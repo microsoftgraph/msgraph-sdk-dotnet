@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Represents an assignment to a Configuration Manager Collection.
     /// </summary>
-    public class ConfigurationManagerCollectionAssignmentTarget : DeviceAndAppManagementAssignmentTarget, IParsable 
+    public class ConfigurationManagerCollectionAssignmentTarget : DeviceAndAppManagementAssignmentTarget, IParsable
     {
         /// <summary>The collection Id that is the target of the assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CollectionId {
+        public string? CollectionId
+        {
             get { return BackingStore?.Get<string?>("collectionId"); }
             set { BackingStore?.Set("collectionId", value); }
         }
 #nullable restore
 #else
-        public string CollectionId {
+        public string CollectionId
+        {
             get { return BackingStore?.Get<string>("collectionId"); }
             set { BackingStore?.Set("collectionId", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"collectionId", n => { CollectionId = n.GetStringValue(); } },
+                { "collectionId", n => { CollectionId = n.GetStringValue(); } },
             };
         }
         /// <summary>

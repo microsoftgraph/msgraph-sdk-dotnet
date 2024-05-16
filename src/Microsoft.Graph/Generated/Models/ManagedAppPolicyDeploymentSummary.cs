@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     /// </summary>
-    public class ManagedAppPolicyDeploymentSummary : Entity, IParsable 
+    public class ManagedAppPolicyDeploymentSummary : Entity, IParsable
     {
         /// <summary>Not yet documented</summary>
-        public int? ConfigurationDeployedUserCount {
+        public int? ConfigurationDeployedUserCount
+        {
             get { return BackingStore?.Get<int?>("configurationDeployedUserCount"); }
             set { BackingStore?.Set("configurationDeployedUserCount", value); }
         }
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppPolicyDeploymentSummaryPerApp>? ConfigurationDeploymentSummaryPerApp {
+        public List<ManagedAppPolicyDeploymentSummaryPerApp>? ConfigurationDeploymentSummaryPerApp
+        {
             get { return BackingStore?.Get<List<ManagedAppPolicyDeploymentSummaryPerApp>?>("configurationDeploymentSummaryPerApp"); }
             set { BackingStore?.Set("configurationDeploymentSummaryPerApp", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppPolicyDeploymentSummaryPerApp> ConfigurationDeploymentSummaryPerApp {
+        public List<ManagedAppPolicyDeploymentSummaryPerApp> ConfigurationDeploymentSummaryPerApp
+        {
             get { return BackingStore?.Get<List<ManagedAppPolicyDeploymentSummaryPerApp>>("configurationDeploymentSummaryPerApp"); }
             set { BackingStore?.Set("configurationDeploymentSummaryPerApp", value); }
         }
@@ -32,32 +36,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Not yet documented</summary>
-        public DateTimeOffset? LastRefreshTime {
+        public DateTimeOffset? LastRefreshTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshTime"); }
             set { BackingStore?.Set("lastRefreshTime", value); }
         }
         /// <summary>Version of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -80,11 +89,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"configurationDeployedUserCount", n => { ConfigurationDeployedUserCount = n.GetIntValue(); } },
-                {"configurationDeploymentSummaryPerApp", n => { ConfigurationDeploymentSummaryPerApp = n.GetCollectionOfObjectValues<ManagedAppPolicyDeploymentSummaryPerApp>(ManagedAppPolicyDeploymentSummaryPerApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastRefreshTime", n => { LastRefreshTime = n.GetDateTimeOffsetValue(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "configurationDeployedUserCount", n => { ConfigurationDeployedUserCount = n.GetIntValue(); } },
+                { "configurationDeploymentSummaryPerApp", n => { ConfigurationDeploymentSummaryPerApp = n.GetCollectionOfObjectValues<ManagedAppPolicyDeploymentSummaryPerApp>(ManagedAppPolicyDeploymentSummaryPerApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastRefreshTime", n => { LastRefreshTime = n.GetDateTimeOffsetValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

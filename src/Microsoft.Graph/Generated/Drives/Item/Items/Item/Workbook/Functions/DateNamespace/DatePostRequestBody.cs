@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DateNamespace {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DateNamespace
+{
     #pragma warning disable CS1591
-    public class DatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DateNamespac
         /// <summary>The day property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Day {
+        public Json? Day
+        {
             get { return BackingStore?.Get<Json?>("day"); }
             set { BackingStore?.Set("day", value); }
         }
 #nullable restore
 #else
-        public Json Day {
+        public Json Day
+        {
             get { return BackingStore?.Get<Json>("day"); }
             set { BackingStore?.Set("day", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DateNamespac
         /// <summary>The month property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Month {
+        public Json? Month
+        {
             get { return BackingStore?.Get<Json?>("month"); }
             set { BackingStore?.Set("month", value); }
         }
 #nullable restore
 #else
-        public Json Month {
+        public Json Month
+        {
             get { return BackingStore?.Get<Json>("month"); }
             set { BackingStore?.Set("month", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DateNamespac
         /// <summary>The year property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Year {
+        public Json? Year
+        {
             get { return BackingStore?.Get<Json?>("year"); }
             set { BackingStore?.Set("year", value); }
         }
 #nullable restore
 #else
-        public Json Year {
+        public Json Year
+        {
             get { return BackingStore?.Get<Json>("year"); }
             set { BackingStore?.Set("year", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DateNamespac
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"day", n => { Day = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"month", n => { Month = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"year", n => { Year = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "day", n => { Day = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "month", n => { Month = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "year", n => { Year = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SubjectRightsRequestHistory : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SubjectRightsRequestHistory : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,56 +22,65 @@ namespace Microsoft.Graph.Models {
         /// <summary>Identity of the user who changed the  subject rights request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? ChangedBy {
+        public IdentitySet? ChangedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("changedBy"); }
             set { BackingStore?.Set("changedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet ChangedBy {
+        public IdentitySet ChangedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("changedBy"); }
             set { BackingStore?.Set("changedBy", value); }
         }
 #endif
         /// <summary>Data and time when the entity was changed.</summary>
-        public DateTimeOffset? EventDateTime {
+        public DateTimeOffset? EventDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: approval.</summary>
-        public SubjectRightsRequestStage? Stage {
+        public SubjectRightsRequestStage? Stage
+        {
             get { return BackingStore?.Get<SubjectRightsRequestStage?>("stage"); }
             set { BackingStore?.Set("stage", value); }
         }
         /// <summary>The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.</summary>
-        public SubjectRightsRequestStageStatus? StageStatus {
+        public SubjectRightsRequestStageStatus? StageStatus
+        {
             get { return BackingStore?.Get<SubjectRightsRequestStageStatus?>("stageStatus"); }
             set { BackingStore?.Set("stageStatus", value); }
         }
         /// <summary>Type of history.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type {
+        public string? Type
+        {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #nullable restore
 #else
-        public string Type {
+        public string Type
+        {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -100,12 +111,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"changedBy", n => { ChangedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"stage", n => { Stage = n.GetEnumValue<SubjectRightsRequestStage>(); } },
-                {"stageStatus", n => { StageStatus = n.GetEnumValue<SubjectRightsRequestStageStatus>(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
+                { "changedBy", n => { ChangedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "stage", n => { Stage = n.GetEnumValue<SubjectRightsRequestStage>(); } },
+                { "stageStatus", n => { StageStatus = n.GetEnumValue<SubjectRightsRequestStageStatus>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

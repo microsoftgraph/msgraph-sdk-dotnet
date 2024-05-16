@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PlannerTaskDetails : Entity, IParsable 
+    public class PlannerTaskDetails : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The collection of checklist items on the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerChecklistItems? Checklist {
+        public PlannerChecklistItems? Checklist
+        {
             get { return BackingStore?.Get<PlannerChecklistItems?>("checklist"); }
             set { BackingStore?.Set("checklist", value); }
         }
 #nullable restore
 #else
-        public PlannerChecklistItems Checklist {
+        public PlannerChecklistItems Checklist
+        {
             get { return BackingStore?.Get<PlannerChecklistItems>("checklist"); }
             set { BackingStore?.Set("checklist", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Description of the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.</summary>
-        public PlannerPreviewType? PreviewType {
+        public PlannerPreviewType? PreviewType
+        {
             get { return BackingStore?.Get<PlannerPreviewType?>("previewType"); }
             set { BackingStore?.Set("previewType", value); }
         }
         /// <summary>The collection of references on the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerExternalReferences? References {
+        public PlannerExternalReferences? References
+        {
             get { return BackingStore?.Get<PlannerExternalReferences?>("references"); }
             set { BackingStore?.Set("references", value); }
         }
 #nullable restore
 #else
-        public PlannerExternalReferences References {
+        public PlannerExternalReferences References
+        {
             get { return BackingStore?.Get<PlannerExternalReferences>("references"); }
             set { BackingStore?.Set("references", value); }
         }
@@ -74,10 +82,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"checklist", n => { Checklist = n.GetObjectValue<PlannerChecklistItems>(PlannerChecklistItems.CreateFromDiscriminatorValue); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"previewType", n => { PreviewType = n.GetEnumValue<PlannerPreviewType>(); } },
-                {"references", n => { References = n.GetObjectValue<PlannerExternalReferences>(PlannerExternalReferences.CreateFromDiscriminatorValue); } },
+                { "checklist", n => { Checklist = n.GetObjectValue<PlannerChecklistItems>(PlannerChecklistItems.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "previewType", n => { PreviewType = n.GetEnumValue<PlannerPreviewType>(); } },
+                { "references", n => { References = n.GetObjectValue<PlannerExternalReferences>(PlannerExternalReferences.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

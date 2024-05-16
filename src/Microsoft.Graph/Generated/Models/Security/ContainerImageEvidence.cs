@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class ContainerImageEvidence : AlertEvidence, IParsable 
+    public class ContainerImageEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The digest image entity, in case this is a tag image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ContainerImageEvidence? DigestImage {
+        public ContainerImageEvidence? DigestImage
+        {
             get { return BackingStore?.Get<ContainerImageEvidence?>("digestImage"); }
             set { BackingStore?.Set("digestImage", value); }
         }
 #nullable restore
 #else
-        public ContainerImageEvidence DigestImage {
+        public ContainerImageEvidence DigestImage
+        {
             get { return BackingStore?.Get<ContainerImageEvidence>("digestImage"); }
             set { BackingStore?.Set("digestImage", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The unique identifier for the container image entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageId {
+        public string? ImageId
+        {
             get { return BackingStore?.Get<string?>("imageId"); }
             set { BackingStore?.Set("imageId", value); }
         }
 #nullable restore
 #else
-        public string ImageId {
+        public string ImageId
+        {
             get { return BackingStore?.Get<string>("imageId"); }
             set { BackingStore?.Set("imageId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The container registry for this image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ContainerRegistryEvidence? Registry {
+        public ContainerRegistryEvidence? Registry
+        {
             get { return BackingStore?.Get<ContainerRegistryEvidence?>("registry"); }
             set { BackingStore?.Set("registry", value); }
         }
 #nullable restore
 #else
-        public ContainerRegistryEvidence Registry {
+        public ContainerRegistryEvidence Registry
+        {
             get { return BackingStore?.Get<ContainerRegistryEvidence>("registry"); }
             set { BackingStore?.Set("registry", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"digestImage", n => { DigestImage = n.GetObjectValue<ContainerImageEvidence>(ContainerImageEvidence.CreateFromDiscriminatorValue); } },
-                {"imageId", n => { ImageId = n.GetStringValue(); } },
-                {"registry", n => { Registry = n.GetObjectValue<ContainerRegistryEvidence>(ContainerRegistryEvidence.CreateFromDiscriminatorValue); } },
+                { "digestImage", n => { DigestImage = n.GetObjectValue<ContainerImageEvidence>(ContainerImageEvidence.CreateFromDiscriminatorValue); } },
+                { "imageId", n => { ImageId = n.GetStringValue(); } },
+                { "registry", n => { Registry = n.GetObjectValue<ContainerRegistryEvidence>(ContainerRegistryEvidence.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

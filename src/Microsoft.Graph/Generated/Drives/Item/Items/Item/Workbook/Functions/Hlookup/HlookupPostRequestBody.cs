@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hlookup {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hlookup
+{
     #pragma warning disable CS1591
-    public class HlookupPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class HlookupPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hlookup {
         /// <summary>The lookupValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? LookupValue {
+        public Json? LookupValue
+        {
             get { return BackingStore?.Get<Json?>("lookupValue"); }
             set { BackingStore?.Set("lookupValue", value); }
         }
 #nullable restore
 #else
-        public Json LookupValue {
+        public Json LookupValue
+        {
             get { return BackingStore?.Get<Json>("lookupValue"); }
             set { BackingStore?.Set("lookupValue", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hlookup {
         /// <summary>The rangeLookup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? RangeLookup {
+        public Json? RangeLookup
+        {
             get { return BackingStore?.Get<Json?>("rangeLookup"); }
             set { BackingStore?.Set("rangeLookup", value); }
         }
 #nullable restore
 #else
-        public Json RangeLookup {
+        public Json RangeLookup
+        {
             get { return BackingStore?.Get<Json>("rangeLookup"); }
             set { BackingStore?.Set("rangeLookup", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hlookup {
         /// <summary>The rowIndexNum property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? RowIndexNum {
+        public Json? RowIndexNum
+        {
             get { return BackingStore?.Get<Json?>("rowIndexNum"); }
             set { BackingStore?.Set("rowIndexNum", value); }
         }
 #nullable restore
 #else
-        public Json RowIndexNum {
+        public Json RowIndexNum
+        {
             get { return BackingStore?.Get<Json>("rowIndexNum"); }
             set { BackingStore?.Set("rowIndexNum", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hlookup {
         /// <summary>The tableArray property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? TableArray {
+        public Json? TableArray
+        {
             get { return BackingStore?.Get<Json?>("tableArray"); }
             set { BackingStore?.Set("tableArray", value); }
         }
 #nullable restore
 #else
-        public Json TableArray {
+        public Json TableArray
+        {
             get { return BackingStore?.Get<Json>("tableArray"); }
             set { BackingStore?.Set("tableArray", value); }
         }
@@ -100,10 +110,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hlookup {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"lookupValue", n => { LookupValue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"rangeLookup", n => { RangeLookup = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"rowIndexNum", n => { RowIndexNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"tableArray", n => { TableArray = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "lookupValue", n => { LookupValue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "rangeLookup", n => { RangeLookup = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "rowIndexNum", n => { RowIndexNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "tableArray", n => { TableArray = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

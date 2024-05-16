@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
     /// </summary>
-    public class AndroidManagedAppProtection : TargetedManagedAppProtection, IParsable 
+    public class AndroidManagedAppProtection : TargetedManagedAppProtection, IParsable
     {
         /// <summary>List of apps to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedMobileApp>? Apps {
+        public List<ManagedMobileApp>? Apps
+        {
             get { return BackingStore?.Get<List<ManagedMobileApp>?>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
 #nullable restore
 #else
-        public List<ManagedMobileApp> Apps {
+        public List<ManagedMobileApp> Apps
+        {
             get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomBrowserDisplayName {
+        public string? CustomBrowserDisplayName
+        {
             get { return BackingStore?.Get<string?>("customBrowserDisplayName"); }
             set { BackingStore?.Set("customBrowserDisplayName", value); }
         }
 #nullable restore
 #else
-        public string CustomBrowserDisplayName {
+        public string CustomBrowserDisplayName
+        {
             get { return BackingStore?.Get<string>("customBrowserDisplayName"); }
             set { BackingStore?.Set("customBrowserDisplayName", value); }
         }
@@ -41,56 +46,65 @@ namespace Microsoft.Graph.Models {
         /// <summary>Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomBrowserPackageId {
+        public string? CustomBrowserPackageId
+        {
             get { return BackingStore?.Get<string?>("customBrowserPackageId"); }
             set { BackingStore?.Set("customBrowserPackageId", value); }
         }
 #nullable restore
 #else
-        public string CustomBrowserPackageId {
+        public string CustomBrowserPackageId
+        {
             get { return BackingStore?.Get<string>("customBrowserPackageId"); }
             set { BackingStore?.Set("customBrowserPackageId", value); }
         }
 #endif
         /// <summary>Count of apps to which the current policy is deployed.</summary>
-        public int? DeployedAppCount {
+        public int? DeployedAppCount
+        {
             get { return BackingStore?.Get<int?>("deployedAppCount"); }
             set { BackingStore?.Set("deployedAppCount", value); }
         }
         /// <summary>Navigation property to deployment summary of the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagedAppPolicyDeploymentSummary? DeploymentSummary {
+        public ManagedAppPolicyDeploymentSummary? DeploymentSummary
+        {
             get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
 #nullable restore
 #else
-        public ManagedAppPolicyDeploymentSummary DeploymentSummary {
+        public ManagedAppPolicyDeploymentSummary DeploymentSummary
+        {
             get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
 #endif
         /// <summary>When this setting is enabled, app level encryption is disabled if device level encryption is enabled</summary>
-        public bool? DisableAppEncryptionIfDeviceEncryptionIsEnabled {
+        public bool? DisableAppEncryptionIfDeviceEncryptionIsEnabled
+        {
             get { return BackingStore?.Get<bool?>("disableAppEncryptionIfDeviceEncryptionIsEnabled"); }
             set { BackingStore?.Set("disableAppEncryptionIfDeviceEncryptionIsEnabled", value); }
         }
         /// <summary>Indicates whether application data for managed apps should be encrypted</summary>
-        public bool? EncryptAppData {
+        public bool? EncryptAppData
+        {
             get { return BackingStore?.Get<bool?>("encryptAppData"); }
             set { BackingStore?.Set("encryptAppData", value); }
         }
         /// <summary>Define the oldest required Android security patch level a user can have to gain secure access to the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinimumRequiredPatchVersion {
+        public string? MinimumRequiredPatchVersion
+        {
             get { return BackingStore?.Get<string?>("minimumRequiredPatchVersion"); }
             set { BackingStore?.Set("minimumRequiredPatchVersion", value); }
         }
 #nullable restore
 #else
-        public string MinimumRequiredPatchVersion {
+        public string MinimumRequiredPatchVersion
+        {
             get { return BackingStore?.Get<string>("minimumRequiredPatchVersion"); }
             set { BackingStore?.Set("minimumRequiredPatchVersion", value); }
         }
@@ -98,19 +112,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>Define the oldest recommended Android security patch level a user can have for secure access to the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinimumWarningPatchVersion {
+        public string? MinimumWarningPatchVersion
+        {
             get { return BackingStore?.Get<string?>("minimumWarningPatchVersion"); }
             set { BackingStore?.Set("minimumWarningPatchVersion", value); }
         }
 #nullable restore
 #else
-        public string MinimumWarningPatchVersion {
+        public string MinimumWarningPatchVersion
+        {
             get { return BackingStore?.Get<string>("minimumWarningPatchVersion"); }
             set { BackingStore?.Set("minimumWarningPatchVersion", value); }
         }
 #endif
         /// <summary>Indicates whether a managed user can take screen captures of managed apps</summary>
-        public bool? ScreenCaptureBlocked {
+        public bool? ScreenCaptureBlocked
+        {
             get { return BackingStore?.Get<bool?>("screenCaptureBlocked"); }
             set { BackingStore?.Set("screenCaptureBlocked", value); }
         }
@@ -139,16 +156,16 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"customBrowserDisplayName", n => { CustomBrowserDisplayName = n.GetStringValue(); } },
-                {"customBrowserPackageId", n => { CustomBrowserPackageId = n.GetStringValue(); } },
-                {"deployedAppCount", n => { DeployedAppCount = n.GetIntValue(); } },
-                {"deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
-                {"disableAppEncryptionIfDeviceEncryptionIsEnabled", n => { DisableAppEncryptionIfDeviceEncryptionIsEnabled = n.GetBoolValue(); } },
-                {"encryptAppData", n => { EncryptAppData = n.GetBoolValue(); } },
-                {"minimumRequiredPatchVersion", n => { MinimumRequiredPatchVersion = n.GetStringValue(); } },
-                {"minimumWarningPatchVersion", n => { MinimumWarningPatchVersion = n.GetStringValue(); } },
-                {"screenCaptureBlocked", n => { ScreenCaptureBlocked = n.GetBoolValue(); } },
+                { "apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customBrowserDisplayName", n => { CustomBrowserDisplayName = n.GetStringValue(); } },
+                { "customBrowserPackageId", n => { CustomBrowserPackageId = n.GetStringValue(); } },
+                { "deployedAppCount", n => { DeployedAppCount = n.GetIntValue(); } },
+                { "deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
+                { "disableAppEncryptionIfDeviceEncryptionIsEnabled", n => { DisableAppEncryptionIfDeviceEncryptionIsEnabled = n.GetBoolValue(); } },
+                { "encryptAppData", n => { EncryptAppData = n.GetBoolValue(); } },
+                { "minimumRequiredPatchVersion", n => { MinimumRequiredPatchVersion = n.GetStringValue(); } },
+                { "minimumWarningPatchVersion", n => { MinimumWarningPatchVersion = n.GetStringValue(); } },
+                { "screenCaptureBlocked", n => { ScreenCaptureBlocked = n.GetBoolValue(); } },
             };
         }
         /// <summary>

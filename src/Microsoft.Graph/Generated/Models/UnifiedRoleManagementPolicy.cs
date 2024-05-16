@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UnifiedRoleManagementPolicy : Entity, IParsable 
+    public class UnifiedRoleManagementPolicy : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Description for the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Display name for the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -40,51 +45,59 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleManagementPolicyRule>? EffectiveRules {
+        public List<UnifiedRoleManagementPolicyRule>? EffectiveRules
+        {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>?>("effectiveRules"); }
             set { BackingStore?.Set("effectiveRules", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleManagementPolicyRule> EffectiveRules {
+        public List<UnifiedRoleManagementPolicyRule> EffectiveRules
+        {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>>("effectiveRules"); }
             set { BackingStore?.Set("effectiveRules", value); }
         }
 #endif
         /// <summary>This can only be set to true for a single tenant-wide policy which will apply to all scopes and roles. Set the scopeId to / and scopeType to Directory. Supports $filter (eq, ne).</summary>
-        public bool? IsOrganizationDefault {
+        public bool? IsOrganizationDefault
+        {
             get { return BackingStore?.Get<bool?>("isOrganizationDefault"); }
             set { BackingStore?.Set("isOrganizationDefault", value); }
         }
         /// <summary>The identity who last modified the role setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? LastModifiedBy {
+        public Identity? LastModifiedBy
+        {
             get { return BackingStore?.Get<Identity?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public Identity LastModifiedBy {
+        public Identity LastModifiedBy
+        {
             get { return BackingStore?.Get<Identity>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>The time when the role setting was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The collection of rules like approval rules and expiration rules. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleManagementPolicyRule>? Rules {
+        public List<UnifiedRoleManagementPolicyRule>? Rules
+        {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>?>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleManagementPolicyRule> Rules {
+        public List<UnifiedRoleManagementPolicyRule> Rules
+        {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
@@ -92,13 +105,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScopeId {
+        public string? ScopeId
+        {
             get { return BackingStore?.Get<string?>("scopeId"); }
             set { BackingStore?.Set("scopeId", value); }
         }
 #nullable restore
 #else
-        public string ScopeId {
+        public string ScopeId
+        {
             get { return BackingStore?.Get<string>("scopeId"); }
             set { BackingStore?.Set("scopeId", value); }
         }
@@ -106,13 +121,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The type of the scope where the policy is created. One of Directory, DirectoryRole, Group. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScopeType {
+        public string? ScopeType
+        {
             get { return BackingStore?.Get<string?>("scopeType"); }
             set { BackingStore?.Set("scopeType", value); }
         }
 #nullable restore
 #else
-        public string ScopeType {
+        public string ScopeType
+        {
             get { return BackingStore?.Get<string>("scopeType"); }
             set { BackingStore?.Set("scopeType", value); }
         }
@@ -135,15 +152,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"effectiveRules", n => { EffectiveRules = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>(UnifiedRoleManagementPolicyRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isOrganizationDefault", n => { IsOrganizationDefault = n.GetBoolValue(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"rules", n => { Rules = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>(UnifiedRoleManagementPolicyRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"scopeId", n => { ScopeId = n.GetStringValue(); } },
-                {"scopeType", n => { ScopeType = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "effectiveRules", n => { EffectiveRules = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>(UnifiedRoleManagementPolicyRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isOrganizationDefault", n => { IsOrganizationDefault = n.GetBoolValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>(UnifiedRoleManagementPolicyRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scopeId", n => { ScopeId = n.GetStringValue(); } },
+                { "scopeType", n => { ScopeType = n.GetStringValue(); } },
             };
         }
         /// <summary>

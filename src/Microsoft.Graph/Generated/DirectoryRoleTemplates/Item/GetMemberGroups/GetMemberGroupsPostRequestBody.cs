@@ -5,20 +5,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DirectoryRoleTemplates.Item.GetMemberGroups {
+namespace Microsoft.Graph.DirectoryRoleTemplates.Item.GetMemberGroups
+{
     #pragma warning disable CS1591
-    public class GetMemberGroupsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class GetMemberGroupsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The securityEnabledOnly property</summary>
-        public bool? SecurityEnabledOnly {
+        public bool? SecurityEnabledOnly
+        {
             get { return BackingStore?.Get<bool?>("securityEnabledOnly"); }
             set { BackingStore?.Set("securityEnabledOnly", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.DirectoryRoleTemplates.Item.GetMemberGroups {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"securityEnabledOnly", n => { SecurityEnabledOnly = n.GetBoolValue(); } },
+                { "securityEnabledOnly", n => { SecurityEnabledOnly = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The identifier for an iOS app.
     /// </summary>
-    public class IosMobileAppIdentifier : MobileAppIdentifier, IParsable 
+    public class IosMobileAppIdentifier : MobileAppIdentifier, IParsable
     {
         /// <summary>The identifier for an app, as specified in the app store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BundleId {
+        public string? BundleId
+        {
             get { return BackingStore?.Get<string?>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
 #nullable restore
 #else
-        public string BundleId {
+        public string BundleId
+        {
             get { return BackingStore?.Get<string>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"bundleId", n => { BundleId = n.GetStringValue(); } },
+                { "bundleId", n => { BundleId = n.GetStringValue(); } },
             };
         }
         /// <summary>

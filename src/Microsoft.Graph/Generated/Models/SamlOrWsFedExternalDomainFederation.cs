@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SamlOrWsFedExternalDomainFederation : SamlOrWsFedProvider, IParsable 
+    public class SamlOrWsFedExternalDomainFederation : SamlOrWsFedProvider, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collection of domain names of the external organizations that the tenant is federating with. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalDomainName>? Domains {
+        public List<ExternalDomainName>? Domains
+        {
             get { return BackingStore?.Get<List<ExternalDomainName>?>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
 #nullable restore
 #else
-        public List<ExternalDomainName> Domains {
+        public List<ExternalDomainName> Domains
+        {
             get { return BackingStore?.Get<List<ExternalDomainName>>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"domains", n => { Domains = n.GetCollectionOfObjectValues<ExternalDomainName>(ExternalDomainName.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "domains", n => { Domains = n.GetCollectionOfObjectValues<ExternalDomainName>(ExternalDomainName.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

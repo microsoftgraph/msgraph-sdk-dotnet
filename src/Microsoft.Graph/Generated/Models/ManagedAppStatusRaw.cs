@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Represents an un-typed status report about organizations app protection and configuration.
     /// </summary>
-    public class ManagedAppStatusRaw : ManagedAppStatus, IParsable 
+    public class ManagedAppStatusRaw : ManagedAppStatus, IParsable
     {
         /// <summary>Status report content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Content {
+        public Json? Content
+        {
             get { return BackingStore?.Get<Json?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public Json Content {
+        public Json Content
+        {
             get { return BackingStore?.Get<Json>("content"); }
             set { BackingStore?.Set("content", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"content", n => { Content = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

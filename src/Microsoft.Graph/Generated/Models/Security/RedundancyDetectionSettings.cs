@@ -5,49 +5,57 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class RedundancyDetectionSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RedundancyDetectionSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether email threading and near duplicate detection are enabled.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.</summary>
-        public int? MaxWords {
+        public int? MaxWords
+        {
             get { return BackingStore?.Get<int?>("maxWords"); }
             set { BackingStore?.Set("maxWords", value); }
         }
         /// <summary>Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.</summary>
-        public int? MinWords {
+        public int? MinWords
+        {
             get { return BackingStore?.Get<int?>("minWords"); }
             set { BackingStore?.Set("minWords", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.</summary>
-        public int? SimilarityThreshold {
+        public int? SimilarityThreshold
+        {
             get { return BackingStore?.Get<int?>("similarityThreshold"); }
             set { BackingStore?.Set("similarityThreshold", value); }
         }
@@ -77,11 +85,11 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"maxWords", n => { MaxWords = n.GetIntValue(); } },
-                {"minWords", n => { MinWords = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"similarityThreshold", n => { SimilarityThreshold = n.GetIntValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "maxWords", n => { MaxWords = n.GetIntValue(); } },
+                { "minWords", n => { MinWords = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "similarityThreshold", n => { SimilarityThreshold = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ParseExpressionResponse : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ParseExpressionResponse : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Error details, if expression evaluation resulted in an error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PublicError? Error {
+        public PublicError? Error
+        {
             get { return BackingStore?.Get<PublicError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public PublicError Error {
+        public PublicError Error
+        {
             get { return BackingStore?.Get<PublicError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
@@ -34,32 +38,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of values produced by the evaluation of the expression.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EvaluationResult {
+        public List<string>? EvaluationResult
+        {
             get { return BackingStore?.Get<List<string>?>("evaluationResult"); }
             set { BackingStore?.Set("evaluationResult", value); }
         }
 #nullable restore
 #else
-        public List<string> EvaluationResult {
+        public List<string> EvaluationResult
+        {
             get { return BackingStore?.Get<List<string>>("evaluationResult"); }
             set { BackingStore?.Set("evaluationResult", value); }
         }
 #endif
         /// <summary>true if the evaluation was successful.</summary>
-        public bool? EvaluationSucceeded {
+        public bool? EvaluationSucceeded
+        {
             get { return BackingStore?.Get<bool?>("evaluationSucceeded"); }
             set { BackingStore?.Set("evaluationSucceeded", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -67,19 +76,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>An attributeMappingSource object representing the parsed expression.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AttributeMappingSource? ParsedExpression {
+        public AttributeMappingSource? ParsedExpression
+        {
             get { return BackingStore?.Get<AttributeMappingSource?>("parsedExpression"); }
             set { BackingStore?.Set("parsedExpression", value); }
         }
 #nullable restore
 #else
-        public AttributeMappingSource ParsedExpression {
+        public AttributeMappingSource ParsedExpression
+        {
             get { return BackingStore?.Get<AttributeMappingSource>("parsedExpression"); }
             set { BackingStore?.Set("parsedExpression", value); }
         }
 #endif
         /// <summary>true if the expression was parsed successfully.</summary>
-        public bool? ParsingSucceeded {
+        public bool? ParsingSucceeded
+        {
             get { return BackingStore?.Get<bool?>("parsingSucceeded"); }
             set { BackingStore?.Set("parsingSucceeded", value); }
         }
@@ -109,12 +121,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"error", n => { Error = n.GetObjectValue<PublicError>(PublicError.CreateFromDiscriminatorValue); } },
-                {"evaluationResult", n => { EvaluationResult = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"evaluationSucceeded", n => { EvaluationSucceeded = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"parsedExpression", n => { ParsedExpression = n.GetObjectValue<AttributeMappingSource>(AttributeMappingSource.CreateFromDiscriminatorValue); } },
-                {"parsingSucceeded", n => { ParsingSucceeded = n.GetBoolValue(); } },
+                { "error", n => { Error = n.GetObjectValue<PublicError>(PublicError.CreateFromDiscriminatorValue); } },
+                { "evaluationResult", n => { EvaluationResult = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "evaluationSucceeded", n => { EvaluationSucceeded = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "parsedExpression", n => { ParsedExpression = n.GetObjectValue<AttributeMappingSource>(AttributeMappingSource.CreateFromDiscriminatorValue); } },
+                { "parsingSucceeded", n => { ParsingSucceeded = n.GetBoolValue(); } },
             };
         }
         /// <summary>

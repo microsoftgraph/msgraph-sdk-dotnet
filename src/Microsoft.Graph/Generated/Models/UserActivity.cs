@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UserActivity : Entity, IParsable 
+    public class UserActivity : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivationUrl {
+        public string? ActivationUrl
+        {
             get { return BackingStore?.Get<string?>("activationUrl"); }
             set { BackingStore?.Set("activationUrl", value); }
         }
 #nullable restore
 #else
-        public string ActivationUrl {
+        public string ActivationUrl
+        {
             get { return BackingStore?.Get<string>("activationUrl"); }
             set { BackingStore?.Set("activationUrl", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivitySourceHost {
+        public string? ActivitySourceHost
+        {
             get { return BackingStore?.Get<string?>("activitySourceHost"); }
             set { BackingStore?.Set("activitySourceHost", value); }
         }
 #nullable restore
 #else
-        public string ActivitySourceHost {
+        public string ActivitySourceHost
+        {
             get { return BackingStore?.Get<string>("activitySourceHost"); }
             set { BackingStore?.Set("activitySourceHost", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppActivityId {
+        public string? AppActivityId
+        {
             get { return BackingStore?.Get<string?>("appActivityId"); }
             set { BackingStore?.Set("appActivityId", value); }
         }
 #nullable restore
 #else
-        public string AppActivityId {
+        public string AppActivityId
+        {
             get { return BackingStore?.Get<string>("appActivityId"); }
             set { BackingStore?.Set("appActivityId", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppDisplayName {
+        public string? AppDisplayName
+        {
             get { return BackingStore?.Get<string?>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
 #nullable restore
 #else
-        public string AppDisplayName {
+        public string AppDisplayName
+        {
             get { return BackingStore?.Get<string>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? ContentInfo {
+        public Json? ContentInfo
+        {
             get { return BackingStore?.Get<Json?>("contentInfo"); }
             set { BackingStore?.Set("contentInfo", value); }
         }
 #nullable restore
 #else
-        public Json ContentInfo {
+        public Json ContentInfo
+        {
             get { return BackingStore?.Get<Json>("contentInfo"); }
             set { BackingStore?.Set("contentInfo", value); }
         }
@@ -82,37 +93,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentUrl {
+        public string? ContentUrl
+        {
             get { return BackingStore?.Get<string?>("contentUrl"); }
             set { BackingStore?.Set("contentUrl", value); }
         }
 #nullable restore
 #else
-        public string ContentUrl {
+        public string ContentUrl
+        {
             get { return BackingStore?.Get<string>("contentUrl"); }
             set { BackingStore?.Set("contentUrl", value); }
         }
 #endif
         /// <summary>Set by the server. DateTime in UTC when the object was created on the server.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Set by the server. DateTime in UTC when the object expired on the server.</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>Optional. URL used to launch the activity in a web-based app, if available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FallbackUrl {
+        public string? FallbackUrl
+        {
             get { return BackingStore?.Get<string?>("fallbackUrl"); }
             set { BackingStore?.Set("fallbackUrl", value); }
         }
 #nullable restore
 #else
-        public string FallbackUrl {
+        public string FallbackUrl
+        {
             get { return BackingStore?.Get<string>("fallbackUrl"); }
             set { BackingStore?.Set("fallbackUrl", value); }
         }
@@ -120,37 +137,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>Optional. NavigationProperty/Containment; navigation property to the activity&apos;s historyItems.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ActivityHistoryItem>? HistoryItems {
+        public List<ActivityHistoryItem>? HistoryItems
+        {
             get { return BackingStore?.Get<List<ActivityHistoryItem>?>("historyItems"); }
             set { BackingStore?.Set("historyItems", value); }
         }
 #nullable restore
 #else
-        public List<ActivityHistoryItem> HistoryItems {
+        public List<ActivityHistoryItem> HistoryItems
+        {
             get { return BackingStore?.Get<List<ActivityHistoryItem>>("historyItems"); }
             set { BackingStore?.Set("historyItems", value); }
         }
 #endif
         /// <summary>Set by the server. DateTime in UTC when the object was modified on the server.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.</summary>
-        public Microsoft.Graph.Models.Status? Status {
+        public Microsoft.Graph.Models.Status? Status
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Status?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Optional. The timezone in which the user&apos;s device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserTimezone {
+        public string? UserTimezone
+        {
             get { return BackingStore?.Get<string?>("userTimezone"); }
             set { BackingStore?.Set("userTimezone", value); }
         }
 #nullable restore
 #else
-        public string UserTimezone {
+        public string UserTimezone
+        {
             get { return BackingStore?.Get<string>("userTimezone"); }
             set { BackingStore?.Set("userTimezone", value); }
         }
@@ -158,13 +181,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The visualElements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VisualInfo? VisualElements {
+        public VisualInfo? VisualElements
+        {
             get { return BackingStore?.Get<VisualInfo?>("visualElements"); }
             set { BackingStore?.Set("visualElements", value); }
         }
 #nullable restore
 #else
-        public VisualInfo VisualElements {
+        public VisualInfo VisualElements
+        {
             get { return BackingStore?.Get<VisualInfo>("visualElements"); }
             set { BackingStore?.Set("visualElements", value); }
         }
@@ -187,20 +212,20 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activationUrl", n => { ActivationUrl = n.GetStringValue(); } },
-                {"activitySourceHost", n => { ActivitySourceHost = n.GetStringValue(); } },
-                {"appActivityId", n => { AppActivityId = n.GetStringValue(); } },
-                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
-                {"contentInfo", n => { ContentInfo = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"contentUrl", n => { ContentUrl = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"fallbackUrl", n => { FallbackUrl = n.GetStringValue(); } },
-                {"historyItems", n => { HistoryItems = n.GetCollectionOfObjectValues<ActivityHistoryItem>(ActivityHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetEnumValue<Status>(); } },
-                {"userTimezone", n => { UserTimezone = n.GetStringValue(); } },
-                {"visualElements", n => { VisualElements = n.GetObjectValue<VisualInfo>(VisualInfo.CreateFromDiscriminatorValue); } },
+                { "activationUrl", n => { ActivationUrl = n.GetStringValue(); } },
+                { "activitySourceHost", n => { ActivitySourceHost = n.GetStringValue(); } },
+                { "appActivityId", n => { AppActivityId = n.GetStringValue(); } },
+                { "appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                { "contentInfo", n => { ContentInfo = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "contentUrl", n => { ContentUrl = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "fallbackUrl", n => { FallbackUrl = n.GetStringValue(); } },
+                { "historyItems", n => { HistoryItems = n.GetCollectionOfObjectValues<ActivityHistoryItem>(ActivityHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<Status>(); } },
+                { "userTimezone", n => { UserTimezone = n.GetStringValue(); } },
+                { "visualElements", n => { VisualElements = n.GetObjectValue<VisualInfo>(VisualInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

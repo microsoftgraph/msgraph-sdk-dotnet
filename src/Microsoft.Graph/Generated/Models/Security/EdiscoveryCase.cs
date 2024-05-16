@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class EdiscoveryCase : Case, IParsable 
+    public class EdiscoveryCase : Case, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The user who closed the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.IdentitySet? ClosedBy {
+        public Microsoft.Graph.Models.IdentitySet? ClosedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("closedBy"); }
             set { BackingStore?.Set("closedBy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.IdentitySet ClosedBy {
+        public Microsoft.Graph.Models.IdentitySet ClosedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("closedBy"); }
             set { BackingStore?.Set("closedBy", value); }
         }
 #endif
         /// <summary>The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? ClosedDateTime {
+        public DateTimeOffset? ClosedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("closedDateTime"); }
             set { BackingStore?.Set("closedDateTime", value); }
         }
         /// <summary>Returns a list of case ediscoveryCustodian objects for this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryCustodian>? Custodians {
+        public List<EdiscoveryCustodian>? Custodians
+        {
             get { return BackingStore?.Get<List<EdiscoveryCustodian>?>("custodians"); }
             set { BackingStore?.Set("custodians", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryCustodian> Custodians {
+        public List<EdiscoveryCustodian> Custodians
+        {
             get { return BackingStore?.Get<List<EdiscoveryCustodian>>("custodians"); }
             set { BackingStore?.Set("custodians", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The external case number for customer reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId {
+        public string? ExternalId
+        {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
 #nullable restore
 #else
-        public string ExternalId {
+        public string ExternalId
+        {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Returns a list of case ediscoveryNoncustodialDataSource objects for this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryNoncustodialDataSource>? NoncustodialDataSources {
+        public List<EdiscoveryNoncustodialDataSource>? NoncustodialDataSources
+        {
             get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>?>("noncustodialDataSources"); }
             set { BackingStore?.Set("noncustodialDataSources", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryNoncustodialDataSource> NoncustodialDataSources {
+        public List<EdiscoveryNoncustodialDataSource> NoncustodialDataSources
+        {
             get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>>("noncustodialDataSources"); }
             set { BackingStore?.Set("noncustodialDataSources", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Returns a list of case caseOperation objects for this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CaseOperation>? Operations {
+        public List<CaseOperation>? Operations
+        {
             get { return BackingStore?.Get<List<CaseOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<CaseOperation> Operations {
+        public List<CaseOperation> Operations
+        {
             get { return BackingStore?.Get<List<CaseOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Returns a list of eDiscoveryReviewSet objects in the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryReviewSet>? ReviewSets {
+        public List<EdiscoveryReviewSet>? ReviewSets
+        {
             get { return BackingStore?.Get<List<EdiscoveryReviewSet>?>("reviewSets"); }
             set { BackingStore?.Set("reviewSets", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryReviewSet> ReviewSets {
+        public List<EdiscoveryReviewSet> ReviewSets
+        {
             get { return BackingStore?.Get<List<EdiscoveryReviewSet>>("reviewSets"); }
             set { BackingStore?.Set("reviewSets", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Returns a list of eDiscoverySearch objects associated with this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoverySearch>? Searches {
+        public List<EdiscoverySearch>? Searches
+        {
             get { return BackingStore?.Get<List<EdiscoverySearch>?>("searches"); }
             set { BackingStore?.Set("searches", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoverySearch> Searches {
+        public List<EdiscoverySearch> Searches
+        {
             get { return BackingStore?.Get<List<EdiscoverySearch>>("searches"); }
             set { BackingStore?.Set("searches", value); }
         }
@@ -115,13 +131,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Returns a list of eDIscoverySettings objects in the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoveryCaseSettings? Settings {
+        public EdiscoveryCaseSettings? Settings
+        {
             get { return BackingStore?.Get<EdiscoveryCaseSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public EdiscoveryCaseSettings Settings {
+        public EdiscoveryCaseSettings Settings
+        {
             get { return BackingStore?.Get<EdiscoveryCaseSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
@@ -129,13 +147,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Returns a list of ediscoveryReviewTag objects associated to this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryReviewTag>? Tags {
+        public List<EdiscoveryReviewTag>? Tags
+        {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryReviewTag> Tags {
+        public List<EdiscoveryReviewTag> Tags
+        {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
@@ -165,16 +185,16 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"closedBy", n => { ClosedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"closedDateTime", n => { ClosedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"custodians", n => { Custodians = n.GetCollectionOfObjectValues<EdiscoveryCustodian>(EdiscoveryCustodian.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"externalId", n => { ExternalId = n.GetStringValue(); } },
-                {"noncustodialDataSources", n => { NoncustodialDataSources = n.GetCollectionOfObjectValues<EdiscoveryNoncustodialDataSource>(EdiscoveryNoncustodialDataSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"operations", n => { Operations = n.GetCollectionOfObjectValues<CaseOperation>(CaseOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"reviewSets", n => { ReviewSets = n.GetCollectionOfObjectValues<EdiscoveryReviewSet>(EdiscoveryReviewSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"searches", n => { Searches = n.GetCollectionOfObjectValues<EdiscoverySearch>(EdiscoverySearch.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"settings", n => { Settings = n.GetObjectValue<EdiscoveryCaseSettings>(EdiscoveryCaseSettings.CreateFromDiscriminatorValue); } },
-                {"tags", n => { Tags = n.GetCollectionOfObjectValues<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "closedBy", n => { ClosedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "closedDateTime", n => { ClosedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "custodians", n => { Custodians = n.GetCollectionOfObjectValues<EdiscoveryCustodian>(EdiscoveryCustodian.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "externalId", n => { ExternalId = n.GetStringValue(); } },
+                { "noncustodialDataSources", n => { NoncustodialDataSources = n.GetCollectionOfObjectValues<EdiscoveryNoncustodialDataSource>(EdiscoveryNoncustodialDataSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<CaseOperation>(CaseOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "reviewSets", n => { ReviewSets = n.GetCollectionOfObjectValues<EdiscoveryReviewSet>(EdiscoveryReviewSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "searches", n => { Searches = n.GetCollectionOfObjectValues<EdiscoverySearch>(EdiscoverySearch.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<EdiscoveryCaseSettings>(EdiscoveryCaseSettings.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetCollectionOfObjectValues<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -6,38 +6,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Reports.Partners.Billing.Usage.Unbilled.MicrosoftGraphPartnersBillingExport {
+namespace Microsoft.Graph.Reports.Partners.Billing.Usage.Unbilled.MicrosoftGraphPartnersBillingExport
+{
     #pragma warning disable CS1591
-    public class ExportPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ExportPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The attributeSet property</summary>
-        public Microsoft.Graph.Models.Partners.Billing.AttributeSet? AttributeSet {
+        public Microsoft.Graph.Models.Partners.Billing.AttributeSet? AttributeSet
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Partners.Billing.AttributeSet?>("attributeSet"); }
             set { BackingStore?.Set("attributeSet", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The billingPeriod property</summary>
-        public Microsoft.Graph.Models.Partners.Billing.BillingPeriod? BillingPeriod {
+        public Microsoft.Graph.Models.Partners.Billing.BillingPeriod? BillingPeriod
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Partners.Billing.BillingPeriod?>("billingPeriod"); }
             set { BackingStore?.Set("billingPeriod", value); }
         }
         /// <summary>The currencyCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencyCode {
+        public string? CurrencyCode
+        {
             get { return BackingStore?.Get<string?>("currencyCode"); }
             set { BackingStore?.Set("currencyCode", value); }
         }
 #nullable restore
 #else
-        public string CurrencyCode {
+        public string CurrencyCode
+        {
             get { return BackingStore?.Get<string>("currencyCode"); }
             set { BackingStore?.Set("currencyCode", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Usage.Unbilled.MicrosoftGraph
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"attributeSet", n => { AttributeSet = n.GetEnumValue<AttributeSet>(); } },
-                {"billingPeriod", n => { BillingPeriod = n.GetEnumValue<BillingPeriod>(); } },
-                {"currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
+                { "attributeSet", n => { AttributeSet = n.GetEnumValue<AttributeSet>(); } },
+                { "billingPeriod", n => { BillingPeriod = n.GetEnumValue<BillingPeriod>(); } },
+                { "currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CallEndedEventMessageDetail : EventMessageDetail, IParsable 
+    public class CallEndedEventMessageDetail : EventMessageDetail, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Duration of the call.</summary>
-        public TimeSpan? CallDuration {
+        public TimeSpan? CallDuration
+        {
             get { return BackingStore?.Get<TimeSpan?>("callDuration"); }
             set { BackingStore?.Set("callDuration", value); }
         }
         /// <summary>Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.</summary>
-        public TeamworkCallEventType? CallEventType {
+        public TeamworkCallEventType? CallEventType
+        {
             get { return BackingStore?.Get<TeamworkCallEventType?>("callEventType"); }
             set { BackingStore?.Set("callEventType", value); }
         }
         /// <summary>Unique identifier of the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallId {
+        public string? CallId
+        {
             get { return BackingStore?.Get<string?>("callId"); }
             set { BackingStore?.Set("callId", value); }
         }
 #nullable restore
 #else
-        public string CallId {
+        public string CallId
+        {
             get { return BackingStore?.Get<string>("callId"); }
             set { BackingStore?.Set("callId", value); }
         }
@@ -36,13 +41,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>List of call participants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CallParticipantInfo>? CallParticipants {
+        public List<CallParticipantInfo>? CallParticipants
+        {
             get { return BackingStore?.Get<List<CallParticipantInfo>?>("callParticipants"); }
             set { BackingStore?.Set("callParticipants", value); }
         }
 #nullable restore
 #else
-        public List<CallParticipantInfo> CallParticipants {
+        public List<CallParticipantInfo> CallParticipants
+        {
             get { return BackingStore?.Get<List<CallParticipantInfo>>("callParticipants"); }
             set { BackingStore?.Set("callParticipants", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Initiator of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Initiator {
+        public IdentitySet? Initiator
+        {
             get { return BackingStore?.Get<IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Initiator {
+        public IdentitySet Initiator
+        {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
@@ -86,11 +95,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"callDuration", n => { CallDuration = n.GetTimeSpanValue(); } },
-                {"callEventType", n => { CallEventType = n.GetEnumValue<TeamworkCallEventType>(); } },
-                {"callId", n => { CallId = n.GetStringValue(); } },
-                {"callParticipants", n => { CallParticipants = n.GetCollectionOfObjectValues<CallParticipantInfo>(CallParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "callDuration", n => { CallDuration = n.GetTimeSpanValue(); } },
+                { "callEventType", n => { CallEventType = n.GetEnumValue<TeamworkCallEventType>(); } },
+                { "callId", n => { CallId = n.GetStringValue(); } },
+                { "callParticipants", n => { CallParticipants = n.GetCollectionOfObjectValues<CallParticipantInfo>(CallParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

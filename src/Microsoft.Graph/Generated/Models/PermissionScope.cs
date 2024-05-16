@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PermissionScope : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PermissionScope : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>A description of the delegated permissions, intended to be read by an administrator granting the permission on behalf of all users. This text appears in tenant-wide admin consent experiences.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdminConsentDescription {
+        public string? AdminConsentDescription
+        {
             get { return BackingStore?.Get<string?>("adminConsentDescription"); }
             set { BackingStore?.Set("adminConsentDescription", value); }
         }
 #nullable restore
 #else
-        public string AdminConsentDescription {
+        public string AdminConsentDescription
+        {
             get { return BackingStore?.Get<string>("adminConsentDescription"); }
             set { BackingStore?.Set("adminConsentDescription", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The permission&apos;s title, intended to be read by an administrator granting the permission on behalf of all users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdminConsentDisplayName {
+        public string? AdminConsentDisplayName
+        {
             get { return BackingStore?.Get<string?>("adminConsentDisplayName"); }
             set { BackingStore?.Set("adminConsentDisplayName", value); }
         }
 #nullable restore
 #else
-        public string AdminConsentDisplayName {
+        public string AdminConsentDisplayName
+        {
             get { return BackingStore?.Get<string>("adminConsentDisplayName"); }
             set { BackingStore?.Set("adminConsentDisplayName", value); }
         }
@@ -46,25 +52,29 @@ namespace Microsoft.Graph.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.</summary>
-        public Guid? Id {
+        public Guid? Id
+        {
             get { return BackingStore?.Get<Guid?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>When you create or update a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -72,13 +82,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The origin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Origin {
+        public string? Origin
+        {
             get { return BackingStore?.Get<string?>("origin"); }
             set { BackingStore?.Set("origin", value); }
         }
 #nullable restore
 #else
-        public string Origin {
+        public string Origin
+        {
             get { return BackingStore?.Get<string>("origin"); }
             set { BackingStore?.Set("origin", value); }
         }
@@ -86,13 +98,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft Graph defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type {
+        public string? Type
+        {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #nullable restore
 #else
-        public string Type {
+        public string Type
+        {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -100,13 +114,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserConsentDescription {
+        public string? UserConsentDescription
+        {
             get { return BackingStore?.Get<string?>("userConsentDescription"); }
             set { BackingStore?.Set("userConsentDescription", value); }
         }
 #nullable restore
 #else
-        public string UserConsentDescription {
+        public string UserConsentDescription
+        {
             get { return BackingStore?.Get<string>("userConsentDescription"); }
             set { BackingStore?.Set("userConsentDescription", value); }
         }
@@ -114,13 +130,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserConsentDisplayName {
+        public string? UserConsentDisplayName
+        {
             get { return BackingStore?.Get<string?>("userConsentDisplayName"); }
             set { BackingStore?.Set("userConsentDisplayName", value); }
         }
 #nullable restore
 #else
-        public string UserConsentDisplayName {
+        public string UserConsentDisplayName
+        {
             get { return BackingStore?.Get<string>("userConsentDisplayName"); }
             set { BackingStore?.Set("userConsentDisplayName", value); }
         }
@@ -128,13 +146,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % &amp; &apos; ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, aren&apos;t allowed. May not begin with ..</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value {
+        public string? Value
+        {
             get { return BackingStore?.Get<string?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public string Value {
+        public string Value
+        {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -165,16 +185,16 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"adminConsentDescription", n => { AdminConsentDescription = n.GetStringValue(); } },
-                {"adminConsentDisplayName", n => { AdminConsentDisplayName = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetGuidValue(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"origin", n => { Origin = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
-                {"userConsentDescription", n => { UserConsentDescription = n.GetStringValue(); } },
-                {"userConsentDisplayName", n => { UserConsentDisplayName = n.GetStringValue(); } },
-                {"value", n => { Value = n.GetStringValue(); } },
+                { "adminConsentDescription", n => { AdminConsentDescription = n.GetStringValue(); } },
+                { "adminConsentDisplayName", n => { AdminConsentDisplayName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "origin", n => { Origin = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+                { "userConsentDescription", n => { UserConsentDescription = n.GetStringValue(); } },
+                { "userConsentDisplayName", n => { UserConsentDisplayName = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive {
+namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive
+{
     [Obsolete("This class is obsolete. Use ArchivePostResponse instead.")]
     #pragma warning disable CS1591
-    public class ArchiveResponse : ArchivePostResponse, IParsable 
+    public class ArchiveResponse : ArchivePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

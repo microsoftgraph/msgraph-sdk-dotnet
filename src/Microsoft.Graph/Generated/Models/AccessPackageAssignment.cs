@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageAssignment : Entity, IParsable 
+    public class AccessPackageAssignment : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.AccessPackage? AccessPackage {
+        public Microsoft.Graph.Models.AccessPackage? AccessPackage
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackage?>("accessPackage"); }
             set { BackingStore?.Set("accessPackage", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.AccessPackage AccessPackage {
+        public Microsoft.Graph.Models.AccessPackage AccessPackage
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackage>("accessPackage"); }
             set { BackingStore?.Set("accessPackage", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Read-only. Supports $filter (eq) on the id property and $expand query parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageAssignmentPolicy? AssignmentPolicy {
+        public AccessPackageAssignmentPolicy? AssignmentPolicy
+        {
             get { return BackingStore?.Get<AccessPackageAssignmentPolicy?>("assignmentPolicy"); }
             set { BackingStore?.Set("assignmentPolicy", value); }
         }
 #nullable restore
 #else
-        public AccessPackageAssignmentPolicy AssignmentPolicy {
+        public AccessPackageAssignmentPolicy AssignmentPolicy
+        {
             get { return BackingStore?.Get<AccessPackageAssignmentPolicy>("assignmentPolicy"); }
             set { BackingStore?.Set("assignmentPolicy", value); }
         }
@@ -40,51 +45,59 @@ namespace Microsoft.Graph.Models {
         /// <summary>Information about all the custom extension calls that were made during the access package assignment workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomExtensionCalloutInstance>? CustomExtensionCalloutInstances {
+        public List<CustomExtensionCalloutInstance>? CustomExtensionCalloutInstances
+        {
             get { return BackingStore?.Get<List<CustomExtensionCalloutInstance>?>("customExtensionCalloutInstances"); }
             set { BackingStore?.Set("customExtensionCalloutInstances", value); }
         }
 #nullable restore
 #else
-        public List<CustomExtensionCalloutInstance> CustomExtensionCalloutInstances {
+        public List<CustomExtensionCalloutInstance> CustomExtensionCalloutInstances
+        {
             get { return BackingStore?.Get<List<CustomExtensionCalloutInstance>>("customExtensionCalloutInstances"); }
             set { BackingStore?.Set("customExtensionCalloutInstances", value); }
         }
 #endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? ExpiredDateTime {
+        public DateTimeOffset? ExpiredDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expiredDateTime"); }
             set { BackingStore?.Set("expiredDateTime", value); }
         }
         /// <summary>When the access assignment is to be in place. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EntitlementManagementSchedule? Schedule {
+        public EntitlementManagementSchedule? Schedule
+        {
             get { return BackingStore?.Get<EntitlementManagementSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public EntitlementManagementSchedule Schedule {
+        public EntitlementManagementSchedule Schedule
+        {
             get { return BackingStore?.Get<EntitlementManagementSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
         /// <summary>The state of the access package assignment. The possible values are: delivering, partiallyDelivered, delivered, expired, deliveryFailed, unknownFutureValue. Read-only. Supports $filter (eq).</summary>
-        public AccessPackageAssignmentState? State {
+        public AccessPackageAssignmentState? State
+        {
             get { return BackingStore?.Get<AccessPackageAssignmentState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status {
+        public string? Status
+        {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public string Status {
+        public string Status
+        {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -92,13 +105,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageSubject? Target {
+        public AccessPackageSubject? Target
+        {
             get { return BackingStore?.Get<AccessPackageSubject?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public AccessPackageSubject Target {
+        public AccessPackageSubject Target
+        {
             get { return BackingStore?.Get<AccessPackageSubject>("target"); }
             set { BackingStore?.Set("target", value); }
         }
@@ -121,14 +136,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessPackage", n => { AccessPackage = n.GetObjectValue<Microsoft.Graph.Models.AccessPackage>(Microsoft.Graph.Models.AccessPackage.CreateFromDiscriminatorValue); } },
-                {"assignmentPolicy", n => { AssignmentPolicy = n.GetObjectValue<AccessPackageAssignmentPolicy>(AccessPackageAssignmentPolicy.CreateFromDiscriminatorValue); } },
-                {"customExtensionCalloutInstances", n => { CustomExtensionCalloutInstances = n.GetCollectionOfObjectValues<CustomExtensionCalloutInstance>(CustomExtensionCalloutInstance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"expiredDateTime", n => { ExpiredDateTime = n.GetDateTimeOffsetValue(); } },
-                {"schedule", n => { Schedule = n.GetObjectValue<EntitlementManagementSchedule>(EntitlementManagementSchedule.CreateFromDiscriminatorValue); } },
-                {"state", n => { State = n.GetEnumValue<AccessPackageAssignmentState>(); } },
-                {"status", n => { Status = n.GetStringValue(); } },
-                {"target", n => { Target = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
+                { "accessPackage", n => { AccessPackage = n.GetObjectValue<Microsoft.Graph.Models.AccessPackage>(Microsoft.Graph.Models.AccessPackage.CreateFromDiscriminatorValue); } },
+                { "assignmentPolicy", n => { AssignmentPolicy = n.GetObjectValue<AccessPackageAssignmentPolicy>(AccessPackageAssignmentPolicy.CreateFromDiscriminatorValue); } },
+                { "customExtensionCalloutInstances", n => { CustomExtensionCalloutInstances = n.GetCollectionOfObjectValues<CustomExtensionCalloutInstance>(CustomExtensionCalloutInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "expiredDateTime", n => { ExpiredDateTime = n.GetDateTimeOffsetValue(); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<EntitlementManagementSchedule>(EntitlementManagementSchedule.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<AccessPackageAssignmentState>(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
+                { "target", n => { Target = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

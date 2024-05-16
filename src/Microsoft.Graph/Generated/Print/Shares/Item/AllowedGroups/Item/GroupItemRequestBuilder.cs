@@ -7,11 +7,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Print.Shares.Item.AllowedGroups.Item {
+namespace Microsoft.Graph.Print.Shares.Item.AllowedGroups.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \print\shares\{printerShare-id}\allowedGroups\{group-id}
     /// </summary>
-    public class GroupItemRequestBuilder : BaseRequestBuilder 
+    public class GroupItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of print entities.</summary>
         public RefRequestBuilder Ref

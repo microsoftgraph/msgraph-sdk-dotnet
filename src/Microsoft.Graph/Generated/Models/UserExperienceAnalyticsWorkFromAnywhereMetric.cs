@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The user experience analytics metric for work from anywhere report.
     /// </summary>
-    public class UserExperienceAnalyticsWorkFromAnywhereMetric : Entity, IParsable 
+    public class UserExperienceAnalyticsWorkFromAnywhereMetric : Entity, IParsable
     {
         /// <summary>The work from anywhere metric devices. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserExperienceAnalyticsWorkFromAnywhereDevice>? MetricDevices {
+        public List<UserExperienceAnalyticsWorkFromAnywhereDevice>? MetricDevices
+        {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsWorkFromAnywhereDevice>?>("metricDevices"); }
             set { BackingStore?.Set("metricDevices", value); }
         }
 #nullable restore
 #else
-        public List<UserExperienceAnalyticsWorkFromAnywhereDevice> MetricDevices {
+        public List<UserExperienceAnalyticsWorkFromAnywhereDevice> MetricDevices
+        {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsWorkFromAnywhereDevice>>("metricDevices"); }
             set { BackingStore?.Set("metricDevices", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"metricDevices", n => { MetricDevices = n.GetCollectionOfObjectValues<UserExperienceAnalyticsWorkFromAnywhereDevice>(UserExperienceAnalyticsWorkFromAnywhereDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "metricDevices", n => { MetricDevices = n.GetCollectionOfObjectValues<UserExperienceAnalyticsWorkFromAnywhereDevice>(UserExperienceAnalyticsWorkFromAnywhereDevice.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CallTranscript : Entity, IParsable 
+    public class CallTranscript : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The content of the transcript. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Content {
+        public byte[]? Content
+        {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public byte[] Content {
+        public byte[] Content
+        {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #endif
         /// <summary>Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The unique identifier of the online meeting related to this transcript. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MeetingId {
+        public string? MeetingId
+        {
             get { return BackingStore?.Get<string?>("meetingId"); }
             set { BackingStore?.Set("meetingId", value); }
         }
 #nullable restore
 #else
-        public string MeetingId {
+        public string MeetingId
+        {
             get { return BackingStore?.Get<string>("meetingId"); }
             set { BackingStore?.Set("meetingId", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identity information of the organizer of the onlineMeeting related to this transcript. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? MeetingOrganizer {
+        public IdentitySet? MeetingOrganizer
+        {
             get { return BackingStore?.Get<IdentitySet?>("meetingOrganizer"); }
             set { BackingStore?.Set("meetingOrganizer", value); }
         }
 #nullable restore
 #else
-        public IdentitySet MeetingOrganizer {
+        public IdentitySet MeetingOrganizer
+        {
             get { return BackingStore?.Get<IdentitySet>("meetingOrganizer"); }
             set { BackingStore?.Set("meetingOrganizer", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The time-aligned metadata of the utterances in the transcript. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? MetadataContent {
+        public byte[]? MetadataContent
+        {
             get { return BackingStore?.Get<byte[]?>("metadataContent"); }
             set { BackingStore?.Set("metadataContent", value); }
         }
 #nullable restore
 #else
-        public byte[] MetadataContent {
+        public byte[] MetadataContent
+        {
             get { return BackingStore?.Get<byte[]>("metadataContent"); }
             set { BackingStore?.Set("metadataContent", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The URL that can be used to access the content of the transcript. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TranscriptContentUrl {
+        public string? TranscriptContentUrl
+        {
             get { return BackingStore?.Get<string?>("transcriptContentUrl"); }
             set { BackingStore?.Set("transcriptContentUrl", value); }
         }
 #nullable restore
 #else
-        public string TranscriptContentUrl {
+        public string TranscriptContentUrl
+        {
             get { return BackingStore?.Get<string>("transcriptContentUrl"); }
             set { BackingStore?.Set("transcriptContentUrl", value); }
         }
@@ -102,12 +114,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"content", n => { Content = n.GetByteArrayValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"meetingId", n => { MeetingId = n.GetStringValue(); } },
-                {"meetingOrganizer", n => { MeetingOrganizer = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"metadataContent", n => { MetadataContent = n.GetByteArrayValue(); } },
-                {"transcriptContentUrl", n => { TranscriptContentUrl = n.GetStringValue(); } },
+                { "content", n => { Content = n.GetByteArrayValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "meetingId", n => { MeetingId = n.GetStringValue(); } },
+                { "meetingOrganizer", n => { MeetingOrganizer = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "metadataContent", n => { MetadataContent = n.GetByteArrayValue(); } },
+                { "transcriptContentUrl", n => { TranscriptContentUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

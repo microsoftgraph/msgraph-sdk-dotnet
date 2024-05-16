@@ -4,36 +4,42 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CloudClipboardItem : Entity, IParsable 
+    public class CloudClipboardItem : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Set by the server. DateTime in UTC when the object was created on the server.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Set by the server. DateTime in UTC when the object expires and after that the object is no longer available. The default and also maximum TTL is 12 hours after the creation, but it might change for performance optimization.</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>Set by the server if not provided in the client&apos;s request. DateTime in UTC when the object was modified by the client.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>A cloudClipboardItem can have multiple cloudClipboardItemPayload objects in the payloads. A window can place more than one clipboard object on the clipboard. Each one represents the same information in a different clipboard format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudClipboardItemPayload>? Payloads {
+        public List<CloudClipboardItemPayload>? Payloads
+        {
             get { return BackingStore?.Get<List<CloudClipboardItemPayload>?>("payloads"); }
             set { BackingStore?.Set("payloads", value); }
         }
 #nullable restore
 #else
-        public List<CloudClipboardItemPayload> Payloads {
+        public List<CloudClipboardItemPayload> Payloads
+        {
             get { return BackingStore?.Get<List<CloudClipboardItemPayload>>("payloads"); }
             set { BackingStore?.Set("payloads", value); }
         }
@@ -56,10 +62,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"payloads", n => { Payloads = n.GetCollectionOfObjectValues<CloudClipboardItemPayload>(CloudClipboardItemPayload.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "payloads", n => { Payloads = n.GetCollectionOfObjectValues<CloudClipboardItemPayload>(CloudClipboardItemPayload.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

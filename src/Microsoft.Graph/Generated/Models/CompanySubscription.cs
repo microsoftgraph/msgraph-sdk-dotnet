@@ -4,50 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CompanySubscription : Entity, IParsable 
+    public class CompanySubscription : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The commerceSubscriptionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommerceSubscriptionId {
+        public string? CommerceSubscriptionId
+        {
             get { return BackingStore?.Get<string?>("commerceSubscriptionId"); }
             set { BackingStore?.Set("commerceSubscriptionId", value); }
         }
 #nullable restore
 #else
-        public string CommerceSubscriptionId {
+        public string CommerceSubscriptionId
+        {
             get { return BackingStore?.Get<string>("commerceSubscriptionId"); }
             set { BackingStore?.Set("commerceSubscriptionId", value); }
         }
 #endif
         /// <summary>The createdDateTime property</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The isTrial property</summary>
-        public bool? IsTrial {
+        public bool? IsTrial
+        {
             get { return BackingStore?.Get<bool?>("isTrial"); }
             set { BackingStore?.Set("isTrial", value); }
         }
         /// <summary>The nextLifecycleDateTime property</summary>
-        public DateTimeOffset? NextLifecycleDateTime {
+        public DateTimeOffset? NextLifecycleDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("nextLifecycleDateTime"); }
             set { BackingStore?.Set("nextLifecycleDateTime", value); }
         }
         /// <summary>The ownerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerId {
+        public string? OwnerId
+        {
             get { return BackingStore?.Get<string?>("ownerId"); }
             set { BackingStore?.Set("ownerId", value); }
         }
 #nullable restore
 #else
-        public string OwnerId {
+        public string OwnerId
+        {
             get { return BackingStore?.Get<string>("ownerId"); }
             set { BackingStore?.Set("ownerId", value); }
         }
@@ -55,13 +63,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The ownerTenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerTenantId {
+        public string? OwnerTenantId
+        {
             get { return BackingStore?.Get<string?>("ownerTenantId"); }
             set { BackingStore?.Set("ownerTenantId", value); }
         }
 #nullable restore
 #else
-        public string OwnerTenantId {
+        public string OwnerTenantId
+        {
             get { return BackingStore?.Get<string>("ownerTenantId"); }
             set { BackingStore?.Set("ownerTenantId", value); }
         }
@@ -69,13 +79,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The ownerType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerType {
+        public string? OwnerType
+        {
             get { return BackingStore?.Get<string?>("ownerType"); }
             set { BackingStore?.Set("ownerType", value); }
         }
 #nullable restore
 #else
-        public string OwnerType {
+        public string OwnerType
+        {
             get { return BackingStore?.Get<string>("ownerType"); }
             set { BackingStore?.Set("ownerType", value); }
         }
@@ -83,13 +95,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The serviceStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServicePlanInfo>? ServiceStatus {
+        public List<ServicePlanInfo>? ServiceStatus
+        {
             get { return BackingStore?.Get<List<ServicePlanInfo>?>("serviceStatus"); }
             set { BackingStore?.Set("serviceStatus", value); }
         }
 #nullable restore
 #else
-        public List<ServicePlanInfo> ServiceStatus {
+        public List<ServicePlanInfo> ServiceStatus
+        {
             get { return BackingStore?.Get<List<ServicePlanInfo>>("serviceStatus"); }
             set { BackingStore?.Set("serviceStatus", value); }
         }
@@ -97,13 +111,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The skuId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SkuId {
+        public string? SkuId
+        {
             get { return BackingStore?.Get<string?>("skuId"); }
             set { BackingStore?.Set("skuId", value); }
         }
 #nullable restore
 #else
-        public string SkuId {
+        public string SkuId
+        {
             get { return BackingStore?.Get<string>("skuId"); }
             set { BackingStore?.Set("skuId", value); }
         }
@@ -111,13 +127,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The skuPartNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SkuPartNumber {
+        public string? SkuPartNumber
+        {
             get { return BackingStore?.Get<string?>("skuPartNumber"); }
             set { BackingStore?.Set("skuPartNumber", value); }
         }
 #nullable restore
 #else
-        public string SkuPartNumber {
+        public string SkuPartNumber
+        {
             get { return BackingStore?.Get<string>("skuPartNumber"); }
             set { BackingStore?.Set("skuPartNumber", value); }
         }
@@ -125,19 +143,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status {
+        public string? Status
+        {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public string Status {
+        public string Status
+        {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #endif
         /// <summary>The totalLicenses property</summary>
-        public int? TotalLicenses {
+        public int? TotalLicenses
+        {
             get { return BackingStore?.Get<int?>("totalLicenses"); }
             set { BackingStore?.Set("totalLicenses", value); }
         }
@@ -159,18 +180,18 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"commerceSubscriptionId", n => { CommerceSubscriptionId = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"isTrial", n => { IsTrial = n.GetBoolValue(); } },
-                {"nextLifecycleDateTime", n => { NextLifecycleDateTime = n.GetDateTimeOffsetValue(); } },
-                {"ownerId", n => { OwnerId = n.GetStringValue(); } },
-                {"ownerTenantId", n => { OwnerTenantId = n.GetStringValue(); } },
-                {"ownerType", n => { OwnerType = n.GetStringValue(); } },
-                {"serviceStatus", n => { ServiceStatus = n.GetCollectionOfObjectValues<ServicePlanInfo>(ServicePlanInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"skuId", n => { SkuId = n.GetStringValue(); } },
-                {"skuPartNumber", n => { SkuPartNumber = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetStringValue(); } },
-                {"totalLicenses", n => { TotalLicenses = n.GetIntValue(); } },
+                { "commerceSubscriptionId", n => { CommerceSubscriptionId = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "isTrial", n => { IsTrial = n.GetBoolValue(); } },
+                { "nextLifecycleDateTime", n => { NextLifecycleDateTime = n.GetDateTimeOffsetValue(); } },
+                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
+                { "ownerTenantId", n => { OwnerTenantId = n.GetStringValue(); } },
+                { "ownerType", n => { OwnerType = n.GetStringValue(); } },
+                { "serviceStatus", n => { ServiceStatus = n.GetCollectionOfObjectValues<ServicePlanInfo>(ServicePlanInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "skuId", n => { SkuId = n.GetStringValue(); } },
+                { "skuPartNumber", n => { SkuPartNumber = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
+                { "totalLicenses", n => { TotalLicenses = n.GetIntValue(); } },
             };
         }
         /// <summary>

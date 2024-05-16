@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ceiling_Math {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ceiling_Math
+{
     #pragma warning disable CS1591
-    public class Ceiling_MathPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Ceiling_MathPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ceiling_Math
         /// <summary>The mode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Mode {
+        public Json? Mode
+        {
             get { return BackingStore?.Get<Json?>("mode"); }
             set { BackingStore?.Set("mode", value); }
         }
 #nullable restore
 #else
-        public Json Mode {
+        public Json Mode
+        {
             get { return BackingStore?.Get<Json>("mode"); }
             set { BackingStore?.Set("mode", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ceiling_Math
         /// <summary>The number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Number {
+        public Json? Number
+        {
             get { return BackingStore?.Get<Json?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #nullable restore
 #else
-        public Json Number {
+        public Json Number
+        {
             get { return BackingStore?.Get<Json>("number"); }
             set { BackingStore?.Set("number", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ceiling_Math
         /// <summary>The significance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Significance {
+        public Json? Significance
+        {
             get { return BackingStore?.Get<Json?>("significance"); }
             set { BackingStore?.Set("significance", value); }
         }
 #nullable restore
 #else
-        public Json Significance {
+        public Json Significance
+        {
             get { return BackingStore?.Get<Json>("significance"); }
             set { BackingStore?.Set("significance", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ceiling_Math
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"mode", n => { Mode = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"number", n => { Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"significance", n => { Significance = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "mode", n => { Mode = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "number", n => { Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "significance", n => { Significance = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

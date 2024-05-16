@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookChartAxisFormat : Entity, IParsable 
+    public class WorkbookChartAxisFormat : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartFont? Font {
+        public WorkbookChartFont? Font
+        {
             get { return BackingStore?.Get<WorkbookChartFont?>("font"); }
             set { BackingStore?.Set("font", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartFont Font {
+        public WorkbookChartFont Font
+        {
             get { return BackingStore?.Get<WorkbookChartFont>("font"); }
             set { BackingStore?.Set("font", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents chart line formatting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartLineFormat? Line {
+        public WorkbookChartLineFormat? Line
+        {
             get { return BackingStore?.Get<WorkbookChartLineFormat?>("line"); }
             set { BackingStore?.Set("line", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartLineFormat Line {
+        public WorkbookChartLineFormat Line
+        {
             get { return BackingStore?.Get<WorkbookChartLineFormat>("line"); }
             set { BackingStore?.Set("line", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"font", n => { Font = n.GetObjectValue<WorkbookChartFont>(WorkbookChartFont.CreateFromDiscriminatorValue); } },
-                {"line", n => { Line = n.GetObjectValue<WorkbookChartLineFormat>(WorkbookChartLineFormat.CreateFromDiscriminatorValue); } },
+                { "font", n => { Font = n.GetObjectValue<WorkbookChartFont>(WorkbookChartFont.CreateFromDiscriminatorValue); } },
+                { "line", n => { Line = n.GetObjectValue<WorkbookChartLineFormat>(WorkbookChartLineFormat.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

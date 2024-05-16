@@ -4,64 +4,74 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookRangeFont : Entity, IParsable 
+    public class WorkbookRangeFont : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the bold status of font.</summary>
-        public bool? Bold {
+        public bool? Bold
+        {
             get { return BackingStore?.Get<bool?>("bold"); }
             set { BackingStore?.Set("bold", value); }
         }
         /// <summary>HTML color code representation of the text color. for example #FF0000 represents Red.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Color {
+        public string? Color
+        {
             get { return BackingStore?.Get<string?>("color"); }
             set { BackingStore?.Set("color", value); }
         }
 #nullable restore
 #else
-        public string Color {
+        public string Color
+        {
             get { return BackingStore?.Get<string>("color"); }
             set { BackingStore?.Set("color", value); }
         }
 #endif
         /// <summary>Represents the italic status of the font.</summary>
-        public bool? Italic {
+        public bool? Italic
+        {
             get { return BackingStore?.Get<bool?>("italic"); }
             set { BackingStore?.Set("italic", value); }
         }
         /// <summary>Font name (for example &apos;Calibri&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #endif
         /// <summary>Font size.</summary>
-        public double? Size {
+        public double? Size
+        {
             get { return BackingStore?.Get<double?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
         /// <summary>Type of underline applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Underline {
+        public string? Underline
+        {
             get { return BackingStore?.Get<string?>("underline"); }
             set { BackingStore?.Set("underline", value); }
         }
 #nullable restore
 #else
-        public string Underline {
+        public string Underline
+        {
             get { return BackingStore?.Get<string>("underline"); }
             set { BackingStore?.Set("underline", value); }
         }
@@ -84,12 +94,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"bold", n => { Bold = n.GetBoolValue(); } },
-                {"color", n => { Color = n.GetStringValue(); } },
-                {"italic", n => { Italic = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"size", n => { Size = n.GetDoubleValue(); } },
-                {"underline", n => { Underline = n.GetStringValue(); } },
+                { "bold", n => { Bold = n.GetBoolValue(); } },
+                { "color", n => { Color = n.GetStringValue(); } },
+                { "italic", n => { Italic = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "size", n => { Size = n.GetDoubleValue(); } },
+                { "underline", n => { Underline = n.GetStringValue(); } },
             };
         }
         /// <summary>

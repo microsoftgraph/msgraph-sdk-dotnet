@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OptionalClaims : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OptionalClaims : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The optional claims returned in the JWT access token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OptionalClaim>? AccessToken {
+        public List<OptionalClaim>? AccessToken
+        {
             get { return BackingStore?.Get<List<OptionalClaim>?>("accessToken"); }
             set { BackingStore?.Set("accessToken", value); }
         }
 #nullable restore
 #else
-        public List<OptionalClaim> AccessToken {
+        public List<OptionalClaim> AccessToken
+        {
             get { return BackingStore?.Get<List<OptionalClaim>>("accessToken"); }
             set { BackingStore?.Set("accessToken", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The optional claims returned in the JWT ID token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OptionalClaim>? IdToken {
+        public List<OptionalClaim>? IdToken
+        {
             get { return BackingStore?.Get<List<OptionalClaim>?>("idToken"); }
             set { BackingStore?.Set("idToken", value); }
         }
 #nullable restore
 #else
-        public List<OptionalClaim> IdToken {
+        public List<OptionalClaim> IdToken
+        {
             get { return BackingStore?.Get<List<OptionalClaim>>("idToken"); }
             set { BackingStore?.Set("idToken", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The optional claims returned in the SAML token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OptionalClaim>? Saml2Token {
+        public List<OptionalClaim>? Saml2Token
+        {
             get { return BackingStore?.Get<List<OptionalClaim>?>("saml2Token"); }
             set { BackingStore?.Set("saml2Token", value); }
         }
 #nullable restore
 #else
-        public List<OptionalClaim> Saml2Token {
+        public List<OptionalClaim> Saml2Token
+        {
             get { return BackingStore?.Get<List<OptionalClaim>>("saml2Token"); }
             set { BackingStore?.Set("saml2Token", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"accessToken", n => { AccessToken = n.GetCollectionOfObjectValues<OptionalClaim>(OptionalClaim.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"idToken", n => { IdToken = n.GetCollectionOfObjectValues<OptionalClaim>(OptionalClaim.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"saml2Token", n => { Saml2Token = n.GetCollectionOfObjectValues<OptionalClaim>(OptionalClaim.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessToken", n => { AccessToken = n.GetCollectionOfObjectValues<OptionalClaim>(OptionalClaim.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "idToken", n => { IdToken = n.GetCollectionOfObjectValues<OptionalClaim>(OptionalClaim.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "saml2Token", n => { Saml2Token = n.GetCollectionOfObjectValues<OptionalClaim>(OptionalClaim.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

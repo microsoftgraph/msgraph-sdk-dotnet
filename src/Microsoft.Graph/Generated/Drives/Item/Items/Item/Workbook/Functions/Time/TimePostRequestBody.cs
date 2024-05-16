@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Time {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Time
+{
     #pragma warning disable CS1591
-    public class TimePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TimePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Time {
         /// <summary>The hour property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Hour {
+        public Json? Hour
+        {
             get { return BackingStore?.Get<Json?>("hour"); }
             set { BackingStore?.Set("hour", value); }
         }
 #nullable restore
 #else
-        public Json Hour {
+        public Json Hour
+        {
             get { return BackingStore?.Get<Json>("hour"); }
             set { BackingStore?.Set("hour", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Time {
         /// <summary>The minute property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Minute {
+        public Json? Minute
+        {
             get { return BackingStore?.Get<Json?>("minute"); }
             set { BackingStore?.Set("minute", value); }
         }
 #nullable restore
 #else
-        public Json Minute {
+        public Json Minute
+        {
             get { return BackingStore?.Get<Json>("minute"); }
             set { BackingStore?.Set("minute", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Time {
         /// <summary>The second property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Second {
+        public Json? Second
+        {
             get { return BackingStore?.Get<Json?>("second"); }
             set { BackingStore?.Set("second", value); }
         }
 #nullable restore
 #else
-        public Json Second {
+        public Json Second
+        {
             get { return BackingStore?.Get<Json>("second"); }
             set { BackingStore?.Set("second", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Time {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"hour", n => { Hour = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"minute", n => { Minute = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"second", n => { Second = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "hour", n => { Hour = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "minute", n => { Minute = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "second", n => { Second = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

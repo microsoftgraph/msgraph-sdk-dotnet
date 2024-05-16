@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class SslCertificateEntity : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SslCertificateEntity : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>A physical address of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.PhysicalAddress? Address {
+        public Microsoft.Graph.Models.PhysicalAddress? Address
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.PhysicalAddress?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.PhysicalAddress Address {
+        public Microsoft.Graph.Models.PhysicalAddress Address
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.PhysicalAddress>("address"); }
             set { BackingStore?.Set("address", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Alternate names for this entity that are part of the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AlternateNames {
+        public List<string>? AlternateNames
+        {
             get { return BackingStore?.Get<List<string>?>("alternateNames"); }
             set { BackingStore?.Set("alternateNames", value); }
         }
 #nullable restore
 #else
-        public List<string> AlternateNames {
+        public List<string> AlternateNames
+        {
             get { return BackingStore?.Get<List<string>>("alternateNames"); }
             set { BackingStore?.Set("alternateNames", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>A common name for this entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommonName {
+        public string? CommonName
+        {
             get { return BackingStore?.Get<string?>("commonName"); }
             set { BackingStore?.Set("commonName", value); }
         }
 #nullable restore
 #else
-        public string CommonName {
+        public string CommonName
+        {
             get { return BackingStore?.Get<string>("commonName"); }
             set { BackingStore?.Set("commonName", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>An email for this entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email {
+        public string? Email
+        {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
 #nullable restore
 #else
-        public string Email {
+        public string Email
+        {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>If the entity is a person, this is the person&apos;s given name (first name).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GivenName {
+        public string? GivenName
+        {
             get { return BackingStore?.Get<string?>("givenName"); }
             set { BackingStore?.Set("givenName", value); }
         }
 #nullable restore
 #else
-        public string GivenName {
+        public string GivenName
+        {
             get { return BackingStore?.Get<string>("givenName"); }
             set { BackingStore?.Set("givenName", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>If the entity is an organization, this is the name of the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationName {
+        public string? OrganizationName
+        {
             get { return BackingStore?.Get<string?>("organizationName"); }
             set { BackingStore?.Set("organizationName", value); }
         }
 #nullable restore
 #else
-        public string OrganizationName {
+        public string OrganizationName
+        {
             get { return BackingStore?.Get<string>("organizationName"); }
             set { BackingStore?.Set("organizationName", value); }
         }
@@ -118,13 +134,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>If the entity is an organization, this communicates if a unit in the organization is named on the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationUnitName {
+        public string? OrganizationUnitName
+        {
             get { return BackingStore?.Get<string?>("organizationUnitName"); }
             set { BackingStore?.Set("organizationUnitName", value); }
         }
 #nullable restore
 #else
-        public string OrganizationUnitName {
+        public string OrganizationUnitName
+        {
             get { return BackingStore?.Get<string>("organizationUnitName"); }
             set { BackingStore?.Set("organizationUnitName", value); }
         }
@@ -132,13 +150,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>A serial number assigned to the entity; usually only available if the entity is the issuer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SerialNumber {
+        public string? SerialNumber
+        {
             get { return BackingStore?.Get<string?>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
 #nullable restore
 #else
-        public string SerialNumber {
+        public string SerialNumber
+        {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
@@ -146,13 +166,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>If the entity is a person, this is the person&apos;s surname (last name).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Surname {
+        public string? Surname
+        {
             get { return BackingStore?.Get<string?>("surname"); }
             set { BackingStore?.Set("surname", value); }
         }
 #nullable restore
 #else
-        public string Surname {
+        public string Surname
+        {
             get { return BackingStore?.Get<string>("surname"); }
             set { BackingStore?.Set("surname", value); }
         }
@@ -183,16 +205,16 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"address", n => { Address = n.GetObjectValue<Microsoft.Graph.Models.PhysicalAddress>(Microsoft.Graph.Models.PhysicalAddress.CreateFromDiscriminatorValue); } },
-                {"alternateNames", n => { AlternateNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"commonName", n => { CommonName = n.GetStringValue(); } },
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"givenName", n => { GivenName = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"organizationName", n => { OrganizationName = n.GetStringValue(); } },
-                {"organizationUnitName", n => { OrganizationUnitName = n.GetStringValue(); } },
-                {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
-                {"surname", n => { Surname = n.GetStringValue(); } },
+                { "address", n => { Address = n.GetObjectValue<Microsoft.Graph.Models.PhysicalAddress>(Microsoft.Graph.Models.PhysicalAddress.CreateFromDiscriminatorValue); } },
+                { "alternateNames", n => { AlternateNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "commonName", n => { CommonName = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "givenName", n => { GivenName = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "organizationName", n => { OrganizationName = n.GetStringValue(); } },
+                { "organizationUnitName", n => { OrganizationUnitName = n.GetStringValue(); } },
+                { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
+                { "surname", n => { Surname = n.GetStringValue(); } },
             };
         }
         /// <summary>

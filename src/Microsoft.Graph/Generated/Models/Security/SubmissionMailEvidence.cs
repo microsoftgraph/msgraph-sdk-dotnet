@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class SubmissionMailEvidence : AlertEvidence, IParsable 
+    public class SubmissionMailEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The networkMessageId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NetworkMessageId {
+        public string? NetworkMessageId
+        {
             get { return BackingStore?.Get<string?>("networkMessageId"); }
             set { BackingStore?.Set("networkMessageId", value); }
         }
 #nullable restore
 #else
-        public string NetworkMessageId {
+        public string NetworkMessageId
+        {
             get { return BackingStore?.Get<string>("networkMessageId"); }
             set { BackingStore?.Set("networkMessageId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The recipient property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Recipient {
+        public string? Recipient
+        {
             get { return BackingStore?.Get<string?>("recipient"); }
             set { BackingStore?.Set("recipient", value); }
         }
 #nullable restore
 #else
-        public string Recipient {
+        public string Recipient
+        {
             get { return BackingStore?.Get<string>("recipient"); }
             set { BackingStore?.Set("recipient", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The reportType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportType {
+        public string? ReportType
+        {
             get { return BackingStore?.Get<string?>("reportType"); }
             set { BackingStore?.Set("reportType", value); }
         }
 #nullable restore
 #else
-        public string ReportType {
+        public string ReportType
+        {
             get { return BackingStore?.Get<string>("reportType"); }
             set { BackingStore?.Set("reportType", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The sender property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sender {
+        public string? Sender
+        {
             get { return BackingStore?.Get<string?>("sender"); }
             set { BackingStore?.Set("sender", value); }
         }
 #nullable restore
 #else
-        public string Sender {
+        public string Sender
+        {
             get { return BackingStore?.Get<string>("sender"); }
             set { BackingStore?.Set("sender", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The senderIp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SenderIp {
+        public string? SenderIp
+        {
             get { return BackingStore?.Get<string?>("senderIp"); }
             set { BackingStore?.Set("senderIp", value); }
         }
 #nullable restore
 #else
-        public string SenderIp {
+        public string SenderIp
+        {
             get { return BackingStore?.Get<string>("senderIp"); }
             set { BackingStore?.Set("senderIp", value); }
         }
@@ -82,32 +93,37 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject {
+        public string? Subject
+        {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public string Subject {
+        public string Subject
+        {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #endif
         /// <summary>The submissionDateTime property</summary>
-        public DateTimeOffset? SubmissionDateTime {
+        public DateTimeOffset? SubmissionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("submissionDateTime"); }
             set { BackingStore?.Set("submissionDateTime", value); }
         }
         /// <summary>The submissionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubmissionId {
+        public string? SubmissionId
+        {
             get { return BackingStore?.Get<string?>("submissionId"); }
             set { BackingStore?.Set("submissionId", value); }
         }
 #nullable restore
 #else
-        public string SubmissionId {
+        public string SubmissionId
+        {
             get { return BackingStore?.Get<string>("submissionId"); }
             set { BackingStore?.Set("submissionId", value); }
         }
@@ -115,13 +131,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The submitter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Submitter {
+        public string? Submitter
+        {
             get { return BackingStore?.Get<string?>("submitter"); }
             set { BackingStore?.Set("submitter", value); }
         }
 #nullable restore
 #else
-        public string Submitter {
+        public string Submitter
+        {
             get { return BackingStore?.Get<string>("submitter"); }
             set { BackingStore?.Set("submitter", value); }
         }
@@ -151,15 +169,15 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"networkMessageId", n => { NetworkMessageId = n.GetStringValue(); } },
-                {"recipient", n => { Recipient = n.GetStringValue(); } },
-                {"reportType", n => { ReportType = n.GetStringValue(); } },
-                {"sender", n => { Sender = n.GetStringValue(); } },
-                {"senderIp", n => { SenderIp = n.GetStringValue(); } },
-                {"subject", n => { Subject = n.GetStringValue(); } },
-                {"submissionDateTime", n => { SubmissionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"submissionId", n => { SubmissionId = n.GetStringValue(); } },
-                {"submitter", n => { Submitter = n.GetStringValue(); } },
+                { "networkMessageId", n => { NetworkMessageId = n.GetStringValue(); } },
+                { "recipient", n => { Recipient = n.GetStringValue(); } },
+                { "reportType", n => { ReportType = n.GetStringValue(); } },
+                { "sender", n => { Sender = n.GetStringValue(); } },
+                { "senderIp", n => { SenderIp = n.GetStringValue(); } },
+                { "subject", n => { Subject = n.GetStringValue(); } },
+                { "submissionDateTime", n => { SubmissionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "submissionId", n => { SubmissionId = n.GetStringValue(); } },
+                { "submitter", n => { Submitter = n.GetStringValue(); } },
             };
         }
         /// <summary>

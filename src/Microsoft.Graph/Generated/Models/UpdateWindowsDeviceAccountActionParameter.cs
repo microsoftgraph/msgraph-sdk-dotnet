@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UpdateWindowsDeviceAccountActionParameter : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UpdateWindowsDeviceAccountActionParameter : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Not yet documented</summary>
-        public bool? CalendarSyncEnabled {
+        public bool? CalendarSyncEnabled
+        {
             get { return BackingStore?.Get<bool?>("calendarSyncEnabled"); }
             set { BackingStore?.Set("calendarSyncEnabled", value); }
         }
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsDeviceAccount? DeviceAccount {
+        public WindowsDeviceAccount? DeviceAccount
+        {
             get { return BackingStore?.Get<WindowsDeviceAccount?>("deviceAccount"); }
             set { BackingStore?.Set("deviceAccount", value); }
         }
 #nullable restore
 #else
-        public WindowsDeviceAccount DeviceAccount {
+        public WindowsDeviceAccount DeviceAccount
+        {
             get { return BackingStore?.Get<WindowsDeviceAccount>("deviceAccount"); }
             set { BackingStore?.Set("deviceAccount", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceAccountEmail {
+        public string? DeviceAccountEmail
+        {
             get { return BackingStore?.Get<string?>("deviceAccountEmail"); }
             set { BackingStore?.Set("deviceAccountEmail", value); }
         }
 #nullable restore
 #else
-        public string DeviceAccountEmail {
+        public string DeviceAccountEmail
+        {
             get { return BackingStore?.Get<string>("deviceAccountEmail"); }
             set { BackingStore?.Set("deviceAccountEmail", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExchangeServer {
+        public string? ExchangeServer
+        {
             get { return BackingStore?.Get<string?>("exchangeServer"); }
             set { BackingStore?.Set("exchangeServer", value); }
         }
 #nullable restore
 #else
-        public string ExchangeServer {
+        public string ExchangeServer
+        {
             get { return BackingStore?.Get<string>("exchangeServer"); }
             set { BackingStore?.Set("exchangeServer", value); }
         }
@@ -67,32 +76,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Not yet documented</summary>
-        public bool? PasswordRotationEnabled {
+        public bool? PasswordRotationEnabled
+        {
             get { return BackingStore?.Get<bool?>("passwordRotationEnabled"); }
             set { BackingStore?.Set("passwordRotationEnabled", value); }
         }
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionInitiationProtocalAddress {
+        public string? SessionInitiationProtocalAddress
+        {
             get { return BackingStore?.Get<string?>("sessionInitiationProtocalAddress"); }
             set { BackingStore?.Set("sessionInitiationProtocalAddress", value); }
         }
 #nullable restore
 #else
-        public string SessionInitiationProtocalAddress {
+        public string SessionInitiationProtocalAddress
+        {
             get { return BackingStore?.Get<string>("sessionInitiationProtocalAddress"); }
             set { BackingStore?.Set("sessionInitiationProtocalAddress", value); }
         }
@@ -123,13 +137,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"calendarSyncEnabled", n => { CalendarSyncEnabled = n.GetBoolValue(); } },
-                {"deviceAccount", n => { DeviceAccount = n.GetObjectValue<WindowsDeviceAccount>(WindowsDeviceAccount.CreateFromDiscriminatorValue); } },
-                {"deviceAccountEmail", n => { DeviceAccountEmail = n.GetStringValue(); } },
-                {"exchangeServer", n => { ExchangeServer = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"passwordRotationEnabled", n => { PasswordRotationEnabled = n.GetBoolValue(); } },
-                {"sessionInitiationProtocalAddress", n => { SessionInitiationProtocalAddress = n.GetStringValue(); } },
+                { "calendarSyncEnabled", n => { CalendarSyncEnabled = n.GetBoolValue(); } },
+                { "deviceAccount", n => { DeviceAccount = n.GetObjectValue<WindowsDeviceAccount>(WindowsDeviceAccount.CreateFromDiscriminatorValue); } },
+                { "deviceAccountEmail", n => { DeviceAccountEmail = n.GetStringValue(); } },
+                { "exchangeServer", n => { ExchangeServer = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "passwordRotationEnabled", n => { PasswordRotationEnabled = n.GetBoolValue(); } },
+                { "sessionInitiationProtocalAddress", n => { SessionInitiationProtocalAddress = n.GetStringValue(); } },
             };
         }
         /// <summary>

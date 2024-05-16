@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties used to assign an iOS VPP mobile app to a group.
     /// </summary>
-    public class IosVppAppAssignmentSettings : MobileAppAssignmentSettings, IParsable 
+    public class IosVppAppAssignmentSettings : MobileAppAssignmentSettings, IParsable
     {
         /// <summary>Whether or not to use device licensing.</summary>
-        public bool? UseDeviceLicensing {
+        public bool? UseDeviceLicensing
+        {
             get { return BackingStore?.Get<bool?>("useDeviceLicensing"); }
             set { BackingStore?.Set("useDeviceLicensing", value); }
         }
         /// <summary>The VPN Configuration Id to apply for this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VpnConfigurationId {
+        public string? VpnConfigurationId
+        {
             get { return BackingStore?.Get<string?>("vpnConfigurationId"); }
             set { BackingStore?.Set("vpnConfigurationId", value); }
         }
 #nullable restore
 #else
-        public string VpnConfigurationId {
+        public string VpnConfigurationId
+        {
             get { return BackingStore?.Get<string>("vpnConfigurationId"); }
             set { BackingStore?.Set("vpnConfigurationId", value); }
         }
@@ -54,8 +58,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"useDeviceLicensing", n => { UseDeviceLicensing = n.GetBoolValue(); } },
-                {"vpnConfigurationId", n => { VpnConfigurationId = n.GetStringValue(); } },
+                { "useDeviceLicensing", n => { UseDeviceLicensing = n.GetBoolValue(); } },
+                { "vpnConfigurationId", n => { VpnConfigurationId = n.GetStringValue(); } },
             };
         }
         /// <summary>

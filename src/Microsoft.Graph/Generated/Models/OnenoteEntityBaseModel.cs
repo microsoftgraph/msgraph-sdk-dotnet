@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OnenoteEntityBaseModel : Entity, IParsable 
+    public class OnenoteEntityBaseModel : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The endpoint where you can get details about the page. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Self {
+        public string? Self
+        {
             get { return BackingStore?.Get<string?>("self"); }
             set { BackingStore?.Set("self", value); }
         }
 #nullable restore
 #else
-        public string Self {
+        public string Self
+        {
             get { return BackingStore?.Get<string>("self"); }
             set { BackingStore?.Set("self", value); }
         }
@@ -52,7 +55,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"self", n => { Self = n.GetStringValue(); } },
+                { "self", n => { Self = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item.UpdateAllowedCombinations {
+namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item.UpdateAllowedCombinations
+{
     #pragma warning disable CS1591
-    public class UpdateAllowedCombinationsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UpdateAllowedCombinationsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The allowedCombinations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.AuthenticationMethodModes?>? AllowedCombinations {
+        public List<Microsoft.Graph.Models.AuthenticationMethodModes?>? AllowedCombinations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationMethodModes?>?>("allowedCombinations"); }
             set { BackingStore?.Set("allowedCombinations", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.AuthenticationMethodModes?> AllowedCombinations {
+        public List<Microsoft.Graph.Models.AuthenticationMethodModes?> AllowedCombinations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationMethodModes?>>("allowedCombinations"); }
             set { BackingStore?.Set("allowedCombinations", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item.UpdateAll
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowedCombinations", n => { AllowedCombinations = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.AuthenticationMethodModes>()?.ToList(); } },
+                { "allowedCombinations", n => { AllowedCombinations = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.AuthenticationMethodModes>()?.ToList(); } },
             };
         }
         /// <summary>

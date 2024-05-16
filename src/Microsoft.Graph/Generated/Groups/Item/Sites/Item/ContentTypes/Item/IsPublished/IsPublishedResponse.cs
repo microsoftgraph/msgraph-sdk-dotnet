@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.IsPublished {
+namespace Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.IsPublished
+{
     [Obsolete("This class is obsolete. Use IsPublishedGetResponse instead.")]
     #pragma warning disable CS1591
-    public class IsPublishedResponse : IsPublishedGetResponse, IParsable 
+    public class IsPublishedResponse : IsPublishedGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

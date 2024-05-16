@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class UserEvidence : AlertEvidence, IParsable 
+    public class UserEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The stream property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public StreamObject? Stream {
+        public StreamObject? Stream
+        {
             get { return BackingStore?.Get<StreamObject?>("stream"); }
             set { BackingStore?.Set("stream", value); }
         }
 #nullable restore
 #else
-        public StreamObject Stream {
+        public StreamObject Stream
+        {
             get { return BackingStore?.Get<StreamObject>("stream"); }
             set { BackingStore?.Set("stream", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The user account details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Security.UserAccount? UserAccount {
+        public Microsoft.Graph.Models.Security.UserAccount? UserAccount
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.UserAccount?>("userAccount"); }
             set { BackingStore?.Set("userAccount", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Security.UserAccount UserAccount {
+        public Microsoft.Graph.Models.Security.UserAccount UserAccount
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.UserAccount>("userAccount"); }
             set { BackingStore?.Set("userAccount", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"stream", n => { Stream = n.GetObjectValue<StreamObject>(StreamObject.CreateFromDiscriminatorValue); } },
-                {"userAccount", n => { UserAccount = n.GetObjectValue<Microsoft.Graph.Models.Security.UserAccount>(Microsoft.Graph.Models.Security.UserAccount.CreateFromDiscriminatorValue); } },
+                { "stream", n => { Stream = n.GetObjectValue<StreamObject>(StreamObject.CreateFromDiscriminatorValue); } },
+                { "userAccount", n => { UserAccount = n.GetObjectValue<Microsoft.Graph.Models.Security.UserAccount>(Microsoft.Graph.Models.Security.UserAccount.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

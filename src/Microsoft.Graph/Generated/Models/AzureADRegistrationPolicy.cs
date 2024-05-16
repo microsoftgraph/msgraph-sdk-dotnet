@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AzureADRegistrationPolicy : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AzureADRegistrationPolicy : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The allowedToRegister property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceRegistrationMembership? AllowedToRegister {
+        public DeviceRegistrationMembership? AllowedToRegister
+        {
             get { return BackingStore?.Get<DeviceRegistrationMembership?>("allowedToRegister"); }
             set { BackingStore?.Set("allowedToRegister", value); }
         }
 #nullable restore
 #else
-        public DeviceRegistrationMembership AllowedToRegister {
+        public DeviceRegistrationMembership AllowedToRegister
+        {
             get { return BackingStore?.Get<DeviceRegistrationMembership>("allowedToRegister"); }
             set { BackingStore?.Set("allowedToRegister", value); }
         }
@@ -32,20 +36,23 @@ namespace Microsoft.Graph.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The isAdminConfigurable property</summary>
-        public bool? IsAdminConfigurable {
+        public bool? IsAdminConfigurable
+        {
             get { return BackingStore?.Get<bool?>("isAdminConfigurable"); }
             set { BackingStore?.Set("isAdminConfigurable", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowedToRegister", n => { AllowedToRegister = n.GetObjectValue<DeviceRegistrationMembership>(DeviceRegistrationMembership.CreateFromDiscriminatorValue); } },
-                {"isAdminConfigurable", n => { IsAdminConfigurable = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "allowedToRegister", n => { AllowedToRegister = n.GetObjectValue<DeviceRegistrationMembership>(DeviceRegistrationMembership.CreateFromDiscriminatorValue); } },
+                { "isAdminConfigurable", n => { IsAdminConfigurable = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Agreement : Entity, IParsable 
+    public class Agreement : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Read-only. Information about acceptances of this agreement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AgreementAcceptance>? Acceptances {
+        public List<AgreementAcceptance>? Acceptances
+        {
             get { return BackingStore?.Get<List<AgreementAcceptance>?>("acceptances"); }
             set { BackingStore?.Set("acceptances", value); }
         }
 #nullable restore
 #else
-        public List<AgreementAcceptance> Acceptances {
+        public List<AgreementAcceptance> Acceptances
+        {
             get { return BackingStore?.Get<List<AgreementAcceptance>>("acceptances"); }
             set { BackingStore?.Set("acceptances", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Display name of the agreement. The display name is used for internal tracking of the agreement but isn&apos;t shown to end users who view the agreement. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Default PDF linked to this agreement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AgreementFile? File {
+        public AgreementFile? File
+        {
             get { return BackingStore?.Get<AgreementFile?>("file"); }
             set { BackingStore?.Set("file", value); }
         }
 #nullable restore
 #else
-        public AgreementFile File {
+        public AgreementFile File
+        {
             get { return BackingStore?.Get<AgreementFile>("file"); }
             set { BackingStore?.Set("file", value); }
         }
@@ -54,43 +61,50 @@ namespace Microsoft.Graph.Models {
         /// <summary>PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AgreementFileLocalization>? Files {
+        public List<AgreementFileLocalization>? Files
+        {
             get { return BackingStore?.Get<List<AgreementFileLocalization>?>("files"); }
             set { BackingStore?.Set("files", value); }
         }
 #nullable restore
 #else
-        public List<AgreementFileLocalization> Files {
+        public List<AgreementFileLocalization> Files
+        {
             get { return BackingStore?.Get<List<AgreementFileLocalization>>("files"); }
             set { BackingStore?.Set("files", value); }
         }
 #endif
         /// <summary>Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Microsoft Entra ID, if they haven&apos;t already done so. Supports $filter (eq).</summary>
-        public bool? IsPerDeviceAcceptanceRequired {
+        public bool? IsPerDeviceAcceptanceRequired
+        {
             get { return BackingStore?.Get<bool?>("isPerDeviceAcceptanceRequired"); }
             set { BackingStore?.Set("isPerDeviceAcceptanceRequired", value); }
         }
         /// <summary>Indicates whether the user has to expand the agreement before accepting. Supports $filter (eq).</summary>
-        public bool? IsViewingBeforeAcceptanceRequired {
+        public bool? IsViewingBeforeAcceptanceRequired
+        {
             get { return BackingStore?.Get<bool?>("isViewingBeforeAcceptanceRequired"); }
             set { BackingStore?.Set("isViewingBeforeAcceptanceRequired", value); }
         }
         /// <summary>Expiration schedule and frequency of agreement for all users. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.TermsExpiration? TermsExpiration {
+        public Microsoft.Graph.Models.TermsExpiration? TermsExpiration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TermsExpiration?>("termsExpiration"); }
             set { BackingStore?.Set("termsExpiration", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.TermsExpiration TermsExpiration {
+        public Microsoft.Graph.Models.TermsExpiration TermsExpiration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TermsExpiration>("termsExpiration"); }
             set { BackingStore?.Set("termsExpiration", value); }
         }
 #endif
         /// <summary>The duration after which the user must reaccept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).</summary>
-        public TimeSpan? UserReacceptRequiredFrequency {
+        public TimeSpan? UserReacceptRequiredFrequency
+        {
             get { return BackingStore?.Get<TimeSpan?>("userReacceptRequiredFrequency"); }
             set { BackingStore?.Set("userReacceptRequiredFrequency", value); }
         }
@@ -112,14 +126,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"acceptances", n => { Acceptances = n.GetCollectionOfObjectValues<AgreementAcceptance>(AgreementAcceptance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"file", n => { File = n.GetObjectValue<AgreementFile>(AgreementFile.CreateFromDiscriminatorValue); } },
-                {"files", n => { Files = n.GetCollectionOfObjectValues<AgreementFileLocalization>(AgreementFileLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isPerDeviceAcceptanceRequired", n => { IsPerDeviceAcceptanceRequired = n.GetBoolValue(); } },
-                {"isViewingBeforeAcceptanceRequired", n => { IsViewingBeforeAcceptanceRequired = n.GetBoolValue(); } },
-                {"termsExpiration", n => { TermsExpiration = n.GetObjectValue<Microsoft.Graph.Models.TermsExpiration>(Microsoft.Graph.Models.TermsExpiration.CreateFromDiscriminatorValue); } },
-                {"userReacceptRequiredFrequency", n => { UserReacceptRequiredFrequency = n.GetTimeSpanValue(); } },
+                { "acceptances", n => { Acceptances = n.GetCollectionOfObjectValues<AgreementAcceptance>(AgreementAcceptance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "file", n => { File = n.GetObjectValue<AgreementFile>(AgreementFile.CreateFromDiscriminatorValue); } },
+                { "files", n => { Files = n.GetCollectionOfObjectValues<AgreementFileLocalization>(AgreementFileLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isPerDeviceAcceptanceRequired", n => { IsPerDeviceAcceptanceRequired = n.GetBoolValue(); } },
+                { "isViewingBeforeAcceptanceRequired", n => { IsViewingBeforeAcceptanceRequired = n.GetBoolValue(); } },
+                { "termsExpiration", n => { TermsExpiration = n.GetObjectValue<Microsoft.Graph.Models.TermsExpiration>(Microsoft.Graph.Models.TermsExpiration.CreateFromDiscriminatorValue); } },
+                { "userReacceptRequiredFrequency", n => { UserReacceptRequiredFrequency = n.GetTimeSpanValue(); } },
             };
         }
         /// <summary>

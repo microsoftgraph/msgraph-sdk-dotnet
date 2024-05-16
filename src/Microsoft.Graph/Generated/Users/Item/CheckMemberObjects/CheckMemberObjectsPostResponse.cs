@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.CheckMemberObjects {
+namespace Microsoft.Graph.Users.Item.CheckMemberObjects
+{
     #pragma warning disable CS1591
-    public class CheckMemberObjectsPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class CheckMemberObjectsPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Value {
+        public List<string>? Value
+        {
             get { return BackingStore?.Get<List<string>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<string> Value {
+        public List<string> Value
+        {
             get { return BackingStore?.Get<List<string>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Users.Item.CheckMemberObjects {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

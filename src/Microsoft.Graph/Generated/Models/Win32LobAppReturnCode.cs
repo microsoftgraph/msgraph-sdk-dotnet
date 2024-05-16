@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains return code properties for a Win32 App
     /// </summary>
-    public class Win32LobAppReturnCode : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Win32LobAppReturnCode : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,24 +23,28 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Return code.</summary>
-        public int? ReturnCode {
+        public int? ReturnCode
+        {
             get { return BackingStore?.Get<int?>("returnCode"); }
             set { BackingStore?.Set("returnCode", value); }
         }
         /// <summary>Indicates the type of return code.</summary>
-        public Win32LobAppReturnCodeType? Type {
+        public Win32LobAppReturnCodeType? Type
+        {
             get { return BackingStore?.Get<Win32LobAppReturnCodeType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"returnCode", n => { ReturnCode = n.GetIntValue(); } },
-                {"type", n => { Type = n.GetEnumValue<Win32LobAppReturnCodeType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "returnCode", n => { ReturnCode = n.GetIntValue(); } },
+                { "type", n => { Type = n.GetEnumValue<Win32LobAppReturnCodeType>(); } },
             };
         }
         /// <summary>

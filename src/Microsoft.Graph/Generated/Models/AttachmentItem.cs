@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AttachmentItem : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AttachmentItem : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The type of attachment. Possible values are: file, item, reference. Required.</summary>
-        public Microsoft.Graph.Models.AttachmentType? AttachmentType {
+        public Microsoft.Graph.Models.AttachmentType? AttachmentType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AttachmentType?>("attachmentType"); }
             set { BackingStore?.Set("attachmentType", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The CID or Content-Id of the attachment for referencing for the in-line attachments using the &lt;img src=&apos;cid:contentId&apos;&gt; tag in HTML messages. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentId {
+        public string? ContentId
+        {
             get { return BackingStore?.Get<string?>("contentId"); }
             set { BackingStore?.Set("contentId", value); }
         }
 #nullable restore
 #else
-        public string ContentId {
+        public string ContentId
+        {
             get { return BackingStore?.Get<string>("contentId"); }
             set { BackingStore?.Set("contentId", value); }
         }
@@ -39,32 +44,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The nature of the data in the attachment. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentType {
+        public string? ContentType
+        {
             get { return BackingStore?.Get<string?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
 #nullable restore
 #else
-        public string ContentType {
+        public string ContentType
+        {
             get { return BackingStore?.Get<string>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
 #endif
         /// <summary>true if the attachment is an inline attachment; otherwise, false. Optional.</summary>
-        public bool? IsInline {
+        public bool? IsInline
+        {
             get { return BackingStore?.Get<bool?>("isInline"); }
             set { BackingStore?.Set("isInline", value); }
         }
         /// <summary>The display name of the attachment. This can be a descriptive string and doesn&apos;t have to be the actual file name. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -72,19 +82,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The length of the attachment in bytes. Required.</summary>
-        public long? Size {
+        public long? Size
+        {
             get { return BackingStore?.Get<long?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
@@ -114,13 +127,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"attachmentType", n => { AttachmentType = n.GetEnumValue<AttachmentType>(); } },
-                {"contentId", n => { ContentId = n.GetStringValue(); } },
-                {"contentType", n => { ContentType = n.GetStringValue(); } },
-                {"isInline", n => { IsInline = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"size", n => { Size = n.GetLongValue(); } },
+                { "attachmentType", n => { AttachmentType = n.GetEnumValue<AttachmentType>(); } },
+                { "contentId", n => { ContentId = n.GetStringValue(); } },
+                { "contentType", n => { ContentType = n.GetStringValue(); } },
+                { "isInline", n => { IsInline = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "size", n => { Size = n.GetLongValue(); } },
             };
         }
         /// <summary>

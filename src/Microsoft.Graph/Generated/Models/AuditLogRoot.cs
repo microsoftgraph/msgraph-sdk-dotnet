@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AuditLogRoot : Entity, IParsable 
+    public class AuditLogRoot : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The directoryAudits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryAudit>? DirectoryAudits {
+        public List<DirectoryAudit>? DirectoryAudits
+        {
             get { return BackingStore?.Get<List<DirectoryAudit>?>("directoryAudits"); }
             set { BackingStore?.Set("directoryAudits", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryAudit> DirectoryAudits {
+        public List<DirectoryAudit> DirectoryAudits
+        {
             get { return BackingStore?.Get<List<DirectoryAudit>>("directoryAudits"); }
             set { BackingStore?.Set("directoryAudits", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The provisioning property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProvisioningObjectSummary>? Provisioning {
+        public List<ProvisioningObjectSummary>? Provisioning
+        {
             get { return BackingStore?.Get<List<ProvisioningObjectSummary>?>("provisioning"); }
             set { BackingStore?.Set("provisioning", value); }
         }
 #nullable restore
 #else
-        public List<ProvisioningObjectSummary> Provisioning {
+        public List<ProvisioningObjectSummary> Provisioning
+        {
             get { return BackingStore?.Get<List<ProvisioningObjectSummary>>("provisioning"); }
             set { BackingStore?.Set("provisioning", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The signIns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SignIn>? SignIns {
+        public List<SignIn>? SignIns
+        {
             get { return BackingStore?.Get<List<SignIn>?>("signIns"); }
             set { BackingStore?.Set("signIns", value); }
         }
 #nullable restore
 #else
-        public List<SignIn> SignIns {
+        public List<SignIn> SignIns
+        {
             get { return BackingStore?.Get<List<SignIn>>("signIns"); }
             set { BackingStore?.Set("signIns", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"directoryAudits", n => { DirectoryAudits = n.GetCollectionOfObjectValues<DirectoryAudit>(DirectoryAudit.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"provisioning", n => { Provisioning = n.GetCollectionOfObjectValues<ProvisioningObjectSummary>(ProvisioningObjectSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"signIns", n => { SignIns = n.GetCollectionOfObjectValues<SignIn>(SignIn.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "directoryAudits", n => { DirectoryAudits = n.GetCollectionOfObjectValues<DirectoryAudit>(DirectoryAudit.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "provisioning", n => { Provisioning = n.GetCollectionOfObjectValues<ProvisioningObjectSummary>(ProvisioningObjectSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "signIns", n => { SignIns = n.GetCollectionOfObjectValues<SignIn>(SignIn.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

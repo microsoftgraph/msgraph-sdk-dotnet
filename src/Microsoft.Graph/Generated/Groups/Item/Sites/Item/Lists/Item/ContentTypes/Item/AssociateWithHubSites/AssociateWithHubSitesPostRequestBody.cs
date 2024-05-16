@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.AssociateWithHubSites {
+namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.AssociateWithHubSites
+{
     #pragma warning disable CS1591
-    public class AssociateWithHubSitesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssociateWithHubSitesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,19 +22,22 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.As
         /// <summary>The hubSiteUrls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? HubSiteUrls {
+        public List<string>? HubSiteUrls
+        {
             get { return BackingStore?.Get<List<string>?>("hubSiteUrls"); }
             set { BackingStore?.Set("hubSiteUrls", value); }
         }
 #nullable restore
 #else
-        public List<string> HubSiteUrls {
+        public List<string> HubSiteUrls
+        {
             get { return BackingStore?.Get<List<string>>("hubSiteUrls"); }
             set { BackingStore?.Set("hubSiteUrls", value); }
         }
 #endif
         /// <summary>The propagateToExistingLists property</summary>
-        public bool? PropagateToExistingLists {
+        public bool? PropagateToExistingLists
+        {
             get { return BackingStore?.Get<bool?>("propagateToExistingLists"); }
             set { BackingStore?.Set("propagateToExistingLists", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.As
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"hubSiteUrls", n => { HubSiteUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"propagateToExistingLists", n => { PropagateToExistingLists = n.GetBoolValue(); } },
+                { "hubSiteUrls", n => { HubSiteUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "propagateToExistingLists", n => { PropagateToExistingLists = n.GetBoolValue(); } },
             };
         }
         /// <summary>

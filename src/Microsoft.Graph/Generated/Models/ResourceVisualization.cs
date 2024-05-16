@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ResourceVisualization : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ResourceVisualization : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContainerDisplayName {
+        public string? ContainerDisplayName
+        {
             get { return BackingStore?.Get<string?>("containerDisplayName"); }
             set { BackingStore?.Set("containerDisplayName", value); }
         }
 #nullable restore
 #else
-        public string ContainerDisplayName {
+        public string ContainerDisplayName
+        {
             get { return BackingStore?.Get<string>("containerDisplayName"); }
             set { BackingStore?.Set("containerDisplayName", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContainerType {
+        public string? ContainerType
+        {
             get { return BackingStore?.Get<string?>("containerType"); }
             set { BackingStore?.Set("containerType", value); }
         }
 #nullable restore
 #else
-        public string ContainerType {
+        public string ContainerType
+        {
             get { return BackingStore?.Get<string>("containerType"); }
             set { BackingStore?.Set("containerType", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A path leading to the folder in which the item is stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContainerWebUrl {
+        public string? ContainerWebUrl
+        {
             get { return BackingStore?.Get<string?>("containerWebUrl"); }
             set { BackingStore?.Set("containerWebUrl", value); }
         }
 #nullable restore
 #else
-        public string ContainerWebUrl {
+        public string ContainerWebUrl
+        {
             get { return BackingStore?.Get<string>("containerWebUrl"); }
             set { BackingStore?.Set("containerWebUrl", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The item&apos;s media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MediaType {
+        public string? MediaType
+        {
             get { return BackingStore?.Get<string?>("mediaType"); }
             set { BackingStore?.Set("mediaType", value); }
         }
 #nullable restore
 #else
-        public string MediaType {
+        public string MediaType
+        {
             get { return BackingStore?.Get<string>("mediaType"); }
             set { BackingStore?.Set("mediaType", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A URL leading to the preview image for the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviewImageUrl {
+        public string? PreviewImageUrl
+        {
             get { return BackingStore?.Get<string?>("previewImageUrl"); }
             set { BackingStore?.Set("previewImageUrl", value); }
         }
 #nullable restore
 #else
-        public string PreviewImageUrl {
+        public string PreviewImageUrl
+        {
             get { return BackingStore?.Get<string>("previewImageUrl"); }
             set { BackingStore?.Set("previewImageUrl", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A preview text for the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviewText {
+        public string? PreviewText
+        {
             get { return BackingStore?.Get<string?>("previewText"); }
             set { BackingStore?.Set("previewText", value); }
         }
 #nullable restore
 #else
-        public string PreviewText {
+        public string PreviewText
+        {
             get { return BackingStore?.Get<string>("previewText"); }
             set { BackingStore?.Set("previewText", value); }
         }
@@ -118,13 +134,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The item&apos;s title text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title {
+        public string? Title
+        {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #nullable restore
 #else
-        public string Title {
+        public string Title
+        {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
@@ -132,13 +150,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The item&apos;s media type. Can be used for filtering for a specific file based on a specific type. See the section Type property values for supported types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type {
+        public string? Type
+        {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #nullable restore
 #else
-        public string Type {
+        public string Type
+        {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -169,15 +189,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"containerDisplayName", n => { ContainerDisplayName = n.GetStringValue(); } },
-                {"containerType", n => { ContainerType = n.GetStringValue(); } },
-                {"containerWebUrl", n => { ContainerWebUrl = n.GetStringValue(); } },
-                {"mediaType", n => { MediaType = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"previewImageUrl", n => { PreviewImageUrl = n.GetStringValue(); } },
-                {"previewText", n => { PreviewText = n.GetStringValue(); } },
-                {"title", n => { Title = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
+                { "containerDisplayName", n => { ContainerDisplayName = n.GetStringValue(); } },
+                { "containerType", n => { ContainerType = n.GetStringValue(); } },
+                { "containerWebUrl", n => { ContainerWebUrl = n.GetStringValue(); } },
+                { "mediaType", n => { MediaType = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "previewImageUrl", n => { PreviewImageUrl = n.GetStringValue(); } },
+                { "previewText", n => { PreviewText = n.GetStringValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

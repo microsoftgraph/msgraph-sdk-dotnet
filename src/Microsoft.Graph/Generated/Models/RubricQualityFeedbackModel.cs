@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class RubricQualityFeedbackModel : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RubricQualityFeedbackModel : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Specific feedback for one quality of this rubric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationItemBody? Feedback {
+        public EducationItemBody? Feedback
+        {
             get { return BackingStore?.Get<EducationItemBody?>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
 #nullable restore
 #else
-        public EducationItemBody Feedback {
+        public EducationItemBody Feedback
+        {
             get { return BackingStore?.Get<EducationItemBody>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The ID of the rubricQuality that this feedback is related to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QualityId {
+        public string? QualityId
+        {
             get { return BackingStore?.Get<string?>("qualityId"); }
             set { BackingStore?.Set("qualityId", value); }
         }
 #nullable restore
 #else
-        public string QualityId {
+        public string QualityId
+        {
             get { return BackingStore?.Get<string>("qualityId"); }
             set { BackingStore?.Set("qualityId", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"feedback", n => { Feedback = n.GetObjectValue<EducationItemBody>(EducationItemBody.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"qualityId", n => { QualityId = n.GetStringValue(); } },
+                { "feedback", n => { Feedback = n.GetObjectValue<EducationItemBody>(EducationItemBody.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "qualityId", n => { QualityId = n.GetStringValue(); } },
             };
         }
         /// <summary>

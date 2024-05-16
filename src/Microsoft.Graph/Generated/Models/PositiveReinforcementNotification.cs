@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PositiveReinforcementNotification : BaseEndUserNotification, IParsable 
+    public class PositiveReinforcementNotification : BaseEndUserNotification, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Delivery preference. Possible values are: unknown, deliverImmedietly, deliverAfterCampaignEnd, unknownFutureValue.</summary>
-        public NotificationDeliveryPreference? DeliveryPreference {
+        public NotificationDeliveryPreference? DeliveryPreference
+        {
             get { return BackingStore?.Get<NotificationDeliveryPreference?>("deliveryPreference"); }
             set { BackingStore?.Set("deliveryPreference", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deliveryPreference", n => { DeliveryPreference = n.GetEnumValue<NotificationDeliveryPreference>(); } },
+                { "deliveryPreference", n => { DeliveryPreference = n.GetEnumValue<NotificationDeliveryPreference>(); } },
             };
         }
         /// <summary>

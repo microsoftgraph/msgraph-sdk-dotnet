@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SignInLocation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SignInLocation : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Provides the city where the sign-in originated and is determined using latitude/longitude information from the sign-in activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? City {
+        public string? City
+        {
             get { return BackingStore?.Get<string?>("city"); }
             set { BackingStore?.Set("city", value); }
         }
 #nullable restore
 #else
-        public string City {
+        public string City
+        {
             get { return BackingStore?.Get<string>("city"); }
             set { BackingStore?.Set("city", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Provides the country code info (two letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryOrRegion {
+        public string? CountryOrRegion
+        {
             get { return BackingStore?.Get<string?>("countryOrRegion"); }
             set { BackingStore?.Set("countryOrRegion", value); }
         }
 #nullable restore
 #else
-        public string CountryOrRegion {
+        public string CountryOrRegion
+        {
             get { return BackingStore?.Get<string>("countryOrRegion"); }
             set { BackingStore?.Set("countryOrRegion", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Provides the latitude, longitude and altitude where the sign-in originated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.GeoCoordinates? GeoCoordinates {
+        public Microsoft.Graph.Models.GeoCoordinates? GeoCoordinates
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.GeoCoordinates?>("geoCoordinates"); }
             set { BackingStore?.Set("geoCoordinates", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.GeoCoordinates GeoCoordinates {
+        public Microsoft.Graph.Models.GeoCoordinates GeoCoordinates
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.GeoCoordinates>("geoCoordinates"); }
             set { BackingStore?.Set("geoCoordinates", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State {
+        public string? State
+        {
             get { return BackingStore?.Get<string?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #nullable restore
 #else
-        public string State {
+        public string State
+        {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"city", n => { City = n.GetStringValue(); } },
-                {"countryOrRegion", n => { CountryOrRegion = n.GetStringValue(); } },
-                {"geoCoordinates", n => { GeoCoordinates = n.GetObjectValue<Microsoft.Graph.Models.GeoCoordinates>(Microsoft.Graph.Models.GeoCoordinates.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"state", n => { State = n.GetStringValue(); } },
+                { "city", n => { City = n.GetStringValue(); } },
+                { "countryOrRegion", n => { CountryOrRegion = n.GetStringValue(); } },
+                { "geoCoordinates", n => { GeoCoordinates = n.GetObjectValue<Microsoft.Graph.Models.GeoCoordinates>(Microsoft.Graph.Models.GeoCoordinates.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "state", n => { State = n.GetStringValue(); } },
             };
         }
         /// <summary>

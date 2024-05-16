@@ -4,42 +4,49 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The user experience analytics work from anywhere model performance.
     /// </summary>
-    public class UserExperienceAnalyticsWorkFromAnywhereModelPerformance : Entity, IParsable 
+    public class UserExperienceAnalyticsWorkFromAnywhereModelPerformance : Entity, IParsable
     {
         /// <summary>The cloud identity score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? CloudIdentityScore {
+        public double? CloudIdentityScore
+        {
             get { return BackingStore?.Get<double?>("cloudIdentityScore"); }
             set { BackingStore?.Set("cloudIdentityScore", value); }
         }
         /// <summary>The cloud management score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? CloudManagementScore {
+        public double? CloudManagementScore
+        {
             get { return BackingStore?.Get<double?>("cloudManagementScore"); }
             set { BackingStore?.Set("cloudManagementScore", value); }
         }
         /// <summary>The cloud provisioning score of the device model.  Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? CloudProvisioningScore {
+        public double? CloudProvisioningScore
+        {
             get { return BackingStore?.Get<double?>("cloudProvisioningScore"); }
             set { BackingStore?.Set("cloudProvisioningScore", value); }
         }
         /// <summary>The healthStatus property</summary>
-        public UserExperienceAnalyticsHealthState? HealthStatus {
+        public UserExperienceAnalyticsHealthState? HealthStatus
+        {
             get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer {
+        public string? Manufacturer
+        {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #nullable restore
 #else
-        public string Manufacturer {
+        public string Manufacturer
+        {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
@@ -47,29 +54,34 @@ namespace Microsoft.Graph.Models {
         /// <summary>The model name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model {
+        public string? Model
+        {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #nullable restore
 #else
-        public string Model {
+        public string Model
+        {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #endif
         /// <summary>The devices count for the model. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? ModelDeviceCount {
+        public int? ModelDeviceCount
+        {
             get { return BackingStore?.Get<int?>("modelDeviceCount"); }
             set { BackingStore?.Set("modelDeviceCount", value); }
         }
         /// <summary>The window score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? WindowsScore {
+        public double? WindowsScore
+        {
             get { return BackingStore?.Get<double?>("windowsScore"); }
             set { BackingStore?.Set("windowsScore", value); }
         }
         /// <summary>The work from anywhere score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? WorkFromAnywhereScore {
+        public double? WorkFromAnywhereScore
+        {
             get { return BackingStore?.Get<double?>("workFromAnywhereScore"); }
             set { BackingStore?.Set("workFromAnywhereScore", value); }
         }
@@ -91,15 +103,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"cloudIdentityScore", n => { CloudIdentityScore = n.GetDoubleValue(); } },
-                {"cloudManagementScore", n => { CloudManagementScore = n.GetDoubleValue(); } },
-                {"cloudProvisioningScore", n => { CloudProvisioningScore = n.GetDoubleValue(); } },
-                {"healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
-                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"model", n => { Model = n.GetStringValue(); } },
-                {"modelDeviceCount", n => { ModelDeviceCount = n.GetIntValue(); } },
-                {"windowsScore", n => { WindowsScore = n.GetDoubleValue(); } },
-                {"workFromAnywhereScore", n => { WorkFromAnywhereScore = n.GetDoubleValue(); } },
+                { "cloudIdentityScore", n => { CloudIdentityScore = n.GetDoubleValue(); } },
+                { "cloudManagementScore", n => { CloudManagementScore = n.GetDoubleValue(); } },
+                { "cloudProvisioningScore", n => { CloudProvisioningScore = n.GetDoubleValue(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "modelDeviceCount", n => { ModelDeviceCount = n.GetIntValue(); } },
+                { "windowsScore", n => { WindowsScore = n.GetDoubleValue(); } },
+                { "workFromAnywhereScore", n => { WorkFromAnywhereScore = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

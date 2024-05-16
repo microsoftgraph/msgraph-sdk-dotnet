@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ApprovalSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ApprovalSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApprovalMode {
+        public string? ApprovalMode
+        {
             get { return BackingStore?.Get<string?>("approvalMode"); }
             set { BackingStore?.Set("approvalMode", value); }
         }
 #nullable restore
 #else
-        public string ApprovalMode {
+        public string ApprovalMode
+        {
             get { return BackingStore?.Get<string>("approvalMode"); }
             set { BackingStore?.Set("approvalMode", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedApprovalStage>? ApprovalStages {
+        public List<UnifiedApprovalStage>? ApprovalStages
+        {
             get { return BackingStore?.Get<List<UnifiedApprovalStage>?>("approvalStages"); }
             set { BackingStore?.Set("approvalStages", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedApprovalStage> ApprovalStages {
+        public List<UnifiedApprovalStage> ApprovalStages
+        {
             get { return BackingStore?.Get<List<UnifiedApprovalStage>>("approvalStages"); }
             set { BackingStore?.Set("approvalStages", value); }
         }
@@ -46,30 +52,35 @@ namespace Microsoft.Graph.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether approval is required for requests in this policy.</summary>
-        public bool? IsApprovalRequired {
+        public bool? IsApprovalRequired
+        {
             get { return BackingStore?.Get<bool?>("isApprovalRequired"); }
             set { BackingStore?.Set("isApprovalRequired", value); }
         }
         /// <summary>Indicates whether approval is required for a user to extend their assignment.</summary>
-        public bool? IsApprovalRequiredForExtension {
+        public bool? IsApprovalRequiredForExtension
+        {
             get { return BackingStore?.Get<bool?>("isApprovalRequiredForExtension"); }
             set { BackingStore?.Set("isApprovalRequiredForExtension", value); }
         }
         /// <summary>Indicates whether the requestor is required to supply a justification in their request.</summary>
-        public bool? IsRequestorJustificationRequired {
+        public bool? IsRequestorJustificationRequired
+        {
             get { return BackingStore?.Get<bool?>("isRequestorJustificationRequired"); }
             set { BackingStore?.Set("isRequestorJustificationRequired", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -100,12 +111,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"approvalMode", n => { ApprovalMode = n.GetStringValue(); } },
-                {"approvalStages", n => { ApprovalStages = n.GetCollectionOfObjectValues<UnifiedApprovalStage>(UnifiedApprovalStage.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isApprovalRequired", n => { IsApprovalRequired = n.GetBoolValue(); } },
-                {"isApprovalRequiredForExtension", n => { IsApprovalRequiredForExtension = n.GetBoolValue(); } },
-                {"isRequestorJustificationRequired", n => { IsRequestorJustificationRequired = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "approvalMode", n => { ApprovalMode = n.GetStringValue(); } },
+                { "approvalStages", n => { ApprovalStages = n.GetCollectionOfObjectValues<UnifiedApprovalStage>(UnifiedApprovalStage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isApprovalRequired", n => { IsApprovalRequired = n.GetBoolValue(); } },
+                { "isApprovalRequiredForExtension", n => { IsApprovalRequiredForExtension = n.GetBoolValue(); } },
+                { "isRequestorJustificationRequired", n => { IsRequestorJustificationRequired = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

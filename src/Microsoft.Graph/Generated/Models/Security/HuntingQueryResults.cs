@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class HuntingQueryResults : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class HuntingQueryResults : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The results of the hunting query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HuntingRowResult>? Results {
+        public List<HuntingRowResult>? Results
+        {
             get { return BackingStore?.Get<List<HuntingRowResult>?>("results"); }
             set { BackingStore?.Set("results", value); }
         }
 #nullable restore
 #else
-        public List<HuntingRowResult> Results {
+        public List<HuntingRowResult> Results
+        {
             get { return BackingStore?.Get<List<HuntingRowResult>>("results"); }
             set { BackingStore?.Set("results", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The schema for the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SinglePropertySchema>? Schema {
+        public List<SinglePropertySchema>? Schema
+        {
             get { return BackingStore?.Get<List<SinglePropertySchema>?>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
 #nullable restore
 #else
-        public List<SinglePropertySchema> Schema {
+        public List<SinglePropertySchema> Schema
+        {
             get { return BackingStore?.Get<List<SinglePropertySchema>>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"results", n => { Results = n.GetCollectionOfObjectValues<HuntingRowResult>(HuntingRowResult.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"schema", n => { Schema = n.GetCollectionOfObjectValues<SinglePropertySchema>(SinglePropertySchema.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "results", n => { Results = n.GetCollectionOfObjectValues<HuntingRowResult>(HuntingRowResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "schema", n => { Schema = n.GetCollectionOfObjectValues<SinglePropertySchema>(SinglePropertySchema.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

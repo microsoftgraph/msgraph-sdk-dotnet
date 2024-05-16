@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DaylightTimeZoneOffset : StandardTimeZoneOffset, IParsable 
+    public class DaylightTimeZoneOffset : StandardTimeZoneOffset, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The time offset from Coordinated Universal Time (UTC) for daylight saving time. This value is in minutes.</summary>
-        public int? DaylightBias {
+        public int? DaylightBias
+        {
             get { return BackingStore?.Get<int?>("daylightBias"); }
             set { BackingStore?.Set("daylightBias", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"daylightBias", n => { DaylightBias = n.GetIntValue(); } },
+                { "daylightBias", n => { DaylightBias = n.GetIntValue(); } },
             };
         }
         /// <summary>

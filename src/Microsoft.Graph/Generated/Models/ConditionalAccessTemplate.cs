@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ConditionalAccessTemplate : Entity, IParsable 
+    public class ConditionalAccessTemplate : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The user-friendly name of the template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessPolicyDetail? Details {
+        public ConditionalAccessPolicyDetail? Details
+        {
             get { return BackingStore?.Get<ConditionalAccessPolicyDetail?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessPolicyDetail Details {
+        public ConditionalAccessPolicyDetail Details
+        {
             get { return BackingStore?.Get<ConditionalAccessPolicyDetail>("details"); }
             set { BackingStore?.Set("details", value); }
         }
@@ -40,19 +45,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The user-friendly name of the template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #endif
         /// <summary>The scenarios property</summary>
-        public TemplateScenarios? Scenarios {
+        public TemplateScenarios? Scenarios
+        {
             get { return BackingStore?.Get<TemplateScenarios?>("scenarios"); }
             set { BackingStore?.Set("scenarios", value); }
         }
@@ -74,10 +82,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"details", n => { Details = n.GetObjectValue<ConditionalAccessPolicyDetail>(ConditionalAccessPolicyDetail.CreateFromDiscriminatorValue); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"scenarios", n => { Scenarios = n.GetEnumValue<TemplateScenarios>(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "details", n => { Details = n.GetObjectValue<ConditionalAccessPolicyDetail>(ConditionalAccessPolicyDetail.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "scenarios", n => { Scenarios = n.GetEnumValue<TemplateScenarios>(); } },
             };
         }
         /// <summary>

@@ -5,43 +5,50 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class LoginPageLayoutConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class LoginPageLayoutConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Option to show the footer on the sign-in page.</summary>
-        public bool? IsFooterShown {
+        public bool? IsFooterShown
+        {
             get { return BackingStore?.Get<bool?>("isFooterShown"); }
             set { BackingStore?.Set("isFooterShown", value); }
         }
         /// <summary>Option to show the header on the sign-in page.</summary>
-        public bool? IsHeaderShown {
+        public bool? IsHeaderShown
+        {
             get { return BackingStore?.Get<bool?>("isHeaderShown"); }
             set { BackingStore?.Set("isHeaderShown", value); }
         }
         /// <summary>Represents the layout template to be displayed on the login page for a tenant. The possible values are  default - Represents the default Microsoft layout with a centered lightbox.  verticalSplit - Represents a layout with a background on the left side and a full-height lightbox to the right.  unknownFutureValue - Evolvable enumeration sentinel value. Don&apos;t use.</summary>
-        public Microsoft.Graph.Models.LayoutTemplateType? LayoutTemplateType {
+        public Microsoft.Graph.Models.LayoutTemplateType? LayoutTemplateType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.LayoutTemplateType?>("layoutTemplateType"); }
             set { BackingStore?.Set("layoutTemplateType", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isFooterShown", n => { IsFooterShown = n.GetBoolValue(); } },
-                {"isHeaderShown", n => { IsHeaderShown = n.GetBoolValue(); } },
-                {"layoutTemplateType", n => { LayoutTemplateType = n.GetEnumValue<LayoutTemplateType>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "isFooterShown", n => { IsFooterShown = n.GetBoolValue(); } },
+                { "isHeaderShown", n => { IsHeaderShown = n.GetBoolValue(); } },
+                { "layoutTemplateType", n => { LayoutTemplateType = n.GetEnumValue<LayoutTemplateType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

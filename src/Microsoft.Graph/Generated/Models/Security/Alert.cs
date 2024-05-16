@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class Alert : Microsoft.Graph.Models.Entity, IParsable 
+    public class Alert : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The adversary or activity group that is associated with this alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActorDisplayName {
+        public string? ActorDisplayName
+        {
             get { return BackingStore?.Get<string?>("actorDisplayName"); }
             set { BackingStore?.Set("actorDisplayName", value); }
         }
 #nullable restore
 #else
-        public string ActorDisplayName {
+        public string ActorDisplayName
+        {
             get { return BackingStore?.Get<string>("actorDisplayName"); }
             set { BackingStore?.Set("actorDisplayName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>A collection of other alert properties, including user-defined properties. Any custom details defined in the alert, and any dynamic content in the alert details, are stored here.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Dictionary? AdditionalDataProperty {
+        public Dictionary? AdditionalDataProperty
+        {
             get { return BackingStore?.Get<Dictionary?>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
 #nullable restore
 #else
-        public Dictionary AdditionalDataProperty {
+        public Dictionary AdditionalDataProperty
+        {
             get { return BackingStore?.Get<Dictionary>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The ID of the policy that generated the alert, and populated when there is a specific policy that generated the alert, whether configured by a customer or a built-in policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlertPolicyId {
+        public string? AlertPolicyId
+        {
             get { return BackingStore?.Get<string?>("alertPolicyId"); }
             set { BackingStore?.Set("alertPolicyId", value); }
         }
 #nullable restore
 #else
-        public string AlertPolicyId {
+        public string AlertPolicyId
+        {
             get { return BackingStore?.Get<string>("alertPolicyId"); }
             set { BackingStore?.Set("alertPolicyId", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The alertWebUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlertWebUrl {
+        public string? AlertWebUrl
+        {
             get { return BackingStore?.Get<string?>("alertWebUrl"); }
             set { BackingStore?.Set("alertWebUrl", value); }
         }
 #nullable restore
 #else
-        public string AlertWebUrl {
+        public string AlertWebUrl
+        {
             get { return BackingStore?.Get<string>("alertWebUrl"); }
             set { BackingStore?.Set("alertWebUrl", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Owner of the alert, or null if no owner is assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignedTo {
+        public string? AssignedTo
+        {
             get { return BackingStore?.Get<string?>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
 #nullable restore
 #else
-        public string AssignedTo {
+        public string AssignedTo
+        {
             get { return BackingStore?.Get<string>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
@@ -82,108 +93,125 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&amp;CK framework.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category {
+        public string? Category
+        {
             get { return BackingStore?.Get<string?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
 #nullable restore
 #else
-        public string Category {
+        public string Category
+        {
             get { return BackingStore?.Get<string>("category"); }
             set { BackingStore?.Set("category", value); }
         }
 #endif
         /// <summary>Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.</summary>
-        public AlertClassification? Classification {
+        public AlertClassification? Classification
+        {
             get { return BackingStore?.Get<AlertClassification?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
         /// <summary>Array of comments created by the Security Operations (SecOps) team during the alert management process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AlertComment>? Comments {
+        public List<AlertComment>? Comments
+        {
             get { return BackingStore?.Get<List<AlertComment>?>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
 #nullable restore
 #else
-        public List<AlertComment> Comments {
+        public List<AlertComment> Comments
+        {
             get { return BackingStore?.Get<List<AlertComment>>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
 #endif
         /// <summary>Time when Microsoft 365 Defender created the alert.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>String value describing each alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl.</summary>
-        public Microsoft.Graph.Models.Security.DetectionSource? DetectionSource {
+        public Microsoft.Graph.Models.Security.DetectionSource? DetectionSource
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.DetectionSource?>("detectionSource"); }
             set { BackingStore?.Set("detectionSource", value); }
         }
         /// <summary>The ID of the detector that triggered the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DetectorId {
+        public string? DetectorId
+        {
             get { return BackingStore?.Get<string?>("detectorId"); }
             set { BackingStore?.Set("detectorId", value); }
         }
 #nullable restore
 #else
-        public string DetectorId {
+        public string DetectorId
+        {
             get { return BackingStore?.Get<string>("detectorId"); }
             set { BackingStore?.Set("detectorId", value); }
         }
 #endif
         /// <summary>Specifies the result of the investigation, whether the alert represents a true attack and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
-        public AlertDetermination? Determination {
+        public AlertDetermination? Determination
+        {
             get { return BackingStore?.Get<AlertDetermination?>("determination"); }
             set { BackingStore?.Set("determination", value); }
         }
         /// <summary>Collection of evidence related to the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AlertEvidence>? Evidence {
+        public List<AlertEvidence>? Evidence
+        {
             get { return BackingStore?.Get<List<AlertEvidence>?>("evidence"); }
             set { BackingStore?.Set("evidence", value); }
         }
 #nullable restore
 #else
-        public List<AlertEvidence> Evidence {
+        public List<AlertEvidence> Evidence
+        {
             get { return BackingStore?.Get<List<AlertEvidence>>("evidence"); }
             set { BackingStore?.Set("evidence", value); }
         }
 #endif
         /// <summary>The earliest activity associated with the alert.</summary>
-        public DateTimeOffset? FirstActivityDateTime {
+        public DateTimeOffset? FirstActivityDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("firstActivityDateTime"); }
             set { BackingStore?.Set("firstActivityDateTime", value); }
         }
         /// <summary>Unique identifier to represent the incident this alert resource is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncidentId {
+        public string? IncidentId
+        {
             get { return BackingStore?.Get<string?>("incidentId"); }
             set { BackingStore?.Set("incidentId", value); }
         }
 #nullable restore
 #else
-        public string IncidentId {
+        public string IncidentId
+        {
             get { return BackingStore?.Get<string>("incidentId"); }
             set { BackingStore?.Set("incidentId", value); }
         }
@@ -191,37 +219,43 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>URL for the incident page in the Microsoft 365 Defender portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncidentWebUrl {
+        public string? IncidentWebUrl
+        {
             get { return BackingStore?.Get<string?>("incidentWebUrl"); }
             set { BackingStore?.Set("incidentWebUrl", value); }
         }
 #nullable restore
 #else
-        public string IncidentWebUrl {
+        public string IncidentWebUrl
+        {
             get { return BackingStore?.Get<string>("incidentWebUrl"); }
             set { BackingStore?.Set("incidentWebUrl", value); }
         }
 #endif
         /// <summary>The oldest activity associated with the alert.</summary>
-        public DateTimeOffset? LastActivityDateTime {
+        public DateTimeOffset? LastActivityDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActivityDateTime"); }
             set { BackingStore?.Set("lastActivityDateTime", value); }
         }
         /// <summary>Time when the alert was last updated at Microsoft 365 Defender.</summary>
-        public DateTimeOffset? LastUpdateDateTime {
+        public DateTimeOffset? LastUpdateDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdateDateTime"); }
             set { BackingStore?.Set("lastUpdateDateTime", value); }
         }
         /// <summary>The attack techniques, as aligned with the MITRE ATT&amp;CK framework.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MitreTechniques {
+        public List<string>? MitreTechniques
+        {
             get { return BackingStore?.Get<List<string>?>("mitreTechniques"); }
             set { BackingStore?.Set("mitreTechniques", value); }
         }
 #nullable restore
 #else
-        public List<string> MitreTechniques {
+        public List<string> MitreTechniques
+        {
             get { return BackingStore?.Get<List<string>>("mitreTechniques"); }
             set { BackingStore?.Set("mitreTechniques", value); }
         }
@@ -229,13 +263,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The productName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductName {
+        public string? ProductName
+        {
             get { return BackingStore?.Get<string?>("productName"); }
             set { BackingStore?.Set("productName", value); }
         }
 #nullable restore
 #else
-        public string ProductName {
+        public string ProductName
+        {
             get { return BackingStore?.Get<string>("productName"); }
             set { BackingStore?.Set("productName", value); }
         }
@@ -243,13 +279,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The ID of the alert as it appears in the security provider product that generated the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProviderAlertId {
+        public string? ProviderAlertId
+        {
             get { return BackingStore?.Get<string?>("providerAlertId"); }
             set { BackingStore?.Set("providerAlertId", value); }
         }
 #nullable restore
 #else
-        public string ProviderAlertId {
+        public string ProviderAlertId
+        {
             get { return BackingStore?.Get<string>("providerAlertId"); }
             set { BackingStore?.Set("providerAlertId", value); }
         }
@@ -257,47 +295,55 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Recommended response and remediation actions to take in the event this alert was generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecommendedActions {
+        public string? RecommendedActions
+        {
             get { return BackingStore?.Get<string?>("recommendedActions"); }
             set { BackingStore?.Set("recommendedActions", value); }
         }
 #nullable restore
 #else
-        public string RecommendedActions {
+        public string RecommendedActions
+        {
             get { return BackingStore?.Get<string>("recommendedActions"); }
             set { BackingStore?.Set("recommendedActions", value); }
         }
 #endif
         /// <summary>Time when the alert was resolved.</summary>
-        public DateTimeOffset? ResolvedDateTime {
+        public DateTimeOffset? ResolvedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("resolvedDateTime"); }
             set { BackingStore?.Set("resolvedDateTime", value); }
         }
         /// <summary>The serviceSource property</summary>
-        public Microsoft.Graph.Models.Security.ServiceSource? ServiceSource {
+        public Microsoft.Graph.Models.Security.ServiceSource? ServiceSource
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.ServiceSource?>("serviceSource"); }
             set { BackingStore?.Set("serviceSource", value); }
         }
         /// <summary>The severity property</summary>
-        public AlertSeverity? Severity {
+        public AlertSeverity? Severity
+        {
             get { return BackingStore?.Get<AlertSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>The status property</summary>
-        public AlertStatus? Status {
+        public AlertStatus? Status
+        {
             get { return BackingStore?.Get<AlertStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The system tags associated with the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SystemTags {
+        public List<string>? SystemTags
+        {
             get { return BackingStore?.Get<List<string>?>("systemTags"); }
             set { BackingStore?.Set("systemTags", value); }
         }
 #nullable restore
 #else
-        public List<string> SystemTags {
+        public List<string> SystemTags
+        {
             get { return BackingStore?.Get<List<string>>("systemTags"); }
             set { BackingStore?.Set("systemTags", value); }
         }
@@ -305,13 +351,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The Microsoft Entra tenant the alert was created in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -319,13 +367,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The threat associated with this alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreatDisplayName {
+        public string? ThreatDisplayName
+        {
             get { return BackingStore?.Get<string?>("threatDisplayName"); }
             set { BackingStore?.Set("threatDisplayName", value); }
         }
 #nullable restore
 #else
-        public string ThreatDisplayName {
+        public string ThreatDisplayName
+        {
             get { return BackingStore?.Get<string>("threatDisplayName"); }
             set { BackingStore?.Set("threatDisplayName", value); }
         }
@@ -333,13 +383,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Threat family associated with this alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreatFamilyName {
+        public string? ThreatFamilyName
+        {
             get { return BackingStore?.Get<string?>("threatFamilyName"); }
             set { BackingStore?.Set("threatFamilyName", value); }
         }
 #nullable restore
 #else
-        public string ThreatFamilyName {
+        public string ThreatFamilyName
+        {
             get { return BackingStore?.Get<string>("threatFamilyName"); }
             set { BackingStore?.Set("threatFamilyName", value); }
         }
@@ -347,13 +399,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Brief identifying string value describing the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title {
+        public string? Title
+        {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #nullable restore
 #else
-        public string Title {
+        public string Title
+        {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
@@ -376,38 +430,38 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actorDisplayName", n => { ActorDisplayName = n.GetStringValue(); } },
-                {"additionalData", n => { AdditionalDataProperty = n.GetObjectValue<Dictionary>(Dictionary.CreateFromDiscriminatorValue); } },
-                {"alertPolicyId", n => { AlertPolicyId = n.GetStringValue(); } },
-                {"alertWebUrl", n => { AlertWebUrl = n.GetStringValue(); } },
-                {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
-                {"category", n => { Category = n.GetStringValue(); } },
-                {"classification", n => { Classification = n.GetEnumValue<AlertClassification>(); } },
-                {"comments", n => { Comments = n.GetCollectionOfObjectValues<AlertComment>(AlertComment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"detectionSource", n => { DetectionSource = n.GetEnumValue<DetectionSource>(); } },
-                {"detectorId", n => { DetectorId = n.GetStringValue(); } },
-                {"determination", n => { Determination = n.GetEnumValue<AlertDetermination>(); } },
-                {"evidence", n => { Evidence = n.GetCollectionOfObjectValues<AlertEvidence>(AlertEvidence.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"firstActivityDateTime", n => { FirstActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"incidentId", n => { IncidentId = n.GetStringValue(); } },
-                {"incidentWebUrl", n => { IncidentWebUrl = n.GetStringValue(); } },
-                {"lastActivityDateTime", n => { LastActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"mitreTechniques", n => { MitreTechniques = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"productName", n => { ProductName = n.GetStringValue(); } },
-                {"providerAlertId", n => { ProviderAlertId = n.GetStringValue(); } },
-                {"recommendedActions", n => { RecommendedActions = n.GetStringValue(); } },
-                {"resolvedDateTime", n => { ResolvedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"serviceSource", n => { ServiceSource = n.GetEnumValue<ServiceSource>(); } },
-                {"severity", n => { Severity = n.GetEnumValue<AlertSeverity>(); } },
-                {"status", n => { Status = n.GetEnumValue<AlertStatus>(); } },
-                {"systemTags", n => { SystemTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
-                {"threatDisplayName", n => { ThreatDisplayName = n.GetStringValue(); } },
-                {"threatFamilyName", n => { ThreatFamilyName = n.GetStringValue(); } },
-                {"title", n => { Title = n.GetStringValue(); } },
+                { "actorDisplayName", n => { ActorDisplayName = n.GetStringValue(); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<Dictionary>(Dictionary.CreateFromDiscriminatorValue); } },
+                { "alertPolicyId", n => { AlertPolicyId = n.GetStringValue(); } },
+                { "alertWebUrl", n => { AlertWebUrl = n.GetStringValue(); } },
+                { "assignedTo", n => { AssignedTo = n.GetStringValue(); } },
+                { "category", n => { Category = n.GetStringValue(); } },
+                { "classification", n => { Classification = n.GetEnumValue<AlertClassification>(); } },
+                { "comments", n => { Comments = n.GetCollectionOfObjectValues<AlertComment>(AlertComment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "detectionSource", n => { DetectionSource = n.GetEnumValue<DetectionSource>(); } },
+                { "detectorId", n => { DetectorId = n.GetStringValue(); } },
+                { "determination", n => { Determination = n.GetEnumValue<AlertDetermination>(); } },
+                { "evidence", n => { Evidence = n.GetCollectionOfObjectValues<AlertEvidence>(AlertEvidence.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "firstActivityDateTime", n => { FirstActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                { "incidentId", n => { IncidentId = n.GetStringValue(); } },
+                { "incidentWebUrl", n => { IncidentWebUrl = n.GetStringValue(); } },
+                { "lastActivityDateTime", n => { LastActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                { "mitreTechniques", n => { MitreTechniques = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "productName", n => { ProductName = n.GetStringValue(); } },
+                { "providerAlertId", n => { ProviderAlertId = n.GetStringValue(); } },
+                { "recommendedActions", n => { RecommendedActions = n.GetStringValue(); } },
+                { "resolvedDateTime", n => { ResolvedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "serviceSource", n => { ServiceSource = n.GetEnumValue<ServiceSource>(); } },
+                { "severity", n => { Severity = n.GetEnumValue<AlertSeverity>(); } },
+                { "status", n => { Status = n.GetEnumValue<AlertStatus>(); } },
+                { "systemTags", n => { SystemTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "threatDisplayName", n => { ThreatDisplayName = n.GetStringValue(); } },
+                { "threatFamilyName", n => { ThreatFamilyName = n.GetStringValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>

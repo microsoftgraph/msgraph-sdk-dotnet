@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ItemReference : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ItemReference : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DriveId {
+        public string? DriveId
+        {
             get { return BackingStore?.Get<string?>("driveId"); }
             set { BackingStore?.Set("driveId", value); }
         }
 #nullable restore
 #else
-        public string DriveId {
+        public string DriveId
+        {
             get { return BackingStore?.Get<string>("driveId"); }
             set { BackingStore?.Set("driveId", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Identifies the type of drive. Only returned if the item is located in a drive. See drive resource for values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DriveType {
+        public string? DriveType
+        {
             get { return BackingStore?.Get<string?>("driveType"); }
             set { BackingStore?.Set("driveType", value); }
         }
 #nullable restore
 #else
-        public string DriveType {
+        public string DriveType
+        {
             get { return BackingStore?.Get<string>("driveType"); }
             set { BackingStore?.Set("driveType", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id {
+        public string? Id
+        {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #nullable restore
 #else
-        public string Id {
+        public string Id
+        {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the item being referenced. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Path that can be used to navigate to the item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Path {
+        public string? Path
+        {
             get { return BackingStore?.Get<string?>("path"); }
             set { BackingStore?.Set("path", value); }
         }
 #nullable restore
 #else
-        public string Path {
+        public string Path
+        {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A unique identifier for a shared resource that can be accessed via the Shares API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShareId {
+        public string? ShareId
+        {
             get { return BackingStore?.Get<string?>("shareId"); }
             set { BackingStore?.Set("shareId", value); }
         }
 #nullable restore
 #else
-        public string ShareId {
+        public string ShareId
+        {
             get { return BackingStore?.Get<string>("shareId"); }
             set { BackingStore?.Set("shareId", value); }
         }
@@ -118,13 +134,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.SharepointIds? SharepointIds {
+        public Microsoft.Graph.Models.SharepointIds? SharepointIds
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.SharepointIds?>("sharepointIds"); }
             set { BackingStore?.Set("sharepointIds", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.SharepointIds SharepointIds {
+        public Microsoft.Graph.Models.SharepointIds SharepointIds
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.SharepointIds>("sharepointIds"); }
             set { BackingStore?.Set("sharepointIds", value); }
         }
@@ -132,13 +150,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SiteId {
+        public string? SiteId
+        {
             get { return BackingStore?.Get<string?>("siteId"); }
             set { BackingStore?.Set("siteId", value); }
         }
 #nullable restore
 #else
-        public string SiteId {
+        public string SiteId
+        {
             get { return BackingStore?.Get<string>("siteId"); }
             set { BackingStore?.Set("siteId", value); }
         }
@@ -169,15 +189,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"driveId", n => { DriveId = n.GetStringValue(); } },
-                {"driveType", n => { DriveType = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"path", n => { Path = n.GetStringValue(); } },
-                {"shareId", n => { ShareId = n.GetStringValue(); } },
-                {"sharepointIds", n => { SharepointIds = n.GetObjectValue<Microsoft.Graph.Models.SharepointIds>(Microsoft.Graph.Models.SharepointIds.CreateFromDiscriminatorValue); } },
-                {"siteId", n => { SiteId = n.GetStringValue(); } },
+                { "driveId", n => { DriveId = n.GetStringValue(); } },
+                { "driveType", n => { DriveType = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
+                { "shareId", n => { ShareId = n.GetStringValue(); } },
+                { "sharepointIds", n => { SharepointIds = n.GetObjectValue<Microsoft.Graph.Models.SharepointIds>(Microsoft.Graph.Models.SharepointIds.CreateFromDiscriminatorValue); } },
+                { "siteId", n => { SiteId = n.GetStringValue(); } },
             };
         }
         /// <summary>

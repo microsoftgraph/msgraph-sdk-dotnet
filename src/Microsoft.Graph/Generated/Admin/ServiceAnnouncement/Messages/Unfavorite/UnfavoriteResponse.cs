@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite {
+namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite
+{
     [Obsolete("This class is obsolete. Use UnfavoritePostResponse instead.")]
     #pragma warning disable CS1591
-    public class UnfavoriteResponse : UnfavoritePostResponse, IParsable 
+    public class UnfavoriteResponse : UnfavoritePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

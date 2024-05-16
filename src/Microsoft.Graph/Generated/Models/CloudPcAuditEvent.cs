@@ -4,50 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcAuditEvent : Entity, IParsable 
+    public class CloudPcAuditEvent : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The friendly name of the audit activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Activity {
+        public string? Activity
+        {
             get { return BackingStore?.Get<string?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #nullable restore
 #else
-        public string Activity {
+        public string Activity
+        {
             get { return BackingStore?.Get<string>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #endif
         /// <summary>The date time in UTC when the activity was performed. Read-only.</summary>
-        public DateTimeOffset? ActivityDateTime {
+        public DateTimeOffset? ActivityDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
             set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>The activityOperationType property</summary>
-        public CloudPcAuditActivityOperationType? ActivityOperationType {
+        public CloudPcAuditActivityOperationType? ActivityOperationType
+        {
             get { return BackingStore?.Get<CloudPcAuditActivityOperationType?>("activityOperationType"); }
             set { BackingStore?.Set("activityOperationType", value); }
         }
         /// <summary>The activityResult property</summary>
-        public CloudPcAuditActivityResult? ActivityResult {
+        public CloudPcAuditActivityResult? ActivityResult
+        {
             get { return BackingStore?.Get<CloudPcAuditActivityResult?>("activityResult"); }
             set { BackingStore?.Set("activityResult", value); }
         }
         /// <summary>The type of activity that was performed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivityType {
+        public string? ActivityType
+        {
             get { return BackingStore?.Get<string?>("activityType"); }
             set { BackingStore?.Set("activityType", value); }
         }
 #nullable restore
 #else
-        public string ActivityType {
+        public string ActivityType
+        {
             get { return BackingStore?.Get<string>("activityType"); }
             set { BackingStore?.Set("activityType", value); }
         }
@@ -55,32 +63,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcAuditActor? Actor {
+        public CloudPcAuditActor? Actor
+        {
             get { return BackingStore?.Get<CloudPcAuditActor?>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
 #nullable restore
 #else
-        public CloudPcAuditActor Actor {
+        public CloudPcAuditActor Actor
+        {
             get { return BackingStore?.Get<CloudPcAuditActor>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
 #endif
         /// <summary>The category property</summary>
-        public CloudPcAuditCategory? Category {
+        public CloudPcAuditCategory? Category
+        {
             get { return BackingStore?.Get<CloudPcAuditCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The component name for the audit event. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ComponentName {
+        public string? ComponentName
+        {
             get { return BackingStore?.Get<string?>("componentName"); }
             set { BackingStore?.Set("componentName", value); }
         }
 #nullable restore
 #else
-        public string ComponentName {
+        public string ComponentName
+        {
             get { return BackingStore?.Get<string>("componentName"); }
             set { BackingStore?.Set("componentName", value); }
         }
@@ -88,13 +101,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The client request ID that is used to correlate activity within the system. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CorrelationId {
+        public string? CorrelationId
+        {
             get { return BackingStore?.Get<string?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
 #nullable restore
 #else
-        public string CorrelationId {
+        public string CorrelationId
+        {
             get { return BackingStore?.Get<string>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
@@ -102,13 +117,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The display name for the audit event. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -116,13 +133,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of cloudPcAuditResource objects. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcAuditResource>? Resources {
+        public List<CloudPcAuditResource>? Resources
+        {
             get { return BackingStore?.Get<List<CloudPcAuditResource>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcAuditResource> Resources {
+        public List<CloudPcAuditResource> Resources
+        {
             get { return BackingStore?.Get<List<CloudPcAuditResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
@@ -145,17 +164,17 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activity", n => { Activity = n.GetStringValue(); } },
-                {"activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"activityOperationType", n => { ActivityOperationType = n.GetEnumValue<CloudPcAuditActivityOperationType>(); } },
-                {"activityResult", n => { ActivityResult = n.GetEnumValue<CloudPcAuditActivityResult>(); } },
-                {"activityType", n => { ActivityType = n.GetStringValue(); } },
-                {"actor", n => { Actor = n.GetObjectValue<CloudPcAuditActor>(CloudPcAuditActor.CreateFromDiscriminatorValue); } },
-                {"category", n => { Category = n.GetEnumValue<CloudPcAuditCategory>(); } },
-                {"componentName", n => { ComponentName = n.GetStringValue(); } },
-                {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"resources", n => { Resources = n.GetCollectionOfObjectValues<CloudPcAuditResource>(CloudPcAuditResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "activity", n => { Activity = n.GetStringValue(); } },
+                { "activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                { "activityOperationType", n => { ActivityOperationType = n.GetEnumValue<CloudPcAuditActivityOperationType>(); } },
+                { "activityResult", n => { ActivityResult = n.GetEnumValue<CloudPcAuditActivityResult>(); } },
+                { "activityType", n => { ActivityType = n.GetStringValue(); } },
+                { "actor", n => { Actor = n.GetObjectValue<CloudPcAuditActor>(CloudPcAuditActor.CreateFromDiscriminatorValue); } },
+                { "category", n => { Category = n.GetEnumValue<CloudPcAuditCategory>(); } },
+                { "componentName", n => { ComponentName = n.GetStringValue(); } },
+                { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<CloudPcAuditResource>(CloudPcAuditResource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class LogicAppTriggerEndpointConfiguration : CustomExtensionEndpointConfiguration, IParsable 
+    public class LogicAppTriggerEndpointConfiguration : CustomExtensionEndpointConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the logic app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogicAppWorkflowName {
+        public string? LogicAppWorkflowName
+        {
             get { return BackingStore?.Get<string?>("logicAppWorkflowName"); }
             set { BackingStore?.Set("logicAppWorkflowName", value); }
         }
 #nullable restore
 #else
-        public string LogicAppWorkflowName {
+        public string LogicAppWorkflowName
+        {
             get { return BackingStore?.Get<string>("logicAppWorkflowName"); }
             set { BackingStore?.Set("logicAppWorkflowName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The Azure resource group name for the logic app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceGroupName {
+        public string? ResourceGroupName
+        {
             get { return BackingStore?.Get<string?>("resourceGroupName"); }
             set { BackingStore?.Set("resourceGroupName", value); }
         }
 #nullable restore
 #else
-        public string ResourceGroupName {
+        public string ResourceGroupName
+        {
             get { return BackingStore?.Get<string>("resourceGroupName"); }
             set { BackingStore?.Set("resourceGroupName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Identifier of the Azure subscription for the logic app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionId {
+        public string? SubscriptionId
+        {
             get { return BackingStore?.Get<string?>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
 #nullable restore
 #else
-        public string SubscriptionId {
+        public string SubscriptionId
+        {
             get { return BackingStore?.Get<string>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The URL to the logic app endpoint that will be triggered. Only required for app-only token scenarios where app is creating a customCalloutExtension without a signed-in user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url {
+        public string? Url
+        {
             get { return BackingStore?.Get<string?>("url"); }
             set { BackingStore?.Set("url", value); }
         }
 #nullable restore
 #else
-        public string Url {
+        public string Url
+        {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"logicAppWorkflowName", n => { LogicAppWorkflowName = n.GetStringValue(); } },
-                {"resourceGroupName", n => { ResourceGroupName = n.GetStringValue(); } },
-                {"subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "logicAppWorkflowName", n => { LogicAppWorkflowName = n.GetStringValue(); } },
+                { "resourceGroupName", n => { ResourceGroupName = n.GetStringValue(); } },
+                { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

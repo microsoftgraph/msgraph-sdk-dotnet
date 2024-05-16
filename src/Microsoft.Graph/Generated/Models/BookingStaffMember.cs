@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Represents a staff member who provides services in a business.
     /// </summary>
-    public class BookingStaffMember : BookingStaffMemberBase, IParsable 
+    public class BookingStaffMember : BookingStaffMemberBase, IParsable
     {
         /// <summary>True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member&apos;s availability in their personal calendar in Microsoft 365, before making a booking.</summary>
-        public bool? AvailabilityIsAffectedByPersonalCalendar {
+        public bool? AvailabilityIsAffectedByPersonalCalendar
+        {
             get { return BackingStore?.Get<bool?>("availabilityIsAffectedByPersonalCalendar"); }
             set { BackingStore?.Set("availabilityIsAffectedByPersonalCalendar", value); }
         }
         /// <summary>The name of the staff member, as displayed to customers. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -32,61 +36,71 @@ namespace Microsoft.Graph.Models {
         /// <summary>The email address of the staff member. This can be in the same Microsoft 365 tenant as the business, or in a different email domain. This email address can be used if the sendConfirmationsToOwner property is set to true in the scheduling policy of the business. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailAddress {
+        public string? EmailAddress
+        {
             get { return BackingStore?.Get<string?>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
 #nullable restore
 #else
-        public string EmailAddress {
+        public string EmailAddress
+        {
             get { return BackingStore?.Get<string>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
 #endif
         /// <summary>True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.</summary>
-        public bool? IsEmailNotificationEnabled {
+        public bool? IsEmailNotificationEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEmailNotificationEnabled"); }
             set { BackingStore?.Set("isEmailNotificationEnabled", value); }
         }
         /// <summary>The membershipStatus property</summary>
-        public BookingStaffMembershipStatus? MembershipStatus {
+        public BookingStaffMembershipStatus? MembershipStatus
+        {
             get { return BackingStore?.Get<BookingStaffMembershipStatus?>("membershipStatus"); }
             set { BackingStore?.Set("membershipStatus", value); }
         }
         /// <summary>The role property</summary>
-        public BookingStaffRole? Role {
+        public BookingStaffRole? Role
+        {
             get { return BackingStore?.Get<BookingStaffRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
         /// <summary>The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeZone {
+        public string? TimeZone
+        {
             get { return BackingStore?.Get<string?>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
 #nullable restore
 #else
-        public string TimeZone {
+        public string TimeZone
+        {
             get { return BackingStore?.Get<string>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
 #endif
         /// <summary>True means the staff member&apos;s availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member&apos;s workingHours property setting.</summary>
-        public bool? UseBusinessHours {
+        public bool? UseBusinessHours
+        {
             get { return BackingStore?.Get<bool?>("useBusinessHours"); }
             set { BackingStore?.Set("useBusinessHours", value); }
         }
         /// <summary>The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingWorkHours>? WorkingHours {
+        public List<BookingWorkHours>? WorkingHours
+        {
             get { return BackingStore?.Get<List<BookingWorkHours>?>("workingHours"); }
             set { BackingStore?.Set("workingHours", value); }
         }
 #nullable restore
 #else
-        public List<BookingWorkHours> WorkingHours {
+        public List<BookingWorkHours> WorkingHours
+        {
             get { return BackingStore?.Get<List<BookingWorkHours>>("workingHours"); }
             set { BackingStore?.Set("workingHours", value); }
         }
@@ -116,15 +130,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"availabilityIsAffectedByPersonalCalendar", n => { AvailabilityIsAffectedByPersonalCalendar = n.GetBoolValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"emailAddress", n => { EmailAddress = n.GetStringValue(); } },
-                {"isEmailNotificationEnabled", n => { IsEmailNotificationEnabled = n.GetBoolValue(); } },
-                {"membershipStatus", n => { MembershipStatus = n.GetEnumValue<BookingStaffMembershipStatus>(); } },
-                {"role", n => { Role = n.GetEnumValue<BookingStaffRole>(); } },
-                {"timeZone", n => { TimeZone = n.GetStringValue(); } },
-                {"useBusinessHours", n => { UseBusinessHours = n.GetBoolValue(); } },
-                {"workingHours", n => { WorkingHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "availabilityIsAffectedByPersonalCalendar", n => { AvailabilityIsAffectedByPersonalCalendar = n.GetBoolValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
+                { "isEmailNotificationEnabled", n => { IsEmailNotificationEnabled = n.GetBoolValue(); } },
+                { "membershipStatus", n => { MembershipStatus = n.GetEnumValue<BookingStaffMembershipStatus>(); } },
+                { "role", n => { Role = n.GetEnumValue<BookingStaffRole>(); } },
+                { "timeZone", n => { TimeZone = n.GetStringValue(); } },
+                { "useBusinessHours", n => { UseBusinessHours = n.GetBoolValue(); } },
+                { "workingHours", n => { WorkingHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SoftwareOathAuthenticationMethod : AuthenticationMethod, IParsable 
+    public class SoftwareOathAuthenticationMethod : AuthenticationMethod, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The secret key of the method. Always returns null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecretKey {
+        public string? SecretKey
+        {
             get { return BackingStore?.Get<string?>("secretKey"); }
             set { BackingStore?.Set("secretKey", value); }
         }
 #nullable restore
 #else
-        public string SecretKey {
+        public string SecretKey
+        {
             get { return BackingStore?.Get<string>("secretKey"); }
             set { BackingStore?.Set("secretKey", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"secretKey", n => { SecretKey = n.GetStringValue(); } },
+                { "secretKey", n => { SecretKey = n.GetStringValue(); } },
             };
         }
         /// <summary>

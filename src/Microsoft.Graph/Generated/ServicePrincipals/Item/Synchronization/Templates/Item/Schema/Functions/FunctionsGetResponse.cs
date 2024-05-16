@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.Functions {
+namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.Functions
+{
     #pragma warning disable CS1591
-    public class FunctionsGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class FunctionsGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttributeMappingFunctionSchema>? Value {
+        public List<AttributeMappingFunctionSchema>? Value
+        {
             get { return BackingStore?.Get<List<AttributeMappingFunctionSchema>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<AttributeMappingFunctionSchema> Value {
+        public List<AttributeMappingFunctionSchema> Value
+        {
             get { return BackingStore?.Get<List<AttributeMappingFunctionSchema>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item.
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<AttributeMappingFunctionSchema>(AttributeMappingFunctionSchema.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<AttributeMappingFunctionSchema>(AttributeMappingFunctionSchema.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

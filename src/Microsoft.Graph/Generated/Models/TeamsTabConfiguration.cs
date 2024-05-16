@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TeamsTabConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamsTabConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Url used for rendering tab contents in Teams. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentUrl {
+        public string? ContentUrl
+        {
             get { return BackingStore?.Get<string?>("contentUrl"); }
             set { BackingStore?.Set("contentUrl", value); }
         }
 #nullable restore
 #else
-        public string ContentUrl {
+        public string ContentUrl
+        {
             get { return BackingStore?.Get<string>("contentUrl"); }
             set { BackingStore?.Set("contentUrl", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Identifier for the entity hosted by the tab provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityId {
+        public string? EntityId
+        {
             get { return BackingStore?.Get<string?>("entityId"); }
             set { BackingStore?.Set("entityId", value); }
         }
 #nullable restore
 #else
-        public string EntityId {
+        public string EntityId
+        {
             get { return BackingStore?.Get<string>("entityId"); }
             set { BackingStore?.Set("entityId", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Url called by Teams client when a Tab is removed using the Teams Client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoveUrl {
+        public string? RemoveUrl
+        {
             get { return BackingStore?.Get<string?>("removeUrl"); }
             set { BackingStore?.Set("removeUrl", value); }
         }
 #nullable restore
 #else
-        public string RemoveUrl {
+        public string RemoveUrl
+        {
             get { return BackingStore?.Get<string>("removeUrl"); }
             set { BackingStore?.Set("removeUrl", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Url for showing tab contents outside of Teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebsiteUrl {
+        public string? WebsiteUrl
+        {
             get { return BackingStore?.Get<string?>("websiteUrl"); }
             set { BackingStore?.Set("websiteUrl", value); }
         }
 #nullable restore
 #else
-        public string WebsiteUrl {
+        public string WebsiteUrl
+        {
             get { return BackingStore?.Get<string>("websiteUrl"); }
             set { BackingStore?.Set("websiteUrl", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"contentUrl", n => { ContentUrl = n.GetStringValue(); } },
-                {"entityId", n => { EntityId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"removeUrl", n => { RemoveUrl = n.GetStringValue(); } },
-                {"websiteUrl", n => { WebsiteUrl = n.GetStringValue(); } },
+                { "contentUrl", n => { ContentUrl = n.GetStringValue(); } },
+                { "entityId", n => { EntityId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "removeUrl", n => { RemoveUrl = n.GetStringValue(); } },
+                { "websiteUrl", n => { WebsiteUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

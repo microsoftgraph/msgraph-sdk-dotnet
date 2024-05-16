@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.GetApplicablePolicyRequirements {
+namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.GetApplicablePolicyRequirements
+{
     [Obsolete("This class is obsolete. Use GetApplicablePolicyRequirementsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetApplicablePolicyRequirementsResponse : GetApplicablePolicyRequirementsPostResponse, IParsable 
+    public class GetApplicablePolicyRequirementsResponse : GetApplicablePolicyRequirementsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

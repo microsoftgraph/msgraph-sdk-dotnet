@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages {
+namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages
+{
     #pragma warning disable CS1591
-    public class GetSourceImagesGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetSourceImagesGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcSourceDeviceImage>? Value {
+        public List<CloudPcSourceDeviceImage>? Value
+        {
             get { return BackingStore?.Get<List<CloudPcSourceDeviceImage>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcSourceDeviceImage> Value {
+        public List<CloudPcSourceDeviceImage> Value
+        {
             get { return BackingStore?.Get<List<CloudPcSourceDeviceImage>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourc
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<CloudPcSourceDeviceImage>(CloudPcSourceDeviceImage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<CloudPcSourceDeviceImage>(CloudPcSourceDeviceImage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

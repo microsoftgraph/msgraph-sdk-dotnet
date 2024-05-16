@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Alert : Entity, IParsable 
+    public class Alert : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Name or alias of the activity group (attacker) this alert is attributed to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivityGroupName {
+        public string? ActivityGroupName
+        {
             get { return BackingStore?.Get<string?>("activityGroupName"); }
             set { BackingStore?.Set("activityGroupName", value); }
         }
 #nullable restore
 #else
-        public string ActivityGroupName {
+        public string ActivityGroupName
+        {
             get { return BackingStore?.Get<string>("activityGroupName"); }
             set { BackingStore?.Set("activityGroupName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The alertDetections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AlertDetection>? AlertDetections {
+        public List<AlertDetection>? AlertDetections
+        {
             get { return BackingStore?.Get<List<AlertDetection>?>("alertDetections"); }
             set { BackingStore?.Set("alertDetections", value); }
         }
 #nullable restore
 #else
-        public List<AlertDetection> AlertDetections {
+        public List<AlertDetection> AlertDetections
+        {
             get { return BackingStore?.Get<List<AlertDetection>>("alertDetections"); }
             set { BackingStore?.Set("alertDetections", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Name of the analyst the alert is assigned to for triage, investigation, or remediation (supports update).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignedTo {
+        public string? AssignedTo
+        {
             get { return BackingStore?.Get<string?>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
 #nullable restore
 #else
-        public string AssignedTo {
+        public string AssignedTo
+        {
             get { return BackingStore?.Get<string>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Azure subscription ID, present if this alert is related to an Azure resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureSubscriptionId {
+        public string? AzureSubscriptionId
+        {
             get { return BackingStore?.Get<string?>("azureSubscriptionId"); }
             set { BackingStore?.Set("azureSubscriptionId", value); }
         }
 #nullable restore
 #else
-        public string AzureSubscriptionId {
+        public string AzureSubscriptionId
+        {
             get { return BackingStore?.Get<string>("azureSubscriptionId"); }
             set { BackingStore?.Set("azureSubscriptionId", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Microsoft Entra tenant ID. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureTenantId {
+        public string? AzureTenantId
+        {
             get { return BackingStore?.Get<string?>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
 #nullable restore
 #else
-        public string AzureTenantId {
+        public string AzureTenantId
+        {
             get { return BackingStore?.Get<string>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
@@ -82,32 +93,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Category of the alert (for example, credentialTheft, ransomware).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category {
+        public string? Category
+        {
             get { return BackingStore?.Get<string?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
 #nullable restore
 #else
-        public string Category {
+        public string Category
+        {
             get { return BackingStore?.Get<string>("category"); }
             set { BackingStore?.Set("category", value); }
         }
 #endif
         /// <summary>Time at which the alert was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z (supports update).</summary>
-        public DateTimeOffset? ClosedDateTime {
+        public DateTimeOffset? ClosedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("closedDateTime"); }
             set { BackingStore?.Set("closedDateTime", value); }
         }
         /// <summary>Security-related stateful information generated by the provider about the cloud application/s related to this alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudAppSecurityState>? CloudAppStates {
+        public List<CloudAppSecurityState>? CloudAppStates
+        {
             get { return BackingStore?.Get<List<CloudAppSecurityState>?>("cloudAppStates"); }
             set { BackingStore?.Set("cloudAppStates", value); }
         }
 #nullable restore
 #else
-        public List<CloudAppSecurityState> CloudAppStates {
+        public List<CloudAppSecurityState> CloudAppStates
+        {
             get { return BackingStore?.Get<List<CloudAppSecurityState>>("cloudAppStates"); }
             set { BackingStore?.Set("cloudAppStates", value); }
         }
@@ -115,37 +131,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>Customer-provided comments on alert (for customer alert management) (supports update).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Comments {
+        public List<string>? Comments
+        {
             get { return BackingStore?.Get<List<string>?>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
 #nullable restore
 #else
-        public List<string> Comments {
+        public List<string> Comments
+        {
             get { return BackingStore?.Get<List<string>>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
 #endif
         /// <summary>Confidence of the detection logic (percentage between 1-100).</summary>
-        public int? Confidence {
+        public int? Confidence
+        {
             get { return BackingStore?.Get<int?>("confidence"); }
             set { BackingStore?.Set("confidence", value); }
         }
         /// <summary>Time at which the alert was created by the alert provider. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Alert description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -153,37 +175,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>Set of alerts related to this alert entity (each alert is pushed to the SIEM as a separate record).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DetectionIds {
+        public List<string>? DetectionIds
+        {
             get { return BackingStore?.Get<List<string>?>("detectionIds"); }
             set { BackingStore?.Set("detectionIds", value); }
         }
 #nullable restore
 #else
-        public List<string> DetectionIds {
+        public List<string> DetectionIds
+        {
             get { return BackingStore?.Get<List<string>>("detectionIds"); }
             set { BackingStore?.Set("detectionIds", value); }
         }
 #endif
         /// <summary>Time at which the event or events that served as the trigger to generate the alert occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.</summary>
-        public DateTimeOffset? EventDateTime {
+        public DateTimeOffset? EventDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
         /// <summary>Analyst feedback on the alert. Possible values are: unknown, truePositive, falsePositive, benignPositive. Supports update.</summary>
-        public AlertFeedback? Feedback {
+        public AlertFeedback? Feedback
+        {
             get { return BackingStore?.Get<AlertFeedback?>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
         /// <summary>Security-related stateful information generated by the provider about the file(s) related to this alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FileSecurityState>? FileStates {
+        public List<FileSecurityState>? FileStates
+        {
             get { return BackingStore?.Get<List<FileSecurityState>?>("fileStates"); }
             set { BackingStore?.Set("fileStates", value); }
         }
 #nullable restore
 #else
-        public List<FileSecurityState> FileStates {
+        public List<FileSecurityState> FileStates
+        {
             get { return BackingStore?.Get<List<FileSecurityState>>("fileStates"); }
             set { BackingStore?.Set("fileStates", value); }
         }
@@ -191,13 +219,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The historyStates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AlertHistoryState>? HistoryStates {
+        public List<AlertHistoryState>? HistoryStates
+        {
             get { return BackingStore?.Get<List<AlertHistoryState>?>("historyStates"); }
             set { BackingStore?.Set("historyStates", value); }
         }
 #nullable restore
 #else
-        public List<AlertHistoryState> HistoryStates {
+        public List<AlertHistoryState> HistoryStates
+        {
             get { return BackingStore?.Get<List<AlertHistoryState>>("historyStates"); }
             set { BackingStore?.Set("historyStates", value); }
         }
@@ -205,13 +235,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Security-related stateful information generated by the provider about the host(s) related to this alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostSecurityState>? HostStates {
+        public List<HostSecurityState>? HostStates
+        {
             get { return BackingStore?.Get<List<HostSecurityState>?>("hostStates"); }
             set { BackingStore?.Set("hostStates", value); }
         }
 #nullable restore
 #else
-        public List<HostSecurityState> HostStates {
+        public List<HostSecurityState> HostStates
+        {
             get { return BackingStore?.Get<List<HostSecurityState>>("hostStates"); }
             set { BackingStore?.Set("hostStates", value); }
         }
@@ -219,13 +251,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>IDs of incidents related to current alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncidentIds {
+        public List<string>? IncidentIds
+        {
             get { return BackingStore?.Get<List<string>?>("incidentIds"); }
             set { BackingStore?.Set("incidentIds", value); }
         }
 #nullable restore
 #else
-        public List<string> IncidentIds {
+        public List<string> IncidentIds
+        {
             get { return BackingStore?.Get<List<string>>("incidentIds"); }
             set { BackingStore?.Set("incidentIds", value); }
         }
@@ -233,37 +267,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>The investigationSecurityStates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<InvestigationSecurityState>? InvestigationSecurityStates {
+        public List<InvestigationSecurityState>? InvestigationSecurityStates
+        {
             get { return BackingStore?.Get<List<InvestigationSecurityState>?>("investigationSecurityStates"); }
             set { BackingStore?.Set("investigationSecurityStates", value); }
         }
 #nullable restore
 #else
-        public List<InvestigationSecurityState> InvestigationSecurityStates {
+        public List<InvestigationSecurityState> InvestigationSecurityStates
+        {
             get { return BackingStore?.Get<List<InvestigationSecurityState>>("investigationSecurityStates"); }
             set { BackingStore?.Set("investigationSecurityStates", value); }
         }
 #endif
         /// <summary>The lastEventDateTime property</summary>
-        public DateTimeOffset? LastEventDateTime {
+        public DateTimeOffset? LastEventDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastEventDateTime"); }
             set { BackingStore?.Set("lastEventDateTime", value); }
         }
         /// <summary>Time at which the alert entity was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Threat Intelligence pertaining to malware related to this alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MalwareState>? MalwareStates {
+        public List<MalwareState>? MalwareStates
+        {
             get { return BackingStore?.Get<List<MalwareState>?>("malwareStates"); }
             set { BackingStore?.Set("malwareStates", value); }
         }
 #nullable restore
 #else
-        public List<MalwareState> MalwareStates {
+        public List<MalwareState> MalwareStates
+        {
             get { return BackingStore?.Get<List<MalwareState>>("malwareStates"); }
             set { BackingStore?.Set("malwareStates", value); }
         }
@@ -271,13 +311,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The messageSecurityStates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MessageSecurityState>? MessageSecurityStates {
+        public List<MessageSecurityState>? MessageSecurityStates
+        {
             get { return BackingStore?.Get<List<MessageSecurityState>?>("messageSecurityStates"); }
             set { BackingStore?.Set("messageSecurityStates", value); }
         }
 #nullable restore
 #else
-        public List<MessageSecurityState> MessageSecurityStates {
+        public List<MessageSecurityState> MessageSecurityStates
+        {
             get { return BackingStore?.Get<List<MessageSecurityState>>("messageSecurityStates"); }
             set { BackingStore?.Set("messageSecurityStates", value); }
         }
@@ -285,13 +327,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Security-related stateful information generated by the provider about the network connection(s) related to this alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NetworkConnection>? NetworkConnections {
+        public List<NetworkConnection>? NetworkConnections
+        {
             get { return BackingStore?.Get<List<NetworkConnection>?>("networkConnections"); }
             set { BackingStore?.Set("networkConnections", value); }
         }
 #nullable restore
 #else
-        public List<NetworkConnection> NetworkConnections {
+        public List<NetworkConnection> NetworkConnections
+        {
             get { return BackingStore?.Get<List<NetworkConnection>>("networkConnections"); }
             set { BackingStore?.Set("networkConnections", value); }
         }
@@ -299,13 +343,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Security-related stateful information generated by the provider about the process or processes related to this alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Process>? Processes {
+        public List<Process>? Processes
+        {
             get { return BackingStore?.Get<List<Process>?>("processes"); }
             set { BackingStore?.Set("processes", value); }
         }
 #nullable restore
 #else
-        public List<Process> Processes {
+        public List<Process> Processes
+        {
             get { return BackingStore?.Get<List<Process>>("processes"); }
             set { BackingStore?.Set("processes", value); }
         }
@@ -313,13 +359,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Vendor/provider recommended action(s) to take as a result of the alert (for example, isolate machine, enforce2FA, reimage host).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RecommendedActions {
+        public List<string>? RecommendedActions
+        {
             get { return BackingStore?.Get<List<string>?>("recommendedActions"); }
             set { BackingStore?.Set("recommendedActions", value); }
         }
 #nullable restore
 #else
-        public List<string> RecommendedActions {
+        public List<string> RecommendedActions
+        {
             get { return BackingStore?.Get<List<string>>("recommendedActions"); }
             set { BackingStore?.Set("recommendedActions", value); }
         }
@@ -327,13 +375,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Security-related stateful information generated by the provider about the registry keys related to this alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RegistryKeyState>? RegistryKeyStates {
+        public List<RegistryKeyState>? RegistryKeyStates
+        {
             get { return BackingStore?.Get<List<RegistryKeyState>?>("registryKeyStates"); }
             set { BackingStore?.Set("registryKeyStates", value); }
         }
 #nullable restore
 #else
-        public List<RegistryKeyState> RegistryKeyStates {
+        public List<RegistryKeyState> RegistryKeyStates
+        {
             get { return BackingStore?.Get<List<RegistryKeyState>>("registryKeyStates"); }
             set { BackingStore?.Set("registryKeyStates", value); }
         }
@@ -341,51 +391,59 @@ namespace Microsoft.Graph.Models {
         /// <summary>Resources related to current alert. For example, for some alerts this can have the Azure Resource value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SecurityResource>? SecurityResources {
+        public List<SecurityResource>? SecurityResources
+        {
             get { return BackingStore?.Get<List<SecurityResource>?>("securityResources"); }
             set { BackingStore?.Set("securityResources", value); }
         }
 #nullable restore
 #else
-        public List<SecurityResource> SecurityResources {
+        public List<SecurityResource> SecurityResources
+        {
             get { return BackingStore?.Get<List<SecurityResource>>("securityResources"); }
             set { BackingStore?.Set("securityResources", value); }
         }
 #endif
         /// <summary>The severity property</summary>
-        public AlertSeverity? Severity {
+        public AlertSeverity? Severity
+        {
             get { return BackingStore?.Get<AlertSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>Hyperlinks (URIs) to the source material related to the alert, for example, provider&apos;s user interface for alerts or log search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SourceMaterials {
+        public List<string>? SourceMaterials
+        {
             get { return BackingStore?.Get<List<string>?>("sourceMaterials"); }
             set { BackingStore?.Set("sourceMaterials", value); }
         }
 #nullable restore
 #else
-        public List<string> SourceMaterials {
+        public List<string> SourceMaterials
+        {
             get { return BackingStore?.Get<List<string>>("sourceMaterials"); }
             set { BackingStore?.Set("sourceMaterials", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public AlertStatus? Status {
+        public AlertStatus? Status
+        {
             get { return BackingStore?.Get<AlertStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>User-definable labels that can be applied to an alert and can serve as filter conditions (for example &apos;HVA&apos;, &apos;SAW&apos;) (supports update).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags {
+        public List<string>? Tags
+        {
             get { return BackingStore?.Get<List<string>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
 #nullable restore
 #else
-        public List<string> Tags {
+        public List<string> Tags
+        {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
@@ -393,13 +451,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Alert title. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title {
+        public string? Title
+        {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #nullable restore
 #else
-        public string Title {
+        public string Title
+        {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
@@ -407,13 +467,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Security-related information about the specific properties that triggered the alert (properties appearing in the alert). Alerts might contain information about multiple users, hosts, files, ip addresses. This field indicates which properties triggered the alert generation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AlertTrigger>? Triggers {
+        public List<AlertTrigger>? Triggers
+        {
             get { return BackingStore?.Get<List<AlertTrigger>?>("triggers"); }
             set { BackingStore?.Set("triggers", value); }
         }
 #nullable restore
 #else
-        public List<AlertTrigger> Triggers {
+        public List<AlertTrigger> Triggers
+        {
             get { return BackingStore?.Get<List<AlertTrigger>>("triggers"); }
             set { BackingStore?.Set("triggers", value); }
         }
@@ -421,13 +483,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The uriClickSecurityStates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UriClickSecurityState>? UriClickSecurityStates {
+        public List<UriClickSecurityState>? UriClickSecurityStates
+        {
             get { return BackingStore?.Get<List<UriClickSecurityState>?>("uriClickSecurityStates"); }
             set { BackingStore?.Set("uriClickSecurityStates", value); }
         }
 #nullable restore
 #else
-        public List<UriClickSecurityState> UriClickSecurityStates {
+        public List<UriClickSecurityState> UriClickSecurityStates
+        {
             get { return BackingStore?.Get<List<UriClickSecurityState>>("uriClickSecurityStates"); }
             set { BackingStore?.Set("uriClickSecurityStates", value); }
         }
@@ -435,13 +499,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Security-related stateful information generated by the provider about the user accounts related to this alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSecurityState>? UserStates {
+        public List<UserSecurityState>? UserStates
+        {
             get { return BackingStore?.Get<List<UserSecurityState>?>("userStates"); }
             set { BackingStore?.Set("userStates", value); }
         }
 #nullable restore
 #else
-        public List<UserSecurityState> UserStates {
+        public List<UserSecurityState> UserStates
+        {
             get { return BackingStore?.Get<List<UserSecurityState>>("userStates"); }
             set { BackingStore?.Set("userStates", value); }
         }
@@ -449,13 +515,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=Windows Defender ATP; subProvider=AppLocker). Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SecurityVendorInformation? VendorInformation {
+        public SecurityVendorInformation? VendorInformation
+        {
             get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #nullable restore
 #else
-        public SecurityVendorInformation VendorInformation {
+        public SecurityVendorInformation VendorInformation
+        {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
@@ -463,13 +531,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Threat intelligence pertaining to one or more vulnerabilities related to this alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VulnerabilityState>? VulnerabilityStates {
+        public List<VulnerabilityState>? VulnerabilityStates
+        {
             get { return BackingStore?.Get<List<VulnerabilityState>?>("vulnerabilityStates"); }
             set { BackingStore?.Set("vulnerabilityStates", value); }
         }
 #nullable restore
 #else
-        public List<VulnerabilityState> VulnerabilityStates {
+        public List<VulnerabilityState> VulnerabilityStates
+        {
             get { return BackingStore?.Get<List<VulnerabilityState>>("vulnerabilityStates"); }
             set { BackingStore?.Set("vulnerabilityStates", value); }
         }
@@ -492,45 +562,45 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activityGroupName", n => { ActivityGroupName = n.GetStringValue(); } },
-                {"alertDetections", n => { AlertDetections = n.GetCollectionOfObjectValues<AlertDetection>(AlertDetection.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
-                {"azureSubscriptionId", n => { AzureSubscriptionId = n.GetStringValue(); } },
-                {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
-                {"category", n => { Category = n.GetStringValue(); } },
-                {"closedDateTime", n => { ClosedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"cloudAppStates", n => { CloudAppStates = n.GetCollectionOfObjectValues<CloudAppSecurityState>(CloudAppSecurityState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"comments", n => { Comments = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"confidence", n => { Confidence = n.GetIntValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"detectionIds", n => { DetectionIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
-                {"feedback", n => { Feedback = n.GetEnumValue<AlertFeedback>(); } },
-                {"fileStates", n => { FileStates = n.GetCollectionOfObjectValues<FileSecurityState>(FileSecurityState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"historyStates", n => { HistoryStates = n.GetCollectionOfObjectValues<AlertHistoryState>(AlertHistoryState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"hostStates", n => { HostStates = n.GetCollectionOfObjectValues<HostSecurityState>(HostSecurityState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"incidentIds", n => { IncidentIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"investigationSecurityStates", n => { InvestigationSecurityStates = n.GetCollectionOfObjectValues<InvestigationSecurityState>(InvestigationSecurityState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastEventDateTime", n => { LastEventDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"malwareStates", n => { MalwareStates = n.GetCollectionOfObjectValues<MalwareState>(MalwareState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"messageSecurityStates", n => { MessageSecurityStates = n.GetCollectionOfObjectValues<MessageSecurityState>(MessageSecurityState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"networkConnections", n => { NetworkConnections = n.GetCollectionOfObjectValues<NetworkConnection>(NetworkConnection.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"processes", n => { Processes = n.GetCollectionOfObjectValues<Process>(Process.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"recommendedActions", n => { RecommendedActions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"registryKeyStates", n => { RegistryKeyStates = n.GetCollectionOfObjectValues<RegistryKeyState>(RegistryKeyState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"securityResources", n => { SecurityResources = n.GetCollectionOfObjectValues<SecurityResource>(SecurityResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"severity", n => { Severity = n.GetEnumValue<AlertSeverity>(); } },
-                {"sourceMaterials", n => { SourceMaterials = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"status", n => { Status = n.GetEnumValue<AlertStatus>(); } },
-                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"title", n => { Title = n.GetStringValue(); } },
-                {"triggers", n => { Triggers = n.GetCollectionOfObjectValues<AlertTrigger>(AlertTrigger.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"uriClickSecurityStates", n => { UriClickSecurityStates = n.GetCollectionOfObjectValues<UriClickSecurityState>(UriClickSecurityState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userStates", n => { UserStates = n.GetCollectionOfObjectValues<UserSecurityState>(UserSecurityState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
-                {"vulnerabilityStates", n => { VulnerabilityStates = n.GetCollectionOfObjectValues<VulnerabilityState>(VulnerabilityState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "activityGroupName", n => { ActivityGroupName = n.GetStringValue(); } },
+                { "alertDetections", n => { AlertDetections = n.GetCollectionOfObjectValues<AlertDetection>(AlertDetection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignedTo", n => { AssignedTo = n.GetStringValue(); } },
+                { "azureSubscriptionId", n => { AzureSubscriptionId = n.GetStringValue(); } },
+                { "azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
+                { "category", n => { Category = n.GetStringValue(); } },
+                { "closedDateTime", n => { ClosedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "cloudAppStates", n => { CloudAppStates = n.GetCollectionOfObjectValues<CloudAppSecurityState>(CloudAppSecurityState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "comments", n => { Comments = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "confidence", n => { Confidence = n.GetIntValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "detectionIds", n => { DetectionIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
+                { "feedback", n => { Feedback = n.GetEnumValue<AlertFeedback>(); } },
+                { "fileStates", n => { FileStates = n.GetCollectionOfObjectValues<FileSecurityState>(FileSecurityState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "historyStates", n => { HistoryStates = n.GetCollectionOfObjectValues<AlertHistoryState>(AlertHistoryState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hostStates", n => { HostStates = n.GetCollectionOfObjectValues<HostSecurityState>(HostSecurityState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "incidentIds", n => { IncidentIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "investigationSecurityStates", n => { InvestigationSecurityStates = n.GetCollectionOfObjectValues<InvestigationSecurityState>(InvestigationSecurityState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastEventDateTime", n => { LastEventDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "malwareStates", n => { MalwareStates = n.GetCollectionOfObjectValues<MalwareState>(MalwareState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "messageSecurityStates", n => { MessageSecurityStates = n.GetCollectionOfObjectValues<MessageSecurityState>(MessageSecurityState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "networkConnections", n => { NetworkConnections = n.GetCollectionOfObjectValues<NetworkConnection>(NetworkConnection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "processes", n => { Processes = n.GetCollectionOfObjectValues<Process>(Process.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recommendedActions", n => { RecommendedActions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "registryKeyStates", n => { RegistryKeyStates = n.GetCollectionOfObjectValues<RegistryKeyState>(RegistryKeyState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "securityResources", n => { SecurityResources = n.GetCollectionOfObjectValues<SecurityResource>(SecurityResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "severity", n => { Severity = n.GetEnumValue<AlertSeverity>(); } },
+                { "sourceMaterials", n => { SourceMaterials = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<AlertStatus>(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
+                { "triggers", n => { Triggers = n.GetCollectionOfObjectValues<AlertTrigger>(AlertTrigger.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "uriClickSecurityStates", n => { UriClickSecurityStates = n.GetCollectionOfObjectValues<UriClickSecurityState>(UriClickSecurityState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userStates", n => { UserStates = n.GetCollectionOfObjectValues<UserSecurityState>(UserSecurityState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+                { "vulnerabilityStates", n => { VulnerabilityStates = n.GetCollectionOfObjectValues<VulnerabilityState>(VulnerabilityState.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

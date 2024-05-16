@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Applications.Item.AddPassword {
+namespace Microsoft.Graph.Applications.Item.AddPassword
+{
     #pragma warning disable CS1591
-    public class AddPasswordPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AddPasswordPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Applications.Item.AddPassword {
         /// <summary>The passwordCredential property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.PasswordCredential? PasswordCredential {
+        public Microsoft.Graph.Models.PasswordCredential? PasswordCredential
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.PasswordCredential?>("passwordCredential"); }
             set { BackingStore?.Set("passwordCredential", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.PasswordCredential PasswordCredential {
+        public Microsoft.Graph.Models.PasswordCredential PasswordCredential
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.PasswordCredential>("passwordCredential"); }
             set { BackingStore?.Set("passwordCredential", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Applications.Item.AddPassword {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"passwordCredential", n => { PasswordCredential = n.GetObjectValue<Microsoft.Graph.Models.PasswordCredential>(Microsoft.Graph.Models.PasswordCredential.CreateFromDiscriminatorValue); } },
+                { "passwordCredential", n => { PasswordCredential = n.GetObjectValue<Microsoft.Graph.Models.PasswordCredential>(Microsoft.Graph.Models.PasswordCredential.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

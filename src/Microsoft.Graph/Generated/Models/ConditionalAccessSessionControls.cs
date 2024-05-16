@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ConditionalAccessSessionControls : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConditionalAccessSessionControls : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ApplicationEnforcedRestrictionsSessionControl? ApplicationEnforcedRestrictions {
+        public ApplicationEnforcedRestrictionsSessionControl? ApplicationEnforcedRestrictions
+        {
             get { return BackingStore?.Get<ApplicationEnforcedRestrictionsSessionControl?>("applicationEnforcedRestrictions"); }
             set { BackingStore?.Set("applicationEnforcedRestrictions", value); }
         }
 #nullable restore
 #else
-        public ApplicationEnforcedRestrictionsSessionControl ApplicationEnforcedRestrictions {
+        public ApplicationEnforcedRestrictionsSessionControl ApplicationEnforcedRestrictions
+        {
             get { return BackingStore?.Get<ApplicationEnforcedRestrictionsSessionControl>("applicationEnforcedRestrictions"); }
             set { BackingStore?.Set("applicationEnforcedRestrictions", value); }
         }
@@ -34,32 +38,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Session control to apply cloud app security.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudAppSecuritySessionControl? CloudAppSecurity {
+        public CloudAppSecuritySessionControl? CloudAppSecurity
+        {
             get { return BackingStore?.Get<CloudAppSecuritySessionControl?>("cloudAppSecurity"); }
             set { BackingStore?.Set("cloudAppSecurity", value); }
         }
 #nullable restore
 #else
-        public CloudAppSecuritySessionControl CloudAppSecurity {
+        public CloudAppSecuritySessionControl CloudAppSecurity
+        {
             get { return BackingStore?.Get<CloudAppSecuritySessionControl>("cloudAppSecurity"); }
             set { BackingStore?.Set("cloudAppSecurity", value); }
         }
 #endif
         /// <summary>Session control that determines whether it is acceptable for Microsoft Entra ID to extend existing sessions based on information collected prior to an outage or not.</summary>
-        public bool? DisableResilienceDefaults {
+        public bool? DisableResilienceDefaults
+        {
             get { return BackingStore?.Get<bool?>("disableResilienceDefaults"); }
             set { BackingStore?.Set("disableResilienceDefaults", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PersistentBrowserSessionControl? PersistentBrowser {
+        public PersistentBrowserSessionControl? PersistentBrowser
+        {
             get { return BackingStore?.Get<PersistentBrowserSessionControl?>("persistentBrowser"); }
             set { BackingStore?.Set("persistentBrowser", value); }
         }
 #nullable restore
 #else
-        public PersistentBrowserSessionControl PersistentBrowser {
+        public PersistentBrowserSessionControl PersistentBrowser
+        {
             get { return BackingStore?.Get<PersistentBrowserSessionControl>("persistentBrowser"); }
             set { BackingStore?.Set("persistentBrowser", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Session control to enforce signin frequency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInFrequencySessionControl? SignInFrequency {
+        public SignInFrequencySessionControl? SignInFrequency
+        {
             get { return BackingStore?.Get<SignInFrequencySessionControl?>("signInFrequency"); }
             set { BackingStore?.Set("signInFrequency", value); }
         }
 #nullable restore
 #else
-        public SignInFrequencySessionControl SignInFrequency {
+        public SignInFrequencySessionControl SignInFrequency
+        {
             get { return BackingStore?.Get<SignInFrequencySessionControl>("signInFrequency"); }
             set { BackingStore?.Set("signInFrequency", value); }
         }
@@ -118,12 +131,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"applicationEnforcedRestrictions", n => { ApplicationEnforcedRestrictions = n.GetObjectValue<ApplicationEnforcedRestrictionsSessionControl>(ApplicationEnforcedRestrictionsSessionControl.CreateFromDiscriminatorValue); } },
-                {"cloudAppSecurity", n => { CloudAppSecurity = n.GetObjectValue<CloudAppSecuritySessionControl>(CloudAppSecuritySessionControl.CreateFromDiscriminatorValue); } },
-                {"disableResilienceDefaults", n => { DisableResilienceDefaults = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"persistentBrowser", n => { PersistentBrowser = n.GetObjectValue<PersistentBrowserSessionControl>(PersistentBrowserSessionControl.CreateFromDiscriminatorValue); } },
-                {"signInFrequency", n => { SignInFrequency = n.GetObjectValue<SignInFrequencySessionControl>(SignInFrequencySessionControl.CreateFromDiscriminatorValue); } },
+                { "applicationEnforcedRestrictions", n => { ApplicationEnforcedRestrictions = n.GetObjectValue<ApplicationEnforcedRestrictionsSessionControl>(ApplicationEnforcedRestrictionsSessionControl.CreateFromDiscriminatorValue); } },
+                { "cloudAppSecurity", n => { CloudAppSecurity = n.GetObjectValue<CloudAppSecuritySessionControl>(CloudAppSecuritySessionControl.CreateFromDiscriminatorValue); } },
+                { "disableResilienceDefaults", n => { DisableResilienceDefaults = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "persistentBrowser", n => { PersistentBrowser = n.GetObjectValue<PersistentBrowserSessionControl>(PersistentBrowserSessionControl.CreateFromDiscriminatorValue); } },
+                { "signInFrequency", n => { SignInFrequency = n.GetObjectValue<SignInFrequencySessionControl>(SignInFrequencySessionControl.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

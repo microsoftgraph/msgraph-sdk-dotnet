@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookComment : Entity, IParsable 
+    public class WorkbookComment : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The content of comment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content {
+        public string? Content
+        {
             get { return BackingStore?.Get<string?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public string Content {
+        public string Content
+        {
             get { return BackingStore?.Get<string>("content"); }
             set { BackingStore?.Set("content", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicates the type for the comment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentType {
+        public string? ContentType
+        {
             get { return BackingStore?.Get<string?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
 #nullable restore
 #else
-        public string ContentType {
+        public string ContentType
+        {
             get { return BackingStore?.Get<string>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The replies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookCommentReply>? Replies {
+        public List<WorkbookCommentReply>? Replies
+        {
             get { return BackingStore?.Get<List<WorkbookCommentReply>?>("replies"); }
             set { BackingStore?.Set("replies", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookCommentReply> Replies {
+        public List<WorkbookCommentReply> Replies
+        {
             get { return BackingStore?.Get<List<WorkbookCommentReply>>("replies"); }
             set { BackingStore?.Set("replies", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"content", n => { Content = n.GetStringValue(); } },
-                {"contentType", n => { ContentType = n.GetStringValue(); } },
-                {"replies", n => { Replies = n.GetCollectionOfObjectValues<WorkbookCommentReply>(WorkbookCommentReply.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "content", n => { Content = n.GetStringValue(); } },
+                { "contentType", n => { ContentType = n.GetStringValue(); } },
+                { "replies", n => { Replies = n.GetCollectionOfObjectValues<WorkbookCommentReply>(WorkbookCommentReply.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

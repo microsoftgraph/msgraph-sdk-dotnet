@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PrivilegedAccessRoot : Entity, IParsable 
+    public class PrivilegedAccessRoot : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A group that&apos;s governed through Privileged Identity Management (PIM).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrivilegedAccessGroup? Group {
+        public PrivilegedAccessGroup? Group
+        {
             get { return BackingStore?.Get<PrivilegedAccessGroup?>("group"); }
             set { BackingStore?.Set("group", value); }
         }
 #nullable restore
 #else
-        public PrivilegedAccessGroup Group {
+        public PrivilegedAccessGroup Group
+        {
             get { return BackingStore?.Get<PrivilegedAccessGroup>("group"); }
             set { BackingStore?.Set("group", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"group", n => { Group = n.GetObjectValue<PrivilegedAccessGroup>(PrivilegedAccessGroup.CreateFromDiscriminatorValue); } },
+                { "group", n => { Group = n.GetObjectValue<PrivilegedAccessGroup>(PrivilegedAccessGroup.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

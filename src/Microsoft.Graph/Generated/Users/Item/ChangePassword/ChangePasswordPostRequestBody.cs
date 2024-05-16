@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.ChangePassword {
+namespace Microsoft.Graph.Users.Item.ChangePassword
+{
     #pragma warning disable CS1591
-    public class ChangePasswordPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ChangePasswordPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Users.Item.ChangePassword {
         /// <summary>The currentPassword property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrentPassword {
+        public string? CurrentPassword
+        {
             get { return BackingStore?.Get<string?>("currentPassword"); }
             set { BackingStore?.Set("currentPassword", value); }
         }
 #nullable restore
 #else
-        public string CurrentPassword {
+        public string CurrentPassword
+        {
             get { return BackingStore?.Get<string>("currentPassword"); }
             set { BackingStore?.Set("currentPassword", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Users.Item.ChangePassword {
         /// <summary>The newPassword property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewPassword {
+        public string? NewPassword
+        {
             get { return BackingStore?.Get<string?>("newPassword"); }
             set { BackingStore?.Set("newPassword", value); }
         }
 #nullable restore
 #else
-        public string NewPassword {
+        public string NewPassword
+        {
             get { return BackingStore?.Get<string>("newPassword"); }
             set { BackingStore?.Set("newPassword", value); }
         }
@@ -71,8 +77,8 @@ namespace Microsoft.Graph.Users.Item.ChangePassword {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"currentPassword", n => { CurrentPassword = n.GetStringValue(); } },
-                {"newPassword", n => { NewPassword = n.GetStringValue(); } },
+                { "currentPassword", n => { CurrentPassword = n.GetStringValue(); } },
+                { "newPassword", n => { NewPassword = n.GetStringValue(); } },
             };
         }
         /// <summary>

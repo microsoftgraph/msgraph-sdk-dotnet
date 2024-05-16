@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class AmazonResourceEvidence : AlertEvidence, IParsable 
+    public class AmazonResourceEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The unique identifier for the Amazon account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AmazonAccountId {
+        public string? AmazonAccountId
+        {
             get { return BackingStore?.Get<string?>("amazonAccountId"); }
             set { BackingStore?.Set("amazonAccountId", value); }
         }
 #nullable restore
 #else
-        public string AmazonAccountId {
+        public string AmazonAccountId
+        {
             get { return BackingStore?.Get<string>("amazonAccountId"); }
             set { BackingStore?.Set("amazonAccountId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The Amazon resource identifier (ARN) for the cloud resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AmazonResourceId {
+        public string? AmazonResourceId
+        {
             get { return BackingStore?.Get<string?>("amazonResourceId"); }
             set { BackingStore?.Set("amazonResourceId", value); }
         }
 #nullable restore
 #else
-        public string AmazonResourceId {
+        public string AmazonResourceId
+        {
             get { return BackingStore?.Get<string>("amazonResourceId"); }
             set { BackingStore?.Set("amazonResourceId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The name of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceName {
+        public string? ResourceName
+        {
             get { return BackingStore?.Get<string?>("resourceName"); }
             set { BackingStore?.Set("resourceName", value); }
         }
 #nullable restore
 #else
-        public string ResourceName {
+        public string ResourceName
+        {
             get { return BackingStore?.Get<string>("resourceName"); }
             set { BackingStore?.Set("resourceName", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The type of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceType {
+        public string? ResourceType
+        {
             get { return BackingStore?.Get<string?>("resourceType"); }
             set { BackingStore?.Set("resourceType", value); }
         }
 #nullable restore
 #else
-        public string ResourceType {
+        public string ResourceType
+        {
             get { return BackingStore?.Get<string>("resourceType"); }
             set { BackingStore?.Set("resourceType", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"amazonAccountId", n => { AmazonAccountId = n.GetStringValue(); } },
-                {"amazonResourceId", n => { AmazonResourceId = n.GetStringValue(); } },
-                {"resourceName", n => { ResourceName = n.GetStringValue(); } },
-                {"resourceType", n => { ResourceType = n.GetStringValue(); } },
+                { "amazonAccountId", n => { AmazonAccountId = n.GetStringValue(); } },
+                { "amazonResourceId", n => { AmazonResourceId = n.GetStringValue(); } },
+                { "resourceName", n => { ResourceName = n.GetStringValue(); } },
+                { "resourceType", n => { ResourceType = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks {
+namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks
+{
     #pragma warning disable CS1591
-    public class GetRecentNotebooksWithIncludePersonalNotebooksGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetRecentNotebooksWithIncludePersonalNotebooksGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RecentNotebook>? Value {
+        public List<RecentNotebook>? Value
+        {
             get { return BackingStore?.Get<List<RecentNotebook>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<RecentNotebook> Value {
+        public List<RecentNotebook> Value
+        {
             get { return BackingStore?.Get<List<RecentNotebook>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.GetRecentNote
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<RecentNotebook>(RecentNotebook.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<RecentNotebook>(RecentNotebook.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

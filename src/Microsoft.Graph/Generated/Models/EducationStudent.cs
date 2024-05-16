@@ -6,52 +6,60 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EducationStudent : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EducationStudent : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Birth date of the student.</summary>
-        public Date? BirthDate {
+        public Date? BirthDate
+        {
             get { return BackingStore?.Get<Date?>("birthDate"); }
             set { BackingStore?.Set("birthDate", value); }
         }
         /// <summary>ID of the student in the source system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId {
+        public string? ExternalId
+        {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
 #nullable restore
 #else
-        public string ExternalId {
+        public string ExternalId
+        {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
 #endif
         /// <summary>The possible values are: female, male, other, unknownFutureValue.</summary>
-        public EducationGender? Gender {
+        public EducationGender? Gender
+        {
             get { return BackingStore?.Get<EducationGender?>("gender"); }
             set { BackingStore?.Set("gender", value); }
         }
         /// <summary>Current grade level of the student.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Grade {
+        public string? Grade
+        {
             get { return BackingStore?.Get<string?>("grade"); }
             set { BackingStore?.Set("grade", value); }
         }
 #nullable restore
 #else
-        public string Grade {
+        public string Grade
+        {
             get { return BackingStore?.Get<string>("grade"); }
             set { BackingStore?.Set("grade", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Year the student is graduating from the school.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GraduationYear {
+        public string? GraduationYear
+        {
             get { return BackingStore?.Get<string?>("graduationYear"); }
             set { BackingStore?.Set("graduationYear", value); }
         }
 #nullable restore
 #else
-        public string GraduationYear {
+        public string GraduationYear
+        {
             get { return BackingStore?.Get<string>("graduationYear"); }
             set { BackingStore?.Set("graduationYear", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Student Number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StudentNumber {
+        public string? StudentNumber
+        {
             get { return BackingStore?.Get<string?>("studentNumber"); }
             set { BackingStore?.Set("studentNumber", value); }
         }
 #nullable restore
 #else
-        public string StudentNumber {
+        public string StudentNumber
+        {
             get { return BackingStore?.Get<string>("studentNumber"); }
             set { BackingStore?.Set("studentNumber", value); }
         }
@@ -124,13 +138,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"birthDate", n => { BirthDate = n.GetDateValue(); } },
-                {"externalId", n => { ExternalId = n.GetStringValue(); } },
-                {"gender", n => { Gender = n.GetEnumValue<EducationGender>(); } },
-                {"grade", n => { Grade = n.GetStringValue(); } },
-                {"graduationYear", n => { GraduationYear = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"studentNumber", n => { StudentNumber = n.GetStringValue(); } },
+                { "birthDate", n => { BirthDate = n.GetDateValue(); } },
+                { "externalId", n => { ExternalId = n.GetStringValue(); } },
+                { "gender", n => { Gender = n.GetEnumValue<EducationGender>(); } },
+                { "grade", n => { Grade = n.GetStringValue(); } },
+                { "graduationYear", n => { GraduationYear = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "studentNumber", n => { StudentNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TokenMeetingInfo : MeetingInfo, IParsable 
+    public class TokenMeetingInfo : MeetingInfo, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The token used to join the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Token {
+        public string? Token
+        {
             get { return BackingStore?.Get<string?>("token"); }
             set { BackingStore?.Set("token", value); }
         }
 #nullable restore
 #else
-        public string Token {
+        public string Token
+        {
             get { return BackingStore?.Get<string>("token"); }
             set { BackingStore?.Set("token", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"token", n => { Token = n.GetStringValue(); } },
+                { "token", n => { Token = n.GetStringValue(); } },
             };
         }
         /// <summary>

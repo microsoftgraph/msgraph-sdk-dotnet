@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Represents an assignment to a group.
     /// </summary>
-    public class GroupAssignmentTarget : DeviceAndAppManagementAssignmentTarget, IParsable 
+    public class GroupAssignmentTarget : DeviceAndAppManagementAssignmentTarget, IParsable
     {
         /// <summary>The group Id that is the target of the assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupId {
+        public string? GroupId
+        {
             get { return BackingStore?.Get<string?>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
 #nullable restore
 #else
-        public string GroupId {
+        public string GroupId
+        {
             get { return BackingStore?.Get<string>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
@@ -54,7 +57,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"groupId", n => { GroupId = n.GetStringValue(); } },
+                { "groupId", n => { GroupId = n.GetStringValue(); } },
             };
         }
         /// <summary>

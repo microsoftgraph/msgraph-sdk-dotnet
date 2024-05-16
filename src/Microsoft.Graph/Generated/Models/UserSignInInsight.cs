@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UserSignInInsight : GovernanceInsight, IParsable 
+    public class UserSignInInsight : GovernanceInsight, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates when the user last signed in.</summary>
-        public DateTimeOffset? LastSignInDateTime {
+        public DateTimeOffset? LastSignInDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSignInDateTime"); }
             set { BackingStore?.Set("lastSignInDateTime", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"lastSignInDateTime", n => { LastSignInDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastSignInDateTime", n => { LastSignInDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

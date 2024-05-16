@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WebApplication : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WebApplication : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Home page or landing page of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HomePageUrl {
+        public string? HomePageUrl
+        {
             get { return BackingStore?.Get<string?>("homePageUrl"); }
             set { BackingStore?.Set("homePageUrl", value); }
         }
 #nullable restore
 #else
-        public string HomePageUrl {
+        public string HomePageUrl
+        {
             get { return BackingStore?.Get<string>("homePageUrl"); }
             set { BackingStore?.Set("homePageUrl", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ImplicitGrantSettings? ImplicitGrantSettings {
+        public Microsoft.Graph.Models.ImplicitGrantSettings? ImplicitGrantSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ImplicitGrantSettings?>("implicitGrantSettings"); }
             set { BackingStore?.Set("implicitGrantSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ImplicitGrantSettings ImplicitGrantSettings {
+        public Microsoft.Graph.Models.ImplicitGrantSettings ImplicitGrantSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ImplicitGrantSettings>("implicitGrantSettings"); }
             set { BackingStore?.Set("implicitGrantSettings", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Specifies the URL that is used by Microsoft&apos;s authorization service to log out a user using front-channel, back-channel or SAML logout protocols.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogoutUrl {
+        public string? LogoutUrl
+        {
             get { return BackingStore?.Get<string?>("logoutUrl"); }
             set { BackingStore?.Set("logoutUrl", value); }
         }
 #nullable restore
 #else
-        public string LogoutUrl {
+        public string LogoutUrl
+        {
             get { return BackingStore?.Get<string>("logoutUrl"); }
             set { BackingStore?.Set("logoutUrl", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RedirectUris {
+        public List<string>? RedirectUris
+        {
             get { return BackingStore?.Get<List<string>?>("redirectUris"); }
             set { BackingStore?.Set("redirectUris", value); }
         }
 #nullable restore
 #else
-        public List<string> RedirectUris {
+        public List<string> RedirectUris
+        {
             get { return BackingStore?.Get<List<string>>("redirectUris"); }
             set { BackingStore?.Set("redirectUris", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The redirectUriSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.RedirectUriSettings>? RedirectUriSettings {
+        public List<Microsoft.Graph.Models.RedirectUriSettings>? RedirectUriSettings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.RedirectUriSettings>?>("redirectUriSettings"); }
             set { BackingStore?.Set("redirectUriSettings", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.RedirectUriSettings> RedirectUriSettings {
+        public List<Microsoft.Graph.Models.RedirectUriSettings> RedirectUriSettings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.RedirectUriSettings>>("redirectUriSettings"); }
             set { BackingStore?.Set("redirectUriSettings", value); }
         }
@@ -127,12 +141,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"homePageUrl", n => { HomePageUrl = n.GetStringValue(); } },
-                {"implicitGrantSettings", n => { ImplicitGrantSettings = n.GetObjectValue<Microsoft.Graph.Models.ImplicitGrantSettings>(Microsoft.Graph.Models.ImplicitGrantSettings.CreateFromDiscriminatorValue); } },
-                {"logoutUrl", n => { LogoutUrl = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"redirectUriSettings", n => { RedirectUriSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.RedirectUriSettings>(Microsoft.Graph.Models.RedirectUriSettings.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"redirectUris", n => { RedirectUris = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "homePageUrl", n => { HomePageUrl = n.GetStringValue(); } },
+                { "implicitGrantSettings", n => { ImplicitGrantSettings = n.GetObjectValue<Microsoft.Graph.Models.ImplicitGrantSettings>(Microsoft.Graph.Models.ImplicitGrantSettings.CreateFromDiscriminatorValue); } },
+                { "logoutUrl", n => { LogoutUrl = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "redirectUriSettings", n => { RedirectUriSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.RedirectUriSettings>(Microsoft.Graph.Models.RedirectUriSettings.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "redirectUris", n => { RedirectUris = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

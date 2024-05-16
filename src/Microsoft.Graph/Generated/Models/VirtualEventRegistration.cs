@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class VirtualEventRegistration : Entity, IParsable 
+    public class VirtualEventRegistration : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CancelationDateTime {
+        public DateTimeOffset? CancelationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("cancelationDateTime"); }
             set { BackingStore?.Set("cancelationDateTime", value); }
         }
         /// <summary>Email address of the registrant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email {
+        public string? Email
+        {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
 #nullable restore
 #else
-        public string Email {
+        public string Email
+        {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>First name of the registrant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstName {
+        public string? FirstName
+        {
             get { return BackingStore?.Get<string?>("firstName"); }
             set { BackingStore?.Set("firstName", value); }
         }
 #nullable restore
 #else
-        public string FirstName {
+        public string FirstName
+        {
             get { return BackingStore?.Get<string>("firstName"); }
             set { BackingStore?.Set("firstName", value); }
         }
@@ -45,51 +51,59 @@ namespace Microsoft.Graph.Models {
         /// <summary>Last name of the registrant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastName {
+        public string? LastName
+        {
             get { return BackingStore?.Get<string?>("lastName"); }
             set { BackingStore?.Set("lastName", value); }
         }
 #nullable restore
 #else
-        public string LastName {
+        public string LastName
+        {
             get { return BackingStore?.Get<string>("lastName"); }
             set { BackingStore?.Set("lastName", value); }
         }
 #endif
         /// <summary>Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? RegistrationDateTime {
+        public DateTimeOffset? RegistrationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("registrationDateTime"); }
             set { BackingStore?.Set("registrationDateTime", value); }
         }
         /// <summary>The registrant&apos;s answer to the registration questions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventRegistrationQuestionAnswer>? RegistrationQuestionAnswers {
+        public List<VirtualEventRegistrationQuestionAnswer>? RegistrationQuestionAnswers
+        {
             get { return BackingStore?.Get<List<VirtualEventRegistrationQuestionAnswer>?>("registrationQuestionAnswers"); }
             set { BackingStore?.Set("registrationQuestionAnswers", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventRegistrationQuestionAnswer> RegistrationQuestionAnswers {
+        public List<VirtualEventRegistrationQuestionAnswer> RegistrationQuestionAnswers
+        {
             get { return BackingStore?.Get<List<VirtualEventRegistrationQuestionAnswer>>("registrationQuestionAnswers"); }
             set { BackingStore?.Set("registrationQuestionAnswers", value); }
         }
 #endif
         /// <summary>Registration status of the registrant. Read-only.</summary>
-        public VirtualEventAttendeeRegistrationStatus? Status {
+        public VirtualEventAttendeeRegistrationStatus? Status
+        {
             get { return BackingStore?.Get<VirtualEventAttendeeRegistrationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The registrant&apos;s ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -112,14 +126,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"cancelationDateTime", n => { CancelationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"firstName", n => { FirstName = n.GetStringValue(); } },
-                {"lastName", n => { LastName = n.GetStringValue(); } },
-                {"registrationDateTime", n => { RegistrationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"registrationQuestionAnswers", n => { RegistrationQuestionAnswers = n.GetCollectionOfObjectValues<VirtualEventRegistrationQuestionAnswer>(VirtualEventRegistrationQuestionAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"status", n => { Status = n.GetEnumValue<VirtualEventAttendeeRegistrationStatus>(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "cancelationDateTime", n => { CancelationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "firstName", n => { FirstName = n.GetStringValue(); } },
+                { "lastName", n => { LastName = n.GetStringValue(); } },
+                { "registrationDateTime", n => { RegistrationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "registrationQuestionAnswers", n => { RegistrationQuestionAnswers = n.GetCollectionOfObjectValues<VirtualEventRegistrationQuestionAnswer>(VirtualEventRegistrationQuestionAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<VirtualEventAttendeeRegistrationStatus>(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

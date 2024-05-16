@@ -4,50 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ConversationThread : Entity, IParsable 
+    public class ConversationThread : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Cc: recipients for the thread. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recipient>? CcRecipients {
+        public List<Recipient>? CcRecipients
+        {
             get { return BackingStore?.Get<List<Recipient>?>("ccRecipients"); }
             set { BackingStore?.Set("ccRecipients", value); }
         }
 #nullable restore
 #else
-        public List<Recipient> CcRecipients {
+        public List<Recipient> CcRecipients
+        {
             get { return BackingStore?.Get<List<Recipient>>("ccRecipients"); }
             set { BackingStore?.Set("ccRecipients", value); }
         }
 #endif
         /// <summary>Indicates whether any of the posts within this thread has at least one attachment. Returned by default.</summary>
-        public bool? HasAttachments {
+        public bool? HasAttachments
+        {
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
             set { BackingStore?.Set("hasAttachments", value); }
         }
         /// <summary>Indicates if the thread is locked. Returned by default.</summary>
-        public bool? IsLocked {
+        public bool? IsLocked
+        {
             get { return BackingStore?.Get<bool?>("isLocked"); }
             set { BackingStore?.Set("isLocked", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Returned by default.</summary>
-        public DateTimeOffset? LastDeliveredDateTime {
+        public DateTimeOffset? LastDeliveredDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastDeliveredDateTime"); }
             set { BackingStore?.Set("lastDeliveredDateTime", value); }
         }
         /// <summary>The posts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Post>? Posts {
+        public List<Post>? Posts
+        {
             get { return BackingStore?.Get<List<Post>?>("posts"); }
             set { BackingStore?.Set("posts", value); }
         }
 #nullable restore
 #else
-        public List<Post> Posts {
+        public List<Post> Posts
+        {
             get { return BackingStore?.Get<List<Post>>("posts"); }
             set { BackingStore?.Set("posts", value); }
         }
@@ -55,13 +63,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A short summary from the body of the latest post in this conversation. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Preview {
+        public string? Preview
+        {
             get { return BackingStore?.Get<string?>("preview"); }
             set { BackingStore?.Set("preview", value); }
         }
 #nullable restore
 #else
-        public string Preview {
+        public string Preview
+        {
             get { return BackingStore?.Get<string>("preview"); }
             set { BackingStore?.Set("preview", value); }
         }
@@ -69,13 +79,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Topic {
+        public string? Topic
+        {
             get { return BackingStore?.Get<string?>("topic"); }
             set { BackingStore?.Set("topic", value); }
         }
 #nullable restore
 #else
-        public string Topic {
+        public string Topic
+        {
             get { return BackingStore?.Get<string>("topic"); }
             set { BackingStore?.Set("topic", value); }
         }
@@ -83,13 +95,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The To: recipients for the thread. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recipient>? ToRecipients {
+        public List<Recipient>? ToRecipients
+        {
             get { return BackingStore?.Get<List<Recipient>?>("toRecipients"); }
             set { BackingStore?.Set("toRecipients", value); }
         }
 #nullable restore
 #else
-        public List<Recipient> ToRecipients {
+        public List<Recipient> ToRecipients
+        {
             get { return BackingStore?.Get<List<Recipient>>("toRecipients"); }
             set { BackingStore?.Set("toRecipients", value); }
         }
@@ -97,13 +111,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>All the users that sent a message to this thread. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UniqueSenders {
+        public List<string>? UniqueSenders
+        {
             get { return BackingStore?.Get<List<string>?>("uniqueSenders"); }
             set { BackingStore?.Set("uniqueSenders", value); }
         }
 #nullable restore
 #else
-        public List<string> UniqueSenders {
+        public List<string> UniqueSenders
+        {
             get { return BackingStore?.Get<List<string>>("uniqueSenders"); }
             set { BackingStore?.Set("uniqueSenders", value); }
         }
@@ -126,15 +142,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"ccRecipients", n => { CcRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
-                {"isLocked", n => { IsLocked = n.GetBoolValue(); } },
-                {"lastDeliveredDateTime", n => { LastDeliveredDateTime = n.GetDateTimeOffsetValue(); } },
-                {"posts", n => { Posts = n.GetCollectionOfObjectValues<Post>(Post.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"preview", n => { Preview = n.GetStringValue(); } },
-                {"toRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"topic", n => { Topic = n.GetStringValue(); } },
-                {"uniqueSenders", n => { UniqueSenders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "ccRecipients", n => { CcRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
+                { "isLocked", n => { IsLocked = n.GetBoolValue(); } },
+                { "lastDeliveredDateTime", n => { LastDeliveredDateTime = n.GetDateTimeOffsetValue(); } },
+                { "posts", n => { Posts = n.GetCollectionOfObjectValues<Post>(Post.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "preview", n => { Preview = n.GetStringValue(); } },
+                { "toRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "topic", n => { Topic = n.GetStringValue(); } },
+                { "uniqueSenders", n => { UniqueSenders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

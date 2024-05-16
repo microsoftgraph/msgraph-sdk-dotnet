@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Represents an icon for an app on the Home Screen
     /// </summary>
-    public class IosHomeScreenApp : IosHomeScreenItem, IParsable 
+    public class IosHomeScreenApp : IosHomeScreenItem, IParsable
     {
         /// <summary>BundleID of the app if isWebClip is false or the URL of a web clip if isWebClip is true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BundleID {
+        public string? BundleID
+        {
             get { return BackingStore?.Get<string?>("bundleID"); }
             set { BackingStore?.Set("bundleID", value); }
         }
 #nullable restore
 #else
-        public string BundleID {
+        public string BundleID
+        {
             get { return BackingStore?.Get<string>("bundleID"); }
             set { BackingStore?.Set("bundleID", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"bundleID", n => { BundleID = n.GetStringValue(); } },
+                { "bundleID", n => { BundleID = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Represents a custom question of the business.
     /// </summary>
-    public class BookingCustomQuestion : Entity, IParsable 
+    public class BookingCustomQuestion : Entity, IParsable
     {
         /// <summary>The expected answer type. The possible values are: text, radioButton, unknownFutureValue.</summary>
-        public Microsoft.Graph.Models.AnswerInputType? AnswerInputType {
+        public Microsoft.Graph.Models.AnswerInputType? AnswerInputType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AnswerInputType?>("answerInputType"); }
             set { BackingStore?.Set("answerInputType", value); }
         }
         /// <summary>List of possible answer values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AnswerOptions {
+        public List<string>? AnswerOptions
+        {
             get { return BackingStore?.Get<List<string>?>("answerOptions"); }
             set { BackingStore?.Set("answerOptions", value); }
         }
 #nullable restore
 #else
-        public List<string> AnswerOptions {
+        public List<string> AnswerOptions
+        {
             get { return BackingStore?.Get<List<string>>("answerOptions"); }
             set { BackingStore?.Set("answerOptions", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The question.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -61,9 +67,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"answerInputType", n => { AnswerInputType = n.GetEnumValue<AnswerInputType>(); } },
-                {"answerOptions", n => { AnswerOptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "answerInputType", n => { AnswerInputType = n.GetEnumValue<AnswerInputType>(); } },
+                { "answerOptions", n => { AnswerOptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
             };
         }
         /// <summary>

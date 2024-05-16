@@ -4,51 +4,59 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class NetworkConnectionEvidence : AlertEvidence, IParsable 
+    public class NetworkConnectionEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The destinationAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IpEvidence? DestinationAddress {
+        public IpEvidence? DestinationAddress
+        {
             get { return BackingStore?.Get<IpEvidence?>("destinationAddress"); }
             set { BackingStore?.Set("destinationAddress", value); }
         }
 #nullable restore
 #else
-        public IpEvidence DestinationAddress {
+        public IpEvidence DestinationAddress
+        {
             get { return BackingStore?.Get<IpEvidence>("destinationAddress"); }
             set { BackingStore?.Set("destinationAddress", value); }
         }
 #endif
         /// <summary>The destinationPort property</summary>
-        public int? DestinationPort {
+        public int? DestinationPort
+        {
             get { return BackingStore?.Get<int?>("destinationPort"); }
             set { BackingStore?.Set("destinationPort", value); }
         }
         /// <summary>The protocol property</summary>
-        public ProtocolType? Protocol {
+        public ProtocolType? Protocol
+        {
             get { return BackingStore?.Get<ProtocolType?>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
         /// <summary>The sourceAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IpEvidence? SourceAddress {
+        public IpEvidence? SourceAddress
+        {
             get { return BackingStore?.Get<IpEvidence?>("sourceAddress"); }
             set { BackingStore?.Set("sourceAddress", value); }
         }
 #nullable restore
 #else
-        public IpEvidence SourceAddress {
+        public IpEvidence SourceAddress
+        {
             get { return BackingStore?.Get<IpEvidence>("sourceAddress"); }
             set { BackingStore?.Set("sourceAddress", value); }
         }
 #endif
         /// <summary>The sourcePort property</summary>
-        public int? SourcePort {
+        public int? SourcePort
+        {
             get { return BackingStore?.Get<int?>("sourcePort"); }
             set { BackingStore?.Set("sourcePort", value); }
         }
@@ -77,11 +85,11 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"destinationAddress", n => { DestinationAddress = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
-                {"destinationPort", n => { DestinationPort = n.GetIntValue(); } },
-                {"protocol", n => { Protocol = n.GetEnumValue<ProtocolType>(); } },
-                {"sourceAddress", n => { SourceAddress = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
-                {"sourcePort", n => { SourcePort = n.GetIntValue(); } },
+                { "destinationAddress", n => { DestinationAddress = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
+                { "destinationPort", n => { DestinationPort = n.GetIntValue(); } },
+                { "protocol", n => { Protocol = n.GetEnumValue<ProtocolType>(); } },
+                { "sourceAddress", n => { SourceAddress = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
+                { "sourcePort", n => { SourcePort = n.GetIntValue(); } },
             };
         }
         /// <summary>

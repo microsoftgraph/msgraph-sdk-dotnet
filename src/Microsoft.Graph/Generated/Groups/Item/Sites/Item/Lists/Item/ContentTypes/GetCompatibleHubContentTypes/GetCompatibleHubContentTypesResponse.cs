@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes {
+namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes
+{
     [Obsolete("This class is obsolete. Use GetCompatibleHubContentTypesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetCompatibleHubContentTypesResponse : GetCompatibleHubContentTypesGetResponse, IParsable 
+    public class GetCompatibleHubContentTypesResponse : GetCompatibleHubContentTypesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

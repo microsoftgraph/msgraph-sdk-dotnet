@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class LearningProvider : Entity, IParsable 
+    public class LearningProvider : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The display name that appears in Viva Learning. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Indicates whether a provider can ingest learning course activity records. The default value is false. Set to true to make learningCourseActivities available for this provider.</summary>
-        public bool? IsCourseActivitySyncEnabled {
+        public bool? IsCourseActivitySyncEnabled
+        {
             get { return BackingStore?.Get<bool?>("isCourseActivitySyncEnabled"); }
             set { BackingStore?.Set("isCourseActivitySyncEnabled", value); }
         }
         /// <summary>Learning catalog items for the provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LearningContent>? LearningContents {
+        public List<LearningContent>? LearningContents
+        {
             get { return BackingStore?.Get<List<LearningContent>?>("learningContents"); }
             set { BackingStore?.Set("learningContents", value); }
         }
 #nullable restore
 #else
-        public List<LearningContent> LearningContents {
+        public List<LearningContent> LearningContents
+        {
             get { return BackingStore?.Get<List<LearningContent>>("learningContents"); }
             set { BackingStore?.Set("learningContents", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The learningCourseActivities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LearningCourseActivity>? LearningCourseActivities {
+        public List<LearningCourseActivity>? LearningCourseActivities
+        {
             get { return BackingStore?.Get<List<LearningCourseActivity>?>("learningCourseActivities"); }
             set { BackingStore?.Set("learningCourseActivities", value); }
         }
 #nullable restore
 #else
-        public List<LearningCourseActivity> LearningCourseActivities {
+        public List<LearningCourseActivity> LearningCourseActivities
+        {
             get { return BackingStore?.Get<List<LearningCourseActivity>>("learningCourseActivities"); }
             set { BackingStore?.Set("learningCourseActivities", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Authentication URL to access the courses for the provider. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoginWebUrl {
+        public string? LoginWebUrl
+        {
             get { return BackingStore?.Get<string?>("loginWebUrl"); }
             set { BackingStore?.Set("loginWebUrl", value); }
         }
 #nullable restore
 #else
-        public string LoginWebUrl {
+        public string LoginWebUrl
+        {
             get { return BackingStore?.Get<string>("loginWebUrl"); }
             set { BackingStore?.Set("loginWebUrl", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The long logo URL for the dark mode that needs to be a publicly accessible image. This image would be saved to the blob storage of Viva Learning for rendering within the Viva Learning app. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LongLogoWebUrlForDarkTheme {
+        public string? LongLogoWebUrlForDarkTheme
+        {
             get { return BackingStore?.Get<string?>("longLogoWebUrlForDarkTheme"); }
             set { BackingStore?.Set("longLogoWebUrlForDarkTheme", value); }
         }
 #nullable restore
 #else
-        public string LongLogoWebUrlForDarkTheme {
+        public string LongLogoWebUrlForDarkTheme
+        {
             get { return BackingStore?.Get<string>("longLogoWebUrlForDarkTheme"); }
             set { BackingStore?.Set("longLogoWebUrlForDarkTheme", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The long logo URL for the light mode that needs to be a publicly accessible image. This image would be saved to the blob storage of Viva Learning for rendering within the Viva Learning app. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LongLogoWebUrlForLightTheme {
+        public string? LongLogoWebUrlForLightTheme
+        {
             get { return BackingStore?.Get<string?>("longLogoWebUrlForLightTheme"); }
             set { BackingStore?.Set("longLogoWebUrlForLightTheme", value); }
         }
 #nullable restore
 #else
-        public string LongLogoWebUrlForLightTheme {
+        public string LongLogoWebUrlForLightTheme
+        {
             get { return BackingStore?.Get<string>("longLogoWebUrlForLightTheme"); }
             set { BackingStore?.Set("longLogoWebUrlForLightTheme", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The square logo URL for the dark mode that needs to be a publicly accessible image. This image would be saved to the blob storage of Viva Learning for rendering within the Viva Learning app. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SquareLogoWebUrlForDarkTheme {
+        public string? SquareLogoWebUrlForDarkTheme
+        {
             get { return BackingStore?.Get<string?>("squareLogoWebUrlForDarkTheme"); }
             set { BackingStore?.Set("squareLogoWebUrlForDarkTheme", value); }
         }
 #nullable restore
 #else
-        public string SquareLogoWebUrlForDarkTheme {
+        public string SquareLogoWebUrlForDarkTheme
+        {
             get { return BackingStore?.Get<string>("squareLogoWebUrlForDarkTheme"); }
             set { BackingStore?.Set("squareLogoWebUrlForDarkTheme", value); }
         }
@@ -115,13 +131,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The square logo URL for the light mode that needs to be a publicly accessible image. This image would be saved to the blob storage of Viva Learning for rendering within the Viva Learning app. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SquareLogoWebUrlForLightTheme {
+        public string? SquareLogoWebUrlForLightTheme
+        {
             get { return BackingStore?.Get<string?>("squareLogoWebUrlForLightTheme"); }
             set { BackingStore?.Set("squareLogoWebUrlForLightTheme", value); }
         }
 #nullable restore
 #else
-        public string SquareLogoWebUrlForLightTheme {
+        public string SquareLogoWebUrlForLightTheme
+        {
             get { return BackingStore?.Get<string>("squareLogoWebUrlForLightTheme"); }
             set { BackingStore?.Set("squareLogoWebUrlForLightTheme", value); }
         }
@@ -144,15 +162,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"isCourseActivitySyncEnabled", n => { IsCourseActivitySyncEnabled = n.GetBoolValue(); } },
-                {"learningContents", n => { LearningContents = n.GetCollectionOfObjectValues<LearningContent>(LearningContent.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"learningCourseActivities", n => { LearningCourseActivities = n.GetCollectionOfObjectValues<LearningCourseActivity>(LearningCourseActivity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"loginWebUrl", n => { LoginWebUrl = n.GetStringValue(); } },
-                {"longLogoWebUrlForDarkTheme", n => { LongLogoWebUrlForDarkTheme = n.GetStringValue(); } },
-                {"longLogoWebUrlForLightTheme", n => { LongLogoWebUrlForLightTheme = n.GetStringValue(); } },
-                {"squareLogoWebUrlForDarkTheme", n => { SquareLogoWebUrlForDarkTheme = n.GetStringValue(); } },
-                {"squareLogoWebUrlForLightTheme", n => { SquareLogoWebUrlForLightTheme = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isCourseActivitySyncEnabled", n => { IsCourseActivitySyncEnabled = n.GetBoolValue(); } },
+                { "learningContents", n => { LearningContents = n.GetCollectionOfObjectValues<LearningContent>(LearningContent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "learningCourseActivities", n => { LearningCourseActivities = n.GetCollectionOfObjectValues<LearningCourseActivity>(LearningCourseActivity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "loginWebUrl", n => { LoginWebUrl = n.GetStringValue(); } },
+                { "longLogoWebUrlForDarkTheme", n => { LongLogoWebUrlForDarkTheme = n.GetStringValue(); } },
+                { "longLogoWebUrlForLightTheme", n => { LongLogoWebUrlForLightTheme = n.GetStringValue(); } },
+                { "squareLogoWebUrlForDarkTheme", n => { SquareLogoWebUrlForDarkTheme = n.GetStringValue(); } },
+                { "squareLogoWebUrlForLightTheme", n => { SquareLogoWebUrlForLightTheme = n.GetStringValue(); } },
             };
         }
         /// <summary>

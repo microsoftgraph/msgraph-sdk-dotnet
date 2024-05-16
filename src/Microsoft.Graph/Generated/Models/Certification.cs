@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Certification : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Certification : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,47 +22,55 @@ namespace Microsoft.Graph.Models {
         /// <summary>URL that shows certification details for the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificationDetailsUrl {
+        public string? CertificationDetailsUrl
+        {
             get { return BackingStore?.Get<string?>("certificationDetailsUrl"); }
             set { BackingStore?.Set("certificationDetailsUrl", value); }
         }
 #nullable restore
 #else
-        public string CertificationDetailsUrl {
+        public string CertificationDetailsUrl
+        {
             get { return BackingStore?.Get<string>("certificationDetailsUrl"); }
             set { BackingStore?.Set("certificationDetailsUrl", value); }
         }
 #endif
         /// <summary>The timestamp when the current certification for the application expires.</summary>
-        public DateTimeOffset? CertificationExpirationDateTime {
+        public DateTimeOffset? CertificationExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("certificationExpirationDateTime"); }
             set { BackingStore?.Set("certificationExpirationDateTime", value); }
         }
         /// <summary>Indicates whether the application is certified by Microsoft.</summary>
-        public bool? IsCertifiedByMicrosoft {
+        public bool? IsCertifiedByMicrosoft
+        {
             get { return BackingStore?.Get<bool?>("isCertifiedByMicrosoft"); }
             set { BackingStore?.Set("isCertifiedByMicrosoft", value); }
         }
         /// <summary>Indicates whether the application has been self-attested by the application developer or the publisher.</summary>
-        public bool? IsPublisherAttested {
+        public bool? IsPublisherAttested
+        {
             get { return BackingStore?.Get<bool?>("isPublisherAttested"); }
             set { BackingStore?.Set("isPublisherAttested", value); }
         }
         /// <summary>The timestamp when the certification for the application was most recently added or updated.</summary>
-        public DateTimeOffset? LastCertificationDateTime {
+        public DateTimeOffset? LastCertificationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastCertificationDateTime"); }
             set { BackingStore?.Set("lastCertificationDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -91,12 +101,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"certificationDetailsUrl", n => { CertificationDetailsUrl = n.GetStringValue(); } },
-                {"certificationExpirationDateTime", n => { CertificationExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"isCertifiedByMicrosoft", n => { IsCertifiedByMicrosoft = n.GetBoolValue(); } },
-                {"isPublisherAttested", n => { IsPublisherAttested = n.GetBoolValue(); } },
-                {"lastCertificationDateTime", n => { LastCertificationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "certificationDetailsUrl", n => { CertificationDetailsUrl = n.GetStringValue(); } },
+                { "certificationExpirationDateTime", n => { CertificationExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "isCertifiedByMicrosoft", n => { IsCertifiedByMicrosoft = n.GetBoolValue(); } },
+                { "isPublisherAttested", n => { IsPublisherAttested = n.GetBoolValue(); } },
+                { "lastCertificationDateTime", n => { LastCertificationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

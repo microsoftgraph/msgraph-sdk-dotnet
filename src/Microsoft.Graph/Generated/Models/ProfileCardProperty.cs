@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ProfileCardProperty : Entity, IParsable 
+    public class ProfileCardProperty : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProfileCardAnnotation>? Annotations {
+        public List<ProfileCardAnnotation>? Annotations
+        {
             get { return BackingStore?.Get<List<ProfileCardAnnotation>?>("annotations"); }
             set { BackingStore?.Set("annotations", value); }
         }
 #nullable restore
 #else
-        public List<ProfileCardAnnotation> Annotations {
+        public List<ProfileCardAnnotation> Annotations
+        {
             get { return BackingStore?.Get<List<ProfileCardAnnotation>>("annotations"); }
             set { BackingStore?.Set("annotations", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Identifies a profileCardProperty resource in Get, Update, or Delete operations. Allows an administrator to surface hidden Microsoft Entra ID properties on the Microsoft 365 profile card within their tenant. When present, the Microsoft Entra ID field referenced in this property is visible to all users in your tenant on the contact pane of the profile card. Allowed values for this field are: UserPrincipalName, Fax, StreetAddress, PostalCode, StateOrProvince, Alias, CustomAttribute1,  CustomAttribute2, CustomAttribute3, CustomAttribute4, CustomAttribute5, CustomAttribute6, CustomAttribute7, CustomAttribute8, CustomAttribute9, CustomAttribute10, CustomAttribute11, CustomAttribute12, CustomAttribute13, CustomAttribute14, CustomAttribute15.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DirectoryPropertyName {
+        public string? DirectoryPropertyName
+        {
             get { return BackingStore?.Get<string?>("directoryPropertyName"); }
             set { BackingStore?.Set("directoryPropertyName", value); }
         }
 #nullable restore
 #else
-        public string DirectoryPropertyName {
+        public string DirectoryPropertyName
+        {
             get { return BackingStore?.Get<string>("directoryPropertyName"); }
             set { BackingStore?.Set("directoryPropertyName", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"annotations", n => { Annotations = n.GetCollectionOfObjectValues<ProfileCardAnnotation>(ProfileCardAnnotation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"directoryPropertyName", n => { DirectoryPropertyName = n.GetStringValue(); } },
+                { "annotations", n => { Annotations = n.GetCollectionOfObjectValues<ProfileCardAnnotation>(ProfileCardAnnotation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "directoryPropertyName", n => { DirectoryPropertyName = n.GetStringValue(); } },
             };
         }
         /// <summary>

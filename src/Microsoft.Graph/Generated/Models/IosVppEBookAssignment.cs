@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties used to assign an iOS VPP EBook to a group.
     /// </summary>
-    public class IosVppEBookAssignment : ManagedEBookAssignment, IParsable 
+    public class IosVppEBookAssignment : ManagedEBookAssignment, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

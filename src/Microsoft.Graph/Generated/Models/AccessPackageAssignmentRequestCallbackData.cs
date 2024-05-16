@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageAssignmentRequestCallbackData : CustomExtensionData, IParsable 
+    public class AccessPackageAssignmentRequestCallbackData : CustomExtensionData, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Details for the callback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomExtensionStageInstanceDetail {
+        public string? CustomExtensionStageInstanceDetail
+        {
             get { return BackingStore?.Get<string?>("customExtensionStageInstanceDetail"); }
             set { BackingStore?.Set("customExtensionStageInstanceDetail", value); }
         }
 #nullable restore
 #else
-        public string CustomExtensionStageInstanceDetail {
+        public string CustomExtensionStageInstanceDetail
+        {
             get { return BackingStore?.Get<string>("customExtensionStageInstanceDetail"); }
             set { BackingStore?.Set("customExtensionStageInstanceDetail", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Unique identifier of the callout to the custom extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomExtensionStageInstanceId {
+        public string? CustomExtensionStageInstanceId
+        {
             get { return BackingStore?.Get<string?>("customExtensionStageInstanceId"); }
             set { BackingStore?.Set("customExtensionStageInstanceId", value); }
         }
 #nullable restore
 #else
-        public string CustomExtensionStageInstanceId {
+        public string CustomExtensionStageInstanceId
+        {
             get { return BackingStore?.Get<string>("customExtensionStageInstanceId"); }
             set { BackingStore?.Set("customExtensionStageInstanceId", value); }
         }
 #endif
         /// <summary>Indicates the stage at which the custom callout extension is executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.</summary>
-        public AccessPackageCustomExtensionStage? Stage {
+        public AccessPackageCustomExtensionStage? Stage
+        {
             get { return BackingStore?.Get<AccessPackageCustomExtensionStage?>("stage"); }
             set { BackingStore?.Set("stage", value); }
         }
         /// <summary>Allow the extension to be able to deny or cancel the request submitted by the requestor. The supported values are Denied and Canceled. This property can only be set for an assignmentRequestCreated stage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State {
+        public string? State
+        {
             get { return BackingStore?.Get<string?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #nullable restore
 #else
-        public string State {
+        public string State
+        {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"customExtensionStageInstanceDetail", n => { CustomExtensionStageInstanceDetail = n.GetStringValue(); } },
-                {"customExtensionStageInstanceId", n => { CustomExtensionStageInstanceId = n.GetStringValue(); } },
-                {"stage", n => { Stage = n.GetEnumValue<AccessPackageCustomExtensionStage>(); } },
-                {"state", n => { State = n.GetStringValue(); } },
+                { "customExtensionStageInstanceDetail", n => { CustomExtensionStageInstanceDetail = n.GetStringValue(); } },
+                { "customExtensionStageInstanceId", n => { CustomExtensionStageInstanceId = n.GetStringValue(); } },
+                { "stage", n => { Stage = n.GetEnumValue<AccessPackageCustomExtensionStage>(); } },
+                { "state", n => { State = n.GetStringValue(); } },
             };
         }
         /// <summary>

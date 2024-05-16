@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread {
+namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread
+{
     [Obsolete("This class is obsolete. Use MarkUnreadPostResponse instead.")]
     #pragma warning disable CS1591
-    public class MarkUnreadResponse : MarkUnreadPostResponse, IParsable 
+    public class MarkUnreadResponse : MarkUnreadPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

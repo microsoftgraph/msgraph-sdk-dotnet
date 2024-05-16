@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TextWebPart : WebPart, IParsable 
+    public class TextWebPart : WebPart, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The HTML string in text web part.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InnerHtml {
+        public string? InnerHtml
+        {
             get { return BackingStore?.Get<string?>("innerHtml"); }
             set { BackingStore?.Set("innerHtml", value); }
         }
 #nullable restore
 #else
-        public string InnerHtml {
+        public string InnerHtml
+        {
             get { return BackingStore?.Get<string>("innerHtml"); }
             set { BackingStore?.Set("innerHtml", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"innerHtml", n => { InnerHtml = n.GetStringValue(); } },
+                { "innerHtml", n => { InnerHtml = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ConversationMemberRoleUpdatedEventMessageDetail : EventMessageDetail, IParsable 
+    public class ConversationMemberRoleUpdatedEventMessageDetail : EventMessageDetail, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Roles for the coversation member user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ConversationMemberRoles {
+        public List<string>? ConversationMemberRoles
+        {
             get { return BackingStore?.Get<List<string>?>("conversationMemberRoles"); }
             set { BackingStore?.Set("conversationMemberRoles", value); }
         }
 #nullable restore
 #else
-        public List<string> ConversationMemberRoles {
+        public List<string> ConversationMemberRoles
+        {
             get { return BackingStore?.Get<List<string>>("conversationMemberRoles"); }
             set { BackingStore?.Set("conversationMemberRoles", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Identity of the conversation member user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkUserIdentity? ConversationMemberUser {
+        public TeamworkUserIdentity? ConversationMemberUser
+        {
             get { return BackingStore?.Get<TeamworkUserIdentity?>("conversationMemberUser"); }
             set { BackingStore?.Set("conversationMemberUser", value); }
         }
 #nullable restore
 #else
-        public TeamworkUserIdentity ConversationMemberUser {
+        public TeamworkUserIdentity ConversationMemberUser
+        {
             get { return BackingStore?.Get<TeamworkUserIdentity>("conversationMemberUser"); }
             set { BackingStore?.Set("conversationMemberUser", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Initiator of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Initiator {
+        public IdentitySet? Initiator
+        {
             get { return BackingStore?.Get<IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Initiator {
+        public IdentitySet Initiator
+        {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"conversationMemberRoles", n => { ConversationMemberRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"conversationMemberUser", n => { ConversationMemberUser = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
-                {"initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "conversationMemberRoles", n => { ConversationMemberRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "conversationMemberUser", n => { ConversationMemberUser = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
+                { "initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

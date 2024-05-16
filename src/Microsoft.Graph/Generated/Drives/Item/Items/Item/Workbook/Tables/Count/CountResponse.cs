@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Count {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Count
+{
     [Obsolete("This class is obsolete. Use CountGetResponse instead.")]
     #pragma warning disable CS1591
-    public class CountResponse : CountGetResponse, IParsable 
+    public class CountResponse : CountGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

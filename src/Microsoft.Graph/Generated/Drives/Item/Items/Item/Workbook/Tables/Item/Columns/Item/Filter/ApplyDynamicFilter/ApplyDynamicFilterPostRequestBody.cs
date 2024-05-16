@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyDynamicFilter {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyDynamicFilter
+{
     #pragma warning disable CS1591
-    public class ApplyDynamicFilterPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ApplyDynamicFilterPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         /// <summary>The criteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Criteria {
+        public string? Criteria
+        {
             get { return BackingStore?.Get<string?>("criteria"); }
             set { BackingStore?.Set("criteria", value); }
         }
 #nullable restore
 #else
-        public string Criteria {
+        public string Criteria
+        {
             get { return BackingStore?.Get<string>("criteria"); }
             set { BackingStore?.Set("criteria", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"criteria", n => { Criteria = n.GetStringValue(); } },
+                { "criteria", n => { Criteria = n.GetStringValue(); } },
             };
         }
         /// <summary>

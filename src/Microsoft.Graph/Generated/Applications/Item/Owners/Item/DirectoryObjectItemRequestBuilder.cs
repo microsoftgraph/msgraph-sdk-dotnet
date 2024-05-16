@@ -10,11 +10,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Applications.Item.Owners.Item {
+namespace Microsoft.Graph.Applications.Item.Owners.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \applications\{application-id}\owners\{directoryObject-id}
     /// </summary>
-    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder 
+    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Casts the previous resource to appRoleAssignment.</summary>
         public GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment

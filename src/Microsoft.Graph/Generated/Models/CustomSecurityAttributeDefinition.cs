@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CustomSecurityAttributeDefinition : Entity, IParsable 
+    public class CustomSecurityAttributeDefinition : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AllowedValue>? AllowedValues {
+        public List<AllowedValue>? AllowedValues
+        {
             get { return BackingStore?.Get<List<AllowedValue>?>("allowedValues"); }
             set { BackingStore?.Set("allowedValues", value); }
         }
 #nullable restore
 #else
-        public List<AllowedValue> AllowedValues {
+        public List<AllowedValue> AllowedValues
+        {
             get { return BackingStore?.Get<List<AllowedValue>>("allowedValues"); }
             set { BackingStore?.Set("allowedValues", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Name of the attribute set. Case insensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AttributeSet {
+        public string? AttributeSet
+        {
             get { return BackingStore?.Get<string?>("attributeSet"); }
             set { BackingStore?.Set("attributeSet", value); }
         }
 #nullable restore
 #else
-        public string AttributeSet {
+        public string AttributeSet
+        {
             get { return BackingStore?.Get<string>("attributeSet"); }
             set { BackingStore?.Set("attributeSet", value); }
         }
@@ -40,37 +45,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>Description of the custom security attribute. Can be up to 128 characters long and include Unicode characters. Can be changed later.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>Indicates whether multiple values can be assigned to the custom security attribute. Cannot be changed later. If type is set to Boolean, isCollection cannot be set to true.</summary>
-        public bool? IsCollection {
+        public bool? IsCollection
+        {
             get { return BackingStore?.Get<bool?>("isCollection"); }
             set { BackingStore?.Set("isCollection", value); }
         }
         /// <summary>Indicates whether custom security attribute values are indexed for searching on objects that are assigned attribute values. Cannot be changed later.</summary>
-        public bool? IsSearchable {
+        public bool? IsSearchable
+        {
             get { return BackingStore?.Get<bool?>("isSearchable"); }
             set { BackingStore?.Set("isSearchable", value); }
         }
         /// <summary>Name of the custom security attribute. Must be unique within an attribute set. Can be up to 32 characters long and include Unicode characters. Cannot contain spaces or special characters. Cannot be changed later. Case insensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -78,13 +89,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Specifies whether the custom security attribute is active or deactivated. Acceptable values are: Available and Deprecated. Can be changed later.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status {
+        public string? Status
+        {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public string Status {
+        public string Status
+        {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -92,19 +105,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type {
+        public string? Type
+        {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #nullable restore
 #else
-        public string Type {
+        public string Type
+        {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #endif
         /// <summary>Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.</summary>
-        public bool? UsePreDefinedValuesOnly {
+        public bool? UsePreDefinedValuesOnly
+        {
             get { return BackingStore?.Get<bool?>("usePreDefinedValuesOnly"); }
             set { BackingStore?.Set("usePreDefinedValuesOnly", value); }
         }
@@ -126,15 +142,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowedValues", n => { AllowedValues = n.GetCollectionOfObjectValues<AllowedValue>(AllowedValue.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"attributeSet", n => { AttributeSet = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"isCollection", n => { IsCollection = n.GetBoolValue(); } },
-                {"isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
-                {"usePreDefinedValuesOnly", n => { UsePreDefinedValuesOnly = n.GetBoolValue(); } },
+                { "allowedValues", n => { AllowedValues = n.GetCollectionOfObjectValues<AllowedValue>(AllowedValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attributeSet", n => { AttributeSet = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "isCollection", n => { IsCollection = n.GetBoolValue(); } },
+                { "isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+                { "usePreDefinedValuesOnly", n => { UsePreDefinedValuesOnly = n.GetBoolValue(); } },
             };
         }
         /// <summary>

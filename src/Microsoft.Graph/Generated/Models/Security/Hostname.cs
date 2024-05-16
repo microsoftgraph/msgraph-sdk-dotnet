@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class Hostname : Host, IParsable 
+    public class Hostname : Host, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The company or individual who registered this hostname, from WHOIS data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Registrant {
+        public string? Registrant
+        {
             get { return BackingStore?.Get<string?>("registrant"); }
             set { BackingStore?.Set("registrant", value); }
         }
 #nullable restore
 #else
-        public string Registrant {
+        public string Registrant
+        {
             get { return BackingStore?.Get<string>("registrant"); }
             set { BackingStore?.Set("registrant", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The registrar for this hostname, from WHOIS data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Registrar {
+        public string? Registrar
+        {
             get { return BackingStore?.Get<string?>("registrar"); }
             set { BackingStore?.Set("registrar", value); }
         }
 #nullable restore
 #else
-        public string Registrar {
+        public string Registrar
+        {
             get { return BackingStore?.Get<string>("registrar"); }
             set { BackingStore?.Set("registrar", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"registrant", n => { Registrant = n.GetStringValue(); } },
-                {"registrar", n => { Registrar = n.GetStringValue(); } },
+                { "registrant", n => { Registrant = n.GetStringValue(); } },
+                { "registrar", n => { Registrar = n.GetStringValue(); } },
             };
         }
         /// <summary>

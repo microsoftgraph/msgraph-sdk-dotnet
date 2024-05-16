@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Fido2CombinationConfiguration : AuthenticationCombinationConfiguration, IParsable 
+    public class Fido2CombinationConfiguration : AuthenticationCombinationConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A list of AAGUIDs allowed to be used as part of the specified authentication method combinations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedAAGUIDs {
+        public List<string>? AllowedAAGUIDs
+        {
             get { return BackingStore?.Get<List<string>?>("allowedAAGUIDs"); }
             set { BackingStore?.Set("allowedAAGUIDs", value); }
         }
 #nullable restore
 #else
-        public List<string> AllowedAAGUIDs {
+        public List<string> AllowedAAGUIDs
+        {
             get { return BackingStore?.Get<List<string>>("allowedAAGUIDs"); }
             set { BackingStore?.Set("allowedAAGUIDs", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowedAAGUIDs", n => { AllowedAAGUIDs = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "allowedAAGUIDs", n => { AllowedAAGUIDs = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

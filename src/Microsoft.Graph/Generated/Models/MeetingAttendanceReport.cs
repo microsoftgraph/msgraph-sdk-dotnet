@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MeetingAttendanceReport : Entity, IParsable 
+    public class MeetingAttendanceReport : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of attendance records of an attendance report. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttendanceRecord>? AttendanceRecords {
+        public List<AttendanceRecord>? AttendanceRecords
+        {
             get { return BackingStore?.Get<List<AttendanceRecord>?>("attendanceRecords"); }
             set { BackingStore?.Set("attendanceRecords", value); }
         }
 #nullable restore
 #else
-        public List<AttendanceRecord> AttendanceRecords {
+        public List<AttendanceRecord> AttendanceRecords
+        {
             get { return BackingStore?.Get<List<AttendanceRecord>>("attendanceRecords"); }
             set { BackingStore?.Set("attendanceRecords", value); }
         }
 #endif
         /// <summary>UTC time when the meeting ended. Read-only.</summary>
-        public DateTimeOffset? MeetingEndDateTime {
+        public DateTimeOffset? MeetingEndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("meetingEndDateTime"); }
             set { BackingStore?.Set("meetingEndDateTime", value); }
         }
         /// <summary>UTC time when the meeting started. Read-only.</summary>
-        public DateTimeOffset? MeetingStartDateTime {
+        public DateTimeOffset? MeetingStartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("meetingStartDateTime"); }
             set { BackingStore?.Set("meetingStartDateTime", value); }
         }
         /// <summary>Total number of participants. Read-only.</summary>
-        public int? TotalParticipantCount {
+        public int? TotalParticipantCount
+        {
             get { return BackingStore?.Get<int?>("totalParticipantCount"); }
             set { BackingStore?.Set("totalParticipantCount", value); }
         }
@@ -56,10 +62,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"attendanceRecords", n => { AttendanceRecords = n.GetCollectionOfObjectValues<AttendanceRecord>(AttendanceRecord.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"meetingEndDateTime", n => { MeetingEndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"meetingStartDateTime", n => { MeetingStartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"totalParticipantCount", n => { TotalParticipantCount = n.GetIntValue(); } },
+                { "attendanceRecords", n => { AttendanceRecords = n.GetCollectionOfObjectValues<AttendanceRecord>(AttendanceRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "meetingEndDateTime", n => { MeetingEndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "meetingStartDateTime", n => { MeetingStartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "totalParticipantCount", n => { TotalParticipantCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

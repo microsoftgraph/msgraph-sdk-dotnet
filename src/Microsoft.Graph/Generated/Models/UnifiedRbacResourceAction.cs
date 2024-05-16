@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UnifiedRbacResourceAction : Entity, IParsable 
+    public class UnifiedRbacResourceAction : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The actionVerb property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActionVerb {
+        public string? ActionVerb
+        {
             get { return BackingStore?.Get<string?>("actionVerb"); }
             set { BackingStore?.Set("actionVerb", value); }
         }
 #nullable restore
 #else
-        public string ActionVerb {
+        public string ActionVerb
+        {
             get { return BackingStore?.Get<string>("actionVerb"); }
             set { BackingStore?.Set("actionVerb", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The authenticationContextId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthenticationContextId {
+        public string? AuthenticationContextId
+        {
             get { return BackingStore?.Get<string?>("authenticationContextId"); }
             set { BackingStore?.Set("authenticationContextId", value); }
         }
 #nullable restore
 #else
-        public string AuthenticationContextId {
+        public string AuthenticationContextId
+        {
             get { return BackingStore?.Get<string>("authenticationContextId"); }
             set { BackingStore?.Set("authenticationContextId", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>The isAuthenticationContextSettable property</summary>
-        public bool? IsAuthenticationContextSettable {
+        public bool? IsAuthenticationContextSettable
+        {
             get { return BackingStore?.Get<bool?>("isAuthenticationContextSettable"); }
             set { BackingStore?.Set("isAuthenticationContextSettable", value); }
         }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The resourceScopeId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceScopeId {
+        public string? ResourceScopeId
+        {
             get { return BackingStore?.Get<string?>("resourceScopeId"); }
             set { BackingStore?.Set("resourceScopeId", value); }
         }
 #nullable restore
 #else
-        public string ResourceScopeId {
+        public string ResourceScopeId
+        {
             get { return BackingStore?.Get<string>("resourceScopeId"); }
             set { BackingStore?.Set("resourceScopeId", value); }
         }
@@ -102,12 +114,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actionVerb", n => { ActionVerb = n.GetStringValue(); } },
-                {"authenticationContextId", n => { AuthenticationContextId = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"isAuthenticationContextSettable", n => { IsAuthenticationContextSettable = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"resourceScopeId", n => { ResourceScopeId = n.GetStringValue(); } },
+                { "actionVerb", n => { ActionVerb = n.GetStringValue(); } },
+                { "authenticationContextId", n => { AuthenticationContextId = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "isAuthenticationContextSettable", n => { IsAuthenticationContextSettable = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "resourceScopeId", n => { ResourceScopeId = n.GetStringValue(); } },
             };
         }
         /// <summary>

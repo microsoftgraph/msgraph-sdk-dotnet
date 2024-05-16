@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ScopedRoleMembership : Entity, IParsable 
+    public class ScopedRoleMembership : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Unique identifier for the administrative unit that the directory role is scoped to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdministrativeUnitId {
+        public string? AdministrativeUnitId
+        {
             get { return BackingStore?.Get<string?>("administrativeUnitId"); }
             set { BackingStore?.Set("administrativeUnitId", value); }
         }
 #nullable restore
 #else
-        public string AdministrativeUnitId {
+        public string AdministrativeUnitId
+        {
             get { return BackingStore?.Get<string>("administrativeUnitId"); }
             set { BackingStore?.Set("administrativeUnitId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Unique identifier for the directory role that the member is in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleId {
+        public string? RoleId
+        {
             get { return BackingStore?.Get<string?>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
 #nullable restore
 #else
-        public string RoleId {
+        public string RoleId
+        {
             get { return BackingStore?.Get<string>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The roleMemberInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? RoleMemberInfo {
+        public Identity? RoleMemberInfo
+        {
             get { return BackingStore?.Get<Identity?>("roleMemberInfo"); }
             set { BackingStore?.Set("roleMemberInfo", value); }
         }
 #nullable restore
 #else
-        public Identity RoleMemberInfo {
+        public Identity RoleMemberInfo
+        {
             get { return BackingStore?.Get<Identity>("roleMemberInfo"); }
             set { BackingStore?.Set("roleMemberInfo", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"administrativeUnitId", n => { AdministrativeUnitId = n.GetStringValue(); } },
-                {"roleId", n => { RoleId = n.GetStringValue(); } },
-                {"roleMemberInfo", n => { RoleMemberInfo = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "administrativeUnitId", n => { AdministrativeUnitId = n.GetStringValue(); } },
+                { "roleId", n => { RoleId = n.GetStringValue(); } },
+                { "roleMemberInfo", n => { RoleMemberInfo = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite {
+namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite
+{
     [Obsolete("This class is obsolete. Use FavoritePostResponse instead.")]
     #pragma warning disable CS1591
-    public class FavoriteResponse : FavoritePostResponse, IParsable 
+    public class FavoriteResponse : FavoritePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

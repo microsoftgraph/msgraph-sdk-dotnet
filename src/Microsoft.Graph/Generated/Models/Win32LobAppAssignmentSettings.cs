@@ -4,46 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties used to assign an Win32 LOB mobile app to a group.
     /// </summary>
-    public class Win32LobAppAssignmentSettings : MobileAppAssignmentSettings, IParsable 
+    public class Win32LobAppAssignmentSettings : MobileAppAssignmentSettings, IParsable
     {
         /// <summary>Contains value for delivery optimization priority.</summary>
-        public Win32LobAppDeliveryOptimizationPriority? DeliveryOptimizationPriority {
+        public Win32LobAppDeliveryOptimizationPriority? DeliveryOptimizationPriority
+        {
             get { return BackingStore?.Get<Win32LobAppDeliveryOptimizationPriority?>("deliveryOptimizationPriority"); }
             set { BackingStore?.Set("deliveryOptimizationPriority", value); }
         }
         /// <summary>The install time settings to apply for this app assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MobileAppInstallTimeSettings? InstallTimeSettings {
+        public MobileAppInstallTimeSettings? InstallTimeSettings
+        {
             get { return BackingStore?.Get<MobileAppInstallTimeSettings?>("installTimeSettings"); }
             set { BackingStore?.Set("installTimeSettings", value); }
         }
 #nullable restore
 #else
-        public MobileAppInstallTimeSettings InstallTimeSettings {
+        public MobileAppInstallTimeSettings InstallTimeSettings
+        {
             get { return BackingStore?.Get<MobileAppInstallTimeSettings>("installTimeSettings"); }
             set { BackingStore?.Set("installTimeSettings", value); }
         }
 #endif
         /// <summary>Contains value for notification status.</summary>
-        public Win32LobAppNotification? Notifications {
+        public Win32LobAppNotification? Notifications
+        {
             get { return BackingStore?.Get<Win32LobAppNotification?>("notifications"); }
             set { BackingStore?.Set("notifications", value); }
         }
         /// <summary>The reboot settings to apply for this app assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Win32LobAppRestartSettings? RestartSettings {
+        public Win32LobAppRestartSettings? RestartSettings
+        {
             get { return BackingStore?.Get<Win32LobAppRestartSettings?>("restartSettings"); }
             set { BackingStore?.Set("restartSettings", value); }
         }
 #nullable restore
 #else
-        public Win32LobAppRestartSettings RestartSettings {
+        public Win32LobAppRestartSettings RestartSettings
+        {
             get { return BackingStore?.Get<Win32LobAppRestartSettings>("restartSettings"); }
             set { BackingStore?.Set("restartSettings", value); }
         }
@@ -73,10 +80,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deliveryOptimizationPriority", n => { DeliveryOptimizationPriority = n.GetEnumValue<Win32LobAppDeliveryOptimizationPriority>(); } },
-                {"installTimeSettings", n => { InstallTimeSettings = n.GetObjectValue<MobileAppInstallTimeSettings>(MobileAppInstallTimeSettings.CreateFromDiscriminatorValue); } },
-                {"notifications", n => { Notifications = n.GetEnumValue<Win32LobAppNotification>(); } },
-                {"restartSettings", n => { RestartSettings = n.GetObjectValue<Win32LobAppRestartSettings>(Win32LobAppRestartSettings.CreateFromDiscriminatorValue); } },
+                { "deliveryOptimizationPriority", n => { DeliveryOptimizationPriority = n.GetEnumValue<Win32LobAppDeliveryOptimizationPriority>(); } },
+                { "installTimeSettings", n => { InstallTimeSettings = n.GetObjectValue<MobileAppInstallTimeSettings>(MobileAppInstallTimeSettings.CreateFromDiscriminatorValue); } },
+                { "notifications", n => { Notifications = n.GetEnumValue<Win32LobAppNotification>(); } },
+                { "restartSettings", n => { RestartSettings = n.GetObjectValue<Win32LobAppRestartSettings>(Win32LobAppRestartSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

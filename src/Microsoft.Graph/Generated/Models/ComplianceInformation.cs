@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ComplianceInformation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ComplianceInformation : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Collection of the certification controls associated with the certification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CertificationControl>? CertificationControls {
+        public List<CertificationControl>? CertificationControls
+        {
             get { return BackingStore?.Get<List<CertificationControl>?>("certificationControls"); }
             set { BackingStore?.Set("certificationControls", value); }
         }
 #nullable restore
 #else
-        public List<CertificationControl> CertificationControls {
+        public List<CertificationControl> CertificationControls
+        {
             get { return BackingStore?.Get<List<CertificationControl>>("certificationControls"); }
             set { BackingStore?.Set("certificationControls", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the compliance certification, for example, ISO 27018:2014, GDPR, FedRAMP, and NIST 800-171.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificationName {
+        public string? CertificationName
+        {
             get { return BackingStore?.Get<string?>("certificationName"); }
             set { BackingStore?.Set("certificationName", value); }
         }
 #nullable restore
 #else
-        public string CertificationName {
+        public string CertificationName
+        {
             get { return BackingStore?.Get<string>("certificationName"); }
             set { BackingStore?.Set("certificationName", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"certificationControls", n => { CertificationControls = n.GetCollectionOfObjectValues<CertificationControl>(CertificationControl.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"certificationName", n => { CertificationName = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "certificationControls", n => { CertificationControls = n.GetCollectionOfObjectValues<CertificationControl>(CertificationControl.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "certificationName", n => { CertificationName = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

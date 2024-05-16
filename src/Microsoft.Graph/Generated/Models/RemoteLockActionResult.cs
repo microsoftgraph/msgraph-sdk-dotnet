@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Lock action result with a pin to unlock
     /// </summary>
-    public class RemoteLockActionResult : DeviceActionResult, IParsable 
+    public class RemoteLockActionResult : DeviceActionResult, IParsable
     {
         /// <summary>Pin to unlock the client</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnlockPin {
+        public string? UnlockPin
+        {
             get { return BackingStore?.Get<string?>("unlockPin"); }
             set { BackingStore?.Set("unlockPin", value); }
         }
 #nullable restore
 #else
-        public string UnlockPin {
+        public string UnlockPin
+        {
             get { return BackingStore?.Get<string>("unlockPin"); }
             set { BackingStore?.Set("unlockPin", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"unlockPin", n => { UnlockPin = n.GetStringValue(); } },
+                { "unlockPin", n => { UnlockPin = n.GetStringValue(); } },
             };
         }
         /// <summary>

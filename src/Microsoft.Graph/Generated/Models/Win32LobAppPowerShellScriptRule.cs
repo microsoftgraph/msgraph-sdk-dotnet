@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// A complex type to store the PowerShell script rule data for a Win32 LOB app.
     /// </summary>
-    public class Win32LobAppPowerShellScriptRule : Win32LobAppRule, IParsable 
+    public class Win32LobAppPowerShellScriptRule : Win32LobAppRule, IParsable
     {
         /// <summary>The script output comparison value. Do not specify a value if the rule is used for detection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ComparisonValue {
+        public string? ComparisonValue
+        {
             get { return BackingStore?.Get<string?>("comparisonValue"); }
             set { BackingStore?.Set("comparisonValue", value); }
         }
 #nullable restore
 #else
-        public string ComparisonValue {
+        public string ComparisonValue
+        {
             get { return BackingStore?.Get<string>("comparisonValue"); }
             set { BackingStore?.Set("comparisonValue", value); }
         }
@@ -27,52 +30,61 @@ namespace Microsoft.Graph.Models {
         /// <summary>The display name for the rule. Do not specify this value if the rule is used for detection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>A value indicating whether a signature check is enforced.</summary>
-        public bool? EnforceSignatureCheck {
+        public bool? EnforceSignatureCheck
+        {
             get { return BackingStore?.Get<bool?>("enforceSignatureCheck"); }
             set { BackingStore?.Set("enforceSignatureCheck", value); }
         }
         /// <summary>Contains all supported Powershell Script output detection type.</summary>
-        public Win32LobAppPowerShellScriptRuleOperationType? OperationType {
+        public Win32LobAppPowerShellScriptRuleOperationType? OperationType
+        {
             get { return BackingStore?.Get<Win32LobAppPowerShellScriptRuleOperationType?>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
         }
         /// <summary>Contains properties for detection operator.</summary>
-        public Win32LobAppRuleOperator? Operator {
+        public Win32LobAppRuleOperator? Operator
+        {
             get { return BackingStore?.Get<Win32LobAppRuleOperator?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>A value indicating whether the script should run as 32-bit.</summary>
-        public bool? RunAs32Bit {
+        public bool? RunAs32Bit
+        {
             get { return BackingStore?.Get<bool?>("runAs32Bit"); }
             set { BackingStore?.Set("runAs32Bit", value); }
         }
         /// <summary>The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. Possible values are: system, user.</summary>
-        public RunAsAccountType? RunAsAccount {
+        public RunAsAccountType? RunAsAccount
+        {
             get { return BackingStore?.Get<RunAsAccountType?>("runAsAccount"); }
             set { BackingStore?.Set("runAsAccount", value); }
         }
         /// <summary>The base64-encoded script content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScriptContent {
+        public string? ScriptContent
+        {
             get { return BackingStore?.Get<string?>("scriptContent"); }
             set { BackingStore?.Set("scriptContent", value); }
         }
 #nullable restore
 #else
-        public string ScriptContent {
+        public string ScriptContent
+        {
             get { return BackingStore?.Get<string>("scriptContent"); }
             set { BackingStore?.Set("scriptContent", value); }
         }
@@ -102,14 +114,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"comparisonValue", n => { ComparisonValue = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"enforceSignatureCheck", n => { EnforceSignatureCheck = n.GetBoolValue(); } },
-                {"operationType", n => { OperationType = n.GetEnumValue<Win32LobAppPowerShellScriptRuleOperationType>(); } },
-                {"operator", n => { Operator = n.GetEnumValue<Win32LobAppRuleOperator>(); } },
-                {"runAs32Bit", n => { RunAs32Bit = n.GetBoolValue(); } },
-                {"runAsAccount", n => { RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
-                {"scriptContent", n => { ScriptContent = n.GetStringValue(); } },
+                { "comparisonValue", n => { ComparisonValue = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "enforceSignatureCheck", n => { EnforceSignatureCheck = n.GetBoolValue(); } },
+                { "operationType", n => { OperationType = n.GetEnumValue<Win32LobAppPowerShellScriptRuleOperationType>(); } },
+                { "operator", n => { Operator = n.GetEnumValue<Win32LobAppRuleOperator>(); } },
+                { "runAs32Bit", n => { RunAs32Bit = n.GetBoolValue(); } },
+                { "runAsAccount", n => { RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
+                { "scriptContent", n => { ScriptContent = n.GetStringValue(); } },
             };
         }
         /// <summary>

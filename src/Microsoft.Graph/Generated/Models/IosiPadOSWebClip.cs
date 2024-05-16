@@ -4,28 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties and inherited properties for iOS web apps.
     /// </summary>
-    public class IosiPadOSWebClip : MobileApp, IParsable 
+    public class IosiPadOSWebClip : MobileApp, IParsable
     {
         /// <summary>Indicates iOS/iPadOS web clip app URL. Example: &apos;https://www.contoso.com&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppUrl {
+        public string? AppUrl
+        {
             get { return BackingStore?.Get<string?>("appUrl"); }
             set { BackingStore?.Set("appUrl", value); }
         }
 #nullable restore
 #else
-        public string AppUrl {
+        public string AppUrl
+        {
             get { return BackingStore?.Get<string>("appUrl"); }
             set { BackingStore?.Set("appUrl", value); }
         }
 #endif
         /// <summary>Whether or not to use managed browser. When TRUE, the app will be required to be opened in Microsoft Edge. When FALSE, the app will not be required to be opened in Microsoft Edge. By default, this property is set to FALSE.</summary>
-        public bool? UseManagedBrowser {
+        public bool? UseManagedBrowser
+        {
             get { return BackingStore?.Get<bool?>("useManagedBrowser"); }
             set { BackingStore?.Set("useManagedBrowser", value); }
         }
@@ -54,8 +58,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appUrl", n => { AppUrl = n.GetStringValue(); } },
-                {"useManagedBrowser", n => { UseManagedBrowser = n.GetBoolValue(); } },
+                { "appUrl", n => { AppUrl = n.GetStringValue(); } },
+                { "useManagedBrowser", n => { UseManagedBrowser = n.GetBoolValue(); } },
             };
         }
         /// <summary>

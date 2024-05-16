@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserExperienceAnalyticsWorkFromAnywhereMetric>? Value {
+        public List<UserExperienceAnalyticsWorkFromAnywhereMetric>? Value
+        {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsWorkFromAnywhereMetric>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<UserExperienceAnalyticsWorkFromAnywhereMetric> Value {
+        public List<UserExperienceAnalyticsWorkFromAnywhereMetric> Value
+        {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsWorkFromAnywhereMetric>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<UserExperienceAnalyticsWorkFromAnywhereMetric>(UserExperienceAnalyticsWorkFromAnywhereMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<UserExperienceAnalyticsWorkFromAnywhereMetric>(UserExperienceAnalyticsWorkFromAnywhereMetric.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

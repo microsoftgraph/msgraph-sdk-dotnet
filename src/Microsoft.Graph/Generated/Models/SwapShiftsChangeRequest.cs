@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SwapShiftsChangeRequest : OfferShiftRequest, IParsable 
+    public class SwapShiftsChangeRequest : OfferShiftRequest, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>ShiftId for the recipient user with whom the request is to swap.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecipientShiftId {
+        public string? RecipientShiftId
+        {
             get { return BackingStore?.Get<string?>("recipientShiftId"); }
             set { BackingStore?.Set("recipientShiftId", value); }
         }
 #nullable restore
 #else
-        public string RecipientShiftId {
+        public string RecipientShiftId
+        {
             get { return BackingStore?.Get<string>("recipientShiftId"); }
             set { BackingStore?.Set("recipientShiftId", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"recipientShiftId", n => { RecipientShiftId = n.GetStringValue(); } },
+                { "recipientShiftId", n => { RecipientShiftId = n.GetStringValue(); } },
             };
         }
         /// <summary>

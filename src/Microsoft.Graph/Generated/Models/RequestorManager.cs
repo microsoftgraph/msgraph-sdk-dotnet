@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class RequestorManager : SubjectSet, IParsable 
+    public class RequestorManager : SubjectSet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The hierarchical level of the manager with respect to the requestor. For example, the direct manager of a requestor would have a managerLevel of 1, while the manager of the requestor&apos;s manager would have a managerLevel of 2. Default value for managerLevel is 1. Possible values for this property range from 1 to 2.</summary>
-        public int? ManagerLevel {
+        public int? ManagerLevel
+        {
             get { return BackingStore?.Get<int?>("managerLevel"); }
             set { BackingStore?.Set("managerLevel", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"managerLevel", n => { ManagerLevel = n.GetIntValue(); } },
+                { "managerLevel", n => { ManagerLevel = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OnPremisesAccidentalDeletionPrevention : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OnPremisesAccidentalDeletionPrevention : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Threshold value which triggers accidental deletion prevention. The threshold is either an absolute number of objects or a percentage number of objects.</summary>
-        public int? AlertThreshold {
+        public int? AlertThreshold
+        {
             get { return BackingStore?.Get<int?>("alertThreshold"); }
             set { BackingStore?.Set("alertThreshold", value); }
         }
@@ -25,19 +28,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The status of the accidental deletion prevention feature. The possible values are: disabled, enabledForCount, enabledForPercentage, unknownFutureValue.</summary>
-        public OnPremisesDirectorySynchronizationDeletionPreventionType? SynchronizationPreventionType {
+        public OnPremisesDirectorySynchronizationDeletionPreventionType? SynchronizationPreventionType
+        {
             get { return BackingStore?.Get<OnPremisesDirectorySynchronizationDeletionPreventionType?>("synchronizationPreventionType"); }
             set { BackingStore?.Set("synchronizationPreventionType", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"alertThreshold", n => { AlertThreshold = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"synchronizationPreventionType", n => { SynchronizationPreventionType = n.GetEnumValue<OnPremisesDirectorySynchronizationDeletionPreventionType>(); } },
+                { "alertThreshold", n => { AlertThreshold = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "synchronizationPreventionType", n => { SynchronizationPreventionType = n.GetEnumValue<OnPremisesDirectorySynchronizationDeletionPreventionType>(); } },
             };
         }
         /// <summary>

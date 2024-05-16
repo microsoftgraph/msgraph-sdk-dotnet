@@ -5,46 +5,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties for App configuration setting item.
     /// </summary>
-    public class AppConfigurationSettingItem : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AppConfigurationSettingItem : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>app configuration key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppConfigKey {
+        public string? AppConfigKey
+        {
             get { return BackingStore?.Get<string?>("appConfigKey"); }
             set { BackingStore?.Set("appConfigKey", value); }
         }
 #nullable restore
 #else
-        public string AppConfigKey {
+        public string AppConfigKey
+        {
             get { return BackingStore?.Get<string>("appConfigKey"); }
             set { BackingStore?.Set("appConfigKey", value); }
         }
 #endif
         /// <summary>App configuration key types.</summary>
-        public MdmAppConfigKeyType? AppConfigKeyType {
+        public MdmAppConfigKeyType? AppConfigKeyType
+        {
             get { return BackingStore?.Get<MdmAppConfigKeyType?>("appConfigKeyType"); }
             set { BackingStore?.Set("appConfigKeyType", value); }
         }
         /// <summary>app configuration key value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppConfigKeyValue {
+        public string? AppConfigKeyValue
+        {
             get { return BackingStore?.Get<string?>("appConfigKeyValue"); }
             set { BackingStore?.Set("appConfigKeyValue", value); }
         }
 #nullable restore
 #else
-        public string AppConfigKeyValue {
+        public string AppConfigKeyValue
+        {
             get { return BackingStore?.Get<string>("appConfigKeyValue"); }
             set { BackingStore?.Set("appConfigKeyValue", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -91,10 +100,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"appConfigKey", n => { AppConfigKey = n.GetStringValue(); } },
-                {"appConfigKeyType", n => { AppConfigKeyType = n.GetEnumValue<MdmAppConfigKeyType>(); } },
-                {"appConfigKeyValue", n => { AppConfigKeyValue = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "appConfigKey", n => { AppConfigKey = n.GetStringValue(); } },
+                { "appConfigKeyType", n => { AppConfigKeyType = n.GetEnumValue<MdmAppConfigKeyType>(); } },
+                { "appConfigKeyValue", n => { AppConfigKeyValue = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

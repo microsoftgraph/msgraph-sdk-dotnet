@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageResourceAttributeQuestion : AccessPackageResourceAttributeSource, IParsable 
+    public class AccessPackageResourceAttributeQuestion : AccessPackageResourceAttributeSource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The question property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageQuestion? Question {
+        public AccessPackageQuestion? Question
+        {
             get { return BackingStore?.Get<AccessPackageQuestion?>("question"); }
             set { BackingStore?.Set("question", value); }
         }
 #nullable restore
 #else
-        public AccessPackageQuestion Question {
+        public AccessPackageQuestion Question
+        {
             get { return BackingStore?.Get<AccessPackageQuestion>("question"); }
             set { BackingStore?.Set("question", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"question", n => { Question = n.GetObjectValue<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue); } },
+                { "question", n => { Question = n.GetObjectValue<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

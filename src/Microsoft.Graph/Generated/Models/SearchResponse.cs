@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SearchResponse : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SearchResponse : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SearchHitsContainer>? HitsContainers {
+        public List<SearchHitsContainer>? HitsContainers
+        {
             get { return BackingStore?.Get<List<SearchHitsContainer>?>("hitsContainers"); }
             set { BackingStore?.Set("hitsContainers", value); }
         }
 #nullable restore
 #else
-        public List<SearchHitsContainer> HitsContainers {
+        public List<SearchHitsContainer> HitsContainers
+        {
             get { return BackingStore?.Get<List<SearchHitsContainer>>("hitsContainers"); }
             set { BackingStore?.Set("hitsContainers", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Provides information related to spelling corrections in the alteration response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AlterationResponse? QueryAlterationResponse {
+        public AlterationResponse? QueryAlterationResponse
+        {
             get { return BackingStore?.Get<AlterationResponse?>("queryAlterationResponse"); }
             set { BackingStore?.Set("queryAlterationResponse", value); }
         }
 #nullable restore
 #else
-        public AlterationResponse QueryAlterationResponse {
+        public AlterationResponse QueryAlterationResponse
+        {
             get { return BackingStore?.Get<AlterationResponse>("queryAlterationResponse"); }
             set { BackingStore?.Set("queryAlterationResponse", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ResultTemplateDictionary? ResultTemplates {
+        public ResultTemplateDictionary? ResultTemplates
+        {
             get { return BackingStore?.Get<ResultTemplateDictionary?>("resultTemplates"); }
             set { BackingStore?.Set("resultTemplates", value); }
         }
 #nullable restore
 #else
-        public ResultTemplateDictionary ResultTemplates {
+        public ResultTemplateDictionary ResultTemplates
+        {
             get { return BackingStore?.Get<ResultTemplateDictionary>("resultTemplates"); }
             set { BackingStore?.Set("resultTemplates", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Contains the search terms sent in the initial search query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SearchTerms {
+        public List<string>? SearchTerms
+        {
             get { return BackingStore?.Get<List<string>?>("searchTerms"); }
             set { BackingStore?.Set("searchTerms", value); }
         }
 #nullable restore
 #else
-        public List<string> SearchTerms {
+        public List<string> SearchTerms
+        {
             get { return BackingStore?.Get<List<string>>("searchTerms"); }
             set { BackingStore?.Set("searchTerms", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"hitsContainers", n => { HitsContainers = n.GetCollectionOfObjectValues<SearchHitsContainer>(SearchHitsContainer.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"queryAlterationResponse", n => { QueryAlterationResponse = n.GetObjectValue<AlterationResponse>(AlterationResponse.CreateFromDiscriminatorValue); } },
-                {"resultTemplates", n => { ResultTemplates = n.GetObjectValue<ResultTemplateDictionary>(ResultTemplateDictionary.CreateFromDiscriminatorValue); } },
-                {"searchTerms", n => { SearchTerms = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "hitsContainers", n => { HitsContainers = n.GetCollectionOfObjectValues<SearchHitsContainer>(SearchHitsContainer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "queryAlterationResponse", n => { QueryAlterationResponse = n.GetObjectValue<AlterationResponse>(AlterationResponse.CreateFromDiscriminatorValue); } },
+                { "resultTemplates", n => { ResultTemplates = n.GetObjectValue<ResultTemplateDictionary>(ResultTemplateDictionary.CreateFromDiscriminatorValue); } },
+                { "searchTerms", n => { SearchTerms = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

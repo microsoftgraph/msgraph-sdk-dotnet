@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Roman {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Roman
+{
     #pragma warning disable CS1591
-    public class RomanPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RomanPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Roman {
         /// <summary>The form property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Form {
+        public Json? Form
+        {
             get { return BackingStore?.Get<Json?>("form"); }
             set { BackingStore?.Set("form", value); }
         }
 #nullable restore
 #else
-        public Json Form {
+        public Json Form
+        {
             get { return BackingStore?.Get<Json>("form"); }
             set { BackingStore?.Set("form", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Roman {
         /// <summary>The number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Number {
+        public Json? Number
+        {
             get { return BackingStore?.Get<Json?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #nullable restore
 #else
-        public Json Number {
+        public Json Number
+        {
             get { return BackingStore?.Get<Json>("number"); }
             set { BackingStore?.Set("number", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Roman {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"form", n => { Form = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"number", n => { Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "form", n => { Form = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "number", n => { Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

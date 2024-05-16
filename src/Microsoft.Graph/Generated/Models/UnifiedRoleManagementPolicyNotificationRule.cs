@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UnifiedRoleManagementPolicyNotificationRule : UnifiedRoleManagementPolicyRule, IParsable 
+    public class UnifiedRoleManagementPolicyNotificationRule : UnifiedRoleManagementPolicyRule, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether a default recipient will receive the notification email.</summary>
-        public bool? IsDefaultRecipientsEnabled {
+        public bool? IsDefaultRecipientsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isDefaultRecipientsEnabled"); }
             set { BackingStore?.Set("isDefaultRecipientsEnabled", value); }
         }
         /// <summary>The level of notification. The possible values are None, Critical, All.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationLevel {
+        public string? NotificationLevel
+        {
             get { return BackingStore?.Get<string?>("notificationLevel"); }
             set { BackingStore?.Set("notificationLevel", value); }
         }
 #nullable restore
 #else
-        public string NotificationLevel {
+        public string NotificationLevel
+        {
             get { return BackingStore?.Get<string>("notificationLevel"); }
             set { BackingStore?.Set("notificationLevel", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of recipients of the email notifications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NotificationRecipients {
+        public List<string>? NotificationRecipients
+        {
             get { return BackingStore?.Get<List<string>?>("notificationRecipients"); }
             set { BackingStore?.Set("notificationRecipients", value); }
         }
 #nullable restore
 #else
-        public List<string> NotificationRecipients {
+        public List<string> NotificationRecipients
+        {
             get { return BackingStore?.Get<List<string>>("notificationRecipients"); }
             set { BackingStore?.Set("notificationRecipients", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The type of notification. Only Email is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationType {
+        public string? NotificationType
+        {
             get { return BackingStore?.Get<string?>("notificationType"); }
             set { BackingStore?.Set("notificationType", value); }
         }
 #nullable restore
 #else
-        public string NotificationType {
+        public string NotificationType
+        {
             get { return BackingStore?.Get<string>("notificationType"); }
             set { BackingStore?.Set("notificationType", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The type of recipient of the notification. The possible values are Requestor, Approver, Admin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecipientType {
+        public string? RecipientType
+        {
             get { return BackingStore?.Get<string?>("recipientType"); }
             set { BackingStore?.Set("recipientType", value); }
         }
 #nullable restore
 #else
-        public string RecipientType {
+        public string RecipientType
+        {
             get { return BackingStore?.Get<string>("recipientType"); }
             set { BackingStore?.Set("recipientType", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isDefaultRecipientsEnabled", n => { IsDefaultRecipientsEnabled = n.GetBoolValue(); } },
-                {"notificationLevel", n => { NotificationLevel = n.GetStringValue(); } },
-                {"notificationRecipients", n => { NotificationRecipients = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"notificationType", n => { NotificationType = n.GetStringValue(); } },
-                {"recipientType", n => { RecipientType = n.GetStringValue(); } },
+                { "isDefaultRecipientsEnabled", n => { IsDefaultRecipientsEnabled = n.GetBoolValue(); } },
+                { "notificationLevel", n => { NotificationLevel = n.GetStringValue(); } },
+                { "notificationRecipients", n => { NotificationRecipients = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "notificationType", n => { NotificationType = n.GetStringValue(); } },
+                { "recipientType", n => { RecipientType = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ServiceAnnouncement : Entity, IParsable 
+    public class ServiceAnnouncement : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServiceHealth>? HealthOverviews {
+        public List<ServiceHealth>? HealthOverviews
+        {
             get { return BackingStore?.Get<List<ServiceHealth>?>("healthOverviews"); }
             set { BackingStore?.Set("healthOverviews", value); }
         }
 #nullable restore
 #else
-        public List<ServiceHealth> HealthOverviews {
+        public List<ServiceHealth> HealthOverviews
+        {
             get { return BackingStore?.Get<List<ServiceHealth>>("healthOverviews"); }
             set { BackingStore?.Set("healthOverviews", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServiceHealthIssue>? Issues {
+        public List<ServiceHealthIssue>? Issues
+        {
             get { return BackingStore?.Get<List<ServiceHealthIssue>?>("issues"); }
             set { BackingStore?.Set("issues", value); }
         }
 #nullable restore
 #else
-        public List<ServiceHealthIssue> Issues {
+        public List<ServiceHealthIssue> Issues
+        {
             get { return BackingStore?.Get<List<ServiceHealthIssue>>("issues"); }
             set { BackingStore?.Set("issues", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServiceUpdateMessage>? Messages {
+        public List<ServiceUpdateMessage>? Messages
+        {
             get { return BackingStore?.Get<List<ServiceUpdateMessage>?>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
 #nullable restore
 #else
-        public List<ServiceUpdateMessage> Messages {
+        public List<ServiceUpdateMessage> Messages
+        {
             get { return BackingStore?.Get<List<ServiceUpdateMessage>>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"healthOverviews", n => { HealthOverviews = n.GetCollectionOfObjectValues<ServiceHealth>(ServiceHealth.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"issues", n => { Issues = n.GetCollectionOfObjectValues<ServiceHealthIssue>(ServiceHealthIssue.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"messages", n => { Messages = n.GetCollectionOfObjectValues<ServiceUpdateMessage>(ServiceUpdateMessage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "healthOverviews", n => { HealthOverviews = n.GetCollectionOfObjectValues<ServiceHealth>(ServiceHealth.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "issues", n => { Issues = n.GetCollectionOfObjectValues<ServiceHealthIssue>(ServiceHealthIssue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<ServiceUpdateMessage>(ServiceUpdateMessage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

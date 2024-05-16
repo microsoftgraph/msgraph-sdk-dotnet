@@ -4,64 +4,74 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SitePage : BaseSitePage, IParsable 
+    public class SitePage : BaseSitePage, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical sections.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.CanvasLayout? CanvasLayout {
+        public Microsoft.Graph.Models.CanvasLayout? CanvasLayout
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.CanvasLayout?>("canvasLayout"); }
             set { BackingStore?.Set("canvasLayout", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.CanvasLayout CanvasLayout {
+        public Microsoft.Graph.Models.CanvasLayout CanvasLayout
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.CanvasLayout>("canvasLayout"); }
             set { BackingStore?.Set("canvasLayout", value); }
         }
 #endif
         /// <summary>Indicates the promotion kind of the sitePage. The possible values are: microsoftReserved, page, newsPost, unknownFutureValue.</summary>
-        public PagePromotionType? PromotionKind {
+        public PagePromotionType? PromotionKind
+        {
             get { return BackingStore?.Get<PagePromotionType?>("promotionKind"); }
             set { BackingStore?.Set("promotionKind", value); }
         }
         /// <summary>Reactions information for the page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ReactionsFacet? Reactions {
+        public ReactionsFacet? Reactions
+        {
             get { return BackingStore?.Get<ReactionsFacet?>("reactions"); }
             set { BackingStore?.Set("reactions", value); }
         }
 #nullable restore
 #else
-        public ReactionsFacet Reactions {
+        public ReactionsFacet Reactions
+        {
             get { return BackingStore?.Get<ReactionsFacet>("reactions"); }
             set { BackingStore?.Set("reactions", value); }
         }
 #endif
         /// <summary>Determines whether or not to show comments at the bottom of the page.</summary>
-        public bool? ShowComments {
+        public bool? ShowComments
+        {
             get { return BackingStore?.Get<bool?>("showComments"); }
             set { BackingStore?.Set("showComments", value); }
         }
         /// <summary>Determines whether or not to show recommended pages at the bottom of the page.</summary>
-        public bool? ShowRecommendedPages {
+        public bool? ShowRecommendedPages
+        {
             get { return BackingStore?.Get<bool?>("showRecommendedPages"); }
             set { BackingStore?.Set("showRecommendedPages", value); }
         }
         /// <summary>Url of the sitePage&apos;s thumbnail image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThumbnailWebUrl {
+        public string? ThumbnailWebUrl
+        {
             get { return BackingStore?.Get<string?>("thumbnailWebUrl"); }
             set { BackingStore?.Set("thumbnailWebUrl", value); }
         }
 #nullable restore
 #else
-        public string ThumbnailWebUrl {
+        public string ThumbnailWebUrl
+        {
             get { return BackingStore?.Get<string>("thumbnailWebUrl"); }
             set { BackingStore?.Set("thumbnailWebUrl", value); }
         }
@@ -69,13 +79,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Title area on the SharePoint page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.TitleArea? TitleArea {
+        public Microsoft.Graph.Models.TitleArea? TitleArea
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TitleArea?>("titleArea"); }
             set { BackingStore?.Set("titleArea", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.TitleArea TitleArea {
+        public Microsoft.Graph.Models.TitleArea TitleArea
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TitleArea>("titleArea"); }
             set { BackingStore?.Set("titleArea", value); }
         }
@@ -83,13 +95,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Collection of webparts on the SharePoint page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WebPart>? WebParts {
+        public List<WebPart>? WebParts
+        {
             get { return BackingStore?.Get<List<WebPart>?>("webParts"); }
             set { BackingStore?.Set("webParts", value); }
         }
 #nullable restore
 #else
-        public List<WebPart> WebParts {
+        public List<WebPart> WebParts
+        {
             get { return BackingStore?.Get<List<WebPart>>("webParts"); }
             set { BackingStore?.Set("webParts", value); }
         }
@@ -112,14 +126,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"canvasLayout", n => { CanvasLayout = n.GetObjectValue<Microsoft.Graph.Models.CanvasLayout>(Microsoft.Graph.Models.CanvasLayout.CreateFromDiscriminatorValue); } },
-                {"promotionKind", n => { PromotionKind = n.GetEnumValue<PagePromotionType>(); } },
-                {"reactions", n => { Reactions = n.GetObjectValue<ReactionsFacet>(ReactionsFacet.CreateFromDiscriminatorValue); } },
-                {"showComments", n => { ShowComments = n.GetBoolValue(); } },
-                {"showRecommendedPages", n => { ShowRecommendedPages = n.GetBoolValue(); } },
-                {"thumbnailWebUrl", n => { ThumbnailWebUrl = n.GetStringValue(); } },
-                {"titleArea", n => { TitleArea = n.GetObjectValue<Microsoft.Graph.Models.TitleArea>(Microsoft.Graph.Models.TitleArea.CreateFromDiscriminatorValue); } },
-                {"webParts", n => { WebParts = n.GetCollectionOfObjectValues<WebPart>(WebPart.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "canvasLayout", n => { CanvasLayout = n.GetObjectValue<Microsoft.Graph.Models.CanvasLayout>(Microsoft.Graph.Models.CanvasLayout.CreateFromDiscriminatorValue); } },
+                { "promotionKind", n => { PromotionKind = n.GetEnumValue<PagePromotionType>(); } },
+                { "reactions", n => { Reactions = n.GetObjectValue<ReactionsFacet>(ReactionsFacet.CreateFromDiscriminatorValue); } },
+                { "showComments", n => { ShowComments = n.GetBoolValue(); } },
+                { "showRecommendedPages", n => { ShowRecommendedPages = n.GetBoolValue(); } },
+                { "thumbnailWebUrl", n => { ThumbnailWebUrl = n.GetStringValue(); } },
+                { "titleArea", n => { TitleArea = n.GetObjectValue<Microsoft.Graph.Models.TitleArea>(Microsoft.Graph.Models.TitleArea.CreateFromDiscriminatorValue); } },
+                { "webParts", n => { WebParts = n.GetCollectionOfObjectValues<WebPart>(WebPart.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

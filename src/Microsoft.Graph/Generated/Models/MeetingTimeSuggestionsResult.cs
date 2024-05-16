@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MeetingTimeSuggestionsResult : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MeetingTimeSuggestionsResult : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A reason for not returning any meeting suggestions. The possible values are: attendeesUnavailable, attendeesUnavailableOrUnknown, locationsUnavailable, organizerUnavailable, or unknown. This property is an empty string if the meetingTimeSuggestions property does include any meeting suggestions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmptySuggestionsReason {
+        public string? EmptySuggestionsReason
+        {
             get { return BackingStore?.Get<string?>("emptySuggestionsReason"); }
             set { BackingStore?.Set("emptySuggestionsReason", value); }
         }
 #nullable restore
 #else
-        public string EmptySuggestionsReason {
+        public string EmptySuggestionsReason
+        {
             get { return BackingStore?.Get<string>("emptySuggestionsReason"); }
             set { BackingStore?.Set("emptySuggestionsReason", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>An array of meeting suggestions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MeetingTimeSuggestion>? MeetingTimeSuggestions {
+        public List<MeetingTimeSuggestion>? MeetingTimeSuggestions
+        {
             get { return BackingStore?.Get<List<MeetingTimeSuggestion>?>("meetingTimeSuggestions"); }
             set { BackingStore?.Set("meetingTimeSuggestions", value); }
         }
 #nullable restore
 #else
-        public List<MeetingTimeSuggestion> MeetingTimeSuggestions {
+        public List<MeetingTimeSuggestion> MeetingTimeSuggestions
+        {
             get { return BackingStore?.Get<List<MeetingTimeSuggestion>>("meetingTimeSuggestions"); }
             set { BackingStore?.Set("meetingTimeSuggestions", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"emptySuggestionsReason", n => { EmptySuggestionsReason = n.GetStringValue(); } },
-                {"meetingTimeSuggestions", n => { MeetingTimeSuggestions = n.GetCollectionOfObjectValues<MeetingTimeSuggestion>(MeetingTimeSuggestion.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "emptySuggestionsReason", n => { EmptySuggestionsReason = n.GetStringValue(); } },
+                { "meetingTimeSuggestions", n => { MeetingTimeSuggestions = n.GetCollectionOfObjectValues<MeetingTimeSuggestion>(MeetingTimeSuggestion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

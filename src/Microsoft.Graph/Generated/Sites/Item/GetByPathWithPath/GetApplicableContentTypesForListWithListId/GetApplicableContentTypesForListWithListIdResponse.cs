@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetApplicableContentTypesForListWithListId {
+namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetApplicableContentTypesForListWithListId
+{
     [Obsolete("This class is obsolete. Use GetApplicableContentTypesForListWithListIdGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetApplicableContentTypesForListWithListIdResponse : GetApplicableContentTypesForListWithListIdGetResponse, IParsable 
+    public class GetApplicableContentTypesForListWithListIdResponse : GetApplicableContentTypesForListWithListIdGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

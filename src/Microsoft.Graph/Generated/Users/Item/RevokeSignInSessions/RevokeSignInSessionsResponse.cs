@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.RevokeSignInSessions {
+namespace Microsoft.Graph.Users.Item.RevokeSignInSessions
+{
     [Obsolete("This class is obsolete. Use RevokeSignInSessionsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class RevokeSignInSessionsResponse : RevokeSignInSessionsPostResponse, IParsable 
+    public class RevokeSignInSessionsResponse : RevokeSignInSessionsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

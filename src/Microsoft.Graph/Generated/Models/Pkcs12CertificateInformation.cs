@@ -5,43 +5,50 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Pkcs12CertificateInformation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Pkcs12CertificateInformation : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents whether the certificate is the active certificate to be used for calling the API connector. The active certificate is the most recently uploaded certificate that isn&apos;t yet expired but whose notBefore time is in the past.</summary>
-        public bool? IsActive {
+        public bool? IsActive
+        {
             get { return BackingStore?.Get<bool?>("isActive"); }
             set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>The certificate&apos;s expiry. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)</summary>
-        public long? NotAfter {
+        public long? NotAfter
+        {
             get { return BackingStore?.Get<long?>("notAfter"); }
             set { BackingStore?.Set("notAfter", value); }
         }
         /// <summary>The certificate&apos;s issue time (not before). This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)</summary>
-        public long? NotBefore {
+        public long? NotBefore
+        {
             get { return BackingStore?.Get<long?>("notBefore"); }
             set { BackingStore?.Set("notBefore", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -49,13 +56,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The certificate thumbprint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Thumbprint {
+        public string? Thumbprint
+        {
             get { return BackingStore?.Get<string?>("thumbprint"); }
             set { BackingStore?.Set("thumbprint", value); }
         }
 #nullable restore
 #else
-        public string Thumbprint {
+        public string Thumbprint
+        {
             get { return BackingStore?.Get<string>("thumbprint"); }
             set { BackingStore?.Set("thumbprint", value); }
         }
@@ -86,11 +95,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isActive", n => { IsActive = n.GetBoolValue(); } },
-                {"notAfter", n => { NotAfter = n.GetLongValue(); } },
-                {"notBefore", n => { NotBefore = n.GetLongValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"thumbprint", n => { Thumbprint = n.GetStringValue(); } },
+                { "isActive", n => { IsActive = n.GetBoolValue(); } },
+                { "notAfter", n => { NotAfter = n.GetLongValue(); } },
+                { "notBefore", n => { NotBefore = n.GetLongValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "thumbprint", n => { Thumbprint = n.GetStringValue(); } },
             };
         }
         /// <summary>

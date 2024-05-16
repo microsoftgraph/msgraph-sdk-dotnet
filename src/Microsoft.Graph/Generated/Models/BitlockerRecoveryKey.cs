@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class BitlockerRecoveryKey : Entity, IParsable 
+    public class BitlockerRecoveryKey : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date and time when the key was originally backed up to Microsoft Entra ID. Not nullable.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -31,19 +35,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The BitLocker recovery key. Returned only on $select. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key {
+        public string? Key
+        {
             get { return BackingStore?.Get<string?>("key"); }
             set { BackingStore?.Set("key", value); }
         }
 #nullable restore
 #else
-        public string Key {
+        public string Key
+        {
             get { return BackingStore?.Get<string>("key"); }
             set { BackingStore?.Set("key", value); }
         }
 #endif
         /// <summary>Indicates the type of volume the BitLocker key is associated with. The possible values are: 1 (for operatingSystemVolume), 2 (for fixedDataVolume), 3 (for removableDataVolume), and 4 (for unknownFutureValue).</summary>
-        public Microsoft.Graph.Models.VolumeType? VolumeType {
+        public Microsoft.Graph.Models.VolumeType? VolumeType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.VolumeType?>("volumeType"); }
             set { BackingStore?.Set("volumeType", value); }
         }
@@ -65,10 +72,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"key", n => { Key = n.GetStringValue(); } },
-                {"volumeType", n => { VolumeType = n.GetEnumValue<VolumeType>(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "key", n => { Key = n.GetStringValue(); } },
+                { "volumeType", n => { VolumeType = n.GetEnumValue<VolumeType>(); } },
             };
         }
         /// <summary>

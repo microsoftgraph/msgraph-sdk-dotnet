@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ItemPreviewInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ItemPreviewInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The getUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GetUrl {
+        public string? GetUrl
+        {
             get { return BackingStore?.Get<string?>("getUrl"); }
             set { BackingStore?.Set("getUrl", value); }
         }
 #nullable restore
 #else
-        public string GetUrl {
+        public string GetUrl
+        {
             get { return BackingStore?.Get<string>("getUrl"); }
             set { BackingStore?.Set("getUrl", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The postParameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostParameters {
+        public string? PostParameters
+        {
             get { return BackingStore?.Get<string?>("postParameters"); }
             set { BackingStore?.Set("postParameters", value); }
         }
 #nullable restore
 #else
-        public string PostParameters {
+        public string PostParameters
+        {
             get { return BackingStore?.Get<string>("postParameters"); }
             set { BackingStore?.Set("postParameters", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The postUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostUrl {
+        public string? PostUrl
+        {
             get { return BackingStore?.Get<string?>("postUrl"); }
             set { BackingStore?.Set("postUrl", value); }
         }
 #nullable restore
 #else
-        public string PostUrl {
+        public string PostUrl
+        {
             get { return BackingStore?.Get<string>("postUrl"); }
             set { BackingStore?.Set("postUrl", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"getUrl", n => { GetUrl = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"postParameters", n => { PostParameters = n.GetStringValue(); } },
-                {"postUrl", n => { PostUrl = n.GetStringValue(); } },
+                { "getUrl", n => { GetUrl = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "postParameters", n => { PostParameters = n.GetStringValue(); } },
+                { "postUrl", n => { PostUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

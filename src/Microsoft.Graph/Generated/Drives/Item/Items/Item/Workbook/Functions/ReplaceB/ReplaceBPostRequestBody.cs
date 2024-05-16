@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ReplaceB {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ReplaceB
+{
     #pragma warning disable CS1591
-    public class ReplaceBPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ReplaceBPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ReplaceB {
         /// <summary>The newText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? NewText {
+        public Json? NewText
+        {
             get { return BackingStore?.Get<Json?>("newText"); }
             set { BackingStore?.Set("newText", value); }
         }
 #nullable restore
 #else
-        public Json NewText {
+        public Json NewText
+        {
             get { return BackingStore?.Get<Json>("newText"); }
             set { BackingStore?.Set("newText", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ReplaceB {
         /// <summary>The numBytes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? NumBytes {
+        public Json? NumBytes
+        {
             get { return BackingStore?.Get<Json?>("numBytes"); }
             set { BackingStore?.Set("numBytes", value); }
         }
 #nullable restore
 #else
-        public Json NumBytes {
+        public Json NumBytes
+        {
             get { return BackingStore?.Get<Json>("numBytes"); }
             set { BackingStore?.Set("numBytes", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ReplaceB {
         /// <summary>The oldText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? OldText {
+        public Json? OldText
+        {
             get { return BackingStore?.Get<Json?>("oldText"); }
             set { BackingStore?.Set("oldText", value); }
         }
 #nullable restore
 #else
-        public Json OldText {
+        public Json OldText
+        {
             get { return BackingStore?.Get<Json>("oldText"); }
             set { BackingStore?.Set("oldText", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ReplaceB {
         /// <summary>The startNum property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? StartNum {
+        public Json? StartNum
+        {
             get { return BackingStore?.Get<Json?>("startNum"); }
             set { BackingStore?.Set("startNum", value); }
         }
 #nullable restore
 #else
-        public Json StartNum {
+        public Json StartNum
+        {
             get { return BackingStore?.Get<Json>("startNum"); }
             set { BackingStore?.Set("startNum", value); }
         }
@@ -100,10 +110,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ReplaceB {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"newText", n => { NewText = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"numBytes", n => { NumBytes = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"oldText", n => { OldText = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"startNum", n => { StartNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "newText", n => { NewText = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "numBytes", n => { NumBytes = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "oldText", n => { OldText = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "startNum", n => { StartNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

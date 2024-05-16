@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AuthenticationConfigurationValidation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AuthenticationConfigurationValidation : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Errors in the validation result of a customAuthenticationExtension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GenericError>? Errors {
+        public List<GenericError>? Errors
+        {
             get { return BackingStore?.Get<List<GenericError>?>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
 #nullable restore
 #else
-        public List<GenericError> Errors {
+        public List<GenericError> Errors
+        {
             get { return BackingStore?.Get<List<GenericError>>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Warnings in the validation result of a customAuthenticationExtension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GenericError>? Warnings {
+        public List<GenericError>? Warnings
+        {
             get { return BackingStore?.Get<List<GenericError>?>("warnings"); }
             set { BackingStore?.Set("warnings", value); }
         }
 #nullable restore
 #else
-        public List<GenericError> Warnings {
+        public List<GenericError> Warnings
+        {
             get { return BackingStore?.Get<List<GenericError>>("warnings"); }
             set { BackingStore?.Set("warnings", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"errors", n => { Errors = n.GetCollectionOfObjectValues<GenericError>(GenericError.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"warnings", n => { Warnings = n.GetCollectionOfObjectValues<GenericError>(GenericError.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<GenericError>(GenericError.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<GenericError>(GenericError.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

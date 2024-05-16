@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Me.TranslateExchangeIds {
+namespace Microsoft.Graph.Me.TranslateExchangeIds
+{
     [Obsolete("This class is obsolete. Use TranslateExchangeIdsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class TranslateExchangeIdsResponse : TranslateExchangeIdsPostResponse, IParsable 
+    public class TranslateExchangeIdsResponse : TranslateExchangeIdsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

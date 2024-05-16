@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Item {
+namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\categories\{educationCategory-id}
     /// </summary>
-    public class EducationCategoryItemRequestBuilder : BaseRequestBuilder 
+    public class EducationCategoryItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of educationRoot entities.</summary>
         public RefRequestBuilder Ref

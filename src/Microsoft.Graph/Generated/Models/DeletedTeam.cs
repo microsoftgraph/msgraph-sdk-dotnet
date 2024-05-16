@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DeletedTeam : Entity, IParsable 
+    public class DeletedTeam : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The channels that are either shared with this deleted team or created in this deleted team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Channel>? Channels {
+        public List<Channel>? Channels
+        {
             get { return BackingStore?.Get<List<Channel>?>("channels"); }
             set { BackingStore?.Set("channels", value); }
         }
 #nullable restore
 #else
-        public List<Channel> Channels {
+        public List<Channel> Channels
+        {
             get { return BackingStore?.Get<List<Channel>>("channels"); }
             set { BackingStore?.Set("channels", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"channels", n => { Channels = n.GetCollectionOfObjectValues<Channel>(Channel.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "channels", n => { Channels = n.GetCollectionOfObjectValues<Channel>(Channel.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

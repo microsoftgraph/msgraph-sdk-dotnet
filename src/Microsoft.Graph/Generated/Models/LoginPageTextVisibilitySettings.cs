@@ -5,58 +5,68 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class LoginPageTextVisibilitySettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class LoginPageTextVisibilitySettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Option to hide the self-service password reset (SSPR) hyperlinks such as &apos;Can&apos;t access your account?&apos;, &apos;Forgot my password&apos; and &apos;Reset it now&apos; on the sign-in form.</summary>
-        public bool? HideAccountResetCredentials {
+        public bool? HideAccountResetCredentials
+        {
             get { return BackingStore?.Get<bool?>("hideAccountResetCredentials"); }
             set { BackingStore?.Set("hideAccountResetCredentials", value); }
         }
         /// <summary>Option to hide the self-service password reset (SSPR) &apos;Can&apos;t access your account?&apos; hyperlink on the sign-in form.</summary>
-        public bool? HideCannotAccessYourAccount {
+        public bool? HideCannotAccessYourAccount
+        {
             get { return BackingStore?.Get<bool?>("hideCannotAccessYourAccount"); }
             set { BackingStore?.Set("hideCannotAccessYourAccount", value); }
         }
         /// <summary>Option to hide the self-service password reset (SSPR) &apos;Forgot my password&apos; hyperlink on the sign-in form.</summary>
-        public bool? HideForgotMyPassword {
+        public bool? HideForgotMyPassword
+        {
             get { return BackingStore?.Get<bool?>("hideForgotMyPassword"); }
             set { BackingStore?.Set("hideForgotMyPassword", value); }
         }
         /// <summary>Option to hide the &apos;Privacy &amp; Cookies&apos; hyperlink in the footer.</summary>
-        public bool? HidePrivacyAndCookies {
+        public bool? HidePrivacyAndCookies
+        {
             get { return BackingStore?.Get<bool?>("hidePrivacyAndCookies"); }
             set { BackingStore?.Set("hidePrivacyAndCookies", value); }
         }
         /// <summary>Option to hide the self-service password reset (SSPR) &apos;reset it now&apos; hyperlink on the sign-in form.</summary>
-        public bool? HideResetItNow {
+        public bool? HideResetItNow
+        {
             get { return BackingStore?.Get<bool?>("hideResetItNow"); }
             set { BackingStore?.Set("hideResetItNow", value); }
         }
         /// <summary>Option to hide the &apos;Terms of Use&apos; hyperlink in the footer.</summary>
-        public bool? HideTermsOfUse {
+        public bool? HideTermsOfUse
+        {
             get { return BackingStore?.Get<bool?>("hideTermsOfUse"); }
             set { BackingStore?.Set("hideTermsOfUse", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -87,13 +97,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"hideAccountResetCredentials", n => { HideAccountResetCredentials = n.GetBoolValue(); } },
-                {"hideCannotAccessYourAccount", n => { HideCannotAccessYourAccount = n.GetBoolValue(); } },
-                {"hideForgotMyPassword", n => { HideForgotMyPassword = n.GetBoolValue(); } },
-                {"hidePrivacyAndCookies", n => { HidePrivacyAndCookies = n.GetBoolValue(); } },
-                {"hideResetItNow", n => { HideResetItNow = n.GetBoolValue(); } },
-                {"hideTermsOfUse", n => { HideTermsOfUse = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "hideAccountResetCredentials", n => { HideAccountResetCredentials = n.GetBoolValue(); } },
+                { "hideCannotAccessYourAccount", n => { HideCannotAccessYourAccount = n.GetBoolValue(); } },
+                { "hideForgotMyPassword", n => { HideForgotMyPassword = n.GetBoolValue(); } },
+                { "hidePrivacyAndCookies", n => { HidePrivacyAndCookies = n.GetBoolValue(); } },
+                { "hideResetItNow", n => { HideResetItNow = n.GetBoolValue(); } },
+                { "hideTermsOfUse", n => { HideTermsOfUse = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

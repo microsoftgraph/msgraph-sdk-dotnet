@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UserRegistrationMethodCount : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UserRegistrationMethodCount : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Name of the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthenticationMethod {
+        public string? AuthenticationMethod
+        {
             get { return BackingStore?.Get<string?>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
 #nullable restore
 #else
-        public string AuthenticationMethod {
+        public string AuthenticationMethod
+        {
             get { return BackingStore?.Get<string>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
@@ -34,19 +38,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Number of users registered.</summary>
-        public long? UserCount {
+        public long? UserCount
+        {
             get { return BackingStore?.Get<long?>("userCount"); }
             set { BackingStore?.Set("userCount", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"authenticationMethod", n => { AuthenticationMethod = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"userCount", n => { UserCount = n.GetLongValue(); } },
+                { "authenticationMethod", n => { AuthenticationMethod = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "userCount", n => { UserCount = n.GetLongValue(); } },
             };
         }
         /// <summary>

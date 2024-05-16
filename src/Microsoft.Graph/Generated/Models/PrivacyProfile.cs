@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PrivacyProfile : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PrivacyProfile : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A valid smtp email address for the privacy statement contact. Not required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContactEmail {
+        public string? ContactEmail
+        {
             get { return BackingStore?.Get<string?>("contactEmail"); }
             set { BackingStore?.Set("contactEmail", value); }
         }
 #nullable restore
 #else
-        public string ContactEmail {
+        public string ContactEmail
+        {
             get { return BackingStore?.Get<string>("contactEmail"); }
             set { BackingStore?.Set("contactEmail", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company&apos;s privacy statement. Not required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatementUrl {
+        public string? StatementUrl
+        {
             get { return BackingStore?.Get<string?>("statementUrl"); }
             set { BackingStore?.Set("statementUrl", value); }
         }
 #nullable restore
 #else
-        public string StatementUrl {
+        public string StatementUrl
+        {
             get { return BackingStore?.Get<string>("statementUrl"); }
             set { BackingStore?.Set("statementUrl", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"contactEmail", n => { ContactEmail = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"statementUrl", n => { StatementUrl = n.GetStringValue(); } },
+                { "contactEmail", n => { ContactEmail = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "statementUrl", n => { StatementUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

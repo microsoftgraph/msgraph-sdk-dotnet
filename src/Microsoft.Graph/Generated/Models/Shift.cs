@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Shift : ChangeTrackedEntity, IParsable 
+    public class Shift : ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they are shared, which copies the changes from the draftShift to the sharedShift property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ShiftItem? DraftShift {
+        public ShiftItem? DraftShift
+        {
             get { return BackingStore?.Get<ShiftItem?>("draftShift"); }
             set { BackingStore?.Set("draftShift", value); }
         }
 #nullable restore
 #else
-        public ShiftItem DraftShift {
+        public ShiftItem DraftShift
+        {
             get { return BackingStore?.Get<ShiftItem>("draftShift"); }
             set { BackingStore?.Set("draftShift", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>ID of the scheduling group the shift is part of. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SchedulingGroupId {
+        public string? SchedulingGroupId
+        {
             get { return BackingStore?.Get<string?>("schedulingGroupId"); }
             set { BackingStore?.Set("schedulingGroupId", value); }
         }
 #nullable restore
 #else
-        public string SchedulingGroupId {
+        public string SchedulingGroupId
+        {
             get { return BackingStore?.Get<string>("schedulingGroupId"); }
             set { BackingStore?.Set("schedulingGroupId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The shared version of this shift that is viewable by both employees and managers. Updates to the sharedShift property send notifications to users in the Teams client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ShiftItem? SharedShift {
+        public ShiftItem? SharedShift
+        {
             get { return BackingStore?.Get<ShiftItem?>("sharedShift"); }
             set { BackingStore?.Set("sharedShift", value); }
         }
 #nullable restore
 #else
-        public ShiftItem SharedShift {
+        public ShiftItem SharedShift
+        {
             get { return BackingStore?.Get<ShiftItem>("sharedShift"); }
             set { BackingStore?.Set("sharedShift", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>ID of the user assigned to the shift. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"draftShift", n => { DraftShift = n.GetObjectValue<ShiftItem>(ShiftItem.CreateFromDiscriminatorValue); } },
-                {"schedulingGroupId", n => { SchedulingGroupId = n.GetStringValue(); } },
-                {"sharedShift", n => { SharedShift = n.GetObjectValue<ShiftItem>(ShiftItem.CreateFromDiscriminatorValue); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "draftShift", n => { DraftShift = n.GetObjectValue<ShiftItem>(ShiftItem.CreateFromDiscriminatorValue); } },
+                { "schedulingGroupId", n => { SchedulingGroupId = n.GetStringValue(); } },
+                { "sharedShift", n => { SharedShift = n.GetObjectValue<ShiftItem>(ShiftItem.CreateFromDiscriminatorValue); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

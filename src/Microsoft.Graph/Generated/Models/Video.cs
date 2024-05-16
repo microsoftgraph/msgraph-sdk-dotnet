@@ -5,97 +5,113 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Video : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Video : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Number of audio bits per sample.</summary>
-        public int? AudioBitsPerSample {
+        public int? AudioBitsPerSample
+        {
             get { return BackingStore?.Get<int?>("audioBitsPerSample"); }
             set { BackingStore?.Set("audioBitsPerSample", value); }
         }
         /// <summary>Number of audio channels.</summary>
-        public int? AudioChannels {
+        public int? AudioChannels
+        {
             get { return BackingStore?.Get<int?>("audioChannels"); }
             set { BackingStore?.Set("audioChannels", value); }
         }
         /// <summary>Name of the audio format (AAC, MP3, etc.).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AudioFormat {
+        public string? AudioFormat
+        {
             get { return BackingStore?.Get<string?>("audioFormat"); }
             set { BackingStore?.Set("audioFormat", value); }
         }
 #nullable restore
 #else
-        public string AudioFormat {
+        public string AudioFormat
+        {
             get { return BackingStore?.Get<string>("audioFormat"); }
             set { BackingStore?.Set("audioFormat", value); }
         }
 #endif
         /// <summary>Number of audio samples per second.</summary>
-        public int? AudioSamplesPerSecond {
+        public int? AudioSamplesPerSecond
+        {
             get { return BackingStore?.Get<int?>("audioSamplesPerSecond"); }
             set { BackingStore?.Set("audioSamplesPerSecond", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Bit rate of the video in bits per second.</summary>
-        public int? Bitrate {
+        public int? Bitrate
+        {
             get { return BackingStore?.Get<int?>("bitrate"); }
             set { BackingStore?.Set("bitrate", value); }
         }
         /// <summary>Duration of the file in milliseconds.</summary>
-        public long? Duration {
+        public long? Duration
+        {
             get { return BackingStore?.Get<long?>("duration"); }
             set { BackingStore?.Set("duration", value); }
         }
         /// <summary>&apos;Four character code&apos; name of the video format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FourCC {
+        public string? FourCC
+        {
             get { return BackingStore?.Get<string?>("fourCC"); }
             set { BackingStore?.Set("fourCC", value); }
         }
 #nullable restore
 #else
-        public string FourCC {
+        public string FourCC
+        {
             get { return BackingStore?.Get<string>("fourCC"); }
             set { BackingStore?.Set("fourCC", value); }
         }
 #endif
         /// <summary>Frame rate of the video.</summary>
-        public double? FrameRate {
+        public double? FrameRate
+        {
             get { return BackingStore?.Get<double?>("frameRate"); }
             set { BackingStore?.Set("frameRate", value); }
         }
         /// <summary>Height of the video, in pixels.</summary>
-        public int? Height {
+        public int? Height
+        {
             get { return BackingStore?.Get<int?>("height"); }
             set { BackingStore?.Set("height", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Width of the video, in pixels.</summary>
-        public int? Width {
+        public int? Width
+        {
             get { return BackingStore?.Get<int?>("width"); }
             set { BackingStore?.Set("width", value); }
         }
@@ -125,17 +141,17 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"audioBitsPerSample", n => { AudioBitsPerSample = n.GetIntValue(); } },
-                {"audioChannels", n => { AudioChannels = n.GetIntValue(); } },
-                {"audioFormat", n => { AudioFormat = n.GetStringValue(); } },
-                {"audioSamplesPerSecond", n => { AudioSamplesPerSecond = n.GetIntValue(); } },
-                {"bitrate", n => { Bitrate = n.GetIntValue(); } },
-                {"duration", n => { Duration = n.GetLongValue(); } },
-                {"fourCC", n => { FourCC = n.GetStringValue(); } },
-                {"frameRate", n => { FrameRate = n.GetDoubleValue(); } },
-                {"height", n => { Height = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"width", n => { Width = n.GetIntValue(); } },
+                { "audioBitsPerSample", n => { AudioBitsPerSample = n.GetIntValue(); } },
+                { "audioChannels", n => { AudioChannels = n.GetIntValue(); } },
+                { "audioFormat", n => { AudioFormat = n.GetStringValue(); } },
+                { "audioSamplesPerSecond", n => { AudioSamplesPerSecond = n.GetIntValue(); } },
+                { "bitrate", n => { Bitrate = n.GetIntValue(); } },
+                { "duration", n => { Duration = n.GetLongValue(); } },
+                { "fourCC", n => { FourCC = n.GetStringValue(); } },
+                { "frameRate", n => { FrameRate = n.GetDoubleValue(); } },
+                { "height", n => { Height = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "width", n => { Width = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.IdentityGovernance {
+namespace Microsoft.Graph.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class TimeBasedAttributeTrigger : WorkflowExecutionTrigger, IParsable 
+    public class TimeBasedAttributeTrigger : WorkflowExecutionTrigger, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date. The value can range between -180 and 180 days.</summary>
-        public int? OffsetInDays {
+        public int? OffsetInDays
+        {
             get { return BackingStore?.Get<int?>("offsetInDays"); }
             set { BackingStore?.Set("offsetInDays", value); }
         }
         /// <summary>The timeBasedAttribute property</summary>
-        public WorkflowTriggerTimeBasedAttribute? TimeBasedAttribute {
+        public WorkflowTriggerTimeBasedAttribute? TimeBasedAttribute
+        {
             get { return BackingStore?.Get<WorkflowTriggerTimeBasedAttribute?>("timeBasedAttribute"); }
             set { BackingStore?.Set("timeBasedAttribute", value); }
         }
@@ -44,8 +47,8 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"offsetInDays", n => { OffsetInDays = n.GetIntValue(); } },
-                {"timeBasedAttribute", n => { TimeBasedAttribute = n.GetEnumValue<WorkflowTriggerTimeBasedAttribute>(); } },
+                { "offsetInDays", n => { OffsetInDays = n.GetIntValue(); } },
+                { "timeBasedAttribute", n => { TimeBasedAttribute = n.GetEnumValue<WorkflowTriggerTimeBasedAttribute>(); } },
             };
         }
         /// <summary>

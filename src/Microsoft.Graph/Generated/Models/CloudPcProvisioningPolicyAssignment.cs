@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcProvisioningPolicyAssignment : Entity, IParsable 
+    public class CloudPcProvisioningPolicyAssignment : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. Read-only. Supports$expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<User>? AssignedUsers {
+        public List<User>? AssignedUsers
+        {
             get { return BackingStore?.Get<List<User>?>("assignedUsers"); }
             set { BackingStore?.Set("assignedUsers", value); }
         }
 #nullable restore
 #else
-        public List<User> AssignedUsers {
+        public List<User> AssignedUsers
+        {
             get { return BackingStore?.Get<List<User>>("assignedUsers"); }
             set { BackingStore?.Set("assignedUsers", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcManagementAssignmentTarget? Target {
+        public CloudPcManagementAssignmentTarget? Target
+        {
             get { return BackingStore?.Get<CloudPcManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public CloudPcManagementAssignmentTarget Target {
+        public CloudPcManagementAssignmentTarget Target
+        {
             get { return BackingStore?.Get<CloudPcManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignedUsers", n => { AssignedUsers = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"target", n => { Target = n.GetObjectValue<CloudPcManagementAssignmentTarget>(CloudPcManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "assignedUsers", n => { AssignedUsers = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "target", n => { Target = n.GetObjectValue<CloudPcManagementAssignmentTarget>(CloudPcManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

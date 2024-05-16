@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MessageSecurityState : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MessageSecurityState : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The connectingIP property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectingIP {
+        public string? ConnectingIP
+        {
             get { return BackingStore?.Get<string?>("connectingIP"); }
             set { BackingStore?.Set("connectingIP", value); }
         }
 #nullable restore
 #else
-        public string ConnectingIP {
+        public string ConnectingIP
+        {
             get { return BackingStore?.Get<string>("connectingIP"); }
             set { BackingStore?.Set("connectingIP", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The deliveryAction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryAction {
+        public string? DeliveryAction
+        {
             get { return BackingStore?.Get<string?>("deliveryAction"); }
             set { BackingStore?.Set("deliveryAction", value); }
         }
 #nullable restore
 #else
-        public string DeliveryAction {
+        public string DeliveryAction
+        {
             get { return BackingStore?.Get<string>("deliveryAction"); }
             set { BackingStore?.Set("deliveryAction", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The deliveryLocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryLocation {
+        public string? DeliveryLocation
+        {
             get { return BackingStore?.Get<string?>("deliveryLocation"); }
             set { BackingStore?.Set("deliveryLocation", value); }
         }
 #nullable restore
 #else
-        public string DeliveryLocation {
+        public string DeliveryLocation
+        {
             get { return BackingStore?.Get<string>("deliveryLocation"); }
             set { BackingStore?.Set("deliveryLocation", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The directionality property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Directionality {
+        public string? Directionality
+        {
             get { return BackingStore?.Get<string?>("directionality"); }
             set { BackingStore?.Set("directionality", value); }
         }
 #nullable restore
 #else
-        public string Directionality {
+        public string Directionality
+        {
             get { return BackingStore?.Get<string>("directionality"); }
             set { BackingStore?.Set("directionality", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The internetMessageId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InternetMessageId {
+        public string? InternetMessageId
+        {
             get { return BackingStore?.Get<string?>("internetMessageId"); }
             set { BackingStore?.Set("internetMessageId", value); }
         }
 #nullable restore
 #else
-        public string InternetMessageId {
+        public string InternetMessageId
+        {
             get { return BackingStore?.Get<string>("internetMessageId"); }
             set { BackingStore?.Set("internetMessageId", value); }
         }
@@ -90,32 +102,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The messageFingerprint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageFingerprint {
+        public string? MessageFingerprint
+        {
             get { return BackingStore?.Get<string?>("messageFingerprint"); }
             set { BackingStore?.Set("messageFingerprint", value); }
         }
 #nullable restore
 #else
-        public string MessageFingerprint {
+        public string MessageFingerprint
+        {
             get { return BackingStore?.Get<string>("messageFingerprint"); }
             set { BackingStore?.Set("messageFingerprint", value); }
         }
 #endif
         /// <summary>The messageReceivedDateTime property</summary>
-        public DateTimeOffset? MessageReceivedDateTime {
+        public DateTimeOffset? MessageReceivedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("messageReceivedDateTime"); }
             set { BackingStore?.Set("messageReceivedDateTime", value); }
         }
         /// <summary>The messageSubject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageSubject {
+        public string? MessageSubject
+        {
             get { return BackingStore?.Get<string?>("messageSubject"); }
             set { BackingStore?.Set("messageSubject", value); }
         }
 #nullable restore
 #else
-        public string MessageSubject {
+        public string MessageSubject
+        {
             get { return BackingStore?.Get<string>("messageSubject"); }
             set { BackingStore?.Set("messageSubject", value); }
         }
@@ -123,13 +140,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The networkMessageId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NetworkMessageId {
+        public string? NetworkMessageId
+        {
             get { return BackingStore?.Get<string?>("networkMessageId"); }
             set { BackingStore?.Set("networkMessageId", value); }
         }
 #nullable restore
 #else
-        public string NetworkMessageId {
+        public string NetworkMessageId
+        {
             get { return BackingStore?.Get<string>("networkMessageId"); }
             set { BackingStore?.Set("networkMessageId", value); }
         }
@@ -137,13 +156,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -174,16 +195,16 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"connectingIP", n => { ConnectingIP = n.GetStringValue(); } },
-                {"deliveryAction", n => { DeliveryAction = n.GetStringValue(); } },
-                {"deliveryLocation", n => { DeliveryLocation = n.GetStringValue(); } },
-                {"directionality", n => { Directionality = n.GetStringValue(); } },
-                {"internetMessageId", n => { InternetMessageId = n.GetStringValue(); } },
-                {"messageFingerprint", n => { MessageFingerprint = n.GetStringValue(); } },
-                {"messageReceivedDateTime", n => { MessageReceivedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"messageSubject", n => { MessageSubject = n.GetStringValue(); } },
-                {"networkMessageId", n => { NetworkMessageId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "connectingIP", n => { ConnectingIP = n.GetStringValue(); } },
+                { "deliveryAction", n => { DeliveryAction = n.GetStringValue(); } },
+                { "deliveryLocation", n => { DeliveryLocation = n.GetStringValue(); } },
+                { "directionality", n => { Directionality = n.GetStringValue(); } },
+                { "internetMessageId", n => { InternetMessageId = n.GetStringValue(); } },
+                { "messageFingerprint", n => { MessageFingerprint = n.GetStringValue(); } },
+                { "messageReceivedDateTime", n => { MessageReceivedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "messageSubject", n => { MessageSubject = n.GetStringValue(); } },
+                { "networkMessageId", n => { NetworkMessageId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

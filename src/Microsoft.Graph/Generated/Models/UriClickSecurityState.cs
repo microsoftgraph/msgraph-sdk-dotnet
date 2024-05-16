@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UriClickSecurityState : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UriClickSecurityState : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The clickAction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClickAction {
+        public string? ClickAction
+        {
             get { return BackingStore?.Get<string?>("clickAction"); }
             set { BackingStore?.Set("clickAction", value); }
         }
 #nullable restore
 #else
-        public string ClickAction {
+        public string ClickAction
+        {
             get { return BackingStore?.Get<string>("clickAction"); }
             set { BackingStore?.Set("clickAction", value); }
         }
 #endif
         /// <summary>The clickDateTime property</summary>
-        public DateTimeOffset? ClickDateTime {
+        public DateTimeOffset? ClickDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("clickDateTime"); }
             set { BackingStore?.Set("clickDateTime", value); }
         }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id {
+        public string? Id
+        {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #nullable restore
 #else
-        public string Id {
+        public string Id
+        {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The sourceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceId {
+        public string? SourceId
+        {
             get { return BackingStore?.Get<string?>("sourceId"); }
             set { BackingStore?.Set("sourceId", value); }
         }
 #nullable restore
 #else
-        public string SourceId {
+        public string SourceId
+        {
             get { return BackingStore?.Get<string>("sourceId"); }
             set { BackingStore?.Set("sourceId", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The uriDomain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UriDomain {
+        public string? UriDomain
+        {
             get { return BackingStore?.Get<string?>("uriDomain"); }
             set { BackingStore?.Set("uriDomain", value); }
         }
 #nullable restore
 #else
-        public string UriDomain {
+        public string UriDomain
+        {
             get { return BackingStore?.Get<string>("uriDomain"); }
             set { BackingStore?.Set("uriDomain", value); }
         }
@@ -95,13 +108,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The verdict property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Verdict {
+        public string? Verdict
+        {
             get { return BackingStore?.Get<string?>("verdict"); }
             set { BackingStore?.Set("verdict", value); }
         }
 #nullable restore
 #else
-        public string Verdict {
+        public string Verdict
+        {
             get { return BackingStore?.Get<string>("verdict"); }
             set { BackingStore?.Set("verdict", value); }
         }
@@ -132,13 +147,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"clickAction", n => { ClickAction = n.GetStringValue(); } },
-                {"clickDateTime", n => { ClickDateTime = n.GetDateTimeOffsetValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sourceId", n => { SourceId = n.GetStringValue(); } },
-                {"uriDomain", n => { UriDomain = n.GetStringValue(); } },
-                {"verdict", n => { Verdict = n.GetStringValue(); } },
+                { "clickAction", n => { ClickAction = n.GetStringValue(); } },
+                { "clickDateTime", n => { ClickDateTime = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sourceId", n => { SourceId = n.GetStringValue(); } },
+                { "uriDomain", n => { UriDomain = n.GetStringValue(); } },
+                { "verdict", n => { Verdict = n.GetStringValue(); } },
             };
         }
         /// <summary>

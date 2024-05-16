@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Domains.Item.Promote {
+namespace Microsoft.Graph.Domains.Item.Promote
+{
     [Obsolete("This class is obsolete. Use PromotePostResponse instead.")]
     #pragma warning disable CS1591
-    public class PromoteResponse : PromotePostResponse, IParsable 
+    public class PromoteResponse : PromotePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

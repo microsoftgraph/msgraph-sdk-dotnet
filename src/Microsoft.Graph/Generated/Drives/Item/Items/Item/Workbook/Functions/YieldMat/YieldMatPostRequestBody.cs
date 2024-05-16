@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.YieldMat {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.YieldMat
+{
     #pragma warning disable CS1591
-    public class YieldMatPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class YieldMatPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.YieldMat {
         /// <summary>The basis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Basis {
+        public Json? Basis
+        {
             get { return BackingStore?.Get<Json?>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
 #nullable restore
 #else
-        public Json Basis {
+        public Json Basis
+        {
             get { return BackingStore?.Get<Json>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.YieldMat {
         /// <summary>The issue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Issue {
+        public Json? Issue
+        {
             get { return BackingStore?.Get<Json?>("issue"); }
             set { BackingStore?.Set("issue", value); }
         }
 #nullable restore
 #else
-        public Json Issue {
+        public Json Issue
+        {
             get { return BackingStore?.Get<Json>("issue"); }
             set { BackingStore?.Set("issue", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.YieldMat {
         /// <summary>The maturity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Maturity {
+        public Json? Maturity
+        {
             get { return BackingStore?.Get<Json?>("maturity"); }
             set { BackingStore?.Set("maturity", value); }
         }
 #nullable restore
 #else
-        public Json Maturity {
+        public Json Maturity
+        {
             get { return BackingStore?.Get<Json>("maturity"); }
             set { BackingStore?.Set("maturity", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.YieldMat {
         /// <summary>The pr property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Pr {
+        public Json? Pr
+        {
             get { return BackingStore?.Get<Json?>("pr"); }
             set { BackingStore?.Set("pr", value); }
         }
 #nullable restore
 #else
-        public Json Pr {
+        public Json Pr
+        {
             get { return BackingStore?.Get<Json>("pr"); }
             set { BackingStore?.Set("pr", value); }
         }
@@ -77,13 +87,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.YieldMat {
         /// <summary>The rate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Rate {
+        public Json? Rate
+        {
             get { return BackingStore?.Get<Json?>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
 #nullable restore
 #else
-        public Json Rate {
+        public Json Rate
+        {
             get { return BackingStore?.Get<Json>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
@@ -91,13 +103,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.YieldMat {
         /// <summary>The settlement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Settlement {
+        public Json? Settlement
+        {
             get { return BackingStore?.Get<Json?>("settlement"); }
             set { BackingStore?.Set("settlement", value); }
         }
 #nullable restore
 #else
-        public Json Settlement {
+        public Json Settlement
+        {
             get { return BackingStore?.Get<Json>("settlement"); }
             set { BackingStore?.Set("settlement", value); }
         }
@@ -128,12 +142,12 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.YieldMat {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"basis", n => { Basis = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"issue", n => { Issue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"maturity", n => { Maturity = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"pr", n => { Pr = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"rate", n => { Rate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"settlement", n => { Settlement = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "basis", n => { Basis = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "issue", n => { Issue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "maturity", n => { Maturity = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "pr", n => { Pr = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "rate", n => { Rate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "settlement", n => { Settlement = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

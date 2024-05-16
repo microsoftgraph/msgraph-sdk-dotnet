@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Singleton entity which represents the Exchange OnPremises Conditional Access Settings for a tenant.
     /// </summary>
-    public class OnPremisesConditionalAccessSettings : Entity, IParsable 
+    public class OnPremisesConditionalAccessSettings : Entity, IParsable
     {
         /// <summary>Indicates if on premises conditional access is enabled for this organization</summary>
-        public bool? Enabled {
+        public bool? Enabled
+        {
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? ExcludedGroups {
+        public List<Guid?>? ExcludedGroups
+        {
             get { return BackingStore?.Get<List<Guid?>?>("excludedGroups"); }
             set { BackingStore?.Set("excludedGroups", value); }
         }
 #nullable restore
 #else
-        public List<Guid?> ExcludedGroups {
+        public List<Guid?> ExcludedGroups
+        {
             get { return BackingStore?.Get<List<Guid?>>("excludedGroups"); }
             set { BackingStore?.Set("excludedGroups", value); }
         }
@@ -32,19 +36,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? IncludedGroups {
+        public List<Guid?>? IncludedGroups
+        {
             get { return BackingStore?.Get<List<Guid?>?>("includedGroups"); }
             set { BackingStore?.Set("includedGroups", value); }
         }
 #nullable restore
 #else
-        public List<Guid?> IncludedGroups {
+        public List<Guid?> IncludedGroups
+        {
             get { return BackingStore?.Get<List<Guid?>>("includedGroups"); }
             set { BackingStore?.Set("includedGroups", value); }
         }
 #endif
         /// <summary>Override the default access rule when allowing a device to ensure access is granted.</summary>
-        public bool? OverrideDefaultRule {
+        public bool? OverrideDefaultRule
+        {
             get { return BackingStore?.Get<bool?>("overrideDefaultRule"); }
             set { BackingStore?.Set("overrideDefaultRule", value); }
         }
@@ -66,10 +73,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"excludedGroups", n => { ExcludedGroups = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
-                {"includedGroups", n => { IncludedGroups = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
-                {"overrideDefaultRule", n => { OverrideDefaultRule = n.GetBoolValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "excludedGroups", n => { ExcludedGroups = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
+                { "includedGroups", n => { IncludedGroups = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
+                { "overrideDefaultRule", n => { OverrideDefaultRule = n.GetBoolValue(); } },
             };
         }
         /// <summary>

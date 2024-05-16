@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Windows Information Protection AppLocker File
     /// </summary>
-    public class WindowsInformationProtectionAppLockerFile : Entity, IParsable 
+    public class WindowsInformationProtectionAppLockerFile : Entity, IParsable
     {
         /// <summary>The friendly name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>File as a byte array</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? File {
+        public byte[]? File
+        {
             get { return BackingStore?.Get<byte[]?>("file"); }
             set { BackingStore?.Set("file", value); }
         }
 #nullable restore
 #else
-        public byte[] File {
+        public byte[] File
+        {
             get { return BackingStore?.Get<byte[]>("file"); }
             set { BackingStore?.Set("file", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>SHA256 hash of the file</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileHash {
+        public string? FileHash
+        {
             get { return BackingStore?.Get<string?>("fileHash"); }
             set { BackingStore?.Set("fileHash", value); }
         }
 #nullable restore
 #else
-        public string FileHash {
+        public string FileHash
+        {
             get { return BackingStore?.Get<string>("fileHash"); }
             set { BackingStore?.Set("fileHash", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Version of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -84,10 +93,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"file", n => { File = n.GetByteArrayValue(); } },
-                {"fileHash", n => { FileHash = n.GetStringValue(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "file", n => { File = n.GetByteArrayValue(); } },
+                { "fileHash", n => { FileHash = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

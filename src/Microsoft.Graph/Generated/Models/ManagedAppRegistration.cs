@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     /// </summary>
-    public class ManagedAppRegistration : Entity, IParsable 
+    public class ManagedAppRegistration : Entity, IParsable
     {
         /// <summary>The app package Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MobileAppIdentifier? AppIdentifier {
+        public MobileAppIdentifier? AppIdentifier
+        {
             get { return BackingStore?.Get<MobileAppIdentifier?>("appIdentifier"); }
             set { BackingStore?.Set("appIdentifier", value); }
         }
 #nullable restore
 #else
-        public MobileAppIdentifier AppIdentifier {
+        public MobileAppIdentifier AppIdentifier
+        {
             get { return BackingStore?.Get<MobileAppIdentifier>("appIdentifier"); }
             set { BackingStore?.Set("appIdentifier", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>App version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationVersion {
+        public string? ApplicationVersion
+        {
             get { return BackingStore?.Get<string?>("applicationVersion"); }
             set { BackingStore?.Set("applicationVersion", value); }
         }
 #nullable restore
 #else
-        public string ApplicationVersion {
+        public string ApplicationVersion
+        {
             get { return BackingStore?.Get<string>("applicationVersion"); }
             set { BackingStore?.Set("applicationVersion", value); }
         }
@@ -41,32 +46,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Zero or more policys already applied on the registered app when it last synchronized with managment service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppPolicy>? AppliedPolicies {
+        public List<ManagedAppPolicy>? AppliedPolicies
+        {
             get { return BackingStore?.Get<List<ManagedAppPolicy>?>("appliedPolicies"); }
             set { BackingStore?.Set("appliedPolicies", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppPolicy> AppliedPolicies {
+        public List<ManagedAppPolicy> AppliedPolicies
+        {
             get { return BackingStore?.Get<List<ManagedAppPolicy>>("appliedPolicies"); }
             set { BackingStore?.Set("appliedPolicies", value); }
         }
 #endif
         /// <summary>Date and time of creation</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Host device name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
@@ -74,13 +84,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceTag {
+        public string? DeviceTag
+        {
             get { return BackingStore?.Get<string?>("deviceTag"); }
             set { BackingStore?.Set("deviceTag", value); }
         }
 #nullable restore
 #else
-        public string DeviceTag {
+        public string DeviceTag
+        {
             get { return BackingStore?.Get<string>("deviceTag"); }
             set { BackingStore?.Set("deviceTag", value); }
         }
@@ -88,13 +100,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Host device type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceType {
+        public string? DeviceType
+        {
             get { return BackingStore?.Get<string?>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
 #nullable restore
 #else
-        public string DeviceType {
+        public string DeviceType
+        {
             get { return BackingStore?.Get<string>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
@@ -102,13 +116,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Zero or more reasons an app registration is flagged. E.g. app running on rooted device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppFlaggedReason?>? FlaggedReasons {
+        public List<ManagedAppFlaggedReason?>? FlaggedReasons
+        {
             get { return BackingStore?.Get<List<ManagedAppFlaggedReason?>?>("flaggedReasons"); }
             set { BackingStore?.Set("flaggedReasons", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppFlaggedReason?> FlaggedReasons {
+        public List<ManagedAppFlaggedReason?> FlaggedReasons
+        {
             get { return BackingStore?.Get<List<ManagedAppFlaggedReason?>>("flaggedReasons"); }
             set { BackingStore?.Set("flaggedReasons", value); }
         }
@@ -116,32 +132,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Zero or more policies admin intended for the app as of now.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppPolicy>? IntendedPolicies {
+        public List<ManagedAppPolicy>? IntendedPolicies
+        {
             get { return BackingStore?.Get<List<ManagedAppPolicy>?>("intendedPolicies"); }
             set { BackingStore?.Set("intendedPolicies", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppPolicy> IntendedPolicies {
+        public List<ManagedAppPolicy> IntendedPolicies
+        {
             get { return BackingStore?.Get<List<ManagedAppPolicy>>("intendedPolicies"); }
             set { BackingStore?.Set("intendedPolicies", value); }
         }
 #endif
         /// <summary>Date and time of last the app synced with management service.</summary>
-        public DateTimeOffset? LastSyncDateTime {
+        public DateTimeOffset? LastSyncDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>App management SDK version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagementSdkVersion {
+        public string? ManagementSdkVersion
+        {
             get { return BackingStore?.Get<string?>("managementSdkVersion"); }
             set { BackingStore?.Set("managementSdkVersion", value); }
         }
 #nullable restore
 #else
-        public string ManagementSdkVersion {
+        public string ManagementSdkVersion
+        {
             get { return BackingStore?.Get<string>("managementSdkVersion"); }
             set { BackingStore?.Set("managementSdkVersion", value); }
         }
@@ -149,13 +170,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Zero or more long running operations triggered on the app registration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppOperation>? Operations {
+        public List<ManagedAppOperation>? Operations
+        {
             get { return BackingStore?.Get<List<ManagedAppOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppOperation> Operations {
+        public List<ManagedAppOperation> Operations
+        {
             get { return BackingStore?.Get<List<ManagedAppOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
@@ -163,13 +186,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Operating System version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlatformVersion {
+        public string? PlatformVersion
+        {
             get { return BackingStore?.Get<string?>("platformVersion"); }
             set { BackingStore?.Set("platformVersion", value); }
         }
 #nullable restore
 #else
-        public string PlatformVersion {
+        public string PlatformVersion
+        {
             get { return BackingStore?.Get<string>("platformVersion"); }
             set { BackingStore?.Set("platformVersion", value); }
         }
@@ -177,13 +202,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The user Id to who this app registration belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -191,13 +218,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Version of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -226,21 +255,21 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appIdentifier", n => { AppIdentifier = n.GetObjectValue<MobileAppIdentifier>(MobileAppIdentifier.CreateFromDiscriminatorValue); } },
-                {"applicationVersion", n => { ApplicationVersion = n.GetStringValue(); } },
-                {"appliedPolicies", n => { AppliedPolicies = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"deviceTag", n => { DeviceTag = n.GetStringValue(); } },
-                {"deviceType", n => { DeviceType = n.GetStringValue(); } },
-                {"flaggedReasons", n => { FlaggedReasons = n.GetCollectionOfEnumValues<ManagedAppFlaggedReason>()?.ToList(); } },
-                {"intendedPolicies", n => { IntendedPolicies = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managementSdkVersion", n => { ManagementSdkVersion = n.GetStringValue(); } },
-                {"operations", n => { Operations = n.GetCollectionOfObjectValues<ManagedAppOperation>(ManagedAppOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"platformVersion", n => { PlatformVersion = n.GetStringValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "appIdentifier", n => { AppIdentifier = n.GetObjectValue<MobileAppIdentifier>(MobileAppIdentifier.CreateFromDiscriminatorValue); } },
+                { "applicationVersion", n => { ApplicationVersion = n.GetStringValue(); } },
+                { "appliedPolicies", n => { AppliedPolicies = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "deviceTag", n => { DeviceTag = n.GetStringValue(); } },
+                { "deviceType", n => { DeviceType = n.GetStringValue(); } },
+                { "flaggedReasons", n => { FlaggedReasons = n.GetCollectionOfEnumValues<ManagedAppFlaggedReason>()?.ToList(); } },
+                { "intendedPolicies", n => { IntendedPolicies = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                { "managementSdkVersion", n => { ManagementSdkVersion = n.GetStringValue(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<ManagedAppOperation>(ManagedAppOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "platformVersion", n => { PlatformVersion = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

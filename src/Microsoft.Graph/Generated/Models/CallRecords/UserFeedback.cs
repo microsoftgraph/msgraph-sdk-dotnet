@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.CallRecords {
+namespace Microsoft.Graph.Models.CallRecords
+{
     #pragma warning disable CS1591
-    public class UserFeedback : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UserFeedback : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The rating property</summary>
-        public UserFeedbackRating? Rating {
+        public UserFeedbackRating? Rating
+        {
             get { return BackingStore?.Get<UserFeedbackRating?>("rating"); }
             set { BackingStore?.Set("rating", value); }
         }
         /// <summary>The feedback text provided by the user of this endpoint for the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text {
+        public string? Text
+        {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public string Text {
+        public string Text
+        {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>The set of feedback tokens provided by the user of this endpoint for the session. This is a set of Boolean properties. The property names should not be relied upon since they may change depending on what tokens are offered to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FeedbackTokenSet? Tokens {
+        public FeedbackTokenSet? Tokens
+        {
             get { return BackingStore?.Get<FeedbackTokenSet?>("tokens"); }
             set { BackingStore?.Set("tokens", value); }
         }
 #nullable restore
 #else
-        public FeedbackTokenSet Tokens {
+        public FeedbackTokenSet Tokens
+        {
             get { return BackingStore?.Get<FeedbackTokenSet>("tokens"); }
             set { BackingStore?.Set("tokens", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models.CallRecords {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"rating", n => { Rating = n.GetEnumValue<UserFeedbackRating>(); } },
-                {"text", n => { Text = n.GetStringValue(); } },
-                {"tokens", n => { Tokens = n.GetObjectValue<FeedbackTokenSet>(FeedbackTokenSet.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "rating", n => { Rating = n.GetEnumValue<UserFeedbackRating>(); } },
+                { "text", n => { Text = n.GetStringValue(); } },
+                { "tokens", n => { Tokens = n.GetObjectValue<FeedbackTokenSet>(FeedbackTokenSet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

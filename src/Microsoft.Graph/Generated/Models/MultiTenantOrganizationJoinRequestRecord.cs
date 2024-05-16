@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MultiTenantOrganizationJoinRequestRecord : Entity, IParsable 
+    public class MultiTenantOrganizationJoinRequestRecord : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Tenant ID of the Microsoft Entra tenant that added a tenant to the multitenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddedByTenantId {
+        public string? AddedByTenantId
+        {
             get { return BackingStore?.Get<string?>("addedByTenantId"); }
             set { BackingStore?.Set("addedByTenantId", value); }
         }
 #nullable restore
 #else
-        public string AddedByTenantId {
+        public string AddedByTenantId
+        {
             get { return BackingStore?.Get<string>("addedByTenantId"); }
             set { BackingStore?.Set("addedByTenantId", value); }
         }
 #endif
         /// <summary>State of the tenant in the multitenant organization. The possible values are: pending, active, removed, unknownFutureValue. Tenants in the pending state must join the multitenant organization to participate in the multitenant organization. Tenants in the active state can participate in the multitenant organization. Tenants in the removed state are in the process of being removed from the multitenant organization. Read-only.</summary>
-        public MultiTenantOrganizationMemberState? MemberState {
+        public MultiTenantOrganizationMemberState? MemberState
+        {
             get { return BackingStore?.Get<MultiTenantOrganizationMemberState?>("memberState"); }
             set { BackingStore?.Set("memberState", value); }
         }
         /// <summary>Role of the tenant in the multitenant organization. The possible values are: owner, member (default), unknownFutureValue. Tenants with the owner role can manage the multitenant organization. There can be multiple tenants with the owner role in a multitenant organization. Tenants with the member role can participate in a multitenant organization.</summary>
-        public MultiTenantOrganizationMemberRole? Role {
+        public MultiTenantOrganizationMemberRole? Role
+        {
             get { return BackingStore?.Get<MultiTenantOrganizationMemberRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
         /// <summary>Details of the processing status for a tenant joining a multitenant organization. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MultiTenantOrganizationJoinRequestTransitionDetails? TransitionDetails {
+        public MultiTenantOrganizationJoinRequestTransitionDetails? TransitionDetails
+        {
             get { return BackingStore?.Get<MultiTenantOrganizationJoinRequestTransitionDetails?>("transitionDetails"); }
             set { BackingStore?.Set("transitionDetails", value); }
         }
 #nullable restore
 #else
-        public MultiTenantOrganizationJoinRequestTransitionDetails TransitionDetails {
+        public MultiTenantOrganizationJoinRequestTransitionDetails TransitionDetails
+        {
             get { return BackingStore?.Get<MultiTenantOrganizationJoinRequestTransitionDetails>("transitionDetails"); }
             set { BackingStore?.Set("transitionDetails", value); }
         }
@@ -65,10 +72,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"addedByTenantId", n => { AddedByTenantId = n.GetStringValue(); } },
-                {"memberState", n => { MemberState = n.GetEnumValue<MultiTenantOrganizationMemberState>(); } },
-                {"role", n => { Role = n.GetEnumValue<MultiTenantOrganizationMemberRole>(); } },
-                {"transitionDetails", n => { TransitionDetails = n.GetObjectValue<MultiTenantOrganizationJoinRequestTransitionDetails>(MultiTenantOrganizationJoinRequestTransitionDetails.CreateFromDiscriminatorValue); } },
+                { "addedByTenantId", n => { AddedByTenantId = n.GetStringValue(); } },
+                { "memberState", n => { MemberState = n.GetEnumValue<MultiTenantOrganizationMemberState>(); } },
+                { "role", n => { Role = n.GetEnumValue<MultiTenantOrganizationMemberRole>(); } },
+                { "transitionDetails", n => { TransitionDetails = n.GetObjectValue<MultiTenantOrganizationJoinRequestTransitionDetails>(MultiTenantOrganizationJoinRequestTransitionDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

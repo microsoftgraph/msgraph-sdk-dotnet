@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PlannerAssignedToTaskBoardTaskFormat : Entity, IParsable 
+    public class PlannerAssignedToTaskBoardTaskFormat : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Dictionary of hints used to order tasks on the AssignedTo view of the Task Board. The key of each entry is one of the users the task is assigned to and the value is the order hint. The format of each value is defined as outlined here.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerOrderHintsByAssignee? OrderHintsByAssignee {
+        public PlannerOrderHintsByAssignee? OrderHintsByAssignee
+        {
             get { return BackingStore?.Get<PlannerOrderHintsByAssignee?>("orderHintsByAssignee"); }
             set { BackingStore?.Set("orderHintsByAssignee", value); }
         }
 #nullable restore
 #else
-        public PlannerOrderHintsByAssignee OrderHintsByAssignee {
+        public PlannerOrderHintsByAssignee OrderHintsByAssignee
+        {
             get { return BackingStore?.Get<PlannerOrderHintsByAssignee>("orderHintsByAssignee"); }
             set { BackingStore?.Set("orderHintsByAssignee", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Hint value used to order the task on the AssignedTo view of the Task Board when the task isn&apos;t assigned to anyone, or if the orderHintsByAssignee dictionary doesn&apos;t provide an order hint for the user the task is assigned to. The format is defined as outlined here.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnassignedOrderHint {
+        public string? UnassignedOrderHint
+        {
             get { return BackingStore?.Get<string?>("unassignedOrderHint"); }
             set { BackingStore?.Set("unassignedOrderHint", value); }
         }
 #nullable restore
 #else
-        public string UnassignedOrderHint {
+        public string UnassignedOrderHint
+        {
             get { return BackingStore?.Get<string>("unassignedOrderHint"); }
             set { BackingStore?.Set("unassignedOrderHint", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"orderHintsByAssignee", n => { OrderHintsByAssignee = n.GetObjectValue<PlannerOrderHintsByAssignee>(PlannerOrderHintsByAssignee.CreateFromDiscriminatorValue); } },
-                {"unassignedOrderHint", n => { UnassignedOrderHint = n.GetStringValue(); } },
+                { "orderHintsByAssignee", n => { OrderHintsByAssignee = n.GetObjectValue<PlannerOrderHintsByAssignee>(PlannerOrderHintsByAssignee.CreateFromDiscriminatorValue); } },
+                { "unassignedOrderHint", n => { UnassignedOrderHint = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.ODataErrors {
+namespace Microsoft.Graph.Models.ODataErrors
+{
     #pragma warning disable CS1591
-    public class ODataError : ApiException, IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ODataError : ApiException, IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Models.ODataErrors {
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MainError? Error {
+        public MainError? Error
+        {
             get { return BackingStore?.Get<MainError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public MainError Error {
+        public MainError Error
+        {
             get { return BackingStore?.Get<MainError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
@@ -60,7 +64,7 @@ namespace Microsoft.Graph.Models.ODataErrors {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"error", n => { Error = n.GetObjectValue<MainError>(MainError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<MainError>(MainError.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PrintUsageByPrinter : PrintUsage, IParsable 
+    public class PrintUsageByPrinter : PrintUsage, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The printerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrinterId {
+        public string? PrinterId
+        {
             get { return BackingStore?.Get<string?>("printerId"); }
             set { BackingStore?.Set("printerId", value); }
         }
 #nullable restore
 #else
-        public string PrinterId {
+        public string PrinterId
+        {
             get { return BackingStore?.Get<string>("printerId"); }
             set { BackingStore?.Set("printerId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the printer represented by these statistics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrinterName {
+        public string? PrinterName
+        {
             get { return BackingStore?.Get<string?>("printerName"); }
             set { BackingStore?.Set("printerName", value); }
         }
 #nullable restore
 #else
-        public string PrinterName {
+        public string PrinterName
+        {
             get { return BackingStore?.Get<string>("printerName"); }
             set { BackingStore?.Set("printerName", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"printerId", n => { PrinterId = n.GetStringValue(); } },
-                {"printerName", n => { PrinterName = n.GetStringValue(); } },
+                { "printerId", n => { PrinterId = n.GetStringValue(); } },
+                { "printerName", n => { PrinterName = n.GetStringValue(); } },
             };
         }
         /// <summary>

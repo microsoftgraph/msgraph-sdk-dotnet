@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ServiceHealthIssue : ServiceAnnouncementBase, IParsable 
+    public class ServiceHealthIssue : ServiceAnnouncementBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The classification property</summary>
-        public ServiceHealthClassificationType? Classification {
+        public ServiceHealthClassificationType? Classification
+        {
             get { return BackingStore?.Get<ServiceHealthClassificationType?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
         /// <summary>The feature name of the service issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Feature {
+        public string? Feature
+        {
             get { return BackingStore?.Get<string?>("feature"); }
             set { BackingStore?.Set("feature", value); }
         }
 #nullable restore
 #else
-        public string Feature {
+        public string Feature
+        {
             get { return BackingStore?.Get<string>("feature"); }
             set { BackingStore?.Set("feature", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The feature group name of the service issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FeatureGroup {
+        public string? FeatureGroup
+        {
             get { return BackingStore?.Get<string?>("featureGroup"); }
             set { BackingStore?.Set("featureGroup", value); }
         }
 #nullable restore
 #else
-        public string FeatureGroup {
+        public string FeatureGroup
+        {
             get { return BackingStore?.Get<string>("featureGroup"); }
             set { BackingStore?.Set("featureGroup", value); }
         }
@@ -45,37 +51,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>The description of the service issue impact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImpactDescription {
+        public string? ImpactDescription
+        {
             get { return BackingStore?.Get<string?>("impactDescription"); }
             set { BackingStore?.Set("impactDescription", value); }
         }
 #nullable restore
 #else
-        public string ImpactDescription {
+        public string ImpactDescription
+        {
             get { return BackingStore?.Get<string>("impactDescription"); }
             set { BackingStore?.Set("impactDescription", value); }
         }
 #endif
         /// <summary>Indicates whether the issue is resolved.</summary>
-        public bool? IsResolved {
+        public bool? IsResolved
+        {
             get { return BackingStore?.Get<bool?>("isResolved"); }
             set { BackingStore?.Set("isResolved", value); }
         }
         /// <summary>The origin property</summary>
-        public ServiceHealthOrigin? Origin {
+        public ServiceHealthOrigin? Origin
+        {
             get { return BackingStore?.Get<ServiceHealthOrigin?>("origin"); }
             set { BackingStore?.Set("origin", value); }
         }
         /// <summary>Collection of historical posts for the service issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServiceHealthIssuePost>? Posts {
+        public List<ServiceHealthIssuePost>? Posts
+        {
             get { return BackingStore?.Get<List<ServiceHealthIssuePost>?>("posts"); }
             set { BackingStore?.Set("posts", value); }
         }
 #nullable restore
 #else
-        public List<ServiceHealthIssuePost> Posts {
+        public List<ServiceHealthIssuePost> Posts
+        {
             get { return BackingStore?.Get<List<ServiceHealthIssuePost>>("posts"); }
             set { BackingStore?.Set("posts", value); }
         }
@@ -83,19 +95,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicates the service affected by the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Service {
+        public string? Service
+        {
             get { return BackingStore?.Get<string?>("service"); }
             set { BackingStore?.Set("service", value); }
         }
 #nullable restore
 #else
-        public string Service {
+        public string Service
+        {
             get { return BackingStore?.Get<string>("service"); }
             set { BackingStore?.Set("service", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public ServiceHealthStatus? Status {
+        public ServiceHealthStatus? Status
+        {
             get { return BackingStore?.Get<ServiceHealthStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -124,15 +139,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"classification", n => { Classification = n.GetEnumValue<ServiceHealthClassificationType>(); } },
-                {"feature", n => { Feature = n.GetStringValue(); } },
-                {"featureGroup", n => { FeatureGroup = n.GetStringValue(); } },
-                {"impactDescription", n => { ImpactDescription = n.GetStringValue(); } },
-                {"isResolved", n => { IsResolved = n.GetBoolValue(); } },
-                {"origin", n => { Origin = n.GetEnumValue<ServiceHealthOrigin>(); } },
-                {"posts", n => { Posts = n.GetCollectionOfObjectValues<ServiceHealthIssuePost>(ServiceHealthIssuePost.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"service", n => { Service = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<ServiceHealthStatus>(); } },
+                { "classification", n => { Classification = n.GetEnumValue<ServiceHealthClassificationType>(); } },
+                { "feature", n => { Feature = n.GetStringValue(); } },
+                { "featureGroup", n => { FeatureGroup = n.GetStringValue(); } },
+                { "impactDescription", n => { ImpactDescription = n.GetStringValue(); } },
+                { "isResolved", n => { IsResolved = n.GetBoolValue(); } },
+                { "origin", n => { Origin = n.GetEnumValue<ServiceHealthOrigin>(); } },
+                { "posts", n => { Posts = n.GetCollectionOfObjectValues<ServiceHealthIssuePost>(ServiceHealthIssuePost.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "service", n => { Service = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<ServiceHealthStatus>(); } },
             };
         }
         /// <summary>

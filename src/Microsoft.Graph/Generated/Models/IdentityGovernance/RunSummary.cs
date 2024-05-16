@@ -5,59 +5,69 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.IdentityGovernance {
+namespace Microsoft.Graph.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class RunSummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RunSummary : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of failed workflow runs.</summary>
-        public int? FailedRuns {
+        public int? FailedRuns
+        {
             get { return BackingStore?.Get<int?>("failedRuns"); }
             set { BackingStore?.Set("failedRuns", value); }
         }
         /// <summary>The number of failed tasks of a workflow.</summary>
-        public int? FailedTasks {
+        public int? FailedTasks
+        {
             get { return BackingStore?.Get<int?>("failedTasks"); }
             set { BackingStore?.Set("failedTasks", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The number of successful workflow runs.</summary>
-        public int? SuccessfulRuns {
+        public int? SuccessfulRuns
+        {
             get { return BackingStore?.Get<int?>("successfulRuns"); }
             set { BackingStore?.Set("successfulRuns", value); }
         }
         /// <summary>The total number of runs for a workflow.</summary>
-        public int? TotalRuns {
+        public int? TotalRuns
+        {
             get { return BackingStore?.Get<int?>("totalRuns"); }
             set { BackingStore?.Set("totalRuns", value); }
         }
         /// <summary>The total number of tasks processed by a workflow.</summary>
-        public int? TotalTasks {
+        public int? TotalTasks
+        {
             get { return BackingStore?.Get<int?>("totalTasks"); }
             set { BackingStore?.Set("totalTasks", value); }
         }
         /// <summary>The total number of users processed by a workflow.</summary>
-        public int? TotalUsers {
+        public int? TotalUsers
+        {
             get { return BackingStore?.Get<int?>("totalUsers"); }
             set { BackingStore?.Set("totalUsers", value); }
         }
@@ -87,13 +97,13 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"failedRuns", n => { FailedRuns = n.GetIntValue(); } },
-                {"failedTasks", n => { FailedTasks = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"successfulRuns", n => { SuccessfulRuns = n.GetIntValue(); } },
-                {"totalRuns", n => { TotalRuns = n.GetIntValue(); } },
-                {"totalTasks", n => { TotalTasks = n.GetIntValue(); } },
-                {"totalUsers", n => { TotalUsers = n.GetIntValue(); } },
+                { "failedRuns", n => { FailedRuns = n.GetIntValue(); } },
+                { "failedTasks", n => { FailedTasks = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "successfulRuns", n => { SuccessfulRuns = n.GetIntValue(); } },
+                { "totalRuns", n => { TotalRuns = n.GetIntValue(); } },
+                { "totalTasks", n => { TotalTasks = n.GetIntValue(); } },
+                { "totalUsers", n => { TotalUsers = n.GetIntValue(); } },
             };
         }
         /// <summary>

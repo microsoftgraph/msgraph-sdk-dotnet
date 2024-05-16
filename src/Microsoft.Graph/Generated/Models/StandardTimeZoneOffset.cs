@@ -6,54 +6,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class StandardTimeZoneOffset : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class StandardTimeZoneOffset : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents the nth occurrence of the day of week that the transition from daylight saving time to standard time occurs.</summary>
-        public int? DayOccurrence {
+        public int? DayOccurrence
+        {
             get { return BackingStore?.Get<int?>("dayOccurrence"); }
             set { BackingStore?.Set("dayOccurrence", value); }
         }
         /// <summary>Represents the day of the week when the transition from daylight saving time to standard time.</summary>
-        public DayOfWeekObject? DayOfWeek {
+        public DayOfWeekObject? DayOfWeek
+        {
             get { return BackingStore?.Get<DayOfWeekObject?>("dayOfWeek"); }
             set { BackingStore?.Set("dayOfWeek", value); }
         }
         /// <summary>Represents the month of the year when the transition from daylight saving time to standard time occurs.</summary>
-        public int? Month {
+        public int? Month
+        {
             get { return BackingStore?.Get<int?>("month"); }
             set { BackingStore?.Set("month", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Represents the time of day when the transition from daylight saving time to standard time occurs.</summary>
-        public Time? Time {
+        public Time? Time
+        {
             get { return BackingStore?.Get<Time?>("time"); }
             set { BackingStore?.Set("time", value); }
         }
         /// <summary>Represents how frequently in terms of years the change from daylight saving time to standard time occurs. For example, a value of 0 means every year.</summary>
-        public int? Year {
+        public int? Year
+        {
             get { return BackingStore?.Get<int?>("year"); }
             set { BackingStore?.Set("year", value); }
         }
@@ -88,12 +97,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"dayOccurrence", n => { DayOccurrence = n.GetIntValue(); } },
-                {"dayOfWeek", n => { DayOfWeek = n.GetEnumValue<DayOfWeekObject>(); } },
-                {"month", n => { Month = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"time", n => { Time = n.GetTimeValue(); } },
-                {"year", n => { Year = n.GetIntValue(); } },
+                { "dayOccurrence", n => { DayOccurrence = n.GetIntValue(); } },
+                { "dayOfWeek", n => { DayOfWeek = n.GetEnumValue<DayOfWeekObject>(); } },
+                { "month", n => { Month = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "time", n => { Time = n.GetTimeValue(); } },
+                { "year", n => { Year = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -5,44 +5,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SynchronizationSchedule : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SynchronizationSchedule : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Date and time when this job expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? Expiration {
+        public DateTimeOffset? Expiration
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expiration"); }
             set { BackingStore?.Set("expiration", value); }
         }
         /// <summary>The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of one month.</summary>
-        public TimeSpan? Interval {
+        public TimeSpan? Interval
+        {
             get { return BackingStore?.Get<TimeSpan?>("interval"); }
             set { BackingStore?.Set("interval", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The state property</summary>
-        public SynchronizationScheduleState? State {
+        public SynchronizationScheduleState? State
+        {
             get { return BackingStore?.Get<SynchronizationScheduleState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"expiration", n => { Expiration = n.GetDateTimeOffsetValue(); } },
-                {"interval", n => { Interval = n.GetTimeSpanValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"state", n => { State = n.GetEnumValue<SynchronizationScheduleState>(); } },
+                { "expiration", n => { Expiration = n.GetDateTimeOffsetValue(); } },
+                { "interval", n => { Interval = n.GetTimeSpanValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<SynchronizationScheduleState>(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TeamsAppInstalledEventMessageDetail : EventMessageDetail, IParsable 
+    public class TeamsAppInstalledEventMessageDetail : EventMessageDetail, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Initiator of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Initiator {
+        public IdentitySet? Initiator
+        {
             get { return BackingStore?.Get<IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Initiator {
+        public IdentitySet Initiator
+        {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Display name of the teamsApp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamsAppDisplayName {
+        public string? TeamsAppDisplayName
+        {
             get { return BackingStore?.Get<string?>("teamsAppDisplayName"); }
             set { BackingStore?.Set("teamsAppDisplayName", value); }
         }
 #nullable restore
 #else
-        public string TeamsAppDisplayName {
+        public string TeamsAppDisplayName
+        {
             get { return BackingStore?.Get<string>("teamsAppDisplayName"); }
             set { BackingStore?.Set("teamsAppDisplayName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Unique identifier of the teamsApp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamsAppId {
+        public string? TeamsAppId
+        {
             get { return BackingStore?.Get<string?>("teamsAppId"); }
             set { BackingStore?.Set("teamsAppId", value); }
         }
 #nullable restore
 #else
-        public string TeamsAppId {
+        public string TeamsAppId
+        {
             get { return BackingStore?.Get<string>("teamsAppId"); }
             set { BackingStore?.Set("teamsAppId", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"teamsAppDisplayName", n => { TeamsAppDisplayName = n.GetStringValue(); } },
-                {"teamsAppId", n => { TeamsAppId = n.GetStringValue(); } },
+                { "initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "teamsAppDisplayName", n => { TeamsAppDisplayName = n.GetStringValue(); } },
+                { "teamsAppId", n => { TeamsAppId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Partners.Billing {
+namespace Microsoft.Graph.Models.Partners.Billing
+{
     #pragma warning disable CS1591
-    public class BillingReconciliation : Microsoft.Graph.Models.Entity, IParsable 
+    public class BillingReconciliation : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The billed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BilledReconciliation? Billed {
+        public BilledReconciliation? Billed
+        {
             get { return BackingStore?.Get<BilledReconciliation?>("billed"); }
             set { BackingStore?.Set("billed", value); }
         }
 #nullable restore
 #else
-        public BilledReconciliation Billed {
+        public BilledReconciliation Billed
+        {
             get { return BackingStore?.Get<BilledReconciliation>("billed"); }
             set { BackingStore?.Set("billed", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models.Partners.Billing {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"billed", n => { Billed = n.GetObjectValue<BilledReconciliation>(BilledReconciliation.CreateFromDiscriminatorValue); } },
+                { "billed", n => { Billed = n.GetObjectValue<BilledReconciliation>(BilledReconciliation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

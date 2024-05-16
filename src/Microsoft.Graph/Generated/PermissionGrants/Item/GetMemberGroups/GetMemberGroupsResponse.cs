@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.PermissionGrants.Item.GetMemberGroups {
+namespace Microsoft.Graph.PermissionGrants.Item.GetMemberGroups
+{
     [Obsolete("This class is obsolete. Use GetMemberGroupsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetMemberGroupsResponse : GetMemberGroupsPostResponse, IParsable 
+    public class GetMemberGroupsResponse : GetMemberGroupsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

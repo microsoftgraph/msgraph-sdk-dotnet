@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MessageRule : Entity, IParsable 
+    public class MessageRule : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Actions to be taken on a message when the corresponding conditions are fulfilled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MessageRuleActions? Actions {
+        public MessageRuleActions? Actions
+        {
             get { return BackingStore?.Get<MessageRuleActions?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #nullable restore
 #else
-        public MessageRuleActions Actions {
+        public MessageRuleActions Actions
+        {
             get { return BackingStore?.Get<MessageRuleActions>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Conditions that when fulfilled trigger the corresponding actions for that rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MessageRulePredicates? Conditions {
+        public MessageRulePredicates? Conditions
+        {
             get { return BackingStore?.Get<MessageRulePredicates?>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
 #nullable restore
 #else
-        public MessageRulePredicates Conditions {
+        public MessageRulePredicates Conditions
+        {
             get { return BackingStore?.Get<MessageRulePredicates>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The display name of the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -54,34 +61,40 @@ namespace Microsoft.Graph.Models {
         /// <summary>Exception conditions for the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MessageRulePredicates? Exceptions {
+        public MessageRulePredicates? Exceptions
+        {
             get { return BackingStore?.Get<MessageRulePredicates?>("exceptions"); }
             set { BackingStore?.Set("exceptions", value); }
         }
 #nullable restore
 #else
-        public MessageRulePredicates Exceptions {
+        public MessageRulePredicates Exceptions
+        {
             get { return BackingStore?.Get<MessageRulePredicates>("exceptions"); }
             set { BackingStore?.Set("exceptions", value); }
         }
 #endif
         /// <summary>Indicates whether the rule is in an error condition. Read-only.</summary>
-        public bool? HasError {
+        public bool? HasError
+        {
             get { return BackingStore?.Get<bool?>("hasError"); }
             set { BackingStore?.Set("hasError", value); }
         }
         /// <summary>Indicates whether the rule is enabled to be applied to messages.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Indicates if the rule is read-only and cannot be modified or deleted by the rules REST API.</summary>
-        public bool? IsReadOnly {
+        public bool? IsReadOnly
+        {
             get { return BackingStore?.Get<bool?>("isReadOnly"); }
             set { BackingStore?.Set("isReadOnly", value); }
         }
         /// <summary>Indicates the order in which the rule is executed, among other rules.</summary>
-        public int? Sequence {
+        public int? Sequence
+        {
             get { return BackingStore?.Get<int?>("sequence"); }
             set { BackingStore?.Set("sequence", value); }
         }
@@ -103,14 +116,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actions", n => { Actions = n.GetObjectValue<MessageRuleActions>(MessageRuleActions.CreateFromDiscriminatorValue); } },
-                {"conditions", n => { Conditions = n.GetObjectValue<MessageRulePredicates>(MessageRulePredicates.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"exceptions", n => { Exceptions = n.GetObjectValue<MessageRulePredicates>(MessageRulePredicates.CreateFromDiscriminatorValue); } },
-                {"hasError", n => { HasError = n.GetBoolValue(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"isReadOnly", n => { IsReadOnly = n.GetBoolValue(); } },
-                {"sequence", n => { Sequence = n.GetIntValue(); } },
+                { "actions", n => { Actions = n.GetObjectValue<MessageRuleActions>(MessageRuleActions.CreateFromDiscriminatorValue); } },
+                { "conditions", n => { Conditions = n.GetObjectValue<MessageRulePredicates>(MessageRulePredicates.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "exceptions", n => { Exceptions = n.GetObjectValue<MessageRulePredicates>(MessageRulePredicates.CreateFromDiscriminatorValue); } },
+                { "hasError", n => { HasError = n.GetBoolValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "isReadOnly", n => { IsReadOnly = n.GetBoolValue(); } },
+                { "sequence", n => { Sequence = n.GetIntValue(); } },
             };
         }
         /// <summary>

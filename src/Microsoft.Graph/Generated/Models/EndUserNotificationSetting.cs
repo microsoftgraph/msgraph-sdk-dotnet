@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EndUserNotificationSetting : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EndUserNotificationSetting : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Notification preference. Possible values are: unknown, microsoft, custom, unknownFutureValue.</summary>
-        public EndUserNotificationPreference? NotificationPreference {
+        public EndUserNotificationPreference? NotificationPreference
+        {
             get { return BackingStore?.Get<EndUserNotificationPreference?>("notificationPreference"); }
             set { BackingStore?.Set("notificationPreference", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -39,19 +44,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>Positive reinforcement detail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PositiveReinforcementNotification? PositiveReinforcement {
+        public PositiveReinforcementNotification? PositiveReinforcement
+        {
             get { return BackingStore?.Get<PositiveReinforcementNotification?>("positiveReinforcement"); }
             set { BackingStore?.Set("positiveReinforcement", value); }
         }
 #nullable restore
 #else
-        public PositiveReinforcementNotification PositiveReinforcement {
+        public PositiveReinforcementNotification PositiveReinforcement
+        {
             get { return BackingStore?.Get<PositiveReinforcementNotification>("positiveReinforcement"); }
             set { BackingStore?.Set("positiveReinforcement", value); }
         }
 #endif
         /// <summary>End user notification type. Possible values are: unknown, noTraining, trainingSelected, noNotification, unknownFutureValue.</summary>
-        public EndUserNotificationSettingType? SettingType {
+        public EndUserNotificationSettingType? SettingType
+        {
             get { return BackingStore?.Get<EndUserNotificationSettingType?>("settingType"); }
             set { BackingStore?.Set("settingType", value); }
         }
@@ -87,10 +95,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"notificationPreference", n => { NotificationPreference = n.GetEnumValue<EndUserNotificationPreference>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"positiveReinforcement", n => { PositiveReinforcement = n.GetObjectValue<PositiveReinforcementNotification>(PositiveReinforcementNotification.CreateFromDiscriminatorValue); } },
-                {"settingType", n => { SettingType = n.GetEnumValue<EndUserNotificationSettingType>(); } },
+                { "notificationPreference", n => { NotificationPreference = n.GetEnumValue<EndUserNotificationPreference>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "positiveReinforcement", n => { PositiveReinforcement = n.GetObjectValue<PositiveReinforcementNotification>(PositiveReinforcementNotification.CreateFromDiscriminatorValue); } },
+                { "settingType", n => { SettingType = n.GetEnumValue<EndUserNotificationSettingType>(); } },
             };
         }
         /// <summary>

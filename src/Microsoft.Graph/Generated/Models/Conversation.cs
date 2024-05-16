@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Conversation : Entity, IParsable 
+    public class Conversation : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.</summary>
-        public bool? HasAttachments {
+        public bool? HasAttachments
+        {
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
             set { BackingStore?.Set("hasAttachments", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? LastDeliveredDateTime {
+        public DateTimeOffset? LastDeliveredDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastDeliveredDateTime"); }
             set { BackingStore?.Set("lastDeliveredDateTime", value); }
         }
         /// <summary>A short summary from the body of the latest post in this conversation. Supports $filter (eq, ne, le, ge).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Preview {
+        public string? Preview
+        {
             get { return BackingStore?.Get<string?>("preview"); }
             set { BackingStore?.Set("preview", value); }
         }
 #nullable restore
 #else
-        public string Preview {
+        public string Preview
+        {
             get { return BackingStore?.Get<string>("preview"); }
             set { BackingStore?.Set("preview", value); }
         }
@@ -36,13 +41,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConversationThread>? Threads {
+        public List<ConversationThread>? Threads
+        {
             get { return BackingStore?.Get<List<ConversationThread>?>("threads"); }
             set { BackingStore?.Set("threads", value); }
         }
 #nullable restore
 #else
-        public List<ConversationThread> Threads {
+        public List<ConversationThread> Threads
+        {
             get { return BackingStore?.Get<List<ConversationThread>>("threads"); }
             set { BackingStore?.Set("threads", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Topic {
+        public string? Topic
+        {
             get { return BackingStore?.Get<string?>("topic"); }
             set { BackingStore?.Set("topic", value); }
         }
 #nullable restore
 #else
-        public string Topic {
+        public string Topic
+        {
             get { return BackingStore?.Get<string>("topic"); }
             set { BackingStore?.Set("topic", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>All the users that sent a message to this Conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UniqueSenders {
+        public List<string>? UniqueSenders
+        {
             get { return BackingStore?.Get<List<string>?>("uniqueSenders"); }
             set { BackingStore?.Set("uniqueSenders", value); }
         }
 #nullable restore
 #else
-        public List<string> UniqueSenders {
+        public List<string> UniqueSenders
+        {
             get { return BackingStore?.Get<List<string>>("uniqueSenders"); }
             set { BackingStore?.Set("uniqueSenders", value); }
         }
@@ -93,12 +104,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
-                {"lastDeliveredDateTime", n => { LastDeliveredDateTime = n.GetDateTimeOffsetValue(); } },
-                {"preview", n => { Preview = n.GetStringValue(); } },
-                {"threads", n => { Threads = n.GetCollectionOfObjectValues<ConversationThread>(ConversationThread.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"topic", n => { Topic = n.GetStringValue(); } },
-                {"uniqueSenders", n => { UniqueSenders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
+                { "lastDeliveredDateTime", n => { LastDeliveredDateTime = n.GetDateTimeOffsetValue(); } },
+                { "preview", n => { Preview = n.GetStringValue(); } },
+                { "threads", n => { Threads = n.GetCollectionOfObjectValues<ConversationThread>(ConversationThread.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "topic", n => { Topic = n.GetStringValue(); } },
+                { "uniqueSenders", n => { UniqueSenders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

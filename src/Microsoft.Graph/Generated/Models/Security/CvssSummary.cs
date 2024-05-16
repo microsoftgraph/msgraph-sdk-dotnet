@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class CvssSummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CvssSummary : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,37 +22,43 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The CVSS score about this vulnerability.</summary>
-        public double? Score {
+        public double? Score
+        {
             get { return BackingStore?.Get<double?>("score"); }
             set { BackingStore?.Set("score", value); }
         }
         /// <summary>The CVSS severity rating for this vulnerability. The possible values are: none, low, medium, high, critical, unknownFutureValue.</summary>
-        public VulnerabilitySeverity? Severity {
+        public VulnerabilitySeverity? Severity
+        {
             get { return BackingStore?.Get<VulnerabilitySeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>The CVSS vector string for this vulnerability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VectorString {
+        public string? VectorString
+        {
             get { return BackingStore?.Get<string?>("vectorString"); }
             set { BackingStore?.Set("vectorString", value); }
         }
 #nullable restore
 #else
-        public string VectorString {
+        public string VectorString
+        {
             get { return BackingStore?.Get<string>("vectorString"); }
             set { BackingStore?.Set("vectorString", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"score", n => { Score = n.GetDoubleValue(); } },
-                {"severity", n => { Severity = n.GetEnumValue<VulnerabilitySeverity>(); } },
-                {"vectorString", n => { VectorString = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "score", n => { Score = n.GetDoubleValue(); } },
+                { "severity", n => { Severity = n.GetEnumValue<VulnerabilitySeverity>(); } },
+                { "vectorString", n => { VectorString = n.GetStringValue(); } },
             };
         }
         /// <summary>

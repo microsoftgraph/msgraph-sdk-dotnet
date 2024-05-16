@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ApplicationTemplate : Entity, IParsable 
+    public class ApplicationTemplate : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design &amp; hosting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Categories {
+        public List<string>? Categories
+        {
             get { return BackingStore?.Get<List<string>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
 #nullable restore
 #else
-        public List<string> Categories {
+        public List<string> Categories
+        {
             get { return BackingStore?.Get<List<string>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A description of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The home page URL of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HomePageUrl {
+        public string? HomePageUrl
+        {
             get { return BackingStore?.Get<string?>("homePageUrl"); }
             set { BackingStore?.Set("homePageUrl", value); }
         }
 #nullable restore
 #else
-        public string HomePageUrl {
+        public string HomePageUrl
+        {
             get { return BackingStore?.Get<string>("homePageUrl"); }
             set { BackingStore?.Set("homePageUrl", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The URL to get the logo for this application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogoUrl {
+        public string? LogoUrl
+        {
             get { return BackingStore?.Get<string?>("logoUrl"); }
             set { BackingStore?.Set("logoUrl", value); }
         }
 #nullable restore
 #else
-        public string LogoUrl {
+        public string LogoUrl
+        {
             get { return BackingStore?.Get<string>("logoUrl"); }
             set { BackingStore?.Set("logoUrl", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the publisher for this application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Publisher {
+        public string? Publisher
+        {
             get { return BackingStore?.Get<string?>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
 #nullable restore
 #else
-        public string Publisher {
+        public string Publisher
+        {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of provisioning modes supported by this application. The only valid value is sync.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SupportedProvisioningTypes {
+        public List<string>? SupportedProvisioningTypes
+        {
             get { return BackingStore?.Get<List<string>?>("supportedProvisioningTypes"); }
             set { BackingStore?.Set("supportedProvisioningTypes", value); }
         }
 #nullable restore
 #else
-        public List<string> SupportedProvisioningTypes {
+        public List<string> SupportedProvisioningTypes
+        {
             get { return BackingStore?.Get<List<string>>("supportedProvisioningTypes"); }
             set { BackingStore?.Set("supportedProvisioningTypes", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of single sign-on modes supported by this application. The supported values are oidc, password, saml, and notSupported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SupportedSingleSignOnModes {
+        public List<string>? SupportedSingleSignOnModes
+        {
             get { return BackingStore?.Get<List<string>?>("supportedSingleSignOnModes"); }
             set { BackingStore?.Set("supportedSingleSignOnModes", value); }
         }
 #nullable restore
 #else
-        public List<string> SupportedSingleSignOnModes {
+        public List<string> SupportedSingleSignOnModes
+        {
             get { return BackingStore?.Get<List<string>>("supportedSingleSignOnModes"); }
             set { BackingStore?.Set("supportedSingleSignOnModes", value); }
         }
@@ -139,14 +156,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"homePageUrl", n => { HomePageUrl = n.GetStringValue(); } },
-                {"logoUrl", n => { LogoUrl = n.GetStringValue(); } },
-                {"publisher", n => { Publisher = n.GetStringValue(); } },
-                {"supportedProvisioningTypes", n => { SupportedProvisioningTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"supportedSingleSignOnModes", n => { SupportedSingleSignOnModes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "homePageUrl", n => { HomePageUrl = n.GetStringValue(); } },
+                { "logoUrl", n => { LogoUrl = n.GetStringValue(); } },
+                { "publisher", n => { Publisher = n.GetStringValue(); } },
+                { "supportedProvisioningTypes", n => { SupportedProvisioningTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "supportedSingleSignOnModes", n => { SupportedSingleSignOnModes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,47 +4,54 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Windows 10 Edition Upgrade configuration.
     /// </summary>
-    public class EditionUpgradeConfiguration : DeviceConfiguration, IParsable 
+    public class EditionUpgradeConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Edition Upgrade License File Content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? License {
+        public string? License
+        {
             get { return BackingStore?.Get<string?>("license"); }
             set { BackingStore?.Set("license", value); }
         }
 #nullable restore
 #else
-        public string License {
+        public string License
+        {
             get { return BackingStore?.Get<string>("license"); }
             set { BackingStore?.Set("license", value); }
         }
 #endif
         /// <summary>Edition Upgrade License type</summary>
-        public EditionUpgradeLicenseType? LicenseType {
+        public EditionUpgradeLicenseType? LicenseType
+        {
             get { return BackingStore?.Get<EditionUpgradeLicenseType?>("licenseType"); }
             set { BackingStore?.Set("licenseType", value); }
         }
         /// <summary>Edition Upgrade Product Key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductKey {
+        public string? ProductKey
+        {
             get { return BackingStore?.Get<string?>("productKey"); }
             set { BackingStore?.Set("productKey", value); }
         }
 #nullable restore
 #else
-        public string ProductKey {
+        public string ProductKey
+        {
             get { return BackingStore?.Get<string>("productKey"); }
             set { BackingStore?.Set("productKey", value); }
         }
 #endif
         /// <summary>Windows 10 Edition type.</summary>
-        public Windows10EditionType? TargetEdition {
+        public Windows10EditionType? TargetEdition
+        {
             get { return BackingStore?.Get<Windows10EditionType?>("targetEdition"); }
             set { BackingStore?.Set("targetEdition", value); }
         }
@@ -73,10 +80,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"license", n => { License = n.GetStringValue(); } },
-                {"licenseType", n => { LicenseType = n.GetEnumValue<EditionUpgradeLicenseType>(); } },
-                {"productKey", n => { ProductKey = n.GetStringValue(); } },
-                {"targetEdition", n => { TargetEdition = n.GetEnumValue<Windows10EditionType>(); } },
+                { "license", n => { License = n.GetStringValue(); } },
+                { "licenseType", n => { LicenseType = n.GetEnumValue<EditionUpgradeLicenseType>(); } },
+                { "productKey", n => { ProductKey = n.GetStringValue(); } },
+                { "targetEdition", n => { TargetEdition = n.GetEnumValue<Windows10EditionType>(); } },
             };
         }
         /// <summary>

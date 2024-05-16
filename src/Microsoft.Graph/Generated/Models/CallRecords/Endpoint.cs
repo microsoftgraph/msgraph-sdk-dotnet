@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.CallRecords {
+namespace Microsoft.Graph.Models.CallRecords
+{
     #pragma warning disable CS1591
-    public class Endpoint : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Endpoint : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>User-agent reported by this endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.CallRecords.UserAgent? UserAgent {
+        public Microsoft.Graph.Models.CallRecords.UserAgent? UserAgent
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.UserAgent?>("userAgent"); }
             set { BackingStore?.Set("userAgent", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.CallRecords.UserAgent UserAgent {
+        public Microsoft.Graph.Models.CallRecords.UserAgent UserAgent
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.UserAgent>("userAgent"); }
             set { BackingStore?.Set("userAgent", value); }
         }
@@ -77,8 +83,8 @@ namespace Microsoft.Graph.Models.CallRecords {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"userAgent", n => { UserAgent = n.GetObjectValue<Microsoft.Graph.Models.CallRecords.UserAgent>(Microsoft.Graph.Models.CallRecords.UserAgent.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "userAgent", n => { UserAgent = n.GetObjectValue<Microsoft.Graph.Models.CallRecords.UserAgent>(Microsoft.Graph.Models.CallRecords.UserAgent.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks {
+namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks
+{
     [Obsolete("This class is obsolete. Use GetRecentNotebooksWithIncludePersonalNotebooksGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetRecentNotebooksWithIncludePersonalNotebooksResponse : GetRecentNotebooksWithIncludePersonalNotebooksGetResponse, IParsable 
+    public class GetRecentNotebooksWithIncludePersonalNotebooksResponse : GetRecentNotebooksWithIncludePersonalNotebooksGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

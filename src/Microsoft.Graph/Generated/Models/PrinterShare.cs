@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PrinterShare : PrinterBase, IParsable 
+    public class PrinterShare : PrinterBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.</summary>
-        public bool? AllowAllUsers {
+        public bool? AllowAllUsers
+        {
             get { return BackingStore?.Get<bool?>("allowAllUsers"); }
             set { BackingStore?.Set("allowAllUsers", value); }
         }
         /// <summary>The groups whose users have access to print using the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Group>? AllowedGroups {
+        public List<Group>? AllowedGroups
+        {
             get { return BackingStore?.Get<List<Group>?>("allowedGroups"); }
             set { BackingStore?.Set("allowedGroups", value); }
         }
 #nullable restore
 #else
-        public List<Group> AllowedGroups {
+        public List<Group> AllowedGroups
+        {
             get { return BackingStore?.Get<List<Group>>("allowedGroups"); }
             set { BackingStore?.Set("allowedGroups", value); }
         }
@@ -31,32 +35,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The users who have access to print using the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<User>? AllowedUsers {
+        public List<User>? AllowedUsers
+        {
             get { return BackingStore?.Get<List<User>?>("allowedUsers"); }
             set { BackingStore?.Set("allowedUsers", value); }
         }
 #nullable restore
 #else
-        public List<User> AllowedUsers {
+        public List<User> AllowedUsers
+        {
             get { return BackingStore?.Get<List<User>>("allowedUsers"); }
             set { BackingStore?.Set("allowedUsers", value); }
         }
 #endif
         /// <summary>The DateTimeOffset when the printer share was created. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The printer that this printer share is related to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Printer? Printer {
+        public Microsoft.Graph.Models.Printer? Printer
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Printer?>("printer"); }
             set { BackingStore?.Set("printer", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Printer Printer {
+        public Microsoft.Graph.Models.Printer Printer
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Printer>("printer"); }
             set { BackingStore?.Set("printer", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Additional data for a printer share as viewed by the signed-in user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrinterShareViewpoint? ViewPoint {
+        public PrinterShareViewpoint? ViewPoint
+        {
             get { return BackingStore?.Get<PrinterShareViewpoint?>("viewPoint"); }
             set { BackingStore?.Set("viewPoint", value); }
         }
 #nullable restore
 #else
-        public PrinterShareViewpoint ViewPoint {
+        public PrinterShareViewpoint ViewPoint
+        {
             get { return BackingStore?.Get<PrinterShareViewpoint>("viewPoint"); }
             set { BackingStore?.Set("viewPoint", value); }
         }
@@ -100,12 +111,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowAllUsers", n => { AllowAllUsers = n.GetBoolValue(); } },
-                {"allowedGroups", n => { AllowedGroups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"allowedUsers", n => { AllowedUsers = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"printer", n => { Printer = n.GetObjectValue<Microsoft.Graph.Models.Printer>(Microsoft.Graph.Models.Printer.CreateFromDiscriminatorValue); } },
-                {"viewPoint", n => { ViewPoint = n.GetObjectValue<PrinterShareViewpoint>(PrinterShareViewpoint.CreateFromDiscriminatorValue); } },
+                { "allowAllUsers", n => { AllowAllUsers = n.GetBoolValue(); } },
+                { "allowedGroups", n => { AllowedGroups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "allowedUsers", n => { AllowedUsers = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "printer", n => { Printer = n.GetObjectValue<Microsoft.Graph.Models.Printer>(Microsoft.Graph.Models.Printer.CreateFromDiscriminatorValue); } },
+                { "viewPoint", n => { ViewPoint = n.GetObjectValue<PrinterShareViewpoint>(PrinterShareViewpoint.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

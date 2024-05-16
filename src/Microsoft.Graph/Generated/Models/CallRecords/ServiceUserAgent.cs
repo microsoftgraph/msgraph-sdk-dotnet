@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.CallRecords {
+namespace Microsoft.Graph.Models.CallRecords
+{
     #pragma warning disable CS1591
-    public class ServiceUserAgent : UserAgent, IParsable 
+    public class ServiceUserAgent : UserAgent, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The role property</summary>
-        public ServiceRole? Role {
+        public ServiceRole? Role
+        {
             get { return BackingStore?.Get<ServiceRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Models.CallRecords {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"role", n => { Role = n.GetEnumValue<ServiceRole>(); } },
+                { "role", n => { Role = n.GetEnumValue<ServiceRole>(); } },
             };
         }
         /// <summary>

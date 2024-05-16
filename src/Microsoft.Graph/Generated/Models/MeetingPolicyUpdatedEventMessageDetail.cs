@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MeetingPolicyUpdatedEventMessageDetail : EventMessageDetail, IParsable 
+    public class MeetingPolicyUpdatedEventMessageDetail : EventMessageDetail, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Initiator of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Initiator {
+        public IdentitySet? Initiator
+        {
             get { return BackingStore?.Get<IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Initiator {
+        public IdentitySet Initiator
+        {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
 #endif
         /// <summary>Represents whether the meeting chat is enabled or not.</summary>
-        public bool? MeetingChatEnabled {
+        public bool? MeetingChatEnabled
+        {
             get { return BackingStore?.Get<bool?>("meetingChatEnabled"); }
             set { BackingStore?.Set("meetingChatEnabled", value); }
         }
         /// <summary>Unique identifier of the meeting chat.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MeetingChatId {
+        public string? MeetingChatId
+        {
             get { return BackingStore?.Get<string?>("meetingChatId"); }
             set { BackingStore?.Set("meetingChatId", value); }
         }
 #nullable restore
 #else
-        public string MeetingChatId {
+        public string MeetingChatId
+        {
             get { return BackingStore?.Get<string>("meetingChatId"); }
             set { BackingStore?.Set("meetingChatId", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"meetingChatEnabled", n => { MeetingChatEnabled = n.GetBoolValue(); } },
-                {"meetingChatId", n => { MeetingChatId = n.GetStringValue(); } },
+                { "initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "meetingChatEnabled", n => { MeetingChatEnabled = n.GetBoolValue(); } },
+                { "meetingChatId", n => { MeetingChatId = n.GetStringValue(); } },
             };
         }
         /// <summary>

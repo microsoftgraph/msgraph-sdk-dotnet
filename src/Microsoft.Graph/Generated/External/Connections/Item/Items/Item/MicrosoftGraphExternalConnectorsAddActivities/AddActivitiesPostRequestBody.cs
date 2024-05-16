@@ -6,27 +6,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.External.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities {
+namespace Microsoft.Graph.External.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities
+{
     #pragma warning disable CS1591
-    public class AddActivitiesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AddActivitiesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The activities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalActivity>? Activities {
+        public List<ExternalActivity>? Activities
+        {
             get { return BackingStore?.Get<List<ExternalActivity>?>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #nullable restore
 #else
-        public List<ExternalActivity> Activities {
+        public List<ExternalActivity> Activities
+        {
             get { return BackingStore?.Get<List<ExternalActivity>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.External.Connections.Item.Items.Item.MicrosoftGraphExt
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"activities", n => { Activities = n.GetCollectionOfObjectValues<ExternalActivity>(ExternalActivity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "activities", n => { Activities = n.GetCollectionOfObjectValues<ExternalActivity>(ExternalActivity.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

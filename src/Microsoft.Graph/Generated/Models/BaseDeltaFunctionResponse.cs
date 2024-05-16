@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class BaseDeltaFunctionResponse : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BaseDeltaFunctionResponse : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataDeltaLink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataDeltaLink {
+        public string? OdataDeltaLink
+        {
             get { return BackingStore?.Get<string?>("@odata.deltaLink"); }
             set { BackingStore?.Set("@odata.deltaLink", value); }
         }
 #nullable restore
 #else
-        public string OdataDeltaLink {
+        public string OdataDeltaLink
+        {
             get { return BackingStore?.Get<string>("@odata.deltaLink"); }
             set { BackingStore?.Set("@odata.deltaLink", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataNextLink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataNextLink {
+        public string? OdataNextLink
+        {
             get { return BackingStore?.Get<string?>("@odata.nextLink"); }
             set { BackingStore?.Set("@odata.nextLink", value); }
         }
 #nullable restore
 #else
-        public string OdataNextLink {
+        public string OdataNextLink
+        {
             get { return BackingStore?.Get<string>("@odata.nextLink"); }
             set { BackingStore?.Set("@odata.nextLink", value); }
         }
@@ -71,8 +77,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.deltaLink", n => { OdataDeltaLink = n.GetStringValue(); } },
-                {"@odata.nextLink", n => { OdataNextLink = n.GetStringValue(); } },
+                { "@odata.deltaLink", n => { OdataDeltaLink = n.GetStringValue(); } },
+                { "@odata.nextLink", n => { OdataNextLink = n.GetStringValue(); } },
             };
         }
         /// <summary>

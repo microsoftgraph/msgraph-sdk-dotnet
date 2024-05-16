@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class InvitedUserMessageInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class InvitedUserMessageInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Additional recipients the invitation message should be sent to. Currently only one additional recipient is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recipient>? CcRecipients {
+        public List<Recipient>? CcRecipients
+        {
             get { return BackingStore?.Get<List<Recipient>?>("ccRecipients"); }
             set { BackingStore?.Set("ccRecipients", value); }
         }
 #nullable restore
 #else
-        public List<Recipient> CcRecipients {
+        public List<Recipient> CcRecipients
+        {
             get { return BackingStore?.Get<List<Recipient>>("ccRecipients"); }
             set { BackingStore?.Set("ccRecipients", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Customized message body you want to send if you don&apos;t want the default message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomizedMessageBody {
+        public string? CustomizedMessageBody
+        {
             get { return BackingStore?.Get<string?>("customizedMessageBody"); }
             set { BackingStore?.Set("customizedMessageBody", value); }
         }
 #nullable restore
 #else
-        public string CustomizedMessageBody {
+        public string CustomizedMessageBody
+        {
             get { return BackingStore?.Get<string>("customizedMessageBody"); }
             set { BackingStore?.Set("customizedMessageBody", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The language you want to send the default message in. If the customizedMessageBody is specified, this property is ignored, and the message is sent using the customizedMessageBody. The language format should be in ISO 639. The default is en-US.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageLanguage {
+        public string? MessageLanguage
+        {
             get { return BackingStore?.Get<string?>("messageLanguage"); }
             set { BackingStore?.Set("messageLanguage", value); }
         }
 #nullable restore
 #else
-        public string MessageLanguage {
+        public string MessageLanguage
+        {
             get { return BackingStore?.Get<string>("messageLanguage"); }
             set { BackingStore?.Set("messageLanguage", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"ccRecipients", n => { CcRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"customizedMessageBody", n => { CustomizedMessageBody = n.GetStringValue(); } },
-                {"messageLanguage", n => { MessageLanguage = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "ccRecipients", n => { CcRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customizedMessageBody", n => { CustomizedMessageBody = n.GetStringValue(); } },
+                { "messageLanguage", n => { MessageLanguage = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

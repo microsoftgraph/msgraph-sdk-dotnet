@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Thumbnail : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Thumbnail : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The content stream for the thumbnail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Content {
+        public byte[]? Content
+        {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public byte[] Content {
+        public byte[] Content
+        {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #endif
         /// <summary>The height of the thumbnail, in pixels.</summary>
-        public int? Height {
+        public int? Height
+        {
             get { return BackingStore?.Get<int?>("height"); }
             set { BackingStore?.Set("height", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier of the item that provided the thumbnail. This is only available when a folder thumbnail is requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceItemId {
+        public string? SourceItemId
+        {
             get { return BackingStore?.Get<string?>("sourceItemId"); }
             set { BackingStore?.Set("sourceItemId", value); }
         }
 #nullable restore
 #else
-        public string SourceItemId {
+        public string SourceItemId
+        {
             get { return BackingStore?.Get<string>("sourceItemId"); }
             set { BackingStore?.Set("sourceItemId", value); }
         }
@@ -67,19 +76,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The URL used to fetch the thumbnail content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url {
+        public string? Url
+        {
             get { return BackingStore?.Get<string?>("url"); }
             set { BackingStore?.Set("url", value); }
         }
 #nullable restore
 #else
-        public string Url {
+        public string Url
+        {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
         }
 #endif
         /// <summary>The width of the thumbnail, in pixels.</summary>
-        public int? Width {
+        public int? Width
+        {
             get { return BackingStore?.Get<int?>("width"); }
             set { BackingStore?.Set("width", value); }
         }
@@ -109,12 +121,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"content", n => { Content = n.GetByteArrayValue(); } },
-                {"height", n => { Height = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sourceItemId", n => { SourceItemId = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
-                {"width", n => { Width = n.GetIntValue(); } },
+                { "content", n => { Content = n.GetByteArrayValue(); } },
+                { "height", n => { Height = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sourceItemId", n => { SourceItemId = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
+                { "width", n => { Width = n.GetIntValue(); } },
             };
         }
         /// <summary>

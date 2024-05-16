@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookWorksheetProtection : Entity, IParsable 
+    public class WorkbookWorksheetProtection : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Sheet protection options. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookWorksheetProtectionOptions? Options {
+        public WorkbookWorksheetProtectionOptions? Options
+        {
             get { return BackingStore?.Get<WorkbookWorksheetProtectionOptions?>("options"); }
             set { BackingStore?.Set("options", value); }
         }
 #nullable restore
 #else
-        public WorkbookWorksheetProtectionOptions Options {
+        public WorkbookWorksheetProtectionOptions Options
+        {
             get { return BackingStore?.Get<WorkbookWorksheetProtectionOptions>("options"); }
             set { BackingStore?.Set("options", value); }
         }
 #endif
         /// <summary>Indicates if the worksheet is protected.  Read-only.</summary>
-        public bool? Protected {
+        public bool? Protected
+        {
             get { return BackingStore?.Get<bool?>("protected"); }
             set { BackingStore?.Set("protected", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"options", n => { Options = n.GetObjectValue<WorkbookWorksheetProtectionOptions>(WorkbookWorksheetProtectionOptions.CreateFromDiscriminatorValue); } },
-                {"protected", n => { Protected = n.GetBoolValue(); } },
+                { "options", n => { Options = n.GetObjectValue<WorkbookWorksheetProtectionOptions>(WorkbookWorksheetProtectionOptions.CreateFromDiscriminatorValue); } },
+                { "protected", n => { Protected = n.GetBoolValue(); } },
             };
         }
         /// <summary>

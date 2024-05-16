@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class KubernetesSecretEvidence : AlertEvidence, IParsable 
+    public class KubernetesSecretEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The secret name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The secret namespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public KubernetesNamespaceEvidence? Namespace {
+        public KubernetesNamespaceEvidence? Namespace
+        {
             get { return BackingStore?.Get<KubernetesNamespaceEvidence?>("namespace"); }
             set { BackingStore?.Set("namespace", value); }
         }
 #nullable restore
 #else
-        public KubernetesNamespaceEvidence Namespace {
+        public KubernetesNamespaceEvidence Namespace
+        {
             get { return BackingStore?.Get<KubernetesNamespaceEvidence>("namespace"); }
             set { BackingStore?.Set("namespace", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The secret type can include both built-in types and custom ones. Examples of built-in types are: Opaque, kubernetes.io/service-account-token, kubernetes.io/dockercfg, kubernetes.io/dockerconfigjson, kubernetes.io/basic-auth, kubernetes.io/ssh-auth, kubernetes.io/tls, bootstrap.kubernetes.io/token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecretType {
+        public string? SecretType
+        {
             get { return BackingStore?.Get<string?>("secretType"); }
             set { BackingStore?.Set("secretType", value); }
         }
 #nullable restore
 #else
-        public string SecretType {
+        public string SecretType
+        {
             get { return BackingStore?.Get<string>("secretType"); }
             set { BackingStore?.Set("secretType", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"namespace", n => { Namespace = n.GetObjectValue<KubernetesNamespaceEvidence>(KubernetesNamespaceEvidence.CreateFromDiscriminatorValue); } },
-                {"secretType", n => { SecretType = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "namespace", n => { Namespace = n.GetObjectValue<KubernetesNamespaceEvidence>(KubernetesNamespaceEvidence.CreateFromDiscriminatorValue); } },
+                { "secretType", n => { SecretType = n.GetStringValue(); } },
             };
         }
         /// <summary>

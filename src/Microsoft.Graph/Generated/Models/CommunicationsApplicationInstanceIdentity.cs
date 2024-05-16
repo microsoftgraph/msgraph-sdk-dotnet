@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CommunicationsApplicationInstanceIdentity : Identity, IParsable 
+    public class CommunicationsApplicationInstanceIdentity : Identity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>True if the participant shouldn&apos;t be shown in other participants&apos; rosters.</summary>
-        public bool? Hidden {
+        public bool? Hidden
+        {
             get { return BackingStore?.Get<bool?>("hidden"); }
             set { BackingStore?.Set("hidden", value); }
         }
         /// <summary>The tenant ID of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"hidden", n => { Hidden = n.GetBoolValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "hidden", n => { Hidden = n.GetBoolValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

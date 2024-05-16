@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.CallRecords {
+namespace Microsoft.Graph.Models.CallRecords
+{
     #pragma warning disable CS1591
-    public class ClientUserAgent : UserAgent, IParsable 
+    public class ClientUserAgent : UserAgent, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The unique identifier of the Microsoft Entra application used by this endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureADAppId {
+        public string? AzureADAppId
+        {
             get { return BackingStore?.Get<string?>("azureADAppId"); }
             set { BackingStore?.Set("azureADAppId", value); }
         }
 #nullable restore
 #else
-        public string AzureADAppId {
+        public string AzureADAppId
+        {
             get { return BackingStore?.Get<string>("azureADAppId"); }
             set { BackingStore?.Set("azureADAppId", value); }
         }
@@ -26,24 +29,28 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>Immutable resource identifier of the Azure Communication Service associated with this endpoint based on Communication Services APIs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommunicationServiceId {
+        public string? CommunicationServiceId
+        {
             get { return BackingStore?.Get<string?>("communicationServiceId"); }
             set { BackingStore?.Set("communicationServiceId", value); }
         }
 #nullable restore
 #else
-        public string CommunicationServiceId {
+        public string CommunicationServiceId
+        {
             get { return BackingStore?.Get<string>("communicationServiceId"); }
             set { BackingStore?.Set("communicationServiceId", value); }
         }
 #endif
         /// <summary>The platform property</summary>
-        public ClientPlatform? Platform {
+        public ClientPlatform? Platform
+        {
             get { return BackingStore?.Get<ClientPlatform?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
         /// <summary>The productFamily property</summary>
-        public Microsoft.Graph.Models.CallRecords.ProductFamily? ProductFamily {
+        public Microsoft.Graph.Models.CallRecords.ProductFamily? ProductFamily
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.ProductFamily?>("productFamily"); }
             set { BackingStore?.Set("productFamily", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Models.CallRecords {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"azureADAppId", n => { AzureADAppId = n.GetStringValue(); } },
-                {"communicationServiceId", n => { CommunicationServiceId = n.GetStringValue(); } },
-                {"platform", n => { Platform = n.GetEnumValue<ClientPlatform>(); } },
-                {"productFamily", n => { ProductFamily = n.GetEnumValue<ProductFamily>(); } },
+                { "azureADAppId", n => { AzureADAppId = n.GetStringValue(); } },
+                { "communicationServiceId", n => { CommunicationServiceId = n.GetStringValue(); } },
+                { "platform", n => { Platform = n.GetEnumValue<ClientPlatform>(); } },
+                { "productFamily", n => { ProductFamily = n.GetEnumValue<ProductFamily>(); } },
             };
         }
         /// <summary>

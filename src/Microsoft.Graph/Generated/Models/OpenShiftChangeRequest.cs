@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OpenShiftChangeRequest : ScheduleChangeRequest, IParsable 
+    public class OpenShiftChangeRequest : ScheduleChangeRequest, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>ID for the open shift.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OpenShiftId {
+        public string? OpenShiftId
+        {
             get { return BackingStore?.Get<string?>("openShiftId"); }
             set { BackingStore?.Set("openShiftId", value); }
         }
 #nullable restore
 #else
-        public string OpenShiftId {
+        public string OpenShiftId
+        {
             get { return BackingStore?.Get<string>("openShiftId"); }
             set { BackingStore?.Set("openShiftId", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"openShiftId", n => { OpenShiftId = n.GetStringValue(); } },
+                { "openShiftId", n => { OpenShiftId = n.GetStringValue(); } },
             };
         }
         /// <summary>

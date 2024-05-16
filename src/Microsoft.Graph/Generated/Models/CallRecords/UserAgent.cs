@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.CallRecords {
+namespace Microsoft.Graph.Models.CallRecords
+{
     #pragma warning disable CS1591
-    public class UserAgent : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UserAgent : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Identifies the version of application software used by this endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationVersion {
+        public string? ApplicationVersion
+        {
             get { return BackingStore?.Get<string?>("applicationVersion"); }
             set { BackingStore?.Set("applicationVersion", value); }
         }
 #nullable restore
 #else
-        public string ApplicationVersion {
+        public string ApplicationVersion
+        {
             get { return BackingStore?.Get<string>("applicationVersion"); }
             set { BackingStore?.Set("applicationVersion", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>User-agent header value reported by this endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeaderValue {
+        public string? HeaderValue
+        {
             get { return BackingStore?.Get<string?>("headerValue"); }
             set { BackingStore?.Set("headerValue", value); }
         }
 #nullable restore
 #else
-        public string HeaderValue {
+        public string HeaderValue
+        {
             get { return BackingStore?.Get<string>("headerValue"); }
             set { BackingStore?.Set("headerValue", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -91,9 +99,9 @@ namespace Microsoft.Graph.Models.CallRecords {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"applicationVersion", n => { ApplicationVersion = n.GetStringValue(); } },
-                {"headerValue", n => { HeaderValue = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "applicationVersion", n => { ApplicationVersion = n.GetStringValue(); } },
+                { "headerValue", n => { HeaderValue = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

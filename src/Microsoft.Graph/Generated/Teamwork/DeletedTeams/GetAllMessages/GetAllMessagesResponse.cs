@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Teamwork.DeletedTeams.GetAllMessages {
+namespace Microsoft.Graph.Teamwork.DeletedTeams.GetAllMessages
+{
     [Obsolete("This class is obsolete. Use GetAllMessagesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetAllMessagesResponse : GetAllMessagesGetResponse, IParsable 
+    public class GetAllMessagesResponse : GetAllMessagesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

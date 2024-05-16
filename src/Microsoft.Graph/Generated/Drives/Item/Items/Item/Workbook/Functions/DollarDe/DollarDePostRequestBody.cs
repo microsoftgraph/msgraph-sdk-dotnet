@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DollarDe {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DollarDe
+{
     #pragma warning disable CS1591
-    public class DollarDePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DollarDePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DollarDe {
         /// <summary>The fraction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Fraction {
+        public Json? Fraction
+        {
             get { return BackingStore?.Get<Json?>("fraction"); }
             set { BackingStore?.Set("fraction", value); }
         }
 #nullable restore
 #else
-        public Json Fraction {
+        public Json Fraction
+        {
             get { return BackingStore?.Get<Json>("fraction"); }
             set { BackingStore?.Set("fraction", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DollarDe {
         /// <summary>The fractionalDollar property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? FractionalDollar {
+        public Json? FractionalDollar
+        {
             get { return BackingStore?.Get<Json?>("fractionalDollar"); }
             set { BackingStore?.Set("fractionalDollar", value); }
         }
 #nullable restore
 #else
-        public Json FractionalDollar {
+        public Json FractionalDollar
+        {
             get { return BackingStore?.Get<Json>("fractionalDollar"); }
             set { BackingStore?.Set("fractionalDollar", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DollarDe {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"fraction", n => { Fraction = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"fractionalDollar", n => { FractionalDollar = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "fraction", n => { Fraction = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "fractionalDollar", n => { FractionalDollar = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

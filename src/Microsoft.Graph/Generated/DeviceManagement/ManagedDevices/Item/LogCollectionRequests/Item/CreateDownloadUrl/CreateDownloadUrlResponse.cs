@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl {
+namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl
+{
     [Obsolete("This class is obsolete. Use CreateDownloadUrlPostResponse instead.")]
     #pragma warning disable CS1591
-    public class CreateDownloadUrlResponse : CreateDownloadUrlPostResponse, IParsable 
+    public class CreateDownloadUrlResponse : CreateDownloadUrlPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

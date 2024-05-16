@@ -4,51 +4,59 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties for the installation state summary for a user.
     /// </summary>
-    public class UserInstallStateSummary : Entity, IParsable 
+    public class UserInstallStateSummary : Entity, IParsable
     {
         /// <summary>The install state of the eBook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceInstallState>? DeviceStates {
+        public List<DeviceInstallState>? DeviceStates
+        {
             get { return BackingStore?.Get<List<DeviceInstallState>?>("deviceStates"); }
             set { BackingStore?.Set("deviceStates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceInstallState> DeviceStates {
+        public List<DeviceInstallState> DeviceStates
+        {
             get { return BackingStore?.Get<List<DeviceInstallState>>("deviceStates"); }
             set { BackingStore?.Set("deviceStates", value); }
         }
 #endif
         /// <summary>Failed Device Count.</summary>
-        public int? FailedDeviceCount {
+        public int? FailedDeviceCount
+        {
             get { return BackingStore?.Get<int?>("failedDeviceCount"); }
             set { BackingStore?.Set("failedDeviceCount", value); }
         }
         /// <summary>Installed Device Count.</summary>
-        public int? InstalledDeviceCount {
+        public int? InstalledDeviceCount
+        {
             get { return BackingStore?.Get<int?>("installedDeviceCount"); }
             set { BackingStore?.Set("installedDeviceCount", value); }
         }
         /// <summary>Not installed device count.</summary>
-        public int? NotInstalledDeviceCount {
+        public int? NotInstalledDeviceCount
+        {
             get { return BackingStore?.Get<int?>("notInstalledDeviceCount"); }
             set { BackingStore?.Set("notInstalledDeviceCount", value); }
         }
         /// <summary>User name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserName {
+        public string? UserName
+        {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
 #nullable restore
 #else
-        public string UserName {
+        public string UserName
+        {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
@@ -71,11 +79,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceStates", n => { DeviceStates = n.GetCollectionOfObjectValues<DeviceInstallState>(DeviceInstallState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
-                {"installedDeviceCount", n => { InstalledDeviceCount = n.GetIntValue(); } },
-                {"notInstalledDeviceCount", n => { NotInstalledDeviceCount = n.GetIntValue(); } },
-                {"userName", n => { UserName = n.GetStringValue(); } },
+                { "deviceStates", n => { DeviceStates = n.GetCollectionOfObjectValues<DeviceInstallState>(DeviceInstallState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
+                { "installedDeviceCount", n => { InstalledDeviceCount = n.GetIntValue(); } },
+                { "notInstalledDeviceCount", n => { NotInstalledDeviceCount = n.GetIntValue(); } },
+                { "userName", n => { UserName = n.GetStringValue(); } },
             };
         }
         /// <summary>

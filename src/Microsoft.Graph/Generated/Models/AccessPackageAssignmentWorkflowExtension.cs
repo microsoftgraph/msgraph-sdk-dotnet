@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageAssignmentWorkflowExtension : CustomCalloutExtension, IParsable 
+    public class AccessPackageAssignmentWorkflowExtension : CustomCalloutExtension, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The callback configuration for a custom extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomExtensionCallbackConfiguration? CallbackConfiguration {
+        public CustomExtensionCallbackConfiguration? CallbackConfiguration
+        {
             get { return BackingStore?.Get<CustomExtensionCallbackConfiguration?>("callbackConfiguration"); }
             set { BackingStore?.Set("callbackConfiguration", value); }
         }
 #nullable restore
 #else
-        public CustomExtensionCallbackConfiguration CallbackConfiguration {
+        public CustomExtensionCallbackConfiguration CallbackConfiguration
+        {
             get { return BackingStore?.Get<CustomExtensionCallbackConfiguration>("callbackConfiguration"); }
             set { BackingStore?.Set("callbackConfiguration", value); }
         }
@@ -26,38 +29,44 @@ namespace Microsoft.Graph.Models {
         /// <summary>The userPrincipalName of the user or identity of the subject that created this resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy {
+        public string? CreatedBy
+        {
             get { return BackingStore?.Get<string?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public string CreatedBy {
+        public string CreatedBy
+        {
             get { return BackingStore?.Get<string>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>When the entity was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The userPrincipalName of the identity that last modified the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastModifiedBy {
+        public string? LastModifiedBy
+        {
             get { return BackingStore?.Get<string?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public string LastModifiedBy {
+        public string LastModifiedBy
+        {
             get { return BackingStore?.Get<string>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>When the entity was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
@@ -86,11 +95,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"callbackConfiguration", n => { CallbackConfiguration = n.GetObjectValue<CustomExtensionCallbackConfiguration>(CustomExtensionCallbackConfiguration.CreateFromDiscriminatorValue); } },
-                {"createdBy", n => { CreatedBy = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "callbackConfiguration", n => { CallbackConfiguration = n.GetObjectValue<CustomExtensionCallbackConfiguration>(CustomExtensionCallbackConfiguration.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

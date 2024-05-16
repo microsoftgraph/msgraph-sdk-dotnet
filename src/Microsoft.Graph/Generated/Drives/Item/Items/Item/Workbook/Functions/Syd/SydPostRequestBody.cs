@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Syd {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Syd
+{
     #pragma warning disable CS1591
-    public class SydPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SydPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Syd {
         /// <summary>The cost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Cost {
+        public Json? Cost
+        {
             get { return BackingStore?.Get<Json?>("cost"); }
             set { BackingStore?.Set("cost", value); }
         }
 #nullable restore
 #else
-        public Json Cost {
+        public Json Cost
+        {
             get { return BackingStore?.Get<Json>("cost"); }
             set { BackingStore?.Set("cost", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Syd {
         /// <summary>The life property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Life {
+        public Json? Life
+        {
             get { return BackingStore?.Get<Json?>("life"); }
             set { BackingStore?.Set("life", value); }
         }
 #nullable restore
 #else
-        public Json Life {
+        public Json Life
+        {
             get { return BackingStore?.Get<Json>("life"); }
             set { BackingStore?.Set("life", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Syd {
         /// <summary>The per property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Per {
+        public Json? Per
+        {
             get { return BackingStore?.Get<Json?>("per"); }
             set { BackingStore?.Set("per", value); }
         }
 #nullable restore
 #else
-        public Json Per {
+        public Json Per
+        {
             get { return BackingStore?.Get<Json>("per"); }
             set { BackingStore?.Set("per", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Syd {
         /// <summary>The salvage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Salvage {
+        public Json? Salvage
+        {
             get { return BackingStore?.Get<Json?>("salvage"); }
             set { BackingStore?.Set("salvage", value); }
         }
 #nullable restore
 #else
-        public Json Salvage {
+        public Json Salvage
+        {
             get { return BackingStore?.Get<Json>("salvage"); }
             set { BackingStore?.Set("salvage", value); }
         }
@@ -100,10 +110,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Syd {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"cost", n => { Cost = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"life", n => { Life = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"per", n => { Per = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"salvage", n => { Salvage = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "cost", n => { Cost = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "life", n => { Life = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "per", n => { Per = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "salvage", n => { Salvage = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

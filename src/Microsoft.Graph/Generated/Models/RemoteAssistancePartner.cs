@@ -4,46 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// RemoteAssistPartner resources represent the metadata and status of a given Remote Assistance partner service.
     /// </summary>
-    public class RemoteAssistancePartner : Entity, IParsable 
+    public class RemoteAssistancePartner : Entity, IParsable
     {
         /// <summary>Display name of the partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Timestamp of the last request sent to Intune by the TEM partner.</summary>
-        public DateTimeOffset? LastConnectionDateTime {
+        public DateTimeOffset? LastConnectionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastConnectionDateTime"); }
             set { BackingStore?.Set("lastConnectionDateTime", value); }
         }
         /// <summary>The current TeamViewer connector status</summary>
-        public RemoteAssistanceOnboardingStatus? OnboardingStatus {
+        public RemoteAssistanceOnboardingStatus? OnboardingStatus
+        {
             get { return BackingStore?.Get<RemoteAssistanceOnboardingStatus?>("onboardingStatus"); }
             set { BackingStore?.Set("onboardingStatus", value); }
         }
         /// <summary>URL of the partner&apos;s onboarding portal, where an administrator can configure their Remote Assistance service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OnboardingUrl {
+        public string? OnboardingUrl
+        {
             get { return BackingStore?.Get<string?>("onboardingUrl"); }
             set { BackingStore?.Set("onboardingUrl", value); }
         }
 #nullable restore
 #else
-        public string OnboardingUrl {
+        public string OnboardingUrl
+        {
             get { return BackingStore?.Get<string>("onboardingUrl"); }
             set { BackingStore?.Set("onboardingUrl", value); }
         }
@@ -66,10 +73,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastConnectionDateTime", n => { LastConnectionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<RemoteAssistanceOnboardingStatus>(); } },
-                {"onboardingUrl", n => { OnboardingUrl = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastConnectionDateTime", n => { LastConnectionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<RemoteAssistanceOnboardingStatus>(); } },
+                { "onboardingUrl", n => { OnboardingUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,70 +5,82 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Device location
     /// </summary>
-    public class DeviceGeoLocation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceGeoLocation : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Altitude, given in meters above sea level</summary>
-        public double? Altitude {
+        public double? Altitude
+        {
             get { return BackingStore?.Get<double?>("altitude"); }
             set { BackingStore?.Set("altitude", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Heading in degrees from true north</summary>
-        public double? Heading {
+        public double? Heading
+        {
             get { return BackingStore?.Get<double?>("heading"); }
             set { BackingStore?.Set("heading", value); }
         }
         /// <summary>Accuracy of longitude and latitude in meters</summary>
-        public double? HorizontalAccuracy {
+        public double? HorizontalAccuracy
+        {
             get { return BackingStore?.Get<double?>("horizontalAccuracy"); }
             set { BackingStore?.Set("horizontalAccuracy", value); }
         }
         /// <summary>Time at which location was recorded, relative to UTC</summary>
-        public DateTimeOffset? LastCollectedDateTime {
+        public DateTimeOffset? LastCollectedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastCollectedDateTime"); }
             set { BackingStore?.Set("lastCollectedDateTime", value); }
         }
         /// <summary>Latitude coordinate of the device&apos;s location</summary>
-        public double? Latitude {
+        public double? Latitude
+        {
             get { return BackingStore?.Get<double?>("latitude"); }
             set { BackingStore?.Set("latitude", value); }
         }
         /// <summary>Longitude coordinate of the device&apos;s location</summary>
-        public double? Longitude {
+        public double? Longitude
+        {
             get { return BackingStore?.Get<double?>("longitude"); }
             set { BackingStore?.Set("longitude", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Speed the device is traveling in meters per second</summary>
-        public double? Speed {
+        public double? Speed
+        {
             get { return BackingStore?.Get<double?>("speed"); }
             set { BackingStore?.Set("speed", value); }
         }
         /// <summary>Accuracy of altitude in meters</summary>
-        public double? VerticalAccuracy {
+        public double? VerticalAccuracy
+        {
             get { return BackingStore?.Get<double?>("verticalAccuracy"); }
             set { BackingStore?.Set("verticalAccuracy", value); }
         }
@@ -98,15 +110,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"altitude", n => { Altitude = n.GetDoubleValue(); } },
-                {"heading", n => { Heading = n.GetDoubleValue(); } },
-                {"horizontalAccuracy", n => { HorizontalAccuracy = n.GetDoubleValue(); } },
-                {"lastCollectedDateTime", n => { LastCollectedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"latitude", n => { Latitude = n.GetDoubleValue(); } },
-                {"longitude", n => { Longitude = n.GetDoubleValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"speed", n => { Speed = n.GetDoubleValue(); } },
-                {"verticalAccuracy", n => { VerticalAccuracy = n.GetDoubleValue(); } },
+                { "altitude", n => { Altitude = n.GetDoubleValue(); } },
+                { "heading", n => { Heading = n.GetDoubleValue(); } },
+                { "horizontalAccuracy", n => { HorizontalAccuracy = n.GetDoubleValue(); } },
+                { "lastCollectedDateTime", n => { LastCollectedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "latitude", n => { Latitude = n.GetDoubleValue(); } },
+                { "longitude", n => { Longitude = n.GetDoubleValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "speed", n => { Speed = n.GetDoubleValue(); } },
+                { "verticalAccuracy", n => { VerticalAccuracy = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SamlOrWsFedProvider : IdentityProviderBase, IParsable 
+    public class SamlOrWsFedProvider : IdentityProviderBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Issuer URI of the federation server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerUri {
+        public string? IssuerUri
+        {
             get { return BackingStore?.Get<string?>("issuerUri"); }
             set { BackingStore?.Set("issuerUri", value); }
         }
 #nullable restore
 #else
-        public string IssuerUri {
+        public string IssuerUri
+        {
             get { return BackingStore?.Get<string>("issuerUri"); }
             set { BackingStore?.Set("issuerUri", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>URI of the metadata exchange endpoint used for authentication from rich client applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MetadataExchangeUri {
+        public string? MetadataExchangeUri
+        {
             get { return BackingStore?.Get<string?>("metadataExchangeUri"); }
             set { BackingStore?.Set("metadataExchangeUri", value); }
         }
 #nullable restore
 #else
-        public string MetadataExchangeUri {
+        public string MetadataExchangeUri
+        {
             get { return BackingStore?.Get<string>("metadataExchangeUri"); }
             set { BackingStore?.Set("metadataExchangeUri", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>URI that web-based clients are directed to when signing in to Microsoft Entra services.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PassiveSignInUri {
+        public string? PassiveSignInUri
+        {
             get { return BackingStore?.Get<string?>("passiveSignInUri"); }
             set { BackingStore?.Set("passiveSignInUri", value); }
         }
 #nullable restore
 #else
-        public string PassiveSignInUri {
+        public string PassiveSignInUri
+        {
             get { return BackingStore?.Get<string>("passiveSignInUri"); }
             set { BackingStore?.Set("passiveSignInUri", value); }
         }
 #endif
         /// <summary>Preferred authentication protocol. The possible values are: wsFed, saml, unknownFutureValue.</summary>
-        public AuthenticationProtocol? PreferredAuthenticationProtocol {
+        public AuthenticationProtocol? PreferredAuthenticationProtocol
+        {
             get { return BackingStore?.Get<AuthenticationProtocol?>("preferredAuthenticationProtocol"); }
             set { BackingStore?.Set("preferredAuthenticationProtocol", value); }
         }
         /// <summary>Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP&apos;s token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn&apos;t present in the federation properties after the federation service certificate has been updated.   Microsoft Entra ID updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn&apos;t available, Microsoft Entra ID monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SigningCertificate {
+        public string? SigningCertificate
+        {
             get { return BackingStore?.Get<string?>("signingCertificate"); }
             set { BackingStore?.Set("signingCertificate", value); }
         }
 #nullable restore
 #else
-        public string SigningCertificate {
+        public string SigningCertificate
+        {
             get { return BackingStore?.Get<string>("signingCertificate"); }
             set { BackingStore?.Set("signingCertificate", value); }
         }
@@ -101,11 +111,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"issuerUri", n => { IssuerUri = n.GetStringValue(); } },
-                {"metadataExchangeUri", n => { MetadataExchangeUri = n.GetStringValue(); } },
-                {"passiveSignInUri", n => { PassiveSignInUri = n.GetStringValue(); } },
-                {"preferredAuthenticationProtocol", n => { PreferredAuthenticationProtocol = n.GetEnumValue<AuthenticationProtocol>(); } },
-                {"signingCertificate", n => { SigningCertificate = n.GetStringValue(); } },
+                { "issuerUri", n => { IssuerUri = n.GetStringValue(); } },
+                { "metadataExchangeUri", n => { MetadataExchangeUri = n.GetStringValue(); } },
+                { "passiveSignInUri", n => { PassiveSignInUri = n.GetStringValue(); } },
+                { "preferredAuthenticationProtocol", n => { PreferredAuthenticationProtocol = n.GetEnumValue<AuthenticationProtocol>(); } },
+                { "signingCertificate", n => { SigningCertificate = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Education.Schools.Item.Users.Item {
+namespace Microsoft.Graph.Education.Schools.Item.Users.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \education\schools\{educationSchool-id}\users\{educationUser-id}
     /// </summary>
-    public class EducationUserItemRequestBuilder : BaseRequestBuilder 
+    public class EducationUserItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of educationRoot entities.</summary>
         public RefRequestBuilder Ref

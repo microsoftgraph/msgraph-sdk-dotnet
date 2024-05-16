@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageResourceAttribute : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AccessPackageResourceAttribute : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,37 +22,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageResourceAttributeDestination? Destination {
+        public AccessPackageResourceAttributeDestination? Destination
+        {
             get { return BackingStore?.Get<AccessPackageResourceAttributeDestination?>("destination"); }
             set { BackingStore?.Set("destination", value); }
         }
 #nullable restore
 #else
-        public AccessPackageResourceAttributeDestination Destination {
+        public AccessPackageResourceAttributeDestination Destination
+        {
             get { return BackingStore?.Get<AccessPackageResourceAttributeDestination>("destination"); }
             set { BackingStore?.Set("destination", value); }
         }
 #endif
         /// <summary>The isEditable property</summary>
-        public bool? IsEditable {
+        public bool? IsEditable
+        {
             get { return BackingStore?.Get<bool?>("isEditable"); }
             set { BackingStore?.Set("isEditable", value); }
         }
         /// <summary>The isPersistedOnAssignmentRemoval property</summary>
-        public bool? IsPersistedOnAssignmentRemoval {
+        public bool? IsPersistedOnAssignmentRemoval
+        {
             get { return BackingStore?.Get<bool?>("isPersistedOnAssignmentRemoval"); }
             set { BackingStore?.Set("isPersistedOnAssignmentRemoval", value); }
         }
         /// <summary>The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension2b676109c7c74ae2b41549205f1947edpersonalTitle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -58,13 +66,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -72,13 +82,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled, currently a accessPackageResourceAttributeQuestion type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageResourceAttributeSource? Source {
+        public AccessPackageResourceAttributeSource? Source
+        {
             get { return BackingStore?.Get<AccessPackageResourceAttributeSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #nullable restore
 #else
-        public AccessPackageResourceAttributeSource Source {
+        public AccessPackageResourceAttributeSource Source
+        {
             get { return BackingStore?.Get<AccessPackageResourceAttributeSource>("source"); }
             set { BackingStore?.Set("source", value); }
         }
@@ -109,12 +121,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"destination", n => { Destination = n.GetObjectValue<AccessPackageResourceAttributeDestination>(AccessPackageResourceAttributeDestination.CreateFromDiscriminatorValue); } },
-                {"isEditable", n => { IsEditable = n.GetBoolValue(); } },
-                {"isPersistedOnAssignmentRemoval", n => { IsPersistedOnAssignmentRemoval = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"source", n => { Source = n.GetObjectValue<AccessPackageResourceAttributeSource>(AccessPackageResourceAttributeSource.CreateFromDiscriminatorValue); } },
+                { "destination", n => { Destination = n.GetObjectValue<AccessPackageResourceAttributeDestination>(AccessPackageResourceAttributeDestination.CreateFromDiscriminatorValue); } },
+                { "isEditable", n => { IsEditable = n.GetBoolValue(); } },
+                { "isPersistedOnAssignmentRemoval", n => { IsPersistedOnAssignmentRemoval = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetObjectValue<AccessPackageResourceAttributeSource>(AccessPackageResourceAttributeSource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

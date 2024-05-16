@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ItemAttachment : Attachment, IParsable 
+    public class ItemAttachment : Attachment, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The attached message or event. Navigation property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OutlookItem? Item {
+        public OutlookItem? Item
+        {
             get { return BackingStore?.Get<OutlookItem?>("item"); }
             set { BackingStore?.Set("item", value); }
         }
 #nullable restore
 #else
-        public OutlookItem Item {
+        public OutlookItem Item
+        {
             get { return BackingStore?.Get<OutlookItem>("item"); }
             set { BackingStore?.Set("item", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"item", n => { Item = n.GetObjectValue<OutlookItem>(OutlookItem.CreateFromDiscriminatorValue); } },
+                { "item", n => { Item = n.GetObjectValue<OutlookItem>(OutlookItem.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

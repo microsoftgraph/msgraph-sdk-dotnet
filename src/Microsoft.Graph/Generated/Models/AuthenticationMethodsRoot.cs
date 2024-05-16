@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AuthenticationMethodsRoot : Entity, IParsable 
+    public class AuthenticationMethodsRoot : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the state of a user&apos;s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multifactor authentication, self-service password reset, and passwordless authentication).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.UserRegistrationDetails>? UserRegistrationDetails {
+        public List<Microsoft.Graph.Models.UserRegistrationDetails>? UserRegistrationDetails
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserRegistrationDetails>?>("userRegistrationDetails"); }
             set { BackingStore?.Set("userRegistrationDetails", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.UserRegistrationDetails> UserRegistrationDetails {
+        public List<Microsoft.Graph.Models.UserRegistrationDetails> UserRegistrationDetails
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserRegistrationDetails>>("userRegistrationDetails"); }
             set { BackingStore?.Set("userRegistrationDetails", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"userRegistrationDetails", n => { UserRegistrationDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UserRegistrationDetails>(Microsoft.Graph.Models.UserRegistrationDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userRegistrationDetails", n => { UserRegistrationDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UserRegistrationDetails>(Microsoft.Graph.Models.UserRegistrationDetails.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

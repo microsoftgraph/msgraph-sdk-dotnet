@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UnifiedRoleManagementPolicyRule : Entity, IParsable 
+    public class UnifiedRoleManagementPolicyRule : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Defines details of scope that&apos;s targeted by role management policy rule. The details can include the principal type, the role assignment type, and actions affecting a role. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRoleManagementPolicyRuleTarget? Target {
+        public UnifiedRoleManagementPolicyRuleTarget? Target
+        {
             get { return BackingStore?.Get<UnifiedRoleManagementPolicyRuleTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public UnifiedRoleManagementPolicyRuleTarget Target {
+        public UnifiedRoleManagementPolicyRuleTarget Target
+        {
             get { return BackingStore?.Get<UnifiedRoleManagementPolicyRuleTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
@@ -50,7 +53,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"target", n => { Target = n.GetObjectValue<UnifiedRoleManagementPolicyRuleTarget>(UnifiedRoleManagementPolicyRuleTarget.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<UnifiedRoleManagementPolicyRuleTarget>(UnifiedRoleManagementPolicyRuleTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

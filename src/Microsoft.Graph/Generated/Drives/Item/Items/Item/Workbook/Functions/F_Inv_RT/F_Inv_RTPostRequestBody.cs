@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.F_Inv_RT {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.F_Inv_RT
+{
     #pragma warning disable CS1591
-    public class F_Inv_RTPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class F_Inv_RTPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.F_Inv_RT {
         /// <summary>The degFreedom1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? DegFreedom1 {
+        public Json? DegFreedom1
+        {
             get { return BackingStore?.Get<Json?>("degFreedom1"); }
             set { BackingStore?.Set("degFreedom1", value); }
         }
 #nullable restore
 #else
-        public Json DegFreedom1 {
+        public Json DegFreedom1
+        {
             get { return BackingStore?.Get<Json>("degFreedom1"); }
             set { BackingStore?.Set("degFreedom1", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.F_Inv_RT {
         /// <summary>The degFreedom2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? DegFreedom2 {
+        public Json? DegFreedom2
+        {
             get { return BackingStore?.Get<Json?>("degFreedom2"); }
             set { BackingStore?.Set("degFreedom2", value); }
         }
 #nullable restore
 #else
-        public Json DegFreedom2 {
+        public Json DegFreedom2
+        {
             get { return BackingStore?.Get<Json>("degFreedom2"); }
             set { BackingStore?.Set("degFreedom2", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.F_Inv_RT {
         /// <summary>The probability property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Probability {
+        public Json? Probability
+        {
             get { return BackingStore?.Get<Json?>("probability"); }
             set { BackingStore?.Set("probability", value); }
         }
 #nullable restore
 #else
-        public Json Probability {
+        public Json Probability
+        {
             get { return BackingStore?.Get<Json>("probability"); }
             set { BackingStore?.Set("probability", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.F_Inv_RT {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"degFreedom1", n => { DegFreedom1 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"degFreedom2", n => { DegFreedom2 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"probability", n => { Probability = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "degFreedom1", n => { DegFreedom1 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "degFreedom2", n => { DegFreedom2 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "probability", n => { Probability = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

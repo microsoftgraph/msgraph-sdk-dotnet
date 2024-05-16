@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties for file encryption information for the content version of a line of business app.
     /// </summary>
-    public class FileEncryptionInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class FileEncryptionInfo : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The key used to encrypt the file content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? EncryptionKey {
+        public byte[]? EncryptionKey
+        {
             get { return BackingStore?.Get<byte[]?>("encryptionKey"); }
             set { BackingStore?.Set("encryptionKey", value); }
         }
 #nullable restore
 #else
-        public byte[] EncryptionKey {
+        public byte[] EncryptionKey
+        {
             get { return BackingStore?.Get<byte[]>("encryptionKey"); }
             set { BackingStore?.Set("encryptionKey", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The file digest prior to encryption. ProfileVersion1 requires a non-null FileDigest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? FileDigest {
+        public byte[]? FileDigest
+        {
             get { return BackingStore?.Get<byte[]?>("fileDigest"); }
             set { BackingStore?.Set("fileDigest", value); }
         }
 #nullable restore
 #else
-        public byte[] FileDigest {
+        public byte[] FileDigest
+        {
             get { return BackingStore?.Get<byte[]>("fileDigest"); }
             set { BackingStore?.Set("fileDigest", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The file digest algorithm. ProfileVersion1 currently only supports SHA256 for the FileDigestAlgorithm.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileDigestAlgorithm {
+        public string? FileDigestAlgorithm
+        {
             get { return BackingStore?.Get<string?>("fileDigestAlgorithm"); }
             set { BackingStore?.Set("fileDigestAlgorithm", value); }
         }
 #nullable restore
 #else
-        public string FileDigestAlgorithm {
+        public string FileDigestAlgorithm
+        {
             get { return BackingStore?.Get<string>("fileDigestAlgorithm"); }
             set { BackingStore?.Set("fileDigestAlgorithm", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The initialization vector (IV) used for the encryption algorithm. Must be 16 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? InitializationVector {
+        public byte[]? InitializationVector
+        {
             get { return BackingStore?.Get<byte[]?>("initializationVector"); }
             set { BackingStore?.Set("initializationVector", value); }
         }
 #nullable restore
 #else
-        public byte[] InitializationVector {
+        public byte[] InitializationVector
+        {
             get { return BackingStore?.Get<byte[]>("initializationVector"); }
             set { BackingStore?.Set("initializationVector", value); }
         }
@@ -77,13 +87,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The hash of the concatenation of the IV and encrypted file content. Must be 32 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Mac {
+        public byte[]? Mac
+        {
             get { return BackingStore?.Get<byte[]?>("mac"); }
             set { BackingStore?.Set("mac", value); }
         }
 #nullable restore
 #else
-        public byte[] Mac {
+        public byte[] Mac
+        {
             get { return BackingStore?.Get<byte[]>("mac"); }
             set { BackingStore?.Set("mac", value); }
         }
@@ -91,13 +103,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The key used to compute the message authentication code of the concatenation of the IV and encrypted file content. Must be 32 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? MacKey {
+        public byte[]? MacKey
+        {
             get { return BackingStore?.Get<byte[]?>("macKey"); }
             set { BackingStore?.Set("macKey", value); }
         }
 #nullable restore
 #else
-        public byte[] MacKey {
+        public byte[] MacKey
+        {
             get { return BackingStore?.Get<byte[]>("macKey"); }
             set { BackingStore?.Set("macKey", value); }
         }
@@ -105,13 +119,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -119,13 +135,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The profile identifier. Maps to the strategy used to encrypt the file. Currently, only ProfileVersion1 is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileIdentifier {
+        public string? ProfileIdentifier
+        {
             get { return BackingStore?.Get<string?>("profileIdentifier"); }
             set { BackingStore?.Set("profileIdentifier", value); }
         }
 #nullable restore
 #else
-        public string ProfileIdentifier {
+        public string ProfileIdentifier
+        {
             get { return BackingStore?.Get<string>("profileIdentifier"); }
             set { BackingStore?.Set("profileIdentifier", value); }
         }
@@ -156,14 +174,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"encryptionKey", n => { EncryptionKey = n.GetByteArrayValue(); } },
-                {"fileDigest", n => { FileDigest = n.GetByteArrayValue(); } },
-                {"fileDigestAlgorithm", n => { FileDigestAlgorithm = n.GetStringValue(); } },
-                {"initializationVector", n => { InitializationVector = n.GetByteArrayValue(); } },
-                {"mac", n => { Mac = n.GetByteArrayValue(); } },
-                {"macKey", n => { MacKey = n.GetByteArrayValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"profileIdentifier", n => { ProfileIdentifier = n.GetStringValue(); } },
+                { "encryptionKey", n => { EncryptionKey = n.GetByteArrayValue(); } },
+                { "fileDigest", n => { FileDigest = n.GetByteArrayValue(); } },
+                { "fileDigestAlgorithm", n => { FileDigestAlgorithm = n.GetStringValue(); } },
+                { "initializationVector", n => { InitializationVector = n.GetByteArrayValue(); } },
+                { "mac", n => { Mac = n.GetByteArrayValue(); } },
+                { "macKey", n => { MacKey = n.GetByteArrayValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "profileIdentifier", n => { ProfileIdentifier = n.GetStringValue(); } },
             };
         }
         /// <summary>

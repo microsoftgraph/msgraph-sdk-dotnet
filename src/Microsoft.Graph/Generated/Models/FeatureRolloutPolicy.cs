@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class FeatureRolloutPolicy : Entity, IParsable 
+    public class FeatureRolloutPolicy : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Nullable. Specifies a list of directoryObject resources that feature is enabled for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? AppliesTo {
+        public List<DirectoryObject>? AppliesTo
+        {
             get { return BackingStore?.Get<List<DirectoryObject>?>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> AppliesTo {
+        public List<DirectoryObject> AppliesTo
+        {
             get { return BackingStore?.Get<List<DirectoryObject>>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A description for this feature rollout policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -40,29 +45,34 @@ namespace Microsoft.Graph.Models {
         /// <summary>The display name for this  feature rollout policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The feature property</summary>
-        public StagedFeatureName? Feature {
+        public StagedFeatureName? Feature
+        {
             get { return BackingStore?.Get<StagedFeatureName?>("feature"); }
             set { BackingStore?.Set("feature", value); }
         }
         /// <summary>Indicates whether this feature rollout policy should be applied to the entire organization.</summary>
-        public bool? IsAppliedToOrganization {
+        public bool? IsAppliedToOrganization
+        {
             get { return BackingStore?.Get<bool?>("isAppliedToOrganization"); }
             set { BackingStore?.Set("isAppliedToOrganization", value); }
         }
         /// <summary>Indicates whether the feature rollout is enabled.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
@@ -84,12 +94,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appliesTo", n => { AppliesTo = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"feature", n => { Feature = n.GetEnumValue<StagedFeatureName>(); } },
-                {"isAppliedToOrganization", n => { IsAppliedToOrganization = n.GetBoolValue(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "appliesTo", n => { AppliesTo = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "feature", n => { Feature = n.GetEnumValue<StagedFeatureName>(); } },
+                { "isAppliedToOrganization", n => { IsAppliedToOrganization = n.GetBoolValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DirectoryAudit : Entity, IParsable 
+    public class DirectoryAudit : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and $orderby.</summary>
-        public DateTimeOffset? ActivityDateTime {
+        public DateTimeOffset? ActivityDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
             set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>Indicates the activity name or the operation name (examples: &apos;Create User&apos; and &apos;Add member to group&apos;). For a list of activities logged, refer to Microsoft Entra audit log categories and activities. Supports $filter (eq, startswith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivityDisplayName {
+        public string? ActivityDisplayName
+        {
             get { return BackingStore?.Get<string?>("activityDisplayName"); }
             set { BackingStore?.Set("activityDisplayName", value); }
         }
 #nullable restore
 #else
-        public string ActivityDisplayName {
+        public string ActivityDisplayName
+        {
             get { return BackingStore?.Get<string>("activityDisplayName"); }
             set { BackingStore?.Set("activityDisplayName", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicates additional details on the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValue>? AdditionalDetails {
+        public List<KeyValue>? AdditionalDetails
+        {
             get { return BackingStore?.Get<List<KeyValue>?>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
 #nullable restore
 #else
-        public List<KeyValue> AdditionalDetails {
+        public List<KeyValue> AdditionalDetails
+        {
             get { return BackingStore?.Get<List<KeyValue>>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicates which resource category that&apos;s targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Microsoft Entra audit log categories and activities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category {
+        public string? Category
+        {
             get { return BackingStore?.Get<string?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
 #nullable restore
 #else
-        public string Category {
+        public string Category
+        {
             get { return BackingStore?.Get<string>("category"); }
             set { BackingStore?.Set("category", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CorrelationId {
+        public string? CorrelationId
+        {
             get { return BackingStore?.Get<string?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
 #nullable restore
 #else
-        public string CorrelationId {
+        public string CorrelationId
+        {
             get { return BackingStore?.Get<string>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The initiatedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuditActivityInitiator? InitiatedBy {
+        public AuditActivityInitiator? InitiatedBy
+        {
             get { return BackingStore?.Get<AuditActivityInitiator?>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
 #nullable restore
 #else
-        public AuditActivityInitiator InitiatedBy {
+        public AuditActivityInitiator InitiatedBy
+        {
             get { return BackingStore?.Get<AuditActivityInitiator>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoggedByService {
+        public string? LoggedByService
+        {
             get { return BackingStore?.Get<string?>("loggedByService"); }
             set { BackingStore?.Set("loggedByService", value); }
         }
 #nullable restore
 #else
-        public string LoggedByService {
+        public string LoggedByService
+        {
             get { return BackingStore?.Get<string>("loggedByService"); }
             set { BackingStore?.Set("loggedByService", value); }
         }
@@ -101,32 +115,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperationType {
+        public string? OperationType
+        {
             get { return BackingStore?.Get<string?>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
         }
 #nullable restore
 #else
-        public string OperationType {
+        public string OperationType
+        {
             get { return BackingStore?.Get<string>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
         }
 #endif
         /// <summary>Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.</summary>
-        public OperationResult? Result {
+        public OperationResult? Result
+        {
             get { return BackingStore?.Get<OperationResult?>("result"); }
             set { BackingStore?.Set("result", value); }
         }
         /// <summary>Indicates the reason for failure if the result is failure or timeout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResultReason {
+        public string? ResultReason
+        {
             get { return BackingStore?.Get<string?>("resultReason"); }
             set { BackingStore?.Set("resultReason", value); }
         }
 #nullable restore
 #else
-        public string ResultReason {
+        public string ResultReason
+        {
             get { return BackingStore?.Get<string>("resultReason"); }
             set { BackingStore?.Set("resultReason", value); }
         }
@@ -134,13 +153,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other. Supports $filter (eq) for id and displayName; and $filter (startswith) for displayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TargetResource>? TargetResources {
+        public List<TargetResource>? TargetResources
+        {
             get { return BackingStore?.Get<List<TargetResource>?>("targetResources"); }
             set { BackingStore?.Set("targetResources", value); }
         }
 #nullable restore
 #else
-        public List<TargetResource> TargetResources {
+        public List<TargetResource> TargetResources
+        {
             get { return BackingStore?.Get<List<TargetResource>>("targetResources"); }
             set { BackingStore?.Set("targetResources", value); }
         }
@@ -163,17 +184,17 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"activityDisplayName", n => { ActivityDisplayName = n.GetStringValue(); } },
-                {"additionalDetails", n => { AdditionalDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"category", n => { Category = n.GetStringValue(); } },
-                {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
-                {"initiatedBy", n => { InitiatedBy = n.GetObjectValue<AuditActivityInitiator>(AuditActivityInitiator.CreateFromDiscriminatorValue); } },
-                {"loggedByService", n => { LoggedByService = n.GetStringValue(); } },
-                {"operationType", n => { OperationType = n.GetStringValue(); } },
-                {"result", n => { Result = n.GetEnumValue<OperationResult>(); } },
-                {"resultReason", n => { ResultReason = n.GetStringValue(); } },
-                {"targetResources", n => { TargetResources = n.GetCollectionOfObjectValues<TargetResource>(TargetResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                { "activityDisplayName", n => { ActivityDisplayName = n.GetStringValue(); } },
+                { "additionalDetails", n => { AdditionalDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "category", n => { Category = n.GetStringValue(); } },
+                { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
+                { "initiatedBy", n => { InitiatedBy = n.GetObjectValue<AuditActivityInitiator>(AuditActivityInitiator.CreateFromDiscriminatorValue); } },
+                { "loggedByService", n => { LoggedByService = n.GetStringValue(); } },
+                { "operationType", n => { OperationType = n.GetStringValue(); } },
+                { "result", n => { Result = n.GetEnumValue<OperationResult>(); } },
+                { "resultReason", n => { ResultReason = n.GetStringValue(); } },
+                { "targetResources", n => { TargetResources = n.GetCollectionOfObjectValues<TargetResource>(TargetResource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PayloadCoachmark : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PayloadCoachmark : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The coachmark location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.CoachmarkLocation? CoachmarkLocation {
+        public Microsoft.Graph.Models.CoachmarkLocation? CoachmarkLocation
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.CoachmarkLocation?>("coachmarkLocation"); }
             set { BackingStore?.Set("coachmarkLocation", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.CoachmarkLocation CoachmarkLocation {
+        public Microsoft.Graph.Models.CoachmarkLocation CoachmarkLocation
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.CoachmarkLocation>("coachmarkLocation"); }
             set { BackingStore?.Set("coachmarkLocation", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The description about the coachmark.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -48,32 +54,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The coachmark indicator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Indicator {
+        public string? Indicator
+        {
             get { return BackingStore?.Get<string?>("indicator"); }
             set { BackingStore?.Set("indicator", value); }
         }
 #nullable restore
 #else
-        public string Indicator {
+        public string Indicator
+        {
             get { return BackingStore?.Get<string>("indicator"); }
             set { BackingStore?.Set("indicator", value); }
         }
 #endif
         /// <summary>Indicates whether the coachmark is valid or not.</summary>
-        public bool? IsValid {
+        public bool? IsValid
+        {
             get { return BackingStore?.Get<bool?>("isValid"); }
             set { BackingStore?.Set("isValid", value); }
         }
         /// <summary>The coachmark language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language {
+        public string? Language
+        {
             get { return BackingStore?.Get<string?>("language"); }
             set { BackingStore?.Set("language", value); }
         }
 #nullable restore
 #else
-        public string Language {
+        public string Language
+        {
             get { return BackingStore?.Get<string>("language"); }
             set { BackingStore?.Set("language", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -95,13 +108,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The coachmark order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Order {
+        public string? Order
+        {
             get { return BackingStore?.Get<string?>("order"); }
             set { BackingStore?.Set("order", value); }
         }
 #nullable restore
 #else
-        public string Order {
+        public string Order
+        {
             get { return BackingStore?.Get<string>("order"); }
             set { BackingStore?.Set("order", value); }
         }
@@ -132,13 +147,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"coachmarkLocation", n => { CoachmarkLocation = n.GetObjectValue<Microsoft.Graph.Models.CoachmarkLocation>(Microsoft.Graph.Models.CoachmarkLocation.CreateFromDiscriminatorValue); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"indicator", n => { Indicator = n.GetStringValue(); } },
-                {"isValid", n => { IsValid = n.GetBoolValue(); } },
-                {"language", n => { Language = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"order", n => { Order = n.GetStringValue(); } },
+                { "coachmarkLocation", n => { CoachmarkLocation = n.GetObjectValue<Microsoft.Graph.Models.CoachmarkLocation>(Microsoft.Graph.Models.CoachmarkLocation.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "indicator", n => { Indicator = n.GetStringValue(); } },
+                { "isValid", n => { IsValid = n.GetBoolValue(); } },
+                { "language", n => { Language = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "order", n => { Order = n.GetStringValue(); } },
             };
         }
         /// <summary>

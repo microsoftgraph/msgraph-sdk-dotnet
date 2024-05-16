@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Event : OutlookItem, IParsable 
+    public class Event : OutlookItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.</summary>
-        public bool? AllowNewTimeProposals {
+        public bool? AllowNewTimeProposals
+        {
             get { return BackingStore?.Get<bool?>("allowNewTimeProposals"); }
             set { BackingStore?.Set("allowNewTimeProposals", value); }
         }
         /// <summary>The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Attachment>? Attachments {
+        public List<Attachment>? Attachments
+        {
             get { return BackingStore?.Get<List<Attachment>?>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
 #nullable restore
 #else
-        public List<Attachment> Attachments {
+        public List<Attachment> Attachments
+        {
             get { return BackingStore?.Get<List<Attachment>>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The collection of attendees for the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Attendee>? Attendees {
+        public List<Attendee>? Attendees
+        {
             get { return BackingStore?.Get<List<Attendee>?>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
 #nullable restore
 #else
-        public List<Attendee> Attendees {
+        public List<Attendee> Attendees
+        {
             get { return BackingStore?.Get<List<Attendee>>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The body of the message associated with the event. It can be in HTML or text format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Body {
+        public ItemBody? Body
+        {
             get { return BackingStore?.Get<ItemBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #nullable restore
 #else
-        public ItemBody Body {
+        public ItemBody Body
+        {
             get { return BackingStore?.Get<ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The preview of the message associated with the event. It is in text format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BodyPreview {
+        public string? BodyPreview
+        {
             get { return BackingStore?.Get<string?>("bodyPreview"); }
             set { BackingStore?.Set("bodyPreview", value); }
         }
 #nullable restore
 #else
-        public string BodyPreview {
+        public string BodyPreview
+        {
             get { return BackingStore?.Get<string>("bodyPreview"); }
             set { BackingStore?.Set("bodyPreview", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The calendar that contains the event. Navigation property. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Calendar? Calendar {
+        public Microsoft.Graph.Models.Calendar? Calendar
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Calendar?>("calendar"); }
             set { BackingStore?.Set("calendar", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Calendar Calendar {
+        public Microsoft.Graph.Models.Calendar Calendar
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Calendar>("calendar"); }
             set { BackingStore?.Set("calendar", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The date, time, and time zone that the event ends. By default, the end time is in UTC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? End {
+        public DateTimeTimeZone? End
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("end"); }
             set { BackingStore?.Set("end", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone End {
+        public DateTimeTimeZone End
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("end"); }
             set { BackingStore?.Set("end", value); }
         }
@@ -101,100 +115,117 @@ namespace Microsoft.Graph.Models {
         /// <summary>The collection of open extensions defined for the event. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions {
+        public List<Extension>? Extensions
+        {
             get { return BackingStore?.Get<List<Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions {
+        public List<Extension> Extensions
+        {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
         /// <summary>Set to true if the event has attachments.</summary>
-        public bool? HasAttachments {
+        public bool? HasAttachments
+        {
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
             set { BackingStore?.Set("hasAttachments", value); }
         }
         /// <summary>When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.</summary>
-        public bool? HideAttendees {
+        public bool? HideAttendees
+        {
             get { return BackingStore?.Get<bool?>("hideAttendees"); }
             set { BackingStore?.Set("hideAttendees", value); }
         }
         /// <summary>A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ICalUId {
+        public string? ICalUId
+        {
             get { return BackingStore?.Get<string?>("iCalUId"); }
             set { BackingStore?.Set("iCalUId", value); }
         }
 #nullable restore
 #else
-        public string ICalUId {
+        public string ICalUId
+        {
             get { return BackingStore?.Get<string>("iCalUId"); }
             set { BackingStore?.Set("iCalUId", value); }
         }
 #endif
         /// <summary>The importance of the event. The possible values are: low, normal, high.</summary>
-        public Microsoft.Graph.Models.Importance? Importance {
+        public Microsoft.Graph.Models.Importance? Importance
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Importance?>("importance"); }
             set { BackingStore?.Set("importance", value); }
         }
         /// <summary>The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Event>? Instances {
+        public List<Event>? Instances
+        {
             get { return BackingStore?.Get<List<Event>?>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
 #nullable restore
 #else
-        public List<Event> Instances {
+        public List<Event> Instances
+        {
             get { return BackingStore?.Get<List<Event>>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
 #endif
         /// <summary>Set to true if the event lasts all day. If true, regardless of whether it&apos;s a single-day or multi-day event, start and end time must be set to midnight and be in the same time zone.</summary>
-        public bool? IsAllDay {
+        public bool? IsAllDay
+        {
             get { return BackingStore?.Get<bool?>("isAllDay"); }
             set { BackingStore?.Set("isAllDay", value); }
         }
         /// <summary>Set to true if the event has been canceled.</summary>
-        public bool? IsCancelled {
+        public bool? IsCancelled
+        {
             get { return BackingStore?.Get<bool?>("isCancelled"); }
             set { BackingStore?.Set("isCancelled", value); }
         }
         /// <summary>Set to true if the user has updated the meeting in Outlook but has not sent the updates to attendees. Set to false if all changes have been sent, or if the event is an appointment without any attendees.</summary>
-        public bool? IsDraft {
+        public bool? IsDraft
+        {
             get { return BackingStore?.Get<bool?>("isDraft"); }
             set { BackingStore?.Set("isDraft", value); }
         }
         /// <summary>True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.</summary>
-        public bool? IsOnlineMeeting {
+        public bool? IsOnlineMeeting
+        {
             get { return BackingStore?.Get<bool?>("isOnlineMeeting"); }
             set { BackingStore?.Set("isOnlineMeeting", value); }
         }
         /// <summary>Set to true if the calendar owner (specified by the owner property of the calendar) is the organizer of the event (specified by the organizer property of the event). This also applies if a delegate organized the event on behalf of the owner.</summary>
-        public bool? IsOrganizer {
+        public bool? IsOrganizer
+        {
             get { return BackingStore?.Get<bool?>("isOrganizer"); }
             set { BackingStore?.Set("isOrganizer", value); }
         }
         /// <summary>Set to true if an alert is set to remind the user of the event.</summary>
-        public bool? IsReminderOn {
+        public bool? IsReminderOn
+        {
             get { return BackingStore?.Get<bool?>("isReminderOn"); }
             set { BackingStore?.Set("isReminderOn", value); }
         }
         /// <summary>The location of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Location? Location {
+        public Microsoft.Graph.Models.Location? Location
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Location?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Location Location {
+        public Microsoft.Graph.Models.Location Location
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Location>("location"); }
             set { BackingStore?.Set("location", value); }
         }
@@ -202,13 +233,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.Location>? Locations {
+        public List<Microsoft.Graph.Models.Location>? Locations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.Location>?>("locations"); }
             set { BackingStore?.Set("locations", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.Location> Locations {
+        public List<Microsoft.Graph.Models.Location> Locations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.Location>>("locations"); }
             set { BackingStore?.Set("locations", value); }
         }
@@ -216,13 +249,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The collection of multi-value extended properties defined for the event. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties {
+        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
+        {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
+        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
+        {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
@@ -230,32 +265,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Details for an attendee to join the meeting online. Default is null. Read-only. After you set the isOnlineMeeting and onlineMeetingProvider properties to enable a meeting online, Microsoft Graph initializes onlineMeeting. When set, the meeting remains available online, and you cannot change the isOnlineMeeting, onlineMeetingProvider, and onlneMeeting properties again.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnlineMeetingInfo? OnlineMeeting {
+        public OnlineMeetingInfo? OnlineMeeting
+        {
             get { return BackingStore?.Get<OnlineMeetingInfo?>("onlineMeeting"); }
             set { BackingStore?.Set("onlineMeeting", value); }
         }
 #nullable restore
 #else
-        public OnlineMeetingInfo OnlineMeeting {
+        public OnlineMeetingInfo OnlineMeeting
+        {
             get { return BackingStore?.Get<OnlineMeetingInfo>("onlineMeeting"); }
             set { BackingStore?.Set("onlineMeeting", value); }
         }
 #endif
         /// <summary>Represents the online meeting service provider. By default, onlineMeetingProvider is unknown. The possible values are unknown, teamsForBusiness, skypeForBusiness, and skypeForConsumer. Optional.  After you set onlineMeetingProvider, Microsoft Graph initializes onlineMeeting. Subsequently you cannot change onlineMeetingProvider again, and the meeting remains available online.</summary>
-        public OnlineMeetingProviderType? OnlineMeetingProvider {
+        public OnlineMeetingProviderType? OnlineMeetingProvider
+        {
             get { return BackingStore?.Get<OnlineMeetingProviderType?>("onlineMeetingProvider"); }
             set { BackingStore?.Set("onlineMeetingProvider", value); }
         }
         /// <summary>A URL for an online meeting. The property is set only when an organizer specifies in Outlook that an event is an online meeting such as Skype. Read-only.To access the URL to join an online meeting, use joinUrl which is exposed via the onlineMeeting property of the event. The onlineMeetingUrl property will be deprecated in the future.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OnlineMeetingUrl {
+        public string? OnlineMeetingUrl
+        {
             get { return BackingStore?.Get<string?>("onlineMeetingUrl"); }
             set { BackingStore?.Set("onlineMeetingUrl", value); }
         }
 #nullable restore
 #else
-        public string OnlineMeetingUrl {
+        public string OnlineMeetingUrl
+        {
             get { return BackingStore?.Get<string>("onlineMeetingUrl"); }
             set { BackingStore?.Set("onlineMeetingUrl", value); }
         }
@@ -263,13 +303,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The organizer of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Recipient? Organizer {
+        public Recipient? Organizer
+        {
             get { return BackingStore?.Get<Recipient?>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
 #nullable restore
 #else
-        public Recipient Organizer {
+        public Recipient Organizer
+        {
             get { return BackingStore?.Get<Recipient>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
@@ -277,32 +319,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The end time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalEndTimeZone {
+        public string? OriginalEndTimeZone
+        {
             get { return BackingStore?.Get<string?>("originalEndTimeZone"); }
             set { BackingStore?.Set("originalEndTimeZone", value); }
         }
 #nullable restore
 #else
-        public string OriginalEndTimeZone {
+        public string OriginalEndTimeZone
+        {
             get { return BackingStore?.Get<string>("originalEndTimeZone"); }
             set { BackingStore?.Set("originalEndTimeZone", value); }
         }
 #endif
         /// <summary>Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property is not returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? OriginalStart {
+        public DateTimeOffset? OriginalStart
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("originalStart"); }
             set { BackingStore?.Set("originalStart", value); }
         }
         /// <summary>The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalStartTimeZone {
+        public string? OriginalStartTimeZone
+        {
             get { return BackingStore?.Get<string?>("originalStartTimeZone"); }
             set { BackingStore?.Set("originalStartTimeZone", value); }
         }
 #nullable restore
 #else
-        public string OriginalStartTimeZone {
+        public string OriginalStartTimeZone
+        {
             get { return BackingStore?.Get<string>("originalStartTimeZone"); }
             set { BackingStore?.Set("originalStartTimeZone", value); }
         }
@@ -310,75 +357,87 @@ namespace Microsoft.Graph.Models {
         /// <summary>The recurrence pattern for the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PatternedRecurrence? Recurrence {
+        public PatternedRecurrence? Recurrence
+        {
             get { return BackingStore?.Get<PatternedRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #nullable restore
 #else
-        public PatternedRecurrence Recurrence {
+        public PatternedRecurrence Recurrence
+        {
             get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #endif
         /// <summary>The number of minutes before the event start time that the reminder alert occurs.</summary>
-        public int? ReminderMinutesBeforeStart {
+        public int? ReminderMinutesBeforeStart
+        {
             get { return BackingStore?.Get<int?>("reminderMinutesBeforeStart"); }
             set { BackingStore?.Set("reminderMinutesBeforeStart", value); }
         }
         /// <summary>Default is true, which represents the organizer would like an invitee to send a response to the event.</summary>
-        public bool? ResponseRequested {
+        public bool? ResponseRequested
+        {
             get { return BackingStore?.Get<bool?>("responseRequested"); }
             set { BackingStore?.Set("responseRequested", value); }
         }
         /// <summary>Indicates the type of response sent in response to an event message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ResponseStatus? ResponseStatus {
+        public Microsoft.Graph.Models.ResponseStatus? ResponseStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ResponseStatus?>("responseStatus"); }
             set { BackingStore?.Set("responseStatus", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ResponseStatus ResponseStatus {
+        public Microsoft.Graph.Models.ResponseStatus ResponseStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ResponseStatus>("responseStatus"); }
             set { BackingStore?.Set("responseStatus", value); }
         }
 #endif
         /// <summary>Possible values are: normal, personal, private, confidential.</summary>
-        public Microsoft.Graph.Models.Sensitivity? Sensitivity {
+        public Microsoft.Graph.Models.Sensitivity? Sensitivity
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Sensitivity?>("sensitivity"); }
             set { BackingStore?.Set("sensitivity", value); }
         }
         /// <summary>The ID for the recurring series master item, if this event is part of a recurring series.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SeriesMasterId {
+        public string? SeriesMasterId
+        {
             get { return BackingStore?.Get<string?>("seriesMasterId"); }
             set { BackingStore?.Set("seriesMasterId", value); }
         }
 #nullable restore
 #else
-        public string SeriesMasterId {
+        public string SeriesMasterId
+        {
             get { return BackingStore?.Get<string>("seriesMasterId"); }
             set { BackingStore?.Set("seriesMasterId", value); }
         }
 #endif
         /// <summary>The status to show. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
-        public FreeBusyStatus? ShowAs {
+        public FreeBusyStatus? ShowAs
+        {
             get { return BackingStore?.Get<FreeBusyStatus?>("showAs"); }
             set { BackingStore?.Set("showAs", value); }
         }
         /// <summary>The collection of single-value extended properties defined for the event. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties {
+        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
+        {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
+        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
+        {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
@@ -386,13 +445,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The start date, time, and time zone of the event. By default, the start time is in UTC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? Start {
+        public DateTimeTimeZone? Start
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("start"); }
             set { BackingStore?.Set("start", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone Start {
+        public DateTimeTimeZone Start
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("start"); }
             set { BackingStore?.Set("start", value); }
         }
@@ -400,13 +461,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The text of the event&apos;s subject line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject {
+        public string? Subject
+        {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public string Subject {
+        public string Subject
+        {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
@@ -414,32 +477,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client&apos;s prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransactionId {
+        public string? TransactionId
+        {
             get { return BackingStore?.Get<string?>("transactionId"); }
             set { BackingStore?.Set("transactionId", value); }
         }
 #nullable restore
 #else
-        public string TransactionId {
+        public string TransactionId
+        {
             get { return BackingStore?.Get<string>("transactionId"); }
             set { BackingStore?.Set("transactionId", value); }
         }
 #endif
         /// <summary>The event type. Possible values are: singleInstance, occurrence, exception, seriesMaster. Read-only</summary>
-        public EventType? Type {
+        public EventType? Type
+        {
             get { return BackingStore?.Get<EventType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebLink {
+        public string? WebLink
+        {
             get { return BackingStore?.Get<string?>("webLink"); }
             set { BackingStore?.Set("webLink", value); }
         }
 #nullable restore
 #else
-        public string WebLink {
+        public string WebLink
+        {
             get { return BackingStore?.Get<string>("webLink"); }
             set { BackingStore?.Set("webLink", value); }
         }
@@ -469,48 +537,48 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowNewTimeProposals", n => { AllowNewTimeProposals = n.GetBoolValue(); } },
-                {"attachments", n => { Attachments = n.GetCollectionOfObjectValues<Attachment>(Attachment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"attendees", n => { Attendees = n.GetCollectionOfObjectValues<Attendee>(Attendee.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"bodyPreview", n => { BodyPreview = n.GetStringValue(); } },
-                {"calendar", n => { Calendar = n.GetObjectValue<Microsoft.Graph.Models.Calendar>(Microsoft.Graph.Models.Calendar.CreateFromDiscriminatorValue); } },
-                {"end", n => { End = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
-                {"hideAttendees", n => { HideAttendees = n.GetBoolValue(); } },
-                {"iCalUId", n => { ICalUId = n.GetStringValue(); } },
-                {"importance", n => { Importance = n.GetEnumValue<Importance>(); } },
-                {"instances", n => { Instances = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isAllDay", n => { IsAllDay = n.GetBoolValue(); } },
-                {"isCancelled", n => { IsCancelled = n.GetBoolValue(); } },
-                {"isDraft", n => { IsDraft = n.GetBoolValue(); } },
-                {"isOnlineMeeting", n => { IsOnlineMeeting = n.GetBoolValue(); } },
-                {"isOrganizer", n => { IsOrganizer = n.GetBoolValue(); } },
-                {"isReminderOn", n => { IsReminderOn = n.GetBoolValue(); } },
-                {"location", n => { Location = n.GetObjectValue<Microsoft.Graph.Models.Location>(Microsoft.Graph.Models.Location.CreateFromDiscriminatorValue); } },
-                {"locations", n => { Locations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Location>(Microsoft.Graph.Models.Location.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"onlineMeeting", n => { OnlineMeeting = n.GetObjectValue<OnlineMeetingInfo>(OnlineMeetingInfo.CreateFromDiscriminatorValue); } },
-                {"onlineMeetingProvider", n => { OnlineMeetingProvider = n.GetEnumValue<OnlineMeetingProviderType>(); } },
-                {"onlineMeetingUrl", n => { OnlineMeetingUrl = n.GetStringValue(); } },
-                {"organizer", n => { Organizer = n.GetObjectValue<Recipient>(Recipient.CreateFromDiscriminatorValue); } },
-                {"originalEndTimeZone", n => { OriginalEndTimeZone = n.GetStringValue(); } },
-                {"originalStart", n => { OriginalStart = n.GetDateTimeOffsetValue(); } },
-                {"originalStartTimeZone", n => { OriginalStartTimeZone = n.GetStringValue(); } },
-                {"recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
-                {"reminderMinutesBeforeStart", n => { ReminderMinutesBeforeStart = n.GetIntValue(); } },
-                {"responseRequested", n => { ResponseRequested = n.GetBoolValue(); } },
-                {"responseStatus", n => { ResponseStatus = n.GetObjectValue<Microsoft.Graph.Models.ResponseStatus>(Microsoft.Graph.Models.ResponseStatus.CreateFromDiscriminatorValue); } },
-                {"sensitivity", n => { Sensitivity = n.GetEnumValue<Sensitivity>(); } },
-                {"seriesMasterId", n => { SeriesMasterId = n.GetStringValue(); } },
-                {"showAs", n => { ShowAs = n.GetEnumValue<FreeBusyStatus>(); } },
-                {"singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"start", n => { Start = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"subject", n => { Subject = n.GetStringValue(); } },
-                {"transactionId", n => { TransactionId = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetEnumValue<EventType>(); } },
-                {"webLink", n => { WebLink = n.GetStringValue(); } },
+                { "allowNewTimeProposals", n => { AllowNewTimeProposals = n.GetBoolValue(); } },
+                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<Attachment>(Attachment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attendees", n => { Attendees = n.GetCollectionOfObjectValues<Attendee>(Attendee.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "bodyPreview", n => { BodyPreview = n.GetStringValue(); } },
+                { "calendar", n => { Calendar = n.GetObjectValue<Microsoft.Graph.Models.Calendar>(Microsoft.Graph.Models.Calendar.CreateFromDiscriminatorValue); } },
+                { "end", n => { End = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
+                { "hideAttendees", n => { HideAttendees = n.GetBoolValue(); } },
+                { "iCalUId", n => { ICalUId = n.GetStringValue(); } },
+                { "importance", n => { Importance = n.GetEnumValue<Importance>(); } },
+                { "instances", n => { Instances = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isAllDay", n => { IsAllDay = n.GetBoolValue(); } },
+                { "isCancelled", n => { IsCancelled = n.GetBoolValue(); } },
+                { "isDraft", n => { IsDraft = n.GetBoolValue(); } },
+                { "isOnlineMeeting", n => { IsOnlineMeeting = n.GetBoolValue(); } },
+                { "isOrganizer", n => { IsOrganizer = n.GetBoolValue(); } },
+                { "isReminderOn", n => { IsReminderOn = n.GetBoolValue(); } },
+                { "location", n => { Location = n.GetObjectValue<Microsoft.Graph.Models.Location>(Microsoft.Graph.Models.Location.CreateFromDiscriminatorValue); } },
+                { "locations", n => { Locations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Location>(Microsoft.Graph.Models.Location.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "onlineMeeting", n => { OnlineMeeting = n.GetObjectValue<OnlineMeetingInfo>(OnlineMeetingInfo.CreateFromDiscriminatorValue); } },
+                { "onlineMeetingProvider", n => { OnlineMeetingProvider = n.GetEnumValue<OnlineMeetingProviderType>(); } },
+                { "onlineMeetingUrl", n => { OnlineMeetingUrl = n.GetStringValue(); } },
+                { "organizer", n => { Organizer = n.GetObjectValue<Recipient>(Recipient.CreateFromDiscriminatorValue); } },
+                { "originalEndTimeZone", n => { OriginalEndTimeZone = n.GetStringValue(); } },
+                { "originalStart", n => { OriginalStart = n.GetDateTimeOffsetValue(); } },
+                { "originalStartTimeZone", n => { OriginalStartTimeZone = n.GetStringValue(); } },
+                { "recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
+                { "reminderMinutesBeforeStart", n => { ReminderMinutesBeforeStart = n.GetIntValue(); } },
+                { "responseRequested", n => { ResponseRequested = n.GetBoolValue(); } },
+                { "responseStatus", n => { ResponseStatus = n.GetObjectValue<Microsoft.Graph.Models.ResponseStatus>(Microsoft.Graph.Models.ResponseStatus.CreateFromDiscriminatorValue); } },
+                { "sensitivity", n => { Sensitivity = n.GetEnumValue<Sensitivity>(); } },
+                { "seriesMasterId", n => { SeriesMasterId = n.GetStringValue(); } },
+                { "showAs", n => { ShowAs = n.GetEnumValue<FreeBusyStatus>(); } },
+                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "start", n => { Start = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "subject", n => { Subject = n.GetStringValue(); } },
+                { "transactionId", n => { TransactionId = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<EventType>(); } },
+                { "webLink", n => { WebLink = n.GetStringValue(); } },
             };
         }
         /// <summary>

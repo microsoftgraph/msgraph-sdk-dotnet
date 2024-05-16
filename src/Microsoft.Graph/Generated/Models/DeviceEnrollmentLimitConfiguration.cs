@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Device Enrollment Configuration that restricts the number of devices a user can enroll
     /// </summary>
-    public class DeviceEnrollmentLimitConfiguration : DeviceEnrollmentConfiguration, IParsable 
+    public class DeviceEnrollmentLimitConfiguration : DeviceEnrollmentConfiguration, IParsable
     {
         /// <summary>The maximum number of devices that a user can enroll</summary>
-        public int? Limit {
+        public int? Limit
+        {
             get { return BackingStore?.Get<int?>("limit"); }
             set { BackingStore?.Set("limit", value); }
         }
@@ -40,7 +42,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"limit", n => { Limit = n.GetIntValue(); } },
+                { "limit", n => { Limit = n.GetIntValue(); } },
             };
         }
         /// <summary>

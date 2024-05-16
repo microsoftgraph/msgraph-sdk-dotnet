@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookChartSeriesFormat : Entity, IParsable 
+    public class WorkbookChartSeriesFormat : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the fill format of a chart series, which includes background formatting information. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartFill? Fill {
+        public WorkbookChartFill? Fill
+        {
             get { return BackingStore?.Get<WorkbookChartFill?>("fill"); }
             set { BackingStore?.Set("fill", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartFill Fill {
+        public WorkbookChartFill Fill
+        {
             get { return BackingStore?.Get<WorkbookChartFill>("fill"); }
             set { BackingStore?.Set("fill", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents line formatting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartLineFormat? Line {
+        public WorkbookChartLineFormat? Line
+        {
             get { return BackingStore?.Get<WorkbookChartLineFormat?>("line"); }
             set { BackingStore?.Set("line", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartLineFormat Line {
+        public WorkbookChartLineFormat Line
+        {
             get { return BackingStore?.Get<WorkbookChartLineFormat>("line"); }
             set { BackingStore?.Set("line", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"fill", n => { Fill = n.GetObjectValue<WorkbookChartFill>(WorkbookChartFill.CreateFromDiscriminatorValue); } },
-                {"line", n => { Line = n.GetObjectValue<WorkbookChartLineFormat>(WorkbookChartLineFormat.CreateFromDiscriminatorValue); } },
+                { "fill", n => { Fill = n.GetObjectValue<WorkbookChartFill>(WorkbookChartFill.CreateFromDiscriminatorValue); } },
+                { "line", n => { Line = n.GetObjectValue<WorkbookChartLineFormat>(WorkbookChartLineFormat.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

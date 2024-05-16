@@ -12,11 +12,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item {
+namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item
+{
     /// <summary>
     /// Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class DeviceEnrollmentConfigurationItemRequestBuilder : BaseRequestBuilder 
+    public class DeviceEnrollmentConfigurationItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the assign method.</summary>
         public AssignRequestBuilder Assign
@@ -68,13 +69,13 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the deviceEnrollmentWindowsHelloForBusinessConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceEnrollmentConfiguration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,13 +93,13 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<DeviceEnrollmentConfiguration>(requestInfo, DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a deviceEnrollmentPlatformRestrictionsConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-update?view=graph-rest-1.0" />
+        /// Update the properties of a deviceEnrollmentLimitConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceEnrollmentConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item {
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<DeviceEnrollmentConfiguration>(requestInfo, DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -142,7 +143,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration object.
+        /// Read properties and relationships of the deviceEnrollmentWindowsHelloForBusinessConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +162,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a deviceEnrollmentPlatformRestrictionsConfiguration object.
+        /// Update the properties of a deviceEnrollmentLimitConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -195,11 +196,11 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceEnrollmentConfigurationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        public class DeviceEnrollmentConfigurationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// Read properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration object.
+        /// Read properties and relationships of the deviceEnrollmentWindowsHelloForBusinessConfiguration object.
         /// </summary>
         public class DeviceEnrollmentConfigurationItemRequestBuilderGetQueryParameters 
         {
@@ -228,14 +229,14 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceEnrollmentConfigurationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceEnrollmentConfigurationItemRequestBuilderGetQueryParameters> 
+        public class DeviceEnrollmentConfigurationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceEnrollmentConfigurationItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceEnrollmentConfigurationItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        public class DeviceEnrollmentConfigurationItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

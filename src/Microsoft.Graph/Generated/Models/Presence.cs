@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Presence : Entity, IParsable 
+    public class Presence : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The supplemental information to a user&apos;s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Activity {
+        public string? Activity
+        {
             get { return BackingStore?.Get<string?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #nullable restore
 #else
-        public string Activity {
+        public string Activity
+        {
             get { return BackingStore?.Get<string>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Availability {
+        public string? Availability
+        {
             get { return BackingStore?.Get<string?>("availability"); }
             set { BackingStore?.Set("availability", value); }
         }
 #nullable restore
 #else
-        public string Availability {
+        public string Availability
+        {
             get { return BackingStore?.Get<string>("availability"); }
             set { BackingStore?.Set("availability", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The presence status message of a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PresenceStatusMessage? StatusMessage {
+        public PresenceStatusMessage? StatusMessage
+        {
             get { return BackingStore?.Get<PresenceStatusMessage?>("statusMessage"); }
             set { BackingStore?.Set("statusMessage", value); }
         }
 #nullable restore
 #else
-        public PresenceStatusMessage StatusMessage {
+        public PresenceStatusMessage StatusMessage
+        {
             get { return BackingStore?.Get<PresenceStatusMessage>("statusMessage"); }
             set { BackingStore?.Set("statusMessage", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activity", n => { Activity = n.GetStringValue(); } },
-                {"availability", n => { Availability = n.GetStringValue(); } },
-                {"statusMessage", n => { StatusMessage = n.GetObjectValue<PresenceStatusMessage>(PresenceStatusMessage.CreateFromDiscriminatorValue); } },
+                { "activity", n => { Activity = n.GetStringValue(); } },
+                { "availability", n => { Availability = n.GetStringValue(); } },
+                { "statusMessage", n => { StatusMessage = n.GetObjectValue<PresenceStatusMessage>(PresenceStatusMessage.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CloudClipboardRoot : Entity, IParsable 
+    public class CloudClipboardRoot : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents a collection of Cloud Clipboard items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudClipboardItem>? Items {
+        public List<CloudClipboardItem>? Items
+        {
             get { return BackingStore?.Get<List<CloudClipboardItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<CloudClipboardItem> Items {
+        public List<CloudClipboardItem> Items
+        {
             get { return BackingStore?.Get<List<CloudClipboardItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"items", n => { Items = n.GetCollectionOfObjectValues<CloudClipboardItem>(CloudClipboardItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<CloudClipboardItem>(CloudClipboardItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

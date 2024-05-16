@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.Outlook.SupportedLanguages {
+namespace Microsoft.Graph.Users.Item.Outlook.SupportedLanguages
+{
     [Obsolete("This class is obsolete. Use SupportedLanguagesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class SupportedLanguagesResponse : SupportedLanguagesGetResponse, IParsable 
+    public class SupportedLanguagesResponse : SupportedLanguagesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

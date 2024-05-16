@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TaskFileAttachment : AttachmentBase, IParsable 
+    public class TaskFileAttachment : AttachmentBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The base64-encoded contents of the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? ContentBytes {
+        public byte[]? ContentBytes
+        {
             get { return BackingStore?.Get<byte[]?>("contentBytes"); }
             set { BackingStore?.Set("contentBytes", value); }
         }
 #nullable restore
 #else
-        public byte[] ContentBytes {
+        public byte[] ContentBytes
+        {
             get { return BackingStore?.Get<byte[]>("contentBytes"); }
             set { BackingStore?.Set("contentBytes", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"contentBytes", n => { ContentBytes = n.GetByteArrayValue(); } },
+                { "contentBytes", n => { ContentBytes = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>

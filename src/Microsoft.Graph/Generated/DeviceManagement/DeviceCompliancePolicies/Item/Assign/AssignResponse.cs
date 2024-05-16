@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign {
+namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign
+{
     [Obsolete("This class is obsolete. Use AssignPostResponse instead.")]
     #pragma warning disable CS1591
-    public class AssignResponse : AssignPostResponse, IParsable 
+    public class AssignResponse : AssignPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

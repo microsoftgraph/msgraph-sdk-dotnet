@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TeamsAppInstallation : Entity, IParsable 
+    public class TeamsAppInstallation : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The set of resource-specific permissions consented to while installing or upgrading the teamsApp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamsAppPermissionSet? ConsentedPermissionSet {
+        public TeamsAppPermissionSet? ConsentedPermissionSet
+        {
             get { return BackingStore?.Get<TeamsAppPermissionSet?>("consentedPermissionSet"); }
             set { BackingStore?.Set("consentedPermissionSet", value); }
         }
 #nullable restore
 #else
-        public TeamsAppPermissionSet ConsentedPermissionSet {
+        public TeamsAppPermissionSet ConsentedPermissionSet
+        {
             get { return BackingStore?.Get<TeamsAppPermissionSet>("consentedPermissionSet"); }
             set { BackingStore?.Set("consentedPermissionSet", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The app that is installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.TeamsApp? TeamsApp {
+        public Microsoft.Graph.Models.TeamsApp? TeamsApp
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsApp?>("teamsApp"); }
             set { BackingStore?.Set("teamsApp", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.TeamsApp TeamsApp {
+        public Microsoft.Graph.Models.TeamsApp TeamsApp
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsApp>("teamsApp"); }
             set { BackingStore?.Set("teamsApp", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The details of this version of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.TeamsAppDefinition? TeamsAppDefinition {
+        public Microsoft.Graph.Models.TeamsAppDefinition? TeamsAppDefinition
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsAppDefinition?>("teamsAppDefinition"); }
             set { BackingStore?.Set("teamsAppDefinition", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.TeamsAppDefinition TeamsAppDefinition {
+        public Microsoft.Graph.Models.TeamsAppDefinition TeamsAppDefinition
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsAppDefinition>("teamsAppDefinition"); }
             set { BackingStore?.Set("teamsAppDefinition", value); }
         }
@@ -74,9 +81,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"consentedPermissionSet", n => { ConsentedPermissionSet = n.GetObjectValue<TeamsAppPermissionSet>(TeamsAppPermissionSet.CreateFromDiscriminatorValue); } },
-                {"teamsApp", n => { TeamsApp = n.GetObjectValue<Microsoft.Graph.Models.TeamsApp>(Microsoft.Graph.Models.TeamsApp.CreateFromDiscriminatorValue); } },
-                {"teamsAppDefinition", n => { TeamsAppDefinition = n.GetObjectValue<Microsoft.Graph.Models.TeamsAppDefinition>(Microsoft.Graph.Models.TeamsAppDefinition.CreateFromDiscriminatorValue); } },
+                { "consentedPermissionSet", n => { ConsentedPermissionSet = n.GetObjectValue<TeamsAppPermissionSet>(TeamsAppPermissionSet.CreateFromDiscriminatorValue); } },
+                { "teamsApp", n => { TeamsApp = n.GetObjectValue<Microsoft.Graph.Models.TeamsApp>(Microsoft.Graph.Models.TeamsApp.CreateFromDiscriminatorValue); } },
+                { "teamsAppDefinition", n => { TeamsAppDefinition = n.GetObjectValue<Microsoft.Graph.Models.TeamsAppDefinition>(Microsoft.Graph.Models.TeamsAppDefinition.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

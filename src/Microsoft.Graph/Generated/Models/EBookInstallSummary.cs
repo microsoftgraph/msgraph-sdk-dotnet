@@ -4,39 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties for the installation summary of a book for a device.
     /// </summary>
-    public class EBookInstallSummary : Entity, IParsable 
+    public class EBookInstallSummary : Entity, IParsable
     {
         /// <summary>Number of Devices that have failed to install this book.</summary>
-        public int? FailedDeviceCount {
+        public int? FailedDeviceCount
+        {
             get { return BackingStore?.Get<int?>("failedDeviceCount"); }
             set { BackingStore?.Set("failedDeviceCount", value); }
         }
         /// <summary>Number of Users that have 1 or more device that failed to install this book.</summary>
-        public int? FailedUserCount {
+        public int? FailedUserCount
+        {
             get { return BackingStore?.Get<int?>("failedUserCount"); }
             set { BackingStore?.Set("failedUserCount", value); }
         }
         /// <summary>Number of Devices that have successfully installed this book.</summary>
-        public int? InstalledDeviceCount {
+        public int? InstalledDeviceCount
+        {
             get { return BackingStore?.Get<int?>("installedDeviceCount"); }
             set { BackingStore?.Set("installedDeviceCount", value); }
         }
         /// <summary>Number of Users whose devices have all succeeded to install this book.</summary>
-        public int? InstalledUserCount {
+        public int? InstalledUserCount
+        {
             get { return BackingStore?.Get<int?>("installedUserCount"); }
             set { BackingStore?.Set("installedUserCount", value); }
         }
         /// <summary>Number of Devices that does not have this book installed.</summary>
-        public int? NotInstalledDeviceCount {
+        public int? NotInstalledDeviceCount
+        {
             get { return BackingStore?.Get<int?>("notInstalledDeviceCount"); }
             set { BackingStore?.Set("notInstalledDeviceCount", value); }
         }
         /// <summary>Number of Users that did not install this book.</summary>
-        public int? NotInstalledUserCount {
+        public int? NotInstalledUserCount
+        {
             get { return BackingStore?.Get<int?>("notInstalledUserCount"); }
             set { BackingStore?.Set("notInstalledUserCount", value); }
         }
@@ -58,12 +65,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
-                {"failedUserCount", n => { FailedUserCount = n.GetIntValue(); } },
-                {"installedDeviceCount", n => { InstalledDeviceCount = n.GetIntValue(); } },
-                {"installedUserCount", n => { InstalledUserCount = n.GetIntValue(); } },
-                {"notInstalledDeviceCount", n => { NotInstalledDeviceCount = n.GetIntValue(); } },
-                {"notInstalledUserCount", n => { NotInstalledUserCount = n.GetIntValue(); } },
+                { "failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
+                { "failedUserCount", n => { FailedUserCount = n.GetIntValue(); } },
+                { "installedDeviceCount", n => { InstalledDeviceCount = n.GetIntValue(); } },
+                { "installedUserCount", n => { InstalledUserCount = n.GetIntValue(); } },
+                { "notInstalledDeviceCount", n => { NotInstalledDeviceCount = n.GetIntValue(); } },
+                { "notInstalledUserCount", n => { NotInstalledUserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CalendarGroup : Entity, IParsable 
+    public class CalendarGroup : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The calendars in the calendar group. Navigation property. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Calendar>? Calendars {
+        public List<Calendar>? Calendars
+        {
             get { return BackingStore?.Get<List<Calendar>?>("calendars"); }
             set { BackingStore?.Set("calendars", value); }
         }
 #nullable restore
 #else
-        public List<Calendar> Calendars {
+        public List<Calendar> Calendars
+        {
             get { return BackingStore?.Get<List<Calendar>>("calendars"); }
             set { BackingStore?.Set("calendars", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChangeKey {
+        public string? ChangeKey
+        {
             get { return BackingStore?.Get<string?>("changeKey"); }
             set { BackingStore?.Set("changeKey", value); }
         }
 #nullable restore
 #else
-        public string ChangeKey {
+        public string ChangeKey
+        {
             get { return BackingStore?.Get<string>("changeKey"); }
             set { BackingStore?.Set("changeKey", value); }
         }
 #endif
         /// <summary>The class identifier. Read-only.</summary>
-        public Guid? ClassId {
+        public Guid? ClassId
+        {
             get { return BackingStore?.Get<Guid?>("classId"); }
             set { BackingStore?.Set("classId", value); }
         }
         /// <summary>The group name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -74,10 +82,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"calendars", n => { Calendars = n.GetCollectionOfObjectValues<Calendar>(Calendar.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"changeKey", n => { ChangeKey = n.GetStringValue(); } },
-                {"classId", n => { ClassId = n.GetGuidValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
+                { "calendars", n => { Calendars = n.GetCollectionOfObjectValues<Calendar>(Calendar.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "changeKey", n => { ChangeKey = n.GetStringValue(); } },
+                { "classId", n => { ClassId = n.GetGuidValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

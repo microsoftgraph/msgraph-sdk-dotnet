@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Teamwork : Entity, IParsable 
+    public class Teamwork : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of deleted chats.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeletedChat>? DeletedChats {
+        public List<DeletedChat>? DeletedChats
+        {
             get { return BackingStore?.Get<List<DeletedChat>?>("deletedChats"); }
             set { BackingStore?.Set("deletedChats", value); }
         }
 #nullable restore
 #else
-        public List<DeletedChat> DeletedChats {
+        public List<DeletedChat> DeletedChats
+        {
             get { return BackingStore?.Get<List<DeletedChat>>("deletedChats"); }
             set { BackingStore?.Set("deletedChats", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The deleted team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeletedTeam>? DeletedTeams {
+        public List<DeletedTeam>? DeletedTeams
+        {
             get { return BackingStore?.Get<List<DeletedTeam>?>("deletedTeams"); }
             set { BackingStore?.Set("deletedTeams", value); }
         }
 #nullable restore
 #else
-        public List<DeletedTeam> DeletedTeams {
+        public List<DeletedTeam> DeletedTeams
+        {
             get { return BackingStore?.Get<List<DeletedTeam>>("deletedTeams"); }
             set { BackingStore?.Set("deletedTeams", value); }
         }
 #endif
         /// <summary>Indicates whether Microsoft Teams is enabled for the organization.</summary>
-        public bool? IsTeamsEnabled {
+        public bool? IsTeamsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isTeamsEnabled"); }
             set { BackingStore?.Set("isTeamsEnabled", value); }
         }
         /// <summary>Represents the region of the organization. &gt; The region property contains the organization&apos;s or the user&apos;s region. The property contains the user&apos;s region (if available) for users who have a valid multigeo license. For users without multigeo licenses, the region property contains the organization&apos;s region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region {
+        public string? Region
+        {
             get { return BackingStore?.Get<string?>("region"); }
             set { BackingStore?.Set("region", value); }
         }
 #nullable restore
 #else
-        public string Region {
+        public string Region
+        {
             get { return BackingStore?.Get<string>("region"); }
             set { BackingStore?.Set("region", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents tenant-wide settings for all Teams apps in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.TeamsAppSettings? TeamsAppSettings {
+        public Microsoft.Graph.Models.TeamsAppSettings? TeamsAppSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsAppSettings?>("teamsAppSettings"); }
             set { BackingStore?.Set("teamsAppSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.TeamsAppSettings TeamsAppSettings {
+        public Microsoft.Graph.Models.TeamsAppSettings TeamsAppSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsAppSettings>("teamsAppSettings"); }
             set { BackingStore?.Set("teamsAppSettings", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The workforceIntegrations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkforceIntegration>? WorkforceIntegrations {
+        public List<WorkforceIntegration>? WorkforceIntegrations
+        {
             get { return BackingStore?.Get<List<WorkforceIntegration>?>("workforceIntegrations"); }
             set { BackingStore?.Set("workforceIntegrations", value); }
         }
 #nullable restore
 #else
-        public List<WorkforceIntegration> WorkforceIntegrations {
+        public List<WorkforceIntegration> WorkforceIntegrations
+        {
             get { return BackingStore?.Get<List<WorkforceIntegration>>("workforceIntegrations"); }
             set { BackingStore?.Set("workforceIntegrations", value); }
         }
@@ -102,12 +114,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deletedChats", n => { DeletedChats = n.GetCollectionOfObjectValues<DeletedChat>(DeletedChat.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deletedTeams", n => { DeletedTeams = n.GetCollectionOfObjectValues<DeletedTeam>(DeletedTeam.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isTeamsEnabled", n => { IsTeamsEnabled = n.GetBoolValue(); } },
-                {"region", n => { Region = n.GetStringValue(); } },
-                {"teamsAppSettings", n => { TeamsAppSettings = n.GetObjectValue<Microsoft.Graph.Models.TeamsAppSettings>(Microsoft.Graph.Models.TeamsAppSettings.CreateFromDiscriminatorValue); } },
-                {"workforceIntegrations", n => { WorkforceIntegrations = n.GetCollectionOfObjectValues<WorkforceIntegration>(WorkforceIntegration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deletedChats", n => { DeletedChats = n.GetCollectionOfObjectValues<DeletedChat>(DeletedChat.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deletedTeams", n => { DeletedTeams = n.GetCollectionOfObjectValues<DeletedTeam>(DeletedTeam.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isTeamsEnabled", n => { IsTeamsEnabled = n.GetBoolValue(); } },
+                { "region", n => { Region = n.GetStringValue(); } },
+                { "teamsAppSettings", n => { TeamsAppSettings = n.GetObjectValue<Microsoft.Graph.Models.TeamsAppSettings>(Microsoft.Graph.Models.TeamsAppSettings.CreateFromDiscriminatorValue); } },
+                { "workforceIntegrations", n => { WorkforceIntegrations = n.GetCollectionOfObjectValues<WorkforceIntegration>(WorkforceIntegration.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

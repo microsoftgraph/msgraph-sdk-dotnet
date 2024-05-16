@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SharedWithChannelTeamInfo : TeamInfo, IParsable 
+    public class SharedWithChannelTeamInfo : TeamInfo, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of team members who have access to the shared channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConversationMember>? AllowedMembers {
+        public List<ConversationMember>? AllowedMembers
+        {
             get { return BackingStore?.Get<List<ConversationMember>?>("allowedMembers"); }
             set { BackingStore?.Set("allowedMembers", value); }
         }
 #nullable restore
 #else
-        public List<ConversationMember> AllowedMembers {
+        public List<ConversationMember> AllowedMembers
+        {
             get { return BackingStore?.Get<List<ConversationMember>>("allowedMembers"); }
             set { BackingStore?.Set("allowedMembers", value); }
         }
 #endif
         /// <summary>Indicates whether the team is the host of the channel.</summary>
-        public bool? IsHostTeam {
+        public bool? IsHostTeam
+        {
             get { return BackingStore?.Get<bool?>("isHostTeam"); }
             set { BackingStore?.Set("isHostTeam", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowedMembers", n => { AllowedMembers = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isHostTeam", n => { IsHostTeam = n.GetBoolValue(); } },
+                { "allowedMembers", n => { AllowedMembers = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isHostTeam", n => { IsHostTeam = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class HostPair : Microsoft.Graph.Models.Entity, IParsable 
+    public class HostPair : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The childHost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Host? ChildHost {
+        public Host? ChildHost
+        {
             get { return BackingStore?.Get<Host?>("childHost"); }
             set { BackingStore?.Set("childHost", value); }
         }
 #nullable restore
 #else
-        public Host ChildHost {
+        public Host ChildHost
+        {
             get { return BackingStore?.Get<Host>("childHost"); }
             set { BackingStore?.Set("childHost", value); }
         }
 #endif
         /// <summary>The date and time when Microsoft Defender Threat Intelligence first observed the hostPair. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? FirstSeenDateTime {
+        public DateTimeOffset? FirstSeenDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
             set { BackingStore?.Set("firstSeenDateTime", value); }
         }
         /// <summary>The date and time when Microsoft Defender Threat Intelligence last observed the hostPair. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastSeenDateTime {
+        public DateTimeOffset? LastSeenDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>The reason that two hosts are identified as hostPair.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkKind {
+        public string? LinkKind
+        {
             get { return BackingStore?.Get<string?>("linkKind"); }
             set { BackingStore?.Set("linkKind", value); }
         }
 #nullable restore
 #else
-        public string LinkKind {
+        public string LinkKind
+        {
             get { return BackingStore?.Get<string>("linkKind"); }
             set { BackingStore?.Set("linkKind", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The parentHost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Host? ParentHost {
+        public Host? ParentHost
+        {
             get { return BackingStore?.Get<Host?>("parentHost"); }
             set { BackingStore?.Set("parentHost", value); }
         }
 #nullable restore
 #else
-        public Host ParentHost {
+        public Host ParentHost
+        {
             get { return BackingStore?.Get<Host>("parentHost"); }
             set { BackingStore?.Set("parentHost", value); }
         }
@@ -79,11 +88,11 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"childHost", n => { ChildHost = n.GetObjectValue<Host>(Host.CreateFromDiscriminatorValue); } },
-                {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"linkKind", n => { LinkKind = n.GetStringValue(); } },
-                {"parentHost", n => { ParentHost = n.GetObjectValue<Host>(Host.CreateFromDiscriminatorValue); } },
+                { "childHost", n => { ChildHost = n.GetObjectValue<Host>(Host.CreateFromDiscriminatorValue); } },
+                { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                { "linkKind", n => { LinkKind = n.GetStringValue(); } },
+                { "parentHost", n => { ParentHost = n.GetObjectValue<Host>(Host.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

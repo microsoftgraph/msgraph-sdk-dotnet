@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Me.Outlook.SupportedLanguages {
+namespace Microsoft.Graph.Me.Outlook.SupportedLanguages
+{
     #pragma warning disable CS1591
-    public class SupportedLanguagesGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class SupportedLanguagesGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LocaleInfo>? Value {
+        public List<LocaleInfo>? Value
+        {
             get { return BackingStore?.Get<List<LocaleInfo>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<LocaleInfo> Value {
+        public List<LocaleInfo> Value
+        {
             get { return BackingStore?.Get<List<LocaleInfo>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Me.Outlook.SupportedLanguages {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

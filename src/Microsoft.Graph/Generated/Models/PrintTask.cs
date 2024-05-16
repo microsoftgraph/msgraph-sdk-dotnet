@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PrintTask : Entity, IParsable 
+    public class PrintTask : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The definition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrintTaskDefinition? Definition {
+        public PrintTaskDefinition? Definition
+        {
             get { return BackingStore?.Get<PrintTaskDefinition?>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
 #nullable restore
 #else
-        public PrintTaskDefinition Definition {
+        public PrintTaskDefinition Definition
+        {
             get { return BackingStore?.Get<PrintTaskDefinition>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentUrl {
+        public string? ParentUrl
+        {
             get { return BackingStore?.Get<string?>("parentUrl"); }
             set { BackingStore?.Set("parentUrl", value); }
         }
 #nullable restore
 #else
-        public string ParentUrl {
+        public string ParentUrl
+        {
             get { return BackingStore?.Get<string>("parentUrl"); }
             set { BackingStore?.Set("parentUrl", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrintTaskStatus? Status {
+        public PrintTaskStatus? Status
+        {
             get { return BackingStore?.Get<PrintTaskStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public PrintTaskStatus Status {
+        public PrintTaskStatus Status
+        {
             get { return BackingStore?.Get<PrintTaskStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The trigger property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrintTaskTrigger? Trigger {
+        public PrintTaskTrigger? Trigger
+        {
             get { return BackingStore?.Get<PrintTaskTrigger?>("trigger"); }
             set { BackingStore?.Set("trigger", value); }
         }
 #nullable restore
 #else
-        public PrintTaskTrigger Trigger {
+        public PrintTaskTrigger Trigger
+        {
             get { return BackingStore?.Get<PrintTaskTrigger>("trigger"); }
             set { BackingStore?.Set("trigger", value); }
         }
@@ -83,10 +92,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"definition", n => { Definition = n.GetObjectValue<PrintTaskDefinition>(PrintTaskDefinition.CreateFromDiscriminatorValue); } },
-                {"parentUrl", n => { ParentUrl = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetObjectValue<PrintTaskStatus>(PrintTaskStatus.CreateFromDiscriminatorValue); } },
-                {"trigger", n => { Trigger = n.GetObjectValue<PrintTaskTrigger>(PrintTaskTrigger.CreateFromDiscriminatorValue); } },
+                { "definition", n => { Definition = n.GetObjectValue<PrintTaskDefinition>(PrintTaskDefinition.CreateFromDiscriminatorValue); } },
+                { "parentUrl", n => { ParentUrl = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetObjectValue<PrintTaskStatus>(PrintTaskStatus.CreateFromDiscriminatorValue); } },
+                { "trigger", n => { Trigger = n.GetObjectValue<PrintTaskTrigger>(PrintTaskTrigger.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

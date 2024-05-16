@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ThumbnailSet : Entity, IParsable 
+    public class ThumbnailSet : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A 1920x1920 scaled thumbnail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Thumbnail? Large {
+        public Thumbnail? Large
+        {
             get { return BackingStore?.Get<Thumbnail?>("large"); }
             set { BackingStore?.Set("large", value); }
         }
 #nullable restore
 #else
-        public Thumbnail Large {
+        public Thumbnail Large
+        {
             get { return BackingStore?.Get<Thumbnail>("large"); }
             set { BackingStore?.Set("large", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A 176x176 scaled thumbnail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Thumbnail? Medium {
+        public Thumbnail? Medium
+        {
             get { return BackingStore?.Get<Thumbnail?>("medium"); }
             set { BackingStore?.Set("medium", value); }
         }
 #nullable restore
 #else
-        public Thumbnail Medium {
+        public Thumbnail Medium
+        {
             get { return BackingStore?.Get<Thumbnail>("medium"); }
             set { BackingStore?.Set("medium", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A 48x48 cropped thumbnail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Thumbnail? Small {
+        public Thumbnail? Small
+        {
             get { return BackingStore?.Get<Thumbnail?>("small"); }
             set { BackingStore?.Set("small", value); }
         }
 #nullable restore
 #else
-        public Thumbnail Small {
+        public Thumbnail Small
+        {
             get { return BackingStore?.Get<Thumbnail>("small"); }
             set { BackingStore?.Set("small", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A custom thumbnail image or the original image used to generate other thumbnails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Thumbnail? Source {
+        public Thumbnail? Source
+        {
             get { return BackingStore?.Get<Thumbnail?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #nullable restore
 #else
-        public Thumbnail Source {
+        public Thumbnail Source
+        {
             get { return BackingStore?.Get<Thumbnail>("source"); }
             set { BackingStore?.Set("source", value); }
         }
@@ -83,10 +92,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"large", n => { Large = n.GetObjectValue<Thumbnail>(Thumbnail.CreateFromDiscriminatorValue); } },
-                {"medium", n => { Medium = n.GetObjectValue<Thumbnail>(Thumbnail.CreateFromDiscriminatorValue); } },
-                {"small", n => { Small = n.GetObjectValue<Thumbnail>(Thumbnail.CreateFromDiscriminatorValue); } },
-                {"source", n => { Source = n.GetObjectValue<Thumbnail>(Thumbnail.CreateFromDiscriminatorValue); } },
+                { "large", n => { Large = n.GetObjectValue<Thumbnail>(Thumbnail.CreateFromDiscriminatorValue); } },
+                { "medium", n => { Medium = n.GetObjectValue<Thumbnail>(Thumbnail.CreateFromDiscriminatorValue); } },
+                { "small", n => { Small = n.GetObjectValue<Thumbnail>(Thumbnail.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetObjectValue<Thumbnail>(Thumbnail.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

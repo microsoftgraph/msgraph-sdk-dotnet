@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory {
+namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory
+{
     [Obsolete("This class is obsolete. Use GetAuditActivityTypesWithCategoryGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetAuditActivityTypesWithCategoryResponse : GetAuditActivityTypesWithCategoryGetResponse, IParsable 
+    public class GetAuditActivityTypesWithCategoryResponse : GetAuditActivityTypesWithCategoryGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

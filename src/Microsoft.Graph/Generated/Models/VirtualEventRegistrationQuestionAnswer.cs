@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class VirtualEventRegistrationQuestionAnswer : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class VirtualEventRegistrationQuestionAnswer : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Boolean answer of the virtual event registration question. Only appears when answerInputType is boolean.</summary>
-        public bool? BooleanValue {
+        public bool? BooleanValue
+        {
             get { return BackingStore?.Get<bool?>("booleanValue"); }
             set { BackingStore?.Set("booleanValue", value); }
         }
         /// <summary>Display name of the registration question.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Collection of text answer of the virtual event registration question. Only appears when answerInputType is multiChoice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MultiChoiceValues {
+        public List<string>? MultiChoiceValues
+        {
             get { return BackingStore?.Get<List<string>?>("multiChoiceValues"); }
             set { BackingStore?.Set("multiChoiceValues", value); }
         }
 #nullable restore
 #else
-        public List<string> MultiChoiceValues {
+        public List<string> MultiChoiceValues
+        {
             get { return BackingStore?.Get<List<string>>("multiChoiceValues"); }
             set { BackingStore?.Set("multiChoiceValues", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>id of the virtual event registration question.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QuestionId {
+        public string? QuestionId
+        {
             get { return BackingStore?.Get<string?>("questionId"); }
             set { BackingStore?.Set("questionId", value); }
         }
 #nullable restore
 #else
-        public string QuestionId {
+        public string QuestionId
+        {
             get { return BackingStore?.Get<string>("questionId"); }
             set { BackingStore?.Set("questionId", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Text answer of the virtual event registration question. Appears when answerInputType is text, multilineText or singleChoice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value {
+        public string? Value
+        {
             get { return BackingStore?.Get<string?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public string Value {
+        public string Value
+        {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -118,12 +131,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"booleanValue", n => { BooleanValue = n.GetBoolValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"multiChoiceValues", n => { MultiChoiceValues = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"questionId", n => { QuestionId = n.GetStringValue(); } },
-                {"value", n => { Value = n.GetStringValue(); } },
+                { "booleanValue", n => { BooleanValue = n.GetBoolValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "multiChoiceValues", n => { MultiChoiceValues = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "questionId", n => { QuestionId = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>

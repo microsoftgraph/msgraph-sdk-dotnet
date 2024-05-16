@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SecureScoreControlProfile : Entity, IParsable 
+    public class SecureScoreControlProfile : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Control action type (Config, Review, Behavior).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActionType {
+        public string? ActionType
+        {
             get { return BackingStore?.Get<string?>("actionType"); }
             set { BackingStore?.Set("actionType", value); }
         }
 #nullable restore
 #else
-        public string ActionType {
+        public string ActionType
+        {
             get { return BackingStore?.Get<string>("actionType"); }
             set { BackingStore?.Set("actionType", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>URL to where the control can be actioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActionUrl {
+        public string? ActionUrl
+        {
             get { return BackingStore?.Get<string?>("actionUrl"); }
             set { BackingStore?.Set("actionUrl", value); }
         }
 #nullable restore
 #else
-        public string ActionUrl {
+        public string ActionUrl
+        {
             get { return BackingStore?.Get<string>("actionUrl"); }
             set { BackingStore?.Set("actionUrl", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>GUID string for tenant ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureTenantId {
+        public string? AzureTenantId
+        {
             get { return BackingStore?.Get<string?>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
 #nullable restore
 #else
-        public string AzureTenantId {
+        public string AzureTenantId
+        {
             get { return BackingStore?.Get<string>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The collection of compliance information associated with secure score control</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.ComplianceInformation>? ComplianceInformation {
+        public List<Microsoft.Graph.Models.ComplianceInformation>? ComplianceInformation
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.ComplianceInformation>?>("complianceInformation"); }
             set { BackingStore?.Set("complianceInformation", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.ComplianceInformation> ComplianceInformation {
+        public List<Microsoft.Graph.Models.ComplianceInformation> ComplianceInformation
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.ComplianceInformation>>("complianceInformation"); }
             set { BackingStore?.Set("complianceInformation", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Control action category (Identity, Data, Device, Apps, Infrastructure).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ControlCategory {
+        public string? ControlCategory
+        {
             get { return BackingStore?.Get<string?>("controlCategory"); }
             set { BackingStore?.Set("controlCategory", value); }
         }
 #nullable restore
 #else
-        public string ControlCategory {
+        public string ControlCategory
+        {
             get { return BackingStore?.Get<string>("controlCategory"); }
             set { BackingStore?.Set("controlCategory", value); }
         }
@@ -82,61 +93,71 @@ namespace Microsoft.Graph.Models {
         /// <summary>Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SecureScoreControlStateUpdate>? ControlStateUpdates {
+        public List<SecureScoreControlStateUpdate>? ControlStateUpdates
+        {
             get { return BackingStore?.Get<List<SecureScoreControlStateUpdate>?>("controlStateUpdates"); }
             set { BackingStore?.Set("controlStateUpdates", value); }
         }
 #nullable restore
 #else
-        public List<SecureScoreControlStateUpdate> ControlStateUpdates {
+        public List<SecureScoreControlStateUpdate> ControlStateUpdates
+        {
             get { return BackingStore?.Get<List<SecureScoreControlStateUpdate>>("controlStateUpdates"); }
             set { BackingStore?.Set("controlStateUpdates", value); }
         }
 #endif
         /// <summary>Flag to indicate if a control is depreciated.</summary>
-        public bool? Deprecated {
+        public bool? Deprecated
+        {
             get { return BackingStore?.Get<bool?>("deprecated"); }
             set { BackingStore?.Set("deprecated", value); }
         }
         /// <summary>Resource cost of implemmentating control (low, moderate, high).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImplementationCost {
+        public string? ImplementationCost
+        {
             get { return BackingStore?.Get<string?>("implementationCost"); }
             set { BackingStore?.Set("implementationCost", value); }
         }
 #nullable restore
 #else
-        public string ImplementationCost {
+        public string ImplementationCost
+        {
             get { return BackingStore?.Get<string>("implementationCost"); }
             set { BackingStore?.Set("implementationCost", value); }
         }
 #endif
         /// <summary>Time at which the control profile entity was last modified. The Timestamp type represents date and time</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>max attainable score for the control.</summary>
-        public double? MaxScore {
+        public double? MaxScore
+        {
             get { return BackingStore?.Get<double?>("maxScore"); }
             set { BackingStore?.Set("maxScore", value); }
         }
         /// <summary>Microsoft&apos;s stack ranking of control.</summary>
-        public int? Rank {
+        public int? Rank
+        {
             get { return BackingStore?.Get<int?>("rank"); }
             set { BackingStore?.Set("rank", value); }
         }
         /// <summary>Description of what the control will help remediate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Remediation {
+        public string? Remediation
+        {
             get { return BackingStore?.Get<string?>("remediation"); }
             set { BackingStore?.Set("remediation", value); }
         }
 #nullable restore
 #else
-        public string Remediation {
+        public string Remediation
+        {
             get { return BackingStore?.Get<string>("remediation"); }
             set { BackingStore?.Set("remediation", value); }
         }
@@ -144,13 +165,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Description of the impact on users of the remediation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemediationImpact {
+        public string? RemediationImpact
+        {
             get { return BackingStore?.Get<string?>("remediationImpact"); }
             set { BackingStore?.Set("remediationImpact", value); }
         }
 #nullable restore
 #else
-        public string RemediationImpact {
+        public string RemediationImpact
+        {
             get { return BackingStore?.Get<string>("remediationImpact"); }
             set { BackingStore?.Set("remediationImpact", value); }
         }
@@ -158,13 +181,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Service {
+        public string? Service
+        {
             get { return BackingStore?.Get<string?>("service"); }
             set { BackingStore?.Set("service", value); }
         }
 #nullable restore
 #else
-        public string Service {
+        public string Service
+        {
             get { return BackingStore?.Get<string>("service"); }
             set { BackingStore?.Set("service", value); }
         }
@@ -172,13 +197,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Threats {
+        public List<string>? Threats
+        {
             get { return BackingStore?.Get<List<string>?>("threats"); }
             set { BackingStore?.Set("threats", value); }
         }
 #nullable restore
 #else
-        public List<string> Threats {
+        public List<string> Threats
+        {
             get { return BackingStore?.Get<List<string>>("threats"); }
             set { BackingStore?.Set("threats", value); }
         }
@@ -186,13 +213,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The tier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tier {
+        public string? Tier
+        {
             get { return BackingStore?.Get<string?>("tier"); }
             set { BackingStore?.Set("tier", value); }
         }
 #nullable restore
 #else
-        public string Tier {
+        public string Tier
+        {
             get { return BackingStore?.Get<string>("tier"); }
             set { BackingStore?.Set("tier", value); }
         }
@@ -200,13 +229,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title {
+        public string? Title
+        {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #nullable restore
 #else
-        public string Title {
+        public string Title
+        {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
@@ -214,13 +245,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The userImpact property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserImpact {
+        public string? UserImpact
+        {
             get { return BackingStore?.Get<string?>("userImpact"); }
             set { BackingStore?.Set("userImpact", value); }
         }
 #nullable restore
 #else
-        public string UserImpact {
+        public string UserImpact
+        {
             get { return BackingStore?.Get<string>("userImpact"); }
             set { BackingStore?.Set("userImpact", value); }
         }
@@ -228,13 +261,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The vendorInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SecurityVendorInformation? VendorInformation {
+        public SecurityVendorInformation? VendorInformation
+        {
             get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #nullable restore
 #else
-        public SecurityVendorInformation VendorInformation {
+        public SecurityVendorInformation VendorInformation
+        {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
@@ -257,25 +292,25 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actionType", n => { ActionType = n.GetStringValue(); } },
-                {"actionUrl", n => { ActionUrl = n.GetStringValue(); } },
-                {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
-                {"complianceInformation", n => { ComplianceInformation = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ComplianceInformation>(Microsoft.Graph.Models.ComplianceInformation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"controlCategory", n => { ControlCategory = n.GetStringValue(); } },
-                {"controlStateUpdates", n => { ControlStateUpdates = n.GetCollectionOfObjectValues<SecureScoreControlStateUpdate>(SecureScoreControlStateUpdate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deprecated", n => { Deprecated = n.GetBoolValue(); } },
-                {"implementationCost", n => { ImplementationCost = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"maxScore", n => { MaxScore = n.GetDoubleValue(); } },
-                {"rank", n => { Rank = n.GetIntValue(); } },
-                {"remediation", n => { Remediation = n.GetStringValue(); } },
-                {"remediationImpact", n => { RemediationImpact = n.GetStringValue(); } },
-                {"service", n => { Service = n.GetStringValue(); } },
-                {"threats", n => { Threats = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"tier", n => { Tier = n.GetStringValue(); } },
-                {"title", n => { Title = n.GetStringValue(); } },
-                {"userImpact", n => { UserImpact = n.GetStringValue(); } },
-                {"vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+                { "actionType", n => { ActionType = n.GetStringValue(); } },
+                { "actionUrl", n => { ActionUrl = n.GetStringValue(); } },
+                { "azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
+                { "complianceInformation", n => { ComplianceInformation = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ComplianceInformation>(Microsoft.Graph.Models.ComplianceInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "controlCategory", n => { ControlCategory = n.GetStringValue(); } },
+                { "controlStateUpdates", n => { ControlStateUpdates = n.GetCollectionOfObjectValues<SecureScoreControlStateUpdate>(SecureScoreControlStateUpdate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deprecated", n => { Deprecated = n.GetBoolValue(); } },
+                { "implementationCost", n => { ImplementationCost = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "maxScore", n => { MaxScore = n.GetDoubleValue(); } },
+                { "rank", n => { Rank = n.GetIntValue(); } },
+                { "remediation", n => { Remediation = n.GetStringValue(); } },
+                { "remediationImpact", n => { RemediationImpact = n.GetStringValue(); } },
+                { "service", n => { Service = n.GetStringValue(); } },
+                { "threats", n => { Threats = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "tier", n => { Tier = n.GetStringValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
+                { "userImpact", n => { UserImpact = n.GetStringValue(); } },
+                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

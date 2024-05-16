@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CloudCommunications : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CloudCommunications : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The callRecords property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CallRecord>? CallRecords {
+        public List<CallRecord>? CallRecords
+        {
             get { return BackingStore?.Get<List<CallRecord>?>("callRecords"); }
             set { BackingStore?.Set("callRecords", value); }
         }
 #nullable restore
 #else
-        public List<CallRecord> CallRecords {
+        public List<CallRecord> CallRecords
+        {
             get { return BackingStore?.Get<List<CallRecord>>("callRecords"); }
             set { BackingStore?.Set("callRecords", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The calls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Call>? Calls {
+        public List<Call>? Calls
+        {
             get { return BackingStore?.Get<List<Call>?>("calls"); }
             set { BackingStore?.Set("calls", value); }
         }
 #nullable restore
 #else
-        public List<Call> Calls {
+        public List<Call> Calls
+        {
             get { return BackingStore?.Get<List<Call>>("calls"); }
             set { BackingStore?.Set("calls", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The onlineMeetings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnlineMeeting>? OnlineMeetings {
+        public List<OnlineMeeting>? OnlineMeetings
+        {
             get { return BackingStore?.Get<List<OnlineMeeting>?>("onlineMeetings"); }
             set { BackingStore?.Set("onlineMeetings", value); }
         }
 #nullable restore
 #else
-        public List<OnlineMeeting> OnlineMeetings {
+        public List<OnlineMeeting> OnlineMeetings
+        {
             get { return BackingStore?.Get<List<OnlineMeeting>>("onlineMeetings"); }
             set { BackingStore?.Set("onlineMeetings", value); }
         }
@@ -77,13 +87,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The presences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Presence>? Presences {
+        public List<Presence>? Presences
+        {
             get { return BackingStore?.Get<List<Presence>?>("presences"); }
             set { BackingStore?.Set("presences", value); }
         }
 #nullable restore
 #else
-        public List<Presence> Presences {
+        public List<Presence> Presences
+        {
             get { return BackingStore?.Get<List<Presence>>("presences"); }
             set { BackingStore?.Set("presences", value); }
         }
@@ -114,11 +126,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"callRecords", n => { CallRecords = n.GetCollectionOfObjectValues<CallRecord>(CallRecord.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"calls", n => { Calls = n.GetCollectionOfObjectValues<Call>(Call.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"onlineMeetings", n => { OnlineMeetings = n.GetCollectionOfObjectValues<OnlineMeeting>(OnlineMeeting.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"presences", n => { Presences = n.GetCollectionOfObjectValues<Presence>(Presence.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "callRecords", n => { CallRecords = n.GetCollectionOfObjectValues<CallRecord>(CallRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "calls", n => { Calls = n.GetCollectionOfObjectValues<Call>(Call.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "onlineMeetings", n => { OnlineMeetings = n.GetCollectionOfObjectValues<OnlineMeeting>(OnlineMeeting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "presences", n => { Presences = n.GetCollectionOfObjectValues<Presence>(Presence.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

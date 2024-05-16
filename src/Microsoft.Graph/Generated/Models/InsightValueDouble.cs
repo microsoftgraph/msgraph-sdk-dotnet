@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The value in an user experience analytics insight.
     /// </summary>
-    public class InsightValueDouble : UserExperienceAnalyticsInsightValue, IParsable 
+    public class InsightValueDouble : UserExperienceAnalyticsInsightValue, IParsable
     {
         /// <summary>The double value of the user experience analytics insight.</summary>
-        public double? Value {
+        public double? Value
+        {
             get { return BackingStore?.Get<double?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -40,7 +42,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetDoubleValue(); } },
+                { "value", n => { Value = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

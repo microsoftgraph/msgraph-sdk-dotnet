@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class TriggerTypesRoot : Microsoft.Graph.Models.Entity, IParsable 
+    public class TriggerTypesRoot : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The retentionEventTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RetentionEventType>? RetentionEventTypes {
+        public List<RetentionEventType>? RetentionEventTypes
+        {
             get { return BackingStore?.Get<List<RetentionEventType>?>("retentionEventTypes"); }
             set { BackingStore?.Set("retentionEventTypes", value); }
         }
 #nullable restore
 #else
-        public List<RetentionEventType> RetentionEventTypes {
+        public List<RetentionEventType> RetentionEventTypes
+        {
             get { return BackingStore?.Get<List<RetentionEventType>>("retentionEventTypes"); }
             set { BackingStore?.Set("retentionEventTypes", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"retentionEventTypes", n => { RetentionEventTypes = n.GetCollectionOfObjectValues<RetentionEventType>(RetentionEventType.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "retentionEventTypes", n => { RetentionEventTypes = n.GetCollectionOfObjectValues<RetentionEventType>(RetentionEventType.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

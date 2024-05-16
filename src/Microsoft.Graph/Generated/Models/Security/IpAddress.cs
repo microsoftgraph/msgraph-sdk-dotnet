@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class IpAddress : Host, IParsable 
+    public class IpAddress : Host, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The details about the autonomous system to which this IP address belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Security.AutonomousSystem? AutonomousSystem {
+        public Microsoft.Graph.Models.Security.AutonomousSystem? AutonomousSystem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.AutonomousSystem?>("autonomousSystem"); }
             set { BackingStore?.Set("autonomousSystem", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Security.AutonomousSystem AutonomousSystem {
+        public Microsoft.Graph.Models.Security.AutonomousSystem AutonomousSystem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.AutonomousSystem>("autonomousSystem"); }
             set { BackingStore?.Set("autonomousSystem", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The country/region for this IP address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryOrRegion {
+        public string? CountryOrRegion
+        {
             get { return BackingStore?.Get<string?>("countryOrRegion"); }
             set { BackingStore?.Set("countryOrRegion", value); }
         }
 #nullable restore
 #else
-        public string CountryOrRegion {
+        public string CountryOrRegion
+        {
             get { return BackingStore?.Get<string>("countryOrRegion"); }
             set { BackingStore?.Set("countryOrRegion", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The hosting company listed for this host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HostingProvider {
+        public string? HostingProvider
+        {
             get { return BackingStore?.Get<string?>("hostingProvider"); }
             set { BackingStore?.Set("hostingProvider", value); }
         }
 #nullable restore
 #else
-        public string HostingProvider {
+        public string HostingProvider
+        {
             get { return BackingStore?.Get<string>("hostingProvider"); }
             set { BackingStore?.Set("hostingProvider", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The block of IP addresses this IP address belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Netblock {
+        public string? Netblock
+        {
             get { return BackingStore?.Get<string?>("netblock"); }
             set { BackingStore?.Set("netblock", value); }
         }
 #nullable restore
 #else
-        public string Netblock {
+        public string Netblock
+        {
             get { return BackingStore?.Get<string>("netblock"); }
             set { BackingStore?.Set("netblock", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"autonomousSystem", n => { AutonomousSystem = n.GetObjectValue<Microsoft.Graph.Models.Security.AutonomousSystem>(Microsoft.Graph.Models.Security.AutonomousSystem.CreateFromDiscriminatorValue); } },
-                {"countryOrRegion", n => { CountryOrRegion = n.GetStringValue(); } },
-                {"hostingProvider", n => { HostingProvider = n.GetStringValue(); } },
-                {"netblock", n => { Netblock = n.GetStringValue(); } },
+                { "autonomousSystem", n => { AutonomousSystem = n.GetObjectValue<Microsoft.Graph.Models.Security.AutonomousSystem>(Microsoft.Graph.Models.Security.AutonomousSystem.CreateFromDiscriminatorValue); } },
+                { "countryOrRegion", n => { CountryOrRegion = n.GetStringValue(); } },
+                { "hostingProvider", n => { HostingProvider = n.GetStringValue(); } },
+                { "netblock", n => { Netblock = n.GetStringValue(); } },
             };
         }
         /// <summary>

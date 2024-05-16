@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DelegatedAdminAccessAssignment : Entity, IParsable 
+    public class DelegatedAdminAccessAssignment : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessContainer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DelegatedAdminAccessContainer? AccessContainer {
+        public DelegatedAdminAccessContainer? AccessContainer
+        {
             get { return BackingStore?.Get<DelegatedAdminAccessContainer?>("accessContainer"); }
             set { BackingStore?.Set("accessContainer", value); }
         }
 #nullable restore
 #else
-        public DelegatedAdminAccessContainer AccessContainer {
+        public DelegatedAdminAccessContainer AccessContainer
+        {
             get { return BackingStore?.Get<DelegatedAdminAccessContainer>("accessContainer"); }
             set { BackingStore?.Set("accessContainer", value); }
         }
@@ -26,29 +29,34 @@ namespace Microsoft.Graph.Models {
         /// <summary>The accessDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DelegatedAdminAccessDetails? AccessDetails {
+        public DelegatedAdminAccessDetails? AccessDetails
+        {
             get { return BackingStore?.Get<DelegatedAdminAccessDetails?>("accessDetails"); }
             set { BackingStore?.Set("accessDetails", value); }
         }
 #nullable restore
 #else
-        public DelegatedAdminAccessDetails AccessDetails {
+        public DelegatedAdminAccessDetails AccessDetails
+        {
             get { return BackingStore?.Get<DelegatedAdminAccessDetails>("accessDetails"); }
             set { BackingStore?.Set("accessDetails", value); }
         }
 #endif
         /// <summary>The date and time in ISO 8601 format and in UTC time when the access assignment was created. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The date and time in ISO 8601 and in UTC time when this access assignment was last modified. Read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The status of the access assignment. Read-only. The possible values are: pending, active, deleting, deleted, error, unknownFutureValue.</summary>
-        public DelegatedAdminAccessAssignmentStatus? Status {
+        public DelegatedAdminAccessAssignmentStatus? Status
+        {
             get { return BackingStore?.Get<DelegatedAdminAccessAssignmentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -70,11 +78,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessContainer", n => { AccessContainer = n.GetObjectValue<DelegatedAdminAccessContainer>(DelegatedAdminAccessContainer.CreateFromDiscriminatorValue); } },
-                {"accessDetails", n => { AccessDetails = n.GetObjectValue<DelegatedAdminAccessDetails>(DelegatedAdminAccessDetails.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetEnumValue<DelegatedAdminAccessAssignmentStatus>(); } },
+                { "accessContainer", n => { AccessContainer = n.GetObjectValue<DelegatedAdminAccessContainer>(DelegatedAdminAccessContainer.CreateFromDiscriminatorValue); } },
+                { "accessDetails", n => { AccessDetails = n.GetObjectValue<DelegatedAdminAccessDetails>(DelegatedAdminAccessDetails.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<DelegatedAdminAccessAssignmentStatus>(); } },
             };
         }
         /// <summary>

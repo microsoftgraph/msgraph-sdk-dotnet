@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.NumberValue {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.NumberValue
+{
     #pragma warning disable CS1591
-    public class NumberValuePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class NumberValuePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.NumberValue 
         /// <summary>The decimalSeparator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? DecimalSeparator {
+        public Json? DecimalSeparator
+        {
             get { return BackingStore?.Get<Json?>("decimalSeparator"); }
             set { BackingStore?.Set("decimalSeparator", value); }
         }
 #nullable restore
 #else
-        public Json DecimalSeparator {
+        public Json DecimalSeparator
+        {
             get { return BackingStore?.Get<Json>("decimalSeparator"); }
             set { BackingStore?.Set("decimalSeparator", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.NumberValue 
         /// <summary>The groupSeparator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? GroupSeparator {
+        public Json? GroupSeparator
+        {
             get { return BackingStore?.Get<Json?>("groupSeparator"); }
             set { BackingStore?.Set("groupSeparator", value); }
         }
 #nullable restore
 #else
-        public Json GroupSeparator {
+        public Json GroupSeparator
+        {
             get { return BackingStore?.Get<Json>("groupSeparator"); }
             set { BackingStore?.Set("groupSeparator", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.NumberValue 
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Text {
+        public Json? Text
+        {
             get { return BackingStore?.Get<Json?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public Json Text {
+        public Json Text
+        {
             get { return BackingStore?.Get<Json>("text"); }
             set { BackingStore?.Set("text", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.NumberValue 
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"decimalSeparator", n => { DecimalSeparator = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"groupSeparator", n => { GroupSeparator = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"text", n => { Text = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "decimalSeparator", n => { DecimalSeparator = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "groupSeparator", n => { GroupSeparator = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "text", n => { Text = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

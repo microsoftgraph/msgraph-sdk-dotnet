@@ -4,46 +4,54 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.IdentityGovernance {
+namespace Microsoft.Graph.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class UserProcessingResult : Microsoft.Graph.Models.Entity, IParsable 
+    public class UserProcessingResult : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date time that the workflow execution for a user completed. Value is null if the workflow hasn&apos;t completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
-        public DateTimeOffset? CompletedDateTime {
+        public DateTimeOffset? CompletedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
         /// <summary>The number of tasks that failed in the workflow execution.</summary>
-        public int? FailedTasksCount {
+        public int? FailedTasksCount
+        {
             get { return BackingStore?.Get<int?>("failedTasksCount"); }
             set { BackingStore?.Set("failedTasksCount", value); }
         }
         /// <summary>The processingStatus property</summary>
-        public LifecycleWorkflowProcessingStatus? ProcessingStatus {
+        public LifecycleWorkflowProcessingStatus? ProcessingStatus
+        {
             get { return BackingStore?.Get<LifecycleWorkflowProcessingStatus?>("processingStatus"); }
             set { BackingStore?.Set("processingStatus", value); }
         }
         /// <summary>The date time that the workflow is scheduled to be executed for a user.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
-        public DateTimeOffset? ScheduledDateTime {
+        public DateTimeOffset? ScheduledDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("scheduledDateTime"); }
             set { BackingStore?.Set("scheduledDateTime", value); }
         }
         /// <summary>The date time that the workflow execution started. Value is null if the workflow execution has not started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
-        public DateTimeOffset? StartedDateTime {
+        public DateTimeOffset? StartedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
             set { BackingStore?.Set("startedDateTime", value); }
         }
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.User? Subject {
+        public Microsoft.Graph.Models.User? Subject
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.User?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.User Subject {
+        public Microsoft.Graph.Models.User Subject
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.User>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
@@ -51,34 +59,40 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The associated individual task execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TaskProcessingResult>? TaskProcessingResults {
+        public List<TaskProcessingResult>? TaskProcessingResults
+        {
             get { return BackingStore?.Get<List<TaskProcessingResult>?>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
 #nullable restore
 #else
-        public List<TaskProcessingResult> TaskProcessingResults {
+        public List<TaskProcessingResult> TaskProcessingResults
+        {
             get { return BackingStore?.Get<List<TaskProcessingResult>>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
 #endif
         /// <summary>The total number of tasks that in the workflow execution.</summary>
-        public int? TotalTasksCount {
+        public int? TotalTasksCount
+        {
             get { return BackingStore?.Get<int?>("totalTasksCount"); }
             set { BackingStore?.Set("totalTasksCount", value); }
         }
         /// <summary>The total number of unprocessed tasks for the workflow.</summary>
-        public int? TotalUnprocessedTasksCount {
+        public int? TotalUnprocessedTasksCount
+        {
             get { return BackingStore?.Get<int?>("totalUnprocessedTasksCount"); }
             set { BackingStore?.Set("totalUnprocessedTasksCount", value); }
         }
         /// <summary>The workflowExecutionType property</summary>
-        public Microsoft.Graph.Models.IdentityGovernance.WorkflowExecutionType? WorkflowExecutionType {
+        public Microsoft.Graph.Models.IdentityGovernance.WorkflowExecutionType? WorkflowExecutionType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.WorkflowExecutionType?>("workflowExecutionType"); }
             set { BackingStore?.Set("workflowExecutionType", value); }
         }
         /// <summary>The version of the workflow that was executed.</summary>
-        public int? WorkflowVersion {
+        public int? WorkflowVersion
+        {
             get { return BackingStore?.Get<int?>("workflowVersion"); }
             set { BackingStore?.Set("workflowVersion", value); }
         }
@@ -100,17 +114,17 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"failedTasksCount", n => { FailedTasksCount = n.GetIntValue(); } },
-                {"processingStatus", n => { ProcessingStatus = n.GetEnumValue<LifecycleWorkflowProcessingStatus>(); } },
-                {"scheduledDateTime", n => { ScheduledDateTime = n.GetDateTimeOffsetValue(); } },
-                {"startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"subject", n => { Subject = n.GetObjectValue<Microsoft.Graph.Models.User>(Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
-                {"taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<TaskProcessingResult>(TaskProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"totalTasksCount", n => { TotalTasksCount = n.GetIntValue(); } },
-                {"totalUnprocessedTasksCount", n => { TotalUnprocessedTasksCount = n.GetIntValue(); } },
-                {"workflowExecutionType", n => { WorkflowExecutionType = n.GetEnumValue<WorkflowExecutionType>(); } },
-                {"workflowVersion", n => { WorkflowVersion = n.GetIntValue(); } },
+                { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "failedTasksCount", n => { FailedTasksCount = n.GetIntValue(); } },
+                { "processingStatus", n => { ProcessingStatus = n.GetEnumValue<LifecycleWorkflowProcessingStatus>(); } },
+                { "scheduledDateTime", n => { ScheduledDateTime = n.GetDateTimeOffsetValue(); } },
+                { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "subject", n => { Subject = n.GetObjectValue<Microsoft.Graph.Models.User>(Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
+                { "taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<TaskProcessingResult>(TaskProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "totalTasksCount", n => { TotalTasksCount = n.GetIntValue(); } },
+                { "totalUnprocessedTasksCount", n => { TotalUnprocessedTasksCount = n.GetIntValue(); } },
+                { "workflowExecutionType", n => { WorkflowExecutionType = n.GetEnumValue<WorkflowExecutionType>(); } },
+                { "workflowVersion", n => { WorkflowVersion = n.GetIntValue(); } },
             };
         }
         /// <summary>

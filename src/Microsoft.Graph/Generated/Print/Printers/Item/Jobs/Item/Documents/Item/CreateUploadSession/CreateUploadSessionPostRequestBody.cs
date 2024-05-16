@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Documents.Item.CreateUploadSession {
+namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Documents.Item.CreateUploadSession
+{
     #pragma warning disable CS1591
-    public class CreateUploadSessionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CreateUploadSessionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Documents.Item.CreateUpl
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrintDocumentUploadProperties? Properties {
+        public PrintDocumentUploadProperties? Properties
+        {
             get { return BackingStore?.Get<PrintDocumentUploadProperties?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #nullable restore
 #else
-        public PrintDocumentUploadProperties Properties {
+        public PrintDocumentUploadProperties Properties
+        {
             get { return BackingStore?.Get<PrintDocumentUploadProperties>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Documents.Item.CreateUpl
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"properties", n => { Properties = n.GetObjectValue<PrintDocumentUploadProperties>(PrintDocumentUploadProperties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<PrintDocumentUploadProperties>(PrintDocumentUploadProperties.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

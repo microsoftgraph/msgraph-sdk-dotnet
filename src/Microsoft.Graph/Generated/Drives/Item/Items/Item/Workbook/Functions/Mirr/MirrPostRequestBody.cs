@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mirr {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mirr
+{
     #pragma warning disable CS1591
-    public class MirrPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MirrPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mirr {
         /// <summary>The financeRate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? FinanceRate {
+        public Json? FinanceRate
+        {
             get { return BackingStore?.Get<Json?>("financeRate"); }
             set { BackingStore?.Set("financeRate", value); }
         }
 #nullable restore
 #else
-        public Json FinanceRate {
+        public Json FinanceRate
+        {
             get { return BackingStore?.Get<Json>("financeRate"); }
             set { BackingStore?.Set("financeRate", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mirr {
         /// <summary>The reinvestRate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? ReinvestRate {
+        public Json? ReinvestRate
+        {
             get { return BackingStore?.Get<Json?>("reinvestRate"); }
             set { BackingStore?.Set("reinvestRate", value); }
         }
 #nullable restore
 #else
-        public Json ReinvestRate {
+        public Json ReinvestRate
+        {
             get { return BackingStore?.Get<Json>("reinvestRate"); }
             set { BackingStore?.Set("reinvestRate", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mirr {
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Values {
+        public Json? Values
+        {
             get { return BackingStore?.Get<Json?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public Json Values {
+        public Json Values
+        {
             get { return BackingStore?.Get<Json>("values"); }
             set { BackingStore?.Set("values", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mirr {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"financeRate", n => { FinanceRate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"reinvestRate", n => { ReinvestRate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "financeRate", n => { FinanceRate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "reinvestRate", n => { ReinvestRate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
