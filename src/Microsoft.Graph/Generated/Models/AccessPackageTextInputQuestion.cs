@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageTextInputQuestion : AccessPackageQuestion, IParsable 
+    public class AccessPackageTextInputQuestion : AccessPackageQuestion, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether the answer is in single or multiple line format.</summary>
-        public bool? IsSingleLineQuestion {
+        public bool? IsSingleLineQuestion
+        {
             get { return BackingStore?.Get<bool?>("isSingleLineQuestion"); }
             set { BackingStore?.Set("isSingleLineQuestion", value); }
         }
         /// <summary>The regular expression pattern that any answer to this question must match.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegexPattern {
+        public string? RegexPattern
+        {
             get { return BackingStore?.Get<string?>("regexPattern"); }
             set { BackingStore?.Set("regexPattern", value); }
         }
 #nullable restore
 #else
-        public string RegexPattern {
+        public string RegexPattern
+        {
             get { return BackingStore?.Get<string>("regexPattern"); }
             set { BackingStore?.Set("regexPattern", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isSingleLineQuestion", n => { IsSingleLineQuestion = n.GetBoolValue(); } },
-                {"regexPattern", n => { RegexPattern = n.GetStringValue(); } },
+                { "isSingleLineQuestion", n => { IsSingleLineQuestion = n.GetBoolValue(); } },
+                { "regexPattern", n => { RegexPattern = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,90 +5,106 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Windows Firewall Profile Policies.
     /// </summary>
-    public class WindowsFirewallNetworkProfile : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WindowsFirewallNetworkProfile : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Configures the firewall to merge authorized application rules from group policy with those from local store instead of ignoring the local store rules. When AuthorizedApplicationRulesFromGroupPolicyNotMerged and AuthorizedApplicationRulesFromGroupPolicyMerged are both true, AuthorizedApplicationRulesFromGroupPolicyMerged takes priority.</summary>
-        public bool? AuthorizedApplicationRulesFromGroupPolicyMerged {
+        public bool? AuthorizedApplicationRulesFromGroupPolicyMerged
+        {
             get { return BackingStore?.Get<bool?>("authorizedApplicationRulesFromGroupPolicyMerged"); }
             set { BackingStore?.Set("authorizedApplicationRulesFromGroupPolicyMerged", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Configures the firewall to merge connection security rules from group policy with those from local store instead of ignoring the local store rules. When ConnectionSecurityRulesFromGroupPolicyNotMerged and ConnectionSecurityRulesFromGroupPolicyMerged are both true, ConnectionSecurityRulesFromGroupPolicyMerged takes priority.</summary>
-        public bool? ConnectionSecurityRulesFromGroupPolicyMerged {
+        public bool? ConnectionSecurityRulesFromGroupPolicyMerged
+        {
             get { return BackingStore?.Get<bool?>("connectionSecurityRulesFromGroupPolicyMerged"); }
             set { BackingStore?.Set("connectionSecurityRulesFromGroupPolicyMerged", value); }
         }
         /// <summary>State Management Setting.</summary>
-        public StateManagementSetting? FirewallEnabled {
+        public StateManagementSetting? FirewallEnabled
+        {
             get { return BackingStore?.Get<StateManagementSetting?>("firewallEnabled"); }
             set { BackingStore?.Set("firewallEnabled", value); }
         }
         /// <summary>Configures the firewall to merge global port rules from group policy with those from local store instead of ignoring the local store rules. When GlobalPortRulesFromGroupPolicyNotMerged and GlobalPortRulesFromGroupPolicyMerged are both true, GlobalPortRulesFromGroupPolicyMerged takes priority.</summary>
-        public bool? GlobalPortRulesFromGroupPolicyMerged {
+        public bool? GlobalPortRulesFromGroupPolicyMerged
+        {
             get { return BackingStore?.Get<bool?>("globalPortRulesFromGroupPolicyMerged"); }
             set { BackingStore?.Set("globalPortRulesFromGroupPolicyMerged", value); }
         }
         /// <summary>Configures the firewall to block all incoming connections by default. When InboundConnectionsRequired and InboundConnectionsBlocked are both true, InboundConnectionsBlocked takes priority.</summary>
-        public bool? InboundConnectionsBlocked {
+        public bool? InboundConnectionsBlocked
+        {
             get { return BackingStore?.Get<bool?>("inboundConnectionsBlocked"); }
             set { BackingStore?.Set("inboundConnectionsBlocked", value); }
         }
         /// <summary>Prevents the firewall from displaying notifications when an application is blocked from listening on a port. When InboundNotificationsRequired and InboundNotificationsBlocked are both true, InboundNotificationsBlocked takes priority.</summary>
-        public bool? InboundNotificationsBlocked {
+        public bool? InboundNotificationsBlocked
+        {
             get { return BackingStore?.Get<bool?>("inboundNotificationsBlocked"); }
             set { BackingStore?.Set("inboundNotificationsBlocked", value); }
         }
         /// <summary>Configures the firewall to block all incoming traffic regardless of other policy settings. When IncomingTrafficRequired and IncomingTrafficBlocked are both true, IncomingTrafficBlocked takes priority.</summary>
-        public bool? IncomingTrafficBlocked {
+        public bool? IncomingTrafficBlocked
+        {
             get { return BackingStore?.Get<bool?>("incomingTrafficBlocked"); }
             set { BackingStore?.Set("incomingTrafficBlocked", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Configures the firewall to block all outgoing connections by default. When OutboundConnectionsRequired and OutboundConnectionsBlocked are both true, OutboundConnectionsBlocked takes priority. This setting will get applied to Windows releases version 1809 and above.</summary>
-        public bool? OutboundConnectionsBlocked {
+        public bool? OutboundConnectionsBlocked
+        {
             get { return BackingStore?.Get<bool?>("outboundConnectionsBlocked"); }
             set { BackingStore?.Set("outboundConnectionsBlocked", value); }
         }
         /// <summary>Configures the firewall to merge Firewall Rule policies from group policy with those from local store instead of ignoring the local store rules. When PolicyRulesFromGroupPolicyNotMerged and PolicyRulesFromGroupPolicyMerged are both true, PolicyRulesFromGroupPolicyMerged takes priority.</summary>
-        public bool? PolicyRulesFromGroupPolicyMerged {
+        public bool? PolicyRulesFromGroupPolicyMerged
+        {
             get { return BackingStore?.Get<bool?>("policyRulesFromGroupPolicyMerged"); }
             set { BackingStore?.Set("policyRulesFromGroupPolicyMerged", value); }
         }
         /// <summary>Configures the firewall to allow the host computer to respond to unsolicited network traffic of that traffic is secured by IPSec even when stealthModeBlocked is set to true. When SecuredPacketExemptionBlocked and SecuredPacketExemptionAllowed are both true, SecuredPacketExemptionAllowed takes priority.</summary>
-        public bool? SecuredPacketExemptionAllowed {
+        public bool? SecuredPacketExemptionAllowed
+        {
             get { return BackingStore?.Get<bool?>("securedPacketExemptionAllowed"); }
             set { BackingStore?.Set("securedPacketExemptionAllowed", value); }
         }
         /// <summary>Prevent the server from operating in stealth mode. When StealthModeRequired and StealthModeBlocked are both true, StealthModeBlocked takes priority.</summary>
-        public bool? StealthModeBlocked {
+        public bool? StealthModeBlocked
+        {
             get { return BackingStore?.Get<bool?>("stealthModeBlocked"); }
             set { BackingStore?.Set("stealthModeBlocked", value); }
         }
         /// <summary>Configures the firewall to block unicast responses to multicast broadcast traffic. When UnicastResponsesToMulticastBroadcastsRequired and UnicastResponsesToMulticastBroadcastsBlocked are both true, UnicastResponsesToMulticastBroadcastsBlocked takes priority.</summary>
-        public bool? UnicastResponsesToMulticastBroadcastsBlocked {
+        public bool? UnicastResponsesToMulticastBroadcastsBlocked
+        {
             get { return BackingStore?.Get<bool?>("unicastResponsesToMulticastBroadcastsBlocked"); }
             set { BackingStore?.Set("unicastResponsesToMulticastBroadcastsBlocked", value); }
         }
@@ -118,19 +134,19 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"authorizedApplicationRulesFromGroupPolicyMerged", n => { AuthorizedApplicationRulesFromGroupPolicyMerged = n.GetBoolValue(); } },
-                {"connectionSecurityRulesFromGroupPolicyMerged", n => { ConnectionSecurityRulesFromGroupPolicyMerged = n.GetBoolValue(); } },
-                {"firewallEnabled", n => { FirewallEnabled = n.GetEnumValue<StateManagementSetting>(); } },
-                {"globalPortRulesFromGroupPolicyMerged", n => { GlobalPortRulesFromGroupPolicyMerged = n.GetBoolValue(); } },
-                {"inboundConnectionsBlocked", n => { InboundConnectionsBlocked = n.GetBoolValue(); } },
-                {"inboundNotificationsBlocked", n => { InboundNotificationsBlocked = n.GetBoolValue(); } },
-                {"incomingTrafficBlocked", n => { IncomingTrafficBlocked = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"outboundConnectionsBlocked", n => { OutboundConnectionsBlocked = n.GetBoolValue(); } },
-                {"policyRulesFromGroupPolicyMerged", n => { PolicyRulesFromGroupPolicyMerged = n.GetBoolValue(); } },
-                {"securedPacketExemptionAllowed", n => { SecuredPacketExemptionAllowed = n.GetBoolValue(); } },
-                {"stealthModeBlocked", n => { StealthModeBlocked = n.GetBoolValue(); } },
-                {"unicastResponsesToMulticastBroadcastsBlocked", n => { UnicastResponsesToMulticastBroadcastsBlocked = n.GetBoolValue(); } },
+                { "authorizedApplicationRulesFromGroupPolicyMerged", n => { AuthorizedApplicationRulesFromGroupPolicyMerged = n.GetBoolValue(); } },
+                { "connectionSecurityRulesFromGroupPolicyMerged", n => { ConnectionSecurityRulesFromGroupPolicyMerged = n.GetBoolValue(); } },
+                { "firewallEnabled", n => { FirewallEnabled = n.GetEnumValue<StateManagementSetting>(); } },
+                { "globalPortRulesFromGroupPolicyMerged", n => { GlobalPortRulesFromGroupPolicyMerged = n.GetBoolValue(); } },
+                { "inboundConnectionsBlocked", n => { InboundConnectionsBlocked = n.GetBoolValue(); } },
+                { "inboundNotificationsBlocked", n => { InboundNotificationsBlocked = n.GetBoolValue(); } },
+                { "incomingTrafficBlocked", n => { IncomingTrafficBlocked = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "outboundConnectionsBlocked", n => { OutboundConnectionsBlocked = n.GetBoolValue(); } },
+                { "policyRulesFromGroupPolicyMerged", n => { PolicyRulesFromGroupPolicyMerged = n.GetBoolValue(); } },
+                { "securedPacketExemptionAllowed", n => { SecuredPacketExemptionAllowed = n.GetBoolValue(); } },
+                { "stealthModeBlocked", n => { StealthModeBlocked = n.GetBoolValue(); } },
+                { "unicastResponsesToMulticastBroadcastsBlocked", n => { UnicastResponsesToMulticastBroadcastsBlocked = n.GetBoolValue(); } },
             };
         }
         /// <summary>

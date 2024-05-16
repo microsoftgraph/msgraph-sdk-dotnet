@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PrinterBase : Entity, IParsable 
+    public class PrinterBase : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The capabilities of the printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrinterCapabilities? Capabilities {
+        public PrinterCapabilities? Capabilities
+        {
             get { return BackingStore?.Get<PrinterCapabilities?>("capabilities"); }
             set { BackingStore?.Set("capabilities", value); }
         }
 #nullable restore
 #else
-        public PrinterCapabilities Capabilities {
+        public PrinterCapabilities Capabilities
+        {
             get { return BackingStore?.Get<PrinterCapabilities>("capabilities"); }
             set { BackingStore?.Set("capabilities", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The default print settings of printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrinterDefaults? Defaults {
+        public PrinterDefaults? Defaults
+        {
             get { return BackingStore?.Get<PrinterDefaults?>("defaults"); }
             set { BackingStore?.Set("defaults", value); }
         }
 #nullable restore
 #else
-        public PrinterDefaults Defaults {
+        public PrinterDefaults Defaults
+        {
             get { return BackingStore?.Get<PrinterDefaults>("defaults"); }
             set { BackingStore?.Set("defaults", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Specifies whether the printer/printerShare is currently accepting new print jobs.</summary>
-        public bool? IsAcceptingJobs {
+        public bool? IsAcceptingJobs
+        {
             get { return BackingStore?.Get<bool?>("isAcceptingJobs"); }
             set { BackingStore?.Set("isAcceptingJobs", value); }
         }
         /// <summary>The list of jobs that are queued for printing by the printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintJob>? Jobs {
+        public List<PrintJob>? Jobs
+        {
             get { return BackingStore?.Get<List<PrintJob>?>("jobs"); }
             set { BackingStore?.Set("jobs", value); }
         }
 #nullable restore
 #else
-        public List<PrintJob> Jobs {
+        public List<PrintJob> Jobs
+        {
             get { return BackingStore?.Get<List<PrintJob>>("jobs"); }
             set { BackingStore?.Set("jobs", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The physical and/or organizational location of the printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrinterLocation? Location {
+        public PrinterLocation? Location
+        {
             get { return BackingStore?.Get<PrinterLocation?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public PrinterLocation Location {
+        public PrinterLocation Location
+        {
             get { return BackingStore?.Get<PrinterLocation>("location"); }
             set { BackingStore?.Set("location", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The manufacturer of the printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer {
+        public string? Manufacturer
+        {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #nullable restore
 #else
-        public string Manufacturer {
+        public string Manufacturer
+        {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The model name of the printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model {
+        public string? Model
+        {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #nullable restore
 #else
-        public string Model {
+        public string Model
+        {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
@@ -115,13 +131,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrinterStatus? Status {
+        public PrinterStatus? Status
+        {
             get { return BackingStore?.Get<PrinterStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public PrinterStatus Status {
+        public PrinterStatus Status
+        {
             get { return BackingStore?.Get<PrinterStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -150,15 +168,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"capabilities", n => { Capabilities = n.GetObjectValue<PrinterCapabilities>(PrinterCapabilities.CreateFromDiscriminatorValue); } },
-                {"defaults", n => { Defaults = n.GetObjectValue<PrinterDefaults>(PrinterDefaults.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"isAcceptingJobs", n => { IsAcceptingJobs = n.GetBoolValue(); } },
-                {"jobs", n => { Jobs = n.GetCollectionOfObjectValues<PrintJob>(PrintJob.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"location", n => { Location = n.GetObjectValue<PrinterLocation>(PrinterLocation.CreateFromDiscriminatorValue); } },
-                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"model", n => { Model = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetObjectValue<PrinterStatus>(PrinterStatus.CreateFromDiscriminatorValue); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<PrinterCapabilities>(PrinterCapabilities.CreateFromDiscriminatorValue); } },
+                { "defaults", n => { Defaults = n.GetObjectValue<PrinterDefaults>(PrinterDefaults.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isAcceptingJobs", n => { IsAcceptingJobs = n.GetBoolValue(); } },
+                { "jobs", n => { Jobs = n.GetCollectionOfObjectValues<PrintJob>(PrintJob.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "location", n => { Location = n.GetObjectValue<PrinterLocation>(PrinterLocation.CreateFromDiscriminatorValue); } },
+                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetObjectValue<PrinterStatus>(PrinterStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

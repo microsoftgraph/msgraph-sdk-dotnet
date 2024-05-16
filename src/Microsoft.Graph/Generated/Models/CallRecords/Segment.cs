@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.CallRecords {
+namespace Microsoft.Graph.Models.CallRecords
+{
     #pragma warning disable CS1591
-    public class Segment : Microsoft.Graph.Models.Entity, IParsable 
+    public class Segment : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Endpoint that answered this segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Endpoint? Callee {
+        public Endpoint? Callee
+        {
             get { return BackingStore?.Get<Endpoint?>("callee"); }
             set { BackingStore?.Set("callee", value); }
         }
 #nullable restore
 #else
-        public Endpoint Callee {
+        public Endpoint Callee
+        {
             get { return BackingStore?.Get<Endpoint>("callee"); }
             set { BackingStore?.Set("callee", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>Endpoint that initiated this segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Endpoint? Caller {
+        public Endpoint? Caller
+        {
             get { return BackingStore?.Get<Endpoint?>("caller"); }
             set { BackingStore?.Set("caller", value); }
         }
 #nullable restore
 #else
-        public Endpoint Caller {
+        public Endpoint Caller
+        {
             get { return BackingStore?.Get<Endpoint>("caller"); }
             set { BackingStore?.Set("caller", value); }
         }
 #endif
         /// <summary>UTC time when the segment ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? EndDateTime {
+        public DateTimeOffset? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Failure information associated with the segment if it failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.CallRecords.FailureInfo? FailureInfo {
+        public Microsoft.Graph.Models.CallRecords.FailureInfo? FailureInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.FailureInfo?>("failureInfo"); }
             set { BackingStore?.Set("failureInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.CallRecords.FailureInfo FailureInfo {
+        public Microsoft.Graph.Models.CallRecords.FailureInfo FailureInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.FailureInfo>("failureInfo"); }
             set { BackingStore?.Set("failureInfo", value); }
         }
@@ -59,19 +67,22 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>Media associated with this segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.CallRecords.Media>? Media {
+        public List<Microsoft.Graph.Models.CallRecords.Media>? Media
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRecords.Media>?>("media"); }
             set { BackingStore?.Set("media", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.CallRecords.Media> Media {
+        public List<Microsoft.Graph.Models.CallRecords.Media> Media
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRecords.Media>>("media"); }
             set { BackingStore?.Set("media", value); }
         }
 #endif
         /// <summary>UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
@@ -93,12 +104,12 @@ namespace Microsoft.Graph.Models.CallRecords {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"callee", n => { Callee = n.GetObjectValue<Endpoint>(Endpoint.CreateFromDiscriminatorValue); } },
-                {"caller", n => { Caller = n.GetObjectValue<Endpoint>(Endpoint.CreateFromDiscriminatorValue); } },
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"failureInfo", n => { FailureInfo = n.GetObjectValue<Microsoft.Graph.Models.CallRecords.FailureInfo>(Microsoft.Graph.Models.CallRecords.FailureInfo.CreateFromDiscriminatorValue); } },
-                {"media", n => { Media = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CallRecords.Media>(Microsoft.Graph.Models.CallRecords.Media.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "callee", n => { Callee = n.GetObjectValue<Endpoint>(Endpoint.CreateFromDiscriminatorValue); } },
+                { "caller", n => { Caller = n.GetObjectValue<Endpoint>(Endpoint.CreateFromDiscriminatorValue); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "failureInfo", n => { FailureInfo = n.GetObjectValue<Microsoft.Graph.Models.CallRecords.FailureInfo>(Microsoft.Graph.Models.CallRecords.FailureInfo.CreateFromDiscriminatorValue); } },
+                { "media", n => { Media = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CallRecords.Media>(Microsoft.Graph.Models.CallRecords.Media.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

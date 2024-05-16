@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class BucketAggregationDefinition : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BucketAggregationDefinition : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>True to specify the sort order as descending. The default is false, with the sort order as ascending. Optional.</summary>
-        public bool? IsDescending {
+        public bool? IsDescending
+        {
             get { return BackingStore?.Get<bool?>("isDescending"); }
             set { BackingStore?.Set("isDescending", value); }
         }
         /// <summary>The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.</summary>
-        public int? MinimumCount {
+        public int? MinimumCount
+        {
             get { return BackingStore?.Get<int?>("minimumCount"); }
             set { BackingStore?.Set("minimumCount", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -44,13 +50,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrefixFilter {
+        public string? PrefixFilter
+        {
             get { return BackingStore?.Get<string?>("prefixFilter"); }
             set { BackingStore?.Set("prefixFilter", value); }
         }
 #nullable restore
 #else
-        public string PrefixFilter {
+        public string PrefixFilter
+        {
             get { return BackingStore?.Get<string>("prefixFilter"); }
             set { BackingStore?.Set("prefixFilter", value); }
         }
@@ -58,19 +66,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>Specifies the manual ranges to compute the aggregations. This is only valid for nonstring refiners of date or numeric type. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BucketAggregationRange>? Ranges {
+        public List<BucketAggregationRange>? Ranges
+        {
             get { return BackingStore?.Get<List<BucketAggregationRange>?>("ranges"); }
             set { BackingStore?.Set("ranges", value); }
         }
 #nullable restore
 #else
-        public List<BucketAggregationRange> Ranges {
+        public List<BucketAggregationRange> Ranges
+        {
             get { return BackingStore?.Get<List<BucketAggregationRange>>("ranges"); }
             set { BackingStore?.Set("ranges", value); }
         }
 #endif
         /// <summary>The sortBy property</summary>
-        public BucketAggregationSortProperty? SortBy {
+        public BucketAggregationSortProperty? SortBy
+        {
             get { return BackingStore?.Get<BucketAggregationSortProperty?>("sortBy"); }
             set { BackingStore?.Set("sortBy", value); }
         }
@@ -100,12 +111,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isDescending", n => { IsDescending = n.GetBoolValue(); } },
-                {"minimumCount", n => { MinimumCount = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"prefixFilter", n => { PrefixFilter = n.GetStringValue(); } },
-                {"ranges", n => { Ranges = n.GetCollectionOfObjectValues<BucketAggregationRange>(BucketAggregationRange.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"sortBy", n => { SortBy = n.GetEnumValue<BucketAggregationSortProperty>(); } },
+                { "isDescending", n => { IsDescending = n.GetBoolValue(); } },
+                { "minimumCount", n => { MinimumCount = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "prefixFilter", n => { PrefixFilter = n.GetStringValue(); } },
+                { "ranges", n => { Ranges = n.GetCollectionOfObjectValues<BucketAggregationRange>(BucketAggregationRange.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sortBy", n => { SortBy = n.GetEnumValue<BucketAggregationSortProperty>(); } },
             };
         }
         /// <summary>

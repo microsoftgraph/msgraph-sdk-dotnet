@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Abstract class that contains properties and inherited properties for apps that you can manage with an Intune app protection policy.
     /// </summary>
-    public class ManagedApp : MobileApp, IParsable 
+    public class ManagedApp : MobileApp, IParsable
     {
         /// <summary>A managed (MAM) application&apos;s availability.</summary>
-        public ManagedAppAvailability? AppAvailability {
+        public ManagedAppAvailability? AppAvailability
+        {
             get { return BackingStore?.Get<ManagedAppAvailability?>("appAvailability"); }
             set { BackingStore?.Set("appAvailability", value); }
         }
         /// <summary>The Application&apos;s version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -63,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appAvailability", n => { AppAvailability = n.GetEnumValue<ManagedAppAvailability>(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "appAvailability", n => { AppAvailability = n.GetEnumValue<ManagedAppAvailability>(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

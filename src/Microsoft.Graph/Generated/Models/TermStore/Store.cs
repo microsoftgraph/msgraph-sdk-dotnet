@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.TermStore {
+namespace Microsoft.Graph.Models.TermStore
+{
     #pragma warning disable CS1591
-    public class Store : Microsoft.Graph.Models.Entity, IParsable 
+    public class Store : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Default language of the term store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultLanguageTag {
+        public string? DefaultLanguageTag
+        {
             get { return BackingStore?.Get<string?>("defaultLanguageTag"); }
             set { BackingStore?.Set("defaultLanguageTag", value); }
         }
 #nullable restore
 #else
-        public string DefaultLanguageTag {
+        public string DefaultLanguageTag
+        {
             get { return BackingStore?.Get<string>("defaultLanguageTag"); }
             set { BackingStore?.Set("defaultLanguageTag", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.TermStore {
         /// <summary>Collection of all groups available in the term store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Group>? Groups {
+        public List<Group>? Groups
+        {
             get { return BackingStore?.Get<List<Group>?>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
 #nullable restore
 #else
-        public List<Group> Groups {
+        public List<Group> Groups
+        {
             get { return BackingStore?.Get<List<Group>>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.TermStore {
         /// <summary>List of languages for the term store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? LanguageTags {
+        public List<string>? LanguageTags
+        {
             get { return BackingStore?.Get<List<string>?>("languageTags"); }
             set { BackingStore?.Set("languageTags", value); }
         }
 #nullable restore
 #else
-        public List<string> LanguageTags {
+        public List<string> LanguageTags
+        {
             get { return BackingStore?.Get<List<string>>("languageTags"); }
             set { BackingStore?.Set("languageTags", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.TermStore {
         /// <summary>Collection of all sets available in the term store. This relationship can only be used to load a specific term set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Set>? Sets {
+        public List<Set>? Sets
+        {
             get { return BackingStore?.Get<List<Set>?>("sets"); }
             set { BackingStore?.Set("sets", value); }
         }
 #nullable restore
 #else
-        public List<Set> Sets {
+        public List<Set> Sets
+        {
             get { return BackingStore?.Get<List<Set>>("sets"); }
             set { BackingStore?.Set("sets", value); }
         }
@@ -83,10 +92,10 @@ namespace Microsoft.Graph.Models.TermStore {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"defaultLanguageTag", n => { DefaultLanguageTag = n.GetStringValue(); } },
-                {"groups", n => { Groups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"languageTags", n => { LanguageTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"sets", n => { Sets = n.GetCollectionOfObjectValues<Set>(Set.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "defaultLanguageTag", n => { DefaultLanguageTag = n.GetStringValue(); } },
+                { "groups", n => { Groups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "languageTags", n => { LanguageTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "sets", n => { Sets = n.GetCollectionOfObjectValues<Set>(Set.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

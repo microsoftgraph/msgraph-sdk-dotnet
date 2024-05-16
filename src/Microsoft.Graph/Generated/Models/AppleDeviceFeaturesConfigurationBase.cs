@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Apple device features configuration profile.
     /// </summary>
-    public class AppleDeviceFeaturesConfigurationBase : DeviceConfiguration, IParsable 
+    public class AppleDeviceFeaturesConfigurationBase : DeviceConfiguration, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="AppleDeviceFeaturesConfigurationBase"/> and sets the default values.

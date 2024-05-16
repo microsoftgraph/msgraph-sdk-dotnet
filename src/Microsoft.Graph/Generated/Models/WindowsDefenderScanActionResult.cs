@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Windows Defender last scan result
     /// </summary>
-    public class WindowsDefenderScanActionResult : DeviceActionResult, IParsable 
+    public class WindowsDefenderScanActionResult : DeviceActionResult, IParsable
     {
         /// <summary>Scan type either full scan or quick scan</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScanType {
+        public string? ScanType
+        {
             get { return BackingStore?.Get<string?>("scanType"); }
             set { BackingStore?.Set("scanType", value); }
         }
 #nullable restore
 #else
-        public string ScanType {
+        public string ScanType
+        {
             get { return BackingStore?.Get<string>("scanType"); }
             set { BackingStore?.Set("scanType", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"scanType", n => { ScanType = n.GetStringValue(); } },
+                { "scanType", n => { ScanType = n.GetStringValue(); } },
             };
         }
         /// <summary>

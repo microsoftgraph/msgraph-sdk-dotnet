@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Edge : Entity, IParsable 
+    public class Edge : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A container for Internet Explorer mode resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.InternetExplorerMode? InternetExplorerMode {
+        public Microsoft.Graph.Models.InternetExplorerMode? InternetExplorerMode
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.InternetExplorerMode?>("internetExplorerMode"); }
             set { BackingStore?.Set("internetExplorerMode", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.InternetExplorerMode InternetExplorerMode {
+        public Microsoft.Graph.Models.InternetExplorerMode InternetExplorerMode
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.InternetExplorerMode>("internetExplorerMode"); }
             set { BackingStore?.Set("internetExplorerMode", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"internetExplorerMode", n => { InternetExplorerMode = n.GetObjectValue<Microsoft.Graph.Models.InternetExplorerMode>(Microsoft.Graph.Models.InternetExplorerMode.CreateFromDiscriminatorValue); } },
+                { "internetExplorerMode", n => { InternetExplorerMode = n.GetObjectValue<Microsoft.Graph.Models.InternetExplorerMode>(Microsoft.Graph.Models.InternetExplorerMode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class ContainerEvidence : AlertEvidence, IParsable 
+    public class ContainerEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The list of arguments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Args {
+        public List<string>? Args
+        {
             get { return BackingStore?.Get<List<string>?>("args"); }
             set { BackingStore?.Set("args", value); }
         }
 #nullable restore
 #else
-        public List<string> Args {
+        public List<string> Args
+        {
             get { return BackingStore?.Get<List<string>>("args"); }
             set { BackingStore?.Set("args", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The list of commands.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Command {
+        public List<string>? Command
+        {
             get { return BackingStore?.Get<List<string>?>("command"); }
             set { BackingStore?.Set("command", value); }
         }
 #nullable restore
 #else
-        public List<string> Command {
+        public List<string> Command
+        {
             get { return BackingStore?.Get<List<string>>("command"); }
             set { BackingStore?.Set("command", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The container ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContainerId {
+        public string? ContainerId
+        {
             get { return BackingStore?.Get<string?>("containerId"); }
             set { BackingStore?.Set("containerId", value); }
         }
 #nullable restore
 #else
-        public string ContainerId {
+        public string ContainerId
+        {
             get { return BackingStore?.Get<string>("containerId"); }
             set { BackingStore?.Set("containerId", value); }
         }
@@ -54,32 +61,37 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The image used to run the container.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ContainerImageEvidence? Image {
+        public ContainerImageEvidence? Image
+        {
             get { return BackingStore?.Get<ContainerImageEvidence?>("image"); }
             set { BackingStore?.Set("image", value); }
         }
 #nullable restore
 #else
-        public ContainerImageEvidence Image {
+        public ContainerImageEvidence Image
+        {
             get { return BackingStore?.Get<ContainerImageEvidence>("image"); }
             set { BackingStore?.Set("image", value); }
         }
 #endif
         /// <summary>The privileged status.</summary>
-        public bool? IsPrivileged {
+        public bool? IsPrivileged
+        {
             get { return BackingStore?.Get<bool?>("isPrivileged"); }
             set { BackingStore?.Set("isPrivileged", value); }
         }
         /// <summary>The container name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The pod this container belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public KubernetesPodEvidence? Pod {
+        public KubernetesPodEvidence? Pod
+        {
             get { return BackingStore?.Get<KubernetesPodEvidence?>("pod"); }
             set { BackingStore?.Set("pod", value); }
         }
 #nullable restore
 #else
-        public KubernetesPodEvidence Pod {
+        public KubernetesPodEvidence Pod
+        {
             get { return BackingStore?.Get<KubernetesPodEvidence>("pod"); }
             set { BackingStore?.Set("pod", value); }
         }
@@ -123,13 +137,13 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"args", n => { Args = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"command", n => { Command = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"containerId", n => { ContainerId = n.GetStringValue(); } },
-                {"image", n => { Image = n.GetObjectValue<ContainerImageEvidence>(ContainerImageEvidence.CreateFromDiscriminatorValue); } },
-                {"isPrivileged", n => { IsPrivileged = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"pod", n => { Pod = n.GetObjectValue<KubernetesPodEvidence>(KubernetesPodEvidence.CreateFromDiscriminatorValue); } },
+                { "args", n => { Args = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "command", n => { Command = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "containerId", n => { ContainerId = n.GetStringValue(); } },
+                { "image", n => { Image = n.GetObjectValue<ContainerImageEvidence>(ContainerImageEvidence.CreateFromDiscriminatorValue); } },
+                { "isPrivileged", n => { IsPrivileged = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "pod", n => { Pod = n.GetObjectValue<KubernetesPodEvidence>(KubernetesPodEvidence.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

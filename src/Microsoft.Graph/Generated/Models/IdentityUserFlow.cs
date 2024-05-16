@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class IdentityUserFlow : Entity, IParsable 
+    public class IdentityUserFlow : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The userFlowType property</summary>
-        public Microsoft.Graph.Models.UserFlowType? UserFlowType {
+        public Microsoft.Graph.Models.UserFlowType? UserFlowType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.UserFlowType?>("userFlowType"); }
             set { BackingStore?.Set("userFlowType", value); }
         }
         /// <summary>The userFlowTypeVersion property</summary>
-        public float? UserFlowTypeVersion {
+        public float? UserFlowTypeVersion
+        {
             get { return BackingStore?.Get<float?>("userFlowTypeVersion"); }
             set { BackingStore?.Set("userFlowTypeVersion", value); }
         }
@@ -42,8 +45,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"userFlowType", n => { UserFlowType = n.GetEnumValue<UserFlowType>(); } },
-                {"userFlowTypeVersion", n => { UserFlowTypeVersion = n.GetFloatValue(); } },
+                { "userFlowType", n => { UserFlowType = n.GetEnumValue<UserFlowType>(); } },
+                { "userFlowTypeVersion", n => { UserFlowTypeVersion = n.GetFloatValue(); } },
             };
         }
         /// <summary>

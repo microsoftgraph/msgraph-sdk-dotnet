@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PeopleAdminSettings : Entity, IParsable 
+    public class PeopleAdminSettings : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProfileCardProperty>? ProfileCardProperties {
+        public List<ProfileCardProperty>? ProfileCardProperties
+        {
             get { return BackingStore?.Get<List<ProfileCardProperty>?>("profileCardProperties"); }
             set { BackingStore?.Set("profileCardProperties", value); }
         }
 #nullable restore
 #else
-        public List<ProfileCardProperty> ProfileCardProperties {
+        public List<ProfileCardProperty> ProfileCardProperties
+        {
             get { return BackingStore?.Get<List<ProfileCardProperty>>("profileCardProperties"); }
             set { BackingStore?.Set("profileCardProperties", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents administrator settings that manage the support of pronouns in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PronounsSettings? Pronouns {
+        public PronounsSettings? Pronouns
+        {
             get { return BackingStore?.Get<PronounsSettings?>("pronouns"); }
             set { BackingStore?.Set("pronouns", value); }
         }
 #nullable restore
 #else
-        public PronounsSettings Pronouns {
+        public PronounsSettings Pronouns
+        {
             get { return BackingStore?.Get<PronounsSettings>("pronouns"); }
             set { BackingStore?.Set("pronouns", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"profileCardProperties", n => { ProfileCardProperties = n.GetCollectionOfObjectValues<ProfileCardProperty>(ProfileCardProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"pronouns", n => { Pronouns = n.GetObjectValue<PronounsSettings>(PronounsSettings.CreateFromDiscriminatorValue); } },
+                { "profileCardProperties", n => { ProfileCardProperties = n.GetCollectionOfObjectValues<ProfileCardProperty>(ProfileCardProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "pronouns", n => { Pronouns = n.GetObjectValue<PronounsSettings>(PronounsSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

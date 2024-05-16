@@ -4,28 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The user experience analytics metric contains the score and units of a metric of a user experience anlaytics category.
     /// </summary>
-    public class UserExperienceAnalyticsMetric : Entity, IParsable 
+    public class UserExperienceAnalyticsMetric : Entity, IParsable
     {
         /// <summary>The unit of the user experience analytics metric. Examples: none, percentage, count, seconds, score.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Unit {
+        public string? Unit
+        {
             get { return BackingStore?.Get<string?>("unit"); }
             set { BackingStore?.Set("unit", value); }
         }
 #nullable restore
 #else
-        public string Unit {
+        public string Unit
+        {
             get { return BackingStore?.Get<string>("unit"); }
             set { BackingStore?.Set("unit", value); }
         }
 #endif
         /// <summary>The value of the user experience analytics metric.</summary>
-        public double? Value {
+        public double? Value
+        {
             get { return BackingStore?.Get<double?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -47,8 +51,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"unit", n => { Unit = n.GetStringValue(); } },
-                {"value", n => { Value = n.GetDoubleValue(); } },
+                { "unit", n => { Unit = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

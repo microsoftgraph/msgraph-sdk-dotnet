@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members.Add {
+namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members.Add
+{
     #pragma warning disable CS1591
-    public class AddPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AddPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members.Add {
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConversationMember>? Values {
+        public List<ConversationMember>? Values
+        {
             get { return BackingStore?.Get<List<ConversationMember>?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public List<ConversationMember> Values {
+        public List<ConversationMember> Values
+        {
             get { return BackingStore?.Get<List<ConversationMember>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members.Add {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"values", n => { Values = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "values", n => { Values = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

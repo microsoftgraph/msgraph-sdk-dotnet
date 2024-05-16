@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class KubernetesClusterEvidence : AlertEvidence, IParsable 
+    public class KubernetesClusterEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The cloud identifier of the cluster. Can be either an amazonResourceEvidence, azureResourceEvidence, or googleCloudResourceEvidence object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AlertEvidence? CloudResource {
+        public AlertEvidence? CloudResource
+        {
             get { return BackingStore?.Get<AlertEvidence?>("cloudResource"); }
             set { BackingStore?.Set("cloudResource", value); }
         }
 #nullable restore
 #else
-        public AlertEvidence CloudResource {
+        public AlertEvidence CloudResource
+        {
             get { return BackingStore?.Get<AlertEvidence>("cloudResource"); }
             set { BackingStore?.Set("cloudResource", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The distribution type of the cluster.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Distribution {
+        public string? Distribution
+        {
             get { return BackingStore?.Get<string?>("distribution"); }
             set { BackingStore?.Set("distribution", value); }
         }
 #nullable restore
 #else
-        public string Distribution {
+        public string Distribution
+        {
             get { return BackingStore?.Get<string>("distribution"); }
             set { BackingStore?.Set("distribution", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The cluster name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #endif
         /// <summary>The platform the cluster runs on. Possible values are: unknown, aks, eks, gke, arc, unknownFutureValue.</summary>
-        public KubernetesPlatform? Platform {
+        public KubernetesPlatform? Platform
+        {
             get { return BackingStore?.Get<KubernetesPlatform?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
         /// <summary>The kubernetes version of the cluster.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"cloudResource", n => { CloudResource = n.GetObjectValue<AlertEvidence>(AlertEvidence.CreateFromDiscriminatorValue); } },
-                {"distribution", n => { Distribution = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"platform", n => { Platform = n.GetEnumValue<KubernetesPlatform>(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "cloudResource", n => { CloudResource = n.GetObjectValue<AlertEvidence>(AlertEvidence.CreateFromDiscriminatorValue); } },
+                { "distribution", n => { Distribution = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "platform", n => { Platform = n.GetEnumValue<KubernetesPlatform>(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

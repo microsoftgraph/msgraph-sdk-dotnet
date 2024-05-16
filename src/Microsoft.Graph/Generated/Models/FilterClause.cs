@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class FilterClause : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class FilterClause : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatorName {
+        public string? OperatorName
+        {
             get { return BackingStore?.Get<string?>("operatorName"); }
             set { BackingStore?.Set("operatorName", value); }
         }
 #nullable restore
 #else
-        public string OperatorName {
+        public string OperatorName
+        {
             get { return BackingStore?.Get<string>("operatorName"); }
             set { BackingStore?.Set("operatorName", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceOperandName {
+        public string? SourceOperandName
+        {
             get { return BackingStore?.Get<string?>("sourceOperandName"); }
             set { BackingStore?.Set("sourceOperandName", value); }
         }
 #nullable restore
 #else
-        public string SourceOperandName {
+        public string SourceOperandName
+        {
             get { return BackingStore?.Get<string>("sourceOperandName"); }
             set { BackingStore?.Set("sourceOperandName", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Values that the source operand will be tested against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FilterOperand? TargetOperand {
+        public FilterOperand? TargetOperand
+        {
             get { return BackingStore?.Get<FilterOperand?>("targetOperand"); }
             set { BackingStore?.Set("targetOperand", value); }
         }
 #nullable restore
 #else
-        public FilterOperand TargetOperand {
+        public FilterOperand TargetOperand
+        {
             get { return BackingStore?.Get<FilterOperand>("targetOperand"); }
             set { BackingStore?.Set("targetOperand", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"operatorName", n => { OperatorName = n.GetStringValue(); } },
-                {"sourceOperandName", n => { SourceOperandName = n.GetStringValue(); } },
-                {"targetOperand", n => { TargetOperand = n.GetObjectValue<FilterOperand>(FilterOperand.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "operatorName", n => { OperatorName = n.GetStringValue(); } },
+                { "sourceOperandName", n => { SourceOperandName = n.GetStringValue(); } },
+                { "targetOperand", n => { TargetOperand = n.GetObjectValue<FilterOperand>(FilterOperand.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

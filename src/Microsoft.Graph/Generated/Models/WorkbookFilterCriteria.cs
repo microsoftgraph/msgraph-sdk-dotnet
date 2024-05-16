@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookFilterCriteria : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WorkbookFilterCriteria : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Color {
+        public string? Color
+        {
             get { return BackingStore?.Get<string?>("color"); }
             set { BackingStore?.Set("color", value); }
         }
 #nullable restore
 #else
-        public string Color {
+        public string Color
+        {
             get { return BackingStore?.Get<string>("color"); }
             set { BackingStore?.Set("color", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The criterion1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Criterion1 {
+        public string? Criterion1
+        {
             get { return BackingStore?.Get<string?>("criterion1"); }
             set { BackingStore?.Set("criterion1", value); }
         }
 #nullable restore
 #else
-        public string Criterion1 {
+        public string Criterion1
+        {
             get { return BackingStore?.Get<string>("criterion1"); }
             set { BackingStore?.Set("criterion1", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The criterion2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Criterion2 {
+        public string? Criterion2
+        {
             get { return BackingStore?.Get<string?>("criterion2"); }
             set { BackingStore?.Set("criterion2", value); }
         }
 #nullable restore
 #else
-        public string Criterion2 {
+        public string Criterion2
+        {
             get { return BackingStore?.Get<string>("criterion2"); }
             set { BackingStore?.Set("criterion2", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The dynamicCriteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DynamicCriteria {
+        public string? DynamicCriteria
+        {
             get { return BackingStore?.Get<string?>("dynamicCriteria"); }
             set { BackingStore?.Set("dynamicCriteria", value); }
         }
 #nullable restore
 #else
-        public string DynamicCriteria {
+        public string DynamicCriteria
+        {
             get { return BackingStore?.Get<string>("dynamicCriteria"); }
             set { BackingStore?.Set("dynamicCriteria", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The filterOn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FilterOn {
+        public string? FilterOn
+        {
             get { return BackingStore?.Get<string?>("filterOn"); }
             set { BackingStore?.Set("filterOn", value); }
         }
 #nullable restore
 #else
-        public string FilterOn {
+        public string FilterOn
+        {
             get { return BackingStore?.Get<string>("filterOn"); }
             set { BackingStore?.Set("filterOn", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The icon property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookIcon? Icon {
+        public WorkbookIcon? Icon
+        {
             get { return BackingStore?.Get<WorkbookIcon?>("icon"); }
             set { BackingStore?.Set("icon", value); }
         }
 #nullable restore
 #else
-        public WorkbookIcon Icon {
+        public WorkbookIcon Icon
+        {
             get { return BackingStore?.Get<WorkbookIcon>("icon"); }
             set { BackingStore?.Set("icon", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -118,13 +134,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The operator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Operator {
+        public string? Operator
+        {
             get { return BackingStore?.Get<string?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
 #nullable restore
 #else
-        public string Operator {
+        public string Operator
+        {
             get { return BackingStore?.Get<string>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
@@ -132,13 +150,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Values {
+        public Json? Values
+        {
             get { return BackingStore?.Get<Json?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public Json Values {
+        public Json Values
+        {
             get { return BackingStore?.Get<Json>("values"); }
             set { BackingStore?.Set("values", value); }
         }
@@ -169,15 +189,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"color", n => { Color = n.GetStringValue(); } },
-                {"criterion1", n => { Criterion1 = n.GetStringValue(); } },
-                {"criterion2", n => { Criterion2 = n.GetStringValue(); } },
-                {"dynamicCriteria", n => { DynamicCriteria = n.GetStringValue(); } },
-                {"filterOn", n => { FilterOn = n.GetStringValue(); } },
-                {"icon", n => { Icon = n.GetObjectValue<WorkbookIcon>(WorkbookIcon.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"operator", n => { Operator = n.GetStringValue(); } },
-                {"values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "color", n => { Color = n.GetStringValue(); } },
+                { "criterion1", n => { Criterion1 = n.GetStringValue(); } },
+                { "criterion2", n => { Criterion2 = n.GetStringValue(); } },
+                { "dynamicCriteria", n => { DynamicCriteria = n.GetStringValue(); } },
+                { "filterOn", n => { FilterOn = n.GetStringValue(); } },
+                { "icon", n => { Icon = n.GetObjectValue<WorkbookIcon>(WorkbookIcon.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "operator", n => { Operator = n.GetStringValue(); } },
+                { "values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

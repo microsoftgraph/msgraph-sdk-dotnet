@@ -4,56 +4,65 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Singleton entity which is used to specify IE mode site metadata
     /// </summary>
-    public class BrowserSite : Entity, IParsable 
+    public class BrowserSite : Entity, IParsable
     {
         /// <summary>Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.</summary>
-        public bool? AllowRedirect {
+        public bool? AllowRedirect
+        {
             get { return BackingStore?.Get<bool?>("allowRedirect"); }
             set { BackingStore?.Set("allowRedirect", value); }
         }
         /// <summary>The comment for the site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment {
+        public string? Comment
+        {
             get { return BackingStore?.Get<string?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
 #nullable restore
 #else
-        public string Comment {
+        public string Comment
+        {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
 #endif
         /// <summary>The compatibilityMode property</summary>
-        public BrowserSiteCompatibilityMode? CompatibilityMode {
+        public BrowserSiteCompatibilityMode? CompatibilityMode
+        {
             get { return BackingStore?.Get<BrowserSiteCompatibilityMode?>("compatibilityMode"); }
             set { BackingStore?.Set("compatibilityMode", value); }
         }
         /// <summary>The date and time when the site was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The date and time when the site was deleted.</summary>
-        public DateTimeOffset? DeletedDateTime {
+        public DateTimeOffset? DeletedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
             set { BackingStore?.Set("deletedDateTime", value); }
         }
         /// <summary>The history of modifications applied to the site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BrowserSiteHistory>? History {
+        public List<BrowserSiteHistory>? History
+        {
             get { return BackingStore?.Get<List<BrowserSiteHistory>?>("history"); }
             set { BackingStore?.Set("history", value); }
         }
 #nullable restore
 #else
-        public List<BrowserSiteHistory> History {
+        public List<BrowserSiteHistory> History
+        {
             get { return BackingStore?.Get<List<BrowserSiteHistory>>("history"); }
             set { BackingStore?.Set("history", value); }
         }
@@ -61,47 +70,55 @@ namespace Microsoft.Graph.Models {
         /// <summary>The user who last modified the site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy {
+        public IdentitySet? LastModifiedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy {
+        public IdentitySet LastModifiedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>The date and time when the site was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The mergeType property</summary>
-        public BrowserSiteMergeType? MergeType {
+        public BrowserSiteMergeType? MergeType
+        {
             get { return BackingStore?.Get<BrowserSiteMergeType?>("mergeType"); }
             set { BackingStore?.Set("mergeType", value); }
         }
         /// <summary>The status property</summary>
-        public BrowserSiteStatus? Status {
+        public BrowserSiteStatus? Status
+        {
             get { return BackingStore?.Get<BrowserSiteStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The targetEnvironment property</summary>
-        public BrowserSiteTargetEnvironment? TargetEnvironment {
+        public BrowserSiteTargetEnvironment? TargetEnvironment
+        {
             get { return BackingStore?.Get<BrowserSiteTargetEnvironment?>("targetEnvironment"); }
             set { BackingStore?.Set("targetEnvironment", value); }
         }
         /// <summary>The URL of the site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl {
+        public string? WebUrl
+        {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
 #nullable restore
 #else
-        public string WebUrl {
+        public string WebUrl
+        {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
@@ -124,18 +141,18 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowRedirect", n => { AllowRedirect = n.GetBoolValue(); } },
-                {"comment", n => { Comment = n.GetStringValue(); } },
-                {"compatibilityMode", n => { CompatibilityMode = n.GetEnumValue<BrowserSiteCompatibilityMode>(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"history", n => { History = n.GetCollectionOfObjectValues<BrowserSiteHistory>(BrowserSiteHistory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"mergeType", n => { MergeType = n.GetEnumValue<BrowserSiteMergeType>(); } },
-                {"status", n => { Status = n.GetEnumValue<BrowserSiteStatus>(); } },
-                {"targetEnvironment", n => { TargetEnvironment = n.GetEnumValue<BrowserSiteTargetEnvironment>(); } },
-                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
+                { "allowRedirect", n => { AllowRedirect = n.GetBoolValue(); } },
+                { "comment", n => { Comment = n.GetStringValue(); } },
+                { "compatibilityMode", n => { CompatibilityMode = n.GetEnumValue<BrowserSiteCompatibilityMode>(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "history", n => { History = n.GetCollectionOfObjectValues<BrowserSiteHistory>(BrowserSiteHistory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "mergeType", n => { MergeType = n.GetEnumValue<BrowserSiteMergeType>(); } },
+                { "status", n => { Status = n.GetEnumValue<BrowserSiteStatus>(); } },
+                { "targetEnvironment", n => { TargetEnvironment = n.GetEnumValue<BrowserSiteTargetEnvironment>(); } },
+                { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

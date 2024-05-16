@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EndUserNotificationDetail : Entity, IParsable 
+    public class EndUserNotificationDetail : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Email HTML content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailContent {
+        public string? EmailContent
+        {
             get { return BackingStore?.Get<string?>("emailContent"); }
             set { BackingStore?.Set("emailContent", value); }
         }
 #nullable restore
 #else
-        public string EmailContent {
+        public string EmailContent
+        {
             get { return BackingStore?.Get<string>("emailContent"); }
             set { BackingStore?.Set("emailContent", value); }
         }
 #endif
         /// <summary>Indicates whether this language is default.</summary>
-        public bool? IsDefaultLangauge {
+        public bool? IsDefaultLangauge
+        {
             get { return BackingStore?.Get<bool?>("isDefaultLangauge"); }
             set { BackingStore?.Set("isDefaultLangauge", value); }
         }
         /// <summary>Notification language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language {
+        public string? Language
+        {
             get { return BackingStore?.Get<string?>("language"); }
             set { BackingStore?.Set("language", value); }
         }
 #nullable restore
 #else
-        public string Language {
+        public string Language
+        {
             get { return BackingStore?.Get<string>("language"); }
             set { BackingStore?.Set("language", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Notification locale.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Locale {
+        public string? Locale
+        {
             get { return BackingStore?.Get<string?>("locale"); }
             set { BackingStore?.Set("locale", value); }
         }
 #nullable restore
 #else
-        public string Locale {
+        public string Locale
+        {
             get { return BackingStore?.Get<string>("locale"); }
             set { BackingStore?.Set("locale", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The sentFrom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? SentFrom {
+        public EmailIdentity? SentFrom
+        {
             get { return BackingStore?.Get<EmailIdentity?>("sentFrom"); }
             set { BackingStore?.Set("sentFrom", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity SentFrom {
+        public EmailIdentity SentFrom
+        {
             get { return BackingStore?.Get<EmailIdentity>("sentFrom"); }
             set { BackingStore?.Set("sentFrom", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Mail subject.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject {
+        public string? Subject
+        {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public string Subject {
+        public string Subject
+        {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
@@ -102,12 +114,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"emailContent", n => { EmailContent = n.GetStringValue(); } },
-                {"isDefaultLangauge", n => { IsDefaultLangauge = n.GetBoolValue(); } },
-                {"language", n => { Language = n.GetStringValue(); } },
-                {"locale", n => { Locale = n.GetStringValue(); } },
-                {"sentFrom", n => { SentFrom = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
-                {"subject", n => { Subject = n.GetStringValue(); } },
+                { "emailContent", n => { EmailContent = n.GetStringValue(); } },
+                { "isDefaultLangauge", n => { IsDefaultLangauge = n.GetBoolValue(); } },
+                { "language", n => { Language = n.GetStringValue(); } },
+                { "locale", n => { Locale = n.GetStringValue(); } },
+                { "sentFrom", n => { SentFrom = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "subject", n => { Subject = n.GetStringValue(); } },
             };
         }
         /// <summary>

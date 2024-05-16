@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// This class contains compliance settings for Windows 10 Mobile.
     /// </summary>
-    public class Windows10MobileCompliancePolicy : DeviceCompliancePolicy, IParsable 
+    public class Windows10MobileCompliancePolicy : DeviceCompliancePolicy, IParsable
     {
         /// <summary>Require devices to be reported healthy by Windows Device Health Attestation - bit locker is enabled</summary>
-        public bool? BitLockerEnabled {
+        public bool? BitLockerEnabled
+        {
             get { return BackingStore?.Get<bool?>("bitLockerEnabled"); }
             set { BackingStore?.Set("bitLockerEnabled", value); }
         }
         /// <summary>Require devices to be reported as healthy by Windows Device Health Attestation.</summary>
-        public bool? CodeIntegrityEnabled {
+        public bool? CodeIntegrityEnabled
+        {
             get { return BackingStore?.Get<bool?>("codeIntegrityEnabled"); }
             set { BackingStore?.Set("codeIntegrityEnabled", value); }
         }
         /// <summary>Require devices to be reported as healthy by Windows Device Health Attestation - early launch antimalware driver is enabled.</summary>
-        public bool? EarlyLaunchAntiMalwareDriverEnabled {
+        public bool? EarlyLaunchAntiMalwareDriverEnabled
+        {
             get { return BackingStore?.Get<bool?>("earlyLaunchAntiMalwareDriverEnabled"); }
             set { BackingStore?.Set("earlyLaunchAntiMalwareDriverEnabled", value); }
         }
         /// <summary>Maximum Windows Phone version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsMaximumVersion {
+        public string? OsMaximumVersion
+        {
             get { return BackingStore?.Get<string?>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
 #nullable restore
 #else
-        public string OsMaximumVersion {
+        public string OsMaximumVersion
+        {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
@@ -42,69 +48,82 @@ namespace Microsoft.Graph.Models {
         /// <summary>Minimum Windows Phone version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsMinimumVersion {
+        public string? OsMinimumVersion
+        {
             get { return BackingStore?.Get<string?>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
 #nullable restore
 #else
-        public string OsMinimumVersion {
+        public string OsMinimumVersion
+        {
             get { return BackingStore?.Get<string>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
 #endif
         /// <summary>Whether or not to block syncing the calendar.</summary>
-        public bool? PasswordBlockSimple {
+        public bool? PasswordBlockSimple
+        {
             get { return BackingStore?.Get<bool?>("passwordBlockSimple"); }
             set { BackingStore?.Set("passwordBlockSimple", value); }
         }
         /// <summary>Number of days before password expiration. Valid values 1 to 255</summary>
-        public int? PasswordExpirationDays {
+        public int? PasswordExpirationDays
+        {
             get { return BackingStore?.Get<int?>("passwordExpirationDays"); }
             set { BackingStore?.Set("passwordExpirationDays", value); }
         }
         /// <summary>The number of character sets required in the password.</summary>
-        public int? PasswordMinimumCharacterSetCount {
+        public int? PasswordMinimumCharacterSetCount
+        {
             get { return BackingStore?.Get<int?>("passwordMinimumCharacterSetCount"); }
             set { BackingStore?.Set("passwordMinimumCharacterSetCount", value); }
         }
         /// <summary>Minimum password length. Valid values 4 to 16</summary>
-        public int? PasswordMinimumLength {
+        public int? PasswordMinimumLength
+        {
             get { return BackingStore?.Get<int?>("passwordMinimumLength"); }
             set { BackingStore?.Set("passwordMinimumLength", value); }
         }
         /// <summary>Minutes of inactivity before a password is required.</summary>
-        public int? PasswordMinutesOfInactivityBeforeLock {
+        public int? PasswordMinutesOfInactivityBeforeLock
+        {
             get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeLock"); }
             set { BackingStore?.Set("passwordMinutesOfInactivityBeforeLock", value); }
         }
         /// <summary>The number of previous passwords to prevent re-use of.</summary>
-        public int? PasswordPreviousPasswordBlockCount {
+        public int? PasswordPreviousPasswordBlockCount
+        {
             get { return BackingStore?.Get<int?>("passwordPreviousPasswordBlockCount"); }
             set { BackingStore?.Set("passwordPreviousPasswordBlockCount", value); }
         }
         /// <summary>Require a password to unlock Windows Phone device.</summary>
-        public bool? PasswordRequired {
+        public bool? PasswordRequired
+        {
             get { return BackingStore?.Get<bool?>("passwordRequired"); }
             set { BackingStore?.Set("passwordRequired", value); }
         }
         /// <summary>Possible values of required passwords.</summary>
-        public RequiredPasswordType? PasswordRequiredType {
+        public RequiredPasswordType? PasswordRequiredType
+        {
             get { return BackingStore?.Get<RequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Require a password to unlock an idle device.</summary>
-        public bool? PasswordRequireToUnlockFromIdle {
+        public bool? PasswordRequireToUnlockFromIdle
+        {
             get { return BackingStore?.Get<bool?>("passwordRequireToUnlockFromIdle"); }
             set { BackingStore?.Set("passwordRequireToUnlockFromIdle", value); }
         }
         /// <summary>Require devices to be reported as healthy by Windows Device Health Attestation - secure boot is enabled.</summary>
-        public bool? SecureBootEnabled {
+        public bool? SecureBootEnabled
+        {
             get { return BackingStore?.Get<bool?>("secureBootEnabled"); }
             set { BackingStore?.Set("secureBootEnabled", value); }
         }
         /// <summary>Require encryption on windows devices.</summary>
-        public bool? StorageRequireEncryption {
+        public bool? StorageRequireEncryption
+        {
             get { return BackingStore?.Get<bool?>("storageRequireEncryption"); }
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
@@ -133,22 +152,22 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"bitLockerEnabled", n => { BitLockerEnabled = n.GetBoolValue(); } },
-                {"codeIntegrityEnabled", n => { CodeIntegrityEnabled = n.GetBoolValue(); } },
-                {"earlyLaunchAntiMalwareDriverEnabled", n => { EarlyLaunchAntiMalwareDriverEnabled = n.GetBoolValue(); } },
-                {"osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
-                {"osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
-                {"passwordBlockSimple", n => { PasswordBlockSimple = n.GetBoolValue(); } },
-                {"passwordExpirationDays", n => { PasswordExpirationDays = n.GetIntValue(); } },
-                {"passwordMinimumCharacterSetCount", n => { PasswordMinimumCharacterSetCount = n.GetIntValue(); } },
-                {"passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
-                {"passwordMinutesOfInactivityBeforeLock", n => { PasswordMinutesOfInactivityBeforeLock = n.GetIntValue(); } },
-                {"passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
-                {"passwordRequireToUnlockFromIdle", n => { PasswordRequireToUnlockFromIdle = n.GetBoolValue(); } },
-                {"passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
-                {"passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
-                {"secureBootEnabled", n => { SecureBootEnabled = n.GetBoolValue(); } },
-                {"storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
+                { "bitLockerEnabled", n => { BitLockerEnabled = n.GetBoolValue(); } },
+                { "codeIntegrityEnabled", n => { CodeIntegrityEnabled = n.GetBoolValue(); } },
+                { "earlyLaunchAntiMalwareDriverEnabled", n => { EarlyLaunchAntiMalwareDriverEnabled = n.GetBoolValue(); } },
+                { "osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
+                { "osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
+                { "passwordBlockSimple", n => { PasswordBlockSimple = n.GetBoolValue(); } },
+                { "passwordExpirationDays", n => { PasswordExpirationDays = n.GetIntValue(); } },
+                { "passwordMinimumCharacterSetCount", n => { PasswordMinimumCharacterSetCount = n.GetIntValue(); } },
+                { "passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
+                { "passwordMinutesOfInactivityBeforeLock", n => { PasswordMinutesOfInactivityBeforeLock = n.GetIntValue(); } },
+                { "passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
+                { "passwordRequireToUnlockFromIdle", n => { PasswordRequireToUnlockFromIdle = n.GetBoolValue(); } },
+                { "passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
+                { "secureBootEnabled", n => { SecureBootEnabled = n.GetBoolValue(); } },
+                { "storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
             };
         }
         /// <summary>

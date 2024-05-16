@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Delta {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Delta
+{
     #pragma warning disable CS1591
-    public class DeltaPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeltaPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Delta {
         /// <summary>The number1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Number1 {
+        public Json? Number1
+        {
             get { return BackingStore?.Get<Json?>("number1"); }
             set { BackingStore?.Set("number1", value); }
         }
 #nullable restore
 #else
-        public Json Number1 {
+        public Json Number1
+        {
             get { return BackingStore?.Get<Json>("number1"); }
             set { BackingStore?.Set("number1", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Delta {
         /// <summary>The number2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Number2 {
+        public Json? Number2
+        {
             get { return BackingStore?.Get<Json?>("number2"); }
             set { BackingStore?.Set("number2", value); }
         }
 #nullable restore
 #else
-        public Json Number2 {
+        public Json Number2
+        {
             get { return BackingStore?.Get<Json>("number2"); }
             set { BackingStore?.Set("number2", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Delta {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"number1", n => { Number1 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"number2", n => { Number2 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "number1", n => { Number1 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "number2", n => { Number2 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

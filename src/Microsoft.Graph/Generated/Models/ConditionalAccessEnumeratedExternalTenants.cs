@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ConditionalAccessEnumeratedExternalTenants : ConditionalAccessExternalTenants, IParsable 
+    public class ConditionalAccessEnumeratedExternalTenants : ConditionalAccessExternalTenants, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of tenant IDs that define the scope of a policy targeting conditional access for guests and external users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Members {
+        public List<string>? Members
+        {
             get { return BackingStore?.Get<List<string>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #nullable restore
 #else
-        public List<string> Members {
+        public List<string> Members
+        {
             get { return BackingStore?.Get<List<string>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"members", n => { Members = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "members", n => { Members = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

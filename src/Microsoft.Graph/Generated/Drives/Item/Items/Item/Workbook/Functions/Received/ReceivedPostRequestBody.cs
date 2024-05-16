@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Received {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Received
+{
     #pragma warning disable CS1591
-    public class ReceivedPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ReceivedPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Received {
         /// <summary>The basis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Basis {
+        public Json? Basis
+        {
             get { return BackingStore?.Get<Json?>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
 #nullable restore
 #else
-        public Json Basis {
+        public Json Basis
+        {
             get { return BackingStore?.Get<Json>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Received {
         /// <summary>The discount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Discount {
+        public Json? Discount
+        {
             get { return BackingStore?.Get<Json?>("discount"); }
             set { BackingStore?.Set("discount", value); }
         }
 #nullable restore
 #else
-        public Json Discount {
+        public Json Discount
+        {
             get { return BackingStore?.Get<Json>("discount"); }
             set { BackingStore?.Set("discount", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Received {
         /// <summary>The investment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Investment {
+        public Json? Investment
+        {
             get { return BackingStore?.Get<Json?>("investment"); }
             set { BackingStore?.Set("investment", value); }
         }
 #nullable restore
 #else
-        public Json Investment {
+        public Json Investment
+        {
             get { return BackingStore?.Get<Json>("investment"); }
             set { BackingStore?.Set("investment", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Received {
         /// <summary>The maturity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Maturity {
+        public Json? Maturity
+        {
             get { return BackingStore?.Get<Json?>("maturity"); }
             set { BackingStore?.Set("maturity", value); }
         }
 #nullable restore
 #else
-        public Json Maturity {
+        public Json Maturity
+        {
             get { return BackingStore?.Get<Json>("maturity"); }
             set { BackingStore?.Set("maturity", value); }
         }
@@ -77,13 +87,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Received {
         /// <summary>The settlement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Settlement {
+        public Json? Settlement
+        {
             get { return BackingStore?.Get<Json?>("settlement"); }
             set { BackingStore?.Set("settlement", value); }
         }
 #nullable restore
 #else
-        public Json Settlement {
+        public Json Settlement
+        {
             get { return BackingStore?.Get<Json>("settlement"); }
             set { BackingStore?.Set("settlement", value); }
         }
@@ -114,11 +126,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Received {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"basis", n => { Basis = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"discount", n => { Discount = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"investment", n => { Investment = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"maturity", n => { Maturity = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"settlement", n => { Settlement = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "basis", n => { Basis = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "discount", n => { Discount = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "investment", n => { Investment = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "maturity", n => { Maturity = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "settlement", n => { Settlement = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

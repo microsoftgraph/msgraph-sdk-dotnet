@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class IoTDeviceEvidence : AlertEvidence, IParsable 
+    public class IoTDeviceEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The deviceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The deviceName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The devicePageLink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DevicePageLink {
+        public string? DevicePageLink
+        {
             get { return BackingStore?.Get<string?>("devicePageLink"); }
             set { BackingStore?.Set("devicePageLink", value); }
         }
 #nullable restore
 #else
-        public string DevicePageLink {
+        public string DevicePageLink
+        {
             get { return BackingStore?.Get<string>("devicePageLink"); }
             set { BackingStore?.Set("devicePageLink", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The deviceSubType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceSubType {
+        public string? DeviceSubType
+        {
             get { return BackingStore?.Get<string?>("deviceSubType"); }
             set { BackingStore?.Set("deviceSubType", value); }
         }
 #nullable restore
 #else
-        public string DeviceSubType {
+        public string DeviceSubType
+        {
             get { return BackingStore?.Get<string>("deviceSubType"); }
             set { BackingStore?.Set("deviceSubType", value); }
         }
@@ -68,32 +77,37 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The deviceType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceType {
+        public string? DeviceType
+        {
             get { return BackingStore?.Get<string?>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
 #nullable restore
 #else
-        public string DeviceType {
+        public string DeviceType
+        {
             get { return BackingStore?.Get<string>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
 #endif
         /// <summary>The importance property</summary>
-        public IoTDeviceImportanceType? Importance {
+        public IoTDeviceImportanceType? Importance
+        {
             get { return BackingStore?.Get<IoTDeviceImportanceType?>("importance"); }
             set { BackingStore?.Set("importance", value); }
         }
         /// <summary>The ioTHub property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AzureResourceEvidence? IoTHub {
+        public AzureResourceEvidence? IoTHub
+        {
             get { return BackingStore?.Get<AzureResourceEvidence?>("ioTHub"); }
             set { BackingStore?.Set("ioTHub", value); }
         }
 #nullable restore
 #else
-        public AzureResourceEvidence IoTHub {
+        public AzureResourceEvidence IoTHub
+        {
             get { return BackingStore?.Get<AzureResourceEvidence>("ioTHub"); }
             set { BackingStore?.Set("ioTHub", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The ioTSecurityAgentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IoTSecurityAgentId {
+        public string? IoTSecurityAgentId
+        {
             get { return BackingStore?.Get<string?>("ioTSecurityAgentId"); }
             set { BackingStore?.Set("ioTSecurityAgentId", value); }
         }
 #nullable restore
 #else
-        public string IoTSecurityAgentId {
+        public string IoTSecurityAgentId
+        {
             get { return BackingStore?.Get<string>("ioTSecurityAgentId"); }
             set { BackingStore?.Set("ioTSecurityAgentId", value); }
         }
@@ -115,42 +131,49 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The ipAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IpEvidence? IpAddress {
+        public IpEvidence? IpAddress
+        {
             get { return BackingStore?.Get<IpEvidence?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #nullable restore
 #else
-        public IpEvidence IpAddress {
+        public IpEvidence IpAddress
+        {
             get { return BackingStore?.Get<IpEvidence>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #endif
         /// <summary>The isAuthorized property</summary>
-        public bool? IsAuthorized {
+        public bool? IsAuthorized
+        {
             get { return BackingStore?.Get<bool?>("isAuthorized"); }
             set { BackingStore?.Set("isAuthorized", value); }
         }
         /// <summary>The isProgramming property</summary>
-        public bool? IsProgramming {
+        public bool? IsProgramming
+        {
             get { return BackingStore?.Get<bool?>("isProgramming"); }
             set { BackingStore?.Set("isProgramming", value); }
         }
         /// <summary>The isScanner property</summary>
-        public bool? IsScanner {
+        public bool? IsScanner
+        {
             get { return BackingStore?.Get<bool?>("isScanner"); }
             set { BackingStore?.Set("isScanner", value); }
         }
         /// <summary>The macAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MacAddress {
+        public string? MacAddress
+        {
             get { return BackingStore?.Get<string?>("macAddress"); }
             set { BackingStore?.Set("macAddress", value); }
         }
 #nullable restore
 #else
-        public string MacAddress {
+        public string MacAddress
+        {
             get { return BackingStore?.Get<string>("macAddress"); }
             set { BackingStore?.Set("macAddress", value); }
         }
@@ -158,13 +181,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The manufacturer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer {
+        public string? Manufacturer
+        {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #nullable restore
 #else
-        public string Manufacturer {
+        public string Manufacturer
+        {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
@@ -172,13 +197,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model {
+        public string? Model
+        {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #nullable restore
 #else
-        public string Model {
+        public string Model
+        {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
@@ -186,13 +213,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The nics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public NicEvidence? Nics {
+        public NicEvidence? Nics
+        {
             get { return BackingStore?.Get<NicEvidence?>("nics"); }
             set { BackingStore?.Set("nics", value); }
         }
 #nullable restore
 #else
-        public NicEvidence Nics {
+        public NicEvidence Nics
+        {
             get { return BackingStore?.Get<NicEvidence>("nics"); }
             set { BackingStore?.Set("nics", value); }
         }
@@ -200,13 +229,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The operatingSystem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatingSystem {
+        public string? OperatingSystem
+        {
             get { return BackingStore?.Get<string?>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
 #nullable restore
 #else
-        public string OperatingSystem {
+        public string OperatingSystem
+        {
             get { return BackingStore?.Get<string>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
@@ -214,13 +245,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The owners property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Owners {
+        public List<string>? Owners
+        {
             get { return BackingStore?.Get<List<string>?>("owners"); }
             set { BackingStore?.Set("owners", value); }
         }
 #nullable restore
 #else
-        public List<string> Owners {
+        public List<string> Owners
+        {
             get { return BackingStore?.Get<List<string>>("owners"); }
             set { BackingStore?.Set("owners", value); }
         }
@@ -228,13 +261,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The protocols property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Protocols {
+        public List<string>? Protocols
+        {
             get { return BackingStore?.Get<List<string>?>("protocols"); }
             set { BackingStore?.Set("protocols", value); }
         }
 #nullable restore
 #else
-        public List<string> Protocols {
+        public List<string> Protocols
+        {
             get { return BackingStore?.Get<List<string>>("protocols"); }
             set { BackingStore?.Set("protocols", value); }
         }
@@ -242,13 +277,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The purdueLayer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PurdueLayer {
+        public string? PurdueLayer
+        {
             get { return BackingStore?.Get<string?>("purdueLayer"); }
             set { BackingStore?.Set("purdueLayer", value); }
         }
 #nullable restore
 #else
-        public string PurdueLayer {
+        public string PurdueLayer
+        {
             get { return BackingStore?.Get<string>("purdueLayer"); }
             set { BackingStore?.Set("purdueLayer", value); }
         }
@@ -256,13 +293,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The sensor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sensor {
+        public string? Sensor
+        {
             get { return BackingStore?.Get<string?>("sensor"); }
             set { BackingStore?.Set("sensor", value); }
         }
 #nullable restore
 #else
-        public string Sensor {
+        public string Sensor
+        {
             get { return BackingStore?.Get<string>("sensor"); }
             set { BackingStore?.Set("sensor", value); }
         }
@@ -270,13 +309,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The serialNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SerialNumber {
+        public string? SerialNumber
+        {
             get { return BackingStore?.Get<string?>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
 #nullable restore
 #else
-        public string SerialNumber {
+        public string SerialNumber
+        {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
@@ -284,13 +325,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The site property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Site {
+        public string? Site
+        {
             get { return BackingStore?.Get<string?>("site"); }
             set { BackingStore?.Set("site", value); }
         }
 #nullable restore
 #else
-        public string Site {
+        public string Site
+        {
             get { return BackingStore?.Get<string>("site"); }
             set { BackingStore?.Set("site", value); }
         }
@@ -298,13 +341,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source {
+        public string? Source
+        {
             get { return BackingStore?.Get<string?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #nullable restore
 #else
-        public string Source {
+        public string Source
+        {
             get { return BackingStore?.Get<string>("source"); }
             set { BackingStore?.Set("source", value); }
         }
@@ -312,13 +357,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The sourceRef property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UrlEvidence? SourceRef {
+        public UrlEvidence? SourceRef
+        {
             get { return BackingStore?.Get<UrlEvidence?>("sourceRef"); }
             set { BackingStore?.Set("sourceRef", value); }
         }
 #nullable restore
 #else
-        public UrlEvidence SourceRef {
+        public UrlEvidence SourceRef
+        {
             get { return BackingStore?.Get<UrlEvidence>("sourceRef"); }
             set { BackingStore?.Set("sourceRef", value); }
         }
@@ -326,13 +373,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The zone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Zone {
+        public string? Zone
+        {
             get { return BackingStore?.Get<string?>("zone"); }
             set { BackingStore?.Set("zone", value); }
         }
 #nullable restore
 #else
-        public string Zone {
+        public string Zone
+        {
             get { return BackingStore?.Get<string>("zone"); }
             set { BackingStore?.Set("zone", value); }
         }
@@ -362,32 +411,32 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"devicePageLink", n => { DevicePageLink = n.GetStringValue(); } },
-                {"deviceSubType", n => { DeviceSubType = n.GetStringValue(); } },
-                {"deviceType", n => { DeviceType = n.GetStringValue(); } },
-                {"importance", n => { Importance = n.GetEnumValue<IoTDeviceImportanceType>(); } },
-                {"ioTHub", n => { IoTHub = n.GetObjectValue<AzureResourceEvidence>(AzureResourceEvidence.CreateFromDiscriminatorValue); } },
-                {"ioTSecurityAgentId", n => { IoTSecurityAgentId = n.GetStringValue(); } },
-                {"ipAddress", n => { IpAddress = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
-                {"isAuthorized", n => { IsAuthorized = n.GetBoolValue(); } },
-                {"isProgramming", n => { IsProgramming = n.GetBoolValue(); } },
-                {"isScanner", n => { IsScanner = n.GetBoolValue(); } },
-                {"macAddress", n => { MacAddress = n.GetStringValue(); } },
-                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"model", n => { Model = n.GetStringValue(); } },
-                {"nics", n => { Nics = n.GetObjectValue<NicEvidence>(NicEvidence.CreateFromDiscriminatorValue); } },
-                {"operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
-                {"owners", n => { Owners = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"protocols", n => { Protocols = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"purdueLayer", n => { PurdueLayer = n.GetStringValue(); } },
-                {"sensor", n => { Sensor = n.GetStringValue(); } },
-                {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
-                {"site", n => { Site = n.GetStringValue(); } },
-                {"source", n => { Source = n.GetStringValue(); } },
-                {"sourceRef", n => { SourceRef = n.GetObjectValue<UrlEvidence>(UrlEvidence.CreateFromDiscriminatorValue); } },
-                {"zone", n => { Zone = n.GetStringValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "devicePageLink", n => { DevicePageLink = n.GetStringValue(); } },
+                { "deviceSubType", n => { DeviceSubType = n.GetStringValue(); } },
+                { "deviceType", n => { DeviceType = n.GetStringValue(); } },
+                { "importance", n => { Importance = n.GetEnumValue<IoTDeviceImportanceType>(); } },
+                { "ioTHub", n => { IoTHub = n.GetObjectValue<AzureResourceEvidence>(AzureResourceEvidence.CreateFromDiscriminatorValue); } },
+                { "ioTSecurityAgentId", n => { IoTSecurityAgentId = n.GetStringValue(); } },
+                { "ipAddress", n => { IpAddress = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
+                { "isAuthorized", n => { IsAuthorized = n.GetBoolValue(); } },
+                { "isProgramming", n => { IsProgramming = n.GetBoolValue(); } },
+                { "isScanner", n => { IsScanner = n.GetBoolValue(); } },
+                { "macAddress", n => { MacAddress = n.GetStringValue(); } },
+                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "nics", n => { Nics = n.GetObjectValue<NicEvidence>(NicEvidence.CreateFromDiscriminatorValue); } },
+                { "operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
+                { "owners", n => { Owners = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "protocols", n => { Protocols = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "purdueLayer", n => { PurdueLayer = n.GetStringValue(); } },
+                { "sensor", n => { Sensor = n.GetStringValue(); } },
+                { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
+                { "site", n => { Site = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetStringValue(); } },
+                { "sourceRef", n => { SourceRef = n.GetObjectValue<UrlEvidence>(UrlEvidence.CreateFromDiscriminatorValue); } },
+                { "zone", n => { Zone = n.GetStringValue(); } },
             };
         }
         /// <summary>

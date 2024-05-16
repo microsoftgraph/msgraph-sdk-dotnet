@@ -5,31 +5,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AttributeDefinition : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AttributeDefinition : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object&apos;s attributes must be designated as the anchor to support synchronization.</summary>
-        public bool? Anchor {
+        public bool? Anchor
+        {
             get { return BackingStore?.Get<bool?>("anchor"); }
             set { BackingStore?.Set("anchor", value); }
         }
         /// <summary>The apiExpressions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<StringKeyStringValuePair>? ApiExpressions {
+        public List<StringKeyStringValuePair>? ApiExpressions
+        {
             get { return BackingStore?.Get<List<StringKeyStringValuePair>?>("apiExpressions"); }
             set { BackingStore?.Set("apiExpressions", value); }
         }
 #nullable restore
 #else
-        public List<StringKeyStringValuePair> ApiExpressions {
+        public List<StringKeyStringValuePair> ApiExpressions
+        {
             get { return BackingStore?.Get<List<StringKeyStringValuePair>>("apiExpressions"); }
             set { BackingStore?.Set("apiExpressions", value); }
         }
@@ -37,63 +42,73 @@ namespace Microsoft.Graph.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.</summary>
-        public bool? CaseExact {
+        public bool? CaseExact
+        {
             get { return BackingStore?.Get<bool?>("caseExact"); }
             set { BackingStore?.Set("caseExact", value); }
         }
         /// <summary>The defaultValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultValue {
+        public string? DefaultValue
+        {
             get { return BackingStore?.Get<string?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #nullable restore
 #else
-        public string DefaultValue {
+        public string DefaultValue
+        {
             get { return BackingStore?.Get<string>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #endif
         /// <summary>&apos;true&apos; to allow null values for attributes.</summary>
-        public bool? FlowNullValues {
+        public bool? FlowNullValues
+        {
             get { return BackingStore?.Get<bool?>("flowNullValues"); }
             set { BackingStore?.Set("flowNullValues", value); }
         }
         /// <summary>Metadata for the given object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttributeDefinitionMetadataEntry>? Metadata {
+        public List<AttributeDefinitionMetadataEntry>? Metadata
+        {
             get { return BackingStore?.Get<List<AttributeDefinitionMetadataEntry>?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public List<AttributeDefinitionMetadataEntry> Metadata {
+        public List<AttributeDefinitionMetadataEntry> Metadata
+        {
             get { return BackingStore?.Get<List<AttributeDefinitionMetadataEntry>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
         /// <summary>true if an attribute can have multiple values. Default is false.</summary>
-        public bool? Multivalued {
+        public bool? Multivalued
+        {
             get { return BackingStore?.Get<bool?>("multivalued"); }
             set { BackingStore?.Set("multivalued", value); }
         }
         /// <summary>The mutability property</summary>
-        public Microsoft.Graph.Models.Mutability? Mutability {
+        public Microsoft.Graph.Models.Mutability? Mutability
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Mutability?>("mutability"); }
             set { BackingStore?.Set("mutability", value); }
         }
         /// <summary>Name of the attribute. Must be unique within the object definition. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -101,13 +116,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -115,24 +132,28 @@ namespace Microsoft.Graph.Models {
         /// <summary>For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ReferencedObject>? ReferencedObjects {
+        public List<ReferencedObject>? ReferencedObjects
+        {
             get { return BackingStore?.Get<List<ReferencedObject>?>("referencedObjects"); }
             set { BackingStore?.Set("referencedObjects", value); }
         }
 #nullable restore
 #else
-        public List<ReferencedObject> ReferencedObjects {
+        public List<ReferencedObject> ReferencedObjects
+        {
             get { return BackingStore?.Get<List<ReferencedObject>>("referencedObjects"); }
             set { BackingStore?.Set("referencedObjects", value); }
         }
 #endif
         /// <summary>true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.</summary>
-        public bool? Required {
+        public bool? Required
+        {
             get { return BackingStore?.Get<bool?>("required"); }
             set { BackingStore?.Set("required", value); }
         }
         /// <summary>The type property</summary>
-        public AttributeType? Type {
+        public AttributeType? Type
+        {
             get { return BackingStore?.Get<AttributeType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -162,19 +183,19 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"anchor", n => { Anchor = n.GetBoolValue(); } },
-                {"apiExpressions", n => { ApiExpressions = n.GetCollectionOfObjectValues<StringKeyStringValuePair>(StringKeyStringValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"caseExact", n => { CaseExact = n.GetBoolValue(); } },
-                {"defaultValue", n => { DefaultValue = n.GetStringValue(); } },
-                {"flowNullValues", n => { FlowNullValues = n.GetBoolValue(); } },
-                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<AttributeDefinitionMetadataEntry>(AttributeDefinitionMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"multivalued", n => { Multivalued = n.GetBoolValue(); } },
-                {"mutability", n => { Mutability = n.GetEnumValue<Mutability>(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"referencedObjects", n => { ReferencedObjects = n.GetCollectionOfObjectValues<ReferencedObject>(ReferencedObject.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"required", n => { Required = n.GetBoolValue(); } },
-                {"type", n => { Type = n.GetEnumValue<AttributeType>(); } },
+                { "anchor", n => { Anchor = n.GetBoolValue(); } },
+                { "apiExpressions", n => { ApiExpressions = n.GetCollectionOfObjectValues<StringKeyStringValuePair>(StringKeyStringValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "caseExact", n => { CaseExact = n.GetBoolValue(); } },
+                { "defaultValue", n => { DefaultValue = n.GetStringValue(); } },
+                { "flowNullValues", n => { FlowNullValues = n.GetBoolValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<AttributeDefinitionMetadataEntry>(AttributeDefinitionMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "multivalued", n => { Multivalued = n.GetBoolValue(); } },
+                { "mutability", n => { Mutability = n.GetEnumValue<Mutability>(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "referencedObjects", n => { ReferencedObjects = n.GetCollectionOfObjectValues<ReferencedObject>(ReferencedObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "required", n => { Required = n.GetBoolValue(); } },
+                { "type", n => { Type = n.GetEnumValue<AttributeType>(); } },
             };
         }
         /// <summary>

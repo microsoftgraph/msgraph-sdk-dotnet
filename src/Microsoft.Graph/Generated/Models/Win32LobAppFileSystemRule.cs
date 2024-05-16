@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// A complex type to store file or folder rule data for a Win32 LOB app.
     /// </summary>
-    public class Win32LobAppFileSystemRule : Win32LobAppRule, IParsable 
+    public class Win32LobAppFileSystemRule : Win32LobAppRule, IParsable
     {
         /// <summary>A value indicating whether to expand environment variables in the 32-bit context on 64-bit systems.</summary>
-        public bool? Check32BitOn64System {
+        public bool? Check32BitOn64System
+        {
             get { return BackingStore?.Get<bool?>("check32BitOn64System"); }
             set { BackingStore?.Set("check32BitOn64System", value); }
         }
         /// <summary>The file or folder comparison value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ComparisonValue {
+        public string? ComparisonValue
+        {
             get { return BackingStore?.Get<string?>("comparisonValue"); }
             set { BackingStore?.Set("comparisonValue", value); }
         }
 #nullable restore
 #else
-        public string ComparisonValue {
+        public string ComparisonValue
+        {
             get { return BackingStore?.Get<string>("comparisonValue"); }
             set { BackingStore?.Set("comparisonValue", value); }
         }
@@ -32,37 +36,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>The file or folder name to look up.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileOrFolderName {
+        public string? FileOrFolderName
+        {
             get { return BackingStore?.Get<string?>("fileOrFolderName"); }
             set { BackingStore?.Set("fileOrFolderName", value); }
         }
 #nullable restore
 #else
-        public string FileOrFolderName {
+        public string FileOrFolderName
+        {
             get { return BackingStore?.Get<string>("fileOrFolderName"); }
             set { BackingStore?.Set("fileOrFolderName", value); }
         }
 #endif
         /// <summary>A list of possible operations for rules used to make determinations about an application based on files or folders. Unless noted, can be used with either detection or requirement rules.</summary>
-        public Win32LobAppFileSystemOperationType? OperationType {
+        public Win32LobAppFileSystemOperationType? OperationType
+        {
             get { return BackingStore?.Get<Win32LobAppFileSystemOperationType?>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
         }
         /// <summary>Contains properties for detection operator.</summary>
-        public Win32LobAppRuleOperator? Operator {
+        public Win32LobAppRuleOperator? Operator
+        {
             get { return BackingStore?.Get<Win32LobAppRuleOperator?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>The file or folder path to look up.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Path {
+        public string? Path
+        {
             get { return BackingStore?.Get<string?>("path"); }
             set { BackingStore?.Set("path", value); }
         }
 #nullable restore
 #else
-        public string Path {
+        public string Path
+        {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
@@ -92,12 +102,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"check32BitOn64System", n => { Check32BitOn64System = n.GetBoolValue(); } },
-                {"comparisonValue", n => { ComparisonValue = n.GetStringValue(); } },
-                {"fileOrFolderName", n => { FileOrFolderName = n.GetStringValue(); } },
-                {"operationType", n => { OperationType = n.GetEnumValue<Win32LobAppFileSystemOperationType>(); } },
-                {"operator", n => { Operator = n.GetEnumValue<Win32LobAppRuleOperator>(); } },
-                {"path", n => { Path = n.GetStringValue(); } },
+                { "check32BitOn64System", n => { Check32BitOn64System = n.GetBoolValue(); } },
+                { "comparisonValue", n => { ComparisonValue = n.GetStringValue(); } },
+                { "fileOrFolderName", n => { FileOrFolderName = n.GetStringValue(); } },
+                { "operationType", n => { OperationType = n.GetEnumValue<Win32LobAppFileSystemOperationType>(); } },
+                { "operator", n => { Operator = n.GetEnumValue<Win32LobAppRuleOperator>(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
             };
         }
         /// <summary>

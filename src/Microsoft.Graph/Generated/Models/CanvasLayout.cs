@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CanvasLayout : Entity, IParsable 
+    public class CanvasLayout : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collection of horizontal sections on the SharePoint page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HorizontalSection>? HorizontalSections {
+        public List<HorizontalSection>? HorizontalSections
+        {
             get { return BackingStore?.Get<List<HorizontalSection>?>("horizontalSections"); }
             set { BackingStore?.Set("horizontalSections", value); }
         }
 #nullable restore
 #else
-        public List<HorizontalSection> HorizontalSections {
+        public List<HorizontalSection> HorizontalSections
+        {
             get { return BackingStore?.Get<List<HorizontalSection>>("horizontalSections"); }
             set { BackingStore?.Set("horizontalSections", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Vertical section on the SharePoint page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.VerticalSection? VerticalSection {
+        public Microsoft.Graph.Models.VerticalSection? VerticalSection
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.VerticalSection?>("verticalSection"); }
             set { BackingStore?.Set("verticalSection", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.VerticalSection VerticalSection {
+        public Microsoft.Graph.Models.VerticalSection VerticalSection
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.VerticalSection>("verticalSection"); }
             set { BackingStore?.Set("verticalSection", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"horizontalSections", n => { HorizontalSections = n.GetCollectionOfObjectValues<HorizontalSection>(HorizontalSection.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"verticalSection", n => { VerticalSection = n.GetObjectValue<Microsoft.Graph.Models.VerticalSection>(Microsoft.Graph.Models.VerticalSection.CreateFromDiscriminatorValue); } },
+                { "horizontalSections", n => { HorizontalSections = n.GetCollectionOfObjectValues<HorizontalSection>(HorizontalSection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "verticalSection", n => { VerticalSection = n.GetObjectValue<Microsoft.Graph.Models.VerticalSection>(Microsoft.Graph.Models.VerticalSection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

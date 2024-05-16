@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AppleManagedIdentityProvider : IdentityProviderBase, IParsable 
+    public class AppleManagedIdentityProvider : IdentityProviderBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The certificate data, which is a long string of text from the certificate. Can be null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificateData {
+        public string? CertificateData
+        {
             get { return BackingStore?.Get<string?>("certificateData"); }
             set { BackingStore?.Set("certificateData", value); }
         }
 #nullable restore
 #else
-        public string CertificateData {
+        public string CertificateData
+        {
             get { return BackingStore?.Get<string>("certificateData"); }
             set { BackingStore?.Set("certificateData", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The Apple developer identifier. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeveloperId {
+        public string? DeveloperId
+        {
             get { return BackingStore?.Get<string?>("developerId"); }
             set { BackingStore?.Set("developerId", value); }
         }
 #nullable restore
 #else
-        public string DeveloperId {
+        public string DeveloperId
+        {
             get { return BackingStore?.Get<string>("developerId"); }
             set { BackingStore?.Set("developerId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The Apple key identifier. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeyId {
+        public string? KeyId
+        {
             get { return BackingStore?.Get<string?>("keyId"); }
             set { BackingStore?.Set("keyId", value); }
         }
 #nullable restore
 #else
-        public string KeyId {
+        public string KeyId
+        {
             get { return BackingStore?.Get<string>("keyId"); }
             set { BackingStore?.Set("keyId", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The Apple service identifier. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceId {
+        public string? ServiceId
+        {
             get { return BackingStore?.Get<string?>("serviceId"); }
             set { BackingStore?.Set("serviceId", value); }
         }
 #nullable restore
 #else
-        public string ServiceId {
+        public string ServiceId
+        {
             get { return BackingStore?.Get<string>("serviceId"); }
             set { BackingStore?.Set("serviceId", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"certificateData", n => { CertificateData = n.GetStringValue(); } },
-                {"developerId", n => { DeveloperId = n.GetStringValue(); } },
-                {"keyId", n => { KeyId = n.GetStringValue(); } },
-                {"serviceId", n => { ServiceId = n.GetStringValue(); } },
+                { "certificateData", n => { CertificateData = n.GetStringValue(); } },
+                { "developerId", n => { DeveloperId = n.GetStringValue(); } },
+                { "keyId", n => { KeyId = n.GetStringValue(); } },
+                { "serviceId", n => { ServiceId = n.GetStringValue(); } },
             };
         }
         /// <summary>

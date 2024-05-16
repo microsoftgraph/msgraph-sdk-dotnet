@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.CallRecords {
+namespace Microsoft.Graph.Models.CallRecords
+{
     #pragma warning disable CS1591
-    public class Media : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Media : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>Device information associated with the callee endpoint of this media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceInfo? CalleeDevice {
+        public DeviceInfo? CalleeDevice
+        {
             get { return BackingStore?.Get<DeviceInfo?>("calleeDevice"); }
             set { BackingStore?.Set("calleeDevice", value); }
         }
 #nullable restore
 #else
-        public DeviceInfo CalleeDevice {
+        public DeviceInfo CalleeDevice
+        {
             get { return BackingStore?.Get<DeviceInfo>("calleeDevice"); }
             set { BackingStore?.Set("calleeDevice", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>Network information associated with the callee endpoint of this media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public NetworkInfo? CalleeNetwork {
+        public NetworkInfo? CalleeNetwork
+        {
             get { return BackingStore?.Get<NetworkInfo?>("calleeNetwork"); }
             set { BackingStore?.Set("calleeNetwork", value); }
         }
 #nullable restore
 #else
-        public NetworkInfo CalleeNetwork {
+        public NetworkInfo CalleeNetwork
+        {
             get { return BackingStore?.Get<NetworkInfo>("calleeNetwork"); }
             set { BackingStore?.Set("calleeNetwork", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>Device information associated with the caller endpoint of this media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceInfo? CallerDevice {
+        public DeviceInfo? CallerDevice
+        {
             get { return BackingStore?.Get<DeviceInfo?>("callerDevice"); }
             set { BackingStore?.Set("callerDevice", value); }
         }
 #nullable restore
 #else
-        public DeviceInfo CallerDevice {
+        public DeviceInfo CallerDevice
+        {
             get { return BackingStore?.Get<DeviceInfo>("callerDevice"); }
             set { BackingStore?.Set("callerDevice", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>Network information associated with the caller endpoint of this media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public NetworkInfo? CallerNetwork {
+        public NetworkInfo? CallerNetwork
+        {
             get { return BackingStore?.Get<NetworkInfo?>("callerNetwork"); }
             set { BackingStore?.Set("callerNetwork", value); }
         }
 #nullable restore
 #else
-        public NetworkInfo CallerNetwork {
+        public NetworkInfo CallerNetwork
+        {
             get { return BackingStore?.Get<NetworkInfo>("callerNetwork"); }
             set { BackingStore?.Set("callerNetwork", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>How the media was identified during media negotiation stage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label {
+        public string? Label
+        {
             get { return BackingStore?.Get<string?>("label"); }
             set { BackingStore?.Set("label", value); }
         }
 #nullable restore
 #else
-        public string Label {
+        public string Label
+        {
             get { return BackingStore?.Get<string>("label"); }
             set { BackingStore?.Set("label", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>Network streams associated with this media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MediaStream>? Streams {
+        public List<MediaStream>? Streams
+        {
             get { return BackingStore?.Get<List<MediaStream>?>("streams"); }
             set { BackingStore?.Set("streams", value); }
         }
 #nullable restore
 #else
-        public List<MediaStream> Streams {
+        public List<MediaStream> Streams
+        {
             get { return BackingStore?.Get<List<MediaStream>>("streams"); }
             set { BackingStore?.Set("streams", value); }
         }
@@ -141,13 +157,13 @@ namespace Microsoft.Graph.Models.CallRecords {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"calleeDevice", n => { CalleeDevice = n.GetObjectValue<DeviceInfo>(DeviceInfo.CreateFromDiscriminatorValue); } },
-                {"calleeNetwork", n => { CalleeNetwork = n.GetObjectValue<NetworkInfo>(NetworkInfo.CreateFromDiscriminatorValue); } },
-                {"callerDevice", n => { CallerDevice = n.GetObjectValue<DeviceInfo>(DeviceInfo.CreateFromDiscriminatorValue); } },
-                {"callerNetwork", n => { CallerNetwork = n.GetObjectValue<NetworkInfo>(NetworkInfo.CreateFromDiscriminatorValue); } },
-                {"label", n => { Label = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"streams", n => { Streams = n.GetCollectionOfObjectValues<MediaStream>(MediaStream.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "calleeDevice", n => { CalleeDevice = n.GetObjectValue<DeviceInfo>(DeviceInfo.CreateFromDiscriminatorValue); } },
+                { "calleeNetwork", n => { CalleeNetwork = n.GetObjectValue<NetworkInfo>(NetworkInfo.CreateFromDiscriminatorValue); } },
+                { "callerDevice", n => { CallerDevice = n.GetObjectValue<DeviceInfo>(DeviceInfo.CreateFromDiscriminatorValue); } },
+                { "callerNetwork", n => { CallerNetwork = n.GetObjectValue<NetworkInfo>(NetworkInfo.CreateFromDiscriminatorValue); } },
+                { "label", n => { Label = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "streams", n => { Streams = n.GetCollectionOfObjectValues<MediaStream>(MediaStream.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

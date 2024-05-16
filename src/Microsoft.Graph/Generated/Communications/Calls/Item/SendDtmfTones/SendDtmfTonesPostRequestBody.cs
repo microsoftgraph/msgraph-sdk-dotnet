@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Communications.Calls.Item.SendDtmfTones {
+namespace Microsoft.Graph.Communications.Calls.Item.SendDtmfTones
+{
     #pragma warning disable CS1591
-    public class SendDtmfTonesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SendDtmfTonesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,32 +23,37 @@ namespace Microsoft.Graph.Communications.Calls.Item.SendDtmfTones {
         /// <summary>The clientContext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientContext {
+        public string? ClientContext
+        {
             get { return BackingStore?.Get<string?>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
 #nullable restore
 #else
-        public string ClientContext {
+        public string ClientContext
+        {
             get { return BackingStore?.Get<string>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
 #endif
         /// <summary>The delayBetweenTonesMs property</summary>
-        public int? DelayBetweenTonesMs {
+        public int? DelayBetweenTonesMs
+        {
             get { return BackingStore?.Get<int?>("delayBetweenTonesMs"); }
             set { BackingStore?.Set("delayBetweenTonesMs", value); }
         }
         /// <summary>The tones property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Tone?>? Tones {
+        public List<Tone?>? Tones
+        {
             get { return BackingStore?.Get<List<Tone?>?>("tones"); }
             set { BackingStore?.Set("tones", value); }
         }
 #nullable restore
 #else
-        public List<Tone?> Tones {
+        public List<Tone?> Tones
+        {
             get { return BackingStore?.Get<List<Tone?>>("tones"); }
             set { BackingStore?.Set("tones", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Communications.Calls.Item.SendDtmfTones {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"clientContext", n => { ClientContext = n.GetStringValue(); } },
-                {"delayBetweenTonesMs", n => { DelayBetweenTonesMs = n.GetIntValue(); } },
-                {"tones", n => { Tones = n.GetCollectionOfEnumValues<Tone>()?.ToList(); } },
+                { "clientContext", n => { ClientContext = n.GetStringValue(); } },
+                { "delayBetweenTonesMs", n => { DelayBetweenTonesMs = n.GetIntValue(); } },
+                { "tones", n => { Tones = n.GetCollectionOfEnumValues<Tone>()?.ToList(); } },
             };
         }
         /// <summary>

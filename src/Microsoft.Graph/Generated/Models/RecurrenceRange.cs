@@ -6,38 +6,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class RecurrenceRange : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RecurrenceRange : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.</summary>
-        public Date? EndDate {
+        public Date? EndDate
+        {
             get { return BackingStore?.Get<Date?>("endDate"); }
             set { BackingStore?.Set("endDate", value); }
         }
         /// <summary>The number of times to repeat the event. Required and must be positive if type is numbered.</summary>
-        public int? NumberOfOccurrences {
+        public int? NumberOfOccurrences
+        {
             get { return BackingStore?.Get<int?>("numberOfOccurrences"); }
             set { BackingStore?.Set("numberOfOccurrences", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -45,24 +51,28 @@ namespace Microsoft.Graph.Models {
         /// <summary>Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecurrenceTimeZone {
+        public string? RecurrenceTimeZone
+        {
             get { return BackingStore?.Get<string?>("recurrenceTimeZone"); }
             set { BackingStore?.Set("recurrenceTimeZone", value); }
         }
 #nullable restore
 #else
-        public string RecurrenceTimeZone {
+        public string RecurrenceTimeZone
+        {
             get { return BackingStore?.Get<string>("recurrenceTimeZone"); }
             set { BackingStore?.Set("recurrenceTimeZone", value); }
         }
 #endif
         /// <summary>The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.</summary>
-        public Date? StartDate {
+        public Date? StartDate
+        {
             get { return BackingStore?.Get<Date?>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
         /// <summary>The recurrence range. The possible values are: endDate, noEnd, numbered. Required.</summary>
-        public RecurrenceRangeType? Type {
+        public RecurrenceRangeType? Type
+        {
             get { return BackingStore?.Get<RecurrenceRangeType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -92,12 +102,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"endDate", n => { EndDate = n.GetDateValue(); } },
-                {"numberOfOccurrences", n => { NumberOfOccurrences = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"recurrenceTimeZone", n => { RecurrenceTimeZone = n.GetStringValue(); } },
-                {"startDate", n => { StartDate = n.GetDateValue(); } },
-                {"type", n => { Type = n.GetEnumValue<RecurrenceRangeType>(); } },
+                { "endDate", n => { EndDate = n.GetDateValue(); } },
+                { "numberOfOccurrences", n => { NumberOfOccurrences = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "recurrenceTimeZone", n => { RecurrenceTimeZone = n.GetStringValue(); } },
+                { "startDate", n => { StartDate = n.GetDateValue(); } },
+                { "type", n => { Type = n.GetEnumValue<RecurrenceRangeType>(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.ExternalConnectors {
+namespace Microsoft.Graph.Models.ExternalConnectors
+{
     #pragma warning disable CS1591
-    public class UrlMatchInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UrlMatchInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>A list of the URL prefixes that must match URLs to be processed by this URL-to-item-resolver.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BaseUrls {
+        public List<string>? BaseUrls
+        {
             get { return BackingStore?.Get<List<string>?>("baseUrls"); }
             set { BackingStore?.Set("baseUrls", value); }
         }
 #nullable restore
 #else
-        public List<string> BaseUrls {
+        public List<string> BaseUrls
+        {
             get { return BackingStore?.Get<List<string>>("baseUrls"); }
             set { BackingStore?.Set("baseUrls", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>A regular expression that will be matched towards the URL that is processed by this URL-to-item-resolver. The ECMAScript specification for regular expressions (ECMA-262) is used for the evaluation. The named groups defined by the regular expression will be used later to extract values from the URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UrlPattern {
+        public string? UrlPattern
+        {
             get { return BackingStore?.Get<string?>("urlPattern"); }
             set { BackingStore?.Set("urlPattern", value); }
         }
 #nullable restore
 #else
-        public string UrlPattern {
+        public string UrlPattern
+        {
             get { return BackingStore?.Get<string>("urlPattern"); }
             set { BackingStore?.Set("urlPattern", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"baseUrls", n => { BaseUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"urlPattern", n => { UrlPattern = n.GetStringValue(); } },
+                { "baseUrls", n => { BaseUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "urlPattern", n => { UrlPattern = n.GetStringValue(); } },
             };
         }
         /// <summary>

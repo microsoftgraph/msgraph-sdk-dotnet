@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Search {
+namespace Microsoft.Graph.Models.Search
+{
     #pragma warning disable CS1591
-    public class Acronym : SearchAnswer, IParsable 
+    public class Acronym : SearchAnswer, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>What the acronym stands for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StandsFor {
+        public string? StandsFor
+        {
             get { return BackingStore?.Get<string?>("standsFor"); }
             set { BackingStore?.Set("standsFor", value); }
         }
 #nullable restore
 #else
-        public string StandsFor {
+        public string StandsFor
+        {
             get { return BackingStore?.Get<string>("standsFor"); }
             set { BackingStore?.Set("standsFor", value); }
         }
 #endif
         /// <summary>The state property</summary>
-        public AnswerState? State {
+        public AnswerState? State
+        {
             get { return BackingStore?.Get<AnswerState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Models.Search {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"standsFor", n => { StandsFor = n.GetStringValue(); } },
-                {"state", n => { State = n.GetEnumValue<AnswerState>(); } },
+                { "standsFor", n => { StandsFor = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<AnswerState>(); } },
             };
         }
         /// <summary>

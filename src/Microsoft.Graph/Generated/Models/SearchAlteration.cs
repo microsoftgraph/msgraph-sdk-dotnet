@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SearchAlteration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SearchAlteration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is: /ue000, /ue001.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlteredHighlightedQueryString {
+        public string? AlteredHighlightedQueryString
+        {
             get { return BackingStore?.Get<string?>("alteredHighlightedQueryString"); }
             set { BackingStore?.Set("alteredHighlightedQueryString", value); }
         }
 #nullable restore
 #else
-        public string AlteredHighlightedQueryString {
+        public string AlteredHighlightedQueryString
+        {
             get { return BackingStore?.Get<string>("alteredHighlightedQueryString"); }
             set { BackingStore?.Set("alteredHighlightedQueryString", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Defines the altered query string with spelling correction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlteredQueryString {
+        public string? AlteredQueryString
+        {
             get { return BackingStore?.Get<string?>("alteredQueryString"); }
             set { BackingStore?.Set("alteredQueryString", value); }
         }
 #nullable restore
 #else
-        public string AlteredQueryString {
+        public string AlteredQueryString
+        {
             get { return BackingStore?.Get<string>("alteredQueryString"); }
             set { BackingStore?.Set("alteredQueryString", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents changed segments related to an original user query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AlteredQueryToken>? AlteredQueryTokens {
+        public List<AlteredQueryToken>? AlteredQueryTokens
+        {
             get { return BackingStore?.Get<List<AlteredQueryToken>?>("alteredQueryTokens"); }
             set { BackingStore?.Set("alteredQueryTokens", value); }
         }
 #nullable restore
 #else
-        public List<AlteredQueryToken> AlteredQueryTokens {
+        public List<AlteredQueryToken> AlteredQueryTokens
+        {
             get { return BackingStore?.Get<List<AlteredQueryToken>>("alteredQueryTokens"); }
             set { BackingStore?.Set("alteredQueryTokens", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"alteredHighlightedQueryString", n => { AlteredHighlightedQueryString = n.GetStringValue(); } },
-                {"alteredQueryString", n => { AlteredQueryString = n.GetStringValue(); } },
-                {"alteredQueryTokens", n => { AlteredQueryTokens = n.GetCollectionOfObjectValues<AlteredQueryToken>(AlteredQueryToken.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "alteredHighlightedQueryString", n => { AlteredHighlightedQueryString = n.GetStringValue(); } },
+                { "alteredQueryString", n => { AlteredQueryString = n.GetStringValue(); } },
+                { "alteredQueryTokens", n => { AlteredQueryTokens = n.GetCollectionOfObjectValues<AlteredQueryToken>(AlteredQueryToken.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

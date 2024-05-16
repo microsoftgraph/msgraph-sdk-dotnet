@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones {
+namespace Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones
+{
     [Obsolete("This class is obsolete. Use SupportedTimeZonesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class SupportedTimeZonesResponse : SupportedTimeZonesGetResponse, IParsable 
+    public class SupportedTimeZonesResponse : SupportedTimeZonesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

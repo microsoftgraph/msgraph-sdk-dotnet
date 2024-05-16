@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// An abstract base class containing properties for all managed mobile line of business apps.
     /// </summary>
-    public class ManagedMobileLobApp : ManagedApp, IParsable 
+    public class ManagedMobileLobApp : ManagedApp, IParsable
     {
         /// <summary>The internal committed content version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommittedContentVersion {
+        public string? CommittedContentVersion
+        {
             get { return BackingStore?.Get<string?>("committedContentVersion"); }
             set { BackingStore?.Set("committedContentVersion", value); }
         }
 #nullable restore
 #else
-        public string CommittedContentVersion {
+        public string CommittedContentVersion
+        {
             get { return BackingStore?.Get<string>("committedContentVersion"); }
             set { BackingStore?.Set("committedContentVersion", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of content versions for this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppContent>? ContentVersions {
+        public List<MobileAppContent>? ContentVersions
+        {
             get { return BackingStore?.Get<List<MobileAppContent>?>("contentVersions"); }
             set { BackingStore?.Set("contentVersions", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppContent> ContentVersions {
+        public List<MobileAppContent> ContentVersions
+        {
             get { return BackingStore?.Get<List<MobileAppContent>>("contentVersions"); }
             set { BackingStore?.Set("contentVersions", value); }
         }
@@ -41,19 +46,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the main Lob application file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName {
+        public string? FileName
+        {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
 #nullable restore
 #else
-        public string FileName {
+        public string FileName
+        {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
 #endif
         /// <summary>The total size, including all uploaded files.</summary>
-        public long? Size {
+        public long? Size
+        {
             get { return BackingStore?.Get<long?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
@@ -88,10 +96,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"committedContentVersion", n => { CommittedContentVersion = n.GetStringValue(); } },
-                {"contentVersions", n => { ContentVersions = n.GetCollectionOfObjectValues<MobileAppContent>(MobileAppContent.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"fileName", n => { FileName = n.GetStringValue(); } },
-                {"size", n => { Size = n.GetLongValue(); } },
+                { "committedContentVersion", n => { CommittedContentVersion = n.GetStringValue(); } },
+                { "contentVersions", n => { ContentVersions = n.GetCollectionOfObjectValues<MobileAppContent>(MobileAppContent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "fileName", n => { FileName = n.GetStringValue(); } },
+                { "size", n => { Size = n.GetLongValue(); } },
             };
         }
         /// <summary>

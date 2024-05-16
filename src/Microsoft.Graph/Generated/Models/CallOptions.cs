@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CallOptions : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CallOptions : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether to hide the app after the call is escalated.</summary>
-        public bool? HideBotAfterEscalation {
+        public bool? HideBotAfterEscalation
+        {
             get { return BackingStore?.Get<bool?>("hideBotAfterEscalation"); }
             set { BackingStore?.Set("hideBotAfterEscalation", value); }
         }
         /// <summary>Indicates whether content sharing notifications should be enabled for the call.</summary>
-        public bool? IsContentSharingNotificationEnabled {
+        public bool? IsContentSharingNotificationEnabled
+        {
             get { return BackingStore?.Get<bool?>("isContentSharingNotificationEnabled"); }
             set { BackingStore?.Set("isContentSharingNotificationEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -73,9 +79,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"hideBotAfterEscalation", n => { HideBotAfterEscalation = n.GetBoolValue(); } },
-                {"isContentSharingNotificationEnabled", n => { IsContentSharingNotificationEnabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "hideBotAfterEscalation", n => { HideBotAfterEscalation = n.GetBoolValue(); } },
+                { "isContentSharingNotificationEnabled", n => { IsContentSharingNotificationEnabled = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

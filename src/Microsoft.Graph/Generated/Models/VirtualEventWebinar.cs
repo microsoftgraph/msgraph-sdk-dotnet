@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class VirtualEventWebinar : VirtualEvent, IParsable 
+    public class VirtualEventWebinar : VirtualEvent, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>To whom the webinar is visible.</summary>
-        public MeetingAudience? Audience {
+        public MeetingAudience? Audience
+        {
             get { return BackingStore?.Get<MeetingAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
         /// <summary>Identity information of coorganizers of the webinar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CommunicationsUserIdentity>? CoOrganizers {
+        public List<CommunicationsUserIdentity>? CoOrganizers
+        {
             get { return BackingStore?.Get<List<CommunicationsUserIdentity>?>("coOrganizers"); }
             set { BackingStore?.Set("coOrganizers", value); }
         }
 #nullable restore
 #else
-        public List<CommunicationsUserIdentity> CoOrganizers {
+        public List<CommunicationsUserIdentity> CoOrganizers
+        {
             get { return BackingStore?.Get<List<CommunicationsUserIdentity>>("coOrganizers"); }
             set { BackingStore?.Set("coOrganizers", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Registration records of the webinar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventRegistration>? Registrations {
+        public List<VirtualEventRegistration>? Registrations
+        {
             get { return BackingStore?.Get<List<VirtualEventRegistration>?>("registrations"); }
             set { BackingStore?.Set("registrations", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventRegistration> Registrations {
+        public List<VirtualEventRegistration> Registrations
+        {
             get { return BackingStore?.Get<List<VirtualEventRegistration>>("registrations"); }
             set { BackingStore?.Set("registrations", value); }
         }
@@ -60,9 +66,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"audience", n => { Audience = n.GetEnumValue<MeetingAudience>(); } },
-                {"coOrganizers", n => { CoOrganizers = n.GetCollectionOfObjectValues<CommunicationsUserIdentity>(CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"registrations", n => { Registrations = n.GetCollectionOfObjectValues<VirtualEventRegistration>(VirtualEventRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "audience", n => { Audience = n.GetEnumValue<MeetingAudience>(); } },
+                { "coOrganizers", n => { CoOrganizers = n.GetCollectionOfObjectValues<CommunicationsUserIdentity>(CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "registrations", n => { Registrations = n.GetCollectionOfObjectValues<VirtualEventRegistration>(VirtualEventRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

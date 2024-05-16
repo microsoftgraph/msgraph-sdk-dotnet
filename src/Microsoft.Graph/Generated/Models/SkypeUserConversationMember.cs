@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SkypeUserConversationMember : ConversationMember, IParsable 
+    public class SkypeUserConversationMember : ConversationMember, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Skype ID of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SkypeId {
+        public string? SkypeId
+        {
             get { return BackingStore?.Get<string?>("skypeId"); }
             set { BackingStore?.Set("skypeId", value); }
         }
 #nullable restore
 #else
-        public string SkypeId {
+        public string SkypeId
+        {
             get { return BackingStore?.Get<string>("skypeId"); }
             set { BackingStore?.Set("skypeId", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"skypeId", n => { SkypeId = n.GetStringValue(); } },
+                { "skypeId", n => { SkypeId = n.GetStringValue(); } },
             };
         }
         /// <summary>

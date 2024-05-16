@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ObjectMapping : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ObjectMapping : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttributeMapping>? AttributeMappings {
+        public List<AttributeMapping>? AttributeMappings
+        {
             get { return BackingStore?.Get<List<AttributeMapping>?>("attributeMappings"); }
             set { BackingStore?.Set("attributeMappings", value); }
         }
 #nullable restore
 #else
-        public List<AttributeMapping> AttributeMappings {
+        public List<AttributeMapping> AttributeMappings
+        {
             get { return BackingStore?.Get<List<AttributeMapping>>("attributeMappings"); }
             set { BackingStore?.Set("attributeMappings", value); }
         }
@@ -32,25 +36,29 @@ namespace Microsoft.Graph.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.</summary>
-        public bool? Enabled {
+        public bool? Enabled
+        {
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>The flowTypes property</summary>
-        public ObjectFlowTypes? FlowTypes {
+        public ObjectFlowTypes? FlowTypes
+        {
             get { return BackingStore?.Get<ObjectFlowTypes?>("flowTypes"); }
             set { BackingStore?.Set("flowTypes", value); }
         }
         /// <summary>Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ObjectMappingMetadataEntry>? Metadata {
+        public List<ObjectMappingMetadataEntry>? Metadata
+        {
             get { return BackingStore?.Get<List<ObjectMappingMetadataEntry>?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public List<ObjectMappingMetadataEntry> Metadata {
+        public List<ObjectMappingMetadataEntry> Metadata
+        {
             get { return BackingStore?.Get<List<ObjectMappingMetadataEntry>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
@@ -58,13 +66,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Human-friendly name of the object mapping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -72,13 +82,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -86,13 +98,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Filter? Scope {
+        public Filter? Scope
+        {
             get { return BackingStore?.Get<Filter?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
 #nullable restore
 #else
-        public Filter Scope {
+        public Filter Scope
+        {
             get { return BackingStore?.Get<Filter>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
@@ -100,13 +114,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Name of the object in the source directory. Must match the object name from the source directory definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceObjectName {
+        public string? SourceObjectName
+        {
             get { return BackingStore?.Get<string?>("sourceObjectName"); }
             set { BackingStore?.Set("sourceObjectName", value); }
         }
 #nullable restore
 #else
-        public string SourceObjectName {
+        public string SourceObjectName
+        {
             get { return BackingStore?.Get<string>("sourceObjectName"); }
             set { BackingStore?.Set("sourceObjectName", value); }
         }
@@ -114,13 +130,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Name of the object in target directory. Must match the object name from the target directory definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetObjectName {
+        public string? TargetObjectName
+        {
             get { return BackingStore?.Get<string?>("targetObjectName"); }
             set { BackingStore?.Set("targetObjectName", value); }
         }
 #nullable restore
 #else
-        public string TargetObjectName {
+        public string TargetObjectName
+        {
             get { return BackingStore?.Get<string>("targetObjectName"); }
             set { BackingStore?.Set("targetObjectName", value); }
         }
@@ -151,15 +169,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"attributeMappings", n => { AttributeMappings = n.GetCollectionOfObjectValues<AttributeMapping>(AttributeMapping.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"flowTypes", n => { FlowTypes = n.GetEnumValue<ObjectFlowTypes>(); } },
-                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<ObjectMappingMetadataEntry>(ObjectMappingMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"scope", n => { Scope = n.GetObjectValue<Filter>(Filter.CreateFromDiscriminatorValue); } },
-                {"sourceObjectName", n => { SourceObjectName = n.GetStringValue(); } },
-                {"targetObjectName", n => { TargetObjectName = n.GetStringValue(); } },
+                { "attributeMappings", n => { AttributeMappings = n.GetCollectionOfObjectValues<AttributeMapping>(AttributeMapping.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "flowTypes", n => { FlowTypes = n.GetEnumValue<ObjectFlowTypes>(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<ObjectMappingMetadataEntry>(ObjectMappingMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "scope", n => { Scope = n.GetObjectValue<Filter>(Filter.CreateFromDiscriminatorValue); } },
+                { "sourceObjectName", n => { SourceObjectName = n.GetStringValue(); } },
+                { "targetObjectName", n => { TargetObjectName = n.GetStringValue(); } },
             };
         }
         /// <summary>

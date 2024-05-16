@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CloudAppSecurityState : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CloudAppSecurityState : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Destination IP Address of the connection to the cloud application/service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationServiceIp {
+        public string? DestinationServiceIp
+        {
             get { return BackingStore?.Get<string?>("destinationServiceIp"); }
             set { BackingStore?.Set("destinationServiceIp", value); }
         }
 #nullable restore
 #else
-        public string DestinationServiceIp {
+        public string DestinationServiceIp
+        {
             get { return BackingStore?.Get<string>("destinationServiceIp"); }
             set { BackingStore?.Set("destinationServiceIp", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Cloud application/service name (for example &apos;Salesforce&apos;, &apos;DropBox&apos;, etc.).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationServiceName {
+        public string? DestinationServiceName
+        {
             get { return BackingStore?.Get<string?>("destinationServiceName"); }
             set { BackingStore?.Set("destinationServiceName", value); }
         }
 #nullable restore
 #else
-        public string DestinationServiceName {
+        public string DestinationServiceName
+        {
             get { return BackingStore?.Get<string>("destinationServiceName"); }
             set { BackingStore?.Set("destinationServiceName", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RiskScore {
+        public string? RiskScore
+        {
             get { return BackingStore?.Get<string?>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
 #nullable restore
 #else
-        public string RiskScore {
+        public string RiskScore
+        {
             get { return BackingStore?.Get<string>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"destinationServiceIp", n => { DestinationServiceIp = n.GetStringValue(); } },
-                {"destinationServiceName", n => { DestinationServiceName = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"riskScore", n => { RiskScore = n.GetStringValue(); } },
+                { "destinationServiceIp", n => { DestinationServiceIp = n.GetStringValue(); } },
+                { "destinationServiceName", n => { DestinationServiceName = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "riskScore", n => { RiskScore = n.GetStringValue(); } },
             };
         }
         /// <summary>

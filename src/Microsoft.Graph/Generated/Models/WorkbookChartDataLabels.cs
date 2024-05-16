@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookChartDataLabels : Entity, IParsable 
+    public class WorkbookChartDataLabels : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the format of chart data labels, which includes fill and font formatting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartDataLabelFormat? Format {
+        public WorkbookChartDataLabelFormat? Format
+        {
             get { return BackingStore?.Get<WorkbookChartDataLabelFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartDataLabelFormat Format {
+        public WorkbookChartDataLabelFormat Format
+        {
             get { return BackingStore?.Get<WorkbookChartDataLabelFormat>("format"); }
             set { BackingStore?.Set("format", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>DataLabelPosition value that represents the position of the data label. The possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Position {
+        public string? Position
+        {
             get { return BackingStore?.Get<string?>("position"); }
             set { BackingStore?.Set("position", value); }
         }
 #nullable restore
 #else
-        public string Position {
+        public string Position
+        {
             get { return BackingStore?.Get<string>("position"); }
             set { BackingStore?.Set("position", value); }
         }
@@ -40,44 +45,52 @@ namespace Microsoft.Graph.Models {
         /// <summary>String representing the separator used for the data labels on a chart.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Separator {
+        public string? Separator
+        {
             get { return BackingStore?.Get<string?>("separator"); }
             set { BackingStore?.Set("separator", value); }
         }
 #nullable restore
 #else
-        public string Separator {
+        public string Separator
+        {
             get { return BackingStore?.Get<string>("separator"); }
             set { BackingStore?.Set("separator", value); }
         }
 #endif
         /// <summary>Boolean value representing if the data label bubble size is visible or not.</summary>
-        public bool? ShowBubbleSize {
+        public bool? ShowBubbleSize
+        {
             get { return BackingStore?.Get<bool?>("showBubbleSize"); }
             set { BackingStore?.Set("showBubbleSize", value); }
         }
         /// <summary>Boolean value representing if the data label category name is visible or not.</summary>
-        public bool? ShowCategoryName {
+        public bool? ShowCategoryName
+        {
             get { return BackingStore?.Get<bool?>("showCategoryName"); }
             set { BackingStore?.Set("showCategoryName", value); }
         }
         /// <summary>Boolean value representing if the data label legend key is visible or not.</summary>
-        public bool? ShowLegendKey {
+        public bool? ShowLegendKey
+        {
             get { return BackingStore?.Get<bool?>("showLegendKey"); }
             set { BackingStore?.Set("showLegendKey", value); }
         }
         /// <summary>Boolean value representing if the data label percentage is visible or not.</summary>
-        public bool? ShowPercentage {
+        public bool? ShowPercentage
+        {
             get { return BackingStore?.Get<bool?>("showPercentage"); }
             set { BackingStore?.Set("showPercentage", value); }
         }
         /// <summary>Boolean value representing if the data label series name is visible or not.</summary>
-        public bool? ShowSeriesName {
+        public bool? ShowSeriesName
+        {
             get { return BackingStore?.Get<bool?>("showSeriesName"); }
             set { BackingStore?.Set("showSeriesName", value); }
         }
         /// <summary>Boolean value representing if the data label value is visible or not.</summary>
-        public bool? ShowValue {
+        public bool? ShowValue
+        {
             get { return BackingStore?.Get<bool?>("showValue"); }
             set { BackingStore?.Set("showValue", value); }
         }
@@ -99,15 +112,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"format", n => { Format = n.GetObjectValue<WorkbookChartDataLabelFormat>(WorkbookChartDataLabelFormat.CreateFromDiscriminatorValue); } },
-                {"position", n => { Position = n.GetStringValue(); } },
-                {"separator", n => { Separator = n.GetStringValue(); } },
-                {"showBubbleSize", n => { ShowBubbleSize = n.GetBoolValue(); } },
-                {"showCategoryName", n => { ShowCategoryName = n.GetBoolValue(); } },
-                {"showLegendKey", n => { ShowLegendKey = n.GetBoolValue(); } },
-                {"showPercentage", n => { ShowPercentage = n.GetBoolValue(); } },
-                {"showSeriesName", n => { ShowSeriesName = n.GetBoolValue(); } },
-                {"showValue", n => { ShowValue = n.GetBoolValue(); } },
+                { "format", n => { Format = n.GetObjectValue<WorkbookChartDataLabelFormat>(WorkbookChartDataLabelFormat.CreateFromDiscriminatorValue); } },
+                { "position", n => { Position = n.GetStringValue(); } },
+                { "separator", n => { Separator = n.GetStringValue(); } },
+                { "showBubbleSize", n => { ShowBubbleSize = n.GetBoolValue(); } },
+                { "showCategoryName", n => { ShowCategoryName = n.GetBoolValue(); } },
+                { "showLegendKey", n => { ShowLegendKey = n.GetBoolValue(); } },
+                { "showPercentage", n => { ShowPercentage = n.GetBoolValue(); } },
+                { "showSeriesName", n => { ShowSeriesName = n.GetBoolValue(); } },
+                { "showValue", n => { ShowValue = n.GetBoolValue(); } },
             };
         }
         /// <summary>

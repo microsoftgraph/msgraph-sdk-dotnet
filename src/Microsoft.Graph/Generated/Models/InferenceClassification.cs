@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class InferenceClassification : Entity, IParsable 
+    public class InferenceClassification : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<InferenceClassificationOverride>? Overrides {
+        public List<InferenceClassificationOverride>? Overrides
+        {
             get { return BackingStore?.Get<List<InferenceClassificationOverride>?>("overrides"); }
             set { BackingStore?.Set("overrides", value); }
         }
 #nullable restore
 #else
-        public List<InferenceClassificationOverride> Overrides {
+        public List<InferenceClassificationOverride> Overrides
+        {
             get { return BackingStore?.Get<List<InferenceClassificationOverride>>("overrides"); }
             set { BackingStore?.Set("overrides", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"overrides", n => { Overrides = n.GetCollectionOfObjectValues<InferenceClassificationOverride>(InferenceClassificationOverride.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "overrides", n => { Overrides = n.GetCollectionOfObjectValues<InferenceClassificationOverride>(InferenceClassificationOverride.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

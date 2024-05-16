@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetData {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetData
+{
     #pragma warning disable CS1591
-    public class SetDataPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SetDataPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <summary>The seriesBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SeriesBy {
+        public string? SeriesBy
+        {
             get { return BackingStore?.Get<string?>("seriesBy"); }
             set { BackingStore?.Set("seriesBy", value); }
         }
 #nullable restore
 #else
-        public string SeriesBy {
+        public string SeriesBy
+        {
             get { return BackingStore?.Get<string>("seriesBy"); }
             set { BackingStore?.Set("seriesBy", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <summary>The sourceData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? SourceData {
+        public Json? SourceData
+        {
             get { return BackingStore?.Get<Json?>("sourceData"); }
             set { BackingStore?.Set("sourceData", value); }
         }
 #nullable restore
 #else
-        public Json SourceData {
+        public Json SourceData
+        {
             get { return BackingStore?.Get<Json>("sourceData"); }
             set { BackingStore?.Set("sourceData", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"seriesBy", n => { SeriesBy = n.GetStringValue(); } },
-                {"sourceData", n => { SourceData = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "seriesBy", n => { SeriesBy = n.GetStringValue(); } },
+                { "sourceData", n => { SourceData = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

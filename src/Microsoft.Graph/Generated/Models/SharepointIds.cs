@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SharepointIds : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SharepointIds : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier (guid) for the item&apos;s list in SharePoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ListId {
+        public string? ListId
+        {
             get { return BackingStore?.Get<string?>("listId"); }
             set { BackingStore?.Set("listId", value); }
         }
 #nullable restore
 #else
-        public string ListId {
+        public string ListId
+        {
             get { return BackingStore?.Get<string>("listId"); }
             set { BackingStore?.Set("listId", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>An integer identifier for the item within the containing list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ListItemId {
+        public string? ListItemId
+        {
             get { return BackingStore?.Get<string?>("listItemId"); }
             set { BackingStore?.Set("listItemId", value); }
         }
 #nullable restore
 #else
-        public string ListItemId {
+        public string ListItemId
+        {
             get { return BackingStore?.Get<string>("listItemId"); }
             set { BackingStore?.Set("listItemId", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier (guid) for the item within OneDrive for Business or a SharePoint site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ListItemUniqueId {
+        public string? ListItemUniqueId
+        {
             get { return BackingStore?.Get<string?>("listItemUniqueId"); }
             set { BackingStore?.Set("listItemUniqueId", value); }
         }
 #nullable restore
 #else
-        public string ListItemUniqueId {
+        public string ListItemUniqueId
+        {
             get { return BackingStore?.Get<string>("listItemUniqueId"); }
             set { BackingStore?.Set("listItemUniqueId", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier (guid) for the item&apos;s site collection (SPSite).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SiteId {
+        public string? SiteId
+        {
             get { return BackingStore?.Get<string?>("siteId"); }
             set { BackingStore?.Set("siteId", value); }
         }
 #nullable restore
 #else
-        public string SiteId {
+        public string SiteId
+        {
             get { return BackingStore?.Get<string>("siteId"); }
             set { BackingStore?.Set("siteId", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The SharePoint URL for the site that contains the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SiteUrl {
+        public string? SiteUrl
+        {
             get { return BackingStore?.Get<string?>("siteUrl"); }
             set { BackingStore?.Set("siteUrl", value); }
         }
 #nullable restore
 #else
-        public string SiteUrl {
+        public string SiteUrl
+        {
             get { return BackingStore?.Get<string>("siteUrl"); }
             set { BackingStore?.Set("siteUrl", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier (guid) for the tenancy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -118,13 +134,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier (guid) for the item&apos;s site (SPWeb).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebId {
+        public string? WebId
+        {
             get { return BackingStore?.Get<string?>("webId"); }
             set { BackingStore?.Set("webId", value); }
         }
 #nullable restore
 #else
-        public string WebId {
+        public string WebId
+        {
             get { return BackingStore?.Get<string>("webId"); }
             set { BackingStore?.Set("webId", value); }
         }
@@ -155,14 +173,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"listId", n => { ListId = n.GetStringValue(); } },
-                {"listItemId", n => { ListItemId = n.GetStringValue(); } },
-                {"listItemUniqueId", n => { ListItemUniqueId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"siteId", n => { SiteId = n.GetStringValue(); } },
-                {"siteUrl", n => { SiteUrl = n.GetStringValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
-                {"webId", n => { WebId = n.GetStringValue(); } },
+                { "listId", n => { ListId = n.GetStringValue(); } },
+                { "listItemId", n => { ListItemId = n.GetStringValue(); } },
+                { "listItemUniqueId", n => { ListItemUniqueId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "siteId", n => { SiteId = n.GetStringValue(); } },
+                { "siteUrl", n => { SiteUrl = n.GetStringValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "webId", n => { WebId = n.GetStringValue(); } },
             };
         }
         /// <summary>

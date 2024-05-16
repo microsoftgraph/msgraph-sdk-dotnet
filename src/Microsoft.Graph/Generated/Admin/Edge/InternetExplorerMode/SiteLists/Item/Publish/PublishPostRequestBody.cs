@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.Publish {
+namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.Publish
+{
     #pragma warning disable CS1591
-    public class PublishPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PublishPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.Publish
         /// <summary>The revision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Revision {
+        public string? Revision
+        {
             get { return BackingStore?.Get<string?>("revision"); }
             set { BackingStore?.Set("revision", value); }
         }
 #nullable restore
 #else
-        public string Revision {
+        public string Revision
+        {
             get { return BackingStore?.Get<string>("revision"); }
             set { BackingStore?.Set("revision", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.Publish
         /// <summary>The sharedCookies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BrowserSharedCookie>? SharedCookies {
+        public List<BrowserSharedCookie>? SharedCookies
+        {
             get { return BackingStore?.Get<List<BrowserSharedCookie>?>("sharedCookies"); }
             set { BackingStore?.Set("sharedCookies", value); }
         }
 #nullable restore
 #else
-        public List<BrowserSharedCookie> SharedCookies {
+        public List<BrowserSharedCookie> SharedCookies
+        {
             get { return BackingStore?.Get<List<BrowserSharedCookie>>("sharedCookies"); }
             set { BackingStore?.Set("sharedCookies", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.Publish
         /// <summary>The sites property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BrowserSite>? Sites {
+        public List<BrowserSite>? Sites
+        {
             get { return BackingStore?.Get<List<BrowserSite>?>("sites"); }
             set { BackingStore?.Set("sites", value); }
         }
 #nullable restore
 #else
-        public List<BrowserSite> Sites {
+        public List<BrowserSite> Sites
+        {
             get { return BackingStore?.Get<List<BrowserSite>>("sites"); }
             set { BackingStore?.Set("sites", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.Publish
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"revision", n => { Revision = n.GetStringValue(); } },
-                {"sharedCookies", n => { SharedCookies = n.GetCollectionOfObjectValues<BrowserSharedCookie>(BrowserSharedCookie.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"sites", n => { Sites = n.GetCollectionOfObjectValues<BrowserSite>(BrowserSite.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "revision", n => { Revision = n.GetStringValue(); } },
+                { "sharedCookies", n => { SharedCookies = n.GetCollectionOfObjectValues<BrowserSharedCookie>(BrowserSharedCookie.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sites", n => { Sites = n.GetCollectionOfObjectValues<BrowserSite>(BrowserSite.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

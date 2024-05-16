@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The user experience analytics category entity contains the scores and insights for the various metrics of a category.
     /// </summary>
-    public class UserExperienceAnalyticsCategory : Entity, IParsable 
+    public class UserExperienceAnalyticsCategory : Entity, IParsable
     {
         /// <summary>The insights for the category. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserExperienceAnalyticsInsight>? Insights {
+        public List<UserExperienceAnalyticsInsight>? Insights
+        {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsInsight>?>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
 #nullable restore
 #else
-        public List<UserExperienceAnalyticsInsight> Insights {
+        public List<UserExperienceAnalyticsInsight> Insights
+        {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsInsight>>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The metric values for the user experience analytics category. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserExperienceAnalyticsMetric>? MetricValues {
+        public List<UserExperienceAnalyticsMetric>? MetricValues
+        {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsMetric>?>("metricValues"); }
             set { BackingStore?.Set("metricValues", value); }
         }
 #nullable restore
 #else
-        public List<UserExperienceAnalyticsMetric> MetricValues {
+        public List<UserExperienceAnalyticsMetric> MetricValues
+        {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsMetric>>("metricValues"); }
             set { BackingStore?.Set("metricValues", value); }
         }
@@ -56,8 +61,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"insights", n => { Insights = n.GetCollectionOfObjectValues<UserExperienceAnalyticsInsight>(UserExperienceAnalyticsInsight.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"metricValues", n => { MetricValues = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "insights", n => { Insights = n.GetCollectionOfObjectValues<UserExperienceAnalyticsInsight>(UserExperienceAnalyticsInsight.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "metricValues", n => { MetricValues = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

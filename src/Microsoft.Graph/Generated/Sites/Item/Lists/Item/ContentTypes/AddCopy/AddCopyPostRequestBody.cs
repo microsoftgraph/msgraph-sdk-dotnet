@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.AddCopy {
+namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.AddCopy
+{
     #pragma warning disable CS1591
-    public class AddCopyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AddCopyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.AddCopy {
         /// <summary>The contentType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentType {
+        public string? ContentType
+        {
             get { return BackingStore?.Get<string?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
 #nullable restore
 #else
-        public string ContentType {
+        public string ContentType
+        {
             get { return BackingStore?.Get<string>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.AddCopy {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"contentType", n => { ContentType = n.GetStringValue(); } },
+                { "contentType", n => { ContentType = n.GetStringValue(); } },
             };
         }
         /// <summary>

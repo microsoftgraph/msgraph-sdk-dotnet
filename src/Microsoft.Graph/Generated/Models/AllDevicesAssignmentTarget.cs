@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Represents an assignment to all managed devices in the tenant.
     /// </summary>
-    public class AllDevicesAssignmentTarget : DeviceAndAppManagementAssignmentTarget, IParsable 
+    public class AllDevicesAssignmentTarget : DeviceAndAppManagementAssignmentTarget, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="AllDevicesAssignmentTarget"/> and sets the default values.

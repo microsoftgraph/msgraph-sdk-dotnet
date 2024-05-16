@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp {
+namespace Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp
+{
     [Obsolete("This class is obsolete. Use CheckGrantedPermissionsForAppPostResponse instead.")]
     #pragma warning disable CS1591
-    public class CheckGrantedPermissionsForAppResponse : CheckGrantedPermissionsForAppPostResponse, IParsable 
+    public class CheckGrantedPermissionsForAppResponse : CheckGrantedPermissionsForAppPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

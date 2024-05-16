@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TeamsLicensingDetails : Entity, IParsable 
+    public class TeamsLicensingDetails : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether the user has a valid license to use Microsoft Teams.</summary>
-        public bool? HasTeamsLicense {
+        public bool? HasTeamsLicense
+        {
             get { return BackingStore?.Get<bool?>("hasTeamsLicense"); }
             set { BackingStore?.Set("hasTeamsLicense", value); }
         }
@@ -32,7 +34,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"hasTeamsLicense", n => { HasTeamsLicense = n.GetBoolValue(); } },
+                { "hasTeamsLicense", n => { HasTeamsLicense = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.WorkDay {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.WorkDay
+{
     #pragma warning disable CS1591
-    public class WorkDayPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WorkDayPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.WorkDay {
         /// <summary>The days property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Days {
+        public Json? Days
+        {
             get { return BackingStore?.Get<Json?>("days"); }
             set { BackingStore?.Set("days", value); }
         }
 #nullable restore
 #else
-        public Json Days {
+        public Json Days
+        {
             get { return BackingStore?.Get<Json>("days"); }
             set { BackingStore?.Set("days", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.WorkDay {
         /// <summary>The holidays property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Holidays {
+        public Json? Holidays
+        {
             get { return BackingStore?.Get<Json?>("holidays"); }
             set { BackingStore?.Set("holidays", value); }
         }
 #nullable restore
 #else
-        public Json Holidays {
+        public Json Holidays
+        {
             get { return BackingStore?.Get<Json>("holidays"); }
             set { BackingStore?.Set("holidays", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.WorkDay {
         /// <summary>The startDate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? StartDate {
+        public Json? StartDate
+        {
             get { return BackingStore?.Get<Json?>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
 #nullable restore
 #else
-        public Json StartDate {
+        public Json StartDate
+        {
             get { return BackingStore?.Get<Json>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.WorkDay {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"days", n => { Days = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"holidays", n => { Holidays = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"startDate", n => { StartDate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "days", n => { Days = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "holidays", n => { Holidays = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "startDate", n => { StartDate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

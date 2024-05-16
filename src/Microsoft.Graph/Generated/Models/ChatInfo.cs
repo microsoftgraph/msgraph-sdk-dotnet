@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ChatInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ChatInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier of a message in a Microsoft Teams channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageId {
+        public string? MessageId
+        {
             get { return BackingStore?.Get<string?>("messageId"); }
             set { BackingStore?.Set("messageId", value); }
         }
 #nullable restore
 #else
-        public string MessageId {
+        public string MessageId
+        {
             get { return BackingStore?.Get<string>("messageId"); }
             set { BackingStore?.Set("messageId", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The ID of the reply message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReplyChainMessageId {
+        public string? ReplyChainMessageId
+        {
             get { return BackingStore?.Get<string?>("replyChainMessageId"); }
             set { BackingStore?.Set("replyChainMessageId", value); }
         }
 #nullable restore
 #else
-        public string ReplyChainMessageId {
+        public string ReplyChainMessageId
+        {
             get { return BackingStore?.Get<string>("replyChainMessageId"); }
             set { BackingStore?.Set("replyChainMessageId", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier for a thread in Microsoft Teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreadId {
+        public string? ThreadId
+        {
             get { return BackingStore?.Get<string?>("threadId"); }
             set { BackingStore?.Set("threadId", value); }
         }
 #nullable restore
 #else
-        public string ThreadId {
+        public string ThreadId
+        {
             get { return BackingStore?.Get<string>("threadId"); }
             set { BackingStore?.Set("threadId", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"messageId", n => { MessageId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"replyChainMessageId", n => { ReplyChainMessageId = n.GetStringValue(); } },
-                {"threadId", n => { ThreadId = n.GetStringValue(); } },
+                { "messageId", n => { MessageId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "replyChainMessageId", n => { ReplyChainMessageId = n.GetStringValue(); } },
+                { "threadId", n => { ThreadId = n.GetStringValue(); } },
             };
         }
         /// <summary>

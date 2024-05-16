@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class BaseCollectionPaginationCountResponse : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BaseCollectionPaginationCountResponse : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataCount property</summary>
-        public long? OdataCount {
+        public long? OdataCount
+        {
             get { return BackingStore?.Get<long?>("@odata.count"); }
             set { BackingStore?.Set("@odata.count", value); }
         }
         /// <summary>The OdataNextLink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataNextLink {
+        public string? OdataNextLink
+        {
             get { return BackingStore?.Get<string?>("@odata.nextLink"); }
             set { BackingStore?.Set("@odata.nextLink", value); }
         }
 #nullable restore
 #else
-        public string OdataNextLink {
+        public string OdataNextLink
+        {
             get { return BackingStore?.Get<string>("@odata.nextLink"); }
             set { BackingStore?.Set("@odata.nextLink", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.count", n => { OdataCount = n.GetLongValue(); } },
-                {"@odata.nextLink", n => { OdataNextLink = n.GetStringValue(); } },
+                { "@odata.count", n => { OdataCount = n.GetLongValue(); } },
+                { "@odata.nextLink", n => { OdataNextLink = n.GetStringValue(); } },
             };
         }
         /// <summary>

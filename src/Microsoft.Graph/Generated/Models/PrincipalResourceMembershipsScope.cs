@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PrincipalResourceMembershipsScope : AccessReviewScope, IParsable 
+    public class PrincipalResourceMembershipsScope : AccessReviewScope, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Defines the scopes of the principals whose access to resources are reviewed in the access review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewScope>? PrincipalScopes {
+        public List<AccessReviewScope>? PrincipalScopes
+        {
             get { return BackingStore?.Get<List<AccessReviewScope>?>("principalScopes"); }
             set { BackingStore?.Set("principalScopes", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewScope> PrincipalScopes {
+        public List<AccessReviewScope> PrincipalScopes
+        {
             get { return BackingStore?.Get<List<AccessReviewScope>>("principalScopes"); }
             set { BackingStore?.Set("principalScopes", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Defines the scopes of the resources for which access is reviewed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewScope>? ResourceScopes {
+        public List<AccessReviewScope>? ResourceScopes
+        {
             get { return BackingStore?.Get<List<AccessReviewScope>?>("resourceScopes"); }
             set { BackingStore?.Set("resourceScopes", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewScope> ResourceScopes {
+        public List<AccessReviewScope> ResourceScopes
+        {
             get { return BackingStore?.Get<List<AccessReviewScope>>("resourceScopes"); }
             set { BackingStore?.Set("resourceScopes", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"principalScopes", n => { PrincipalScopes = n.GetCollectionOfObjectValues<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"resourceScopes", n => { ResourceScopes = n.GetCollectionOfObjectValues<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "principalScopes", n => { PrincipalScopes = n.GetCollectionOfObjectValues<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resourceScopes", n => { ResourceScopes = n.GetCollectionOfObjectValues<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

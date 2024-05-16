@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ppmt {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ppmt
+{
     #pragma warning disable CS1591
-    public class PpmtPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PpmtPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ppmt {
         /// <summary>The fv property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Fv {
+        public Json? Fv
+        {
             get { return BackingStore?.Get<Json?>("fv"); }
             set { BackingStore?.Set("fv", value); }
         }
 #nullable restore
 #else
-        public Json Fv {
+        public Json Fv
+        {
             get { return BackingStore?.Get<Json>("fv"); }
             set { BackingStore?.Set("fv", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ppmt {
         /// <summary>The nper property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Nper {
+        public Json? Nper
+        {
             get { return BackingStore?.Get<Json?>("nper"); }
             set { BackingStore?.Set("nper", value); }
         }
 #nullable restore
 #else
-        public Json Nper {
+        public Json Nper
+        {
             get { return BackingStore?.Get<Json>("nper"); }
             set { BackingStore?.Set("nper", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ppmt {
         /// <summary>The per property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Per {
+        public Json? Per
+        {
             get { return BackingStore?.Get<Json?>("per"); }
             set { BackingStore?.Set("per", value); }
         }
 #nullable restore
 #else
-        public Json Per {
+        public Json Per
+        {
             get { return BackingStore?.Get<Json>("per"); }
             set { BackingStore?.Set("per", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ppmt {
         /// <summary>The pv property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Pv {
+        public Json? Pv
+        {
             get { return BackingStore?.Get<Json?>("pv"); }
             set { BackingStore?.Set("pv", value); }
         }
 #nullable restore
 #else
-        public Json Pv {
+        public Json Pv
+        {
             get { return BackingStore?.Get<Json>("pv"); }
             set { BackingStore?.Set("pv", value); }
         }
@@ -77,13 +87,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ppmt {
         /// <summary>The rate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Rate {
+        public Json? Rate
+        {
             get { return BackingStore?.Get<Json?>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
 #nullable restore
 #else
-        public Json Rate {
+        public Json Rate
+        {
             get { return BackingStore?.Get<Json>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
@@ -91,13 +103,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ppmt {
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Type {
+        public Json? Type
+        {
             get { return BackingStore?.Get<Json?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #nullable restore
 #else
-        public Json Type {
+        public Json Type
+        {
             get { return BackingStore?.Get<Json>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -128,12 +142,12 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ppmt {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"fv", n => { Fv = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"nper", n => { Nper = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"per", n => { Per = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"pv", n => { Pv = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"rate", n => { Rate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"type", n => { Type = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "fv", n => { Fv = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "nper", n => { Nper = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "per", n => { Per = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "pv", n => { Pv = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "rate", n => { Rate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

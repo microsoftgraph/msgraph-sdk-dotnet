@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Shares.Item.List.Items.Item.GetActivitiesByInterval {
+namespace Microsoft.Graph.Shares.Item.List.Items.Item.GetActivitiesByInterval
+{
     #pragma warning disable CS1591
-    public class GetActivitiesByIntervalGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetActivitiesByIntervalGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ItemActivityStat>? Value {
+        public List<ItemActivityStat>? Value
+        {
             get { return BackingStore?.Get<List<ItemActivityStat>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ItemActivityStat> Value {
+        public List<ItemActivityStat> Value
+        {
             get { return BackingStore?.Get<List<ItemActivityStat>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Shares.Item.List.Items.Item.GetActivitiesByInterval {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ItemActivityStat>(ItemActivityStat.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<ItemActivityStat>(ItemActivityStat.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

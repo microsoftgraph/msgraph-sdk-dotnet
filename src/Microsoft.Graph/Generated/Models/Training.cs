@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Training : Entity, IParsable 
+    public class Training : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Training availability status. Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.</summary>
-        public TrainingAvailabilityStatus? AvailabilityStatus {
+        public TrainingAvailabilityStatus? AvailabilityStatus
+        {
             get { return BackingStore?.Get<TrainingAvailabilityStatus?>("availabilityStatus"); }
             set { BackingStore?.Set("availabilityStatus", value); }
         }
         /// <summary>Identity of the user who created the training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? CreatedBy {
+        public EmailIdentity? CreatedBy
+        {
             get { return BackingStore?.Get<EmailIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity CreatedBy {
+        public EmailIdentity CreatedBy
+        {
             get { return BackingStore?.Get<EmailIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>Date and time when the training was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description for the training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -50,37 +57,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>The display name for the training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Training duration.</summary>
-        public int? DurationInMinutes {
+        public int? DurationInMinutes
+        {
             get { return BackingStore?.Get<int?>("durationInMinutes"); }
             set { BackingStore?.Set("durationInMinutes", value); }
         }
         /// <summary>Indicates whether the training has any evaluation.</summary>
-        public bool? HasEvaluation {
+        public bool? HasEvaluation
+        {
             get { return BackingStore?.Get<bool?>("hasEvaluation"); }
             set { BackingStore?.Set("hasEvaluation", value); }
         }
         /// <summary>Language specific details on a training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TrainingLanguageDetail>? LanguageDetails {
+        public List<TrainingLanguageDetail>? LanguageDetails
+        {
             get { return BackingStore?.Get<List<TrainingLanguageDetail>?>("languageDetails"); }
             set { BackingStore?.Set("languageDetails", value); }
         }
 #nullable restore
 #else
-        public List<TrainingLanguageDetail> LanguageDetails {
+        public List<TrainingLanguageDetail> LanguageDetails
+        {
             get { return BackingStore?.Get<List<TrainingLanguageDetail>>("languageDetails"); }
             set { BackingStore?.Set("languageDetails", value); }
         }
@@ -88,37 +101,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>Identity of the user who last modified the training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? LastModifiedBy {
+        public EmailIdentity? LastModifiedBy
+        {
             get { return BackingStore?.Get<EmailIdentity?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity LastModifiedBy {
+        public EmailIdentity LastModifiedBy
+        {
             get { return BackingStore?.Get<EmailIdentity>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>Date and time when the training was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Training content source. Possible values are: unknown, global, tenant, unknownFutureValue.</summary>
-        public SimulationContentSource? Source {
+        public SimulationContentSource? Source
+        {
             get { return BackingStore?.Get<SimulationContentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
         /// <summary>Supported locales for content for the associated training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SupportedLocales {
+        public List<string>? SupportedLocales
+        {
             get { return BackingStore?.Get<List<string>?>("supportedLocales"); }
             set { BackingStore?.Set("supportedLocales", value); }
         }
 #nullable restore
 #else
-        public List<string> SupportedLocales {
+        public List<string> SupportedLocales
+        {
             get { return BackingStore?.Get<List<string>>("supportedLocales"); }
             set { BackingStore?.Set("supportedLocales", value); }
         }
@@ -126,19 +145,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>Training tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags {
+        public List<string>? Tags
+        {
             get { return BackingStore?.Get<List<string>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
 #nullable restore
 #else
-        public List<string> Tags {
+        public List<string> Tags
+        {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
 #endif
         /// <summary>The type of training. Possible values are: unknown, phishing, unknownFutureValue.</summary>
-        public TrainingType? Type {
+        public TrainingType? Type
+        {
             get { return BackingStore?.Get<TrainingType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -160,20 +182,20 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"availabilityStatus", n => { AvailabilityStatus = n.GetEnumValue<TrainingAvailabilityStatus>(); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"durationInMinutes", n => { DurationInMinutes = n.GetIntValue(); } },
-                {"hasEvaluation", n => { HasEvaluation = n.GetBoolValue(); } },
-                {"languageDetails", n => { LanguageDetails = n.GetCollectionOfObjectValues<TrainingLanguageDetail>(TrainingLanguageDetail.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"source", n => { Source = n.GetEnumValue<SimulationContentSource>(); } },
-                {"supportedLocales", n => { SupportedLocales = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"type", n => { Type = n.GetEnumValue<TrainingType>(); } },
+                { "availabilityStatus", n => { AvailabilityStatus = n.GetEnumValue<TrainingAvailabilityStatus>(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "durationInMinutes", n => { DurationInMinutes = n.GetIntValue(); } },
+                { "hasEvaluation", n => { HasEvaluation = n.GetBoolValue(); } },
+                { "languageDetails", n => { LanguageDetails = n.GetCollectionOfObjectValues<TrainingLanguageDetail>(TrainingLanguageDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "source", n => { Source = n.GetEnumValue<SimulationContentSource>(); } },
+                { "supportedLocales", n => { SupportedLocales = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "type", n => { Type = n.GetEnumValue<TrainingType>(); } },
             };
         }
         /// <summary>

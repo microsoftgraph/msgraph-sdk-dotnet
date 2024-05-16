@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.List.Items.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval {
+namespace Microsoft.Graph.Drives.Item.List.Items.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval
+{
     [Obsolete("This class is obsolete. Use GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse : GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetResponse, IParsable 
+    public class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse : GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

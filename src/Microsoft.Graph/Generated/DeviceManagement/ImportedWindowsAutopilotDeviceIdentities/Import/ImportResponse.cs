@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import {
+namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import
+{
     [Obsolete("This class is obsolete. Use ImportPostResponse instead.")]
     #pragma warning disable CS1591
-    public class ImportResponse : ImportPostResponse, IParsable 
+    public class ImportResponse : ImportPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

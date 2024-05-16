@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class BlobEvidence : AlertEvidence, IParsable 
+    public class BlobEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The container which the blob belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BlobContainerEvidence? BlobContainer {
+        public BlobContainerEvidence? BlobContainer
+        {
             get { return BackingStore?.Get<BlobContainerEvidence?>("blobContainer"); }
             set { BackingStore?.Set("blobContainer", value); }
         }
 #nullable restore
 #else
-        public BlobContainerEvidence BlobContainer {
+        public BlobContainerEvidence BlobContainer
+        {
             get { return BackingStore?.Get<BlobContainerEvidence>("blobContainer"); }
             set { BackingStore?.Set("blobContainer", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The Etag associated with this blob.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Etag {
+        public string? Etag
+        {
             get { return BackingStore?.Get<string?>("etag"); }
             set { BackingStore?.Set("etag", value); }
         }
 #nullable restore
 #else
-        public string Etag {
+        public string Etag
+        {
             get { return BackingStore?.Get<string>("etag"); }
             set { BackingStore?.Set("etag", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The file hashes associated with this blob.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FileHash>? FileHashes {
+        public List<FileHash>? FileHashes
+        {
             get { return BackingStore?.Get<List<FileHash>?>("fileHashes"); }
             set { BackingStore?.Set("fileHashes", value); }
         }
 #nullable restore
 #else
-        public List<FileHash> FileHashes {
+        public List<FileHash> FileHashes
+        {
             get { return BackingStore?.Get<List<FileHash>>("fileHashes"); }
             set { BackingStore?.Set("fileHashes", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The name of the blob.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The full URL representation of the blob.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url {
+        public string? Url
+        {
             get { return BackingStore?.Get<string?>("url"); }
             set { BackingStore?.Set("url", value); }
         }
 #nullable restore
 #else
-        public string Url {
+        public string Url
+        {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"blobContainer", n => { BlobContainer = n.GetObjectValue<BlobContainerEvidence>(BlobContainerEvidence.CreateFromDiscriminatorValue); } },
-                {"etag", n => { Etag = n.GetStringValue(); } },
-                {"fileHashes", n => { FileHashes = n.GetCollectionOfObjectValues<FileHash>(FileHash.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "blobContainer", n => { BlobContainer = n.GetObjectValue<BlobContainerEvidence>(BlobContainerEvidence.CreateFromDiscriminatorValue); } },
+                { "etag", n => { Etag = n.GetStringValue(); } },
+                { "fileHashes", n => { FileHashes = n.GetCollectionOfObjectValues<FileHash>(FileHash.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

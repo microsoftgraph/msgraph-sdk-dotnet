@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Partners.Billing {
+namespace Microsoft.Graph.Models.Partners.Billing
+{
     #pragma warning disable CS1591
-    public class ExportSuccessOperation : Operation, IParsable 
+    public class ExportSuccessOperation : Operation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The resourceLocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Manifest? ResourceLocation {
+        public Manifest? ResourceLocation
+        {
             get { return BackingStore?.Get<Manifest?>("resourceLocation"); }
             set { BackingStore?.Set("resourceLocation", value); }
         }
 #nullable restore
 #else
-        public Manifest ResourceLocation {
+        public Manifest ResourceLocation
+        {
             get { return BackingStore?.Get<Manifest>("resourceLocation"); }
             set { BackingStore?.Set("resourceLocation", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models.Partners.Billing {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"resourceLocation", n => { ResourceLocation = n.GetObjectValue<Manifest>(Manifest.CreateFromDiscriminatorValue); } },
+                { "resourceLocation", n => { ResourceLocation = n.GetObjectValue<Manifest>(Manifest.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

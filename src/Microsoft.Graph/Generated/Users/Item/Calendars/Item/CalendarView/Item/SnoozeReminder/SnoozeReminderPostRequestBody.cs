@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.SnoozeReminder {
+namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.SnoozeReminder
+{
     #pragma warning disable CS1591
-    public class SnoozeReminderPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SnoozeReminderPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.SnoozeRemi
         /// <summary>The NewReminderTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? NewReminderTime {
+        public DateTimeTimeZone? NewReminderTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("NewReminderTime"); }
             set { BackingStore?.Set("NewReminderTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone NewReminderTime {
+        public DateTimeTimeZone NewReminderTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("NewReminderTime"); }
             set { BackingStore?.Set("NewReminderTime", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.SnoozeRemi
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"NewReminderTime", n => { NewReminderTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "NewReminderTime", n => { NewReminderTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

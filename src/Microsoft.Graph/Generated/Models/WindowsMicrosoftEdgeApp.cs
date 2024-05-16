@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties and inherited properties for the Microsoft Edge app on Windows.
     /// </summary>
-    public class WindowsMicrosoftEdgeApp : MobileApp, IParsable 
+    public class WindowsMicrosoftEdgeApp : MobileApp, IParsable
     {
         /// <summary>The enum to specify the channels for Microsoft Edge apps.</summary>
-        public MicrosoftEdgeChannel? Channel {
+        public MicrosoftEdgeChannel? Channel
+        {
             get { return BackingStore?.Get<MicrosoftEdgeChannel?>("channel"); }
             set { BackingStore?.Set("channel", value); }
         }
         /// <summary>The language locale to use when the Edge app displays text to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayLanguageLocale {
+        public string? DisplayLanguageLocale
+        {
             get { return BackingStore?.Get<string?>("displayLanguageLocale"); }
             set { BackingStore?.Set("displayLanguageLocale", value); }
         }
 #nullable restore
 #else
-        public string DisplayLanguageLocale {
+        public string DisplayLanguageLocale
+        {
             get { return BackingStore?.Get<string>("displayLanguageLocale"); }
             set { BackingStore?.Set("displayLanguageLocale", value); }
         }
@@ -54,8 +58,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"channel", n => { Channel = n.GetEnumValue<MicrosoftEdgeChannel>(); } },
-                {"displayLanguageLocale", n => { DisplayLanguageLocale = n.GetStringValue(); } },
+                { "channel", n => { Channel = n.GetEnumValue<MicrosoftEdgeChannel>(); } },
+                { "displayLanguageLocale", n => { DisplayLanguageLocale = n.GetStringValue(); } },
             };
         }
         /// <summary>

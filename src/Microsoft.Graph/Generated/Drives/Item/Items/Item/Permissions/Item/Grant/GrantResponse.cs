@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.Grant {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.Grant
+{
     [Obsolete("This class is obsolete. Use GrantPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GrantResponse : GrantPostResponse, IParsable 
+    public class GrantResponse : GrantPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

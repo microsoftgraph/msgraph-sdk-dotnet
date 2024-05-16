@@ -6,58 +6,68 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class RetentionLabelSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RetentionLabelSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Describes the item behavior during retention period. Possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue. Read-only.</summary>
-        public Microsoft.Graph.Models.Security.BehaviorDuringRetentionPeriod? BehaviorDuringRetentionPeriod {
+        public Microsoft.Graph.Models.Security.BehaviorDuringRetentionPeriod? BehaviorDuringRetentionPeriod
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.BehaviorDuringRetentionPeriod?>("behaviorDuringRetentionPeriod"); }
             set { BackingStore?.Set("behaviorDuringRetentionPeriod", value); }
         }
         /// <summary>Specifies whether updates to document content are allowed. Read-only.</summary>
-        public bool? IsContentUpdateAllowed {
+        public bool? IsContentUpdateAllowed
+        {
             get { return BackingStore?.Get<bool?>("isContentUpdateAllowed"); }
             set { BackingStore?.Set("isContentUpdateAllowed", value); }
         }
         /// <summary>Specifies whether the document deletion is allowed. Read-only.</summary>
-        public bool? IsDeleteAllowed {
+        public bool? IsDeleteAllowed
+        {
             get { return BackingStore?.Get<bool?>("isDeleteAllowed"); }
             set { BackingStore?.Set("isDeleteAllowed", value); }
         }
         /// <summary>Specifies whether you&apos;re allowed to change the retention label on the document. Read-only.</summary>
-        public bool? IsLabelUpdateAllowed {
+        public bool? IsLabelUpdateAllowed
+        {
             get { return BackingStore?.Get<bool?>("isLabelUpdateAllowed"); }
             set { BackingStore?.Set("isLabelUpdateAllowed", value); }
         }
         /// <summary>Specifies whether updates to the item metadata (for example, the Title field) are blocked. Read-only.</summary>
-        public bool? IsMetadataUpdateAllowed {
+        public bool? IsMetadataUpdateAllowed
+        {
             get { return BackingStore?.Get<bool?>("isMetadataUpdateAllowed"); }
             set { BackingStore?.Set("isMetadataUpdateAllowed", value); }
         }
         /// <summary>Specifies whether the item is locked. Read-write.</summary>
-        public bool? IsRecordLocked {
+        public bool? IsRecordLocked
+        {
             get { return BackingStore?.Get<bool?>("isRecordLocked"); }
             set { BackingStore?.Set("isRecordLocked", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -88,13 +98,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"behaviorDuringRetentionPeriod", n => { BehaviorDuringRetentionPeriod = n.GetEnumValue<BehaviorDuringRetentionPeriod>(); } },
-                {"isContentUpdateAllowed", n => { IsContentUpdateAllowed = n.GetBoolValue(); } },
-                {"isDeleteAllowed", n => { IsDeleteAllowed = n.GetBoolValue(); } },
-                {"isLabelUpdateAllowed", n => { IsLabelUpdateAllowed = n.GetBoolValue(); } },
-                {"isMetadataUpdateAllowed", n => { IsMetadataUpdateAllowed = n.GetBoolValue(); } },
-                {"isRecordLocked", n => { IsRecordLocked = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "behaviorDuringRetentionPeriod", n => { BehaviorDuringRetentionPeriod = n.GetEnumValue<BehaviorDuringRetentionPeriod>(); } },
+                { "isContentUpdateAllowed", n => { IsContentUpdateAllowed = n.GetBoolValue(); } },
+                { "isDeleteAllowed", n => { IsDeleteAllowed = n.GetBoolValue(); } },
+                { "isLabelUpdateAllowed", n => { IsLabelUpdateAllowed = n.GetBoolValue(); } },
+                { "isMetadataUpdateAllowed", n => { IsMetadataUpdateAllowed = n.GetBoolValue(); } },
+                { "isRecordLocked", n => { IsRecordLocked = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

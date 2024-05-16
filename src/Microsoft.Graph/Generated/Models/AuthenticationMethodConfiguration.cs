@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AuthenticationMethodConfiguration : Entity, IParsable 
+    public class AuthenticationMethodConfiguration : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Groups of users that are excluded from a policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExcludeTarget>? ExcludeTargets {
+        public List<ExcludeTarget>? ExcludeTargets
+        {
             get { return BackingStore?.Get<List<ExcludeTarget>?>("excludeTargets"); }
             set { BackingStore?.Set("excludeTargets", value); }
         }
 #nullable restore
 #else
-        public List<ExcludeTarget> ExcludeTargets {
+        public List<ExcludeTarget> ExcludeTargets
+        {
             get { return BackingStore?.Get<List<ExcludeTarget>>("excludeTargets"); }
             set { BackingStore?.Set("excludeTargets", value); }
         }
 #endif
         /// <summary>The state of the policy. Possible values are: enabled, disabled.</summary>
-        public AuthenticationMethodState? State {
+        public AuthenticationMethodState? State
+        {
             get { return BackingStore?.Get<AuthenticationMethodState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -58,8 +62,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"excludeTargets", n => { ExcludeTargets = n.GetCollectionOfObjectValues<ExcludeTarget>(ExcludeTarget.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"state", n => { State = n.GetEnumValue<AuthenticationMethodState>(); } },
+                { "excludeTargets", n => { ExcludeTargets = n.GetCollectionOfObjectValues<ExcludeTarget>(ExcludeTarget.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "state", n => { State = n.GetEnumValue<AuthenticationMethodState>(); } },
             };
         }
         /// <summary>

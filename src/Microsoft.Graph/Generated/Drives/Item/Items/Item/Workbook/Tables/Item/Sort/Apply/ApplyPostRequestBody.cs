@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Sort.Apply {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Sort.Apply
+{
     #pragma warning disable CS1591
-    public class ApplyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ApplyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,32 +23,37 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Sort.Apply
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookSortField>? Fields {
+        public List<WorkbookSortField>? Fields
+        {
             get { return BackingStore?.Get<List<WorkbookSortField>?>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookSortField> Fields {
+        public List<WorkbookSortField> Fields
+        {
             get { return BackingStore?.Get<List<WorkbookSortField>>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
 #endif
         /// <summary>The matchCase property</summary>
-        public bool? MatchCase {
+        public bool? MatchCase
+        {
             get { return BackingStore?.Get<bool?>("matchCase"); }
             set { BackingStore?.Set("matchCase", value); }
         }
         /// <summary>The method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Method {
+        public string? Method
+        {
             get { return BackingStore?.Get<string?>("method"); }
             set { BackingStore?.Set("method", value); }
         }
 #nullable restore
 #else
-        public string Method {
+        public string Method
+        {
             get { return BackingStore?.Get<string>("method"); }
             set { BackingStore?.Set("method", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Sort.Apply
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"fields", n => { Fields = n.GetCollectionOfObjectValues<WorkbookSortField>(WorkbookSortField.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"matchCase", n => { MatchCase = n.GetBoolValue(); } },
-                {"method", n => { Method = n.GetStringValue(); } },
+                { "fields", n => { Fields = n.GetCollectionOfObjectValues<WorkbookSortField>(WorkbookSortField.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "matchCase", n => { MatchCase = n.GetBoolValue(); } },
+                { "method", n => { Method = n.GetStringValue(); } },
             };
         }
         /// <summary>

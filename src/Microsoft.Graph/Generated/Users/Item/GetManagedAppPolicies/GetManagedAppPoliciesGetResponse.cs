@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.GetManagedAppPolicies {
+namespace Microsoft.Graph.Users.Item.GetManagedAppPolicies
+{
     #pragma warning disable CS1591
-    public class GetManagedAppPoliciesGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetManagedAppPoliciesGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppPolicy>? Value {
+        public List<ManagedAppPolicy>? Value
+        {
             get { return BackingStore?.Get<List<ManagedAppPolicy>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppPolicy> Value {
+        public List<ManagedAppPolicy> Value
+        {
             get { return BackingStore?.Get<List<ManagedAppPolicy>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Users.Item.GetManagedAppPolicies {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

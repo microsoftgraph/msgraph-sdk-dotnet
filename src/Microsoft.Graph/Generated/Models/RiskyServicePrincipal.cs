@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class RiskyServicePrincipal : Entity, IParsable 
+    public class RiskyServicePrincipal : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The globally unique identifier for the associated application (its appId property), if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The display name for the service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -40,57 +45,67 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents the risk history of Microsoft Entra service principals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RiskyServicePrincipalHistoryItem>? History {
+        public List<RiskyServicePrincipalHistoryItem>? History
+        {
             get { return BackingStore?.Get<List<RiskyServicePrincipalHistoryItem>?>("history"); }
             set { BackingStore?.Set("history", value); }
         }
 #nullable restore
 #else
-        public List<RiskyServicePrincipalHistoryItem> History {
+        public List<RiskyServicePrincipalHistoryItem> History
+        {
             get { return BackingStore?.Get<List<RiskyServicePrincipalHistoryItem>>("history"); }
             set { BackingStore?.Set("history", value); }
         }
 #endif
         /// <summary>true if the service principal account is enabled; otherwise, false.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Indicates whether Microsoft Entra ID is currently processing the service principal&apos;s risky state.</summary>
-        public bool? IsProcessing {
+        public bool? IsProcessing
+        {
             get { return BackingStore?.Get<bool?>("isProcessing"); }
             set { BackingStore?.Set("isProcessing", value); }
         }
         /// <summary>Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden,  unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.</summary>
-        public Microsoft.Graph.Models.RiskDetail? RiskDetail {
+        public Microsoft.Graph.Models.RiskDetail? RiskDetail
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.RiskDetail?>("riskDetail"); }
             set { BackingStore?.Set("riskDetail", value); }
         }
         /// <summary>The date and time that the risk state was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z. Supports $filter (eq).</summary>
-        public DateTimeOffset? RiskLastUpdatedDateTime {
+        public DateTimeOffset? RiskLastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("riskLastUpdatedDateTime"); }
             set { BackingStore?.Set("riskLastUpdatedDateTime", value); }
         }
         /// <summary>Level of the detected risky workload identity. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).</summary>
-        public Microsoft.Graph.Models.RiskLevel? RiskLevel {
+        public Microsoft.Graph.Models.RiskLevel? RiskLevel
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.RiskLevel?>("riskLevel"); }
             set { BackingStore?.Set("riskLevel", value); }
         }
         /// <summary>State of the service principal&apos;s risk. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.</summary>
-        public Microsoft.Graph.Models.RiskState? RiskState {
+        public Microsoft.Graph.Models.RiskState? RiskState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.RiskState?>("riskState"); }
             set { BackingStore?.Set("riskState", value); }
         }
         /// <summary>Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Microsoft Entra ID internally and is inherited from servicePrincipal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServicePrincipalType {
+        public string? ServicePrincipalType
+        {
             get { return BackingStore?.Get<string?>("servicePrincipalType"); }
             set { BackingStore?.Set("servicePrincipalType", value); }
         }
 #nullable restore
 #else
-        public string ServicePrincipalType {
+        public string ServicePrincipalType
+        {
             get { return BackingStore?.Get<string>("servicePrincipalType"); }
             set { BackingStore?.Set("servicePrincipalType", value); }
         }
@@ -118,16 +133,16 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"history", n => { History = n.GetCollectionOfObjectValues<RiskyServicePrincipalHistoryItem>(RiskyServicePrincipalHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"isProcessing", n => { IsProcessing = n.GetBoolValue(); } },
-                {"riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
-                {"riskLastUpdatedDateTime", n => { RiskLastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"riskLevel", n => { RiskLevel = n.GetEnumValue<RiskLevel>(); } },
-                {"riskState", n => { RiskState = n.GetEnumValue<RiskState>(); } },
-                {"servicePrincipalType", n => { ServicePrincipalType = n.GetStringValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "history", n => { History = n.GetCollectionOfObjectValues<RiskyServicePrincipalHistoryItem>(RiskyServicePrincipalHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "isProcessing", n => { IsProcessing = n.GetBoolValue(); } },
+                { "riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
+                { "riskLastUpdatedDateTime", n => { RiskLastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "riskLevel", n => { RiskLevel = n.GetEnumValue<RiskLevel>(); } },
+                { "riskState", n => { RiskState = n.GetEnumValue<RiskState>(); } },
+                { "servicePrincipalType", n => { ServicePrincipalType = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability {
+namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability
+{
     [Obsolete("This class is obsolete. Use GetStaffAvailabilityPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetStaffAvailabilityResponse : GetStaffAvailabilityPostResponse, IParsable 
+    public class GetStaffAvailabilityResponse : GetStaffAvailabilityPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.ProvisionOnDemand {
+namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.ProvisionOnDemand
+{
     #pragma warning disable CS1591
-    public class ProvisionOnDemandPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ProvisionOnDemandPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Provi
         /// <summary>The parameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SynchronizationJobApplicationParameters>? Parameters {
+        public List<SynchronizationJobApplicationParameters>? Parameters
+        {
             get { return BackingStore?.Get<List<SynchronizationJobApplicationParameters>?>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
 #nullable restore
 #else
-        public List<SynchronizationJobApplicationParameters> Parameters {
+        public List<SynchronizationJobApplicationParameters> Parameters
+        {
             get { return BackingStore?.Get<List<SynchronizationJobApplicationParameters>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Provi
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"parameters", n => { Parameters = n.GetCollectionOfObjectValues<SynchronizationJobApplicationParameters>(SynchronizationJobApplicationParameters.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<SynchronizationJobApplicationParameters>(SynchronizationJobApplicationParameters.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

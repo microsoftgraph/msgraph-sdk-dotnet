@@ -4,200 +4,237 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the windows81GeneralConfiguration resource.
     /// </summary>
-    public class Windows81GeneralConfiguration : DeviceConfiguration, IParsable 
+    public class Windows81GeneralConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.</summary>
-        public bool? AccountsBlockAddingNonMicrosoftAccountEmail {
+        public bool? AccountsBlockAddingNonMicrosoftAccountEmail
+        {
             get { return BackingStore?.Get<bool?>("accountsBlockAddingNonMicrosoftAccountEmail"); }
             set { BackingStore?.Set("accountsBlockAddingNonMicrosoftAccountEmail", value); }
         }
         /// <summary>Value indicating whether this policy only applies to Windows 8.1. This property is read-only.</summary>
-        public bool? ApplyOnlyToWindows81 {
+        public bool? ApplyOnlyToWindows81
+        {
             get { return BackingStore?.Get<bool?>("applyOnlyToWindows81"); }
             set { BackingStore?.Set("applyOnlyToWindows81", value); }
         }
         /// <summary>Indicates whether or not to block auto fill.</summary>
-        public bool? BrowserBlockAutofill {
+        public bool? BrowserBlockAutofill
+        {
             get { return BackingStore?.Get<bool?>("browserBlockAutofill"); }
             set { BackingStore?.Set("browserBlockAutofill", value); }
         }
         /// <summary>Indicates whether or not to block automatic detection of Intranet sites.</summary>
-        public bool? BrowserBlockAutomaticDetectionOfIntranetSites {
+        public bool? BrowserBlockAutomaticDetectionOfIntranetSites
+        {
             get { return BackingStore?.Get<bool?>("browserBlockAutomaticDetectionOfIntranetSites"); }
             set { BackingStore?.Set("browserBlockAutomaticDetectionOfIntranetSites", value); }
         }
         /// <summary>Indicates whether or not to block enterprise mode access.</summary>
-        public bool? BrowserBlockEnterpriseModeAccess {
+        public bool? BrowserBlockEnterpriseModeAccess
+        {
             get { return BackingStore?.Get<bool?>("browserBlockEnterpriseModeAccess"); }
             set { BackingStore?.Set("browserBlockEnterpriseModeAccess", value); }
         }
         /// <summary>Indicates whether or not to Block the user from using JavaScript.</summary>
-        public bool? BrowserBlockJavaScript {
+        public bool? BrowserBlockJavaScript
+        {
             get { return BackingStore?.Get<bool?>("browserBlockJavaScript"); }
             set { BackingStore?.Set("browserBlockJavaScript", value); }
         }
         /// <summary>Indicates whether or not to block plug-ins.</summary>
-        public bool? BrowserBlockPlugins {
+        public bool? BrowserBlockPlugins
+        {
             get { return BackingStore?.Get<bool?>("browserBlockPlugins"); }
             set { BackingStore?.Set("browserBlockPlugins", value); }
         }
         /// <summary>Indicates whether or not to block popups.</summary>
-        public bool? BrowserBlockPopups {
+        public bool? BrowserBlockPopups
+        {
             get { return BackingStore?.Get<bool?>("browserBlockPopups"); }
             set { BackingStore?.Set("browserBlockPopups", value); }
         }
         /// <summary>Indicates whether or not to Block the user from sending the do not track header.</summary>
-        public bool? BrowserBlockSendingDoNotTrackHeader {
+        public bool? BrowserBlockSendingDoNotTrackHeader
+        {
             get { return BackingStore?.Get<bool?>("browserBlockSendingDoNotTrackHeader"); }
             set { BackingStore?.Set("browserBlockSendingDoNotTrackHeader", value); }
         }
         /// <summary>Indicates whether or not to block a single word entry on Intranet sites.</summary>
-        public bool? BrowserBlockSingleWordEntryOnIntranetSites {
+        public bool? BrowserBlockSingleWordEntryOnIntranetSites
+        {
             get { return BackingStore?.Get<bool?>("browserBlockSingleWordEntryOnIntranetSites"); }
             set { BackingStore?.Set("browserBlockSingleWordEntryOnIntranetSites", value); }
         }
         /// <summary>The enterprise mode site list location. Could be a local file, local network or http location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BrowserEnterpriseModeSiteListLocation {
+        public string? BrowserEnterpriseModeSiteListLocation
+        {
             get { return BackingStore?.Get<string?>("browserEnterpriseModeSiteListLocation"); }
             set { BackingStore?.Set("browserEnterpriseModeSiteListLocation", value); }
         }
 #nullable restore
 #else
-        public string BrowserEnterpriseModeSiteListLocation {
+        public string BrowserEnterpriseModeSiteListLocation
+        {
             get { return BackingStore?.Get<string>("browserEnterpriseModeSiteListLocation"); }
             set { BackingStore?.Set("browserEnterpriseModeSiteListLocation", value); }
         }
 #endif
         /// <summary>Possible values for internet site security level.</summary>
-        public InternetSiteSecurityLevel? BrowserInternetSecurityLevel {
+        public InternetSiteSecurityLevel? BrowserInternetSecurityLevel
+        {
             get { return BackingStore?.Get<InternetSiteSecurityLevel?>("browserInternetSecurityLevel"); }
             set { BackingStore?.Set("browserInternetSecurityLevel", value); }
         }
         /// <summary>Possible values for site security level.</summary>
-        public SiteSecurityLevel? BrowserIntranetSecurityLevel {
+        public SiteSecurityLevel? BrowserIntranetSecurityLevel
+        {
             get { return BackingStore?.Get<SiteSecurityLevel?>("browserIntranetSecurityLevel"); }
             set { BackingStore?.Set("browserIntranetSecurityLevel", value); }
         }
         /// <summary>The logging report location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BrowserLoggingReportLocation {
+        public string? BrowserLoggingReportLocation
+        {
             get { return BackingStore?.Get<string?>("browserLoggingReportLocation"); }
             set { BackingStore?.Set("browserLoggingReportLocation", value); }
         }
 #nullable restore
 #else
-        public string BrowserLoggingReportLocation {
+        public string BrowserLoggingReportLocation
+        {
             get { return BackingStore?.Get<string>("browserLoggingReportLocation"); }
             set { BackingStore?.Set("browserLoggingReportLocation", value); }
         }
 #endif
         /// <summary>Indicates whether or not to require a firewall.</summary>
-        public bool? BrowserRequireFirewall {
+        public bool? BrowserRequireFirewall
+        {
             get { return BackingStore?.Get<bool?>("browserRequireFirewall"); }
             set { BackingStore?.Set("browserRequireFirewall", value); }
         }
         /// <summary>Indicates whether or not to require fraud warning.</summary>
-        public bool? BrowserRequireFraudWarning {
+        public bool? BrowserRequireFraudWarning
+        {
             get { return BackingStore?.Get<bool?>("browserRequireFraudWarning"); }
             set { BackingStore?.Set("browserRequireFraudWarning", value); }
         }
         /// <summary>Indicates whether or not to require high security for restricted sites.</summary>
-        public bool? BrowserRequireHighSecurityForRestrictedSites {
+        public bool? BrowserRequireHighSecurityForRestrictedSites
+        {
             get { return BackingStore?.Get<bool?>("browserRequireHighSecurityForRestrictedSites"); }
             set { BackingStore?.Set("browserRequireHighSecurityForRestrictedSites", value); }
         }
         /// <summary>Indicates whether or not to require the user to use the smart screen filter.</summary>
-        public bool? BrowserRequireSmartScreen {
+        public bool? BrowserRequireSmartScreen
+        {
             get { return BackingStore?.Get<bool?>("browserRequireSmartScreen"); }
             set { BackingStore?.Set("browserRequireSmartScreen", value); }
         }
         /// <summary>Possible values for site security level.</summary>
-        public SiteSecurityLevel? BrowserTrustedSitesSecurityLevel {
+        public SiteSecurityLevel? BrowserTrustedSitesSecurityLevel
+        {
             get { return BackingStore?.Get<SiteSecurityLevel?>("browserTrustedSitesSecurityLevel"); }
             set { BackingStore?.Set("browserTrustedSitesSecurityLevel", value); }
         }
         /// <summary>Indicates whether or not to block data roaming.</summary>
-        public bool? CellularBlockDataRoaming {
+        public bool? CellularBlockDataRoaming
+        {
             get { return BackingStore?.Get<bool?>("cellularBlockDataRoaming"); }
             set { BackingStore?.Set("cellularBlockDataRoaming", value); }
         }
         /// <summary>Indicates whether or not to block diagnostic data submission.</summary>
-        public bool? DiagnosticsBlockDataSubmission {
+        public bool? DiagnosticsBlockDataSubmission
+        {
             get { return BackingStore?.Get<bool?>("diagnosticsBlockDataSubmission"); }
             set { BackingStore?.Set("diagnosticsBlockDataSubmission", value); }
         }
         /// <summary>Indicates whether or not to Block the user from using a pictures password and pin.</summary>
-        public bool? PasswordBlockPicturePasswordAndPin {
+        public bool? PasswordBlockPicturePasswordAndPin
+        {
             get { return BackingStore?.Get<bool?>("passwordBlockPicturePasswordAndPin"); }
             set { BackingStore?.Set("passwordBlockPicturePasswordAndPin", value); }
         }
         /// <summary>Password expiration in days.</summary>
-        public int? PasswordExpirationDays {
+        public int? PasswordExpirationDays
+        {
             get { return BackingStore?.Get<int?>("passwordExpirationDays"); }
             set { BackingStore?.Set("passwordExpirationDays", value); }
         }
         /// <summary>The number of character sets required in the password.</summary>
-        public int? PasswordMinimumCharacterSetCount {
+        public int? PasswordMinimumCharacterSetCount
+        {
             get { return BackingStore?.Get<int?>("passwordMinimumCharacterSetCount"); }
             set { BackingStore?.Set("passwordMinimumCharacterSetCount", value); }
         }
         /// <summary>The minimum password length.</summary>
-        public int? PasswordMinimumLength {
+        public int? PasswordMinimumLength
+        {
             get { return BackingStore?.Get<int?>("passwordMinimumLength"); }
             set { BackingStore?.Set("passwordMinimumLength", value); }
         }
         /// <summary>The minutes of inactivity before the screen times out.</summary>
-        public int? PasswordMinutesOfInactivityBeforeScreenTimeout {
+        public int? PasswordMinutesOfInactivityBeforeScreenTimeout
+        {
             get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeScreenTimeout"); }
             set { BackingStore?.Set("passwordMinutesOfInactivityBeforeScreenTimeout", value); }
         }
         /// <summary>The number of previous passwords to prevent re-use of. Valid values 0 to 24</summary>
-        public int? PasswordPreviousPasswordBlockCount {
+        public int? PasswordPreviousPasswordBlockCount
+        {
             get { return BackingStore?.Get<int?>("passwordPreviousPasswordBlockCount"); }
             set { BackingStore?.Set("passwordPreviousPasswordBlockCount", value); }
         }
         /// <summary>Possible values of required passwords.</summary>
-        public RequiredPasswordType? PasswordRequiredType {
+        public RequiredPasswordType? PasswordRequiredType
+        {
             get { return BackingStore?.Get<RequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>The number of sign in failures before factory reset.</summary>
-        public int? PasswordSignInFailureCountBeforeFactoryReset {
+        public int? PasswordSignInFailureCountBeforeFactoryReset
+        {
             get { return BackingStore?.Get<int?>("passwordSignInFailureCountBeforeFactoryReset"); }
             set { BackingStore?.Set("passwordSignInFailureCountBeforeFactoryReset", value); }
         }
         /// <summary>Indicates whether or not to require encryption on a mobile device.</summary>
-        public bool? StorageRequireDeviceEncryption {
+        public bool? StorageRequireDeviceEncryption
+        {
             get { return BackingStore?.Get<bool?>("storageRequireDeviceEncryption"); }
             set { BackingStore?.Set("storageRequireDeviceEncryption", value); }
         }
         /// <summary>Indicates whether or not to require automatic updates.</summary>
-        public bool? UpdatesRequireAutomaticUpdates {
+        public bool? UpdatesRequireAutomaticUpdates
+        {
             get { return BackingStore?.Get<bool?>("updatesRequireAutomaticUpdates"); }
             set { BackingStore?.Set("updatesRequireAutomaticUpdates", value); }
         }
         /// <summary>Possible values for Windows user account control settings.</summary>
-        public WindowsUserAccountControlSettings? UserAccountControlSettings {
+        public WindowsUserAccountControlSettings? UserAccountControlSettings
+        {
             get { return BackingStore?.Get<WindowsUserAccountControlSettings?>("userAccountControlSettings"); }
             set { BackingStore?.Set("userAccountControlSettings", value); }
         }
         /// <summary>The work folders url.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkFoldersUrl {
+        public string? WorkFoldersUrl
+        {
             get { return BackingStore?.Get<string?>("workFoldersUrl"); }
             set { BackingStore?.Set("workFoldersUrl", value); }
         }
 #nullable restore
 #else
-        public string WorkFoldersUrl {
+        public string WorkFoldersUrl
+        {
             get { return BackingStore?.Get<string>("workFoldersUrl"); }
             set { BackingStore?.Set("workFoldersUrl", value); }
         }
@@ -227,39 +264,39 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accountsBlockAddingNonMicrosoftAccountEmail", n => { AccountsBlockAddingNonMicrosoftAccountEmail = n.GetBoolValue(); } },
-                {"applyOnlyToWindows81", n => { ApplyOnlyToWindows81 = n.GetBoolValue(); } },
-                {"browserBlockAutofill", n => { BrowserBlockAutofill = n.GetBoolValue(); } },
-                {"browserBlockAutomaticDetectionOfIntranetSites", n => { BrowserBlockAutomaticDetectionOfIntranetSites = n.GetBoolValue(); } },
-                {"browserBlockEnterpriseModeAccess", n => { BrowserBlockEnterpriseModeAccess = n.GetBoolValue(); } },
-                {"browserBlockJavaScript", n => { BrowserBlockJavaScript = n.GetBoolValue(); } },
-                {"browserBlockPlugins", n => { BrowserBlockPlugins = n.GetBoolValue(); } },
-                {"browserBlockPopups", n => { BrowserBlockPopups = n.GetBoolValue(); } },
-                {"browserBlockSendingDoNotTrackHeader", n => { BrowserBlockSendingDoNotTrackHeader = n.GetBoolValue(); } },
-                {"browserBlockSingleWordEntryOnIntranetSites", n => { BrowserBlockSingleWordEntryOnIntranetSites = n.GetBoolValue(); } },
-                {"browserEnterpriseModeSiteListLocation", n => { BrowserEnterpriseModeSiteListLocation = n.GetStringValue(); } },
-                {"browserInternetSecurityLevel", n => { BrowserInternetSecurityLevel = n.GetEnumValue<InternetSiteSecurityLevel>(); } },
-                {"browserIntranetSecurityLevel", n => { BrowserIntranetSecurityLevel = n.GetEnumValue<SiteSecurityLevel>(); } },
-                {"browserLoggingReportLocation", n => { BrowserLoggingReportLocation = n.GetStringValue(); } },
-                {"browserRequireFirewall", n => { BrowserRequireFirewall = n.GetBoolValue(); } },
-                {"browserRequireFraudWarning", n => { BrowserRequireFraudWarning = n.GetBoolValue(); } },
-                {"browserRequireHighSecurityForRestrictedSites", n => { BrowserRequireHighSecurityForRestrictedSites = n.GetBoolValue(); } },
-                {"browserRequireSmartScreen", n => { BrowserRequireSmartScreen = n.GetBoolValue(); } },
-                {"browserTrustedSitesSecurityLevel", n => { BrowserTrustedSitesSecurityLevel = n.GetEnumValue<SiteSecurityLevel>(); } },
-                {"cellularBlockDataRoaming", n => { CellularBlockDataRoaming = n.GetBoolValue(); } },
-                {"diagnosticsBlockDataSubmission", n => { DiagnosticsBlockDataSubmission = n.GetBoolValue(); } },
-                {"passwordBlockPicturePasswordAndPin", n => { PasswordBlockPicturePasswordAndPin = n.GetBoolValue(); } },
-                {"passwordExpirationDays", n => { PasswordExpirationDays = n.GetIntValue(); } },
-                {"passwordMinimumCharacterSetCount", n => { PasswordMinimumCharacterSetCount = n.GetIntValue(); } },
-                {"passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
-                {"passwordMinutesOfInactivityBeforeScreenTimeout", n => { PasswordMinutesOfInactivityBeforeScreenTimeout = n.GetIntValue(); } },
-                {"passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
-                {"passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
-                {"passwordSignInFailureCountBeforeFactoryReset", n => { PasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
-                {"storageRequireDeviceEncryption", n => { StorageRequireDeviceEncryption = n.GetBoolValue(); } },
-                {"updatesRequireAutomaticUpdates", n => { UpdatesRequireAutomaticUpdates = n.GetBoolValue(); } },
-                {"userAccountControlSettings", n => { UserAccountControlSettings = n.GetEnumValue<WindowsUserAccountControlSettings>(); } },
-                {"workFoldersUrl", n => { WorkFoldersUrl = n.GetStringValue(); } },
+                { "accountsBlockAddingNonMicrosoftAccountEmail", n => { AccountsBlockAddingNonMicrosoftAccountEmail = n.GetBoolValue(); } },
+                { "applyOnlyToWindows81", n => { ApplyOnlyToWindows81 = n.GetBoolValue(); } },
+                { "browserBlockAutofill", n => { BrowserBlockAutofill = n.GetBoolValue(); } },
+                { "browserBlockAutomaticDetectionOfIntranetSites", n => { BrowserBlockAutomaticDetectionOfIntranetSites = n.GetBoolValue(); } },
+                { "browserBlockEnterpriseModeAccess", n => { BrowserBlockEnterpriseModeAccess = n.GetBoolValue(); } },
+                { "browserBlockJavaScript", n => { BrowserBlockJavaScript = n.GetBoolValue(); } },
+                { "browserBlockPlugins", n => { BrowserBlockPlugins = n.GetBoolValue(); } },
+                { "browserBlockPopups", n => { BrowserBlockPopups = n.GetBoolValue(); } },
+                { "browserBlockSendingDoNotTrackHeader", n => { BrowserBlockSendingDoNotTrackHeader = n.GetBoolValue(); } },
+                { "browserBlockSingleWordEntryOnIntranetSites", n => { BrowserBlockSingleWordEntryOnIntranetSites = n.GetBoolValue(); } },
+                { "browserEnterpriseModeSiteListLocation", n => { BrowserEnterpriseModeSiteListLocation = n.GetStringValue(); } },
+                { "browserInternetSecurityLevel", n => { BrowserInternetSecurityLevel = n.GetEnumValue<InternetSiteSecurityLevel>(); } },
+                { "browserIntranetSecurityLevel", n => { BrowserIntranetSecurityLevel = n.GetEnumValue<SiteSecurityLevel>(); } },
+                { "browserLoggingReportLocation", n => { BrowserLoggingReportLocation = n.GetStringValue(); } },
+                { "browserRequireFirewall", n => { BrowserRequireFirewall = n.GetBoolValue(); } },
+                { "browserRequireFraudWarning", n => { BrowserRequireFraudWarning = n.GetBoolValue(); } },
+                { "browserRequireHighSecurityForRestrictedSites", n => { BrowserRequireHighSecurityForRestrictedSites = n.GetBoolValue(); } },
+                { "browserRequireSmartScreen", n => { BrowserRequireSmartScreen = n.GetBoolValue(); } },
+                { "browserTrustedSitesSecurityLevel", n => { BrowserTrustedSitesSecurityLevel = n.GetEnumValue<SiteSecurityLevel>(); } },
+                { "cellularBlockDataRoaming", n => { CellularBlockDataRoaming = n.GetBoolValue(); } },
+                { "diagnosticsBlockDataSubmission", n => { DiagnosticsBlockDataSubmission = n.GetBoolValue(); } },
+                { "passwordBlockPicturePasswordAndPin", n => { PasswordBlockPicturePasswordAndPin = n.GetBoolValue(); } },
+                { "passwordExpirationDays", n => { PasswordExpirationDays = n.GetIntValue(); } },
+                { "passwordMinimumCharacterSetCount", n => { PasswordMinimumCharacterSetCount = n.GetIntValue(); } },
+                { "passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
+                { "passwordMinutesOfInactivityBeforeScreenTimeout", n => { PasswordMinutesOfInactivityBeforeScreenTimeout = n.GetIntValue(); } },
+                { "passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
+                { "passwordSignInFailureCountBeforeFactoryReset", n => { PasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
+                { "storageRequireDeviceEncryption", n => { StorageRequireDeviceEncryption = n.GetBoolValue(); } },
+                { "updatesRequireAutomaticUpdates", n => { UpdatesRequireAutomaticUpdates = n.GetBoolValue(); } },
+                { "userAccountControlSettings", n => { UserAccountControlSettings = n.GetEnumValue<WindowsUserAccountControlSettings>(); } },
+                { "workFoldersUrl", n => { WorkFoldersUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

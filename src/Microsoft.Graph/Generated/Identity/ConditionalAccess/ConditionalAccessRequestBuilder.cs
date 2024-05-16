@@ -10,11 +10,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Identity.ConditionalAccess {
+namespace Microsoft.Graph.Identity.ConditionalAccess
+{
     /// <summary>
     /// Builds and executes requests for operations under \identity\conditionalAccess
     /// </summary>
-    public class ConditionalAccessRequestBuilder : BaseRequestBuilder 
+    public class ConditionalAccessRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         public AuthenticationContextClassReferencesRequestBuilder AuthenticationContextClassReferences

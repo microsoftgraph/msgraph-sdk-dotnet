@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.GroupLifecyclePolicies.Item.RemoveGroup {
+namespace Microsoft.Graph.GroupLifecyclePolicies.Item.RemoveGroup
+{
     [Obsolete("This class is obsolete. Use RemoveGroupPostResponse instead.")]
     #pragma warning disable CS1591
-    public class RemoveGroupResponse : RemoveGroupPostResponse, IParsable 
+    public class RemoveGroupResponse : RemoveGroupPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

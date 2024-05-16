@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class EdiscoveryReviewSet : DataSet, IParsable 
+    public class EdiscoveryReviewSet : DataSet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents queries within the review set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryReviewSetQuery>? Queries {
+        public List<EdiscoveryReviewSetQuery>? Queries
+        {
             get { return BackingStore?.Get<List<EdiscoveryReviewSetQuery>?>("queries"); }
             set { BackingStore?.Set("queries", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryReviewSetQuery> Queries {
+        public List<EdiscoveryReviewSetQuery> Queries
+        {
             get { return BackingStore?.Get<List<EdiscoveryReviewSetQuery>>("queries"); }
             set { BackingStore?.Set("queries", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"queries", n => { Queries = n.GetCollectionOfObjectValues<EdiscoveryReviewSetQuery>(EdiscoveryReviewSetQuery.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "queries", n => { Queries = n.GetCollectionOfObjectValues<EdiscoveryReviewSetQuery>(EdiscoveryReviewSetQuery.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

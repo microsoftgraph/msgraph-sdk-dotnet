@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.SharedWithMe {
+namespace Microsoft.Graph.Drives.Item.SharedWithMe
+{
     [Obsolete("This class is obsolete. Use SharedWithMeGetResponse instead.")]
     #pragma warning disable CS1591
-    public class SharedWithMeResponse : SharedWithMeGetResponse, IParsable 
+    public class SharedWithMeResponse : SharedWithMeGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

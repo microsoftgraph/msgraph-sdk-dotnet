@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.CalendarView.Item.Instances.Item.Accept {
+namespace Microsoft.Graph.Users.Item.CalendarView.Item.Instances.Item.Accept
+{
     #pragma warning disable CS1591
-    public class AcceptPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AcceptPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,19 +22,22 @@ namespace Microsoft.Graph.Users.Item.CalendarView.Item.Instances.Item.Accept {
         /// <summary>The Comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment {
+        public string? Comment
+        {
             get { return BackingStore?.Get<string?>("Comment"); }
             set { BackingStore?.Set("Comment", value); }
         }
 #nullable restore
 #else
-        public string Comment {
+        public string Comment
+        {
             get { return BackingStore?.Get<string>("Comment"); }
             set { BackingStore?.Set("Comment", value); }
         }
 #endif
         /// <summary>The SendResponse property</summary>
-        public bool? SendResponse {
+        public bool? SendResponse
+        {
             get { return BackingStore?.Get<bool?>("SendResponse"); }
             set { BackingStore?.Set("SendResponse", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Users.Item.CalendarView.Item.Instances.Item.Accept {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Comment", n => { Comment = n.GetStringValue(); } },
-                {"SendResponse", n => { SendResponse = n.GetBoolValue(); } },
+                { "Comment", n => { Comment = n.GetStringValue(); } },
+                { "SendResponse", n => { SendResponse = n.GetBoolValue(); } },
             };
         }
         /// <summary>

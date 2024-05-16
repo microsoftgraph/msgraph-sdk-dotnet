@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// This class contains compliance settings for Windows 8.1 Mobile.
     /// </summary>
-    public class WindowsPhone81CompliancePolicy : DeviceCompliancePolicy, IParsable 
+    public class WindowsPhone81CompliancePolicy : DeviceCompliancePolicy, IParsable
     {
         /// <summary>Maximum Windows Phone version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsMaximumVersion {
+        public string? OsMaximumVersion
+        {
             get { return BackingStore?.Get<string?>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
 #nullable restore
 #else
-        public string OsMaximumVersion {
+        public string OsMaximumVersion
+        {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
@@ -27,59 +30,70 @@ namespace Microsoft.Graph.Models {
         /// <summary>Minimum Windows Phone version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsMinimumVersion {
+        public string? OsMinimumVersion
+        {
             get { return BackingStore?.Get<string?>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
 #nullable restore
 #else
-        public string OsMinimumVersion {
+        public string OsMinimumVersion
+        {
             get { return BackingStore?.Get<string>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
 #endif
         /// <summary>Whether or not to block syncing the calendar.</summary>
-        public bool? PasswordBlockSimple {
+        public bool? PasswordBlockSimple
+        {
             get { return BackingStore?.Get<bool?>("passwordBlockSimple"); }
             set { BackingStore?.Set("passwordBlockSimple", value); }
         }
         /// <summary>Number of days before the password expires.</summary>
-        public int? PasswordExpirationDays {
+        public int? PasswordExpirationDays
+        {
             get { return BackingStore?.Get<int?>("passwordExpirationDays"); }
             set { BackingStore?.Set("passwordExpirationDays", value); }
         }
         /// <summary>The number of character sets required in the password.</summary>
-        public int? PasswordMinimumCharacterSetCount {
+        public int? PasswordMinimumCharacterSetCount
+        {
             get { return BackingStore?.Get<int?>("passwordMinimumCharacterSetCount"); }
             set { BackingStore?.Set("passwordMinimumCharacterSetCount", value); }
         }
         /// <summary>Minimum length of passwords.</summary>
-        public int? PasswordMinimumLength {
+        public int? PasswordMinimumLength
+        {
             get { return BackingStore?.Get<int?>("passwordMinimumLength"); }
             set { BackingStore?.Set("passwordMinimumLength", value); }
         }
         /// <summary>Minutes of inactivity before a password is required.</summary>
-        public int? PasswordMinutesOfInactivityBeforeLock {
+        public int? PasswordMinutesOfInactivityBeforeLock
+        {
             get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeLock"); }
             set { BackingStore?.Set("passwordMinutesOfInactivityBeforeLock", value); }
         }
         /// <summary>Number of previous passwords to block. Valid values 0 to 24</summary>
-        public int? PasswordPreviousPasswordBlockCount {
+        public int? PasswordPreviousPasswordBlockCount
+        {
             get { return BackingStore?.Get<int?>("passwordPreviousPasswordBlockCount"); }
             set { BackingStore?.Set("passwordPreviousPasswordBlockCount", value); }
         }
         /// <summary>Whether or not to require a password.</summary>
-        public bool? PasswordRequired {
+        public bool? PasswordRequired
+        {
             get { return BackingStore?.Get<bool?>("passwordRequired"); }
             set { BackingStore?.Set("passwordRequired", value); }
         }
         /// <summary>Possible values of required passwords.</summary>
-        public RequiredPasswordType? PasswordRequiredType {
+        public RequiredPasswordType? PasswordRequiredType
+        {
             get { return BackingStore?.Get<RequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Require encryption on windows phone devices.</summary>
-        public bool? StorageRequireEncryption {
+        public bool? StorageRequireEncryption
+        {
             get { return BackingStore?.Get<bool?>("storageRequireEncryption"); }
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
@@ -108,17 +122,17 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
-                {"osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
-                {"passwordBlockSimple", n => { PasswordBlockSimple = n.GetBoolValue(); } },
-                {"passwordExpirationDays", n => { PasswordExpirationDays = n.GetIntValue(); } },
-                {"passwordMinimumCharacterSetCount", n => { PasswordMinimumCharacterSetCount = n.GetIntValue(); } },
-                {"passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
-                {"passwordMinutesOfInactivityBeforeLock", n => { PasswordMinutesOfInactivityBeforeLock = n.GetIntValue(); } },
-                {"passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
-                {"passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
-                {"passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
-                {"storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
+                { "osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
+                { "osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
+                { "passwordBlockSimple", n => { PasswordBlockSimple = n.GetBoolValue(); } },
+                { "passwordExpirationDays", n => { PasswordExpirationDays = n.GetIntValue(); } },
+                { "passwordMinimumCharacterSetCount", n => { PasswordMinimumCharacterSetCount = n.GetIntValue(); } },
+                { "passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
+                { "passwordMinutesOfInactivityBeforeLock", n => { PasswordMinutesOfInactivityBeforeLock = n.GetIntValue(); } },
+                { "passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
+                { "passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
+                { "storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -4,46 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookChartTitle : Entity, IParsable 
+    public class WorkbookChartTitle : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the formatting of a chart title, which includes fill and font formatting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartTitleFormat? Format {
+        public WorkbookChartTitleFormat? Format
+        {
             get { return BackingStore?.Get<WorkbookChartTitleFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartTitleFormat Format {
+        public WorkbookChartTitleFormat Format
+        {
             get { return BackingStore?.Get<WorkbookChartTitleFormat>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #endif
         /// <summary>Boolean value representing if the chart title will overlay the chart or not.</summary>
-        public bool? Overlay {
+        public bool? Overlay
+        {
             get { return BackingStore?.Get<bool?>("overlay"); }
             set { BackingStore?.Set("overlay", value); }
         }
         /// <summary>Represents the title text of a chart.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text {
+        public string? Text
+        {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public string Text {
+        public string Text
+        {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #endif
         /// <summary>A boolean value that represents the visibility of a chart title object.</summary>
-        public bool? Visible {
+        public bool? Visible
+        {
             get { return BackingStore?.Get<bool?>("visible"); }
             set { BackingStore?.Set("visible", value); }
         }
@@ -65,10 +72,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"format", n => { Format = n.GetObjectValue<WorkbookChartTitleFormat>(WorkbookChartTitleFormat.CreateFromDiscriminatorValue); } },
-                {"overlay", n => { Overlay = n.GetBoolValue(); } },
-                {"text", n => { Text = n.GetStringValue(); } },
-                {"visible", n => { Visible = n.GetBoolValue(); } },
+                { "format", n => { Format = n.GetObjectValue<WorkbookChartTitleFormat>(WorkbookChartTitleFormat.CreateFromDiscriminatorValue); } },
+                { "overlay", n => { Overlay = n.GetBoolValue(); } },
+                { "text", n => { Text = n.GetStringValue(); } },
+                { "visible", n => { Visible = n.GetBoolValue(); } },
             };
         }
         /// <summary>

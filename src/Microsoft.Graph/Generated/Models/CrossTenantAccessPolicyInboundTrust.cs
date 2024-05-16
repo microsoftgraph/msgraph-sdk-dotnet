@@ -5,43 +5,50 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CrossTenantAccessPolicyInboundTrust : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CrossTenantAccessPolicyInboundTrust : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies whether compliant devices from external Microsoft Entra organizations are trusted.</summary>
-        public bool? IsCompliantDeviceAccepted {
+        public bool? IsCompliantDeviceAccepted
+        {
             get { return BackingStore?.Get<bool?>("isCompliantDeviceAccepted"); }
             set { BackingStore?.Set("isCompliantDeviceAccepted", value); }
         }
         /// <summary>Specifies whether Microsoft Entra hybrid joined devices from external Microsoft Entra organizations are trusted.</summary>
-        public bool? IsHybridAzureADJoinedDeviceAccepted {
+        public bool? IsHybridAzureADJoinedDeviceAccepted
+        {
             get { return BackingStore?.Get<bool?>("isHybridAzureADJoinedDeviceAccepted"); }
             set { BackingStore?.Set("isHybridAzureADJoinedDeviceAccepted", value); }
         }
         /// <summary>Specifies whether MFA from external Microsoft Entra organizations is trusted.</summary>
-        public bool? IsMfaAccepted {
+        public bool? IsMfaAccepted
+        {
             get { return BackingStore?.Get<bool?>("isMfaAccepted"); }
             set { BackingStore?.Set("isMfaAccepted", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isCompliantDeviceAccepted", n => { IsCompliantDeviceAccepted = n.GetBoolValue(); } },
-                {"isHybridAzureADJoinedDeviceAccepted", n => { IsHybridAzureADJoinedDeviceAccepted = n.GetBoolValue(); } },
-                {"isMfaAccepted", n => { IsMfaAccepted = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "isCompliantDeviceAccepted", n => { IsCompliantDeviceAccepted = n.GetBoolValue(); } },
+                { "isHybridAzureADJoinedDeviceAccepted", n => { IsHybridAzureADJoinedDeviceAccepted = n.GetBoolValue(); } },
+                { "isMfaAccepted", n => { IsMfaAccepted = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

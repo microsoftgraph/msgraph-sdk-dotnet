@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SearchHit : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SearchHit : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the content source that the externalItem is part of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentSource {
+        public string? ContentSource
+        {
             get { return BackingStore?.Get<string?>("contentSource"); }
             set { BackingStore?.Set("contentSource", value); }
         }
 #nullable restore
 #else
-        public string ContentSource {
+        public string ContentSource
+        {
             get { return BackingStore?.Get<string>("contentSource"); }
             set { BackingStore?.Set("contentSource", value); }
         }
@@ -34,51 +38,59 @@ namespace Microsoft.Graph.Models {
         /// <summary>The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HitId {
+        public string? HitId
+        {
             get { return BackingStore?.Get<string?>("hitId"); }
             set { BackingStore?.Set("hitId", value); }
         }
 #nullable restore
 #else
-        public string HitId {
+        public string HitId
+        {
             get { return BackingStore?.Get<string>("hitId"); }
             set { BackingStore?.Set("hitId", value); }
         }
 #endif
         /// <summary>Indicates whether the current result is collapsed when the collapseProperties property in the searchRequest is used.</summary>
-        public bool? IsCollapsed {
+        public bool? IsCollapsed
+        {
             get { return BackingStore?.Get<bool?>("isCollapsed"); }
             set { BackingStore?.Set("isCollapsed", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The rank or the order of the result.</summary>
-        public int? Rank {
+        public int? Rank
+        {
             get { return BackingStore?.Get<int?>("rank"); }
             set { BackingStore?.Set("rank", value); }
         }
         /// <summary>The resource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Entity? Resource {
+        public Entity? Resource
+        {
             get { return BackingStore?.Get<Entity?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public Entity Resource {
+        public Entity Resource
+        {
             get { return BackingStore?.Get<Entity>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
@@ -86,13 +98,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>ID of the result template used to render the search result. This ID must map to a display layout in the resultTemplates dictionary that is also included in the searchResponse.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResultTemplateId {
+        public string? ResultTemplateId
+        {
             get { return BackingStore?.Get<string?>("resultTemplateId"); }
             set { BackingStore?.Set("resultTemplateId", value); }
         }
 #nullable restore
 #else
-        public string ResultTemplateId {
+        public string ResultTemplateId
+        {
             get { return BackingStore?.Get<string>("resultTemplateId"); }
             set { BackingStore?.Set("resultTemplateId", value); }
         }
@@ -100,13 +114,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A summary of the result, if a summary is available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Summary {
+        public string? Summary
+        {
             get { return BackingStore?.Get<string?>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
 #nullable restore
 #else
-        public string Summary {
+        public string Summary
+        {
             get { return BackingStore?.Get<string>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
@@ -137,14 +153,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"contentSource", n => { ContentSource = n.GetStringValue(); } },
-                {"hitId", n => { HitId = n.GetStringValue(); } },
-                {"isCollapsed", n => { IsCollapsed = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"rank", n => { Rank = n.GetIntValue(); } },
-                {"resource", n => { Resource = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
-                {"resultTemplateId", n => { ResultTemplateId = n.GetStringValue(); } },
-                {"summary", n => { Summary = n.GetStringValue(); } },
+                { "contentSource", n => { ContentSource = n.GetStringValue(); } },
+                { "hitId", n => { HitId = n.GetStringValue(); } },
+                { "isCollapsed", n => { IsCollapsed = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "rank", n => { Rank = n.GetIntValue(); } },
+                { "resource", n => { Resource = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
+                { "resultTemplateId", n => { ResultTemplateId = n.GetStringValue(); } },
+                { "summary", n => { Summary = n.GetStringValue(); } },
             };
         }
         /// <summary>

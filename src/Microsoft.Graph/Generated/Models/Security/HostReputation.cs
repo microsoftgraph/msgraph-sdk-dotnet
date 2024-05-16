@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class HostReputation : Microsoft.Graph.Models.Entity, IParsable 
+    public class HostReputation : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The classification property</summary>
-        public HostReputationClassification? Classification {
+        public HostReputationClassification? Classification
+        {
             get { return BackingStore?.Get<HostReputationClassification?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
         /// <summary>A collection of rules that have been used to calculate the classification and score.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostReputationRule>? Rules {
+        public List<HostReputationRule>? Rules
+        {
             get { return BackingStore?.Get<List<HostReputationRule>?>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
 #nullable restore
 #else
-        public List<HostReputationRule> Rules {
+        public List<HostReputationRule> Rules
+        {
             get { return BackingStore?.Get<List<HostReputationRule>>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
 #endif
         /// <summary>The calculated score (0-100) of the requested host. A higher value indicates that this host is more likely to be suspicious or malicious.</summary>
-        public int? Score {
+        public int? Score
+        {
             get { return BackingStore?.Get<int?>("score"); }
             set { BackingStore?.Set("score", value); }
         }
@@ -51,9 +56,9 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"classification", n => { Classification = n.GetEnumValue<HostReputationClassification>(); } },
-                {"rules", n => { Rules = n.GetCollectionOfObjectValues<HostReputationRule>(HostReputationRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"score", n => { Score = n.GetIntValue(); } },
+                { "classification", n => { Classification = n.GetEnumValue<HostReputationClassification>(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<HostReputationRule>(HostReputationRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "score", n => { Score = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UnifiedRoleManagementPolicyRuleTarget : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UnifiedRoleManagementPolicyRuleTarget : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The type of caller that&apos;s the target of the policy rule. Allowed values are: None, Admin, EndUser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Caller {
+        public string? Caller
+        {
             get { return BackingStore?.Get<string?>("caller"); }
             set { BackingStore?.Set("caller", value); }
         }
 #nullable restore
 #else
-        public string Caller {
+        public string Caller
+        {
             get { return BackingStore?.Get<string>("caller"); }
             set { BackingStore?.Set("caller", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of role settings that are enforced and cannot be overridden by child scopes. Use All for all settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EnforcedSettings {
+        public List<string>? EnforcedSettings
+        {
             get { return BackingStore?.Get<List<string>?>("enforcedSettings"); }
             set { BackingStore?.Set("enforcedSettings", value); }
         }
 #nullable restore
 #else
-        public List<string> EnforcedSettings {
+        public List<string> EnforcedSettings
+        {
             get { return BackingStore?.Get<List<string>>("enforcedSettings"); }
             set { BackingStore?.Set("enforcedSettings", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of role settings that can be inherited by child scopes. Use All for all settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? InheritableSettings {
+        public List<string>? InheritableSettings
+        {
             get { return BackingStore?.Get<List<string>?>("inheritableSettings"); }
             set { BackingStore?.Set("inheritableSettings", value); }
         }
 #nullable restore
 #else
-        public List<string> InheritableSettings {
+        public List<string> InheritableSettings
+        {
             get { return BackingStore?.Get<List<string>>("inheritableSettings"); }
             set { BackingStore?.Set("inheritableSettings", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The role assignment type that&apos;s the target of policy rule. Allowed values are: Eligibility, Assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Level {
+        public string? Level
+        {
             get { return BackingStore?.Get<string?>("level"); }
             set { BackingStore?.Set("level", value); }
         }
 #nullable restore
 #else
-        public string Level {
+        public string Level
+        {
             get { return BackingStore?.Get<string>("level"); }
             set { BackingStore?.Set("level", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleManagementPolicyRuleTargetOperations?>? Operations {
+        public List<UnifiedRoleManagementPolicyRuleTargetOperations?>? Operations
+        {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRuleTargetOperations?>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleManagementPolicyRuleTargetOperations?> Operations {
+        public List<UnifiedRoleManagementPolicyRuleTargetOperations?> Operations
+        {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRuleTargetOperations?>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The targetObjects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? TargetObjects {
+        public List<DirectoryObject>? TargetObjects
+        {
             get { return BackingStore?.Get<List<DirectoryObject>?>("targetObjects"); }
             set { BackingStore?.Set("targetObjects", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> TargetObjects {
+        public List<DirectoryObject> TargetObjects
+        {
             get { return BackingStore?.Get<List<DirectoryObject>>("targetObjects"); }
             set { BackingStore?.Set("targetObjects", value); }
         }
@@ -141,13 +157,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"caller", n => { Caller = n.GetStringValue(); } },
-                {"enforcedSettings", n => { EnforcedSettings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"inheritableSettings", n => { InheritableSettings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"level", n => { Level = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"operations", n => { Operations = n.GetCollectionOfEnumValues<UnifiedRoleManagementPolicyRuleTargetOperations>()?.ToList(); } },
-                {"targetObjects", n => { TargetObjects = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "caller", n => { Caller = n.GetStringValue(); } },
+                { "enforcedSettings", n => { EnforcedSettings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "inheritableSettings", n => { InheritableSettings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "level", n => { Level = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "operations", n => { Operations = n.GetCollectionOfEnumValues<UnifiedRoleManagementPolicyRuleTargetOperations>()?.ToList(); } },
+                { "targetObjects", n => { TargetObjects = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

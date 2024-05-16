@@ -5,43 +5,50 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SynchronizationStatus : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SynchronizationStatus : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The code property</summary>
-        public SynchronizationStatusCode? Code {
+        public SynchronizationStatusCode? Code
+        {
             get { return BackingStore?.Get<SynchronizationStatusCode?>("code"); }
             set { BackingStore?.Set("code", value); }
         }
         /// <summary>Number of consecutive times this job failed.</summary>
-        public long? CountSuccessiveCompleteFailures {
+        public long? CountSuccessiveCompleteFailures
+        {
             get { return BackingStore?.Get<long?>("countSuccessiveCompleteFailures"); }
             set { BackingStore?.Set("countSuccessiveCompleteFailures", value); }
         }
         /// <summary>true if the job&apos;s escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job&apos;s errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.</summary>
-        public bool? EscrowsPruned {
+        public bool? EscrowsPruned
+        {
             get { return BackingStore?.Get<bool?>("escrowsPruned"); }
             set { BackingStore?.Set("escrowsPruned", value); }
         }
         /// <summary>Details of the last execution of the job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationTaskExecution? LastExecution {
+        public SynchronizationTaskExecution? LastExecution
+        {
             get { return BackingStore?.Get<SynchronizationTaskExecution?>("lastExecution"); }
             set { BackingStore?.Set("lastExecution", value); }
         }
 #nullable restore
 #else
-        public SynchronizationTaskExecution LastExecution {
+        public SynchronizationTaskExecution LastExecution
+        {
             get { return BackingStore?.Get<SynchronizationTaskExecution>("lastExecution"); }
             set { BackingStore?.Set("lastExecution", value); }
         }
@@ -49,13 +56,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Details of the last execution of this job, which didn&apos;t have any errors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationTaskExecution? LastSuccessfulExecution {
+        public SynchronizationTaskExecution? LastSuccessfulExecution
+        {
             get { return BackingStore?.Get<SynchronizationTaskExecution?>("lastSuccessfulExecution"); }
             set { BackingStore?.Set("lastSuccessfulExecution", value); }
         }
 #nullable restore
 #else
-        public SynchronizationTaskExecution LastSuccessfulExecution {
+        public SynchronizationTaskExecution LastSuccessfulExecution
+        {
             get { return BackingStore?.Get<SynchronizationTaskExecution>("lastSuccessfulExecution"); }
             set { BackingStore?.Set("lastSuccessfulExecution", value); }
         }
@@ -63,13 +72,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Details of the last execution of the job, which exported objects into the target directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationTaskExecution? LastSuccessfulExecutionWithExports {
+        public SynchronizationTaskExecution? LastSuccessfulExecutionWithExports
+        {
             get { return BackingStore?.Get<SynchronizationTaskExecution?>("lastSuccessfulExecutionWithExports"); }
             set { BackingStore?.Set("lastSuccessfulExecutionWithExports", value); }
         }
 #nullable restore
 #else
-        public SynchronizationTaskExecution LastSuccessfulExecutionWithExports {
+        public SynchronizationTaskExecution LastSuccessfulExecutionWithExports
+        {
             get { return BackingStore?.Get<SynchronizationTaskExecution>("lastSuccessfulExecutionWithExports"); }
             set { BackingStore?.Set("lastSuccessfulExecutionWithExports", value); }
         }
@@ -77,13 +88,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -91,13 +104,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Details of the progress of a job toward completion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SynchronizationProgress>? Progress {
+        public List<SynchronizationProgress>? Progress
+        {
             get { return BackingStore?.Get<List<SynchronizationProgress>?>("progress"); }
             set { BackingStore?.Set("progress", value); }
         }
 #nullable restore
 #else
-        public List<SynchronizationProgress> Progress {
+        public List<SynchronizationProgress> Progress
+        {
             get { return BackingStore?.Get<List<SynchronizationProgress>>("progress"); }
             set { BackingStore?.Set("progress", value); }
         }
@@ -105,37 +120,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>If job is in quarantine, quarantine details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationQuarantine? Quarantine {
+        public SynchronizationQuarantine? Quarantine
+        {
             get { return BackingStore?.Get<SynchronizationQuarantine?>("quarantine"); }
             set { BackingStore?.Set("quarantine", value); }
         }
 #nullable restore
 #else
-        public SynchronizationQuarantine Quarantine {
+        public SynchronizationQuarantine Quarantine
+        {
             get { return BackingStore?.Get<SynchronizationQuarantine>("quarantine"); }
             set { BackingStore?.Set("quarantine", value); }
         }
 #endif
         /// <summary>The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? SteadyStateFirstAchievedTime {
+        public DateTimeOffset? SteadyStateFirstAchievedTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("steadyStateFirstAchievedTime"); }
             set { BackingStore?.Set("steadyStateFirstAchievedTime", value); }
         }
         /// <summary>The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? SteadyStateLastAchievedTime {
+        public DateTimeOffset? SteadyStateLastAchievedTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("steadyStateLastAchievedTime"); }
             set { BackingStore?.Set("steadyStateLastAchievedTime", value); }
         }
         /// <summary>Count of synchronized objects, listed by object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<StringKeyLongValuePair>? SynchronizedEntryCountByType {
+        public List<StringKeyLongValuePair>? SynchronizedEntryCountByType
+        {
             get { return BackingStore?.Get<List<StringKeyLongValuePair>?>("synchronizedEntryCountByType"); }
             set { BackingStore?.Set("synchronizedEntryCountByType", value); }
         }
 #nullable restore
 #else
-        public List<StringKeyLongValuePair> SynchronizedEntryCountByType {
+        public List<StringKeyLongValuePair> SynchronizedEntryCountByType
+        {
             get { return BackingStore?.Get<List<StringKeyLongValuePair>>("synchronizedEntryCountByType"); }
             set { BackingStore?.Set("synchronizedEntryCountByType", value); }
         }
@@ -143,13 +164,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>In the event of an error, the URL with the troubleshooting steps for the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TroubleshootingUrl {
+        public string? TroubleshootingUrl
+        {
             get { return BackingStore?.Get<string?>("troubleshootingUrl"); }
             set { BackingStore?.Set("troubleshootingUrl", value); }
         }
 #nullable restore
 #else
-        public string TroubleshootingUrl {
+        public string TroubleshootingUrl
+        {
             get { return BackingStore?.Get<string>("troubleshootingUrl"); }
             set { BackingStore?.Set("troubleshootingUrl", value); }
         }
@@ -180,19 +203,19 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"code", n => { Code = n.GetEnumValue<SynchronizationStatusCode>(); } },
-                {"countSuccessiveCompleteFailures", n => { CountSuccessiveCompleteFailures = n.GetLongValue(); } },
-                {"escrowsPruned", n => { EscrowsPruned = n.GetBoolValue(); } },
-                {"lastExecution", n => { LastExecution = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
-                {"lastSuccessfulExecution", n => { LastSuccessfulExecution = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
-                {"lastSuccessfulExecutionWithExports", n => { LastSuccessfulExecutionWithExports = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"progress", n => { Progress = n.GetCollectionOfObjectValues<SynchronizationProgress>(SynchronizationProgress.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"quarantine", n => { Quarantine = n.GetObjectValue<SynchronizationQuarantine>(SynchronizationQuarantine.CreateFromDiscriminatorValue); } },
-                {"steadyStateFirstAchievedTime", n => { SteadyStateFirstAchievedTime = n.GetDateTimeOffsetValue(); } },
-                {"steadyStateLastAchievedTime", n => { SteadyStateLastAchievedTime = n.GetDateTimeOffsetValue(); } },
-                {"synchronizedEntryCountByType", n => { SynchronizedEntryCountByType = n.GetCollectionOfObjectValues<StringKeyLongValuePair>(StringKeyLongValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"troubleshootingUrl", n => { TroubleshootingUrl = n.GetStringValue(); } },
+                { "code", n => { Code = n.GetEnumValue<SynchronizationStatusCode>(); } },
+                { "countSuccessiveCompleteFailures", n => { CountSuccessiveCompleteFailures = n.GetLongValue(); } },
+                { "escrowsPruned", n => { EscrowsPruned = n.GetBoolValue(); } },
+                { "lastExecution", n => { LastExecution = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
+                { "lastSuccessfulExecution", n => { LastSuccessfulExecution = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
+                { "lastSuccessfulExecutionWithExports", n => { LastSuccessfulExecutionWithExports = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "progress", n => { Progress = n.GetCollectionOfObjectValues<SynchronizationProgress>(SynchronizationProgress.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "quarantine", n => { Quarantine = n.GetObjectValue<SynchronizationQuarantine>(SynchronizationQuarantine.CreateFromDiscriminatorValue); } },
+                { "steadyStateFirstAchievedTime", n => { SteadyStateFirstAchievedTime = n.GetDateTimeOffsetValue(); } },
+                { "steadyStateLastAchievedTime", n => { SteadyStateLastAchievedTime = n.GetDateTimeOffsetValue(); } },
+                { "synchronizedEntryCountByType", n => { SynchronizedEntryCountByType = n.GetCollectionOfObjectValues<StringKeyLongValuePair>(StringKeyLongValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "troubleshootingUrl", n => { TroubleshootingUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

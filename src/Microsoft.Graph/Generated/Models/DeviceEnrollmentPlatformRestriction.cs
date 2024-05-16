@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Platform specific enrollment restrictions
     /// </summary>
-    public class DeviceEnrollmentPlatformRestriction : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceEnrollmentPlatformRestriction : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Max OS version supported</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsMaximumVersion {
+        public string? OsMaximumVersion
+        {
             get { return BackingStore?.Get<string?>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
 #nullable restore
 #else
-        public string OsMaximumVersion {
+        public string OsMaximumVersion
+        {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
@@ -49,24 +55,28 @@ namespace Microsoft.Graph.Models {
         /// <summary>Min OS version supported</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsMinimumVersion {
+        public string? OsMinimumVersion
+        {
             get { return BackingStore?.Get<string?>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
 #nullable restore
 #else
-        public string OsMinimumVersion {
+        public string OsMinimumVersion
+        {
             get { return BackingStore?.Get<string>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
 #endif
         /// <summary>Block personally owned devices from enrolling</summary>
-        public bool? PersonalDeviceEnrollmentBlocked {
+        public bool? PersonalDeviceEnrollmentBlocked
+        {
             get { return BackingStore?.Get<bool?>("personalDeviceEnrollmentBlocked"); }
             set { BackingStore?.Set("personalDeviceEnrollmentBlocked", value); }
         }
         /// <summary>Block the platform from enrolling</summary>
-        public bool? PlatformBlocked {
+        public bool? PlatformBlocked
+        {
             get { return BackingStore?.Get<bool?>("platformBlocked"); }
             set { BackingStore?.Set("platformBlocked", value); }
         }
@@ -96,11 +106,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
-                {"osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
-                {"personalDeviceEnrollmentBlocked", n => { PersonalDeviceEnrollmentBlocked = n.GetBoolValue(); } },
-                {"platformBlocked", n => { PlatformBlocked = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
+                { "osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
+                { "personalDeviceEnrollmentBlocked", n => { PersonalDeviceEnrollmentBlocked = n.GetBoolValue(); } },
+                { "platformBlocked", n => { PlatformBlocked = n.GetBoolValue(); } },
             };
         }
         /// <summary>

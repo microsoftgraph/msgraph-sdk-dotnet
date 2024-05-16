@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OrganizationalBranding : OrganizationalBrandingProperties, IParsable 
+    public class OrganizationalBranding : OrganizationalBrandingProperties, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Add different branding based on a locale.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OrganizationalBrandingLocalization>? Localizations {
+        public List<OrganizationalBrandingLocalization>? Localizations
+        {
             get { return BackingStore?.Get<List<OrganizationalBrandingLocalization>?>("localizations"); }
             set { BackingStore?.Set("localizations", value); }
         }
 #nullable restore
 #else
-        public List<OrganizationalBrandingLocalization> Localizations {
+        public List<OrganizationalBrandingLocalization> Localizations
+        {
             get { return BackingStore?.Get<List<OrganizationalBrandingLocalization>>("localizations"); }
             set { BackingStore?.Set("localizations", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"localizations", n => { Localizations = n.GetCollectionOfObjectValues<OrganizationalBrandingLocalization>(OrganizationalBrandingLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "localizations", n => { Localizations = n.GetCollectionOfObjectValues<OrganizationalBrandingLocalization>(OrganizationalBrandingLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

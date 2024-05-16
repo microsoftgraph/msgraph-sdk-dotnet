@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Print.Shares.Item.Jobs.Item.Redirect {
+namespace Microsoft.Graph.Print.Shares.Item.Jobs.Item.Redirect
+{
     #pragma warning disable CS1591
-    public class RedirectPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RedirectPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Print.Shares.Item.Jobs.Item.Redirect {
         /// <summary>The configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrintJobConfiguration? Configuration {
+        public PrintJobConfiguration? Configuration
+        {
             get { return BackingStore?.Get<PrintJobConfiguration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #nullable restore
 #else
-        public PrintJobConfiguration Configuration {
+        public PrintJobConfiguration Configuration
+        {
             get { return BackingStore?.Get<PrintJobConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Print.Shares.Item.Jobs.Item.Redirect {
         /// <summary>The destinationPrinterId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationPrinterId {
+        public string? DestinationPrinterId
+        {
             get { return BackingStore?.Get<string?>("destinationPrinterId"); }
             set { BackingStore?.Set("destinationPrinterId", value); }
         }
 #nullable restore
 #else
-        public string DestinationPrinterId {
+        public string DestinationPrinterId
+        {
             get { return BackingStore?.Get<string>("destinationPrinterId"); }
             set { BackingStore?.Set("destinationPrinterId", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Print.Shares.Item.Jobs.Item.Redirect {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"configuration", n => { Configuration = n.GetObjectValue<PrintJobConfiguration>(PrintJobConfiguration.CreateFromDiscriminatorValue); } },
-                {"destinationPrinterId", n => { DestinationPrinterId = n.GetStringValue(); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<PrintJobConfiguration>(PrintJobConfiguration.CreateFromDiscriminatorValue); } },
+                { "destinationPrinterId", n => { DestinationPrinterId = n.GetStringValue(); } },
             };
         }
         /// <summary>

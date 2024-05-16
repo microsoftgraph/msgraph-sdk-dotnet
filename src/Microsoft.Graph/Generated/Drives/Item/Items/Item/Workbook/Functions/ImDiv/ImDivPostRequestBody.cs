@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImDiv {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImDiv
+{
     #pragma warning disable CS1591
-    public class ImDivPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ImDivPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImDiv {
         /// <summary>The inumber1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Inumber1 {
+        public Json? Inumber1
+        {
             get { return BackingStore?.Get<Json?>("inumber1"); }
             set { BackingStore?.Set("inumber1", value); }
         }
 #nullable restore
 #else
-        public Json Inumber1 {
+        public Json Inumber1
+        {
             get { return BackingStore?.Get<Json>("inumber1"); }
             set { BackingStore?.Set("inumber1", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImDiv {
         /// <summary>The inumber2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Inumber2 {
+        public Json? Inumber2
+        {
             get { return BackingStore?.Get<Json?>("inumber2"); }
             set { BackingStore?.Set("inumber2", value); }
         }
 #nullable restore
 #else
-        public Json Inumber2 {
+        public Json Inumber2
+        {
             get { return BackingStore?.Get<Json>("inumber2"); }
             set { BackingStore?.Set("inumber2", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImDiv {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"inumber1", n => { Inumber1 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"inumber2", n => { Inumber2 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "inumber1", n => { Inumber1 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "inumber2", n => { Inumber2 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

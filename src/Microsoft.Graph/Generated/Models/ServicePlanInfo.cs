@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ServicePlanInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ServicePlanInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppliesTo {
+        public string? AppliesTo
+        {
             get { return BackingStore?.Get<string?>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
 #nullable restore
 #else
-        public string AppliesTo {
+        public string AppliesTo
+        {
             get { return BackingStore?.Get<string>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,32 +54,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn&apos;t provisioned and is in an error state.PendingInput - The service isn&apos;t provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn&apos;t activated in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProvisioningStatus {
+        public string? ProvisioningStatus
+        {
             get { return BackingStore?.Get<string?>("provisioningStatus"); }
             set { BackingStore?.Set("provisioningStatus", value); }
         }
 #nullable restore
 #else
-        public string ProvisioningStatus {
+        public string ProvisioningStatus
+        {
             get { return BackingStore?.Get<string>("provisioningStatus"); }
             set { BackingStore?.Set("provisioningStatus", value); }
         }
 #endif
         /// <summary>The unique identifier of the service plan.</summary>
-        public Guid? ServicePlanId {
+        public Guid? ServicePlanId
+        {
             get { return BackingStore?.Get<Guid?>("servicePlanId"); }
             set { BackingStore?.Set("servicePlanId", value); }
         }
         /// <summary>The name of the service plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServicePlanName {
+        public string? ServicePlanName
+        {
             get { return BackingStore?.Get<string?>("servicePlanName"); }
             set { BackingStore?.Set("servicePlanName", value); }
         }
 #nullable restore
 #else
-        public string ServicePlanName {
+        public string ServicePlanName
+        {
             get { return BackingStore?.Get<string>("servicePlanName"); }
             set { BackingStore?.Set("servicePlanName", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"appliesTo", n => { AppliesTo = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"provisioningStatus", n => { ProvisioningStatus = n.GetStringValue(); } },
-                {"servicePlanId", n => { ServicePlanId = n.GetGuidValue(); } },
-                {"servicePlanName", n => { ServicePlanName = n.GetStringValue(); } },
+                { "appliesTo", n => { AppliesTo = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "provisioningStatus", n => { ProvisioningStatus = n.GetStringValue(); } },
+                { "servicePlanId", n => { ServicePlanId = n.GetGuidValue(); } },
+                { "servicePlanName", n => { ServicePlanName = n.GetStringValue(); } },
             };
         }
         /// <summary>

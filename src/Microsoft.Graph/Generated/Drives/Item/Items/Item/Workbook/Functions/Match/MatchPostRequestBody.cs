@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Match {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Match
+{
     #pragma warning disable CS1591
-    public class MatchPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MatchPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Match {
         /// <summary>The lookupArray property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? LookupArray {
+        public Json? LookupArray
+        {
             get { return BackingStore?.Get<Json?>("lookupArray"); }
             set { BackingStore?.Set("lookupArray", value); }
         }
 #nullable restore
 #else
-        public Json LookupArray {
+        public Json LookupArray
+        {
             get { return BackingStore?.Get<Json>("lookupArray"); }
             set { BackingStore?.Set("lookupArray", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Match {
         /// <summary>The lookupValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? LookupValue {
+        public Json? LookupValue
+        {
             get { return BackingStore?.Get<Json?>("lookupValue"); }
             set { BackingStore?.Set("lookupValue", value); }
         }
 #nullable restore
 #else
-        public Json LookupValue {
+        public Json LookupValue
+        {
             get { return BackingStore?.Get<Json>("lookupValue"); }
             set { BackingStore?.Set("lookupValue", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Match {
         /// <summary>The matchType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? MatchType {
+        public Json? MatchType
+        {
             get { return BackingStore?.Get<Json?>("matchType"); }
             set { BackingStore?.Set("matchType", value); }
         }
 #nullable restore
 #else
-        public Json MatchType {
+        public Json MatchType
+        {
             get { return BackingStore?.Get<Json>("matchType"); }
             set { BackingStore?.Set("matchType", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Match {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"lookupArray", n => { LookupArray = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"lookupValue", n => { LookupValue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"matchType", n => { MatchType = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "lookupArray", n => { LookupArray = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "lookupValue", n => { LookupValue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "matchType", n => { MatchType = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ReferencedObject : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ReferencedObject : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Name of the referenced object. Must match one of the objects in the directory definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferencedObjectName {
+        public string? ReferencedObjectName
+        {
             get { return BackingStore?.Get<string?>("referencedObjectName"); }
             set { BackingStore?.Set("referencedObjectName", value); }
         }
 #nullable restore
 #else
-        public string ReferencedObjectName {
+        public string ReferencedObjectName
+        {
             get { return BackingStore?.Get<string>("referencedObjectName"); }
             set { BackingStore?.Set("referencedObjectName", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferencedProperty {
+        public string? ReferencedProperty
+        {
             get { return BackingStore?.Get<string?>("referencedProperty"); }
             set { BackingStore?.Set("referencedProperty", value); }
         }
 #nullable restore
 #else
-        public string ReferencedProperty {
+        public string ReferencedProperty
+        {
             get { return BackingStore?.Get<string>("referencedProperty"); }
             set { BackingStore?.Set("referencedProperty", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"referencedObjectName", n => { ReferencedObjectName = n.GetStringValue(); } },
-                {"referencedProperty", n => { ReferencedProperty = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "referencedObjectName", n => { ReferencedObjectName = n.GetStringValue(); } },
+                { "referencedProperty", n => { ReferencedProperty = n.GetStringValue(); } },
             };
         }
         /// <summary>

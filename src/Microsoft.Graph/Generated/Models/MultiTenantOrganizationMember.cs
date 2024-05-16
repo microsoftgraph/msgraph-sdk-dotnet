@@ -4,60 +4,70 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MultiTenantOrganizationMember : DirectoryObject, IParsable 
+    public class MultiTenantOrganizationMember : DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Tenant ID of the tenant that added the tenant to the multitenant organization. Read-only.</summary>
-        public Guid? AddedByTenantId {
+        public Guid? AddedByTenantId
+        {
             get { return BackingStore?.Get<Guid?>("addedByTenantId"); }
             set { BackingStore?.Set("addedByTenantId", value); }
         }
         /// <summary>Date and time when the tenant was added to the multitenant organization. Read-only.</summary>
-        public DateTimeOffset? AddedDateTime {
+        public DateTimeOffset? AddedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("addedDateTime"); }
             set { BackingStore?.Set("addedDateTime", value); }
         }
         /// <summary>Display name of the tenant added to the multitenant organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Date and time when the tenant joined the multitenant organization. Read-only.</summary>
-        public DateTimeOffset? JoinedDateTime {
+        public DateTimeOffset? JoinedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("joinedDateTime"); }
             set { BackingStore?.Set("joinedDateTime", value); }
         }
         /// <summary>Role of the tenant in the multitenant organization. The possible values are: owner, member (default), unknownFutureValue. Tenants with the owner role can manage the multitenant organization but tenants with the member role can only participate in a multitenant organization. There can be multiple tenants with the owner role in a multitenant organization.</summary>
-        public MultiTenantOrganizationMemberRole? Role {
+        public MultiTenantOrganizationMemberRole? Role
+        {
             get { return BackingStore?.Get<MultiTenantOrganizationMemberRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
         /// <summary>State of the tenant in the multitenant organization. The possible values are: pending, active, removed, unknownFutureValue. Tenants in the pending state must join the multitenant organization to participate in the multitenant organization. Tenants in the active state can participate in the multitenant organization. Tenants in the removed state are in the process of being removed from the multitenant organization. Read-only.</summary>
-        public MultiTenantOrganizationMemberState? State {
+        public MultiTenantOrganizationMemberState? State
+        {
             get { return BackingStore?.Get<MultiTenantOrganizationMemberState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>Tenant ID of the Microsoft Entra tenant added to the multitenant organization. Set at the time tenant is added.Supports $filter. Key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -65,13 +75,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Details of the processing status for a tenant in a multitenant organization. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MultiTenantOrganizationMemberTransitionDetails? TransitionDetails {
+        public MultiTenantOrganizationMemberTransitionDetails? TransitionDetails
+        {
             get { return BackingStore?.Get<MultiTenantOrganizationMemberTransitionDetails?>("transitionDetails"); }
             set { BackingStore?.Set("transitionDetails", value); }
         }
 #nullable restore
 #else
-        public MultiTenantOrganizationMemberTransitionDetails TransitionDetails {
+        public MultiTenantOrganizationMemberTransitionDetails TransitionDetails
+        {
             get { return BackingStore?.Get<MultiTenantOrganizationMemberTransitionDetails>("transitionDetails"); }
             set { BackingStore?.Set("transitionDetails", value); }
         }
@@ -101,14 +113,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"addedByTenantId", n => { AddedByTenantId = n.GetGuidValue(); } },
-                {"addedDateTime", n => { AddedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"joinedDateTime", n => { JoinedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"role", n => { Role = n.GetEnumValue<MultiTenantOrganizationMemberRole>(); } },
-                {"state", n => { State = n.GetEnumValue<MultiTenantOrganizationMemberState>(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
-                {"transitionDetails", n => { TransitionDetails = n.GetObjectValue<MultiTenantOrganizationMemberTransitionDetails>(MultiTenantOrganizationMemberTransitionDetails.CreateFromDiscriminatorValue); } },
+                { "addedByTenantId", n => { AddedByTenantId = n.GetGuidValue(); } },
+                { "addedDateTime", n => { AddedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "joinedDateTime", n => { JoinedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "role", n => { Role = n.GetEnumValue<MultiTenantOrganizationMemberRole>(); } },
+                { "state", n => { State = n.GetEnumValue<MultiTenantOrganizationMemberState>(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "transitionDetails", n => { TransitionDetails = n.GetObjectValue<MultiTenantOrganizationMemberTransitionDetails>(MultiTenantOrganizationMemberTransitionDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,41 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The user experience analytics metric history.
     /// </summary>
-    public class UserExperienceAnalyticsMetricHistory : Entity, IParsable 
+    public class UserExperienceAnalyticsMetricHistory : Entity, IParsable
     {
         /// <summary>The Intune device id of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
         /// <summary>The metric date time. The value cannot be modified and is automatically populated when the metric is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Returned by default.</summary>
-        public DateTimeOffset? MetricDateTime {
+        public DateTimeOffset? MetricDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("metricDateTime"); }
             set { BackingStore?.Set("metricDateTime", value); }
         }
         /// <summary>The user experience analytics metric type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MetricType {
+        public string? MetricType
+        {
             get { return BackingStore?.Get<string?>("metricType"); }
             set { BackingStore?.Set("metricType", value); }
         }
 #nullable restore
 #else
-        public string MetricType {
+        public string MetricType
+        {
             get { return BackingStore?.Get<string>("metricType"); }
             set { BackingStore?.Set("metricType", value); }
         }
@@ -61,9 +67,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"metricDateTime", n => { MetricDateTime = n.GetDateTimeOffsetValue(); } },
-                {"metricType", n => { MetricType = n.GetStringValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "metricDateTime", n => { MetricDateTime = n.GetDateTimeOffsetValue(); } },
+                { "metricType", n => { MetricType = n.GetStringValue(); } },
             };
         }
         /// <summary>

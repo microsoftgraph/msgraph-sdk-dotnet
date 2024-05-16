@@ -4,64 +4,74 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class CloudApplicationEvidence : AlertEvidence, IParsable 
+    public class CloudApplicationEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Unique identifier of the application.</summary>
-        public long? AppId {
+        public long? AppId
+        {
             get { return BackingStore?.Get<long?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
         /// <summary>Name of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Identifier of the instance of the Software as a Service (SaaS) application.</summary>
-        public long? InstanceId {
+        public long? InstanceId
+        {
             get { return BackingStore?.Get<long?>("instanceId"); }
             set { BackingStore?.Set("instanceId", value); }
         }
         /// <summary>Name of the instance of the SaaS application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstanceName {
+        public string? InstanceName
+        {
             get { return BackingStore?.Get<string?>("instanceName"); }
             set { BackingStore?.Set("instanceName", value); }
         }
 #nullable restore
 #else
-        public string InstanceName {
+        public string InstanceName
+        {
             get { return BackingStore?.Get<string>("instanceName"); }
             set { BackingStore?.Set("instanceName", value); }
         }
 #endif
         /// <summary>The identifier of the SaaS application.</summary>
-        public long? SaasAppId {
+        public long? SaasAppId
+        {
             get { return BackingStore?.Get<long?>("saasAppId"); }
             set { BackingStore?.Set("saasAppId", value); }
         }
         /// <summary>The stream property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public StreamObject? Stream {
+        public StreamObject? Stream
+        {
             get { return BackingStore?.Get<StreamObject?>("stream"); }
             set { BackingStore?.Set("stream", value); }
         }
 #nullable restore
 #else
-        public StreamObject Stream {
+        public StreamObject Stream
+        {
             get { return BackingStore?.Get<StreamObject>("stream"); }
             set { BackingStore?.Set("stream", value); }
         }
@@ -91,12 +101,12 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appId", n => { AppId = n.GetLongValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"instanceId", n => { InstanceId = n.GetLongValue(); } },
-                {"instanceName", n => { InstanceName = n.GetStringValue(); } },
-                {"saasAppId", n => { SaasAppId = n.GetLongValue(); } },
-                {"stream", n => { Stream = n.GetObjectValue<StreamObject>(StreamObject.CreateFromDiscriminatorValue); } },
+                { "appId", n => { AppId = n.GetLongValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "instanceId", n => { InstanceId = n.GetLongValue(); } },
+                { "instanceName", n => { InstanceName = n.GetStringValue(); } },
+                { "saasAppId", n => { SaasAppId = n.GetLongValue(); } },
+                { "stream", n => { Stream = n.GetObjectValue<StreamObject>(StreamObject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

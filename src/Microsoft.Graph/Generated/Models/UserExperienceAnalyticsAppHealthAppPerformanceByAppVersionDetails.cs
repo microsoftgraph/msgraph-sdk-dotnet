@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The user experience analytics application performance entity contains application performance by application version details.
     /// </summary>
-    public class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails : Entity, IParsable 
+    public class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails : Entity, IParsable
     {
         /// <summary>The number of crashes for the app. Valid values -2147483648 to 2147483647</summary>
-        public int? AppCrashCount {
+        public int? AppCrashCount
+        {
             get { return BackingStore?.Get<int?>("appCrashCount"); }
             set { BackingStore?.Set("appCrashCount", value); }
         }
         /// <summary>The friendly name of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppDisplayName {
+        public string? AppDisplayName
+        {
             get { return BackingStore?.Get<string?>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
 #nullable restore
 #else
-        public string AppDisplayName {
+        public string AppDisplayName
+        {
             get { return BackingStore?.Get<string>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppName {
+        public string? AppName
+        {
             get { return BackingStore?.Get<string?>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
 #nullable restore
 #else
-        public string AppName {
+        public string AppName
+        {
             get { return BackingStore?.Get<string>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The publisher of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppPublisher {
+        public string? AppPublisher
+        {
             get { return BackingStore?.Get<string?>("appPublisher"); }
             set { BackingStore?.Set("appPublisher", value); }
         }
 #nullable restore
 #else
-        public string AppPublisher {
+        public string AppPublisher
+        {
             get { return BackingStore?.Get<string>("appPublisher"); }
             set { BackingStore?.Set("appPublisher", value); }
         }
@@ -60,29 +68,34 @@ namespace Microsoft.Graph.Models {
         /// <summary>The version of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppVersion {
+        public string? AppVersion
+        {
             get { return BackingStore?.Get<string?>("appVersion"); }
             set { BackingStore?.Set("appVersion", value); }
         }
 #nullable restore
 #else
-        public string AppVersion {
+        public string AppVersion
+        {
             get { return BackingStore?.Get<string>("appVersion"); }
             set { BackingStore?.Set("appVersion", value); }
         }
 #endif
         /// <summary>The total number of devices that have reported one or more application crashes for this application and version. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? DeviceCountWithCrashes {
+        public int? DeviceCountWithCrashes
+        {
             get { return BackingStore?.Get<int?>("deviceCountWithCrashes"); }
             set { BackingStore?.Set("deviceCountWithCrashes", value); }
         }
         /// <summary>When TRUE, indicates the version of application is the latest version for that application that is in use. When FALSE, indicates the version is not the latest version. FALSE by default. Supports: $select, $OrderBy.</summary>
-        public bool? IsLatestUsedVersion {
+        public bool? IsLatestUsedVersion
+        {
             get { return BackingStore?.Get<bool?>("isLatestUsedVersion"); }
             set { BackingStore?.Set("isLatestUsedVersion", value); }
         }
         /// <summary>When TRUE, indicates the version of application is the most used version for that application. When FALSE, indicates the version is not the most used version. FALSE by default. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? IsMostUsedVersion {
+        public bool? IsMostUsedVersion
+        {
             get { return BackingStore?.Get<bool?>("isMostUsedVersion"); }
             set { BackingStore?.Set("isMostUsedVersion", value); }
         }
@@ -104,14 +117,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appCrashCount", n => { AppCrashCount = n.GetIntValue(); } },
-                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
-                {"appName", n => { AppName = n.GetStringValue(); } },
-                {"appPublisher", n => { AppPublisher = n.GetStringValue(); } },
-                {"appVersion", n => { AppVersion = n.GetStringValue(); } },
-                {"deviceCountWithCrashes", n => { DeviceCountWithCrashes = n.GetIntValue(); } },
-                {"isLatestUsedVersion", n => { IsLatestUsedVersion = n.GetBoolValue(); } },
-                {"isMostUsedVersion", n => { IsMostUsedVersion = n.GetBoolValue(); } },
+                { "appCrashCount", n => { AppCrashCount = n.GetIntValue(); } },
+                { "appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                { "appName", n => { AppName = n.GetStringValue(); } },
+                { "appPublisher", n => { AppPublisher = n.GetStringValue(); } },
+                { "appVersion", n => { AppVersion = n.GetStringValue(); } },
+                { "deviceCountWithCrashes", n => { DeviceCountWithCrashes = n.GetIntValue(); } },
+                { "isLatestUsedVersion", n => { IsLatestUsedVersion = n.GetBoolValue(); } },
+                { "isMostUsedVersion", n => { IsMostUsedVersion = n.GetBoolValue(); } },
             };
         }
         /// <summary>

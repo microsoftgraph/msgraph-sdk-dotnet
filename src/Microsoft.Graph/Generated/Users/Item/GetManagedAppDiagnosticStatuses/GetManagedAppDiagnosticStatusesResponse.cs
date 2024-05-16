@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.GetManagedAppDiagnosticStatuses {
+namespace Microsoft.Graph.Users.Item.GetManagedAppDiagnosticStatuses
+{
     [Obsolete("This class is obsolete. Use GetManagedAppDiagnosticStatusesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetManagedAppDiagnosticStatusesResponse : GetManagedAppDiagnosticStatusesGetResponse, IParsable 
+    public class GetManagedAppDiagnosticStatusesResponse : GetManagedAppDiagnosticStatusesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

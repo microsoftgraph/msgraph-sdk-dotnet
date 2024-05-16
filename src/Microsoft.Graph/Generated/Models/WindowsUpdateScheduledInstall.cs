@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WindowsUpdateScheduledInstall : WindowsUpdateInstallScheduleType, IParsable 
+    public class WindowsUpdateScheduledInstall : WindowsUpdateInstallScheduleType, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Possible values for a weekly schedule.</summary>
-        public WeeklySchedule? ScheduledInstallDay {
+        public WeeklySchedule? ScheduledInstallDay
+        {
             get { return BackingStore?.Get<WeeklySchedule?>("scheduledInstallDay"); }
             set { BackingStore?.Set("scheduledInstallDay", value); }
         }
         /// <summary>Scheduled Install Time during day</summary>
-        public Time? ScheduledInstallTime {
+        public Time? ScheduledInstallTime
+        {
             get { return BackingStore?.Get<Time?>("scheduledInstallTime"); }
             set { BackingStore?.Set("scheduledInstallTime", value); }
         }
@@ -45,8 +48,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"scheduledInstallDay", n => { ScheduledInstallDay = n.GetEnumValue<WeeklySchedule>(); } },
-                {"scheduledInstallTime", n => { ScheduledInstallTime = n.GetTimeValue(); } },
+                { "scheduledInstallDay", n => { ScheduledInstallDay = n.GetEnumValue<WeeklySchedule>(); } },
+                { "scheduledInstallTime", n => { ScheduledInstallTime = n.GetTimeValue(); } },
             };
         }
         /// <summary>

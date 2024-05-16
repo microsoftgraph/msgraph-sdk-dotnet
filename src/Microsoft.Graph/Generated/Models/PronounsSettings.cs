@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PronounsSettings : Entity, IParsable 
+    public class PronounsSettings : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>true to enable pronouns in the organization; otherwise, false. The default value is false, and pronouns are disabled.</summary>
-        public bool? IsEnabledInOrganization {
+        public bool? IsEnabledInOrganization
+        {
             get { return BackingStore?.Get<bool?>("isEnabledInOrganization"); }
             set { BackingStore?.Set("isEnabledInOrganization", value); }
         }
@@ -32,7 +34,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isEnabledInOrganization", n => { IsEnabledInOrganization = n.GetBoolValue(); } },
+                { "isEnabledInOrganization", n => { IsEnabledInOrganization = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CommunicationsIdentitySet : IdentitySet, IParsable 
+    public class CommunicationsIdentitySet : IdentitySet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The application instance associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? ApplicationInstance {
+        public Identity? ApplicationInstance
+        {
             get { return BackingStore?.Get<Identity?>("applicationInstance"); }
             set { BackingStore?.Set("applicationInstance", value); }
         }
 #nullable restore
 #else
-        public Identity ApplicationInstance {
+        public Identity ApplicationInstance
+        {
             get { return BackingStore?.Get<Identity>("applicationInstance"); }
             set { BackingStore?.Set("applicationInstance", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>An identity the participant would like to present itself as to the other participants in the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? AssertedIdentity {
+        public Identity? AssertedIdentity
+        {
             get { return BackingStore?.Get<Identity?>("assertedIdentity"); }
             set { BackingStore?.Set("assertedIdentity", value); }
         }
 #nullable restore
 #else
-        public Identity AssertedIdentity {
+        public Identity AssertedIdentity
+        {
             get { return BackingStore?.Get<Identity>("assertedIdentity"); }
             set { BackingStore?.Set("assertedIdentity", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The Azure Communication Services user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? AzureCommunicationServicesUser {
+        public Identity? AzureCommunicationServicesUser
+        {
             get { return BackingStore?.Get<Identity?>("azureCommunicationServicesUser"); }
             set { BackingStore?.Set("azureCommunicationServicesUser", value); }
         }
 #nullable restore
 #else
-        public Identity AzureCommunicationServicesUser {
+        public Identity AzureCommunicationServicesUser
+        {
             get { return BackingStore?.Get<Identity>("azureCommunicationServicesUser"); }
             set { BackingStore?.Set("azureCommunicationServicesUser", value); }
         }
@@ -54,32 +61,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The encrypted user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Encrypted {
+        public Identity? Encrypted
+        {
             get { return BackingStore?.Get<Identity?>("encrypted"); }
             set { BackingStore?.Set("encrypted", value); }
         }
 #nullable restore
 #else
-        public Identity Encrypted {
+        public Identity Encrypted
+        {
             get { return BackingStore?.Get<Identity>("encrypted"); }
             set { BackingStore?.Set("encrypted", value); }
         }
 #endif
         /// <summary>Type of endpoint that the participant uses. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone, unknownFutureValue.</summary>
-        public Microsoft.Graph.Models.EndpointType? EndpointType {
+        public Microsoft.Graph.Models.EndpointType? EndpointType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.EndpointType?>("endpointType"); }
             set { BackingStore?.Set("endpointType", value); }
         }
         /// <summary>The guest user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Guest {
+        public Identity? Guest
+        {
             get { return BackingStore?.Get<Identity?>("guest"); }
             set { BackingStore?.Set("guest", value); }
         }
 #nullable restore
 #else
-        public Identity Guest {
+        public Identity Guest
+        {
             get { return BackingStore?.Get<Identity>("guest"); }
             set { BackingStore?.Set("guest", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The Skype for Business on-premises user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? OnPremises {
+        public Identity? OnPremises
+        {
             get { return BackingStore?.Get<Identity?>("onPremises"); }
             set { BackingStore?.Set("onPremises", value); }
         }
 #nullable restore
 #else
-        public Identity OnPremises {
+        public Identity OnPremises
+        {
             get { return BackingStore?.Get<Identity>("onPremises"); }
             set { BackingStore?.Set("onPremises", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The phone user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Phone {
+        public Identity? Phone
+        {
             get { return BackingStore?.Get<Identity?>("phone"); }
             set { BackingStore?.Set("phone", value); }
         }
 #nullable restore
 #else
-        public Identity Phone {
+        public Identity Phone
+        {
             get { return BackingStore?.Get<Identity>("phone"); }
             set { BackingStore?.Set("phone", value); }
         }
@@ -137,14 +153,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"applicationInstance", n => { ApplicationInstance = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                {"assertedIdentity", n => { AssertedIdentity = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                {"azureCommunicationServicesUser", n => { AzureCommunicationServicesUser = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                {"encrypted", n => { Encrypted = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                {"endpointType", n => { EndpointType = n.GetEnumValue<EndpointType>(); } },
-                {"guest", n => { Guest = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                {"onPremises", n => { OnPremises = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                {"phone", n => { Phone = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "applicationInstance", n => { ApplicationInstance = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "assertedIdentity", n => { AssertedIdentity = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "azureCommunicationServicesUser", n => { AzureCommunicationServicesUser = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "encrypted", n => { Encrypted = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "endpointType", n => { EndpointType = n.GetEnumValue<EndpointType>(); } },
+                { "guest", n => { Guest = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "onPremises", n => { OnPremises = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "phone", n => { Phone = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

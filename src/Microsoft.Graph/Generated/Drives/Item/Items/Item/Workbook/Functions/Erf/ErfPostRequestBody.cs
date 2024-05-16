@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Erf {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Erf
+{
     #pragma warning disable CS1591
-    public class ErfPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ErfPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Erf {
         /// <summary>The lowerLimit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? LowerLimit {
+        public Json? LowerLimit
+        {
             get { return BackingStore?.Get<Json?>("lowerLimit"); }
             set { BackingStore?.Set("lowerLimit", value); }
         }
 #nullable restore
 #else
-        public Json LowerLimit {
+        public Json LowerLimit
+        {
             get { return BackingStore?.Get<Json>("lowerLimit"); }
             set { BackingStore?.Set("lowerLimit", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Erf {
         /// <summary>The upperLimit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? UpperLimit {
+        public Json? UpperLimit
+        {
             get { return BackingStore?.Get<Json?>("upperLimit"); }
             set { BackingStore?.Set("upperLimit", value); }
         }
 #nullable restore
 #else
-        public Json UpperLimit {
+        public Json UpperLimit
+        {
             get { return BackingStore?.Get<Json>("upperLimit"); }
             set { BackingStore?.Set("upperLimit", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Erf {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"lowerLimit", n => { LowerLimit = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"upperLimit", n => { UpperLimit = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "lowerLimit", n => { LowerLimit = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "upperLimit", n => { UpperLimit = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

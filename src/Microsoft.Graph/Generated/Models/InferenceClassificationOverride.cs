@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class InferenceClassificationOverride : Entity, IParsable 
+    public class InferenceClassificationOverride : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies how incoming messages from a specific sender should always be classified as. The possible values are: focused, other.</summary>
-        public InferenceClassificationType? ClassifyAs {
+        public InferenceClassificationType? ClassifyAs
+        {
             get { return BackingStore?.Get<InferenceClassificationType?>("classifyAs"); }
             set { BackingStore?.Set("classifyAs", value); }
         }
         /// <summary>The email address information of the sender for whom the override is created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailAddress? SenderEmailAddress {
+        public EmailAddress? SenderEmailAddress
+        {
             get { return BackingStore?.Get<EmailAddress?>("senderEmailAddress"); }
             set { BackingStore?.Set("senderEmailAddress", value); }
         }
 #nullable restore
 #else
-        public EmailAddress SenderEmailAddress {
+        public EmailAddress SenderEmailAddress
+        {
             get { return BackingStore?.Get<EmailAddress>("senderEmailAddress"); }
             set { BackingStore?.Set("senderEmailAddress", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"classifyAs", n => { ClassifyAs = n.GetEnumValue<InferenceClassificationType>(); } },
-                {"senderEmailAddress", n => { SenderEmailAddress = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
+                { "classifyAs", n => { ClassifyAs = n.GetEnumValue<InferenceClassificationType>(); } },
+                { "senderEmailAddress", n => { SenderEmailAddress = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

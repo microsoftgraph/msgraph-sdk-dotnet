@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AllowedValue : Entity, IParsable 
+    public class AllowedValue : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether the predefined value is active or deactivated. If set to false, this predefined value can&apos;t be assigned to any other supported directory objects.</summary>
-        public bool? IsActive {
+        public bool? IsActive
+        {
             get { return BackingStore?.Get<bool?>("isActive"); }
             set { BackingStore?.Set("isActive", value); }
         }
@@ -32,7 +34,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isActive", n => { IsActive = n.GetBoolValue(); } },
+                { "isActive", n => { IsActive = n.GetBoolValue(); } },
             };
         }
         /// <summary>

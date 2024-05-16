@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImCot {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImCot
+{
     #pragma warning disable CS1591
-    public class ImCotPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ImCotPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImCot {
         /// <summary>The inumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Inumber {
+        public Json? Inumber
+        {
             get { return BackingStore?.Get<Json?>("inumber"); }
             set { BackingStore?.Set("inumber", value); }
         }
 #nullable restore
 #else
-        public Json Inumber {
+        public Json Inumber
+        {
             get { return BackingStore?.Get<Json>("inumber"); }
             set { BackingStore?.Set("inumber", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImCot {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"inumber", n => { Inumber = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "inumber", n => { Inumber = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

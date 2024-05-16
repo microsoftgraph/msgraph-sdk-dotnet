@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EntitlementManagementSettings : Entity, IParsable 
+    public class EntitlementManagementSettings : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically many days, after an external user is blocked from sign in before their account is deleted.</summary>
-        public TimeSpan? DurationUntilExternalUserDeletedAfterBlocked {
+        public TimeSpan? DurationUntilExternalUserDeletedAfterBlocked
+        {
             get { return BackingStore?.Get<TimeSpan?>("durationUntilExternalUserDeletedAfterBlocked"); }
             set { BackingStore?.Set("durationUntilExternalUserDeletedAfterBlocked", value); }
         }
         /// <summary>Automatic action that the service should take when an external user&apos;s last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.</summary>
-        public AccessPackageExternalUserLifecycleAction? ExternalUserLifecycleAction {
+        public AccessPackageExternalUserLifecycleAction? ExternalUserLifecycleAction
+        {
             get { return BackingStore?.Get<AccessPackageExternalUserLifecycleAction?>("externalUserLifecycleAction"); }
             set { BackingStore?.Set("externalUserLifecycleAction", value); }
         }
@@ -37,8 +40,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"durationUntilExternalUserDeletedAfterBlocked", n => { DurationUntilExternalUserDeletedAfterBlocked = n.GetTimeSpanValue(); } },
-                {"externalUserLifecycleAction", n => { ExternalUserLifecycleAction = n.GetEnumValue<AccessPackageExternalUserLifecycleAction>(); } },
+                { "durationUntilExternalUserDeletedAfterBlocked", n => { DurationUntilExternalUserDeletedAfterBlocked = n.GetTimeSpanValue(); } },
+                { "externalUserLifecycleAction", n => { ExternalUserLifecycleAction = n.GetEnumValue<AccessPackageExternalUserLifecycleAction>(); } },
             };
         }
         /// <summary>

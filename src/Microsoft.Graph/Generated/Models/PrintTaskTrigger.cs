@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PrintTaskTrigger : Entity, IParsable 
+    public class PrintTaskTrigger : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The definition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrintTaskDefinition? Definition {
+        public PrintTaskDefinition? Definition
+        {
             get { return BackingStore?.Get<PrintTaskDefinition?>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
 #nullable restore
 #else
-        public PrintTaskDefinition Definition {
+        public PrintTaskDefinition Definition
+        {
             get { return BackingStore?.Get<PrintTaskDefinition>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
 #endif
         /// <summary>The event property</summary>
-        public PrintEvent? Event {
+        public PrintEvent? Event
+        {
             get { return BackingStore?.Get<PrintEvent?>("event"); }
             set { BackingStore?.Set("event", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"definition", n => { Definition = n.GetObjectValue<PrintTaskDefinition>(PrintTaskDefinition.CreateFromDiscriminatorValue); } },
-                {"event", n => { Event = n.GetEnumValue<PrintEvent>(); } },
+                { "definition", n => { Definition = n.GetObjectValue<PrintTaskDefinition>(PrintTaskDefinition.CreateFromDiscriminatorValue); } },
+                { "event", n => { Event = n.GetEnumValue<PrintEvent>(); } },
             };
         }
         /// <summary>

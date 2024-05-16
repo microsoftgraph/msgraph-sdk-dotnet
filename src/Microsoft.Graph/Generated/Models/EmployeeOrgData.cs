@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EmployeeOrgData : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EmployeeOrgData : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The cost center associated with the user. Returned only on $select. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostCenter {
+        public string? CostCenter
+        {
             get { return BackingStore?.Get<string?>("costCenter"); }
             set { BackingStore?.Set("costCenter", value); }
         }
 #nullable restore
 #else
-        public string CostCenter {
+        public string CostCenter
+        {
             get { return BackingStore?.Get<string>("costCenter"); }
             set { BackingStore?.Set("costCenter", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the division in which the user works. Returned only on $select. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Division {
+        public string? Division
+        {
             get { return BackingStore?.Get<string?>("division"); }
             set { BackingStore?.Set("division", value); }
         }
 #nullable restore
 #else
-        public string Division {
+        public string Division
+        {
             get { return BackingStore?.Get<string>("division"); }
             set { BackingStore?.Set("division", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"costCenter", n => { CostCenter = n.GetStringValue(); } },
-                {"division", n => { Division = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "costCenter", n => { CostCenter = n.GetStringValue(); } },
+                { "division", n => { Division = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

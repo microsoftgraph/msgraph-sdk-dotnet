@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Windows Information Protection Network learning Summary entity.
     /// </summary>
-    public class WindowsInformationProtectionNetworkLearningSummary : Entity, IParsable 
+    public class WindowsInformationProtectionNetworkLearningSummary : Entity, IParsable
     {
         /// <summary>Device Count</summary>
-        public int? DeviceCount {
+        public int? DeviceCount
+        {
             get { return BackingStore?.Get<int?>("deviceCount"); }
             set { BackingStore?.Set("deviceCount", value); }
         }
         /// <summary>Website url</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url {
+        public string? Url
+        {
             get { return BackingStore?.Get<string?>("url"); }
             set { BackingStore?.Set("url", value); }
         }
 #nullable restore
 #else
-        public string Url {
+        public string Url
+        {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
         }
@@ -47,8 +51,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceCount", n => { DeviceCount = n.GetIntValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "deviceCount", n => { DeviceCount = n.GetIntValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

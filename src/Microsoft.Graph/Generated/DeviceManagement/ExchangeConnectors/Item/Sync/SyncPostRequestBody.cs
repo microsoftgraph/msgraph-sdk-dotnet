@@ -6,20 +6,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item.Sync {
+namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item.Sync
+{
     #pragma warning disable CS1591
-    public class SyncPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SyncPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The type of Exchange Connector sync requested.</summary>
-        public DeviceManagementExchangeConnectorSyncType? SyncType {
+        public DeviceManagementExchangeConnectorSyncType? SyncType
+        {
             get { return BackingStore?.Get<DeviceManagementExchangeConnectorSyncType?>("syncType"); }
             set { BackingStore?.Set("syncType", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item.Sync {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"syncType", n => { SyncType = n.GetEnumValue<DeviceManagementExchangeConnectorSyncType>(); } },
+                { "syncType", n => { SyncType = n.GetEnumValue<DeviceManagementExchangeConnectorSyncType>(); } },
             };
         }
         /// <summary>

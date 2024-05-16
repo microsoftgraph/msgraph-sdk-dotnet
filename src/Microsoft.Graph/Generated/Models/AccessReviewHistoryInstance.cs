@@ -4,52 +4,61 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessReviewHistoryInstance : Entity, IParsable 
+    public class AccessReviewHistoryInstance : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Uri that can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DownloadUri {
+        public string? DownloadUri
+        {
             get { return BackingStore?.Get<string?>("downloadUri"); }
             set { BackingStore?.Set("downloadUri", value); }
         }
 #nullable restore
 #else
-        public string DownloadUri {
+        public string DownloadUri
+        {
             get { return BackingStore?.Get<string>("downloadUri"); }
             set { BackingStore?.Set("downloadUri", value); }
         }
 #endif
         /// <summary>Timestamp when this instance and associated data expires and the history is deleted. Required.</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>Timestamp when all of the available data for this instance was collected and is set after this instance&apos;s status is set to done. Required.</summary>
-        public DateTimeOffset? FulfilledDateTime {
+        public DateTimeOffset? FulfilledDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("fulfilledDateTime"); }
             set { BackingStore?.Set("fulfilledDateTime", value); }
         }
         /// <summary>Timestamp reviews ending on or before this date will be included in the fetched history data.</summary>
-        public DateTimeOffset? ReviewHistoryPeriodEndDateTime {
+        public DateTimeOffset? ReviewHistoryPeriodEndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("reviewHistoryPeriodEndDateTime"); }
             set { BackingStore?.Set("reviewHistoryPeriodEndDateTime", value); }
         }
         /// <summary>Timestamp reviews starting on or after this date will be included in the fetched history data.</summary>
-        public DateTimeOffset? ReviewHistoryPeriodStartDateTime {
+        public DateTimeOffset? ReviewHistoryPeriodStartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("reviewHistoryPeriodStartDateTime"); }
             set { BackingStore?.Set("reviewHistoryPeriodStartDateTime", value); }
         }
         /// <summary>Timestamp when the instance&apos;s history data is scheduled to be generated.</summary>
-        public DateTimeOffset? RunDateTime {
+        public DateTimeOffset? RunDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("runDateTime"); }
             set { BackingStore?.Set("runDateTime", value); }
         }
         /// <summary>Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue. Once the status has been marked as done, a link can be generated to retrieve the instance&apos;s data by calling generateDownloadUri method.</summary>
-        public AccessReviewHistoryStatus? Status {
+        public AccessReviewHistoryStatus? Status
+        {
             get { return BackingStore?.Get<AccessReviewHistoryStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -71,13 +80,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"downloadUri", n => { DownloadUri = n.GetStringValue(); } },
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"fulfilledDateTime", n => { FulfilledDateTime = n.GetDateTimeOffsetValue(); } },
-                {"reviewHistoryPeriodEndDateTime", n => { ReviewHistoryPeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"reviewHistoryPeriodStartDateTime", n => { ReviewHistoryPeriodStartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"runDateTime", n => { RunDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetEnumValue<AccessReviewHistoryStatus>(); } },
+                { "downloadUri", n => { DownloadUri = n.GetStringValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "fulfilledDateTime", n => { FulfilledDateTime = n.GetDateTimeOffsetValue(); } },
+                { "reviewHistoryPeriodEndDateTime", n => { ReviewHistoryPeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "reviewHistoryPeriodStartDateTime", n => { ReviewHistoryPeriodStartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "runDateTime", n => { RunDateTime = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<AccessReviewHistoryStatus>(); } },
             };
         }
         /// <summary>

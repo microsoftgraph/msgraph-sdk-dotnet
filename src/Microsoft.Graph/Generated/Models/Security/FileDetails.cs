@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class FileDetails : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class FileDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The name of the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName {
+        public string? FileName
+        {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
 #nullable restore
 #else
-        public string FileName {
+        public string FileName
+        {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The file path (location) of the file instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FilePath {
+        public string? FilePath
+        {
             get { return BackingStore?.Get<string?>("filePath"); }
             set { BackingStore?.Set("filePath", value); }
         }
 #nullable restore
 #else
-        public string FilePath {
+        public string FilePath
+        {
             get { return BackingStore?.Get<string>("filePath"); }
             set { BackingStore?.Set("filePath", value); }
         }
@@ -48,32 +54,37 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The publisher of the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FilePublisher {
+        public string? FilePublisher
+        {
             get { return BackingStore?.Get<string?>("filePublisher"); }
             set { BackingStore?.Set("filePublisher", value); }
         }
 #nullable restore
 #else
-        public string FilePublisher {
+        public string FilePublisher
+        {
             get { return BackingStore?.Get<string>("filePublisher"); }
             set { BackingStore?.Set("filePublisher", value); }
         }
 #endif
         /// <summary>The size of the file in bytes.</summary>
-        public long? FileSize {
+        public long? FileSize
+        {
             get { return BackingStore?.Get<long?>("fileSize"); }
             set { BackingStore?.Set("fileSize", value); }
         }
         /// <summary>The certificate authority (CA) that issued the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Issuer {
+        public string? Issuer
+        {
             get { return BackingStore?.Get<string?>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
 #nullable restore
 #else
-        public string Issuer {
+        public string Issuer
+        {
             get { return BackingStore?.Get<string>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -95,13 +108,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The Sha1 cryptographic hash of the file content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha1 {
+        public string? Sha1
+        {
             get { return BackingStore?.Get<string?>("sha1"); }
             set { BackingStore?.Set("sha1", value); }
         }
 #nullable restore
 #else
-        public string Sha1 {
+        public string Sha1
+        {
             get { return BackingStore?.Get<string>("sha1"); }
             set { BackingStore?.Set("sha1", value); }
         }
@@ -109,13 +124,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The Sha256 cryptographic hash of the file content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha256 {
+        public string? Sha256
+        {
             get { return BackingStore?.Get<string?>("sha256"); }
             set { BackingStore?.Set("sha256", value); }
         }
 #nullable restore
 #else
-        public string Sha256 {
+        public string Sha256
+        {
             get { return BackingStore?.Get<string>("sha256"); }
             set { BackingStore?.Set("sha256", value); }
         }
@@ -123,13 +140,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The signer of the signed file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Signer {
+        public string? Signer
+        {
             get { return BackingStore?.Get<string?>("signer"); }
             set { BackingStore?.Set("signer", value); }
         }
 #nullable restore
 #else
-        public string Signer {
+        public string Signer
+        {
             get { return BackingStore?.Get<string>("signer"); }
             set { BackingStore?.Set("signer", value); }
         }
@@ -160,15 +179,15 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"fileName", n => { FileName = n.GetStringValue(); } },
-                {"filePath", n => { FilePath = n.GetStringValue(); } },
-                {"filePublisher", n => { FilePublisher = n.GetStringValue(); } },
-                {"fileSize", n => { FileSize = n.GetLongValue(); } },
-                {"issuer", n => { Issuer = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sha1", n => { Sha1 = n.GetStringValue(); } },
-                {"sha256", n => { Sha256 = n.GetStringValue(); } },
-                {"signer", n => { Signer = n.GetStringValue(); } },
+                { "fileName", n => { FileName = n.GetStringValue(); } },
+                { "filePath", n => { FilePath = n.GetStringValue(); } },
+                { "filePublisher", n => { FilePublisher = n.GetStringValue(); } },
+                { "fileSize", n => { FileSize = n.GetLongValue(); } },
+                { "issuer", n => { Issuer = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sha1", n => { Sha1 = n.GetStringValue(); } },
+                { "sha256", n => { Sha256 = n.GetStringValue(); } },
+                { "signer", n => { Signer = n.GetStringValue(); } },
             };
         }
         /// <summary>

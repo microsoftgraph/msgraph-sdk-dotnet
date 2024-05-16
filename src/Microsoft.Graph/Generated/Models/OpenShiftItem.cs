@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OpenShiftItem : ShiftItem, IParsable 
+    public class OpenShiftItem : ShiftItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Count of the number of slots for the given open shift.</summary>
-        public int? OpenSlotCount {
+        public int? OpenSlotCount
+        {
             get { return BackingStore?.Get<int?>("openSlotCount"); }
             set { BackingStore?.Set("openSlotCount", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"openSlotCount", n => { OpenSlotCount = n.GetIntValue(); } },
+                { "openSlotCount", n => { OpenSlotCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

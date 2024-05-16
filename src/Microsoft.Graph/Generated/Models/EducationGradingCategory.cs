@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EducationGradingCategory : Entity, IParsable 
+    public class EducationGradingCategory : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the grading category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The weight of the category; an integer between 0 and 100.</summary>
-        public int? PercentageWeight {
+        public int? PercentageWeight
+        {
             get { return BackingStore?.Get<int?>("percentageWeight"); }
             set { BackingStore?.Set("percentageWeight", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"percentageWeight", n => { PercentageWeight = n.GetIntValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "percentageWeight", n => { PercentageWeight = n.GetIntValue(); } },
             };
         }
         /// <summary>

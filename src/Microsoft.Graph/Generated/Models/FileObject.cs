@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class FileObject : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class FileObject : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Hashes of the file&apos;s binary content, if available. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Hashes? Hashes {
+        public Microsoft.Graph.Models.Hashes? Hashes
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Hashes?>("hashes"); }
             set { BackingStore?.Set("hashes", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Hashes Hashes {
+        public Microsoft.Graph.Models.Hashes Hashes
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Hashes>("hashes"); }
             set { BackingStore?.Set("hashes", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MimeType {
+        public string? MimeType
+        {
             get { return BackingStore?.Get<string?>("mimeType"); }
             set { BackingStore?.Set("mimeType", value); }
         }
 #nullable restore
 #else
-        public string MimeType {
+        public string MimeType
+        {
             get { return BackingStore?.Get<string>("mimeType"); }
             set { BackingStore?.Set("mimeType", value); }
         }
@@ -48,19 +54,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The processingMetadata property</summary>
-        public bool? ProcessingMetadata {
+        public bool? ProcessingMetadata
+        {
             get { return BackingStore?.Get<bool?>("processingMetadata"); }
             set { BackingStore?.Set("processingMetadata", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"hashes", n => { Hashes = n.GetObjectValue<Microsoft.Graph.Models.Hashes>(Microsoft.Graph.Models.Hashes.CreateFromDiscriminatorValue); } },
-                {"mimeType", n => { MimeType = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"processingMetadata", n => { ProcessingMetadata = n.GetBoolValue(); } },
+                { "hashes", n => { Hashes = n.GetObjectValue<Microsoft.Graph.Models.Hashes>(Microsoft.Graph.Models.Hashes.CreateFromDiscriminatorValue); } },
+                { "mimeType", n => { MimeType = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "processingMetadata", n => { ProcessingMetadata = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EducationAssignmentPointsGrade : EducationAssignmentGrade, IParsable 
+    public class EducationAssignmentPointsGrade : EducationAssignmentGrade, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Number of points a teacher is giving this submission object.</summary>
-        public float? Points {
+        public float? Points
+        {
             get { return BackingStore?.Get<float?>("points"); }
             set { BackingStore?.Set("points", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"points", n => { Points = n.GetFloatValue(); } },
+                { "points", n => { Points = n.GetFloatValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookChartLegendFormat : Entity, IParsable 
+    public class WorkbookChartLegendFormat : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the fill format of an object, which includes background formating information. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartFill? Fill {
+        public WorkbookChartFill? Fill
+        {
             get { return BackingStore?.Get<WorkbookChartFill?>("fill"); }
             set { BackingStore?.Set("fill", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartFill Fill {
+        public WorkbookChartFill Fill
+        {
             get { return BackingStore?.Get<WorkbookChartFill>("fill"); }
             set { BackingStore?.Set("fill", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents the font attributes such as font name, font size, color, etc. of a chart legend. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartFont? Font {
+        public WorkbookChartFont? Font
+        {
             get { return BackingStore?.Get<WorkbookChartFont?>("font"); }
             set { BackingStore?.Set("font", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartFont Font {
+        public WorkbookChartFont Font
+        {
             get { return BackingStore?.Get<WorkbookChartFont>("font"); }
             set { BackingStore?.Set("font", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"fill", n => { Fill = n.GetObjectValue<WorkbookChartFill>(WorkbookChartFill.CreateFromDiscriminatorValue); } },
-                {"font", n => { Font = n.GetObjectValue<WorkbookChartFont>(WorkbookChartFont.CreateFromDiscriminatorValue); } },
+                { "fill", n => { Fill = n.GetObjectValue<WorkbookChartFill>(WorkbookChartFill.CreateFromDiscriminatorValue); } },
+                { "font", n => { Font = n.GetObjectValue<WorkbookChartFont>(WorkbookChartFont.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

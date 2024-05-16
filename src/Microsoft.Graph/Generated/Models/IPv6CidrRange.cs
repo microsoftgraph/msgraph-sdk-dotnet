@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class IPv6CidrRange : IpRange, IParsable 
+    public class IPv6CidrRange : IpRange, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>IPv6 address in CIDR notation. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CidrAddress {
+        public string? CidrAddress
+        {
             get { return BackingStore?.Get<string?>("cidrAddress"); }
             set { BackingStore?.Set("cidrAddress", value); }
         }
 #nullable restore
 #else
-        public string CidrAddress {
+        public string CidrAddress
+        {
             get { return BackingStore?.Get<string>("cidrAddress"); }
             set { BackingStore?.Set("cidrAddress", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"cidrAddress", n => { CidrAddress = n.GetStringValue(); } },
+                { "cidrAddress", n => { CidrAddress = n.GetStringValue(); } },
             };
         }
         /// <summary>

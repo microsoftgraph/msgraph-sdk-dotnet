@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class RecordOperation : CommsOperation, IParsable 
+    public class RecordOperation : CommsOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The access token required to retrieve the recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordingAccessToken {
+        public string? RecordingAccessToken
+        {
             get { return BackingStore?.Get<string?>("recordingAccessToken"); }
             set { BackingStore?.Set("recordingAccessToken", value); }
         }
 #nullable restore
 #else
-        public string RecordingAccessToken {
+        public string RecordingAccessToken
+        {
             get { return BackingStore?.Get<string>("recordingAccessToken"); }
             set { BackingStore?.Set("recordingAccessToken", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The location where the recording is located.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordingLocation {
+        public string? RecordingLocation
+        {
             get { return BackingStore?.Get<string?>("recordingLocation"); }
             set { BackingStore?.Set("recordingLocation", value); }
         }
 #nullable restore
 #else
-        public string RecordingLocation {
+        public string RecordingLocation
+        {
             get { return BackingStore?.Get<string>("recordingLocation"); }
             set { BackingStore?.Set("recordingLocation", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"recordingAccessToken", n => { RecordingAccessToken = n.GetStringValue(); } },
-                {"recordingLocation", n => { RecordingLocation = n.GetStringValue(); } },
+                { "recordingAccessToken", n => { RecordingAccessToken = n.GetStringValue(); } },
+                { "recordingLocation", n => { RecordingLocation = n.GetStringValue(); } },
             };
         }
         /// <summary>

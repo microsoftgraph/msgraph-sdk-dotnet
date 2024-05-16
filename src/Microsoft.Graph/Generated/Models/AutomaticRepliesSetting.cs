@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AutomaticRepliesSetting : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AutomaticRepliesSetting : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The set of audience external to the signed-in user&apos;s organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.</summary>
-        public ExternalAudienceScope? ExternalAudience {
+        public ExternalAudienceScope? ExternalAudience
+        {
             get { return BackingStore?.Get<ExternalAudienceScope?>("externalAudience"); }
             set { BackingStore?.Set("externalAudience", value); }
         }
         /// <summary>The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalReplyMessage {
+        public string? ExternalReplyMessage
+        {
             get { return BackingStore?.Get<string?>("externalReplyMessage"); }
             set { BackingStore?.Set("externalReplyMessage", value); }
         }
 #nullable restore
 #else
-        public string ExternalReplyMessage {
+        public string ExternalReplyMessage
+        {
             get { return BackingStore?.Get<string>("externalReplyMessage"); }
             set { BackingStore?.Set("externalReplyMessage", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The automatic reply to send to the audience internal to the signed-in user&apos;s organization, if Status is AlwaysEnabled or Scheduled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InternalReplyMessage {
+        public string? InternalReplyMessage
+        {
             get { return BackingStore?.Get<string?>("internalReplyMessage"); }
             set { BackingStore?.Set("internalReplyMessage", value); }
         }
 #nullable restore
 #else
-        public string InternalReplyMessage {
+        public string InternalReplyMessage
+        {
             get { return BackingStore?.Get<string>("internalReplyMessage"); }
             set { BackingStore?.Set("internalReplyMessage", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The date and time that automatic replies are set to end, if Status is set to Scheduled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? ScheduledEndDateTime {
+        public DateTimeTimeZone? ScheduledEndDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("scheduledEndDateTime"); }
             set { BackingStore?.Set("scheduledEndDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone ScheduledEndDateTime {
+        public DateTimeTimeZone ScheduledEndDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("scheduledEndDateTime"); }
             set { BackingStore?.Set("scheduledEndDateTime", value); }
         }
@@ -81,19 +92,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The date and time that automatic replies are set to begin, if Status is set to Scheduled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? ScheduledStartDateTime {
+        public DateTimeTimeZone? ScheduledStartDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("scheduledStartDateTime"); }
             set { BackingStore?.Set("scheduledStartDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone ScheduledStartDateTime {
+        public DateTimeTimeZone ScheduledStartDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("scheduledStartDateTime"); }
             set { BackingStore?.Set("scheduledStartDateTime", value); }
         }
 #endif
         /// <summary>Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.</summary>
-        public AutomaticRepliesStatus? Status {
+        public AutomaticRepliesStatus? Status
+        {
             get { return BackingStore?.Get<AutomaticRepliesStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -123,13 +137,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"externalAudience", n => { ExternalAudience = n.GetEnumValue<ExternalAudienceScope>(); } },
-                {"externalReplyMessage", n => { ExternalReplyMessage = n.GetStringValue(); } },
-                {"internalReplyMessage", n => { InternalReplyMessage = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"scheduledEndDateTime", n => { ScheduledEndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"scheduledStartDateTime", n => { ScheduledStartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"status", n => { Status = n.GetEnumValue<AutomaticRepliesStatus>(); } },
+                { "externalAudience", n => { ExternalAudience = n.GetEnumValue<ExternalAudienceScope>(); } },
+                { "externalReplyMessage", n => { ExternalReplyMessage = n.GetStringValue(); } },
+                { "internalReplyMessage", n => { InternalReplyMessage = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "scheduledEndDateTime", n => { ScheduledEndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "scheduledStartDateTime", n => { ScheduledStartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<AutomaticRepliesStatus>(); } },
             };
         }
         /// <summary>

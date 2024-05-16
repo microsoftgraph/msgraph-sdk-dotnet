@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the windows10TeamGeneralConfiguration resource.
     /// </summary>
-    public class Windows10TeamGeneralConfiguration : DeviceConfiguration, IParsable 
+    public class Windows10TeamGeneralConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Indicates whether or not to Block Azure Operational Insights.</summary>
-        public bool? AzureOperationalInsightsBlockTelemetry {
+        public bool? AzureOperationalInsightsBlockTelemetry
+        {
             get { return BackingStore?.Get<bool?>("azureOperationalInsightsBlockTelemetry"); }
             set { BackingStore?.Set("azureOperationalInsightsBlockTelemetry", value); }
         }
         /// <summary>The Azure Operational Insights workspace id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureOperationalInsightsWorkspaceId {
+        public string? AzureOperationalInsightsWorkspaceId
+        {
             get { return BackingStore?.Get<string?>("azureOperationalInsightsWorkspaceId"); }
             set { BackingStore?.Set("azureOperationalInsightsWorkspaceId", value); }
         }
 #nullable restore
 #else
-        public string AzureOperationalInsightsWorkspaceId {
+        public string AzureOperationalInsightsWorkspaceId
+        {
             get { return BackingStore?.Get<string>("azureOperationalInsightsWorkspaceId"); }
             set { BackingStore?.Set("azureOperationalInsightsWorkspaceId", value); }
         }
@@ -33,108 +37,128 @@ namespace Microsoft.Graph.Models {
         /// <summary>The Azure Operational Insights Workspace key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureOperationalInsightsWorkspaceKey {
+        public string? AzureOperationalInsightsWorkspaceKey
+        {
             get { return BackingStore?.Get<string?>("azureOperationalInsightsWorkspaceKey"); }
             set { BackingStore?.Set("azureOperationalInsightsWorkspaceKey", value); }
         }
 #nullable restore
 #else
-        public string AzureOperationalInsightsWorkspaceKey {
+        public string AzureOperationalInsightsWorkspaceKey
+        {
             get { return BackingStore?.Get<string>("azureOperationalInsightsWorkspaceKey"); }
             set { BackingStore?.Set("azureOperationalInsightsWorkspaceKey", value); }
         }
 #endif
         /// <summary>Specifies whether to automatically launch the Connect app whenever a projection is initiated.</summary>
-        public bool? ConnectAppBlockAutoLaunch {
+        public bool? ConnectAppBlockAutoLaunch
+        {
             get { return BackingStore?.Get<bool?>("connectAppBlockAutoLaunch"); }
             set { BackingStore?.Set("connectAppBlockAutoLaunch", value); }
         }
         /// <summary>Indicates whether or not to Block setting a maintenance window for device updates.</summary>
-        public bool? MaintenanceWindowBlocked {
+        public bool? MaintenanceWindowBlocked
+        {
             get { return BackingStore?.Get<bool?>("maintenanceWindowBlocked"); }
             set { BackingStore?.Set("maintenanceWindowBlocked", value); }
         }
         /// <summary>Maintenance window duration for device updates. Valid values 0 to 5</summary>
-        public int? MaintenanceWindowDurationInHours {
+        public int? MaintenanceWindowDurationInHours
+        {
             get { return BackingStore?.Get<int?>("maintenanceWindowDurationInHours"); }
             set { BackingStore?.Set("maintenanceWindowDurationInHours", value); }
         }
         /// <summary>Maintenance window start time for device updates.</summary>
-        public Time? MaintenanceWindowStartTime {
+        public Time? MaintenanceWindowStartTime
+        {
             get { return BackingStore?.Get<Time?>("maintenanceWindowStartTime"); }
             set { BackingStore?.Set("maintenanceWindowStartTime", value); }
         }
         /// <summary>Indicates whether or not to Block wireless projection.</summary>
-        public bool? MiracastBlocked {
+        public bool? MiracastBlocked
+        {
             get { return BackingStore?.Get<bool?>("miracastBlocked"); }
             set { BackingStore?.Set("miracastBlocked", value); }
         }
         /// <summary>Possible values for Miracast channel.</summary>
-        public Microsoft.Graph.Models.MiracastChannel? MiracastChannel {
+        public Microsoft.Graph.Models.MiracastChannel? MiracastChannel
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.MiracastChannel?>("miracastChannel"); }
             set { BackingStore?.Set("miracastChannel", value); }
         }
         /// <summary>Indicates whether or not to require a pin for wireless projection.</summary>
-        public bool? MiracastRequirePin {
+        public bool? MiracastRequirePin
+        {
             get { return BackingStore?.Get<bool?>("miracastRequirePin"); }
             set { BackingStore?.Set("miracastRequirePin", value); }
         }
         /// <summary>Specifies whether to disable the &apos;My meetings and files&apos; feature in the Start menu, which shows the signed-in user&apos;s meetings and files from Office 365.</summary>
-        public bool? SettingsBlockMyMeetingsAndFiles {
+        public bool? SettingsBlockMyMeetingsAndFiles
+        {
             get { return BackingStore?.Get<bool?>("settingsBlockMyMeetingsAndFiles"); }
             set { BackingStore?.Set("settingsBlockMyMeetingsAndFiles", value); }
         }
         /// <summary>Specifies whether to allow the ability to resume a session when the session times out.</summary>
-        public bool? SettingsBlockSessionResume {
+        public bool? SettingsBlockSessionResume
+        {
             get { return BackingStore?.Get<bool?>("settingsBlockSessionResume"); }
             set { BackingStore?.Set("settingsBlockSessionResume", value); }
         }
         /// <summary>Specifies whether to disable auto-populating of the sign-in dialog with invitees from scheduled meetings.</summary>
-        public bool? SettingsBlockSigninSuggestions {
+        public bool? SettingsBlockSigninSuggestions
+        {
             get { return BackingStore?.Get<bool?>("settingsBlockSigninSuggestions"); }
             set { BackingStore?.Set("settingsBlockSigninSuggestions", value); }
         }
         /// <summary>Specifies the default volume value for a new session. Permitted values are 0-100. The default is 45. Valid values 0 to 100</summary>
-        public int? SettingsDefaultVolume {
+        public int? SettingsDefaultVolume
+        {
             get { return BackingStore?.Get<int?>("settingsDefaultVolume"); }
             set { BackingStore?.Set("settingsDefaultVolume", value); }
         }
         /// <summary>Specifies the number of minutes until the Hub screen turns off.</summary>
-        public int? SettingsScreenTimeoutInMinutes {
+        public int? SettingsScreenTimeoutInMinutes
+        {
             get { return BackingStore?.Get<int?>("settingsScreenTimeoutInMinutes"); }
             set { BackingStore?.Set("settingsScreenTimeoutInMinutes", value); }
         }
         /// <summary>Specifies the number of minutes until the session times out.</summary>
-        public int? SettingsSessionTimeoutInMinutes {
+        public int? SettingsSessionTimeoutInMinutes
+        {
             get { return BackingStore?.Get<int?>("settingsSessionTimeoutInMinutes"); }
             set { BackingStore?.Set("settingsSessionTimeoutInMinutes", value); }
         }
         /// <summary>Specifies the number of minutes until the Hub enters sleep mode.</summary>
-        public int? SettingsSleepTimeoutInMinutes {
+        public int? SettingsSleepTimeoutInMinutes
+        {
             get { return BackingStore?.Get<int?>("settingsSleepTimeoutInMinutes"); }
             set { BackingStore?.Set("settingsSleepTimeoutInMinutes", value); }
         }
         /// <summary>The welcome screen background image URL. The URL must use the HTTPS protocol and return a PNG image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WelcomeScreenBackgroundImageUrl {
+        public string? WelcomeScreenBackgroundImageUrl
+        {
             get { return BackingStore?.Get<string?>("welcomeScreenBackgroundImageUrl"); }
             set { BackingStore?.Set("welcomeScreenBackgroundImageUrl", value); }
         }
 #nullable restore
 #else
-        public string WelcomeScreenBackgroundImageUrl {
+        public string WelcomeScreenBackgroundImageUrl
+        {
             get { return BackingStore?.Get<string>("welcomeScreenBackgroundImageUrl"); }
             set { BackingStore?.Set("welcomeScreenBackgroundImageUrl", value); }
         }
 #endif
         /// <summary>Indicates whether or not to Block the welcome screen from waking up automatically when someone enters the room.</summary>
-        public bool? WelcomeScreenBlockAutomaticWakeUp {
+        public bool? WelcomeScreenBlockAutomaticWakeUp
+        {
             get { return BackingStore?.Get<bool?>("welcomeScreenBlockAutomaticWakeUp"); }
             set { BackingStore?.Set("welcomeScreenBlockAutomaticWakeUp", value); }
         }
         /// <summary>Possible values for welcome screen meeting information.</summary>
-        public Microsoft.Graph.Models.WelcomeScreenMeetingInformation? WelcomeScreenMeetingInformation {
+        public Microsoft.Graph.Models.WelcomeScreenMeetingInformation? WelcomeScreenMeetingInformation
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.WelcomeScreenMeetingInformation?>("welcomeScreenMeetingInformation"); }
             set { BackingStore?.Set("welcomeScreenMeetingInformation", value); }
         }
@@ -163,26 +187,26 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"azureOperationalInsightsBlockTelemetry", n => { AzureOperationalInsightsBlockTelemetry = n.GetBoolValue(); } },
-                {"azureOperationalInsightsWorkspaceId", n => { AzureOperationalInsightsWorkspaceId = n.GetStringValue(); } },
-                {"azureOperationalInsightsWorkspaceKey", n => { AzureOperationalInsightsWorkspaceKey = n.GetStringValue(); } },
-                {"connectAppBlockAutoLaunch", n => { ConnectAppBlockAutoLaunch = n.GetBoolValue(); } },
-                {"maintenanceWindowBlocked", n => { MaintenanceWindowBlocked = n.GetBoolValue(); } },
-                {"maintenanceWindowDurationInHours", n => { MaintenanceWindowDurationInHours = n.GetIntValue(); } },
-                {"maintenanceWindowStartTime", n => { MaintenanceWindowStartTime = n.GetTimeValue(); } },
-                {"miracastBlocked", n => { MiracastBlocked = n.GetBoolValue(); } },
-                {"miracastChannel", n => { MiracastChannel = n.GetEnumValue<MiracastChannel>(); } },
-                {"miracastRequirePin", n => { MiracastRequirePin = n.GetBoolValue(); } },
-                {"settingsBlockMyMeetingsAndFiles", n => { SettingsBlockMyMeetingsAndFiles = n.GetBoolValue(); } },
-                {"settingsBlockSessionResume", n => { SettingsBlockSessionResume = n.GetBoolValue(); } },
-                {"settingsBlockSigninSuggestions", n => { SettingsBlockSigninSuggestions = n.GetBoolValue(); } },
-                {"settingsDefaultVolume", n => { SettingsDefaultVolume = n.GetIntValue(); } },
-                {"settingsScreenTimeoutInMinutes", n => { SettingsScreenTimeoutInMinutes = n.GetIntValue(); } },
-                {"settingsSessionTimeoutInMinutes", n => { SettingsSessionTimeoutInMinutes = n.GetIntValue(); } },
-                {"settingsSleepTimeoutInMinutes", n => { SettingsSleepTimeoutInMinutes = n.GetIntValue(); } },
-                {"welcomeScreenBackgroundImageUrl", n => { WelcomeScreenBackgroundImageUrl = n.GetStringValue(); } },
-                {"welcomeScreenBlockAutomaticWakeUp", n => { WelcomeScreenBlockAutomaticWakeUp = n.GetBoolValue(); } },
-                {"welcomeScreenMeetingInformation", n => { WelcomeScreenMeetingInformation = n.GetEnumValue<WelcomeScreenMeetingInformation>(); } },
+                { "azureOperationalInsightsBlockTelemetry", n => { AzureOperationalInsightsBlockTelemetry = n.GetBoolValue(); } },
+                { "azureOperationalInsightsWorkspaceId", n => { AzureOperationalInsightsWorkspaceId = n.GetStringValue(); } },
+                { "azureOperationalInsightsWorkspaceKey", n => { AzureOperationalInsightsWorkspaceKey = n.GetStringValue(); } },
+                { "connectAppBlockAutoLaunch", n => { ConnectAppBlockAutoLaunch = n.GetBoolValue(); } },
+                { "maintenanceWindowBlocked", n => { MaintenanceWindowBlocked = n.GetBoolValue(); } },
+                { "maintenanceWindowDurationInHours", n => { MaintenanceWindowDurationInHours = n.GetIntValue(); } },
+                { "maintenanceWindowStartTime", n => { MaintenanceWindowStartTime = n.GetTimeValue(); } },
+                { "miracastBlocked", n => { MiracastBlocked = n.GetBoolValue(); } },
+                { "miracastChannel", n => { MiracastChannel = n.GetEnumValue<MiracastChannel>(); } },
+                { "miracastRequirePin", n => { MiracastRequirePin = n.GetBoolValue(); } },
+                { "settingsBlockMyMeetingsAndFiles", n => { SettingsBlockMyMeetingsAndFiles = n.GetBoolValue(); } },
+                { "settingsBlockSessionResume", n => { SettingsBlockSessionResume = n.GetBoolValue(); } },
+                { "settingsBlockSigninSuggestions", n => { SettingsBlockSigninSuggestions = n.GetBoolValue(); } },
+                { "settingsDefaultVolume", n => { SettingsDefaultVolume = n.GetIntValue(); } },
+                { "settingsScreenTimeoutInMinutes", n => { SettingsScreenTimeoutInMinutes = n.GetIntValue(); } },
+                { "settingsSessionTimeoutInMinutes", n => { SettingsSessionTimeoutInMinutes = n.GetIntValue(); } },
+                { "settingsSleepTimeoutInMinutes", n => { SettingsSleepTimeoutInMinutes = n.GetIntValue(); } },
+                { "welcomeScreenBackgroundImageUrl", n => { WelcomeScreenBackgroundImageUrl = n.GetStringValue(); } },
+                { "welcomeScreenBlockAutomaticWakeUp", n => { WelcomeScreenBlockAutomaticWakeUp = n.GetBoolValue(); } },
+                { "welcomeScreenMeetingInformation", n => { WelcomeScreenMeetingInformation = n.GetEnumValue<WelcomeScreenMeetingInformation>(); } },
             };
         }
         /// <summary>

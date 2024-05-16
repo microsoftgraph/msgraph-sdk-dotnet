@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Timevalue {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Timevalue
+{
     #pragma warning disable CS1591
-    public class TimevaluePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TimevaluePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Timevalue {
         /// <summary>The timeText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? TimeText {
+        public Json? TimeText
+        {
             get { return BackingStore?.Get<Json?>("timeText"); }
             set { BackingStore?.Set("timeText", value); }
         }
 #nullable restore
 #else
-        public Json TimeText {
+        public Json TimeText
+        {
             get { return BackingStore?.Get<Json>("timeText"); }
             set { BackingStore?.Set("timeText", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Timevalue {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"timeText", n => { TimeText = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "timeText", n => { TimeText = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

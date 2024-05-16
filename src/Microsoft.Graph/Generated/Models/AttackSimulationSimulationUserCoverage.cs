@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AttackSimulationSimulationUserCoverage : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AttackSimulationSimulationUserCoverage : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>User in an attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.AttackSimulationUser? AttackSimulationUser {
+        public Microsoft.Graph.Models.AttackSimulationUser? AttackSimulationUser
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AttackSimulationUser?>("attackSimulationUser"); }
             set { BackingStore?.Set("attackSimulationUser", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.AttackSimulationUser AttackSimulationUser {
+        public Microsoft.Graph.Models.AttackSimulationUser AttackSimulationUser
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AttackSimulationUser>("attackSimulationUser"); }
             set { BackingStore?.Set("attackSimulationUser", value); }
         }
@@ -32,36 +36,42 @@ namespace Microsoft.Graph.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of link clicks in the received payloads by the user in attack simulation and training campaigns.</summary>
-        public int? ClickCount {
+        public int? ClickCount
+        {
             get { return BackingStore?.Get<int?>("clickCount"); }
             set { BackingStore?.Set("clickCount", value); }
         }
         /// <summary>Number of compromising actions by the user in attack simulation and training campaigns.</summary>
-        public int? CompromisedCount {
+        public int? CompromisedCount
+        {
             get { return BackingStore?.Get<int?>("compromisedCount"); }
             set { BackingStore?.Set("compromisedCount", value); }
         }
         /// <summary>Date and time of the latest attack simulation and training campaign that the user was included in.</summary>
-        public DateTimeOffset? LatestSimulationDateTime {
+        public DateTimeOffset? LatestSimulationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("latestSimulationDateTime"); }
             set { BackingStore?.Set("latestSimulationDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Number of attack simulation and training campaigns that the user was included in.</summary>
-        public int? SimulationCount {
+        public int? SimulationCount
+        {
             get { return BackingStore?.Get<int?>("simulationCount"); }
             set { BackingStore?.Set("simulationCount", value); }
         }
@@ -91,12 +101,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"attackSimulationUser", n => { AttackSimulationUser = n.GetObjectValue<Microsoft.Graph.Models.AttackSimulationUser>(Microsoft.Graph.Models.AttackSimulationUser.CreateFromDiscriminatorValue); } },
-                {"clickCount", n => { ClickCount = n.GetIntValue(); } },
-                {"compromisedCount", n => { CompromisedCount = n.GetIntValue(); } },
-                {"latestSimulationDateTime", n => { LatestSimulationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"simulationCount", n => { SimulationCount = n.GetIntValue(); } },
+                { "attackSimulationUser", n => { AttackSimulationUser = n.GetObjectValue<Microsoft.Graph.Models.AttackSimulationUser>(Microsoft.Graph.Models.AttackSimulationUser.CreateFromDiscriminatorValue); } },
+                { "clickCount", n => { ClickCount = n.GetIntValue(); } },
+                { "compromisedCount", n => { CompromisedCount = n.GetIntValue(); } },
+                { "latestSimulationDateTime", n => { LatestSimulationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "simulationCount", n => { SimulationCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

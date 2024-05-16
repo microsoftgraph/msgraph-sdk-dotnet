@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkingHours : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WorkingHours : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,51 +23,59 @@ namespace Microsoft.Graph.Models {
         /// <summary>The days of the week on which the user works.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DayOfWeekObject?>? DaysOfWeek {
+        public List<DayOfWeekObject?>? DaysOfWeek
+        {
             get { return BackingStore?.Get<List<DayOfWeekObject?>?>("daysOfWeek"); }
             set { BackingStore?.Set("daysOfWeek", value); }
         }
 #nullable restore
 #else
-        public List<DayOfWeekObject?> DaysOfWeek {
+        public List<DayOfWeekObject?> DaysOfWeek
+        {
             get { return BackingStore?.Get<List<DayOfWeekObject?>>("daysOfWeek"); }
             set { BackingStore?.Set("daysOfWeek", value); }
         }
 #endif
         /// <summary>The time of the day that the user stops working.</summary>
-        public Time? EndTime {
+        public Time? EndTime
+        {
             get { return BackingStore?.Get<Time?>("endTime"); }
             set { BackingStore?.Set("endTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The time of the day that the user starts working.</summary>
-        public Time? StartTime {
+        public Time? StartTime
+        {
             get { return BackingStore?.Get<Time?>("startTime"); }
             set { BackingStore?.Set("startTime", value); }
         }
         /// <summary>The time zone to which the working hours apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeZoneBase? TimeZone {
+        public TimeZoneBase? TimeZone
+        {
             get { return BackingStore?.Get<TimeZoneBase?>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
 #nullable restore
 #else
-        public TimeZoneBase TimeZone {
+        public TimeZoneBase TimeZone
+        {
             get { return BackingStore?.Get<TimeZoneBase>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
@@ -96,11 +106,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfEnumValues<DayOfWeekObject>()?.ToList(); } },
-                {"endTime", n => { EndTime = n.GetTimeValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"startTime", n => { StartTime = n.GetTimeValue(); } },
-                {"timeZone", n => { TimeZone = n.GetObjectValue<TimeZoneBase>(TimeZoneBase.CreateFromDiscriminatorValue); } },
+                { "daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfEnumValues<DayOfWeekObject>()?.ToList(); } },
+                { "endTime", n => { EndTime = n.GetTimeValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "startTime", n => { StartTime = n.GetTimeValue(); } },
+                { "timeZone", n => { TimeZone = n.GetObjectValue<TimeZoneBase>(TimeZoneBase.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

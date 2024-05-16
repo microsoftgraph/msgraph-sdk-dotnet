@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Communications.Calls.LogTeleconferenceDeviceQuality {
+namespace Microsoft.Graph.Communications.Calls.LogTeleconferenceDeviceQuality
+{
     #pragma warning disable CS1591
-    public class LogTeleconferenceDeviceQualityPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class LogTeleconferenceDeviceQualityPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Communications.Calls.LogTeleconferenceDeviceQuality {
         /// <summary>The quality property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeleconferenceDeviceQuality? Quality {
+        public TeleconferenceDeviceQuality? Quality
+        {
             get { return BackingStore?.Get<TeleconferenceDeviceQuality?>("quality"); }
             set { BackingStore?.Set("quality", value); }
         }
 #nullable restore
 #else
-        public TeleconferenceDeviceQuality Quality {
+        public TeleconferenceDeviceQuality Quality
+        {
             get { return BackingStore?.Get<TeleconferenceDeviceQuality>("quality"); }
             set { BackingStore?.Set("quality", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Communications.Calls.LogTeleconferenceDeviceQuality {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"quality", n => { Quality = n.GetObjectValue<TeleconferenceDeviceQuality>(TeleconferenceDeviceQuality.CreateFromDiscriminatorValue); } },
+                { "quality", n => { Quality = n.GetObjectValue<TeleconferenceDeviceQuality>(TeleconferenceDeviceQuality.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

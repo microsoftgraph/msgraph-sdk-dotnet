@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PermissionGrantConditionSet : Entity, IParsable 
+    public class PermissionGrantConditionSet : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ClientApplicationIds {
+        public List<string>? ClientApplicationIds
+        {
             get { return BackingStore?.Get<List<string>?>("clientApplicationIds"); }
             set { BackingStore?.Set("clientApplicationIds", value); }
         }
 #nullable restore
 #else
-        public List<string> ClientApplicationIds {
+        public List<string> ClientApplicationIds
+        {
             get { return BackingStore?.Get<List<string>>("clientApplicationIds"); }
             set { BackingStore?.Set("clientApplicationIds", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value all to match with client apps from any publisher. Default is the single value all.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ClientApplicationPublisherIds {
+        public List<string>? ClientApplicationPublisherIds
+        {
             get { return BackingStore?.Get<List<string>?>("clientApplicationPublisherIds"); }
             set { BackingStore?.Set("clientApplicationPublisherIds", value); }
         }
 #nullable restore
 #else
-        public List<string> ClientApplicationPublisherIds {
+        public List<string> ClientApplicationPublisherIds
+        {
             get { return BackingStore?.Get<List<string>>("clientApplicationPublisherIds"); }
             set { BackingStore?.Set("clientApplicationPublisherIds", value); }
         }
 #endif
         /// <summary>Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it doesn&apos;t have a verified publisher. Default is false.</summary>
-        public bool? ClientApplicationsFromVerifiedPublisherOnly {
+        public bool? ClientApplicationsFromVerifiedPublisherOnly
+        {
             get { return BackingStore?.Get<bool?>("clientApplicationsFromVerifiedPublisherOnly"); }
             set { BackingStore?.Set("clientApplicationsFromVerifiedPublisherOnly", value); }
         }
         /// <summary>A list of Microsoft Entra tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ClientApplicationTenantIds {
+        public List<string>? ClientApplicationTenantIds
+        {
             get { return BackingStore?.Get<List<string>?>("clientApplicationTenantIds"); }
             set { BackingStore?.Set("clientApplicationTenantIds", value); }
         }
 #nullable restore
 #else
-        public List<string> ClientApplicationTenantIds {
+        public List<string> ClientApplicationTenantIds
+        {
             get { return BackingStore?.Get<List<string>>("clientApplicationTenantIds"); }
             set { BackingStore?.Set("clientApplicationTenantIds", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The permission classification for the permission being granted, or all to match with any permission classification (including permissions that aren&apos;t classified). Default is all.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PermissionClassification {
+        public string? PermissionClassification
+        {
             get { return BackingStore?.Get<string?>("permissionClassification"); }
             set { BackingStore?.Set("permissionClassification", value); }
         }
 #nullable restore
 #else
-        public string PermissionClassification {
+        public string PermissionClassification
+        {
             get { return BackingStore?.Get<string>("permissionClassification"); }
             set { BackingStore?.Set("permissionClassification", value); }
         }
@@ -73,32 +83,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the oauth2PermissionScopes property of the API&apos;s servicePrincipal object. The id of application permissions can be found in the appRoles property of the API&apos;s servicePrincipal object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API&apos;s servicePrincipal object. Default is the single value all.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Permissions {
+        public List<string>? Permissions
+        {
             get { return BackingStore?.Get<List<string>?>("permissions"); }
             set { BackingStore?.Set("permissions", value); }
         }
 #nullable restore
 #else
-        public List<string> Permissions {
+        public List<string> Permissions
+        {
             get { return BackingStore?.Get<List<string>>("permissions"); }
             set { BackingStore?.Set("permissions", value); }
         }
 #endif
         /// <summary>The permission type of the permission being granted. Possible values: application for application permissions (for example app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions that haven&apos;t been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but can&apos;t be used in custom permission grant policies. Required.</summary>
-        public Microsoft.Graph.Models.PermissionType? PermissionType {
+        public Microsoft.Graph.Models.PermissionType? PermissionType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.PermissionType?>("permissionType"); }
             set { BackingStore?.Set("permissionType", value); }
         }
         /// <summary>The appId of the resource application (for example the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceApplication {
+        public string? ResourceApplication
+        {
             get { return BackingStore?.Get<string?>("resourceApplication"); }
             set { BackingStore?.Set("resourceApplication", value); }
         }
 #nullable restore
 #else
-        public string ResourceApplication {
+        public string ResourceApplication
+        {
             get { return BackingStore?.Get<string>("resourceApplication"); }
             set { BackingStore?.Set("resourceApplication", value); }
         }
@@ -121,14 +136,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"clientApplicationIds", n => { ClientApplicationIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"clientApplicationPublisherIds", n => { ClientApplicationPublisherIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"clientApplicationTenantIds", n => { ClientApplicationTenantIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"clientApplicationsFromVerifiedPublisherOnly", n => { ClientApplicationsFromVerifiedPublisherOnly = n.GetBoolValue(); } },
-                {"permissionClassification", n => { PermissionClassification = n.GetStringValue(); } },
-                {"permissionType", n => { PermissionType = n.GetEnumValue<PermissionType>(); } },
-                {"permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"resourceApplication", n => { ResourceApplication = n.GetStringValue(); } },
+                { "clientApplicationIds", n => { ClientApplicationIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "clientApplicationPublisherIds", n => { ClientApplicationPublisherIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "clientApplicationTenantIds", n => { ClientApplicationTenantIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "clientApplicationsFromVerifiedPublisherOnly", n => { ClientApplicationsFromVerifiedPublisherOnly = n.GetBoolValue(); } },
+                { "permissionClassification", n => { PermissionClassification = n.GetStringValue(); } },
+                { "permissionType", n => { PermissionType = n.GetEnumValue<PermissionType>(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "resourceApplication", n => { ResourceApplication = n.GetStringValue(); } },
             };
         }
         /// <summary>

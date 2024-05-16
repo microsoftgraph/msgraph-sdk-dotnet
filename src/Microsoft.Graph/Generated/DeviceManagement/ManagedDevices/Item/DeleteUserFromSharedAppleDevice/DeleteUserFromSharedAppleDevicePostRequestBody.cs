@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.DeleteUserFromSharedAppleDevice {
+namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.DeleteUserFromSharedAppleDevice
+{
     #pragma warning disable CS1591
-    public class DeleteUserFromSharedAppleDevicePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeleteUserFromSharedAppleDevicePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.DeleteUserFromSha
         /// <summary>The userPrincipalName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.DeleteUserFromSha
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class IdentityApiConnector : Entity, IParsable 
+    public class IdentityApiConnector : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ApiAuthenticationConfigurationBase? AuthenticationConfiguration {
+        public ApiAuthenticationConfigurationBase? AuthenticationConfiguration
+        {
             get { return BackingStore?.Get<ApiAuthenticationConfigurationBase?>("authenticationConfiguration"); }
             set { BackingStore?.Set("authenticationConfiguration", value); }
         }
 #nullable restore
 #else
-        public ApiAuthenticationConfigurationBase AuthenticationConfiguration {
+        public ApiAuthenticationConfigurationBase AuthenticationConfiguration
+        {
             get { return BackingStore?.Get<ApiAuthenticationConfigurationBase>("authenticationConfiguration"); }
             set { BackingStore?.Set("authenticationConfiguration", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the API connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The URL of the API endpoint to call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetUrl {
+        public string? TargetUrl
+        {
             get { return BackingStore?.Get<string?>("targetUrl"); }
             set { BackingStore?.Set("targetUrl", value); }
         }
 #nullable restore
 #else
-        public string TargetUrl {
+        public string TargetUrl
+        {
             get { return BackingStore?.Get<string>("targetUrl"); }
             set { BackingStore?.Set("targetUrl", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authenticationConfiguration", n => { AuthenticationConfiguration = n.GetObjectValue<ApiAuthenticationConfigurationBase>(ApiAuthenticationConfigurationBase.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"targetUrl", n => { TargetUrl = n.GetStringValue(); } },
+                { "authenticationConfiguration", n => { AuthenticationConfiguration = n.GetObjectValue<ApiAuthenticationConfigurationBase>(ApiAuthenticationConfigurationBase.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "targetUrl", n => { TargetUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

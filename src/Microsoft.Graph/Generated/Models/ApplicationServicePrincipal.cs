@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ApplicationServicePrincipal : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ApplicationServicePrincipal : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The application property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Application? Application {
+        public Microsoft.Graph.Models.Application? Application
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Application?>("application"); }
             set { BackingStore?.Set("application", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Application Application {
+        public Microsoft.Graph.Models.Application Application
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Application>("application"); }
             set { BackingStore?.Set("application", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The servicePrincipal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ServicePrincipal? ServicePrincipal {
+        public Microsoft.Graph.Models.ServicePrincipal? ServicePrincipal
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ServicePrincipal?>("servicePrincipal"); }
             set { BackingStore?.Set("servicePrincipal", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ServicePrincipal ServicePrincipal {
+        public Microsoft.Graph.Models.ServicePrincipal ServicePrincipal
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ServicePrincipal>("servicePrincipal"); }
             set { BackingStore?.Set("servicePrincipal", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"application", n => { Application = n.GetObjectValue<Microsoft.Graph.Models.Application>(Microsoft.Graph.Models.Application.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"servicePrincipal", n => { ServicePrincipal = n.GetObjectValue<Microsoft.Graph.Models.ServicePrincipal>(Microsoft.Graph.Models.ServicePrincipal.CreateFromDiscriminatorValue); } },
+                { "application", n => { Application = n.GetObjectValue<Microsoft.Graph.Models.Application>(Microsoft.Graph.Models.Application.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "servicePrincipal", n => { ServicePrincipal = n.GetObjectValue<Microsoft.Graph.Models.ServicePrincipal>(Microsoft.Graph.Models.ServicePrincipal.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

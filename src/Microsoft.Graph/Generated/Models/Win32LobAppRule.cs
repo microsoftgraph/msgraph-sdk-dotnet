@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// A base complex type to store the detection or requirement rule data for a Win32 LOB app.
     /// </summary>
-    public class Win32LobAppRule : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Win32LobAppRule : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,19 +23,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Contains rule types for Win32 LOB apps.</summary>
-        public Win32LobAppRuleType? RuleType {
+        public Win32LobAppRuleType? RuleType
+        {
             get { return BackingStore?.Get<Win32LobAppRuleType?>("ruleType"); }
             set { BackingStore?.Set("ruleType", value); }
         }
@@ -71,8 +76,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"ruleType", n => { RuleType = n.GetEnumValue<Win32LobAppRuleType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "ruleType", n => { RuleType = n.GetEnumValue<Win32LobAppRuleType>(); } },
             };
         }
         /// <summary>

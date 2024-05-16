@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Reports.Security.GetAttackSimulationSimulationUserCoverage {
+namespace Microsoft.Graph.Reports.Security.GetAttackSimulationSimulationUserCoverage
+{
     #pragma warning disable CS1591
-    public class GetAttackSimulationSimulationUserCoverageGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetAttackSimulationSimulationUserCoverageGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttackSimulationSimulationUserCoverage>? Value {
+        public List<AttackSimulationSimulationUserCoverage>? Value
+        {
             get { return BackingStore?.Get<List<AttackSimulationSimulationUserCoverage>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<AttackSimulationSimulationUserCoverage> Value {
+        public List<AttackSimulationSimulationUserCoverage> Value
+        {
             get { return BackingStore?.Get<List<AttackSimulationSimulationUserCoverage>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationSimulationUserCove
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<AttackSimulationSimulationUserCoverage>(AttackSimulationSimulationUserCoverage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<AttackSimulationSimulationUserCoverage>(AttackSimulationSimulationUserCoverage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

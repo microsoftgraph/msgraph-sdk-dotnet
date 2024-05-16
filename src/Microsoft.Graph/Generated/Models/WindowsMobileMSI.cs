@@ -4,41 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties and inherited properties for Windows Mobile MSI Line Of Business apps.
     /// </summary>
-    public class WindowsMobileMSI : MobileLobApp, IParsable 
+    public class WindowsMobileMSI : MobileLobApp, IParsable
     {
         /// <summary>The command line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommandLine {
+        public string? CommandLine
+        {
             get { return BackingStore?.Get<string?>("commandLine"); }
             set { BackingStore?.Set("commandLine", value); }
         }
 #nullable restore
 #else
-        public string CommandLine {
+        public string CommandLine
+        {
             get { return BackingStore?.Get<string>("commandLine"); }
             set { BackingStore?.Set("commandLine", value); }
         }
 #endif
         /// <summary>A boolean to control whether the app&apos;s version will be used to detect the app after it is installed on a device. Set this to true for Windows Mobile MSI Line of Business (LoB) apps that use a self update feature.</summary>
-        public bool? IgnoreVersionDetection {
+        public bool? IgnoreVersionDetection
+        {
             get { return BackingStore?.Get<bool?>("ignoreVersionDetection"); }
             set { BackingStore?.Set("ignoreVersionDetection", value); }
         }
         /// <summary>The product code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductCode {
+        public string? ProductCode
+        {
             get { return BackingStore?.Get<string?>("productCode"); }
             set { BackingStore?.Set("productCode", value); }
         }
 #nullable restore
 #else
-        public string ProductCode {
+        public string ProductCode
+        {
             get { return BackingStore?.Get<string>("productCode"); }
             set { BackingStore?.Set("productCode", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The product version of Windows Mobile MSI Line of Business (LoB) app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductVersion {
+        public string? ProductVersion
+        {
             get { return BackingStore?.Get<string?>("productVersion"); }
             set { BackingStore?.Set("productVersion", value); }
         }
 #nullable restore
 #else
-        public string ProductVersion {
+        public string ProductVersion
+        {
             get { return BackingStore?.Get<string>("productVersion"); }
             set { BackingStore?.Set("productVersion", value); }
         }
@@ -82,10 +90,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"commandLine", n => { CommandLine = n.GetStringValue(); } },
-                {"ignoreVersionDetection", n => { IgnoreVersionDetection = n.GetBoolValue(); } },
-                {"productCode", n => { ProductCode = n.GetStringValue(); } },
-                {"productVersion", n => { ProductVersion = n.GetStringValue(); } },
+                { "commandLine", n => { CommandLine = n.GetStringValue(); } },
+                { "ignoreVersionDetection", n => { IgnoreVersionDetection = n.GetBoolValue(); } },
+                { "productCode", n => { ProductCode = n.GetStringValue(); } },
+                { "productVersion", n => { ProductVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>

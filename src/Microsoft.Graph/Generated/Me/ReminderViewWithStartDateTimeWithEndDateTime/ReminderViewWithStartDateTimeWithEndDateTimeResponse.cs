@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Me.ReminderViewWithStartDateTimeWithEndDateTime {
+namespace Microsoft.Graph.Me.ReminderViewWithStartDateTimeWithEndDateTime
+{
     [Obsolete("This class is obsolete. Use ReminderViewWithStartDateTimeWithEndDateTimeGetResponse instead.")]
     #pragma warning disable CS1591
-    public class ReminderViewWithStartDateTimeWithEndDateTimeResponse : ReminderViewWithStartDateTimeWithEndDateTimeGetResponse, IParsable 
+    public class ReminderViewWithStartDateTimeWithEndDateTimeResponse : ReminderViewWithStartDateTimeWithEndDateTimeGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

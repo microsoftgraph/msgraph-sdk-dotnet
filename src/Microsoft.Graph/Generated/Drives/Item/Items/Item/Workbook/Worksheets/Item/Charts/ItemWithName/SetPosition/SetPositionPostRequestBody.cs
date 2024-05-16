@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ItemWithName.SetPosition {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ItemWithName.SetPosition
+{
     #pragma warning disable CS1591
-    public class SetPositionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SetPositionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <summary>The endCell property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? EndCell {
+        public Json? EndCell
+        {
             get { return BackingStore?.Get<Json?>("endCell"); }
             set { BackingStore?.Set("endCell", value); }
         }
 #nullable restore
 #else
-        public Json EndCell {
+        public Json EndCell
+        {
             get { return BackingStore?.Get<Json>("endCell"); }
             set { BackingStore?.Set("endCell", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <summary>The startCell property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? StartCell {
+        public Json? StartCell
+        {
             get { return BackingStore?.Get<Json?>("startCell"); }
             set { BackingStore?.Set("startCell", value); }
         }
 #nullable restore
 #else
-        public Json StartCell {
+        public Json StartCell
+        {
             get { return BackingStore?.Get<Json>("startCell"); }
             set { BackingStore?.Set("startCell", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"endCell", n => { EndCell = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"startCell", n => { StartCell = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "endCell", n => { EndCell = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "startCell", n => { StartCell = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

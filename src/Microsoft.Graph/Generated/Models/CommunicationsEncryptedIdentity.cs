@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CommunicationsEncryptedIdentity : Identity, IParsable 
+    public class CommunicationsEncryptedIdentity : Identity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class RecentNotebook : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RecentNotebook : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the notebook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? LastAccessedTime {
+        public DateTimeOffset? LastAccessedTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastAccessedTime"); }
             set { BackingStore?.Set("lastAccessedTime", value); }
         }
         /// <summary>Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote client, if it&apos;s installed. The oneNoteWebURL link opens the notebook in OneNote on the web.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RecentNotebookLinks? Links {
+        public RecentNotebookLinks? Links
+        {
             get { return BackingStore?.Get<RecentNotebookLinks?>("links"); }
             set { BackingStore?.Set("links", value); }
         }
 #nullable restore
 #else
-        public RecentNotebookLinks Links {
+        public RecentNotebookLinks Links
+        {
             get { return BackingStore?.Get<RecentNotebookLinks>("links"); }
             set { BackingStore?.Set("links", value); }
         }
@@ -53,19 +60,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive.</summary>
-        public OnenoteSourceService? SourceService {
+        public OnenoteSourceService? SourceService
+        {
             get { return BackingStore?.Get<OnenoteSourceService?>("sourceService"); }
             set { BackingStore?.Set("sourceService", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastAccessedTime", n => { LastAccessedTime = n.GetDateTimeOffsetValue(); } },
-                {"links", n => { Links = n.GetObjectValue<RecentNotebookLinks>(RecentNotebookLinks.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sourceService", n => { SourceService = n.GetEnumValue<OnenoteSourceService>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastAccessedTime", n => { LastAccessedTime = n.GetDateTimeOffsetValue(); } },
+                { "links", n => { Links = n.GetObjectValue<RecentNotebookLinks>(RecentNotebookLinks.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sourceService", n => { SourceService = n.GetEnumValue<OnenoteSourceService>(); } },
             };
         }
         /// <summary>

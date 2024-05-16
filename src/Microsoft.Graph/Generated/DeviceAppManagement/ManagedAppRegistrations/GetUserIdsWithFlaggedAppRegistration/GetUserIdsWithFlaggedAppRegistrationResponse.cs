@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.GetUserIdsWithFlaggedAppRegistration {
+namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.GetUserIdsWithFlaggedAppRegistration
+{
     [Obsolete("This class is obsolete. Use GetUserIdsWithFlaggedAppRegistrationGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetUserIdsWithFlaggedAppRegistrationResponse : GetUserIdsWithFlaggedAppRegistrationGetResponse, IParsable 
+    public class GetUserIdsWithFlaggedAppRegistrationResponse : GetUserIdsWithFlaggedAppRegistrationGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

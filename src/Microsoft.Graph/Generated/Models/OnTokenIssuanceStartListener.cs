@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OnTokenIssuanceStartListener : AuthenticationEventListener, IParsable 
+    public class OnTokenIssuanceStartListener : AuthenticationEventListener, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The handler to invoke when conditions are met for this onTokenIssuanceStartListener.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnTokenIssuanceStartHandler? Handler {
+        public OnTokenIssuanceStartHandler? Handler
+        {
             get { return BackingStore?.Get<OnTokenIssuanceStartHandler?>("handler"); }
             set { BackingStore?.Set("handler", value); }
         }
 #nullable restore
 #else
-        public OnTokenIssuanceStartHandler Handler {
+        public OnTokenIssuanceStartHandler Handler
+        {
             get { return BackingStore?.Get<OnTokenIssuanceStartHandler>("handler"); }
             set { BackingStore?.Set("handler", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"handler", n => { Handler = n.GetObjectValue<OnTokenIssuanceStartHandler>(OnTokenIssuanceStartHandler.CreateFromDiscriminatorValue); } },
+                { "handler", n => { Handler = n.GetObjectValue<OnTokenIssuanceStartHandler>(OnTokenIssuanceStartHandler.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

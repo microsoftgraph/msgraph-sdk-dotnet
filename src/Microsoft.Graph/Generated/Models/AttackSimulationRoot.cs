@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AttackSimulationRoot : Entity, IParsable 
+    public class AttackSimulationRoot : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents an end user&apos;s notification for an attack simulation training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EndUserNotification>? EndUserNotifications {
+        public List<EndUserNotification>? EndUserNotifications
+        {
             get { return BackingStore?.Get<List<EndUserNotification>?>("endUserNotifications"); }
             set { BackingStore?.Set("endUserNotifications", value); }
         }
 #nullable restore
 #else
-        public List<EndUserNotification> EndUserNotifications {
+        public List<EndUserNotification> EndUserNotifications
+        {
             get { return BackingStore?.Get<List<EndUserNotification>>("endUserNotifications"); }
             set { BackingStore?.Set("endUserNotifications", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents an attack simulation training landing page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LandingPage>? LandingPages {
+        public List<LandingPage>? LandingPages
+        {
             get { return BackingStore?.Get<List<LandingPage>?>("landingPages"); }
             set { BackingStore?.Set("landingPages", value); }
         }
 #nullable restore
 #else
-        public List<LandingPage> LandingPages {
+        public List<LandingPage> LandingPages
+        {
             get { return BackingStore?.Get<List<LandingPage>>("landingPages"); }
             set { BackingStore?.Set("landingPages", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents an attack simulation training login page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LoginPage>? LoginPages {
+        public List<LoginPage>? LoginPages
+        {
             get { return BackingStore?.Get<List<LoginPage>?>("loginPages"); }
             set { BackingStore?.Set("loginPages", value); }
         }
 #nullable restore
 #else
-        public List<LoginPage> LoginPages {
+        public List<LoginPage> LoginPages
+        {
             get { return BackingStore?.Get<List<LoginPage>>("loginPages"); }
             set { BackingStore?.Set("loginPages", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents an attack simulation training operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttackSimulationOperation>? Operations {
+        public List<AttackSimulationOperation>? Operations
+        {
             get { return BackingStore?.Get<List<AttackSimulationOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<AttackSimulationOperation> Operations {
+        public List<AttackSimulationOperation> Operations
+        {
             get { return BackingStore?.Get<List<AttackSimulationOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents an attack simulation training campaign payload in a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Payload>? Payloads {
+        public List<Payload>? Payloads
+        {
             get { return BackingStore?.Get<List<Payload>?>("payloads"); }
             set { BackingStore?.Set("payloads", value); }
         }
 #nullable restore
 #else
-        public List<Payload> Payloads {
+        public List<Payload> Payloads
+        {
             get { return BackingStore?.Get<List<Payload>>("payloads"); }
             set { BackingStore?.Set("payloads", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents simulation automation created to run on a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SimulationAutomation>? SimulationAutomations {
+        public List<SimulationAutomation>? SimulationAutomations
+        {
             get { return BackingStore?.Get<List<SimulationAutomation>?>("simulationAutomations"); }
             set { BackingStore?.Set("simulationAutomations", value); }
         }
 #nullable restore
 #else
-        public List<SimulationAutomation> SimulationAutomations {
+        public List<SimulationAutomation> SimulationAutomations
+        {
             get { return BackingStore?.Get<List<SimulationAutomation>>("simulationAutomations"); }
             set { BackingStore?.Set("simulationAutomations", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents an attack simulation training campaign in a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Simulation>? Simulations {
+        public List<Simulation>? Simulations
+        {
             get { return BackingStore?.Get<List<Simulation>?>("simulations"); }
             set { BackingStore?.Set("simulations", value); }
         }
 #nullable restore
 #else
-        public List<Simulation> Simulations {
+        public List<Simulation> Simulations
+        {
             get { return BackingStore?.Get<List<Simulation>>("simulations"); }
             set { BackingStore?.Set("simulations", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents details about attack simulation trainings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Training>? Trainings {
+        public List<Training>? Trainings
+        {
             get { return BackingStore?.Get<List<Training>?>("trainings"); }
             set { BackingStore?.Set("trainings", value); }
         }
 #nullable restore
 #else
-        public List<Training> Trainings {
+        public List<Training> Trainings
+        {
             get { return BackingStore?.Get<List<Training>>("trainings"); }
             set { BackingStore?.Set("trainings", value); }
         }
@@ -139,14 +156,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"endUserNotifications", n => { EndUserNotifications = n.GetCollectionOfObjectValues<EndUserNotification>(EndUserNotification.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"landingPages", n => { LandingPages = n.GetCollectionOfObjectValues<LandingPage>(LandingPage.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"loginPages", n => { LoginPages = n.GetCollectionOfObjectValues<LoginPage>(LoginPage.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"operations", n => { Operations = n.GetCollectionOfObjectValues<AttackSimulationOperation>(AttackSimulationOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"payloads", n => { Payloads = n.GetCollectionOfObjectValues<Payload>(Payload.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"simulationAutomations", n => { SimulationAutomations = n.GetCollectionOfObjectValues<SimulationAutomation>(SimulationAutomation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"simulations", n => { Simulations = n.GetCollectionOfObjectValues<Simulation>(Simulation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"trainings", n => { Trainings = n.GetCollectionOfObjectValues<Training>(Training.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "endUserNotifications", n => { EndUserNotifications = n.GetCollectionOfObjectValues<EndUserNotification>(EndUserNotification.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "landingPages", n => { LandingPages = n.GetCollectionOfObjectValues<LandingPage>(LandingPage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "loginPages", n => { LoginPages = n.GetCollectionOfObjectValues<LoginPage>(LoginPage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<AttackSimulationOperation>(AttackSimulationOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "payloads", n => { Payloads = n.GetCollectionOfObjectValues<Payload>(Payload.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "simulationAutomations", n => { SimulationAutomations = n.GetCollectionOfObjectValues<SimulationAutomation>(SimulationAutomation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "simulations", n => { Simulations = n.GetCollectionOfObjectValues<Simulation>(Simulation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "trainings", n => { Trainings = n.GetCollectionOfObjectValues<Training>(Training.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

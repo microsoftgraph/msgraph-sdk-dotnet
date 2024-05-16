@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Search {
+namespace Microsoft.Graph.Models.Search
+{
     #pragma warning disable CS1591
-    public class AnswerKeyword : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AnswerKeyword : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Models.Search {
         /// <summary>A collection of keywords used to trigger the search answer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Keywords {
+        public List<string>? Keywords
+        {
             get { return BackingStore?.Get<List<string>?>("keywords"); }
             set { BackingStore?.Set("keywords", value); }
         }
 #nullable restore
 #else
-        public List<string> Keywords {
+        public List<string> Keywords
+        {
             get { return BackingStore?.Get<List<string>>("keywords"); }
             set { BackingStore?.Set("keywords", value); }
         }
 #endif
         /// <summary>If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.</summary>
-        public bool? MatchSimilarKeywords {
+        public bool? MatchSimilarKeywords
+        {
             get { return BackingStore?.Get<bool?>("matchSimilarKeywords"); }
             set { BackingStore?.Set("matchSimilarKeywords", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models.Search {
         /// <summary>Unique keywords that guarantee the search answer is triggered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ReservedKeywords {
+        public List<string>? ReservedKeywords
+        {
             get { return BackingStore?.Get<List<string>?>("reservedKeywords"); }
             set { BackingStore?.Set("reservedKeywords", value); }
         }
 #nullable restore
 #else
-        public List<string> ReservedKeywords {
+        public List<string> ReservedKeywords
+        {
             get { return BackingStore?.Get<List<string>>("reservedKeywords"); }
             set { BackingStore?.Set("reservedKeywords", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models.Search {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"matchSimilarKeywords", n => { MatchSimilarKeywords = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"reservedKeywords", n => { ReservedKeywords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "matchSimilarKeywords", n => { MatchSimilarKeywords = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "reservedKeywords", n => { ReservedKeywords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

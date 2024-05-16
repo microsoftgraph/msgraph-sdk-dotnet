@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.List.Items.DeltaWithToken {
+namespace Microsoft.Graph.Drives.Item.List.Items.DeltaWithToken
+{
     [Obsolete("This class is obsolete. Use DeltaWithTokenGetResponse instead.")]
     #pragma warning disable CS1591
-    public class DeltaWithTokenResponse : DeltaWithTokenGetResponse, IParsable 
+    public class DeltaWithTokenResponse : DeltaWithTokenGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

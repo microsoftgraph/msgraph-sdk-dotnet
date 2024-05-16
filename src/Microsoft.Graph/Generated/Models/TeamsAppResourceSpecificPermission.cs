@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TeamsAppResourceSpecificPermission : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamsAppResourceSpecificPermission : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The type of resource-specific permission.</summary>
-        public TeamsAppResourceSpecificPermissionType? PermissionType {
+        public TeamsAppResourceSpecificPermissionType? PermissionType
+        {
             get { return BackingStore?.Get<TeamsAppResourceSpecificPermissionType?>("permissionType"); }
             set { BackingStore?.Set("permissionType", value); }
         }
         /// <summary>The name of the resource-specific permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PermissionValue {
+        public string? PermissionValue
+        {
             get { return BackingStore?.Get<string?>("permissionValue"); }
             set { BackingStore?.Set("permissionValue", value); }
         }
 #nullable restore
 #else
-        public string PermissionValue {
+        public string PermissionValue
+        {
             get { return BackingStore?.Get<string>("permissionValue"); }
             set { BackingStore?.Set("permissionValue", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"permissionType", n => { PermissionType = n.GetEnumValue<TeamsAppResourceSpecificPermissionType>(); } },
-                {"permissionValue", n => { PermissionValue = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "permissionType", n => { PermissionType = n.GetEnumValue<TeamsAppResourceSpecificPermissionType>(); } },
+                { "permissionValue", n => { PermissionValue = n.GetStringValue(); } },
             };
         }
         /// <summary>

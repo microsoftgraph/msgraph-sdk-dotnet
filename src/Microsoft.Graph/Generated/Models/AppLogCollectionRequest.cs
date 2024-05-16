@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Entity for AppLogCollectionRequest contains all logs values.
     /// </summary>
-    public class AppLogCollectionRequest : Entity, IParsable 
+    public class AppLogCollectionRequest : Entity, IParsable
     {
         /// <summary>Time at which the upload log request reached a completed state if not completed yet NULL will be returned.</summary>
-        public DateTimeOffset? CompletedDateTime {
+        public DateTimeOffset? CompletedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
         /// <summary>List of log folders.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CustomLogFolders {
+        public List<string>? CustomLogFolders
+        {
             get { return BackingStore?.Get<List<string>?>("customLogFolders"); }
             set { BackingStore?.Set("customLogFolders", value); }
         }
 #nullable restore
 #else
-        public List<string> CustomLogFolders {
+        public List<string> CustomLogFolders
+        {
             get { return BackingStore?.Get<List<string>>("customLogFolders"); }
             set { BackingStore?.Set("customLogFolders", value); }
         }
@@ -32,19 +36,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicates error message if any during the upload process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorMessage {
+        public string? ErrorMessage
+        {
             get { return BackingStore?.Get<string?>("errorMessage"); }
             set { BackingStore?.Set("errorMessage", value); }
         }
 #nullable restore
 #else
-        public string ErrorMessage {
+        public string ErrorMessage
+        {
             get { return BackingStore?.Get<string>("errorMessage"); }
             set { BackingStore?.Set("errorMessage", value); }
         }
 #endif
         /// <summary>AppLogUploadStatus</summary>
-        public AppLogUploadState? Status {
+        public AppLogUploadState? Status
+        {
             get { return BackingStore?.Get<AppLogUploadState?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -66,10 +73,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"customLogFolders", n => { CustomLogFolders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<AppLogUploadState>(); } },
+                { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "customLogFolders", n => { CustomLogFolders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<AppLogUploadState>(); } },
             };
         }
         /// <summary>

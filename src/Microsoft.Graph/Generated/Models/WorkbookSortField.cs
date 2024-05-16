@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookSortField : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WorkbookSortField : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Represents whether the sorting is done in an ascending fashion.</summary>
-        public bool? Ascending {
+        public bool? Ascending
+        {
             get { return BackingStore?.Get<bool?>("ascending"); }
             set { BackingStore?.Set("ascending", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents the color that is the target of the condition if the sorting is on font or cell color.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Color {
+        public string? Color
+        {
             get { return BackingStore?.Get<string?>("color"); }
             set { BackingStore?.Set("color", value); }
         }
 #nullable restore
 #else
-        public string Color {
+        public string Color
+        {
             get { return BackingStore?.Get<string>("color"); }
             set { BackingStore?.Set("color", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DataOption {
+        public string? DataOption
+        {
             get { return BackingStore?.Get<string?>("dataOption"); }
             set { BackingStore?.Set("dataOption", value); }
         }
 #nullable restore
 #else
-        public string DataOption {
+        public string DataOption
+        {
             get { return BackingStore?.Get<string>("dataOption"); }
             set { BackingStore?.Set("dataOption", value); }
         }
@@ -53,32 +60,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents the icon that is the target of the condition if the sorting is on the cell&apos;s icon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookIcon? Icon {
+        public WorkbookIcon? Icon
+        {
             get { return BackingStore?.Get<WorkbookIcon?>("icon"); }
             set { BackingStore?.Set("icon", value); }
         }
 #nullable restore
 #else
-        public WorkbookIcon Icon {
+        public WorkbookIcon Icon
+        {
             get { return BackingStore?.Get<WorkbookIcon>("icon"); }
             set { BackingStore?.Set("icon", value); }
         }
 #endif
         /// <summary>Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).</summary>
-        public int? Key {
+        public int? Key
+        {
             get { return BackingStore?.Get<int?>("key"); }
             set { BackingStore?.Set("key", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -86,13 +98,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SortOn {
+        public string? SortOn
+        {
             get { return BackingStore?.Get<string?>("sortOn"); }
             set { BackingStore?.Set("sortOn", value); }
         }
 #nullable restore
 #else
-        public string SortOn {
+        public string SortOn
+        {
             get { return BackingStore?.Get<string>("sortOn"); }
             set { BackingStore?.Set("sortOn", value); }
         }
@@ -123,13 +137,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"ascending", n => { Ascending = n.GetBoolValue(); } },
-                {"color", n => { Color = n.GetStringValue(); } },
-                {"dataOption", n => { DataOption = n.GetStringValue(); } },
-                {"icon", n => { Icon = n.GetObjectValue<WorkbookIcon>(WorkbookIcon.CreateFromDiscriminatorValue); } },
-                {"key", n => { Key = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sortOn", n => { SortOn = n.GetStringValue(); } },
+                { "ascending", n => { Ascending = n.GetBoolValue(); } },
+                { "color", n => { Color = n.GetStringValue(); } },
+                { "dataOption", n => { DataOption = n.GetStringValue(); } },
+                { "icon", n => { Icon = n.GetObjectValue<WorkbookIcon>(WorkbookIcon.CreateFromDiscriminatorValue); } },
+                { "key", n => { Key = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sortOn", n => { SortOn = n.GetStringValue(); } },
             };
         }
         /// <summary>

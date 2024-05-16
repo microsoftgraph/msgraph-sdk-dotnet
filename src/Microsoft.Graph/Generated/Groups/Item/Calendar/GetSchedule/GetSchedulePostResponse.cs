@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Groups.Item.Calendar.GetSchedule {
+namespace Microsoft.Graph.Groups.Item.Calendar.GetSchedule
+{
     #pragma warning disable CS1591
-    public class GetSchedulePostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetSchedulePostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ScheduleInformation>? Value {
+        public List<ScheduleInformation>? Value
+        {
             get { return BackingStore?.Get<List<ScheduleInformation>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ScheduleInformation> Value {
+        public List<ScheduleInformation> Value
+        {
             get { return BackingStore?.Get<List<ScheduleInformation>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Groups.Item.Calendar.GetSchedule {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ScheduleInformation>(ScheduleInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<ScheduleInformation>(ScheduleInformation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

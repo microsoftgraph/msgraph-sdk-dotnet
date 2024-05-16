@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PersonOrGroupColumn : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PersonOrGroupColumn : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Indicates whether multiple values can be selected from the source.</summary>
-        public bool? AllowMultipleSelection {
+        public bool? AllowMultipleSelection
+        {
             get { return BackingStore?.Get<bool?>("allowMultipleSelection"); }
             set { BackingStore?.Set("allowMultipleSelection", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChooseFromType {
+        public string? ChooseFromType
+        {
             get { return BackingStore?.Get<string?>("chooseFromType"); }
             set { BackingStore?.Set("chooseFromType", value); }
         }
 #nullable restore
 #else
-        public string ChooseFromType {
+        public string ChooseFromType
+        {
             get { return BackingStore?.Get<string>("chooseFromType"); }
             set { BackingStore?.Set("chooseFromType", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>How to display the information about the person or group chosen. See below.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayAs {
+        public string? DisplayAs
+        {
             get { return BackingStore?.Get<string?>("displayAs"); }
             set { BackingStore?.Set("displayAs", value); }
         }
 #nullable restore
 #else
-        public string DisplayAs {
+        public string DisplayAs
+        {
             get { return BackingStore?.Get<string>("displayAs"); }
             set { BackingStore?.Set("displayAs", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowMultipleSelection", n => { AllowMultipleSelection = n.GetBoolValue(); } },
-                {"chooseFromType", n => { ChooseFromType = n.GetStringValue(); } },
-                {"displayAs", n => { DisplayAs = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "allowMultipleSelection", n => { AllowMultipleSelection = n.GetBoolValue(); } },
+                { "chooseFromType", n => { ChooseFromType = n.GetStringValue(); } },
+                { "displayAs", n => { DisplayAs = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

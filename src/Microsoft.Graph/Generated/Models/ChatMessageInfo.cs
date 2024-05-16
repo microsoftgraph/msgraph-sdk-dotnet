@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ChatMessageInfo : Entity, IParsable 
+    public class ChatMessageInfo : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object doesn&apos;t return @mentions and attachments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Body {
+        public ItemBody? Body
+        {
             get { return BackingStore?.Get<ItemBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #nullable restore
 #else
-        public ItemBody Body {
+        public ItemBody Body
+        {
             get { return BackingStore?.Get<ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #endif
         /// <summary>Date time object representing the time at which message was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property is set to systemEventMessage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EventMessageDetail? EventDetail {
+        public EventMessageDetail? EventDetail
+        {
             get { return BackingStore?.Get<EventMessageDetail?>("eventDetail"); }
             set { BackingStore?.Set("eventDetail", value); }
         }
 #nullable restore
 #else
-        public EventMessageDetail EventDetail {
+        public EventMessageDetail EventDetail
+        {
             get { return BackingStore?.Get<EventMessageDetail>("eventDetail"); }
             set { BackingStore?.Set("eventDetail", value); }
         }
@@ -45,24 +51,28 @@ namespace Microsoft.Graph.Models {
         /// <summary>Information about the sender of the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ChatMessageFromIdentitySet? From {
+        public ChatMessageFromIdentitySet? From
+        {
             get { return BackingStore?.Get<ChatMessageFromIdentitySet?>("from"); }
             set { BackingStore?.Set("from", value); }
         }
 #nullable restore
 #else
-        public ChatMessageFromIdentitySet From {
+        public ChatMessageFromIdentitySet From
+        {
             get { return BackingStore?.Get<ChatMessageFromIdentitySet>("from"); }
             set { BackingStore?.Set("from", value); }
         }
 #endif
         /// <summary>If set to true, the original message has been deleted.</summary>
-        public bool? IsDeleted {
+        public bool? IsDeleted
+        {
             get { return BackingStore?.Get<bool?>("isDeleted"); }
             set { BackingStore?.Set("isDeleted", value); }
         }
         /// <summary>The messageType property</summary>
-        public ChatMessageType? MessageType {
+        public ChatMessageType? MessageType
+        {
             get { return BackingStore?.Get<ChatMessageType?>("messageType"); }
             set { BackingStore?.Set("messageType", value); }
         }
@@ -84,12 +94,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"eventDetail", n => { EventDetail = n.GetObjectValue<EventMessageDetail>(EventMessageDetail.CreateFromDiscriminatorValue); } },
-                {"from", n => { From = n.GetObjectValue<ChatMessageFromIdentitySet>(ChatMessageFromIdentitySet.CreateFromDiscriminatorValue); } },
-                {"isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
-                {"messageType", n => { MessageType = n.GetEnumValue<ChatMessageType>(); } },
+                { "body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "eventDetail", n => { EventDetail = n.GetObjectValue<EventMessageDetail>(EventMessageDetail.CreateFromDiscriminatorValue); } },
+                { "from", n => { From = n.GetObjectValue<ChatMessageFromIdentitySet>(ChatMessageFromIdentitySet.CreateFromDiscriminatorValue); } },
+                { "isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
+                { "messageType", n => { MessageType = n.GetEnumValue<ChatMessageType>(); } },
             };
         }
         /// <summary>

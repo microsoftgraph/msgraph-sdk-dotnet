@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Confidence_Norm {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Confidence_Norm
+{
     #pragma warning disable CS1591
-    public class Confidence_NormPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Confidence_NormPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The alpha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Alpha {
+        public Json? Alpha
+        {
             get { return BackingStore?.Get<Json?>("alpha"); }
             set { BackingStore?.Set("alpha", value); }
         }
 #nullable restore
 #else
-        public Json Alpha {
+        public Json Alpha
+        {
             get { return BackingStore?.Get<Json>("alpha"); }
             set { BackingStore?.Set("alpha", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Confidence_N
         /// <summary>The size property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Size {
+        public Json? Size
+        {
             get { return BackingStore?.Get<Json?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
 #nullable restore
 #else
-        public Json Size {
+        public Json Size
+        {
             get { return BackingStore?.Get<Json>("size"); }
             set { BackingStore?.Set("size", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Confidence_N
         /// <summary>The standardDev property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? StandardDev {
+        public Json? StandardDev
+        {
             get { return BackingStore?.Get<Json?>("standardDev"); }
             set { BackingStore?.Set("standardDev", value); }
         }
 #nullable restore
 #else
-        public Json StandardDev {
+        public Json StandardDev
+        {
             get { return BackingStore?.Get<Json>("standardDev"); }
             set { BackingStore?.Set("standardDev", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Confidence_N
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"alpha", n => { Alpha = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"size", n => { Size = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"standardDev", n => { StandardDev = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "alpha", n => { Alpha = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "size", n => { Size = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "standardDev", n => { StandardDev = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

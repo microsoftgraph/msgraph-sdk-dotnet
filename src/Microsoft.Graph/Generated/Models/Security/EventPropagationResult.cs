@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class EventPropagationResult : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EventPropagationResult : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The name of the specific location in the workload associated with the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Location {
+        public string? Location
+        {
             get { return BackingStore?.Get<string?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public string Location {
+        public string Location
+        {
             get { return BackingStore?.Get<string>("location"); }
             set { BackingStore?.Set("location", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,32 +54,37 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The name of the workload associated with the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceName {
+        public string? ServiceName
+        {
             get { return BackingStore?.Get<string?>("serviceName"); }
             set { BackingStore?.Set("serviceName", value); }
         }
 #nullable restore
 #else
-        public string ServiceName {
+        public string ServiceName
+        {
             get { return BackingStore?.Get<string>("serviceName"); }
             set { BackingStore?.Set("serviceName", value); }
         }
 #endif
         /// <summary>Indicates the status of the event creation request. The possible values are: none, inProcessing, failed, success, unknownFutureValue.</summary>
-        public EventPropagationStatus? Status {
+        public EventPropagationStatus? Status
+        {
             get { return BackingStore?.Get<EventPropagationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Additional information about the status of the event creation request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatusInformation {
+        public string? StatusInformation
+        {
             get { return BackingStore?.Get<string?>("statusInformation"); }
             set { BackingStore?.Set("statusInformation", value); }
         }
 #nullable restore
 #else
-        public string StatusInformation {
+        public string StatusInformation
+        {
             get { return BackingStore?.Get<string>("statusInformation"); }
             set { BackingStore?.Set("statusInformation", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"location", n => { Location = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"serviceName", n => { ServiceName = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<EventPropagationStatus>(); } },
-                {"statusInformation", n => { StatusInformation = n.GetStringValue(); } },
+                { "location", n => { Location = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "serviceName", n => { ServiceName = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<EventPropagationStatus>(); } },
+                { "statusInformation", n => { StatusInformation = n.GetStringValue(); } },
             };
         }
         /// <summary>

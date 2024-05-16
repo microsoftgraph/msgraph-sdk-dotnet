@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Me.JoinedTeams.Item.Clone {
+namespace Microsoft.Graph.Me.JoinedTeams.Item.Clone
+{
     #pragma warning disable CS1591
-    public class ClonePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ClonePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Clone {
         /// <summary>The classification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Classification {
+        public string? Classification
+        {
             get { return BackingStore?.Get<string?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
 #nullable restore
 #else
-        public string Classification {
+        public string Classification
+        {
             get { return BackingStore?.Get<string>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Clone {
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Clone {
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -63,24 +71,28 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Clone {
         /// <summary>The mailNickname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MailNickname {
+        public string? MailNickname
+        {
             get { return BackingStore?.Get<string?>("mailNickname"); }
             set { BackingStore?.Set("mailNickname", value); }
         }
 #nullable restore
 #else
-        public string MailNickname {
+        public string MailNickname
+        {
             get { return BackingStore?.Get<string>("mailNickname"); }
             set { BackingStore?.Set("mailNickname", value); }
         }
 #endif
         /// <summary>The partsToClone property</summary>
-        public ClonableTeamParts? PartsToClone {
+        public ClonableTeamParts? PartsToClone
+        {
             get { return BackingStore?.Get<ClonableTeamParts?>("partsToClone"); }
             set { BackingStore?.Set("partsToClone", value); }
         }
         /// <summary>The visibility property</summary>
-        public TeamVisibilityType? Visibility {
+        public TeamVisibilityType? Visibility
+        {
             get { return BackingStore?.Get<TeamVisibilityType?>("visibility"); }
             set { BackingStore?.Set("visibility", value); }
         }
@@ -110,12 +122,12 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Clone {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"classification", n => { Classification = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"mailNickname", n => { MailNickname = n.GetStringValue(); } },
-                {"partsToClone", n => { PartsToClone = n.GetEnumValue<ClonableTeamParts>(); } },
-                {"visibility", n => { Visibility = n.GetEnumValue<TeamVisibilityType>(); } },
+                { "classification", n => { Classification = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "mailNickname", n => { MailNickname = n.GetStringValue(); } },
+                { "partsToClone", n => { PartsToClone = n.GetEnumValue<ClonableTeamParts>(); } },
+                { "visibility", n => { Visibility = n.GetEnumValue<TeamVisibilityType>(); } },
             };
         }
         /// <summary>

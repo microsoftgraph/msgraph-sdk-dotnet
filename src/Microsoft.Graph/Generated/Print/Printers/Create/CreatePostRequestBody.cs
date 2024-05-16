@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Print.Printers.Create {
+namespace Microsoft.Graph.Print.Printers.Create
+{
     #pragma warning disable CS1591
-    public class CreatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CreatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Print.Printers.Create {
         /// <summary>The certificateSigningRequest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrintCertificateSigningRequest? CertificateSigningRequest {
+        public PrintCertificateSigningRequest? CertificateSigningRequest
+        {
             get { return BackingStore?.Get<PrintCertificateSigningRequest?>("certificateSigningRequest"); }
             set { BackingStore?.Set("certificateSigningRequest", value); }
         }
 #nullable restore
 #else
-        public PrintCertificateSigningRequest CertificateSigningRequest {
+        public PrintCertificateSigningRequest CertificateSigningRequest
+        {
             get { return BackingStore?.Get<PrintCertificateSigningRequest>("certificateSigningRequest"); }
             set { BackingStore?.Set("certificateSigningRequest", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Print.Printers.Create {
         /// <summary>The connectorId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectorId {
+        public string? ConnectorId
+        {
             get { return BackingStore?.Get<string?>("connectorId"); }
             set { BackingStore?.Set("connectorId", value); }
         }
 #nullable restore
 #else
-        public string ConnectorId {
+        public string ConnectorId
+        {
             get { return BackingStore?.Get<string>("connectorId"); }
             set { BackingStore?.Set("connectorId", value); }
         }
@@ -49,32 +55,37 @@ namespace Microsoft.Graph.Print.Printers.Create {
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The hasPhysicalDevice property</summary>
-        public bool? HasPhysicalDevice {
+        public bool? HasPhysicalDevice
+        {
             get { return BackingStore?.Get<bool?>("hasPhysicalDevice"); }
             set { BackingStore?.Set("hasPhysicalDevice", value); }
         }
         /// <summary>The manufacturer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer {
+        public string? Manufacturer
+        {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #nullable restore
 #else
-        public string Manufacturer {
+        public string Manufacturer
+        {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Print.Printers.Create {
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model {
+        public string? Model
+        {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #nullable restore
 #else
-        public string Model {
+        public string Model
+        {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Print.Printers.Create {
         /// <summary>The physicalDeviceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhysicalDeviceId {
+        public string? PhysicalDeviceId
+        {
             get { return BackingStore?.Get<string?>("physicalDeviceId"); }
             set { BackingStore?.Set("physicalDeviceId", value); }
         }
 #nullable restore
 #else
-        public string PhysicalDeviceId {
+        public string PhysicalDeviceId
+        {
             get { return BackingStore?.Get<string>("physicalDeviceId"); }
             set { BackingStore?.Set("physicalDeviceId", value); }
         }
@@ -133,13 +148,13 @@ namespace Microsoft.Graph.Print.Printers.Create {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"certificateSigningRequest", n => { CertificateSigningRequest = n.GetObjectValue<PrintCertificateSigningRequest>(PrintCertificateSigningRequest.CreateFromDiscriminatorValue); } },
-                {"connectorId", n => { ConnectorId = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"hasPhysicalDevice", n => { HasPhysicalDevice = n.GetBoolValue(); } },
-                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"model", n => { Model = n.GetStringValue(); } },
-                {"physicalDeviceId", n => { PhysicalDeviceId = n.GetStringValue(); } },
+                { "certificateSigningRequest", n => { CertificateSigningRequest = n.GetObjectValue<PrintCertificateSigningRequest>(PrintCertificateSigningRequest.CreateFromDiscriminatorValue); } },
+                { "connectorId", n => { ConnectorId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "hasPhysicalDevice", n => { HasPhysicalDevice = n.GetBoolValue(); } },
+                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "physicalDeviceId", n => { PhysicalDeviceId = n.GetStringValue(); } },
             };
         }
         /// <summary>

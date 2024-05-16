@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OnTokenIssuanceStartCustomExtension : CustomAuthenticationExtension, IParsable 
+    public class OnTokenIssuanceStartCustomExtension : CustomAuthenticationExtension, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collection of claims to be returned by the API called by this custom authentication extension. Used to populate claims mapping experience in Microsoft Entra admin center. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnTokenIssuanceStartReturnClaim>? ClaimsForTokenConfiguration {
+        public List<OnTokenIssuanceStartReturnClaim>? ClaimsForTokenConfiguration
+        {
             get { return BackingStore?.Get<List<OnTokenIssuanceStartReturnClaim>?>("claimsForTokenConfiguration"); }
             set { BackingStore?.Set("claimsForTokenConfiguration", value); }
         }
 #nullable restore
 #else
-        public List<OnTokenIssuanceStartReturnClaim> ClaimsForTokenConfiguration {
+        public List<OnTokenIssuanceStartReturnClaim> ClaimsForTokenConfiguration
+        {
             get { return BackingStore?.Get<List<OnTokenIssuanceStartReturnClaim>>("claimsForTokenConfiguration"); }
             set { BackingStore?.Set("claimsForTokenConfiguration", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"claimsForTokenConfiguration", n => { ClaimsForTokenConfiguration = n.GetCollectionOfObjectValues<OnTokenIssuanceStartReturnClaim>(OnTokenIssuanceStartReturnClaim.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "claimsForTokenConfiguration", n => { ClaimsForTokenConfiguration = n.GetCollectionOfObjectValues<OnTokenIssuanceStartReturnClaim>(OnTokenIssuanceStartReturnClaim.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

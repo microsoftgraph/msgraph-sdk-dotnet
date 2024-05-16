@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Partners.Billing {
+namespace Microsoft.Graph.Models.Partners.Billing
+{
     #pragma warning disable CS1591
-    public class AzureUsage : Microsoft.Graph.Models.Entity, IParsable 
+    public class AzureUsage : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The billed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BilledUsage? Billed {
+        public BilledUsage? Billed
+        {
             get { return BackingStore?.Get<BilledUsage?>("billed"); }
             set { BackingStore?.Set("billed", value); }
         }
 #nullable restore
 #else
-        public BilledUsage Billed {
+        public BilledUsage Billed
+        {
             get { return BackingStore?.Get<BilledUsage>("billed"); }
             set { BackingStore?.Set("billed", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Partners.Billing {
         /// <summary>The unbilled property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnbilledUsage? Unbilled {
+        public UnbilledUsage? Unbilled
+        {
             get { return BackingStore?.Get<UnbilledUsage?>("unbilled"); }
             set { BackingStore?.Set("unbilled", value); }
         }
 #nullable restore
 #else
-        public UnbilledUsage Unbilled {
+        public UnbilledUsage Unbilled
+        {
             get { return BackingStore?.Get<UnbilledUsage>("unbilled"); }
             set { BackingStore?.Set("unbilled", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models.Partners.Billing {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"billed", n => { Billed = n.GetObjectValue<BilledUsage>(BilledUsage.CreateFromDiscriminatorValue); } },
-                {"unbilled", n => { Unbilled = n.GetObjectValue<UnbilledUsage>(UnbilledUsage.CreateFromDiscriminatorValue); } },
+                { "billed", n => { Billed = n.GetObjectValue<BilledUsage>(BilledUsage.CreateFromDiscriminatorValue); } },
+                { "unbilled", n => { Unbilled = n.GetObjectValue<UnbilledUsage>(UnbilledUsage.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

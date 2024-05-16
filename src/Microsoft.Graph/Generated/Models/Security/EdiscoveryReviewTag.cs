@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class EdiscoveryReviewTag : Tag, IParsable 
+    public class EdiscoveryReviewTag : Tag, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.</summary>
-        public Microsoft.Graph.Models.Security.ChildSelectability? ChildSelectability {
+        public Microsoft.Graph.Models.Security.ChildSelectability? ChildSelectability
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.ChildSelectability?>("childSelectability"); }
             set { BackingStore?.Set("childSelectability", value); }
         }
         /// <summary>Returns the tags that are a child of a tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryReviewTag>? ChildTags {
+        public List<EdiscoveryReviewTag>? ChildTags
+        {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("childTags"); }
             set { BackingStore?.Set("childTags", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryReviewTag> ChildTags {
+        public List<EdiscoveryReviewTag> ChildTags
+        {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("childTags"); }
             set { BackingStore?.Set("childTags", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Returns the parent tag of the specified tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoveryReviewTag? Parent {
+        public EdiscoveryReviewTag? Parent
+        {
             get { return BackingStore?.Get<EdiscoveryReviewTag?>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
 #nullable restore
 #else
-        public EdiscoveryReviewTag Parent {
+        public EdiscoveryReviewTag Parent
+        {
             get { return BackingStore?.Get<EdiscoveryReviewTag>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"childSelectability", n => { ChildSelectability = n.GetEnumValue<ChildSelectability>(); } },
-                {"childTags", n => { ChildTags = n.GetCollectionOfObjectValues<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"parent", n => { Parent = n.GetObjectValue<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue); } },
+                { "childSelectability", n => { ChildSelectability = n.GetEnumValue<ChildSelectability>(); } },
+                { "childTags", n => { ChildTags = n.GetCollectionOfObjectValues<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "parent", n => { Parent = n.GetObjectValue<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

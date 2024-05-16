@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Communications.Calls.Item.Reject {
+namespace Microsoft.Graph.Communications.Calls.Item.Reject
+{
     #pragma warning disable CS1591
-    public class RejectPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RejectPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,19 +23,22 @@ namespace Microsoft.Graph.Communications.Calls.Item.Reject {
         /// <summary>The callbackUri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallbackUri {
+        public string? CallbackUri
+        {
             get { return BackingStore?.Get<string?>("callbackUri"); }
             set { BackingStore?.Set("callbackUri", value); }
         }
 #nullable restore
 #else
-        public string CallbackUri {
+        public string CallbackUri
+        {
             get { return BackingStore?.Get<string>("callbackUri"); }
             set { BackingStore?.Set("callbackUri", value); }
         }
 #endif
         /// <summary>The reason property</summary>
-        public RejectReason? Reason {
+        public RejectReason? Reason
+        {
             get { return BackingStore?.Get<RejectReason?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Communications.Calls.Item.Reject {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"callbackUri", n => { CallbackUri = n.GetStringValue(); } },
-                {"reason", n => { Reason = n.GetEnumValue<RejectReason>(); } },
+                { "callbackUri", n => { CallbackUri = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetEnumValue<RejectReason>(); } },
             };
         }
         /// <summary>

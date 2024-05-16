@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class BaseEndUserNotification : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BaseEndUserNotification : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The default language for the end user notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultLanguage {
+        public string? DefaultLanguage
+        {
             get { return BackingStore?.Get<string?>("defaultLanguage"); }
             set { BackingStore?.Set("defaultLanguage", value); }
         }
 #nullable restore
 #else
-        public string DefaultLanguage {
+        public string DefaultLanguage
+        {
             get { return BackingStore?.Get<string>("defaultLanguage"); }
             set { BackingStore?.Set("defaultLanguage", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The endUserNotification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.EndUserNotification? EndUserNotification {
+        public Microsoft.Graph.Models.EndUserNotification? EndUserNotification
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.EndUserNotification?>("endUserNotification"); }
             set { BackingStore?.Set("endUserNotification", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.EndUserNotification EndUserNotification {
+        public Microsoft.Graph.Models.EndUserNotification EndUserNotification
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.EndUserNotification>("endUserNotification"); }
             set { BackingStore?.Set("endUserNotification", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -92,9 +100,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"defaultLanguage", n => { DefaultLanguage = n.GetStringValue(); } },
-                {"endUserNotification", n => { EndUserNotification = n.GetObjectValue<Microsoft.Graph.Models.EndUserNotification>(Microsoft.Graph.Models.EndUserNotification.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "defaultLanguage", n => { DefaultLanguage = n.GetStringValue(); } },
+                { "endUserNotification", n => { EndUserNotification = n.GetObjectValue<Microsoft.Graph.Models.EndUserNotification>(Microsoft.Graph.Models.EndUserNotification.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

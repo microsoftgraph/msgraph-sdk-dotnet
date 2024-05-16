@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DirectoryRoles.GetAvailableExtensionProperties {
+namespace Microsoft.Graph.DirectoryRoles.GetAvailableExtensionProperties
+{
     [Obsolete("This class is obsolete. Use GetAvailableExtensionPropertiesPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetAvailableExtensionPropertiesResponse : GetAvailableExtensionPropertiesPostResponse, IParsable 
+    public class GetAvailableExtensionPropertiesResponse : GetAvailableExtensionPropertiesPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

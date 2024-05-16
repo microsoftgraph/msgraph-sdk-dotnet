@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CommsOperation : Entity, IParsable 
+    public class CommsOperation : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Unique Client Context string. Max limit is 256 chars.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientContext {
+        public string? ClientContext
+        {
             get { return BackingStore?.Get<string?>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
 #nullable restore
 #else
-        public string ClientContext {
+        public string ClientContext
+        {
             get { return BackingStore?.Get<string>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
@@ -26,19 +29,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The result information. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ResultInfo? ResultInfo {
+        public Microsoft.Graph.Models.ResultInfo? ResultInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ResultInfo?>("resultInfo"); }
             set { BackingStore?.Set("resultInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ResultInfo ResultInfo {
+        public Microsoft.Graph.Models.ResultInfo ResultInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ResultInfo>("resultInfo"); }
             set { BackingStore?.Set("resultInfo", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public OperationStatus? Status {
+        public OperationStatus? Status
+        {
             get { return BackingStore?.Get<OperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -76,9 +82,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"clientContext", n => { ClientContext = n.GetStringValue(); } },
-                {"resultInfo", n => { ResultInfo = n.GetObjectValue<Microsoft.Graph.Models.ResultInfo>(Microsoft.Graph.Models.ResultInfo.CreateFromDiscriminatorValue); } },
-                {"status", n => { Status = n.GetEnumValue<OperationStatus>(); } },
+                { "clientContext", n => { ClientContext = n.GetStringValue(); } },
+                { "resultInfo", n => { ResultInfo = n.GetObjectValue<Microsoft.Graph.Models.ResultInfo>(Microsoft.Graph.Models.ResultInfo.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<OperationStatus>(); } },
             };
         }
         /// <summary>

@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo.Item {
+namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \policies\featureRolloutPolicies\{featureRolloutPolicy-id}\appliesTo\{directoryObject-id}
     /// </summary>
-    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder 
+    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of policyRoot entities.</summary>
         public RefRequestBuilder Ref

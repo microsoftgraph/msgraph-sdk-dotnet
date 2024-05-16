@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class GroupLifecyclePolicy : Entity, IParsable 
+    public class GroupLifecyclePolicy : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlternateNotificationEmails {
+        public string? AlternateNotificationEmails
+        {
             get { return BackingStore?.Get<string?>("alternateNotificationEmails"); }
             set { BackingStore?.Set("alternateNotificationEmails", value); }
         }
 #nullable restore
 #else
-        public string AlternateNotificationEmails {
+        public string AlternateNotificationEmails
+        {
             get { return BackingStore?.Get<string>("alternateNotificationEmails"); }
             set { BackingStore?.Set("alternateNotificationEmails", value); }
         }
 #endif
         /// <summary>Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.</summary>
-        public int? GroupLifetimeInDays {
+        public int? GroupLifetimeInDays
+        {
             get { return BackingStore?.Get<int?>("groupLifetimeInDays"); }
             set { BackingStore?.Set("groupLifetimeInDays", value); }
         }
         /// <summary>The group type for which the expiration policy applies. Possible values are All, Selected or None.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedGroupTypes {
+        public string? ManagedGroupTypes
+        {
             get { return BackingStore?.Get<string?>("managedGroupTypes"); }
             set { BackingStore?.Set("managedGroupTypes", value); }
         }
 #nullable restore
 #else
-        public string ManagedGroupTypes {
+        public string ManagedGroupTypes
+        {
             get { return BackingStore?.Get<string>("managedGroupTypes"); }
             set { BackingStore?.Set("managedGroupTypes", value); }
         }
@@ -60,9 +66,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"alternateNotificationEmails", n => { AlternateNotificationEmails = n.GetStringValue(); } },
-                {"groupLifetimeInDays", n => { GroupLifetimeInDays = n.GetIntValue(); } },
-                {"managedGroupTypes", n => { ManagedGroupTypes = n.GetStringValue(); } },
+                { "alternateNotificationEmails", n => { AlternateNotificationEmails = n.GetStringValue(); } },
+                { "groupLifetimeInDays", n => { GroupLifetimeInDays = n.GetIntValue(); } },
+                { "managedGroupTypes", n => { ManagedGroupTypes = n.GetStringValue(); } },
             };
         }
         /// <summary>

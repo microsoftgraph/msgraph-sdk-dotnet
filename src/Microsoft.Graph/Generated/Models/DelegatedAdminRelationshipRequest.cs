@@ -4,28 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DelegatedAdminRelationshipRequest : Entity, IParsable 
+    public class DelegatedAdminRelationshipRequest : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
-        public DelegatedAdminRelationshipRequestAction? Action {
+        public DelegatedAdminRelationshipRequestAction? Action
+        {
             get { return BackingStore?.Get<DelegatedAdminRelationshipRequestAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>The date and time in ISO 8601 format and in UTC time when the relationship request was created. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The date and time in ISO 8601 format and UTC time when this relationship request was last modified. Read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The status of the request. Read-only. The possible values are: created, pending, succeeded, failed, unknownFutureValue.</summary>
-        public DelegatedAdminRelationshipRequestStatus? Status {
+        public DelegatedAdminRelationshipRequestStatus? Status
+        {
             get { return BackingStore?.Get<DelegatedAdminRelationshipRequestStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -47,10 +52,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"action", n => { Action = n.GetEnumValue<DelegatedAdminRelationshipRequestAction>(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetEnumValue<DelegatedAdminRelationshipRequestStatus>(); } },
+                { "action", n => { Action = n.GetEnumValue<DelegatedAdminRelationshipRequestAction>(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<DelegatedAdminRelationshipRequestStatus>(); } },
             };
         }
         /// <summary>

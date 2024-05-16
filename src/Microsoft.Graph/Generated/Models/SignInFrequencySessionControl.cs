@@ -4,28 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SignInFrequencySessionControl : ConditionalAccessSessionControl, IParsable 
+    public class SignInFrequencySessionControl : ConditionalAccessSessionControl, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue. This property isn&apos;t required when using frequencyInterval with the value of timeBased.</summary>
-        public SignInFrequencyAuthenticationType? AuthenticationType {
+        public SignInFrequencyAuthenticationType? AuthenticationType
+        {
             get { return BackingStore?.Get<SignInFrequencyAuthenticationType?>("authenticationType"); }
             set { BackingStore?.Set("authenticationType", value); }
         }
         /// <summary>The possible values are timeBased, everyTime, unknownFutureValue. Sign-in frequency of everyTime is available for risky users, risky sign-ins, and Intune device enrollment. For more information, see Require reauthentication every time.</summary>
-        public SignInFrequencyInterval? FrequencyInterval {
+        public SignInFrequencyInterval? FrequencyInterval
+        {
             get { return BackingStore?.Get<SignInFrequencyInterval?>("frequencyInterval"); }
             set { BackingStore?.Set("frequencyInterval", value); }
         }
         /// <summary>Possible values are: days, hours.</summary>
-        public SigninFrequencyType? Type {
+        public SigninFrequencyType? Type
+        {
             get { return BackingStore?.Get<SigninFrequencyType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>The number of days or hours.</summary>
-        public int? Value {
+        public int? Value
+        {
             get { return BackingStore?.Get<int?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -54,10 +59,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authenticationType", n => { AuthenticationType = n.GetEnumValue<SignInFrequencyAuthenticationType>(); } },
-                {"frequencyInterval", n => { FrequencyInterval = n.GetEnumValue<SignInFrequencyInterval>(); } },
-                {"type", n => { Type = n.GetEnumValue<SigninFrequencyType>(); } },
-                {"value", n => { Value = n.GetIntValue(); } },
+                { "authenticationType", n => { AuthenticationType = n.GetEnumValue<SignInFrequencyAuthenticationType>(); } },
+                { "frequencyInterval", n => { FrequencyInterval = n.GetEnumValue<SignInFrequencyInterval>(); } },
+                { "type", n => { Type = n.GetEnumValue<SigninFrequencyType>(); } },
+                { "value", n => { Value = n.GetIntValue(); } },
             };
         }
         /// <summary>

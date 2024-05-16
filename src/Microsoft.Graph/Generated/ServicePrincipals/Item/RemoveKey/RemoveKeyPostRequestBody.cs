@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.ServicePrincipals.Item.RemoveKey {
+namespace Microsoft.Graph.ServicePrincipals.Item.RemoveKey
+{
     #pragma warning disable CS1591
-    public class RemoveKeyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RemoveKeyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The keyId property</summary>
-        public Guid? KeyId {
+        public Guid? KeyId
+        {
             get { return BackingStore?.Get<Guid?>("keyId"); }
             set { BackingStore?.Set("keyId", value); }
         }
         /// <summary>The proof property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Proof {
+        public string? Proof
+        {
             get { return BackingStore?.Get<string?>("proof"); }
             set { BackingStore?.Set("proof", value); }
         }
 #nullable restore
 #else
-        public string Proof {
+        public string Proof
+        {
             get { return BackingStore?.Get<string>("proof"); }
             set { BackingStore?.Set("proof", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoveKey {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"keyId", n => { KeyId = n.GetGuidValue(); } },
-                {"proof", n => { Proof = n.GetStringValue(); } },
+                { "keyId", n => { KeyId = n.GetGuidValue(); } },
+                { "proof", n => { Proof = n.GetStringValue(); } },
             };
         }
         /// <summary>

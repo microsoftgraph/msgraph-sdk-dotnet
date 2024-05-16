@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EducationAssignmentResource : Entity, IParsable 
+    public class EducationAssignmentResource : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether this resource should be copied to each student submission for modification and submission. Required</summary>
-        public bool? DistributeForStudentWork {
+        public bool? DistributeForStudentWork
+        {
             get { return BackingStore?.Get<bool?>("distributeForStudentWork"); }
             set { BackingStore?.Set("distributeForStudentWork", value); }
         }
         /// <summary>Resource object that has been associated with this assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationResource? Resource {
+        public EducationResource? Resource
+        {
             get { return BackingStore?.Get<EducationResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public EducationResource Resource {
+        public EducationResource Resource
+        {
             get { return BackingStore?.Get<EducationResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"distributeForStudentWork", n => { DistributeForStudentWork = n.GetBoolValue(); } },
-                {"resource", n => { Resource = n.GetObjectValue<EducationResource>(EducationResource.CreateFromDiscriminatorValue); } },
+                { "distributeForStudentWork", n => { DistributeForStudentWork = n.GetBoolValue(); } },
+                { "resource", n => { Resource = n.GetObjectValue<EducationResource>(EducationResource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

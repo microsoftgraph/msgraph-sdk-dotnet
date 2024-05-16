@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EducationTeamsAppResource : EducationResource, IParsable 
+    public class EducationTeamsAppResource : EducationResource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>URL that points to the icon of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppIconWebUrl {
+        public string? AppIconWebUrl
+        {
             get { return BackingStore?.Get<string?>("appIconWebUrl"); }
             set { BackingStore?.Set("appIconWebUrl", value); }
         }
 #nullable restore
 #else
-        public string AppIconWebUrl {
+        public string AppIconWebUrl
+        {
             get { return BackingStore?.Get<string>("appIconWebUrl"); }
             set { BackingStore?.Set("appIconWebUrl", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Teams app ID of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>URL for the app resource that will be opened by Teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamsEmbeddedContentUrl {
+        public string? TeamsEmbeddedContentUrl
+        {
             get { return BackingStore?.Get<string?>("teamsEmbeddedContentUrl"); }
             set { BackingStore?.Set("teamsEmbeddedContentUrl", value); }
         }
 #nullable restore
 #else
-        public string TeamsEmbeddedContentUrl {
+        public string TeamsEmbeddedContentUrl
+        {
             get { return BackingStore?.Get<string>("teamsEmbeddedContentUrl"); }
             set { BackingStore?.Set("teamsEmbeddedContentUrl", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>URL for the app resource that can be opened in the browser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl {
+        public string? WebUrl
+        {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
 #nullable restore
 #else
-        public string WebUrl {
+        public string WebUrl
+        {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appIconWebUrl", n => { AppIconWebUrl = n.GetStringValue(); } },
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"teamsEmbeddedContentUrl", n => { TeamsEmbeddedContentUrl = n.GetStringValue(); } },
-                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
+                { "appIconWebUrl", n => { AppIconWebUrl = n.GetStringValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "teamsEmbeddedContentUrl", n => { TeamsEmbeddedContentUrl = n.GetStringValue(); } },
+                { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

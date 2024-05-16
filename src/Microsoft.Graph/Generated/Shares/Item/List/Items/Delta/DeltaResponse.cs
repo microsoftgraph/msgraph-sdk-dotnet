@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Shares.Item.List.Items.Delta {
+namespace Microsoft.Graph.Shares.Item.List.Items.Delta
+{
     [Obsolete("This class is obsolete. Use DeltaGetResponse instead.")]
     #pragma warning disable CS1591
-    public class DeltaResponse : DeltaGetResponse, IParsable 
+    public class DeltaResponse : DeltaGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

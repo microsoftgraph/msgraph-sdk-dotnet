@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Me.Activities.Recent {
+namespace Microsoft.Graph.Me.Activities.Recent
+{
     #pragma warning disable CS1591
-    public class RecentGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class RecentGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserActivity>? Value {
+        public List<UserActivity>? Value
+        {
             get { return BackingStore?.Get<List<UserActivity>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<UserActivity> Value {
+        public List<UserActivity> Value
+        {
             get { return BackingStore?.Get<List<UserActivity>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Me.Activities.Recent {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<UserActivity>(UserActivity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<UserActivity>(UserActivity.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

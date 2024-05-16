@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ColumnValidation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ColumnValidation : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Default BCP 47 language tag for the description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultLanguage {
+        public string? DefaultLanguage
+        {
             get { return BackingStore?.Get<string?>("defaultLanguage"); }
             set { BackingStore?.Set("defaultLanguage", value); }
         }
 #nullable restore
 #else
-        public string DefaultLanguage {
+        public string DefaultLanguage
+        {
             get { return BackingStore?.Get<string>("defaultLanguage"); }
             set { BackingStore?.Set("defaultLanguage", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Localized messages that explain what is needed for this column&apos;s value to be considered valid. User will be prompted with this message if validation fails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DisplayNameLocalization>? Descriptions {
+        public List<DisplayNameLocalization>? Descriptions
+        {
             get { return BackingStore?.Get<List<DisplayNameLocalization>?>("descriptions"); }
             set { BackingStore?.Set("descriptions", value); }
         }
 #nullable restore
 #else
-        public List<DisplayNameLocalization> Descriptions {
+        public List<DisplayNameLocalization> Descriptions
+        {
             get { return BackingStore?.Get<List<DisplayNameLocalization>>("descriptions"); }
             set { BackingStore?.Set("descriptions", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The formula to validate column value. For examples, see Examples of common formulas in lists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Formula {
+        public string? Formula
+        {
             get { return BackingStore?.Get<string?>("formula"); }
             set { BackingStore?.Set("formula", value); }
         }
 #nullable restore
 #else
-        public string Formula {
+        public string Formula
+        {
             get { return BackingStore?.Get<string>("formula"); }
             set { BackingStore?.Set("formula", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"defaultLanguage", n => { DefaultLanguage = n.GetStringValue(); } },
-                {"descriptions", n => { Descriptions = n.GetCollectionOfObjectValues<DisplayNameLocalization>(DisplayNameLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"formula", n => { Formula = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "defaultLanguage", n => { DefaultLanguage = n.GetStringValue(); } },
+                { "descriptions", n => { Descriptions = n.GetCollectionOfObjectValues<DisplayNameLocalization>(DisplayNameLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "formula", n => { Formula = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

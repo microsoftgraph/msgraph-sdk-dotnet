@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class AuthorityTemplate : FilePlanDescriptorTemplate, IParsable 
+    public class AuthorityTemplate : FilePlanDescriptorTemplate, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

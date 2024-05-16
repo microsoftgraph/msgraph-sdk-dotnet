@@ -4,61 +4,71 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class CaseOperation : Microsoft.Graph.Models.Entity, IParsable 
+    public class CaseOperation : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData</summary>
-        public CaseAction? Action {
+        public CaseAction? Action
+        {
             get { return BackingStore?.Get<CaseAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>The date and time the operation was completed.</summary>
-        public DateTimeOffset? CompletedDateTime {
+        public DateTimeOffset? CompletedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
         /// <summary>The user that created the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.IdentitySet? CreatedBy {
+        public Microsoft.Graph.Models.IdentitySet? CreatedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.IdentitySet CreatedBy {
+        public Microsoft.Graph.Models.IdentitySet CreatedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>The date and time the operation was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The progress of the operation.</summary>
-        public int? PercentProgress {
+        public int? PercentProgress
+        {
             get { return BackingStore?.Get<int?>("percentProgress"); }
             set { BackingStore?.Set("percentProgress", value); }
         }
         /// <summary>Contains success and failure-specific result information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ResultInfo? ResultInfo {
+        public Microsoft.Graph.Models.ResultInfo? ResultInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ResultInfo?>("resultInfo"); }
             set { BackingStore?.Set("resultInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ResultInfo ResultInfo {
+        public Microsoft.Graph.Models.ResultInfo ResultInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ResultInfo>("resultInfo"); }
             set { BackingStore?.Set("resultInfo", value); }
         }
 #endif
         /// <summary>The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.</summary>
-        public CaseOperationStatus? Status {
+        public CaseOperationStatus? Status
+        {
             get { return BackingStore?.Get<CaseOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -91,13 +101,13 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"action", n => { Action = n.GetEnumValue<CaseAction>(); } },
-                {"completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"percentProgress", n => { PercentProgress = n.GetIntValue(); } },
-                {"resultInfo", n => { ResultInfo = n.GetObjectValue<Microsoft.Graph.Models.ResultInfo>(Microsoft.Graph.Models.ResultInfo.CreateFromDiscriminatorValue); } },
-                {"status", n => { Status = n.GetEnumValue<CaseOperationStatus>(); } },
+                { "action", n => { Action = n.GetEnumValue<CaseAction>(); } },
+                { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "percentProgress", n => { PercentProgress = n.GetIntValue(); } },
+                { "resultInfo", n => { ResultInfo = n.GetObjectValue<Microsoft.Graph.Models.ResultInfo>(Microsoft.Graph.Models.ResultInfo.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<CaseOperationStatus>(); } },
             };
         }
         /// <summary>

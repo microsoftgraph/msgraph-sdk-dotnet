@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties used to assign an Microsoft Store for Business mobile app to a group.
     /// </summary>
-    public class MicrosoftStoreForBusinessAppAssignmentSettings : MobileAppAssignmentSettings, IParsable 
+    public class MicrosoftStoreForBusinessAppAssignmentSettings : MobileAppAssignmentSettings, IParsable
     {
         /// <summary>Whether or not to use device execution context for Microsoft Store for Business mobile app.</summary>
-        public bool? UseDeviceContext {
+        public bool? UseDeviceContext
+        {
             get { return BackingStore?.Get<bool?>("useDeviceContext"); }
             set { BackingStore?.Set("useDeviceContext", value); }
         }
@@ -40,7 +42,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"useDeviceContext", n => { UseDeviceContext = n.GetBoolValue(); } },
+                { "useDeviceContext", n => { UseDeviceContext = n.GetBoolValue(); } },
             };
         }
         /// <summary>

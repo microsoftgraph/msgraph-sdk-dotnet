@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MailSearchFolder : MailFolder, IParsable 
+    public class MailSearchFolder : MailFolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The OData query to filter the messages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FilterQuery {
+        public string? FilterQuery
+        {
             get { return BackingStore?.Get<string?>("filterQuery"); }
             set { BackingStore?.Set("filterQuery", value); }
         }
 #nullable restore
 #else
-        public string FilterQuery {
+        public string FilterQuery
+        {
             get { return BackingStore?.Get<string>("filterQuery"); }
             set { BackingStore?.Set("filterQuery", value); }
         }
 #endif
         /// <summary>Indicates how the mailbox folder hierarchy should be traversed in the search. true means that a deep search should be done to include child folders in the hierarchy of each folder explicitly specified in sourceFolderIds. false means a shallow search of only each of the folders explicitly specified in sourceFolderIds.</summary>
-        public bool? IncludeNestedFolders {
+        public bool? IncludeNestedFolders
+        {
             get { return BackingStore?.Get<bool?>("includeNestedFolders"); }
             set { BackingStore?.Set("includeNestedFolders", value); }
         }
         /// <summary>Indicates whether a search folder is editable using REST APIs.</summary>
-        public bool? IsSupported {
+        public bool? IsSupported
+        {
             get { return BackingStore?.Get<bool?>("isSupported"); }
             set { BackingStore?.Set("isSupported", value); }
         }
         /// <summary>The mailbox folders that should be mined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SourceFolderIds {
+        public List<string>? SourceFolderIds
+        {
             get { return BackingStore?.Get<List<string>?>("sourceFolderIds"); }
             set { BackingStore?.Set("sourceFolderIds", value); }
         }
 #nullable restore
 #else
-        public List<string> SourceFolderIds {
+        public List<string> SourceFolderIds
+        {
             get { return BackingStore?.Get<List<string>>("sourceFolderIds"); }
             set { BackingStore?.Set("sourceFolderIds", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"filterQuery", n => { FilterQuery = n.GetStringValue(); } },
-                {"includeNestedFolders", n => { IncludeNestedFolders = n.GetBoolValue(); } },
-                {"isSupported", n => { IsSupported = n.GetBoolValue(); } },
-                {"sourceFolderIds", n => { SourceFolderIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "filterQuery", n => { FilterQuery = n.GetStringValue(); } },
+                { "includeNestedFolders", n => { IncludeNestedFolders = n.GetBoolValue(); } },
+                { "isSupported", n => { IsSupported = n.GetBoolValue(); } },
+                { "sourceFolderIds", n => { SourceFolderIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

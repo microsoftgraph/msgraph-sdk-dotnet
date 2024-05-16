@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Item {
+namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\homeRealmDiscoveryPolicies\{homeRealmDiscoveryPolicy-id}
     /// </summary>
-    public class HomeRealmDiscoveryPolicyItemRequestBuilder : BaseRequestBuilder 
+    public class HomeRealmDiscoveryPolicyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of servicePrincipal entities.</summary>
         public RefRequestBuilder Ref

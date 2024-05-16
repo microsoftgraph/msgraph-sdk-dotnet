@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// This class contains compliance settings for IOS.
     /// </summary>
-    public class IosCompliancePolicy : DeviceCompliancePolicy, IParsable 
+    public class IosCompliancePolicy : DeviceCompliancePolicy, IParsable
     {
         /// <summary>Require that devices have enabled device threat protection .</summary>
-        public bool? DeviceThreatProtectionEnabled {
+        public bool? DeviceThreatProtectionEnabled
+        {
             get { return BackingStore?.Get<bool?>("deviceThreatProtectionEnabled"); }
             set { BackingStore?.Set("deviceThreatProtectionEnabled", value); }
         }
         /// <summary>Device threat protection levels for the Device Threat Protection API.</summary>
-        public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel {
+        public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel
+        {
             get { return BackingStore?.Get<DeviceThreatProtectionLevel?>("deviceThreatProtectionRequiredSecurityLevel"); }
             set { BackingStore?.Set("deviceThreatProtectionRequiredSecurityLevel", value); }
         }
         /// <summary>Indicates whether or not to require a managed email profile.</summary>
-        public bool? ManagedEmailProfileRequired {
+        public bool? ManagedEmailProfileRequired
+        {
             get { return BackingStore?.Get<bool?>("managedEmailProfileRequired"); }
             set { BackingStore?.Set("managedEmailProfileRequired", value); }
         }
         /// <summary>Maximum IOS version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsMaximumVersion {
+        public string? OsMaximumVersion
+        {
             get { return BackingStore?.Get<string?>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
 #nullable restore
 #else
-        public string OsMaximumVersion {
+        public string OsMaximumVersion
+        {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
@@ -42,59 +48,70 @@ namespace Microsoft.Graph.Models {
         /// <summary>Minimum IOS version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsMinimumVersion {
+        public string? OsMinimumVersion
+        {
             get { return BackingStore?.Get<string?>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
 #nullable restore
 #else
-        public string OsMinimumVersion {
+        public string OsMinimumVersion
+        {
             get { return BackingStore?.Get<string>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
 #endif
         /// <summary>Indicates whether or not to block simple passcodes.</summary>
-        public bool? PasscodeBlockSimple {
+        public bool? PasscodeBlockSimple
+        {
             get { return BackingStore?.Get<bool?>("passcodeBlockSimple"); }
             set { BackingStore?.Set("passcodeBlockSimple", value); }
         }
         /// <summary>Number of days before the passcode expires. Valid values 1 to 65535</summary>
-        public int? PasscodeExpirationDays {
+        public int? PasscodeExpirationDays
+        {
             get { return BackingStore?.Get<int?>("passcodeExpirationDays"); }
             set { BackingStore?.Set("passcodeExpirationDays", value); }
         }
         /// <summary>The number of character sets required in the password.</summary>
-        public int? PasscodeMinimumCharacterSetCount {
+        public int? PasscodeMinimumCharacterSetCount
+        {
             get { return BackingStore?.Get<int?>("passcodeMinimumCharacterSetCount"); }
             set { BackingStore?.Set("passcodeMinimumCharacterSetCount", value); }
         }
         /// <summary>Minimum length of passcode. Valid values 4 to 14</summary>
-        public int? PasscodeMinimumLength {
+        public int? PasscodeMinimumLength
+        {
             get { return BackingStore?.Get<int?>("passcodeMinimumLength"); }
             set { BackingStore?.Set("passcodeMinimumLength", value); }
         }
         /// <summary>Minutes of inactivity before a passcode is required.</summary>
-        public int? PasscodeMinutesOfInactivityBeforeLock {
+        public int? PasscodeMinutesOfInactivityBeforeLock
+        {
             get { return BackingStore?.Get<int?>("passcodeMinutesOfInactivityBeforeLock"); }
             set { BackingStore?.Set("passcodeMinutesOfInactivityBeforeLock", value); }
         }
         /// <summary>Number of previous passcodes to block. Valid values 1 to 24</summary>
-        public int? PasscodePreviousPasscodeBlockCount {
+        public int? PasscodePreviousPasscodeBlockCount
+        {
             get { return BackingStore?.Get<int?>("passcodePreviousPasscodeBlockCount"); }
             set { BackingStore?.Set("passcodePreviousPasscodeBlockCount", value); }
         }
         /// <summary>Indicates whether or not to require a passcode.</summary>
-        public bool? PasscodeRequired {
+        public bool? PasscodeRequired
+        {
             get { return BackingStore?.Get<bool?>("passcodeRequired"); }
             set { BackingStore?.Set("passcodeRequired", value); }
         }
         /// <summary>Possible values of required passwords.</summary>
-        public RequiredPasswordType? PasscodeRequiredType {
+        public RequiredPasswordType? PasscodeRequiredType
+        {
             get { return BackingStore?.Get<RequiredPasswordType?>("passcodeRequiredType"); }
             set { BackingStore?.Set("passcodeRequiredType", value); }
         }
         /// <summary>Devices must not be jailbroken or rooted.</summary>
-        public bool? SecurityBlockJailbrokenDevices {
+        public bool? SecurityBlockJailbrokenDevices
+        {
             get { return BackingStore?.Get<bool?>("securityBlockJailbrokenDevices"); }
             set { BackingStore?.Set("securityBlockJailbrokenDevices", value); }
         }
@@ -123,20 +140,20 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceThreatProtectionEnabled", n => { DeviceThreatProtectionEnabled = n.GetBoolValue(); } },
-                {"deviceThreatProtectionRequiredSecurityLevel", n => { DeviceThreatProtectionRequiredSecurityLevel = n.GetEnumValue<DeviceThreatProtectionLevel>(); } },
-                {"managedEmailProfileRequired", n => { ManagedEmailProfileRequired = n.GetBoolValue(); } },
-                {"osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
-                {"osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
-                {"passcodeBlockSimple", n => { PasscodeBlockSimple = n.GetBoolValue(); } },
-                {"passcodeExpirationDays", n => { PasscodeExpirationDays = n.GetIntValue(); } },
-                {"passcodeMinimumCharacterSetCount", n => { PasscodeMinimumCharacterSetCount = n.GetIntValue(); } },
-                {"passcodeMinimumLength", n => { PasscodeMinimumLength = n.GetIntValue(); } },
-                {"passcodeMinutesOfInactivityBeforeLock", n => { PasscodeMinutesOfInactivityBeforeLock = n.GetIntValue(); } },
-                {"passcodePreviousPasscodeBlockCount", n => { PasscodePreviousPasscodeBlockCount = n.GetIntValue(); } },
-                {"passcodeRequired", n => { PasscodeRequired = n.GetBoolValue(); } },
-                {"passcodeRequiredType", n => { PasscodeRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
-                {"securityBlockJailbrokenDevices", n => { SecurityBlockJailbrokenDevices = n.GetBoolValue(); } },
+                { "deviceThreatProtectionEnabled", n => { DeviceThreatProtectionEnabled = n.GetBoolValue(); } },
+                { "deviceThreatProtectionRequiredSecurityLevel", n => { DeviceThreatProtectionRequiredSecurityLevel = n.GetEnumValue<DeviceThreatProtectionLevel>(); } },
+                { "managedEmailProfileRequired", n => { ManagedEmailProfileRequired = n.GetBoolValue(); } },
+                { "osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
+                { "osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
+                { "passcodeBlockSimple", n => { PasscodeBlockSimple = n.GetBoolValue(); } },
+                { "passcodeExpirationDays", n => { PasscodeExpirationDays = n.GetIntValue(); } },
+                { "passcodeMinimumCharacterSetCount", n => { PasscodeMinimumCharacterSetCount = n.GetIntValue(); } },
+                { "passcodeMinimumLength", n => { PasscodeMinimumLength = n.GetIntValue(); } },
+                { "passcodeMinutesOfInactivityBeforeLock", n => { PasscodeMinutesOfInactivityBeforeLock = n.GetIntValue(); } },
+                { "passcodePreviousPasscodeBlockCount", n => { PasscodePreviousPasscodeBlockCount = n.GetIntValue(); } },
+                { "passcodeRequired", n => { PasscodeRequired = n.GetBoolValue(); } },
+                { "passcodeRequiredType", n => { PasscodeRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
+                { "securityBlockJailbrokenDevices", n => { SecurityBlockJailbrokenDevices = n.GetBoolValue(); } },
             };
         }
         /// <summary>

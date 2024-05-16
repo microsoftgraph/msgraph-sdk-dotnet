@@ -4,50 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class LongRunningOperation : Entity, IParsable 
+    public class LongRunningOperation : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastActionDateTime {
+        public DateTimeOffset? LastActionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>URI of the resource that the operation is performed on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceLocation {
+        public string? ResourceLocation
+        {
             get { return BackingStore?.Get<string?>("resourceLocation"); }
             set { BackingStore?.Set("resourceLocation", value); }
         }
 #nullable restore
 #else
-        public string ResourceLocation {
+        public string ResourceLocation
+        {
             get { return BackingStore?.Get<string>("resourceLocation"); }
             set { BackingStore?.Set("resourceLocation", value); }
         }
 #endif
         /// <summary>The status of the operation. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue.</summary>
-        public LongRunningOperationStatus? Status {
+        public LongRunningOperationStatus? Status
+        {
             get { return BackingStore?.Get<LongRunningOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Details about the status of the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatusDetail {
+        public string? StatusDetail
+        {
             get { return BackingStore?.Get<string?>("statusDetail"); }
             set { BackingStore?.Set("statusDetail", value); }
         }
 #nullable restore
 #else
-        public string StatusDetail {
+        public string StatusDetail
+        {
             get { return BackingStore?.Get<string>("statusDetail"); }
             set { BackingStore?.Set("statusDetail", value); }
         }
@@ -76,11 +84,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"resourceLocation", n => { ResourceLocation = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<LongRunningOperationStatus>(); } },
-                {"statusDetail", n => { StatusDetail = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "resourceLocation", n => { ResourceLocation = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<LongRunningOperationStatus>(); } },
+                { "statusDetail", n => { StatusDetail = n.GetStringValue(); } },
             };
         }
         /// <summary>

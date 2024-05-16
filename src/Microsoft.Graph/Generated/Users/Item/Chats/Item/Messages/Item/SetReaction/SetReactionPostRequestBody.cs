@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.Chats.Item.Messages.Item.SetReaction {
+namespace Microsoft.Graph.Users.Item.Chats.Item.Messages.Item.SetReaction
+{
     #pragma warning disable CS1591
-    public class SetReactionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SetReactionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Messages.Item.SetReaction {
         /// <summary>The reactionType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReactionType {
+        public string? ReactionType
+        {
             get { return BackingStore?.Get<string?>("reactionType"); }
             set { BackingStore?.Set("reactionType", value); }
         }
 #nullable restore
 #else
-        public string ReactionType {
+        public string ReactionType
+        {
             get { return BackingStore?.Get<string>("reactionType"); }
             set { BackingStore?.Set("reactionType", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Messages.Item.SetReaction {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"reactionType", n => { ReactionType = n.GetStringValue(); } },
+                { "reactionType", n => { ReactionType = n.GetStringValue(); } },
             };
         }
         /// <summary>

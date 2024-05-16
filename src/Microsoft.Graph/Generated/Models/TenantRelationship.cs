@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TenantRelationship : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TenantRelationship : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The customer who has a delegated admin relationship with a Microsoft partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DelegatedAdminCustomer>? DelegatedAdminCustomers {
+        public List<DelegatedAdminCustomer>? DelegatedAdminCustomers
+        {
             get { return BackingStore?.Get<List<DelegatedAdminCustomer>?>("delegatedAdminCustomers"); }
             set { BackingStore?.Set("delegatedAdminCustomers", value); }
         }
 #nullable restore
 #else
-        public List<DelegatedAdminCustomer> DelegatedAdminCustomers {
+        public List<DelegatedAdminCustomer> DelegatedAdminCustomers
+        {
             get { return BackingStore?.Get<List<DelegatedAdminCustomer>>("delegatedAdminCustomers"); }
             set { BackingStore?.Set("delegatedAdminCustomers", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DelegatedAdminRelationship>? DelegatedAdminRelationships {
+        public List<DelegatedAdminRelationship>? DelegatedAdminRelationships
+        {
             get { return BackingStore?.Get<List<DelegatedAdminRelationship>?>("delegatedAdminRelationships"); }
             set { BackingStore?.Set("delegatedAdminRelationships", value); }
         }
 #nullable restore
 #else
-        public List<DelegatedAdminRelationship> DelegatedAdminRelationships {
+        public List<DelegatedAdminRelationship> DelegatedAdminRelationships
+        {
             get { return BackingStore?.Get<List<DelegatedAdminRelationship>>("delegatedAdminRelationships"); }
             set { BackingStore?.Set("delegatedAdminRelationships", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Defines an organization with more than one instance of Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.MultiTenantOrganization? MultiTenantOrganization {
+        public Microsoft.Graph.Models.MultiTenantOrganization? MultiTenantOrganization
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.MultiTenantOrganization?>("multiTenantOrganization"); }
             set { BackingStore?.Set("multiTenantOrganization", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.MultiTenantOrganization MultiTenantOrganization {
+        public Microsoft.Graph.Models.MultiTenantOrganization MultiTenantOrganization
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.MultiTenantOrganization>("multiTenantOrganization"); }
             set { BackingStore?.Set("multiTenantOrganization", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"delegatedAdminCustomers", n => { DelegatedAdminCustomers = n.GetCollectionOfObjectValues<DelegatedAdminCustomer>(DelegatedAdminCustomer.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"delegatedAdminRelationships", n => { DelegatedAdminRelationships = n.GetCollectionOfObjectValues<DelegatedAdminRelationship>(DelegatedAdminRelationship.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"multiTenantOrganization", n => { MultiTenantOrganization = n.GetObjectValue<Microsoft.Graph.Models.MultiTenantOrganization>(Microsoft.Graph.Models.MultiTenantOrganization.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "delegatedAdminCustomers", n => { DelegatedAdminCustomers = n.GetCollectionOfObjectValues<DelegatedAdminCustomer>(DelegatedAdminCustomer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "delegatedAdminRelationships", n => { DelegatedAdminRelationships = n.GetCollectionOfObjectValues<DelegatedAdminRelationship>(DelegatedAdminRelationship.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "multiTenantOrganization", n => { MultiTenantOrganization = n.GetObjectValue<Microsoft.Graph.Models.MultiTenantOrganization>(Microsoft.Graph.Models.MultiTenantOrganization.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

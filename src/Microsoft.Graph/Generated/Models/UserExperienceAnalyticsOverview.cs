@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The user experience analytics overview entity contains the overall score and the scores and insights of every metric of all categories.
     /// </summary>
-    public class UserExperienceAnalyticsOverview : Entity, IParsable 
+    public class UserExperienceAnalyticsOverview : Entity, IParsable
     {
         /// <summary>The user experience analytics insights. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserExperienceAnalyticsInsight>? Insights {
+        public List<UserExperienceAnalyticsInsight>? Insights
+        {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsInsight>?>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
 #nullable restore
 #else
-        public List<UserExperienceAnalyticsInsight> Insights {
+        public List<UserExperienceAnalyticsInsight> Insights
+        {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsInsight>>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"insights", n => { Insights = n.GetCollectionOfObjectValues<UserExperienceAnalyticsInsight>(UserExperienceAnalyticsInsight.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "insights", n => { Insights = n.GetCollectionOfObjectValues<UserExperienceAnalyticsInsight>(UserExperienceAnalyticsInsight.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

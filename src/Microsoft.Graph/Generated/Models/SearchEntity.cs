@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SearchEntity : Entity, IParsable 
+    public class SearchEntity : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Administrative answer in Microsoft Search results to define common acronyms in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Acronym>? Acronyms {
+        public List<Acronym>? Acronyms
+        {
             get { return BackingStore?.Get<List<Acronym>?>("acronyms"); }
             set { BackingStore?.Set("acronyms", value); }
         }
 #nullable restore
 #else
-        public List<Acronym> Acronyms {
+        public List<Acronym> Acronyms
+        {
             get { return BackingStore?.Get<List<Acronym>>("acronyms"); }
             set { BackingStore?.Set("acronyms", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Administrative answer in Microsoft Search results for common search queries in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Bookmark>? Bookmarks {
+        public List<Bookmark>? Bookmarks
+        {
             get { return BackingStore?.Get<List<Bookmark>?>("bookmarks"); }
             set { BackingStore?.Set("bookmarks", value); }
         }
 #nullable restore
 #else
-        public List<Bookmark> Bookmarks {
+        public List<Bookmark> Bookmarks
+        {
             get { return BackingStore?.Get<List<Bookmark>>("bookmarks"); }
             set { BackingStore?.Set("bookmarks", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Qna>? Qnas {
+        public List<Qna>? Qnas
+        {
             get { return BackingStore?.Get<List<Qna>?>("qnas"); }
             set { BackingStore?.Set("qnas", value); }
         }
 #nullable restore
 #else
-        public List<Qna> Qnas {
+        public List<Qna> Qnas
+        {
             get { return BackingStore?.Get<List<Qna>>("qnas"); }
             set { BackingStore?.Set("qnas", value); }
         }
@@ -70,9 +77,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"acronyms", n => { Acronyms = n.GetCollectionOfObjectValues<Acronym>(Acronym.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"bookmarks", n => { Bookmarks = n.GetCollectionOfObjectValues<Bookmark>(Bookmark.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"qnas", n => { Qnas = n.GetCollectionOfObjectValues<Qna>(Qna.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "acronyms", n => { Acronyms = n.GetCollectionOfObjectValues<Acronym>(Acronym.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "bookmarks", n => { Bookmarks = n.GetCollectionOfObjectValues<Bookmark>(Bookmark.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "qnas", n => { Qnas = n.GetCollectionOfObjectValues<Qna>(Qna.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

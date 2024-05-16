@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CertificateAuthority : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CertificateAuthority : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Required. The base64 encoded string representing the public certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Certificate {
+        public byte[]? Certificate
+        {
             get { return BackingStore?.Get<byte[]?>("certificate"); }
             set { BackingStore?.Set("certificate", value); }
         }
 #nullable restore
 #else
-        public byte[] Certificate {
+        public byte[] Certificate
+        {
             get { return BackingStore?.Get<byte[]>("certificate"); }
             set { BackingStore?.Set("certificate", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The URL of the certificate revocation list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificateRevocationListUrl {
+        public string? CertificateRevocationListUrl
+        {
             get { return BackingStore?.Get<string?>("certificateRevocationListUrl"); }
             set { BackingStore?.Set("certificateRevocationListUrl", value); }
         }
 #nullable restore
 #else
-        public string CertificateRevocationListUrl {
+        public string CertificateRevocationListUrl
+        {
             get { return BackingStore?.Get<string>("certificateRevocationListUrl"); }
             set { BackingStore?.Set("certificateRevocationListUrl", value); }
         }
@@ -48,32 +54,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The URL contains the list of all revoked certificates since the last time a full certificate revocaton list was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeltaCertificateRevocationListUrl {
+        public string? DeltaCertificateRevocationListUrl
+        {
             get { return BackingStore?.Get<string?>("deltaCertificateRevocationListUrl"); }
             set { BackingStore?.Set("deltaCertificateRevocationListUrl", value); }
         }
 #nullable restore
 #else
-        public string DeltaCertificateRevocationListUrl {
+        public string DeltaCertificateRevocationListUrl
+        {
             get { return BackingStore?.Get<string>("deltaCertificateRevocationListUrl"); }
             set { BackingStore?.Set("deltaCertificateRevocationListUrl", value); }
         }
 #endif
         /// <summary>Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.</summary>
-        public bool? IsRootAuthority {
+        public bool? IsRootAuthority
+        {
             get { return BackingStore?.Get<bool?>("isRootAuthority"); }
             set { BackingStore?.Set("isRootAuthority", value); }
         }
         /// <summary>The issuer of the certificate, calculated from the certificate value. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Issuer {
+        public string? Issuer
+        {
             get { return BackingStore?.Get<string?>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
 #nullable restore
 #else
-        public string Issuer {
+        public string Issuer
+        {
             get { return BackingStore?.Get<string>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The subject key identifier of the certificate, calculated from the certificate value. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerSki {
+        public string? IssuerSki
+        {
             get { return BackingStore?.Get<string?>("issuerSki"); }
             set { BackingStore?.Set("issuerSki", value); }
         }
 #nullable restore
 #else
-        public string IssuerSki {
+        public string IssuerSki
+        {
             get { return BackingStore?.Get<string>("issuerSki"); }
             set { BackingStore?.Set("issuerSki", value); }
         }
@@ -95,13 +108,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -132,13 +147,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"certificate", n => { Certificate = n.GetByteArrayValue(); } },
-                {"certificateRevocationListUrl", n => { CertificateRevocationListUrl = n.GetStringValue(); } },
-                {"deltaCertificateRevocationListUrl", n => { DeltaCertificateRevocationListUrl = n.GetStringValue(); } },
-                {"isRootAuthority", n => { IsRootAuthority = n.GetBoolValue(); } },
-                {"issuer", n => { Issuer = n.GetStringValue(); } },
-                {"issuerSki", n => { IssuerSki = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "certificate", n => { Certificate = n.GetByteArrayValue(); } },
+                { "certificateRevocationListUrl", n => { CertificateRevocationListUrl = n.GetStringValue(); } },
+                { "deltaCertificateRevocationListUrl", n => { DeltaCertificateRevocationListUrl = n.GetStringValue(); } },
+                { "isRootAuthority", n => { IsRootAuthority = n.GetBoolValue(); } },
+                { "issuer", n => { Issuer = n.GetStringValue(); } },
+                { "issuerSki", n => { IssuerSki = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

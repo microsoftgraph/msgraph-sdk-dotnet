@@ -6,67 +6,78 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Communications.Calls.Item.RecordResponse {
+namespace Microsoft.Graph.Communications.Calls.Item.RecordResponse
+{
     #pragma warning disable CS1591
-    public class RecordResponsePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RecordResponsePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The bargeInAllowed property</summary>
-        public bool? BargeInAllowed {
+        public bool? BargeInAllowed
+        {
             get { return BackingStore?.Get<bool?>("bargeInAllowed"); }
             set { BackingStore?.Set("bargeInAllowed", value); }
         }
         /// <summary>The clientContext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientContext {
+        public string? ClientContext
+        {
             get { return BackingStore?.Get<string?>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
 #nullable restore
 #else
-        public string ClientContext {
+        public string ClientContext
+        {
             get { return BackingStore?.Get<string>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
 #endif
         /// <summary>The initialSilenceTimeoutInSeconds property</summary>
-        public int? InitialSilenceTimeoutInSeconds {
+        public int? InitialSilenceTimeoutInSeconds
+        {
             get { return BackingStore?.Get<int?>("initialSilenceTimeoutInSeconds"); }
             set { BackingStore?.Set("initialSilenceTimeoutInSeconds", value); }
         }
         /// <summary>The maxRecordDurationInSeconds property</summary>
-        public int? MaxRecordDurationInSeconds {
+        public int? MaxRecordDurationInSeconds
+        {
             get { return BackingStore?.Get<int?>("maxRecordDurationInSeconds"); }
             set { BackingStore?.Set("maxRecordDurationInSeconds", value); }
         }
         /// <summary>The maxSilenceTimeoutInSeconds property</summary>
-        public int? MaxSilenceTimeoutInSeconds {
+        public int? MaxSilenceTimeoutInSeconds
+        {
             get { return BackingStore?.Get<int?>("maxSilenceTimeoutInSeconds"); }
             set { BackingStore?.Set("maxSilenceTimeoutInSeconds", value); }
         }
         /// <summary>The playBeep property</summary>
-        public bool? PlayBeep {
+        public bool? PlayBeep
+        {
             get { return BackingStore?.Get<bool?>("playBeep"); }
             set { BackingStore?.Set("playBeep", value); }
         }
         /// <summary>The prompts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Prompt>? Prompts {
+        public List<Prompt>? Prompts
+        {
             get { return BackingStore?.Get<List<Prompt>?>("prompts"); }
             set { BackingStore?.Set("prompts", value); }
         }
 #nullable restore
 #else
-        public List<Prompt> Prompts {
+        public List<Prompt> Prompts
+        {
             get { return BackingStore?.Get<List<Prompt>>("prompts"); }
             set { BackingStore?.Set("prompts", value); }
         }
@@ -74,13 +85,15 @@ namespace Microsoft.Graph.Communications.Calls.Item.RecordResponse {
         /// <summary>The stopTones property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? StopTones {
+        public List<string>? StopTones
+        {
             get { return BackingStore?.Get<List<string>?>("stopTones"); }
             set { BackingStore?.Set("stopTones", value); }
         }
 #nullable restore
 #else
-        public List<string> StopTones {
+        public List<string> StopTones
+        {
             get { return BackingStore?.Get<List<string>>("stopTones"); }
             set { BackingStore?.Set("stopTones", value); }
         }
@@ -111,14 +124,14 @@ namespace Microsoft.Graph.Communications.Calls.Item.RecordResponse {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"bargeInAllowed", n => { BargeInAllowed = n.GetBoolValue(); } },
-                {"clientContext", n => { ClientContext = n.GetStringValue(); } },
-                {"initialSilenceTimeoutInSeconds", n => { InitialSilenceTimeoutInSeconds = n.GetIntValue(); } },
-                {"maxRecordDurationInSeconds", n => { MaxRecordDurationInSeconds = n.GetIntValue(); } },
-                {"maxSilenceTimeoutInSeconds", n => { MaxSilenceTimeoutInSeconds = n.GetIntValue(); } },
-                {"playBeep", n => { PlayBeep = n.GetBoolValue(); } },
-                {"prompts", n => { Prompts = n.GetCollectionOfObjectValues<Prompt>(Prompt.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"stopTones", n => { StopTones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "bargeInAllowed", n => { BargeInAllowed = n.GetBoolValue(); } },
+                { "clientContext", n => { ClientContext = n.GetStringValue(); } },
+                { "initialSilenceTimeoutInSeconds", n => { InitialSilenceTimeoutInSeconds = n.GetIntValue(); } },
+                { "maxRecordDurationInSeconds", n => { MaxRecordDurationInSeconds = n.GetIntValue(); } },
+                { "maxSilenceTimeoutInSeconds", n => { MaxSilenceTimeoutInSeconds = n.GetIntValue(); } },
+                { "playBeep", n => { PlayBeep = n.GetBoolValue(); } },
+                { "prompts", n => { Prompts = n.GetCollectionOfObjectValues<Prompt>(Prompt.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "stopTones", n => { StopTones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

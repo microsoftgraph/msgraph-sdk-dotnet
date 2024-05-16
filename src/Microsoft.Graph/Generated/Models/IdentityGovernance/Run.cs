@@ -4,96 +4,113 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.IdentityGovernance {
+namespace Microsoft.Graph.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class Run : Microsoft.Graph.Models.Entity, IParsable 
+    public class Run : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date time that the run completed. Value is null if the workflow hasn&apos;t completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
-        public DateTimeOffset? CompletedDateTime {
+        public DateTimeOffset? CompletedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
         /// <summary>The number of tasks that failed in the run execution.</summary>
-        public int? FailedTasksCount {
+        public int? FailedTasksCount
+        {
             get { return BackingStore?.Get<int?>("failedTasksCount"); }
             set { BackingStore?.Set("failedTasksCount", value); }
         }
         /// <summary>The number of users that failed in the run execution.</summary>
-        public int? FailedUsersCount {
+        public int? FailedUsersCount
+        {
             get { return BackingStore?.Get<int?>("failedUsersCount"); }
             set { BackingStore?.Set("failedUsersCount", value); }
         }
         /// <summary>The datetime that the run was last updated.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The processingStatus property</summary>
-        public LifecycleWorkflowProcessingStatus? ProcessingStatus {
+        public LifecycleWorkflowProcessingStatus? ProcessingStatus
+        {
             get { return BackingStore?.Get<LifecycleWorkflowProcessingStatus?>("processingStatus"); }
             set { BackingStore?.Set("processingStatus", value); }
         }
         /// <summary>The date time that the run is scheduled to be executed for a workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
-        public DateTimeOffset? ScheduledDateTime {
+        public DateTimeOffset? ScheduledDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("scheduledDateTime"); }
             set { BackingStore?.Set("scheduledDateTime", value); }
         }
         /// <summary>The date time that the run execution started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
-        public DateTimeOffset? StartedDateTime {
+        public DateTimeOffset? StartedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
             set { BackingStore?.Set("startedDateTime", value); }
         }
         /// <summary>The number of successfully completed users in the run.</summary>
-        public int? SuccessfulUsersCount {
+        public int? SuccessfulUsersCount
+        {
             get { return BackingStore?.Get<int?>("successfulUsersCount"); }
             set { BackingStore?.Set("successfulUsersCount", value); }
         }
         /// <summary>The related taskProcessingResults.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TaskProcessingResult>? TaskProcessingResults {
+        public List<TaskProcessingResult>? TaskProcessingResults
+        {
             get { return BackingStore?.Get<List<TaskProcessingResult>?>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
 #nullable restore
 #else
-        public List<TaskProcessingResult> TaskProcessingResults {
+        public List<TaskProcessingResult> TaskProcessingResults
+        {
             get { return BackingStore?.Get<List<TaskProcessingResult>>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
 #endif
         /// <summary>The totalTasksCount property</summary>
-        public int? TotalTasksCount {
+        public int? TotalTasksCount
+        {
             get { return BackingStore?.Get<int?>("totalTasksCount"); }
             set { BackingStore?.Set("totalTasksCount", value); }
         }
         /// <summary>The total number of unprocessed tasks in the run execution.</summary>
-        public int? TotalUnprocessedTasksCount {
+        public int? TotalUnprocessedTasksCount
+        {
             get { return BackingStore?.Get<int?>("totalUnprocessedTasksCount"); }
             set { BackingStore?.Set("totalUnprocessedTasksCount", value); }
         }
         /// <summary>The total number of users in the workflow execution.</summary>
-        public int? TotalUsersCount {
+        public int? TotalUsersCount
+        {
             get { return BackingStore?.Get<int?>("totalUsersCount"); }
             set { BackingStore?.Set("totalUsersCount", value); }
         }
         /// <summary>The associated individual user execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserProcessingResult>? UserProcessingResults {
+        public List<UserProcessingResult>? UserProcessingResults
+        {
             get { return BackingStore?.Get<List<UserProcessingResult>?>("userProcessingResults"); }
             set { BackingStore?.Set("userProcessingResults", value); }
         }
 #nullable restore
 #else
-        public List<UserProcessingResult> UserProcessingResults {
+        public List<UserProcessingResult> UserProcessingResults
+        {
             get { return BackingStore?.Get<List<UserProcessingResult>>("userProcessingResults"); }
             set { BackingStore?.Set("userProcessingResults", value); }
         }
 #endif
         /// <summary>The workflowExecutionType property</summary>
-        public Microsoft.Graph.Models.IdentityGovernance.WorkflowExecutionType? WorkflowExecutionType {
+        public Microsoft.Graph.Models.IdentityGovernance.WorkflowExecutionType? WorkflowExecutionType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.WorkflowExecutionType?>("workflowExecutionType"); }
             set { BackingStore?.Set("workflowExecutionType", value); }
         }
@@ -115,20 +132,20 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"failedTasksCount", n => { FailedTasksCount = n.GetIntValue(); } },
-                {"failedUsersCount", n => { FailedUsersCount = n.GetIntValue(); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"processingStatus", n => { ProcessingStatus = n.GetEnumValue<LifecycleWorkflowProcessingStatus>(); } },
-                {"scheduledDateTime", n => { ScheduledDateTime = n.GetDateTimeOffsetValue(); } },
-                {"startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"successfulUsersCount", n => { SuccessfulUsersCount = n.GetIntValue(); } },
-                {"taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<TaskProcessingResult>(TaskProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"totalTasksCount", n => { TotalTasksCount = n.GetIntValue(); } },
-                {"totalUnprocessedTasksCount", n => { TotalUnprocessedTasksCount = n.GetIntValue(); } },
-                {"totalUsersCount", n => { TotalUsersCount = n.GetIntValue(); } },
-                {"userProcessingResults", n => { UserProcessingResults = n.GetCollectionOfObjectValues<UserProcessingResult>(UserProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"workflowExecutionType", n => { WorkflowExecutionType = n.GetEnumValue<WorkflowExecutionType>(); } },
+                { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "failedTasksCount", n => { FailedTasksCount = n.GetIntValue(); } },
+                { "failedUsersCount", n => { FailedUsersCount = n.GetIntValue(); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "processingStatus", n => { ProcessingStatus = n.GetEnumValue<LifecycleWorkflowProcessingStatus>(); } },
+                { "scheduledDateTime", n => { ScheduledDateTime = n.GetDateTimeOffsetValue(); } },
+                { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "successfulUsersCount", n => { SuccessfulUsersCount = n.GetIntValue(); } },
+                { "taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<TaskProcessingResult>(TaskProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "totalTasksCount", n => { TotalTasksCount = n.GetIntValue(); } },
+                { "totalUnprocessedTasksCount", n => { TotalUnprocessedTasksCount = n.GetIntValue(); } },
+                { "totalUsersCount", n => { TotalUsersCount = n.GetIntValue(); } },
+                { "userProcessingResults", n => { UserProcessingResults = n.GetCollectionOfObjectValues<UserProcessingResult>(UserProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "workflowExecutionType", n => { WorkflowExecutionType = n.GetEnumValue<WorkflowExecutionType>(); } },
             };
         }
         /// <summary>

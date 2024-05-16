@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class RecentNotebookLinks : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RecentNotebookLinks : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Opens the notebook in the OneNote native client if it&apos;s installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExternalLink? OneNoteClientUrl {
+        public ExternalLink? OneNoteClientUrl
+        {
             get { return BackingStore?.Get<ExternalLink?>("oneNoteClientUrl"); }
             set { BackingStore?.Set("oneNoteClientUrl", value); }
         }
 #nullable restore
 #else
-        public ExternalLink OneNoteClientUrl {
+        public ExternalLink OneNoteClientUrl
+        {
             get { return BackingStore?.Get<ExternalLink>("oneNoteClientUrl"); }
             set { BackingStore?.Set("oneNoteClientUrl", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Opens the notebook in OneNote on the web.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExternalLink? OneNoteWebUrl {
+        public ExternalLink? OneNoteWebUrl
+        {
             get { return BackingStore?.Get<ExternalLink?>("oneNoteWebUrl"); }
             set { BackingStore?.Set("oneNoteWebUrl", value); }
         }
 #nullable restore
 #else
-        public ExternalLink OneNoteWebUrl {
+        public ExternalLink OneNoteWebUrl
+        {
             get { return BackingStore?.Get<ExternalLink>("oneNoteWebUrl"); }
             set { BackingStore?.Set("oneNoteWebUrl", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"oneNoteClientUrl", n => { OneNoteClientUrl = n.GetObjectValue<ExternalLink>(ExternalLink.CreateFromDiscriminatorValue); } },
-                {"oneNoteWebUrl", n => { OneNoteWebUrl = n.GetObjectValue<ExternalLink>(ExternalLink.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "oneNoteClientUrl", n => { OneNoteClientUrl = n.GetObjectValue<ExternalLink>(ExternalLink.CreateFromDiscriminatorValue); } },
+                { "oneNoteWebUrl", n => { OneNoteWebUrl = n.GetObjectValue<ExternalLink>(ExternalLink.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

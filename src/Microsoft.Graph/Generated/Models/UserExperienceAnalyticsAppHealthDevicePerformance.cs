@@ -4,42 +4,49 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The user experience analytics device performance entity contains device performance details.
     /// </summary>
-    public class UserExperienceAnalyticsAppHealthDevicePerformance : Entity, IParsable 
+    public class UserExperienceAnalyticsAppHealthDevicePerformance : Entity, IParsable
     {
         /// <summary>The number of application crashes for the device. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? AppCrashCount {
+        public int? AppCrashCount
+        {
             get { return BackingStore?.Get<int?>("appCrashCount"); }
             set { BackingStore?.Set("appCrashCount", value); }
         }
         /// <summary>The number of application hangs for the device. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? AppHangCount {
+        public int? AppHangCount
+        {
             get { return BackingStore?.Get<int?>("appHangCount"); }
             set { BackingStore?.Set("appHangCount", value); }
         }
         /// <summary>The number of distinct application crashes for the device. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? CrashedAppCount {
+        public int? CrashedAppCount
+        {
             get { return BackingStore?.Get<int?>("crashedAppCount"); }
             set { BackingStore?.Set("crashedAppCount", value); }
         }
         /// <summary>The application health score of the device. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? DeviceAppHealthScore {
+        public double? DeviceAppHealthScore
+        {
             get { return BackingStore?.Get<double?>("deviceAppHealthScore"); }
             set { BackingStore?.Set("deviceAppHealthScore", value); }
         }
         /// <summary>The name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceDisplayName {
+        public string? DeviceDisplayName
+        {
             get { return BackingStore?.Get<string?>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
 #nullable restore
 #else
-        public string DeviceDisplayName {
+        public string DeviceDisplayName
+        {
             get { return BackingStore?.Get<string>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
@@ -47,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The Intune device id of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -61,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceManufacturer {
+        public string? DeviceManufacturer
+        {
             get { return BackingStore?.Get<string?>("deviceManufacturer"); }
             set { BackingStore?.Set("deviceManufacturer", value); }
         }
 #nullable restore
 #else
-        public string DeviceManufacturer {
+        public string DeviceManufacturer
+        {
             get { return BackingStore?.Get<string>("deviceManufacturer"); }
             set { BackingStore?.Set("deviceManufacturer", value); }
         }
@@ -75,29 +86,34 @@ namespace Microsoft.Graph.Models {
         /// <summary>The model name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceModel {
+        public string? DeviceModel
+        {
             get { return BackingStore?.Get<string?>("deviceModel"); }
             set { BackingStore?.Set("deviceModel", value); }
         }
 #nullable restore
 #else
-        public string DeviceModel {
+        public string DeviceModel
+        {
             get { return BackingStore?.Get<string>("deviceModel"); }
             set { BackingStore?.Set("deviceModel", value); }
         }
 #endif
         /// <summary>The healthStatus property</summary>
-        public UserExperienceAnalyticsHealthState? HealthStatus {
+        public UserExperienceAnalyticsHealthState? HealthStatus
+        {
             get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? MeanTimeToFailureInMinutes {
+        public int? MeanTimeToFailureInMinutes
+        {
             get { return BackingStore?.Get<int?>("meanTimeToFailureInMinutes"); }
             set { BackingStore?.Set("meanTimeToFailureInMinutes", value); }
         }
         /// <summary>The date and time when the statistics were last computed. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: &apos;2022-01-01T00:00:00Z&apos;. Returned by default. Read-only.</summary>
-        public DateTimeOffset? ProcessedDateTime {
+        public DateTimeOffset? ProcessedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("processedDateTime"); }
             set { BackingStore?.Set("processedDateTime", value); }
         }
@@ -119,17 +135,17 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appCrashCount", n => { AppCrashCount = n.GetIntValue(); } },
-                {"appHangCount", n => { AppHangCount = n.GetIntValue(); } },
-                {"crashedAppCount", n => { CrashedAppCount = n.GetIntValue(); } },
-                {"deviceAppHealthScore", n => { DeviceAppHealthScore = n.GetDoubleValue(); } },
-                {"deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"deviceManufacturer", n => { DeviceManufacturer = n.GetStringValue(); } },
-                {"deviceModel", n => { DeviceModel = n.GetStringValue(); } },
-                {"healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
-                {"meanTimeToFailureInMinutes", n => { MeanTimeToFailureInMinutes = n.GetIntValue(); } },
-                {"processedDateTime", n => { ProcessedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "appCrashCount", n => { AppCrashCount = n.GetIntValue(); } },
+                { "appHangCount", n => { AppHangCount = n.GetIntValue(); } },
+                { "crashedAppCount", n => { CrashedAppCount = n.GetIntValue(); } },
+                { "deviceAppHealthScore", n => { DeviceAppHealthScore = n.GetDoubleValue(); } },
+                { "deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "deviceManufacturer", n => { DeviceManufacturer = n.GetStringValue(); } },
+                { "deviceModel", n => { DeviceModel = n.GetStringValue(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                { "meanTimeToFailureInMinutes", n => { MeanTimeToFailureInMinutes = n.GetIntValue(); } },
+                { "processedDateTime", n => { ProcessedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

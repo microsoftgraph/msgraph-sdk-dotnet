@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DomainDnsMxRecord : DomainDnsRecord, IParsable 
+    public class DomainDnsMxRecord : DomainDnsRecord, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Value used when configuring the answer/destination/value of the MX record at the DNS host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MailExchange {
+        public string? MailExchange
+        {
             get { return BackingStore?.Get<string?>("mailExchange"); }
             set { BackingStore?.Set("mailExchange", value); }
         }
 #nullable restore
 #else
-        public string MailExchange {
+        public string MailExchange
+        {
             get { return BackingStore?.Get<string>("mailExchange"); }
             set { BackingStore?.Set("mailExchange", value); }
         }
 #endif
         /// <summary>Value used when configuring the Preference/Priority property of the MX record at the DNS host.</summary>
-        public int? Preference {
+        public int? Preference
+        {
             get { return BackingStore?.Get<int?>("preference"); }
             set { BackingStore?.Set("preference", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"mailExchange", n => { MailExchange = n.GetStringValue(); } },
-                {"preference", n => { Preference = n.GetIntValue(); } },
+                { "mailExchange", n => { MailExchange = n.GetStringValue(); } },
+                { "preference", n => { Preference = n.GetIntValue(); } },
             };
         }
         /// <summary>

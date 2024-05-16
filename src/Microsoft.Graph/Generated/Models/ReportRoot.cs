@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ReportRoot : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ReportRoot : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Container for navigation properties for Microsoft Entra authentication methods resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationMethodsRoot? AuthenticationMethods {
+        public AuthenticationMethodsRoot? AuthenticationMethods
+        {
             get { return BackingStore?.Get<AuthenticationMethodsRoot?>("authenticationMethods"); }
             set { BackingStore?.Set("authenticationMethods", value); }
         }
 #nullable restore
 #else
-        public AuthenticationMethodsRoot AuthenticationMethods {
+        public AuthenticationMethodsRoot AuthenticationMethods
+        {
             get { return BackingStore?.Get<AuthenticationMethodsRoot>("authenticationMethods"); }
             set { BackingStore?.Set("authenticationMethods", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Retrieve a list of daily print usage summaries, grouped by printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintUsageByPrinter>? DailyPrintUsageByPrinter {
+        public List<PrintUsageByPrinter>? DailyPrintUsageByPrinter
+        {
             get { return BackingStore?.Get<List<PrintUsageByPrinter>?>("dailyPrintUsageByPrinter"); }
             set { BackingStore?.Set("dailyPrintUsageByPrinter", value); }
         }
 #nullable restore
 #else
-        public List<PrintUsageByPrinter> DailyPrintUsageByPrinter {
+        public List<PrintUsageByPrinter> DailyPrintUsageByPrinter
+        {
             get { return BackingStore?.Get<List<PrintUsageByPrinter>>("dailyPrintUsageByPrinter"); }
             set { BackingStore?.Set("dailyPrintUsageByPrinter", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Retrieve a list of daily print usage summaries, grouped by user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintUsageByUser>? DailyPrintUsageByUser {
+        public List<PrintUsageByUser>? DailyPrintUsageByUser
+        {
             get { return BackingStore?.Get<List<PrintUsageByUser>?>("dailyPrintUsageByUser"); }
             set { BackingStore?.Set("dailyPrintUsageByUser", value); }
         }
 #nullable restore
 #else
-        public List<PrintUsageByUser> DailyPrintUsageByUser {
+        public List<PrintUsageByUser> DailyPrintUsageByUser
+        {
             get { return BackingStore?.Get<List<PrintUsageByUser>>("dailyPrintUsageByUser"); }
             set { BackingStore?.Set("dailyPrintUsageByUser", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Retrieve a list of monthly print usage summaries, grouped by printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintUsageByPrinter>? MonthlyPrintUsageByPrinter {
+        public List<PrintUsageByPrinter>? MonthlyPrintUsageByPrinter
+        {
             get { return BackingStore?.Get<List<PrintUsageByPrinter>?>("monthlyPrintUsageByPrinter"); }
             set { BackingStore?.Set("monthlyPrintUsageByPrinter", value); }
         }
 #nullable restore
 #else
-        public List<PrintUsageByPrinter> MonthlyPrintUsageByPrinter {
+        public List<PrintUsageByPrinter> MonthlyPrintUsageByPrinter
+        {
             get { return BackingStore?.Get<List<PrintUsageByPrinter>>("monthlyPrintUsageByPrinter"); }
             set { BackingStore?.Set("monthlyPrintUsageByPrinter", value); }
         }
@@ -77,13 +87,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Retrieve a list of monthly print usage summaries, grouped by user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintUsageByUser>? MonthlyPrintUsageByUser {
+        public List<PrintUsageByUser>? MonthlyPrintUsageByUser
+        {
             get { return BackingStore?.Get<List<PrintUsageByUser>?>("monthlyPrintUsageByUser"); }
             set { BackingStore?.Set("monthlyPrintUsageByUser", value); }
         }
 #nullable restore
 #else
-        public List<PrintUsageByUser> MonthlyPrintUsageByUser {
+        public List<PrintUsageByUser> MonthlyPrintUsageByUser
+        {
             get { return BackingStore?.Get<List<PrintUsageByUser>>("monthlyPrintUsageByUser"); }
             set { BackingStore?.Set("monthlyPrintUsageByUser", value); }
         }
@@ -91,13 +103,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -105,13 +119,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents billing details for a Microsoft direct partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Partners.Partners? Partners {
+        public Microsoft.Graph.Models.Partners.Partners? Partners
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Partners.Partners?>("partners"); }
             set { BackingStore?.Set("partners", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Partners.Partners Partners {
+        public Microsoft.Graph.Models.Partners.Partners Partners
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Partners.Partners>("partners"); }
             set { BackingStore?.Set("partners", value); }
         }
@@ -119,13 +135,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents an abstract type that contains resources for attack simulation and training reports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SecurityReportsRoot? Security {
+        public SecurityReportsRoot? Security
+        {
             get { return BackingStore?.Get<SecurityReportsRoot?>("security"); }
             set { BackingStore?.Set("security", value); }
         }
 #nullable restore
 #else
-        public SecurityReportsRoot Security {
+        public SecurityReportsRoot Security
+        {
             get { return BackingStore?.Get<SecurityReportsRoot>("security"); }
             set { BackingStore?.Set("security", value); }
         }
@@ -156,14 +174,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"authenticationMethods", n => { AuthenticationMethods = n.GetObjectValue<AuthenticationMethodsRoot>(AuthenticationMethodsRoot.CreateFromDiscriminatorValue); } },
-                {"dailyPrintUsageByPrinter", n => { DailyPrintUsageByPrinter = n.GetCollectionOfObjectValues<PrintUsageByPrinter>(PrintUsageByPrinter.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"dailyPrintUsageByUser", n => { DailyPrintUsageByUser = n.GetCollectionOfObjectValues<PrintUsageByUser>(PrintUsageByUser.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"monthlyPrintUsageByPrinter", n => { MonthlyPrintUsageByPrinter = n.GetCollectionOfObjectValues<PrintUsageByPrinter>(PrintUsageByPrinter.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"monthlyPrintUsageByUser", n => { MonthlyPrintUsageByUser = n.GetCollectionOfObjectValues<PrintUsageByUser>(PrintUsageByUser.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"partners", n => { Partners = n.GetObjectValue<Microsoft.Graph.Models.Partners.Partners>(Microsoft.Graph.Models.Partners.Partners.CreateFromDiscriminatorValue); } },
-                {"security", n => { Security = n.GetObjectValue<SecurityReportsRoot>(SecurityReportsRoot.CreateFromDiscriminatorValue); } },
+                { "authenticationMethods", n => { AuthenticationMethods = n.GetObjectValue<AuthenticationMethodsRoot>(AuthenticationMethodsRoot.CreateFromDiscriminatorValue); } },
+                { "dailyPrintUsageByPrinter", n => { DailyPrintUsageByPrinter = n.GetCollectionOfObjectValues<PrintUsageByPrinter>(PrintUsageByPrinter.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dailyPrintUsageByUser", n => { DailyPrintUsageByUser = n.GetCollectionOfObjectValues<PrintUsageByUser>(PrintUsageByUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "monthlyPrintUsageByPrinter", n => { MonthlyPrintUsageByPrinter = n.GetCollectionOfObjectValues<PrintUsageByPrinter>(PrintUsageByPrinter.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "monthlyPrintUsageByUser", n => { MonthlyPrintUsageByUser = n.GetCollectionOfObjectValues<PrintUsageByUser>(PrintUsageByUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "partners", n => { Partners = n.GetObjectValue<Microsoft.Graph.Models.Partners.Partners>(Microsoft.Graph.Models.Partners.Partners.CreateFromDiscriminatorValue); } },
+                { "security", n => { Security = n.GetObjectValue<SecurityReportsRoot>(SecurityReportsRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

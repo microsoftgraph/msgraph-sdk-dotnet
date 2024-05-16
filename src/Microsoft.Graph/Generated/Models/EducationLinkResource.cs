@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EducationLinkResource : EducationResource, IParsable 
+    public class EducationLinkResource : EducationResource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>URL to the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Link {
+        public string? Link
+        {
             get { return BackingStore?.Get<string?>("link"); }
             set { BackingStore?.Set("link", value); }
         }
 #nullable restore
 #else
-        public string Link {
+        public string Link
+        {
             get { return BackingStore?.Get<string>("link"); }
             set { BackingStore?.Set("link", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"link", n => { Link = n.GetStringValue(); } },
+                { "link", n => { Link = n.GetStringValue(); } },
             };
         }
         /// <summary>

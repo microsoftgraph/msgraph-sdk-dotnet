@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SubjectRightsRequestEnumeratedMailboxLocation : SubjectRightsRequestMailboxLocation, IParsable 
+    public class SubjectRightsRequestEnumeratedMailboxLocation : SubjectRightsRequestMailboxLocation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collection of mailboxes that should be included in the search. Includes the user principal name (UPN) of each mailbox, for example, Monica.Thompson@contoso.com.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UserPrincipalNames {
+        public List<string>? UserPrincipalNames
+        {
             get { return BackingStore?.Get<List<string>?>("userPrincipalNames"); }
             set { BackingStore?.Set("userPrincipalNames", value); }
         }
 #nullable restore
 #else
-        public List<string> UserPrincipalNames {
+        public List<string> UserPrincipalNames
+        {
             get { return BackingStore?.Get<List<string>>("userPrincipalNames"); }
             set { BackingStore?.Set("userPrincipalNames", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"userPrincipalNames", n => { UserPrincipalNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "userPrincipalNames", n => { UserPrincipalNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

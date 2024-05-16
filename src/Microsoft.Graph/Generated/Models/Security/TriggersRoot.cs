@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class TriggersRoot : Microsoft.Graph.Models.Entity, IParsable 
+    public class TriggersRoot : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The retentionEvents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RetentionEvent>? RetentionEvents {
+        public List<RetentionEvent>? RetentionEvents
+        {
             get { return BackingStore?.Get<List<RetentionEvent>?>("retentionEvents"); }
             set { BackingStore?.Set("retentionEvents", value); }
         }
 #nullable restore
 #else
-        public List<RetentionEvent> RetentionEvents {
+        public List<RetentionEvent> RetentionEvents
+        {
             get { return BackingStore?.Get<List<RetentionEvent>>("retentionEvents"); }
             set { BackingStore?.Set("retentionEvents", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"retentionEvents", n => { RetentionEvents = n.GetCollectionOfObjectValues<RetentionEvent>(RetentionEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "retentionEvents", n => { RetentionEvents = n.GetCollectionOfObjectValues<RetentionEvent>(RetentionEvent.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

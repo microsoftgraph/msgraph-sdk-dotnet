@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The minimum operating system required for a Windows mobile app.
     /// </summary>
-    public class WindowsMinimumOperatingSystem : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WindowsMinimumOperatingSystem : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,29 +23,34 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Windows version 10.0 or later.</summary>
-        public bool? V100 {
+        public bool? V100
+        {
             get { return BackingStore?.Get<bool?>("v10_0"); }
             set { BackingStore?.Set("v10_0", value); }
         }
         /// <summary>Windows version 8.0 or later.</summary>
-        public bool? V80 {
+        public bool? V80
+        {
             get { return BackingStore?.Get<bool?>("v8_0"); }
             set { BackingStore?.Set("v8_0", value); }
         }
         /// <summary>Windows version 8.1 or later.</summary>
-        public bool? V81 {
+        public bool? V81
+        {
             get { return BackingStore?.Get<bool?>("v8_1"); }
             set { BackingStore?.Set("v8_1", value); }
         }
@@ -73,10 +80,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"v10_0", n => { V100 = n.GetBoolValue(); } },
-                {"v8_0", n => { V80 = n.GetBoolValue(); } },
-                {"v8_1", n => { V81 = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "v10_0", n => { V100 = n.GetBoolValue(); } },
+                { "v8_0", n => { V80 = n.GetBoolValue(); } },
+                { "v8_1", n => { V81 = n.GetBoolValue(); } },
             };
         }
         /// <summary>

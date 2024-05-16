@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.PermissionGrants.GetAvailableExtensionProperties {
+namespace Microsoft.Graph.PermissionGrants.GetAvailableExtensionProperties
+{
     #pragma warning disable CS1591
-    public class GetAvailableExtensionPropertiesPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetAvailableExtensionPropertiesPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExtensionProperty>? Value {
+        public List<ExtensionProperty>? Value
+        {
             get { return BackingStore?.Get<List<ExtensionProperty>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ExtensionProperty> Value {
+        public List<ExtensionProperty> Value
+        {
             get { return BackingStore?.Get<List<ExtensionProperty>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.PermissionGrants.GetAvailableExtensionProperties {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ExtensionProperty>(ExtensionProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<ExtensionProperty>(ExtensionProperty.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

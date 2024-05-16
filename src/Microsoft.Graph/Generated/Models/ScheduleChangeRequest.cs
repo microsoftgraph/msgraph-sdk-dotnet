@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ScheduleChangeRequest : ChangeTrackedEntity, IParsable 
+    public class ScheduleChangeRequest : ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The assignedTo property</summary>
-        public ScheduleChangeRequestActor? AssignedTo {
+        public ScheduleChangeRequestActor? AssignedTo
+        {
             get { return BackingStore?.Get<ScheduleChangeRequestActor?>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
         /// <summary>The managerActionDateTime property</summary>
-        public DateTimeOffset? ManagerActionDateTime {
+        public DateTimeOffset? ManagerActionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("managerActionDateTime"); }
             set { BackingStore?.Set("managerActionDateTime", value); }
         }
         /// <summary>The managerActionMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagerActionMessage {
+        public string? ManagerActionMessage
+        {
             get { return BackingStore?.Get<string?>("managerActionMessage"); }
             set { BackingStore?.Set("managerActionMessage", value); }
         }
 #nullable restore
 #else
-        public string ManagerActionMessage {
+        public string ManagerActionMessage
+        {
             get { return BackingStore?.Get<string>("managerActionMessage"); }
             set { BackingStore?.Set("managerActionMessage", value); }
         }
@@ -36,32 +41,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The managerUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagerUserId {
+        public string? ManagerUserId
+        {
             get { return BackingStore?.Get<string?>("managerUserId"); }
             set { BackingStore?.Set("managerUserId", value); }
         }
 #nullable restore
 #else
-        public string ManagerUserId {
+        public string ManagerUserId
+        {
             get { return BackingStore?.Get<string>("managerUserId"); }
             set { BackingStore?.Set("managerUserId", value); }
         }
 #endif
         /// <summary>The senderDateTime property</summary>
-        public DateTimeOffset? SenderDateTime {
+        public DateTimeOffset? SenderDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("senderDateTime"); }
             set { BackingStore?.Set("senderDateTime", value); }
         }
         /// <summary>The senderMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SenderMessage {
+        public string? SenderMessage
+        {
             get { return BackingStore?.Get<string?>("senderMessage"); }
             set { BackingStore?.Set("senderMessage", value); }
         }
 #nullable restore
 #else
-        public string SenderMessage {
+        public string SenderMessage
+        {
             get { return BackingStore?.Get<string>("senderMessage"); }
             set { BackingStore?.Set("senderMessage", value); }
         }
@@ -69,19 +79,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The senderUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SenderUserId {
+        public string? SenderUserId
+        {
             get { return BackingStore?.Get<string?>("senderUserId"); }
             set { BackingStore?.Set("senderUserId", value); }
         }
 #nullable restore
 #else
-        public string SenderUserId {
+        public string SenderUserId
+        {
             get { return BackingStore?.Get<string>("senderUserId"); }
             set { BackingStore?.Set("senderUserId", value); }
         }
 #endif
         /// <summary>The state property</summary>
-        public ScheduleChangeState? State {
+        public ScheduleChangeState? State
+        {
             get { return BackingStore?.Get<ScheduleChangeState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -118,14 +131,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignedTo", n => { AssignedTo = n.GetEnumValue<ScheduleChangeRequestActor>(); } },
-                {"managerActionDateTime", n => { ManagerActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managerActionMessage", n => { ManagerActionMessage = n.GetStringValue(); } },
-                {"managerUserId", n => { ManagerUserId = n.GetStringValue(); } },
-                {"senderDateTime", n => { SenderDateTime = n.GetDateTimeOffsetValue(); } },
-                {"senderMessage", n => { SenderMessage = n.GetStringValue(); } },
-                {"senderUserId", n => { SenderUserId = n.GetStringValue(); } },
-                {"state", n => { State = n.GetEnumValue<ScheduleChangeState>(); } },
+                { "assignedTo", n => { AssignedTo = n.GetEnumValue<ScheduleChangeRequestActor>(); } },
+                { "managerActionDateTime", n => { ManagerActionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "managerActionMessage", n => { ManagerActionMessage = n.GetStringValue(); } },
+                { "managerUserId", n => { ManagerUserId = n.GetStringValue(); } },
+                { "senderDateTime", n => { SenderDateTime = n.GetDateTimeOffsetValue(); } },
+                { "senderMessage", n => { SenderMessage = n.GetStringValue(); } },
+                { "senderUserId", n => { SenderUserId = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<ScheduleChangeState>(); } },
             };
         }
         /// <summary>

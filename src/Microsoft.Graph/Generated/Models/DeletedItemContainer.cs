@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DeletedItemContainer : Entity, IParsable 
+    public class DeletedItemContainer : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Deleted workflows that end up in the deletedItemsContainer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Workflow>? Workflows {
+        public List<Workflow>? Workflows
+        {
             get { return BackingStore?.Get<List<Workflow>?>("workflows"); }
             set { BackingStore?.Set("workflows", value); }
         }
 #nullable restore
 #else
-        public List<Workflow> Workflows {
+        public List<Workflow> Workflows
+        {
             get { return BackingStore?.Get<List<Workflow>>("workflows"); }
             set { BackingStore?.Set("workflows", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"workflows", n => { Workflows = n.GetCollectionOfObjectValues<Workflow>(Workflow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "workflows", n => { Workflows = n.GetCollectionOfObjectValues<Workflow>(Workflow.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

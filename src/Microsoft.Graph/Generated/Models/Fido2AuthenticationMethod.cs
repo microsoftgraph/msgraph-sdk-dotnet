@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Fido2AuthenticationMethod : AuthenticationMethod, IParsable 
+    public class Fido2AuthenticationMethod : AuthenticationMethod, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AaGuid {
+        public string? AaGuid
+        {
             get { return BackingStore?.Get<string?>("aaGuid"); }
             set { BackingStore?.Set("aaGuid", value); }
         }
 #nullable restore
 #else
-        public string AaGuid {
+        public string AaGuid
+        {
             get { return BackingStore?.Get<string>("aaGuid"); }
             set { BackingStore?.Set("aaGuid", value); }
         }
@@ -26,37 +29,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>The attestation certificate(s) attached to this security key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AttestationCertificates {
+        public List<string>? AttestationCertificates
+        {
             get { return BackingStore?.Get<List<string>?>("attestationCertificates"); }
             set { BackingStore?.Set("attestationCertificates", value); }
         }
 #nullable restore
 #else
-        public List<string> AttestationCertificates {
+        public List<string> AttestationCertificates
+        {
             get { return BackingStore?.Get<List<string>>("attestationCertificates"); }
             set { BackingStore?.Set("attestationCertificates", value); }
         }
 #endif
         /// <summary>The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.</summary>
-        public Microsoft.Graph.Models.AttestationLevel? AttestationLevel {
+        public Microsoft.Graph.Models.AttestationLevel? AttestationLevel
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AttestationLevel?>("attestationLevel"); }
             set { BackingStore?.Set("attestationLevel", value); }
         }
         /// <summary>The timestamp when this key was registered to the user.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The display name of the key as given by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The manufacturer-assigned model of the FIDO2 security key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model {
+        public string? Model
+        {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #nullable restore
 #else
-        public string Model {
+        public string Model
+        {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
@@ -100,12 +111,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"aaGuid", n => { AaGuid = n.GetStringValue(); } },
-                {"attestationCertificates", n => { AttestationCertificates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"attestationLevel", n => { AttestationLevel = n.GetEnumValue<AttestationLevel>(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"model", n => { Model = n.GetStringValue(); } },
+                { "aaGuid", n => { AaGuid = n.GetStringValue(); } },
+                { "attestationCertificates", n => { AttestationCertificates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "attestationLevel", n => { AttestationLevel = n.GetEnumValue<AttestationLevel>(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
             };
         }
         /// <summary>

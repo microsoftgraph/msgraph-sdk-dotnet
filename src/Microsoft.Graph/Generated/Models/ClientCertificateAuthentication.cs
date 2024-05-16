@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ClientCertificateAuthentication : ApiAuthenticationConfigurationBase, IParsable 
+    public class ClientCertificateAuthentication : ApiAuthenticationConfigurationBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The list of certificates uploaded for this API connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Pkcs12CertificateInformation>? CertificateList {
+        public List<Pkcs12CertificateInformation>? CertificateList
+        {
             get { return BackingStore?.Get<List<Pkcs12CertificateInformation>?>("certificateList"); }
             set { BackingStore?.Set("certificateList", value); }
         }
 #nullable restore
 #else
-        public List<Pkcs12CertificateInformation> CertificateList {
+        public List<Pkcs12CertificateInformation> CertificateList
+        {
             get { return BackingStore?.Get<List<Pkcs12CertificateInformation>>("certificateList"); }
             set { BackingStore?.Set("certificateList", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"certificateList", n => { CertificateList = n.GetCollectionOfObjectValues<Pkcs12CertificateInformation>(Pkcs12CertificateInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "certificateList", n => { CertificateList = n.GetCollectionOfObjectValues<Pkcs12CertificateInformation>(Pkcs12CertificateInformation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

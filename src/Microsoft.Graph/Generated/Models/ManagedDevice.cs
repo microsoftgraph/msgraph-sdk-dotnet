@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Devices that are managed or pre-enrolled through Intune
     /// </summary>
-    public class ManagedDevice : Entity, IParsable 
+    public class ManagedDevice : Entity, IParsable
     {
         /// <summary>The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivationLockBypassCode {
+        public string? ActivationLockBypassCode
+        {
             get { return BackingStore?.Get<string?>("activationLockBypassCode"); }
             set { BackingStore?.Set("activationLockBypassCode", value); }
         }
 #nullable restore
 #else
-        public string ActivationLockBypassCode {
+        public string ActivationLockBypassCode
+        {
             get { return BackingStore?.Get<string>("activationLockBypassCode"); }
             set { BackingStore?.Set("activationLockBypassCode", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Android security patch level. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AndroidSecurityPatchLevel {
+        public string? AndroidSecurityPatchLevel
+        {
             get { return BackingStore?.Get<string?>("androidSecurityPatchLevel"); }
             set { BackingStore?.Set("androidSecurityPatchLevel", value); }
         }
 #nullable restore
 #else
-        public string AndroidSecurityPatchLevel {
+        public string AndroidSecurityPatchLevel
+        {
             get { return BackingStore?.Get<string>("androidSecurityPatchLevel"); }
             set { BackingStore?.Set("androidSecurityPatchLevel", value); }
         }
@@ -41,42 +46,49 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier for the Azure Active Directory device. Read only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureADDeviceId {
+        public string? AzureADDeviceId
+        {
             get { return BackingStore?.Get<string?>("azureADDeviceId"); }
             set { BackingStore?.Set("azureADDeviceId", value); }
         }
 #nullable restore
 #else
-        public string AzureADDeviceId {
+        public string AzureADDeviceId
+        {
             get { return BackingStore?.Get<string>("azureADDeviceId"); }
             set { BackingStore?.Set("azureADDeviceId", value); }
         }
 #endif
         /// <summary>Whether the device is Azure Active Directory registered. This property is read-only.</summary>
-        public bool? AzureADRegistered {
+        public bool? AzureADRegistered
+        {
             get { return BackingStore?.Get<bool?>("azureADRegistered"); }
             set { BackingStore?.Set("azureADRegistered", value); }
         }
         /// <summary>The DateTime when device compliance grace period expires. This property is read-only.</summary>
-        public DateTimeOffset? ComplianceGracePeriodExpirationDateTime {
+        public DateTimeOffset? ComplianceGracePeriodExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("complianceGracePeriodExpirationDateTime"); }
             set { BackingStore?.Set("complianceGracePeriodExpirationDateTime", value); }
         }
         /// <summary>Compliance state.</summary>
-        public Microsoft.Graph.Models.ComplianceState? ComplianceState {
+        public Microsoft.Graph.Models.ComplianceState? ComplianceState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ComplianceState?>("complianceState"); }
             set { BackingStore?.Set("complianceState", value); }
         }
         /// <summary>ConfigrMgr client enabled features. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ConfigurationManagerClientEnabledFeatures? ConfigurationManagerClientEnabledFeatures {
+        public Microsoft.Graph.Models.ConfigurationManagerClientEnabledFeatures? ConfigurationManagerClientEnabledFeatures
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ConfigurationManagerClientEnabledFeatures?>("configurationManagerClientEnabledFeatures"); }
             set { BackingStore?.Set("configurationManagerClientEnabledFeatures", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ConfigurationManagerClientEnabledFeatures ConfigurationManagerClientEnabledFeatures {
+        public Microsoft.Graph.Models.ConfigurationManagerClientEnabledFeatures ConfigurationManagerClientEnabledFeatures
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ConfigurationManagerClientEnabledFeatures>("configurationManagerClientEnabledFeatures"); }
             set { BackingStore?.Set("configurationManagerClientEnabledFeatures", value); }
         }
@@ -84,13 +96,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>List of ComplexType deviceActionResult objects. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceActionResult>? DeviceActionResults {
+        public List<DeviceActionResult>? DeviceActionResults
+        {
             get { return BackingStore?.Get<List<DeviceActionResult>?>("deviceActionResults"); }
             set { BackingStore?.Set("deviceActionResults", value); }
         }
 #nullable restore
 #else
-        public List<DeviceActionResult> DeviceActionResults {
+        public List<DeviceActionResult> DeviceActionResults
+        {
             get { return BackingStore?.Get<List<DeviceActionResult>>("deviceActionResults"); }
             set { BackingStore?.Set("deviceActionResults", value); }
         }
@@ -98,13 +112,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Device category</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.DeviceCategory? DeviceCategory {
+        public Microsoft.Graph.Models.DeviceCategory? DeviceCategory
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceCategory?>("deviceCategory"); }
             set { BackingStore?.Set("deviceCategory", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.DeviceCategory DeviceCategory {
+        public Microsoft.Graph.Models.DeviceCategory DeviceCategory
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceCategory>("deviceCategory"); }
             set { BackingStore?.Set("deviceCategory", value); }
         }
@@ -112,13 +128,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Device category display name. Default is an empty string. Supports $filter operator &apos;eq&apos; and &apos;or&apos;. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceCategoryDisplayName {
+        public string? DeviceCategoryDisplayName
+        {
             get { return BackingStore?.Get<string?>("deviceCategoryDisplayName"); }
             set { BackingStore?.Set("deviceCategoryDisplayName", value); }
         }
 #nullable restore
 #else
-        public string DeviceCategoryDisplayName {
+        public string DeviceCategoryDisplayName
+        {
             get { return BackingStore?.Get<string>("deviceCategoryDisplayName"); }
             set { BackingStore?.Set("deviceCategoryDisplayName", value); }
         }
@@ -126,13 +144,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Device compliance policy states for this device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceCompliancePolicyState>? DeviceCompliancePolicyStates {
+        public List<DeviceCompliancePolicyState>? DeviceCompliancePolicyStates
+        {
             get { return BackingStore?.Get<List<DeviceCompliancePolicyState>?>("deviceCompliancePolicyStates"); }
             set { BackingStore?.Set("deviceCompliancePolicyStates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceCompliancePolicyState> DeviceCompliancePolicyStates {
+        public List<DeviceCompliancePolicyState> DeviceCompliancePolicyStates
+        {
             get { return BackingStore?.Get<List<DeviceCompliancePolicyState>>("deviceCompliancePolicyStates"); }
             set { BackingStore?.Set("deviceCompliancePolicyStates", value); }
         }
@@ -140,32 +160,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Device configuration states for this device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceConfigurationState>? DeviceConfigurationStates {
+        public List<DeviceConfigurationState>? DeviceConfigurationStates
+        {
             get { return BackingStore?.Get<List<DeviceConfigurationState>?>("deviceConfigurationStates"); }
             set { BackingStore?.Set("deviceConfigurationStates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceConfigurationState> DeviceConfigurationStates {
+        public List<DeviceConfigurationState> DeviceConfigurationStates
+        {
             get { return BackingStore?.Get<List<DeviceConfigurationState>>("deviceConfigurationStates"); }
             set { BackingStore?.Set("deviceConfigurationStates", value); }
         }
 #endif
         /// <summary>Possible ways of adding a mobile device to management.</summary>
-        public Microsoft.Graph.Models.DeviceEnrollmentType? DeviceEnrollmentType {
+        public Microsoft.Graph.Models.DeviceEnrollmentType? DeviceEnrollmentType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceEnrollmentType?>("deviceEnrollmentType"); }
             set { BackingStore?.Set("deviceEnrollmentType", value); }
         }
         /// <summary>The device health attestation state. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.DeviceHealthAttestationState? DeviceHealthAttestationState {
+        public Microsoft.Graph.Models.DeviceHealthAttestationState? DeviceHealthAttestationState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceHealthAttestationState?>("deviceHealthAttestationState"); }
             set { BackingStore?.Set("deviceHealthAttestationState", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.DeviceHealthAttestationState DeviceHealthAttestationState {
+        public Microsoft.Graph.Models.DeviceHealthAttestationState DeviceHealthAttestationState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceHealthAttestationState>("deviceHealthAttestationState"); }
             set { BackingStore?.Set("deviceHealthAttestationState", value); }
         }
@@ -173,42 +198,49 @@ namespace Microsoft.Graph.Models {
         /// <summary>Name of the device. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #endif
         /// <summary>Device registration status.</summary>
-        public Microsoft.Graph.Models.DeviceRegistrationState? DeviceRegistrationState {
+        public Microsoft.Graph.Models.DeviceRegistrationState? DeviceRegistrationState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceRegistrationState?>("deviceRegistrationState"); }
             set { BackingStore?.Set("deviceRegistrationState", value); }
         }
         /// <summary>Whether the device is Exchange ActiveSync activated. This property is read-only.</summary>
-        public bool? EasActivated {
+        public bool? EasActivated
+        {
             get { return BackingStore?.Get<bool?>("easActivated"); }
             set { BackingStore?.Set("easActivated", value); }
         }
         /// <summary>Exchange ActivationSync activation time of the device. This property is read-only.</summary>
-        public DateTimeOffset? EasActivationDateTime {
+        public DateTimeOffset? EasActivationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("easActivationDateTime"); }
             set { BackingStore?.Set("easActivationDateTime", value); }
         }
         /// <summary>Exchange ActiveSync Id of the device. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EasDeviceId {
+        public string? EasDeviceId
+        {
             get { return BackingStore?.Get<string?>("easDeviceId"); }
             set { BackingStore?.Set("easDeviceId", value); }
         }
 #nullable restore
 #else
-        public string EasDeviceId {
+        public string EasDeviceId
+        {
             get { return BackingStore?.Get<string>("easDeviceId"); }
             set { BackingStore?.Set("easDeviceId", value); }
         }
@@ -216,32 +248,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Email(s) for the user associated with the device. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailAddress {
+        public string? EmailAddress
+        {
             get { return BackingStore?.Get<string?>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
 #nullable restore
 #else
-        public string EmailAddress {
+        public string EmailAddress
+        {
             get { return BackingStore?.Get<string>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
 #endif
         /// <summary>Enrollment time of the device. Supports $filter operator &apos;lt&apos; and &apos;gt&apos;. This property is read-only.</summary>
-        public DateTimeOffset? EnrolledDateTime {
+        public DateTimeOffset? EnrolledDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("enrolledDateTime"); }
             set { BackingStore?.Set("enrolledDateTime", value); }
         }
         /// <summary>Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnrollmentProfileName {
+        public string? EnrollmentProfileName
+        {
             get { return BackingStore?.Get<string?>("enrollmentProfileName"); }
             set { BackingStore?.Set("enrollmentProfileName", value); }
         }
 #nullable restore
 #else
-        public string EnrollmentProfileName {
+        public string EnrollmentProfileName
+        {
             get { return BackingStore?.Get<string>("enrollmentProfileName"); }
             set { BackingStore?.Set("enrollmentProfileName", value); }
         }
@@ -249,47 +286,55 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EthernetMacAddress {
+        public string? EthernetMacAddress
+        {
             get { return BackingStore?.Get<string?>("ethernetMacAddress"); }
             set { BackingStore?.Set("ethernetMacAddress", value); }
         }
 #nullable restore
 #else
-        public string EthernetMacAddress {
+        public string EthernetMacAddress
+        {
             get { return BackingStore?.Get<string>("ethernetMacAddress"); }
             set { BackingStore?.Set("ethernetMacAddress", value); }
         }
 #endif
         /// <summary>Device Exchange Access State.</summary>
-        public DeviceManagementExchangeAccessState? ExchangeAccessState {
+        public DeviceManagementExchangeAccessState? ExchangeAccessState
+        {
             get { return BackingStore?.Get<DeviceManagementExchangeAccessState?>("exchangeAccessState"); }
             set { BackingStore?.Set("exchangeAccessState", value); }
         }
         /// <summary>Device Exchange Access State Reason.</summary>
-        public DeviceManagementExchangeAccessStateReason? ExchangeAccessStateReason {
+        public DeviceManagementExchangeAccessStateReason? ExchangeAccessStateReason
+        {
             get { return BackingStore?.Get<DeviceManagementExchangeAccessStateReason?>("exchangeAccessStateReason"); }
             set { BackingStore?.Set("exchangeAccessStateReason", value); }
         }
         /// <summary>Last time the device contacted Exchange. This property is read-only.</summary>
-        public DateTimeOffset? ExchangeLastSuccessfulSyncDateTime {
+        public DateTimeOffset? ExchangeLastSuccessfulSyncDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("exchangeLastSuccessfulSyncDateTime"); }
             set { BackingStore?.Set("exchangeLastSuccessfulSyncDateTime", value); }
         }
         /// <summary>Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.</summary>
-        public long? FreeStorageSpaceInBytes {
+        public long? FreeStorageSpaceInBytes
+        {
             get { return BackingStore?.Get<long?>("freeStorageSpaceInBytes"); }
             set { BackingStore?.Set("freeStorageSpaceInBytes", value); }
         }
         /// <summary>Integrated Circuit Card Identifier, it is A SIM card&apos;s unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Iccid {
+        public string? Iccid
+        {
             get { return BackingStore?.Get<string?>("iccid"); }
             set { BackingStore?.Set("iccid", value); }
         }
 #nullable restore
 #else
-        public string Iccid {
+        public string Iccid
+        {
             get { return BackingStore?.Get<string>("iccid"); }
             set { BackingStore?.Set("iccid", value); }
         }
@@ -297,56 +342,65 @@ namespace Microsoft.Graph.Models {
         /// <summary>IMEI. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Imei {
+        public string? Imei
+        {
             get { return BackingStore?.Get<string?>("imei"); }
             set { BackingStore?.Set("imei", value); }
         }
 #nullable restore
 #else
-        public string Imei {
+        public string Imei
+        {
             get { return BackingStore?.Get<string>("imei"); }
             set { BackingStore?.Set("imei", value); }
         }
 #endif
         /// <summary>Device encryption status. This property is read-only.</summary>
-        public bool? IsEncrypted {
+        public bool? IsEncrypted
+        {
             get { return BackingStore?.Get<bool?>("isEncrypted"); }
             set { BackingStore?.Set("isEncrypted", value); }
         }
         /// <summary>Device supervised status. This property is read-only.</summary>
-        public bool? IsSupervised {
+        public bool? IsSupervised
+        {
             get { return BackingStore?.Get<bool?>("isSupervised"); }
             set { BackingStore?.Set("isSupervised", value); }
         }
         /// <summary>Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator &apos;eq&apos; and &apos;or&apos;. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JailBroken {
+        public string? JailBroken
+        {
             get { return BackingStore?.Get<string?>("jailBroken"); }
             set { BackingStore?.Set("jailBroken", value); }
         }
 #nullable restore
 #else
-        public string JailBroken {
+        public string JailBroken
+        {
             get { return BackingStore?.Get<string>("jailBroken"); }
             set { BackingStore?.Set("jailBroken", value); }
         }
 #endif
         /// <summary>The date and time that the device last completed a successful sync with Intune. Supports $filter operator &apos;lt&apos; and &apos;gt&apos;. This property is read-only.</summary>
-        public DateTimeOffset? LastSyncDateTime {
+        public DateTimeOffset? LastSyncDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>List of log collection requests</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceLogCollectionResponse>? LogCollectionRequests {
+        public List<DeviceLogCollectionResponse>? LogCollectionRequests
+        {
             get { return BackingStore?.Get<List<DeviceLogCollectionResponse>?>("logCollectionRequests"); }
             set { BackingStore?.Set("logCollectionRequests", value); }
         }
 #nullable restore
 #else
-        public List<DeviceLogCollectionResponse> LogCollectionRequests {
+        public List<DeviceLogCollectionResponse> LogCollectionRequests
+        {
             get { return BackingStore?.Get<List<DeviceLogCollectionResponse>>("logCollectionRequests"); }
             set { BackingStore?.Set("logCollectionRequests", value); }
         }
@@ -354,42 +408,49 @@ namespace Microsoft.Graph.Models {
         /// <summary>Automatically generated name to identify a device. Can be overwritten to a user friendly name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedDeviceName {
+        public string? ManagedDeviceName
+        {
             get { return BackingStore?.Get<string?>("managedDeviceName"); }
             set { BackingStore?.Set("managedDeviceName", value); }
         }
 #nullable restore
 #else
-        public string ManagedDeviceName {
+        public string ManagedDeviceName
+        {
             get { return BackingStore?.Get<string>("managedDeviceName"); }
             set { BackingStore?.Set("managedDeviceName", value); }
         }
 #endif
         /// <summary>Owner type of device.</summary>
-        public Microsoft.Graph.Models.ManagedDeviceOwnerType? ManagedDeviceOwnerType {
+        public Microsoft.Graph.Models.ManagedDeviceOwnerType? ManagedDeviceOwnerType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ManagedDeviceOwnerType?>("managedDeviceOwnerType"); }
             set { BackingStore?.Set("managedDeviceOwnerType", value); }
         }
         /// <summary>The managementAgent property</summary>
-        public ManagementAgentType? ManagementAgent {
+        public ManagementAgentType? ManagementAgent
+        {
             get { return BackingStore?.Get<ManagementAgentType?>("managementAgent"); }
             set { BackingStore?.Set("managementAgent", value); }
         }
         /// <summary>Reports device management certificate expiration date. This property is read-only.</summary>
-        public DateTimeOffset? ManagementCertificateExpirationDate {
+        public DateTimeOffset? ManagementCertificateExpirationDate
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("managementCertificateExpirationDate"); }
             set { BackingStore?.Set("managementCertificateExpirationDate", value); }
         }
         /// <summary>Manufacturer of the device. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer {
+        public string? Manufacturer
+        {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #nullable restore
 #else
-        public string Manufacturer {
+        public string Manufacturer
+        {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
@@ -397,13 +458,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>MEID. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Meid {
+        public string? Meid
+        {
             get { return BackingStore?.Get<string?>("meid"); }
             set { BackingStore?.Set("meid", value); }
         }
 #nullable restore
 #else
-        public string Meid {
+        public string Meid
+        {
             get { return BackingStore?.Get<string>("meid"); }
             set { BackingStore?.Set("meid", value); }
         }
@@ -411,13 +474,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Model of the device. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model {
+        public string? Model
+        {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #nullable restore
 #else
-        public string Model {
+        public string Model
+        {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
@@ -425,13 +490,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes {
+        public string? Notes
+        {
             get { return BackingStore?.Get<string?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #nullable restore
 #else
-        public string Notes {
+        public string Notes
+        {
             get { return BackingStore?.Get<string>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
@@ -439,13 +506,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Operating system of the device. Windows, iOS, etc. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatingSystem {
+        public string? OperatingSystem
+        {
             get { return BackingStore?.Get<string?>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
 #nullable restore
 #else
-        public string OperatingSystem {
+        public string OperatingSystem
+        {
             get { return BackingStore?.Get<string>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
@@ -453,51 +522,59 @@ namespace Microsoft.Graph.Models {
         /// <summary>Operating system version of the device. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsVersion {
+        public string? OsVersion
+        {
             get { return BackingStore?.Get<string?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
 #nullable restore
 #else
-        public string OsVersion {
+        public string OsVersion
+        {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
 #endif
         /// <summary>Available health states for the Device Health API</summary>
-        public ManagedDevicePartnerReportedHealthState? PartnerReportedThreatState {
+        public ManagedDevicePartnerReportedHealthState? PartnerReportedThreatState
+        {
             get { return BackingStore?.Get<ManagedDevicePartnerReportedHealthState?>("partnerReportedThreatState"); }
             set { BackingStore?.Set("partnerReportedThreatState", value); }
         }
         /// <summary>Phone number of the device. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneNumber {
+        public string? PhoneNumber
+        {
             get { return BackingStore?.Get<string?>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
 #nullable restore
 #else
-        public string PhoneNumber {
+        public string PhoneNumber
+        {
             get { return BackingStore?.Get<string>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
 #endif
         /// <summary>Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.</summary>
-        public long? PhysicalMemoryInBytes {
+        public long? PhysicalMemoryInBytes
+        {
             get { return BackingStore?.Get<long?>("physicalMemoryInBytes"); }
             set { BackingStore?.Set("physicalMemoryInBytes", value); }
         }
         /// <summary>An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoteAssistanceSessionErrorDetails {
+        public string? RemoteAssistanceSessionErrorDetails
+        {
             get { return BackingStore?.Get<string?>("remoteAssistanceSessionErrorDetails"); }
             set { BackingStore?.Set("remoteAssistanceSessionErrorDetails", value); }
         }
 #nullable restore
 #else
-        public string RemoteAssistanceSessionErrorDetails {
+        public string RemoteAssistanceSessionErrorDetails
+        {
             get { return BackingStore?.Get<string>("remoteAssistanceSessionErrorDetails"); }
             set { BackingStore?.Set("remoteAssistanceSessionErrorDetails", value); }
         }
@@ -505,32 +582,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoteAssistanceSessionUrl {
+        public string? RemoteAssistanceSessionUrl
+        {
             get { return BackingStore?.Get<string?>("remoteAssistanceSessionUrl"); }
             set { BackingStore?.Set("remoteAssistanceSessionUrl", value); }
         }
 #nullable restore
 #else
-        public string RemoteAssistanceSessionUrl {
+        public string RemoteAssistanceSessionUrl
+        {
             get { return BackingStore?.Get<string>("remoteAssistanceSessionUrl"); }
             set { BackingStore?.Set("remoteAssistanceSessionUrl", value); }
         }
 #endif
         /// <summary>Reports if the managed iOS device is user approval enrollment. This property is read-only.</summary>
-        public bool? RequireUserEnrollmentApproval {
+        public bool? RequireUserEnrollmentApproval
+        {
             get { return BackingStore?.Get<bool?>("requireUserEnrollmentApproval"); }
             set { BackingStore?.Set("requireUserEnrollmentApproval", value); }
         }
         /// <summary>SerialNumber. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SerialNumber {
+        public string? SerialNumber
+        {
             get { return BackingStore?.Get<string?>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
 #nullable restore
 #else
-        public string SerialNumber {
+        public string SerialNumber
+        {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
@@ -538,32 +620,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Subscriber Carrier. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriberCarrier {
+        public string? SubscriberCarrier
+        {
             get { return BackingStore?.Get<string?>("subscriberCarrier"); }
             set { BackingStore?.Set("subscriberCarrier", value); }
         }
 #nullable restore
 #else
-        public string SubscriberCarrier {
+        public string SubscriberCarrier
+        {
             get { return BackingStore?.Get<string>("subscriberCarrier"); }
             set { BackingStore?.Set("subscriberCarrier", value); }
         }
 #endif
         /// <summary>Total Storage in Bytes. This property is read-only.</summary>
-        public long? TotalStorageSpaceInBytes {
+        public long? TotalStorageSpaceInBytes
+        {
             get { return BackingStore?.Get<long?>("totalStorageSpaceInBytes"); }
             set { BackingStore?.Set("totalStorageSpaceInBytes", value); }
         }
         /// <summary>Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Udid {
+        public string? Udid
+        {
             get { return BackingStore?.Get<string?>("udid"); }
             set { BackingStore?.Set("udid", value); }
         }
 #nullable restore
 #else
-        public string Udid {
+        public string Udid
+        {
             get { return BackingStore?.Get<string>("udid"); }
             set { BackingStore?.Set("udid", value); }
         }
@@ -571,13 +658,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>User display name. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserDisplayName {
+        public string? UserDisplayName
+        {
             get { return BackingStore?.Get<string?>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #nullable restore
 #else
-        public string UserDisplayName {
+        public string UserDisplayName
+        {
             get { return BackingStore?.Get<string>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
@@ -585,13 +674,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Unique Identifier for the user associated with the device. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -599,13 +690,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Device user principal name. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -613,13 +706,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The primary users associated with the managed device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<User>? Users {
+        public List<User>? Users
+        {
             get { return BackingStore?.Get<List<User>?>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #nullable restore
 #else
-        public List<User> Users {
+        public List<User> Users
+        {
             get { return BackingStore?.Get<List<User>>("users"); }
             set { BackingStore?.Set("users", value); }
         }
@@ -627,13 +722,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Wi-Fi MAC. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WiFiMacAddress {
+        public string? WiFiMacAddress
+        {
             get { return BackingStore?.Get<string?>("wiFiMacAddress"); }
             set { BackingStore?.Set("wiFiMacAddress", value); }
         }
 #nullable restore
 #else
-        public string WiFiMacAddress {
+        public string WiFiMacAddress
+        {
             get { return BackingStore?.Get<string>("wiFiMacAddress"); }
             set { BackingStore?.Set("wiFiMacAddress", value); }
         }
@@ -641,13 +738,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The device protection status. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.WindowsProtectionState? WindowsProtectionState {
+        public Microsoft.Graph.Models.WindowsProtectionState? WindowsProtectionState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsProtectionState?>("windowsProtectionState"); }
             set { BackingStore?.Set("windowsProtectionState", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.WindowsProtectionState WindowsProtectionState {
+        public Microsoft.Graph.Models.WindowsProtectionState WindowsProtectionState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsProtectionState>("windowsProtectionState"); }
             set { BackingStore?.Set("windowsProtectionState", value); }
         }
@@ -670,66 +769,66 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activationLockBypassCode", n => { ActivationLockBypassCode = n.GetStringValue(); } },
-                {"androidSecurityPatchLevel", n => { AndroidSecurityPatchLevel = n.GetStringValue(); } },
-                {"azureADDeviceId", n => { AzureADDeviceId = n.GetStringValue(); } },
-                {"azureADRegistered", n => { AzureADRegistered = n.GetBoolValue(); } },
-                {"complianceGracePeriodExpirationDateTime", n => { ComplianceGracePeriodExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"complianceState", n => { ComplianceState = n.GetEnumValue<ComplianceState>(); } },
-                {"configurationManagerClientEnabledFeatures", n => { ConfigurationManagerClientEnabledFeatures = n.GetObjectValue<Microsoft.Graph.Models.ConfigurationManagerClientEnabledFeatures>(Microsoft.Graph.Models.ConfigurationManagerClientEnabledFeatures.CreateFromDiscriminatorValue); } },
-                {"deviceActionResults", n => { DeviceActionResults = n.GetCollectionOfObjectValues<DeviceActionResult>(DeviceActionResult.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceCategory", n => { DeviceCategory = n.GetObjectValue<Microsoft.Graph.Models.DeviceCategory>(Microsoft.Graph.Models.DeviceCategory.CreateFromDiscriminatorValue); } },
-                {"deviceCategoryDisplayName", n => { DeviceCategoryDisplayName = n.GetStringValue(); } },
-                {"deviceCompliancePolicyStates", n => { DeviceCompliancePolicyStates = n.GetCollectionOfObjectValues<DeviceCompliancePolicyState>(DeviceCompliancePolicyState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceConfigurationStates", n => { DeviceConfigurationStates = n.GetCollectionOfObjectValues<DeviceConfigurationState>(DeviceConfigurationState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceEnrollmentType", n => { DeviceEnrollmentType = n.GetEnumValue<DeviceEnrollmentType>(); } },
-                {"deviceHealthAttestationState", n => { DeviceHealthAttestationState = n.GetObjectValue<Microsoft.Graph.Models.DeviceHealthAttestationState>(Microsoft.Graph.Models.DeviceHealthAttestationState.CreateFromDiscriminatorValue); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"deviceRegistrationState", n => { DeviceRegistrationState = n.GetEnumValue<DeviceRegistrationState>(); } },
-                {"easActivated", n => { EasActivated = n.GetBoolValue(); } },
-                {"easActivationDateTime", n => { EasActivationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"easDeviceId", n => { EasDeviceId = n.GetStringValue(); } },
-                {"emailAddress", n => { EmailAddress = n.GetStringValue(); } },
-                {"enrolledDateTime", n => { EnrolledDateTime = n.GetDateTimeOffsetValue(); } },
-                {"enrollmentProfileName", n => { EnrollmentProfileName = n.GetStringValue(); } },
-                {"ethernetMacAddress", n => { EthernetMacAddress = n.GetStringValue(); } },
-                {"exchangeAccessState", n => { ExchangeAccessState = n.GetEnumValue<DeviceManagementExchangeAccessState>(); } },
-                {"exchangeAccessStateReason", n => { ExchangeAccessStateReason = n.GetEnumValue<DeviceManagementExchangeAccessStateReason>(); } },
-                {"exchangeLastSuccessfulSyncDateTime", n => { ExchangeLastSuccessfulSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"freeStorageSpaceInBytes", n => { FreeStorageSpaceInBytes = n.GetLongValue(); } },
-                {"iccid", n => { Iccid = n.GetStringValue(); } },
-                {"imei", n => { Imei = n.GetStringValue(); } },
-                {"isEncrypted", n => { IsEncrypted = n.GetBoolValue(); } },
-                {"isSupervised", n => { IsSupervised = n.GetBoolValue(); } },
-                {"jailBroken", n => { JailBroken = n.GetStringValue(); } },
-                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"logCollectionRequests", n => { LogCollectionRequests = n.GetCollectionOfObjectValues<DeviceLogCollectionResponse>(DeviceLogCollectionResponse.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
-                {"managedDeviceOwnerType", n => { ManagedDeviceOwnerType = n.GetEnumValue<ManagedDeviceOwnerType>(); } },
-                {"managementAgent", n => { ManagementAgent = n.GetEnumValue<ManagementAgentType>(); } },
-                {"managementCertificateExpirationDate", n => { ManagementCertificateExpirationDate = n.GetDateTimeOffsetValue(); } },
-                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"meid", n => { Meid = n.GetStringValue(); } },
-                {"model", n => { Model = n.GetStringValue(); } },
-                {"notes", n => { Notes = n.GetStringValue(); } },
-                {"operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
-                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
-                {"partnerReportedThreatState", n => { PartnerReportedThreatState = n.GetEnumValue<ManagedDevicePartnerReportedHealthState>(); } },
-                {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
-                {"physicalMemoryInBytes", n => { PhysicalMemoryInBytes = n.GetLongValue(); } },
-                {"remoteAssistanceSessionErrorDetails", n => { RemoteAssistanceSessionErrorDetails = n.GetStringValue(); } },
-                {"remoteAssistanceSessionUrl", n => { RemoteAssistanceSessionUrl = n.GetStringValue(); } },
-                {"requireUserEnrollmentApproval", n => { RequireUserEnrollmentApproval = n.GetBoolValue(); } },
-                {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
-                {"subscriberCarrier", n => { SubscriberCarrier = n.GetStringValue(); } },
-                {"totalStorageSpaceInBytes", n => { TotalStorageSpaceInBytes = n.GetLongValue(); } },
-                {"udid", n => { Udid = n.GetStringValue(); } },
-                {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                {"users", n => { Users = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"wiFiMacAddress", n => { WiFiMacAddress = n.GetStringValue(); } },
-                {"windowsProtectionState", n => { WindowsProtectionState = n.GetObjectValue<Microsoft.Graph.Models.WindowsProtectionState>(Microsoft.Graph.Models.WindowsProtectionState.CreateFromDiscriminatorValue); } },
+                { "activationLockBypassCode", n => { ActivationLockBypassCode = n.GetStringValue(); } },
+                { "androidSecurityPatchLevel", n => { AndroidSecurityPatchLevel = n.GetStringValue(); } },
+                { "azureADDeviceId", n => { AzureADDeviceId = n.GetStringValue(); } },
+                { "azureADRegistered", n => { AzureADRegistered = n.GetBoolValue(); } },
+                { "complianceGracePeriodExpirationDateTime", n => { ComplianceGracePeriodExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "complianceState", n => { ComplianceState = n.GetEnumValue<ComplianceState>(); } },
+                { "configurationManagerClientEnabledFeatures", n => { ConfigurationManagerClientEnabledFeatures = n.GetObjectValue<Microsoft.Graph.Models.ConfigurationManagerClientEnabledFeatures>(Microsoft.Graph.Models.ConfigurationManagerClientEnabledFeatures.CreateFromDiscriminatorValue); } },
+                { "deviceActionResults", n => { DeviceActionResults = n.GetCollectionOfObjectValues<DeviceActionResult>(DeviceActionResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceCategory", n => { DeviceCategory = n.GetObjectValue<Microsoft.Graph.Models.DeviceCategory>(Microsoft.Graph.Models.DeviceCategory.CreateFromDiscriminatorValue); } },
+                { "deviceCategoryDisplayName", n => { DeviceCategoryDisplayName = n.GetStringValue(); } },
+                { "deviceCompliancePolicyStates", n => { DeviceCompliancePolicyStates = n.GetCollectionOfObjectValues<DeviceCompliancePolicyState>(DeviceCompliancePolicyState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceConfigurationStates", n => { DeviceConfigurationStates = n.GetCollectionOfObjectValues<DeviceConfigurationState>(DeviceConfigurationState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceEnrollmentType", n => { DeviceEnrollmentType = n.GetEnumValue<DeviceEnrollmentType>(); } },
+                { "deviceHealthAttestationState", n => { DeviceHealthAttestationState = n.GetObjectValue<Microsoft.Graph.Models.DeviceHealthAttestationState>(Microsoft.Graph.Models.DeviceHealthAttestationState.CreateFromDiscriminatorValue); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "deviceRegistrationState", n => { DeviceRegistrationState = n.GetEnumValue<DeviceRegistrationState>(); } },
+                { "easActivated", n => { EasActivated = n.GetBoolValue(); } },
+                { "easActivationDateTime", n => { EasActivationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "easDeviceId", n => { EasDeviceId = n.GetStringValue(); } },
+                { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
+                { "enrolledDateTime", n => { EnrolledDateTime = n.GetDateTimeOffsetValue(); } },
+                { "enrollmentProfileName", n => { EnrollmentProfileName = n.GetStringValue(); } },
+                { "ethernetMacAddress", n => { EthernetMacAddress = n.GetStringValue(); } },
+                { "exchangeAccessState", n => { ExchangeAccessState = n.GetEnumValue<DeviceManagementExchangeAccessState>(); } },
+                { "exchangeAccessStateReason", n => { ExchangeAccessStateReason = n.GetEnumValue<DeviceManagementExchangeAccessStateReason>(); } },
+                { "exchangeLastSuccessfulSyncDateTime", n => { ExchangeLastSuccessfulSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                { "freeStorageSpaceInBytes", n => { FreeStorageSpaceInBytes = n.GetLongValue(); } },
+                { "iccid", n => { Iccid = n.GetStringValue(); } },
+                { "imei", n => { Imei = n.GetStringValue(); } },
+                { "isEncrypted", n => { IsEncrypted = n.GetBoolValue(); } },
+                { "isSupervised", n => { IsSupervised = n.GetBoolValue(); } },
+                { "jailBroken", n => { JailBroken = n.GetStringValue(); } },
+                { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                { "logCollectionRequests", n => { LogCollectionRequests = n.GetCollectionOfObjectValues<DeviceLogCollectionResponse>(DeviceLogCollectionResponse.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
+                { "managedDeviceOwnerType", n => { ManagedDeviceOwnerType = n.GetEnumValue<ManagedDeviceOwnerType>(); } },
+                { "managementAgent", n => { ManagementAgent = n.GetEnumValue<ManagementAgentType>(); } },
+                { "managementCertificateExpirationDate", n => { ManagementCertificateExpirationDate = n.GetDateTimeOffsetValue(); } },
+                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "meid", n => { Meid = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "notes", n => { Notes = n.GetStringValue(); } },
+                { "operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
+                { "osVersion", n => { OsVersion = n.GetStringValue(); } },
+                { "partnerReportedThreatState", n => { PartnerReportedThreatState = n.GetEnumValue<ManagedDevicePartnerReportedHealthState>(); } },
+                { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
+                { "physicalMemoryInBytes", n => { PhysicalMemoryInBytes = n.GetLongValue(); } },
+                { "remoteAssistanceSessionErrorDetails", n => { RemoteAssistanceSessionErrorDetails = n.GetStringValue(); } },
+                { "remoteAssistanceSessionUrl", n => { RemoteAssistanceSessionUrl = n.GetStringValue(); } },
+                { "requireUserEnrollmentApproval", n => { RequireUserEnrollmentApproval = n.GetBoolValue(); } },
+                { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
+                { "subscriberCarrier", n => { SubscriberCarrier = n.GetStringValue(); } },
+                { "totalStorageSpaceInBytes", n => { TotalStorageSpaceInBytes = n.GetLongValue(); } },
+                { "udid", n => { Udid = n.GetStringValue(); } },
+                { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "wiFiMacAddress", n => { WiFiMacAddress = n.GetStringValue(); } },
+                { "windowsProtectionState", n => { WindowsProtectionState = n.GetObjectValue<Microsoft.Graph.Models.WindowsProtectionState>(Microsoft.Graph.Models.WindowsProtectionState.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

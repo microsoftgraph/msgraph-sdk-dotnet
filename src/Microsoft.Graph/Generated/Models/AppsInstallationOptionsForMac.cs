@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AppsInstallationOptionsForMac : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AppsInstallationOptionsForMac : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies whether users can install Microsoft 365 apps on their MAC devices. The default value is true.</summary>
-        public bool? IsMicrosoft365AppsEnabled {
+        public bool? IsMicrosoft365AppsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isMicrosoft365AppsEnabled"); }
             set { BackingStore?.Set("isMicrosoft365AppsEnabled", value); }
         }
         /// <summary>Specifies whether users can install Skype for Business on their MAC devices running OS X El Capitan 10.11 or later. The default value is true.</summary>
-        public bool? IsSkypeForBusinessEnabled {
+        public bool? IsSkypeForBusinessEnabled
+        {
             get { return BackingStore?.Get<bool?>("isSkypeForBusinessEnabled"); }
             set { BackingStore?.Set("isSkypeForBusinessEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isMicrosoft365AppsEnabled", n => { IsMicrosoft365AppsEnabled = n.GetBoolValue(); } },
-                {"isSkypeForBusinessEnabled", n => { IsSkypeForBusinessEnabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "isMicrosoft365AppsEnabled", n => { IsMicrosoft365AppsEnabled = n.GetBoolValue(); } },
+                { "isSkypeForBusinessEnabled", n => { IsSkypeForBusinessEnabled = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

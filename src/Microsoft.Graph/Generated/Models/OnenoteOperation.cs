@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OnenoteOperation : Operation, IParsable 
+    public class OnenoteOperation : Operation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The error returned by the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnenoteOperationError? Error {
+        public OnenoteOperationError? Error
+        {
             get { return BackingStore?.Get<OnenoteOperationError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public OnenoteOperationError Error {
+        public OnenoteOperationError Error
+        {
             get { return BackingStore?.Get<OnenoteOperationError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The operation percent complete if the operation is still in running status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PercentComplete {
+        public string? PercentComplete
+        {
             get { return BackingStore?.Get<string?>("percentComplete"); }
             set { BackingStore?.Set("percentComplete", value); }
         }
 #nullable restore
 #else
-        public string PercentComplete {
+        public string PercentComplete
+        {
             get { return BackingStore?.Get<string>("percentComplete"); }
             set { BackingStore?.Set("percentComplete", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The resource id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceId {
+        public string? ResourceId
+        {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
 #nullable restore
 #else
-        public string ResourceId {
+        public string ResourceId
+        {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The resource URI for the object. For example, the resource URI for a copied page or section.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceLocation {
+        public string? ResourceLocation
+        {
             get { return BackingStore?.Get<string?>("resourceLocation"); }
             set { BackingStore?.Set("resourceLocation", value); }
         }
 #nullable restore
 #else
-        public string ResourceLocation {
+        public string ResourceLocation
+        {
             get { return BackingStore?.Get<string>("resourceLocation"); }
             set { BackingStore?.Set("resourceLocation", value); }
         }
@@ -83,10 +92,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"error", n => { Error = n.GetObjectValue<OnenoteOperationError>(OnenoteOperationError.CreateFromDiscriminatorValue); } },
-                {"percentComplete", n => { PercentComplete = n.GetStringValue(); } },
-                {"resourceId", n => { ResourceId = n.GetStringValue(); } },
-                {"resourceLocation", n => { ResourceLocation = n.GetStringValue(); } },
+                { "error", n => { Error = n.GetObjectValue<OnenoteOperationError>(OnenoteOperationError.CreateFromDiscriminatorValue); } },
+                { "percentComplete", n => { PercentComplete = n.GetStringValue(); } },
+                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "resourceLocation", n => { ResourceLocation = n.GetStringValue(); } },
             };
         }
         /// <summary>

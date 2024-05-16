@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SearchHitsContainer : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SearchHitsContainer : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The aggregations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SearchAggregation>? Aggregations {
+        public List<SearchAggregation>? Aggregations
+        {
             get { return BackingStore?.Get<List<SearchAggregation>?>("aggregations"); }
             set { BackingStore?.Set("aggregations", value); }
         }
 #nullable restore
 #else
-        public List<SearchAggregation> Aggregations {
+        public List<SearchAggregation> Aggregations
+        {
             get { return BackingStore?.Get<List<SearchAggregation>>("aggregations"); }
             set { BackingStore?.Set("aggregations", value); }
         }
@@ -34,38 +38,44 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of the search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SearchHit>? Hits {
+        public List<SearchHit>? Hits
+        {
             get { return BackingStore?.Get<List<SearchHit>?>("hits"); }
             set { BackingStore?.Set("hits", value); }
         }
 #nullable restore
 #else
-        public List<SearchHit> Hits {
+        public List<SearchHit> Hits
+        {
             get { return BackingStore?.Get<List<SearchHit>>("hits"); }
             set { BackingStore?.Set("hits", value); }
         }
 #endif
         /// <summary>Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.</summary>
-        public bool? MoreResultsAvailable {
+        public bool? MoreResultsAvailable
+        {
             get { return BackingStore?.Get<bool?>("moreResultsAvailable"); }
             set { BackingStore?.Set("moreResultsAvailable", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The total number of results. Note this isn&apos;t the number of results on the page, but the total number of results satisfying the query.</summary>
-        public int? Total {
+        public int? Total
+        {
             get { return BackingStore?.Get<int?>("total"); }
             set { BackingStore?.Set("total", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"aggregations", n => { Aggregations = n.GetCollectionOfObjectValues<SearchAggregation>(SearchAggregation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"hits", n => { Hits = n.GetCollectionOfObjectValues<SearchHit>(SearchHit.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"moreResultsAvailable", n => { MoreResultsAvailable = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"total", n => { Total = n.GetIntValue(); } },
+                { "aggregations", n => { Aggregations = n.GetCollectionOfObjectValues<SearchAggregation>(SearchAggregation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hits", n => { Hits = n.GetCollectionOfObjectValues<SearchHit>(SearchHit.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "moreResultsAvailable", n => { MoreResultsAvailable = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "total", n => { Total = n.GetIntValue(); } },
             };
         }
         /// <summary>

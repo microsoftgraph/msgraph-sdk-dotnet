@@ -6,33 +6,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.CreateLink {
+namespace Microsoft.Graph.Drives.Item.Items.Item.CreateLink
+{
     #pragma warning disable CS1591
-    public class CreateLinkPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CreateLinkPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The expirationDateTime property</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message {
+        public string? Message
+        {
             get { return BackingStore?.Get<string?>("message"); }
             set { BackingStore?.Set("message", value); }
         }
 #nullable restore
 #else
-        public string Message {
+        public string Message
+        {
             get { return BackingStore?.Get<string>("message"); }
             set { BackingStore?.Set("message", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.CreateLink {
         /// <summary>The password property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Password {
+        public string? Password
+        {
             get { return BackingStore?.Get<string?>("password"); }
             set { BackingStore?.Set("password", value); }
         }
 #nullable restore
 #else
-        public string Password {
+        public string Password
+        {
             get { return BackingStore?.Get<string>("password"); }
             set { BackingStore?.Set("password", value); }
         }
@@ -54,51 +61,59 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.CreateLink {
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DriveRecipient>? Recipients {
+        public List<DriveRecipient>? Recipients
+        {
             get { return BackingStore?.Get<List<DriveRecipient>?>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
 #nullable restore
 #else
-        public List<DriveRecipient> Recipients {
+        public List<DriveRecipient> Recipients
+        {
             get { return BackingStore?.Get<List<DriveRecipient>>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
 #endif
         /// <summary>The retainInheritedPermissions property</summary>
-        public bool? RetainInheritedPermissions {
+        public bool? RetainInheritedPermissions
+        {
             get { return BackingStore?.Get<bool?>("retainInheritedPermissions"); }
             set { BackingStore?.Set("retainInheritedPermissions", value); }
         }
         /// <summary>The scope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Scope {
+        public string? Scope
+        {
             get { return BackingStore?.Get<string?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
 #nullable restore
 #else
-        public string Scope {
+        public string Scope
+        {
             get { return BackingStore?.Get<string>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
 #endif
         /// <summary>The sendNotification property</summary>
-        public bool? SendNotification {
+        public bool? SendNotification
+        {
             get { return BackingStore?.Get<bool?>("sendNotification"); }
             set { BackingStore?.Set("sendNotification", value); }
         }
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type {
+        public string? Type
+        {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #nullable restore
 #else
-        public string Type {
+        public string Type
+        {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -129,14 +144,14 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.CreateLink {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"message", n => { Message = n.GetStringValue(); } },
-                {"password", n => { Password = n.GetStringValue(); } },
-                {"recipients", n => { Recipients = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"retainInheritedPermissions", n => { RetainInheritedPermissions = n.GetBoolValue(); } },
-                {"scope", n => { Scope = n.GetStringValue(); } },
-                {"sendNotification", n => { SendNotification = n.GetBoolValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "password", n => { Password = n.GetStringValue(); } },
+                { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "retainInheritedPermissions", n => { RetainInheritedPermissions = n.GetBoolValue(); } },
+                { "scope", n => { Scope = n.GetStringValue(); } },
+                { "sendNotification", n => { SendNotification = n.GetBoolValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

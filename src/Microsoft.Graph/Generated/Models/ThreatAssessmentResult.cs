@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ThreatAssessmentResult : Entity, IParsable 
+    public class ThreatAssessmentResult : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The result message for each threat assessment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message {
+        public string? Message
+        {
             get { return BackingStore?.Get<string?>("message"); }
             set { BackingStore?.Set("message", value); }
         }
 #nullable restore
 #else
-        public string Message {
+        public string Message
+        {
             get { return BackingStore?.Get<string>("message"); }
             set { BackingStore?.Set("message", value); }
         }
 #endif
         /// <summary>The threat assessment result type. Possible values are: checkPolicy, rescan.</summary>
-        public ThreatAssessmentResultType? ResultType {
+        public ThreatAssessmentResultType? ResultType
+        {
             get { return BackingStore?.Get<ThreatAssessmentResultType?>("resultType"); }
             set { BackingStore?.Set("resultType", value); }
         }
@@ -51,9 +56,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"message", n => { Message = n.GetStringValue(); } },
-                {"resultType", n => { ResultType = n.GetEnumValue<ThreatAssessmentResultType>(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "resultType", n => { ResultType = n.GetEnumValue<ThreatAssessmentResultType>(); } },
             };
         }
         /// <summary>

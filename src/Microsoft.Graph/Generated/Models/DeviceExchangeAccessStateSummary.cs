@@ -5,55 +5,64 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Device Exchange Access State summary
     /// </summary>
-    public class DeviceExchangeAccessStateSummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceExchangeAccessStateSummary : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Total count of devices with Exchange Access State: Allowed.</summary>
-        public int? AllowedDeviceCount {
+        public int? AllowedDeviceCount
+        {
             get { return BackingStore?.Get<int?>("allowedDeviceCount"); }
             set { BackingStore?.Set("allowedDeviceCount", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Total count of devices with Exchange Access State: Blocked.</summary>
-        public int? BlockedDeviceCount {
+        public int? BlockedDeviceCount
+        {
             get { return BackingStore?.Get<int?>("blockedDeviceCount"); }
             set { BackingStore?.Set("blockedDeviceCount", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Total count of devices with Exchange Access State: Quarantined.</summary>
-        public int? QuarantinedDeviceCount {
+        public int? QuarantinedDeviceCount
+        {
             get { return BackingStore?.Get<int?>("quarantinedDeviceCount"); }
             set { BackingStore?.Set("quarantinedDeviceCount", value); }
         }
         /// <summary>Total count of devices for which no Exchange Access State could be found.</summary>
-        public int? UnavailableDeviceCount {
+        public int? UnavailableDeviceCount
+        {
             get { return BackingStore?.Get<int?>("unavailableDeviceCount"); }
             set { BackingStore?.Set("unavailableDeviceCount", value); }
         }
         /// <summary>Total count of devices with Exchange Access State: Unknown.</summary>
-        public int? UnknownDeviceCount {
+        public int? UnknownDeviceCount
+        {
             get { return BackingStore?.Get<int?>("unknownDeviceCount"); }
             set { BackingStore?.Set("unknownDeviceCount", value); }
         }
@@ -83,12 +92,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowedDeviceCount", n => { AllowedDeviceCount = n.GetIntValue(); } },
-                {"blockedDeviceCount", n => { BlockedDeviceCount = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"quarantinedDeviceCount", n => { QuarantinedDeviceCount = n.GetIntValue(); } },
-                {"unavailableDeviceCount", n => { UnavailableDeviceCount = n.GetIntValue(); } },
-                {"unknownDeviceCount", n => { UnknownDeviceCount = n.GetIntValue(); } },
+                { "allowedDeviceCount", n => { AllowedDeviceCount = n.GetIntValue(); } },
+                { "blockedDeviceCount", n => { BlockedDeviceCount = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "quarantinedDeviceCount", n => { QuarantinedDeviceCount = n.GetIntValue(); } },
+                { "unavailableDeviceCount", n => { UnavailableDeviceCount = n.GetIntValue(); } },
+                { "unknownDeviceCount", n => { UnknownDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ItemAnalytics : Entity, IParsable 
+    public class ItemAnalytics : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The allTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemActivityStat? AllTime {
+        public ItemActivityStat? AllTime
+        {
             get { return BackingStore?.Get<ItemActivityStat?>("allTime"); }
             set { BackingStore?.Set("allTime", value); }
         }
 #nullable restore
 #else
-        public ItemActivityStat AllTime {
+        public ItemActivityStat AllTime
+        {
             get { return BackingStore?.Get<ItemActivityStat>("allTime"); }
             set { BackingStore?.Set("allTime", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The itemActivityStats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ItemActivityStat>? ItemActivityStats {
+        public List<ItemActivityStat>? ItemActivityStats
+        {
             get { return BackingStore?.Get<List<ItemActivityStat>?>("itemActivityStats"); }
             set { BackingStore?.Set("itemActivityStats", value); }
         }
 #nullable restore
 #else
-        public List<ItemActivityStat> ItemActivityStats {
+        public List<ItemActivityStat> ItemActivityStats
+        {
             get { return BackingStore?.Get<List<ItemActivityStat>>("itemActivityStats"); }
             set { BackingStore?.Set("itemActivityStats", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The lastSevenDays property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemActivityStat? LastSevenDays {
+        public ItemActivityStat? LastSevenDays
+        {
             get { return BackingStore?.Get<ItemActivityStat?>("lastSevenDays"); }
             set { BackingStore?.Set("lastSevenDays", value); }
         }
 #nullable restore
 #else
-        public ItemActivityStat LastSevenDays {
+        public ItemActivityStat LastSevenDays
+        {
             get { return BackingStore?.Get<ItemActivityStat>("lastSevenDays"); }
             set { BackingStore?.Set("lastSevenDays", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allTime", n => { AllTime = n.GetObjectValue<ItemActivityStat>(ItemActivityStat.CreateFromDiscriminatorValue); } },
-                {"itemActivityStats", n => { ItemActivityStats = n.GetCollectionOfObjectValues<ItemActivityStat>(ItemActivityStat.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastSevenDays", n => { LastSevenDays = n.GetObjectValue<ItemActivityStat>(ItemActivityStat.CreateFromDiscriminatorValue); } },
+                { "allTime", n => { AllTime = n.GetObjectValue<ItemActivityStat>(ItemActivityStat.CreateFromDiscriminatorValue); } },
+                { "itemActivityStats", n => { ItemActivityStats = n.GetCollectionOfObjectValues<ItemActivityStat>(ItemActivityStat.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastSevenDays", n => { LastSevenDays = n.GetObjectValue<ItemActivityStat>(ItemActivityStat.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

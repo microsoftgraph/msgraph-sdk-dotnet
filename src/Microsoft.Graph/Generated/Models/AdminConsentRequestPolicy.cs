@@ -4,47 +4,55 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AdminConsentRequestPolicy : Entity, IParsable 
+    public class AdminConsentRequestPolicy : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies whether the admin consent request feature is enabled or disabled. Required.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Specifies whether reviewers will receive notifications. Required.</summary>
-        public bool? NotifyReviewers {
+        public bool? NotifyReviewers
+        {
             get { return BackingStore?.Get<bool?>("notifyReviewers"); }
             set { BackingStore?.Set("notifyReviewers", value); }
         }
         /// <summary>Specifies whether reviewers will receive reminder emails. Required.</summary>
-        public bool? RemindersEnabled {
+        public bool? RemindersEnabled
+        {
             get { return BackingStore?.Get<bool?>("remindersEnabled"); }
             set { BackingStore?.Set("remindersEnabled", value); }
         }
         /// <summary>Specifies the duration the request is active before it automatically expires if no decision is applied.</summary>
-        public int? RequestDurationInDays {
+        public int? RequestDurationInDays
+        {
             get { return BackingStore?.Get<int?>("requestDurationInDays"); }
             set { BackingStore?.Set("requestDurationInDays", value); }
         }
         /// <summary>The list of reviewers for the admin consent. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewReviewerScope>? Reviewers {
+        public List<AccessReviewReviewerScope>? Reviewers
+        {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewReviewerScope> Reviewers {
+        public List<AccessReviewReviewerScope> Reviewers
+        {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
 #endif
         /// <summary>Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.</summary>
-        public int? Version {
+        public int? Version
+        {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -66,12 +74,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"notifyReviewers", n => { NotifyReviewers = n.GetBoolValue(); } },
-                {"remindersEnabled", n => { RemindersEnabled = n.GetBoolValue(); } },
-                {"requestDurationInDays", n => { RequestDurationInDays = n.GetIntValue(); } },
-                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"version", n => { Version = n.GetIntValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "notifyReviewers", n => { NotifyReviewers = n.GetBoolValue(); } },
+                { "remindersEnabled", n => { RemindersEnabled = n.GetBoolValue(); } },
+                { "requestDurationInDays", n => { RequestDurationInDays = n.GetIntValue(); } },
+                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

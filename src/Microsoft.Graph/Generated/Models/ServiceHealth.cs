@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ServiceHealth : Entity, IParsable 
+    public class ServiceHealth : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of issues that happened on the service, with detailed information for each issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServiceHealthIssue>? Issues {
+        public List<ServiceHealthIssue>? Issues
+        {
             get { return BackingStore?.Get<List<ServiceHealthIssue>?>("issues"); }
             set { BackingStore?.Set("issues", value); }
         }
 #nullable restore
 #else
-        public List<ServiceHealthIssue> Issues {
+        public List<ServiceHealthIssue> Issues
+        {
             get { return BackingStore?.Get<List<ServiceHealthIssue>>("issues"); }
             set { BackingStore?.Set("issues", value); }
         }
@@ -26,19 +29,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Service {
+        public string? Service
+        {
             get { return BackingStore?.Get<string?>("service"); }
             set { BackingStore?.Set("service", value); }
         }
 #nullable restore
 #else
-        public string Service {
+        public string Service
+        {
             get { return BackingStore?.Get<string>("service"); }
             set { BackingStore?.Set("service", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public ServiceHealthStatus? Status {
+        public ServiceHealthStatus? Status
+        {
             get { return BackingStore?.Get<ServiceHealthStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -60,9 +66,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"issues", n => { Issues = n.GetCollectionOfObjectValues<ServiceHealthIssue>(ServiceHealthIssue.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"service", n => { Service = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<ServiceHealthStatus>(); } },
+                { "issues", n => { Issues = n.GetCollectionOfObjectValues<ServiceHealthIssue>(ServiceHealthIssue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "service", n => { Service = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<ServiceHealthStatus>(); } },
             };
         }
         /// <summary>

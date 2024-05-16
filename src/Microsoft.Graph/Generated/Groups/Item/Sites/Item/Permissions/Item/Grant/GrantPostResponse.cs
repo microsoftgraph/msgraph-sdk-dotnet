@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.Grant {
+namespace Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.Grant
+{
     #pragma warning disable CS1591
-    public class GrantPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GrantPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.Permission>? Value {
+        public List<Microsoft.Graph.Models.Permission>? Value
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.Permission>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.Permission> Value {
+        public List<Microsoft.Graph.Models.Permission> Value
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.Permission>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.Grant {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Permission>(Microsoft.Graph.Models.Permission.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Permission>(Microsoft.Graph.Models.Permission.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

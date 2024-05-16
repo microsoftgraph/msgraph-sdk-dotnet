@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Communications.OnlineMeetings.Item.SendVirtualAppointmentSms {
+namespace Microsoft.Graph.Communications.OnlineMeetings.Item.SendVirtualAppointmentSms
+{
     #pragma warning disable CS1591
-    public class SendVirtualAppointmentSmsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SendVirtualAppointmentSmsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The attendees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttendeeNotificationInfo>? Attendees {
+        public List<AttendeeNotificationInfo>? Attendees
+        {
             get { return BackingStore?.Get<List<AttendeeNotificationInfo>?>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
 #nullable restore
 #else
-        public List<AttendeeNotificationInfo> Attendees {
+        public List<AttendeeNotificationInfo> Attendees
+        {
             get { return BackingStore?.Get<List<AttendeeNotificationInfo>>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
@@ -33,7 +37,8 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.SendVirtualAppointm
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The messageType property</summary>
-        public VirtualAppointmentMessageType? MessageType {
+        public VirtualAppointmentMessageType? MessageType
+        {
             get { return BackingStore?.Get<VirtualAppointmentMessageType?>("messageType"); }
             set { BackingStore?.Set("messageType", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.SendVirtualAppointm
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"attendees", n => { Attendees = n.GetCollectionOfObjectValues<AttendeeNotificationInfo>(AttendeeNotificationInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"messageType", n => { MessageType = n.GetEnumValue<VirtualAppointmentMessageType>(); } },
+                { "attendees", n => { Attendees = n.GetCollectionOfObjectValues<AttendeeNotificationInfo>(AttendeeNotificationInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "messageType", n => { MessageType = n.GetEnumValue<VirtualAppointmentMessageType>(); } },
             };
         }
         /// <summary>

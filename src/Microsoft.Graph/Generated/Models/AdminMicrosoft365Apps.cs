@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AdminMicrosoft365Apps : Entity, IParsable 
+    public class AdminMicrosoft365Apps : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A container for tenant-level settings for Microsoft 365 applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public M365AppsInstallationOptions? InstallationOptions {
+        public M365AppsInstallationOptions? InstallationOptions
+        {
             get { return BackingStore?.Get<M365AppsInstallationOptions?>("installationOptions"); }
             set { BackingStore?.Set("installationOptions", value); }
         }
 #nullable restore
 #else
-        public M365AppsInstallationOptions InstallationOptions {
+        public M365AppsInstallationOptions InstallationOptions
+        {
             get { return BackingStore?.Get<M365AppsInstallationOptions>("installationOptions"); }
             set { BackingStore?.Set("installationOptions", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"installationOptions", n => { InstallationOptions = n.GetObjectValue<M365AppsInstallationOptions>(M365AppsInstallationOptions.CreateFromDiscriminatorValue); } },
+                { "installationOptions", n => { InstallationOptions = n.GetObjectValue<M365AppsInstallationOptions>(M365AppsInstallationOptions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

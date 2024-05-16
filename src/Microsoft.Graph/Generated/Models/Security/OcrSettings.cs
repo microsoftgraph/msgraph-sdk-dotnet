@@ -5,44 +5,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class OcrSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OcrSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether or not OCR is enabled for the case.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Maximum image size that will be processed in KB).</summary>
-        public int? MaxImageSize {
+        public int? MaxImageSize
+        {
             get { return BackingStore?.Get<int?>("maxImageSize"); }
             set { BackingStore?.Set("maxImageSize", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The timeout duration for the OCR engine. A longer timeout might increase success of OCR, but might add to the total processing time.</summary>
-        public TimeSpan? Timeout {
+        public TimeSpan? Timeout
+        {
             get { return BackingStore?.Get<TimeSpan?>("timeout"); }
             set { BackingStore?.Set("timeout", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"maxImageSize", n => { MaxImageSize = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"timeout", n => { Timeout = n.GetTimeSpanValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "maxImageSize", n => { MaxImageSize = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "timeout", n => { Timeout = n.GetTimeSpanValue(); } },
             };
         }
         /// <summary>

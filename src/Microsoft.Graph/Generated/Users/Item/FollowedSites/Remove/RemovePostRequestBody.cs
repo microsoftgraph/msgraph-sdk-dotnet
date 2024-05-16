@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.FollowedSites.Remove {
+namespace Microsoft.Graph.Users.Item.FollowedSites.Remove
+{
     #pragma warning disable CS1591
-    public class RemovePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RemovePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Users.Item.FollowedSites.Remove {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.Site>? Value {
+        public List<Microsoft.Graph.Models.Site>? Value
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.Site>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.Site> Value {
+        public List<Microsoft.Graph.Models.Site> Value
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.Site>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.FollowedSites.Remove {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Site>(Microsoft.Graph.Models.Site.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Site>(Microsoft.Graph.Models.Site.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

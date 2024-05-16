@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TeamsAppSettings : Entity, IParsable 
+    public class TeamsAppSettings : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether users are allowed to request access to the unavailable Teams apps.</summary>
-        public bool? AllowUserRequestsForAppAccess {
+        public bool? AllowUserRequestsForAppAccess
+        {
             get { return BackingStore?.Get<bool?>("allowUserRequestsForAppAccess"); }
             set { BackingStore?.Set("allowUserRequestsForAppAccess", value); }
         }
         /// <summary>Indicates whether resource-specific consent for personal scope in Teams apps is enabled for the tenant. True indicates that Teams apps that are allowed in the tenant and require resource-specific permissions can be installed in the personal scope. False blocks the installation of any Teams app that requires resource-specific permissions in the personal scope.</summary>
-        public bool? IsUserPersonalScopeResourceSpecificConsentEnabled {
+        public bool? IsUserPersonalScopeResourceSpecificConsentEnabled
+        {
             get { return BackingStore?.Get<bool?>("isUserPersonalScopeResourceSpecificConsentEnabled"); }
             set { BackingStore?.Set("isUserPersonalScopeResourceSpecificConsentEnabled", value); }
         }
@@ -37,8 +40,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowUserRequestsForAppAccess", n => { AllowUserRequestsForAppAccess = n.GetBoolValue(); } },
-                {"isUserPersonalScopeResourceSpecificConsentEnabled", n => { IsUserPersonalScopeResourceSpecificConsentEnabled = n.GetBoolValue(); } },
+                { "allowUserRequestsForAppAccess", n => { AllowUserRequestsForAppAccess = n.GetBoolValue(); } },
+                { "isUserPersonalScopeResourceSpecificConsentEnabled", n => { IsUserPersonalScopeResourceSpecificConsentEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

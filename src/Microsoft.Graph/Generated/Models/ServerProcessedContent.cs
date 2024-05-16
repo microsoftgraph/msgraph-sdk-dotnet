@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ServerProcessedContent : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ServerProcessedContent : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MetaDataKeyStringPair>? HtmlStrings {
+        public List<MetaDataKeyStringPair>? HtmlStrings
+        {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>?>("htmlStrings"); }
             set { BackingStore?.Set("htmlStrings", value); }
         }
 #nullable restore
 #else
-        public List<MetaDataKeyStringPair> HtmlStrings {
+        public List<MetaDataKeyStringPair> HtmlStrings
+        {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>>("htmlStrings"); }
             set { BackingStore?.Set("htmlStrings", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MetaDataKeyStringPair>? ImageSources {
+        public List<MetaDataKeyStringPair>? ImageSources
+        {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>?>("imageSources"); }
             set { BackingStore?.Set("imageSources", value); }
         }
 #nullable restore
 #else
-        public List<MetaDataKeyStringPair> ImageSources {
+        public List<MetaDataKeyStringPair> ImageSources
+        {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>>("imageSources"); }
             set { BackingStore?.Set("imageSources", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MetaDataKeyStringPair>? Links {
+        public List<MetaDataKeyStringPair>? Links
+        {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>?>("links"); }
             set { BackingStore?.Set("links", value); }
         }
 #nullable restore
 #else
-        public List<MetaDataKeyStringPair> Links {
+        public List<MetaDataKeyStringPair> Links
+        {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>>("links"); }
             set { BackingStore?.Set("links", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A key-value map where keys are string identifiers and values are strings that should be search indexed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MetaDataKeyStringPair>? SearchablePlainTexts {
+        public List<MetaDataKeyStringPair>? SearchablePlainTexts
+        {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>?>("searchablePlainTexts"); }
             set { BackingStore?.Set("searchablePlainTexts", value); }
         }
 #nullable restore
 #else
-        public List<MetaDataKeyStringPair> SearchablePlainTexts {
+        public List<MetaDataKeyStringPair> SearchablePlainTexts
+        {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>>("searchablePlainTexts"); }
             set { BackingStore?.Set("searchablePlainTexts", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"htmlStrings", n => { HtmlStrings = n.GetCollectionOfObjectValues<MetaDataKeyStringPair>(MetaDataKeyStringPair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"imageSources", n => { ImageSources = n.GetCollectionOfObjectValues<MetaDataKeyStringPair>(MetaDataKeyStringPair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"links", n => { Links = n.GetCollectionOfObjectValues<MetaDataKeyStringPair>(MetaDataKeyStringPair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"searchablePlainTexts", n => { SearchablePlainTexts = n.GetCollectionOfObjectValues<MetaDataKeyStringPair>(MetaDataKeyStringPair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "htmlStrings", n => { HtmlStrings = n.GetCollectionOfObjectValues<MetaDataKeyStringPair>(MetaDataKeyStringPair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "imageSources", n => { ImageSources = n.GetCollectionOfObjectValues<MetaDataKeyStringPair>(MetaDataKeyStringPair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "links", n => { Links = n.GetCollectionOfObjectValues<MetaDataKeyStringPair>(MetaDataKeyStringPair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "searchablePlainTexts", n => { SearchablePlainTexts = n.GetCollectionOfObjectValues<MetaDataKeyStringPair>(MetaDataKeyStringPair.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

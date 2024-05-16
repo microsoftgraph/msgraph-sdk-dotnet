@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DomainDnsSrvRecord : DomainDnsRecord, IParsable 
+    public class DomainDnsSrvRecord : DomainDnsRecord, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Value to use when configuring the Target property of the SRV record at the DNS host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NameTarget {
+        public string? NameTarget
+        {
             get { return BackingStore?.Get<string?>("nameTarget"); }
             set { BackingStore?.Set("nameTarget", value); }
         }
 #nullable restore
 #else
-        public string NameTarget {
+        public string NameTarget
+        {
             get { return BackingStore?.Get<string>("nameTarget"); }
             set { BackingStore?.Set("nameTarget", value); }
         }
 #endif
         /// <summary>Value to use when configuring the port property of the SRV record at the DNS host.</summary>
-        public int? Port {
+        public int? Port
+        {
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
         }
         /// <summary>Value to use when configuring the priority property of the SRV record at the DNS host.</summary>
-        public int? Priority {
+        public int? Priority
+        {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>Value to use when configuring the protocol property of the SRV record at the DNS host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Protocol {
+        public string? Protocol
+        {
             get { return BackingStore?.Get<string?>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
 #nullable restore
 #else
-        public string Protocol {
+        public string Protocol
+        {
             get { return BackingStore?.Get<string>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
@@ -50,19 +57,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>Value to use when configuring the service property of the SRV record at the DNS host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Service {
+        public string? Service
+        {
             get { return BackingStore?.Get<string?>("service"); }
             set { BackingStore?.Set("service", value); }
         }
 #nullable restore
 #else
-        public string Service {
+        public string Service
+        {
             get { return BackingStore?.Get<string>("service"); }
             set { BackingStore?.Set("service", value); }
         }
 #endif
         /// <summary>Value to use when configuring the weight property of the SRV record at the DNS host.</summary>
-        public int? Weight {
+        public int? Weight
+        {
             get { return BackingStore?.Get<int?>("weight"); }
             set { BackingStore?.Set("weight", value); }
         }
@@ -84,12 +94,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"nameTarget", n => { NameTarget = n.GetStringValue(); } },
-                {"port", n => { Port = n.GetIntValue(); } },
-                {"priority", n => { Priority = n.GetIntValue(); } },
-                {"protocol", n => { Protocol = n.GetStringValue(); } },
-                {"service", n => { Service = n.GetStringValue(); } },
-                {"weight", n => { Weight = n.GetIntValue(); } },
+                { "nameTarget", n => { NameTarget = n.GetStringValue(); } },
+                { "port", n => { Port = n.GetIntValue(); } },
+                { "priority", n => { Priority = n.GetIntValue(); } },
+                { "protocol", n => { Protocol = n.GetStringValue(); } },
+                { "service", n => { Service = n.GetStringValue(); } },
+                { "weight", n => { Weight = n.GetIntValue(); } },
             };
         }
         /// <summary>

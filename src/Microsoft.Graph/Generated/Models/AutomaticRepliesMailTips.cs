@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AutomaticRepliesMailTips : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AutomaticRepliesMailTips : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The automatic reply message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message {
+        public string? Message
+        {
             get { return BackingStore?.Get<string?>("message"); }
             set { BackingStore?.Set("message", value); }
         }
 #nullable restore
 #else
-        public string Message {
+        public string Message
+        {
             get { return BackingStore?.Get<string>("message"); }
             set { BackingStore?.Set("message", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The language that the automatic reply message is in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LocaleInfo? MessageLanguage {
+        public LocaleInfo? MessageLanguage
+        {
             get { return BackingStore?.Get<LocaleInfo?>("messageLanguage"); }
             set { BackingStore?.Set("messageLanguage", value); }
         }
 #nullable restore
 #else
-        public LocaleInfo MessageLanguage {
+        public LocaleInfo MessageLanguage
+        {
             get { return BackingStore?.Get<LocaleInfo>("messageLanguage"); }
             set { BackingStore?.Set("messageLanguage", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The date and time that automatic replies are set to end.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? ScheduledEndTime {
+        public DateTimeTimeZone? ScheduledEndTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("scheduledEndTime"); }
             set { BackingStore?.Set("scheduledEndTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone ScheduledEndTime {
+        public DateTimeTimeZone ScheduledEndTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("scheduledEndTime"); }
             set { BackingStore?.Set("scheduledEndTime", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The date and time that automatic replies are set to begin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? ScheduledStartTime {
+        public DateTimeTimeZone? ScheduledStartTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("scheduledStartTime"); }
             set { BackingStore?.Set("scheduledStartTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone ScheduledStartTime {
+        public DateTimeTimeZone ScheduledStartTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("scheduledStartTime"); }
             set { BackingStore?.Set("scheduledStartTime", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"message", n => { Message = n.GetStringValue(); } },
-                {"messageLanguage", n => { MessageLanguage = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"scheduledEndTime", n => { ScheduledEndTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"scheduledStartTime", n => { ScheduledStartTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "messageLanguage", n => { MessageLanguage = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "scheduledEndTime", n => { ScheduledEndTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "scheduledStartTime", n => { ScheduledStartTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Groups.Item.Calendar.AllowedCalendarSharingRolesWithUser {
+namespace Microsoft.Graph.Groups.Item.Calendar.AllowedCalendarSharingRolesWithUser
+{
     #pragma warning disable CS1591
-    public class AllowedCalendarSharingRolesWithUserGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class AllowedCalendarSharingRolesWithUserGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CalendarRoleType?>? Value {
+        public List<CalendarRoleType?>? Value
+        {
             get { return BackingStore?.Get<List<CalendarRoleType?>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<CalendarRoleType?> Value {
+        public List<CalendarRoleType?> Value
+        {
             get { return BackingStore?.Get<List<CalendarRoleType?>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Groups.Item.Calendar.AllowedCalendarSharingRolesWithUs
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfEnumValues<CalendarRoleType>()?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfEnumValues<CalendarRoleType>()?.ToList(); } },
             };
         }
         /// <summary>

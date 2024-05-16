@@ -5,124 +5,147 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OnPremisesDirectorySynchronizationFeature : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OnPremisesDirectorySynchronizationFeature : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Used to block cloud object takeover via source anchor hard match if enabled.</summary>
-        public bool? BlockCloudObjectTakeoverThroughHardMatchEnabled {
+        public bool? BlockCloudObjectTakeoverThroughHardMatchEnabled
+        {
             get { return BackingStore?.Get<bool?>("blockCloudObjectTakeoverThroughHardMatchEnabled"); }
             set { BackingStore?.Set("blockCloudObjectTakeoverThroughHardMatchEnabled", value); }
         }
         /// <summary>Use to block soft match for all objects if enabled for the  tenant. Customers are encouraged to enable this feature and keep it enabled until soft matching is required again for their tenancy. This flag should be enabled again after any soft matching has been completed and is no longer needed.</summary>
-        public bool? BlockSoftMatchEnabled {
+        public bool? BlockSoftMatchEnabled
+        {
             get { return BackingStore?.Get<bool?>("blockSoftMatchEnabled"); }
             set { BackingStore?.Set("blockSoftMatchEnabled", value); }
         }
         /// <summary>When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Microsoft Entra ID.</summary>
-        public bool? BypassDirSyncOverridesEnabled {
+        public bool? BypassDirSyncOverridesEnabled
+        {
             get { return BackingStore?.Get<bool?>("bypassDirSyncOverridesEnabled"); }
             set { BackingStore?.Set("bypassDirSyncOverridesEnabled", value); }
         }
         /// <summary>Used to indicate that cloud password policy applies to users whose passwords are synchronized from on-premises.</summary>
-        public bool? CloudPasswordPolicyForPasswordSyncedUsersEnabled {
+        public bool? CloudPasswordPolicyForPasswordSyncedUsersEnabled
+        {
             get { return BackingStore?.Get<bool?>("cloudPasswordPolicyForPasswordSyncedUsersEnabled"); }
             set { BackingStore?.Set("cloudPasswordPolicyForPasswordSyncedUsersEnabled", value); }
         }
         /// <summary>Used to enable concurrent user credentials update in OrgId.</summary>
-        public bool? ConcurrentCredentialUpdateEnabled {
+        public bool? ConcurrentCredentialUpdateEnabled
+        {
             get { return BackingStore?.Get<bool?>("concurrentCredentialUpdateEnabled"); }
             set { BackingStore?.Set("concurrentCredentialUpdateEnabled", value); }
         }
         /// <summary>Used to enable concurrent user creation in OrgId.</summary>
-        public bool? ConcurrentOrgIdProvisioningEnabled {
+        public bool? ConcurrentOrgIdProvisioningEnabled
+        {
             get { return BackingStore?.Get<bool?>("concurrentOrgIdProvisioningEnabled"); }
             set { BackingStore?.Set("concurrentOrgIdProvisioningEnabled", value); }
         }
         /// <summary>Used to indicate that device write-back is enabled.</summary>
-        public bool? DeviceWritebackEnabled {
+        public bool? DeviceWritebackEnabled
+        {
             get { return BackingStore?.Get<bool?>("deviceWritebackEnabled"); }
             set { BackingStore?.Set("deviceWritebackEnabled", value); }
         }
         /// <summary>Used to indicate that directory extensions are being synced from on-premises AD to Microsoft Entra ID.</summary>
-        public bool? DirectoryExtensionsEnabled {
+        public bool? DirectoryExtensionsEnabled
+        {
             get { return BackingStore?.Get<bool?>("directoryExtensionsEnabled"); }
             set { BackingStore?.Set("directoryExtensionsEnabled", value); }
         }
         /// <summary>Used to indicate that for a Microsoft Forefront Online Protection for Exchange (FOPE) migrated tenant, the conflicting proxy address should be migrated over.</summary>
-        public bool? FopeConflictResolutionEnabled {
+        public bool? FopeConflictResolutionEnabled
+        {
             get { return BackingStore?.Get<bool?>("fopeConflictResolutionEnabled"); }
             set { BackingStore?.Set("fopeConflictResolutionEnabled", value); }
         }
         /// <summary>Used to enable object-level group writeback feature for additional group types.</summary>
-        public bool? GroupWriteBackEnabled {
+        public bool? GroupWriteBackEnabled
+        {
             get { return BackingStore?.Get<bool?>("groupWriteBackEnabled"); }
             set { BackingStore?.Set("groupWriteBackEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Used to indicate on-premise password synchronization is enabled.</summary>
-        public bool? PasswordSyncEnabled {
+        public bool? PasswordSyncEnabled
+        {
             get { return BackingStore?.Get<bool?>("passwordSyncEnabled"); }
             set { BackingStore?.Set("passwordSyncEnabled", value); }
         }
         /// <summary>Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled.</summary>
-        public bool? PasswordWritebackEnabled {
+        public bool? PasswordWritebackEnabled
+        {
             get { return BackingStore?.Get<bool?>("passwordWritebackEnabled"); }
             set { BackingStore?.Set("passwordWritebackEnabled", value); }
         }
         /// <summary>Used to indicate that we should quarantine objects with conflicting proxy address.</summary>
-        public bool? QuarantineUponProxyAddressesConflictEnabled {
+        public bool? QuarantineUponProxyAddressesConflictEnabled
+        {
             get { return BackingStore?.Get<bool?>("quarantineUponProxyAddressesConflictEnabled"); }
             set { BackingStore?.Set("quarantineUponProxyAddressesConflictEnabled", value); }
         }
         /// <summary>Used to indicate that we should quarantine objects conflicting with duplicate userPrincipalName.</summary>
-        public bool? QuarantineUponUpnConflictEnabled {
+        public bool? QuarantineUponUpnConflictEnabled
+        {
             get { return BackingStore?.Get<bool?>("quarantineUponUpnConflictEnabled"); }
             set { BackingStore?.Set("quarantineUponUpnConflictEnabled", value); }
         }
         /// <summary>Used to indicate that we should soft match objects based on userPrincipalName.</summary>
-        public bool? SoftMatchOnUpnEnabled {
+        public bool? SoftMatchOnUpnEnabled
+        {
             get { return BackingStore?.Get<bool?>("softMatchOnUpnEnabled"); }
             set { BackingStore?.Set("softMatchOnUpnEnabled", value); }
         }
         /// <summary>Used to indicate that we should synchronize userPrincipalName objects for managed users with licenses.</summary>
-        public bool? SynchronizeUpnForManagedUsersEnabled {
+        public bool? SynchronizeUpnForManagedUsersEnabled
+        {
             get { return BackingStore?.Get<bool?>("synchronizeUpnForManagedUsersEnabled"); }
             set { BackingStore?.Set("synchronizeUpnForManagedUsersEnabled", value); }
         }
         /// <summary>Used to indicate that Microsoft 365 Group write-back is enabled.</summary>
-        public bool? UnifiedGroupWritebackEnabled {
+        public bool? UnifiedGroupWritebackEnabled
+        {
             get { return BackingStore?.Get<bool?>("unifiedGroupWritebackEnabled"); }
             set { BackingStore?.Set("unifiedGroupWritebackEnabled", value); }
         }
         /// <summary>Used to indicate that feature to force password change for a user on logon is enabled while synchronizing on-premise credentials.</summary>
-        public bool? UserForcePasswordChangeOnLogonEnabled {
+        public bool? UserForcePasswordChangeOnLogonEnabled
+        {
             get { return BackingStore?.Get<bool?>("userForcePasswordChangeOnLogonEnabled"); }
             set { BackingStore?.Set("userForcePasswordChangeOnLogonEnabled", value); }
         }
         /// <summary>Used to indicate that user writeback is enabled.</summary>
-        public bool? UserWritebackEnabled {
+        public bool? UserWritebackEnabled
+        {
             get { return BackingStore?.Get<bool?>("userWritebackEnabled"); }
             set { BackingStore?.Set("userWritebackEnabled", value); }
         }
@@ -152,26 +175,26 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"blockCloudObjectTakeoverThroughHardMatchEnabled", n => { BlockCloudObjectTakeoverThroughHardMatchEnabled = n.GetBoolValue(); } },
-                {"blockSoftMatchEnabled", n => { BlockSoftMatchEnabled = n.GetBoolValue(); } },
-                {"bypassDirSyncOverridesEnabled", n => { BypassDirSyncOverridesEnabled = n.GetBoolValue(); } },
-                {"cloudPasswordPolicyForPasswordSyncedUsersEnabled", n => { CloudPasswordPolicyForPasswordSyncedUsersEnabled = n.GetBoolValue(); } },
-                {"concurrentCredentialUpdateEnabled", n => { ConcurrentCredentialUpdateEnabled = n.GetBoolValue(); } },
-                {"concurrentOrgIdProvisioningEnabled", n => { ConcurrentOrgIdProvisioningEnabled = n.GetBoolValue(); } },
-                {"deviceWritebackEnabled", n => { DeviceWritebackEnabled = n.GetBoolValue(); } },
-                {"directoryExtensionsEnabled", n => { DirectoryExtensionsEnabled = n.GetBoolValue(); } },
-                {"fopeConflictResolutionEnabled", n => { FopeConflictResolutionEnabled = n.GetBoolValue(); } },
-                {"groupWriteBackEnabled", n => { GroupWriteBackEnabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"passwordSyncEnabled", n => { PasswordSyncEnabled = n.GetBoolValue(); } },
-                {"passwordWritebackEnabled", n => { PasswordWritebackEnabled = n.GetBoolValue(); } },
-                {"quarantineUponProxyAddressesConflictEnabled", n => { QuarantineUponProxyAddressesConflictEnabled = n.GetBoolValue(); } },
-                {"quarantineUponUpnConflictEnabled", n => { QuarantineUponUpnConflictEnabled = n.GetBoolValue(); } },
-                {"softMatchOnUpnEnabled", n => { SoftMatchOnUpnEnabled = n.GetBoolValue(); } },
-                {"synchronizeUpnForManagedUsersEnabled", n => { SynchronizeUpnForManagedUsersEnabled = n.GetBoolValue(); } },
-                {"unifiedGroupWritebackEnabled", n => { UnifiedGroupWritebackEnabled = n.GetBoolValue(); } },
-                {"userForcePasswordChangeOnLogonEnabled", n => { UserForcePasswordChangeOnLogonEnabled = n.GetBoolValue(); } },
-                {"userWritebackEnabled", n => { UserWritebackEnabled = n.GetBoolValue(); } },
+                { "blockCloudObjectTakeoverThroughHardMatchEnabled", n => { BlockCloudObjectTakeoverThroughHardMatchEnabled = n.GetBoolValue(); } },
+                { "blockSoftMatchEnabled", n => { BlockSoftMatchEnabled = n.GetBoolValue(); } },
+                { "bypassDirSyncOverridesEnabled", n => { BypassDirSyncOverridesEnabled = n.GetBoolValue(); } },
+                { "cloudPasswordPolicyForPasswordSyncedUsersEnabled", n => { CloudPasswordPolicyForPasswordSyncedUsersEnabled = n.GetBoolValue(); } },
+                { "concurrentCredentialUpdateEnabled", n => { ConcurrentCredentialUpdateEnabled = n.GetBoolValue(); } },
+                { "concurrentOrgIdProvisioningEnabled", n => { ConcurrentOrgIdProvisioningEnabled = n.GetBoolValue(); } },
+                { "deviceWritebackEnabled", n => { DeviceWritebackEnabled = n.GetBoolValue(); } },
+                { "directoryExtensionsEnabled", n => { DirectoryExtensionsEnabled = n.GetBoolValue(); } },
+                { "fopeConflictResolutionEnabled", n => { FopeConflictResolutionEnabled = n.GetBoolValue(); } },
+                { "groupWriteBackEnabled", n => { GroupWriteBackEnabled = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "passwordSyncEnabled", n => { PasswordSyncEnabled = n.GetBoolValue(); } },
+                { "passwordWritebackEnabled", n => { PasswordWritebackEnabled = n.GetBoolValue(); } },
+                { "quarantineUponProxyAddressesConflictEnabled", n => { QuarantineUponProxyAddressesConflictEnabled = n.GetBoolValue(); } },
+                { "quarantineUponUpnConflictEnabled", n => { QuarantineUponUpnConflictEnabled = n.GetBoolValue(); } },
+                { "softMatchOnUpnEnabled", n => { SoftMatchOnUpnEnabled = n.GetBoolValue(); } },
+                { "synchronizeUpnForManagedUsersEnabled", n => { SynchronizeUpnForManagedUsersEnabled = n.GetBoolValue(); } },
+                { "unifiedGroupWritebackEnabled", n => { UnifiedGroupWritebackEnabled = n.GetBoolValue(); } },
+                { "userForcePasswordChangeOnLogonEnabled", n => { UserForcePasswordChangeOnLogonEnabled = n.GetBoolValue(); } },
+                { "userWritebackEnabled", n => { UserWritebackEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

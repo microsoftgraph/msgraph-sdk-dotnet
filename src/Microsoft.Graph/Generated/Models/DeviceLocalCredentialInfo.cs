@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DeviceLocalCredentialInfo : Entity, IParsable 
+    public class DeviceLocalCredentialInfo : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The credentials of the device&apos;s local administrator account backed up to Azure Active Directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceLocalCredential>? Credentials {
+        public List<DeviceLocalCredential>? Credentials
+        {
             get { return BackingStore?.Get<List<DeviceLocalCredential>?>("credentials"); }
             set { BackingStore?.Set("credentials", value); }
         }
 #nullable restore
 #else
-        public List<DeviceLocalCredential> Credentials {
+        public List<DeviceLocalCredential> Credentials
+        {
             get { return BackingStore?.Get<List<DeviceLocalCredential>>("credentials"); }
             set { BackingStore?.Set("credentials", value); }
         }
@@ -26,24 +29,28 @@ namespace Microsoft.Graph.Models {
         /// <summary>Display name of the device that the local credentials are associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #endif
         /// <summary>When the local administrator account credential was backed up to Azure Active Directory.</summary>
-        public DateTimeOffset? LastBackupDateTime {
+        public DateTimeOffset? LastBackupDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastBackupDateTime"); }
             set { BackingStore?.Set("lastBackupDateTime", value); }
         }
         /// <summary>When the local administrator account credential will be refreshed and backed up to Azure Active Directory.</summary>
-        public DateTimeOffset? RefreshDateTime {
+        public DateTimeOffset? RefreshDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("refreshDateTime"); }
             set { BackingStore?.Set("refreshDateTime", value); }
         }
@@ -65,10 +72,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"credentials", n => { Credentials = n.GetCollectionOfObjectValues<DeviceLocalCredential>(DeviceLocalCredential.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"lastBackupDateTime", n => { LastBackupDateTime = n.GetDateTimeOffsetValue(); } },
-                {"refreshDateTime", n => { RefreshDateTime = n.GetDateTimeOffsetValue(); } },
+                { "credentials", n => { Credentials = n.GetCollectionOfObjectValues<DeviceLocalCredential>(DeviceLocalCredential.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "lastBackupDateTime", n => { LastBackupDateTime = n.GetDateTimeOffsetValue(); } },
+                { "refreshDateTime", n => { RefreshDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

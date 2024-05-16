@@ -6,20 +6,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Communications.Calls.Item.ChangeScreenSharingRole {
+namespace Microsoft.Graph.Communications.Calls.Item.ChangeScreenSharingRole
+{
     #pragma warning disable CS1591
-    public class ChangeScreenSharingRolePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ChangeScreenSharingRolePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The role property</summary>
-        public ScreenSharingRole? Role {
+        public ScreenSharingRole? Role
+        {
             get { return BackingStore?.Get<ScreenSharingRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.ChangeScreenSharingRole {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"role", n => { Role = n.GetEnumValue<ScreenSharingRole>(); } },
+                { "role", n => { Role = n.GetEnumValue<ScreenSharingRole>(); } },
             };
         }
         /// <summary>

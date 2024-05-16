@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Devices.Item.CheckMemberGroups {
+namespace Microsoft.Graph.Devices.Item.CheckMemberGroups
+{
     #pragma warning disable CS1591
-    public class CheckMemberGroupsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CheckMemberGroupsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Devices.Item.CheckMemberGroups {
         /// <summary>The groupIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? GroupIds {
+        public List<string>? GroupIds
+        {
             get { return BackingStore?.Get<List<string>?>("groupIds"); }
             set { BackingStore?.Set("groupIds", value); }
         }
 #nullable restore
 #else
-        public List<string> GroupIds {
+        public List<string> GroupIds
+        {
             get { return BackingStore?.Get<List<string>>("groupIds"); }
             set { BackingStore?.Set("groupIds", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Devices.Item.CheckMemberGroups {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"groupIds", n => { GroupIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "groupIds", n => { GroupIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

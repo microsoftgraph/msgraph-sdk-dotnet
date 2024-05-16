@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Reset passcode action result
     /// </summary>
-    public class ResetPasscodeActionResult : DeviceActionResult, IParsable 
+    public class ResetPasscodeActionResult : DeviceActionResult, IParsable
     {
         /// <summary>RotateBitLockerKeys action error code. Valid values 0 to 2147483647</summary>
-        public int? ErrorCode {
+        public int? ErrorCode
+        {
             get { return BackingStore?.Get<int?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Newly generated passcode for the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Passcode {
+        public string? Passcode
+        {
             get { return BackingStore?.Get<string?>("passcode"); }
             set { BackingStore?.Set("passcode", value); }
         }
 #nullable restore
 #else
-        public string Passcode {
+        public string Passcode
+        {
             get { return BackingStore?.Get<string>("passcode"); }
             set { BackingStore?.Set("passcode", value); }
         }
@@ -47,8 +51,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"errorCode", n => { ErrorCode = n.GetIntValue(); } },
-                {"passcode", n => { Passcode = n.GetStringValue(); } },
+                { "errorCode", n => { ErrorCode = n.GetIntValue(); } },
+                { "passcode", n => { Passcode = n.GetStringValue(); } },
             };
         }
         /// <summary>

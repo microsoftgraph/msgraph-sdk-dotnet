@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.GetByIds {
+namespace Microsoft.Graph.Users.GetByIds
+{
     [Obsolete("This class is obsolete. Use GetByIdsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetByIdsResponse : GetByIdsPostResponse, IParsable 
+    public class GetByIdsResponse : GetByIdsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class WhoisRecord : WhoisBaseRecord, IParsable 
+    public class WhoisRecord : WhoisBaseRecord, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The collection of historical records associated to this WHOIS object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WhoisHistoryRecord>? History {
+        public List<WhoisHistoryRecord>? History
+        {
             get { return BackingStore?.Get<List<WhoisHistoryRecord>?>("history"); }
             set { BackingStore?.Set("history", value); }
         }
 #nullable restore
 #else
-        public List<WhoisHistoryRecord> History {
+        public List<WhoisHistoryRecord> History
+        {
             get { return BackingStore?.Get<List<WhoisHistoryRecord>>("history"); }
             set { BackingStore?.Set("history", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"history", n => { History = n.GetCollectionOfObjectValues<WhoisHistoryRecord>(WhoisHistoryRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "history", n => { History = n.GetCollectionOfObjectValues<WhoisHistoryRecord>(WhoisHistoryRecord.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

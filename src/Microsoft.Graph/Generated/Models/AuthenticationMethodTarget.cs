@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AuthenticationMethodTarget : Entity, IParsable 
+    public class AuthenticationMethodTarget : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Determines if the user is enforced to register the authentication method.</summary>
-        public bool? IsRegistrationRequired {
+        public bool? IsRegistrationRequired
+        {
             get { return BackingStore?.Get<bool?>("isRegistrationRequired"); }
             set { BackingStore?.Set("isRegistrationRequired", value); }
         }
         /// <summary>The targetType property</summary>
-        public AuthenticationMethodTargetType? TargetType {
+        public AuthenticationMethodTargetType? TargetType
+        {
             get { return BackingStore?.Get<AuthenticationMethodTargetType?>("targetType"); }
             set { BackingStore?.Set("targetType", value); }
         }
@@ -43,8 +46,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isRegistrationRequired", n => { IsRegistrationRequired = n.GetBoolValue(); } },
-                {"targetType", n => { TargetType = n.GetEnumValue<AuthenticationMethodTargetType>(); } },
+                { "isRegistrationRequired", n => { IsRegistrationRequired = n.GetBoolValue(); } },
+                { "targetType", n => { TargetType = n.GetEnumValue<AuthenticationMethodTargetType>(); } },
             };
         }
         /// <summary>

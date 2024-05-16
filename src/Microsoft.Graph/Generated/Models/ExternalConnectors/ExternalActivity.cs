@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.ExternalConnectors {
+namespace Microsoft.Graph.Models.ExternalConnectors
+{
     #pragma warning disable CS1591
-    public class ExternalActivity : Microsoft.Graph.Models.Entity, IParsable 
+    public class ExternalActivity : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents an identity used to identify who is responsible for the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? PerformedBy {
+        public Identity? PerformedBy
+        {
             get { return BackingStore?.Get<Identity?>("performedBy"); }
             set { BackingStore?.Set("performedBy", value); }
         }
 #nullable restore
 #else
-        public Identity PerformedBy {
+        public Identity PerformedBy
+        {
             get { return BackingStore?.Get<Identity>("performedBy"); }
             set { BackingStore?.Set("performedBy", value); }
         }
 #endif
         /// <summary>The date and time when the particular activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The type property</summary>
-        public ExternalActivityType? Type {
+        public ExternalActivityType? Type
+        {
             get { return BackingStore?.Get<ExternalActivityType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -56,9 +61,9 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"performedBy", n => { PerformedBy = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"type", n => { Type = n.GetEnumValue<ExternalActivityType>(); } },
+                { "performedBy", n => { PerformedBy = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "type", n => { Type = n.GetEnumValue<ExternalActivityType>(); } },
             };
         }
         /// <summary>

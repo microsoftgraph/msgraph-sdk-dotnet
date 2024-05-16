@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Represents diagnostics status.
     /// </summary>
-    public class ManagedAppDiagnosticStatus : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ManagedAppDiagnosticStatus : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Instruction on how to mitigate a failed validation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MitigationInstruction {
+        public string? MitigationInstruction
+        {
             get { return BackingStore?.Get<string?>("mitigationInstruction"); }
             set { BackingStore?.Set("mitigationInstruction", value); }
         }
 #nullable restore
 #else
-        public string MitigationInstruction {
+        public string MitigationInstruction
+        {
             get { return BackingStore?.Get<string>("mitigationInstruction"); }
             set { BackingStore?.Set("mitigationInstruction", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The state of the operation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State {
+        public string? State
+        {
             get { return BackingStore?.Get<string?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #nullable restore
 #else
-        public string State {
+        public string State
+        {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The validation friendly name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValidationName {
+        public string? ValidationName
+        {
             get { return BackingStore?.Get<string?>("validationName"); }
             set { BackingStore?.Set("validationName", value); }
         }
 #nullable restore
 #else
-        public string ValidationName {
+        public string ValidationName
+        {
             get { return BackingStore?.Get<string>("validationName"); }
             set { BackingStore?.Set("validationName", value); }
         }
@@ -100,10 +110,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"mitigationInstruction", n => { MitigationInstruction = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"state", n => { State = n.GetStringValue(); } },
-                {"validationName", n => { ValidationName = n.GetStringValue(); } },
+                { "mitigationInstruction", n => { MitigationInstruction = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "state", n => { State = n.GetStringValue(); } },
+                { "validationName", n => { ValidationName = n.GetStringValue(); } },
             };
         }
         /// <summary>

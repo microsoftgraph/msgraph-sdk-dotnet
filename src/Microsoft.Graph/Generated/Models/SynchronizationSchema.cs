@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SynchronizationSchema : Entity, IParsable 
+    public class SynchronizationSchema : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Contains the collection of directories and all of their objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryDefinition>? Directories {
+        public List<DirectoryDefinition>? Directories
+        {
             get { return BackingStore?.Get<List<DirectoryDefinition>?>("directories"); }
             set { BackingStore?.Set("directories", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryDefinition> Directories {
+        public List<DirectoryDefinition> Directories
+        {
             get { return BackingStore?.Get<List<DirectoryDefinition>>("directories"); }
             set { BackingStore?.Set("directories", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SynchronizationRule>? SynchronizationRules {
+        public List<SynchronizationRule>? SynchronizationRules
+        {
             get { return BackingStore?.Get<List<SynchronizationRule>?>("synchronizationRules"); }
             set { BackingStore?.Set("synchronizationRules", value); }
         }
 #nullable restore
 #else
-        public List<SynchronizationRule> SynchronizationRules {
+        public List<SynchronizationRule> SynchronizationRules
+        {
             get { return BackingStore?.Get<List<SynchronizationRule>>("synchronizationRules"); }
             set { BackingStore?.Set("synchronizationRules", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The version of the schema, updated automatically with every schema change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"directories", n => { Directories = n.GetCollectionOfObjectValues<DirectoryDefinition>(DirectoryDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"synchronizationRules", n => { SynchronizationRules = n.GetCollectionOfObjectValues<SynchronizationRule>(SynchronizationRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "directories", n => { Directories = n.GetCollectionOfObjectValues<DirectoryDefinition>(DirectoryDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "synchronizationRules", n => { SynchronizationRules = n.GetCollectionOfObjectValues<SynchronizationRule>(SynchronizationRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

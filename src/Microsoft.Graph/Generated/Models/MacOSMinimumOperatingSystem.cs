@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The minimum operating system required for a macOS app.
     /// </summary>
-    public class MacOSMinimumOperatingSystem : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MacOSMinimumOperatingSystem : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,74 +23,88 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>When TRUE, indicates OS X 10.10 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
-        public bool? V1010 {
+        public bool? V1010
+        {
             get { return BackingStore?.Get<bool?>("v10_10"); }
             set { BackingStore?.Set("v10_10", value); }
         }
         /// <summary>When TRUE, indicates OS X 10.11 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
-        public bool? V1011 {
+        public bool? V1011
+        {
             get { return BackingStore?.Get<bool?>("v10_11"); }
             set { BackingStore?.Set("v10_11", value); }
         }
         /// <summary>When TRUE, indicates macOS 10.12 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
-        public bool? V1012 {
+        public bool? V1012
+        {
             get { return BackingStore?.Get<bool?>("v10_12"); }
             set { BackingStore?.Set("v10_12", value); }
         }
         /// <summary>When TRUE, indicates macOS 10.13 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
-        public bool? V1013 {
+        public bool? V1013
+        {
             get { return BackingStore?.Get<bool?>("v10_13"); }
             set { BackingStore?.Set("v10_13", value); }
         }
         /// <summary>When TRUE, indicates macOS 10.14 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
-        public bool? V1014 {
+        public bool? V1014
+        {
             get { return BackingStore?.Get<bool?>("v10_14"); }
             set { BackingStore?.Set("v10_14", value); }
         }
         /// <summary>When TRUE, indicates macOS 10.15 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
-        public bool? V1015 {
+        public bool? V1015
+        {
             get { return BackingStore?.Get<bool?>("v10_15"); }
             set { BackingStore?.Set("v10_15", value); }
         }
         /// <summary>When TRUE, indicates Mac OS X 10.7 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
-        public bool? V107 {
+        public bool? V107
+        {
             get { return BackingStore?.Get<bool?>("v10_7"); }
             set { BackingStore?.Set("v10_7", value); }
         }
         /// <summary>When TRUE, indicates OS X 10.8 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
-        public bool? V108 {
+        public bool? V108
+        {
             get { return BackingStore?.Get<bool?>("v10_8"); }
             set { BackingStore?.Set("v10_8", value); }
         }
         /// <summary>When TRUE, indicates OS X 10.9 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
-        public bool? V109 {
+        public bool? V109
+        {
             get { return BackingStore?.Get<bool?>("v10_9"); }
             set { BackingStore?.Set("v10_9", value); }
         }
         /// <summary>When TRUE, indicates macOS 11.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
-        public bool? V110 {
+        public bool? V110
+        {
             get { return BackingStore?.Get<bool?>("v11_0"); }
             set { BackingStore?.Set("v11_0", value); }
         }
         /// <summary>When TRUE, indicates macOS 12.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
-        public bool? V120 {
+        public bool? V120
+        {
             get { return BackingStore?.Get<bool?>("v12_0"); }
             set { BackingStore?.Set("v12_0", value); }
         }
         /// <summary>When TRUE, indicates macOS 13.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
-        public bool? V130 {
+        public bool? V130
+        {
             get { return BackingStore?.Get<bool?>("v13_0"); }
             set { BackingStore?.Set("v13_0", value); }
         }
@@ -118,19 +134,19 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"v10_10", n => { V1010 = n.GetBoolValue(); } },
-                {"v10_11", n => { V1011 = n.GetBoolValue(); } },
-                {"v10_12", n => { V1012 = n.GetBoolValue(); } },
-                {"v10_13", n => { V1013 = n.GetBoolValue(); } },
-                {"v10_14", n => { V1014 = n.GetBoolValue(); } },
-                {"v10_15", n => { V1015 = n.GetBoolValue(); } },
-                {"v10_7", n => { V107 = n.GetBoolValue(); } },
-                {"v10_8", n => { V108 = n.GetBoolValue(); } },
-                {"v10_9", n => { V109 = n.GetBoolValue(); } },
-                {"v11_0", n => { V110 = n.GetBoolValue(); } },
-                {"v12_0", n => { V120 = n.GetBoolValue(); } },
-                {"v13_0", n => { V130 = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "v10_10", n => { V1010 = n.GetBoolValue(); } },
+                { "v10_11", n => { V1011 = n.GetBoolValue(); } },
+                { "v10_12", n => { V1012 = n.GetBoolValue(); } },
+                { "v10_13", n => { V1013 = n.GetBoolValue(); } },
+                { "v10_14", n => { V1014 = n.GetBoolValue(); } },
+                { "v10_15", n => { V1015 = n.GetBoolValue(); } },
+                { "v10_7", n => { V107 = n.GetBoolValue(); } },
+                { "v10_8", n => { V108 = n.GetBoolValue(); } },
+                { "v10_9", n => { V109 = n.GetBoolValue(); } },
+                { "v11_0", n => { V110 = n.GetBoolValue(); } },
+                { "v12_0", n => { V120 = n.GetBoolValue(); } },
+                { "v13_0", n => { V130 = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names.AddFormulaLocal {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names.AddFormulaLocal
+{
     #pragma warning disable CS1591
-    public class AddFormulaLocalPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AddFormulaLocalPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names.AddFormulaLocal 
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment {
+        public string? Comment
+        {
             get { return BackingStore?.Get<string?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
 #nullable restore
 #else
-        public string Comment {
+        public string Comment
+        {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names.AddFormulaLocal 
         /// <summary>The formula property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Formula {
+        public string? Formula
+        {
             get { return BackingStore?.Get<string?>("formula"); }
             set { BackingStore?.Set("formula", value); }
         }
 #nullable restore
 #else
-        public string Formula {
+        public string Formula
+        {
             get { return BackingStore?.Get<string>("formula"); }
             set { BackingStore?.Set("formula", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names.AddFormulaLocal 
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names.AddFormulaLocal 
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"comment", n => { Comment = n.GetStringValue(); } },
-                {"formula", n => { Formula = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
+                { "comment", n => { Comment = n.GetStringValue(); } },
+                { "formula", n => { Formula = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

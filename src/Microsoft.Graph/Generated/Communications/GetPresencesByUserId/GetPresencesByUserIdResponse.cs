@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Communications.GetPresencesByUserId {
+namespace Microsoft.Graph.Communications.GetPresencesByUserId
+{
     [Obsolete("This class is obsolete. Use GetPresencesByUserIdPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetPresencesByUserIdResponse : GetPresencesByUserIdPostResponse, IParsable 
+    public class GetPresencesByUserIdResponse : GetPresencesByUserIdPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
