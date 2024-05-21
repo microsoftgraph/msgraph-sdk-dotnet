@@ -80,8 +80,8 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             return await RequestAdapter.SendAsync<CustomCalloutExtension>(requestInfo, CustomCalloutExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-update?view=graph-rest-1.0" />
+        /// Update the properties of an accessPackageAssignmentWorkflowExtension object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CustomCalloutExtension"/></returns>
         /// <param name="body">The request body</param>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
+        /// Update the properties of an accessPackageAssignmentWorkflowExtension object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

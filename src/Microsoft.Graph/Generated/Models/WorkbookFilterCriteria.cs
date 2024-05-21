@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The color property</summary>
+        /// <summary>The color applied to the cell.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Color
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("color", value); }
         }
 #endif
-        /// <summary>The criterion1 property</summary>
+        /// <summary>A custom criterion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Criterion1
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("criterion1", value); }
         }
 #endif
-        /// <summary>The criterion2 property</summary>
+        /// <summary>A custom criterion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Criterion2
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("criterion2", value); }
         }
 #endif
-        /// <summary>The dynamicCriteria property</summary>
+        /// <summary>A dynamic formula specified in a custom filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DynamicCriteria
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("dynamicCriteria", value); }
         }
 #endif
-        /// <summary>The filterOn property</summary>
+        /// <summary>Indicates whether a filter is applied to a column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FilterOn
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("filterOn", value); }
         }
 #endif
-        /// <summary>The icon property</summary>
+        /// <summary>An icon applied to a cell via conditional formatting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public WorkbookIcon? Icon
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The operator property</summary>
+        /// <summary>An operator in a cell; for example, =, &gt;, &lt;, &lt;=, or &lt;&gt;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operator
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("operator", value); }
         }
 #endif
-        /// <summary>The values property</summary>
+        /// <summary>The values that appear in the cell.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Json? Values

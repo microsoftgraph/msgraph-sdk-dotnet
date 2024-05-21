@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The exportFileMetadata property</summary>
+        /// <summary>Contains the properties for an export file metadata, including downloadUrl, fileName, and size.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Microsoft.Graph.Models.Security.ExportFileMetadata>? ExportFileMetadata

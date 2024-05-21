@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The tollFreeNumber property</summary>
+        /// <summary>The toll-free number that connects to the Audio Conference Provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TollFreeNumber
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("tollFreeNumbers", value); }
         }
 #endif
-        /// <summary>The tollNumber property</summary>
+        /// <summary>The toll number that connects to the Audio Conference Provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TollNumber

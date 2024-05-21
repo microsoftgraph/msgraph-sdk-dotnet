@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The eventPropagationResults property</summary>
+        /// <summary>Represents the success status of a created event and additional information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<EventPropagationResult>? EventPropagationResults
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("eventQueries", value); }
         }
 #endif
-        /// <summary>The eventStatus property</summary>
+        /// <summary>Status of event propogation to the scoped locations after the event has been created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RetentionEventStatus? EventStatus

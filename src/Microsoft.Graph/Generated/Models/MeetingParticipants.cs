@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The attendees property</summary>
+        /// <summary>Information about the meeting attendees.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<MeetingParticipantInfo>? Attendees
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The organizer property</summary>
+        /// <summary>Information about the meeting organizer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public MeetingParticipantInfo? Organizer

@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("service", value); }
         }
 #endif
-        /// <summary>List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,</summary>
+        /// <summary>List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage, elevationOfPrivilege, maliciousInsider, passwordCracking, phishingOrWhaling, spoofing).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Threats
@@ -210,7 +210,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("threats", value); }
         }
 #endif
-        /// <summary>The tier property</summary>
+        /// <summary>Control tier (Core, Defense in Depth, Advanced.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Tier
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("tier", value); }
         }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>Title of the control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title
@@ -242,7 +242,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("title", value); }
         }
 #endif
-        /// <summary>The userImpact property</summary>
+        /// <summary>User impact of implementing control (low, moderate, high).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserImpact
@@ -258,7 +258,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("userImpact", value); }
         }
 #endif
-        /// <summary>The vendorInformation property</summary>
+        /// <summary>Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SecurityVendorInformation? VendorInformation
