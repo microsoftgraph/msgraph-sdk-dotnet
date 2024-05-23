@@ -52,7 +52,7 @@ jobs:
 
           echo 'PROJECT_ID='$(jq '.data.organization.projectV2.id' project_data.json) >> $GITHUB_ENV
           echo 'LANGUAGE_FIELD_ID='$(jq '.data.organization.projectV2.fields.nodes[] | select(.name== "Language") | .id' project_data.json) >> $GITHUB_ENV
-          echo 'LANGUAGE_OPTION_ID='$(jq '.data.organization.projectV2.fields.nodes[] | select(.name== "Language") | .options[] | select(.name=="Csharp") |.id' project_data.json) >> $GITHUB_ENV
+          echo 'LANGUAGE_OPTION_ID='$(jq '.data.organization.projectV2.fields.nodes[] | select(.name== "Language") | .options[] | select(.name=="CSharp") |.id' project_data.json) >> $GITHUB_ENV
 
       - name: Add Issue or PR to project
         env:
