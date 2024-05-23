@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     public class Device : DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.</summary>
+        /// <summary>true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers with at least the Cloud Device Administrator role can set this property.</summary>
         public bool? AccountEnabled
         {
             get { return BackingStore?.Get<bool?>("accountEnabled"); }

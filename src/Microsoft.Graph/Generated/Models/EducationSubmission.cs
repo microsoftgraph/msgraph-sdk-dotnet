@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     public class EducationSubmission : Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The excusedBy property</summary>
+        /// <summary>The user that marked the submission as excused.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public IdentitySet? ExcusedBy
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("excusedBy", value); }
         }
 #endif
-        /// <summary>The excusedDateTime property</summary>
+        /// <summary>The time that the submission was excused. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ExcusedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("excusedDateTime"); }
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("returnedDateTime"); }
             set { BackingStore?.Set("returnedDateTime", value); }
         }
-        /// <summary>Read-only. Possible values are: working, submitted, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reassigned.</summary>
+        /// <summary>Read-only. Possible values are: excused, reassigned, returned, submitted and working. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: excused and reassigned.</summary>
         public EducationSubmissionStatus? Status
         {
             get { return BackingStore?.Get<EducationSubmissionStatus?>("status"); }

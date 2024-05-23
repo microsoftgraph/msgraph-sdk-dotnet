@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("skuPartNumber", value); }
         }
 #endif
-        /// <summary>The subscriptionIds property</summary>
+        /// <summary>A list of all subscription IDs associated with this SKU.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SubscriptionIds

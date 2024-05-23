@@ -57,6 +57,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<X509CertificateAuthenticationMode?>("x509CertificateAuthenticationDefaultMode"); }
             set { BackingStore?.Set("x509CertificateAuthenticationDefaultMode", value); }
         }
+        /// <summary>The x509CertificateDefaultRequiredAffinityLevel property</summary>
+        public X509CertificateAffinityLevel? X509CertificateDefaultRequiredAffinityLevel
+        {
+            get { return BackingStore?.Get<X509CertificateAffinityLevel?>("x509CertificateDefaultRequiredAffinityLevel"); }
+            set { BackingStore?.Set("x509CertificateDefaultRequiredAffinityLevel", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="X509CertificateAuthenticationModeConfiguration"/> and sets the default values.
         /// </summary>
@@ -86,6 +92,7 @@ namespace Microsoft.Graph.Models
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "rules", n => { Rules = n.GetCollectionOfObjectValues<X509CertificateRule>(X509CertificateRule.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "x509CertificateAuthenticationDefaultMode", n => { X509CertificateAuthenticationDefaultMode = n.GetEnumValue<X509CertificateAuthenticationMode>(); } },
+                { "x509CertificateDefaultRequiredAffinityLevel", n => { X509CertificateDefaultRequiredAffinityLevel = n.GetEnumValue<X509CertificateAffinityLevel>(); } },
             };
         }
         /// <summary>
@@ -98,6 +105,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<X509CertificateRule>("rules", Rules);
             writer.WriteEnumValue<X509CertificateAuthenticationMode>("x509CertificateAuthenticationDefaultMode", X509CertificateAuthenticationDefaultMode);
+            writer.WriteEnumValue<X509CertificateAffinityLevel>("x509CertificateDefaultRequiredAffinityLevel", X509CertificateDefaultRequiredAffinityLevel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

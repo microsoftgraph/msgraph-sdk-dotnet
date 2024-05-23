@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("caseExact"); }
             set { BackingStore?.Set("caseExact", value); }
         }
-        /// <summary>The defaultValue property</summary>
+        /// <summary>The default value of the attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultValue

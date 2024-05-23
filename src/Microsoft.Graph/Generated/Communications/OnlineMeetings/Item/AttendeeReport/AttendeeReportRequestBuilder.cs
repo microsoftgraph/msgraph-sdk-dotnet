@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.AttendeeReport
         {
         }
         /// <summary>
-        /// Delete attendeeReport for the navigation property onlineMeetings in communications
+        /// The content stream of the attendee report of a Microsoft Teams live event. Read-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.AttendeeReport
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get attendeeReport for the navigation property onlineMeetings from communications
+        /// The content stream of the attendee report of a Microsoft Teams live event. Read-only.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.AttendeeReport
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update attendeeReport for the navigation property onlineMeetings in communications
+        /// The content stream of the attendee report of a Microsoft Teams live event. Read-only.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">Binary request body</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.AttendeeReport
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete attendeeReport for the navigation property onlineMeetings in communications
+        /// The content stream of the attendee report of a Microsoft Teams live event. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.AttendeeReport
             return requestInfo;
         }
         /// <summary>
-        /// Get attendeeReport for the navigation property onlineMeetings from communications
+        /// The content stream of the attendee report of a Microsoft Teams live event. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.AttendeeReport
             return requestInfo;
         }
         /// <summary>
-        /// Update attendeeReport for the navigation property onlineMeetings in communications
+        /// The content stream of the attendee report of a Microsoft Teams live event. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Binary request body</param>

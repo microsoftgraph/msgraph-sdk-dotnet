@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("alertPolicyId", value); }
         }
 #endif
-        /// <summary>The alertWebUrl property</summary>
+        /// <summary>URL for the Microsoft 365 Defender portal alert page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AlertWebUrl
@@ -260,7 +260,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("mitreTechniques", value); }
         }
 #endif
-        /// <summary>The productName property</summary>
+        /// <summary>The name of the product which published this alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProductName

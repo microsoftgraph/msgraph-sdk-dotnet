@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     public class OnlineMeeting : OnlineMeetingBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The attendeeReport property</summary>
+        /// <summary>The content stream of the attendee report of a Microsoft Teams live event. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? AttendeeReport
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("attendeeReport", value); }
         }
 #endif
-        /// <summary>The broadcastSettings property</summary>
+        /// <summary>Settings related to a live event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public BroadcastMeetingSettings? BroadcastSettings
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("externalId", value); }
         }
 #endif
-        /// <summary>The isBroadcast property</summary>
+        /// <summary>Indicates if this is a Teams live event.</summary>
         public bool? IsBroadcast
         {
             get { return BackingStore?.Get<bool?>("isBroadcast"); }
