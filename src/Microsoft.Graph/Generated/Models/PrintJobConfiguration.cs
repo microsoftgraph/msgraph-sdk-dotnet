@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("finishings", value); }
         }
 #endif
-        /// <summary>The fitPdfToPage property</summary>
+        /// <summary>True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.</summary>
         public bool? FitPdfToPage
         {
             get { return BackingStore?.Get<bool?>("fitPdfToPage"); }
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("margin", value); }
         }
 #endif
-        /// <summary>The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.</summary>
+        /// <summary>The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaSize
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("mediaSize", value); }
         }
 #endif
-        /// <summary>The mediaType property</summary>
+        /// <summary>The default media (such as paper) type to print the document on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaType
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("mediaType", value); }
         }
 #endif
-        /// <summary>The multipageLayout property</summary>
+        /// <summary>The direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.</summary>
         public PrintMultipageLayout? MultipageLayout
         {
             get { return BackingStore?.Get<PrintMultipageLayout?>("multipageLayout"); }
@@ -163,13 +163,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The orientation property</summary>
+        /// <summary>The orientation setting the printer should use when printing the job. Valid values are described in the following table.</summary>
         public PrintOrientation? Orientation
         {
             get { return BackingStore?.Get<PrintOrientation?>("orientation"); }
             set { BackingStore?.Set("orientation", value); }
         }
-        /// <summary>The outputBin property</summary>
+        /// <summary>The output bin to place completed prints into. See the printer&apos;s capabilities for a list of supported output bins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OutputBin
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("outputBin", value); }
         }
 #endif
-        /// <summary>The pageRanges property</summary>
+        /// <summary>The page ranges to print. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<IntegerRange>? PageRanges
@@ -201,19 +201,19 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("pageRanges", value); }
         }
 #endif
-        /// <summary>The pagesPerSheet property</summary>
+        /// <summary>The number of document pages to print on each sheet.</summary>
         public int? PagesPerSheet
         {
             get { return BackingStore?.Get<int?>("pagesPerSheet"); }
             set { BackingStore?.Set("pagesPerSheet", value); }
         }
-        /// <summary>The quality property</summary>
+        /// <summary>The print quality to use when printing the job. Valid values are described in the table below. Read-only.</summary>
         public PrintQuality? Quality
         {
             get { return BackingStore?.Get<PrintQuality?>("quality"); }
             set { BackingStore?.Set("quality", value); }
         }
-        /// <summary>The scaling property</summary>
+        /// <summary>Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.</summary>
         public PrintScaling? Scaling
         {
             get { return BackingStore?.Get<PrintScaling?>("scaling"); }

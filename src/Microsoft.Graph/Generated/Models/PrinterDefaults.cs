@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("fitPdfToPage"); }
             set { BackingStore?.Set("fitPdfToPage", value); }
         }
-        /// <summary>The inputBin property</summary>
+        /// <summary>The default input bin that serves as the paper source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InputBin

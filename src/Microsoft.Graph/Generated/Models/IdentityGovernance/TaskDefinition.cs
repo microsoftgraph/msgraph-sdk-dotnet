@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             get { return BackingStore?.Get<LifecycleTaskCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
-        /// <summary>The continueOnError property</summary>
+        /// <summary>Defines if the workflow will continue if the task has an error.</summary>
         public bool? ContinueOnError
         {
             get { return BackingStore?.Get<bool?>("continueOnError"); }

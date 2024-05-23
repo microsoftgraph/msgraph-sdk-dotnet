@@ -76,8 +76,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations
             return await RequestAdapter.SendAsync<DeviceEnrollmentConfigurationCollectionResponse>(requestInfo, DeviceEnrollmentConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new deviceEnrollmentPlatformRestrictionsConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-create?view=graph-rest-1.0" />
+        /// Create a new deviceEnrollmentLimitConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceEnrollmentConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations
             return requestInfo;
         }
         /// <summary>
-        /// Create a new deviceEnrollmentPlatformRestrictionsConfiguration object.
+        /// Create a new deviceEnrollmentLimitConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

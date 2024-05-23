@@ -262,7 +262,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("mobilePhone", value); }
         }
 #endif
-        /// <summary>The officeLocation property</summary>
+        /// <summary>The office location for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OfficeLocation
@@ -364,7 +364,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("provisionedPlans", value); }
         }
 #endif
-        /// <summary>The refreshTokensValidFromDateTime property</summary>
+        /// <summary>Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Returned only on $select. Read-only.</summary>
         public DateTimeOffset? RefreshTokensValidFromDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("refreshTokensValidFromDateTime"); }

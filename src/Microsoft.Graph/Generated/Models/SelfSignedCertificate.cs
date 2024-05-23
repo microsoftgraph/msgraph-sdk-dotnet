@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The customKeyIdentifier property</summary>
+        /// <summary>Custom key identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? CustomKeyIdentifier
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("customKeyIdentifier", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The friendly name for the key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -51,13 +51,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The endDateTime property</summary>
+        /// <summary>The date and time at which the credential expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? EndDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
-        /// <summary>The key property</summary>
+        /// <summary>The value for the key credential. Should be a Base-64 encoded value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Key
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("key", value); }
         }
 #endif
-        /// <summary>The keyId property</summary>
+        /// <summary>The unique identifier (GUID) for the key.</summary>
         public Guid? KeyId
         {
             get { return BackingStore?.Get<Guid?>("keyId"); }
@@ -95,13 +95,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The startDateTime property</summary>
+        /// <summary>The date and time at which the credential becomes valid. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? StartDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
-        /// <summary>The thumbprint property</summary>
+        /// <summary>The thumbprint value for the key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Thumbprint
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("thumbprint", value); }
         }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The type of key credential. AsymmetricX509Cert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("type", value); }
         }
 #endif
-        /// <summary>The usage property</summary>
+        /// <summary>A string that describes the purpose for which the key can be used. The possible value is Verify.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Usage

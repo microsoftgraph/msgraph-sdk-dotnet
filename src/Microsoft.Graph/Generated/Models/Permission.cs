@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>The grantedTo property</summary>
+        /// <summary>For user type permissions, the details of the users and applications for this permission. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public IdentitySet? GrantedTo
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("grantedTo", value); }
         }
 #endif
-        /// <summary>The grantedToIdentities property</summary>
+        /// <summary>For type permissions, the details of the users to whom permission was granted. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<IdentitySet>? GrantedToIdentities

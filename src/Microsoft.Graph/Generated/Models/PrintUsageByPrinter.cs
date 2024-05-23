@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     public class PrintUsageByPrinter : PrintUsage, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The printerId property</summary>
+        /// <summary>The ID of the printer represented by these statistics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrinterId

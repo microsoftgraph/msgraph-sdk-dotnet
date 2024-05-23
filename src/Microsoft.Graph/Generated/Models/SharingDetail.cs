@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("sharedDateTime"); }
             set { BackingStore?.Set("sharedDateTime", value); }
         }
-        /// <summary>The sharingReference property</summary>
+        /// <summary>Reference properties of the document, such as the URL and type of the document. Read-only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ResourceReference? SharingReference
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("sharingSubject", value); }
         }
 #endif
-        /// <summary>Determines the way the document was shared, can be by a &apos;Link&apos;, &apos;Attachment&apos;, &apos;Group&apos;, &apos;Site&apos;.</summary>
+        /// <summary>Determines the way the document was shared. Can be by a 1Link1, 1Attachment1, 1Group1, 1Site1.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SharingType

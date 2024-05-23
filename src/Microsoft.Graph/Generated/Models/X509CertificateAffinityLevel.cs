@@ -4,24 +4,20 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public enum X509CertificateRuleType
+    public enum X509CertificateAffinityLevel
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "issuerSubject")]
+        [EnumMember(Value = "low")]
         #pragma warning disable CS1591
-        IssuerSubject,
+        Low,
         #pragma warning restore CS1591
-        [EnumMember(Value = "policyOID")]
+        [EnumMember(Value = "high")]
         #pragma warning disable CS1591
-        PolicyOID,
+        High,
         #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
         UnknownFutureValue,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "issuerSubjectAndPolicyOID")]
-        #pragma warning disable CS1591
-        IssuerSubjectAndPolicyOID,
         #pragma warning restore CS1591
     }
 }

@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for the addIn object.</summary>
         public Guid? Id
         {
             get { return BackingStore?.Get<Guid?>("id"); }
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The properties property</summary>
+        /// <summary>The collection of key-value pairs that define parameters that the consuming service can use or call. You must specify this property when performing a POST or a PATCH operation on the addIns collection. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<KeyValue>? Properties
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("properties", value); }
         }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The unique name for the functionality exposed by the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type
