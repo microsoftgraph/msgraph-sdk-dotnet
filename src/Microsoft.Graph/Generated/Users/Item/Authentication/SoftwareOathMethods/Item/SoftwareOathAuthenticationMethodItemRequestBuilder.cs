@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The software OATH TOTP applications registered to a user for authentication.
+        /// The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
         /// </summary>
         /// <returns>A <see cref="SoftwareOathAuthenticationMethod"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods.Item
             return requestInfo;
         }
         /// <summary>
-        /// The software OATH TOTP applications registered to a user for authentication.
+        /// The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods.Item
         {
         }
         /// <summary>
-        /// The software OATH TOTP applications registered to a user for authentication.
+        /// The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
         /// </summary>
         public class SoftwareOathAuthenticationMethodItemRequestBuilderGetQueryParameters 
         {

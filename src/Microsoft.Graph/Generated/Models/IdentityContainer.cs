@@ -42,6 +42,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("authenticationEventListeners", value); }
         }
 #endif
+        /// <summary>Represents the entry point for self-service sign-up and sign-in user flows in both Microsoft Entra workforce and external tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<AuthenticationEventsFlow>? AuthenticationEventsFlows
+        {
+            get { return BackingStore?.Get<List<AuthenticationEventsFlow>?>("authenticationEventsFlows"); }
+            set { BackingStore?.Set("authenticationEventsFlows", value); }
+        }
+#nullable restore
+#else
+        public List<AuthenticationEventsFlow> AuthenticationEventsFlows
+        {
+            get { return BackingStore?.Get<List<AuthenticationEventsFlow>>("authenticationEventsFlows"); }
+            set { BackingStore?.Set("authenticationEventsFlows", value); }
+        }
+#endif
         /// <summary>Represents entry point for B2X/self-service sign-up identity userflows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,6 +158,7 @@ namespace Microsoft.Graph.Models
             {
                 { "apiConnectors", n => { ApiConnectors = n.GetCollectionOfObjectValues<IdentityApiConnector>(IdentityApiConnector.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "authenticationEventListeners", n => { AuthenticationEventListeners = n.GetCollectionOfObjectValues<AuthenticationEventListener>(AuthenticationEventListener.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationEventsFlows", n => { AuthenticationEventsFlows = n.GetCollectionOfObjectValues<AuthenticationEventsFlow>(AuthenticationEventsFlow.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "b2xUserFlows", n => { B2xUserFlows = n.GetCollectionOfObjectValues<B2xIdentityUserFlow>(B2xIdentityUserFlow.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "conditionalAccess", n => { ConditionalAccess = n.GetObjectValue<ConditionalAccessRoot>(ConditionalAccessRoot.CreateFromDiscriminatorValue); } },
                 { "customAuthenticationExtensions", n => { CustomAuthenticationExtensions = n.GetCollectionOfObjectValues<CustomAuthenticationExtension>(CustomAuthenticationExtension.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -159,6 +176,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<IdentityApiConnector>("apiConnectors", ApiConnectors);
             writer.WriteCollectionOfObjectValues<AuthenticationEventListener>("authenticationEventListeners", AuthenticationEventListeners);
+            writer.WriteCollectionOfObjectValues<AuthenticationEventsFlow>("authenticationEventsFlows", AuthenticationEventsFlows);
             writer.WriteCollectionOfObjectValues<B2xIdentityUserFlow>("b2xUserFlows", B2xUserFlows);
             writer.WriteObjectValue<ConditionalAccessRoot>("conditionalAccess", ConditionalAccess);
             writer.WriteCollectionOfObjectValues<CustomAuthenticationExtension>("customAuthenticationExtensions", CustomAuthenticationExtensions);

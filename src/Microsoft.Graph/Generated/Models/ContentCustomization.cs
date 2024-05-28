@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The registrationCampaign property</summary>
+        /// <summary>Represents content options to customize during MFA proofup interruptions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<KeyValue>? RegistrationCampaign
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("registrationCampaign", value); }
         }
 #endif
-        /// <summary>The registrationCampaignRelativeUrl property</summary>
+        /// <summary>The relative URL of the content options to customize during MFA proofup interruptions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RegistrationCampaignRelativeUrl

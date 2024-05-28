@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: &apos;2014-01-01T00:00:00Z&apos;. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.</summary>
+        /// <summary>The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.</summary>
         public DateTimeOffset? LastNonInteractiveSignInDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastNonInteractiveSignInDateTime"); }
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("lastNonInteractiveSignInRequestId", value); }
         }
 #endif
-        /// <summary>The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: &apos;2014-01-01T00:00:00Z&apos;. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.</summary>
+        /// <summary>The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.</summary>
         public DateTimeOffset? LastSignInDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSignInDateTime"); }
@@ -61,6 +61,28 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<string>("lastSignInRequestId"); }
             set { BackingStore?.Set("lastSignInRequestId", value); }
+        }
+#endif
+        /// <summary>The date and time of the user&apos;s most recent successful sign-in activity. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        public DateTimeOffset? LastSuccessfulSignInDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSuccessfulSignInDateTime"); }
+            set { BackingStore?.Set("lastSuccessfulSignInDateTime", value); }
+        }
+        /// <summary>The request ID of the last successful sign-in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastSuccessfulSignInRequestId
+        {
+            get { return BackingStore?.Get<string?>("lastSuccessfulSignInRequestId"); }
+            set { BackingStore?.Set("lastSuccessfulSignInRequestId", value); }
+        }
+#nullable restore
+#else
+        public string LastSuccessfulSignInRequestId
+        {
+            get { return BackingStore?.Get<string>("lastSuccessfulSignInRequestId"); }
+            set { BackingStore?.Set("lastSuccessfulSignInRequestId", value); }
         }
 #endif
         /// <summary>The OdataType property</summary>
@@ -109,6 +131,8 @@ namespace Microsoft.Graph.Models
                 { "lastNonInteractiveSignInRequestId", n => { LastNonInteractiveSignInRequestId = n.GetStringValue(); } },
                 { "lastSignInDateTime", n => { LastSignInDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastSignInRequestId", n => { LastSignInRequestId = n.GetStringValue(); } },
+                { "lastSuccessfulSignInDateTime", n => { LastSuccessfulSignInDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastSuccessfulSignInRequestId", n => { LastSuccessfulSignInRequestId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -123,6 +147,8 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("lastNonInteractiveSignInRequestId", LastNonInteractiveSignInRequestId);
             writer.WriteDateTimeOffsetValue("lastSignInDateTime", LastSignInDateTime);
             writer.WriteStringValue("lastSignInRequestId", LastSignInRequestId);
+            writer.WriteDateTimeOffsetValue("lastSuccessfulSignInDateTime", LastSuccessfulSignInDateTime);
+            writer.WriteStringValue("lastSuccessfulSignInRequestId", LastSuccessfulSignInRequestId);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
