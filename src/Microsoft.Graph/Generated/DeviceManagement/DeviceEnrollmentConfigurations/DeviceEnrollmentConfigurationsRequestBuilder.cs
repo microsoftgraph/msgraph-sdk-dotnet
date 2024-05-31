@@ -52,8 +52,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations
         {
         }
         /// <summary>
-        /// List properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the deviceEnrollmentLimitConfiguration objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceEnrollmentConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,8 +76,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations
             return await RequestAdapter.SendAsync<DeviceEnrollmentConfigurationCollectionResponse>(requestInfo, DeviceEnrollmentConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new deviceEnrollmentLimitConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-create?view=graph-rest-1.0" />
+        /// Create a new deviceEnrollmentPlatformRestrictionsConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceEnrollmentConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations
             return await RequestAdapter.SendAsync<DeviceEnrollmentConfiguration>(requestInfo, DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration objects.
+        /// List properties and relationships of the deviceEnrollmentLimitConfiguration objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations
             return requestInfo;
         }
         /// <summary>
-        /// Create a new deviceEnrollmentLimitConfiguration object.
+        /// Create a new deviceEnrollmentPlatformRestrictionsConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations
             return new DeviceEnrollmentConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration objects.
+        /// List properties and relationships of the deviceEnrollmentLimitConfiguration objects.
         /// </summary>
         public class DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters 
         {

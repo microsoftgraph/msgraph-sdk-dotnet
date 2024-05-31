@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
             set { BackingStore?.Set("modifiedDateTime", value); }
         }
-        /// <summary>The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.</summary>
+        /// <summary>The unique identifier of the resource in the origin system. For a Microsoft Entra group, this is the identifier of the group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginId

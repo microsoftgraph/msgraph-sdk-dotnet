@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.fileStorageContainerCustomPropertyDictionary" => new FileStorageContainerCustomPropertyDictionary(),
                 "#microsoft.graph.resultTemplateDictionary" => new ResultTemplateDictionary(),
                 _ => new Dictionary(),
             };

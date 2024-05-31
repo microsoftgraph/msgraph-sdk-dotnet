@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("resource", value); }
         }
 #endif
-        /// <summary>The outcome of whether the service was able to add the resource to the catalog.  The value is delivered if the resource was added or removed, and deliveryFailed if it could not be added or removed. Read-only.</summary>
+        /// <summary>The outcome of whether the service was able to add the resource to the catalog. The value is delivered if the resource was added or removed, and deliveryFailed if it couldn&apos;t be added or removed. Read-only.</summary>
         public AccessPackageRequestState? State
         {
             get { return BackingStore?.Get<AccessPackageRequestState?>("state"); }

@@ -52,8 +52,8 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions
         {
         }
         /// <summary>
-        /// List properties and relationships of the roleDefinition objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="RoleDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.RoleDefinition>(requestInfo, Microsoft.Graph.Models.RoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the roleDefinition objects.
+        /// List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions
             return new RoleDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the roleDefinition objects.
+        /// List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
         /// </summary>
         public class RoleDefinitionsRequestBuilderGetQueryParameters 
         {

@@ -52,8 +52,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations
         {
         }
         /// <summary>
-        /// List properties and relationships of the macOSGeneralDeviceConfiguration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-macosgeneraldeviceconfiguration-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the macOSDeviceFeaturesConfiguration objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-macosdevicefeaturesconfiguration-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,8 +76,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations
             return await RequestAdapter.SendAsync<DeviceConfigurationCollectionResponse>(requestInfo, DeviceConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new windows10CustomConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10customconfiguration-create?view=graph-rest-1.0" />
+        /// Create a new windowsPhone81GeneralConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81generalconfiguration-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations
             return await RequestAdapter.SendAsync<DeviceConfiguration>(requestInfo, DeviceConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the macOSGeneralDeviceConfiguration objects.
+        /// List properties and relationships of the macOSDeviceFeaturesConfiguration objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations
             return requestInfo;
         }
         /// <summary>
-        /// Create a new windows10CustomConfiguration object.
+        /// Create a new windowsPhone81GeneralConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations
             return new DeviceConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the macOSGeneralDeviceConfiguration objects.
+        /// List properties and relationships of the macOSDeviceFeaturesConfiguration objects.
         /// </summary>
         public class DeviceConfigurationsRequestBuilderGetQueryParameters 
         {

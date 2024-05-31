@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments
             return await RequestAdapter.SendAsync<EducationAssignmentCollectionResponse>(requestInfo, EducationAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new assignment. Only teachers in a class can create an assignment. Assignments start in the Draft state, which means that students will not see the assignment until publication.
+        /// Create a new assignment. Only teachers in a class can create an assignment. Assignments start in draft status, which means that students can&apos;t see the assignment until it&apos;s published.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-post-assignment?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EducationAssignment"/></returns>
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments
             return requestInfo;
         }
         /// <summary>
-        /// Create a new assignment. Only teachers in a class can create an assignment. Assignments start in the Draft state, which means that students will not see the assignment until publication.
+        /// Create a new assignment. Only teachers in a class can create an assignment. Assignments start in draft status, which means that students can&apos;t see the assignment until it&apos;s published.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
