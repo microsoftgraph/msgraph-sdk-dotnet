@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.PasswordMethods.Item
         {
         }
         /// <summary>
-        /// Represents the password that&apos;s registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
+        /// Represents the password registered to a user for authentication. For security, the password itself is never returned in the object, but action can be taken to reset a password.
         /// </summary>
         /// <returns>A <see cref="PasswordAuthenticationMethod"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.PasswordMethods.Item
             return await RequestAdapter.SendAsync<PasswordAuthenticationMethod>(requestInfo, PasswordAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the password that&apos;s registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
+        /// Represents the password registered to a user for authentication. For security, the password itself is never returned in the object, but action can be taken to reset a password.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.PasswordMethods.Item
             return new PasswordAuthenticationMethodItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents the password that&apos;s registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
+        /// Represents the password registered to a user for authentication. For security, the password itself is never returned in the object, but action can be taken to reset a password.
         /// </summary>
         public class PasswordAuthenticationMethodItemRequestBuilderGetQueryParameters 
         {

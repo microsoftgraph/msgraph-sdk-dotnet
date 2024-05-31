@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<IdentityUserFlowAttributeDataType?>("dataType"); }
             set { BackingStore?.Set("dataType", value); }
         }
-        /// <summary>The description of the user flow attribute that&apos;s shown to the user at the time of sign-up.</summary>
+        /// <summary>The description of the user flow attribute that&apos;s shown to the user at the time of sign up.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description

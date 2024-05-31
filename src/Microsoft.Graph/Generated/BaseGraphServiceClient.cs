@@ -66,6 +66,7 @@ using Microsoft.Graph.ServicePrincipalsWithAppId;
 using Microsoft.Graph.Shares;
 using Microsoft.Graph.Sites;
 using Microsoft.Graph.Solutions;
+using Microsoft.Graph.Storage;
 using Microsoft.Graph.SubscribedSkus;
 using Microsoft.Graph.Subscriptions;
 using Microsoft.Graph.Teams;
@@ -396,6 +397,11 @@ namespace Microsoft.Graph
         public SolutionsRequestBuilder Solutions
         {
             get => new SolutionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the storage singleton.</summary>
+        public StorageRequestBuilder Storage
+        {
+            get => new StorageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of subscribedSku entities.</summary>
         public SubscribedSkusRequestBuilder SubscribedSkus

@@ -124,7 +124,7 @@ namespace Microsoft.Graph.DeviceAppManagement
         }
         /// <summary>
         /// Read properties and relationships of the deviceAppManagement object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-policyset-deviceappmanagement-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-deviceappmanagement-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.DeviceAppManagement"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.DeviceAppManagement
         }
         /// <summary>
         /// Update the properties of a deviceAppManagement object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-deviceappmanagement-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceappmanagement-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.DeviceAppManagement"/></returns>
         /// <param name="body">The request body</param>

@@ -17,6 +17,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>The archivalDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public SiteArchivalDetails? ArchivalDetails
+        {
+            get { return BackingStore?.Get<SiteArchivalDetails?>("archivalDetails"); }
+            set { BackingStore?.Set("archivalDetails", value); }
+        }
+#nullable restore
+#else
+        public SiteArchivalDetails ArchivalDetails
+        {
+            get { return BackingStore?.Get<SiteArchivalDetails>("archivalDetails"); }
+            set { BackingStore?.Set("archivalDetails", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.</summary>
@@ -109,6 +125,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "archivalDetails", n => { ArchivalDetails = n.GetObjectValue<SiteArchivalDetails>(SiteArchivalDetails.CreateFromDiscriminatorValue); } },
                 { "dataLocationCode", n => { DataLocationCode = n.GetStringValue(); } },
                 { "hostname", n => { Hostname = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -122,6 +139,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<SiteArchivalDetails>("archivalDetails", ArchivalDetails);
             writer.WriteStringValue("dataLocationCode", DataLocationCode);
             writer.WriteStringValue("hostname", Hostname);
             writer.WriteStringValue("@odata.type", OdataType);
