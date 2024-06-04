@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item
     public class TodoTaskItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.todoTask entity.</summary>
-        public AttachmentsRequestBuilder Attachments
+        public Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.Attachments.AttachmentsRequestBuilder Attachments
         {
-            get => new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.Attachments.AttachmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.</summary>
-        public AttachmentSessionsRequestBuilder AttachmentSessions
+        public Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.AttachmentSessions.AttachmentSessionsRequestBuilder AttachmentSessions
         {
-            get => new AttachmentSessionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.AttachmentSessions.AttachmentSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.</summary>
-        public ChecklistItemsRequestBuilder ChecklistItems
+        public Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems.ChecklistItemsRequestBuilder ChecklistItems
         {
-            get => new ChecklistItemsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems.ChecklistItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.todoTask entity.</summary>
-        public ExtensionsRequestBuilder Extensions
+        public Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.Extensions.ExtensionsRequestBuilder Extensions
         {
-            get => new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.</summary>
-        public LinkedResourcesRequestBuilder LinkedResources
+        public Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder LinkedResources
         {
-            get => new LinkedResourcesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="TodoTaskItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.TodoTaskItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TodoTaskItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.TodoTaskItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -89,51 +89,51 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item
         /// Read the properties and relationships of a todoTask object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="TodoTask"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TodoTask"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TodoTask?> GetAsync(Action<RequestConfiguration<TodoTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TodoTask?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.TodoTaskItemRequestBuilder.TodoTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TodoTask> GetAsync(Action<RequestConfiguration<TodoTaskItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TodoTask> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.TodoTaskItemRequestBuilder.TodoTaskItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TodoTask>(requestInfo, TodoTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TodoTask>(requestInfo, Microsoft.Graph.Models.TodoTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of a todoTask object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="TodoTask"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TodoTask"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TodoTask?> PatchAsync(TodoTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TodoTask?> PatchAsync(Microsoft.Graph.Models.TodoTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TodoTask> PatchAsync(TodoTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TodoTask> PatchAsync(Microsoft.Graph.Models.TodoTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TodoTask>(requestInfo, TodoTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TodoTask>(requestInfo, Microsoft.Graph.Models.TodoTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a todoTask object.
@@ -161,11 +161,11 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TodoTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.TodoTaskItemRequestBuilder.TodoTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TodoTaskItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.TodoTaskItemRequestBuilder.TodoTaskItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -181,11 +181,11 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(TodoTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.TodoTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(TodoTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.TodoTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -198,11 +198,11 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TodoTaskItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.TodoTaskItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TodoTaskItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.TodoTaskItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new TodoTaskItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.TodoTaskItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -241,7 +241,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TodoTaskItemRequestBuilderGetRequestConfiguration : RequestConfiguration<TodoTaskItemRequestBuilderGetQueryParameters>
+        public class TodoTaskItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.TodoTaskItemRequestBuilder.TodoTaskItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

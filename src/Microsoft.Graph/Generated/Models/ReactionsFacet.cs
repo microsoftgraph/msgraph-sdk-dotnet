@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("shareCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ReactionsFacet"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ReactionsFacet"/> and sets the default values.
         /// </summary>
         public ReactionsFacet()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ReactionsFacet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ReactionsFacet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ReactionsFacet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ReactionsFacet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ReactionsFacet();
+            return new Microsoft.Graph.Models.ReactionsFacet();
         }
         /// <summary>
         /// The deserialization information for the current model

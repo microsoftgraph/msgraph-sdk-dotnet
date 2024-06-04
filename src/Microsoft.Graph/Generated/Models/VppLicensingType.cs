@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("supportsUserLicensing", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="VppLicensingType"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.VppLicensingType"/> and sets the default values.
         /// </summary>
         public VppLicensingType()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VppLicensingType"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.VppLicensingType"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static VppLicensingType CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.VppLicensingType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VppLicensingType();
+            return new Microsoft.Graph.Models.VppLicensingType();
         }
         /// <summary>
         /// The deserialization information for the current model

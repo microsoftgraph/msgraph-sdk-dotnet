@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ApplyDynamicFilterPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyDynamicFilter.ApplyDynamicFilterPostRequestBody"/> and sets the default values.
         /// </summary>
         public ApplyDynamicFilterPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ApplyDynamicFilterPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyDynamicFilter.ApplyDynamicFilterPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ApplyDynamicFilterPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyDynamicFilter.ApplyDynamicFilterPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ApplyDynamicFilterPostRequestBody();
+            return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyDynamicFilter.ApplyDynamicFilterPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

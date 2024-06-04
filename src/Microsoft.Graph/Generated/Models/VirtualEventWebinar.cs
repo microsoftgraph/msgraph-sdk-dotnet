@@ -7,56 +7,56 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class VirtualEventWebinar : VirtualEvent, IParsable
+    public class VirtualEventWebinar : Microsoft.Graph.Models.VirtualEvent, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>To whom the webinar is visible.</summary>
-        public MeetingAudience? Audience
+        public Microsoft.Graph.Models.MeetingAudience? Audience
         {
-            get { return BackingStore?.Get<MeetingAudience?>("audience"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MeetingAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
         /// <summary>Identity information of coorganizers of the webinar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CommunicationsUserIdentity>? CoOrganizers
+        public List<Microsoft.Graph.Models.CommunicationsUserIdentity>? CoOrganizers
         {
-            get { return BackingStore?.Get<List<CommunicationsUserIdentity>?>("coOrganizers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CommunicationsUserIdentity>?>("coOrganizers"); }
             set { BackingStore?.Set("coOrganizers", value); }
         }
 #nullable restore
 #else
-        public List<CommunicationsUserIdentity> CoOrganizers
+        public List<Microsoft.Graph.Models.CommunicationsUserIdentity> CoOrganizers
         {
-            get { return BackingStore?.Get<List<CommunicationsUserIdentity>>("coOrganizers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CommunicationsUserIdentity>>("coOrganizers"); }
             set { BackingStore?.Set("coOrganizers", value); }
         }
 #endif
         /// <summary>Registration records of the webinar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventRegistration>? Registrations
+        public List<Microsoft.Graph.Models.VirtualEventRegistration>? Registrations
         {
-            get { return BackingStore?.Get<List<VirtualEventRegistration>?>("registrations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.VirtualEventRegistration>?>("registrations"); }
             set { BackingStore?.Set("registrations", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventRegistration> Registrations
+        public List<Microsoft.Graph.Models.VirtualEventRegistration> Registrations
         {
-            get { return BackingStore?.Get<List<VirtualEventRegistration>>("registrations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.VirtualEventRegistration>>("registrations"); }
             set { BackingStore?.Set("registrations", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VirtualEventWebinar"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.VirtualEventWebinar"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VirtualEventWebinar CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.VirtualEventWebinar CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VirtualEventWebinar();
+            return new Microsoft.Graph.Models.VirtualEventWebinar();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,9 +66,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "audience", n => { Audience = n.GetEnumValue<MeetingAudience>(); } },
-                { "coOrganizers", n => { CoOrganizers = n.GetCollectionOfObjectValues<CommunicationsUserIdentity>(CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "registrations", n => { Registrations = n.GetCollectionOfObjectValues<VirtualEventRegistration>(VirtualEventRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "audience", n => { Audience = n.GetEnumValue<Microsoft.Graph.Models.MeetingAudience>(); } },
+                { "coOrganizers", n => { CoOrganizers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CommunicationsUserIdentity>(Microsoft.Graph.Models.CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "registrations", n => { Registrations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.VirtualEventRegistration>(Microsoft.Graph.Models.VirtualEventRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -79,9 +79,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<MeetingAudience>("audience", Audience);
-            writer.WriteCollectionOfObjectValues<CommunicationsUserIdentity>("coOrganizers", CoOrganizers);
-            writer.WriteCollectionOfObjectValues<VirtualEventRegistration>("registrations", Registrations);
+            writer.WriteEnumValue<Microsoft.Graph.Models.MeetingAudience>("audience", Audience);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CommunicationsUserIdentity>("coOrganizers", CoOrganizers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.VirtualEventRegistration>("registrations", Registrations);
         }
     }
 }

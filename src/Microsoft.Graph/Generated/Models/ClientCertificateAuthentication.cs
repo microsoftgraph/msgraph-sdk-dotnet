@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ClientCertificateAuthentication : ApiAuthenticationConfigurationBase, IParsable
+    public class ClientCertificateAuthentication : Microsoft.Graph.Models.ApiAuthenticationConfigurationBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The list of certificates uploaded for this API connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Pkcs12CertificateInformation>? CertificateList
+        public List<Microsoft.Graph.Models.Pkcs12CertificateInformation>? CertificateList
         {
-            get { return BackingStore?.Get<List<Pkcs12CertificateInformation>?>("certificateList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Pkcs12CertificateInformation>?>("certificateList"); }
             set { BackingStore?.Set("certificateList", value); }
         }
 #nullable restore
 #else
-        public List<Pkcs12CertificateInformation> CertificateList
+        public List<Microsoft.Graph.Models.Pkcs12CertificateInformation> CertificateList
         {
-            get { return BackingStore?.Get<List<Pkcs12CertificateInformation>>("certificateList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Pkcs12CertificateInformation>>("certificateList"); }
             set { BackingStore?.Set("certificateList", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ClientCertificateAuthentication"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ClientCertificateAuthentication"/> and sets the default values.
         /// </summary>
         public ClientCertificateAuthentication() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ClientCertificateAuthentication"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ClientCertificateAuthentication"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ClientCertificateAuthentication CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ClientCertificateAuthentication CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ClientCertificateAuthentication();
+            return new Microsoft.Graph.Models.ClientCertificateAuthentication();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "certificateList", n => { CertificateList = n.GetCollectionOfObjectValues<Pkcs12CertificateInformation>(Pkcs12CertificateInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "certificateList", n => { CertificateList = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Pkcs12CertificateInformation>(Microsoft.Graph.Models.Pkcs12CertificateInformation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Pkcs12CertificateInformation>("certificateList", CertificateList);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Pkcs12CertificateInformation>("certificateList", CertificateList);
         }
     }
 }

@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class BlobEvidence : AlertEvidence, IParsable
+    public class BlobEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The container which the blob belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BlobContainerEvidence? BlobContainer
+        public Microsoft.Graph.Models.Security.BlobContainerEvidence? BlobContainer
         {
-            get { return BackingStore?.Get<BlobContainerEvidence?>("blobContainer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.BlobContainerEvidence?>("blobContainer"); }
             set { BackingStore?.Set("blobContainer", value); }
         }
 #nullable restore
 #else
-        public BlobContainerEvidence BlobContainer
+        public Microsoft.Graph.Models.Security.BlobContainerEvidence BlobContainer
         {
-            get { return BackingStore?.Get<BlobContainerEvidence>("blobContainer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.BlobContainerEvidence>("blobContainer"); }
             set { BackingStore?.Set("blobContainer", value); }
         }
 #endif
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The file hashes associated with this blob.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FileHash>? FileHashes
+        public List<Microsoft.Graph.Models.Security.FileHash>? FileHashes
         {
-            get { return BackingStore?.Get<List<FileHash>?>("fileHashes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.FileHash>?>("fileHashes"); }
             set { BackingStore?.Set("fileHashes", value); }
         }
 #nullable restore
 #else
-        public List<FileHash> FileHashes
+        public List<Microsoft.Graph.Models.Security.FileHash> FileHashes
         {
-            get { return BackingStore?.Get<List<FileHash>>("fileHashes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.FileHash>>("fileHashes"); }
             set { BackingStore?.Set("fileHashes", value); }
         }
 #endif
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="BlobEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.BlobEvidence"/> and sets the default values.
         /// </summary>
         public BlobEvidence() : base()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BlobEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.BlobEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BlobEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.BlobEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BlobEvidence();
+            return new Microsoft.Graph.Models.Security.BlobEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,9 +115,9 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "blobContainer", n => { BlobContainer = n.GetObjectValue<BlobContainerEvidence>(BlobContainerEvidence.CreateFromDiscriminatorValue); } },
+                { "blobContainer", n => { BlobContainer = n.GetObjectValue<Microsoft.Graph.Models.Security.BlobContainerEvidence>(Microsoft.Graph.Models.Security.BlobContainerEvidence.CreateFromDiscriminatorValue); } },
                 { "etag", n => { Etag = n.GetStringValue(); } },
-                { "fileHashes", n => { FileHashes = n.GetCollectionOfObjectValues<FileHash>(FileHash.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "fileHashes", n => { FileHashes = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.FileHash>(Microsoft.Graph.Models.Security.FileHash.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -130,9 +130,9 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<BlobContainerEvidence>("blobContainer", BlobContainer);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.BlobContainerEvidence>("blobContainer", BlobContainer);
             writer.WriteStringValue("etag", Etag);
-            writer.WriteCollectionOfObjectValues<FileHash>("fileHashes", FileHashes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.FileHash>("fileHashes", FileHashes);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("url", Url);
         }

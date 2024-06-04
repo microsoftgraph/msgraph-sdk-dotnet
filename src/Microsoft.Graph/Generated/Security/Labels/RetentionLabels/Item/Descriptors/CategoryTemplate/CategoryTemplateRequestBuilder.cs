@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.Categ
     public class CategoryTemplateRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="CategoryTemplateRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.CategoryTemplate.CategoryTemplateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.Categ
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CategoryTemplateRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.CategoryTemplate.CategoryTemplateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,20 +38,20 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.Categ
         /// <returns>A <see cref="Microsoft.Graph.Models.Security.CategoryTemplate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.CategoryTemplate?> GetAsync(Action<RequestConfiguration<CategoryTemplateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.CategoryTemplate?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.CategoryTemplate.CategoryTemplateRequestBuilder.CategoryTemplateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.CategoryTemplate> GetAsync(Action<RequestConfiguration<CategoryTemplateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.CategoryTemplate> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.CategoryTemplate.CategoryTemplateRequestBuilder.CategoryTemplateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.CategoryTemplate>(requestInfo, Microsoft.Graph.Models.Security.CategoryTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.Categ
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CategoryTemplateRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.CategoryTemplate.CategoryTemplateRequestBuilder.CategoryTemplateRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CategoryTemplateRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.CategoryTemplate.CategoryTemplateRequestBuilder.CategoryTemplateRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.Categ
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CategoryTemplateRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.CategoryTemplate.CategoryTemplateRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CategoryTemplateRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.CategoryTemplate.CategoryTemplateRequestBuilder WithUrl(string rawUrl)
         {
-            return new CategoryTemplateRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.CategoryTemplate.CategoryTemplateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Specifies a group of similar types of content in a particular department.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.Categ
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CategoryTemplateRequestBuilderGetRequestConfiguration : RequestConfiguration<CategoryTemplateRequestBuilderGetQueryParameters>
+        public class CategoryTemplateRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.CategoryTemplate.CategoryTemplateRequestBuilder.CategoryTemplateRequestBuilderGetQueryParameters>
         {
         }
     }

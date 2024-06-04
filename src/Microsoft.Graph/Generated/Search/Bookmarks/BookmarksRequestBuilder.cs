@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Search.Bookmarks
     public class BookmarksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Search.Bookmarks.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Search.Bookmarks.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.</summary>
         /// <param name="position">The unique identifier of bookmark</param>
-        /// <returns>A <see cref="BookmarkItemRequestBuilder"/></returns>
-        public BookmarkItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Search.Bookmarks.Item.BookmarkItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Search.Bookmarks.Item.BookmarkItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("bookmark%2Did", position);
-                return new BookmarkItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Search.Bookmarks.Item.BookmarkItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="BookmarksRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Search.Bookmarks.BookmarksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Search.Bookmarks
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="BookmarksRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Search.Bookmarks.BookmarksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Search.Bookmarks
         /// Get a list of bookmark objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="BookmarkCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Search.BookmarkCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BookmarkCollectionResponse?> GetAsync(Action<RequestConfiguration<BookmarksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Search.BookmarkCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Search.Bookmarks.BookmarksRequestBuilder.BookmarksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BookmarkCollectionResponse> GetAsync(Action<RequestConfiguration<BookmarksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Search.BookmarkCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Search.Bookmarks.BookmarksRequestBuilder.BookmarksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<BookmarkCollectionResponse>(requestInfo, BookmarkCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Search.BookmarkCollectionResponse>(requestInfo, Microsoft.Graph.Models.Search.BookmarkCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new bookmark object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Bookmark"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Search.Bookmark"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Bookmark?> PostAsync(Bookmark body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Search.Bookmark?> PostAsync(Microsoft.Graph.Models.Search.Bookmark body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Bookmark> PostAsync(Bookmark body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Search.Bookmark> PostAsync(Microsoft.Graph.Models.Search.Bookmark body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Bookmark>(requestInfo, Bookmark.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Search.Bookmark>(requestInfo, Microsoft.Graph.Models.Search.Bookmark.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of bookmark objects and their properties.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Search.Bookmarks
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BookmarksRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Search.Bookmarks.BookmarksRequestBuilder.BookmarksRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BookmarksRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Search.Bookmarks.BookmarksRequestBuilder.BookmarksRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Search.Bookmarks
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Bookmark body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Search.Bookmark body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Bookmark body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Search.Bookmark body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Search.Bookmarks
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="BookmarksRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Search.Bookmarks.BookmarksRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public BookmarksRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Search.Bookmarks.BookmarksRequestBuilder WithUrl(string rawUrl)
         {
-            return new BookmarksRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Search.Bookmarks.BookmarksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of bookmark objects and their properties.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Search.Bookmarks
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BookmarksRequestBuilderGetRequestConfiguration : RequestConfiguration<BookmarksRequestBuilderGetQueryParameters>
+        public class BookmarksRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Search.Bookmarks.BookmarksRequestBuilder.BookmarksRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

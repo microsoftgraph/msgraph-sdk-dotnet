@@ -39,21 +39,21 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.CopyToDefaultConten
         /// <summary>The sourceFile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemReference? SourceFile
+        public Microsoft.Graph.Models.ItemReference? SourceFile
         {
-            get { return BackingStore?.Get<ItemReference?>("sourceFile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemReference?>("sourceFile"); }
             set { BackingStore?.Set("sourceFile", value); }
         }
 #nullable restore
 #else
-        public ItemReference SourceFile
+        public Microsoft.Graph.Models.ItemReference SourceFile
         {
-            get { return BackingStore?.Get<ItemReference>("sourceFile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemReference>("sourceFile"); }
             set { BackingStore?.Set("sourceFile", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CopyToDefaultContentLocationPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Shares.Item.List.ContentTypes.Item.CopyToDefaultContentLocation.CopyToDefaultContentLocationPostRequestBody"/> and sets the default values.
         /// </summary>
         public CopyToDefaultContentLocationPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.CopyToDefaultConten
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CopyToDefaultContentLocationPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Shares.Item.List.ContentTypes.Item.CopyToDefaultContentLocation.CopyToDefaultContentLocationPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CopyToDefaultContentLocationPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Shares.Item.List.ContentTypes.Item.CopyToDefaultContentLocation.CopyToDefaultContentLocationPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CopyToDefaultContentLocationPostRequestBody();
+            return new Microsoft.Graph.Shares.Item.List.ContentTypes.Item.CopyToDefaultContentLocation.CopyToDefaultContentLocationPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.CopyToDefaultConten
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "destinationFileName", n => { DestinationFileName = n.GetStringValue(); } },
-                { "sourceFile", n => { SourceFile = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
+                { "sourceFile", n => { SourceFile = n.GetObjectValue<Microsoft.Graph.Models.ItemReference>(Microsoft.Graph.Models.ItemReference.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.CopyToDefaultConten
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("destinationFileName", DestinationFileName);
-            writer.WriteObjectValue<ItemReference>("sourceFile", SourceFile);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemReference>("sourceFile", SourceFile);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

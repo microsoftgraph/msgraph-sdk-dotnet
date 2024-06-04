@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class ContainerEvidence : AlertEvidence, IParsable
+    public class ContainerEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The list of arguments.</summary>
@@ -61,16 +61,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The image used to run the container.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ContainerImageEvidence? Image
+        public Microsoft.Graph.Models.Security.ContainerImageEvidence? Image
         {
-            get { return BackingStore?.Get<ContainerImageEvidence?>("image"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.ContainerImageEvidence?>("image"); }
             set { BackingStore?.Set("image", value); }
         }
 #nullable restore
 #else
-        public ContainerImageEvidence Image
+        public Microsoft.Graph.Models.Security.ContainerImageEvidence Image
         {
-            get { return BackingStore?.Get<ContainerImageEvidence>("image"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.ContainerImageEvidence>("image"); }
             set { BackingStore?.Set("image", value); }
         }
 #endif
@@ -99,21 +99,21 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The pod this container belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public KubernetesPodEvidence? Pod
+        public Microsoft.Graph.Models.Security.KubernetesPodEvidence? Pod
         {
-            get { return BackingStore?.Get<KubernetesPodEvidence?>("pod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.KubernetesPodEvidence?>("pod"); }
             set { BackingStore?.Set("pod", value); }
         }
 #nullable restore
 #else
-        public KubernetesPodEvidence Pod
+        public Microsoft.Graph.Models.Security.KubernetesPodEvidence Pod
         {
-            get { return BackingStore?.Get<KubernetesPodEvidence>("pod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.KubernetesPodEvidence>("pod"); }
             set { BackingStore?.Set("pod", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ContainerEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.ContainerEvidence"/> and sets the default values.
         /// </summary>
         public ContainerEvidence() : base()
         {
@@ -122,12 +122,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ContainerEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.ContainerEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ContainerEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.ContainerEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ContainerEvidence();
+            return new Microsoft.Graph.Models.Security.ContainerEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -140,10 +140,10 @@ namespace Microsoft.Graph.Models.Security
                 { "args", n => { Args = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "command", n => { Command = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "containerId", n => { ContainerId = n.GetStringValue(); } },
-                { "image", n => { Image = n.GetObjectValue<ContainerImageEvidence>(ContainerImageEvidence.CreateFromDiscriminatorValue); } },
+                { "image", n => { Image = n.GetObjectValue<Microsoft.Graph.Models.Security.ContainerImageEvidence>(Microsoft.Graph.Models.Security.ContainerImageEvidence.CreateFromDiscriminatorValue); } },
                 { "isPrivileged", n => { IsPrivileged = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "pod", n => { Pod = n.GetObjectValue<KubernetesPodEvidence>(KubernetesPodEvidence.CreateFromDiscriminatorValue); } },
+                { "pod", n => { Pod = n.GetObjectValue<Microsoft.Graph.Models.Security.KubernetesPodEvidence>(Microsoft.Graph.Models.Security.KubernetesPodEvidence.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -157,10 +157,10 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteCollectionOfPrimitiveValues<string>("args", Args);
             writer.WriteCollectionOfPrimitiveValues<string>("command", Command);
             writer.WriteStringValue("containerId", ContainerId);
-            writer.WriteObjectValue<ContainerImageEvidence>("image", Image);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.ContainerImageEvidence>("image", Image);
             writer.WriteBoolValue("isPrivileged", IsPrivileged);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<KubernetesPodEvidence>("pod", Pod);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.KubernetesPodEvidence>("pod", Pod);
         }
     }
 }

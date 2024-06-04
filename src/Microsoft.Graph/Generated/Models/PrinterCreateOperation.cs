@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class PrinterCreateOperation : PrintOperation, IParsable
+    public class PrinterCreateOperation : Microsoft.Graph.Models.PrintOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The signed certificate created during the registration process. Read-only.</summary>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PrinterCreateOperation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.PrinterCreateOperation"/> and sets the default values.
         /// </summary>
         public PrinterCreateOperation() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrinterCreateOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrinterCreateOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrinterCreateOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.PrinterCreateOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrinterCreateOperation();
+            return new Microsoft.Graph.Models.PrinterCreateOperation();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class TenantAppManagementPolicy : PolicyBase, IParsable
+    public class TenantAppManagementPolicy : Microsoft.Graph.Models.PolicyBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Restrictions that apply as default to all application objects in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AppManagementConfiguration? ApplicationRestrictions
+        public Microsoft.Graph.Models.AppManagementConfiguration? ApplicationRestrictions
         {
-            get { return BackingStore?.Get<AppManagementConfiguration?>("applicationRestrictions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AppManagementConfiguration?>("applicationRestrictions"); }
             set { BackingStore?.Set("applicationRestrictions", value); }
         }
 #nullable restore
 #else
-        public AppManagementConfiguration ApplicationRestrictions
+        public Microsoft.Graph.Models.AppManagementConfiguration ApplicationRestrictions
         {
-            get { return BackingStore?.Get<AppManagementConfiguration>("applicationRestrictions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AppManagementConfiguration>("applicationRestrictions"); }
             set { BackingStore?.Set("applicationRestrictions", value); }
         }
 #endif
@@ -35,21 +35,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Restrictions that apply as default to all service principal objects in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AppManagementConfiguration? ServicePrincipalRestrictions
+        public Microsoft.Graph.Models.AppManagementConfiguration? ServicePrincipalRestrictions
         {
-            get { return BackingStore?.Get<AppManagementConfiguration?>("servicePrincipalRestrictions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AppManagementConfiguration?>("servicePrincipalRestrictions"); }
             set { BackingStore?.Set("servicePrincipalRestrictions", value); }
         }
 #nullable restore
 #else
-        public AppManagementConfiguration ServicePrincipalRestrictions
+        public Microsoft.Graph.Models.AppManagementConfiguration ServicePrincipalRestrictions
         {
-            get { return BackingStore?.Get<AppManagementConfiguration>("servicePrincipalRestrictions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AppManagementConfiguration>("servicePrincipalRestrictions"); }
             set { BackingStore?.Set("servicePrincipalRestrictions", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TenantAppManagementPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TenantAppManagementPolicy"/> and sets the default values.
         /// </summary>
         public TenantAppManagementPolicy() : base()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TenantAppManagementPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TenantAppManagementPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TenantAppManagementPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TenantAppManagementPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TenantAppManagementPolicy();
+            return new Microsoft.Graph.Models.TenantAppManagementPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,9 +73,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "applicationRestrictions", n => { ApplicationRestrictions = n.GetObjectValue<AppManagementConfiguration>(AppManagementConfiguration.CreateFromDiscriminatorValue); } },
+                { "applicationRestrictions", n => { ApplicationRestrictions = n.GetObjectValue<Microsoft.Graph.Models.AppManagementConfiguration>(Microsoft.Graph.Models.AppManagementConfiguration.CreateFromDiscriminatorValue); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                { "servicePrincipalRestrictions", n => { ServicePrincipalRestrictions = n.GetObjectValue<AppManagementConfiguration>(AppManagementConfiguration.CreateFromDiscriminatorValue); } },
+                { "servicePrincipalRestrictions", n => { ServicePrincipalRestrictions = n.GetObjectValue<Microsoft.Graph.Models.AppManagementConfiguration>(Microsoft.Graph.Models.AppManagementConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -86,9 +86,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AppManagementConfiguration>("applicationRestrictions", ApplicationRestrictions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AppManagementConfiguration>("applicationRestrictions", ApplicationRestrictions);
             writer.WriteBoolValue("isEnabled", IsEnabled);
-            writer.WriteObjectValue<AppManagementConfiguration>("servicePrincipalRestrictions", ServicePrincipalRestrictions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AppManagementConfiguration>("servicePrincipalRestrictions", ServicePrincipalRestrictions);
         }
     }
 }

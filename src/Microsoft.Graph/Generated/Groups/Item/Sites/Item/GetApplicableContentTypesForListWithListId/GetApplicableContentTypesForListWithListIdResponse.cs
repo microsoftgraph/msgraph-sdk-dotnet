@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetApplicableContentTypesForLis
 {
     [Obsolete("This class is obsolete. Use GetApplicableContentTypesForListWithListIdGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetApplicableContentTypesForListWithListIdResponse : GetApplicableContentTypesForListWithListIdGetResponse, IParsable
+    public class GetApplicableContentTypesForListWithListIdResponse : Microsoft.Graph.Groups.Item.Sites.Item.GetApplicableContentTypesForListWithListId.GetApplicableContentTypesForListWithListIdGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetApplicableContentTypesForListWithListIdResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Sites.Item.GetApplicableContentTypesForListWithListId.GetApplicableContentTypesForListWithListIdResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetApplicableContentTypesForListWithListIdResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Groups.Item.Sites.Item.GetApplicableContentTypesForListWithListId.GetApplicableContentTypesForListWithListIdResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetApplicableContentTypesForListWithListIdResponse();
+            return new Microsoft.Graph.Groups.Item.Sites.Item.GetApplicableContentTypesForListWithListId.GetApplicableContentTypesForListWithListIdResponse();
         }
     }
 }

@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
         /// <summary>The tagsToAdd property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryReviewTag>? TagsToAdd
+        public List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>? TagsToAdd
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("tagsToAdd"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>?>("tagsToAdd"); }
             set { BackingStore?.Set("tagsToAdd", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryReviewTag> TagsToAdd
+        public List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag> TagsToAdd
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("tagsToAdd"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>>("tagsToAdd"); }
             set { BackingStore?.Set("tagsToAdd", value); }
         }
 #endif
         /// <summary>The tagsToRemove property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryReviewTag>? TagsToRemove
+        public List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>? TagsToRemove
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("tagsToRemove"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>?>("tagsToRemove"); }
             set { BackingStore?.Set("tagsToRemove", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryReviewTag> TagsToRemove
+        public List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag> TagsToRemove
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("tagsToRemove"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>>("tagsToRemove"); }
             set { BackingStore?.Set("tagsToRemove", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ApplyTagsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityApplyTags.ApplyTagsPostRequestBody"/> and sets the default values.
         /// </summary>
         public ApplyTagsPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ApplyTagsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityApplyTags.ApplyTagsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ApplyTagsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityApplyTags.ApplyTagsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ApplyTagsPostRequestBody();
+            return new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityApplyTags.ApplyTagsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "tagsToAdd", n => { TagsToAdd = n.GetCollectionOfObjectValues<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "tagsToRemove", n => { TagsToRemove = n.GetCollectionOfObjectValues<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tagsToAdd", n => { TagsToAdd = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>(Microsoft.Graph.Models.Security.EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tagsToRemove", n => { TagsToRemove = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>(Microsoft.Graph.Models.Security.EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<EdiscoveryReviewTag>("tagsToAdd", TagsToAdd);
-            writer.WriteCollectionOfObjectValues<EdiscoveryReviewTag>("tagsToRemove", TagsToRemove);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>("tagsToAdd", TagsToAdd);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>("tagsToRemove", TagsToRemove);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("timeoutDuration", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CustomExtensionCallbackConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CustomExtensionCallbackConfiguration"/> and sets the default values.
         /// </summary>
         public CustomExtensionCallbackConfiguration()
         {
@@ -53,16 +53,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomExtensionCallbackConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CustomExtensionCallbackConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CustomExtensionCallbackConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CustomExtensionCallbackConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.identityGovernance.customTaskExtensionCallbackConfiguration" => new CustomTaskExtensionCallbackConfiguration(),
-                _ => new CustomExtensionCallbackConfiguration(),
+                "#microsoft.graph.identityGovernance.customTaskExtensionCallbackConfiguration" => new Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtensionCallbackConfiguration(),
+                _ => new Microsoft.Graph.Models.CustomExtensionCallbackConfiguration(),
             };
         }
         /// <summary>

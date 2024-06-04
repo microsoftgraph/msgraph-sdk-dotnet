@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Me.Presence.ClearPresence
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ClearPresencePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Presence.ClearPresence.ClearPresencePostRequestBody"/> and sets the default values.
         /// </summary>
         public ClearPresencePostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Me.Presence.ClearPresence
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ClearPresencePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Presence.ClearPresence.ClearPresencePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ClearPresencePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Me.Presence.ClearPresence.ClearPresencePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ClearPresencePostRequestBody();
+            return new Microsoft.Graph.Me.Presence.ClearPresence.ClearPresencePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

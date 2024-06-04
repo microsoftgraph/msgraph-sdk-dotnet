@@ -18,12 +18,12 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item
     public class ServiceHealthIssueItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the incidentReport method.</summary>
-        public IncidentReportRequestBuilder IncidentReport
+        public Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item.IncidentReport.IncidentReportRequestBuilder IncidentReport
         {
-            get => new IncidentReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item.IncidentReport.IncidentReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ServiceHealthIssueItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item.ServiceHealthIssueItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ServiceHealthIssueItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item.ServiceHealthIssueItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -64,50 +64,50 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item
         /// Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/servicehealthissue-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ServiceHealthIssue"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ServiceHealthIssue"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ServiceHealthIssue?> GetAsync(Action<RequestConfiguration<ServiceHealthIssueItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ServiceHealthIssue?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item.ServiceHealthIssueItemRequestBuilder.ServiceHealthIssueItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ServiceHealthIssue> GetAsync(Action<RequestConfiguration<ServiceHealthIssueItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ServiceHealthIssue> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item.ServiceHealthIssueItemRequestBuilder.ServiceHealthIssueItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ServiceHealthIssue>(requestInfo, ServiceHealthIssue.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ServiceHealthIssue>(requestInfo, Microsoft.Graph.Models.ServiceHealthIssue.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property issues in admin
         /// </summary>
-        /// <returns>A <see cref="ServiceHealthIssue"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ServiceHealthIssue"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ServiceHealthIssue?> PatchAsync(ServiceHealthIssue body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ServiceHealthIssue?> PatchAsync(Microsoft.Graph.Models.ServiceHealthIssue body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ServiceHealthIssue> PatchAsync(ServiceHealthIssue body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ServiceHealthIssue> PatchAsync(Microsoft.Graph.Models.ServiceHealthIssue body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ServiceHealthIssue>(requestInfo, ServiceHealthIssue.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ServiceHealthIssue>(requestInfo, Microsoft.Graph.Models.ServiceHealthIssue.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property issues for admin
@@ -135,11 +135,11 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ServiceHealthIssueItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item.ServiceHealthIssueItemRequestBuilder.ServiceHealthIssueItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ServiceHealthIssueItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item.ServiceHealthIssueItemRequestBuilder.ServiceHealthIssueItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -155,11 +155,11 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(ServiceHealthIssue body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ServiceHealthIssue body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(ServiceHealthIssue body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ServiceHealthIssue body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -172,11 +172,11 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ServiceHealthIssueItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item.ServiceHealthIssueItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ServiceHealthIssueItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item.ServiceHealthIssueItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new ServiceHealthIssueItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item.ServiceHealthIssueItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -215,7 +215,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ServiceHealthIssueItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ServiceHealthIssueItemRequestBuilderGetQueryParameters>
+        public class ServiceHealthIssueItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item.ServiceHealthIssueItemRequestBuilder.ServiceHealthIssueItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

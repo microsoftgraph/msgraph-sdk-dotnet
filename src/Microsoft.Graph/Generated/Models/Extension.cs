@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Extension : Entity, IParsable
+    public class Extension : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Extension"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Extension"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Extension CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Extension CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.openTypeExtension" => new OpenTypeExtension(),
-                _ => new Extension(),
+                "#microsoft.graph.openTypeExtension" => new Microsoft.Graph.Models.OpenTypeExtension(),
+                _ => new Microsoft.Graph.Models.Extension(),
             };
         }
         /// <summary>

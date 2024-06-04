@@ -80,21 +80,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The principals who can request on-behalf-of others.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubjectSet>? OnBehalfRequestors
+        public List<Microsoft.Graph.Models.SubjectSet>? OnBehalfRequestors
         {
-            get { return BackingStore?.Get<List<SubjectSet>?>("onBehalfRequestors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SubjectSet>?>("onBehalfRequestors"); }
             set { BackingStore?.Set("onBehalfRequestors", value); }
         }
 #nullable restore
 #else
-        public List<SubjectSet> OnBehalfRequestors
+        public List<Microsoft.Graph.Models.SubjectSet> OnBehalfRequestors
         {
-            get { return BackingStore?.Get<List<SubjectSet>>("onBehalfRequestors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SubjectSet>>("onBehalfRequestors"); }
             set { BackingStore?.Set("onBehalfRequestors", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessPackageAssignmentRequestorSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AccessPackageAssignmentRequestorSettings"/> and sets the default values.
         /// </summary>
         public AccessPackageAssignmentRequestorSettings()
         {
@@ -104,12 +104,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageAssignmentRequestorSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackageAssignmentRequestorSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessPackageAssignmentRequestorSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AccessPackageAssignmentRequestorSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageAssignmentRequestorSettings();
+            return new Microsoft.Graph.Models.AccessPackageAssignmentRequestorSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Models
                 { "enableTargetsToSelfRemoveAccess", n => { EnableTargetsToSelfRemoveAccess = n.GetBoolValue(); } },
                 { "enableTargetsToSelfUpdateAccess", n => { EnableTargetsToSelfUpdateAccess = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "onBehalfRequestors", n => { OnBehalfRequestors = n.GetCollectionOfObjectValues<SubjectSet>(SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "onBehalfRequestors", n => { OnBehalfRequestors = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SubjectSet>(Microsoft.Graph.Models.SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("enableTargetsToSelfRemoveAccess", EnableTargetsToSelfRemoveAccess);
             writer.WriteBoolValue("enableTargetsToSelfUpdateAccess", EnableTargetsToSelfUpdateAccess);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<SubjectSet>("onBehalfRequestors", OnBehalfRequestors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SubjectSet>("onBehalfRequestors", OnBehalfRequestors);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class DelegatedAdminCustomerCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class DelegatedAdminCustomerCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DelegatedAdminCustomer>? Value
+        public List<Microsoft.Graph.Models.DelegatedAdminCustomer>? Value
         {
-            get { return BackingStore?.Get<List<DelegatedAdminCustomer>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DelegatedAdminCustomer>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<DelegatedAdminCustomer> Value
+        public List<Microsoft.Graph.Models.DelegatedAdminCustomer> Value
         {
-            get { return BackingStore?.Get<List<DelegatedAdminCustomer>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DelegatedAdminCustomer>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DelegatedAdminCustomerCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DelegatedAdminCustomerCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DelegatedAdminCustomerCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DelegatedAdminCustomerCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DelegatedAdminCustomerCollectionResponse();
+            return new Microsoft.Graph.Models.DelegatedAdminCustomerCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<DelegatedAdminCustomer>(DelegatedAdminCustomer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DelegatedAdminCustomer>(Microsoft.Graph.Models.DelegatedAdminCustomer.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DelegatedAdminCustomer>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DelegatedAdminCustomer>("value", Value);
         }
     }
 }

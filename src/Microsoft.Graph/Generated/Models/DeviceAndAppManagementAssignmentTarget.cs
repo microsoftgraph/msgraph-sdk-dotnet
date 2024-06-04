@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceAndAppManagementAssignmentTarget"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget"/> and sets the default values.
         /// </summary>
         public DeviceAndAppManagementAssignmentTarget()
         {
@@ -47,20 +47,20 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceAndAppManagementAssignmentTarget"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceAndAppManagementAssignmentTarget CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.allDevicesAssignmentTarget" => new AllDevicesAssignmentTarget(),
-                "#microsoft.graph.allLicensedUsersAssignmentTarget" => new AllLicensedUsersAssignmentTarget(),
-                "#microsoft.graph.configurationManagerCollectionAssignmentTarget" => new ConfigurationManagerCollectionAssignmentTarget(),
-                "#microsoft.graph.exclusionGroupAssignmentTarget" => new ExclusionGroupAssignmentTarget(),
-                "#microsoft.graph.groupAssignmentTarget" => new GroupAssignmentTarget(),
-                _ => new DeviceAndAppManagementAssignmentTarget(),
+                "#microsoft.graph.allDevicesAssignmentTarget" => new Microsoft.Graph.Models.AllDevicesAssignmentTarget(),
+                "#microsoft.graph.allLicensedUsersAssignmentTarget" => new Microsoft.Graph.Models.AllLicensedUsersAssignmentTarget(),
+                "#microsoft.graph.configurationManagerCollectionAssignmentTarget" => new Microsoft.Graph.Models.ConfigurationManagerCollectionAssignmentTarget(),
+                "#microsoft.graph.exclusionGroupAssignmentTarget" => new Microsoft.Graph.Models.ExclusionGroupAssignmentTarget(),
+                "#microsoft.graph.groupAssignmentTarget" => new Microsoft.Graph.Models.GroupAssignmentTarget(),
+                _ => new Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget(),
             };
         }
         /// <summary>

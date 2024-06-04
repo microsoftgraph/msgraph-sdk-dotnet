@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConditionalAccessDevicePlatform?>? ExcludePlatforms
+        public List<Microsoft.Graph.Models.ConditionalAccessDevicePlatform?>? ExcludePlatforms
         {
-            get { return BackingStore?.Get<List<ConditionalAccessDevicePlatform?>?>("excludePlatforms"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConditionalAccessDevicePlatform?>?>("excludePlatforms"); }
             set { BackingStore?.Set("excludePlatforms", value); }
         }
 #nullable restore
 #else
-        public List<ConditionalAccessDevicePlatform?> ExcludePlatforms
+        public List<Microsoft.Graph.Models.ConditionalAccessDevicePlatform?> ExcludePlatforms
         {
-            get { return BackingStore?.Get<List<ConditionalAccessDevicePlatform?>>("excludePlatforms"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConditionalAccessDevicePlatform?>>("excludePlatforms"); }
             set { BackingStore?.Set("excludePlatforms", value); }
         }
 #endif
         /// <summary>Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConditionalAccessDevicePlatform?>? IncludePlatforms
+        public List<Microsoft.Graph.Models.ConditionalAccessDevicePlatform?>? IncludePlatforms
         {
-            get { return BackingStore?.Get<List<ConditionalAccessDevicePlatform?>?>("includePlatforms"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConditionalAccessDevicePlatform?>?>("includePlatforms"); }
             set { BackingStore?.Set("includePlatforms", value); }
         }
 #nullable restore
 #else
-        public List<ConditionalAccessDevicePlatform?> IncludePlatforms
+        public List<Microsoft.Graph.Models.ConditionalAccessDevicePlatform?> IncludePlatforms
         {
-            get { return BackingStore?.Get<List<ConditionalAccessDevicePlatform?>>("includePlatforms"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConditionalAccessDevicePlatform?>>("includePlatforms"); }
             set { BackingStore?.Set("includePlatforms", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ConditionalAccessPlatforms"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ConditionalAccessPlatforms"/> and sets the default values.
         /// </summary>
         public ConditionalAccessPlatforms()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessPlatforms"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ConditionalAccessPlatforms"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConditionalAccessPlatforms CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ConditionalAccessPlatforms CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessPlatforms();
+            return new Microsoft.Graph.Models.ConditionalAccessPlatforms();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,8 +93,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "excludePlatforms", n => { ExcludePlatforms = n.GetCollectionOfEnumValues<ConditionalAccessDevicePlatform>()?.ToList(); } },
-                { "includePlatforms", n => { IncludePlatforms = n.GetCollectionOfEnumValues<ConditionalAccessDevicePlatform>()?.ToList(); } },
+                { "excludePlatforms", n => { ExcludePlatforms = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.ConditionalAccessDevicePlatform>()?.ToList(); } },
+                { "includePlatforms", n => { IncludePlatforms = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.ConditionalAccessDevicePlatform>()?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -105,8 +105,8 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<ConditionalAccessDevicePlatform>("excludePlatforms", ExcludePlatforms);
-            writer.WriteCollectionOfEnumValues<ConditionalAccessDevicePlatform>("includePlatforms", IncludePlatforms);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.ConditionalAccessDevicePlatform>("excludePlatforms", ExcludePlatforms);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.ConditionalAccessDevicePlatform>("includePlatforms", IncludePlatforms);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

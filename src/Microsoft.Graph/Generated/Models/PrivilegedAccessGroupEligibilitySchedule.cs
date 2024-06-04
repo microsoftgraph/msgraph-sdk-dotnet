@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class PrivilegedAccessGroupEligibilitySchedule : PrivilegedAccessSchedule, IParsable
+    public class PrivilegedAccessGroupEligibilitySchedule : Microsoft.Graph.Models.PrivilegedAccessSchedule, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identifier of the membership or ownership eligibility to the group that is governed by PIM. Required. The possible values are: owner, member. Supports $filter (eq).</summary>
-        public PrivilegedAccessGroupRelationships? AccessId
+        public Microsoft.Graph.Models.PrivilegedAccessGroupRelationships? AccessId
         {
-            get { return BackingStore?.Get<PrivilegedAccessGroupRelationships?>("accessId"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrivilegedAccessGroupRelationships?>("accessId"); }
             set { BackingStore?.Set("accessId", value); }
         }
         /// <summary>References the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.</summary>
@@ -49,24 +49,24 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the schedule. Required. The possible values are: direct, group, unknownFutureValue. Supports $filter (eq).</summary>
-        public PrivilegedAccessGroupMemberType? MemberType
+        public Microsoft.Graph.Models.PrivilegedAccessGroupMemberType? MemberType
         {
-            get { return BackingStore?.Get<PrivilegedAccessGroupMemberType?>("memberType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrivilegedAccessGroupMemberType?>("memberType"); }
             set { BackingStore?.Set("memberType", value); }
         }
         /// <summary>References the principal that&apos;s in the scope of this membership or ownership eligibility request to the group that&apos;s governed by PIM. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? Principal
+        public Microsoft.Graph.Models.DirectoryObject? Principal
         {
-            get { return BackingStore?.Get<DirectoryObject?>("principal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject?>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject Principal
+        public Microsoft.Graph.Models.DirectoryObject Principal
         {
-            get { return BackingStore?.Get<DirectoryObject>("principal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #endif
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PrivilegedAccessGroupEligibilitySchedule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.PrivilegedAccessGroupEligibilitySchedule"/> and sets the default values.
         /// </summary>
         public PrivilegedAccessGroupEligibilitySchedule() : base()
         {
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrivilegedAccessGroupEligibilitySchedule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrivilegedAccessGroupEligibilitySchedule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrivilegedAccessGroupEligibilitySchedule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.PrivilegedAccessGroupEligibilitySchedule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrivilegedAccessGroupEligibilitySchedule();
+            return new Microsoft.Graph.Models.PrivilegedAccessGroupEligibilitySchedule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,11 +111,11 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accessId", n => { AccessId = n.GetEnumValue<PrivilegedAccessGroupRelationships>(); } },
+                { "accessId", n => { AccessId = n.GetEnumValue<Microsoft.Graph.Models.PrivilegedAccessGroupRelationships>(); } },
                 { "group", n => { Group = n.GetObjectValue<Microsoft.Graph.Models.Group>(Microsoft.Graph.Models.Group.CreateFromDiscriminatorValue); } },
                 { "groupId", n => { GroupId = n.GetStringValue(); } },
-                { "memberType", n => { MemberType = n.GetEnumValue<PrivilegedAccessGroupMemberType>(); } },
-                { "principal", n => { Principal = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "memberType", n => { MemberType = n.GetEnumValue<Microsoft.Graph.Models.PrivilegedAccessGroupMemberType>(); } },
+                { "principal", n => { Principal = n.GetObjectValue<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
                 { "principalId", n => { PrincipalId = n.GetStringValue(); } },
             };
         }
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<PrivilegedAccessGroupRelationships>("accessId", AccessId);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PrivilegedAccessGroupRelationships>("accessId", AccessId);
             writer.WriteObjectValue<Microsoft.Graph.Models.Group>("group", Group);
             writer.WriteStringValue("groupId", GroupId);
-            writer.WriteEnumValue<PrivilegedAccessGroupMemberType>("memberType", MemberType);
-            writer.WriteObjectValue<DirectoryObject>("principal", Principal);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PrivilegedAccessGroupMemberType>("memberType", MemberType);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DirectoryObject>("principal", Principal);
             writer.WriteStringValue("principalId", PrincipalId);
         }
     }

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.DirectoryRoles.Item.ScopedMembers
     public class ScopedMembersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.DirectoryRoles.Item.ScopedMembers.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DirectoryRoles.Item.ScopedMembers.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the scopedMembers property of the microsoft.graph.directoryRole entity.</summary>
         /// <param name="position">The unique identifier of scopedRoleMembership</param>
-        /// <returns>A <see cref="ScopedRoleMembershipItemRequestBuilder"/></returns>
-        public ScopedRoleMembershipItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.DirectoryRoles.Item.ScopedMembers.Item.ScopedRoleMembershipItemRequestBuilder"/></returns>
+        public Microsoft.Graph.DirectoryRoles.Item.ScopedMembers.Item.ScopedRoleMembershipItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("scopedRoleMembership%2Did", position);
-                return new ScopedRoleMembershipItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.DirectoryRoles.Item.ScopedMembers.Item.ScopedRoleMembershipItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ScopedMembersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DirectoryRoles.Item.ScopedMembers.ScopedMembersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.DirectoryRoles.Item.ScopedMembers
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ScopedMembersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DirectoryRoles.Item.ScopedMembers.ScopedMembersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +55,50 @@ namespace Microsoft.Graph.DirectoryRoles.Item.ScopedMembers
         /// Retrieve a list of scopedRoleMembership objects for a directory role.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryrole-list-scopedmembers?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ScopedRoleMembershipCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ScopedRoleMembershipCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ScopedRoleMembershipCollectionResponse?> GetAsync(Action<RequestConfiguration<ScopedMembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ScopedRoleMembershipCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DirectoryRoles.Item.ScopedMembers.ScopedMembersRequestBuilder.ScopedMembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ScopedRoleMembershipCollectionResponse> GetAsync(Action<RequestConfiguration<ScopedMembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ScopedRoleMembershipCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DirectoryRoles.Item.ScopedMembers.ScopedMembersRequestBuilder.ScopedMembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ScopedRoleMembershipCollectionResponse>(requestInfo, ScopedRoleMembershipCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ScopedRoleMembershipCollectionResponse>(requestInfo, Microsoft.Graph.Models.ScopedRoleMembershipCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to scopedMembers for directoryRoles
         /// </summary>
-        /// <returns>A <see cref="ScopedRoleMembership"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ScopedRoleMembership"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ScopedRoleMembership?> PostAsync(ScopedRoleMembership body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ScopedRoleMembership?> PostAsync(Microsoft.Graph.Models.ScopedRoleMembership body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ScopedRoleMembership> PostAsync(ScopedRoleMembership body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ScopedRoleMembership> PostAsync(Microsoft.Graph.Models.ScopedRoleMembership body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ScopedRoleMembership>(requestInfo, ScopedRoleMembership.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ScopedRoleMembership>(requestInfo, Microsoft.Graph.Models.ScopedRoleMembership.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of scopedRoleMembership objects for a directory role.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.DirectoryRoles.Item.ScopedMembers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ScopedMembersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DirectoryRoles.Item.ScopedMembers.ScopedMembersRequestBuilder.ScopedMembersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ScopedMembersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DirectoryRoles.Item.ScopedMembers.ScopedMembersRequestBuilder.ScopedMembersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.DirectoryRoles.Item.ScopedMembers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ScopedRoleMembership body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ScopedRoleMembership body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ScopedRoleMembership body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ScopedRoleMembership body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.DirectoryRoles.Item.ScopedMembers
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ScopedMembersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DirectoryRoles.Item.ScopedMembers.ScopedMembersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ScopedMembersRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DirectoryRoles.Item.ScopedMembers.ScopedMembersRequestBuilder WithUrl(string rawUrl)
         {
-            return new ScopedMembersRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DirectoryRoles.Item.ScopedMembers.ScopedMembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of scopedRoleMembership objects for a directory role.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.DirectoryRoles.Item.ScopedMembers
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ScopedMembersRequestBuilderGetRequestConfiguration : RequestConfiguration<ScopedMembersRequestBuilderGetQueryParameters>
+        public class ScopedMembersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DirectoryRoles.Item.ScopedMembers.ScopedMembersRequestBuilder.ScopedMembersRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

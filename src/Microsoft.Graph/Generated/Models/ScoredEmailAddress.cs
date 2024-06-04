@@ -74,13 +74,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("relevanceScore", value); }
         }
         /// <summary>The selectionLikelihood property</summary>
-        public SelectionLikelihoodInfo? SelectionLikelihood
+        public Microsoft.Graph.Models.SelectionLikelihoodInfo? SelectionLikelihood
         {
-            get { return BackingStore?.Get<SelectionLikelihoodInfo?>("selectionLikelihood"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SelectionLikelihoodInfo?>("selectionLikelihood"); }
             set { BackingStore?.Set("selectionLikelihood", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ScoredEmailAddress"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ScoredEmailAddress"/> and sets the default values.
         /// </summary>
         public ScoredEmailAddress()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ScoredEmailAddress"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ScoredEmailAddress"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ScoredEmailAddress CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ScoredEmailAddress CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ScoredEmailAddress();
+            return new Microsoft.Graph.Models.ScoredEmailAddress();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Models
                 { "itemId", n => { ItemId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "relevanceScore", n => { RelevanceScore = n.GetDoubleValue(); } },
-                { "selectionLikelihood", n => { SelectionLikelihood = n.GetEnumValue<SelectionLikelihoodInfo>(); } },
+                { "selectionLikelihood", n => { SelectionLikelihood = n.GetEnumValue<Microsoft.Graph.Models.SelectionLikelihoodInfo>(); } },
             };
         }
         /// <summary>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("itemId", ItemId);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDoubleValue("relevanceScore", RelevanceScore);
-            writer.WriteEnumValue<SelectionLikelihoodInfo>("selectionLikelihood", SelectionLikelihood);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SelectionLikelihoodInfo>("selectionLikelihood", SelectionLikelihood);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

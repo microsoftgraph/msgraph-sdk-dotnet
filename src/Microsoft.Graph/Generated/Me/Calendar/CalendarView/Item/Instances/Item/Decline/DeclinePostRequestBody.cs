@@ -39,16 +39,16 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Instances.Item.Decline
         /// <summary>The ProposedNewTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeSlot? ProposedNewTime
+        public Microsoft.Graph.Models.TimeSlot? ProposedNewTime
         {
-            get { return BackingStore?.Get<TimeSlot?>("ProposedNewTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TimeSlot?>("ProposedNewTime"); }
             set { BackingStore?.Set("ProposedNewTime", value); }
         }
 #nullable restore
 #else
-        public TimeSlot ProposedNewTime
+        public Microsoft.Graph.Models.TimeSlot ProposedNewTime
         {
-            get { return BackingStore?.Get<TimeSlot>("ProposedNewTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TimeSlot>("ProposedNewTime"); }
             set { BackingStore?.Set("ProposedNewTime", value); }
         }
 #endif
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Instances.Item.Decline
             set { BackingStore?.Set("SendResponse", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeclinePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Calendar.CalendarView.Item.Instances.Item.Decline.DeclinePostRequestBody"/> and sets the default values.
         /// </summary>
         public DeclinePostRequestBody()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Instances.Item.Decline
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeclinePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Calendar.CalendarView.Item.Instances.Item.Decline.DeclinePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeclinePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Me.Calendar.CalendarView.Item.Instances.Item.Decline.DeclinePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeclinePostRequestBody();
+            return new Microsoft.Graph.Me.Calendar.CalendarView.Item.Instances.Item.Decline.DeclinePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Instances.Item.Decline
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "Comment", n => { Comment = n.GetStringValue(); } },
-                { "ProposedNewTime", n => { ProposedNewTime = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
+                { "ProposedNewTime", n => { ProposedNewTime = n.GetObjectValue<Microsoft.Graph.Models.TimeSlot>(Microsoft.Graph.Models.TimeSlot.CreateFromDiscriminatorValue); } },
                 { "SendResponse", n => { SendResponse = n.GetBoolValue(); } },
             };
         }
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Instances.Item.Decline
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("Comment", Comment);
-            writer.WriteObjectValue<TimeSlot>("ProposedNewTime", ProposedNewTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TimeSlot>("ProposedNewTime", ProposedNewTime);
             writer.WriteBoolValue("SendResponse", SendResponse);
             writer.WriteAdditionalData(AdditionalData);
         }

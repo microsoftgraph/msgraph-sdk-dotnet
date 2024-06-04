@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Functions
 {
     #pragma warning disable CS1591
-    public class FunctionsGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class FunctionsGetResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttributeMappingFunctionSchema>? Value
+        public List<Microsoft.Graph.Models.AttributeMappingFunctionSchema>? Value
         {
-            get { return BackingStore?.Get<List<AttributeMappingFunctionSchema>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttributeMappingFunctionSchema>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<AttributeMappingFunctionSchema> Value
+        public List<Microsoft.Graph.Models.AttributeMappingFunctionSchema> Value
         {
-            get { return BackingStore?.Get<List<AttributeMappingFunctionSchema>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttributeMappingFunctionSchema>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FunctionsGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Functions.FunctionsGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FunctionsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Functions.FunctionsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FunctionsGetResponse();
+            return new Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Functions.FunctionsGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<AttributeMappingFunctionSchema>(AttributeMappingFunctionSchema.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AttributeMappingFunctionSchema>(Microsoft.Graph.Models.AttributeMappingFunctionSchema.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AttributeMappingFunctionSchema>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AttributeMappingFunctionSchema>("value", Value);
         }
     }
 }

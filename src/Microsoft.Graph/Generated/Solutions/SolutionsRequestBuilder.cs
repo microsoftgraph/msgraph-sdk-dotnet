@@ -20,22 +20,22 @@ namespace Microsoft.Graph.Solutions
     public class SolutionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.</summary>
-        public BookingBusinessesRequestBuilder BookingBusinesses
+        public Microsoft.Graph.Solutions.BookingBusinesses.BookingBusinessesRequestBuilder BookingBusinesses
         {
-            get => new BookingBusinessesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Solutions.BookingBusinesses.BookingBusinessesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.</summary>
-        public BookingCurrenciesRequestBuilder BookingCurrencies
+        public Microsoft.Graph.Solutions.BookingCurrencies.BookingCurrenciesRequestBuilder BookingCurrencies
         {
-            get => new BookingCurrenciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Solutions.BookingCurrencies.BookingCurrenciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the virtualEvents property of the microsoft.graph.solutionsRoot entity.</summary>
-        public VirtualEventsRequestBuilder VirtualEvents
+        public Microsoft.Graph.Solutions.VirtualEvents.VirtualEventsRequestBuilder VirtualEvents
         {
-            get => new VirtualEventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Solutions.VirtualEvents.VirtualEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="SolutionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Solutions.SolutionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Solutions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SolutionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Solutions.SolutionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -53,50 +53,50 @@ namespace Microsoft.Graph.Solutions
         /// <summary>
         /// Get solutions
         /// </summary>
-        /// <returns>A <see cref="SolutionsRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SolutionsRoot"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SolutionsRoot?> GetAsync(Action<RequestConfiguration<SolutionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SolutionsRoot?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Solutions.SolutionsRequestBuilder.SolutionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SolutionsRoot> GetAsync(Action<RequestConfiguration<SolutionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SolutionsRoot> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Solutions.SolutionsRequestBuilder.SolutionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SolutionsRoot>(requestInfo, SolutionsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SolutionsRoot>(requestInfo, Microsoft.Graph.Models.SolutionsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update solutions
         /// </summary>
-        /// <returns>A <see cref="SolutionsRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SolutionsRoot"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SolutionsRoot?> PatchAsync(SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SolutionsRoot?> PatchAsync(Microsoft.Graph.Models.SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SolutionsRoot> PatchAsync(SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SolutionsRoot> PatchAsync(Microsoft.Graph.Models.SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SolutionsRoot>(requestInfo, SolutionsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SolutionsRoot>(requestInfo, Microsoft.Graph.Models.SolutionsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get solutions
@@ -105,11 +105,11 @@ namespace Microsoft.Graph.Solutions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SolutionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Solutions.SolutionsRequestBuilder.SolutionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SolutionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Solutions.SolutionsRequestBuilder.SolutionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -125,11 +125,11 @@ namespace Microsoft.Graph.Solutions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -142,11 +142,11 @@ namespace Microsoft.Graph.Solutions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SolutionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Solutions.SolutionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SolutionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Solutions.SolutionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new SolutionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Solutions.SolutionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get solutions
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Solutions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SolutionsRequestBuilderGetRequestConfiguration : RequestConfiguration<SolutionsRequestBuilderGetQueryParameters>
+        public class SolutionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Solutions.SolutionsRequestBuilder.SolutionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

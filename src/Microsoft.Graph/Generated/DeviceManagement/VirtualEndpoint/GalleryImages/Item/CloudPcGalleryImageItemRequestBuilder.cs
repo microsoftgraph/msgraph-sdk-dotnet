@@ -17,7 +17,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item
     public class CloudPcGalleryImageItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcGalleryImageItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item.CloudPcGalleryImageItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcGalleryImageItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item.CloudPcGalleryImageItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -58,50 +58,50 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item
         /// Read the properties and relationships of a specific cloudPcGalleryImage object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcgalleryimage-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="CloudPcGalleryImage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudPcGalleryImage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPcGalleryImage?> GetAsync(Action<RequestConfiguration<CloudPcGalleryImageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CloudPcGalleryImage?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item.CloudPcGalleryImageItemRequestBuilder.CloudPcGalleryImageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudPcGalleryImage> GetAsync(Action<RequestConfiguration<CloudPcGalleryImageItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CloudPcGalleryImage> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item.CloudPcGalleryImageItemRequestBuilder.CloudPcGalleryImageItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudPcGalleryImage>(requestInfo, CloudPcGalleryImage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CloudPcGalleryImage>(requestInfo, Microsoft.Graph.Models.CloudPcGalleryImage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property galleryImages in deviceManagement
         /// </summary>
-        /// <returns>A <see cref="CloudPcGalleryImage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudPcGalleryImage"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPcGalleryImage?> PatchAsync(CloudPcGalleryImage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CloudPcGalleryImage?> PatchAsync(Microsoft.Graph.Models.CloudPcGalleryImage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudPcGalleryImage> PatchAsync(CloudPcGalleryImage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CloudPcGalleryImage> PatchAsync(Microsoft.Graph.Models.CloudPcGalleryImage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudPcGalleryImage>(requestInfo, CloudPcGalleryImage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CloudPcGalleryImage>(requestInfo, Microsoft.Graph.Models.CloudPcGalleryImage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property galleryImages for deviceManagement
@@ -129,11 +129,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CloudPcGalleryImageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item.CloudPcGalleryImageItemRequestBuilder.CloudPcGalleryImageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CloudPcGalleryImageItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item.CloudPcGalleryImageItemRequestBuilder.CloudPcGalleryImageItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -149,11 +149,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(CloudPcGalleryImage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.CloudPcGalleryImage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(CloudPcGalleryImage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.CloudPcGalleryImage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -166,11 +166,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CloudPcGalleryImageItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item.CloudPcGalleryImageItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CloudPcGalleryImageItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item.CloudPcGalleryImageItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new CloudPcGalleryImageItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item.CloudPcGalleryImageItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -209,7 +209,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CloudPcGalleryImageItemRequestBuilderGetRequestConfiguration : RequestConfiguration<CloudPcGalleryImageItemRequestBuilderGetQueryParameters>
+        public class CloudPcGalleryImageItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.Item.CloudPcGalleryImageItemRequestBuilder.CloudPcGalleryImageItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

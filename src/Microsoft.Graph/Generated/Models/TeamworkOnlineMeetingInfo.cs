@@ -70,21 +70,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The organizer of the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkUserIdentity? Organizer
+        public Microsoft.Graph.Models.TeamworkUserIdentity? Organizer
         {
-            get { return BackingStore?.Get<TeamworkUserIdentity?>("organizer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamworkUserIdentity?>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
 #nullable restore
 #else
-        public TeamworkUserIdentity Organizer
+        public Microsoft.Graph.Models.TeamworkUserIdentity Organizer
         {
-            get { return BackingStore?.Get<TeamworkUserIdentity>("organizer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamworkUserIdentity>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkOnlineMeetingInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TeamworkOnlineMeetingInfo"/> and sets the default values.
         /// </summary>
         public TeamworkOnlineMeetingInfo()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkOnlineMeetingInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamworkOnlineMeetingInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamworkOnlineMeetingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.TeamworkOnlineMeetingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkOnlineMeetingInfo();
+            return new Microsoft.Graph.Models.TeamworkOnlineMeetingInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Models
                 { "calendarEventId", n => { CalendarEventId = n.GetStringValue(); } },
                 { "joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "organizer", n => { Organizer = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
+                { "organizer", n => { Organizer = n.GetObjectValue<Microsoft.Graph.Models.TeamworkUserIdentity>(Microsoft.Graph.Models.TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("calendarEventId", CalendarEventId);
             writer.WriteStringValue("joinWebUrl", JoinWebUrl);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<TeamworkUserIdentity>("organizer", Organizer);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TeamworkUserIdentity>("organizer", Organizer);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

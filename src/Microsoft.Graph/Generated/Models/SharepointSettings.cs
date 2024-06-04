@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SharepointSettings : Entity, IParsable
+    public class SharepointSettings : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collection of trusted domain GUIDs for the OneDrive sync app.</summary>
@@ -81,9 +81,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.</summary>
-        public ImageTaggingChoice? ImageTaggingOption
+        public Microsoft.Graph.Models.ImageTaggingChoice? ImageTaggingOption
         {
-            get { return BackingStore?.Get<ImageTaggingChoice?>("imageTaggingOption"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ImageTaggingChoice?>("imageTaggingOption"); }
             set { BackingStore?.Set("imageTaggingOption", value); }
         }
         /// <summary>Indicates whether comments are allowed on modern site pages in SharePoint.</summary>
@@ -215,9 +215,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Sharing capability for the tenant. Possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.</summary>
-        public SharingCapabilities? SharingCapability
+        public Microsoft.Graph.Models.SharingCapabilities? SharingCapability
         {
-            get { return BackingStore?.Get<SharingCapabilities?>("sharingCapability"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SharingCapabilities?>("sharingCapability"); }
             set { BackingStore?.Set("sharingCapability", value); }
         }
         /// <summary>Specifies the external sharing mode for domains. Possible values are: none, allowList, blockList.</summary>
@@ -267,12 +267,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SharepointSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SharepointSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SharepointSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SharepointSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SharepointSettings();
+            return new Microsoft.Graph.Models.SharepointSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -287,7 +287,7 @@ namespace Microsoft.Graph.Models
                 { "deletedUserPersonalSiteRetentionPeriodInDays", n => { DeletedUserPersonalSiteRetentionPeriodInDays = n.GetIntValue(); } },
                 { "excludedFileExtensionsForSyncApp", n => { ExcludedFileExtensionsForSyncApp = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "idleSessionSignOut", n => { IdleSessionSignOut = n.GetObjectValue<Microsoft.Graph.Models.IdleSessionSignOut>(Microsoft.Graph.Models.IdleSessionSignOut.CreateFromDiscriminatorValue); } },
-                { "imageTaggingOption", n => { ImageTaggingOption = n.GetEnumValue<ImageTaggingChoice>(); } },
+                { "imageTaggingOption", n => { ImageTaggingOption = n.GetEnumValue<Microsoft.Graph.Models.ImageTaggingChoice>(); } },
                 { "isCommentingOnSitePagesEnabled", n => { IsCommentingOnSitePagesEnabled = n.GetBoolValue(); } },
                 { "isFileActivityNotificationEnabled", n => { IsFileActivityNotificationEnabled = n.GetBoolValue(); } },
                 { "isLegacyAuthProtocolsEnabled", n => { IsLegacyAuthProtocolsEnabled = n.GetBoolValue(); } },
@@ -306,8 +306,8 @@ namespace Microsoft.Graph.Models
                 { "personalSiteDefaultStorageLimitInMB", n => { PersonalSiteDefaultStorageLimitInMB = n.GetLongValue(); } },
                 { "sharingAllowedDomainList", n => { SharingAllowedDomainList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "sharingBlockedDomainList", n => { SharingBlockedDomainList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "sharingCapability", n => { SharingCapability = n.GetEnumValue<SharingCapabilities>(); } },
-                { "sharingDomainRestrictionMode", n => { SharingDomainRestrictionMode = n.GetEnumValue<SharingDomainRestrictionMode>(); } },
+                { "sharingCapability", n => { SharingCapability = n.GetEnumValue<Microsoft.Graph.Models.SharingCapabilities>(); } },
+                { "sharingDomainRestrictionMode", n => { SharingDomainRestrictionMode = n.GetEnumValue<Microsoft.Graph.Models.SharingDomainRestrictionMode>(); } },
                 { "siteCreationDefaultManagedPath", n => { SiteCreationDefaultManagedPath = n.GetStringValue(); } },
                 { "siteCreationDefaultStorageLimitInMB", n => { SiteCreationDefaultStorageLimitInMB = n.GetIntValue(); } },
                 { "tenantDefaultTimezone", n => { TenantDefaultTimezone = n.GetStringValue(); } },
@@ -326,7 +326,7 @@ namespace Microsoft.Graph.Models
             writer.WriteIntValue("deletedUserPersonalSiteRetentionPeriodInDays", DeletedUserPersonalSiteRetentionPeriodInDays);
             writer.WriteCollectionOfPrimitiveValues<string>("excludedFileExtensionsForSyncApp", ExcludedFileExtensionsForSyncApp);
             writer.WriteObjectValue<Microsoft.Graph.Models.IdleSessionSignOut>("idleSessionSignOut", IdleSessionSignOut);
-            writer.WriteEnumValue<ImageTaggingChoice>("imageTaggingOption", ImageTaggingOption);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ImageTaggingChoice>("imageTaggingOption", ImageTaggingOption);
             writer.WriteBoolValue("isCommentingOnSitePagesEnabled", IsCommentingOnSitePagesEnabled);
             writer.WriteBoolValue("isFileActivityNotificationEnabled", IsFileActivityNotificationEnabled);
             writer.WriteBoolValue("isLegacyAuthProtocolsEnabled", IsLegacyAuthProtocolsEnabled);
@@ -345,8 +345,8 @@ namespace Microsoft.Graph.Models
             writer.WriteLongValue("personalSiteDefaultStorageLimitInMB", PersonalSiteDefaultStorageLimitInMB);
             writer.WriteCollectionOfPrimitiveValues<string>("sharingAllowedDomainList", SharingAllowedDomainList);
             writer.WriteCollectionOfPrimitiveValues<string>("sharingBlockedDomainList", SharingBlockedDomainList);
-            writer.WriteEnumValue<SharingCapabilities>("sharingCapability", SharingCapability);
-            writer.WriteEnumValue<SharingDomainRestrictionMode>("sharingDomainRestrictionMode", SharingDomainRestrictionMode);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SharingCapabilities>("sharingCapability", SharingCapability);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SharingDomainRestrictionMode>("sharingDomainRestrictionMode", SharingDomainRestrictionMode);
             writer.WriteStringValue("siteCreationDefaultManagedPath", SiteCreationDefaultManagedPath);
             writer.WriteIntValue("siteCreationDefaultStorageLimitInMB", SiteCreationDefaultStorageLimitInMB);
             writer.WriteStringValue("tenantDefaultTimezone", TenantDefaultTimezone);

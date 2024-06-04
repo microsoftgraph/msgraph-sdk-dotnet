@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class TeamMembersNotificationRecipient : TeamworkNotificationRecipient, IParsable
+    public class TeamMembersNotificationRecipient : Microsoft.Graph.Models.TeamworkNotificationRecipient, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The unique identifier for the team whose members should receive the notification.</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TeamMembersNotificationRecipient"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TeamMembersNotificationRecipient"/> and sets the default values.
         /// </summary>
         public TeamMembersNotificationRecipient() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamMembersNotificationRecipient"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamMembersNotificationRecipient"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeamMembersNotificationRecipient CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TeamMembersNotificationRecipient CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamMembersNotificationRecipient();
+            return new Microsoft.Graph.Models.TeamMembersNotificationRecipient();
         }
         /// <summary>
         /// The deserialization information for the current model

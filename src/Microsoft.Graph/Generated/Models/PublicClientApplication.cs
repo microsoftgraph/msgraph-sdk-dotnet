@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PublicClientApplication"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.PublicClientApplication"/> and sets the default values.
         /// </summary>
         public PublicClientApplication()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PublicClientApplication"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PublicClientApplication"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PublicClientApplication CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.PublicClientApplication CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PublicClientApplication();
+            return new Microsoft.Graph.Models.PublicClientApplication();
         }
         /// <summary>
         /// The deserialization information for the current model

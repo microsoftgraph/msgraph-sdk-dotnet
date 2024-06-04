@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The identity of the owner of the shared item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Owner
+        public Microsoft.Graph.Models.IdentitySet? Owner
         {
-            get { return BackingStore?.Get<IdentitySet?>("owner"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Owner
+        public Microsoft.Graph.Models.IdentitySet Owner
         {
-            get { return BackingStore?.Get<IdentitySet>("owner"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #endif
@@ -70,16 +70,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The identity of the user who shared the item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? SharedBy
+        public Microsoft.Graph.Models.IdentitySet? SharedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("sharedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("sharedBy"); }
             set { BackingStore?.Set("sharedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet SharedBy
+        public Microsoft.Graph.Models.IdentitySet SharedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("sharedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("sharedBy"); }
             set { BackingStore?.Set("sharedBy", value); }
         }
 #endif
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("sharedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Shared"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Shared"/> and sets the default values.
         /// </summary>
         public Shared()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Shared"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Shared"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Shared CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Shared CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Shared();
+            return new Microsoft.Graph.Models.Shared();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,9 +116,9 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
-                { "sharedBy", n => { SharedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "sharedBy", n => { SharedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "sharedDateTime", n => { SharedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -130,9 +130,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<IdentitySet>("owner", Owner);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("owner", Owner);
             writer.WriteStringValue("scope", Scope);
-            writer.WriteObjectValue<IdentitySet>("sharedBy", SharedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("sharedBy", SharedBy);
             writer.WriteDateTimeOffsetValue("sharedDateTime", SharedDateTime);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class SecurityGroupEvidence : AlertEvidence, IParsable
+    public class SecurityGroupEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the security group.</summary>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SecurityGroupEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.SecurityGroupEvidence"/> and sets the default values.
         /// </summary>
         public SecurityGroupEvidence() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SecurityGroupEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.SecurityGroupEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SecurityGroupEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.SecurityGroupEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SecurityGroupEvidence();
+            return new Microsoft.Graph.Models.Security.SecurityGroupEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model

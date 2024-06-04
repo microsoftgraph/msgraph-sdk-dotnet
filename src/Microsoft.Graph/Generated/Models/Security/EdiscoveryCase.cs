@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class EdiscoveryCase : Case, IParsable
+    public class EdiscoveryCase : Microsoft.Graph.Models.Security.Case, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The user who closed the case.</summary>
@@ -35,16 +35,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>Returns a list of case ediscoveryCustodian objects for this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryCustodian>? Custodians
+        public List<Microsoft.Graph.Models.Security.EdiscoveryCustodian>? Custodians
         {
-            get { return BackingStore?.Get<List<EdiscoveryCustodian>?>("custodians"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryCustodian>?>("custodians"); }
             set { BackingStore?.Set("custodians", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryCustodian> Custodians
+        public List<Microsoft.Graph.Models.Security.EdiscoveryCustodian> Custodians
         {
-            get { return BackingStore?.Get<List<EdiscoveryCustodian>>("custodians"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryCustodian>>("custodians"); }
             set { BackingStore?.Set("custodians", value); }
         }
 #endif
@@ -67,101 +67,101 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>Returns a list of case ediscoveryNoncustodialDataSource objects for this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryNoncustodialDataSource>? NoncustodialDataSources
+        public List<Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource>? NoncustodialDataSources
         {
-            get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>?>("noncustodialDataSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource>?>("noncustodialDataSources"); }
             set { BackingStore?.Set("noncustodialDataSources", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryNoncustodialDataSource> NoncustodialDataSources
+        public List<Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource> NoncustodialDataSources
         {
-            get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>>("noncustodialDataSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource>>("noncustodialDataSources"); }
             set { BackingStore?.Set("noncustodialDataSources", value); }
         }
 #endif
         /// <summary>Returns a list of case caseOperation objects for this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CaseOperation>? Operations
+        public List<Microsoft.Graph.Models.Security.CaseOperation>? Operations
         {
-            get { return BackingStore?.Get<List<CaseOperation>?>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.CaseOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<CaseOperation> Operations
+        public List<Microsoft.Graph.Models.Security.CaseOperation> Operations
         {
-            get { return BackingStore?.Get<List<CaseOperation>>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.CaseOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #endif
         /// <summary>Returns a list of eDiscoveryReviewSet objects in the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryReviewSet>? ReviewSets
+        public List<Microsoft.Graph.Models.Security.EdiscoveryReviewSet>? ReviewSets
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewSet>?>("reviewSets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryReviewSet>?>("reviewSets"); }
             set { BackingStore?.Set("reviewSets", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryReviewSet> ReviewSets
+        public List<Microsoft.Graph.Models.Security.EdiscoveryReviewSet> ReviewSets
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewSet>>("reviewSets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryReviewSet>>("reviewSets"); }
             set { BackingStore?.Set("reviewSets", value); }
         }
 #endif
         /// <summary>Returns a list of eDiscoverySearch objects associated with this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoverySearch>? Searches
+        public List<Microsoft.Graph.Models.Security.EdiscoverySearch>? Searches
         {
-            get { return BackingStore?.Get<List<EdiscoverySearch>?>("searches"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoverySearch>?>("searches"); }
             set { BackingStore?.Set("searches", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoverySearch> Searches
+        public List<Microsoft.Graph.Models.Security.EdiscoverySearch> Searches
         {
-            get { return BackingStore?.Get<List<EdiscoverySearch>>("searches"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoverySearch>>("searches"); }
             set { BackingStore?.Set("searches", value); }
         }
 #endif
         /// <summary>Returns a list of eDIscoverySettings objects in the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoveryCaseSettings? Settings
+        public Microsoft.Graph.Models.Security.EdiscoveryCaseSettings? Settings
         {
-            get { return BackingStore?.Get<EdiscoveryCaseSettings?>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.EdiscoveryCaseSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public EdiscoveryCaseSettings Settings
+        public Microsoft.Graph.Models.Security.EdiscoveryCaseSettings Settings
         {
-            get { return BackingStore?.Get<EdiscoveryCaseSettings>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.EdiscoveryCaseSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>Returns a list of ediscoveryReviewTag objects associated to this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryReviewTag>? Tags
+        public List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>? Tags
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("tags"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryReviewTag> Tags
+        public List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag> Tags
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("tags"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EdiscoveryCase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.EdiscoveryCase"/> and sets the default values.
         /// </summary>
         public EdiscoveryCase() : base()
         {
@@ -170,12 +170,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryCase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.EdiscoveryCase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdiscoveryCase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.EdiscoveryCase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdiscoveryCase();
+            return new Microsoft.Graph.Models.Security.EdiscoveryCase();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -187,14 +187,14 @@ namespace Microsoft.Graph.Models.Security
             {
                 { "closedBy", n => { ClosedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "closedDateTime", n => { ClosedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "custodians", n => { Custodians = n.GetCollectionOfObjectValues<EdiscoveryCustodian>(EdiscoveryCustodian.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "custodians", n => { Custodians = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryCustodian>(Microsoft.Graph.Models.Security.EdiscoveryCustodian.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
-                { "noncustodialDataSources", n => { NoncustodialDataSources = n.GetCollectionOfObjectValues<EdiscoveryNoncustodialDataSource>(EdiscoveryNoncustodialDataSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "operations", n => { Operations = n.GetCollectionOfObjectValues<CaseOperation>(CaseOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "reviewSets", n => { ReviewSets = n.GetCollectionOfObjectValues<EdiscoveryReviewSet>(EdiscoveryReviewSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "searches", n => { Searches = n.GetCollectionOfObjectValues<EdiscoverySearch>(EdiscoverySearch.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "settings", n => { Settings = n.GetObjectValue<EdiscoveryCaseSettings>(EdiscoveryCaseSettings.CreateFromDiscriminatorValue); } },
-                { "tags", n => { Tags = n.GetCollectionOfObjectValues<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "noncustodialDataSources", n => { NoncustodialDataSources = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource>(Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.CaseOperation>(Microsoft.Graph.Models.Security.CaseOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "reviewSets", n => { ReviewSets = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryReviewSet>(Microsoft.Graph.Models.Security.EdiscoveryReviewSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "searches", n => { Searches = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoverySearch>(Microsoft.Graph.Models.Security.EdiscoverySearch.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Models.Security.EdiscoveryCaseSettings>(Microsoft.Graph.Models.Security.EdiscoveryCaseSettings.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>(Microsoft.Graph.Models.Security.EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -207,14 +207,14 @@ namespace Microsoft.Graph.Models.Security
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("closedBy", ClosedBy);
             writer.WriteDateTimeOffsetValue("closedDateTime", ClosedDateTime);
-            writer.WriteCollectionOfObjectValues<EdiscoveryCustodian>("custodians", Custodians);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryCustodian>("custodians", Custodians);
             writer.WriteStringValue("externalId", ExternalId);
-            writer.WriteCollectionOfObjectValues<EdiscoveryNoncustodialDataSource>("noncustodialDataSources", NoncustodialDataSources);
-            writer.WriteCollectionOfObjectValues<CaseOperation>("operations", Operations);
-            writer.WriteCollectionOfObjectValues<EdiscoveryReviewSet>("reviewSets", ReviewSets);
-            writer.WriteCollectionOfObjectValues<EdiscoverySearch>("searches", Searches);
-            writer.WriteObjectValue<EdiscoveryCaseSettings>("settings", Settings);
-            writer.WriteCollectionOfObjectValues<EdiscoveryReviewTag>("tags", Tags);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource>("noncustodialDataSources", NoncustodialDataSources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.CaseOperation>("operations", Operations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryReviewSet>("reviewSets", ReviewSets);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoverySearch>("searches", Searches);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.EdiscoveryCaseSettings>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>("tags", Tags);
         }
     }
 }

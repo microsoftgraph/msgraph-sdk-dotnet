@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class PolicyBase : DirectoryObject, IParsable
+    public class PolicyBase : Microsoft.Graph.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Description for this policy. Required.</summary>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PolicyBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.PolicyBase"/> and sets the default values.
         /// </summary>
         public PolicyBase() : base()
         {
@@ -52,27 +52,27 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PolicyBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PolicyBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PolicyBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.PolicyBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.activityBasedTimeoutPolicy" => new ActivityBasedTimeoutPolicy(),
-                "#microsoft.graph.appManagementPolicy" => new AppManagementPolicy(),
-                "#microsoft.graph.authorizationPolicy" => new AuthorizationPolicy(),
-                "#microsoft.graph.claimsMappingPolicy" => new ClaimsMappingPolicy(),
-                "#microsoft.graph.crossTenantAccessPolicy" => new CrossTenantAccessPolicy(),
-                "#microsoft.graph.homeRealmDiscoveryPolicy" => new HomeRealmDiscoveryPolicy(),
-                "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new IdentitySecurityDefaultsEnforcementPolicy(),
-                "#microsoft.graph.permissionGrantPolicy" => new PermissionGrantPolicy(),
-                "#microsoft.graph.stsPolicy" => new StsPolicy(),
-                "#microsoft.graph.tenantAppManagementPolicy" => new TenantAppManagementPolicy(),
-                "#microsoft.graph.tokenIssuancePolicy" => new TokenIssuancePolicy(),
-                "#microsoft.graph.tokenLifetimePolicy" => new TokenLifetimePolicy(),
-                _ => new PolicyBase(),
+                "#microsoft.graph.activityBasedTimeoutPolicy" => new Microsoft.Graph.Models.ActivityBasedTimeoutPolicy(),
+                "#microsoft.graph.appManagementPolicy" => new Microsoft.Graph.Models.AppManagementPolicy(),
+                "#microsoft.graph.authorizationPolicy" => new Microsoft.Graph.Models.AuthorizationPolicy(),
+                "#microsoft.graph.claimsMappingPolicy" => new Microsoft.Graph.Models.ClaimsMappingPolicy(),
+                "#microsoft.graph.crossTenantAccessPolicy" => new Microsoft.Graph.Models.CrossTenantAccessPolicy(),
+                "#microsoft.graph.homeRealmDiscoveryPolicy" => new Microsoft.Graph.Models.HomeRealmDiscoveryPolicy(),
+                "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy(),
+                "#microsoft.graph.permissionGrantPolicy" => new Microsoft.Graph.Models.PermissionGrantPolicy(),
+                "#microsoft.graph.stsPolicy" => new Microsoft.Graph.Models.StsPolicy(),
+                "#microsoft.graph.tenantAppManagementPolicy" => new Microsoft.Graph.Models.TenantAppManagementPolicy(),
+                "#microsoft.graph.tokenIssuancePolicy" => new Microsoft.Graph.Models.TokenIssuancePolicy(),
+                "#microsoft.graph.tokenLifetimePolicy" => new Microsoft.Graph.Models.TokenLifetimePolicy(),
+                _ => new Microsoft.Graph.Models.PolicyBase(),
             };
         }
         /// <summary>

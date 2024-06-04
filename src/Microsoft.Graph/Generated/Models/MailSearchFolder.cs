@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class MailSearchFolder : MailFolder, IParsable
+    public class MailSearchFolder : Microsoft.Graph.Models.MailFolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The OData query to filter the messages.</summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MailSearchFolder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MailSearchFolder"/> and sets the default values.
         /// </summary>
         public MailSearchFolder() : base()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MailSearchFolder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MailSearchFolder"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MailSearchFolder CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MailSearchFolder CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MailSearchFolder();
+            return new Microsoft.Graph.Models.MailSearchFolder();
         }
         /// <summary>
         /// The deserialization information for the current model

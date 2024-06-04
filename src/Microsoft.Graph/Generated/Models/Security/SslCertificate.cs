@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class SslCertificate : Artifact, IParsable
+    public class SslCertificate : Microsoft.Graph.Models.Security.Artifact, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date and time when a certificate expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
@@ -47,16 +47,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The entity that grants this certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SslCertificateEntity? Issuer
+        public Microsoft.Graph.Models.Security.SslCertificateEntity? Issuer
         {
-            get { return BackingStore?.Get<SslCertificateEntity?>("issuer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.SslCertificateEntity?>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
 #nullable restore
 #else
-        public SslCertificateEntity Issuer
+        public Microsoft.Graph.Models.Security.SslCertificateEntity Issuer
         {
-            get { return BackingStore?.Get<SslCertificateEntity>("issuer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.SslCertificateEntity>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
 #endif
@@ -69,16 +69,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The hosts related with this sslCertificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Host>? RelatedHosts
+        public List<Microsoft.Graph.Models.Security.Host>? RelatedHosts
         {
-            get { return BackingStore?.Get<List<Host>?>("relatedHosts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.Host>?>("relatedHosts"); }
             set { BackingStore?.Set("relatedHosts", value); }
         }
 #nullable restore
 #else
-        public List<Host> RelatedHosts
+        public List<Microsoft.Graph.Models.Security.Host> RelatedHosts
         {
-            get { return BackingStore?.Get<List<Host>>("relatedHosts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.Host>>("relatedHosts"); }
             set { BackingStore?.Set("relatedHosts", value); }
         }
 #endif
@@ -117,21 +117,21 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The person, site, machine, and so on, this certificate is for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SslCertificateEntity? Subject
+        public Microsoft.Graph.Models.Security.SslCertificateEntity? Subject
         {
-            get { return BackingStore?.Get<SslCertificateEntity?>("subject"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.SslCertificateEntity?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public SslCertificateEntity Subject
+        public Microsoft.Graph.Models.Security.SslCertificateEntity Subject
         {
-            get { return BackingStore?.Get<SslCertificateEntity>("subject"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.SslCertificateEntity>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SslCertificate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.SslCertificate"/> and sets the default values.
         /// </summary>
         public SslCertificate() : base()
         {
@@ -140,12 +140,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SslCertificate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.SslCertificate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SslCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.SslCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SslCertificate();
+            return new Microsoft.Graph.Models.Security.SslCertificate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -159,12 +159,12 @@ namespace Microsoft.Graph.Models.Security
                 { "fingerprint", n => { Fingerprint = n.GetStringValue(); } },
                 { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "issueDateTime", n => { IssueDateTime = n.GetDateTimeOffsetValue(); } },
-                { "issuer", n => { Issuer = n.GetObjectValue<SslCertificateEntity>(SslCertificateEntity.CreateFromDiscriminatorValue); } },
+                { "issuer", n => { Issuer = n.GetObjectValue<Microsoft.Graph.Models.Security.SslCertificateEntity>(Microsoft.Graph.Models.Security.SslCertificateEntity.CreateFromDiscriminatorValue); } },
                 { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                { "relatedHosts", n => { RelatedHosts = n.GetCollectionOfObjectValues<Host>(Host.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "relatedHosts", n => { RelatedHosts = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.Host>(Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
                 { "sha1", n => { Sha1 = n.GetStringValue(); } },
-                { "subject", n => { Subject = n.GetObjectValue<SslCertificateEntity>(SslCertificateEntity.CreateFromDiscriminatorValue); } },
+                { "subject", n => { Subject = n.GetObjectValue<Microsoft.Graph.Models.Security.SslCertificateEntity>(Microsoft.Graph.Models.Security.SslCertificateEntity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -179,12 +179,12 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteStringValue("fingerprint", Fingerprint);
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
             writer.WriteDateTimeOffsetValue("issueDateTime", IssueDateTime);
-            writer.WriteObjectValue<SslCertificateEntity>("issuer", Issuer);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.SslCertificateEntity>("issuer", Issuer);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
-            writer.WriteCollectionOfObjectValues<Host>("relatedHosts", RelatedHosts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.Host>("relatedHosts", RelatedHosts);
             writer.WriteStringValue("serialNumber", SerialNumber);
             writer.WriteStringValue("sha1", Sha1);
-            writer.WriteObjectValue<SslCertificateEntity>("subject", Subject);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.SslCertificateEntity>("subject", Subject);
         }
     }
 }

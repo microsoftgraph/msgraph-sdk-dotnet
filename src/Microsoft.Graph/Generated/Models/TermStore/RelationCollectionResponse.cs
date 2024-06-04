@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Models.TermStore
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Relation>? Value
+        public List<Microsoft.Graph.Models.TermStore.Relation>? Value
         {
-            get { return BackingStore?.Get<List<Relation>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.Relation>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Relation> Value
+        public List<Microsoft.Graph.Models.TermStore.Relation> Value
         {
-            get { return BackingStore?.Get<List<Relation>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.Relation>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RelationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TermStore.RelationCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RelationCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TermStore.RelationCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RelationCollectionResponse();
+            return new Microsoft.Graph.Models.TermStore.RelationCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.TermStore
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<Relation>(Relation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.Relation>(Microsoft.Graph.Models.TermStore.Relation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models.TermStore
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Relation>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.Relation>("value", Value);
         }
     }
 }

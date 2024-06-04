@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OptionalClaim"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OptionalClaim"/> and sets the default values.
         /// </summary>
         public OptionalClaim()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OptionalClaim"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OptionalClaim"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OptionalClaim CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.OptionalClaim CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OptionalClaim();
+            return new Microsoft.Graph.Models.OptionalClaim();
         }
         /// <summary>
         /// The deserialization information for the current model

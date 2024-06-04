@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceAndAppManagementData"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.DeviceAndAppManagementData"/> and sets the default values.
         /// </summary>
         public DeviceAndAppManagementData()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceAndAppManagementData"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceAndAppManagementData"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceAndAppManagementData CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.DeviceAndAppManagementData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceAndAppManagementData();
+            return new Microsoft.Graph.Models.DeviceAndAppManagementData();
         }
         /// <summary>
         /// The deserialization information for the current model

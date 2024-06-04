@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod
     public class GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod
             if (!string.IsNullOrWhiteSpace(period)) PathParameters.Add("period", period);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,50 +37,50 @@ namespace Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod
         /// Get a summary of AD FS relying parties information.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getrelyingpartydetailedsummary?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetRelyingPartyDetailedSummaryWithPeriodGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetRelyingPartyDetailedSummaryWithPeriodGetResponse?> GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponseAsync(Action<RequestConfiguration<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodGetResponse?> GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetRelyingPartyDetailedSummaryWithPeriodGetResponse> GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponseAsync(Action<RequestConfiguration<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodGetResponse> GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetRelyingPartyDetailedSummaryWithPeriodGetResponse>(requestInfo, GetRelyingPartyDetailedSummaryWithPeriodGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodGetResponse>(requestInfo, Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a summary of AD FS relying parties information.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getrelyingpartydetailedsummary?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetRelyingPartyDetailedSummaryWithPeriodResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetRelyingPartyDetailedSummaryWithPeriodResponse?> GetAsync(Action<RequestConfiguration<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetRelyingPartyDetailedSummaryWithPeriodResponse> GetAsync(Action<RequestConfiguration<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetRelyingPartyDetailedSummaryWithPeriodResponse>(requestInfo, GetRelyingPartyDetailedSummaryWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodResponse>(requestInfo, Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a summary of AD FS relying parties information.
@@ -89,11 +89,11 @@ namespace Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -104,11 +104,11 @@ namespace Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a summary of AD FS relying parties information.
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration : RequestConfiguration<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>
+        public class GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder.GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>
         {
         }
     }

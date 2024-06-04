@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OnAttributeCollectionListener : AuthenticationEventListener, IParsable
+    public class OnAttributeCollectionListener : Microsoft.Graph.Models.AuthenticationEventListener, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Required. Configuration for what to invoke if the event resolves to this listener.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnAttributeCollectionHandler? Handler
+        public Microsoft.Graph.Models.OnAttributeCollectionHandler? Handler
         {
-            get { return BackingStore?.Get<OnAttributeCollectionHandler?>("handler"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnAttributeCollectionHandler?>("handler"); }
             set { BackingStore?.Set("handler", value); }
         }
 #nullable restore
 #else
-        public OnAttributeCollectionHandler Handler
+        public Microsoft.Graph.Models.OnAttributeCollectionHandler Handler
         {
-            get { return BackingStore?.Get<OnAttributeCollectionHandler>("handler"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnAttributeCollectionHandler>("handler"); }
             set { BackingStore?.Set("handler", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnAttributeCollectionListener"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OnAttributeCollectionListener"/> and sets the default values.
         /// </summary>
         public OnAttributeCollectionListener() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnAttributeCollectionListener"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnAttributeCollectionListener"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnAttributeCollectionListener CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OnAttributeCollectionListener CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnAttributeCollectionListener();
+            return new Microsoft.Graph.Models.OnAttributeCollectionListener();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "handler", n => { Handler = n.GetObjectValue<OnAttributeCollectionHandler>(OnAttributeCollectionHandler.CreateFromDiscriminatorValue); } },
+                { "handler", n => { Handler = n.GetObjectValue<Microsoft.Graph.Models.OnAttributeCollectionHandler>(Microsoft.Graph.Models.OnAttributeCollectionHandler.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<OnAttributeCollectionHandler>("handler", Handler);
+            writer.WriteObjectValue<Microsoft.Graph.Models.OnAttributeCollectionHandler>("handler", Handler);
         }
     }
 }

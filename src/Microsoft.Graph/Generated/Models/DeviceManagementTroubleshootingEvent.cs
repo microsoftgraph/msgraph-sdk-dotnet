@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Event representing an general failure.
     /// </summary>
-    public class DeviceManagementTroubleshootingEvent : Entity, IParsable
+    public class DeviceManagementTroubleshootingEvent : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Id used for tracing the failure in the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,16 +36,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementTroubleshootingEvent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementTroubleshootingEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.enrollmentTroubleshootingEvent" => new EnrollmentTroubleshootingEvent(),
-                _ => new DeviceManagementTroubleshootingEvent(),
+                "#microsoft.graph.enrollmentTroubleshootingEvent" => new Microsoft.Graph.Models.EnrollmentTroubleshootingEvent(),
+                _ => new Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent(),
             };
         }
         /// <summary>

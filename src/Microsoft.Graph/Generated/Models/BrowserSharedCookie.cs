@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class BrowserSharedCookie : Entity, IParsable
+    public class BrowserSharedCookie : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The comment for the shared cookie.</summary>
@@ -57,16 +57,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The history of modifications applied to the cookie.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BrowserSharedCookieHistory>? History
+        public List<Microsoft.Graph.Models.BrowserSharedCookieHistory>? History
         {
-            get { return BackingStore?.Get<List<BrowserSharedCookieHistory>?>("history"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BrowserSharedCookieHistory>?>("history"); }
             set { BackingStore?.Set("history", value); }
         }
 #nullable restore
 #else
-        public List<BrowserSharedCookieHistory> History
+        public List<Microsoft.Graph.Models.BrowserSharedCookieHistory> History
         {
-            get { return BackingStore?.Get<List<BrowserSharedCookieHistory>>("history"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BrowserSharedCookieHistory>>("history"); }
             set { BackingStore?.Set("history", value); }
         }
 #endif
@@ -95,16 +95,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The user who last modified the cookie.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -131,26 +131,26 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The sourceEnvironment property</summary>
-        public BrowserSharedCookieSourceEnvironment? SourceEnvironment
+        public Microsoft.Graph.Models.BrowserSharedCookieSourceEnvironment? SourceEnvironment
         {
-            get { return BackingStore?.Get<BrowserSharedCookieSourceEnvironment?>("sourceEnvironment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BrowserSharedCookieSourceEnvironment?>("sourceEnvironment"); }
             set { BackingStore?.Set("sourceEnvironment", value); }
         }
         /// <summary>The status property</summary>
-        public BrowserSharedCookieStatus? Status
+        public Microsoft.Graph.Models.BrowserSharedCookieStatus? Status
         {
-            get { return BackingStore?.Get<BrowserSharedCookieStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BrowserSharedCookieStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BrowserSharedCookie"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BrowserSharedCookie"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BrowserSharedCookie CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.BrowserSharedCookie CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BrowserSharedCookie();
+            return new Microsoft.Graph.Models.BrowserSharedCookie();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -164,14 +164,14 @@ namespace Microsoft.Graph.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "history", n => { History = n.GetCollectionOfObjectValues<BrowserSharedCookieHistory>(BrowserSharedCookieHistory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "history", n => { History = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.BrowserSharedCookieHistory>(Microsoft.Graph.Models.BrowserSharedCookieHistory.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "hostOnly", n => { HostOnly = n.GetBoolValue(); } },
                 { "hostOrDomain", n => { HostOrDomain = n.GetStringValue(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
-                { "sourceEnvironment", n => { SourceEnvironment = n.GetEnumValue<BrowserSharedCookieSourceEnvironment>(); } },
-                { "status", n => { Status = n.GetEnumValue<BrowserSharedCookieStatus>(); } },
+                { "sourceEnvironment", n => { SourceEnvironment = n.GetEnumValue<Microsoft.Graph.Models.BrowserSharedCookieSourceEnvironment>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.BrowserSharedCookieStatus>(); } },
             };
         }
         /// <summary>
@@ -186,14 +186,14 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("deletedDateTime", DeletedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<BrowserSharedCookieHistory>("history", History);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.BrowserSharedCookieHistory>("history", History);
             writer.WriteBoolValue("hostOnly", HostOnly);
             writer.WriteStringValue("hostOrDomain", HostOrDomain);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("path", Path);
-            writer.WriteEnumValue<BrowserSharedCookieSourceEnvironment>("sourceEnvironment", SourceEnvironment);
-            writer.WriteEnumValue<BrowserSharedCookieStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.BrowserSharedCookieSourceEnvironment>("sourceEnvironment", SourceEnvironment);
+            writer.WriteEnumValue<Microsoft.Graph.Models.BrowserSharedCookieStatus>("status", Status);
         }
     }
 }

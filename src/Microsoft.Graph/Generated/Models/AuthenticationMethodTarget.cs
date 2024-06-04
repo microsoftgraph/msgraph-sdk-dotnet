@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AuthenticationMethodTarget : Entity, IParsable
+    public class AuthenticationMethodTarget : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Determines if the user is enforced to register the authentication method.</summary>
@@ -17,25 +17,25 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("isRegistrationRequired", value); }
         }
         /// <summary>The targetType property</summary>
-        public AuthenticationMethodTargetType? TargetType
+        public Microsoft.Graph.Models.AuthenticationMethodTargetType? TargetType
         {
-            get { return BackingStore?.Get<AuthenticationMethodTargetType?>("targetType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationMethodTargetType?>("targetType"); }
             set { BackingStore?.Set("targetType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationMethodTarget"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationMethodTarget"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthenticationMethodTarget CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AuthenticationMethodTarget CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget" => new MicrosoftAuthenticatorAuthenticationMethodTarget(),
-                "#microsoft.graph.smsAuthenticationMethodTarget" => new SmsAuthenticationMethodTarget(),
-                _ => new AuthenticationMethodTarget(),
+                "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget" => new Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethodTarget(),
+                "#microsoft.graph.smsAuthenticationMethodTarget" => new Microsoft.Graph.Models.SmsAuthenticationMethodTarget(),
+                _ => new Microsoft.Graph.Models.AuthenticationMethodTarget(),
             };
         }
         /// <summary>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "isRegistrationRequired", n => { IsRegistrationRequired = n.GetBoolValue(); } },
-                { "targetType", n => { TargetType = n.GetEnumValue<AuthenticationMethodTargetType>(); } },
+                { "targetType", n => { TargetType = n.GetEnumValue<Microsoft.Graph.Models.AuthenticationMethodTargetType>(); } },
             };
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("isRegistrationRequired", IsRegistrationRequired);
-            writer.WriteEnumValue<AuthenticationMethodTargetType>("targetType", TargetType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AuthenticationMethodTargetType>("targetType", TargetType);
         }
     }
 }

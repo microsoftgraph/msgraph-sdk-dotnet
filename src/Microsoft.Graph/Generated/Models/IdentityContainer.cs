@@ -7,146 +7,146 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class IdentityContainer : Entity, IParsable
+    public class IdentityContainer : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents entry point for API connectors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IdentityApiConnector>? ApiConnectors
+        public List<Microsoft.Graph.Models.IdentityApiConnector>? ApiConnectors
         {
-            get { return BackingStore?.Get<List<IdentityApiConnector>?>("apiConnectors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityApiConnector>?>("apiConnectors"); }
             set { BackingStore?.Set("apiConnectors", value); }
         }
 #nullable restore
 #else
-        public List<IdentityApiConnector> ApiConnectors
+        public List<Microsoft.Graph.Models.IdentityApiConnector> ApiConnectors
         {
-            get { return BackingStore?.Get<List<IdentityApiConnector>>("apiConnectors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityApiConnector>>("apiConnectors"); }
             set { BackingStore?.Set("apiConnectors", value); }
         }
 #endif
         /// <summary>Represents listeners for custom authentication extension events in Azure AD for workforce and customers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationEventListener>? AuthenticationEventListeners
+        public List<Microsoft.Graph.Models.AuthenticationEventListener>? AuthenticationEventListeners
         {
-            get { return BackingStore?.Get<List<AuthenticationEventListener>?>("authenticationEventListeners"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationEventListener>?>("authenticationEventListeners"); }
             set { BackingStore?.Set("authenticationEventListeners", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationEventListener> AuthenticationEventListeners
+        public List<Microsoft.Graph.Models.AuthenticationEventListener> AuthenticationEventListeners
         {
-            get { return BackingStore?.Get<List<AuthenticationEventListener>>("authenticationEventListeners"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationEventListener>>("authenticationEventListeners"); }
             set { BackingStore?.Set("authenticationEventListeners", value); }
         }
 #endif
         /// <summary>Represents the entry point for self-service sign-up and sign-in user flows in both Microsoft Entra workforce and external tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationEventsFlow>? AuthenticationEventsFlows
+        public List<Microsoft.Graph.Models.AuthenticationEventsFlow>? AuthenticationEventsFlows
         {
-            get { return BackingStore?.Get<List<AuthenticationEventsFlow>?>("authenticationEventsFlows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationEventsFlow>?>("authenticationEventsFlows"); }
             set { BackingStore?.Set("authenticationEventsFlows", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationEventsFlow> AuthenticationEventsFlows
+        public List<Microsoft.Graph.Models.AuthenticationEventsFlow> AuthenticationEventsFlows
         {
-            get { return BackingStore?.Get<List<AuthenticationEventsFlow>>("authenticationEventsFlows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationEventsFlow>>("authenticationEventsFlows"); }
             set { BackingStore?.Set("authenticationEventsFlows", value); }
         }
 #endif
         /// <summary>Represents entry point for B2X/self-service sign-up identity userflows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<B2xIdentityUserFlow>? B2xUserFlows
+        public List<Microsoft.Graph.Models.B2xIdentityUserFlow>? B2xUserFlows
         {
-            get { return BackingStore?.Get<List<B2xIdentityUserFlow>?>("b2xUserFlows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.B2xIdentityUserFlow>?>("b2xUserFlows"); }
             set { BackingStore?.Set("b2xUserFlows", value); }
         }
 #nullable restore
 #else
-        public List<B2xIdentityUserFlow> B2xUserFlows
+        public List<Microsoft.Graph.Models.B2xIdentityUserFlow> B2xUserFlows
         {
-            get { return BackingStore?.Get<List<B2xIdentityUserFlow>>("b2xUserFlows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.B2xIdentityUserFlow>>("b2xUserFlows"); }
             set { BackingStore?.Set("b2xUserFlows", value); }
         }
 #endif
         /// <summary>the entry point for the Conditional Access (CA) object model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessRoot? ConditionalAccess
+        public Microsoft.Graph.Models.ConditionalAccessRoot? ConditionalAccess
         {
-            get { return BackingStore?.Get<ConditionalAccessRoot?>("conditionalAccess"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessRoot?>("conditionalAccess"); }
             set { BackingStore?.Set("conditionalAccess", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessRoot ConditionalAccess
+        public Microsoft.Graph.Models.ConditionalAccessRoot ConditionalAccess
         {
-            get { return BackingStore?.Get<ConditionalAccessRoot>("conditionalAccess"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessRoot>("conditionalAccess"); }
             set { BackingStore?.Set("conditionalAccess", value); }
         }
 #endif
         /// <summary>Represents custom extensions to authentication flows in Azure AD for workforce and customers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomAuthenticationExtension>? CustomAuthenticationExtensions
+        public List<Microsoft.Graph.Models.CustomAuthenticationExtension>? CustomAuthenticationExtensions
         {
-            get { return BackingStore?.Get<List<CustomAuthenticationExtension>?>("customAuthenticationExtensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CustomAuthenticationExtension>?>("customAuthenticationExtensions"); }
             set { BackingStore?.Set("customAuthenticationExtensions", value); }
         }
 #nullable restore
 #else
-        public List<CustomAuthenticationExtension> CustomAuthenticationExtensions
+        public List<Microsoft.Graph.Models.CustomAuthenticationExtension> CustomAuthenticationExtensions
         {
-            get { return BackingStore?.Get<List<CustomAuthenticationExtension>>("customAuthenticationExtensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CustomAuthenticationExtension>>("customAuthenticationExtensions"); }
             set { BackingStore?.Set("customAuthenticationExtensions", value); }
         }
 #endif
         /// <summary>The identityProviders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IdentityProviderBase>? IdentityProviders
+        public List<Microsoft.Graph.Models.IdentityProviderBase>? IdentityProviders
         {
-            get { return BackingStore?.Get<List<IdentityProviderBase>?>("identityProviders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityProviderBase>?>("identityProviders"); }
             set { BackingStore?.Set("identityProviders", value); }
         }
 #nullable restore
 #else
-        public List<IdentityProviderBase> IdentityProviders
+        public List<Microsoft.Graph.Models.IdentityProviderBase> IdentityProviders
         {
-            get { return BackingStore?.Get<List<IdentityProviderBase>>("identityProviders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityProviderBase>>("identityProviders"); }
             set { BackingStore?.Set("identityProviders", value); }
         }
 #endif
         /// <summary>Represents entry point for identity userflow attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IdentityUserFlowAttribute>? UserFlowAttributes
+        public List<Microsoft.Graph.Models.IdentityUserFlowAttribute>? UserFlowAttributes
         {
-            get { return BackingStore?.Get<List<IdentityUserFlowAttribute>?>("userFlowAttributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityUserFlowAttribute>?>("userFlowAttributes"); }
             set { BackingStore?.Set("userFlowAttributes", value); }
         }
 #nullable restore
 #else
-        public List<IdentityUserFlowAttribute> UserFlowAttributes
+        public List<Microsoft.Graph.Models.IdentityUserFlowAttribute> UserFlowAttributes
         {
-            get { return BackingStore?.Get<List<IdentityUserFlowAttribute>>("userFlowAttributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityUserFlowAttribute>>("userFlowAttributes"); }
             set { BackingStore?.Set("userFlowAttributes", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IdentityContainer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityContainer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IdentityContainer CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IdentityContainer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IdentityContainer();
+            return new Microsoft.Graph.Models.IdentityContainer();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -156,14 +156,14 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "apiConnectors", n => { ApiConnectors = n.GetCollectionOfObjectValues<IdentityApiConnector>(IdentityApiConnector.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "authenticationEventListeners", n => { AuthenticationEventListeners = n.GetCollectionOfObjectValues<AuthenticationEventListener>(AuthenticationEventListener.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "authenticationEventsFlows", n => { AuthenticationEventsFlows = n.GetCollectionOfObjectValues<AuthenticationEventsFlow>(AuthenticationEventsFlow.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "b2xUserFlows", n => { B2xUserFlows = n.GetCollectionOfObjectValues<B2xIdentityUserFlow>(B2xIdentityUserFlow.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "conditionalAccess", n => { ConditionalAccess = n.GetObjectValue<ConditionalAccessRoot>(ConditionalAccessRoot.CreateFromDiscriminatorValue); } },
-                { "customAuthenticationExtensions", n => { CustomAuthenticationExtensions = n.GetCollectionOfObjectValues<CustomAuthenticationExtension>(CustomAuthenticationExtension.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "identityProviders", n => { IdentityProviders = n.GetCollectionOfObjectValues<IdentityProviderBase>(IdentityProviderBase.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "userFlowAttributes", n => { UserFlowAttributes = n.GetCollectionOfObjectValues<IdentityUserFlowAttribute>(IdentityUserFlowAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "apiConnectors", n => { ApiConnectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentityApiConnector>(Microsoft.Graph.Models.IdentityApiConnector.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationEventListeners", n => { AuthenticationEventListeners = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationEventListener>(Microsoft.Graph.Models.AuthenticationEventListener.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationEventsFlows", n => { AuthenticationEventsFlows = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationEventsFlow>(Microsoft.Graph.Models.AuthenticationEventsFlow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "b2xUserFlows", n => { B2xUserFlows = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.B2xIdentityUserFlow>(Microsoft.Graph.Models.B2xIdentityUserFlow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "conditionalAccess", n => { ConditionalAccess = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessRoot>(Microsoft.Graph.Models.ConditionalAccessRoot.CreateFromDiscriminatorValue); } },
+                { "customAuthenticationExtensions", n => { CustomAuthenticationExtensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CustomAuthenticationExtension>(Microsoft.Graph.Models.CustomAuthenticationExtension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "identityProviders", n => { IdentityProviders = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentityProviderBase>(Microsoft.Graph.Models.IdentityProviderBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userFlowAttributes", n => { UserFlowAttributes = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentityUserFlowAttribute>(Microsoft.Graph.Models.IdentityUserFlowAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -174,14 +174,14 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<IdentityApiConnector>("apiConnectors", ApiConnectors);
-            writer.WriteCollectionOfObjectValues<AuthenticationEventListener>("authenticationEventListeners", AuthenticationEventListeners);
-            writer.WriteCollectionOfObjectValues<AuthenticationEventsFlow>("authenticationEventsFlows", AuthenticationEventsFlows);
-            writer.WriteCollectionOfObjectValues<B2xIdentityUserFlow>("b2xUserFlows", B2xUserFlows);
-            writer.WriteObjectValue<ConditionalAccessRoot>("conditionalAccess", ConditionalAccess);
-            writer.WriteCollectionOfObjectValues<CustomAuthenticationExtension>("customAuthenticationExtensions", CustomAuthenticationExtensions);
-            writer.WriteCollectionOfObjectValues<IdentityProviderBase>("identityProviders", IdentityProviders);
-            writer.WriteCollectionOfObjectValues<IdentityUserFlowAttribute>("userFlowAttributes", UserFlowAttributes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentityApiConnector>("apiConnectors", ApiConnectors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationEventListener>("authenticationEventListeners", AuthenticationEventListeners);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationEventsFlow>("authenticationEventsFlows", AuthenticationEventsFlows);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.B2xIdentityUserFlow>("b2xUserFlows", B2xUserFlows);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessRoot>("conditionalAccess", ConditionalAccess);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CustomAuthenticationExtension>("customAuthenticationExtensions", CustomAuthenticationExtensions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentityProviderBase>("identityProviders", IdentityProviders);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentityUserFlowAttribute>("userFlowAttributes", UserFlowAttributes);
         }
     }
 }

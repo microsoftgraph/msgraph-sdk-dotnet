@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Information about the meeting attendees.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MeetingParticipantInfo>? Attendees
+        public List<Microsoft.Graph.Models.MeetingParticipantInfo>? Attendees
         {
-            get { return BackingStore?.Get<List<MeetingParticipantInfo>?>("attendees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MeetingParticipantInfo>?>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
 #nullable restore
 #else
-        public List<MeetingParticipantInfo> Attendees
+        public List<Microsoft.Graph.Models.MeetingParticipantInfo> Attendees
         {
-            get { return BackingStore?.Get<List<MeetingParticipantInfo>>("attendees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MeetingParticipantInfo>>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
 #endif
@@ -54,21 +54,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Information about the meeting organizer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MeetingParticipantInfo? Organizer
+        public Microsoft.Graph.Models.MeetingParticipantInfo? Organizer
         {
-            get { return BackingStore?.Get<MeetingParticipantInfo?>("organizer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MeetingParticipantInfo?>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
 #nullable restore
 #else
-        public MeetingParticipantInfo Organizer
+        public Microsoft.Graph.Models.MeetingParticipantInfo Organizer
         {
-            get { return BackingStore?.Get<MeetingParticipantInfo>("organizer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MeetingParticipantInfo>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MeetingParticipants"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MeetingParticipants"/> and sets the default values.
         /// </summary>
         public MeetingParticipants()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MeetingParticipants"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MeetingParticipants"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MeetingParticipants CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.MeetingParticipants CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MeetingParticipants();
+            return new Microsoft.Graph.Models.MeetingParticipants();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attendees", n => { Attendees = n.GetCollectionOfObjectValues<MeetingParticipantInfo>(MeetingParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attendees", n => { Attendees = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MeetingParticipantInfo>(Microsoft.Graph.Models.MeetingParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "organizer", n => { Organizer = n.GetObjectValue<MeetingParticipantInfo>(MeetingParticipantInfo.CreateFromDiscriminatorValue); } },
+                { "organizer", n => { Organizer = n.GetObjectValue<Microsoft.Graph.Models.MeetingParticipantInfo>(Microsoft.Graph.Models.MeetingParticipantInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,9 +105,9 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<MeetingParticipantInfo>("attendees", Attendees);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MeetingParticipantInfo>("attendees", Attendees);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<MeetingParticipantInfo>("organizer", Organizer);
+            writer.WriteObjectValue<Microsoft.Graph.Models.MeetingParticipantInfo>("organizer", Organizer);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

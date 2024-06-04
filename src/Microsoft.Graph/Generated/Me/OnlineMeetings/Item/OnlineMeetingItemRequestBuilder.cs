@@ -24,42 +24,42 @@ namespace Microsoft.Graph.Me.OnlineMeetings.Item
     public class OnlineMeetingItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeetingBase entity.</summary>
-        public AttendanceReportsRequestBuilder AttendanceReports
+        public Microsoft.Graph.Me.OnlineMeetings.Item.AttendanceReports.AttendanceReportsRequestBuilder AttendanceReports
         {
-            get => new AttendanceReportsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.OnlineMeetings.Item.AttendanceReports.AttendanceReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the media for the user entity.</summary>
-        public AttendeeReportRequestBuilder AttendeeReport
+        public Microsoft.Graph.Me.OnlineMeetings.Item.AttendeeReport.AttendeeReportRequestBuilder AttendeeReport
         {
-            get => new AttendeeReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.OnlineMeetings.Item.AttendeeReport.AttendeeReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getVirtualAppointmentJoinWebUrl method.</summary>
-        public GetVirtualAppointmentJoinWebUrlRequestBuilder GetVirtualAppointmentJoinWebUrl
+        public Microsoft.Graph.Me.OnlineMeetings.Item.GetVirtualAppointmentJoinWebUrl.GetVirtualAppointmentJoinWebUrlRequestBuilder GetVirtualAppointmentJoinWebUrl
         {
-            get => new GetVirtualAppointmentJoinWebUrlRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.OnlineMeetings.Item.GetVirtualAppointmentJoinWebUrl.GetVirtualAppointmentJoinWebUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.</summary>
-        public RecordingsRequestBuilder Recordings
+        public Microsoft.Graph.Me.OnlineMeetings.Item.Recordings.RecordingsRequestBuilder Recordings
         {
-            get => new RecordingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.OnlineMeetings.Item.Recordings.RecordingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendVirtualAppointmentReminderSms method.</summary>
-        public SendVirtualAppointmentReminderSmsRequestBuilder SendVirtualAppointmentReminderSms
+        public Microsoft.Graph.Me.OnlineMeetings.Item.SendVirtualAppointmentReminderSms.SendVirtualAppointmentReminderSmsRequestBuilder SendVirtualAppointmentReminderSms
         {
-            get => new SendVirtualAppointmentReminderSmsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.OnlineMeetings.Item.SendVirtualAppointmentReminderSms.SendVirtualAppointmentReminderSmsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendVirtualAppointmentSms method.</summary>
-        public SendVirtualAppointmentSmsRequestBuilder SendVirtualAppointmentSms
+        public Microsoft.Graph.Me.OnlineMeetings.Item.SendVirtualAppointmentSms.SendVirtualAppointmentSmsRequestBuilder SendVirtualAppointmentSms
         {
-            get => new SendVirtualAppointmentSmsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.OnlineMeetings.Item.SendVirtualAppointmentSms.SendVirtualAppointmentSmsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.</summary>
-        public TranscriptsRequestBuilder Transcripts
+        public Microsoft.Graph.Me.OnlineMeetings.Item.Transcripts.TranscriptsRequestBuilder Transcripts
         {
-            get => new TranscriptsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.OnlineMeetings.Item.Transcripts.TranscriptsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="OnlineMeetingItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.OnlineMeetings.Item.OnlineMeetingItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Me.OnlineMeetings.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="OnlineMeetingItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.OnlineMeetings.Item.OnlineMeetingItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Me.OnlineMeetings.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Me.OnlineMeetings.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -101,51 +101,51 @@ namespace Microsoft.Graph.Me.OnlineMeetings.Item
         /// Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report (deprecated) is an online meeting artifact. For details, see Online meeting artifacts and permissions.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="OnlineMeeting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnlineMeeting"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnlineMeeting?> GetAsync(Action<RequestConfiguration<OnlineMeetingItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OnlineMeeting?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.OnlineMeetings.Item.OnlineMeetingItemRequestBuilder.OnlineMeetingItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<OnlineMeeting> GetAsync(Action<RequestConfiguration<OnlineMeetingItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OnlineMeeting> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.OnlineMeetings.Item.OnlineMeetingItemRequestBuilder.OnlineMeetingItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<OnlineMeeting>(requestInfo, OnlineMeeting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.OnlineMeeting>(requestInfo, Microsoft.Graph.Models.OnlineMeeting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="OnlineMeeting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnlineMeeting"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnlineMeeting?> PatchAsync(OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OnlineMeeting?> PatchAsync(Microsoft.Graph.Models.OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<OnlineMeeting> PatchAsync(OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OnlineMeeting> PatchAsync(Microsoft.Graph.Models.OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<OnlineMeeting>(requestInfo, OnlineMeeting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.OnlineMeeting>(requestInfo, Microsoft.Graph.Models.OnlineMeeting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete an onlineMeeting object.
@@ -173,11 +173,11 @@ namespace Microsoft.Graph.Me.OnlineMeetings.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OnlineMeetingItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.OnlineMeetings.Item.OnlineMeetingItemRequestBuilder.OnlineMeetingItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OnlineMeetingItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.OnlineMeetings.Item.OnlineMeetingItemRequestBuilder.OnlineMeetingItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -193,11 +193,11 @@ namespace Microsoft.Graph.Me.OnlineMeetings.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -210,11 +210,11 @@ namespace Microsoft.Graph.Me.OnlineMeetings.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="OnlineMeetingItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.OnlineMeetings.Item.OnlineMeetingItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public OnlineMeetingItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Me.OnlineMeetings.Item.OnlineMeetingItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new OnlineMeetingItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Me.OnlineMeetings.Item.OnlineMeetingItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -253,7 +253,7 @@ namespace Microsoft.Graph.Me.OnlineMeetings.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class OnlineMeetingItemRequestBuilderGetRequestConfiguration : RequestConfiguration<OnlineMeetingItemRequestBuilderGetQueryParameters>
+        public class OnlineMeetingItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.OnlineMeetings.Item.OnlineMeetingItemRequestBuilder.OnlineMeetingItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

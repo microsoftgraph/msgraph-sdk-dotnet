@@ -44,21 +44,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The timeSlots property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TimeSlot>? TimeSlots
+        public List<Microsoft.Graph.Models.TimeSlot>? TimeSlots
         {
-            get { return BackingStore?.Get<List<TimeSlot>?>("timeSlots"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TimeSlot>?>("timeSlots"); }
             set { BackingStore?.Set("timeSlots", value); }
         }
 #nullable restore
 #else
-        public List<TimeSlot> TimeSlots
+        public List<Microsoft.Graph.Models.TimeSlot> TimeSlots
         {
-            get { return BackingStore?.Get<List<TimeSlot>>("timeSlots"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TimeSlot>>("timeSlots"); }
             set { BackingStore?.Set("timeSlots", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TimeConstraint"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TimeConstraint"/> and sets the default values.
         /// </summary>
         public TimeConstraint()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TimeConstraint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TimeConstraint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TimeConstraint CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.TimeConstraint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TimeConstraint();
+            return new Microsoft.Graph.Models.TimeConstraint();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,9 +83,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "activityDomain", n => { ActivityDomain = n.GetEnumValue<ActivityDomain>(); } },
+                { "activityDomain", n => { ActivityDomain = n.GetEnumValue<Microsoft.Graph.Models.ActivityDomain>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "timeSlots", n => { TimeSlots = n.GetCollectionOfObjectValues<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "timeSlots", n => { TimeSlots = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TimeSlot>(Microsoft.Graph.Models.TimeSlot.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -95,9 +95,9 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<ActivityDomain>("activityDomain", ActivityDomain);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ActivityDomain>("activityDomain", ActivityDomain);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<TimeSlot>("timeSlots", TimeSlots);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TimeSlot>("timeSlots", TimeSlots);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

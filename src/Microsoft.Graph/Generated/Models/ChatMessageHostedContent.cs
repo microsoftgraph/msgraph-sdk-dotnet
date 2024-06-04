@@ -7,18 +7,18 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ChatMessageHostedContent : TeamworkHostedContent, IParsable
+    public class ChatMessageHostedContent : Microsoft.Graph.Models.TeamworkHostedContent, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ChatMessageHostedContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ChatMessageHostedContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ChatMessageHostedContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ChatMessageHostedContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ChatMessageHostedContent();
+            return new Microsoft.Graph.Models.ChatMessageHostedContent();
         }
         /// <summary>
         /// The deserialization information for the current model

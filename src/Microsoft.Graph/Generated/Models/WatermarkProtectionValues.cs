@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WatermarkProtectionValues"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WatermarkProtectionValues"/> and sets the default values.
         /// </summary>
         public WatermarkProtectionValues()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WatermarkProtectionValues"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WatermarkProtectionValues"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WatermarkProtectionValues CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.WatermarkProtectionValues CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WatermarkProtectionValues();
+            return new Microsoft.Graph.Models.WatermarkProtectionValues();
         }
         /// <summary>
         /// The deserialization information for the current model

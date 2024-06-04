@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RuleBasedSubjectSet"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IdentityGovernance.RuleBasedSubjectSet"/> and sets the default values.
         /// </summary>
         public RuleBasedSubjectSet() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RuleBasedSubjectSet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityGovernance.RuleBasedSubjectSet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RuleBasedSubjectSet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IdentityGovernance.RuleBasedSubjectSet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RuleBasedSubjectSet();
+            return new Microsoft.Graph.Models.IdentityGovernance.RuleBasedSubjectSet();
         }
         /// <summary>
         /// The deserialization information for the current model

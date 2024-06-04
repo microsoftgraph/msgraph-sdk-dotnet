@@ -8,18 +8,18 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item.RemoveGroup
 {
     [Obsolete("This class is obsolete. Use RemoveGroupPostResponse instead.")]
     #pragma warning disable CS1591
-    public class RemoveGroupResponse : RemoveGroupPostResponse, IParsable
+    public class RemoveGroupResponse : Microsoft.Graph.GroupLifecyclePolicies.Item.RemoveGroup.RemoveGroupPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RemoveGroupResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.GroupLifecyclePolicies.Item.RemoveGroup.RemoveGroupResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RemoveGroupResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.GroupLifecyclePolicies.Item.RemoveGroup.RemoveGroupResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RemoveGroupResponse();
+            return new Microsoft.Graph.GroupLifecyclePolicies.Item.RemoveGroup.RemoveGroupResponse();
         }
     }
 }

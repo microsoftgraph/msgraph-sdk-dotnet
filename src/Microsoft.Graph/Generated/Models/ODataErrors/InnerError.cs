@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Models.ODataErrors
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="InnerError"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ODataErrors.InnerError"/> and sets the default values.
         /// </summary>
         public InnerError()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Models.ODataErrors
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InnerError"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ODataErrors.InnerError"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static InnerError CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ODataErrors.InnerError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InnerError();
+            return new Microsoft.Graph.Models.ODataErrors.InnerError();
         }
         /// <summary>
         /// The deserialization information for the current model

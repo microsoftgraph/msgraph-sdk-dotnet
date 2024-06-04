@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Time in which the status message expires.If not provided, the status message doesn&apos;t expire.expiryDateTime.dateTime shouldn&apos;t include time zone.expiryDateTime isn&apos;t available when you request the presence of another user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? ExpiryDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? ExpiryDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("expiryDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("expiryDateTime"); }
             set { BackingStore?.Set("expiryDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone ExpiryDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone ExpiryDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("expiryDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("expiryDateTime"); }
             set { BackingStore?.Set("expiryDateTime", value); }
         }
 #endif
         /// <summary>Status message item. The only supported format currently is message.contentType = &apos;text&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Message
+        public Microsoft.Graph.Models.ItemBody? Message
         {
-            get { return BackingStore?.Get<ItemBody?>("message"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemBody?>("message"); }
             set { BackingStore?.Set("message", value); }
         }
 #nullable restore
 #else
-        public ItemBody Message
+        public Microsoft.Graph.Models.ItemBody Message
         {
-            get { return BackingStore?.Get<ItemBody>("message"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemBody>("message"); }
             set { BackingStore?.Set("message", value); }
         }
 #endif
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("publishedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PresenceStatusMessage"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.PresenceStatusMessage"/> and sets the default values.
         /// </summary>
         public PresenceStatusMessage()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PresenceStatusMessage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PresenceStatusMessage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PresenceStatusMessage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.PresenceStatusMessage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PresenceStatusMessage();
+            return new Microsoft.Graph.Models.PresenceStatusMessage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,8 +99,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "expiryDateTime", n => { ExpiryDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                { "message", n => { Message = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "expiryDateTime", n => { ExpiryDateTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "message", n => { Message = n.GetObjectValue<Microsoft.Graph.Models.ItemBody>(Microsoft.Graph.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "publishedDateTime", n => { PublishedDateTime = n.GetDateTimeOffsetValue(); } },
             };
@@ -112,8 +112,8 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<DateTimeTimeZone>("expiryDateTime", ExpiryDateTime);
-            writer.WriteObjectValue<ItemBody>("message", Message);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("expiryDateTime", ExpiryDateTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemBody>("message", Message);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("publishedDateTime", PublishedDateTime);
             writer.WriteAdditionalData(AdditionalData);

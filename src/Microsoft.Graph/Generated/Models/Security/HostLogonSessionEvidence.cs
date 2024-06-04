@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class HostLogonSessionEvidence : AlertEvidence, IParsable
+    public class HostLogonSessionEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserEvidence? Account
+        public Microsoft.Graph.Models.Security.UserEvidence? Account
         {
-            get { return BackingStore?.Get<UserEvidence?>("account"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.UserEvidence?>("account"); }
             set { BackingStore?.Set("account", value); }
         }
 #nullable restore
 #else
-        public UserEvidence Account
+        public Microsoft.Graph.Models.Security.UserEvidence Account
         {
-            get { return BackingStore?.Get<UserEvidence>("account"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.UserEvidence>("account"); }
             set { BackingStore?.Set("account", value); }
         }
 #endif
@@ -35,16 +35,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The host property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceEvidence? Host
+        public Microsoft.Graph.Models.Security.DeviceEvidence? Host
         {
-            get { return BackingStore?.Get<DeviceEvidence?>("host"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.DeviceEvidence?>("host"); }
             set { BackingStore?.Set("host", value); }
         }
 #nullable restore
 #else
-        public DeviceEvidence Host
+        public Microsoft.Graph.Models.Security.DeviceEvidence Host
         {
-            get { return BackingStore?.Get<DeviceEvidence>("host"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.DeviceEvidence>("host"); }
             set { BackingStore?.Set("host", value); }
         }
 #endif
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("startUtcDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="HostLogonSessionEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.HostLogonSessionEvidence"/> and sets the default values.
         /// </summary>
         public HostLogonSessionEvidence() : base()
         {
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HostLogonSessionEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.HostLogonSessionEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new HostLogonSessionEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.HostLogonSessionEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HostLogonSessionEvidence();
+            return new Microsoft.Graph.Models.Security.HostLogonSessionEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,9 +95,9 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "account", n => { Account = n.GetObjectValue<UserEvidence>(UserEvidence.CreateFromDiscriminatorValue); } },
+                { "account", n => { Account = n.GetObjectValue<Microsoft.Graph.Models.Security.UserEvidence>(Microsoft.Graph.Models.Security.UserEvidence.CreateFromDiscriminatorValue); } },
                 { "endUtcDateTime", n => { EndUtcDateTime = n.GetDateTimeOffsetValue(); } },
-                { "host", n => { Host = n.GetObjectValue<DeviceEvidence>(DeviceEvidence.CreateFromDiscriminatorValue); } },
+                { "host", n => { Host = n.GetObjectValue<Microsoft.Graph.Models.Security.DeviceEvidence>(Microsoft.Graph.Models.Security.DeviceEvidence.CreateFromDiscriminatorValue); } },
                 { "sessionId", n => { SessionId = n.GetStringValue(); } },
                 { "startUtcDateTime", n => { StartUtcDateTime = n.GetDateTimeOffsetValue(); } },
             };
@@ -110,9 +110,9 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<UserEvidence>("account", Account);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.UserEvidence>("account", Account);
             writer.WriteDateTimeOffsetValue("endUtcDateTime", EndUtcDateTime);
-            writer.WriteObjectValue<DeviceEvidence>("host", Host);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.DeviceEvidence>("host", Host);
             writer.WriteStringValue("sessionId", SessionId);
             writer.WriteDateTimeOffsetValue("startUtcDateTime", StartUtcDateTime);
         }

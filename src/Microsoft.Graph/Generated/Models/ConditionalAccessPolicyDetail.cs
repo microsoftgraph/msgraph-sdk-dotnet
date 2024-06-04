@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessConditionSet? Conditions
+        public Microsoft.Graph.Models.ConditionalAccessConditionSet? Conditions
         {
-            get { return BackingStore?.Get<ConditionalAccessConditionSet?>("conditions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessConditionSet?>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessConditionSet Conditions
+        public Microsoft.Graph.Models.ConditionalAccessConditionSet Conditions
         {
-            get { return BackingStore?.Get<ConditionalAccessConditionSet>("conditions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessConditionSet>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
 #endif
         /// <summary>Represents grant controls that must be fulfilled for the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessGrantControls? GrantControls
+        public Microsoft.Graph.Models.ConditionalAccessGrantControls? GrantControls
         {
-            get { return BackingStore?.Get<ConditionalAccessGrantControls?>("grantControls"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessGrantControls?>("grantControls"); }
             set { BackingStore?.Set("grantControls", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessGrantControls GrantControls
+        public Microsoft.Graph.Models.ConditionalAccessGrantControls GrantControls
         {
-            get { return BackingStore?.Get<ConditionalAccessGrantControls>("grantControls"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessGrantControls>("grantControls"); }
             set { BackingStore?.Set("grantControls", value); }
         }
 #endif
@@ -70,21 +70,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Represents a complex type of session controls that is enforced after sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessSessionControls? SessionControls
+        public Microsoft.Graph.Models.ConditionalAccessSessionControls? SessionControls
         {
-            get { return BackingStore?.Get<ConditionalAccessSessionControls?>("sessionControls"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessSessionControls?>("sessionControls"); }
             set { BackingStore?.Set("sessionControls", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessSessionControls SessionControls
+        public Microsoft.Graph.Models.ConditionalAccessSessionControls SessionControls
         {
-            get { return BackingStore?.Get<ConditionalAccessSessionControls>("sessionControls"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessSessionControls>("sessionControls"); }
             set { BackingStore?.Set("sessionControls", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ConditionalAccessPolicyDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ConditionalAccessPolicyDetail"/> and sets the default values.
         /// </summary>
         public ConditionalAccessPolicyDetail()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessPolicyDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ConditionalAccessPolicyDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConditionalAccessPolicyDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ConditionalAccessPolicyDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessPolicyDetail();
+            return new Microsoft.Graph.Models.ConditionalAccessPolicyDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,10 +109,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "conditions", n => { Conditions = n.GetObjectValue<ConditionalAccessConditionSet>(ConditionalAccessConditionSet.CreateFromDiscriminatorValue); } },
-                { "grantControls", n => { GrantControls = n.GetObjectValue<ConditionalAccessGrantControls>(ConditionalAccessGrantControls.CreateFromDiscriminatorValue); } },
+                { "conditions", n => { Conditions = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessConditionSet>(Microsoft.Graph.Models.ConditionalAccessConditionSet.CreateFromDiscriminatorValue); } },
+                { "grantControls", n => { GrantControls = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessGrantControls>(Microsoft.Graph.Models.ConditionalAccessGrantControls.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "sessionControls", n => { SessionControls = n.GetObjectValue<ConditionalAccessSessionControls>(ConditionalAccessSessionControls.CreateFromDiscriminatorValue); } },
+                { "sessionControls", n => { SessionControls = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessSessionControls>(Microsoft.Graph.Models.ConditionalAccessSessionControls.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -122,10 +122,10 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ConditionalAccessConditionSet>("conditions", Conditions);
-            writer.WriteObjectValue<ConditionalAccessGrantControls>("grantControls", GrantControls);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessConditionSet>("conditions", Conditions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessGrantControls>("grantControls", GrantControls);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<ConditionalAccessSessionControls>("sessionControls", SessionControls);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessSessionControls>("sessionControls", SessionControls);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

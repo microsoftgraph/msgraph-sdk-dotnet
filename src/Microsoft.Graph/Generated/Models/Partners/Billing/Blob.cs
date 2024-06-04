@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models.Partners.Billing
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Blob"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Partners.Billing.Blob"/> and sets the default values.
         /// </summary>
         public Blob()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models.Partners.Billing
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Blob"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Partners.Billing.Blob"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Blob CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Partners.Billing.Blob CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Blob();
+            return new Microsoft.Graph.Models.Partners.Billing.Blob();
         }
         /// <summary>
         /// The deserialization information for the current model

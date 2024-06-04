@@ -16,7 +16,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories
     public class GetAuditCategoriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetAuditCategoriesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetAuditCategoriesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,50 +35,50 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories
         /// Not yet documented
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-auditing-auditevent-getauditcategories?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetAuditCategoriesGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAuditCategoriesGetResponse?> GetAsGetAuditCategoriesGetResponseAsync(Action<RequestConfiguration<GetAuditCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesGetResponse?> GetAsGetAuditCategoriesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesRequestBuilder.GetAuditCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetAuditCategoriesGetResponse> GetAsGetAuditCategoriesGetResponseAsync(Action<RequestConfiguration<GetAuditCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesGetResponse> GetAsGetAuditCategoriesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesRequestBuilder.GetAuditCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetAuditCategoriesGetResponse>(requestInfo, GetAuditCategoriesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesGetResponse>(requestInfo, Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Not yet documented
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-auditing-auditevent-getauditcategories?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetAuditCategoriesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetAuditCategoriesGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAuditCategoriesResponse?> GetAsync(Action<RequestConfiguration<GetAuditCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesRequestBuilder.GetAuditCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetAuditCategoriesResponse> GetAsync(Action<RequestConfiguration<GetAuditCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesRequestBuilder.GetAuditCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetAuditCategoriesResponse>(requestInfo, GetAuditCategoriesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesResponse>(requestInfo, Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Not yet documented
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAuditCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesRequestBuilder.GetAuditCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAuditCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesRequestBuilder.GetAuditCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetAuditCategoriesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetAuditCategoriesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetAuditCategoriesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Not yet documented
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetAuditCategoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<GetAuditCategoriesRequestBuilderGetQueryParameters>
+        public class GetAuditCategoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesRequestBuilder.GetAuditCategoriesRequestBuilderGetQueryParameters>
         {
         }
     }

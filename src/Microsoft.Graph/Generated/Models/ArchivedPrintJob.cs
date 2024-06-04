@@ -46,16 +46,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The user who created the print job. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? CreatedBy
+        public Microsoft.Graph.Models.UserIdentity? CreatedBy
         {
-            get { return BackingStore?.Get<UserIdentity?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public UserIdentity CreatedBy
+        public Microsoft.Graph.Models.UserIdentity CreatedBy
         {
-            get { return BackingStore?.Get<UserIdentity>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -130,13 +130,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The processingState property</summary>
-        public PrintJobProcessingState? ProcessingState
+        public Microsoft.Graph.Models.PrintJobProcessingState? ProcessingState
         {
-            get { return BackingStore?.Get<PrintJobProcessingState?>("processingState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrintJobProcessingState?>("processingState"); }
             set { BackingStore?.Set("processingState", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ArchivedPrintJob"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ArchivedPrintJob"/> and sets the default values.
         /// </summary>
         public ArchivedPrintJob()
         {
@@ -146,12 +146,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ArchivedPrintJob"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ArchivedPrintJob"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ArchivedPrintJob CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ArchivedPrintJob CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ArchivedPrintJob();
+            return new Microsoft.Graph.Models.ArchivedPrintJob();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -165,13 +165,13 @@ namespace Microsoft.Graph.Models
                 { "acquiredDateTime", n => { AcquiredDateTime = n.GetDateTimeOffsetValue(); } },
                 { "completionDateTime", n => { CompletionDateTime = n.GetDateTimeOffsetValue(); } },
                 { "copiesPrinted", n => { CopiesPrinted = n.GetIntValue(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.UserIdentity>(Microsoft.Graph.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "printerId", n => { PrinterId = n.GetStringValue(); } },
                 { "printerName", n => { PrinterName = n.GetStringValue(); } },
-                { "processingState", n => { ProcessingState = n.GetEnumValue<PrintJobProcessingState>(); } },
+                { "processingState", n => { ProcessingState = n.GetEnumValue<Microsoft.Graph.Models.PrintJobProcessingState>(); } },
             };
         }
         /// <summary>
@@ -185,13 +185,13 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("acquiredDateTime", AcquiredDateTime);
             writer.WriteDateTimeOffsetValue("completionDateTime", CompletionDateTime);
             writer.WriteIntValue("copiesPrinted", CopiesPrinted);
-            writer.WriteObjectValue<UserIdentity>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("printerId", PrinterId);
             writer.WriteStringValue("printerName", PrinterName);
-            writer.WriteEnumValue<PrintJobProcessingState>("processingState", ProcessingState);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PrintJobProcessingState>("processingState", ProcessingState);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

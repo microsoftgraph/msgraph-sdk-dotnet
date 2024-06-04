@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UnifiedRbacResourceNamespace : Entity, IParsable
+    public class UnifiedRbacResourceNamespace : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name property</summary>
@@ -29,28 +29,28 @@ namespace Microsoft.Graph.Models
         /// <summary>The resourceActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRbacResourceAction>? ResourceActions
+        public List<Microsoft.Graph.Models.UnifiedRbacResourceAction>? ResourceActions
         {
-            get { return BackingStore?.Get<List<UnifiedRbacResourceAction>?>("resourceActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UnifiedRbacResourceAction>?>("resourceActions"); }
             set { BackingStore?.Set("resourceActions", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRbacResourceAction> ResourceActions
+        public List<Microsoft.Graph.Models.UnifiedRbacResourceAction> ResourceActions
         {
-            get { return BackingStore?.Get<List<UnifiedRbacResourceAction>>("resourceActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UnifiedRbacResourceAction>>("resourceActions"); }
             set { BackingStore?.Set("resourceActions", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedRbacResourceNamespace"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRbacResourceNamespace"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnifiedRbacResourceNamespace CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UnifiedRbacResourceNamespace CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedRbacResourceNamespace();
+            return new Microsoft.Graph.Models.UnifiedRbacResourceNamespace();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "resourceActions", n => { ResourceActions = n.GetCollectionOfObjectValues<UnifiedRbacResourceAction>(UnifiedRbacResourceAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resourceActions", n => { ResourceActions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UnifiedRbacResourceAction>(Microsoft.Graph.Models.UnifiedRbacResourceAction.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<UnifiedRbacResourceAction>("resourceActions", ResourceActions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UnifiedRbacResourceAction>("resourceActions", ResourceActions);
         }
     }
 }

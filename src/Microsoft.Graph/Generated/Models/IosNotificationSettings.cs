@@ -19,9 +19,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Notification Settings Alert Type.</summary>
-        public IosNotificationAlertType? AlertType
+        public Microsoft.Graph.Models.IosNotificationAlertType? AlertType
         {
-            get { return BackingStore?.Get<IosNotificationAlertType?>("alertType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IosNotificationAlertType?>("alertType"); }
             set { BackingStore?.Set("alertType", value); }
         }
         /// <summary>Application name to be associated with the bundleID.</summary>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("soundsEnabled", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IosNotificationSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IosNotificationSettings"/> and sets the default values.
         /// </summary>
         public IosNotificationSettings()
         {
@@ -131,12 +131,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosNotificationSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IosNotificationSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IosNotificationSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.IosNotificationSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosNotificationSettings();
+            return new Microsoft.Graph.Models.IosNotificationSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alertType", n => { AlertType = n.GetEnumValue<IosNotificationAlertType>(); } },
+                { "alertType", n => { AlertType = n.GetEnumValue<Microsoft.Graph.Models.IosNotificationAlertType>(); } },
                 { "appName", n => { AppName = n.GetStringValue(); } },
                 { "badgesEnabled", n => { BadgesEnabled = n.GetBoolValue(); } },
                 { "bundleID", n => { BundleID = n.GetStringValue(); } },
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<IosNotificationAlertType>("alertType", AlertType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.IosNotificationAlertType>("alertType", AlertType);
             writer.WriteStringValue("appName", AppName);
             writer.WriteBoolValue("badgesEnabled", BadgesEnabled);
             writer.WriteStringValue("bundleID", BundleID);

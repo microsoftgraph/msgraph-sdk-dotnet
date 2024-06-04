@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MimeContent"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MimeContent"/> and sets the default values.
         /// </summary>
         public MimeContent()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MimeContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MimeContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MimeContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.MimeContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MimeContent();
+            return new Microsoft.Graph.Models.MimeContent();
         }
         /// <summary>
         /// The deserialization information for the current model

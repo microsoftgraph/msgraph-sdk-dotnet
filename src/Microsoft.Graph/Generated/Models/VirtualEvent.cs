@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class VirtualEvent : Entity, IParsable
+    public class VirtualEvent : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Identity information for the creator of the virtual event. Inherited from virtualEvent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CommunicationsIdentitySet? CreatedBy
+        public Microsoft.Graph.Models.CommunicationsIdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<CommunicationsIdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CommunicationsIdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public CommunicationsIdentitySet CreatedBy
+        public Microsoft.Graph.Models.CommunicationsIdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<CommunicationsIdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CommunicationsIdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>Description of the virtual event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Description
+        public Microsoft.Graph.Models.ItemBody? Description
         {
-            get { return BackingStore?.Get<ItemBody?>("description"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemBody?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public ItemBody Description
+        public Microsoft.Graph.Models.ItemBody Description
         {
-            get { return BackingStore?.Get<ItemBody>("description"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemBody>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
@@ -61,70 +61,70 @@ namespace Microsoft.Graph.Models
         /// <summary>End time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows. For details on how to get all available time zones using PowerShell, see Get-TimeZone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? EndDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? EndDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("endDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone EndDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone EndDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("endDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
 #endif
         /// <summary>Sessions for the virtual event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventSession>? Sessions
+        public List<Microsoft.Graph.Models.VirtualEventSession>? Sessions
         {
-            get { return BackingStore?.Get<List<VirtualEventSession>?>("sessions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.VirtualEventSession>?>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventSession> Sessions
+        public List<Microsoft.Graph.Models.VirtualEventSession> Sessions
         {
-            get { return BackingStore?.Get<List<VirtualEventSession>>("sessions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.VirtualEventSession>>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
 #endif
         /// <summary>Start time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows. For details on how to get all available time zones using PowerShell, see Get-TimeZone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? StartDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? StartDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone StartDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone StartDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
         /// <summary>Status of the virtual event. The possible values are: draft, published, canceled, unknownFutureValue.</summary>
-        public VirtualEventStatus? Status
+        public Microsoft.Graph.Models.VirtualEventStatus? Status
         {
-            get { return BackingStore?.Get<VirtualEventStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.VirtualEventStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VirtualEvent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.VirtualEvent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VirtualEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.VirtualEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.virtualEventWebinar" => new VirtualEventWebinar(),
-                _ => new VirtualEvent(),
+                "#microsoft.graph.virtualEventWebinar" => new Microsoft.Graph.Models.VirtualEventWebinar(),
+                _ => new Microsoft.Graph.Models.VirtualEvent(),
             };
         }
         /// <summary>
@@ -135,13 +135,13 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<CommunicationsIdentitySet>(CommunicationsIdentitySet.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.CommunicationsIdentitySet>(Microsoft.Graph.Models.CommunicationsIdentitySet.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<Microsoft.Graph.Models.ItemBody>(Microsoft.Graph.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "endDateTime", n => { EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<VirtualEventSession>(VirtualEventSession.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<VirtualEventStatus>(); } },
+                { "endDateTime", n => { EndDateTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.VirtualEventSession>(Microsoft.Graph.Models.VirtualEventSession.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "startDateTime", n => { StartDateTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.VirtualEventStatus>(); } },
             };
         }
         /// <summary>
@@ -152,13 +152,13 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<CommunicationsIdentitySet>("createdBy", CreatedBy);
-            writer.WriteObjectValue<ItemBody>("description", Description);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CommunicationsIdentitySet>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemBody>("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<DateTimeTimeZone>("endDateTime", EndDateTime);
-            writer.WriteCollectionOfObjectValues<VirtualEventSession>("sessions", Sessions);
-            writer.WriteObjectValue<DateTimeTimeZone>("startDateTime", StartDateTime);
-            writer.WriteEnumValue<VirtualEventStatus>("status", Status);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("endDateTime", EndDateTime);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.VirtualEventSession>("sessions", Sessions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("startDateTime", StartDateTime);
+            writer.WriteEnumValue<Microsoft.Graph.Models.VirtualEventStatus>("status", Status);
         }
     }
 }

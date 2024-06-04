@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IntelligenceProfileCountryOrRegionOfOrigin"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.IntelligenceProfileCountryOrRegionOfOrigin"/> and sets the default values.
         /// </summary>
         public IntelligenceProfileCountryOrRegionOfOrigin()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IntelligenceProfileCountryOrRegionOfOrigin"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.IntelligenceProfileCountryOrRegionOfOrigin"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IntelligenceProfileCountryOrRegionOfOrigin CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Security.IntelligenceProfileCountryOrRegionOfOrigin CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IntelligenceProfileCountryOrRegionOfOrigin();
+            return new Microsoft.Graph.Models.Security.IntelligenceProfileCountryOrRegionOfOrigin();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties used to assign an iOS Store mobile app to a group.
     /// </summary>
-    public class IosStoreAppAssignmentSettings : MobileAppAssignmentSettings, IParsable
+    public class IosStoreAppAssignmentSettings : Microsoft.Graph.Models.MobileAppAssignmentSettings, IParsable
     {
         /// <summary>When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.</summary>
         public bool? IsRemovable
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IosStoreAppAssignmentSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IosStoreAppAssignmentSettings"/> and sets the default values.
         /// </summary>
         public IosStoreAppAssignmentSettings() : base()
         {
@@ -49,12 +49,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosStoreAppAssignmentSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IosStoreAppAssignmentSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosStoreAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IosStoreAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosStoreAppAssignmentSettings();
+            return new Microsoft.Graph.Models.IosStoreAppAssignmentSettings();
         }
         /// <summary>
         /// The deserialization information for the current model

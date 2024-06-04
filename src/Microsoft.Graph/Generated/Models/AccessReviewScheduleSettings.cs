@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewApplyAction>? ApplyActions
+        public List<Microsoft.Graph.Models.AccessReviewApplyAction>? ApplyActions
         {
-            get { return BackingStore?.Get<List<AccessReviewApplyAction>?>("applyActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewApplyAction>?>("applyActions"); }
             set { BackingStore?.Set("applyActions", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewApplyAction> ApplyActions
+        public List<Microsoft.Graph.Models.AccessReviewApplyAction> ApplyActions
         {
-            get { return BackingStore?.Get<List<AccessReviewApplyAction>>("applyActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewApplyAction>>("applyActions"); }
             set { BackingStore?.Set("applyActions", value); }
         }
 #endif
@@ -106,16 +106,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewRecommendationInsightSetting>? RecommendationInsightSettings
+        public List<Microsoft.Graph.Models.AccessReviewRecommendationInsightSetting>? RecommendationInsightSettings
         {
-            get { return BackingStore?.Get<List<AccessReviewRecommendationInsightSetting>?>("recommendationInsightSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewRecommendationInsightSetting>?>("recommendationInsightSettings"); }
             set { BackingStore?.Set("recommendationInsightSettings", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewRecommendationInsightSetting> RecommendationInsightSettings
+        public List<Microsoft.Graph.Models.AccessReviewRecommendationInsightSetting> RecommendationInsightSettings
         {
-            get { return BackingStore?.Get<List<AccessReviewRecommendationInsightSetting>>("recommendationInsightSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewRecommendationInsightSetting>>("recommendationInsightSettings"); }
             set { BackingStore?.Set("recommendationInsightSettings", value); }
         }
 #endif
@@ -134,16 +134,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Detailed settings for recurrence using the standard Outlook recurrence object. Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PatternedRecurrence? Recurrence
+        public Microsoft.Graph.Models.PatternedRecurrence? Recurrence
         {
-            get { return BackingStore?.Get<PatternedRecurrence?>("recurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PatternedRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #nullable restore
 #else
-        public PatternedRecurrence Recurrence
+        public Microsoft.Graph.Models.PatternedRecurrence Recurrence
         {
-            get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PatternedRecurrence>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #endif
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("reminderNotificationsEnabled", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AccessReviewScheduleSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AccessReviewScheduleSettings"/> and sets the default values.
         /// </summary>
         public AccessReviewScheduleSettings()
         {
@@ -164,12 +164,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewScheduleSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessReviewScheduleSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessReviewScheduleSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AccessReviewScheduleSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessReviewScheduleSettings();
+            return new Microsoft.Graph.Models.AccessReviewScheduleSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "applyActions", n => { ApplyActions = n.GetCollectionOfObjectValues<AccessReviewApplyAction>(AccessReviewApplyAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "applyActions", n => { ApplyActions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewApplyAction>(Microsoft.Graph.Models.AccessReviewApplyAction.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "autoApplyDecisionsEnabled", n => { AutoApplyDecisionsEnabled = n.GetBoolValue(); } },
                 { "decisionHistoriesForReviewersEnabled", n => { DecisionHistoriesForReviewersEnabled = n.GetBoolValue(); } },
                 { "defaultDecision", n => { DefaultDecision = n.GetStringValue(); } },
@@ -188,10 +188,10 @@ namespace Microsoft.Graph.Models
                 { "justificationRequiredOnApproval", n => { JustificationRequiredOnApproval = n.GetBoolValue(); } },
                 { "mailNotificationsEnabled", n => { MailNotificationsEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recommendationInsightSettings", n => { RecommendationInsightSettings = n.GetCollectionOfObjectValues<AccessReviewRecommendationInsightSetting>(AccessReviewRecommendationInsightSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recommendationInsightSettings", n => { RecommendationInsightSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewRecommendationInsightSetting>(Microsoft.Graph.Models.AccessReviewRecommendationInsightSetting.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "recommendationLookBackDuration", n => { RecommendationLookBackDuration = n.GetTimeSpanValue(); } },
                 { "recommendationsEnabled", n => { RecommendationsEnabled = n.GetBoolValue(); } },
-                { "recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
+                { "recurrence", n => { Recurrence = n.GetObjectValue<Microsoft.Graph.Models.PatternedRecurrence>(Microsoft.Graph.Models.PatternedRecurrence.CreateFromDiscriminatorValue); } },
                 { "reminderNotificationsEnabled", n => { ReminderNotificationsEnabled = n.GetBoolValue(); } },
             };
         }
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<AccessReviewApplyAction>("applyActions", ApplyActions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewApplyAction>("applyActions", ApplyActions);
             writer.WriteBoolValue("autoApplyDecisionsEnabled", AutoApplyDecisionsEnabled);
             writer.WriteBoolValue("decisionHistoriesForReviewersEnabled", DecisionHistoriesForReviewersEnabled);
             writer.WriteStringValue("defaultDecision", DefaultDecision);
@@ -211,10 +211,10 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("justificationRequiredOnApproval", JustificationRequiredOnApproval);
             writer.WriteBoolValue("mailNotificationsEnabled", MailNotificationsEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<AccessReviewRecommendationInsightSetting>("recommendationInsightSettings", RecommendationInsightSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewRecommendationInsightSetting>("recommendationInsightSettings", RecommendationInsightSettings);
             writer.WriteTimeSpanValue("recommendationLookBackDuration", RecommendationLookBackDuration);
             writer.WriteBoolValue("recommendationsEnabled", RecommendationsEnabled);
-            writer.WriteObjectValue<PatternedRecurrence>("recurrence", Recurrence);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PatternedRecurrence>("recurrence", Recurrence);
             writer.WriteBoolValue("reminderNotificationsEnabled", ReminderNotificationsEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }

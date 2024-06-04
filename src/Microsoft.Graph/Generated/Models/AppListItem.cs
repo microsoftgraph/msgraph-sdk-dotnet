@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AppListItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AppListItem"/> and sets the default values.
         /// </summary>
         public AppListItem()
         {
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppListItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AppListItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AppListItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AppListItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AppListItem();
+            return new Microsoft.Graph.Models.AppListItem();
         }
         /// <summary>
         /// The deserialization information for the current model

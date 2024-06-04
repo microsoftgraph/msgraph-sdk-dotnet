@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessReviewApplyAction"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AccessReviewApplyAction"/> and sets the default values.
         /// </summary>
         public AccessReviewApplyAction()
         {
@@ -46,17 +46,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewApplyAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessReviewApplyAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessReviewApplyAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AccessReviewApplyAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.disableAndDeleteUserApplyAction" => new DisableAndDeleteUserApplyAction(),
-                "#microsoft.graph.removeAccessApplyAction" => new RemoveAccessApplyAction(),
-                _ => new AccessReviewApplyAction(),
+                "#microsoft.graph.disableAndDeleteUserApplyAction" => new Microsoft.Graph.Models.DisableAndDeleteUserApplyAction(),
+                "#microsoft.graph.removeAccessApplyAction" => new Microsoft.Graph.Models.RemoveAccessApplyAction(),
+                _ => new Microsoft.Graph.Models.AccessReviewApplyAction(),
             };
         }
         /// <summary>

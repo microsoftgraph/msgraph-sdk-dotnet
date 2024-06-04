@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class PrintServiceEndpoint : Entity, IParsable
+    public class PrintServiceEndpoint : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A human-readable display name for the endpoint.</summary>
@@ -45,12 +45,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrintServiceEndpoint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrintServiceEndpoint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrintServiceEndpoint CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.PrintServiceEndpoint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrintServiceEndpoint();
+            return new Microsoft.Graph.Models.PrintServiceEndpoint();
         }
         /// <summary>
         /// The deserialization information for the current model

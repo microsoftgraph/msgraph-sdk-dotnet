@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Admin.People.ProfileCardProperties
     public class ProfileCardPropertiesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Admin.People.ProfileCardProperties.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Admin.People.ProfileCardProperties.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the profileCardProperties property of the microsoft.graph.peopleAdminSettings entity.</summary>
         /// <param name="position">The unique identifier of profileCardProperty</param>
-        /// <returns>A <see cref="ProfileCardPropertyItemRequestBuilder"/></returns>
-        public ProfileCardPropertyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Admin.People.ProfileCardProperties.Item.ProfileCardPropertyItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Admin.People.ProfileCardProperties.Item.ProfileCardPropertyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("profileCardProperty%2Did", position);
-                return new ProfileCardPropertyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Admin.People.ProfileCardProperties.Item.ProfileCardPropertyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProfileCardPropertiesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Admin.People.ProfileCardProperties.ProfileCardPropertiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Admin.People.ProfileCardProperties
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProfileCardPropertiesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Admin.People.ProfileCardProperties.ProfileCardPropertiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Admin.People.ProfileCardProperties
         /// Get a collection of profileCardProperty resources for an organization. Each resource is identified by its directoryPropertyName property.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/peopleadminsettings-list-profilecardproperties?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ProfileCardPropertyCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ProfileCardPropertyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProfileCardPropertyCollectionResponse?> GetAsync(Action<RequestConfiguration<ProfileCardPropertiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ProfileCardPropertyCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Admin.People.ProfileCardProperties.ProfileCardPropertiesRequestBuilder.ProfileCardPropertiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ProfileCardPropertyCollectionResponse> GetAsync(Action<RequestConfiguration<ProfileCardPropertiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ProfileCardPropertyCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Admin.People.ProfileCardProperties.ProfileCardPropertiesRequestBuilder.ProfileCardPropertiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ProfileCardPropertyCollectionResponse>(requestInfo, ProfileCardPropertyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ProfileCardPropertyCollectionResponse>(requestInfo, Microsoft.Graph.Models.ProfileCardPropertyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or remove custom attributes on a profile card using the profile card API.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/peopleadminsettings-post-profilecardproperties?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ProfileCardProperty"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ProfileCardProperty"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProfileCardProperty?> PostAsync(ProfileCardProperty body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ProfileCardProperty?> PostAsync(Microsoft.Graph.Models.ProfileCardProperty body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ProfileCardProperty> PostAsync(ProfileCardProperty body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ProfileCardProperty> PostAsync(Microsoft.Graph.Models.ProfileCardProperty body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ProfileCardProperty>(requestInfo, ProfileCardProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ProfileCardProperty>(requestInfo, Microsoft.Graph.Models.ProfileCardProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a collection of profileCardProperty resources for an organization. Each resource is identified by its directoryPropertyName property.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Admin.People.ProfileCardProperties
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProfileCardPropertiesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Admin.People.ProfileCardProperties.ProfileCardPropertiesRequestBuilder.ProfileCardPropertiesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProfileCardPropertiesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Admin.People.ProfileCardProperties.ProfileCardPropertiesRequestBuilder.ProfileCardPropertiesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Admin.People.ProfileCardProperties
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ProfileCardProperty body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ProfileCardProperty body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ProfileCardProperty body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ProfileCardProperty body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Admin.People.ProfileCardProperties
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ProfileCardPropertiesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Admin.People.ProfileCardProperties.ProfileCardPropertiesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ProfileCardPropertiesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Admin.People.ProfileCardProperties.ProfileCardPropertiesRequestBuilder WithUrl(string rawUrl)
         {
-            return new ProfileCardPropertiesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Admin.People.ProfileCardProperties.ProfileCardPropertiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a collection of profileCardProperty resources for an organization. Each resource is identified by its directoryPropertyName property.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Admin.People.ProfileCardProperties
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ProfileCardPropertiesRequestBuilderGetRequestConfiguration : RequestConfiguration<ProfileCardPropertiesRequestBuilderGetQueryParameters>
+        public class ProfileCardPropertiesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Admin.People.ProfileCardProperties.ProfileCardPropertiesRequestBuilder.ProfileCardPropertiesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

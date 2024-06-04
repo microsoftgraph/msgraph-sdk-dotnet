@@ -20,14 +20,14 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders
     public class ChildFoldersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public DeltaRequestBuilder Delta
+        public Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Delta.DeltaRequestBuilder Delta
         {
-            get => new DeltaRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the childFolders property of the microsoft.graph.mailFolder entity.</summary>
         /// <param name="position">The unique identifier of mailFolder</param>
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ChildFoldersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.ChildFoldersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ChildFoldersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.ChildFoldersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -60,50 +60,50 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders
         /// <summary>
         /// The collection of child folders in the mailFolder.
         /// </summary>
-        /// <returns>A <see cref="MailFolderCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MailFolderCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MailFolderCollectionResponse?> GetAsync(Action<RequestConfiguration<ChildFoldersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.MailFolderCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.ChildFoldersRequestBuilder.ChildFoldersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<MailFolderCollectionResponse> GetAsync(Action<RequestConfiguration<ChildFoldersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.MailFolderCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.ChildFoldersRequestBuilder.ChildFoldersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<MailFolderCollectionResponse>(requestInfo, MailFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.MailFolderCollectionResponse>(requestInfo, Microsoft.Graph.Models.MailFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to childFolders for users
         /// </summary>
-        /// <returns>A <see cref="MailFolder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MailFolder"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MailFolder?> PostAsync(MailFolder body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.MailFolder?> PostAsync(Microsoft.Graph.Models.MailFolder body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<MailFolder> PostAsync(MailFolder body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.MailFolder> PostAsync(Microsoft.Graph.Models.MailFolder body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.MailFolder>(requestInfo, Microsoft.Graph.Models.MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The collection of child folders in the mailFolder.
@@ -112,11 +112,11 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChildFoldersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.ChildFoldersRequestBuilder.ChildFoldersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChildFoldersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.ChildFoldersRequestBuilder.ChildFoldersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -132,11 +132,11 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(MailFolder body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.MailFolder body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(MailFolder body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.MailFolder body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -149,11 +149,11 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ChildFoldersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.ChildFoldersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ChildFoldersRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.ChildFoldersRequestBuilder WithUrl(string rawUrl)
         {
-            return new ChildFoldersRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.ChildFoldersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The collection of child folders in the mailFolder.
@@ -234,7 +234,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ChildFoldersRequestBuilderGetRequestConfiguration : RequestConfiguration<ChildFoldersRequestBuilderGetQueryParameters>
+        public class ChildFoldersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.ChildFoldersRequestBuilder.ChildFoldersRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

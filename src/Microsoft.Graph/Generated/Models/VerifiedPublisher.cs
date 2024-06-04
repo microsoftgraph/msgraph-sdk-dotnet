@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="VerifiedPublisher"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.VerifiedPublisher"/> and sets the default values.
         /// </summary>
         public VerifiedPublisher()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VerifiedPublisher"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.VerifiedPublisher"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static VerifiedPublisher CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.VerifiedPublisher CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VerifiedPublisher();
+            return new Microsoft.Graph.Models.VerifiedPublisher();
         }
         /// <summary>
         /// The deserialization information for the current model

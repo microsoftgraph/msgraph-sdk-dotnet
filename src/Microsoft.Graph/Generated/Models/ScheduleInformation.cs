@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Error information from attempting to get the availability of the user, distribution list, or resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FreeBusyError? Error
+        public Microsoft.Graph.Models.FreeBusyError? Error
         {
-            get { return BackingStore?.Get<FreeBusyError?>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.FreeBusyError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public FreeBusyError Error
+        public Microsoft.Graph.Models.FreeBusyError Error
         {
-            get { return BackingStore?.Get<FreeBusyError>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.FreeBusyError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #endif
@@ -86,16 +86,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Contains the items that describe the availability of the user or resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ScheduleItem>? ScheduleItems
+        public List<Microsoft.Graph.Models.ScheduleItem>? ScheduleItems
         {
-            get { return BackingStore?.Get<List<ScheduleItem>?>("scheduleItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ScheduleItem>?>("scheduleItems"); }
             set { BackingStore?.Set("scheduleItems", value); }
         }
 #nullable restore
 #else
-        public List<ScheduleItem> ScheduleItems
+        public List<Microsoft.Graph.Models.ScheduleItem> ScheduleItems
         {
-            get { return BackingStore?.Get<List<ScheduleItem>>("scheduleItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ScheduleItem>>("scheduleItems"); }
             set { BackingStore?.Set("scheduleItems", value); }
         }
 #endif
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ScheduleInformation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ScheduleInformation"/> and sets the default values.
         /// </summary>
         public ScheduleInformation()
         {
@@ -126,12 +126,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ScheduleInformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ScheduleInformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ScheduleInformation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ScheduleInformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ScheduleInformation();
+            return new Microsoft.Graph.Models.ScheduleInformation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -142,10 +142,10 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "availabilityView", n => { AvailabilityView = n.GetStringValue(); } },
-                { "error", n => { Error = n.GetObjectValue<FreeBusyError>(FreeBusyError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<Microsoft.Graph.Models.FreeBusyError>(Microsoft.Graph.Models.FreeBusyError.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "scheduleId", n => { ScheduleId = n.GetStringValue(); } },
-                { "scheduleItems", n => { ScheduleItems = n.GetCollectionOfObjectValues<ScheduleItem>(ScheduleItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scheduleItems", n => { ScheduleItems = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ScheduleItem>(Microsoft.Graph.Models.ScheduleItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "workingHours", n => { WorkingHours = n.GetObjectValue<Microsoft.Graph.Models.WorkingHours>(Microsoft.Graph.Models.WorkingHours.CreateFromDiscriminatorValue); } },
             };
         }
@@ -157,10 +157,10 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("availabilityView", AvailabilityView);
-            writer.WriteObjectValue<FreeBusyError>("error", Error);
+            writer.WriteObjectValue<Microsoft.Graph.Models.FreeBusyError>("error", Error);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("scheduleId", ScheduleId);
-            writer.WriteCollectionOfObjectValues<ScheduleItem>("scheduleItems", ScheduleItems);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ScheduleItem>("scheduleItems", ScheduleItems);
             writer.WriteObjectValue<Microsoft.Graph.Models.WorkingHours>("workingHours", WorkingHours);
             writer.WriteAdditionalData(AdditionalData);
         }

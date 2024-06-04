@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGrap
     public class MicrosoftGraphSecurityAsHierarchyRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftGraphSecurityAsHierarchyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.MicrosoftGraphSecurityAsHierarchyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGrap
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftGraphSecurityAsHierarchyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.MicrosoftGraphSecurityAsHierarchyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -32,64 +32,64 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGrap
         {
         }
         /// <summary>
-        /// Invoke function asHierarchy
+        /// List eDiscovery review tags with the tag hierarchy shown.
         /// </summary>
-        /// <returns>A <see cref="AsHierarchyGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.AsHierarchyGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AsHierarchyGetResponse?> GetAsAsHierarchyGetResponseAsync(Action<RequestConfiguration<MicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.AsHierarchyGetResponse?> GetAsAsHierarchyGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.MicrosoftGraphSecurityAsHierarchyRequestBuilder.MicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AsHierarchyGetResponse> GetAsAsHierarchyGetResponseAsync(Action<RequestConfiguration<MicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.AsHierarchyGetResponse> GetAsAsHierarchyGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.MicrosoftGraphSecurityAsHierarchyRequestBuilder.MicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AsHierarchyGetResponse>(requestInfo, AsHierarchyGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.AsHierarchyGetResponse>(requestInfo, Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.AsHierarchyGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function asHierarchy
+        /// List eDiscovery review tags with the tag hierarchy shown.
         /// </summary>
-        /// <returns>A <see cref="AsHierarchyResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.AsHierarchyResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsAsHierarchyGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AsHierarchyResponse?> GetAsync(Action<RequestConfiguration<MicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.AsHierarchyResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.MicrosoftGraphSecurityAsHierarchyRequestBuilder.MicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AsHierarchyResponse> GetAsync(Action<RequestConfiguration<MicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.AsHierarchyResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.MicrosoftGraphSecurityAsHierarchyRequestBuilder.MicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AsHierarchyResponse>(requestInfo, AsHierarchyResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.AsHierarchyResponse>(requestInfo, Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.AsHierarchyResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function asHierarchy
+        /// List eDiscovery review tags with the tag hierarchy shown.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.MicrosoftGraphSecurityAsHierarchyRequestBuilder.MicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.MicrosoftGraphSecurityAsHierarchyRequestBuilder.MicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -100,14 +100,14 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGrap
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MicrosoftGraphSecurityAsHierarchyRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.MicrosoftGraphSecurityAsHierarchyRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MicrosoftGraphSecurityAsHierarchyRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.MicrosoftGraphSecurityAsHierarchyRequestBuilder WithUrl(string rawUrl)
         {
-            return new MicrosoftGraphSecurityAsHierarchyRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.MicrosoftGraphSecurityAsHierarchyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function asHierarchy
+        /// List eDiscovery review tags with the tag hierarchy shown.
         /// </summary>
         public class MicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters 
         {
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGrap
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MicrosoftGraphSecurityAsHierarchyRequestBuilderGetRequestConfiguration : RequestConfiguration<MicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters>
+        public class MicrosoftGraphSecurityAsHierarchyRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.MicrosoftGraphSecurityAsHierarchyRequestBuilder.MicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters>
         {
         }
     }

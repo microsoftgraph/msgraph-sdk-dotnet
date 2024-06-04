@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Error details, if expression evaluation resulted in an error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PublicError? Error
+        public Microsoft.Graph.Models.PublicError? Error
         {
-            get { return BackingStore?.Get<PublicError?>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PublicError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public PublicError Error
+        public Microsoft.Graph.Models.PublicError Error
         {
-            get { return BackingStore?.Get<PublicError>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PublicError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #endif
@@ -76,16 +76,16 @@ namespace Microsoft.Graph.Models
         /// <summary>An attributeMappingSource object representing the parsed expression.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AttributeMappingSource? ParsedExpression
+        public Microsoft.Graph.Models.AttributeMappingSource? ParsedExpression
         {
-            get { return BackingStore?.Get<AttributeMappingSource?>("parsedExpression"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AttributeMappingSource?>("parsedExpression"); }
             set { BackingStore?.Set("parsedExpression", value); }
         }
 #nullable restore
 #else
-        public AttributeMappingSource ParsedExpression
+        public Microsoft.Graph.Models.AttributeMappingSource ParsedExpression
         {
-            get { return BackingStore?.Get<AttributeMappingSource>("parsedExpression"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AttributeMappingSource>("parsedExpression"); }
             set { BackingStore?.Set("parsedExpression", value); }
         }
 #endif
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("parsingSucceeded", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ParseExpressionResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ParseExpressionResponse"/> and sets the default values.
         /// </summary>
         public ParseExpressionResponse()
         {
@@ -106,12 +106,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ParseExpressionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ParseExpressionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ParseExpressionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ParseExpressionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ParseExpressionResponse();
+            return new Microsoft.Graph.Models.ParseExpressionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -121,11 +121,11 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "error", n => { Error = n.GetObjectValue<PublicError>(PublicError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<Microsoft.Graph.Models.PublicError>(Microsoft.Graph.Models.PublicError.CreateFromDiscriminatorValue); } },
                 { "evaluationResult", n => { EvaluationResult = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "evaluationSucceeded", n => { EvaluationSucceeded = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "parsedExpression", n => { ParsedExpression = n.GetObjectValue<AttributeMappingSource>(AttributeMappingSource.CreateFromDiscriminatorValue); } },
+                { "parsedExpression", n => { ParsedExpression = n.GetObjectValue<Microsoft.Graph.Models.AttributeMappingSource>(Microsoft.Graph.Models.AttributeMappingSource.CreateFromDiscriminatorValue); } },
                 { "parsingSucceeded", n => { ParsingSucceeded = n.GetBoolValue(); } },
             };
         }
@@ -136,11 +136,11 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<PublicError>("error", Error);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PublicError>("error", Error);
             writer.WriteCollectionOfPrimitiveValues<string>("evaluationResult", EvaluationResult);
             writer.WriteBoolValue("evaluationSucceeded", EvaluationSucceeded);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<AttributeMappingSource>("parsedExpression", ParsedExpression);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AttributeMappingSource>("parsedExpression", ParsedExpression);
             writer.WriteBoolValue("parsingSucceeded", ParsingSucceeded);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -20,15 +20,15 @@ namespace Microsoft.Graph.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Role of the tenant in the multitenant organization. The possible values are: owner, member, unknownFutureValue.</summary>
-        public MultiTenantOrganizationMemberRole? DesiredRole
+        public Microsoft.Graph.Models.MultiTenantOrganizationMemberRole? DesiredRole
         {
-            get { return BackingStore?.Get<MultiTenantOrganizationMemberRole?>("desiredRole"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MultiTenantOrganizationMemberRole?>("desiredRole"); }
             set { BackingStore?.Set("desiredRole", value); }
         }
         /// <summary>State of the tenant in the multitenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.</summary>
-        public MultiTenantOrganizationMemberState? DesiredState
+        public Microsoft.Graph.Models.MultiTenantOrganizationMemberState? DesiredState
         {
-            get { return BackingStore?.Get<MultiTenantOrganizationMemberState?>("desiredState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MultiTenantOrganizationMemberState?>("desiredState"); }
             set { BackingStore?.Set("desiredState", value); }
         }
         /// <summary>Details that explain the processing status if any. Read-only.</summary>
@@ -64,13 +64,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Processing state of the asynchronous job. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only.</summary>
-        public MultiTenantOrganizationMemberProcessingStatus? Status
+        public Microsoft.Graph.Models.MultiTenantOrganizationMemberProcessingStatus? Status
         {
-            get { return BackingStore?.Get<MultiTenantOrganizationMemberProcessingStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MultiTenantOrganizationMemberProcessingStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MultiTenantOrganizationMemberTransitionDetails"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MultiTenantOrganizationMemberTransitionDetails"/> and sets the default values.
         /// </summary>
         public MultiTenantOrganizationMemberTransitionDetails()
         {
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MultiTenantOrganizationMemberTransitionDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MultiTenantOrganizationMemberTransitionDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MultiTenantOrganizationMemberTransitionDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.MultiTenantOrganizationMemberTransitionDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MultiTenantOrganizationMemberTransitionDetails();
+            return new Microsoft.Graph.Models.MultiTenantOrganizationMemberTransitionDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,11 +95,11 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "desiredRole", n => { DesiredRole = n.GetEnumValue<MultiTenantOrganizationMemberRole>(); } },
-                { "desiredState", n => { DesiredState = n.GetEnumValue<MultiTenantOrganizationMemberState>(); } },
+                { "desiredRole", n => { DesiredRole = n.GetEnumValue<Microsoft.Graph.Models.MultiTenantOrganizationMemberRole>(); } },
+                { "desiredState", n => { DesiredState = n.GetEnumValue<Microsoft.Graph.Models.MultiTenantOrganizationMemberState>(); } },
                 { "details", n => { Details = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<MultiTenantOrganizationMemberProcessingStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.MultiTenantOrganizationMemberProcessingStatus>(); } },
             };
         }
         /// <summary>
@@ -109,11 +109,11 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<MultiTenantOrganizationMemberRole>("desiredRole", DesiredRole);
-            writer.WriteEnumValue<MultiTenantOrganizationMemberState>("desiredState", DesiredState);
+            writer.WriteEnumValue<Microsoft.Graph.Models.MultiTenantOrganizationMemberRole>("desiredRole", DesiredRole);
+            writer.WriteEnumValue<Microsoft.Graph.Models.MultiTenantOrganizationMemberState>("desiredState", DesiredState);
             writer.WriteStringValue("details", Details);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<MultiTenantOrganizationMemberProcessingStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.MultiTenantOrganizationMemberProcessingStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

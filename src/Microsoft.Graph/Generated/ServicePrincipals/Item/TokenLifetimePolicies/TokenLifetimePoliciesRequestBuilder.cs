@@ -19,24 +19,24 @@ namespace Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies
     public class TokenLifetimePoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.servicePrincipal entity.</summary>
         /// <param name="position">The unique identifier of tokenLifetimePolicy</param>
-        /// <returns>A <see cref="TokenLifetimePolicyItemRequestBuilder"/></returns>
-        public TokenLifetimePolicyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.Item.TokenLifetimePolicyItemRequestBuilder"/></returns>
+        public Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.Item.TokenLifetimePolicyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("tokenLifetimePolicy%2Did", position);
-                return new TokenLifetimePolicyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.Item.TokenLifetimePolicyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TokenLifetimePoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.TokenLifetimePoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TokenLifetimePoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.TokenLifetimePoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,25 +55,25 @@ namespace Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies
         /// List the tokenLifetimePolicy objects that are assigned to a servicePrincipal. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to a service principal.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-tokenlifetimepolicies?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="TokenLifetimePolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TokenLifetimePolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TokenLifetimePolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<TokenLifetimePoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TokenLifetimePolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.TokenLifetimePoliciesRequestBuilder.TokenLifetimePoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TokenLifetimePolicyCollectionResponse> GetAsync(Action<RequestConfiguration<TokenLifetimePoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TokenLifetimePolicyCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.TokenLifetimePoliciesRequestBuilder.TokenLifetimePoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TokenLifetimePolicyCollectionResponse>(requestInfo, TokenLifetimePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TokenLifetimePolicyCollectionResponse>(requestInfo, Microsoft.Graph.Models.TokenLifetimePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List the tokenLifetimePolicy objects that are assigned to a servicePrincipal. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to a service principal.
@@ -82,11 +82,11 @@ namespace Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TokenLifetimePoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.TokenLifetimePoliciesRequestBuilder.TokenLifetimePoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TokenLifetimePoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.TokenLifetimePoliciesRequestBuilder.TokenLifetimePoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -97,11 +97,11 @@ namespace Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TokenLifetimePoliciesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.TokenLifetimePoliciesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TokenLifetimePoliciesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.TokenLifetimePoliciesRequestBuilder WithUrl(string rawUrl)
         {
-            return new TokenLifetimePoliciesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.TokenLifetimePoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List the tokenLifetimePolicy objects that are assigned to a servicePrincipal. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to a service principal.
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TokenLifetimePoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<TokenLifetimePoliciesRequestBuilderGetQueryParameters>
+        public class TokenLifetimePoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.TokenLifetimePoliciesRequestBuilder.TokenLifetimePoliciesRequestBuilderGetQueryParameters>
         {
         }
     }

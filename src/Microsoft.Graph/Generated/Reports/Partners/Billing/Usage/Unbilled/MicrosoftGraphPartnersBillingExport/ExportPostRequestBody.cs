@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Usage.Unbilled.MicrosoftGraph
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ExportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.Partners.Billing.Usage.Unbilled.MicrosoftGraphPartnersBillingExport.ExportPostRequestBody"/> and sets the default values.
         /// </summary>
         public ExportPostRequestBody()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Usage.Unbilled.MicrosoftGraph
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.Partners.Billing.Usage.Unbilled.MicrosoftGraphPartnersBillingExport.ExportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ExportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Reports.Partners.Billing.Usage.Unbilled.MicrosoftGraphPartnersBillingExport.ExportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExportPostRequestBody();
+            return new Microsoft.Graph.Reports.Partners.Billing.Usage.Unbilled.MicrosoftGraphPartnersBillingExport.ExportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Usage.Unbilled.MicrosoftGraph
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attributeSet", n => { AttributeSet = n.GetEnumValue<AttributeSet>(); } },
-                { "billingPeriod", n => { BillingPeriod = n.GetEnumValue<BillingPeriod>(); } },
+                { "attributeSet", n => { AttributeSet = n.GetEnumValue<Microsoft.Graph.Models.Partners.Billing.AttributeSet>(); } },
+                { "billingPeriod", n => { BillingPeriod = n.GetEnumValue<Microsoft.Graph.Models.Partners.Billing.BillingPeriod>(); } },
                 { "currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
             };
         }
@@ -86,8 +86,8 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Usage.Unbilled.MicrosoftGraph
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AttributeSet>("attributeSet", AttributeSet);
-            writer.WriteEnumValue<BillingPeriod>("billingPeriod", BillingPeriod);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Partners.Billing.AttributeSet>("attributeSet", AttributeSet);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Partners.Billing.BillingPeriod>("billingPeriod", BillingPeriod);
             writer.WriteStringValue("currencyCode", CurrencyCode);
             writer.WriteAdditionalData(AdditionalData);
         }

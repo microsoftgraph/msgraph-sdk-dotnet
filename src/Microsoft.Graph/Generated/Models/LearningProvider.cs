@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class LearningProvider : Entity, IParsable
+    public class LearningProvider : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The display name that appears in Viva Learning. Required.</summary>
@@ -35,32 +35,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Learning catalog items for the provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LearningContent>? LearningContents
+        public List<Microsoft.Graph.Models.LearningContent>? LearningContents
         {
-            get { return BackingStore?.Get<List<LearningContent>?>("learningContents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.LearningContent>?>("learningContents"); }
             set { BackingStore?.Set("learningContents", value); }
         }
 #nullable restore
 #else
-        public List<LearningContent> LearningContents
+        public List<Microsoft.Graph.Models.LearningContent> LearningContents
         {
-            get { return BackingStore?.Get<List<LearningContent>>("learningContents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.LearningContent>>("learningContents"); }
             set { BackingStore?.Set("learningContents", value); }
         }
 #endif
         /// <summary>The learningCourseActivities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LearningCourseActivity>? LearningCourseActivities
+        public List<Microsoft.Graph.Models.LearningCourseActivity>? LearningCourseActivities
         {
-            get { return BackingStore?.Get<List<LearningCourseActivity>?>("learningCourseActivities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.LearningCourseActivity>?>("learningCourseActivities"); }
             set { BackingStore?.Set("learningCourseActivities", value); }
         }
 #nullable restore
 #else
-        public List<LearningCourseActivity> LearningCourseActivities
+        public List<Microsoft.Graph.Models.LearningCourseActivity> LearningCourseActivities
         {
-            get { return BackingStore?.Get<List<LearningCourseActivity>>("learningCourseActivities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.LearningCourseActivity>>("learningCourseActivities"); }
             set { BackingStore?.Set("learningCourseActivities", value); }
         }
 #endif
@@ -147,12 +147,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LearningProvider"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.LearningProvider"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new LearningProvider CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.LearningProvider CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LearningProvider();
+            return new Microsoft.Graph.Models.LearningProvider();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -164,8 +164,8 @@ namespace Microsoft.Graph.Models
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "isCourseActivitySyncEnabled", n => { IsCourseActivitySyncEnabled = n.GetBoolValue(); } },
-                { "learningContents", n => { LearningContents = n.GetCollectionOfObjectValues<LearningContent>(LearningContent.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "learningCourseActivities", n => { LearningCourseActivities = n.GetCollectionOfObjectValues<LearningCourseActivity>(LearningCourseActivity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "learningContents", n => { LearningContents = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.LearningContent>(Microsoft.Graph.Models.LearningContent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "learningCourseActivities", n => { LearningCourseActivities = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.LearningCourseActivity>(Microsoft.Graph.Models.LearningCourseActivity.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "loginWebUrl", n => { LoginWebUrl = n.GetStringValue(); } },
                 { "longLogoWebUrlForDarkTheme", n => { LongLogoWebUrlForDarkTheme = n.GetStringValue(); } },
                 { "longLogoWebUrlForLightTheme", n => { LongLogoWebUrlForLightTheme = n.GetStringValue(); } },
@@ -183,8 +183,8 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isCourseActivitySyncEnabled", IsCourseActivitySyncEnabled);
-            writer.WriteCollectionOfObjectValues<LearningContent>("learningContents", LearningContents);
-            writer.WriteCollectionOfObjectValues<LearningCourseActivity>("learningCourseActivities", LearningCourseActivities);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.LearningContent>("learningContents", LearningContents);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.LearningCourseActivity>("learningCourseActivities", LearningCourseActivities);
             writer.WriteStringValue("loginWebUrl", LoginWebUrl);
             writer.WriteStringValue("longLogoWebUrlForDarkTheme", LongLogoWebUrlForDarkTheme);
             writer.WriteStringValue("longLogoWebUrlForLightTheme", LongLogoWebUrlForLightTheme);

@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The accessContainerType property</summary>
-        public DelegatedAdminAccessContainerType? AccessContainerType
+        public Microsoft.Graph.Models.DelegatedAdminAccessContainerType? AccessContainerType
         {
-            get { return BackingStore?.Get<DelegatedAdminAccessContainerType?>("accessContainerType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DelegatedAdminAccessContainerType?>("accessContainerType"); }
             set { BackingStore?.Set("accessContainerType", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DelegatedAdminAccessContainer"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.DelegatedAdminAccessContainer"/> and sets the default values.
         /// </summary>
         public DelegatedAdminAccessContainer()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DelegatedAdminAccessContainer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DelegatedAdminAccessContainer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DelegatedAdminAccessContainer CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.DelegatedAdminAccessContainer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DelegatedAdminAccessContainer();
+            return new Microsoft.Graph.Models.DelegatedAdminAccessContainer();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accessContainerId", n => { AccessContainerId = n.GetStringValue(); } },
-                { "accessContainerType", n => { AccessContainerType = n.GetEnumValue<DelegatedAdminAccessContainerType>(); } },
+                { "accessContainerType", n => { AccessContainerType = n.GetEnumValue<Microsoft.Graph.Models.DelegatedAdminAccessContainerType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accessContainerId", AccessContainerId);
-            writer.WriteEnumValue<DelegatedAdminAccessContainerType>("accessContainerType", AccessContainerType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DelegatedAdminAccessContainerType>("accessContainerType", AccessContainerType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

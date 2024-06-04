@@ -19,24 +19,24 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization
     public class OnPremisesSynchronizationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.</summary>
         /// <param name="position">The unique identifier of onPremisesDirectorySynchronization</param>
-        /// <returns>A <see cref="OnPremisesDirectorySynchronizationItemRequestBuilder"/></returns>
-        public OnPremisesDirectorySynchronizationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Item.OnPremisesDirectorySynchronizationItemRequestBuilder"/></returns>
+        public Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Item.OnPremisesDirectorySynchronizationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("onPremisesDirectorySynchronization%2Did", position);
-                return new OnPremisesDirectorySynchronizationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Item.OnPremisesDirectorySynchronizationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="OnPremisesSynchronizationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.OnPremisesSynchronizationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="OnPremisesSynchronizationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.OnPremisesSynchronizationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization
         /// <summary>
         /// Read the properties and relationships of an onPremisesDirectorySynchronization object.
         /// </summary>
-        /// <returns>A <see cref="OnPremisesDirectorySynchronizationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnPremisesDirectorySynchronizationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnPremisesDirectorySynchronizationCollectionResponse?> GetAsync(Action<RequestConfiguration<OnPremisesSynchronizationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OnPremisesDirectorySynchronizationCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.OnPremisesSynchronizationRequestBuilder.OnPremisesSynchronizationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<OnPremisesDirectorySynchronizationCollectionResponse> GetAsync(Action<RequestConfiguration<OnPremisesSynchronizationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OnPremisesDirectorySynchronizationCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.OnPremisesSynchronizationRequestBuilder.OnPremisesSynchronizationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<OnPremisesDirectorySynchronizationCollectionResponse>(requestInfo, OnPremisesDirectorySynchronizationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.OnPremisesDirectorySynchronizationCollectionResponse>(requestInfo, Microsoft.Graph.Models.OnPremisesDirectorySynchronizationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to onPremisesSynchronization for directory
         /// </summary>
-        /// <returns>A <see cref="OnPremisesDirectorySynchronization"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnPremisesDirectorySynchronization"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnPremisesDirectorySynchronization?> PostAsync(OnPremisesDirectorySynchronization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OnPremisesDirectorySynchronization?> PostAsync(Microsoft.Graph.Models.OnPremisesDirectorySynchronization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<OnPremisesDirectorySynchronization> PostAsync(OnPremisesDirectorySynchronization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OnPremisesDirectorySynchronization> PostAsync(Microsoft.Graph.Models.OnPremisesDirectorySynchronization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<OnPremisesDirectorySynchronization>(requestInfo, OnPremisesDirectorySynchronization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.OnPremisesDirectorySynchronization>(requestInfo, Microsoft.Graph.Models.OnPremisesDirectorySynchronization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of an onPremisesDirectorySynchronization object.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OnPremisesSynchronizationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.OnPremisesSynchronizationRequestBuilder.OnPremisesSynchronizationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OnPremisesSynchronizationRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.OnPremisesSynchronizationRequestBuilder.OnPremisesSynchronizationRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(OnPremisesDirectorySynchronization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.OnPremisesDirectorySynchronization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(OnPremisesDirectorySynchronization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.OnPremisesDirectorySynchronization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="OnPremisesSynchronizationRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.OnPremisesSynchronizationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public OnPremisesSynchronizationRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.OnPremisesSynchronizationRequestBuilder WithUrl(string rawUrl)
         {
-            return new OnPremisesSynchronizationRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.OnPremisesSynchronizationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Read the properties and relationships of an onPremisesDirectorySynchronization object.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class OnPremisesSynchronizationRequestBuilderGetRequestConfiguration : RequestConfiguration<OnPremisesSynchronizationRequestBuilderGetQueryParameters>
+        public class OnPremisesSynchronizationRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.OnPremisesSynchronizationRequestBuilder.OnPremisesSynchronizationRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

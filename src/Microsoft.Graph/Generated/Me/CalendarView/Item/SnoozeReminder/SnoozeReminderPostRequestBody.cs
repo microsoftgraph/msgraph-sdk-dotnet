@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Me.CalendarView.Item.SnoozeReminder
         /// <summary>The NewReminderTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? NewReminderTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? NewReminderTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("NewReminderTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("NewReminderTime"); }
             set { BackingStore?.Set("NewReminderTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone NewReminderTime
+        public Microsoft.Graph.Models.DateTimeTimeZone NewReminderTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("NewReminderTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("NewReminderTime"); }
             set { BackingStore?.Set("NewReminderTime", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SnoozeReminderPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.CalendarView.Item.SnoozeReminder.SnoozeReminderPostRequestBody"/> and sets the default values.
         /// </summary>
         public SnoozeReminderPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Me.CalendarView.Item.SnoozeReminder
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SnoozeReminderPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.CalendarView.Item.SnoozeReminder.SnoozeReminderPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SnoozeReminderPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Me.CalendarView.Item.SnoozeReminder.SnoozeReminderPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SnoozeReminderPostRequestBody();
+            return new Microsoft.Graph.Me.CalendarView.Item.SnoozeReminder.SnoozeReminderPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Me.CalendarView.Item.SnoozeReminder
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "NewReminderTime", n => { NewReminderTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "NewReminderTime", n => { NewReminderTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Me.CalendarView.Item.SnoozeReminder
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<DateTimeTimeZone>("NewReminderTime", NewReminderTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("NewReminderTime", NewReminderTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

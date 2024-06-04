@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CloudPcProvisioningPolicy : Entity, IParsable
+    public class CloudPcProvisioningPolicy : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The URL of the alternate resource that links to this provisioning policy. Read-only.</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Models
         /// <summary>A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcProvisioningPolicyAssignment>? Assignments
+        public List<Microsoft.Graph.Models.CloudPcProvisioningPolicyAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<CloudPcProvisioningPolicyAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CloudPcProvisioningPolicyAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcProvisioningPolicyAssignment> Assignments
+        public List<Microsoft.Graph.Models.CloudPcProvisioningPolicyAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<CloudPcProvisioningPolicyAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CloudPcProvisioningPolicyAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -109,16 +109,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Specifies a list ordered by priority on how Cloud PCs join Microsoft Entra ID (Azure AD). Supports $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcDomainJoinConfiguration>? DomainJoinConfigurations
+        public List<Microsoft.Graph.Models.CloudPcDomainJoinConfiguration>? DomainJoinConfigurations
         {
-            get { return BackingStore?.Get<List<CloudPcDomainJoinConfiguration>?>("domainJoinConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CloudPcDomainJoinConfiguration>?>("domainJoinConfigurations"); }
             set { BackingStore?.Set("domainJoinConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcDomainJoinConfiguration> DomainJoinConfigurations
+        public List<Microsoft.Graph.Models.CloudPcDomainJoinConfiguration> DomainJoinConfigurations
         {
-            get { return BackingStore?.Get<List<CloudPcDomainJoinConfiguration>>("domainJoinConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CloudPcDomainJoinConfiguration>>("domainJoinConfigurations"); }
             set { BackingStore?.Set("domainJoinConfigurations", value); }
         }
 #endif
@@ -167,9 +167,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The imageType property</summary>
-        public CloudPcProvisioningPolicyImageType? ImageType
+        public Microsoft.Graph.Models.CloudPcProvisioningPolicyImageType? ImageType
         {
-            get { return BackingStore?.Get<CloudPcProvisioningPolicyImageType?>("imageType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CloudPcProvisioningPolicyImageType?>("imageType"); }
             set { BackingStore?.Set("imageType", value); }
         }
         /// <summary>When true, the local admin is enabled for Cloud PCs; false indicates that the local admin isn&apos;t enabled for Cloud PCs. The default value is false. Supports $filter, $select, and $orderBy.</summary>
@@ -195,36 +195,36 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Specifies the type of license used when provisioning Cloud PCs using this policy. By default, the license type is dedicated if the provisioningType isn&apos;t specified when you create the cloudPcProvisioningPolicy. You can&apos;t change this property after the cloudPcProvisioningPolicy was created. Possible values are: dedicated, shared, unknownFutureValue.</summary>
-        public CloudPcProvisioningType? ProvisioningType
+        public Microsoft.Graph.Models.CloudPcProvisioningType? ProvisioningType
         {
-            get { return BackingStore?.Get<CloudPcProvisioningType?>("provisioningType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CloudPcProvisioningType?>("provisioningType"); }
             set { BackingStore?.Set("provisioningType", value); }
         }
         /// <summary>Indicates a specific Windows setting to configure during the creation of Cloud PCs for this provisioning policy. Supports $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcWindowsSetting? WindowsSetting
+        public Microsoft.Graph.Models.CloudPcWindowsSetting? WindowsSetting
         {
-            get { return BackingStore?.Get<CloudPcWindowsSetting?>("windowsSetting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CloudPcWindowsSetting?>("windowsSetting"); }
             set { BackingStore?.Set("windowsSetting", value); }
         }
 #nullable restore
 #else
-        public CloudPcWindowsSetting WindowsSetting
+        public Microsoft.Graph.Models.CloudPcWindowsSetting WindowsSetting
         {
-            get { return BackingStore?.Get<CloudPcWindowsSetting>("windowsSetting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CloudPcWindowsSetting>("windowsSetting"); }
             set { BackingStore?.Set("windowsSetting", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcProvisioningPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudPcProvisioningPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPcProvisioningPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CloudPcProvisioningPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcProvisioningPolicy();
+            return new Microsoft.Graph.Models.CloudPcProvisioningPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -235,21 +235,21 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "alternateResourceUrl", n => { AlternateResourceUrl = n.GetStringValue(); } },
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<CloudPcProvisioningPolicyAssignment>(CloudPcProvisioningPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CloudPcProvisioningPolicyAssignment>(Microsoft.Graph.Models.CloudPcProvisioningPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "cloudPcGroupDisplayName", n => { CloudPcGroupDisplayName = n.GetStringValue(); } },
                 { "cloudPcNamingTemplate", n => { CloudPcNamingTemplate = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "domainJoinConfigurations", n => { DomainJoinConfigurations = n.GetCollectionOfObjectValues<CloudPcDomainJoinConfiguration>(CloudPcDomainJoinConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "domainJoinConfigurations", n => { DomainJoinConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CloudPcDomainJoinConfiguration>(Microsoft.Graph.Models.CloudPcDomainJoinConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "enableSingleSignOn", n => { EnableSingleSignOn = n.GetBoolValue(); } },
                 { "gracePeriodInHours", n => { GracePeriodInHours = n.GetIntValue(); } },
                 { "imageDisplayName", n => { ImageDisplayName = n.GetStringValue(); } },
                 { "imageId", n => { ImageId = n.GetStringValue(); } },
-                { "imageType", n => { ImageType = n.GetEnumValue<CloudPcProvisioningPolicyImageType>(); } },
+                { "imageType", n => { ImageType = n.GetEnumValue<Microsoft.Graph.Models.CloudPcProvisioningPolicyImageType>(); } },
                 { "localAdminEnabled", n => { LocalAdminEnabled = n.GetBoolValue(); } },
                 { "microsoftManagedDesktop", n => { MicrosoftManagedDesktop = n.GetObjectValue<Microsoft.Graph.Models.MicrosoftManagedDesktop>(Microsoft.Graph.Models.MicrosoftManagedDesktop.CreateFromDiscriminatorValue); } },
-                { "provisioningType", n => { ProvisioningType = n.GetEnumValue<CloudPcProvisioningType>(); } },
-                { "windowsSetting", n => { WindowsSetting = n.GetObjectValue<CloudPcWindowsSetting>(CloudPcWindowsSetting.CreateFromDiscriminatorValue); } },
+                { "provisioningType", n => { ProvisioningType = n.GetEnumValue<Microsoft.Graph.Models.CloudPcProvisioningType>(); } },
+                { "windowsSetting", n => { WindowsSetting = n.GetObjectValue<Microsoft.Graph.Models.CloudPcWindowsSetting>(Microsoft.Graph.Models.CloudPcWindowsSetting.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -261,21 +261,21 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("alternateResourceUrl", AlternateResourceUrl);
-            writer.WriteCollectionOfObjectValues<CloudPcProvisioningPolicyAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CloudPcProvisioningPolicyAssignment>("assignments", Assignments);
             writer.WriteStringValue("cloudPcGroupDisplayName", CloudPcGroupDisplayName);
             writer.WriteStringValue("cloudPcNamingTemplate", CloudPcNamingTemplate);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<CloudPcDomainJoinConfiguration>("domainJoinConfigurations", DomainJoinConfigurations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CloudPcDomainJoinConfiguration>("domainJoinConfigurations", DomainJoinConfigurations);
             writer.WriteBoolValue("enableSingleSignOn", EnableSingleSignOn);
             writer.WriteIntValue("gracePeriodInHours", GracePeriodInHours);
             writer.WriteStringValue("imageDisplayName", ImageDisplayName);
             writer.WriteStringValue("imageId", ImageId);
-            writer.WriteEnumValue<CloudPcProvisioningPolicyImageType>("imageType", ImageType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CloudPcProvisioningPolicyImageType>("imageType", ImageType);
             writer.WriteBoolValue("localAdminEnabled", LocalAdminEnabled);
             writer.WriteObjectValue<Microsoft.Graph.Models.MicrosoftManagedDesktop>("microsoftManagedDesktop", MicrosoftManagedDesktop);
-            writer.WriteEnumValue<CloudPcProvisioningType>("provisioningType", ProvisioningType);
-            writer.WriteObjectValue<CloudPcWindowsSetting>("windowsSetting", WindowsSetting);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CloudPcProvisioningType>("provisioningType", ProvisioningType);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CloudPcWindowsSetting>("windowsSetting", WindowsSetting);
         }
     }
 }

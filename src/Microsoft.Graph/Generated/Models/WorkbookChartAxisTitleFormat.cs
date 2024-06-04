@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookChartAxisTitleFormat : Entity, IParsable
+    public class WorkbookChartAxisTitleFormat : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the font attributes, such as font name, font size, color, etc. of chart axis title object. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartFont? Font
+        public Microsoft.Graph.Models.WorkbookChartFont? Font
         {
-            get { return BackingStore?.Get<WorkbookChartFont?>("font"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartFont?>("font"); }
             set { BackingStore?.Set("font", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartFont Font
+        public Microsoft.Graph.Models.WorkbookChartFont Font
         {
-            get { return BackingStore?.Get<WorkbookChartFont>("font"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartFont>("font"); }
             set { BackingStore?.Set("font", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookChartAxisTitleFormat"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookChartAxisTitleFormat"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookChartAxisTitleFormat CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WorkbookChartAxisTitleFormat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookChartAxisTitleFormat();
+            return new Microsoft.Graph.Models.WorkbookChartAxisTitleFormat();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "font", n => { Font = n.GetObjectValue<WorkbookChartFont>(WorkbookChartFont.CreateFromDiscriminatorValue); } },
+                { "font", n => { Font = n.GetObjectValue<Microsoft.Graph.Models.WorkbookChartFont>(Microsoft.Graph.Models.WorkbookChartFont.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<WorkbookChartFont>("font", Font);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookChartFont>("font", Font);
         }
     }
 }

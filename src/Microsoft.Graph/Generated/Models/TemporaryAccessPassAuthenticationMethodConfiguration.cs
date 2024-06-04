@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class TemporaryAccessPassAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable
+    public class TemporaryAccessPassAuthenticationMethodConfiguration : Microsoft.Graph.Models.AuthenticationMethodConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Default length in characters of a Temporary Access Pass object. Must be between 8 and 48 characters.</summary>
@@ -25,16 +25,16 @@ namespace Microsoft.Graph.Models
         /// <summary>A collection of groups that are enabled to use the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodTarget>? IncludeTargets
+        public List<Microsoft.Graph.Models.AuthenticationMethodTarget>? IncludeTargets
         {
-            get { return BackingStore?.Get<List<AuthenticationMethodTarget>?>("includeTargets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationMethodTarget>?>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodTarget> IncludeTargets
+        public List<Microsoft.Graph.Models.AuthenticationMethodTarget> IncludeTargets
         {
-            get { return BackingStore?.Get<List<AuthenticationMethodTarget>>("includeTargets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationMethodTarget>>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
 #endif
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("minimumLifetimeInMinutes", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TemporaryAccessPassAuthenticationMethodConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TemporaryAccessPassAuthenticationMethodConfiguration"/> and sets the default values.
         /// </summary>
         public TemporaryAccessPassAuthenticationMethodConfiguration() : base()
         {
@@ -66,12 +66,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TemporaryAccessPassAuthenticationMethodConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TemporaryAccessPassAuthenticationMethodConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TemporaryAccessPassAuthenticationMethodConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TemporaryAccessPassAuthenticationMethodConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TemporaryAccessPassAuthenticationMethodConfiguration();
+            return new Microsoft.Graph.Models.TemporaryAccessPassAuthenticationMethodConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Models
             {
                 { "defaultLength", n => { DefaultLength = n.GetIntValue(); } },
                 { "defaultLifetimeInMinutes", n => { DefaultLifetimeInMinutes = n.GetIntValue(); } },
-                { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<AuthenticationMethodTarget>(AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationMethodTarget>(Microsoft.Graph.Models.AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isUsableOnce", n => { IsUsableOnce = n.GetBoolValue(); } },
                 { "maximumLifetimeInMinutes", n => { MaximumLifetimeInMinutes = n.GetIntValue(); } },
                 { "minimumLifetimeInMinutes", n => { MinimumLifetimeInMinutes = n.GetIntValue(); } },
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteIntValue("defaultLength", DefaultLength);
             writer.WriteIntValue("defaultLifetimeInMinutes", DefaultLifetimeInMinutes);
-            writer.WriteCollectionOfObjectValues<AuthenticationMethodTarget>("includeTargets", IncludeTargets);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationMethodTarget>("includeTargets", IncludeTargets);
             writer.WriteBoolValue("isUsableOnce", IsUsableOnce);
             writer.WriteIntValue("maximumLifetimeInMinutes", MaximumLifetimeInMinutes);
             writer.WriteIntValue("minimumLifetimeInMinutes", MinimumLifetimeInMinutes);

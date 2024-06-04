@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class TeamworkHostedContent : Entity, IParsable
+    public class TeamworkHostedContent : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Write only. Bytes for the hosted content (such as images).</summary>
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkHostedContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamworkHostedContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeamworkHostedContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TeamworkHostedContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.chatMessageHostedContent" => new ChatMessageHostedContent(),
-                _ => new TeamworkHostedContent(),
+                "#microsoft.graph.chatMessageHostedContent" => new Microsoft.Graph.Models.ChatMessageHostedContent(),
+                _ => new Microsoft.Graph.Models.TeamworkHostedContent(),
             };
         }
         /// <summary>

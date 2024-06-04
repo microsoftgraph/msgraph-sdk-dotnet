@@ -26,7 +26,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.S
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SetPriorityPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.SetPriority.SetPriorityPostRequestBody"/> and sets the default values.
         /// </summary>
         public SetPriorityPostRequestBody()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.S
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SetPriorityPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.SetPriority.SetPriorityPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SetPriorityPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.SetPriority.SetPriorityPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SetPriorityPostRequestBody();
+            return new Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.SetPriority.SetPriorityPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

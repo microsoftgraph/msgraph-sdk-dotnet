@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class PhoneAuthenticationMethod : AuthenticationMethod, IParsable
+    public class PhoneAuthenticationMethod : Microsoft.Graph.Models.AuthenticationMethod, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they don&apos;t match the required format.</summary>
@@ -27,19 +27,19 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The type of this phone. Possible values are: mobile, alternateMobile, or office.</summary>
-        public AuthenticationPhoneType? PhoneType
+        public Microsoft.Graph.Models.AuthenticationPhoneType? PhoneType
         {
-            get { return BackingStore?.Get<AuthenticationPhoneType?>("phoneType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationPhoneType?>("phoneType"); }
             set { BackingStore?.Set("phoneType", value); }
         }
         /// <summary>Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.</summary>
-        public AuthenticationMethodSignInState? SmsSignInState
+        public Microsoft.Graph.Models.AuthenticationMethodSignInState? SmsSignInState
         {
-            get { return BackingStore?.Get<AuthenticationMethodSignInState?>("smsSignInState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationMethodSignInState?>("smsSignInState"); }
             set { BackingStore?.Set("smsSignInState", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PhoneAuthenticationMethod"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.PhoneAuthenticationMethod"/> and sets the default values.
         /// </summary>
         public PhoneAuthenticationMethod() : base()
         {
@@ -48,12 +48,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PhoneAuthenticationMethod"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PhoneAuthenticationMethod"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PhoneAuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.PhoneAuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PhoneAuthenticationMethod();
+            return new Microsoft.Graph.Models.PhoneAuthenticationMethod();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
-                { "phoneType", n => { PhoneType = n.GetEnumValue<AuthenticationPhoneType>(); } },
-                { "smsSignInState", n => { SmsSignInState = n.GetEnumValue<AuthenticationMethodSignInState>(); } },
+                { "phoneType", n => { PhoneType = n.GetEnumValue<Microsoft.Graph.Models.AuthenticationPhoneType>(); } },
+                { "smsSignInState", n => { SmsSignInState = n.GetEnumValue<Microsoft.Graph.Models.AuthenticationMethodSignInState>(); } },
             };
         }
         /// <summary>
@@ -77,8 +77,8 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
-            writer.WriteEnumValue<AuthenticationPhoneType>("phoneType", PhoneType);
-            writer.WriteEnumValue<AuthenticationMethodSignInState>("smsSignInState", SmsSignInState);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AuthenticationPhoneType>("phoneType", PhoneType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AuthenticationMethodSignInState>("smsSignInState", SmsSignInState);
         }
     }
 }

@@ -17,34 +17,34 @@ namespace Microsoft.Graph.Places
     public class PlacesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Places.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Places.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to room.</summary>
-        public GraphRoomRequestBuilder GraphRoom
+        public Microsoft.Graph.Places.GraphRoom.GraphRoomRequestBuilder GraphRoom
         {
-            get => new GraphRoomRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Places.GraphRoom.GraphRoomRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to roomList.</summary>
-        public GraphRoomListRequestBuilder GraphRoomList
+        public Microsoft.Graph.Places.GraphRoomList.GraphRoomListRequestBuilder GraphRoomList
         {
-            get => new GraphRoomListRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Places.GraphRoomList.GraphRoomListRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of place entities.</summary>
         /// <param name="position">The unique identifier of place</param>
-        /// <returns>A <see cref="PlaceItemRequestBuilder"/></returns>
-        public PlaceItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Places.Item.PlaceItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Places.Item.PlaceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("place%2Did", position);
-                return new PlaceItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Places.Item.PlaceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlacesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Places.PlacesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Places
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlacesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Places.PlacesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

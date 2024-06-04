@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole
 {
     #pragma warning disable CS1591
-    public class GetByUserRoleWithRoleGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetByUserRoleWithRoleGetResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventWebinar>? Value
+        public List<Microsoft.Graph.Models.VirtualEventWebinar>? Value
         {
-            get { return BackingStore?.Get<List<VirtualEventWebinar>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.VirtualEventWebinar>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventWebinar> Value
+        public List<Microsoft.Graph.Models.VirtualEventWebinar> Value
         {
-            get { return BackingStore?.Get<List<VirtualEventWebinar>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.VirtualEventWebinar>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetByUserRoleWithRoleGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetByUserRoleWithRoleGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetByUserRoleWithRoleGetResponse();
+            return new Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<VirtualEventWebinar>(VirtualEventWebinar.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.VirtualEventWebinar>(Microsoft.Graph.Models.VirtualEventWebinar.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<VirtualEventWebinar>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.VirtualEventWebinar>("value", Value);
         }
     }
 }

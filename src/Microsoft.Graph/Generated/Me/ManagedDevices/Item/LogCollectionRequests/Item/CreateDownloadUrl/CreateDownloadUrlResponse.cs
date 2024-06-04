@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item.LogCollectionRequests.Item.Crea
 {
     [Obsolete("This class is obsolete. Use CreateDownloadUrlPostResponse instead.")]
     #pragma warning disable CS1591
-    public class CreateDownloadUrlResponse : CreateDownloadUrlPostResponse, IParsable
+    public class CreateDownloadUrlResponse : Microsoft.Graph.Me.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl.CreateDownloadUrlPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CreateDownloadUrlResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl.CreateDownloadUrlResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CreateDownloadUrlResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Me.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl.CreateDownloadUrlResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CreateDownloadUrlResponse();
+            return new Microsoft.Graph.Me.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl.CreateDownloadUrlResponse();
         }
     }
 }

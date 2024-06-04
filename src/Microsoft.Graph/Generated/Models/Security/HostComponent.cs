@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class HostComponent : Artifact, IParsable
+    public class HostComponent : Microsoft.Graph.Models.Security.Artifact, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The type of component that was detected (for example, Operating System, Framework, Remote Access, or Server).</summary>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="HostComponent"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.HostComponent"/> and sets the default values.
         /// </summary>
         public HostComponent() : base()
         {
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HostComponent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.HostComponent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new HostComponent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.HostComponent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HostComponent();
+            return new Microsoft.Graph.Models.Security.HostComponent();
         }
         /// <summary>
         /// The deserialization information for the current model

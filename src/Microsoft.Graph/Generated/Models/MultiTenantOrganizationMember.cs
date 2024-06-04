@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class MultiTenantOrganizationMember : DirectoryObject, IParsable
+    public class MultiTenantOrganizationMember : Microsoft.Graph.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Tenant ID of the tenant that added the tenant to the multitenant organization. Read-only.</summary>
@@ -45,15 +45,15 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("joinedDateTime", value); }
         }
         /// <summary>Role of the tenant in the multitenant organization. The possible values are: owner, member (default), unknownFutureValue. Tenants with the owner role can manage the multitenant organization but tenants with the member role can only participate in a multitenant organization. There can be multiple tenants with the owner role in a multitenant organization.</summary>
-        public MultiTenantOrganizationMemberRole? Role
+        public Microsoft.Graph.Models.MultiTenantOrganizationMemberRole? Role
         {
-            get { return BackingStore?.Get<MultiTenantOrganizationMemberRole?>("role"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MultiTenantOrganizationMemberRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
         /// <summary>State of the tenant in the multitenant organization. The possible values are: pending, active, removed, unknownFutureValue. Tenants in the pending state must join the multitenant organization to participate in the multitenant organization. Tenants in the active state can participate in the multitenant organization. Tenants in the removed state are in the process of being removed from the multitenant organization. Read-only.</summary>
-        public MultiTenantOrganizationMemberState? State
+        public Microsoft.Graph.Models.MultiTenantOrganizationMemberState? State
         {
-            get { return BackingStore?.Get<MultiTenantOrganizationMemberState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MultiTenantOrganizationMemberState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>Tenant ID of the Microsoft Entra tenant added to the multitenant organization. Set at the time tenant is added.Supports $filter. Key.</summary>
@@ -75,21 +75,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Details of the processing status for a tenant in a multitenant organization. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MultiTenantOrganizationMemberTransitionDetails? TransitionDetails
+        public Microsoft.Graph.Models.MultiTenantOrganizationMemberTransitionDetails? TransitionDetails
         {
-            get { return BackingStore?.Get<MultiTenantOrganizationMemberTransitionDetails?>("transitionDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MultiTenantOrganizationMemberTransitionDetails?>("transitionDetails"); }
             set { BackingStore?.Set("transitionDetails", value); }
         }
 #nullable restore
 #else
-        public MultiTenantOrganizationMemberTransitionDetails TransitionDetails
+        public Microsoft.Graph.Models.MultiTenantOrganizationMemberTransitionDetails TransitionDetails
         {
-            get { return BackingStore?.Get<MultiTenantOrganizationMemberTransitionDetails>("transitionDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MultiTenantOrganizationMemberTransitionDetails>("transitionDetails"); }
             set { BackingStore?.Set("transitionDetails", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MultiTenantOrganizationMember"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MultiTenantOrganizationMember"/> and sets the default values.
         /// </summary>
         public MultiTenantOrganizationMember() : base()
         {
@@ -98,12 +98,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MultiTenantOrganizationMember"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MultiTenantOrganizationMember"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MultiTenantOrganizationMember CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MultiTenantOrganizationMember CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MultiTenantOrganizationMember();
+            return new Microsoft.Graph.Models.MultiTenantOrganizationMember();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -117,10 +117,10 @@ namespace Microsoft.Graph.Models
                 { "addedDateTime", n => { AddedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "joinedDateTime", n => { JoinedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "role", n => { Role = n.GetEnumValue<MultiTenantOrganizationMemberRole>(); } },
-                { "state", n => { State = n.GetEnumValue<MultiTenantOrganizationMemberState>(); } },
+                { "role", n => { Role = n.GetEnumValue<Microsoft.Graph.Models.MultiTenantOrganizationMemberRole>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Models.MultiTenantOrganizationMemberState>(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
-                { "transitionDetails", n => { TransitionDetails = n.GetObjectValue<MultiTenantOrganizationMemberTransitionDetails>(MultiTenantOrganizationMemberTransitionDetails.CreateFromDiscriminatorValue); } },
+                { "transitionDetails", n => { TransitionDetails = n.GetObjectValue<Microsoft.Graph.Models.MultiTenantOrganizationMemberTransitionDetails>(Microsoft.Graph.Models.MultiTenantOrganizationMemberTransitionDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -135,10 +135,10 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("addedDateTime", AddedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("joinedDateTime", JoinedDateTime);
-            writer.WriteEnumValue<MultiTenantOrganizationMemberRole>("role", Role);
-            writer.WriteEnumValue<MultiTenantOrganizationMemberState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Models.MultiTenantOrganizationMemberRole>("role", Role);
+            writer.WriteEnumValue<Microsoft.Graph.Models.MultiTenantOrganizationMemberState>("state", State);
             writer.WriteStringValue("tenantId", TenantId);
-            writer.WriteObjectValue<MultiTenantOrganizationMemberTransitionDetails>("transitionDetails", TransitionDetails);
+            writer.WriteObjectValue<Microsoft.Graph.Models.MultiTenantOrganizationMemberTransitionDetails>("transitionDetails", TransitionDetails);
         }
     }
 }

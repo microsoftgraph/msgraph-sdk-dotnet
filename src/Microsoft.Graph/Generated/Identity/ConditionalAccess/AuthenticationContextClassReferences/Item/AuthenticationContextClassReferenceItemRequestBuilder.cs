@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassR
     public class AuthenticationContextClassReferenceItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationContextClassReferenceItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassReferences.Item.AuthenticationContextClassReferenceItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassR
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationContextClassReferenceItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassReferences.Item.AuthenticationContextClassReferenceItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassR
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassR
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -59,51 +59,51 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassR
         /// Retrieve the properties and relationships of a authenticationContextClassReference object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationcontextclassreference-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="AuthenticationContextClassReference"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationContextClassReference"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationContextClassReference?> GetAsync(Action<RequestConfiguration<AuthenticationContextClassReferenceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationContextClassReference?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassReferences.Item.AuthenticationContextClassReferenceItemRequestBuilder.AuthenticationContextClassReferenceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AuthenticationContextClassReference> GetAsync(Action<RequestConfiguration<AuthenticationContextClassReferenceItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationContextClassReference> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassReferences.Item.AuthenticationContextClassReferenceItemRequestBuilder.AuthenticationContextClassReferenceItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AuthenticationContextClassReference>(requestInfo, AuthenticationContextClassReference.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthenticationContextClassReference>(requestInfo, Microsoft.Graph.Models.AuthenticationContextClassReference.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create an authenticationContextClassReference object, if the ID has not been used. If ID has been used, this call updates the authenticationContextClassReference object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationcontextclassreference-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="AuthenticationContextClassReference"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationContextClassReference"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationContextClassReference?> PatchAsync(AuthenticationContextClassReference body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationContextClassReference?> PatchAsync(Microsoft.Graph.Models.AuthenticationContextClassReference body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AuthenticationContextClassReference> PatchAsync(AuthenticationContextClassReference body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationContextClassReference> PatchAsync(Microsoft.Graph.Models.AuthenticationContextClassReference body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AuthenticationContextClassReference>(requestInfo, AuthenticationContextClassReference.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthenticationContextClassReference>(requestInfo, Microsoft.Graph.Models.AuthenticationContextClassReference.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete an authenticationContextClassReference object that&apos;s not published or used by a conditional access policy.
@@ -131,11 +131,11 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassR
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthenticationContextClassReferenceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassReferences.Item.AuthenticationContextClassReferenceItemRequestBuilder.AuthenticationContextClassReferenceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthenticationContextClassReferenceItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassReferences.Item.AuthenticationContextClassReferenceItemRequestBuilder.AuthenticationContextClassReferenceItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -151,11 +151,11 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassR
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(AuthenticationContextClassReference body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.AuthenticationContextClassReference body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(AuthenticationContextClassReference body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.AuthenticationContextClassReference body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -168,11 +168,11 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassR
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AuthenticationContextClassReferenceItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassReferences.Item.AuthenticationContextClassReferenceItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AuthenticationContextClassReferenceItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassReferences.Item.AuthenticationContextClassReferenceItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new AuthenticationContextClassReferenceItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassReferences.Item.AuthenticationContextClassReferenceItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -211,7 +211,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassR
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AuthenticationContextClassReferenceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<AuthenticationContextClassReferenceItemRequestBuilderGetQueryParameters>
+        public class AuthenticationContextClassReferenceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassReferences.Item.AuthenticationContextClassReferenceItemRequestBuilder.AuthenticationContextClassReferenceItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

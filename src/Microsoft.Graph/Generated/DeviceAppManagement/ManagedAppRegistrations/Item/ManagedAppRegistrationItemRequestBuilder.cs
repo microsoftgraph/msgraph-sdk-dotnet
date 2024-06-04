@@ -20,22 +20,22 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item
     public class ManagedAppRegistrationItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the appliedPolicies property of the microsoft.graph.managedAppRegistration entity.</summary>
-        public AppliedPoliciesRequestBuilder AppliedPolicies
+        public Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.AppliedPolicies.AppliedPoliciesRequestBuilder AppliedPolicies
         {
-            get => new AppliedPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.AppliedPolicies.AppliedPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the intendedPolicies property of the microsoft.graph.managedAppRegistration entity.</summary>
-        public IntendedPoliciesRequestBuilder IntendedPolicies
+        public Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.IntendedPolicies.IntendedPoliciesRequestBuilder IntendedPolicies
         {
-            get => new IntendedPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.IntendedPolicies.IntendedPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.managedAppRegistration entity.</summary>
-        public OperationsRequestBuilder Operations
+        public Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.OperationsRequestBuilder Operations
         {
-            get => new OperationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagedAppRegistrationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.ManagedAppRegistrationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagedAppRegistrationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.ManagedAppRegistrationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -68,58 +68,58 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the iosManagedAppRegistration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-iosmanagedappregistration-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the managedAppRegistration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ManagedAppRegistration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedAppRegistration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedAppRegistration?> GetAsync(Action<RequestConfiguration<ManagedAppRegistrationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedAppRegistration?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.ManagedAppRegistrationItemRequestBuilder.ManagedAppRegistrationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedAppRegistration> GetAsync(Action<RequestConfiguration<ManagedAppRegistrationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedAppRegistration> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.ManagedAppRegistrationItemRequestBuilder.ManagedAppRegistrationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedAppRegistration>(requestInfo, ManagedAppRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedAppRegistration>(requestInfo, Microsoft.Graph.Models.ManagedAppRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property managedAppRegistrations in deviceAppManagement
         /// </summary>
-        /// <returns>A <see cref="ManagedAppRegistration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedAppRegistration"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedAppRegistration?> PatchAsync(ManagedAppRegistration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedAppRegistration?> PatchAsync(Microsoft.Graph.Models.ManagedAppRegistration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedAppRegistration> PatchAsync(ManagedAppRegistration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedAppRegistration> PatchAsync(Microsoft.Graph.Models.ManagedAppRegistration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedAppRegistration>(requestInfo, ManagedAppRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedAppRegistration>(requestInfo, Microsoft.Graph.Models.ManagedAppRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property managedAppRegistrations for deviceAppManagement
@@ -141,17 +141,17 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the iosManagedAppRegistration object.
+        /// Read properties and relationships of the managedAppRegistration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedAppRegistrationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.ManagedAppRegistrationItemRequestBuilder.ManagedAppRegistrationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedAppRegistrationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.ManagedAppRegistrationItemRequestBuilder.ManagedAppRegistrationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -167,11 +167,11 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(ManagedAppRegistration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ManagedAppRegistration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(ManagedAppRegistration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ManagedAppRegistration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -184,11 +184,11 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ManagedAppRegistrationItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.ManagedAppRegistrationItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ManagedAppRegistrationItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.ManagedAppRegistrationItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new ManagedAppRegistrationItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.ManagedAppRegistrationItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item
         {
         }
         /// <summary>
-        /// Read properties and relationships of the iosManagedAppRegistration object.
+        /// Read properties and relationships of the managedAppRegistration object.
         /// </summary>
         public class ManagedAppRegistrationItemRequestBuilderGetQueryParameters 
         {
@@ -227,7 +227,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedAppRegistrationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ManagedAppRegistrationItemRequestBuilderGetQueryParameters>
+        public class ManagedAppRegistrationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.ManagedAppRegistrationItemRequestBuilder.ManagedAppRegistrationItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics metric contains the score and units of a metric of a user experience anlaytics category.
     /// </summary>
-    public class UserExperienceAnalyticsMetric : Entity, IParsable
+    public class UserExperienceAnalyticsMetric : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The unit of the user experience analytics metric. Examples: none, percentage, count, seconds, score.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsMetric"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsMetric"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsMetric CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserExperienceAnalyticsMetric CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsMetric();
+            return new Microsoft.Graph.Models.UserExperienceAnalyticsMetric();
         }
         /// <summary>
         /// The deserialization information for the current model

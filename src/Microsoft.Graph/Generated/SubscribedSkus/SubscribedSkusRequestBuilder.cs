@@ -19,80 +19,80 @@ namespace Microsoft.Graph.SubscribedSkus
     {
         /// <summary>Provides operations to manage the collection of subscribedSku entities.</summary>
         /// <param name="position">The unique identifier of subscribedSku</param>
-        /// <returns>A <see cref="SubscribedSkuItemRequestBuilder"/></returns>
-        public SubscribedSkuItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.SubscribedSkus.Item.SubscribedSkuItemRequestBuilder"/></returns>
+        public Microsoft.Graph.SubscribedSkus.Item.SubscribedSkuItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("subscribedSku%2Did", position);
-                return new SubscribedSkuItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.SubscribedSkus.Item.SubscribedSkuItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SubscribedSkusRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.SubscribedSkus.SubscribedSkusRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscribedSkusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/subscribedSkus{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        public SubscribedSkusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/subscribedSkus{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SubscribedSkusRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.SubscribedSkus.SubscribedSkusRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscribedSkusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/subscribedSkus{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        public SubscribedSkusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/subscribedSkus{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
         {
         }
         /// <summary>
         /// Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Microsoft Entra admin center or the Microsoft 365 admin center against their Microsoft Graph skuId and skuPartNumber properties, see Product names and service plan identifiers for licensing.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/subscribedsku-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="SubscribedSkuCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SubscribedSkuCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SubscribedSkuCollectionResponse?> GetAsync(Action<RequestConfiguration<SubscribedSkusRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SubscribedSkuCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.SubscribedSkus.SubscribedSkusRequestBuilder.SubscribedSkusRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SubscribedSkuCollectionResponse> GetAsync(Action<RequestConfiguration<SubscribedSkusRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SubscribedSkuCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.SubscribedSkus.SubscribedSkusRequestBuilder.SubscribedSkusRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SubscribedSkuCollectionResponse>(requestInfo, SubscribedSkuCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SubscribedSkuCollectionResponse>(requestInfo, Microsoft.Graph.Models.SubscribedSkuCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to subscribedSkus
         /// </summary>
-        /// <returns>A <see cref="SubscribedSku"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SubscribedSku"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SubscribedSku?> PostAsync(SubscribedSku body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SubscribedSku?> PostAsync(Microsoft.Graph.Models.SubscribedSku body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SubscribedSku> PostAsync(SubscribedSku body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SubscribedSku> PostAsync(Microsoft.Graph.Models.SubscribedSku body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SubscribedSku>(requestInfo, SubscribedSku.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SubscribedSku>(requestInfo, Microsoft.Graph.Models.SubscribedSku.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Microsoft Entra admin center or the Microsoft 365 admin center against their Microsoft Graph skuId and skuPartNumber properties, see Product names and service plan identifiers for licensing.
@@ -101,11 +101,11 @@ namespace Microsoft.Graph.SubscribedSkus
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SubscribedSkusRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.SubscribedSkus.SubscribedSkusRequestBuilder.SubscribedSkusRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SubscribedSkusRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.SubscribedSkus.SubscribedSkusRequestBuilder.SubscribedSkusRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -121,11 +121,11 @@ namespace Microsoft.Graph.SubscribedSkus
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(SubscribedSku body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.SubscribedSku body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(SubscribedSku body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.SubscribedSku body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -138,11 +138,11 @@ namespace Microsoft.Graph.SubscribedSkus
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SubscribedSkusRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.SubscribedSkus.SubscribedSkusRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SubscribedSkusRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.SubscribedSkus.SubscribedSkusRequestBuilder WithUrl(string rawUrl)
         {
-            return new SubscribedSkusRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.SubscribedSkus.SubscribedSkusRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Microsoft Entra admin center or the Microsoft 365 admin center against their Microsoft Graph skuId and skuPartNumber properties, see Product names and service plan identifiers for licensing.
@@ -152,6 +152,16 @@ namespace Microsoft.Graph.SubscribedSkus
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -203,7 +213,7 @@ namespace Microsoft.Graph.SubscribedSkus
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SubscribedSkusRequestBuilderGetRequestConfiguration : RequestConfiguration<SubscribedSkusRequestBuilderGetQueryParameters>
+        public class SubscribedSkusRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.SubscribedSkus.SubscribedSkusRequestBuilder.SubscribedSkusRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class EducationAssignmentClassRecipient : EducationAssignmentRecipient, IParsable
+    public class EducationAssignmentClassRecipient : Microsoft.Graph.Models.EducationAssignmentRecipient, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="EducationAssignmentClassRecipient"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.EducationAssignmentClassRecipient"/> and sets the default values.
         /// </summary>
         public EducationAssignmentClassRecipient() : base()
         {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationAssignmentClassRecipient"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationAssignmentClassRecipient"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationAssignmentClassRecipient CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EducationAssignmentClassRecipient CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationAssignmentClassRecipient();
+            return new Microsoft.Graph.Models.EducationAssignmentClassRecipient();
         }
         /// <summary>
         /// The deserialization information for the current model

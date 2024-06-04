@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
     public class DirectoriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Directories.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Directories.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.</summary>
         /// <param name="position">The unique identifier of directoryDefinition</param>
-        /// <returns>A <see cref="DirectoryDefinitionItemRequestBuilder"/></returns>
-        public DirectoryDefinitionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Directories.Item.DirectoryDefinitionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Directories.Item.DirectoryDefinitionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("directoryDefinition%2Did", position);
-                return new DirectoryDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Directories.Item.DirectoryDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DirectoriesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Directories.DirectoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DirectoriesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Directories.DirectoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         /// <summary>
         /// Contains the collection of directories and all of their objects.
         /// </summary>
-        /// <returns>A <see cref="DirectoryDefinitionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectoryDefinitionCollectionResponse?> GetAsync(Action<RequestConfiguration<DirectoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DirectoryDefinitionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Directories.DirectoriesRequestBuilder.DirectoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DirectoryDefinitionCollectionResponse> GetAsync(Action<RequestConfiguration<DirectoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DirectoryDefinitionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Directories.DirectoriesRequestBuilder.DirectoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DirectoryDefinitionCollectionResponse>(requestInfo, DirectoryDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DirectoryDefinitionCollectionResponse>(requestInfo, Microsoft.Graph.Models.DirectoryDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to directories for applications
         /// </summary>
-        /// <returns>A <see cref="DirectoryDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryDefinition"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectoryDefinition?> PostAsync(DirectoryDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DirectoryDefinition?> PostAsync(Microsoft.Graph.Models.DirectoryDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DirectoryDefinition> PostAsync(DirectoryDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DirectoryDefinition> PostAsync(Microsoft.Graph.Models.DirectoryDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DirectoryDefinition>(requestInfo, DirectoryDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DirectoryDefinition>(requestInfo, Microsoft.Graph.Models.DirectoryDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Contains the collection of directories and all of their objects.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Directories.DirectoriesRequestBuilder.DirectoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Directories.DirectoriesRequestBuilder.DirectoriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DirectoryDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.DirectoryDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DirectoryDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.DirectoryDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DirectoriesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Directories.DirectoriesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DirectoriesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Directories.DirectoriesRequestBuilder WithUrl(string rawUrl)
         {
-            return new DirectoriesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Directories.DirectoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Contains the collection of directories and all of their objects.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<DirectoriesRequestBuilderGetQueryParameters>
+        public class DirectoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Directories.DirectoriesRequestBuilder.DirectoriesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

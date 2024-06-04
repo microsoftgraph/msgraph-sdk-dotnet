@@ -29,21 +29,21 @@ namespace Microsoft.Graph.Me.Chats.Item.MarkChatUnreadForUser
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkUserIdentity? User
+        public Microsoft.Graph.Models.TeamworkUserIdentity? User
         {
-            get { return BackingStore?.Get<TeamworkUserIdentity?>("user"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamworkUserIdentity?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
 #nullable restore
 #else
-        public TeamworkUserIdentity User
+        public Microsoft.Graph.Models.TeamworkUserIdentity User
         {
-            get { return BackingStore?.Get<TeamworkUserIdentity>("user"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamworkUserIdentity>("user"); }
             set { BackingStore?.Set("user", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MarkChatUnreadForUserPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Chats.Item.MarkChatUnreadForUser.MarkChatUnreadForUserPostRequestBody"/> and sets the default values.
         /// </summary>
         public MarkChatUnreadForUserPostRequestBody()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Me.Chats.Item.MarkChatUnreadForUser
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MarkChatUnreadForUserPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Chats.Item.MarkChatUnreadForUser.MarkChatUnreadForUserPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MarkChatUnreadForUserPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Me.Chats.Item.MarkChatUnreadForUser.MarkChatUnreadForUserPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MarkChatUnreadForUserPostRequestBody();
+            return new Microsoft.Graph.Me.Chats.Item.MarkChatUnreadForUser.MarkChatUnreadForUserPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Me.Chats.Item.MarkChatUnreadForUser
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "lastMessageReadDateTime", n => { LastMessageReadDateTime = n.GetDateTimeOffsetValue(); } },
-                { "user", n => { User = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<Microsoft.Graph.Models.TeamworkUserIdentity>(Microsoft.Graph.Models.TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Me.Chats.Item.MarkChatUnreadForUser
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("lastMessageReadDateTime", LastMessageReadDateTime);
-            writer.WriteObjectValue<TeamworkUserIdentity>("user", User);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TeamworkUserIdentity>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

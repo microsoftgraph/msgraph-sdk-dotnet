@@ -22,32 +22,32 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item
     public class CloudPCItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the endGracePeriod method.</summary>
-        public EndGracePeriodRequestBuilder EndGracePeriod
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.EndGracePeriod.EndGracePeriodRequestBuilder EndGracePeriod
         {
-            get => new EndGracePeriodRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.EndGracePeriod.EndGracePeriodRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reboot method.</summary>
-        public RebootRequestBuilder Reboot
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reboot.RebootRequestBuilder Reboot
         {
-            get => new RebootRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reboot.RebootRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rename method.</summary>
-        public RenameRequestBuilder Rename
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Rename.RenameRequestBuilder Rename
         {
-            get => new RenameRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Rename.RenameRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
-        public RestoreRequestBuilder Restore
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Restore.RestoreRequestBuilder Restore
         {
-            get => new RestoreRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the troubleshoot method.</summary>
-        public TroubleshootRequestBuilder Troubleshoot
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Troubleshoot.TroubleshootRequestBuilder Troubleshoot
         {
-            get => new TroubleshootRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Troubleshoot.TroubleshootRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="CloudPCItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.CloudPCItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CloudPCItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.CloudPCItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -88,50 +88,50 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         /// Read the properties and relationships of a specific cloudPC object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="CloudPC"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudPC"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPC?> GetAsync(Action<RequestConfiguration<CloudPCItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CloudPC?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.CloudPCItemRequestBuilder.CloudPCItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudPC> GetAsync(Action<RequestConfiguration<CloudPCItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CloudPC> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.CloudPCItemRequestBuilder.CloudPCItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudPC>(requestInfo, CloudPC.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CloudPC>(requestInfo, Microsoft.Graph.Models.CloudPC.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property cloudPCs in deviceManagement
         /// </summary>
-        /// <returns>A <see cref="CloudPC"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudPC"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPC?> PatchAsync(CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CloudPC?> PatchAsync(Microsoft.Graph.Models.CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudPC> PatchAsync(CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CloudPC> PatchAsync(Microsoft.Graph.Models.CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudPC>(requestInfo, CloudPC.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CloudPC>(requestInfo, Microsoft.Graph.Models.CloudPC.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property cloudPCs for deviceManagement
@@ -159,11 +159,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CloudPCItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.CloudPCItemRequestBuilder.CloudPCItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CloudPCItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.CloudPCItemRequestBuilder.CloudPCItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -179,11 +179,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -196,11 +196,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CloudPCItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.CloudPCItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CloudPCItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.CloudPCItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new CloudPCItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.CloudPCItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -239,7 +239,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CloudPCItemRequestBuilderGetRequestConfiguration : RequestConfiguration<CloudPCItemRequestBuilderGetQueryParameters>
+        public class CloudPCItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.CloudPCItemRequestBuilder.CloudPCItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

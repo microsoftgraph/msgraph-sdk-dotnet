@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class CategoryTemplate : FilePlanDescriptorTemplate, IParsable
+    public class CategoryTemplate : Microsoft.Graph.Models.Security.FilePlanDescriptorTemplate, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents all subcategories under a particular category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubcategoryTemplate>? Subcategories
+        public List<Microsoft.Graph.Models.Security.SubcategoryTemplate>? Subcategories
         {
-            get { return BackingStore?.Get<List<SubcategoryTemplate>?>("subcategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.SubcategoryTemplate>?>("subcategories"); }
             set { BackingStore?.Set("subcategories", value); }
         }
 #nullable restore
 #else
-        public List<SubcategoryTemplate> Subcategories
+        public List<Microsoft.Graph.Models.Security.SubcategoryTemplate> Subcategories
         {
-            get { return BackingStore?.Get<List<SubcategoryTemplate>>("subcategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.SubcategoryTemplate>>("subcategories"); }
             set { BackingStore?.Set("subcategories", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CategoryTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.CategoryTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CategoryTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.CategoryTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CategoryTemplate();
+            return new Microsoft.Graph.Models.Security.CategoryTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "subcategories", n => { Subcategories = n.GetCollectionOfObjectValues<SubcategoryTemplate>(SubcategoryTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "subcategories", n => { Subcategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.SubcategoryTemplate>(Microsoft.Graph.Models.Security.SubcategoryTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<SubcategoryTemplate>("subcategories", Subcategories);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.SubcategoryTemplate>("subcategories", Subcategories);
         }
     }
 }

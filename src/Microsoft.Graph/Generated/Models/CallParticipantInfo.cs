@@ -38,21 +38,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Identity of the call participant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Participant
+        public Microsoft.Graph.Models.IdentitySet? Participant
         {
-            get { return BackingStore?.Get<IdentitySet?>("participant"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("participant"); }
             set { BackingStore?.Set("participant", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Participant
+        public Microsoft.Graph.Models.IdentitySet Participant
         {
-            get { return BackingStore?.Get<IdentitySet>("participant"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("participant"); }
             set { BackingStore?.Set("participant", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CallParticipantInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CallParticipantInfo"/> and sets the default values.
         /// </summary>
         public CallParticipantInfo()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CallParticipantInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CallParticipantInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CallParticipantInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CallParticipantInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CallParticipantInfo();
+            return new Microsoft.Graph.Models.CallParticipantInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "participant", n => { Participant = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "participant", n => { Participant = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<IdentitySet>("participant", Participant);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("participant", Participant);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

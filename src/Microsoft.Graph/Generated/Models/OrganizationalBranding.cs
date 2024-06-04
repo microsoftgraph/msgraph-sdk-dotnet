@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OrganizationalBranding : OrganizationalBrandingProperties, IParsable
+    public class OrganizationalBranding : Microsoft.Graph.Models.OrganizationalBrandingProperties, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Add different branding based on a locale.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OrganizationalBrandingLocalization>? Localizations
+        public List<Microsoft.Graph.Models.OrganizationalBrandingLocalization>? Localizations
         {
-            get { return BackingStore?.Get<List<OrganizationalBrandingLocalization>?>("localizations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OrganizationalBrandingLocalization>?>("localizations"); }
             set { BackingStore?.Set("localizations", value); }
         }
 #nullable restore
 #else
-        public List<OrganizationalBrandingLocalization> Localizations
+        public List<Microsoft.Graph.Models.OrganizationalBrandingLocalization> Localizations
         {
-            get { return BackingStore?.Get<List<OrganizationalBrandingLocalization>>("localizations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OrganizationalBrandingLocalization>>("localizations"); }
             set { BackingStore?.Set("localizations", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OrganizationalBranding"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OrganizationalBranding"/> and sets the default values.
         /// </summary>
         public OrganizationalBranding() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OrganizationalBranding"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OrganizationalBranding"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OrganizationalBranding CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OrganizationalBranding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OrganizationalBranding();
+            return new Microsoft.Graph.Models.OrganizationalBranding();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "localizations", n => { Localizations = n.GetCollectionOfObjectValues<OrganizationalBrandingLocalization>(OrganizationalBrandingLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "localizations", n => { Localizations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OrganizationalBrandingLocalization>(Microsoft.Graph.Models.OrganizationalBrandingLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<OrganizationalBrandingLocalization>("localizations", Localizations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OrganizationalBrandingLocalization>("localizations", Localizations);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists
     public class ListsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ListsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists.ListsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ListsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists.ListsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists
         /// <summary>
         /// The collection of lists under this site.
         /// </summary>
-        /// <returns>A <see cref="ListCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ListCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ListCollectionResponse?> GetAsync(Action<RequestConfiguration<ListsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ListCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ListCollectionResponse> GetAsync(Action<RequestConfiguration<ListsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ListCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ListCollectionResponse>(requestInfo, ListCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ListCollectionResponse>(requestInfo, Microsoft.Graph.Models.ListCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to lists for sites
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.List?> PostAsync(Microsoft.Graph.Models.List body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.List>(requestInfo, Microsoft.Graph.Models.List.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ListsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ListsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -124,11 +124,11 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ListsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists.ListsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ListsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists.ListsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ListsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists.ListsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The collection of lists under this site.
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ListsRequestBuilderGetRequestConfiguration : RequestConfiguration<ListsRequestBuilderGetQueryParameters>
+        public class ListsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

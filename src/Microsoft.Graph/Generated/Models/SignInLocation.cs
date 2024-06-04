@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SignInLocation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SignInLocation"/> and sets the default values.
         /// </summary>
         public SignInLocation()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SignInLocation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SignInLocation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SignInLocation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SignInLocation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SignInLocation();
+            return new Microsoft.Graph.Models.SignInLocation();
         }
         /// <summary>
         /// The deserialization information for the current model

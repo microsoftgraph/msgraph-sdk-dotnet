@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WindowsSetting : Entity, IParsable
+    public class WindowsSetting : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of setting values for a given windowsSetting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsSettingInstance>? Instances
+        public List<Microsoft.Graph.Models.WindowsSettingInstance>? Instances
         {
-            get { return BackingStore?.Get<List<WindowsSettingInstance>?>("instances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsSettingInstance>?>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
 #nullable restore
 #else
-        public List<WindowsSettingInstance> Instances
+        public List<Microsoft.Graph.Models.WindowsSettingInstance> Instances
         {
-            get { return BackingStore?.Get<List<WindowsSettingInstance>>("instances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsSettingInstance>>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
 #endif
@@ -43,9 +43,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The settingType property</summary>
-        public WindowsSettingType? SettingType
+        public Microsoft.Graph.Models.WindowsSettingType? SettingType
         {
-            get { return BackingStore?.Get<WindowsSettingType?>("settingType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsSettingType?>("settingType"); }
             set { BackingStore?.Set("settingType", value); }
         }
         /// <summary>A unique identifier for the device the setting might belong to if it is of the settingType backup.</summary>
@@ -67,12 +67,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WindowsSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsSetting();
+            return new Microsoft.Graph.Models.WindowsSetting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,9 +82,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "instances", n => { Instances = n.GetCollectionOfObjectValues<WindowsSettingInstance>(WindowsSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "instances", n => { Instances = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WindowsSettingInstance>(Microsoft.Graph.Models.WindowsSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "payloadType", n => { PayloadType = n.GetStringValue(); } },
-                { "settingType", n => { SettingType = n.GetEnumValue<WindowsSettingType>(); } },
+                { "settingType", n => { SettingType = n.GetEnumValue<Microsoft.Graph.Models.WindowsSettingType>(); } },
                 { "windowsDeviceId", n => { WindowsDeviceId = n.GetStringValue(); } },
             };
         }
@@ -96,9 +96,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<WindowsSettingInstance>("instances", Instances);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WindowsSettingInstance>("instances", Instances);
             writer.WriteStringValue("payloadType", PayloadType);
-            writer.WriteEnumValue<WindowsSettingType>("settingType", SettingType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.WindowsSettingType>("settingType", SettingType);
             writer.WriteStringValue("windowsDeviceId", WindowsDeviceId);
         }
     }

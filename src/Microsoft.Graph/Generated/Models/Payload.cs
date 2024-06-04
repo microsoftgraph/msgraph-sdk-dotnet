@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Payload : Entity, IParsable
+    public class Payload : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, sendGrid, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.</summary>
-        public PayloadBrand? Brand
+        public Microsoft.Graph.Models.PayloadBrand? Brand
         {
-            get { return BackingStore?.Get<PayloadBrand?>("brand"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PayloadBrand?>("brand"); }
             set { BackingStore?.Set("brand", value); }
         }
         /// <summary>The complexity of a payload. Possible values are: unknown, low, medium, high, unknownFutureValue.</summary>
-        public PayloadComplexity? Complexity
+        public Microsoft.Graph.Models.PayloadComplexity? Complexity
         {
-            get { return BackingStore?.Get<PayloadComplexity?>("complexity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PayloadComplexity?>("complexity"); }
             set { BackingStore?.Set("complexity", value); }
         }
         /// <summary>Identity of the user who created the attack simulation and training campaign payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? CreatedBy
+        public Microsoft.Graph.Models.EmailIdentity? CreatedBy
         {
-            get { return BackingStore?.Get<EmailIdentity?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity CreatedBy
+        public Microsoft.Graph.Models.EmailIdentity CreatedBy
         {
-            get { return BackingStore?.Get<EmailIdentity>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -63,16 +63,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Additional details about the payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PayloadDetail? Detail
+        public Microsoft.Graph.Models.PayloadDetail? Detail
         {
-            get { return BackingStore?.Get<PayloadDetail?>("detail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PayloadDetail?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
 #nullable restore
 #else
-        public PayloadDetail Detail
+        public Microsoft.Graph.Models.PayloadDetail Detail
         {
-            get { return BackingStore?.Get<PayloadDetail>("detail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PayloadDetail>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
 #endif
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Industry of a payload. Possible values are: unknown, other, banking, businessServices, consumerServices, education, energy, construction, consulting, financialServices, government, hospitality, insurance, legal, courierServices, IT, healthcare, manufacturing, retail, telecom, realEstate, unknownFutureValue.</summary>
-        public PayloadIndustry? Industry
+        public Microsoft.Graph.Models.PayloadIndustry? Industry
         {
-            get { return BackingStore?.Get<PayloadIndustry?>("industry"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PayloadIndustry?>("industry"); }
             set { BackingStore?.Set("industry", value); }
         }
         /// <summary>Indicates whether the attack simulation and training campaign payload was created from an automation flow. Supports $filter and $orderby.</summary>
@@ -135,16 +135,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Identity of the user who most recently modified the attack simulation and training campaign payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? LastModifiedBy
+        public Microsoft.Graph.Models.EmailIdentity? LastModifiedBy
         {
-            get { return BackingStore?.Get<EmailIdentity?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailIdentity?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity LastModifiedBy
+        public Microsoft.Graph.Models.EmailIdentity LastModifiedBy
         {
-            get { return BackingStore?.Get<EmailIdentity>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailIdentity>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -171,9 +171,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The payload delivery platform for a simulation. Possible values are: unknown, sms, email, teams, unknownFutureValue.</summary>
-        public PayloadDeliveryPlatform? Platform
+        public Microsoft.Graph.Models.PayloadDeliveryPlatform? Platform
         {
-            get { return BackingStore?.Get<PayloadDeliveryPlatform?>("platform"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PayloadDeliveryPlatform?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
         /// <summary>Predicted probability for a payload to phish a targeted user.</summary>
@@ -189,38 +189,38 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("simulationAttackType", value); }
         }
         /// <summary>The source property</summary>
-        public SimulationContentSource? Source
+        public Microsoft.Graph.Models.SimulationContentSource? Source
         {
-            get { return BackingStore?.Get<SimulationContentSource?>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SimulationContentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
         /// <summary>Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.</summary>
-        public SimulationContentStatus? Status
+        public Microsoft.Graph.Models.SimulationContentStatus? Status
         {
-            get { return BackingStore?.Get<SimulationContentStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SimulationContentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.</summary>
-        public SimulationAttackTechnique? Technique
+        public Microsoft.Graph.Models.SimulationAttackTechnique? Technique
         {
-            get { return BackingStore?.Get<SimulationAttackTechnique?>("technique"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SimulationAttackTechnique?>("technique"); }
             set { BackingStore?.Set("technique", value); }
         }
         /// <summary>The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, fax, financeReport, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.</summary>
-        public PayloadTheme? Theme
+        public Microsoft.Graph.Models.PayloadTheme? Theme
         {
-            get { return BackingStore?.Get<PayloadTheme?>("theme"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PayloadTheme?>("theme"); }
             set { BackingStore?.Set("theme", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Payload"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Payload"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Payload CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Payload CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Payload();
+            return new Microsoft.Graph.Models.Payload();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -230,28 +230,28 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "brand", n => { Brand = n.GetEnumValue<PayloadBrand>(); } },
-                { "complexity", n => { Complexity = n.GetEnumValue<PayloadComplexity>(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "brand", n => { Brand = n.GetEnumValue<Microsoft.Graph.Models.PayloadBrand>(); } },
+                { "complexity", n => { Complexity = n.GetEnumValue<Microsoft.Graph.Models.PayloadComplexity>(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.EmailIdentity>(Microsoft.Graph.Models.EmailIdentity.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "detail", n => { Detail = n.GetObjectValue<PayloadDetail>(PayloadDetail.CreateFromDiscriminatorValue); } },
+                { "detail", n => { Detail = n.GetObjectValue<Microsoft.Graph.Models.PayloadDetail>(Microsoft.Graph.Models.PayloadDetail.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "industry", n => { Industry = n.GetEnumValue<PayloadIndustry>(); } },
+                { "industry", n => { Industry = n.GetEnumValue<Microsoft.Graph.Models.PayloadIndustry>(); } },
                 { "isAutomated", n => { IsAutomated = n.GetBoolValue(); } },
                 { "isControversial", n => { IsControversial = n.GetBoolValue(); } },
                 { "isCurrentEvent", n => { IsCurrentEvent = n.GetBoolValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.EmailIdentity>(Microsoft.Graph.Models.EmailIdentity.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "payloadTags", n => { PayloadTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "platform", n => { Platform = n.GetEnumValue<PayloadDeliveryPlatform>(); } },
+                { "platform", n => { Platform = n.GetEnumValue<Microsoft.Graph.Models.PayloadDeliveryPlatform>(); } },
                 { "predictedCompromiseRate", n => { PredictedCompromiseRate = n.GetDoubleValue(); } },
-                { "simulationAttackType", n => { SimulationAttackType = n.GetEnumValue<SimulationAttackType>(); } },
-                { "source", n => { Source = n.GetEnumValue<SimulationContentSource>(); } },
-                { "status", n => { Status = n.GetEnumValue<SimulationContentStatus>(); } },
-                { "technique", n => { Technique = n.GetEnumValue<SimulationAttackTechnique>(); } },
-                { "theme", n => { Theme = n.GetEnumValue<PayloadTheme>(); } },
+                { "simulationAttackType", n => { SimulationAttackType = n.GetEnumValue<Microsoft.Graph.Models.SimulationAttackType>(); } },
+                { "source", n => { Source = n.GetEnumValue<Microsoft.Graph.Models.SimulationContentSource>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.SimulationContentStatus>(); } },
+                { "technique", n => { Technique = n.GetEnumValue<Microsoft.Graph.Models.SimulationAttackTechnique>(); } },
+                { "theme", n => { Theme = n.GetEnumValue<Microsoft.Graph.Models.PayloadTheme>(); } },
             };
         }
         /// <summary>
@@ -262,28 +262,28 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<PayloadBrand>("brand", Brand);
-            writer.WriteEnumValue<PayloadComplexity>("complexity", Complexity);
-            writer.WriteObjectValue<EmailIdentity>("createdBy", CreatedBy);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PayloadBrand>("brand", Brand);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PayloadComplexity>("complexity", Complexity);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EmailIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<PayloadDetail>("detail", Detail);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PayloadDetail>("detail", Detail);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<PayloadIndustry>("industry", Industry);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PayloadIndustry>("industry", Industry);
             writer.WriteBoolValue("isAutomated", IsAutomated);
             writer.WriteBoolValue("isControversial", IsControversial);
             writer.WriteBoolValue("isCurrentEvent", IsCurrentEvent);
             writer.WriteStringValue("language", Language);
-            writer.WriteObjectValue<EmailIdentity>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EmailIdentity>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("payloadTags", PayloadTags);
-            writer.WriteEnumValue<PayloadDeliveryPlatform>("platform", Platform);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PayloadDeliveryPlatform>("platform", Platform);
             writer.WriteDoubleValue("predictedCompromiseRate", PredictedCompromiseRate);
-            writer.WriteEnumValue<SimulationAttackType>("simulationAttackType", SimulationAttackType);
-            writer.WriteEnumValue<SimulationContentSource>("source", Source);
-            writer.WriteEnumValue<SimulationContentStatus>("status", Status);
-            writer.WriteEnumValue<SimulationAttackTechnique>("technique", Technique);
-            writer.WriteEnumValue<PayloadTheme>("theme", Theme);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SimulationAttackType>("simulationAttackType", SimulationAttackType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SimulationContentSource>("source", Source);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SimulationContentStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SimulationAttackTechnique>("technique", Technique);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PayloadTheme>("theme", Theme);
         }
     }
 }

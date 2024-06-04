@@ -44,16 +44,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote client, if it&apos;s installed. The oneNoteWebURL link opens the notebook in OneNote on the web.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RecentNotebookLinks? Links
+        public Microsoft.Graph.Models.RecentNotebookLinks? Links
         {
-            get { return BackingStore?.Get<RecentNotebookLinks?>("links"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RecentNotebookLinks?>("links"); }
             set { BackingStore?.Set("links", value); }
         }
 #nullable restore
 #else
-        public RecentNotebookLinks Links
+        public Microsoft.Graph.Models.RecentNotebookLinks Links
         {
-            get { return BackingStore?.Get<RecentNotebookLinks>("links"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RecentNotebookLinks>("links"); }
             set { BackingStore?.Set("links", value); }
         }
 #endif
@@ -74,13 +74,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive.</summary>
-        public OnenoteSourceService? SourceService
+        public Microsoft.Graph.Models.OnenoteSourceService? SourceService
         {
-            get { return BackingStore?.Get<OnenoteSourceService?>("sourceService"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnenoteSourceService?>("sourceService"); }
             set { BackingStore?.Set("sourceService", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RecentNotebook"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.RecentNotebook"/> and sets the default values.
         /// </summary>
         public RecentNotebook()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RecentNotebook"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RecentNotebook"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RecentNotebook CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.RecentNotebook CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RecentNotebook();
+            return new Microsoft.Graph.Models.RecentNotebook();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,9 +107,9 @@ namespace Microsoft.Graph.Models
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastAccessedTime", n => { LastAccessedTime = n.GetDateTimeOffsetValue(); } },
-                { "links", n => { Links = n.GetObjectValue<RecentNotebookLinks>(RecentNotebookLinks.CreateFromDiscriminatorValue); } },
+                { "links", n => { Links = n.GetObjectValue<Microsoft.Graph.Models.RecentNotebookLinks>(Microsoft.Graph.Models.RecentNotebookLinks.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "sourceService", n => { SourceService = n.GetEnumValue<OnenoteSourceService>(); } },
+                { "sourceService", n => { SourceService = n.GetEnumValue<Microsoft.Graph.Models.OnenoteSourceService>(); } },
             };
         }
         /// <summary>
@@ -121,9 +121,9 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastAccessedTime", LastAccessedTime);
-            writer.WriteObjectValue<RecentNotebookLinks>("links", Links);
+            writer.WriteObjectValue<Microsoft.Graph.Models.RecentNotebookLinks>("links", Links);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<OnenoteSourceService>("sourceService", SourceService);
+            writer.WriteEnumValue<Microsoft.Graph.Models.OnenoteSourceService>("sourceService", SourceService);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

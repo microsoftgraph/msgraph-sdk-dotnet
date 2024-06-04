@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TermsExpiration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TermsExpiration"/> and sets the default values.
         /// </summary>
         public TermsExpiration()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TermsExpiration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TermsExpiration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TermsExpiration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.TermsExpiration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TermsExpiration();
+            return new Microsoft.Graph.Models.TermsExpiration();
         }
         /// <summary>
         /// The deserialization information for the current model

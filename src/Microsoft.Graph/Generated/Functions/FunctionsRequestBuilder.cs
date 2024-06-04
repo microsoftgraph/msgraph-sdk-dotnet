@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Functions
     public class FunctionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Functions.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Functions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of attributeMappingFunctionSchema entities.</summary>
         /// <param name="position">The unique identifier of attributeMappingFunctionSchema</param>
-        /// <returns>A <see cref="AttributeMappingFunctionSchemaItemRequestBuilder"/></returns>
-        public AttributeMappingFunctionSchemaItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Functions.Item.AttributeMappingFunctionSchemaItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Functions.Item.AttributeMappingFunctionSchemaItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("attributeMappingFunctionSchema%2Did", position);
-                return new AttributeMappingFunctionSchemaItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Functions.Item.AttributeMappingFunctionSchemaItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="FunctionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Functions.FunctionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Functions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="FunctionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Functions.FunctionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Functions
         /// <summary>
         /// Get entities from functions
         /// </summary>
-        /// <returns>A <see cref="AttributeMappingFunctionSchemaCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AttributeMappingFunctionSchemaCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AttributeMappingFunctionSchemaCollectionResponse?> GetAsync(Action<RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AttributeMappingFunctionSchemaCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Functions.FunctionsRequestBuilder.FunctionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AttributeMappingFunctionSchemaCollectionResponse> GetAsync(Action<RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AttributeMappingFunctionSchemaCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Functions.FunctionsRequestBuilder.FunctionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AttributeMappingFunctionSchemaCollectionResponse>(requestInfo, AttributeMappingFunctionSchemaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AttributeMappingFunctionSchemaCollectionResponse>(requestInfo, Microsoft.Graph.Models.AttributeMappingFunctionSchemaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to functions
         /// </summary>
-        /// <returns>A <see cref="AttributeMappingFunctionSchema"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AttributeMappingFunctionSchema"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AttributeMappingFunctionSchema?> PostAsync(AttributeMappingFunctionSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AttributeMappingFunctionSchema?> PostAsync(Microsoft.Graph.Models.AttributeMappingFunctionSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AttributeMappingFunctionSchema> PostAsync(AttributeMappingFunctionSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AttributeMappingFunctionSchema> PostAsync(Microsoft.Graph.Models.AttributeMappingFunctionSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AttributeMappingFunctionSchema>(requestInfo, AttributeMappingFunctionSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AttributeMappingFunctionSchema>(requestInfo, Microsoft.Graph.Models.AttributeMappingFunctionSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from functions
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Functions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Functions.FunctionsRequestBuilder.FunctionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Functions.FunctionsRequestBuilder.FunctionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Functions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(AttributeMappingFunctionSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.AttributeMappingFunctionSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(AttributeMappingFunctionSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.AttributeMappingFunctionSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Functions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="FunctionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Functions.FunctionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FunctionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Functions.FunctionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new FunctionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Functions.FunctionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get entities from functions
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Functions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FunctionsRequestBuilderGetRequestConfiguration : RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>
+        public class FunctionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Functions.FunctionsRequestBuilder.FunctionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

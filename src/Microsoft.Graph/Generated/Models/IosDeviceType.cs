@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IosDeviceType"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IosDeviceType"/> and sets the default values.
         /// </summary>
         public IosDeviceType()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosDeviceType"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IosDeviceType"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IosDeviceType CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.IosDeviceType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosDeviceType();
+            return new Microsoft.Graph.Models.IosDeviceType();
         }
         /// <summary>
         /// The deserialization information for the current model

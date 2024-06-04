@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("outboundAllowed", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="InboundOutboundPolicyConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.InboundOutboundPolicyConfiguration"/> and sets the default values.
         /// </summary>
         public InboundOutboundPolicyConfiguration()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InboundOutboundPolicyConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.InboundOutboundPolicyConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static InboundOutboundPolicyConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.InboundOutboundPolicyConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InboundOutboundPolicyConfiguration();
+            return new Microsoft.Graph.Models.InboundOutboundPolicyConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

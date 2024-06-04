@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SslCertificateEntity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.SslCertificateEntity"/> and sets the default values.
         /// </summary>
         public SslCertificateEntity()
         {
@@ -190,12 +190,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SslCertificateEntity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.SslCertificateEntity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SslCertificateEntity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Security.SslCertificateEntity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SslCertificateEntity();
+            return new Microsoft.Graph.Models.Security.SslCertificateEntity();
         }
         /// <summary>
         /// The deserialization information for the current model

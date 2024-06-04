@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class RiskDetection : Entity, IParsable
+    public class RiskDetection : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates the activity type the detected risk is linked to. Possible values are: signin, user, unknownFutureValue.</summary>
-        public ActivityType? Activity
+        public Microsoft.Graph.Models.ActivityType? Activity
         {
-            get { return BackingStore?.Get<ActivityType?>("activity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ActivityType?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
         /// <summary>Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z</summary>
@@ -61,9 +61,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("detectedDateTime", value); }
         }
         /// <summary>Timing of the detected risk (real-time/offline). Possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.</summary>
-        public RiskDetectionTimingType? DetectionTimingType
+        public Microsoft.Graph.Models.RiskDetectionTimingType? DetectionTimingType
         {
-            get { return BackingStore?.Get<RiskDetectionTimingType?>("detectionTimingType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RiskDetectionTimingType?>("detectionTimingType"); }
             set { BackingStore?.Set("detectionTimingType", value); }
         }
         /// <summary>Provides the IP address of the client from where the risk occurred.</summary>
@@ -91,16 +91,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Location of the sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInLocation? Location
+        public Microsoft.Graph.Models.SignInLocation? Location
         {
-            get { return BackingStore?.Get<SignInLocation?>("location"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SignInLocation?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public SignInLocation Location
+        public Microsoft.Graph.Models.SignInLocation Location
         {
-            get { return BackingStore?.Get<SignInLocation>("location"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SignInLocation>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #endif
@@ -227,12 +227,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RiskDetection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RiskDetection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RiskDetection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.RiskDetection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RiskDetection();
+            return new Microsoft.Graph.Models.RiskDetection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -242,22 +242,22 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "activity", n => { Activity = n.GetEnumValue<ActivityType>(); } },
+                { "activity", n => { Activity = n.GetEnumValue<Microsoft.Graph.Models.ActivityType>(); } },
                 { "activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
                 { "additionalInfo", n => { AdditionalInfo = n.GetStringValue(); } },
                 { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 { "detectedDateTime", n => { DetectedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "detectionTimingType", n => { DetectionTimingType = n.GetEnumValue<RiskDetectionTimingType>(); } },
+                { "detectionTimingType", n => { DetectionTimingType = n.GetEnumValue<Microsoft.Graph.Models.RiskDetectionTimingType>(); } },
                 { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "location", n => { Location = n.GetObjectValue<SignInLocation>(SignInLocation.CreateFromDiscriminatorValue); } },
+                { "location", n => { Location = n.GetObjectValue<Microsoft.Graph.Models.SignInLocation>(Microsoft.Graph.Models.SignInLocation.CreateFromDiscriminatorValue); } },
                 { "requestId", n => { RequestId = n.GetStringValue(); } },
-                { "riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
+                { "riskDetail", n => { RiskDetail = n.GetEnumValue<Microsoft.Graph.Models.RiskDetail>(); } },
                 { "riskEventType", n => { RiskEventType = n.GetStringValue(); } },
-                { "riskLevel", n => { RiskLevel = n.GetEnumValue<RiskLevel>(); } },
-                { "riskState", n => { RiskState = n.GetEnumValue<RiskState>(); } },
+                { "riskLevel", n => { RiskLevel = n.GetEnumValue<Microsoft.Graph.Models.RiskLevel>(); } },
+                { "riskState", n => { RiskState = n.GetEnumValue<Microsoft.Graph.Models.RiskState>(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
-                { "tokenIssuerType", n => { TokenIssuerType = n.GetEnumValue<TokenIssuerType>(); } },
+                { "tokenIssuerType", n => { TokenIssuerType = n.GetEnumValue<Microsoft.Graph.Models.TokenIssuerType>(); } },
                 { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
@@ -271,22 +271,22 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<ActivityType>("activity", Activity);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ActivityType>("activity", Activity);
             writer.WriteDateTimeOffsetValue("activityDateTime", ActivityDateTime);
             writer.WriteStringValue("additionalInfo", AdditionalInfo);
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteDateTimeOffsetValue("detectedDateTime", DetectedDateTime);
-            writer.WriteEnumValue<RiskDetectionTimingType>("detectionTimingType", DetectionTimingType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RiskDetectionTimingType>("detectionTimingType", DetectionTimingType);
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
-            writer.WriteObjectValue<SignInLocation>("location", Location);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SignInLocation>("location", Location);
             writer.WriteStringValue("requestId", RequestId);
-            writer.WriteEnumValue<RiskDetail>("riskDetail", RiskDetail);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RiskDetail>("riskDetail", RiskDetail);
             writer.WriteStringValue("riskEventType", RiskEventType);
-            writer.WriteEnumValue<RiskLevel>("riskLevel", RiskLevel);
-            writer.WriteEnumValue<RiskState>("riskState", RiskState);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RiskLevel>("riskLevel", RiskLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RiskState>("riskState", RiskState);
             writer.WriteStringValue("source", Source);
-            writer.WriteEnumValue<TokenIssuerType>("tokenIssuerType", TokenIssuerType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TokenIssuerType>("tokenIssuerType", TokenIssuerType);
             writer.WriteStringValue("userDisplayName", UserDisplayName);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);

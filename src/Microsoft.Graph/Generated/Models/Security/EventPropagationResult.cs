@@ -68,9 +68,9 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>Indicates the status of the event creation request. The possible values are: none, inProcessing, failed, success, unknownFutureValue.</summary>
-        public EventPropagationStatus? Status
+        public Microsoft.Graph.Models.Security.EventPropagationStatus? Status
         {
-            get { return BackingStore?.Get<EventPropagationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.EventPropagationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Additional information about the status of the event creation request.</summary>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EventPropagationResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.EventPropagationResult"/> and sets the default values.
         /// </summary>
         public EventPropagationResult()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EventPropagationResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.EventPropagationResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EventPropagationResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Security.EventPropagationResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EventPropagationResult();
+            return new Microsoft.Graph.Models.Security.EventPropagationResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Models.Security
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "serviceName", n => { ServiceName = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<EventPropagationStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.Security.EventPropagationStatus>(); } },
                 { "statusInformation", n => { StatusInformation = n.GetStringValue(); } },
             };
         }
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("serviceName", ServiceName);
-            writer.WriteEnumValue<EventPropagationStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.EventPropagationStatus>("status", Status);
             writer.WriteStringValue("statusInformation", StatusInformation);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ChatMessageMentionedIdentitySet : IdentitySet, IParsable
+    public class ChatMessageMentionedIdentitySet : Microsoft.Graph.Models.IdentitySet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>If present, represents a conversation (for example, team or channel) @mentioned in a message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkConversationIdentity? Conversation
+        public Microsoft.Graph.Models.TeamworkConversationIdentity? Conversation
         {
-            get { return BackingStore?.Get<TeamworkConversationIdentity?>("conversation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamworkConversationIdentity?>("conversation"); }
             set { BackingStore?.Set("conversation", value); }
         }
 #nullable restore
 #else
-        public TeamworkConversationIdentity Conversation
+        public Microsoft.Graph.Models.TeamworkConversationIdentity Conversation
         {
-            get { return BackingStore?.Get<TeamworkConversationIdentity>("conversation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamworkConversationIdentity>("conversation"); }
             set { BackingStore?.Set("conversation", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ChatMessageMentionedIdentitySet"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ChatMessageMentionedIdentitySet"/> and sets the default values.
         /// </summary>
         public ChatMessageMentionedIdentitySet() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ChatMessageMentionedIdentitySet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ChatMessageMentionedIdentitySet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ChatMessageMentionedIdentitySet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ChatMessageMentionedIdentitySet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ChatMessageMentionedIdentitySet();
+            return new Microsoft.Graph.Models.ChatMessageMentionedIdentitySet();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "conversation", n => { Conversation = n.GetObjectValue<TeamworkConversationIdentity>(TeamworkConversationIdentity.CreateFromDiscriminatorValue); } },
+                { "conversation", n => { Conversation = n.GetObjectValue<Microsoft.Graph.Models.TeamworkConversationIdentity>(Microsoft.Graph.Models.TeamworkConversationIdentity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<TeamworkConversationIdentity>("conversation", Conversation);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TeamworkConversationIdentity>("conversation", Conversation);
         }
     }
 }

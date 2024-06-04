@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EmployeeOrgData"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.EmployeeOrgData"/> and sets the default values.
         /// </summary>
         public EmployeeOrgData()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EmployeeOrgData"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EmployeeOrgData"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EmployeeOrgData CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.EmployeeOrgData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EmployeeOrgData();
+            return new Microsoft.Graph.Models.EmployeeOrgData();
         }
         /// <summary>
         /// The deserialization information for the current model

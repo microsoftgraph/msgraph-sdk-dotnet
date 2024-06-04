@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class InternalDomainFederation : SamlOrWsFedProvider, IParsable
+    public class InternalDomainFederation : Microsoft.Graph.Models.SamlOrWsFedProvider, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the ActiveLogOnUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.</summary>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="InternalDomainFederation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.InternalDomainFederation"/> and sets the default values.
         /// </summary>
         public InternalDomainFederation() : base()
         {
@@ -102,12 +102,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InternalDomainFederation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.InternalDomainFederation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new InternalDomainFederation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.InternalDomainFederation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InternalDomainFederation();
+            return new Microsoft.Graph.Models.InternalDomainFederation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,10 +118,10 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "activeSignInUri", n => { ActiveSignInUri = n.GetStringValue(); } },
-                { "federatedIdpMfaBehavior", n => { FederatedIdpMfaBehavior = n.GetEnumValue<FederatedIdpMfaBehavior>(); } },
+                { "federatedIdpMfaBehavior", n => { FederatedIdpMfaBehavior = n.GetEnumValue<Microsoft.Graph.Models.FederatedIdpMfaBehavior>(); } },
                 { "isSignedAuthenticationRequestRequired", n => { IsSignedAuthenticationRequestRequired = n.GetBoolValue(); } },
                 { "nextSigningCertificate", n => { NextSigningCertificate = n.GetStringValue(); } },
-                { "promptLoginBehavior", n => { PromptLoginBehavior = n.GetEnumValue<PromptLoginBehavior>(); } },
+                { "promptLoginBehavior", n => { PromptLoginBehavior = n.GetEnumValue<Microsoft.Graph.Models.PromptLoginBehavior>(); } },
                 { "signOutUri", n => { SignOutUri = n.GetStringValue(); } },
                 { "signingCertificateUpdateStatus", n => { SigningCertificateUpdateStatus = n.GetObjectValue<Microsoft.Graph.Models.SigningCertificateUpdateStatus>(Microsoft.Graph.Models.SigningCertificateUpdateStatus.CreateFromDiscriminatorValue); } },
             };
@@ -135,10 +135,10 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("activeSignInUri", ActiveSignInUri);
-            writer.WriteEnumValue<FederatedIdpMfaBehavior>("federatedIdpMfaBehavior", FederatedIdpMfaBehavior);
+            writer.WriteEnumValue<Microsoft.Graph.Models.FederatedIdpMfaBehavior>("federatedIdpMfaBehavior", FederatedIdpMfaBehavior);
             writer.WriteBoolValue("isSignedAuthenticationRequestRequired", IsSignedAuthenticationRequestRequired);
             writer.WriteStringValue("nextSigningCertificate", NextSigningCertificate);
-            writer.WriteEnumValue<PromptLoginBehavior>("promptLoginBehavior", PromptLoginBehavior);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PromptLoginBehavior>("promptLoginBehavior", PromptLoginBehavior);
             writer.WriteObjectValue<Microsoft.Graph.Models.SigningCertificateUpdateStatus>("signingCertificateUpdateStatus", SigningCertificateUpdateStatus);
             writer.WriteStringValue("signOutUri", SignOutUri);
         }

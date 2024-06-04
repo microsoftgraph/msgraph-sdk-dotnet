@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UrlToItemResolverBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ExternalConnectors.UrlToItemResolverBase"/> and sets the default values.
         /// </summary>
         public UrlToItemResolverBase()
         {
@@ -52,16 +52,16 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UrlToItemResolverBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ExternalConnectors.UrlToItemResolverBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UrlToItemResolverBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ExternalConnectors.UrlToItemResolverBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.externalConnectors.itemIdResolver" => new ItemIdResolver(),
-                _ => new UrlToItemResolverBase(),
+                "#microsoft.graph.externalConnectors.itemIdResolver" => new Microsoft.Graph.Models.ExternalConnectors.ItemIdResolver(),
+                _ => new Microsoft.Graph.Models.ExternalConnectors.UrlToItemResolverBase(),
             };
         }
         /// <summary>

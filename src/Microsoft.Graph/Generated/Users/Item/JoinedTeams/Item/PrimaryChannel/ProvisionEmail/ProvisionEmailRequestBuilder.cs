@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.ProvisionEm
     public class ProvisionEmailRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ProvisionEmailRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.ProvisionEmail.ProvisionEmailRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.ProvisionEm
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProvisionEmailRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.ProvisionEmail.ProvisionEmailRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,25 +36,25 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.ProvisionEm
         /// Provision an email address for a channel. Microsoft Teams doesn&apos;t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a channel, use the removeEmail method.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ProvisionChannelEmailResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ProvisionChannelEmailResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProvisionChannelEmailResult?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ProvisionChannelEmailResult?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ProvisionChannelEmailResult> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ProvisionChannelEmailResult> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ProvisionChannelEmailResult>(requestInfo, ProvisionChannelEmailResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ProvisionChannelEmailResult>(requestInfo, Microsoft.Graph.Models.ProvisionChannelEmailResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provision an email address for a channel. Microsoft Teams doesn&apos;t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a channel, use the removeEmail method.
@@ -78,11 +78,11 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.ProvisionEm
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ProvisionEmailRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.ProvisionEmail.ProvisionEmailRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ProvisionEmailRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.ProvisionEmail.ProvisionEmailRequestBuilder WithUrl(string rawUrl)
         {
-            return new ProvisionEmailRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.ProvisionEmail.ProvisionEmailRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

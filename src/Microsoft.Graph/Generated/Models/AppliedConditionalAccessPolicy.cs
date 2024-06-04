@@ -100,13 +100,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (policy isn&apos;t applied because policy conditions weren&apos;t met), notEnabled (This is due to the policy in a disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.  You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.</summary>
-        public AppliedConditionalAccessPolicyResult? Result
+        public Microsoft.Graph.Models.AppliedConditionalAccessPolicyResult? Result
         {
-            get { return BackingStore?.Get<AppliedConditionalAccessPolicyResult?>("result"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AppliedConditionalAccessPolicyResult?>("result"); }
             set { BackingStore?.Set("result", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AppliedConditionalAccessPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AppliedConditionalAccessPolicy"/> and sets the default values.
         /// </summary>
         public AppliedConditionalAccessPolicy()
         {
@@ -116,12 +116,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppliedConditionalAccessPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AppliedConditionalAccessPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AppliedConditionalAccessPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AppliedConditionalAccessPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AppliedConditionalAccessPolicy();
+            return new Microsoft.Graph.Models.AppliedConditionalAccessPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Models
                 { "enforcedSessionControls", n => { EnforcedSessionControls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "result", n => { Result = n.GetEnumValue<AppliedConditionalAccessPolicyResult>(); } },
+                { "result", n => { Result = n.GetEnumValue<Microsoft.Graph.Models.AppliedConditionalAccessPolicyResult>(); } },
             };
         }
         /// <summary>
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfPrimitiveValues<string>("enforcedSessionControls", EnforcedSessionControls);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<AppliedConditionalAccessPolicyResult>("result", Result);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AppliedConditionalAccessPolicyResult>("result", Result);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

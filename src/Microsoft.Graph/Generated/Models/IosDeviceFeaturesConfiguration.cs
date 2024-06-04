@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// iOS Device Features Configuration Profile.
     /// </summary>
-    public class IosDeviceFeaturesConfiguration : AppleDeviceFeaturesConfigurationBase, IParsable
+    public class IosDeviceFeaturesConfiguration : Microsoft.Graph.Models.AppleDeviceFeaturesConfigurationBase, IParsable
     {
         /// <summary>Asset tag information for the device, displayed on the login window and lock screen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,32 +30,32 @@ namespace Microsoft.Graph.Models
         /// <summary>A list of app and folders to appear on the Home Screen Dock. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosHomeScreenItem>? HomeScreenDockIcons
+        public List<Microsoft.Graph.Models.IosHomeScreenItem>? HomeScreenDockIcons
         {
-            get { return BackingStore?.Get<List<IosHomeScreenItem>?>("homeScreenDockIcons"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IosHomeScreenItem>?>("homeScreenDockIcons"); }
             set { BackingStore?.Set("homeScreenDockIcons", value); }
         }
 #nullable restore
 #else
-        public List<IosHomeScreenItem> HomeScreenDockIcons
+        public List<Microsoft.Graph.Models.IosHomeScreenItem> HomeScreenDockIcons
         {
-            get { return BackingStore?.Get<List<IosHomeScreenItem>>("homeScreenDockIcons"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IosHomeScreenItem>>("homeScreenDockIcons"); }
             set { BackingStore?.Set("homeScreenDockIcons", value); }
         }
 #endif
         /// <summary>A list of pages on the Home Screen. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosHomeScreenPage>? HomeScreenPages
+        public List<Microsoft.Graph.Models.IosHomeScreenPage>? HomeScreenPages
         {
-            get { return BackingStore?.Get<List<IosHomeScreenPage>?>("homeScreenPages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IosHomeScreenPage>?>("homeScreenPages"); }
             set { BackingStore?.Set("homeScreenPages", value); }
         }
 #nullable restore
 #else
-        public List<IosHomeScreenPage> HomeScreenPages
+        public List<Microsoft.Graph.Models.IosHomeScreenPage> HomeScreenPages
         {
-            get { return BackingStore?.Get<List<IosHomeScreenPage>>("homeScreenPages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IosHomeScreenPage>>("homeScreenPages"); }
             set { BackingStore?.Set("homeScreenPages", value); }
         }
 #endif
@@ -78,21 +78,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Notification settings for each bundle id. Applicable to devices in supervised mode only (iOS 9.3 and later). This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosNotificationSettings>? NotificationSettings
+        public List<Microsoft.Graph.Models.IosNotificationSettings>? NotificationSettings
         {
-            get { return BackingStore?.Get<List<IosNotificationSettings>?>("notificationSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IosNotificationSettings>?>("notificationSettings"); }
             set { BackingStore?.Set("notificationSettings", value); }
         }
 #nullable restore
 #else
-        public List<IosNotificationSettings> NotificationSettings
+        public List<Microsoft.Graph.Models.IosNotificationSettings> NotificationSettings
         {
-            get { return BackingStore?.Get<List<IosNotificationSettings>>("notificationSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IosNotificationSettings>>("notificationSettings"); }
             set { BackingStore?.Set("notificationSettings", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IosDeviceFeaturesConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IosDeviceFeaturesConfiguration"/> and sets the default values.
         /// </summary>
         public IosDeviceFeaturesConfiguration() : base()
         {
@@ -101,12 +101,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosDeviceFeaturesConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IosDeviceFeaturesConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosDeviceFeaturesConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IosDeviceFeaturesConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosDeviceFeaturesConfiguration();
+            return new Microsoft.Graph.Models.IosDeviceFeaturesConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -117,10 +117,10 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "assetTagTemplate", n => { AssetTagTemplate = n.GetStringValue(); } },
-                { "homeScreenDockIcons", n => { HomeScreenDockIcons = n.GetCollectionOfObjectValues<IosHomeScreenItem>(IosHomeScreenItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "homeScreenPages", n => { HomeScreenPages = n.GetCollectionOfObjectValues<IosHomeScreenPage>(IosHomeScreenPage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "homeScreenDockIcons", n => { HomeScreenDockIcons = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IosHomeScreenItem>(Microsoft.Graph.Models.IosHomeScreenItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "homeScreenPages", n => { HomeScreenPages = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IosHomeScreenPage>(Microsoft.Graph.Models.IosHomeScreenPage.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lockScreenFootnote", n => { LockScreenFootnote = n.GetStringValue(); } },
-                { "notificationSettings", n => { NotificationSettings = n.GetCollectionOfObjectValues<IosNotificationSettings>(IosNotificationSettings.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "notificationSettings", n => { NotificationSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IosNotificationSettings>(Microsoft.Graph.Models.IosNotificationSettings.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -132,10 +132,10 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("assetTagTemplate", AssetTagTemplate);
-            writer.WriteCollectionOfObjectValues<IosHomeScreenItem>("homeScreenDockIcons", HomeScreenDockIcons);
-            writer.WriteCollectionOfObjectValues<IosHomeScreenPage>("homeScreenPages", HomeScreenPages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IosHomeScreenItem>("homeScreenDockIcons", HomeScreenDockIcons);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IosHomeScreenPage>("homeScreenPages", HomeScreenPages);
             writer.WriteStringValue("lockScreenFootnote", LockScreenFootnote);
-            writer.WriteCollectionOfObjectValues<IosNotificationSettings>("notificationSettings", NotificationSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IosNotificationSettings>("notificationSettings", NotificationSettings);
         }
     }
 }

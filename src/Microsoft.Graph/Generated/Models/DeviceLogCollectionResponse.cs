@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Windows Log Collection request entity.
     /// </summary>
-    public class DeviceLogCollectionResponse : Entity, IParsable
+    public class DeviceLogCollectionResponse : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The User Principal Name (UPN) of the user that enrolled the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,20 +74,20 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("sizeInKB", value); }
         }
         /// <summary>AppLogUploadStatus</summary>
-        public AppLogUploadState? Status
+        public Microsoft.Graph.Models.AppLogUploadState? Status
         {
-            get { return BackingStore?.Get<AppLogUploadState?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AppLogUploadState?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceLogCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceLogCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceLogCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeviceLogCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceLogCollectionResponse();
+            return new Microsoft.Graph.Models.DeviceLogCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Models
                 { "receivedDateTimeUTC", n => { ReceivedDateTimeUTC = n.GetDateTimeOffsetValue(); } },
                 { "requestedDateTimeUTC", n => { RequestedDateTimeUTC = n.GetDateTimeOffsetValue(); } },
                 { "sizeInKB", n => { SizeInKB = n.GetDoubleValue(); } },
-                { "status", n => { Status = n.GetEnumValue<AppLogUploadState>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.AppLogUploadState>(); } },
             };
         }
         /// <summary>
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("receivedDateTimeUTC", ReceivedDateTimeUTC);
             writer.WriteDateTimeOffsetValue("requestedDateTimeUTC", RequestedDateTimeUTC);
             writer.WriteDoubleValue("sizeInKB", SizeInKB);
-            writer.WriteEnumValue<AppLogUploadState>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AppLogUploadState>("status", Status);
         }
     }
 }

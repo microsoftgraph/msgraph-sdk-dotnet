@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Me.GetManagedDevicesWithAppFailures
 {
     #pragma warning disable CS1591
-    public class GetManagedDevicesWithAppFailuresGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetManagedDevicesWithAppFailuresGetResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
@@ -30,12 +30,12 @@ namespace Microsoft.Graph.Me.GetManagedDevicesWithAppFailures
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetManagedDevicesWithAppFailuresGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetManagedDevicesWithAppFailuresGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Me.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetManagedDevicesWithAppFailuresGetResponse();
+            return new Microsoft.Graph.Me.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

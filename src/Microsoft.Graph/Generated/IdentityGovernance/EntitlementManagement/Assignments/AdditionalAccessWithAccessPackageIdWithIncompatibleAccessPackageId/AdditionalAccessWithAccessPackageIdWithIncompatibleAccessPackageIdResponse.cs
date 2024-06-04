@@ -8,18 +8,18 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.A
 {
     [Obsolete("This class is obsolete. Use AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdGetResponse instead.")]
     #pragma warning disable CS1591
-    public class AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse : AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdGetResponse, IParsable
+    public class AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse : Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse();
+            return new Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse();
         }
     }
 }

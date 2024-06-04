@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookTableColumn : Entity, IParsable
+    public class WorkbookTableColumn : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Retrieve the filter applied to the column. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookFilter? Filter
+        public Microsoft.Graph.Models.WorkbookFilter? Filter
         {
-            get { return BackingStore?.Get<WorkbookFilter?>("filter"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookFilter?>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
 #nullable restore
 #else
-        public WorkbookFilter Filter
+        public Microsoft.Graph.Models.WorkbookFilter Filter
         {
-            get { return BackingStore?.Get<WorkbookFilter>("filter"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookFilter>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
 #endif
@@ -51,28 +51,28 @@ namespace Microsoft.Graph.Models
         /// <summary>Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Values
+        public UntypedNode? Values
         {
-            get { return BackingStore?.Get<Json?>("values"); }
+            get { return BackingStore?.Get<UntypedNode?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public Json Values
+        public UntypedNode Values
         {
-            get { return BackingStore?.Get<Json>("values"); }
+            get { return BackingStore?.Get<UntypedNode>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookTableColumn"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookTableColumn"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookTableColumn CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WorkbookTableColumn CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookTableColumn();
+            return new Microsoft.Graph.Models.WorkbookTableColumn();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,10 +82,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "filter", n => { Filter = n.GetObjectValue<WorkbookFilter>(WorkbookFilter.CreateFromDiscriminatorValue); } },
+                { "filter", n => { Filter = n.GetObjectValue<Microsoft.Graph.Models.WorkbookFilter>(Microsoft.Graph.Models.WorkbookFilter.CreateFromDiscriminatorValue); } },
                 { "index", n => { Index = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "values", n => { Values = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -96,10 +96,10 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<WorkbookFilter>("filter", Filter);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookFilter>("filter", Filter);
             writer.WriteIntValue("index", Index);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<Json>("values", Values);
+            writer.WriteObjectValue<UntypedNode>("values", Values);
         }
     }
 }

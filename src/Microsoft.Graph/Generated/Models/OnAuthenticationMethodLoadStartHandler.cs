@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnAuthenticationMethodLoadStartHandler"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OnAuthenticationMethodLoadStartHandler"/> and sets the default values.
         /// </summary>
         public OnAuthenticationMethodLoadStartHandler()
         {
@@ -46,16 +46,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnAuthenticationMethodLoadStartHandler"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnAuthenticationMethodLoadStartHandler"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OnAuthenticationMethodLoadStartHandler CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.OnAuthenticationMethodLoadStartHandler CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp" => new OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp(),
-                _ => new OnAuthenticationMethodLoadStartHandler(),
+                "#microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp" => new Microsoft.Graph.Models.OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp(),
+                _ => new Microsoft.Graph.Models.OnAuthenticationMethodLoadStartHandler(),
             };
         }
         /// <summary>

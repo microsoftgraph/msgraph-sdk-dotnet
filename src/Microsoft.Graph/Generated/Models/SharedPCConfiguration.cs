@@ -10,28 +10,28 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the sharedPCConfiguration resource.
     /// </summary>
-    public class SharedPCConfiguration : DeviceConfiguration, IParsable
+    public class SharedPCConfiguration : Microsoft.Graph.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Specifies how accounts are managed on a shared PC. Only applies when disableAccountManager is false.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharedPCAccountManagerPolicy? AccountManagerPolicy
+        public Microsoft.Graph.Models.SharedPCAccountManagerPolicy? AccountManagerPolicy
         {
-            get { return BackingStore?.Get<SharedPCAccountManagerPolicy?>("accountManagerPolicy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SharedPCAccountManagerPolicy?>("accountManagerPolicy"); }
             set { BackingStore?.Set("accountManagerPolicy", value); }
         }
 #nullable restore
 #else
-        public SharedPCAccountManagerPolicy AccountManagerPolicy
+        public Microsoft.Graph.Models.SharedPCAccountManagerPolicy AccountManagerPolicy
         {
-            get { return BackingStore?.Get<SharedPCAccountManagerPolicy>("accountManagerPolicy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SharedPCAccountManagerPolicy>("accountManagerPolicy"); }
             set { BackingStore?.Set("accountManagerPolicy", value); }
         }
 #endif
         /// <summary>Type of accounts that are allowed to share the PC.</summary>
-        public SharedPCAllowedAccountType? AllowedAccounts
+        public Microsoft.Graph.Models.SharedPCAllowedAccountType? AllowedAccounts
         {
-            get { return BackingStore?.Get<SharedPCAllowedAccountType?>("allowedAccounts"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SharedPCAllowedAccountType?>("allowedAccounts"); }
             set { BackingStore?.Set("allowedAccounts", value); }
         }
         /// <summary>Specifies whether local storage is allowed on a shared PC.</summary>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("maintenanceStartTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SharedPCConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SharedPCConfiguration"/> and sets the default values.
         /// </summary>
         public SharedPCConfiguration() : base()
         {
@@ -124,12 +124,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SharedPCConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SharedPCConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SharedPCConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SharedPCConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SharedPCConfiguration();
+            return new Microsoft.Graph.Models.SharedPCConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -139,9 +139,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accountManagerPolicy", n => { AccountManagerPolicy = n.GetObjectValue<SharedPCAccountManagerPolicy>(SharedPCAccountManagerPolicy.CreateFromDiscriminatorValue); } },
+                { "accountManagerPolicy", n => { AccountManagerPolicy = n.GetObjectValue<Microsoft.Graph.Models.SharedPCAccountManagerPolicy>(Microsoft.Graph.Models.SharedPCAccountManagerPolicy.CreateFromDiscriminatorValue); } },
                 { "allowLocalStorage", n => { AllowLocalStorage = n.GetBoolValue(); } },
-                { "allowedAccounts", n => { AllowedAccounts = n.GetEnumValue<SharedPCAllowedAccountType>(); } },
+                { "allowedAccounts", n => { AllowedAccounts = n.GetEnumValue<Microsoft.Graph.Models.SharedPCAllowedAccountType>(); } },
                 { "disableAccountManager", n => { DisableAccountManager = n.GetBoolValue(); } },
                 { "disableEduPolicies", n => { DisableEduPolicies = n.GetBoolValue(); } },
                 { "disablePowerPolicies", n => { DisablePowerPolicies = n.GetBoolValue(); } },
@@ -161,8 +161,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<SharedPCAccountManagerPolicy>("accountManagerPolicy", AccountManagerPolicy);
-            writer.WriteEnumValue<SharedPCAllowedAccountType>("allowedAccounts", AllowedAccounts);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SharedPCAccountManagerPolicy>("accountManagerPolicy", AccountManagerPolicy);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SharedPCAllowedAccountType>("allowedAccounts", AllowedAccounts);
             writer.WriteBoolValue("allowLocalStorage", AllowLocalStorage);
             writer.WriteBoolValue("disableAccountManager", DisableAccountManager);
             writer.WriteBoolValue("disableEduPolicies", DisableEduPolicies);

@@ -7,18 +7,18 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class SubcategoryTemplate : FilePlanDescriptorTemplate, IParsable
+    public class SubcategoryTemplate : Microsoft.Graph.Models.Security.FilePlanDescriptorTemplate, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SubcategoryTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.SubcategoryTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SubcategoryTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.SubcategoryTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SubcategoryTemplate();
+            return new Microsoft.Graph.Models.Security.SubcategoryTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model

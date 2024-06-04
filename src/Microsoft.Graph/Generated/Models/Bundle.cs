@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Bundle"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Bundle"/> and sets the default values.
         /// </summary>
         public Bundle()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Bundle"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Bundle"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Bundle CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Bundle CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Bundle();
+            return new Microsoft.Graph.Models.Bundle();
         }
         /// <summary>
         /// The deserialization information for the current model

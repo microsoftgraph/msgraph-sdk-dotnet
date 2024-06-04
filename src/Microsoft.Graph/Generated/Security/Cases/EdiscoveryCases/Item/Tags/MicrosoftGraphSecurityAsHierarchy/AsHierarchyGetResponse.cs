@@ -9,34 +9,34 @@ using System;
 namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy
 {
     #pragma warning disable CS1591
-    public class AsHierarchyGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class AsHierarchyGetResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryReviewTag>? Value
+        public List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>? Value
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryReviewTag> Value
+        public List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag> Value
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AsHierarchyGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.AsHierarchyGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AsHierarchyGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.AsHierarchyGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AsHierarchyGetResponse();
+            return new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.AsHierarchyGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGrap
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>(Microsoft.Graph.Models.Security.EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGrap
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<EdiscoveryReviewTag>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>("value", Value);
         }
     }
 }

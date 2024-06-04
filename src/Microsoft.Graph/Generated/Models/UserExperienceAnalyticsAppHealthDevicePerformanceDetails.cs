@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics device performance entity contains device performance details.
     /// </summary>
-    public class UserExperienceAnalyticsAppHealthDevicePerformanceDetails : Entity, IParsable
+    public class UserExperienceAnalyticsAppHealthDevicePerformanceDetails : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The friendly name of the application for which the event occurred. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,12 +116,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsAppHealthDevicePerformanceDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsAppHealthDevicePerformanceDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsAppHealthDevicePerformanceDetails();
+            return new Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails();
         }
         /// <summary>
         /// The deserialization information for the current model

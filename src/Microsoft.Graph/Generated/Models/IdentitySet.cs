@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Optional. The application associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Application
+        public Microsoft.Graph.Models.Identity? Application
         {
-            get { return BackingStore?.Get<Identity?>("application"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity?>("application"); }
             set { BackingStore?.Set("application", value); }
         }
 #nullable restore
 #else
-        public Identity Application
+        public Microsoft.Graph.Models.Identity Application
         {
-            get { return BackingStore?.Get<Identity>("application"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity>("application"); }
             set { BackingStore?.Set("application", value); }
         }
 #endif
@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Optional. The device associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Device
+        public Microsoft.Graph.Models.Identity? Device
         {
-            get { return BackingStore?.Get<Identity?>("device"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity?>("device"); }
             set { BackingStore?.Set("device", value); }
         }
 #nullable restore
 #else
-        public Identity Device
+        public Microsoft.Graph.Models.Identity Device
         {
-            get { return BackingStore?.Get<Identity>("device"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity>("device"); }
             set { BackingStore?.Set("device", value); }
         }
 #endif
@@ -70,21 +70,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Optional. The user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? User
+        public Microsoft.Graph.Models.Identity? User
         {
-            get { return BackingStore?.Get<Identity?>("user"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
 #nullable restore
 #else
-        public Identity User
+        public Microsoft.Graph.Models.Identity User
         {
-            get { return BackingStore?.Get<Identity>("user"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity>("user"); }
             set { BackingStore?.Set("user", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IdentitySet"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IdentitySet"/> and sets the default values.
         /// </summary>
         public IdentitySet()
         {
@@ -94,20 +94,20 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IdentitySet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentitySet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IdentitySet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.IdentitySet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.chatMessageFromIdentitySet" => new ChatMessageFromIdentitySet(),
-                "#microsoft.graph.chatMessageMentionedIdentitySet" => new ChatMessageMentionedIdentitySet(),
-                "#microsoft.graph.chatMessageReactionIdentitySet" => new ChatMessageReactionIdentitySet(),
-                "#microsoft.graph.communicationsIdentitySet" => new CommunicationsIdentitySet(),
-                "#microsoft.graph.sharePointIdentitySet" => new SharePointIdentitySet(),
-                _ => new IdentitySet(),
+                "#microsoft.graph.chatMessageFromIdentitySet" => new Microsoft.Graph.Models.ChatMessageFromIdentitySet(),
+                "#microsoft.graph.chatMessageMentionedIdentitySet" => new Microsoft.Graph.Models.ChatMessageMentionedIdentitySet(),
+                "#microsoft.graph.chatMessageReactionIdentitySet" => new Microsoft.Graph.Models.ChatMessageReactionIdentitySet(),
+                "#microsoft.graph.communicationsIdentitySet" => new Microsoft.Graph.Models.CommunicationsIdentitySet(),
+                "#microsoft.graph.sharePointIdentitySet" => new Microsoft.Graph.Models.SharePointIdentitySet(),
+                _ => new Microsoft.Graph.Models.IdentitySet(),
             };
         }
         /// <summary>
@@ -118,10 +118,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "application", n => { Application = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                { "device", n => { Device = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "application", n => { Application = n.GetObjectValue<Microsoft.Graph.Models.Identity>(Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
+                { "device", n => { Device = n.GetObjectValue<Microsoft.Graph.Models.Identity>(Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<Microsoft.Graph.Models.Identity>(Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -131,10 +131,10 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Identity>("application", Application);
-            writer.WriteObjectValue<Identity>("device", Device);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Identity>("application", Application);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Identity>("device", Device);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<Identity>("user", User);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Identity>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

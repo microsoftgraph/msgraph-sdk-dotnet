@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The Base Class of Device Enrollment Configuration
     /// </summary>
-    public class DeviceEnrollmentConfiguration : Entity, IParsable
+    public class DeviceEnrollmentConfiguration : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The list of group assignments for the device configuration profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EnrollmentConfigurationAssignment>? Assignments
+        public List<Microsoft.Graph.Models.EnrollmentConfigurationAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<EnrollmentConfigurationAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EnrollmentConfigurationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<EnrollmentConfigurationAssignment> Assignments
+        public List<Microsoft.Graph.Models.EnrollmentConfigurationAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<EnrollmentConfigurationAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EnrollmentConfigurationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -86,19 +86,19 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceEnrollmentConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceEnrollmentConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceEnrollmentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeviceEnrollmentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.deviceEnrollmentLimitConfiguration" => new DeviceEnrollmentLimitConfiguration(),
-                "#microsoft.graph.deviceEnrollmentPlatformRestrictionsConfiguration" => new DeviceEnrollmentPlatformRestrictionsConfiguration(),
-                "#microsoft.graph.deviceEnrollmentWindowsHelloForBusinessConfiguration" => new DeviceEnrollmentWindowsHelloForBusinessConfiguration(),
-                "#microsoft.graph.windows10EnrollmentCompletionPageConfiguration" => new Windows10EnrollmentCompletionPageConfiguration(),
-                _ => new DeviceEnrollmentConfiguration(),
+                "#microsoft.graph.deviceEnrollmentLimitConfiguration" => new Microsoft.Graph.Models.DeviceEnrollmentLimitConfiguration(),
+                "#microsoft.graph.deviceEnrollmentPlatformRestrictionsConfiguration" => new Microsoft.Graph.Models.DeviceEnrollmentPlatformRestrictionsConfiguration(),
+                "#microsoft.graph.deviceEnrollmentWindowsHelloForBusinessConfiguration" => new Microsoft.Graph.Models.DeviceEnrollmentWindowsHelloForBusinessConfiguration(),
+                "#microsoft.graph.windows10EnrollmentCompletionPageConfiguration" => new Microsoft.Graph.Models.Windows10EnrollmentCompletionPageConfiguration(),
+                _ => new Microsoft.Graph.Models.DeviceEnrollmentConfiguration(),
             };
         }
         /// <summary>
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<EnrollmentConfigurationAssignment>(EnrollmentConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.EnrollmentConfigurationAssignment>(Microsoft.Graph.Models.EnrollmentConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<EnrollmentConfigurationAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.EnrollmentConfigurationAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);

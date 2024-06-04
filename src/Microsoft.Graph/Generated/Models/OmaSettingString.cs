@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// OMA Settings String definition.
     /// </summary>
-    public class OmaSettingString : OmaSetting, IParsable
+    public class OmaSettingString : Microsoft.Graph.Models.OmaSetting, IParsable
     {
         /// <summary>Value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OmaSettingString"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OmaSettingString"/> and sets the default values.
         /// </summary>
         public OmaSettingString() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OmaSettingString"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OmaSettingString"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OmaSettingString CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OmaSettingString CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OmaSettingString();
+            return new Microsoft.Graph.Models.OmaSettingString();
         }
         /// <summary>
         /// The deserialization information for the current model

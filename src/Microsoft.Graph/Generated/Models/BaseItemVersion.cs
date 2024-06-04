@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class BaseItemVersion : Entity, IParsable
+    public class BaseItemVersion : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Identity of the user which last modified the version. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -35,34 +35,34 @@ namespace Microsoft.Graph.Models
         /// <summary>Indicates the publication status of this particular version. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PublicationFacet? Publication
+        public Microsoft.Graph.Models.PublicationFacet? Publication
         {
-            get { return BackingStore?.Get<PublicationFacet?>("publication"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PublicationFacet?>("publication"); }
             set { BackingStore?.Set("publication", value); }
         }
 #nullable restore
 #else
-        public PublicationFacet Publication
+        public Microsoft.Graph.Models.PublicationFacet Publication
         {
-            get { return BackingStore?.Get<PublicationFacet>("publication"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PublicationFacet>("publication"); }
             set { BackingStore?.Set("publication", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BaseItemVersion"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BaseItemVersion"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BaseItemVersion CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.BaseItemVersion CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.documentSetVersion" => new DocumentSetVersion(),
-                "#microsoft.graph.driveItemVersion" => new DriveItemVersion(),
-                "#microsoft.graph.listItemVersion" => new ListItemVersion(),
-                _ => new BaseItemVersion(),
+                "#microsoft.graph.documentSetVersion" => new Microsoft.Graph.Models.DocumentSetVersion(),
+                "#microsoft.graph.driveItemVersion" => new Microsoft.Graph.Models.DriveItemVersion(),
+                "#microsoft.graph.listItemVersion" => new Microsoft.Graph.Models.ListItemVersion(),
+                _ => new Microsoft.Graph.Models.BaseItemVersion(),
             };
         }
         /// <summary>
@@ -73,9 +73,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "publication", n => { Publication = n.GetObjectValue<PublicationFacet>(PublicationFacet.CreateFromDiscriminatorValue); } },
+                { "publication", n => { Publication = n.GetObjectValue<Microsoft.Graph.Models.PublicationFacet>(Microsoft.Graph.Models.PublicationFacet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -86,9 +86,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteObjectValue<PublicationFacet>("publication", Publication);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PublicationFacet>("publication", Publication);
         }
     }
 }

@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item.UpdateAll
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>
-        /// Instantiates a new <see cref="UpdateAllowedCombinationsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item.UpdateAllowedCombinations.UpdateAllowedCombinationsPostRequestBody"/> and sets the default values.
         /// </summary>
         public UpdateAllowedCombinationsPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item.UpdateAll
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpdateAllowedCombinationsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item.UpdateAllowedCombinations.UpdateAllowedCombinationsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UpdateAllowedCombinationsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item.UpdateAllowedCombinations.UpdateAllowedCombinationsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpdateAllowedCombinationsPostRequestBody();
+            return new Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item.UpdateAllowedCombinations.UpdateAllowedCombinationsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

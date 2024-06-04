@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Models.Search
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Bookmark>? Value
+        public List<Microsoft.Graph.Models.Search.Bookmark>? Value
         {
-            get { return BackingStore?.Get<List<Bookmark>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Search.Bookmark>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Bookmark> Value
+        public List<Microsoft.Graph.Models.Search.Bookmark> Value
         {
-            get { return BackingStore?.Get<List<Bookmark>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Search.Bookmark>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BookmarkCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Search.BookmarkCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BookmarkCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Search.BookmarkCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BookmarkCollectionResponse();
+            return new Microsoft.Graph.Models.Search.BookmarkCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.Search
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<Bookmark>(Bookmark.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Search.Bookmark>(Microsoft.Graph.Models.Search.Bookmark.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models.Search
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Bookmark>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Search.Bookmark>("value", Value);
         }
     }
 }

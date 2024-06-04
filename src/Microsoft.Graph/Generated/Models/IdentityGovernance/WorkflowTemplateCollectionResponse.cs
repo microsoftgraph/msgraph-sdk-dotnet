@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkflowTemplate>? Value
+        public List<Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate>? Value
         {
-            get { return BackingStore?.Get<List<WorkflowTemplate>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<WorkflowTemplate> Value
+        public List<Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate> Value
         {
-            get { return BackingStore?.Get<List<WorkflowTemplate>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkflowTemplateCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplateCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkflowTemplateCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplateCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkflowTemplateCollectionResponse();
+            return new Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplateCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<WorkflowTemplate>(WorkflowTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate>(Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<WorkflowTemplate>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate>("value", Value);
         }
     }
 }

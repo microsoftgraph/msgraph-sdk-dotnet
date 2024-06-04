@@ -44,33 +44,33 @@ namespace Microsoft.Graph.Models
         /// <summary>Number of users registered or capable for multi-factor authentication, self-service password reset, and passwordless authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserRegistrationFeatureCount>? UserRegistrationFeatureCounts
+        public List<Microsoft.Graph.Models.UserRegistrationFeatureCount>? UserRegistrationFeatureCounts
         {
-            get { return BackingStore?.Get<List<UserRegistrationFeatureCount>?>("userRegistrationFeatureCounts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserRegistrationFeatureCount>?>("userRegistrationFeatureCounts"); }
             set { BackingStore?.Set("userRegistrationFeatureCounts", value); }
         }
 #nullable restore
 #else
-        public List<UserRegistrationFeatureCount> UserRegistrationFeatureCounts
+        public List<Microsoft.Graph.Models.UserRegistrationFeatureCount> UserRegistrationFeatureCounts
         {
-            get { return BackingStore?.Get<List<UserRegistrationFeatureCount>>("userRegistrationFeatureCounts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserRegistrationFeatureCount>>("userRegistrationFeatureCounts"); }
             set { BackingStore?.Set("userRegistrationFeatureCounts", value); }
         }
 #endif
         /// <summary>The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.</summary>
-        public IncludedUserRoles? UserRoles
+        public Microsoft.Graph.Models.IncludedUserRoles? UserRoles
         {
-            get { return BackingStore?.Get<IncludedUserRoles?>("userRoles"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IncludedUserRoles?>("userRoles"); }
             set { BackingStore?.Set("userRoles", value); }
         }
         /// <summary>User type. Possible values are: all, member, guest, unknownFutureValue.</summary>
-        public IncludedUserTypes? UserTypes
+        public Microsoft.Graph.Models.IncludedUserTypes? UserTypes
         {
-            get { return BackingStore?.Get<IncludedUserTypes?>("userTypes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IncludedUserTypes?>("userTypes"); }
             set { BackingStore?.Set("userTypes", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserRegistrationFeatureSummary"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.UserRegistrationFeatureSummary"/> and sets the default values.
         /// </summary>
         public UserRegistrationFeatureSummary()
         {
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserRegistrationFeatureSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserRegistrationFeatureSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserRegistrationFeatureSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.UserRegistrationFeatureSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserRegistrationFeatureSummary();
+            return new Microsoft.Graph.Models.UserRegistrationFeatureSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,9 +97,9 @@ namespace Microsoft.Graph.Models
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "totalUserCount", n => { TotalUserCount = n.GetLongValue(); } },
-                { "userRegistrationFeatureCounts", n => { UserRegistrationFeatureCounts = n.GetCollectionOfObjectValues<UserRegistrationFeatureCount>(UserRegistrationFeatureCount.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "userRoles", n => { UserRoles = n.GetEnumValue<IncludedUserRoles>(); } },
-                { "userTypes", n => { UserTypes = n.GetEnumValue<IncludedUserTypes>(); } },
+                { "userRegistrationFeatureCounts", n => { UserRegistrationFeatureCounts = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UserRegistrationFeatureCount>(Microsoft.Graph.Models.UserRegistrationFeatureCount.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userRoles", n => { UserRoles = n.GetEnumValue<Microsoft.Graph.Models.IncludedUserRoles>(); } },
+                { "userTypes", n => { UserTypes = n.GetEnumValue<Microsoft.Graph.Models.IncludedUserTypes>(); } },
             };
         }
         /// <summary>
@@ -111,9 +111,9 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteLongValue("totalUserCount", TotalUserCount);
-            writer.WriteCollectionOfObjectValues<UserRegistrationFeatureCount>("userRegistrationFeatureCounts", UserRegistrationFeatureCounts);
-            writer.WriteEnumValue<IncludedUserRoles>("userRoles", UserRoles);
-            writer.WriteEnumValue<IncludedUserTypes>("userTypes", UserTypes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UserRegistrationFeatureCount>("userRegistrationFeatureCounts", UserRegistrationFeatureCounts);
+            writer.WriteEnumValue<Microsoft.Graph.Models.IncludedUserRoles>("userRoles", UserRoles);
+            writer.WriteEnumValue<Microsoft.Graph.Models.IncludedUserTypes>("userTypes", UserTypes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

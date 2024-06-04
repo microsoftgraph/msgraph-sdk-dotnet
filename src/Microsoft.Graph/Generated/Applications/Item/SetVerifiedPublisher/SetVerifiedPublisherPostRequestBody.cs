@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Applications.Item.SetVerifiedPublisher
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SetVerifiedPublisherPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.SetVerifiedPublisher.SetVerifiedPublisherPostRequestBody"/> and sets the default values.
         /// </summary>
         public SetVerifiedPublisherPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Applications.Item.SetVerifiedPublisher
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SetVerifiedPublisherPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Applications.Item.SetVerifiedPublisher.SetVerifiedPublisherPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SetVerifiedPublisherPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Applications.Item.SetVerifiedPublisher.SetVerifiedPublisherPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SetVerifiedPublisherPostRequestBody();
+            return new Microsoft.Graph.Applications.Item.SetVerifiedPublisher.SetVerifiedPublisherPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

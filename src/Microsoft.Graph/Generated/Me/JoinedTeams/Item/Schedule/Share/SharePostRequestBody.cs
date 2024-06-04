@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Schedule.Share
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SharePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.JoinedTeams.Item.Schedule.Share.SharePostRequestBody"/> and sets the default values.
         /// </summary>
         public SharePostRequestBody()
         {
@@ -48,12 +48,12 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Schedule.Share
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SharePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.JoinedTeams.Item.Schedule.Share.SharePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SharePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Me.JoinedTeams.Item.Schedule.Share.SharePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SharePostRequestBody();
+            return new Microsoft.Graph.Me.JoinedTeams.Item.Schedule.Share.SharePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

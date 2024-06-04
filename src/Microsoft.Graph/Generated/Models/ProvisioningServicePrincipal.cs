@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ProvisioningServicePrincipal : Identity, IParsable
+    public class ProvisioningServicePrincipal : Microsoft.Graph.Models.Identity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="ProvisioningServicePrincipal"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ProvisioningServicePrincipal"/> and sets the default values.
         /// </summary>
         public ProvisioningServicePrincipal() : base()
         {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProvisioningServicePrincipal"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ProvisioningServicePrincipal"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ProvisioningServicePrincipal CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ProvisioningServicePrincipal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProvisioningServicePrincipal();
+            return new Microsoft.Graph.Models.ProvisioningServicePrincipal();
         }
         /// <summary>
         /// The deserialization information for the current model

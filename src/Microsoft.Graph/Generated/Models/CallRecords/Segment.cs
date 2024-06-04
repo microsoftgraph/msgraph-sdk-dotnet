@@ -13,32 +13,32 @@ namespace Microsoft.Graph.Models.CallRecords
         /// <summary>Endpoint that answered this segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Endpoint? Callee
+        public Microsoft.Graph.Models.CallRecords.Endpoint? Callee
         {
-            get { return BackingStore?.Get<Endpoint?>("callee"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.Endpoint?>("callee"); }
             set { BackingStore?.Set("callee", value); }
         }
 #nullable restore
 #else
-        public Endpoint Callee
+        public Microsoft.Graph.Models.CallRecords.Endpoint Callee
         {
-            get { return BackingStore?.Get<Endpoint>("callee"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.Endpoint>("callee"); }
             set { BackingStore?.Set("callee", value); }
         }
 #endif
         /// <summary>Endpoint that initiated this segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Endpoint? Caller
+        public Microsoft.Graph.Models.CallRecords.Endpoint? Caller
         {
-            get { return BackingStore?.Get<Endpoint?>("caller"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.Endpoint?>("caller"); }
             set { BackingStore?.Set("caller", value); }
         }
 #nullable restore
 #else
-        public Endpoint Caller
+        public Microsoft.Graph.Models.CallRecords.Endpoint Caller
         {
-            get { return BackingStore?.Get<Endpoint>("caller"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.Endpoint>("caller"); }
             set { BackingStore?.Set("caller", value); }
         }
 #endif
@@ -89,12 +89,12 @@ namespace Microsoft.Graph.Models.CallRecords
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Segment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CallRecords.Segment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Segment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CallRecords.Segment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Segment();
+            return new Microsoft.Graph.Models.CallRecords.Segment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,8 +104,8 @@ namespace Microsoft.Graph.Models.CallRecords
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "callee", n => { Callee = n.GetObjectValue<Endpoint>(Endpoint.CreateFromDiscriminatorValue); } },
-                { "caller", n => { Caller = n.GetObjectValue<Endpoint>(Endpoint.CreateFromDiscriminatorValue); } },
+                { "callee", n => { Callee = n.GetObjectValue<Microsoft.Graph.Models.CallRecords.Endpoint>(Microsoft.Graph.Models.CallRecords.Endpoint.CreateFromDiscriminatorValue); } },
+                { "caller", n => { Caller = n.GetObjectValue<Microsoft.Graph.Models.CallRecords.Endpoint>(Microsoft.Graph.Models.CallRecords.Endpoint.CreateFromDiscriminatorValue); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "failureInfo", n => { FailureInfo = n.GetObjectValue<Microsoft.Graph.Models.CallRecords.FailureInfo>(Microsoft.Graph.Models.CallRecords.FailureInfo.CreateFromDiscriminatorValue); } },
                 { "media", n => { Media = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CallRecords.Media>(Microsoft.Graph.Models.CallRecords.Media.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -120,8 +120,8 @@ namespace Microsoft.Graph.Models.CallRecords
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<Endpoint>("callee", Callee);
-            writer.WriteObjectValue<Endpoint>("caller", Caller);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CallRecords.Endpoint>("callee", Callee);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CallRecords.Endpoint>("caller", Caller);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Models.CallRecords.FailureInfo>("failureInfo", FailureInfo);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CallRecords.Media>("media", Media);

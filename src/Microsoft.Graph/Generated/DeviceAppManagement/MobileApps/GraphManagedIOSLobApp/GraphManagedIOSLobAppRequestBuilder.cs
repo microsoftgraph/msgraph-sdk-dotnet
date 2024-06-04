@@ -18,12 +18,12 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp
     public class GraphManagedIOSLobAppRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphManagedIOSLobAppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphManagedIOSLobAppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,25 +41,25 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp
         /// <summary>
         /// Get the items of type microsoft.graph.managedIOSLobApp in the microsoft.graph.mobileApp collection
         /// </summary>
-        /// <returns>A <see cref="ManagedIOSLobAppCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedIOSLobAppCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedIOSLobAppCollectionResponse?> GetAsync(Action<RequestConfiguration<GraphManagedIOSLobAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedIOSLobAppCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder.GraphManagedIOSLobAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedIOSLobAppCollectionResponse> GetAsync(Action<RequestConfiguration<GraphManagedIOSLobAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedIOSLobAppCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder.GraphManagedIOSLobAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedIOSLobAppCollectionResponse>(requestInfo, ManagedIOSLobAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedIOSLobAppCollectionResponse>(requestInfo, Microsoft.Graph.Models.ManagedIOSLobAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the items of type microsoft.graph.managedIOSLobApp in the microsoft.graph.mobileApp collection
@@ -68,11 +68,11 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphManagedIOSLobAppRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder.GraphManagedIOSLobAppRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphManagedIOSLobAppRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder.GraphManagedIOSLobAppRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -83,11 +83,11 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GraphManagedIOSLobAppRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GraphManagedIOSLobAppRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder WithUrl(string rawUrl)
         {
-            return new GraphManagedIOSLobAppRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the items of type microsoft.graph.managedIOSLobApp in the microsoft.graph.mobileApp collection
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphManagedIOSLobAppRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphManagedIOSLobAppRequestBuilderGetQueryParameters>
+        public class GraphManagedIOSLobAppRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder.GraphManagedIOSLobAppRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -9,53 +9,53 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Singleton entity that acts as a container for all device app management functionality.
     /// </summary>
-    public class DeviceAppManagement : Entity, IParsable
+    public class DeviceAppManagement : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Android managed app policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidManagedAppProtection>? AndroidManagedAppProtections
+        public List<Microsoft.Graph.Models.AndroidManagedAppProtection>? AndroidManagedAppProtections
         {
-            get { return BackingStore?.Get<List<AndroidManagedAppProtection>?>("androidManagedAppProtections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AndroidManagedAppProtection>?>("androidManagedAppProtections"); }
             set { BackingStore?.Set("androidManagedAppProtections", value); }
         }
 #nullable restore
 #else
-        public List<AndroidManagedAppProtection> AndroidManagedAppProtections
+        public List<Microsoft.Graph.Models.AndroidManagedAppProtection> AndroidManagedAppProtections
         {
-            get { return BackingStore?.Get<List<AndroidManagedAppProtection>>("androidManagedAppProtections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AndroidManagedAppProtection>>("androidManagedAppProtections"); }
             set { BackingStore?.Set("androidManagedAppProtections", value); }
         }
 #endif
         /// <summary>Default managed app policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DefaultManagedAppProtection>? DefaultManagedAppProtections
+        public List<Microsoft.Graph.Models.DefaultManagedAppProtection>? DefaultManagedAppProtections
         {
-            get { return BackingStore?.Get<List<DefaultManagedAppProtection>?>("defaultManagedAppProtections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DefaultManagedAppProtection>?>("defaultManagedAppProtections"); }
             set { BackingStore?.Set("defaultManagedAppProtections", value); }
         }
 #nullable restore
 #else
-        public List<DefaultManagedAppProtection> DefaultManagedAppProtections
+        public List<Microsoft.Graph.Models.DefaultManagedAppProtection> DefaultManagedAppProtections
         {
-            get { return BackingStore?.Get<List<DefaultManagedAppProtection>>("defaultManagedAppProtections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DefaultManagedAppProtection>>("defaultManagedAppProtections"); }
             set { BackingStore?.Set("defaultManagedAppProtections", value); }
         }
 #endif
         /// <summary>iOS managed app policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosManagedAppProtection>? IosManagedAppProtections
+        public List<Microsoft.Graph.Models.IosManagedAppProtection>? IosManagedAppProtections
         {
-            get { return BackingStore?.Get<List<IosManagedAppProtection>?>("iosManagedAppProtections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IosManagedAppProtection>?>("iosManagedAppProtections"); }
             set { BackingStore?.Set("iosManagedAppProtections", value); }
         }
 #nullable restore
 #else
-        public List<IosManagedAppProtection> IosManagedAppProtections
+        public List<Microsoft.Graph.Models.IosManagedAppProtection> IosManagedAppProtections
         {
-            get { return BackingStore?.Get<List<IosManagedAppProtection>>("iosManagedAppProtections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IosManagedAppProtection>>("iosManagedAppProtections"); }
             set { BackingStore?.Set("iosManagedAppProtections", value); }
         }
 #endif
@@ -68,80 +68,80 @@ namespace Microsoft.Graph.Models
         /// <summary>Managed app policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppPolicy>? ManagedAppPolicies
+        public List<Microsoft.Graph.Models.ManagedAppPolicy>? ManagedAppPolicies
         {
-            get { return BackingStore?.Get<List<ManagedAppPolicy>?>("managedAppPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppPolicy>?>("managedAppPolicies"); }
             set { BackingStore?.Set("managedAppPolicies", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppPolicy> ManagedAppPolicies
+        public List<Microsoft.Graph.Models.ManagedAppPolicy> ManagedAppPolicies
         {
-            get { return BackingStore?.Get<List<ManagedAppPolicy>>("managedAppPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppPolicy>>("managedAppPolicies"); }
             set { BackingStore?.Set("managedAppPolicies", value); }
         }
 #endif
         /// <summary>The managed app registrations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppRegistration>? ManagedAppRegistrations
+        public List<Microsoft.Graph.Models.ManagedAppRegistration>? ManagedAppRegistrations
         {
-            get { return BackingStore?.Get<List<ManagedAppRegistration>?>("managedAppRegistrations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppRegistration>?>("managedAppRegistrations"); }
             set { BackingStore?.Set("managedAppRegistrations", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppRegistration> ManagedAppRegistrations
+        public List<Microsoft.Graph.Models.ManagedAppRegistration> ManagedAppRegistrations
         {
-            get { return BackingStore?.Get<List<ManagedAppRegistration>>("managedAppRegistrations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppRegistration>>("managedAppRegistrations"); }
             set { BackingStore?.Set("managedAppRegistrations", value); }
         }
 #endif
         /// <summary>The managed app statuses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppStatus>? ManagedAppStatuses
+        public List<Microsoft.Graph.Models.ManagedAppStatus>? ManagedAppStatuses
         {
-            get { return BackingStore?.Get<List<ManagedAppStatus>?>("managedAppStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppStatus>?>("managedAppStatuses"); }
             set { BackingStore?.Set("managedAppStatuses", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppStatus> ManagedAppStatuses
+        public List<Microsoft.Graph.Models.ManagedAppStatus> ManagedAppStatuses
         {
-            get { return BackingStore?.Get<List<ManagedAppStatus>>("managedAppStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppStatus>>("managedAppStatuses"); }
             set { BackingStore?.Set("managedAppStatuses", value); }
         }
 #endif
         /// <summary>The Managed eBook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedEBook>? ManagedEBooks
+        public List<Microsoft.Graph.Models.ManagedEBook>? ManagedEBooks
         {
-            get { return BackingStore?.Get<List<ManagedEBook>?>("managedEBooks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedEBook>?>("managedEBooks"); }
             set { BackingStore?.Set("managedEBooks", value); }
         }
 #nullable restore
 #else
-        public List<ManagedEBook> ManagedEBooks
+        public List<Microsoft.Graph.Models.ManagedEBook> ManagedEBooks
         {
-            get { return BackingStore?.Get<List<ManagedEBook>>("managedEBooks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedEBook>>("managedEBooks"); }
             set { BackingStore?.Set("managedEBooks", value); }
         }
 #endif
         /// <summary>Windows information protection for apps running on devices which are MDM enrolled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MdmWindowsInformationProtectionPolicy>? MdmWindowsInformationProtectionPolicies
+        public List<Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy>? MdmWindowsInformationProtectionPolicies
         {
-            get { return BackingStore?.Get<List<MdmWindowsInformationProtectionPolicy>?>("mdmWindowsInformationProtectionPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy>?>("mdmWindowsInformationProtectionPolicies"); }
             set { BackingStore?.Set("mdmWindowsInformationProtectionPolicies", value); }
         }
 #nullable restore
 #else
-        public List<MdmWindowsInformationProtectionPolicy> MdmWindowsInformationProtectionPolicies
+        public List<Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy> MdmWindowsInformationProtectionPolicies
         {
-            get { return BackingStore?.Get<List<MdmWindowsInformationProtectionPolicy>>("mdmWindowsInformationProtectionPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy>>("mdmWindowsInformationProtectionPolicies"); }
             set { BackingStore?.Set("mdmWindowsInformationProtectionPolicies", value); }
         }
 #endif
@@ -176,108 +176,108 @@ namespace Microsoft.Graph.Models
         /// <summary>The mobile app categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppCategory>? MobileAppCategories
+        public List<Microsoft.Graph.Models.MobileAppCategory>? MobileAppCategories
         {
-            get { return BackingStore?.Get<List<MobileAppCategory>?>("mobileAppCategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MobileAppCategory>?>("mobileAppCategories"); }
             set { BackingStore?.Set("mobileAppCategories", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppCategory> MobileAppCategories
+        public List<Microsoft.Graph.Models.MobileAppCategory> MobileAppCategories
         {
-            get { return BackingStore?.Get<List<MobileAppCategory>>("mobileAppCategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MobileAppCategory>>("mobileAppCategories"); }
             set { BackingStore?.Set("mobileAppCategories", value); }
         }
 #endif
         /// <summary>The Managed Device Mobile Application Configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceMobileAppConfiguration>? MobileAppConfigurations
+        public List<Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration>? MobileAppConfigurations
         {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfiguration>?>("mobileAppConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration>?>("mobileAppConfigurations"); }
             set { BackingStore?.Set("mobileAppConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceMobileAppConfiguration> MobileAppConfigurations
+        public List<Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration> MobileAppConfigurations
         {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfiguration>>("mobileAppConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration>>("mobileAppConfigurations"); }
             set { BackingStore?.Set("mobileAppConfigurations", value); }
         }
 #endif
         /// <summary>The mobile apps.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileApp>? MobileApps
+        public List<Microsoft.Graph.Models.MobileApp>? MobileApps
         {
-            get { return BackingStore?.Get<List<MobileApp>?>("mobileApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MobileApp>?>("mobileApps"); }
             set { BackingStore?.Set("mobileApps", value); }
         }
 #nullable restore
 #else
-        public List<MobileApp> MobileApps
+        public List<Microsoft.Graph.Models.MobileApp> MobileApps
         {
-            get { return BackingStore?.Get<List<MobileApp>>("mobileApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MobileApp>>("mobileApps"); }
             set { BackingStore?.Set("mobileApps", value); }
         }
 #endif
         /// <summary>Targeted managed app configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TargetedManagedAppConfiguration>? TargetedManagedAppConfigurations
+        public List<Microsoft.Graph.Models.TargetedManagedAppConfiguration>? TargetedManagedAppConfigurations
         {
-            get { return BackingStore?.Get<List<TargetedManagedAppConfiguration>?>("targetedManagedAppConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TargetedManagedAppConfiguration>?>("targetedManagedAppConfigurations"); }
             set { BackingStore?.Set("targetedManagedAppConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<TargetedManagedAppConfiguration> TargetedManagedAppConfigurations
+        public List<Microsoft.Graph.Models.TargetedManagedAppConfiguration> TargetedManagedAppConfigurations
         {
-            get { return BackingStore?.Get<List<TargetedManagedAppConfiguration>>("targetedManagedAppConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TargetedManagedAppConfiguration>>("targetedManagedAppConfigurations"); }
             set { BackingStore?.Set("targetedManagedAppConfigurations", value); }
         }
 #endif
         /// <summary>List of Vpp tokens for this organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VppToken>? VppTokens
+        public List<Microsoft.Graph.Models.VppToken>? VppTokens
         {
-            get { return BackingStore?.Get<List<VppToken>?>("vppTokens"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.VppToken>?>("vppTokens"); }
             set { BackingStore?.Set("vppTokens", value); }
         }
 #nullable restore
 #else
-        public List<VppToken> VppTokens
+        public List<Microsoft.Graph.Models.VppToken> VppTokens
         {
-            get { return BackingStore?.Get<List<VppToken>>("vppTokens"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.VppToken>>("vppTokens"); }
             set { BackingStore?.Set("vppTokens", value); }
         }
 #endif
         /// <summary>Windows information protection for apps running on devices which are not MDM enrolled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsInformationProtectionPolicy>? WindowsInformationProtectionPolicies
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionPolicy>? WindowsInformationProtectionPolicies
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionPolicy>?>("windowsInformationProtectionPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionPolicy>?>("windowsInformationProtectionPolicies"); }
             set { BackingStore?.Set("windowsInformationProtectionPolicies", value); }
         }
 #nullable restore
 #else
-        public List<WindowsInformationProtectionPolicy> WindowsInformationProtectionPolicies
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionPolicy> WindowsInformationProtectionPolicies
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionPolicy>>("windowsInformationProtectionPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionPolicy>>("windowsInformationProtectionPolicies"); }
             set { BackingStore?.Set("windowsInformationProtectionPolicies", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceAppManagement"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceAppManagement"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceAppManagement CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeviceAppManagement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceAppManagement();
+            return new Microsoft.Graph.Models.DeviceAppManagement();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -287,24 +287,24 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "androidManagedAppProtections", n => { AndroidManagedAppProtections = n.GetCollectionOfObjectValues<AndroidManagedAppProtection>(AndroidManagedAppProtection.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "defaultManagedAppProtections", n => { DefaultManagedAppProtections = n.GetCollectionOfObjectValues<DefaultManagedAppProtection>(DefaultManagedAppProtection.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "iosManagedAppProtections", n => { IosManagedAppProtections = n.GetCollectionOfObjectValues<IosManagedAppProtection>(IosManagedAppProtection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "androidManagedAppProtections", n => { AndroidManagedAppProtections = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AndroidManagedAppProtection>(Microsoft.Graph.Models.AndroidManagedAppProtection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "defaultManagedAppProtections", n => { DefaultManagedAppProtections = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DefaultManagedAppProtection>(Microsoft.Graph.Models.DefaultManagedAppProtection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "iosManagedAppProtections", n => { IosManagedAppProtections = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IosManagedAppProtection>(Microsoft.Graph.Models.IosManagedAppProtection.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isEnabledForMicrosoftStoreForBusiness", n => { IsEnabledForMicrosoftStoreForBusiness = n.GetBoolValue(); } },
-                { "managedAppPolicies", n => { ManagedAppPolicies = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "managedAppRegistrations", n => { ManagedAppRegistrations = n.GetCollectionOfObjectValues<ManagedAppRegistration>(ManagedAppRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "managedAppStatuses", n => { ManagedAppStatuses = n.GetCollectionOfObjectValues<ManagedAppStatus>(ManagedAppStatus.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "managedEBooks", n => { ManagedEBooks = n.GetCollectionOfObjectValues<ManagedEBook>(ManagedEBook.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "mdmWindowsInformationProtectionPolicies", n => { MdmWindowsInformationProtectionPolicies = n.GetCollectionOfObjectValues<MdmWindowsInformationProtectionPolicy>(MdmWindowsInformationProtectionPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedAppPolicies", n => { ManagedAppPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppPolicy>(Microsoft.Graph.Models.ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedAppRegistrations", n => { ManagedAppRegistrations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppRegistration>(Microsoft.Graph.Models.ManagedAppRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedAppStatuses", n => { ManagedAppStatuses = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppStatus>(Microsoft.Graph.Models.ManagedAppStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedEBooks", n => { ManagedEBooks = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ManagedEBook>(Microsoft.Graph.Models.ManagedEBook.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mdmWindowsInformationProtectionPolicies", n => { MdmWindowsInformationProtectionPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy>(Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "microsoftStoreForBusinessLanguage", n => { MicrosoftStoreForBusinessLanguage = n.GetStringValue(); } },
                 { "microsoftStoreForBusinessLastCompletedApplicationSyncTime", n => { MicrosoftStoreForBusinessLastCompletedApplicationSyncTime = n.GetDateTimeOffsetValue(); } },
                 { "microsoftStoreForBusinessLastSuccessfulSyncDateTime", n => { MicrosoftStoreForBusinessLastSuccessfulSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                { "mobileAppCategories", n => { MobileAppCategories = n.GetCollectionOfObjectValues<MobileAppCategory>(MobileAppCategory.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "mobileAppConfigurations", n => { MobileAppConfigurations = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfiguration>(ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "mobileApps", n => { MobileApps = n.GetCollectionOfObjectValues<MobileApp>(MobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "targetedManagedAppConfigurations", n => { TargetedManagedAppConfigurations = n.GetCollectionOfObjectValues<TargetedManagedAppConfiguration>(TargetedManagedAppConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "vppTokens", n => { VppTokens = n.GetCollectionOfObjectValues<VppToken>(VppToken.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "windowsInformationProtectionPolicies", n => { WindowsInformationProtectionPolicies = n.GetCollectionOfObjectValues<WindowsInformationProtectionPolicy>(WindowsInformationProtectionPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mobileAppCategories", n => { MobileAppCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MobileAppCategory>(Microsoft.Graph.Models.MobileAppCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mobileAppConfigurations", n => { MobileAppConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration>(Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mobileApps", n => { MobileApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MobileApp>(Microsoft.Graph.Models.MobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "targetedManagedAppConfigurations", n => { TargetedManagedAppConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TargetedManagedAppConfiguration>(Microsoft.Graph.Models.TargetedManagedAppConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "vppTokens", n => { VppTokens = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.VppToken>(Microsoft.Graph.Models.VppToken.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsInformationProtectionPolicies", n => { WindowsInformationProtectionPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionPolicy>(Microsoft.Graph.Models.WindowsInformationProtectionPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -315,24 +315,24 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AndroidManagedAppProtection>("androidManagedAppProtections", AndroidManagedAppProtections);
-            writer.WriteCollectionOfObjectValues<DefaultManagedAppProtection>("defaultManagedAppProtections", DefaultManagedAppProtections);
-            writer.WriteCollectionOfObjectValues<IosManagedAppProtection>("iosManagedAppProtections", IosManagedAppProtections);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AndroidManagedAppProtection>("androidManagedAppProtections", AndroidManagedAppProtections);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DefaultManagedAppProtection>("defaultManagedAppProtections", DefaultManagedAppProtections);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IosManagedAppProtection>("iosManagedAppProtections", IosManagedAppProtections);
             writer.WriteBoolValue("isEnabledForMicrosoftStoreForBusiness", IsEnabledForMicrosoftStoreForBusiness);
-            writer.WriteCollectionOfObjectValues<ManagedAppPolicy>("managedAppPolicies", ManagedAppPolicies);
-            writer.WriteCollectionOfObjectValues<ManagedAppRegistration>("managedAppRegistrations", ManagedAppRegistrations);
-            writer.WriteCollectionOfObjectValues<ManagedAppStatus>("managedAppStatuses", ManagedAppStatuses);
-            writer.WriteCollectionOfObjectValues<ManagedEBook>("managedEBooks", ManagedEBooks);
-            writer.WriteCollectionOfObjectValues<MdmWindowsInformationProtectionPolicy>("mdmWindowsInformationProtectionPolicies", MdmWindowsInformationProtectionPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppPolicy>("managedAppPolicies", ManagedAppPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppRegistration>("managedAppRegistrations", ManagedAppRegistrations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppStatus>("managedAppStatuses", ManagedAppStatuses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ManagedEBook>("managedEBooks", ManagedEBooks);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy>("mdmWindowsInformationProtectionPolicies", MdmWindowsInformationProtectionPolicies);
             writer.WriteStringValue("microsoftStoreForBusinessLanguage", MicrosoftStoreForBusinessLanguage);
             writer.WriteDateTimeOffsetValue("microsoftStoreForBusinessLastCompletedApplicationSyncTime", MicrosoftStoreForBusinessLastCompletedApplicationSyncTime);
             writer.WriteDateTimeOffsetValue("microsoftStoreForBusinessLastSuccessfulSyncDateTime", MicrosoftStoreForBusinessLastSuccessfulSyncDateTime);
-            writer.WriteCollectionOfObjectValues<MobileAppCategory>("mobileAppCategories", MobileAppCategories);
-            writer.WriteCollectionOfObjectValues<ManagedDeviceMobileAppConfiguration>("mobileAppConfigurations", MobileAppConfigurations);
-            writer.WriteCollectionOfObjectValues<MobileApp>("mobileApps", MobileApps);
-            writer.WriteCollectionOfObjectValues<TargetedManagedAppConfiguration>("targetedManagedAppConfigurations", TargetedManagedAppConfigurations);
-            writer.WriteCollectionOfObjectValues<VppToken>("vppTokens", VppTokens);
-            writer.WriteCollectionOfObjectValues<WindowsInformationProtectionPolicy>("windowsInformationProtectionPolicies", WindowsInformationProtectionPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MobileAppCategory>("mobileAppCategories", MobileAppCategories);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration>("mobileAppConfigurations", MobileAppConfigurations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MobileApp>("mobileApps", MobileApps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TargetedManagedAppConfiguration>("targetedManagedAppConfigurations", TargetedManagedAppConfigurations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.VppToken>("vppTokens", VppTokens);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionPolicy>("windowsInformationProtectionPolicies", WindowsInformationProtectionPolicies);
         }
     }
 }

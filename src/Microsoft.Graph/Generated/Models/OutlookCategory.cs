@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OutlookCategory : Entity, IParsable
+    public class OutlookCategory : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. For more details, see the following note.</summary>
-        public CategoryColor? Color
+        public Microsoft.Graph.Models.CategoryColor? Color
         {
-            get { return BackingStore?.Get<CategoryColor?>("color"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CategoryColor?>("color"); }
             set { BackingStore?.Set("color", value); }
         }
         /// <summary>A unique name that identifies a category in the user&apos;s mailbox. After a category is created, the name cannot be changed. Read-only.</summary>
@@ -35,12 +35,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OutlookCategory"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OutlookCategory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OutlookCategory CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OutlookCategory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OutlookCategory();
+            return new Microsoft.Graph.Models.OutlookCategory();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "color", n => { Color = n.GetEnumValue<CategoryColor>(); } },
+                { "color", n => { Color = n.GetEnumValue<Microsoft.Graph.Models.CategoryColor>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
             };
         }
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<CategoryColor>("color", Color);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CategoryColor>("color", Color);
             writer.WriteStringValue("displayName", DisplayName);
         }
     }

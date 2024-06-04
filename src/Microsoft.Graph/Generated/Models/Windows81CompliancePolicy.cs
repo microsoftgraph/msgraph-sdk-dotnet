@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// This class contains compliance settings for Windows 8.1.
     /// </summary>
-    public class Windows81CompliancePolicy : DeviceCompliancePolicy, IParsable
+    public class Windows81CompliancePolicy : Microsoft.Graph.Models.DeviceCompliancePolicy, IParsable
     {
         /// <summary>Maximum Windows 8.1 version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,9 +86,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("passwordRequired", value); }
         }
         /// <summary>Possible values of required passwords.</summary>
-        public RequiredPasswordType? PasswordRequiredType
+        public Microsoft.Graph.Models.RequiredPasswordType? PasswordRequiredType
         {
-            get { return BackingStore?.Get<RequiredPasswordType?>("passwordRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Indicates whether or not to require encryption on a windows 8.1 device.</summary>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Windows81CompliancePolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Windows81CompliancePolicy"/> and sets the default values.
         /// </summary>
         public Windows81CompliancePolicy() : base()
         {
@@ -107,12 +107,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows81CompliancePolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Windows81CompliancePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows81CompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Windows81CompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Windows81CompliancePolicy();
+            return new Microsoft.Graph.Models.Windows81CompliancePolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Models
                 { "passwordMinutesOfInactivityBeforeLock", n => { PasswordMinutesOfInactivityBeforeLock = n.GetIntValue(); } },
                 { "passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
                 { "passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
-                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<Microsoft.Graph.Models.RequiredPasswordType>(); } },
                 { "storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
             };
         }
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Models
             writer.WriteIntValue("passwordMinutesOfInactivityBeforeLock", PasswordMinutesOfInactivityBeforeLock);
             writer.WriteIntValue("passwordPreviousPasswordBlockCount", PasswordPreviousPasswordBlockCount);
             writer.WriteBoolValue("passwordRequired", PasswordRequired);
-            writer.WriteEnumValue<RequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
             writer.WriteBoolValue("storageRequireEncryption", StorageRequireEncryption);
         }
     }

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations
     public class RelationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the relations property of the microsoft.graph.termStore.set entity.</summary>
         /// <param name="position">The unique identifier of relation</param>
-        /// <returns>A <see cref="RelationItemRequestBuilder"/></returns>
-        public RelationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations.Item.RelationItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations.Item.RelationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("relation%2Did", position);
-                return new RelationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations.Item.RelationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RelationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations.RelationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RelationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations.RelationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations
         /// <summary>
         /// Indicates which terms have been pinned or reused directly under the set.
         /// </summary>
-        /// <returns>A <see cref="RelationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TermStore.RelationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RelationCollectionResponse?> GetAsync(Action<RequestConfiguration<RelationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TermStore.RelationCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations.RelationsRequestBuilder.RelationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<RelationCollectionResponse> GetAsync(Action<RequestConfiguration<RelationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TermStore.RelationCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations.RelationsRequestBuilder.RelationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<RelationCollectionResponse>(requestInfo, RelationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermStore.RelationCollectionResponse>(requestInfo, Microsoft.Graph.Models.TermStore.RelationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to relations for sites
         /// </summary>
-        /// <returns>A <see cref="Relation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TermStore.Relation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Relation?> PostAsync(Relation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TermStore.Relation?> PostAsync(Microsoft.Graph.Models.TermStore.Relation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Relation> PostAsync(Relation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TermStore.Relation> PostAsync(Microsoft.Graph.Models.TermStore.Relation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Relation>(requestInfo, Relation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermStore.Relation>(requestInfo, Microsoft.Graph.Models.TermStore.Relation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Indicates which terms have been pinned or reused directly under the set.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RelationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations.RelationsRequestBuilder.RelationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RelationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations.RelationsRequestBuilder.RelationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Relation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.TermStore.Relation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Relation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.TermStore.Relation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RelationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations.RelationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RelationsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations.RelationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new RelationsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations.RelationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Indicates which terms have been pinned or reused directly under the set.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RelationsRequestBuilderGetRequestConfiguration : RequestConfiguration<RelationsRequestBuilderGetQueryParameters>
+        public class RelationsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations.RelationsRequestBuilder.RelationsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -13,284 +13,284 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>Refers to indicators of threat or compromise highlighted in an article.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ArticleIndicator>? ArticleIndicators
+        public List<Microsoft.Graph.Models.Security.ArticleIndicator>? ArticleIndicators
         {
-            get { return BackingStore?.Get<List<ArticleIndicator>?>("articleIndicators"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.ArticleIndicator>?>("articleIndicators"); }
             set { BackingStore?.Set("articleIndicators", value); }
         }
 #nullable restore
 #else
-        public List<ArticleIndicator> ArticleIndicators
+        public List<Microsoft.Graph.Models.Security.ArticleIndicator> ArticleIndicators
         {
-            get { return BackingStore?.Get<List<ArticleIndicator>>("articleIndicators"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.ArticleIndicator>>("articleIndicators"); }
             set { BackingStore?.Set("articleIndicators", value); }
         }
 #endif
         /// <summary>A list of article objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Article>? Articles
+        public List<Microsoft.Graph.Models.Security.Article>? Articles
         {
-            get { return BackingStore?.Get<List<Article>?>("articles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.Article>?>("articles"); }
             set { BackingStore?.Set("articles", value); }
         }
 #nullable restore
 #else
-        public List<Article> Articles
+        public List<Microsoft.Graph.Models.Security.Article> Articles
         {
-            get { return BackingStore?.Get<List<Article>>("articles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.Article>>("articles"); }
             set { BackingStore?.Set("articles", value); }
         }
 #endif
         /// <summary>Retrieve details about hostComponent objects.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostComponent>? HostComponents
+        public List<Microsoft.Graph.Models.Security.HostComponent>? HostComponents
         {
-            get { return BackingStore?.Get<List<HostComponent>?>("hostComponents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostComponent>?>("hostComponents"); }
             set { BackingStore?.Set("hostComponents", value); }
         }
 #nullable restore
 #else
-        public List<HostComponent> HostComponents
+        public List<Microsoft.Graph.Models.Security.HostComponent> HostComponents
         {
-            get { return BackingStore?.Get<List<HostComponent>>("hostComponents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostComponent>>("hostComponents"); }
             set { BackingStore?.Set("hostComponents", value); }
         }
 #endif
         /// <summary>Retrieve details about hostCookie objects.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostCookie>? HostCookies
+        public List<Microsoft.Graph.Models.Security.HostCookie>? HostCookies
         {
-            get { return BackingStore?.Get<List<HostCookie>?>("hostCookies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostCookie>?>("hostCookies"); }
             set { BackingStore?.Set("hostCookies", value); }
         }
 #nullable restore
 #else
-        public List<HostCookie> HostCookies
+        public List<Microsoft.Graph.Models.Security.HostCookie> HostCookies
         {
-            get { return BackingStore?.Get<List<HostCookie>>("hostCookies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostCookie>>("hostCookies"); }
             set { BackingStore?.Set("hostCookies", value); }
         }
 #endif
         /// <summary>Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostPair>? HostPairs
+        public List<Microsoft.Graph.Models.Security.HostPair>? HostPairs
         {
-            get { return BackingStore?.Get<List<HostPair>?>("hostPairs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostPair>?>("hostPairs"); }
             set { BackingStore?.Set("hostPairs", value); }
         }
 #nullable restore
 #else
-        public List<HostPair> HostPairs
+        public List<Microsoft.Graph.Models.Security.HostPair> HostPairs
         {
-            get { return BackingStore?.Get<List<HostPair>>("hostPairs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostPair>>("hostPairs"); }
             set { BackingStore?.Set("hostPairs", value); }
         }
 #endif
         /// <summary>Retrieve details about hostPort objects.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostPort>? HostPorts
+        public List<Microsoft.Graph.Models.Security.HostPort>? HostPorts
         {
-            get { return BackingStore?.Get<List<HostPort>?>("hostPorts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostPort>?>("hostPorts"); }
             set { BackingStore?.Set("hostPorts", value); }
         }
 #nullable restore
 #else
-        public List<HostPort> HostPorts
+        public List<Microsoft.Graph.Models.Security.HostPort> HostPorts
         {
-            get { return BackingStore?.Get<List<HostPort>>("hostPorts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostPort>>("hostPorts"); }
             set { BackingStore?.Set("hostPorts", value); }
         }
 #endif
         /// <summary>Refers to host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Host>? Hosts
+        public List<Microsoft.Graph.Models.Security.Host>? Hosts
         {
-            get { return BackingStore?.Get<List<Host>?>("hosts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.Host>?>("hosts"); }
             set { BackingStore?.Set("hosts", value); }
         }
 #nullable restore
 #else
-        public List<Host> Hosts
+        public List<Microsoft.Graph.Models.Security.Host> Hosts
         {
-            get { return BackingStore?.Get<List<Host>>("hosts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.Host>>("hosts"); }
             set { BackingStore?.Set("hosts", value); }
         }
 #endif
         /// <summary>Retrieve details about hostSslCertificate objects.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostSslCertificate>? HostSslCertificates
+        public List<Microsoft.Graph.Models.Security.HostSslCertificate>? HostSslCertificates
         {
-            get { return BackingStore?.Get<List<HostSslCertificate>?>("hostSslCertificates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostSslCertificate>?>("hostSslCertificates"); }
             set { BackingStore?.Set("hostSslCertificates", value); }
         }
 #nullable restore
 #else
-        public List<HostSslCertificate> HostSslCertificates
+        public List<Microsoft.Graph.Models.Security.HostSslCertificate> HostSslCertificates
         {
-            get { return BackingStore?.Get<List<HostSslCertificate>>("hostSslCertificates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostSslCertificate>>("hostSslCertificates"); }
             set { BackingStore?.Set("hostSslCertificates", value); }
         }
 #endif
         /// <summary>Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostTracker>? HostTrackers
+        public List<Microsoft.Graph.Models.Security.HostTracker>? HostTrackers
         {
-            get { return BackingStore?.Get<List<HostTracker>?>("hostTrackers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostTracker>?>("hostTrackers"); }
             set { BackingStore?.Set("hostTrackers", value); }
         }
 #nullable restore
 #else
-        public List<HostTracker> HostTrackers
+        public List<Microsoft.Graph.Models.Security.HostTracker> HostTrackers
         {
-            get { return BackingStore?.Get<List<HostTracker>>("hostTrackers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostTracker>>("hostTrackers"); }
             set { BackingStore?.Set("hostTrackers", value); }
         }
 #endif
         /// <summary>The intelligenceProfileIndicators property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IntelligenceProfileIndicator>? IntelligenceProfileIndicators
+        public List<Microsoft.Graph.Models.Security.IntelligenceProfileIndicator>? IntelligenceProfileIndicators
         {
-            get { return BackingStore?.Get<List<IntelligenceProfileIndicator>?>("intelligenceProfileIndicators"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.IntelligenceProfileIndicator>?>("intelligenceProfileIndicators"); }
             set { BackingStore?.Set("intelligenceProfileIndicators", value); }
         }
 #nullable restore
 #else
-        public List<IntelligenceProfileIndicator> IntelligenceProfileIndicators
+        public List<Microsoft.Graph.Models.Security.IntelligenceProfileIndicator> IntelligenceProfileIndicators
         {
-            get { return BackingStore?.Get<List<IntelligenceProfileIndicator>>("intelligenceProfileIndicators"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.IntelligenceProfileIndicator>>("intelligenceProfileIndicators"); }
             set { BackingStore?.Set("intelligenceProfileIndicators", value); }
         }
 #endif
         /// <summary>A list of intelligenceProfile objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IntelligenceProfile>? IntelProfiles
+        public List<Microsoft.Graph.Models.Security.IntelligenceProfile>? IntelProfiles
         {
-            get { return BackingStore?.Get<List<IntelligenceProfile>?>("intelProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.IntelligenceProfile>?>("intelProfiles"); }
             set { BackingStore?.Set("intelProfiles", value); }
         }
 #nullable restore
 #else
-        public List<IntelligenceProfile> IntelProfiles
+        public List<Microsoft.Graph.Models.Security.IntelligenceProfile> IntelProfiles
         {
-            get { return BackingStore?.Get<List<IntelligenceProfile>>("intelProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.IntelligenceProfile>>("intelProfiles"); }
             set { BackingStore?.Set("intelProfiles", value); }
         }
 #endif
         /// <summary>Retrieve details about passiveDnsRecord objects.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PassiveDnsRecord>? PassiveDnsRecords
+        public List<Microsoft.Graph.Models.Security.PassiveDnsRecord>? PassiveDnsRecords
         {
-            get { return BackingStore?.Get<List<PassiveDnsRecord>?>("passiveDnsRecords"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.PassiveDnsRecord>?>("passiveDnsRecords"); }
             set { BackingStore?.Set("passiveDnsRecords", value); }
         }
 #nullable restore
 #else
-        public List<PassiveDnsRecord> PassiveDnsRecords
+        public List<Microsoft.Graph.Models.Security.PassiveDnsRecord> PassiveDnsRecords
         {
-            get { return BackingStore?.Get<List<PassiveDnsRecord>>("passiveDnsRecords"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.PassiveDnsRecord>>("passiveDnsRecords"); }
             set { BackingStore?.Set("passiveDnsRecords", value); }
         }
 #endif
         /// <summary>Retrieve details about sslCertificate objects.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SslCertificate>? SslCertificates
+        public List<Microsoft.Graph.Models.Security.SslCertificate>? SslCertificates
         {
-            get { return BackingStore?.Get<List<SslCertificate>?>("sslCertificates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.SslCertificate>?>("sslCertificates"); }
             set { BackingStore?.Set("sslCertificates", value); }
         }
 #nullable restore
 #else
-        public List<SslCertificate> SslCertificates
+        public List<Microsoft.Graph.Models.Security.SslCertificate> SslCertificates
         {
-            get { return BackingStore?.Get<List<SslCertificate>>("sslCertificates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.SslCertificate>>("sslCertificates"); }
             set { BackingStore?.Set("sslCertificates", value); }
         }
 #endif
         /// <summary>Retrieve details about the subdomain.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Subdomain>? Subdomains
+        public List<Microsoft.Graph.Models.Security.Subdomain>? Subdomains
         {
-            get { return BackingStore?.Get<List<Subdomain>?>("subdomains"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.Subdomain>?>("subdomains"); }
             set { BackingStore?.Set("subdomains", value); }
         }
 #nullable restore
 #else
-        public List<Subdomain> Subdomains
+        public List<Microsoft.Graph.Models.Security.Subdomain> Subdomains
         {
-            get { return BackingStore?.Get<List<Subdomain>>("subdomains"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.Subdomain>>("subdomains"); }
             set { BackingStore?.Set("subdomains", value); }
         }
 #endif
         /// <summary>Retrieve details about vulnerabilities.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Vulnerability>? Vulnerabilities
+        public List<Microsoft.Graph.Models.Security.Vulnerability>? Vulnerabilities
         {
-            get { return BackingStore?.Get<List<Vulnerability>?>("vulnerabilities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.Vulnerability>?>("vulnerabilities"); }
             set { BackingStore?.Set("vulnerabilities", value); }
         }
 #nullable restore
 #else
-        public List<Vulnerability> Vulnerabilities
+        public List<Microsoft.Graph.Models.Security.Vulnerability> Vulnerabilities
         {
-            get { return BackingStore?.Get<List<Vulnerability>>("vulnerabilities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.Vulnerability>>("vulnerabilities"); }
             set { BackingStore?.Set("vulnerabilities", value); }
         }
 #endif
         /// <summary>Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WhoisHistoryRecord>? WhoisHistoryRecords
+        public List<Microsoft.Graph.Models.Security.WhoisHistoryRecord>? WhoisHistoryRecords
         {
-            get { return BackingStore?.Get<List<WhoisHistoryRecord>?>("whoisHistoryRecords"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.WhoisHistoryRecord>?>("whoisHistoryRecords"); }
             set { BackingStore?.Set("whoisHistoryRecords", value); }
         }
 #nullable restore
 #else
-        public List<WhoisHistoryRecord> WhoisHistoryRecords
+        public List<Microsoft.Graph.Models.Security.WhoisHistoryRecord> WhoisHistoryRecords
         {
-            get { return BackingStore?.Get<List<WhoisHistoryRecord>>("whoisHistoryRecords"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.WhoisHistoryRecord>>("whoisHistoryRecords"); }
             set { BackingStore?.Set("whoisHistoryRecords", value); }
         }
 #endif
         /// <summary>A list of whoisRecord objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WhoisRecord>? WhoisRecords
+        public List<Microsoft.Graph.Models.Security.WhoisRecord>? WhoisRecords
         {
-            get { return BackingStore?.Get<List<WhoisRecord>?>("whoisRecords"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.WhoisRecord>?>("whoisRecords"); }
             set { BackingStore?.Set("whoisRecords", value); }
         }
 #nullable restore
 #else
-        public List<WhoisRecord> WhoisRecords
+        public List<Microsoft.Graph.Models.Security.WhoisRecord> WhoisRecords
         {
-            get { return BackingStore?.Get<List<WhoisRecord>>("whoisRecords"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.WhoisRecord>>("whoisRecords"); }
             set { BackingStore?.Set("whoisRecords", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ThreatIntelligence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.ThreatIntelligence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ThreatIntelligence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.ThreatIntelligence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ThreatIntelligence();
+            return new Microsoft.Graph.Models.Security.ThreatIntelligence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -300,23 +300,23 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "articleIndicators", n => { ArticleIndicators = n.GetCollectionOfObjectValues<ArticleIndicator>(ArticleIndicator.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "articles", n => { Articles = n.GetCollectionOfObjectValues<Article>(Article.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "hostComponents", n => { HostComponents = n.GetCollectionOfObjectValues<HostComponent>(HostComponent.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "hostCookies", n => { HostCookies = n.GetCollectionOfObjectValues<HostCookie>(HostCookie.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "hostPairs", n => { HostPairs = n.GetCollectionOfObjectValues<HostPair>(HostPair.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "hostPorts", n => { HostPorts = n.GetCollectionOfObjectValues<HostPort>(HostPort.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "hostSslCertificates", n => { HostSslCertificates = n.GetCollectionOfObjectValues<HostSslCertificate>(HostSslCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "hostTrackers", n => { HostTrackers = n.GetCollectionOfObjectValues<HostTracker>(HostTracker.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "hosts", n => { Hosts = n.GetCollectionOfObjectValues<Host>(Host.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "intelProfiles", n => { IntelProfiles = n.GetCollectionOfObjectValues<IntelligenceProfile>(IntelligenceProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "intelligenceProfileIndicators", n => { IntelligenceProfileIndicators = n.GetCollectionOfObjectValues<IntelligenceProfileIndicator>(IntelligenceProfileIndicator.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "passiveDnsRecords", n => { PassiveDnsRecords = n.GetCollectionOfObjectValues<PassiveDnsRecord>(PassiveDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sslCertificates", n => { SslCertificates = n.GetCollectionOfObjectValues<SslCertificate>(SslCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "subdomains", n => { Subdomains = n.GetCollectionOfObjectValues<Subdomain>(Subdomain.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<Vulnerability>(Vulnerability.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "whoisHistoryRecords", n => { WhoisHistoryRecords = n.GetCollectionOfObjectValues<WhoisHistoryRecord>(WhoisHistoryRecord.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "whoisRecords", n => { WhoisRecords = n.GetCollectionOfObjectValues<WhoisRecord>(WhoisRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "articleIndicators", n => { ArticleIndicators = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.ArticleIndicator>(Microsoft.Graph.Models.Security.ArticleIndicator.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "articles", n => { Articles = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.Article>(Microsoft.Graph.Models.Security.Article.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hostComponents", n => { HostComponents = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostComponent>(Microsoft.Graph.Models.Security.HostComponent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hostCookies", n => { HostCookies = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostCookie>(Microsoft.Graph.Models.Security.HostCookie.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hostPairs", n => { HostPairs = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostPair>(Microsoft.Graph.Models.Security.HostPair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hostPorts", n => { HostPorts = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostPort>(Microsoft.Graph.Models.Security.HostPort.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hostSslCertificates", n => { HostSslCertificates = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostSslCertificate>(Microsoft.Graph.Models.Security.HostSslCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hostTrackers", n => { HostTrackers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostTracker>(Microsoft.Graph.Models.Security.HostTracker.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hosts", n => { Hosts = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.Host>(Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "intelProfiles", n => { IntelProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.IntelligenceProfile>(Microsoft.Graph.Models.Security.IntelligenceProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "intelligenceProfileIndicators", n => { IntelligenceProfileIndicators = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.IntelligenceProfileIndicator>(Microsoft.Graph.Models.Security.IntelligenceProfileIndicator.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "passiveDnsRecords", n => { PassiveDnsRecords = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.PassiveDnsRecord>(Microsoft.Graph.Models.Security.PassiveDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sslCertificates", n => { SslCertificates = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.SslCertificate>(Microsoft.Graph.Models.Security.SslCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "subdomains", n => { Subdomains = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.Subdomain>(Microsoft.Graph.Models.Security.Subdomain.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.Vulnerability>(Microsoft.Graph.Models.Security.Vulnerability.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "whoisHistoryRecords", n => { WhoisHistoryRecords = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.WhoisHistoryRecord>(Microsoft.Graph.Models.Security.WhoisHistoryRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "whoisRecords", n => { WhoisRecords = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.WhoisRecord>(Microsoft.Graph.Models.Security.WhoisRecord.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -327,23 +327,23 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ArticleIndicator>("articleIndicators", ArticleIndicators);
-            writer.WriteCollectionOfObjectValues<Article>("articles", Articles);
-            writer.WriteCollectionOfObjectValues<HostComponent>("hostComponents", HostComponents);
-            writer.WriteCollectionOfObjectValues<HostCookie>("hostCookies", HostCookies);
-            writer.WriteCollectionOfObjectValues<HostPair>("hostPairs", HostPairs);
-            writer.WriteCollectionOfObjectValues<HostPort>("hostPorts", HostPorts);
-            writer.WriteCollectionOfObjectValues<Host>("hosts", Hosts);
-            writer.WriteCollectionOfObjectValues<HostSslCertificate>("hostSslCertificates", HostSslCertificates);
-            writer.WriteCollectionOfObjectValues<HostTracker>("hostTrackers", HostTrackers);
-            writer.WriteCollectionOfObjectValues<IntelligenceProfileIndicator>("intelligenceProfileIndicators", IntelligenceProfileIndicators);
-            writer.WriteCollectionOfObjectValues<IntelligenceProfile>("intelProfiles", IntelProfiles);
-            writer.WriteCollectionOfObjectValues<PassiveDnsRecord>("passiveDnsRecords", PassiveDnsRecords);
-            writer.WriteCollectionOfObjectValues<SslCertificate>("sslCertificates", SslCertificates);
-            writer.WriteCollectionOfObjectValues<Subdomain>("subdomains", Subdomains);
-            writer.WriteCollectionOfObjectValues<Vulnerability>("vulnerabilities", Vulnerabilities);
-            writer.WriteCollectionOfObjectValues<WhoisHistoryRecord>("whoisHistoryRecords", WhoisHistoryRecords);
-            writer.WriteCollectionOfObjectValues<WhoisRecord>("whoisRecords", WhoisRecords);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.ArticleIndicator>("articleIndicators", ArticleIndicators);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.Article>("articles", Articles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostComponent>("hostComponents", HostComponents);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostCookie>("hostCookies", HostCookies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostPair>("hostPairs", HostPairs);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostPort>("hostPorts", HostPorts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.Host>("hosts", Hosts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostSslCertificate>("hostSslCertificates", HostSslCertificates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostTracker>("hostTrackers", HostTrackers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.IntelligenceProfileIndicator>("intelligenceProfileIndicators", IntelligenceProfileIndicators);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.IntelligenceProfile>("intelProfiles", IntelProfiles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.PassiveDnsRecord>("passiveDnsRecords", PassiveDnsRecords);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.SslCertificate>("sslCertificates", SslCertificates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.Subdomain>("subdomains", Subdomains);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.Vulnerability>("vulnerabilities", Vulnerabilities);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.WhoisHistoryRecord>("whoisHistoryRecords", WhoisHistoryRecords);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.WhoisRecord>("whoisRecords", WhoisRecords);
         }
     }
 }

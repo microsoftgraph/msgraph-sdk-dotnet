@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.GetSched
         /// <summary>The EndTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? EndTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? EndTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("EndTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("EndTime"); }
             set { BackingStore?.Set("EndTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone EndTime
+        public Microsoft.Graph.Models.DateTimeTimeZone EndTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("EndTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("EndTime"); }
             set { BackingStore?.Set("EndTime", value); }
         }
 #endif
@@ -61,21 +61,21 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.GetSched
         /// <summary>The StartTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? StartTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? StartTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("StartTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("StartTime"); }
             set { BackingStore?.Set("StartTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone StartTime
+        public Microsoft.Graph.Models.DateTimeTimeZone StartTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("StartTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("StartTime"); }
             set { BackingStore?.Set("StartTime", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GetSchedulePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.GetSchedule.GetSchedulePostRequestBody"/> and sets the default values.
         /// </summary>
         public GetSchedulePostRequestBody()
         {
@@ -85,12 +85,12 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.GetSched
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetSchedulePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.GetSchedule.GetSchedulePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetSchedulePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.GetSchedule.GetSchedulePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetSchedulePostRequestBody();
+            return new Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.GetSchedule.GetSchedulePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,9 +101,9 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.GetSched
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "AvailabilityViewInterval", n => { AvailabilityViewInterval = n.GetIntValue(); } },
-                { "EndTime", n => { EndTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "EndTime", n => { EndTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "Schedules", n => { Schedules = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "StartTime", n => { StartTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "StartTime", n => { StartTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -114,9 +114,9 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.GetSched
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("AvailabilityViewInterval", AvailabilityViewInterval);
-            writer.WriteObjectValue<DateTimeTimeZone>("EndTime", EndTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("EndTime", EndTime);
             writer.WriteCollectionOfPrimitiveValues<string>("Schedules", Schedules);
-            writer.WriteObjectValue<DateTimeTimeZone>("StartTime", StartTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("StartTime", StartTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

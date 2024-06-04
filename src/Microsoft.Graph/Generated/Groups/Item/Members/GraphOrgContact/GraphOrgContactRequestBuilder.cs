@@ -18,12 +18,12 @@ namespace Microsoft.Graph.Groups.Item.Members.GraphOrgContact
     public class GraphOrgContactRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Groups.Item.Members.GraphOrgContact.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Members.GraphOrgContact.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphOrgContactRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Members.GraphOrgContact.GraphOrgContactRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Groups.Item.Members.GraphOrgContact
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphOrgContactRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Members.GraphOrgContact.GraphOrgContactRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,25 +41,25 @@ namespace Microsoft.Graph.Groups.Item.Members.GraphOrgContact
         /// <summary>
         /// Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
         /// </summary>
-        /// <returns>A <see cref="OrgContactCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OrgContactCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OrgContactCollectionResponse?> GetAsync(Action<RequestConfiguration<GraphOrgContactRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OrgContactCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Members.GraphOrgContact.GraphOrgContactRequestBuilder.GraphOrgContactRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<OrgContactCollectionResponse> GetAsync(Action<RequestConfiguration<GraphOrgContactRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OrgContactCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Members.GraphOrgContact.GraphOrgContactRequestBuilder.GraphOrgContactRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<OrgContactCollectionResponse>(requestInfo, OrgContactCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.OrgContactCollectionResponse>(requestInfo, Microsoft.Graph.Models.OrgContactCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
@@ -68,11 +68,11 @@ namespace Microsoft.Graph.Groups.Item.Members.GraphOrgContact
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphOrgContactRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Members.GraphOrgContact.GraphOrgContactRequestBuilder.GraphOrgContactRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphOrgContactRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Members.GraphOrgContact.GraphOrgContactRequestBuilder.GraphOrgContactRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -83,11 +83,11 @@ namespace Microsoft.Graph.Groups.Item.Members.GraphOrgContact
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GraphOrgContactRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Members.GraphOrgContact.GraphOrgContactRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GraphOrgContactRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Groups.Item.Members.GraphOrgContact.GraphOrgContactRequestBuilder WithUrl(string rawUrl)
         {
-            return new GraphOrgContactRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Groups.Item.Members.GraphOrgContact.GraphOrgContactRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Groups.Item.Members.GraphOrgContact
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphOrgContactRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphOrgContactRequestBuilderGetQueryParameters>
+        public class GraphOrgContactRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Groups.Item.Members.GraphOrgContact.GraphOrgContactRequestBuilder.GraphOrgContactRequestBuilderGetQueryParameters>
         {
         }
     }

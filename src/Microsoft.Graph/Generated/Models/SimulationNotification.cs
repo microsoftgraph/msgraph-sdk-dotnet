@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SimulationNotification : BaseEndUserNotification, IParsable
+    public class SimulationNotification : Microsoft.Graph.Models.BaseEndUserNotification, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Target user type. Possible values are: unknown, clicked, compromised, allUsers, unknownFutureValue.</summary>
@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("targettedUserType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SimulationNotification"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SimulationNotification"/> and sets the default values.
         /// </summary>
         public SimulationNotification() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SimulationNotification"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SimulationNotification"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SimulationNotification CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SimulationNotification CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SimulationNotification();
+            return new Microsoft.Graph.Models.SimulationNotification();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "targettedUserType", n => { TargettedUserType = n.GetEnumValue<TargettedUserType>(); } },
+                { "targettedUserType", n => { TargettedUserType = n.GetEnumValue<Microsoft.Graph.Models.TargettedUserType>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<TargettedUserType>("targettedUserType", TargettedUserType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TargettedUserType>("targettedUserType", TargettedUserType);
         }
     }
 }

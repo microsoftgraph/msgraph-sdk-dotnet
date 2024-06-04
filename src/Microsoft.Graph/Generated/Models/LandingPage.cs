@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class LandingPage : Entity, IParsable
+    public class LandingPage : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Identity of the user who created the landing page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? CreatedBy
+        public Microsoft.Graph.Models.EmailIdentity? CreatedBy
         {
-            get { return BackingStore?.Get<EmailIdentity?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity CreatedBy
+        public Microsoft.Graph.Models.EmailIdentity CreatedBy
         {
-            get { return BackingStore?.Get<EmailIdentity>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -51,16 +51,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The detail information for a landing page associated with a simulation during its creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LandingPageDetail>? Details
+        public List<Microsoft.Graph.Models.LandingPageDetail>? Details
         {
-            get { return BackingStore?.Get<List<LandingPageDetail>?>("details"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.LandingPageDetail>?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #nullable restore
 #else
-        public List<LandingPageDetail> Details
+        public List<Microsoft.Graph.Models.LandingPageDetail> Details
         {
-            get { return BackingStore?.Get<List<LandingPageDetail>>("details"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.LandingPageDetail>>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #endif
@@ -83,16 +83,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Email identity of the user who last modified the landing page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? LastModifiedBy
+        public Microsoft.Graph.Models.EmailIdentity? LastModifiedBy
         {
-            get { return BackingStore?.Get<EmailIdentity?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailIdentity?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity LastModifiedBy
+        public Microsoft.Graph.Models.EmailIdentity LastModifiedBy
         {
-            get { return BackingStore?.Get<EmailIdentity>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailIdentity>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -119,15 +119,15 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.</summary>
-        public SimulationContentSource? Source
+        public Microsoft.Graph.Models.SimulationContentSource? Source
         {
-            get { return BackingStore?.Get<SimulationContentSource?>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SimulationContentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
         /// <summary>The status of the simulation. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.</summary>
-        public SimulationContentStatus? Status
+        public Microsoft.Graph.Models.SimulationContentStatus? Status
         {
-            get { return BackingStore?.Get<SimulationContentStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SimulationContentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Supported locales.</summary>
@@ -149,12 +149,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LandingPage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.LandingPage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new LandingPage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.LandingPage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LandingPage();
+            return new Microsoft.Graph.Models.LandingPage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -164,16 +164,16 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.EmailIdentity>(Microsoft.Graph.Models.EmailIdentity.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "details", n => { Details = n.GetCollectionOfObjectValues<LandingPageDetail>(LandingPageDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "details", n => { Details = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.LandingPageDetail>(Microsoft.Graph.Models.LandingPageDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.EmailIdentity>(Microsoft.Graph.Models.EmailIdentity.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "locale", n => { Locale = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetEnumValue<SimulationContentSource>(); } },
-                { "status", n => { Status = n.GetEnumValue<SimulationContentStatus>(); } },
+                { "source", n => { Source = n.GetEnumValue<Microsoft.Graph.Models.SimulationContentSource>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.SimulationContentStatus>(); } },
                 { "supportedLocales", n => { SupportedLocales = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -185,16 +185,16 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<EmailIdentity>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EmailIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfObjectValues<LandingPageDetail>("details", Details);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.LandingPageDetail>("details", Details);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<EmailIdentity>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EmailIdentity>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("locale", Locale);
-            writer.WriteEnumValue<SimulationContentSource>("source", Source);
-            writer.WriteEnumValue<SimulationContentStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SimulationContentSource>("source", Source);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SimulationContentStatus>("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedLocales", SupportedLocales);
         }
     }

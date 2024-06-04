@@ -19,24 +19,24 @@ namespace Microsoft.Graph.IdentityProtection.RiskDetections
     public class RiskDetectionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.IdentityProtection.RiskDetections.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityProtection.RiskDetections.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.</summary>
         /// <param name="position">The unique identifier of riskDetection</param>
-        /// <returns>A <see cref="RiskDetectionItemRequestBuilder"/></returns>
-        public RiskDetectionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.IdentityProtection.RiskDetections.Item.RiskDetectionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.IdentityProtection.RiskDetections.Item.RiskDetectionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("riskDetection%2Did", position);
-                return new RiskDetectionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.IdentityProtection.RiskDetections.Item.RiskDetectionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RiskDetectionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityProtection.RiskDetections.RiskDetectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskDetections
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RiskDetectionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityProtection.RiskDetections.RiskDetectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +55,50 @@ namespace Microsoft.Graph.IdentityProtection.RiskDetections
         /// Get a list of the riskDetection objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="RiskDetectionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RiskDetectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RiskDetectionCollectionResponse?> GetAsync(Action<RequestConfiguration<RiskDetectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.RiskDetectionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityProtection.RiskDetections.RiskDetectionsRequestBuilder.RiskDetectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<RiskDetectionCollectionResponse> GetAsync(Action<RequestConfiguration<RiskDetectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.RiskDetectionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityProtection.RiskDetections.RiskDetectionsRequestBuilder.RiskDetectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<RiskDetectionCollectionResponse>(requestInfo, RiskDetectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.RiskDetectionCollectionResponse>(requestInfo, Microsoft.Graph.Models.RiskDetectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to riskDetections for identityProtection
         /// </summary>
-        /// <returns>A <see cref="RiskDetection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RiskDetection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RiskDetection?> PostAsync(RiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.RiskDetection?> PostAsync(Microsoft.Graph.Models.RiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<RiskDetection> PostAsync(RiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.RiskDetection> PostAsync(Microsoft.Graph.Models.RiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<RiskDetection>(requestInfo, RiskDetection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.RiskDetection>(requestInfo, Microsoft.Graph.Models.RiskDetection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the riskDetection objects and their properties.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.IdentityProtection.RiskDetections
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RiskDetectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityProtection.RiskDetections.RiskDetectionsRequestBuilder.RiskDetectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RiskDetectionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityProtection.RiskDetections.RiskDetectionsRequestBuilder.RiskDetectionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.IdentityProtection.RiskDetections
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(RiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.RiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(RiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.RiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.IdentityProtection.RiskDetections
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RiskDetectionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityProtection.RiskDetections.RiskDetectionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RiskDetectionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.IdentityProtection.RiskDetections.RiskDetectionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new RiskDetectionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.IdentityProtection.RiskDetections.RiskDetectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the riskDetection objects and their properties.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskDetections
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RiskDetectionsRequestBuilderGetRequestConfiguration : RequestConfiguration<RiskDetectionsRequestBuilderGetQueryParameters>
+        public class RiskDetectionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.IdentityProtection.RiskDetections.RiskDetectionsRequestBuilder.RiskDetectionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

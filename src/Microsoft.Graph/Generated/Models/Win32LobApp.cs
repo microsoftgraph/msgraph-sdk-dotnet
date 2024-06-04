@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties and inherited properties for Win32 apps.
     /// </summary>
-    public class Win32LobApp : MobileLobApp, IParsable
+    public class Win32LobApp : Microsoft.Graph.Models.MobileLobApp, IParsable
     {
         /// <summary>Contains properties for Windows architecture.</summary>
-        public WindowsArchitecture? ApplicableArchitectures
+        public Microsoft.Graph.Models.WindowsArchitecture? ApplicableArchitectures
         {
-            get { return BackingStore?.Get<WindowsArchitecture?>("applicableArchitectures"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsArchitecture?>("applicableArchitectures"); }
             set { BackingStore?.Set("applicableArchitectures", value); }
         }
         /// <summary>The command line to install this app</summary>
@@ -36,16 +36,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The install experience for this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Win32LobAppInstallExperience? InstallExperience
+        public Microsoft.Graph.Models.Win32LobAppInstallExperience? InstallExperience
         {
-            get { return BackingStore?.Get<Win32LobAppInstallExperience?>("installExperience"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Win32LobAppInstallExperience?>("installExperience"); }
             set { BackingStore?.Set("installExperience", value); }
         }
 #nullable restore
 #else
-        public Win32LobAppInstallExperience InstallExperience
+        public Microsoft.Graph.Models.Win32LobAppInstallExperience InstallExperience
         {
-            get { return BackingStore?.Get<Win32LobAppInstallExperience>("installExperience"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Win32LobAppInstallExperience>("installExperience"); }
             set { BackingStore?.Set("installExperience", value); }
         }
 #endif
@@ -92,48 +92,48 @@ namespace Microsoft.Graph.Models
         /// <summary>The MSI details if this Win32 app is an MSI app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Win32LobAppMsiInformation? MsiInformation
+        public Microsoft.Graph.Models.Win32LobAppMsiInformation? MsiInformation
         {
-            get { return BackingStore?.Get<Win32LobAppMsiInformation?>("msiInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Win32LobAppMsiInformation?>("msiInformation"); }
             set { BackingStore?.Set("msiInformation", value); }
         }
 #nullable restore
 #else
-        public Win32LobAppMsiInformation MsiInformation
+        public Microsoft.Graph.Models.Win32LobAppMsiInformation MsiInformation
         {
-            get { return BackingStore?.Get<Win32LobAppMsiInformation>("msiInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Win32LobAppMsiInformation>("msiInformation"); }
             set { BackingStore?.Set("msiInformation", value); }
         }
 #endif
         /// <summary>The return codes for post installation behavior.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Win32LobAppReturnCode>? ReturnCodes
+        public List<Microsoft.Graph.Models.Win32LobAppReturnCode>? ReturnCodes
         {
-            get { return BackingStore?.Get<List<Win32LobAppReturnCode>?>("returnCodes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Win32LobAppReturnCode>?>("returnCodes"); }
             set { BackingStore?.Set("returnCodes", value); }
         }
 #nullable restore
 #else
-        public List<Win32LobAppReturnCode> ReturnCodes
+        public List<Microsoft.Graph.Models.Win32LobAppReturnCode> ReturnCodes
         {
-            get { return BackingStore?.Get<List<Win32LobAppReturnCode>>("returnCodes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Win32LobAppReturnCode>>("returnCodes"); }
             set { BackingStore?.Set("returnCodes", value); }
         }
 #endif
         /// <summary>The detection and requirement rules for this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Win32LobAppRule>? Rules
+        public List<Microsoft.Graph.Models.Win32LobAppRule>? Rules
         {
-            get { return BackingStore?.Get<List<Win32LobAppRule>?>("rules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Win32LobAppRule>?>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
 #nullable restore
 #else
-        public List<Win32LobAppRule> Rules
+        public List<Microsoft.Graph.Models.Win32LobAppRule> Rules
         {
-            get { return BackingStore?.Get<List<Win32LobAppRule>>("rules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Win32LobAppRule>>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
 #endif
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Win32LobApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Win32LobApp"/> and sets the default values.
         /// </summary>
         public Win32LobApp() : base()
         {
@@ -179,12 +179,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Win32LobApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Win32LobApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Win32LobApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Win32LobApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Win32LobApp();
+            return new Microsoft.Graph.Models.Win32LobApp();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -194,17 +194,17 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<WindowsArchitecture>(); } },
+                { "applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<Microsoft.Graph.Models.WindowsArchitecture>(); } },
                 { "installCommandLine", n => { InstallCommandLine = n.GetStringValue(); } },
-                { "installExperience", n => { InstallExperience = n.GetObjectValue<Win32LobAppInstallExperience>(Win32LobAppInstallExperience.CreateFromDiscriminatorValue); } },
+                { "installExperience", n => { InstallExperience = n.GetObjectValue<Microsoft.Graph.Models.Win32LobAppInstallExperience>(Microsoft.Graph.Models.Win32LobAppInstallExperience.CreateFromDiscriminatorValue); } },
                 { "minimumCpuSpeedInMHz", n => { MinimumCpuSpeedInMHz = n.GetIntValue(); } },
                 { "minimumFreeDiskSpaceInMB", n => { MinimumFreeDiskSpaceInMB = n.GetIntValue(); } },
                 { "minimumMemoryInMB", n => { MinimumMemoryInMB = n.GetIntValue(); } },
                 { "minimumNumberOfProcessors", n => { MinimumNumberOfProcessors = n.GetIntValue(); } },
                 { "minimumSupportedWindowsRelease", n => { MinimumSupportedWindowsRelease = n.GetStringValue(); } },
-                { "msiInformation", n => { MsiInformation = n.GetObjectValue<Win32LobAppMsiInformation>(Win32LobAppMsiInformation.CreateFromDiscriminatorValue); } },
-                { "returnCodes", n => { ReturnCodes = n.GetCollectionOfObjectValues<Win32LobAppReturnCode>(Win32LobAppReturnCode.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "rules", n => { Rules = n.GetCollectionOfObjectValues<Win32LobAppRule>(Win32LobAppRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "msiInformation", n => { MsiInformation = n.GetObjectValue<Microsoft.Graph.Models.Win32LobAppMsiInformation>(Microsoft.Graph.Models.Win32LobAppMsiInformation.CreateFromDiscriminatorValue); } },
+                { "returnCodes", n => { ReturnCodes = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Win32LobAppReturnCode>(Microsoft.Graph.Models.Win32LobAppReturnCode.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Win32LobAppRule>(Microsoft.Graph.Models.Win32LobAppRule.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "setupFilePath", n => { SetupFilePath = n.GetStringValue(); } },
                 { "uninstallCommandLine", n => { UninstallCommandLine = n.GetStringValue(); } },
             };
@@ -217,17 +217,17 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<WindowsArchitecture>("applicableArchitectures", ApplicableArchitectures);
+            writer.WriteEnumValue<Microsoft.Graph.Models.WindowsArchitecture>("applicableArchitectures", ApplicableArchitectures);
             writer.WriteStringValue("installCommandLine", InstallCommandLine);
-            writer.WriteObjectValue<Win32LobAppInstallExperience>("installExperience", InstallExperience);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Win32LobAppInstallExperience>("installExperience", InstallExperience);
             writer.WriteIntValue("minimumCpuSpeedInMHz", MinimumCpuSpeedInMHz);
             writer.WriteIntValue("minimumFreeDiskSpaceInMB", MinimumFreeDiskSpaceInMB);
             writer.WriteIntValue("minimumMemoryInMB", MinimumMemoryInMB);
             writer.WriteIntValue("minimumNumberOfProcessors", MinimumNumberOfProcessors);
             writer.WriteStringValue("minimumSupportedWindowsRelease", MinimumSupportedWindowsRelease);
-            writer.WriteObjectValue<Win32LobAppMsiInformation>("msiInformation", MsiInformation);
-            writer.WriteCollectionOfObjectValues<Win32LobAppReturnCode>("returnCodes", ReturnCodes);
-            writer.WriteCollectionOfObjectValues<Win32LobAppRule>("rules", Rules);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Win32LobAppMsiInformation>("msiInformation", MsiInformation);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Win32LobAppReturnCode>("returnCodes", ReturnCodes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Win32LobAppRule>("rules", Rules);
             writer.WriteStringValue("setupFilePath", SetupFilePath);
             writer.WriteStringValue("uninstallCommandLine", UninstallCommandLine);
         }

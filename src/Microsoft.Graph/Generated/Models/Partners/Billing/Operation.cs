@@ -23,26 +23,26 @@ namespace Microsoft.Graph.Models.Partners.Billing
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The status of the operation. Possible values are: notStarted, running, completed, failed, unknownFutureValue.</summary>
-        public LongRunningOperationStatus? Status
+        public Microsoft.Graph.Models.LongRunningOperationStatus? Status
         {
-            get { return BackingStore?.Get<LongRunningOperationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.LongRunningOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Operation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Partners.Billing.Operation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Operation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Partners.Billing.Operation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.partners.billing.exportSuccessOperation" => new ExportSuccessOperation(),
-                "#microsoft.graph.partners.billing.failedOperation" => new FailedOperation(),
-                "#microsoft.graph.partners.billing.runningOperation" => new RunningOperation(),
-                _ => new Operation(),
+                "#microsoft.graph.partners.billing.exportSuccessOperation" => new Microsoft.Graph.Models.Partners.Billing.ExportSuccessOperation(),
+                "#microsoft.graph.partners.billing.failedOperation" => new Microsoft.Graph.Models.Partners.Billing.FailedOperation(),
+                "#microsoft.graph.partners.billing.runningOperation" => new Microsoft.Graph.Models.Partners.Billing.RunningOperation(),
+                _ => new Microsoft.Graph.Models.Partners.Billing.Operation(),
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models.Partners.Billing
             {
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<LongRunningOperationStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.LongRunningOperationStatus>(); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models.Partners.Billing
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
-            writer.WriteEnumValue<LongRunningOperationStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.LongRunningOperationStatus>("status", Status);
         }
     }
 }

@@ -21,16 +21,16 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.SendVirtualAppointm
         /// <summary>The attendees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttendeeNotificationInfo>? Attendees
+        public List<Microsoft.Graph.Models.AttendeeNotificationInfo>? Attendees
         {
-            get { return BackingStore?.Get<List<AttendeeNotificationInfo>?>("attendees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttendeeNotificationInfo>?>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
 #nullable restore
 #else
-        public List<AttendeeNotificationInfo> Attendees
+        public List<Microsoft.Graph.Models.AttendeeNotificationInfo> Attendees
         {
-            get { return BackingStore?.Get<List<AttendeeNotificationInfo>>("attendees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttendeeNotificationInfo>>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
 #endif
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.SendVirtualAppointm
             set { BackingStore?.Set("remindBeforeTimeInMinutesType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SendVirtualAppointmentReminderSmsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Communications.OnlineMeetings.Item.SendVirtualAppointmentReminderSms.SendVirtualAppointmentReminderSmsPostRequestBody"/> and sets the default values.
         /// </summary>
         public SendVirtualAppointmentReminderSmsPostRequestBody()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.SendVirtualAppointm
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SendVirtualAppointmentReminderSmsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Communications.OnlineMeetings.Item.SendVirtualAppointmentReminderSms.SendVirtualAppointmentReminderSmsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SendVirtualAppointmentReminderSmsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Communications.OnlineMeetings.Item.SendVirtualAppointmentReminderSms.SendVirtualAppointmentReminderSmsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SendVirtualAppointmentReminderSmsPostRequestBody();
+            return new Microsoft.Graph.Communications.OnlineMeetings.Item.SendVirtualAppointmentReminderSms.SendVirtualAppointmentReminderSmsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.SendVirtualAppointm
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attendees", n => { Attendees = n.GetCollectionOfObjectValues<AttendeeNotificationInfo>(AttendeeNotificationInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "remindBeforeTimeInMinutesType", n => { RemindBeforeTimeInMinutesType = n.GetEnumValue<RemindBeforeTimeInMinutesType>(); } },
+                { "attendees", n => { Attendees = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AttendeeNotificationInfo>(Microsoft.Graph.Models.AttendeeNotificationInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "remindBeforeTimeInMinutesType", n => { RemindBeforeTimeInMinutesType = n.GetEnumValue<Microsoft.Graph.Models.RemindBeforeTimeInMinutesType>(); } },
             };
         }
         /// <summary>
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.SendVirtualAppointm
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<AttendeeNotificationInfo>("attendees", Attendees);
-            writer.WriteEnumValue<RemindBeforeTimeInMinutesType>("remindBeforeTimeInMinutesType", RemindBeforeTimeInMinutesType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AttendeeNotificationInfo>("attendees", Attendees);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RemindBeforeTimeInMinutesType>("remindBeforeTimeInMinutesType", RemindBeforeTimeInMinutesType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

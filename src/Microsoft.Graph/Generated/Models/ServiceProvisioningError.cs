@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ServiceProvisioningError"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ServiceProvisioningError"/> and sets the default values.
         /// </summary>
         public ServiceProvisioningError()
         {
@@ -74,16 +74,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ServiceProvisioningError"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ServiceProvisioningError"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ServiceProvisioningError CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ServiceProvisioningError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.serviceProvisioningXmlError" => new ServiceProvisioningXmlError(),
-                _ => new ServiceProvisioningError(),
+                "#microsoft.graph.serviceProvisioningXmlError" => new Microsoft.Graph.Models.ServiceProvisioningXmlError(),
+                _ => new Microsoft.Graph.Models.ServiceProvisioningError(),
             };
         }
         /// <summary>

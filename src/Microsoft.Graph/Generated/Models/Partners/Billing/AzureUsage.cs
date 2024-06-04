@@ -13,44 +13,44 @@ namespace Microsoft.Graph.Models.Partners.Billing
         /// <summary>The billed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BilledUsage? Billed
+        public Microsoft.Graph.Models.Partners.Billing.BilledUsage? Billed
         {
-            get { return BackingStore?.Get<BilledUsage?>("billed"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Partners.Billing.BilledUsage?>("billed"); }
             set { BackingStore?.Set("billed", value); }
         }
 #nullable restore
 #else
-        public BilledUsage Billed
+        public Microsoft.Graph.Models.Partners.Billing.BilledUsage Billed
         {
-            get { return BackingStore?.Get<BilledUsage>("billed"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Partners.Billing.BilledUsage>("billed"); }
             set { BackingStore?.Set("billed", value); }
         }
 #endif
         /// <summary>The unbilled property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnbilledUsage? Unbilled
+        public Microsoft.Graph.Models.Partners.Billing.UnbilledUsage? Unbilled
         {
-            get { return BackingStore?.Get<UnbilledUsage?>("unbilled"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Partners.Billing.UnbilledUsage?>("unbilled"); }
             set { BackingStore?.Set("unbilled", value); }
         }
 #nullable restore
 #else
-        public UnbilledUsage Unbilled
+        public Microsoft.Graph.Models.Partners.Billing.UnbilledUsage Unbilled
         {
-            get { return BackingStore?.Get<UnbilledUsage>("unbilled"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Partners.Billing.UnbilledUsage>("unbilled"); }
             set { BackingStore?.Set("unbilled", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AzureUsage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Partners.Billing.AzureUsage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AzureUsage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Partners.Billing.AzureUsage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AzureUsage();
+            return new Microsoft.Graph.Models.Partners.Billing.AzureUsage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Models.Partners.Billing
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "billed", n => { Billed = n.GetObjectValue<BilledUsage>(BilledUsage.CreateFromDiscriminatorValue); } },
-                { "unbilled", n => { Unbilled = n.GetObjectValue<UnbilledUsage>(UnbilledUsage.CreateFromDiscriminatorValue); } },
+                { "billed", n => { Billed = n.GetObjectValue<Microsoft.Graph.Models.Partners.Billing.BilledUsage>(Microsoft.Graph.Models.Partners.Billing.BilledUsage.CreateFromDiscriminatorValue); } },
+                { "unbilled", n => { Unbilled = n.GetObjectValue<Microsoft.Graph.Models.Partners.Billing.UnbilledUsage>(Microsoft.Graph.Models.Partners.Billing.UnbilledUsage.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Models.Partners.Billing
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<BilledUsage>("billed", Billed);
-            writer.WriteObjectValue<UnbilledUsage>("unbilled", Unbilled);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Partners.Billing.BilledUsage>("billed", Billed);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Partners.Billing.UnbilledUsage>("unbilled", Unbilled);
         }
     }
 }

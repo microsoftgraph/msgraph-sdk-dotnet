@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class IdentitySecurityDefaultsEnforcementPolicy : PolicyBase, IParsable
+    public class IdentitySecurityDefaultsEnforcementPolicy : Microsoft.Graph.Models.PolicyBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>If set to true, Microsoft Entra security defaults are enabled for the tenant.</summary>
@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IdentitySecurityDefaultsEnforcementPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy"/> and sets the default values.
         /// </summary>
         public IdentitySecurityDefaultsEnforcementPolicy() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IdentitySecurityDefaultsEnforcementPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IdentitySecurityDefaultsEnforcementPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IdentitySecurityDefaultsEnforcementPolicy();
+            return new Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model

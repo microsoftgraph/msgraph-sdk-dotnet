@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Me.Calendars.Item.CalendarView.Item.Accept
             set { BackingStore?.Set("SendResponse", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AcceptPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Calendars.Item.CalendarView.Item.Accept.AcceptPostRequestBody"/> and sets the default values.
         /// </summary>
         public AcceptPostRequestBody()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Me.Calendars.Item.CalendarView.Item.Accept
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AcceptPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Calendars.Item.CalendarView.Item.Accept.AcceptPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AcceptPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Me.Calendars.Item.CalendarView.Item.Accept.AcceptPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AcceptPostRequestBody();
+            return new Microsoft.Graph.Me.Calendars.Item.CalendarView.Item.Accept.AcceptPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

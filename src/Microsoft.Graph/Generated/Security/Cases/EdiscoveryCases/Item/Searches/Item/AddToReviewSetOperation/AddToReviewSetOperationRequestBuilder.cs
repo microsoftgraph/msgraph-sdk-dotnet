@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.AddT
     public class AddToReviewSetOperationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="AddToReviewSetOperationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.AddToReviewSetOperation.AddToReviewSetOperationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.AddT
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AddToReviewSetOperationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.AddToReviewSetOperation.AddToReviewSetOperationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.AddT
         /// <summary>
         /// Adds the results of the eDiscovery search to the specified reviewSet.
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryAddToReviewSetOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.EdiscoveryAddToReviewSetOperation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EdiscoveryAddToReviewSetOperation?> GetAsync(Action<RequestConfiguration<AddToReviewSetOperationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.EdiscoveryAddToReviewSetOperation?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.AddToReviewSetOperation.AddToReviewSetOperationRequestBuilder.AddToReviewSetOperationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EdiscoveryAddToReviewSetOperation> GetAsync(Action<RequestConfiguration<AddToReviewSetOperationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.EdiscoveryAddToReviewSetOperation> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.AddToReviewSetOperation.AddToReviewSetOperationRequestBuilder.AddToReviewSetOperationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EdiscoveryAddToReviewSetOperation>(requestInfo, EdiscoveryAddToReviewSetOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.EdiscoveryAddToReviewSetOperation>(requestInfo, Microsoft.Graph.Models.Security.EdiscoveryAddToReviewSetOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Adds the results of the eDiscovery search to the specified reviewSet.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.AddT
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AddToReviewSetOperationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.AddToReviewSetOperation.AddToReviewSetOperationRequestBuilder.AddToReviewSetOperationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AddToReviewSetOperationRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.AddToReviewSetOperation.AddToReviewSetOperationRequestBuilder.AddToReviewSetOperationRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.AddT
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AddToReviewSetOperationRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.AddToReviewSetOperation.AddToReviewSetOperationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AddToReviewSetOperationRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.AddToReviewSetOperation.AddToReviewSetOperationRequestBuilder WithUrl(string rawUrl)
         {
-            return new AddToReviewSetOperationRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.AddToReviewSetOperation.AddToReviewSetOperationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Adds the results of the eDiscovery search to the specified reviewSet.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.AddT
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AddToReviewSetOperationRequestBuilderGetRequestConfiguration : RequestConfiguration<AddToReviewSetOperationRequestBuilderGetQueryParameters>
+        public class AddToReviewSetOperationRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.AddToReviewSetOperation.AddToReviewSetOperationRequestBuilder.AddToReviewSetOperationRequestBuilderGetQueryParameters>
         {
         }
     }

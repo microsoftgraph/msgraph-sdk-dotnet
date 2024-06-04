@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ResultTemplateOption"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ResultTemplateOption"/> and sets the default values.
         /// </summary>
         public ResultTemplateOption()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ResultTemplateOption"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ResultTemplateOption"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ResultTemplateOption CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ResultTemplateOption CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ResultTemplateOption();
+            return new Microsoft.Graph.Models.ResultTemplateOption();
         }
         /// <summary>
         /// The deserialization information for the current model

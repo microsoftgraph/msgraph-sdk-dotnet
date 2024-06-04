@@ -8,54 +8,54 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Site : BaseItem, IParsable
+    public class Site : Microsoft.Graph.Models.BaseItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Analytics about the view activities that took place on this site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemAnalytics? Analytics
+        public Microsoft.Graph.Models.ItemAnalytics? Analytics
         {
-            get { return BackingStore?.Get<ItemAnalytics?>("analytics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemAnalytics?>("analytics"); }
             set { BackingStore?.Set("analytics", value); }
         }
 #nullable restore
 #else
-        public ItemAnalytics Analytics
+        public Microsoft.Graph.Models.ItemAnalytics Analytics
         {
-            get { return BackingStore?.Get<ItemAnalytics>("analytics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemAnalytics>("analytics"); }
             set { BackingStore?.Set("analytics", value); }
         }
 #endif
         /// <summary>The collection of column definitions reusable across lists under this site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ColumnDefinition>? Columns
+        public List<Microsoft.Graph.Models.ColumnDefinition>? Columns
         {
-            get { return BackingStore?.Get<List<ColumnDefinition>?>("columns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ColumnDefinition>?>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
 #nullable restore
 #else
-        public List<ColumnDefinition> Columns
+        public List<Microsoft.Graph.Models.ColumnDefinition> Columns
         {
-            get { return BackingStore?.Get<List<ColumnDefinition>>("columns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ColumnDefinition>>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
 #endif
         /// <summary>The collection of content types defined for this site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ContentType>? ContentTypes
+        public List<Microsoft.Graph.Models.ContentType>? ContentTypes
         {
-            get { return BackingStore?.Get<List<ContentType>?>("contentTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ContentType>?>("contentTypes"); }
             set { BackingStore?.Set("contentTypes", value); }
         }
 #nullable restore
 #else
-        public List<ContentType> ContentTypes
+        public List<Microsoft.Graph.Models.ContentType> ContentTypes
         {
-            get { return BackingStore?.Get<List<ContentType>>("contentTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ContentType>>("contentTypes"); }
             set { BackingStore?.Set("contentTypes", value); }
         }
 #endif
@@ -110,32 +110,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PublicError? Error
+        public Microsoft.Graph.Models.PublicError? Error
         {
-            get { return BackingStore?.Get<PublicError?>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PublicError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public PublicError Error
+        public Microsoft.Graph.Models.PublicError Error
         {
-            get { return BackingStore?.Get<PublicError>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PublicError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #endif
         /// <summary>The externalColumns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ColumnDefinition>? ExternalColumns
+        public List<Microsoft.Graph.Models.ColumnDefinition>? ExternalColumns
         {
-            get { return BackingStore?.Get<List<ColumnDefinition>?>("externalColumns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ColumnDefinition>?>("externalColumns"); }
             set { BackingStore?.Set("externalColumns", value); }
         }
 #nullable restore
 #else
-        public List<ColumnDefinition> ExternalColumns
+        public List<Microsoft.Graph.Models.ColumnDefinition> ExternalColumns
         {
-            get { return BackingStore?.Get<List<ColumnDefinition>>("externalColumns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ColumnDefinition>>("externalColumns"); }
             set { BackingStore?.Set("externalColumns", value); }
         }
 #endif
@@ -148,32 +148,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Used to address any item contained in this site. This collection can&apos;t be enumerated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BaseItem>? Items
+        public List<Microsoft.Graph.Models.BaseItem>? Items
         {
-            get { return BackingStore?.Get<List<BaseItem>?>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BaseItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<BaseItem> Items
+        public List<Microsoft.Graph.Models.BaseItem> Items
         {
-            get { return BackingStore?.Get<List<BaseItem>>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BaseItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #endif
         /// <summary>The collection of lists under this site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<List>? Lists
+        public List<Microsoft.Graph.Models.List>? Lists
         {
-            get { return BackingStore?.Get<List<List>?>("lists"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.List>?>("lists"); }
             set { BackingStore?.Set("lists", value); }
         }
 #nullable restore
 #else
-        public List<List> Lists
+        public List<Microsoft.Graph.Models.List> Lists
         {
-            get { return BackingStore?.Get<List<List>>("lists"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.List>>("lists"); }
             set { BackingStore?.Set("lists", value); }
         }
 #endif
@@ -196,48 +196,48 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of long-running operations on the site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RichLongRunningOperation>? Operations
+        public List<Microsoft.Graph.Models.RichLongRunningOperation>? Operations
         {
-            get { return BackingStore?.Get<List<RichLongRunningOperation>?>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.RichLongRunningOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<RichLongRunningOperation> Operations
+        public List<Microsoft.Graph.Models.RichLongRunningOperation> Operations
         {
-            get { return BackingStore?.Get<List<RichLongRunningOperation>>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.RichLongRunningOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #endif
         /// <summary>The collection of pages in the baseSitePages list in this site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BaseSitePage>? Pages
+        public List<Microsoft.Graph.Models.BaseSitePage>? Pages
         {
-            get { return BackingStore?.Get<List<BaseSitePage>?>("pages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BaseSitePage>?>("pages"); }
             set { BackingStore?.Set("pages", value); }
         }
 #nullable restore
 #else
-        public List<BaseSitePage> Pages
+        public List<Microsoft.Graph.Models.BaseSitePage> Pages
         {
-            get { return BackingStore?.Get<List<BaseSitePage>>("pages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BaseSitePage>>("pages"); }
             set { BackingStore?.Set("pages", value); }
         }
 #endif
         /// <summary>The permissions associated with the site. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Permission>? Permissions
+        public List<Microsoft.Graph.Models.Permission>? Permissions
         {
-            get { return BackingStore?.Get<List<Permission>?>("permissions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Permission>?>("permissions"); }
             set { BackingStore?.Set("permissions", value); }
         }
 #nullable restore
 #else
-        public List<Permission> Permissions
+        public List<Microsoft.Graph.Models.Permission> Permissions
         {
-            get { return BackingStore?.Get<List<Permission>>("permissions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Permission>>("permissions"); }
             set { BackingStore?.Set("permissions", value); }
         }
 #endif
@@ -292,53 +292,53 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of the sub-sites under this site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Site>? Sites
+        public List<Microsoft.Graph.Models.Site>? Sites
         {
-            get { return BackingStore?.Get<List<Site>?>("sites"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Site>?>("sites"); }
             set { BackingStore?.Set("sites", value); }
         }
 #nullable restore
 #else
-        public List<Site> Sites
+        public List<Microsoft.Graph.Models.Site> Sites
         {
-            get { return BackingStore?.Get<List<Site>>("sites"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Site>>("sites"); }
             set { BackingStore?.Set("sites", value); }
         }
 #endif
         /// <summary>The default termStore under this site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Store? TermStore
+        public Microsoft.Graph.Models.TermStore.Store? TermStore
         {
-            get { return BackingStore?.Get<Store?>("termStore"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TermStore.Store?>("termStore"); }
             set { BackingStore?.Set("termStore", value); }
         }
 #nullable restore
 #else
-        public Store TermStore
+        public Microsoft.Graph.Models.TermStore.Store TermStore
         {
-            get { return BackingStore?.Get<Store>("termStore"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TermStore.Store>("termStore"); }
             set { BackingStore?.Set("termStore", value); }
         }
 #endif
         /// <summary>The collection of termStores under this site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Store>? TermStores
+        public List<Microsoft.Graph.Models.TermStore.Store>? TermStores
         {
-            get { return BackingStore?.Get<List<Store>?>("termStores"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.Store>?>("termStores"); }
             set { BackingStore?.Set("termStores", value); }
         }
 #nullable restore
 #else
-        public List<Store> TermStores
+        public List<Microsoft.Graph.Models.TermStore.Store> TermStores
         {
-            get { return BackingStore?.Get<List<Store>>("termStores"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.Store>>("termStores"); }
             set { BackingStore?.Set("termStores", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Site"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Site"/> and sets the default values.
         /// </summary>
         public Site() : base()
         {
@@ -347,12 +347,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Site"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Site"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Site CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Site CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Site();
+            return new Microsoft.Graph.Models.Site();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -362,27 +362,27 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "analytics", n => { Analytics = n.GetObjectValue<ItemAnalytics>(ItemAnalytics.CreateFromDiscriminatorValue); } },
-                { "columns", n => { Columns = n.GetCollectionOfObjectValues<ColumnDefinition>(ColumnDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "contentTypes", n => { ContentTypes = n.GetCollectionOfObjectValues<ContentType>(ContentType.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "analytics", n => { Analytics = n.GetObjectValue<Microsoft.Graph.Models.ItemAnalytics>(Microsoft.Graph.Models.ItemAnalytics.CreateFromDiscriminatorValue); } },
+                { "columns", n => { Columns = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ColumnDefinition>(Microsoft.Graph.Models.ColumnDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contentTypes", n => { ContentTypes = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ContentType>(Microsoft.Graph.Models.ContentType.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "drive", n => { Drive = n.GetObjectValue<Microsoft.Graph.Models.Drive>(Microsoft.Graph.Models.Drive.CreateFromDiscriminatorValue); } },
                 { "drives", n => { Drives = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Drive>(Microsoft.Graph.Models.Drive.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "error", n => { Error = n.GetObjectValue<PublicError>(PublicError.CreateFromDiscriminatorValue); } },
-                { "externalColumns", n => { ExternalColumns = n.GetCollectionOfObjectValues<ColumnDefinition>(ColumnDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "error", n => { Error = n.GetObjectValue<Microsoft.Graph.Models.PublicError>(Microsoft.Graph.Models.PublicError.CreateFromDiscriminatorValue); } },
+                { "externalColumns", n => { ExternalColumns = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ColumnDefinition>(Microsoft.Graph.Models.ColumnDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isPersonalSite", n => { IsPersonalSite = n.GetBoolValue(); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<BaseItem>(BaseItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "lists", n => { Lists = n.GetCollectionOfObjectValues<List>(List.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.BaseItem>(Microsoft.Graph.Models.BaseItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lists", n => { Lists = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.List>(Microsoft.Graph.Models.List.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "onenote", n => { Onenote = n.GetObjectValue<Microsoft.Graph.Models.Onenote>(Microsoft.Graph.Models.Onenote.CreateFromDiscriminatorValue); } },
-                { "operations", n => { Operations = n.GetCollectionOfObjectValues<RichLongRunningOperation>(RichLongRunningOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "pages", n => { Pages = n.GetCollectionOfObjectValues<BaseSitePage>(BaseSitePage.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<Permission>(Permission.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.RichLongRunningOperation>(Microsoft.Graph.Models.RichLongRunningOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "pages", n => { Pages = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.BaseSitePage>(Microsoft.Graph.Models.BaseSitePage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Permission>(Microsoft.Graph.Models.Permission.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "root", n => { Root = n.GetObjectValue<Microsoft.Graph.Models.Root>(Microsoft.Graph.Models.Root.CreateFromDiscriminatorValue); } },
                 { "sharepointIds", n => { SharepointIds = n.GetObjectValue<Microsoft.Graph.Models.SharepointIds>(Microsoft.Graph.Models.SharepointIds.CreateFromDiscriminatorValue); } },
                 { "siteCollection", n => { SiteCollection = n.GetObjectValue<Microsoft.Graph.Models.SiteCollection>(Microsoft.Graph.Models.SiteCollection.CreateFromDiscriminatorValue); } },
-                { "sites", n => { Sites = n.GetCollectionOfObjectValues<Site>(Site.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "termStore", n => { TermStore = n.GetObjectValue<Store>(Store.CreateFromDiscriminatorValue); } },
-                { "termStores", n => { TermStores = n.GetCollectionOfObjectValues<Store>(Store.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sites", n => { Sites = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Site>(Microsoft.Graph.Models.Site.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "termStore", n => { TermStore = n.GetObjectValue<Microsoft.Graph.Models.TermStore.Store>(Microsoft.Graph.Models.TermStore.Store.CreateFromDiscriminatorValue); } },
+                { "termStores", n => { TermStores = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.Store>(Microsoft.Graph.Models.TermStore.Store.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -393,27 +393,27 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ItemAnalytics>("analytics", Analytics);
-            writer.WriteCollectionOfObjectValues<ColumnDefinition>("columns", Columns);
-            writer.WriteCollectionOfObjectValues<ContentType>("contentTypes", ContentTypes);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemAnalytics>("analytics", Analytics);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ColumnDefinition>("columns", Columns);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ContentType>("contentTypes", ContentTypes);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<Microsoft.Graph.Models.Drive>("drive", Drive);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Drive>("drives", Drives);
-            writer.WriteObjectValue<PublicError>("error", Error);
-            writer.WriteCollectionOfObjectValues<ColumnDefinition>("externalColumns", ExternalColumns);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PublicError>("error", Error);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ColumnDefinition>("externalColumns", ExternalColumns);
             writer.WriteBoolValue("isPersonalSite", IsPersonalSite);
-            writer.WriteCollectionOfObjectValues<BaseItem>("items", Items);
-            writer.WriteCollectionOfObjectValues<List>("lists", Lists);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.BaseItem>("items", Items);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.List>("lists", Lists);
             writer.WriteObjectValue<Microsoft.Graph.Models.Onenote>("onenote", Onenote);
-            writer.WriteCollectionOfObjectValues<RichLongRunningOperation>("operations", Operations);
-            writer.WriteCollectionOfObjectValues<BaseSitePage>("pages", Pages);
-            writer.WriteCollectionOfObjectValues<Permission>("permissions", Permissions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.RichLongRunningOperation>("operations", Operations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.BaseSitePage>("pages", Pages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Permission>("permissions", Permissions);
             writer.WriteObjectValue<Microsoft.Graph.Models.Root>("root", Root);
             writer.WriteObjectValue<Microsoft.Graph.Models.SharepointIds>("sharepointIds", SharepointIds);
             writer.WriteObjectValue<Microsoft.Graph.Models.SiteCollection>("siteCollection", SiteCollection);
-            writer.WriteCollectionOfObjectValues<Site>("sites", Sites);
-            writer.WriteObjectValue<Store>("termStore", TermStore);
-            writer.WriteCollectionOfObjectValues<Store>("termStores", TermStores);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Site>("sites", Sites);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TermStore.Store>("termStore", TermStore);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.Store>("termStores", TermStores);
         }
     }
 }

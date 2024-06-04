@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Applications which trigger a custom authentication extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationConditionsApplications? Applications
+        public Microsoft.Graph.Models.AuthenticationConditionsApplications? Applications
         {
-            get { return BackingStore?.Get<AuthenticationConditionsApplications?>("applications"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationConditionsApplications?>("applications"); }
             set { BackingStore?.Set("applications", value); }
         }
 #nullable restore
 #else
-        public AuthenticationConditionsApplications Applications
+        public Microsoft.Graph.Models.AuthenticationConditionsApplications Applications
         {
-            get { return BackingStore?.Get<AuthenticationConditionsApplications>("applications"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationConditionsApplications>("applications"); }
             set { BackingStore?.Set("applications", value); }
         }
 #endif
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationConditions"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AuthenticationConditions"/> and sets the default values.
         /// </summary>
         public AuthenticationConditions()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationConditions"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationConditions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AuthenticationConditions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AuthenticationConditions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationConditions();
+            return new Microsoft.Graph.Models.AuthenticationConditions();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "applications", n => { Applications = n.GetObjectValue<AuthenticationConditionsApplications>(AuthenticationConditionsApplications.CreateFromDiscriminatorValue); } },
+                { "applications", n => { Applications = n.GetObjectValue<Microsoft.Graph.Models.AuthenticationConditionsApplications>(Microsoft.Graph.Models.AuthenticationConditionsApplications.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<AuthenticationConditionsApplications>("applications", Applications);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AuthenticationConditionsApplications>("applications", Applications);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

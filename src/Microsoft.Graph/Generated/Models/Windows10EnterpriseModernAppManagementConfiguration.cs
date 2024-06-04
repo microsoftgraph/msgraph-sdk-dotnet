@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Windows10 Enterprise Modern App Management Configuration.
     /// </summary>
-    public class Windows10EnterpriseModernAppManagementConfiguration : DeviceConfiguration, IParsable
+    public class Windows10EnterpriseModernAppManagementConfiguration : Microsoft.Graph.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Indicates whether or not to uninstall a fixed list of built-in Windows apps.</summary>
         public bool? UninstallBuiltInApps
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("uninstallBuiltInApps", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Windows10EnterpriseModernAppManagementConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Windows10EnterpriseModernAppManagementConfiguration"/> and sets the default values.
         /// </summary>
         public Windows10EnterpriseModernAppManagementConfiguration() : base()
         {
@@ -27,12 +27,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows10EnterpriseModernAppManagementConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Windows10EnterpriseModernAppManagementConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows10EnterpriseModernAppManagementConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Windows10EnterpriseModernAppManagementConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Windows10EnterpriseModernAppManagementConfiguration();
+            return new Microsoft.Graph.Models.Windows10EnterpriseModernAppManagementConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

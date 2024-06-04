@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The identities of the recording initiator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Initiator
+        public Microsoft.Graph.Models.IdentitySet? Initiator
         {
-            get { return BackingStore?.Get<IdentitySet?>("initiator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Initiator
+        public Microsoft.Graph.Models.IdentitySet Initiator
         {
-            get { return BackingStore?.Get<IdentitySet>("initiator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
 #endif
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("recordingStatus", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RecordingInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.RecordingInfo"/> and sets the default values.
         /// </summary>
         public RecordingInfo()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RecordingInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RecordingInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RecordingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.RecordingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RecordingInfo();
+            return new Microsoft.Graph.Models.RecordingInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,9 +83,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "initiator", n => { Initiator = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recordingStatus", n => { RecordingStatus = n.GetEnumValue<RecordingStatus>(); } },
+                { "recordingStatus", n => { RecordingStatus = n.GetEnumValue<Microsoft.Graph.Models.RecordingStatus>(); } },
             };
         }
         /// <summary>
@@ -95,9 +95,9 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<IdentitySet>("initiator", Initiator);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("initiator", Initiator);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<RecordingStatus>("recordingStatus", RecordingStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RecordingStatus>("recordingStatus", RecordingStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

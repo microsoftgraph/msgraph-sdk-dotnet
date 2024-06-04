@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class DirectoryObject : Entity, IParsable
+    public class DirectoryObject : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Date and time when this object was deleted. Always null when the object hasn&apos;t been deleted.</summary>
@@ -19,46 +19,46 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DirectoryObject"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryObject"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DirectoryObject CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DirectoryObject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.activityBasedTimeoutPolicy" => new ActivityBasedTimeoutPolicy(),
-                "#microsoft.graph.administrativeUnit" => new AdministrativeUnit(),
-                "#microsoft.graph.application" => new Application(),
-                "#microsoft.graph.appManagementPolicy" => new AppManagementPolicy(),
-                "#microsoft.graph.appRoleAssignment" => new AppRoleAssignment(),
-                "#microsoft.graph.authorizationPolicy" => new AuthorizationPolicy(),
-                "#microsoft.graph.claimsMappingPolicy" => new ClaimsMappingPolicy(),
-                "#microsoft.graph.contract" => new Contract(),
-                "#microsoft.graph.crossTenantAccessPolicy" => new CrossTenantAccessPolicy(),
-                "#microsoft.graph.device" => new Device(),
-                "#microsoft.graph.directoryObjectPartnerReference" => new DirectoryObjectPartnerReference(),
-                "#microsoft.graph.directoryRole" => new DirectoryRole(),
-                "#microsoft.graph.directoryRoleTemplate" => new DirectoryRoleTemplate(),
-                "#microsoft.graph.endpoint" => new Endpoint(),
-                "#microsoft.graph.extensionProperty" => new ExtensionProperty(),
-                "#microsoft.graph.group" => new Group(),
-                "#microsoft.graph.groupSettingTemplate" => new GroupSettingTemplate(),
-                "#microsoft.graph.homeRealmDiscoveryPolicy" => new HomeRealmDiscoveryPolicy(),
-                "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new IdentitySecurityDefaultsEnforcementPolicy(),
-                "#microsoft.graph.multiTenantOrganizationMember" => new MultiTenantOrganizationMember(),
-                "#microsoft.graph.organization" => new Organization(),
-                "#microsoft.graph.orgContact" => new OrgContact(),
-                "#microsoft.graph.permissionGrantPolicy" => new PermissionGrantPolicy(),
-                "#microsoft.graph.policyBase" => new PolicyBase(),
-                "#microsoft.graph.resourceSpecificPermissionGrant" => new ResourceSpecificPermissionGrant(),
-                "#microsoft.graph.servicePrincipal" => new ServicePrincipal(),
-                "#microsoft.graph.stsPolicy" => new StsPolicy(),
-                "#microsoft.graph.tenantAppManagementPolicy" => new TenantAppManagementPolicy(),
-                "#microsoft.graph.tokenIssuancePolicy" => new TokenIssuancePolicy(),
-                "#microsoft.graph.tokenLifetimePolicy" => new TokenLifetimePolicy(),
-                "#microsoft.graph.user" => new User(),
-                _ => new DirectoryObject(),
+                "#microsoft.graph.activityBasedTimeoutPolicy" => new Microsoft.Graph.Models.ActivityBasedTimeoutPolicy(),
+                "#microsoft.graph.administrativeUnit" => new Microsoft.Graph.Models.AdministrativeUnit(),
+                "#microsoft.graph.application" => new Microsoft.Graph.Models.Application(),
+                "#microsoft.graph.appManagementPolicy" => new Microsoft.Graph.Models.AppManagementPolicy(),
+                "#microsoft.graph.appRoleAssignment" => new Microsoft.Graph.Models.AppRoleAssignment(),
+                "#microsoft.graph.authorizationPolicy" => new Microsoft.Graph.Models.AuthorizationPolicy(),
+                "#microsoft.graph.claimsMappingPolicy" => new Microsoft.Graph.Models.ClaimsMappingPolicy(),
+                "#microsoft.graph.contract" => new Microsoft.Graph.Models.Contract(),
+                "#microsoft.graph.crossTenantAccessPolicy" => new Microsoft.Graph.Models.CrossTenantAccessPolicy(),
+                "#microsoft.graph.device" => new Microsoft.Graph.Models.Device(),
+                "#microsoft.graph.directoryObjectPartnerReference" => new Microsoft.Graph.Models.DirectoryObjectPartnerReference(),
+                "#microsoft.graph.directoryRole" => new Microsoft.Graph.Models.DirectoryRole(),
+                "#microsoft.graph.directoryRoleTemplate" => new Microsoft.Graph.Models.DirectoryRoleTemplate(),
+                "#microsoft.graph.endpoint" => new Microsoft.Graph.Models.Endpoint(),
+                "#microsoft.graph.extensionProperty" => new Microsoft.Graph.Models.ExtensionProperty(),
+                "#microsoft.graph.group" => new Microsoft.Graph.Models.Group(),
+                "#microsoft.graph.groupSettingTemplate" => new Microsoft.Graph.Models.GroupSettingTemplate(),
+                "#microsoft.graph.homeRealmDiscoveryPolicy" => new Microsoft.Graph.Models.HomeRealmDiscoveryPolicy(),
+                "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy(),
+                "#microsoft.graph.multiTenantOrganizationMember" => new Microsoft.Graph.Models.MultiTenantOrganizationMember(),
+                "#microsoft.graph.organization" => new Microsoft.Graph.Models.Organization(),
+                "#microsoft.graph.orgContact" => new Microsoft.Graph.Models.OrgContact(),
+                "#microsoft.graph.permissionGrantPolicy" => new Microsoft.Graph.Models.PermissionGrantPolicy(),
+                "#microsoft.graph.policyBase" => new Microsoft.Graph.Models.PolicyBase(),
+                "#microsoft.graph.resourceSpecificPermissionGrant" => new Microsoft.Graph.Models.ResourceSpecificPermissionGrant(),
+                "#microsoft.graph.servicePrincipal" => new Microsoft.Graph.Models.ServicePrincipal(),
+                "#microsoft.graph.stsPolicy" => new Microsoft.Graph.Models.StsPolicy(),
+                "#microsoft.graph.tenantAppManagementPolicy" => new Microsoft.Graph.Models.TenantAppManagementPolicy(),
+                "#microsoft.graph.tokenIssuancePolicy" => new Microsoft.Graph.Models.TokenIssuancePolicy(),
+                "#microsoft.graph.tokenLifetimePolicy" => new Microsoft.Graph.Models.TokenLifetimePolicy(),
+                "#microsoft.graph.user" => new Microsoft.Graph.Models.User(),
+                _ => new Microsoft.Graph.Models.DirectoryObject(),
             };
         }
         /// <summary>

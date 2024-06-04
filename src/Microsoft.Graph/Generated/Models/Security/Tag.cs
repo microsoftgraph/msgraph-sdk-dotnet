@@ -67,16 +67,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Tag"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.Tag"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Tag CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.Tag CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.ediscoveryReviewTag" => new EdiscoveryReviewTag(),
-                _ => new Tag(),
+                "#microsoft.graph.security.ediscoveryReviewTag" => new Microsoft.Graph.Models.Security.EdiscoveryReviewTag(),
+                _ => new Microsoft.Graph.Models.Security.Tag(),
             };
         }
         /// <summary>

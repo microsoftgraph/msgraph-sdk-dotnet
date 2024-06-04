@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The type of the content. Possible values are text and html.</summary>
-        public BodyType? ContentType
+        public Microsoft.Graph.Models.BodyType? ContentType
         {
-            get { return BackingStore?.Get<BodyType?>("contentType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BodyType?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ItemBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ItemBody"/> and sets the default values.
         /// </summary>
         public ItemBody()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ItemBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ItemBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ItemBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ItemBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ItemBody();
+            return new Microsoft.Graph.Models.ItemBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content", n => { Content = n.GetStringValue(); } },
-                { "contentType", n => { ContentType = n.GetEnumValue<BodyType>(); } },
+                { "contentType", n => { ContentType = n.GetEnumValue<Microsoft.Graph.Models.BodyType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content", Content);
-            writer.WriteEnumValue<BodyType>("contentType", ContentType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.BodyType>("contentType", ContentType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

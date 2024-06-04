@@ -66,27 +66,27 @@ namespace Microsoft.Graph.Models
         /// <summary>Specifies the manual ranges to compute the aggregations. This is only valid for nonstring refiners of date or numeric type. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BucketAggregationRange>? Ranges
+        public List<Microsoft.Graph.Models.BucketAggregationRange>? Ranges
         {
-            get { return BackingStore?.Get<List<BucketAggregationRange>?>("ranges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BucketAggregationRange>?>("ranges"); }
             set { BackingStore?.Set("ranges", value); }
         }
 #nullable restore
 #else
-        public List<BucketAggregationRange> Ranges
+        public List<Microsoft.Graph.Models.BucketAggregationRange> Ranges
         {
-            get { return BackingStore?.Get<List<BucketAggregationRange>>("ranges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BucketAggregationRange>>("ranges"); }
             set { BackingStore?.Set("ranges", value); }
         }
 #endif
         /// <summary>The sortBy property</summary>
-        public BucketAggregationSortProperty? SortBy
+        public Microsoft.Graph.Models.BucketAggregationSortProperty? SortBy
         {
-            get { return BackingStore?.Get<BucketAggregationSortProperty?>("sortBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BucketAggregationSortProperty?>("sortBy"); }
             set { BackingStore?.Set("sortBy", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="BucketAggregationDefinition"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.BucketAggregationDefinition"/> and sets the default values.
         /// </summary>
         public BucketAggregationDefinition()
         {
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BucketAggregationDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BucketAggregationDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BucketAggregationDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.BucketAggregationDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BucketAggregationDefinition();
+            return new Microsoft.Graph.Models.BucketAggregationDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,8 +115,8 @@ namespace Microsoft.Graph.Models
                 { "minimumCount", n => { MinimumCount = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "prefixFilter", n => { PrefixFilter = n.GetStringValue(); } },
-                { "ranges", n => { Ranges = n.GetCollectionOfObjectValues<BucketAggregationRange>(BucketAggregationRange.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sortBy", n => { SortBy = n.GetEnumValue<BucketAggregationSortProperty>(); } },
+                { "ranges", n => { Ranges = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.BucketAggregationRange>(Microsoft.Graph.Models.BucketAggregationRange.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sortBy", n => { SortBy = n.GetEnumValue<Microsoft.Graph.Models.BucketAggregationSortProperty>(); } },
             };
         }
         /// <summary>
@@ -130,8 +130,8 @@ namespace Microsoft.Graph.Models
             writer.WriteIntValue("minimumCount", MinimumCount);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("prefixFilter", PrefixFilter);
-            writer.WriteCollectionOfObjectValues<BucketAggregationRange>("ranges", Ranges);
-            writer.WriteEnumValue<BucketAggregationSortProperty>("sortBy", SortBy);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.BucketAggregationRange>("ranges", Ranges);
+            writer.WriteEnumValue<Microsoft.Graph.Models.BucketAggregationSortProperty>("sortBy", SortBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class MultiTenantOrganizationIdentitySyncPolicyTemplate : Entity, IParsable
+    public class MultiTenantOrganizationIdentitySyncPolicyTemplate : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The templateApplicationLevel property</summary>
@@ -19,28 +19,28 @@ namespace Microsoft.Graph.Models
         /// <summary>Defines whether users can be synchronized from the partner tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CrossTenantUserSyncInbound? UserSyncInbound
+        public Microsoft.Graph.Models.CrossTenantUserSyncInbound? UserSyncInbound
         {
-            get { return BackingStore?.Get<CrossTenantUserSyncInbound?>("userSyncInbound"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CrossTenantUserSyncInbound?>("userSyncInbound"); }
             set { BackingStore?.Set("userSyncInbound", value); }
         }
 #nullable restore
 #else
-        public CrossTenantUserSyncInbound UserSyncInbound
+        public Microsoft.Graph.Models.CrossTenantUserSyncInbound UserSyncInbound
         {
-            get { return BackingStore?.Get<CrossTenantUserSyncInbound>("userSyncInbound"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CrossTenantUserSyncInbound>("userSyncInbound"); }
             set { BackingStore?.Set("userSyncInbound", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MultiTenantOrganizationIdentitySyncPolicyTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MultiTenantOrganizationIdentitySyncPolicyTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MultiTenantOrganizationIdentitySyncPolicyTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MultiTenantOrganizationIdentitySyncPolicyTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MultiTenantOrganizationIdentitySyncPolicyTemplate();
+            return new Microsoft.Graph.Models.MultiTenantOrganizationIdentitySyncPolicyTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,8 +50,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "templateApplicationLevel", n => { TemplateApplicationLevel = n.GetEnumValue<TemplateApplicationLevel>(); } },
-                { "userSyncInbound", n => { UserSyncInbound = n.GetObjectValue<CrossTenantUserSyncInbound>(CrossTenantUserSyncInbound.CreateFromDiscriminatorValue); } },
+                { "templateApplicationLevel", n => { TemplateApplicationLevel = n.GetEnumValue<Microsoft.Graph.Models.TemplateApplicationLevel>(); } },
+                { "userSyncInbound", n => { UserSyncInbound = n.GetObjectValue<Microsoft.Graph.Models.CrossTenantUserSyncInbound>(Microsoft.Graph.Models.CrossTenantUserSyncInbound.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,8 +62,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<TemplateApplicationLevel>("templateApplicationLevel", TemplateApplicationLevel);
-            writer.WriteObjectValue<CrossTenantUserSyncInbound>("userSyncInbound", UserSyncInbound);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TemplateApplicationLevel>("templateApplicationLevel", TemplateApplicationLevel);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CrossTenantUserSyncInbound>("userSyncInbound", UserSyncInbound);
         }
     }
 }

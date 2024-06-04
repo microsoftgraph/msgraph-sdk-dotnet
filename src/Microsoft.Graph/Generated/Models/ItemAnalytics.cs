@@ -7,66 +7,66 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ItemAnalytics : Entity, IParsable
+    public class ItemAnalytics : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The allTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemActivityStat? AllTime
+        public Microsoft.Graph.Models.ItemActivityStat? AllTime
         {
-            get { return BackingStore?.Get<ItemActivityStat?>("allTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemActivityStat?>("allTime"); }
             set { BackingStore?.Set("allTime", value); }
         }
 #nullable restore
 #else
-        public ItemActivityStat AllTime
+        public Microsoft.Graph.Models.ItemActivityStat AllTime
         {
-            get { return BackingStore?.Get<ItemActivityStat>("allTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemActivityStat>("allTime"); }
             set { BackingStore?.Set("allTime", value); }
         }
 #endif
         /// <summary>The itemActivityStats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ItemActivityStat>? ItemActivityStats
+        public List<Microsoft.Graph.Models.ItemActivityStat>? ItemActivityStats
         {
-            get { return BackingStore?.Get<List<ItemActivityStat>?>("itemActivityStats"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ItemActivityStat>?>("itemActivityStats"); }
             set { BackingStore?.Set("itemActivityStats", value); }
         }
 #nullable restore
 #else
-        public List<ItemActivityStat> ItemActivityStats
+        public List<Microsoft.Graph.Models.ItemActivityStat> ItemActivityStats
         {
-            get { return BackingStore?.Get<List<ItemActivityStat>>("itemActivityStats"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ItemActivityStat>>("itemActivityStats"); }
             set { BackingStore?.Set("itemActivityStats", value); }
         }
 #endif
         /// <summary>The lastSevenDays property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemActivityStat? LastSevenDays
+        public Microsoft.Graph.Models.ItemActivityStat? LastSevenDays
         {
-            get { return BackingStore?.Get<ItemActivityStat?>("lastSevenDays"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemActivityStat?>("lastSevenDays"); }
             set { BackingStore?.Set("lastSevenDays", value); }
         }
 #nullable restore
 #else
-        public ItemActivityStat LastSevenDays
+        public Microsoft.Graph.Models.ItemActivityStat LastSevenDays
         {
-            get { return BackingStore?.Get<ItemActivityStat>("lastSevenDays"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemActivityStat>("lastSevenDays"); }
             set { BackingStore?.Set("lastSevenDays", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ItemAnalytics"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ItemAnalytics"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ItemAnalytics CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ItemAnalytics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ItemAnalytics();
+            return new Microsoft.Graph.Models.ItemAnalytics();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,9 +76,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allTime", n => { AllTime = n.GetObjectValue<ItemActivityStat>(ItemActivityStat.CreateFromDiscriminatorValue); } },
-                { "itemActivityStats", n => { ItemActivityStats = n.GetCollectionOfObjectValues<ItemActivityStat>(ItemActivityStat.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "lastSevenDays", n => { LastSevenDays = n.GetObjectValue<ItemActivityStat>(ItemActivityStat.CreateFromDiscriminatorValue); } },
+                { "allTime", n => { AllTime = n.GetObjectValue<Microsoft.Graph.Models.ItemActivityStat>(Microsoft.Graph.Models.ItemActivityStat.CreateFromDiscriminatorValue); } },
+                { "itemActivityStats", n => { ItemActivityStats = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ItemActivityStat>(Microsoft.Graph.Models.ItemActivityStat.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastSevenDays", n => { LastSevenDays = n.GetObjectValue<Microsoft.Graph.Models.ItemActivityStat>(Microsoft.Graph.Models.ItemActivityStat.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ItemActivityStat>("allTime", AllTime);
-            writer.WriteCollectionOfObjectValues<ItemActivityStat>("itemActivityStats", ItemActivityStats);
-            writer.WriteObjectValue<ItemActivityStat>("lastSevenDays", LastSevenDays);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemActivityStat>("allTime", AllTime);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ItemActivityStat>("itemActivityStats", ItemActivityStats);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemActivityStat>("lastSevenDays", LastSevenDays);
         }
     }
 }

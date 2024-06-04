@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Store App for Windows information protection
     /// </summary>
-    public class WindowsInformationProtectionStoreApp : WindowsInformationProtectionApp, IParsable
+    public class WindowsInformationProtectionStoreApp : Microsoft.Graph.Models.WindowsInformationProtectionApp, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="WindowsInformationProtectionStoreApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WindowsInformationProtectionStoreApp"/> and sets the default values.
         /// </summary>
         public WindowsInformationProtectionStoreApp() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsInformationProtectionStoreApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsInformationProtectionStoreApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsInformationProtectionStoreApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WindowsInformationProtectionStoreApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsInformationProtectionStoreApp();
+            return new Microsoft.Graph.Models.WindowsInformationProtectionStoreApp();
         }
         /// <summary>
         /// The deserialization information for the current model

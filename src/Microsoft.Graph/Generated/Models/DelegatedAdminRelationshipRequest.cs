@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class DelegatedAdminRelationshipRequest : Entity, IParsable
+    public class DelegatedAdminRelationshipRequest : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
-        public DelegatedAdminRelationshipRequestAction? Action
+        public Microsoft.Graph.Models.DelegatedAdminRelationshipRequestAction? Action
         {
-            get { return BackingStore?.Get<DelegatedAdminRelationshipRequestAction?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DelegatedAdminRelationshipRequestAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>The date and time in ISO 8601 format and in UTC time when the relationship request was created. Read-only.</summary>
@@ -29,20 +29,20 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The status of the request. Read-only. The possible values are: created, pending, succeeded, failed, unknownFutureValue.</summary>
-        public DelegatedAdminRelationshipRequestStatus? Status
+        public Microsoft.Graph.Models.DelegatedAdminRelationshipRequestStatus? Status
         {
-            get { return BackingStore?.Get<DelegatedAdminRelationshipRequestStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DelegatedAdminRelationshipRequestStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DelegatedAdminRelationshipRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DelegatedAdminRelationshipRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DelegatedAdminRelationshipRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DelegatedAdminRelationshipRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DelegatedAdminRelationshipRequest();
+            return new Microsoft.Graph.Models.DelegatedAdminRelationshipRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,10 +52,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "action", n => { Action = n.GetEnumValue<DelegatedAdminRelationshipRequestAction>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Models.DelegatedAdminRelationshipRequestAction>(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<DelegatedAdminRelationshipRequestStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.DelegatedAdminRelationshipRequestStatus>(); } },
             };
         }
         /// <summary>
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<DelegatedAdminRelationshipRequestAction>("action", Action);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DelegatedAdminRelationshipRequestAction>("action", Action);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteEnumValue<DelegatedAdminRelationshipRequestStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DelegatedAdminRelationshipRequestStatus>("status", Status);
         }
     }
 }

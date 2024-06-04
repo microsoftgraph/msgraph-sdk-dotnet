@@ -17,7 +17,7 @@ namespace Microsoft.Graph.TenantRelationships.FindTenantInformationByDomainNameW
     public class FindTenantInformationByDomainNameWithDomainNameRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="FindTenantInformationByDomainNameWithDomainNameRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.TenantRelationships.FindTenantInformationByDomainNameWithDomainName.FindTenantInformationByDomainNameWithDomainNameRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="domainName">Usage: domainName=&apos;{domainName}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.TenantRelationships.FindTenantInformationByDomainNameW
             if (!string.IsNullOrWhiteSpace(domainName)) PathParameters.Add("domainName", domainName);
         }
         /// <summary>
-        /// Instantiates a new <see cref="FindTenantInformationByDomainNameWithDomainNameRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.TenantRelationships.FindTenantInformationByDomainNameWithDomainName.FindTenantInformationByDomainNameWithDomainNameRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,25 +38,25 @@ namespace Microsoft.Graph.TenantRelationships.FindTenantInformationByDomainNameW
         /// Given a domain name, search for a tenant and read its tenantInformation. You can use this API to validate tenant information and use the tenantId to configure cross-tenant access settings between you and the tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantrelationship-findtenantinformationbydomainname?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="TenantInformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TenantInformation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TenantInformation?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TenantInformation?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TenantInformation> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TenantInformation> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TenantInformation>(requestInfo, TenantInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TenantInformation>(requestInfo, Microsoft.Graph.Models.TenantInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Given a domain name, search for a tenant and read its tenantInformation. You can use this API to validate tenant information and use the tenantId to configure cross-tenant access settings between you and the tenant.
@@ -80,11 +80,11 @@ namespace Microsoft.Graph.TenantRelationships.FindTenantInformationByDomainNameW
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="FindTenantInformationByDomainNameWithDomainNameRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.TenantRelationships.FindTenantInformationByDomainNameWithDomainName.FindTenantInformationByDomainNameWithDomainNameRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FindTenantInformationByDomainNameWithDomainNameRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.TenantRelationships.FindTenantInformationByDomainNameWithDomainName.FindTenantInformationByDomainNameWithDomainNameRequestBuilder WithUrl(string rawUrl)
         {
-            return new FindTenantInformationByDomainNameWithDomainNameRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.TenantRelationships.FindTenantInformationByDomainNameWithDomainName.FindTenantInformationByDomainNameWithDomainNameRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

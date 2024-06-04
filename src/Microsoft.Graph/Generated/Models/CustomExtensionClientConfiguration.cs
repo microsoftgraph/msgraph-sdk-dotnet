@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("timeoutInMilliseconds", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CustomExtensionClientConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CustomExtensionClientConfiguration"/> and sets the default values.
         /// </summary>
         public CustomExtensionClientConfiguration()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomExtensionClientConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CustomExtensionClientConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CustomExtensionClientConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CustomExtensionClientConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CustomExtensionClientConfiguration();
+            return new Microsoft.Graph.Models.CustomExtensionClientConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

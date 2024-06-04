@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages.Item.UnsetRea
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UnsetReactionPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages.Item.UnsetReaction.UnsetReactionPostRequestBody"/> and sets the default values.
         /// </summary>
         public UnsetReactionPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages.Item.UnsetRea
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnsetReactionPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages.Item.UnsetReaction.UnsetReactionPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UnsetReactionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages.Item.UnsetReaction.UnsetReactionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnsetReactionPostRequestBody();
+            return new Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages.Item.UnsetReaction.UnsetReactionPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -36,7 +36,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.ConfirmCompromised
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ConfirmCompromisedPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityProtection.RiskyUsers.ConfirmCompromised.ConfirmCompromisedPostRequestBody"/> and sets the default values.
         /// </summary>
         public ConfirmCompromisedPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.ConfirmCompromised
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConfirmCompromisedPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityProtection.RiskyUsers.ConfirmCompromised.ConfirmCompromisedPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConfirmCompromisedPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.IdentityProtection.RiskyUsers.ConfirmCompromised.ConfirmCompromisedPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConfirmCompromisedPostRequestBody();
+            return new Microsoft.Graph.IdentityProtection.RiskyUsers.ConfirmCompromised.ConfirmCompromisedPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

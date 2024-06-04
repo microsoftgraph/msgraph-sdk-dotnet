@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class DirectoryObjectPartnerReference : DirectoryObject, IParsable
+    public class DirectoryObjectPartnerReference : Microsoft.Graph.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Description of the object returned. Read-only.</summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DirectoryObjectPartnerReference"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.DirectoryObjectPartnerReference"/> and sets the default values.
         /// </summary>
         public DirectoryObjectPartnerReference() : base()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DirectoryObjectPartnerReference"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryObjectPartnerReference"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DirectoryObjectPartnerReference CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DirectoryObjectPartnerReference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DirectoryObjectPartnerReference();
+            return new Microsoft.Graph.Models.DirectoryObjectPartnerReference();
         }
         /// <summary>
         /// The deserialization information for the current model

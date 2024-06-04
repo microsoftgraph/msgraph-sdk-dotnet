@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics work from anywhere model performance.
     /// </summary>
-    public class UserExperienceAnalyticsWorkFromAnywhereModelPerformance : Entity, IParsable
+    public class UserExperienceAnalyticsWorkFromAnywhereModelPerformance : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The cloud identity score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudIdentityScore
@@ -30,9 +30,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("cloudProvisioningScore", value); }
         }
         /// <summary>The healthStatus property</summary>
-        public UserExperienceAnalyticsHealthState? HealthStatus
+        public Microsoft.Graph.Models.UserExperienceAnalyticsHealthState? HealthStatus
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsHealthState?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.</summary>
@@ -88,12 +88,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsWorkFromAnywhereModelPerformance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsWorkFromAnywhereModelPerformance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsWorkFromAnywhereModelPerformance();
+            return new Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Models
                 { "cloudIdentityScore", n => { CloudIdentityScore = n.GetDoubleValue(); } },
                 { "cloudManagementScore", n => { CloudManagementScore = n.GetDoubleValue(); } },
                 { "cloudProvisioningScore", n => { CloudProvisioningScore = n.GetDoubleValue(); } },
-                { "healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<Microsoft.Graph.Models.UserExperienceAnalyticsHealthState>(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "modelDeviceCount", n => { ModelDeviceCount = n.GetIntValue(); } },
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDoubleValue("cloudIdentityScore", CloudIdentityScore);
             writer.WriteDoubleValue("cloudManagementScore", CloudManagementScore);
             writer.WriteDoubleValue("cloudProvisioningScore", CloudProvisioningScore);
-            writer.WriteEnumValue<UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("model", Model);
             writer.WriteIntValue("modelDeviceCount", ModelDeviceCount);

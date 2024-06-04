@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Se
         /// <summary>The newAssignmentOrder property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AssignmentOrder? NewAssignmentOrder
+        public Microsoft.Graph.Models.AssignmentOrder? NewAssignmentOrder
         {
-            get { return BackingStore?.Get<AssignmentOrder?>("newAssignmentOrder"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AssignmentOrder?>("newAssignmentOrder"); }
             set { BackingStore?.Set("newAssignmentOrder", value); }
         }
 #nullable restore
 #else
-        public AssignmentOrder NewAssignmentOrder
+        public Microsoft.Graph.Models.AssignmentOrder NewAssignmentOrder
         {
-            get { return BackingStore?.Get<AssignmentOrder>("newAssignmentOrder"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AssignmentOrder>("newAssignmentOrder"); }
             set { BackingStore?.Set("newAssignmentOrder", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SetOrderPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.SetOrder.SetOrderPostRequestBody"/> and sets the default values.
         /// </summary>
         public SetOrderPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Se
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SetOrderPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.SetOrder.SetOrderPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SetOrderPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.SetOrder.SetOrderPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SetOrderPostRequestBody();
+            return new Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.SetOrder.SetOrderPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Se
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "newAssignmentOrder", n => { NewAssignmentOrder = n.GetObjectValue<AssignmentOrder>(AssignmentOrder.CreateFromDiscriminatorValue); } },
+                { "newAssignmentOrder", n => { NewAssignmentOrder = n.GetObjectValue<Microsoft.Graph.Models.AssignmentOrder>(Microsoft.Graph.Models.AssignmentOrder.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Se
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<AssignmentOrder>("newAssignmentOrder", NewAssignmentOrder);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AssignmentOrder>("newAssignmentOrder", NewAssignmentOrder);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

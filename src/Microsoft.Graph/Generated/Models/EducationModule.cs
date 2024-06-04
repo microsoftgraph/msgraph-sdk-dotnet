@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class EducationModule : Entity, IParsable
+    public class EducationModule : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The display name of the user that created the module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy
+        public Microsoft.Graph.Models.IdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy
+        public Microsoft.Graph.Models.IdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -73,16 +73,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The last user that modified the module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -95,16 +95,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Learning objects that are associated with this module. Only teachers can modify this list. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationModuleResource>? Resources
+        public List<Microsoft.Graph.Models.EducationModuleResource>? Resources
         {
-            get { return BackingStore?.Get<List<EducationModuleResource>?>("resources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationModuleResource>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #nullable restore
 #else
-        public List<EducationModuleResource> Resources
+        public List<Microsoft.Graph.Models.EducationModuleResource> Resources
         {
-            get { return BackingStore?.Get<List<EducationModuleResource>>("resources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationModuleResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #endif
@@ -125,20 +125,20 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Status of the module. You can&apos;t use a PATCH operation to update this value. Possible values are: draft and published.</summary>
-        public EducationModuleStatus? Status
+        public Microsoft.Graph.Models.EducationModuleStatus? Status
         {
-            get { return BackingStore?.Get<EducationModuleStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationModuleStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationModule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationModule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationModule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EducationModule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationModule();
+            return new Microsoft.Graph.Models.EducationModule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -148,16 +148,16 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "isPinned", n => { IsPinned = n.GetBoolValue(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "resources", n => { Resources = n.GetCollectionOfObjectValues<EducationModuleResource>(EducationModuleResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.EducationModuleResource>(Microsoft.Graph.Models.EducationModuleResource.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "resourcesFolderUrl", n => { ResourcesFolderUrl = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<EducationModuleStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.EducationModuleStatus>(); } },
             };
         }
         /// <summary>
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isPinned", IsPinned);
-            writer.WriteCollectionOfObjectValues<EducationModuleResource>("resources", Resources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.EducationModuleResource>("resources", Resources);
         }
     }
 }

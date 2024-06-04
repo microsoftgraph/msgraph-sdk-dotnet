@@ -7,50 +7,50 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class VirtualEventsRoot : Entity, IParsable
+    public class VirtualEventsRoot : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The events property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEvent>? Events
+        public List<Microsoft.Graph.Models.VirtualEvent>? Events
         {
-            get { return BackingStore?.Get<List<VirtualEvent>?>("events"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.VirtualEvent>?>("events"); }
             set { BackingStore?.Set("events", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEvent> Events
+        public List<Microsoft.Graph.Models.VirtualEvent> Events
         {
-            get { return BackingStore?.Get<List<VirtualEvent>>("events"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.VirtualEvent>>("events"); }
             set { BackingStore?.Set("events", value); }
         }
 #endif
         /// <summary>The webinars property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventWebinar>? Webinars
+        public List<Microsoft.Graph.Models.VirtualEventWebinar>? Webinars
         {
-            get { return BackingStore?.Get<List<VirtualEventWebinar>?>("webinars"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.VirtualEventWebinar>?>("webinars"); }
             set { BackingStore?.Set("webinars", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventWebinar> Webinars
+        public List<Microsoft.Graph.Models.VirtualEventWebinar> Webinars
         {
-            get { return BackingStore?.Get<List<VirtualEventWebinar>>("webinars"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.VirtualEventWebinar>>("webinars"); }
             set { BackingStore?.Set("webinars", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VirtualEventsRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.VirtualEventsRoot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VirtualEventsRoot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.VirtualEventsRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VirtualEventsRoot();
+            return new Microsoft.Graph.Models.VirtualEventsRoot();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "events", n => { Events = n.GetCollectionOfObjectValues<VirtualEvent>(VirtualEvent.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "webinars", n => { Webinars = n.GetCollectionOfObjectValues<VirtualEventWebinar>(VirtualEventWebinar.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "events", n => { Events = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.VirtualEvent>(Microsoft.Graph.Models.VirtualEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "webinars", n => { Webinars = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.VirtualEventWebinar>(Microsoft.Graph.Models.VirtualEventWebinar.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<VirtualEvent>("events", Events);
-            writer.WriteCollectionOfObjectValues<VirtualEventWebinar>("webinars", Webinars);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.VirtualEvent>("events", Events);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.VirtualEventWebinar>("webinars", Webinars);
         }
     }
 }

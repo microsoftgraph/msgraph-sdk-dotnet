@@ -76,16 +76,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn&apos;t be changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<StringKeyStringValuePair>? Metadata
+        public List<Microsoft.Graph.Models.StringKeyStringValuePair>? Metadata
         {
-            get { return BackingStore?.Get<List<StringKeyStringValuePair>?>("metadata"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.StringKeyStringValuePair>?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public List<StringKeyStringValuePair> Metadata
+        public List<Microsoft.Graph.Models.StringKeyStringValuePair> Metadata
         {
-            get { return BackingStore?.Get<List<StringKeyStringValuePair>>("metadata"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.StringKeyStringValuePair>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
@@ -108,16 +108,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Collection of object mappings supported by the rule. Tells the synchronization engine which objects should be synchronized.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ObjectMapping>? ObjectMappings
+        public List<Microsoft.Graph.Models.ObjectMapping>? ObjectMappings
         {
-            get { return BackingStore?.Get<List<ObjectMapping>?>("objectMappings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ObjectMapping>?>("objectMappings"); }
             set { BackingStore?.Set("objectMappings", value); }
         }
 #nullable restore
 #else
-        public List<ObjectMapping> ObjectMappings
+        public List<Microsoft.Graph.Models.ObjectMapping> ObjectMappings
         {
-            get { return BackingStore?.Get<List<ObjectMapping>>("objectMappings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ObjectMapping>>("objectMappings"); }
             set { BackingStore?.Set("objectMappings", value); }
         }
 #endif
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SynchronizationRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SynchronizationRule"/> and sets the default values.
         /// </summary>
         public SynchronizationRule()
         {
@@ -186,12 +186,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SynchronizationRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SynchronizationRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SynchronizationRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SynchronizationRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SynchronizationRule();
+            return new Microsoft.Graph.Models.SynchronizationRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -205,9 +205,9 @@ namespace Microsoft.Graph.Models
                 { "editable", n => { Editable = n.GetBoolValue(); } },
                 { "groupFilter", n => { GroupFilter = n.GetObjectValue<Microsoft.Graph.Models.GroupFilter>(Microsoft.Graph.Models.GroupFilter.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<StringKeyStringValuePair>(StringKeyStringValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.StringKeyStringValuePair>(Microsoft.Graph.Models.StringKeyStringValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "objectMappings", n => { ObjectMappings = n.GetCollectionOfObjectValues<ObjectMapping>(ObjectMapping.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "objectMappings", n => { ObjectMappings = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ObjectMapping>(Microsoft.Graph.Models.ObjectMapping.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
                 { "sourceDirectoryName", n => { SourceDirectoryName = n.GetStringValue(); } },
@@ -225,9 +225,9 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("editable", Editable);
             writer.WriteObjectValue<Microsoft.Graph.Models.GroupFilter>("groupFilter", GroupFilter);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfObjectValues<StringKeyStringValuePair>("metadata", Metadata);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.StringKeyStringValuePair>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<ObjectMapping>("objectMappings", ObjectMappings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ObjectMapping>("objectMappings", ObjectMappings);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("priority", Priority);
             writer.WriteStringValue("sourceDirectoryName", SourceDirectoryName);

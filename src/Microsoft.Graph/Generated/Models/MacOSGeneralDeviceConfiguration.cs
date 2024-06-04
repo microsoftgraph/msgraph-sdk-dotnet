@@ -9,27 +9,27 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSGeneralDeviceConfiguration resource.
     /// </summary>
-    public class MacOSGeneralDeviceConfiguration : DeviceConfiguration, IParsable
+    public class MacOSGeneralDeviceConfiguration : Microsoft.Graph.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Possible values of the compliance app list.</summary>
-        public AppListType? CompliantAppListType
+        public Microsoft.Graph.Models.AppListType? CompliantAppListType
         {
-            get { return BackingStore?.Get<AppListType?>("compliantAppListType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AppListType?>("compliantAppListType"); }
             set { BackingStore?.Set("compliantAppListType", value); }
         }
         /// <summary>List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? CompliantAppsList
+        public List<Microsoft.Graph.Models.AppListItem>? CompliantAppsList
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("compliantAppsList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AppListItem>?>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> CompliantAppsList
+        public List<Microsoft.Graph.Models.AppListItem> CompliantAppsList
         {
-            get { return BackingStore?.Get<List<AppListItem>>("compliantAppsList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AppListItem>>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
 #endif
@@ -98,13 +98,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("passwordRequired", value); }
         }
         /// <summary>Possible values of required passwords.</summary>
-        public RequiredPasswordType? PasswordRequiredType
+        public Microsoft.Graph.Models.RequiredPasswordType? PasswordRequiredType
         {
-            get { return BackingStore?.Get<RequiredPasswordType?>("passwordRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MacOSGeneralDeviceConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MacOSGeneralDeviceConfiguration"/> and sets the default values.
         /// </summary>
         public MacOSGeneralDeviceConfiguration() : base()
         {
@@ -113,12 +113,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOSGeneralDeviceConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MacOSGeneralDeviceConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MacOSGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSGeneralDeviceConfiguration();
+            return new Microsoft.Graph.Models.MacOSGeneralDeviceConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -128,8 +128,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "compliantAppListType", n => { CompliantAppListType = n.GetEnumValue<AppListType>(); } },
-                { "compliantAppsList", n => { CompliantAppsList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "compliantAppListType", n => { CompliantAppListType = n.GetEnumValue<Microsoft.Graph.Models.AppListType>(); } },
+                { "compliantAppsList", n => { CompliantAppsList = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AppListItem>(Microsoft.Graph.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "emailInDomainSuffixes", n => { EmailInDomainSuffixes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "passwordBlockSimple", n => { PasswordBlockSimple = n.GetBoolValue(); } },
                 { "passwordExpirationDays", n => { PasswordExpirationDays = n.GetIntValue(); } },
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Models
                 { "passwordMinutesOfInactivityBeforeScreenTimeout", n => { PasswordMinutesOfInactivityBeforeScreenTimeout = n.GetIntValue(); } },
                 { "passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
                 { "passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
-                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<Microsoft.Graph.Models.RequiredPasswordType>(); } },
             };
         }
         /// <summary>
@@ -150,8 +150,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AppListType>("compliantAppListType", CompliantAppListType);
-            writer.WriteCollectionOfObjectValues<AppListItem>("compliantAppsList", CompliantAppsList);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AppListType>("compliantAppListType", CompliantAppListType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AppListItem>("compliantAppsList", CompliantAppsList);
             writer.WriteCollectionOfPrimitiveValues<string>("emailInDomainSuffixes", EmailInDomainSuffixes);
             writer.WriteBoolValue("passwordBlockSimple", PasswordBlockSimple);
             writer.WriteIntValue("passwordExpirationDays", PasswordExpirationDays);
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Models
             writer.WriteIntValue("passwordMinutesOfInactivityBeforeScreenTimeout", PasswordMinutesOfInactivityBeforeScreenTimeout);
             writer.WriteIntValue("passwordPreviousPasswordBlockCount", PasswordPreviousPasswordBlockCount);
             writer.WriteBoolValue("passwordRequired", PasswordRequired);
-            writer.WriteEnumValue<RequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
         }
     }
 }

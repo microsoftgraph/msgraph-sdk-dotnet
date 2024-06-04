@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models.ODataErrors
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ErrorDetails"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ODataErrors.ErrorDetails"/> and sets the default values.
         /// </summary>
         public ErrorDetails()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models.ODataErrors
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ErrorDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ODataErrors.ErrorDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ErrorDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ODataErrors.ErrorDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ErrorDetails();
+            return new Microsoft.Graph.Models.ODataErrors.ErrorDetails();
         }
         /// <summary>
         /// The deserialization information for the current model

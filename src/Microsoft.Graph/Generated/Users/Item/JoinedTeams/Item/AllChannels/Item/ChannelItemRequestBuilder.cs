@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.AllChannels.Item
     public class ChannelItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ChannelItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.JoinedTeams.Item.AllChannels.Item.ChannelItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.AllChannels.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ChannelItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.JoinedTeams.Item.AllChannels.Item.ChannelItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.AllChannels.Item
         /// <summary>
         /// List of channels either hosted in or shared with the team (incoming channels).
         /// </summary>
-        /// <returns>A <see cref="Channel"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Channel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Channel?> GetAsync(Action<RequestConfiguration<ChannelItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Channel?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.JoinedTeams.Item.AllChannels.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Channel> GetAsync(Action<RequestConfiguration<ChannelItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Channel> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.JoinedTeams.Item.AllChannels.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Channel>(requestInfo, Microsoft.Graph.Models.Channel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List of channels either hosted in or shared with the team (incoming channels).
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.AllChannels.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChannelItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.JoinedTeams.Item.AllChannels.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChannelItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.JoinedTeams.Item.AllChannels.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.AllChannels.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ChannelItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.JoinedTeams.Item.AllChannels.Item.ChannelItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ChannelItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.JoinedTeams.Item.AllChannels.Item.ChannelItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new ChannelItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.JoinedTeams.Item.AllChannels.Item.ChannelItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List of channels either hosted in or shared with the team (incoming channels).
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.AllChannels.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ChannelItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ChannelItemRequestBuilderGetQueryParameters>
+        public class ChannelItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.JoinedTeams.Item.AllChannels.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderGetQueryParameters>
         {
         }
     }

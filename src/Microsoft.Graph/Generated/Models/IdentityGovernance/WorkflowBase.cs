@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The category property</summary>
-        public LifecycleWorkflowCategory? Category
+        public Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowCategory? Category
         {
-            get { return BackingStore?.Get<LifecycleWorkflowCategory?>("category"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The user who created the workflow.</summary>
@@ -82,16 +82,16 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>Defines when and for who the workflow will run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkflowExecutionConditions? ExecutionConditions
+        public Microsoft.Graph.Models.IdentityGovernance.WorkflowExecutionConditions? ExecutionConditions
         {
-            get { return BackingStore?.Get<WorkflowExecutionConditions?>("executionConditions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.WorkflowExecutionConditions?>("executionConditions"); }
             set { BackingStore?.Set("executionConditions", value); }
         }
 #nullable restore
 #else
-        public WorkflowExecutionConditions ExecutionConditions
+        public Microsoft.Graph.Models.IdentityGovernance.WorkflowExecutionConditions ExecutionConditions
         {
-            get { return BackingStore?.Get<WorkflowExecutionConditions>("executionConditions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.WorkflowExecutionConditions>("executionConditions"); }
             set { BackingStore?.Set("executionConditions", value); }
         }
 #endif
@@ -148,21 +148,21 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>The tasks in the workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TaskObject>? Tasks
+        public List<Microsoft.Graph.Models.IdentityGovernance.TaskObject>? Tasks
         {
-            get { return BackingStore?.Get<List<TaskObject>?>("tasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.TaskObject>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #nullable restore
 #else
-        public List<TaskObject> Tasks
+        public List<Microsoft.Graph.Models.IdentityGovernance.TaskObject> Tasks
         {
-            get { return BackingStore?.Get<List<TaskObject>>("tasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.TaskObject>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WorkflowBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IdentityGovernance.WorkflowBase"/> and sets the default values.
         /// </summary>
         public WorkflowBase()
         {
@@ -172,17 +172,17 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkflowBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityGovernance.WorkflowBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WorkflowBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.IdentityGovernance.WorkflowBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.identityGovernance.workflow" => new Workflow(),
-                "#microsoft.graph.identityGovernance.workflowVersion" => new WorkflowVersion(),
-                _ => new WorkflowBase(),
+                "#microsoft.graph.identityGovernance.workflow" => new Microsoft.Graph.Models.IdentityGovernance.Workflow(),
+                "#microsoft.graph.identityGovernance.workflowVersion" => new Microsoft.Graph.Models.IdentityGovernance.WorkflowVersion(),
+                _ => new Microsoft.Graph.Models.IdentityGovernance.WorkflowBase(),
             };
         }
         /// <summary>
@@ -193,18 +193,18 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "category", n => { Category = n.GetEnumValue<LifecycleWorkflowCategory>(); } },
+                { "category", n => { Category = n.GetEnumValue<Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowCategory>(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.User>(Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "executionConditions", n => { ExecutionConditions = n.GetObjectValue<WorkflowExecutionConditions>(WorkflowExecutionConditions.CreateFromDiscriminatorValue); } },
+                { "executionConditions", n => { ExecutionConditions = n.GetObjectValue<Microsoft.Graph.Models.IdentityGovernance.WorkflowExecutionConditions>(Microsoft.Graph.Models.IdentityGovernance.WorkflowExecutionConditions.CreateFromDiscriminatorValue); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "isSchedulingEnabled", n => { IsSchedulingEnabled = n.GetBoolValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.User>(Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<TaskObject>(TaskObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.TaskObject>(Microsoft.Graph.Models.IdentityGovernance.TaskObject.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -214,18 +214,18 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<LifecycleWorkflowCategory>("category", Category);
+            writer.WriteEnumValue<Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowCategory>("category", Category);
             writer.WriteObjectValue<Microsoft.Graph.Models.User>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<WorkflowExecutionConditions>("executionConditions", ExecutionConditions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentityGovernance.WorkflowExecutionConditions>("executionConditions", ExecutionConditions);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteBoolValue("isSchedulingEnabled", IsSchedulingEnabled);
             writer.WriteObjectValue<Microsoft.Graph.Models.User>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<TaskObject>("tasks", Tasks);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.TaskObject>("tasks", Tasks);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the windowsPhone81CustomConfiguration resource.
     /// </summary>
-    public class WindowsPhone81CustomConfiguration : DeviceConfiguration, IParsable
+    public class WindowsPhone81CustomConfiguration : Microsoft.Graph.Models.DeviceConfiguration, IParsable
     {
         /// <summary>OMA settings. This collection can contain a maximum of 1000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OmaSetting>? OmaSettings
+        public List<Microsoft.Graph.Models.OmaSetting>? OmaSettings
         {
-            get { return BackingStore?.Get<List<OmaSetting>?>("omaSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OmaSetting>?>("omaSettings"); }
             set { BackingStore?.Set("omaSettings", value); }
         }
 #nullable restore
 #else
-        public List<OmaSetting> OmaSettings
+        public List<Microsoft.Graph.Models.OmaSetting> OmaSettings
         {
-            get { return BackingStore?.Get<List<OmaSetting>>("omaSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OmaSetting>>("omaSettings"); }
             set { BackingStore?.Set("omaSettings", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsPhone81CustomConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WindowsPhone81CustomConfiguration"/> and sets the default values.
         /// </summary>
         public WindowsPhone81CustomConfiguration() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsPhone81CustomConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsPhone81CustomConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsPhone81CustomConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WindowsPhone81CustomConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsPhone81CustomConfiguration();
+            return new Microsoft.Graph.Models.WindowsPhone81CustomConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "omaSettings", n => { OmaSettings = n.GetCollectionOfObjectValues<OmaSetting>(OmaSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "omaSettings", n => { OmaSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OmaSetting>(Microsoft.Graph.Models.OmaSetting.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<OmaSetting>("omaSettings", OmaSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OmaSetting>("omaSettings", OmaSettings);
         }
     }
 }

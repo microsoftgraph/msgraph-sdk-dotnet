@@ -22,22 +22,22 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods
     public class AuthenticationMethodsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the userRegistrationDetails property of the microsoft.graph.authenticationMethodsRoot entity.</summary>
-        public UserRegistrationDetailsRequestBuilder UserRegistrationDetails
+        public Microsoft.Graph.Reports.AuthenticationMethods.UserRegistrationDetails.UserRegistrationDetailsRequestBuilder UserRegistrationDetails
         {
-            get => new UserRegistrationDetailsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Reports.AuthenticationMethods.UserRegistrationDetails.UserRegistrationDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the usersRegisteredByFeature method.</summary>
-        public UsersRegisteredByFeatureRequestBuilder UsersRegisteredByFeature
+        public Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByFeature.UsersRegisteredByFeatureRequestBuilder UsersRegisteredByFeature
         {
-            get => new UsersRegisteredByFeatureRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByFeature.UsersRegisteredByFeatureRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the usersRegisteredByMethod method.</summary>
-        public UsersRegisteredByMethodRequestBuilder UsersRegisteredByMethod
+        public Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByMethod.UsersRegisteredByMethodRequestBuilder UsersRegisteredByMethod
         {
-            get => new UsersRegisteredByMethodRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByMethod.UsersRegisteredByMethodRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationMethodsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.AuthenticationMethods.AuthenticationMethodsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationMethodsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.AuthenticationMethods.AuthenticationMethodsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -70,57 +70,57 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Container for navigation properties for Microsoft Entra authentication methods resources.
         /// </summary>
-        /// <returns>A <see cref="AuthenticationMethodsRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationMethodsRoot"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationMethodsRoot?> GetAsync(Action<RequestConfiguration<AuthenticationMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationMethodsRoot?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.AuthenticationMethods.AuthenticationMethodsRequestBuilder.AuthenticationMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AuthenticationMethodsRoot> GetAsync(Action<RequestConfiguration<AuthenticationMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationMethodsRoot> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.AuthenticationMethods.AuthenticationMethodsRequestBuilder.AuthenticationMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AuthenticationMethodsRoot>(requestInfo, AuthenticationMethodsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthenticationMethodsRoot>(requestInfo, Microsoft.Graph.Models.AuthenticationMethodsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property authenticationMethods in reports
         /// </summary>
-        /// <returns>A <see cref="AuthenticationMethodsRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationMethodsRoot"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationMethodsRoot?> PatchAsync(AuthenticationMethodsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationMethodsRoot?> PatchAsync(Microsoft.Graph.Models.AuthenticationMethodsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AuthenticationMethodsRoot> PatchAsync(AuthenticationMethodsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationMethodsRoot> PatchAsync(Microsoft.Graph.Models.AuthenticationMethodsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AuthenticationMethodsRoot>(requestInfo, AuthenticationMethodsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthenticationMethodsRoot>(requestInfo, Microsoft.Graph.Models.AuthenticationMethodsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property authenticationMethods for reports
@@ -148,11 +148,11 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthenticationMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Reports.AuthenticationMethods.AuthenticationMethodsRequestBuilder.AuthenticationMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthenticationMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Reports.AuthenticationMethods.AuthenticationMethodsRequestBuilder.AuthenticationMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -168,11 +168,11 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(AuthenticationMethodsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.AuthenticationMethodsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(AuthenticationMethodsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.AuthenticationMethodsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -185,35 +185,35 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods
         /// <summary>
         /// Provides operations to call the usersRegisteredByFeature method.
         /// </summary>
-        /// <returns>A <see cref="UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder"/></returns>
         /// <param name="includedUserRoles">Usage: includedUserRoles=&apos;{includedUserRoles}&apos;</param>
         /// <param name="includedUserTypes">Usage: includedUserTypes=&apos;{includedUserTypes}&apos;</param>
-        public UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles(string includedUserRoles, string includedUserTypes)
+        public Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles(string includedUserRoles, string includedUserTypes)
         {
             if(string.IsNullOrEmpty(includedUserRoles)) throw new ArgumentNullException(nameof(includedUserRoles));
             if(string.IsNullOrEmpty(includedUserTypes)) throw new ArgumentNullException(nameof(includedUserTypes));
-            return new UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(PathParameters, RequestAdapter, includedUserRoles, includedUserTypes);
+            return new Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(PathParameters, RequestAdapter, includedUserRoles, includedUserTypes);
         }
         /// <summary>
         /// Provides operations to call the usersRegisteredByMethod method.
         /// </summary>
-        /// <returns>A <see cref="UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles.UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder"/></returns>
         /// <param name="includedUserRoles">Usage: includedUserRoles=&apos;{includedUserRoles}&apos;</param>
         /// <param name="includedUserTypes">Usage: includedUserTypes=&apos;{includedUserTypes}&apos;</param>
-        public UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles(string includedUserRoles, string includedUserTypes)
+        public Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles.UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles(string includedUserRoles, string includedUserTypes)
         {
             if(string.IsNullOrEmpty(includedUserRoles)) throw new ArgumentNullException(nameof(includedUserRoles));
             if(string.IsNullOrEmpty(includedUserTypes)) throw new ArgumentNullException(nameof(includedUserTypes));
-            return new UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(PathParameters, RequestAdapter, includedUserRoles, includedUserTypes);
+            return new Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles.UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(PathParameters, RequestAdapter, includedUserRoles, includedUserTypes);
         }
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AuthenticationMethodsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.AuthenticationMethods.AuthenticationMethodsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AuthenticationMethodsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Reports.AuthenticationMethods.AuthenticationMethodsRequestBuilder WithUrl(string rawUrl)
         {
-            return new AuthenticationMethodsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Reports.AuthenticationMethods.AuthenticationMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -252,7 +252,7 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AuthenticationMethodsRequestBuilderGetRequestConfiguration : RequestConfiguration<AuthenticationMethodsRequestBuilderGetQueryParameters>
+        public class AuthenticationMethodsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Reports.AuthenticationMethods.AuthenticationMethodsRequestBuilder.AuthenticationMethodsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

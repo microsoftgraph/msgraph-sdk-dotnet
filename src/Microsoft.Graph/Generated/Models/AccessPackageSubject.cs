@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AccessPackageSubject : Entity, IParsable
+    public class AccessPackageSubject : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The connected organization of the subject. Read-only. Nullable.</summary>
@@ -107,20 +107,20 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The resource type of the subject. The possible values are: notSpecified, user, servicePrincipal, unknownFutureValue.</summary>
-        public AccessPackageSubjectType? SubjectType
+        public Microsoft.Graph.Models.AccessPackageSubjectType? SubjectType
         {
-            get { return BackingStore?.Get<AccessPackageSubjectType?>("subjectType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageSubjectType?>("subjectType"); }
             set { BackingStore?.Set("subjectType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageSubject"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackageSubject"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessPackageSubject CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AccessPackageSubject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageSubject();
+            return new Microsoft.Graph.Models.AccessPackageSubject();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Models
                 { "objectId", n => { ObjectId = n.GetStringValue(); } },
                 { "onPremisesSecurityIdentifier", n => { OnPremisesSecurityIdentifier = n.GetStringValue(); } },
                 { "principalName", n => { PrincipalName = n.GetStringValue(); } },
-                { "subjectType", n => { SubjectType = n.GetEnumValue<AccessPackageSubjectType>(); } },
+                { "subjectType", n => { SubjectType = n.GetEnumValue<Microsoft.Graph.Models.AccessPackageSubjectType>(); } },
             };
         }
         /// <summary>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("objectId", ObjectId);
             writer.WriteStringValue("onPremisesSecurityIdentifier", OnPremisesSecurityIdentifier);
             writer.WriteStringValue("principalName", PrincipalName);
-            writer.WriteEnumValue<AccessPackageSubjectType>("subjectType", SubjectType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AccessPackageSubjectType>("subjectType", SubjectType);
         }
     }
 }

@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Item.StopHoldMu
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="StopHoldMusicPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Communications.Calls.Item.Participants.Item.StopHoldMusic.StopHoldMusicPostRequestBody"/> and sets the default values.
         /// </summary>
         public StopHoldMusicPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Item.StopHoldMu
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="StopHoldMusicPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Communications.Calls.Item.Participants.Item.StopHoldMusic.StopHoldMusicPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static StopHoldMusicPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Communications.Calls.Item.Participants.Item.StopHoldMusic.StopHoldMusicPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new StopHoldMusicPostRequestBody();
+            return new Microsoft.Graph.Communications.Calls.Item.Participants.Item.StopHoldMusic.StopHoldMusicPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

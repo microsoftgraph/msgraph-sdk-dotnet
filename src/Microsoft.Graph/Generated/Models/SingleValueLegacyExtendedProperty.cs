@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SingleValueLegacyExtendedProperty : Entity, IParsable
+    public class SingleValueLegacyExtendedProperty : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A property value.</summary>
@@ -29,12 +29,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SingleValueLegacyExtendedProperty"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SingleValueLegacyExtendedProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SingleValueLegacyExtendedProperty CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SingleValueLegacyExtendedProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SingleValueLegacyExtendedProperty();
+            return new Microsoft.Graph.Models.SingleValueLegacyExtendedProperty();
         }
         /// <summary>
         /// The deserialization information for the current model

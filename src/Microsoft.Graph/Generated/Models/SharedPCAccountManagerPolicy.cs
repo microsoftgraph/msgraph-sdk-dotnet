@@ -13,9 +13,9 @@ namespace Microsoft.Graph.Models
     public class SharedPCAccountManagerPolicy : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Possible values for when accounts are deleted on a shared PC.</summary>
-        public SharedPCAccountDeletionPolicyType? AccountDeletionPolicy
+        public Microsoft.Graph.Models.SharedPCAccountDeletionPolicyType? AccountDeletionPolicy
         {
-            get { return BackingStore?.Get<SharedPCAccountDeletionPolicyType?>("accountDeletionPolicy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SharedPCAccountDeletionPolicyType?>("accountDeletionPolicy"); }
             set { BackingStore?.Set("accountDeletionPolicy", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("removeAccountsBelowDiskFreePercentage", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SharedPCAccountManagerPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SharedPCAccountManagerPolicy"/> and sets the default values.
         /// </summary>
         public SharedPCAccountManagerPolicy()
         {
@@ -71,12 +71,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SharedPCAccountManagerPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SharedPCAccountManagerPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SharedPCAccountManagerPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SharedPCAccountManagerPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SharedPCAccountManagerPolicy();
+            return new Microsoft.Graph.Models.SharedPCAccountManagerPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountDeletionPolicy", n => { AccountDeletionPolicy = n.GetEnumValue<SharedPCAccountDeletionPolicyType>(); } },
+                { "accountDeletionPolicy", n => { AccountDeletionPolicy = n.GetEnumValue<Microsoft.Graph.Models.SharedPCAccountDeletionPolicyType>(); } },
                 { "cacheAccountsAboveDiskFreePercentage", n => { CacheAccountsAboveDiskFreePercentage = n.GetIntValue(); } },
                 { "inactiveThresholdDays", n => { InactiveThresholdDays = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<SharedPCAccountDeletionPolicyType>("accountDeletionPolicy", AccountDeletionPolicy);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SharedPCAccountDeletionPolicyType>("accountDeletionPolicy", AccountDeletionPolicy);
             writer.WriteIntValue("cacheAccountsAboveDiskFreePercentage", CacheAccountsAboveDiskFreePercentage);
             writer.WriteIntValue("inactiveThresholdDays", InactiveThresholdDays);
             writer.WriteStringValue("@odata.type", OdataType);

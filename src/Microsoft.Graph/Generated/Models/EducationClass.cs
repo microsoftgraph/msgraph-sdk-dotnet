@@ -7,70 +7,70 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class EducationClass : Entity, IParsable
+    public class EducationClass : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>All categories associated with this class. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationCategory>? AssignmentCategories
+        public List<Microsoft.Graph.Models.EducationCategory>? AssignmentCategories
         {
-            get { return BackingStore?.Get<List<EducationCategory>?>("assignmentCategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationCategory>?>("assignmentCategories"); }
             set { BackingStore?.Set("assignmentCategories", value); }
         }
 #nullable restore
 #else
-        public List<EducationCategory> AssignmentCategories
+        public List<Microsoft.Graph.Models.EducationCategory> AssignmentCategories
         {
-            get { return BackingStore?.Get<List<EducationCategory>>("assignmentCategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationCategory>>("assignmentCategories"); }
             set { BackingStore?.Set("assignmentCategories", value); }
         }
 #endif
         /// <summary>Specifies class-level defaults respected by new assignments created in the class.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationAssignmentDefaults? AssignmentDefaults
+        public Microsoft.Graph.Models.EducationAssignmentDefaults? AssignmentDefaults
         {
-            get { return BackingStore?.Get<EducationAssignmentDefaults?>("assignmentDefaults"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationAssignmentDefaults?>("assignmentDefaults"); }
             set { BackingStore?.Set("assignmentDefaults", value); }
         }
 #nullable restore
 #else
-        public EducationAssignmentDefaults AssignmentDefaults
+        public Microsoft.Graph.Models.EducationAssignmentDefaults AssignmentDefaults
         {
-            get { return BackingStore?.Get<EducationAssignmentDefaults>("assignmentDefaults"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationAssignmentDefaults>("assignmentDefaults"); }
             set { BackingStore?.Set("assignmentDefaults", value); }
         }
 #endif
         /// <summary>All assignments associated with this class. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationAssignment>? Assignments
+        public List<Microsoft.Graph.Models.EducationAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<EducationAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<EducationAssignment> Assignments
+        public List<Microsoft.Graph.Models.EducationAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<EducationAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
         /// <summary>Specifies class-level assignments settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationAssignmentSettings? AssignmentSettings
+        public Microsoft.Graph.Models.EducationAssignmentSettings? AssignmentSettings
         {
-            get { return BackingStore?.Get<EducationAssignmentSettings?>("assignmentSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationAssignmentSettings?>("assignmentSettings"); }
             set { BackingStore?.Set("assignmentSettings", value); }
         }
 #nullable restore
 #else
-        public EducationAssignmentSettings AssignmentSettings
+        public Microsoft.Graph.Models.EducationAssignmentSettings AssignmentSettings
         {
-            get { return BackingStore?.Get<EducationAssignmentSettings>("assignmentSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationAssignmentSettings>("assignmentSettings"); }
             set { BackingStore?.Set("assignmentSettings", value); }
         }
 #endif
@@ -93,32 +93,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The course property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationCourse? Course
+        public Microsoft.Graph.Models.EducationCourse? Course
         {
-            get { return BackingStore?.Get<EducationCourse?>("course"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationCourse?>("course"); }
             set { BackingStore?.Set("course", value); }
         }
 #nullable restore
 #else
-        public EducationCourse Course
+        public Microsoft.Graph.Models.EducationCourse Course
         {
-            get { return BackingStore?.Get<EducationCourse>("course"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationCourse>("course"); }
             set { BackingStore?.Set("course", value); }
         }
 #endif
         /// <summary>Entity who created the class</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy
+        public Microsoft.Graph.Models.IdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy
+        public Microsoft.Graph.Models.IdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -187,9 +187,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>How this class was created. Possible values are: sis, manual.</summary>
-        public EducationExternalSource? ExternalSource
+        public Microsoft.Graph.Models.EducationExternalSource? ExternalSource
         {
-            get { return BackingStore?.Get<EducationExternalSource?>("externalSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationExternalSource?>("externalSource"); }
             set { BackingStore?.Set("externalSource", value); }
         }
         /// <summary>The name of the external source this resource was generated from.</summary>
@@ -259,92 +259,92 @@ namespace Microsoft.Graph.Models
         /// <summary>All users in the class. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationUser>? Members
+        public List<Microsoft.Graph.Models.EducationUser>? Members
         {
-            get { return BackingStore?.Get<List<EducationUser>?>("members"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationUser>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #nullable restore
 #else
-        public List<EducationUser> Members
+        public List<Microsoft.Graph.Models.EducationUser> Members
         {
-            get { return BackingStore?.Get<List<EducationUser>>("members"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationUser>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #endif
         /// <summary>All modules in the class. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationModule>? Modules
+        public List<Microsoft.Graph.Models.EducationModule>? Modules
         {
-            get { return BackingStore?.Get<List<EducationModule>?>("modules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationModule>?>("modules"); }
             set { BackingStore?.Set("modules", value); }
         }
 #nullable restore
 #else
-        public List<EducationModule> Modules
+        public List<Microsoft.Graph.Models.EducationModule> Modules
         {
-            get { return BackingStore?.Get<List<EducationModule>>("modules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationModule>>("modules"); }
             set { BackingStore?.Set("modules", value); }
         }
 #endif
         /// <summary>All schools that this class is associated with. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationSchool>? Schools
+        public List<Microsoft.Graph.Models.EducationSchool>? Schools
         {
-            get { return BackingStore?.Get<List<EducationSchool>?>("schools"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationSchool>?>("schools"); }
             set { BackingStore?.Set("schools", value); }
         }
 #nullable restore
 #else
-        public List<EducationSchool> Schools
+        public List<Microsoft.Graph.Models.EducationSchool> Schools
         {
-            get { return BackingStore?.Get<List<EducationSchool>>("schools"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationSchool>>("schools"); }
             set { BackingStore?.Set("schools", value); }
         }
 #endif
         /// <summary>All teachers in the class. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationUser>? Teachers
+        public List<Microsoft.Graph.Models.EducationUser>? Teachers
         {
-            get { return BackingStore?.Get<List<EducationUser>?>("teachers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationUser>?>("teachers"); }
             set { BackingStore?.Set("teachers", value); }
         }
 #nullable restore
 #else
-        public List<EducationUser> Teachers
+        public List<Microsoft.Graph.Models.EducationUser> Teachers
         {
-            get { return BackingStore?.Get<List<EducationUser>>("teachers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationUser>>("teachers"); }
             set { BackingStore?.Set("teachers", value); }
         }
 #endif
         /// <summary>Term for this class.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationTerm? Term
+        public Microsoft.Graph.Models.EducationTerm? Term
         {
-            get { return BackingStore?.Get<EducationTerm?>("term"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationTerm?>("term"); }
             set { BackingStore?.Set("term", value); }
         }
 #nullable restore
 #else
-        public EducationTerm Term
+        public Microsoft.Graph.Models.EducationTerm Term
         {
-            get { return BackingStore?.Get<EducationTerm>("term"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationTerm>("term"); }
             set { BackingStore?.Set("term", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationClass"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationClass"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationClass CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EducationClass CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationClass();
+            return new Microsoft.Graph.Models.EducationClass();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -354,27 +354,27 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignmentCategories", n => { AssignmentCategories = n.GetCollectionOfObjectValues<EducationCategory>(EducationCategory.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "assignmentDefaults", n => { AssignmentDefaults = n.GetObjectValue<EducationAssignmentDefaults>(EducationAssignmentDefaults.CreateFromDiscriminatorValue); } },
-                { "assignmentSettings", n => { AssignmentSettings = n.GetObjectValue<EducationAssignmentSettings>(EducationAssignmentSettings.CreateFromDiscriminatorValue); } },
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<EducationAssignment>(EducationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignmentCategories", n => { AssignmentCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.EducationCategory>(Microsoft.Graph.Models.EducationCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignmentDefaults", n => { AssignmentDefaults = n.GetObjectValue<Microsoft.Graph.Models.EducationAssignmentDefaults>(Microsoft.Graph.Models.EducationAssignmentDefaults.CreateFromDiscriminatorValue); } },
+                { "assignmentSettings", n => { AssignmentSettings = n.GetObjectValue<Microsoft.Graph.Models.EducationAssignmentSettings>(Microsoft.Graph.Models.EducationAssignmentSettings.CreateFromDiscriminatorValue); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.EducationAssignment>(Microsoft.Graph.Models.EducationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "classCode", n => { ClassCode = n.GetStringValue(); } },
-                { "course", n => { Course = n.GetObjectValue<EducationCourse>(EducationCourse.CreateFromDiscriminatorValue); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "course", n => { Course = n.GetObjectValue<Microsoft.Graph.Models.EducationCourse>(Microsoft.Graph.Models.EducationCourse.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
                 { "externalName", n => { ExternalName = n.GetStringValue(); } },
-                { "externalSource", n => { ExternalSource = n.GetEnumValue<EducationExternalSource>(); } },
+                { "externalSource", n => { ExternalSource = n.GetEnumValue<Microsoft.Graph.Models.EducationExternalSource>(); } },
                 { "externalSourceDetail", n => { ExternalSourceDetail = n.GetStringValue(); } },
                 { "grade", n => { Grade = n.GetStringValue(); } },
                 { "group", n => { Group = n.GetObjectValue<Microsoft.Graph.Models.Group>(Microsoft.Graph.Models.Group.CreateFromDiscriminatorValue); } },
                 { "mailNickname", n => { MailNickname = n.GetStringValue(); } },
-                { "members", n => { Members = n.GetCollectionOfObjectValues<EducationUser>(EducationUser.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "modules", n => { Modules = n.GetCollectionOfObjectValues<EducationModule>(EducationModule.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "schools", n => { Schools = n.GetCollectionOfObjectValues<EducationSchool>(EducationSchool.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "teachers", n => { Teachers = n.GetCollectionOfObjectValues<EducationUser>(EducationUser.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "term", n => { Term = n.GetObjectValue<EducationTerm>(EducationTerm.CreateFromDiscriminatorValue); } },
+                { "members", n => { Members = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.EducationUser>(Microsoft.Graph.Models.EducationUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "modules", n => { Modules = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.EducationModule>(Microsoft.Graph.Models.EducationModule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "schools", n => { Schools = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.EducationSchool>(Microsoft.Graph.Models.EducationSchool.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "teachers", n => { Teachers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.EducationUser>(Microsoft.Graph.Models.EducationUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "term", n => { Term = n.GetObjectValue<Microsoft.Graph.Models.EducationTerm>(Microsoft.Graph.Models.EducationTerm.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -385,27 +385,27 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<EducationCategory>("assignmentCategories", AssignmentCategories);
-            writer.WriteObjectValue<EducationAssignmentDefaults>("assignmentDefaults", AssignmentDefaults);
-            writer.WriteCollectionOfObjectValues<EducationAssignment>("assignments", Assignments);
-            writer.WriteObjectValue<EducationAssignmentSettings>("assignmentSettings", AssignmentSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.EducationCategory>("assignmentCategories", AssignmentCategories);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EducationAssignmentDefaults>("assignmentDefaults", AssignmentDefaults);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.EducationAssignment>("assignments", Assignments);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EducationAssignmentSettings>("assignmentSettings", AssignmentSettings);
             writer.WriteStringValue("classCode", ClassCode);
-            writer.WriteObjectValue<EducationCourse>("course", Course);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EducationCourse>("course", Course);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("externalId", ExternalId);
             writer.WriteStringValue("externalName", ExternalName);
-            writer.WriteEnumValue<EducationExternalSource>("externalSource", ExternalSource);
+            writer.WriteEnumValue<Microsoft.Graph.Models.EducationExternalSource>("externalSource", ExternalSource);
             writer.WriteStringValue("externalSourceDetail", ExternalSourceDetail);
             writer.WriteStringValue("grade", Grade);
             writer.WriteObjectValue<Microsoft.Graph.Models.Group>("group", Group);
             writer.WriteStringValue("mailNickname", MailNickname);
-            writer.WriteCollectionOfObjectValues<EducationUser>("members", Members);
-            writer.WriteCollectionOfObjectValues<EducationModule>("modules", Modules);
-            writer.WriteCollectionOfObjectValues<EducationSchool>("schools", Schools);
-            writer.WriteCollectionOfObjectValues<EducationUser>("teachers", Teachers);
-            writer.WriteObjectValue<EducationTerm>("term", Term);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.EducationUser>("members", Members);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.EducationModule>("modules", Modules);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.EducationSchool>("schools", Schools);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.EducationUser>("teachers", Teachers);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EducationTerm>("term", Term);
         }
     }
 }

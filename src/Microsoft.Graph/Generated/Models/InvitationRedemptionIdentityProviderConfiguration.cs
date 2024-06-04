@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The fallback identity provider to be used in case no primary identity provider can be used for guest invitation redemption. Possible values are: defaultConfiguredIdp, emailOneTimePasscode, or microsoftAccount.</summary>
-        public B2bIdentityProvidersType? FallbackIdentityProvider
+        public Microsoft.Graph.Models.B2bIdentityProvidersType? FallbackIdentityProvider
         {
-            get { return BackingStore?.Get<B2bIdentityProvidersType?>("fallbackIdentityProvider"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.B2bIdentityProvidersType?>("fallbackIdentityProvider"); }
             set { BackingStore?.Set("fallbackIdentityProvider", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -44,21 +44,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Collection of identity providers in priority order of preference to be used for guest invitation redemption. Possible values are: azureActiveDirectory, externalFederation, or socialIdentityProviders.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<B2bIdentityProvidersType?>? PrimaryIdentityProviderPrecedenceOrder
+        public List<Microsoft.Graph.Models.B2bIdentityProvidersType?>? PrimaryIdentityProviderPrecedenceOrder
         {
-            get { return BackingStore?.Get<List<B2bIdentityProvidersType?>?>("primaryIdentityProviderPrecedenceOrder"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.B2bIdentityProvidersType?>?>("primaryIdentityProviderPrecedenceOrder"); }
             set { BackingStore?.Set("primaryIdentityProviderPrecedenceOrder", value); }
         }
 #nullable restore
 #else
-        public List<B2bIdentityProvidersType?> PrimaryIdentityProviderPrecedenceOrder
+        public List<Microsoft.Graph.Models.B2bIdentityProvidersType?> PrimaryIdentityProviderPrecedenceOrder
         {
-            get { return BackingStore?.Get<List<B2bIdentityProvidersType?>>("primaryIdentityProviderPrecedenceOrder"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.B2bIdentityProvidersType?>>("primaryIdentityProviderPrecedenceOrder"); }
             set { BackingStore?.Set("primaryIdentityProviderPrecedenceOrder", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="InvitationRedemptionIdentityProviderConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.InvitationRedemptionIdentityProviderConfiguration"/> and sets the default values.
         /// </summary>
         public InvitationRedemptionIdentityProviderConfiguration()
         {
@@ -68,16 +68,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InvitationRedemptionIdentityProviderConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.InvitationRedemptionIdentityProviderConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static InvitationRedemptionIdentityProviderConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.InvitationRedemptionIdentityProviderConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.defaultInvitationRedemptionIdentityProviderConfiguration" => new DefaultInvitationRedemptionIdentityProviderConfiguration(),
-                _ => new InvitationRedemptionIdentityProviderConfiguration(),
+                "#microsoft.graph.defaultInvitationRedemptionIdentityProviderConfiguration" => new Microsoft.Graph.Models.DefaultInvitationRedemptionIdentityProviderConfiguration(),
+                _ => new Microsoft.Graph.Models.InvitationRedemptionIdentityProviderConfiguration(),
             };
         }
         /// <summary>
@@ -88,9 +88,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fallbackIdentityProvider", n => { FallbackIdentityProvider = n.GetEnumValue<B2bIdentityProvidersType>(); } },
+                { "fallbackIdentityProvider", n => { FallbackIdentityProvider = n.GetEnumValue<Microsoft.Graph.Models.B2bIdentityProvidersType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "primaryIdentityProviderPrecedenceOrder", n => { PrimaryIdentityProviderPrecedenceOrder = n.GetCollectionOfEnumValues<B2bIdentityProvidersType>()?.ToList(); } },
+                { "primaryIdentityProviderPrecedenceOrder", n => { PrimaryIdentityProviderPrecedenceOrder = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.B2bIdentityProvidersType>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -100,9 +100,9 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<B2bIdentityProvidersType>("fallbackIdentityProvider", FallbackIdentityProvider);
+            writer.WriteEnumValue<Microsoft.Graph.Models.B2bIdentityProvidersType>("fallbackIdentityProvider", FallbackIdentityProvider);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfEnumValues<B2bIdentityProvidersType>("primaryIdentityProviderPrecedenceOrder", PrimaryIdentityProviderPrecedenceOrder);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.B2bIdentityProvidersType>("primaryIdentityProviderPrecedenceOrder", PrimaryIdentityProviderPrecedenceOrder);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

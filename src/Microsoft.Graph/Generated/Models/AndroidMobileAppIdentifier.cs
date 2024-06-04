@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The identifier for an Android app.
     /// </summary>
-    public class AndroidMobileAppIdentifier : MobileAppIdentifier, IParsable
+    public class AndroidMobileAppIdentifier : Microsoft.Graph.Models.MobileAppIdentifier, IParsable
     {
         /// <summary>The identifier for an app, as specified in the play store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AndroidMobileAppIdentifier"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AndroidMobileAppIdentifier"/> and sets the default values.
         /// </summary>
         public AndroidMobileAppIdentifier() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidMobileAppIdentifier"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AndroidMobileAppIdentifier"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidMobileAppIdentifier CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AndroidMobileAppIdentifier CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidMobileAppIdentifier();
+            return new Microsoft.Graph.Models.AndroidMobileAppIdentifier();
         }
         /// <summary>
         /// The deserialization information for the current model

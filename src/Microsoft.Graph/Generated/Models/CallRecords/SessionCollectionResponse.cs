@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Models.CallRecords
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Session>? Value
+        public List<Microsoft.Graph.Models.CallRecords.Session>? Value
         {
-            get { return BackingStore?.Get<List<Session>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRecords.Session>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Session> Value
+        public List<Microsoft.Graph.Models.CallRecords.Session> Value
         {
-            get { return BackingStore?.Get<List<Session>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRecords.Session>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SessionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CallRecords.SessionCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SessionCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CallRecords.SessionCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SessionCollectionResponse();
+            return new Microsoft.Graph.Models.CallRecords.SessionCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.CallRecords
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<Session>(Session.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CallRecords.Session>(Microsoft.Graph.Models.CallRecords.Session.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models.CallRecords
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Session>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CallRecords.Session>("value", Value);
         }
     }
 }

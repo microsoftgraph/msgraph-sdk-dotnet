@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Call : Entity, IParsable
+    public class Call : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The audioRoutingGroups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AudioRoutingGroup>? AudioRoutingGroups
+        public List<Microsoft.Graph.Models.AudioRoutingGroup>? AudioRoutingGroups
         {
-            get { return BackingStore?.Get<List<AudioRoutingGroup>?>("audioRoutingGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AudioRoutingGroup>?>("audioRoutingGroups"); }
             set { BackingStore?.Set("audioRoutingGroups", value); }
         }
 #nullable restore
 #else
-        public List<AudioRoutingGroup> AudioRoutingGroups
+        public List<Microsoft.Graph.Models.AudioRoutingGroup> AudioRoutingGroups
         {
-            get { return BackingStore?.Get<List<AudioRoutingGroup>>("audioRoutingGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AudioRoutingGroup>>("audioRoutingGroups"); }
             set { BackingStore?.Set("audioRoutingGroups", value); }
         }
 #endif
@@ -77,16 +77,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The routing information on how the call was retargeted. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CallRoute>? CallRoutes
+        public List<Microsoft.Graph.Models.CallRoute>? CallRoutes
         {
-            get { return BackingStore?.Get<List<CallRoute>?>("callRoutes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRoute>?>("callRoutes"); }
             set { BackingStore?.Set("callRoutes", value); }
         }
 #nullable restore
 #else
-        public List<CallRoute> CallRoutes
+        public List<Microsoft.Graph.Models.CallRoute> CallRoutes
         {
-            get { return BackingStore?.Get<List<CallRoute>>("callRoutes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRoute>>("callRoutes"); }
             set { BackingStore?.Set("callRoutes", value); }
         }
 #endif
@@ -109,23 +109,23 @@ namespace Microsoft.Graph.Models
         /// <summary>The contentSharingSessions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ContentSharingSession>? ContentSharingSessions
+        public List<Microsoft.Graph.Models.ContentSharingSession>? ContentSharingSessions
         {
-            get { return BackingStore?.Get<List<ContentSharingSession>?>("contentSharingSessions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ContentSharingSession>?>("contentSharingSessions"); }
             set { BackingStore?.Set("contentSharingSessions", value); }
         }
 #nullable restore
 #else
-        public List<ContentSharingSession> ContentSharingSessions
+        public List<Microsoft.Graph.Models.ContentSharingSession> ContentSharingSessions
         {
-            get { return BackingStore?.Get<List<ContentSharingSession>>("contentSharingSessions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ContentSharingSession>>("contentSharingSessions"); }
             set { BackingStore?.Set("contentSharingSessions", value); }
         }
 #endif
         /// <summary>The direction of the call. The possible values are incoming or outgoing. Read-only.</summary>
-        public CallDirection? Direction
+        public Microsoft.Graph.Models.CallDirection? Direction
         {
-            get { return BackingStore?.Get<CallDirection?>("direction"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallDirection?>("direction"); }
             set { BackingStore?.Set("direction", value); }
         }
         /// <summary>Call context associated with an incoming call.</summary>
@@ -163,16 +163,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Read-only. The call media state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CallMediaState? MediaState
+        public Microsoft.Graph.Models.CallMediaState? MediaState
         {
-            get { return BackingStore?.Get<CallMediaState?>("mediaState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallMediaState?>("mediaState"); }
             set { BackingStore?.Set("mediaState", value); }
         }
 #nullable restore
 #else
-        public CallMediaState MediaState
+        public Microsoft.Graph.Models.CallMediaState MediaState
         {
-            get { return BackingStore?.Get<CallMediaState>("mediaState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallMediaState>("mediaState"); }
             set { BackingStore?.Set("mediaState", value); }
         }
 #endif
@@ -211,48 +211,48 @@ namespace Microsoft.Graph.Models
         /// <summary>The operations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CommsOperation>? Operations
+        public List<Microsoft.Graph.Models.CommsOperation>? Operations
         {
-            get { return BackingStore?.Get<List<CommsOperation>?>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CommsOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<CommsOperation> Operations
+        public List<Microsoft.Graph.Models.CommsOperation> Operations
         {
-            get { return BackingStore?.Get<List<CommsOperation>>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CommsOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #endif
         /// <summary>The participants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Participant>? Participants
+        public List<Microsoft.Graph.Models.Participant>? Participants
         {
-            get { return BackingStore?.Get<List<Participant>?>("participants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Participant>?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #nullable restore
 #else
-        public List<Participant> Participants
+        public List<Microsoft.Graph.Models.Participant> Participants
         {
-            get { return BackingStore?.Get<List<Participant>>("participants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Participant>>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #endif
         /// <summary>The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Modality?>? RequestedModalities
+        public List<Microsoft.Graph.Models.Modality?>? RequestedModalities
         {
-            get { return BackingStore?.Get<List<Modality?>?>("requestedModalities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Modality?>?>("requestedModalities"); }
             set { BackingStore?.Set("requestedModalities", value); }
         }
 #nullable restore
 #else
-        public List<Modality?> RequestedModalities
+        public List<Microsoft.Graph.Models.Modality?> RequestedModalities
         {
-            get { return BackingStore?.Get<List<Modality?>>("requestedModalities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Modality?>>("requestedModalities"); }
             set { BackingStore?.Set("requestedModalities", value); }
         }
 #endif
@@ -275,23 +275,23 @@ namespace Microsoft.Graph.Models
         /// <summary>The originator of the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ParticipantInfo? Source
+        public Microsoft.Graph.Models.ParticipantInfo? Source
         {
-            get { return BackingStore?.Get<ParticipantInfo?>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ParticipantInfo?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #nullable restore
 #else
-        public ParticipantInfo Source
+        public Microsoft.Graph.Models.ParticipantInfo Source
         {
-            get { return BackingStore?.Get<ParticipantInfo>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ParticipantInfo>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #endif
         /// <summary>The call state. Possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.</summary>
-        public CallState? State
+        public Microsoft.Graph.Models.CallState? State
         {
-            get { return BackingStore?.Get<CallState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>The subject of the conversation.</summary>
@@ -313,16 +313,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The targets of the call. Required information for creating peer to peer call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<InvitationParticipantInfo>? Targets
+        public List<Microsoft.Graph.Models.InvitationParticipantInfo>? Targets
         {
-            get { return BackingStore?.Get<List<InvitationParticipantInfo>?>("targets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.InvitationParticipantInfo>?>("targets"); }
             set { BackingStore?.Set("targets", value); }
         }
 #nullable restore
 #else
-        public List<InvitationParticipantInfo> Targets
+        public List<Microsoft.Graph.Models.InvitationParticipantInfo> Targets
         {
-            get { return BackingStore?.Get<List<InvitationParticipantInfo>>("targets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.InvitationParticipantInfo>>("targets"); }
             set { BackingStore?.Set("targets", value); }
         }
 #endif
@@ -361,28 +361,28 @@ namespace Microsoft.Graph.Models
         /// <summary>The transcription information for the call. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CallTranscriptionInfo? Transcription
+        public Microsoft.Graph.Models.CallTranscriptionInfo? Transcription
         {
-            get { return BackingStore?.Get<CallTranscriptionInfo?>("transcription"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallTranscriptionInfo?>("transcription"); }
             set { BackingStore?.Set("transcription", value); }
         }
 #nullable restore
 #else
-        public CallTranscriptionInfo Transcription
+        public Microsoft.Graph.Models.CallTranscriptionInfo Transcription
         {
-            get { return BackingStore?.Get<CallTranscriptionInfo>("transcription"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallTranscriptionInfo>("transcription"); }
             set { BackingStore?.Set("transcription", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Call"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Call"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Call CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Call CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Call();
+            return new Microsoft.Graph.Models.Call();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -392,30 +392,30 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "audioRoutingGroups", n => { AudioRoutingGroups = n.GetCollectionOfObjectValues<AudioRoutingGroup>(AudioRoutingGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "audioRoutingGroups", n => { AudioRoutingGroups = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AudioRoutingGroup>(Microsoft.Graph.Models.AudioRoutingGroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "callChainId", n => { CallChainId = n.GetStringValue(); } },
                 { "callOptions", n => { CallOptions = n.GetObjectValue<Microsoft.Graph.Models.CallOptions>(Microsoft.Graph.Models.CallOptions.CreateFromDiscriminatorValue); } },
-                { "callRoutes", n => { CallRoutes = n.GetCollectionOfObjectValues<CallRoute>(CallRoute.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "callRoutes", n => { CallRoutes = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CallRoute>(Microsoft.Graph.Models.CallRoute.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "callbackUri", n => { CallbackUri = n.GetStringValue(); } },
                 { "chatInfo", n => { ChatInfo = n.GetObjectValue<Microsoft.Graph.Models.ChatInfo>(Microsoft.Graph.Models.ChatInfo.CreateFromDiscriminatorValue); } },
-                { "contentSharingSessions", n => { ContentSharingSessions = n.GetCollectionOfObjectValues<ContentSharingSession>(ContentSharingSession.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "direction", n => { Direction = n.GetEnumValue<CallDirection>(); } },
+                { "contentSharingSessions", n => { ContentSharingSessions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ContentSharingSession>(Microsoft.Graph.Models.ContentSharingSession.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "direction", n => { Direction = n.GetEnumValue<Microsoft.Graph.Models.CallDirection>(); } },
                 { "incomingContext", n => { IncomingContext = n.GetObjectValue<Microsoft.Graph.Models.IncomingContext>(Microsoft.Graph.Models.IncomingContext.CreateFromDiscriminatorValue); } },
                 { "mediaConfig", n => { MediaConfig = n.GetObjectValue<Microsoft.Graph.Models.MediaConfig>(Microsoft.Graph.Models.MediaConfig.CreateFromDiscriminatorValue); } },
-                { "mediaState", n => { MediaState = n.GetObjectValue<CallMediaState>(CallMediaState.CreateFromDiscriminatorValue); } },
+                { "mediaState", n => { MediaState = n.GetObjectValue<Microsoft.Graph.Models.CallMediaState>(Microsoft.Graph.Models.CallMediaState.CreateFromDiscriminatorValue); } },
                 { "meetingInfo", n => { MeetingInfo = n.GetObjectValue<Microsoft.Graph.Models.MeetingInfo>(Microsoft.Graph.Models.MeetingInfo.CreateFromDiscriminatorValue); } },
                 { "myParticipantId", n => { MyParticipantId = n.GetStringValue(); } },
-                { "operations", n => { Operations = n.GetCollectionOfObjectValues<CommsOperation>(CommsOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "participants", n => { Participants = n.GetCollectionOfObjectValues<Participant>(Participant.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "requestedModalities", n => { RequestedModalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CommsOperation>(Microsoft.Graph.Models.CommsOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "participants", n => { Participants = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Participant>(Microsoft.Graph.Models.Participant.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "requestedModalities", n => { RequestedModalities = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.Modality>()?.ToList(); } },
                 { "resultInfo", n => { ResultInfo = n.GetObjectValue<Microsoft.Graph.Models.ResultInfo>(Microsoft.Graph.Models.ResultInfo.CreateFromDiscriminatorValue); } },
-                { "source", n => { Source = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetEnumValue<CallState>(); } },
+                { "source", n => { Source = n.GetObjectValue<Microsoft.Graph.Models.ParticipantInfo>(Microsoft.Graph.Models.ParticipantInfo.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Models.CallState>(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
-                { "targets", n => { Targets = n.GetCollectionOfObjectValues<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "targets", n => { Targets = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.InvitationParticipantInfo>(Microsoft.Graph.Models.InvitationParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
                 { "toneInfo", n => { ToneInfo = n.GetObjectValue<Microsoft.Graph.Models.ToneInfo>(Microsoft.Graph.Models.ToneInfo.CreateFromDiscriminatorValue); } },
-                { "transcription", n => { Transcription = n.GetObjectValue<CallTranscriptionInfo>(CallTranscriptionInfo.CreateFromDiscriminatorValue); } },
+                { "transcription", n => { Transcription = n.GetObjectValue<Microsoft.Graph.Models.CallTranscriptionInfo>(Microsoft.Graph.Models.CallTranscriptionInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -426,30 +426,30 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AudioRoutingGroup>("audioRoutingGroups", AudioRoutingGroups);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AudioRoutingGroup>("audioRoutingGroups", AudioRoutingGroups);
             writer.WriteStringValue("callbackUri", CallbackUri);
             writer.WriteStringValue("callChainId", CallChainId);
             writer.WriteObjectValue<Microsoft.Graph.Models.CallOptions>("callOptions", CallOptions);
-            writer.WriteCollectionOfObjectValues<CallRoute>("callRoutes", CallRoutes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CallRoute>("callRoutes", CallRoutes);
             writer.WriteObjectValue<Microsoft.Graph.Models.ChatInfo>("chatInfo", ChatInfo);
-            writer.WriteCollectionOfObjectValues<ContentSharingSession>("contentSharingSessions", ContentSharingSessions);
-            writer.WriteEnumValue<CallDirection>("direction", Direction);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ContentSharingSession>("contentSharingSessions", ContentSharingSessions);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CallDirection>("direction", Direction);
             writer.WriteObjectValue<Microsoft.Graph.Models.IncomingContext>("incomingContext", IncomingContext);
             writer.WriteObjectValue<Microsoft.Graph.Models.MediaConfig>("mediaConfig", MediaConfig);
-            writer.WriteObjectValue<CallMediaState>("mediaState", MediaState);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CallMediaState>("mediaState", MediaState);
             writer.WriteObjectValue<Microsoft.Graph.Models.MeetingInfo>("meetingInfo", MeetingInfo);
             writer.WriteStringValue("myParticipantId", MyParticipantId);
-            writer.WriteCollectionOfObjectValues<CommsOperation>("operations", Operations);
-            writer.WriteCollectionOfObjectValues<Participant>("participants", Participants);
-            writer.WriteCollectionOfEnumValues<Modality>("requestedModalities", RequestedModalities);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CommsOperation>("operations", Operations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Participant>("participants", Participants);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.Modality>("requestedModalities", RequestedModalities);
             writer.WriteObjectValue<Microsoft.Graph.Models.ResultInfo>("resultInfo", ResultInfo);
-            writer.WriteObjectValue<ParticipantInfo>("source", Source);
-            writer.WriteEnumValue<CallState>("state", State);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ParticipantInfo>("source", Source);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CallState>("state", State);
             writer.WriteStringValue("subject", Subject);
-            writer.WriteCollectionOfObjectValues<InvitationParticipantInfo>("targets", Targets);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.InvitationParticipantInfo>("targets", Targets);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteObjectValue<Microsoft.Graph.Models.ToneInfo>("toneInfo", ToneInfo);
-            writer.WriteObjectValue<CallTranscriptionInfo>("transcription", Transcription);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CallTranscriptionInfo>("transcription", Transcription);
         }
     }
 }

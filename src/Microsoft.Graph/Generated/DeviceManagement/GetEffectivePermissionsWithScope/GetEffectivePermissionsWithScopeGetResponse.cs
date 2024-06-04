@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope
 {
     #pragma warning disable CS1591
-    public class GetEffectivePermissionsWithScopeGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetEffectivePermissionsWithScopeGetResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RolePermission>? Value
+        public List<Microsoft.Graph.Models.RolePermission>? Value
         {
-            get { return BackingStore?.Get<List<RolePermission>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.RolePermission>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<RolePermission> Value
+        public List<Microsoft.Graph.Models.RolePermission> Value
         {
-            get { return BackingStore?.Get<List<RolePermission>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.RolePermission>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetEffectivePermissionsWithScopeGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetEffectivePermissionsWithScopeGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetEffectivePermissionsWithScopeGetResponse();
+            return new Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<RolePermission>(RolePermission.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.RolePermission>(Microsoft.Graph.Models.RolePermission.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<RolePermission>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.RolePermission>("value", Value);
         }
     }
 }

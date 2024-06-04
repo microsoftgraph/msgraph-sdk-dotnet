@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Conversation : Entity, IParsable
+    public class Conversation : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.</summary>
@@ -41,16 +41,16 @@ namespace Microsoft.Graph.Models
         /// <summary>A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConversationThread>? Threads
+        public List<Microsoft.Graph.Models.ConversationThread>? Threads
         {
-            get { return BackingStore?.Get<List<ConversationThread>?>("threads"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConversationThread>?>("threads"); }
             set { BackingStore?.Set("threads", value); }
         }
 #nullable restore
 #else
-        public List<ConversationThread> Threads
+        public List<Microsoft.Graph.Models.ConversationThread> Threads
         {
-            get { return BackingStore?.Get<List<ConversationThread>>("threads"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConversationThread>>("threads"); }
             set { BackingStore?.Set("threads", value); }
         }
 #endif
@@ -89,12 +89,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Conversation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Conversation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Conversation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Conversation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Conversation();
+            return new Microsoft.Graph.Models.Conversation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Models
                 { "hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
                 { "lastDeliveredDateTime", n => { LastDeliveredDateTime = n.GetDateTimeOffsetValue(); } },
                 { "preview", n => { Preview = n.GetStringValue(); } },
-                { "threads", n => { Threads = n.GetCollectionOfObjectValues<ConversationThread>(ConversationThread.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "threads", n => { Threads = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ConversationThread>(Microsoft.Graph.Models.ConversationThread.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "topic", n => { Topic = n.GetStringValue(); } },
                 { "uniqueSenders", n => { UniqueSenders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("hasAttachments", HasAttachments);
             writer.WriteDateTimeOffsetValue("lastDeliveredDateTime", LastDeliveredDateTime);
             writer.WriteStringValue("preview", Preview);
-            writer.WriteCollectionOfObjectValues<ConversationThread>("threads", Threads);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ConversationThread>("threads", Threads);
             writer.WriteStringValue("topic", Topic);
             writer.WriteCollectionOfPrimitiveValues<string>("uniqueSenders", UniqueSenders);
         }

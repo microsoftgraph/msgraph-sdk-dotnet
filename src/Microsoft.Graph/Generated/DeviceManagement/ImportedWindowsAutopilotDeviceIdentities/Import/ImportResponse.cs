@@ -8,18 +8,18 @@ namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentit
 {
     [Obsolete("This class is obsolete. Use ImportPostResponse instead.")]
     #pragma warning disable CS1591
-    public class ImportResponse : ImportPostResponse, IParsable
+    public class ImportResponse : Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import.ImportPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ImportResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import.ImportResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ImportResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import.ImportResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ImportResponse();
+            return new Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import.ImportResponse();
         }
     }
 }

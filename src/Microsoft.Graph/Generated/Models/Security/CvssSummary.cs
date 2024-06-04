@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("score", value); }
         }
         /// <summary>The CVSS severity rating for this vulnerability. The possible values are: none, low, medium, high, critical, unknownFutureValue.</summary>
-        public VulnerabilitySeverity? Severity
+        public Microsoft.Graph.Models.Security.VulnerabilitySeverity? Severity
         {
-            get { return BackingStore?.Get<VulnerabilitySeverity?>("severity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.VulnerabilitySeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>The CVSS vector string for this vulnerability.</summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CvssSummary"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.CvssSummary"/> and sets the default values.
         /// </summary>
         public CvssSummary()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CvssSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.CvssSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CvssSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Security.CvssSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CvssSummary();
+            return new Microsoft.Graph.Models.Security.CvssSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Models.Security
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "score", n => { Score = n.GetDoubleValue(); } },
-                { "severity", n => { Severity = n.GetEnumValue<VulnerabilitySeverity>(); } },
+                { "severity", n => { Severity = n.GetEnumValue<Microsoft.Graph.Models.Security.VulnerabilitySeverity>(); } },
                 { "vectorString", n => { VectorString = n.GetStringValue(); } },
             };
         }
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Models.Security
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDoubleValue("score", Score);
-            writer.WriteEnumValue<VulnerabilitySeverity>("severity", Severity);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.VulnerabilitySeverity>("severity", Severity);
             writer.WriteStringValue("vectorString", VectorString);
             writer.WriteAdditionalData(AdditionalData);
         }

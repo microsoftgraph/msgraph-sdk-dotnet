@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole
     public class GetByUserRoleWithRoleRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetByUserRoleWithRoleRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole
             if (!string.IsNullOrWhiteSpace(role)) PathParameters.Add("role", role);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetByUserRoleWithRoleRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,50 +37,50 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole
         /// Get a virtualEventWebinar collection where the signed-in user is either the organizer or a coorganizer.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuserrole?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetByUserRoleWithRoleGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetByUserRoleWithRoleGetResponse?> GetAsGetByUserRoleWithRoleGetResponseAsync(Action<RequestConfiguration<GetByUserRoleWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleGetResponse?> GetAsGetByUserRoleWithRoleGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder.GetByUserRoleWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetByUserRoleWithRoleGetResponse> GetAsGetByUserRoleWithRoleGetResponseAsync(Action<RequestConfiguration<GetByUserRoleWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleGetResponse> GetAsGetByUserRoleWithRoleGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder.GetByUserRoleWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetByUserRoleWithRoleGetResponse>(requestInfo, GetByUserRoleWithRoleGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleGetResponse>(requestInfo, Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a virtualEventWebinar collection where the signed-in user is either the organizer or a coorganizer.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuserrole?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetByUserRoleWithRoleResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetByUserRoleWithRoleGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetByUserRoleWithRoleResponse?> GetAsync(Action<RequestConfiguration<GetByUserRoleWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder.GetByUserRoleWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetByUserRoleWithRoleResponse> GetAsync(Action<RequestConfiguration<GetByUserRoleWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder.GetByUserRoleWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetByUserRoleWithRoleResponse>(requestInfo, GetByUserRoleWithRoleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleResponse>(requestInfo, Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a virtualEventWebinar collection where the signed-in user is either the organizer or a coorganizer.
@@ -89,11 +89,11 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetByUserRoleWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder.GetByUserRoleWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetByUserRoleWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder.GetByUserRoleWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -104,11 +104,11 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetByUserRoleWithRoleRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetByUserRoleWithRoleRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetByUserRoleWithRoleRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a virtualEventWebinar collection where the signed-in user is either the organizer or a coorganizer.
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetByUserRoleWithRoleRequestBuilderGetRequestConfiguration : RequestConfiguration<GetByUserRoleWithRoleRequestBuilderGetQueryParameters>
+        public class GetByUserRoleWithRoleRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder.GetByUserRoleWithRoleRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -9,17 +9,17 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties used to assign an iOS VPP EBook to a group.
     /// </summary>
-    public class IosVppEBookAssignment : ManagedEBookAssignment, IParsable
+    public class IosVppEBookAssignment : Microsoft.Graph.Models.ManagedEBookAssignment, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosVppEBookAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IosVppEBookAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosVppEBookAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IosVppEBookAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosVppEBookAssignment();
+            return new Microsoft.Graph.Models.IosVppEBookAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model

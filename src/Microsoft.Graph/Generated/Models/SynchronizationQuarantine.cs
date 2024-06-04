@@ -28,16 +28,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Describes the error(s) that occurred when putting the synchronization job into quarantine.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationError? Error
+        public Microsoft.Graph.Models.SynchronizationError? Error
         {
-            get { return BackingStore?.Get<SynchronizationError?>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SynchronizationError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public SynchronizationError Error
+        public Microsoft.Graph.Models.SynchronizationError Error
         {
-            get { return BackingStore?.Get<SynchronizationError>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SynchronizationError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #endif
@@ -64,9 +64,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The reason property</summary>
-        public QuarantineReason? Reason
+        public Microsoft.Graph.Models.QuarantineReason? Reason
         {
-            get { return BackingStore?.Get<QuarantineReason?>("reason"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.QuarantineReason?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
         /// <summary>Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("seriesCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SynchronizationQuarantine"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SynchronizationQuarantine"/> and sets the default values.
         /// </summary>
         public SynchronizationQuarantine()
         {
@@ -92,12 +92,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SynchronizationQuarantine"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SynchronizationQuarantine"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SynchronizationQuarantine CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SynchronizationQuarantine CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SynchronizationQuarantine();
+            return new Microsoft.Graph.Models.SynchronizationQuarantine();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,10 +108,10 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "currentBegan", n => { CurrentBegan = n.GetDateTimeOffsetValue(); } },
-                { "error", n => { Error = n.GetObjectValue<SynchronizationError>(SynchronizationError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<Microsoft.Graph.Models.SynchronizationError>(Microsoft.Graph.Models.SynchronizationError.CreateFromDiscriminatorValue); } },
                 { "nextAttempt", n => { NextAttempt = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "reason", n => { Reason = n.GetEnumValue<QuarantineReason>(); } },
+                { "reason", n => { Reason = n.GetEnumValue<Microsoft.Graph.Models.QuarantineReason>(); } },
                 { "seriesBegan", n => { SeriesBegan = n.GetDateTimeOffsetValue(); } },
                 { "seriesCount", n => { SeriesCount = n.GetLongValue(); } },
             };
@@ -124,10 +124,10 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("currentBegan", CurrentBegan);
-            writer.WriteObjectValue<SynchronizationError>("error", Error);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SynchronizationError>("error", Error);
             writer.WriteDateTimeOffsetValue("nextAttempt", NextAttempt);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<QuarantineReason>("reason", Reason);
+            writer.WriteEnumValue<Microsoft.Graph.Models.QuarantineReason>("reason", Reason);
             writer.WriteDateTimeOffsetValue("seriesBegan", SeriesBegan);
             writer.WriteLongValue("seriesCount", SeriesCount);
             writer.WriteAdditionalData(AdditionalData);

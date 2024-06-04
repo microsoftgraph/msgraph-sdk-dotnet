@@ -58,9 +58,9 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>The remediationStatus property</summary>
-        public EvidenceRemediationStatus? RemediationStatus
+        public Microsoft.Graph.Models.Security.EvidenceRemediationStatus? RemediationStatus
         {
-            get { return BackingStore?.Get<EvidenceRemediationStatus?>("remediationStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.EvidenceRemediationStatus?>("remediationStatus"); }
             set { BackingStore?.Set("remediationStatus", value); }
         }
         /// <summary>Details about the remediation status.</summary>
@@ -82,16 +82,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The role/s that an evidence entity represents in an alert, for example, an IP address that is associated with an attacker has the evidence role Attacker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EvidenceRole?>? Roles
+        public List<Microsoft.Graph.Models.Security.EvidenceRole?>? Roles
         {
-            get { return BackingStore?.Get<List<EvidenceRole?>?>("roles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EvidenceRole?>?>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #nullable restore
 #else
-        public List<EvidenceRole?> Roles
+        public List<Microsoft.Graph.Models.Security.EvidenceRole?> Roles
         {
-            get { return BackingStore?.Get<List<EvidenceRole?>>("roles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EvidenceRole?>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #endif
@@ -112,13 +112,13 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>The verdict property</summary>
-        public EvidenceVerdict? Verdict
+        public Microsoft.Graph.Models.Security.EvidenceVerdict? Verdict
         {
-            get { return BackingStore?.Get<EvidenceVerdict?>("verdict"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.EvidenceVerdict?>("verdict"); }
             set { BackingStore?.Set("verdict", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AlertEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.AlertEvidence"/> and sets the default values.
         /// </summary>
         public AlertEvidence()
         {
@@ -128,58 +128,58 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AlertEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.AlertEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AlertEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Security.AlertEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.amazonResourceEvidence" => new AmazonResourceEvidence(),
-                "#microsoft.graph.security.analyzedMessageEvidence" => new AnalyzedMessageEvidence(),
-                "#microsoft.graph.security.azureResourceEvidence" => new AzureResourceEvidence(),
-                "#microsoft.graph.security.blobContainerEvidence" => new BlobContainerEvidence(),
-                "#microsoft.graph.security.blobEvidence" => new BlobEvidence(),
-                "#microsoft.graph.security.cloudApplicationEvidence" => new CloudApplicationEvidence(),
-                "#microsoft.graph.security.containerEvidence" => new ContainerEvidence(),
-                "#microsoft.graph.security.containerImageEvidence" => new ContainerImageEvidence(),
-                "#microsoft.graph.security.containerRegistryEvidence" => new ContainerRegistryEvidence(),
-                "#microsoft.graph.security.deviceEvidence" => new DeviceEvidence(),
-                "#microsoft.graph.security.dnsEvidence" => new DnsEvidence(),
-                "#microsoft.graph.security.fileEvidence" => new FileEvidence(),
-                "#microsoft.graph.security.fileHashEvidence" => new FileHashEvidence(),
-                "#microsoft.graph.security.gitHubOrganizationEvidence" => new GitHubOrganizationEvidence(),
-                "#microsoft.graph.security.gitHubRepoEvidence" => new GitHubRepoEvidence(),
-                "#microsoft.graph.security.gitHubUserEvidence" => new GitHubUserEvidence(),
-                "#microsoft.graph.security.googleCloudResourceEvidence" => new GoogleCloudResourceEvidence(),
-                "#microsoft.graph.security.hostLogonSessionEvidence" => new HostLogonSessionEvidence(),
-                "#microsoft.graph.security.ioTDeviceEvidence" => new IoTDeviceEvidence(),
-                "#microsoft.graph.security.ipEvidence" => new IpEvidence(),
-                "#microsoft.graph.security.kubernetesClusterEvidence" => new KubernetesClusterEvidence(),
-                "#microsoft.graph.security.kubernetesControllerEvidence" => new KubernetesControllerEvidence(),
-                "#microsoft.graph.security.kubernetesNamespaceEvidence" => new KubernetesNamespaceEvidence(),
-                "#microsoft.graph.security.kubernetesPodEvidence" => new KubernetesPodEvidence(),
-                "#microsoft.graph.security.kubernetesSecretEvidence" => new KubernetesSecretEvidence(),
-                "#microsoft.graph.security.kubernetesServiceAccountEvidence" => new KubernetesServiceAccountEvidence(),
-                "#microsoft.graph.security.kubernetesServiceEvidence" => new KubernetesServiceEvidence(),
-                "#microsoft.graph.security.mailboxConfigurationEvidence" => new MailboxConfigurationEvidence(),
-                "#microsoft.graph.security.mailboxEvidence" => new MailboxEvidence(),
-                "#microsoft.graph.security.mailClusterEvidence" => new MailClusterEvidence(),
-                "#microsoft.graph.security.malwareEvidence" => new MalwareEvidence(),
-                "#microsoft.graph.security.networkConnectionEvidence" => new NetworkConnectionEvidence(),
-                "#microsoft.graph.security.nicEvidence" => new NicEvidence(),
-                "#microsoft.graph.security.oauthApplicationEvidence" => new OauthApplicationEvidence(),
-                "#microsoft.graph.security.processEvidence" => new ProcessEvidence(),
-                "#microsoft.graph.security.registryKeyEvidence" => new RegistryKeyEvidence(),
-                "#microsoft.graph.security.registryValueEvidence" => new RegistryValueEvidence(),
-                "#microsoft.graph.security.sasTokenEvidence" => new SasTokenEvidence(),
-                "#microsoft.graph.security.securityGroupEvidence" => new SecurityGroupEvidence(),
-                "#microsoft.graph.security.servicePrincipalEvidence" => new ServicePrincipalEvidence(),
-                "#microsoft.graph.security.submissionMailEvidence" => new SubmissionMailEvidence(),
-                "#microsoft.graph.security.urlEvidence" => new UrlEvidence(),
-                "#microsoft.graph.security.userEvidence" => new UserEvidence(),
-                _ => new AlertEvidence(),
+                "#microsoft.graph.security.amazonResourceEvidence" => new Microsoft.Graph.Models.Security.AmazonResourceEvidence(),
+                "#microsoft.graph.security.analyzedMessageEvidence" => new Microsoft.Graph.Models.Security.AnalyzedMessageEvidence(),
+                "#microsoft.graph.security.azureResourceEvidence" => new Microsoft.Graph.Models.Security.AzureResourceEvidence(),
+                "#microsoft.graph.security.blobContainerEvidence" => new Microsoft.Graph.Models.Security.BlobContainerEvidence(),
+                "#microsoft.graph.security.blobEvidence" => new Microsoft.Graph.Models.Security.BlobEvidence(),
+                "#microsoft.graph.security.cloudApplicationEvidence" => new Microsoft.Graph.Models.Security.CloudApplicationEvidence(),
+                "#microsoft.graph.security.containerEvidence" => new Microsoft.Graph.Models.Security.ContainerEvidence(),
+                "#microsoft.graph.security.containerImageEvidence" => new Microsoft.Graph.Models.Security.ContainerImageEvidence(),
+                "#microsoft.graph.security.containerRegistryEvidence" => new Microsoft.Graph.Models.Security.ContainerRegistryEvidence(),
+                "#microsoft.graph.security.deviceEvidence" => new Microsoft.Graph.Models.Security.DeviceEvidence(),
+                "#microsoft.graph.security.dnsEvidence" => new Microsoft.Graph.Models.Security.DnsEvidence(),
+                "#microsoft.graph.security.fileEvidence" => new Microsoft.Graph.Models.Security.FileEvidence(),
+                "#microsoft.graph.security.fileHashEvidence" => new Microsoft.Graph.Models.Security.FileHashEvidence(),
+                "#microsoft.graph.security.gitHubOrganizationEvidence" => new Microsoft.Graph.Models.Security.GitHubOrganizationEvidence(),
+                "#microsoft.graph.security.gitHubRepoEvidence" => new Microsoft.Graph.Models.Security.GitHubRepoEvidence(),
+                "#microsoft.graph.security.gitHubUserEvidence" => new Microsoft.Graph.Models.Security.GitHubUserEvidence(),
+                "#microsoft.graph.security.googleCloudResourceEvidence" => new Microsoft.Graph.Models.Security.GoogleCloudResourceEvidence(),
+                "#microsoft.graph.security.hostLogonSessionEvidence" => new Microsoft.Graph.Models.Security.HostLogonSessionEvidence(),
+                "#microsoft.graph.security.ioTDeviceEvidence" => new Microsoft.Graph.Models.Security.IoTDeviceEvidence(),
+                "#microsoft.graph.security.ipEvidence" => new Microsoft.Graph.Models.Security.IpEvidence(),
+                "#microsoft.graph.security.kubernetesClusterEvidence" => new Microsoft.Graph.Models.Security.KubernetesClusterEvidence(),
+                "#microsoft.graph.security.kubernetesControllerEvidence" => new Microsoft.Graph.Models.Security.KubernetesControllerEvidence(),
+                "#microsoft.graph.security.kubernetesNamespaceEvidence" => new Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence(),
+                "#microsoft.graph.security.kubernetesPodEvidence" => new Microsoft.Graph.Models.Security.KubernetesPodEvidence(),
+                "#microsoft.graph.security.kubernetesSecretEvidence" => new Microsoft.Graph.Models.Security.KubernetesSecretEvidence(),
+                "#microsoft.graph.security.kubernetesServiceAccountEvidence" => new Microsoft.Graph.Models.Security.KubernetesServiceAccountEvidence(),
+                "#microsoft.graph.security.kubernetesServiceEvidence" => new Microsoft.Graph.Models.Security.KubernetesServiceEvidence(),
+                "#microsoft.graph.security.mailboxConfigurationEvidence" => new Microsoft.Graph.Models.Security.MailboxConfigurationEvidence(),
+                "#microsoft.graph.security.mailboxEvidence" => new Microsoft.Graph.Models.Security.MailboxEvidence(),
+                "#microsoft.graph.security.mailClusterEvidence" => new Microsoft.Graph.Models.Security.MailClusterEvidence(),
+                "#microsoft.graph.security.malwareEvidence" => new Microsoft.Graph.Models.Security.MalwareEvidence(),
+                "#microsoft.graph.security.networkConnectionEvidence" => new Microsoft.Graph.Models.Security.NetworkConnectionEvidence(),
+                "#microsoft.graph.security.nicEvidence" => new Microsoft.Graph.Models.Security.NicEvidence(),
+                "#microsoft.graph.security.oauthApplicationEvidence" => new Microsoft.Graph.Models.Security.OauthApplicationEvidence(),
+                "#microsoft.graph.security.processEvidence" => new Microsoft.Graph.Models.Security.ProcessEvidence(),
+                "#microsoft.graph.security.registryKeyEvidence" => new Microsoft.Graph.Models.Security.RegistryKeyEvidence(),
+                "#microsoft.graph.security.registryValueEvidence" => new Microsoft.Graph.Models.Security.RegistryValueEvidence(),
+                "#microsoft.graph.security.sasTokenEvidence" => new Microsoft.Graph.Models.Security.SasTokenEvidence(),
+                "#microsoft.graph.security.securityGroupEvidence" => new Microsoft.Graph.Models.Security.SecurityGroupEvidence(),
+                "#microsoft.graph.security.servicePrincipalEvidence" => new Microsoft.Graph.Models.Security.ServicePrincipalEvidence(),
+                "#microsoft.graph.security.submissionMailEvidence" => new Microsoft.Graph.Models.Security.SubmissionMailEvidence(),
+                "#microsoft.graph.security.urlEvidence" => new Microsoft.Graph.Models.Security.UrlEvidence(),
+                "#microsoft.graph.security.userEvidence" => new Microsoft.Graph.Models.Security.UserEvidence(),
+                _ => new Microsoft.Graph.Models.Security.AlertEvidence(),
             };
         }
         /// <summary>
@@ -193,11 +193,11 @@ namespace Microsoft.Graph.Models.Security
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "detailedRoles", n => { DetailedRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "remediationStatus", n => { RemediationStatus = n.GetEnumValue<EvidenceRemediationStatus>(); } },
+                { "remediationStatus", n => { RemediationStatus = n.GetEnumValue<Microsoft.Graph.Models.Security.EvidenceRemediationStatus>(); } },
                 { "remediationStatusDetails", n => { RemediationStatusDetails = n.GetStringValue(); } },
-                { "roles", n => { Roles = n.GetCollectionOfEnumValues<EvidenceRole>()?.ToList(); } },
+                { "roles", n => { Roles = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.Security.EvidenceRole>()?.ToList(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "verdict", n => { Verdict = n.GetEnumValue<EvidenceVerdict>(); } },
+                { "verdict", n => { Verdict = n.GetEnumValue<Microsoft.Graph.Models.Security.EvidenceVerdict>(); } },
             };
         }
         /// <summary>
@@ -210,11 +210,11 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("detailedRoles", DetailedRoles);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<EvidenceRemediationStatus>("remediationStatus", RemediationStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.EvidenceRemediationStatus>("remediationStatus", RemediationStatus);
             writer.WriteStringValue("remediationStatusDetails", RemediationStatusDetails);
-            writer.WriteCollectionOfEnumValues<EvidenceRole>("roles", Roles);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.Security.EvidenceRole>("roles", Roles);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteEnumValue<EvidenceVerdict>("verdict", Verdict);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.EvidenceVerdict>("verdict", Verdict);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

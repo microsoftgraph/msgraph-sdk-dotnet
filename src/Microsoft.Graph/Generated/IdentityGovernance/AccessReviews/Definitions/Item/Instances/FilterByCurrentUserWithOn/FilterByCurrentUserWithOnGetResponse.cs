@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.FilterByCurrentUserWithOn
 {
     #pragma warning disable CS1591
-    public class FilterByCurrentUserWithOnGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class FilterByCurrentUserWithOnGetResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewInstance>? Value
+        public List<Microsoft.Graph.Models.AccessReviewInstance>? Value
         {
-            get { return BackingStore?.Get<List<AccessReviewInstance>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewInstance>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewInstance> Value
+        public List<Microsoft.Graph.Models.AccessReviewInstance> Value
         {
-            get { return BackingStore?.Get<List<AccessReviewInstance>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewInstance>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FilterByCurrentUserWithOnGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FilterByCurrentUserWithOnGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FilterByCurrentUserWithOnGetResponse();
+            return new Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<AccessReviewInstance>(AccessReviewInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewInstance>(Microsoft.Graph.Models.AccessReviewInstance.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AccessReviewInstance>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewInstance>("value", Value);
         }
     }
 }

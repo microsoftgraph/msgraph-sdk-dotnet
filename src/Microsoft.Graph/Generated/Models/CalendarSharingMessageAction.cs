@@ -12,15 +12,15 @@ namespace Microsoft.Graph.Models
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
-        public CalendarSharingAction? Action
+        public Microsoft.Graph.Models.CalendarSharingAction? Action
         {
-            get { return BackingStore?.Get<CalendarSharingAction?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CalendarSharingAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>The actionType property</summary>
-        public CalendarSharingActionType? ActionType
+        public Microsoft.Graph.Models.CalendarSharingActionType? ActionType
         {
-            get { return BackingStore?.Get<CalendarSharingActionType?>("actionType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CalendarSharingActionType?>("actionType"); }
             set { BackingStore?.Set("actionType", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,9 +32,9 @@ namespace Microsoft.Graph.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The importance property</summary>
-        public CalendarSharingActionImportance? Importance
+        public Microsoft.Graph.Models.CalendarSharingActionImportance? Importance
         {
-            get { return BackingStore?.Get<CalendarSharingActionImportance?>("importance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CalendarSharingActionImportance?>("importance"); }
             set { BackingStore?.Set("importance", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CalendarSharingMessageAction"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CalendarSharingMessageAction"/> and sets the default values.
         /// </summary>
         public CalendarSharingMessageAction()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CalendarSharingMessageAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CalendarSharingMessageAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CalendarSharingMessageAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CalendarSharingMessageAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CalendarSharingMessageAction();
+            return new Microsoft.Graph.Models.CalendarSharingMessageAction();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,9 +79,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<CalendarSharingAction>(); } },
-                { "actionType", n => { ActionType = n.GetEnumValue<CalendarSharingActionType>(); } },
-                { "importance", n => { Importance = n.GetEnumValue<CalendarSharingActionImportance>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Models.CalendarSharingAction>(); } },
+                { "actionType", n => { ActionType = n.GetEnumValue<Microsoft.Graph.Models.CalendarSharingActionType>(); } },
+                { "importance", n => { Importance = n.GetEnumValue<Microsoft.Graph.Models.CalendarSharingActionImportance>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -92,9 +92,9 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<CalendarSharingAction>("action", Action);
-            writer.WriteEnumValue<CalendarSharingActionType>("actionType", ActionType);
-            writer.WriteEnumValue<CalendarSharingActionImportance>("importance", Importance);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CalendarSharingAction>("action", Action);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CalendarSharingActionType>("actionType", ActionType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CalendarSharingActionImportance>("importance", Importance);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

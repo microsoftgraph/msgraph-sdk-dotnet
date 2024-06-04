@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The classes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationClass>? Classes
+        public List<Microsoft.Graph.Models.EducationClass>? Classes
         {
-            get { return BackingStore?.Get<List<EducationClass>?>("classes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationClass>?>("classes"); }
             set { BackingStore?.Set("classes", value); }
         }
 #nullable restore
 #else
-        public List<EducationClass> Classes
+        public List<Microsoft.Graph.Models.EducationClass> Classes
         {
-            get { return BackingStore?.Get<List<EducationClass>>("classes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationClass>>("classes"); }
             set { BackingStore?.Set("classes", value); }
         }
 #endif
         /// <summary>The me property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationUser? Me
+        public Microsoft.Graph.Models.EducationUser? Me
         {
-            get { return BackingStore?.Get<EducationUser?>("me"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationUser?>("me"); }
             set { BackingStore?.Set("me", value); }
         }
 #nullable restore
 #else
-        public EducationUser Me
+        public Microsoft.Graph.Models.EducationUser Me
         {
-            get { return BackingStore?.Get<EducationUser>("me"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationUser>("me"); }
             set { BackingStore?.Set("me", value); }
         }
 #endif
@@ -70,37 +70,37 @@ namespace Microsoft.Graph.Models
         /// <summary>The schools property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationSchool>? Schools
+        public List<Microsoft.Graph.Models.EducationSchool>? Schools
         {
-            get { return BackingStore?.Get<List<EducationSchool>?>("schools"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationSchool>?>("schools"); }
             set { BackingStore?.Set("schools", value); }
         }
 #nullable restore
 #else
-        public List<EducationSchool> Schools
+        public List<Microsoft.Graph.Models.EducationSchool> Schools
         {
-            get { return BackingStore?.Get<List<EducationSchool>>("schools"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationSchool>>("schools"); }
             set { BackingStore?.Set("schools", value); }
         }
 #endif
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationUser>? Users
+        public List<Microsoft.Graph.Models.EducationUser>? Users
         {
-            get { return BackingStore?.Get<List<EducationUser>?>("users"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationUser>?>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #nullable restore
 #else
-        public List<EducationUser> Users
+        public List<Microsoft.Graph.Models.EducationUser> Users
         {
-            get { return BackingStore?.Get<List<EducationUser>>("users"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationUser>>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EducationRoot"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.EducationRoot"/> and sets the default values.
         /// </summary>
         public EducationRoot()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationRoot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EducationRoot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.EducationRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationRoot();
+            return new Microsoft.Graph.Models.EducationRoot();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,11 +125,11 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "classes", n => { Classes = n.GetCollectionOfObjectValues<EducationClass>(EducationClass.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "me", n => { Me = n.GetObjectValue<EducationUser>(EducationUser.CreateFromDiscriminatorValue); } },
+                { "classes", n => { Classes = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.EducationClass>(Microsoft.Graph.Models.EducationClass.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "me", n => { Me = n.GetObjectValue<Microsoft.Graph.Models.EducationUser>(Microsoft.Graph.Models.EducationUser.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "schools", n => { Schools = n.GetCollectionOfObjectValues<EducationSchool>(EducationSchool.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "users", n => { Users = n.GetCollectionOfObjectValues<EducationUser>(EducationUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "schools", n => { Schools = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.EducationSchool>(Microsoft.Graph.Models.EducationSchool.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.EducationUser>(Microsoft.Graph.Models.EducationUser.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -139,11 +139,11 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<EducationClass>("classes", Classes);
-            writer.WriteObjectValue<EducationUser>("me", Me);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.EducationClass>("classes", Classes);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EducationUser>("me", Me);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<EducationSchool>("schools", Schools);
-            writer.WriteCollectionOfObjectValues<EducationUser>("users", Users);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.EducationSchool>("schools", Schools);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.EducationUser>("users", Users);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

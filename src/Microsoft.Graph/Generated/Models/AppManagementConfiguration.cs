@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Collection of keyCredential restrictions settings to be applied to an application or service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyCredentialConfiguration>? KeyCredentials
+        public List<Microsoft.Graph.Models.KeyCredentialConfiguration>? KeyCredentials
         {
-            get { return BackingStore?.Get<List<KeyCredentialConfiguration>?>("keyCredentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyCredentialConfiguration>?>("keyCredentials"); }
             set { BackingStore?.Set("keyCredentials", value); }
         }
 #nullable restore
 #else
-        public List<KeyCredentialConfiguration> KeyCredentials
+        public List<Microsoft.Graph.Models.KeyCredentialConfiguration> KeyCredentials
         {
-            get { return BackingStore?.Get<List<KeyCredentialConfiguration>>("keyCredentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyCredentialConfiguration>>("keyCredentials"); }
             set { BackingStore?.Set("keyCredentials", value); }
         }
 #endif
@@ -54,21 +54,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Collection of password restrictions settings to be applied to an application or service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PasswordCredentialConfiguration>? PasswordCredentials
+        public List<Microsoft.Graph.Models.PasswordCredentialConfiguration>? PasswordCredentials
         {
-            get { return BackingStore?.Get<List<PasswordCredentialConfiguration>?>("passwordCredentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PasswordCredentialConfiguration>?>("passwordCredentials"); }
             set { BackingStore?.Set("passwordCredentials", value); }
         }
 #nullable restore
 #else
-        public List<PasswordCredentialConfiguration> PasswordCredentials
+        public List<Microsoft.Graph.Models.PasswordCredentialConfiguration> PasswordCredentials
         {
-            get { return BackingStore?.Get<List<PasswordCredentialConfiguration>>("passwordCredentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PasswordCredentialConfiguration>>("passwordCredentials"); }
             set { BackingStore?.Set("passwordCredentials", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AppManagementConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AppManagementConfiguration"/> and sets the default values.
         /// </summary>
         public AppManagementConfiguration()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppManagementConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AppManagementConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AppManagementConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AppManagementConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AppManagementConfiguration();
+            return new Microsoft.Graph.Models.AppManagementConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "keyCredentials", n => { KeyCredentials = n.GetCollectionOfObjectValues<KeyCredentialConfiguration>(KeyCredentialConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "keyCredentials", n => { KeyCredentials = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.KeyCredentialConfiguration>(Microsoft.Graph.Models.KeyCredentialConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "passwordCredentials", n => { PasswordCredentials = n.GetCollectionOfObjectValues<PasswordCredentialConfiguration>(PasswordCredentialConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "passwordCredentials", n => { PasswordCredentials = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.PasswordCredentialConfiguration>(Microsoft.Graph.Models.PasswordCredentialConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -105,9 +105,9 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<KeyCredentialConfiguration>("keyCredentials", KeyCredentials);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.KeyCredentialConfiguration>("keyCredentials", KeyCredentials);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<PasswordCredentialConfiguration>("passwordCredentials", PasswordCredentials);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.PasswordCredentialConfiguration>("passwordCredentials", PasswordCredentials);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

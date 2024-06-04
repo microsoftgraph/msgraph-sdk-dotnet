@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UserConsentRequestCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class UserConsentRequestCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserConsentRequest>? Value
+        public List<Microsoft.Graph.Models.UserConsentRequest>? Value
         {
-            get { return BackingStore?.Get<List<UserConsentRequest>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserConsentRequest>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<UserConsentRequest> Value
+        public List<Microsoft.Graph.Models.UserConsentRequest> Value
         {
-            get { return BackingStore?.Get<List<UserConsentRequest>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserConsentRequest>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserConsentRequestCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserConsentRequestCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserConsentRequestCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserConsentRequestCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserConsentRequestCollectionResponse();
+            return new Microsoft.Graph.Models.UserConsentRequestCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<UserConsentRequest>(UserConsentRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UserConsentRequest>(Microsoft.Graph.Models.UserConsentRequest.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<UserConsentRequest>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UserConsentRequest>("value", Value);
         }
     }
 }

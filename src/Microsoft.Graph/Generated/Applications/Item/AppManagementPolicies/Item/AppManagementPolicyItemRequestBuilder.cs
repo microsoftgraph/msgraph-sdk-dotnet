@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Applications.Item.AppManagementPolicies.Item
     public class AppManagementPolicyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of application entities.</summary>
-        public RefRequestBuilder Ref
+        public Microsoft.Graph.Applications.Item.AppManagementPolicies.Item.Ref.RefRequestBuilder Ref
         {
-            get => new RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.AppManagementPolicies.Item.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="AppManagementPolicyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.AppManagementPolicies.Item.AppManagementPolicyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Applications.Item.AppManagementPolicies.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AppManagementPolicyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.AppManagementPolicies.Item.AppManagementPolicyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

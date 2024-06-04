@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OpenShiftItem : ShiftItem, IParsable
+    public class OpenShiftItem : Microsoft.Graph.Models.ShiftItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Count of the number of slots for the given open shift.</summary>
@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("openSlotCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="OpenShiftItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OpenShiftItem"/> and sets the default values.
         /// </summary>
         public OpenShiftItem() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OpenShiftItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OpenShiftItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OpenShiftItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OpenShiftItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OpenShiftItem();
+            return new Microsoft.Graph.Models.OpenShiftItem();
         }
         /// <summary>
         /// The deserialization information for the current model

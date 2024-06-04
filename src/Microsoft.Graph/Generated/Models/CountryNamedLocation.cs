@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CountryNamedLocation : NamedLocation, IParsable
+    public class CountryNamedLocation : Microsoft.Graph.Models.NamedLocation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of countries and/or regions in two-letter format specified by ISO 3166-2. Required.</summary>
@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress(default) and authenticatorAppGps. Note: authenticatorAppGps is not yet supported in the Microsoft Cloud for US Government.</summary>
-        public CountryLookupMethodType? CountryLookupMethod
+        public Microsoft.Graph.Models.CountryLookupMethodType? CountryLookupMethod
         {
-            get { return BackingStore?.Get<CountryLookupMethodType?>("countryLookupMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CountryLookupMethodType?>("countryLookupMethod"); }
             set { BackingStore?.Set("countryLookupMethod", value); }
         }
         /// <summary>true if IP addresses that don&apos;t map to a country or region should be included in the named location. Optional. Default value is false.</summary>
@@ -41,12 +41,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CountryNamedLocation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CountryNamedLocation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CountryNamedLocation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CountryNamedLocation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CountryNamedLocation();
+            return new Microsoft.Graph.Models.CountryNamedLocation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "countriesAndRegions", n => { CountriesAndRegions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "countryLookupMethod", n => { CountryLookupMethod = n.GetEnumValue<CountryLookupMethodType>(); } },
+                { "countryLookupMethod", n => { CountryLookupMethod = n.GetEnumValue<Microsoft.Graph.Models.CountryLookupMethodType>(); } },
                 { "includeUnknownCountriesAndRegions", n => { IncludeUnknownCountriesAndRegions = n.GetBoolValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("countriesAndRegions", CountriesAndRegions);
-            writer.WriteEnumValue<CountryLookupMethodType>("countryLookupMethod", CountryLookupMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CountryLookupMethodType>("countryLookupMethod", CountryLookupMethod);
             writer.WriteBoolValue("includeUnknownCountriesAndRegions", IncludeUnknownCountriesAndRegions);
         }
     }

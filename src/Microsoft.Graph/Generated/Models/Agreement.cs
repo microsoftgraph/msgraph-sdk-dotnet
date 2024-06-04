@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Agreement : Entity, IParsable
+    public class Agreement : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Read-only. Information about acceptances of this agreement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AgreementAcceptance>? Acceptances
+        public List<Microsoft.Graph.Models.AgreementAcceptance>? Acceptances
         {
-            get { return BackingStore?.Get<List<AgreementAcceptance>?>("acceptances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AgreementAcceptance>?>("acceptances"); }
             set { BackingStore?.Set("acceptances", value); }
         }
 #nullable restore
 #else
-        public List<AgreementAcceptance> Acceptances
+        public List<Microsoft.Graph.Models.AgreementAcceptance> Acceptances
         {
-            get { return BackingStore?.Get<List<AgreementAcceptance>>("acceptances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AgreementAcceptance>>("acceptances"); }
             set { BackingStore?.Set("acceptances", value); }
         }
 #endif
@@ -45,32 +45,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Default PDF linked to this agreement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AgreementFile? File
+        public Microsoft.Graph.Models.AgreementFile? File
         {
-            get { return BackingStore?.Get<AgreementFile?>("file"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AgreementFile?>("file"); }
             set { BackingStore?.Set("file", value); }
         }
 #nullable restore
 #else
-        public AgreementFile File
+        public Microsoft.Graph.Models.AgreementFile File
         {
-            get { return BackingStore?.Get<AgreementFile>("file"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AgreementFile>("file"); }
             set { BackingStore?.Set("file", value); }
         }
 #endif
         /// <summary>PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AgreementFileLocalization>? Files
+        public List<Microsoft.Graph.Models.AgreementFileLocalization>? Files
         {
-            get { return BackingStore?.Get<List<AgreementFileLocalization>?>("files"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AgreementFileLocalization>?>("files"); }
             set { BackingStore?.Set("files", value); }
         }
 #nullable restore
 #else
-        public List<AgreementFileLocalization> Files
+        public List<Microsoft.Graph.Models.AgreementFileLocalization> Files
         {
-            get { return BackingStore?.Get<List<AgreementFileLocalization>>("files"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AgreementFileLocalization>>("files"); }
             set { BackingStore?.Set("files", value); }
         }
 #endif
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Agreement"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Agreement"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Agreement CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Agreement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Agreement();
+            return new Microsoft.Graph.Models.Agreement();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,10 +126,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "acceptances", n => { Acceptances = n.GetCollectionOfObjectValues<AgreementAcceptance>(AgreementAcceptance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "acceptances", n => { Acceptances = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AgreementAcceptance>(Microsoft.Graph.Models.AgreementAcceptance.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "file", n => { File = n.GetObjectValue<AgreementFile>(AgreementFile.CreateFromDiscriminatorValue); } },
-                { "files", n => { Files = n.GetCollectionOfObjectValues<AgreementFileLocalization>(AgreementFileLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "file", n => { File = n.GetObjectValue<Microsoft.Graph.Models.AgreementFile>(Microsoft.Graph.Models.AgreementFile.CreateFromDiscriminatorValue); } },
+                { "files", n => { Files = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AgreementFileLocalization>(Microsoft.Graph.Models.AgreementFileLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isPerDeviceAcceptanceRequired", n => { IsPerDeviceAcceptanceRequired = n.GetBoolValue(); } },
                 { "isViewingBeforeAcceptanceRequired", n => { IsViewingBeforeAcceptanceRequired = n.GetBoolValue(); } },
                 { "termsExpiration", n => { TermsExpiration = n.GetObjectValue<Microsoft.Graph.Models.TermsExpiration>(Microsoft.Graph.Models.TermsExpiration.CreateFromDiscriminatorValue); } },
@@ -144,10 +144,10 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AgreementAcceptance>("acceptances", Acceptances);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AgreementAcceptance>("acceptances", Acceptances);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<AgreementFile>("file", File);
-            writer.WriteCollectionOfObjectValues<AgreementFileLocalization>("files", Files);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AgreementFile>("file", File);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AgreementFileLocalization>("files", Files);
             writer.WriteBoolValue("isPerDeviceAcceptanceRequired", IsPerDeviceAcceptanceRequired);
             writer.WriteBoolValue("isViewingBeforeAcceptanceRequired", IsViewingBeforeAcceptanceRequired);
             writer.WriteObjectValue<Microsoft.Graph.Models.TermsExpiration>("termsExpiration", TermsExpiration);

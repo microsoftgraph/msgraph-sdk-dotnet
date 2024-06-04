@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class DeviceConfigurationAssignmentCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class DeviceConfigurationAssignmentCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceConfigurationAssignment>? Value
+        public List<Microsoft.Graph.Models.DeviceConfigurationAssignment>? Value
         {
-            get { return BackingStore?.Get<List<DeviceConfigurationAssignment>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceConfigurationAssignment>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<DeviceConfigurationAssignment> Value
+        public List<Microsoft.Graph.Models.DeviceConfigurationAssignment> Value
         {
-            get { return BackingStore?.Get<List<DeviceConfigurationAssignment>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceConfigurationAssignment>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceConfigurationAssignmentCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceConfigurationAssignmentCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceConfigurationAssignmentCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeviceConfigurationAssignmentCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceConfigurationAssignmentCollectionResponse();
+            return new Microsoft.Graph.Models.DeviceConfigurationAssignmentCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<DeviceConfigurationAssignment>(DeviceConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DeviceConfigurationAssignment>(Microsoft.Graph.Models.DeviceConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceConfigurationAssignment>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DeviceConfigurationAssignment>("value", Value);
         }
     }
 }

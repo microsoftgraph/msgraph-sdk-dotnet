@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Device Configuration.
     /// </summary>
-    public class DeviceConfiguration : Entity, IParsable
+    public class DeviceConfiguration : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The list of assignments for the device configuration profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceConfigurationAssignment>? Assignments
+        public List<Microsoft.Graph.Models.DeviceConfigurationAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<DeviceConfigurationAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceConfigurationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<DeviceConfigurationAssignment> Assignments
+        public List<Microsoft.Graph.Models.DeviceConfigurationAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<DeviceConfigurationAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceConfigurationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -52,48 +52,48 @@ namespace Microsoft.Graph.Models
         /// <summary>Device Configuration Setting State Device Summary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SettingStateDeviceSummary>? DeviceSettingStateSummaries
+        public List<Microsoft.Graph.Models.SettingStateDeviceSummary>? DeviceSettingStateSummaries
         {
-            get { return BackingStore?.Get<List<SettingStateDeviceSummary>?>("deviceSettingStateSummaries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SettingStateDeviceSummary>?>("deviceSettingStateSummaries"); }
             set { BackingStore?.Set("deviceSettingStateSummaries", value); }
         }
 #nullable restore
 #else
-        public List<SettingStateDeviceSummary> DeviceSettingStateSummaries
+        public List<Microsoft.Graph.Models.SettingStateDeviceSummary> DeviceSettingStateSummaries
         {
-            get { return BackingStore?.Get<List<SettingStateDeviceSummary>>("deviceSettingStateSummaries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SettingStateDeviceSummary>>("deviceSettingStateSummaries"); }
             set { BackingStore?.Set("deviceSettingStateSummaries", value); }
         }
 #endif
         /// <summary>Device configuration installation status by device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceConfigurationDeviceStatus>? DeviceStatuses
+        public List<Microsoft.Graph.Models.DeviceConfigurationDeviceStatus>? DeviceStatuses
         {
-            get { return BackingStore?.Get<List<DeviceConfigurationDeviceStatus>?>("deviceStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceConfigurationDeviceStatus>?>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
 #nullable restore
 #else
-        public List<DeviceConfigurationDeviceStatus> DeviceStatuses
+        public List<Microsoft.Graph.Models.DeviceConfigurationDeviceStatus> DeviceStatuses
         {
-            get { return BackingStore?.Get<List<DeviceConfigurationDeviceStatus>>("deviceStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceConfigurationDeviceStatus>>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
 #endif
         /// <summary>Device Configuration devices status overview</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceConfigurationDeviceOverview? DeviceStatusOverview
+        public Microsoft.Graph.Models.DeviceConfigurationDeviceOverview? DeviceStatusOverview
         {
-            get { return BackingStore?.Get<DeviceConfigurationDeviceOverview?>("deviceStatusOverview"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceConfigurationDeviceOverview?>("deviceStatusOverview"); }
             set { BackingStore?.Set("deviceStatusOverview", value); }
         }
 #nullable restore
 #else
-        public DeviceConfigurationDeviceOverview DeviceStatusOverview
+        public Microsoft.Graph.Models.DeviceConfigurationDeviceOverview DeviceStatusOverview
         {
-            get { return BackingStore?.Get<DeviceConfigurationDeviceOverview>("deviceStatusOverview"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceConfigurationDeviceOverview>("deviceStatusOverview"); }
             set { BackingStore?.Set("deviceStatusOverview", value); }
         }
 #endif
@@ -122,32 +122,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Device configuration installation status by user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceConfigurationUserStatus>? UserStatuses
+        public List<Microsoft.Graph.Models.DeviceConfigurationUserStatus>? UserStatuses
         {
-            get { return BackingStore?.Get<List<DeviceConfigurationUserStatus>?>("userStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceConfigurationUserStatus>?>("userStatuses"); }
             set { BackingStore?.Set("userStatuses", value); }
         }
 #nullable restore
 #else
-        public List<DeviceConfigurationUserStatus> UserStatuses
+        public List<Microsoft.Graph.Models.DeviceConfigurationUserStatus> UserStatuses
         {
-            get { return BackingStore?.Get<List<DeviceConfigurationUserStatus>>("userStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceConfigurationUserStatus>>("userStatuses"); }
             set { BackingStore?.Set("userStatuses", value); }
         }
 #endif
         /// <summary>Device Configuration users status overview</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceConfigurationUserOverview? UserStatusOverview
+        public Microsoft.Graph.Models.DeviceConfigurationUserOverview? UserStatusOverview
         {
-            get { return BackingStore?.Get<DeviceConfigurationUserOverview?>("userStatusOverview"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceConfigurationUserOverview?>("userStatusOverview"); }
             set { BackingStore?.Set("userStatusOverview", value); }
         }
 #nullable restore
 #else
-        public DeviceConfigurationUserOverview UserStatusOverview
+        public Microsoft.Graph.Models.DeviceConfigurationUserOverview UserStatusOverview
         {
-            get { return BackingStore?.Get<DeviceConfigurationUserOverview>("userStatusOverview"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceConfigurationUserOverview>("userStatusOverview"); }
             set { BackingStore?.Set("userStatusOverview", value); }
         }
 #endif
@@ -160,41 +160,41 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.androidCustomConfiguration" => new AndroidCustomConfiguration(),
-                "#microsoft.graph.androidGeneralDeviceConfiguration" => new AndroidGeneralDeviceConfiguration(),
-                "#microsoft.graph.androidWorkProfileCustomConfiguration" => new AndroidWorkProfileCustomConfiguration(),
-                "#microsoft.graph.androidWorkProfileGeneralDeviceConfiguration" => new AndroidWorkProfileGeneralDeviceConfiguration(),
-                "#microsoft.graph.appleDeviceFeaturesConfigurationBase" => new AppleDeviceFeaturesConfigurationBase(),
-                "#microsoft.graph.editionUpgradeConfiguration" => new EditionUpgradeConfiguration(),
-                "#microsoft.graph.iosCertificateProfile" => new IosCertificateProfile(),
-                "#microsoft.graph.iosCustomConfiguration" => new IosCustomConfiguration(),
-                "#microsoft.graph.iosDeviceFeaturesConfiguration" => new IosDeviceFeaturesConfiguration(),
-                "#microsoft.graph.iosGeneralDeviceConfiguration" => new IosGeneralDeviceConfiguration(),
-                "#microsoft.graph.iosUpdateConfiguration" => new IosUpdateConfiguration(),
-                "#microsoft.graph.macOSCustomConfiguration" => new MacOSCustomConfiguration(),
-                "#microsoft.graph.macOSDeviceFeaturesConfiguration" => new MacOSDeviceFeaturesConfiguration(),
-                "#microsoft.graph.macOSGeneralDeviceConfiguration" => new MacOSGeneralDeviceConfiguration(),
-                "#microsoft.graph.sharedPCConfiguration" => new SharedPCConfiguration(),
-                "#microsoft.graph.windows10CustomConfiguration" => new Windows10CustomConfiguration(),
-                "#microsoft.graph.windows10EndpointProtectionConfiguration" => new Windows10EndpointProtectionConfiguration(),
-                "#microsoft.graph.windows10EnterpriseModernAppManagementConfiguration" => new Windows10EnterpriseModernAppManagementConfiguration(),
-                "#microsoft.graph.windows10GeneralConfiguration" => new Windows10GeneralConfiguration(),
-                "#microsoft.graph.windows10SecureAssessmentConfiguration" => new Windows10SecureAssessmentConfiguration(),
-                "#microsoft.graph.windows10TeamGeneralConfiguration" => new Windows10TeamGeneralConfiguration(),
-                "#microsoft.graph.windows81GeneralConfiguration" => new Windows81GeneralConfiguration(),
-                "#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration" => new WindowsDefenderAdvancedThreatProtectionConfiguration(),
-                "#microsoft.graph.windowsPhone81CustomConfiguration" => new WindowsPhone81CustomConfiguration(),
-                "#microsoft.graph.windowsPhone81GeneralConfiguration" => new WindowsPhone81GeneralConfiguration(),
-                "#microsoft.graph.windowsUpdateForBusinessConfiguration" => new WindowsUpdateForBusinessConfiguration(),
-                _ => new DeviceConfiguration(),
+                "#microsoft.graph.androidCustomConfiguration" => new Microsoft.Graph.Models.AndroidCustomConfiguration(),
+                "#microsoft.graph.androidGeneralDeviceConfiguration" => new Microsoft.Graph.Models.AndroidGeneralDeviceConfiguration(),
+                "#microsoft.graph.androidWorkProfileCustomConfiguration" => new Microsoft.Graph.Models.AndroidWorkProfileCustomConfiguration(),
+                "#microsoft.graph.androidWorkProfileGeneralDeviceConfiguration" => new Microsoft.Graph.Models.AndroidWorkProfileGeneralDeviceConfiguration(),
+                "#microsoft.graph.appleDeviceFeaturesConfigurationBase" => new Microsoft.Graph.Models.AppleDeviceFeaturesConfigurationBase(),
+                "#microsoft.graph.editionUpgradeConfiguration" => new Microsoft.Graph.Models.EditionUpgradeConfiguration(),
+                "#microsoft.graph.iosCertificateProfile" => new Microsoft.Graph.Models.IosCertificateProfile(),
+                "#microsoft.graph.iosCustomConfiguration" => new Microsoft.Graph.Models.IosCustomConfiguration(),
+                "#microsoft.graph.iosDeviceFeaturesConfiguration" => new Microsoft.Graph.Models.IosDeviceFeaturesConfiguration(),
+                "#microsoft.graph.iosGeneralDeviceConfiguration" => new Microsoft.Graph.Models.IosGeneralDeviceConfiguration(),
+                "#microsoft.graph.iosUpdateConfiguration" => new Microsoft.Graph.Models.IosUpdateConfiguration(),
+                "#microsoft.graph.macOSCustomConfiguration" => new Microsoft.Graph.Models.MacOSCustomConfiguration(),
+                "#microsoft.graph.macOSDeviceFeaturesConfiguration" => new Microsoft.Graph.Models.MacOSDeviceFeaturesConfiguration(),
+                "#microsoft.graph.macOSGeneralDeviceConfiguration" => new Microsoft.Graph.Models.MacOSGeneralDeviceConfiguration(),
+                "#microsoft.graph.sharedPCConfiguration" => new Microsoft.Graph.Models.SharedPCConfiguration(),
+                "#microsoft.graph.windows10CustomConfiguration" => new Microsoft.Graph.Models.Windows10CustomConfiguration(),
+                "#microsoft.graph.windows10EndpointProtectionConfiguration" => new Microsoft.Graph.Models.Windows10EndpointProtectionConfiguration(),
+                "#microsoft.graph.windows10EnterpriseModernAppManagementConfiguration" => new Microsoft.Graph.Models.Windows10EnterpriseModernAppManagementConfiguration(),
+                "#microsoft.graph.windows10GeneralConfiguration" => new Microsoft.Graph.Models.Windows10GeneralConfiguration(),
+                "#microsoft.graph.windows10SecureAssessmentConfiguration" => new Microsoft.Graph.Models.Windows10SecureAssessmentConfiguration(),
+                "#microsoft.graph.windows10TeamGeneralConfiguration" => new Microsoft.Graph.Models.Windows10TeamGeneralConfiguration(),
+                "#microsoft.graph.windows81GeneralConfiguration" => new Microsoft.Graph.Models.Windows81GeneralConfiguration(),
+                "#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration" => new Microsoft.Graph.Models.WindowsDefenderAdvancedThreatProtectionConfiguration(),
+                "#microsoft.graph.windowsPhone81CustomConfiguration" => new Microsoft.Graph.Models.WindowsPhone81CustomConfiguration(),
+                "#microsoft.graph.windowsPhone81GeneralConfiguration" => new Microsoft.Graph.Models.WindowsPhone81GeneralConfiguration(),
+                "#microsoft.graph.windowsUpdateForBusinessConfiguration" => new Microsoft.Graph.Models.WindowsUpdateForBusinessConfiguration(),
+                _ => new Microsoft.Graph.Models.DeviceConfiguration(),
             };
         }
         /// <summary>
@@ -205,16 +205,16 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<DeviceConfigurationAssignment>(DeviceConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DeviceConfigurationAssignment>(Microsoft.Graph.Models.DeviceConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "deviceSettingStateSummaries", n => { DeviceSettingStateSummaries = n.GetCollectionOfObjectValues<SettingStateDeviceSummary>(SettingStateDeviceSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "deviceStatusOverview", n => { DeviceStatusOverview = n.GetObjectValue<DeviceConfigurationDeviceOverview>(DeviceConfigurationDeviceOverview.CreateFromDiscriminatorValue); } },
-                { "deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<DeviceConfigurationDeviceStatus>(DeviceConfigurationDeviceStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceSettingStateSummaries", n => { DeviceSettingStateSummaries = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SettingStateDeviceSummary>(Microsoft.Graph.Models.SettingStateDeviceSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceStatusOverview", n => { DeviceStatusOverview = n.GetObjectValue<Microsoft.Graph.Models.DeviceConfigurationDeviceOverview>(Microsoft.Graph.Models.DeviceConfigurationDeviceOverview.CreateFromDiscriminatorValue); } },
+                { "deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DeviceConfigurationDeviceStatus>(Microsoft.Graph.Models.DeviceConfigurationDeviceStatus.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "userStatusOverview", n => { UserStatusOverview = n.GetObjectValue<DeviceConfigurationUserOverview>(DeviceConfigurationUserOverview.CreateFromDiscriminatorValue); } },
-                { "userStatuses", n => { UserStatuses = n.GetCollectionOfObjectValues<DeviceConfigurationUserStatus>(DeviceConfigurationUserStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userStatusOverview", n => { UserStatusOverview = n.GetObjectValue<Microsoft.Graph.Models.DeviceConfigurationUserOverview>(Microsoft.Graph.Models.DeviceConfigurationUserOverview.CreateFromDiscriminatorValue); } },
+                { "userStatuses", n => { UserStatuses = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DeviceConfigurationUserStatus>(Microsoft.Graph.Models.DeviceConfigurationUserStatus.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
             };
         }
@@ -226,16 +226,16 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceConfigurationAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DeviceConfigurationAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfObjectValues<SettingStateDeviceSummary>("deviceSettingStateSummaries", DeviceSettingStateSummaries);
-            writer.WriteCollectionOfObjectValues<DeviceConfigurationDeviceStatus>("deviceStatuses", DeviceStatuses);
-            writer.WriteObjectValue<DeviceConfigurationDeviceOverview>("deviceStatusOverview", DeviceStatusOverview);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SettingStateDeviceSummary>("deviceSettingStateSummaries", DeviceSettingStateSummaries);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DeviceConfigurationDeviceStatus>("deviceStatuses", DeviceStatuses);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DeviceConfigurationDeviceOverview>("deviceStatusOverview", DeviceStatusOverview);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteCollectionOfObjectValues<DeviceConfigurationUserStatus>("userStatuses", UserStatuses);
-            writer.WriteObjectValue<DeviceConfigurationUserOverview>("userStatusOverview", UserStatusOverview);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DeviceConfigurationUserStatus>("userStatuses", UserStatuses);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DeviceConfigurationUserOverview>("userStatusOverview", UserStatusOverview);
             writer.WriteIntValue("version", Version);
         }
     }

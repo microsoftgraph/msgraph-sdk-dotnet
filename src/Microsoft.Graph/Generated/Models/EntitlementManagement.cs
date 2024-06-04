@@ -7,210 +7,210 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class EntitlementManagement : Entity, IParsable
+    public class EntitlementManagement : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Approval stages for decisions associated with access package assignment requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Approval>? AccessPackageAssignmentApprovals
+        public List<Microsoft.Graph.Models.Approval>? AccessPackageAssignmentApprovals
         {
-            get { return BackingStore?.Get<List<Approval>?>("accessPackageAssignmentApprovals"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Approval>?>("accessPackageAssignmentApprovals"); }
             set { BackingStore?.Set("accessPackageAssignmentApprovals", value); }
         }
 #nullable restore
 #else
-        public List<Approval> AccessPackageAssignmentApprovals
+        public List<Microsoft.Graph.Models.Approval> AccessPackageAssignmentApprovals
         {
-            get { return BackingStore?.Get<List<Approval>>("accessPackageAssignmentApprovals"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Approval>>("accessPackageAssignmentApprovals"); }
             set { BackingStore?.Set("accessPackageAssignmentApprovals", value); }
         }
 #endif
         /// <summary>Access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackage>? AccessPackages
+        public List<Microsoft.Graph.Models.AccessPackage>? AccessPackages
         {
-            get { return BackingStore?.Get<List<AccessPackage>?>("accessPackages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackage>?>("accessPackages"); }
             set { BackingStore?.Set("accessPackages", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackage> AccessPackages
+        public List<Microsoft.Graph.Models.AccessPackage> AccessPackages
         {
-            get { return BackingStore?.Get<List<AccessPackage>>("accessPackages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackage>>("accessPackages"); }
             set { BackingStore?.Set("accessPackages", value); }
         }
 #endif
         /// <summary>Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageAssignmentPolicy>? AssignmentPolicies
+        public List<Microsoft.Graph.Models.AccessPackageAssignmentPolicy>? AssignmentPolicies
         {
-            get { return BackingStore?.Get<List<AccessPackageAssignmentPolicy>?>("assignmentPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageAssignmentPolicy>?>("assignmentPolicies"); }
             set { BackingStore?.Set("assignmentPolicies", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageAssignmentPolicy> AssignmentPolicies
+        public List<Microsoft.Graph.Models.AccessPackageAssignmentPolicy> AssignmentPolicies
         {
-            get { return BackingStore?.Get<List<AccessPackageAssignmentPolicy>>("assignmentPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageAssignmentPolicy>>("assignmentPolicies"); }
             set { BackingStore?.Set("assignmentPolicies", value); }
         }
 #endif
         /// <summary>Access package assignment requests created by or on behalf of a subject.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageAssignmentRequest>? AssignmentRequests
+        public List<Microsoft.Graph.Models.AccessPackageAssignmentRequest>? AssignmentRequests
         {
-            get { return BackingStore?.Get<List<AccessPackageAssignmentRequest>?>("assignmentRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageAssignmentRequest>?>("assignmentRequests"); }
             set { BackingStore?.Set("assignmentRequests", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageAssignmentRequest> AssignmentRequests
+        public List<Microsoft.Graph.Models.AccessPackageAssignmentRequest> AssignmentRequests
         {
-            get { return BackingStore?.Get<List<AccessPackageAssignmentRequest>>("assignmentRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageAssignmentRequest>>("assignmentRequests"); }
             set { BackingStore?.Set("assignmentRequests", value); }
         }
 #endif
         /// <summary>The assignment of an access package to a subject for a period of time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageAssignment>? Assignments
+        public List<Microsoft.Graph.Models.AccessPackageAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<AccessPackageAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageAssignment> Assignments
+        public List<Microsoft.Graph.Models.AccessPackageAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<AccessPackageAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
         /// <summary>A container for access packages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageCatalog>? Catalogs
+        public List<Microsoft.Graph.Models.AccessPackageCatalog>? Catalogs
         {
-            get { return BackingStore?.Get<List<AccessPackageCatalog>?>("catalogs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageCatalog>?>("catalogs"); }
             set { BackingStore?.Set("catalogs", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageCatalog> Catalogs
+        public List<Microsoft.Graph.Models.AccessPackageCatalog> Catalogs
         {
-            get { return BackingStore?.Get<List<AccessPackageCatalog>>("catalogs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageCatalog>>("catalogs"); }
             set { BackingStore?.Set("catalogs", value); }
         }
 #endif
         /// <summary>References to a directory or domain of another organization whose users can request access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConnectedOrganization>? ConnectedOrganizations
+        public List<Microsoft.Graph.Models.ConnectedOrganization>? ConnectedOrganizations
         {
-            get { return BackingStore?.Get<List<ConnectedOrganization>?>("connectedOrganizations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConnectedOrganization>?>("connectedOrganizations"); }
             set { BackingStore?.Set("connectedOrganizations", value); }
         }
 #nullable restore
 #else
-        public List<ConnectedOrganization> ConnectedOrganizations
+        public List<Microsoft.Graph.Models.ConnectedOrganization> ConnectedOrganizations
         {
-            get { return BackingStore?.Get<List<ConnectedOrganization>>("connectedOrganizations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConnectedOrganization>>("connectedOrganizations"); }
             set { BackingStore?.Set("connectedOrganizations", value); }
         }
 #endif
         /// <summary>A reference to the geolocation environments in which a resource is located.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResourceEnvironment>? ResourceEnvironments
+        public List<Microsoft.Graph.Models.AccessPackageResourceEnvironment>? ResourceEnvironments
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceEnvironment>?>("resourceEnvironments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageResourceEnvironment>?>("resourceEnvironments"); }
             set { BackingStore?.Set("resourceEnvironments", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResourceEnvironment> ResourceEnvironments
+        public List<Microsoft.Graph.Models.AccessPackageResourceEnvironment> ResourceEnvironments
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceEnvironment>>("resourceEnvironments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageResourceEnvironment>>("resourceEnvironments"); }
             set { BackingStore?.Set("resourceEnvironments", value); }
         }
 #endif
         /// <summary>Represents a request to add or remove a resource to or from a catalog respectively.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResourceRequest>? ResourceRequests
+        public List<Microsoft.Graph.Models.AccessPackageResourceRequest>? ResourceRequests
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceRequest>?>("resourceRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageResourceRequest>?>("resourceRequests"); }
             set { BackingStore?.Set("resourceRequests", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResourceRequest> ResourceRequests
+        public List<Microsoft.Graph.Models.AccessPackageResourceRequest> ResourceRequests
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceRequest>>("resourceRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageResourceRequest>>("resourceRequests"); }
             set { BackingStore?.Set("resourceRequests", value); }
         }
 #endif
         /// <summary>The resourceRoleScopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResourceRoleScope>? ResourceRoleScopes
+        public List<Microsoft.Graph.Models.AccessPackageResourceRoleScope>? ResourceRoleScopes
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceRoleScope>?>("resourceRoleScopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageResourceRoleScope>?>("resourceRoleScopes"); }
             set { BackingStore?.Set("resourceRoleScopes", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResourceRoleScope> ResourceRoleScopes
+        public List<Microsoft.Graph.Models.AccessPackageResourceRoleScope> ResourceRoleScopes
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceRoleScope>>("resourceRoleScopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageResourceRoleScope>>("resourceRoleScopes"); }
             set { BackingStore?.Set("resourceRoleScopes", value); }
         }
 #endif
         /// <summary>The resources associated with the catalogs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResource>? Resources
+        public List<Microsoft.Graph.Models.AccessPackageResource>? Resources
         {
-            get { return BackingStore?.Get<List<AccessPackageResource>?>("resources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageResource>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResource> Resources
+        public List<Microsoft.Graph.Models.AccessPackageResource> Resources
         {
-            get { return BackingStore?.Get<List<AccessPackageResource>>("resources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #endif
         /// <summary>The settings that control the behavior of Microsoft Entra entitlement management.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EntitlementManagementSettings? Settings
+        public Microsoft.Graph.Models.EntitlementManagementSettings? Settings
         {
-            get { return BackingStore?.Get<EntitlementManagementSettings?>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EntitlementManagementSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public EntitlementManagementSettings Settings
+        public Microsoft.Graph.Models.EntitlementManagementSettings Settings
         {
-            get { return BackingStore?.Get<EntitlementManagementSettings>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EntitlementManagementSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EntitlementManagement"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EntitlementManagement"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EntitlementManagement CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EntitlementManagement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EntitlementManagement();
+            return new Microsoft.Graph.Models.EntitlementManagement();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -220,18 +220,18 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accessPackageAssignmentApprovals", n => { AccessPackageAssignmentApprovals = n.GetCollectionOfObjectValues<Approval>(Approval.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "accessPackages", n => { AccessPackages = n.GetCollectionOfObjectValues<AccessPackage>(AccessPackage.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "assignmentPolicies", n => { AssignmentPolicies = n.GetCollectionOfObjectValues<AccessPackageAssignmentPolicy>(AccessPackageAssignmentPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "assignmentRequests", n => { AssignmentRequests = n.GetCollectionOfObjectValues<AccessPackageAssignmentRequest>(AccessPackageAssignmentRequest.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<AccessPackageAssignment>(AccessPackageAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "catalogs", n => { Catalogs = n.GetCollectionOfObjectValues<AccessPackageCatalog>(AccessPackageCatalog.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "connectedOrganizations", n => { ConnectedOrganizations = n.GetCollectionOfObjectValues<ConnectedOrganization>(ConnectedOrganization.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "resourceEnvironments", n => { ResourceEnvironments = n.GetCollectionOfObjectValues<AccessPackageResourceEnvironment>(AccessPackageResourceEnvironment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "resourceRequests", n => { ResourceRequests = n.GetCollectionOfObjectValues<AccessPackageResourceRequest>(AccessPackageResourceRequest.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "resourceRoleScopes", n => { ResourceRoleScopes = n.GetCollectionOfObjectValues<AccessPackageResourceRoleScope>(AccessPackageResourceRoleScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "resources", n => { Resources = n.GetCollectionOfObjectValues<AccessPackageResource>(AccessPackageResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "settings", n => { Settings = n.GetObjectValue<EntitlementManagementSettings>(EntitlementManagementSettings.CreateFromDiscriminatorValue); } },
+                { "accessPackageAssignmentApprovals", n => { AccessPackageAssignmentApprovals = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Approval>(Microsoft.Graph.Models.Approval.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessPackages", n => { AccessPackages = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackage>(Microsoft.Graph.Models.AccessPackage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignmentPolicies", n => { AssignmentPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageAssignmentPolicy>(Microsoft.Graph.Models.AccessPackageAssignmentPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignmentRequests", n => { AssignmentRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageAssignmentRequest>(Microsoft.Graph.Models.AccessPackageAssignmentRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageAssignment>(Microsoft.Graph.Models.AccessPackageAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "catalogs", n => { Catalogs = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageCatalog>(Microsoft.Graph.Models.AccessPackageCatalog.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "connectedOrganizations", n => { ConnectedOrganizations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ConnectedOrganization>(Microsoft.Graph.Models.ConnectedOrganization.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resourceEnvironments", n => { ResourceEnvironments = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageResourceEnvironment>(Microsoft.Graph.Models.AccessPackageResourceEnvironment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resourceRequests", n => { ResourceRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageResourceRequest>(Microsoft.Graph.Models.AccessPackageResourceRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resourceRoleScopes", n => { ResourceRoleScopes = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageResourceRoleScope>(Microsoft.Graph.Models.AccessPackageResourceRoleScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageResource>(Microsoft.Graph.Models.AccessPackageResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Models.EntitlementManagementSettings>(Microsoft.Graph.Models.EntitlementManagementSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -242,18 +242,18 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Approval>("accessPackageAssignmentApprovals", AccessPackageAssignmentApprovals);
-            writer.WriteCollectionOfObjectValues<AccessPackage>("accessPackages", AccessPackages);
-            writer.WriteCollectionOfObjectValues<AccessPackageAssignmentPolicy>("assignmentPolicies", AssignmentPolicies);
-            writer.WriteCollectionOfObjectValues<AccessPackageAssignmentRequest>("assignmentRequests", AssignmentRequests);
-            writer.WriteCollectionOfObjectValues<AccessPackageAssignment>("assignments", Assignments);
-            writer.WriteCollectionOfObjectValues<AccessPackageCatalog>("catalogs", Catalogs);
-            writer.WriteCollectionOfObjectValues<ConnectedOrganization>("connectedOrganizations", ConnectedOrganizations);
-            writer.WriteCollectionOfObjectValues<AccessPackageResourceEnvironment>("resourceEnvironments", ResourceEnvironments);
-            writer.WriteCollectionOfObjectValues<AccessPackageResourceRequest>("resourceRequests", ResourceRequests);
-            writer.WriteCollectionOfObjectValues<AccessPackageResourceRoleScope>("resourceRoleScopes", ResourceRoleScopes);
-            writer.WriteCollectionOfObjectValues<AccessPackageResource>("resources", Resources);
-            writer.WriteObjectValue<EntitlementManagementSettings>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Approval>("accessPackageAssignmentApprovals", AccessPackageAssignmentApprovals);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackage>("accessPackages", AccessPackages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageAssignmentPolicy>("assignmentPolicies", AssignmentPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageAssignmentRequest>("assignmentRequests", AssignmentRequests);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageCatalog>("catalogs", Catalogs);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ConnectedOrganization>("connectedOrganizations", ConnectedOrganizations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageResourceEnvironment>("resourceEnvironments", ResourceEnvironments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageResourceRequest>("resourceRequests", ResourceRequests);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageResourceRoleScope>("resourceRoleScopes", ResourceRoleScopes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageResource>("resources", Resources);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EntitlementManagementSettings>("settings", Settings);
         }
     }
 }

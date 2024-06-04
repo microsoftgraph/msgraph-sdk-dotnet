@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Cust
     public class CustodianSourcesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the custodianSources property of the microsoft.graph.security.ediscoverySearch entity.</summary>
         /// <param name="position">The unique identifier of dataSource</param>
-        /// <returns>A <see cref="DataSourceItemRequestBuilder"/></returns>
-        public DataSourceItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources.Item.DataSourceItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources.Item.DataSourceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("dataSource%2Did", position);
-                return new DataSourceItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources.Item.DataSourceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CustodianSourcesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources.CustodianSourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Cust
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CustodianSourcesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources.CustodianSourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,40 +52,41 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Cust
         {
         }
         /// <summary>
-        /// Custodian sources that are included in the eDiscovery search.
+        /// Get the list of custodial data sources associated with an eDiscovery search.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverysearch-list-custodiansources?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="DataSourceCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.DataSourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DataSourceCollectionResponse?> GetAsync(Action<RequestConfiguration<CustodianSourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.DataSourceCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources.CustodianSourcesRequestBuilder.CustodianSourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DataSourceCollectionResponse> GetAsync(Action<RequestConfiguration<CustodianSourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.DataSourceCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources.CustodianSourcesRequestBuilder.CustodianSourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DataSourceCollectionResponse>(requestInfo, DataSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.DataSourceCollectionResponse>(requestInfo, Microsoft.Graph.Models.Security.DataSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Custodian sources that are included in the eDiscovery search.
+        /// Get the list of custodial data sources associated with an eDiscovery search.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CustodianSourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources.CustodianSourcesRequestBuilder.CustodianSourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CustodianSourcesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources.CustodianSourcesRequestBuilder.CustodianSourcesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -96,14 +97,14 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Cust
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CustodianSourcesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources.CustodianSourcesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CustodianSourcesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources.CustodianSourcesRequestBuilder WithUrl(string rawUrl)
         {
-            return new CustodianSourcesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources.CustodianSourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Custodian sources that are included in the eDiscovery search.
+        /// Get the list of custodial data sources associated with an eDiscovery search.
         /// </summary>
         public class CustodianSourcesRequestBuilderGetQueryParameters 
         {
@@ -171,7 +172,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Cust
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CustodianSourcesRequestBuilderGetRequestConfiguration : RequestConfiguration<CustodianSourcesRequestBuilderGetQueryParameters>
+        public class CustodianSourcesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources.CustodianSourcesRequestBuilder.CustodianSourcesRequestBuilderGetQueryParameters>
         {
         }
     }

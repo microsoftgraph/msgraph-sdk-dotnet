@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("used", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Quota"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Quota"/> and sets the default values.
         /// </summary>
         public Quota()
         {
@@ -102,12 +102,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Quota"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Quota"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Quota CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Quota CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Quota();
+            return new Microsoft.Graph.Models.Quota();
         }
         /// <summary>
         /// The deserialization information for the current model

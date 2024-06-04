@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Users.Item.FollowedSites.Remove
 {
     [Obsolete("This class is obsolete. Use RemovePostResponse instead.")]
     #pragma warning disable CS1591
-    public class RemoveResponse : RemovePostResponse, IParsable
+    public class RemoveResponse : Microsoft.Graph.Users.Item.FollowedSites.Remove.RemovePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RemoveResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.FollowedSites.Remove.RemoveResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RemoveResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Users.Item.FollowedSites.Remove.RemoveResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RemoveResponse();
+            return new Microsoft.Graph.Users.Item.FollowedSites.Remove.RemoveResponse();
         }
     }
 }

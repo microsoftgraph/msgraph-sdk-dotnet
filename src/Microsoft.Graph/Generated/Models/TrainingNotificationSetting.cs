@@ -7,43 +7,43 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class TrainingNotificationSetting : EndUserNotificationSetting, IParsable
+    public class TrainingNotificationSetting : Microsoft.Graph.Models.EndUserNotificationSetting, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Training assignment details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BaseEndUserNotification? TrainingAssignment
+        public Microsoft.Graph.Models.BaseEndUserNotification? TrainingAssignment
         {
-            get { return BackingStore?.Get<BaseEndUserNotification?>("trainingAssignment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BaseEndUserNotification?>("trainingAssignment"); }
             set { BackingStore?.Set("trainingAssignment", value); }
         }
 #nullable restore
 #else
-        public BaseEndUserNotification TrainingAssignment
+        public Microsoft.Graph.Models.BaseEndUserNotification TrainingAssignment
         {
-            get { return BackingStore?.Get<BaseEndUserNotification>("trainingAssignment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BaseEndUserNotification>("trainingAssignment"); }
             set { BackingStore?.Set("trainingAssignment", value); }
         }
 #endif
         /// <summary>Training reminder details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TrainingReminderNotification? TrainingReminder
+        public Microsoft.Graph.Models.TrainingReminderNotification? TrainingReminder
         {
-            get { return BackingStore?.Get<TrainingReminderNotification?>("trainingReminder"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TrainingReminderNotification?>("trainingReminder"); }
             set { BackingStore?.Set("trainingReminder", value); }
         }
 #nullable restore
 #else
-        public TrainingReminderNotification TrainingReminder
+        public Microsoft.Graph.Models.TrainingReminderNotification TrainingReminder
         {
-            get { return BackingStore?.Get<TrainingReminderNotification>("trainingReminder"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TrainingReminderNotification>("trainingReminder"); }
             set { BackingStore?.Set("trainingReminder", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TrainingNotificationSetting"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TrainingNotificationSetting"/> and sets the default values.
         /// </summary>
         public TrainingNotificationSetting() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TrainingNotificationSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TrainingNotificationSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TrainingNotificationSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TrainingNotificationSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TrainingNotificationSetting();
+            return new Microsoft.Graph.Models.TrainingNotificationSetting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,8 +67,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "trainingAssignment", n => { TrainingAssignment = n.GetObjectValue<BaseEndUserNotification>(BaseEndUserNotification.CreateFromDiscriminatorValue); } },
-                { "trainingReminder", n => { TrainingReminder = n.GetObjectValue<TrainingReminderNotification>(TrainingReminderNotification.CreateFromDiscriminatorValue); } },
+                { "trainingAssignment", n => { TrainingAssignment = n.GetObjectValue<Microsoft.Graph.Models.BaseEndUserNotification>(Microsoft.Graph.Models.BaseEndUserNotification.CreateFromDiscriminatorValue); } },
+                { "trainingReminder", n => { TrainingReminder = n.GetObjectValue<Microsoft.Graph.Models.TrainingReminderNotification>(Microsoft.Graph.Models.TrainingReminderNotification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<BaseEndUserNotification>("trainingAssignment", TrainingAssignment);
-            writer.WriteObjectValue<TrainingReminderNotification>("trainingReminder", TrainingReminder);
+            writer.WriteObjectValue<Microsoft.Graph.Models.BaseEndUserNotification>("trainingAssignment", TrainingAssignment);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TrainingReminderNotification>("trainingReminder", TrainingReminder);
         }
     }
 }

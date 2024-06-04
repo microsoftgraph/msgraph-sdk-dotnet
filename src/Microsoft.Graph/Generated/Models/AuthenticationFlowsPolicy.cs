@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AuthenticationFlowsPolicy : Entity, IParsable
+    public class AuthenticationFlowsPolicy : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Inherited property. A description of the policy. Optional. Read-only.</summary>
@@ -45,28 +45,28 @@ namespace Microsoft.Graph.Models
         /// <summary>Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SelfServiceSignUpAuthenticationFlowConfiguration? SelfServiceSignUp
+        public Microsoft.Graph.Models.SelfServiceSignUpAuthenticationFlowConfiguration? SelfServiceSignUp
         {
-            get { return BackingStore?.Get<SelfServiceSignUpAuthenticationFlowConfiguration?>("selfServiceSignUp"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SelfServiceSignUpAuthenticationFlowConfiguration?>("selfServiceSignUp"); }
             set { BackingStore?.Set("selfServiceSignUp", value); }
         }
 #nullable restore
 #else
-        public SelfServiceSignUpAuthenticationFlowConfiguration SelfServiceSignUp
+        public Microsoft.Graph.Models.SelfServiceSignUpAuthenticationFlowConfiguration SelfServiceSignUp
         {
-            get { return BackingStore?.Get<SelfServiceSignUpAuthenticationFlowConfiguration>("selfServiceSignUp"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SelfServiceSignUpAuthenticationFlowConfiguration>("selfServiceSignUp"); }
             set { BackingStore?.Set("selfServiceSignUp", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationFlowsPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationFlowsPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthenticationFlowsPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AuthenticationFlowsPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationFlowsPolicy();
+            return new Microsoft.Graph.Models.AuthenticationFlowsPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "selfServiceSignUp", n => { SelfServiceSignUp = n.GetObjectValue<SelfServiceSignUpAuthenticationFlowConfiguration>(SelfServiceSignUpAuthenticationFlowConfiguration.CreateFromDiscriminatorValue); } },
+                { "selfServiceSignUp", n => { SelfServiceSignUp = n.GetObjectValue<Microsoft.Graph.Models.SelfServiceSignUpAuthenticationFlowConfiguration>(Microsoft.Graph.Models.SelfServiceSignUpAuthenticationFlowConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<SelfServiceSignUpAuthenticationFlowConfiguration>("selfServiceSignUp", SelfServiceSignUp);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SelfServiceSignUpAuthenticationFlowConfiguration>("selfServiceSignUp", SelfServiceSignUp);
         }
     }
 }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UnifiedRoleManagementPolicy : Entity, IParsable
+    public class UnifiedRoleManagementPolicy : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Description for the policy.</summary>
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleManagementPolicyRule>? EffectiveRules
+        public List<Microsoft.Graph.Models.UnifiedRoleManagementPolicyRule>? EffectiveRules
         {
-            get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>?>("effectiveRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UnifiedRoleManagementPolicyRule>?>("effectiveRules"); }
             set { BackingStore?.Set("effectiveRules", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleManagementPolicyRule> EffectiveRules
+        public List<Microsoft.Graph.Models.UnifiedRoleManagementPolicyRule> EffectiveRules
         {
-            get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>>("effectiveRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UnifiedRoleManagementPolicyRule>>("effectiveRules"); }
             set { BackingStore?.Set("effectiveRules", value); }
         }
 #endif
@@ -67,16 +67,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The identity who last modified the role setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? LastModifiedBy
+        public Microsoft.Graph.Models.Identity? LastModifiedBy
         {
-            get { return BackingStore?.Get<Identity?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public Identity LastModifiedBy
+        public Microsoft.Graph.Models.Identity LastModifiedBy
         {
-            get { return BackingStore?.Get<Identity>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -89,16 +89,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of rules like approval rules and expiration rules. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleManagementPolicyRule>? Rules
+        public List<Microsoft.Graph.Models.UnifiedRoleManagementPolicyRule>? Rules
         {
-            get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>?>("rules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UnifiedRoleManagementPolicyRule>?>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleManagementPolicyRule> Rules
+        public List<Microsoft.Graph.Models.UnifiedRoleManagementPolicyRule> Rules
         {
-            get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>>("rules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UnifiedRoleManagementPolicyRule>>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
 #endif
@@ -137,12 +137,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleManagementPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRoleManagementPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnifiedRoleManagementPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UnifiedRoleManagementPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedRoleManagementPolicy();
+            return new Microsoft.Graph.Models.UnifiedRoleManagementPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -154,11 +154,11 @@ namespace Microsoft.Graph.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "effectiveRules", n => { EffectiveRules = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>(UnifiedRoleManagementPolicyRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "effectiveRules", n => { EffectiveRules = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UnifiedRoleManagementPolicyRule>(Microsoft.Graph.Models.UnifiedRoleManagementPolicyRule.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isOrganizationDefault", n => { IsOrganizationDefault = n.GetBoolValue(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.Identity>(Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "rules", n => { Rules = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>(UnifiedRoleManagementPolicyRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UnifiedRoleManagementPolicyRule>(Microsoft.Graph.Models.UnifiedRoleManagementPolicyRule.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "scopeId", n => { ScopeId = n.GetStringValue(); } },
                 { "scopeType", n => { ScopeType = n.GetStringValue(); } },
             };
@@ -173,11 +173,11 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>("effectiveRules", EffectiveRules);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UnifiedRoleManagementPolicyRule>("effectiveRules", EffectiveRules);
             writer.WriteBoolValue("isOrganizationDefault", IsOrganizationDefault);
-            writer.WriteObjectValue<Identity>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Identity>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>("rules", Rules);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UnifiedRoleManagementPolicyRule>("rules", Rules);
             writer.WriteStringValue("scopeId", ScopeId);
             writer.WriteStringValue("scopeType", ScopeType);
         }

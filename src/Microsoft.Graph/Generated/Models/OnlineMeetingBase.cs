@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OnlineMeetingBase : Entity, IParsable
+    public class OnlineMeetingBase : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether attendees can turn on their camera.</summary>
@@ -23,15 +23,15 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("allowAttendeeToEnableMic", value); }
         }
         /// <summary>Specifies who can be a presenter in a meeting.</summary>
-        public OnlineMeetingPresenters? AllowedPresenters
+        public Microsoft.Graph.Models.OnlineMeetingPresenters? AllowedPresenters
         {
-            get { return BackingStore?.Get<OnlineMeetingPresenters?>("allowedPresenters"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnlineMeetingPresenters?>("allowedPresenters"); }
             set { BackingStore?.Set("allowedPresenters", value); }
         }
         /// <summary>Specifies the mode of the meeting chat.</summary>
-        public MeetingChatMode? AllowMeetingChat
+        public Microsoft.Graph.Models.MeetingChatMode? AllowMeetingChat
         {
-            get { return BackingStore?.Get<MeetingChatMode?>("allowMeetingChat"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MeetingChatMode?>("allowMeetingChat"); }
             set { BackingStore?.Set("allowMeetingChat", value); }
         }
         /// <summary>Specifies if participants are allowed to rename themselves in an instance of the meeting.</summary>
@@ -49,16 +49,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The attendance reports of an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MeetingAttendanceReport>? AttendanceReports
+        public List<Microsoft.Graph.Models.MeetingAttendanceReport>? AttendanceReports
         {
-            get { return BackingStore?.Get<List<MeetingAttendanceReport>?>("attendanceReports"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MeetingAttendanceReport>?>("attendanceReports"); }
             set { BackingStore?.Set("attendanceReports", value); }
         }
 #nullable restore
 #else
-        public List<MeetingAttendanceReport> AttendanceReports
+        public List<Microsoft.Graph.Models.MeetingAttendanceReport> AttendanceReports
         {
-            get { return BackingStore?.Get<List<MeetingAttendanceReport>>("attendanceReports"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MeetingAttendanceReport>>("attendanceReports"); }
             set { BackingStore?.Set("attendanceReports", value); }
         }
 #endif
@@ -103,16 +103,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The join information in the language and locale variant specified in &apos;Accept-Language&apos; request HTTP header. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? JoinInformation
+        public Microsoft.Graph.Models.ItemBody? JoinInformation
         {
-            get { return BackingStore?.Get<ItemBody?>("joinInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemBody?>("joinInformation"); }
             set { BackingStore?.Set("joinInformation", value); }
         }
 #nullable restore
 #else
-        public ItemBody JoinInformation
+        public Microsoft.Graph.Models.ItemBody JoinInformation
         {
-            get { return BackingStore?.Get<ItemBody>("joinInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemBody>("joinInformation"); }
             set { BackingStore?.Set("joinInformation", value); }
         }
 #endif
@@ -171,9 +171,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("recordAutomatically", value); }
         }
         /// <summary>Specifies whether meeting chat history is shared with participants.  Possible values are: all, none, unknownFutureValue.</summary>
-        public MeetingChatHistoryDefaultMode? ShareMeetingChatHistoryDefault
+        public Microsoft.Graph.Models.MeetingChatHistoryDefaultMode? ShareMeetingChatHistoryDefault
         {
-            get { return BackingStore?.Get<MeetingChatHistoryDefaultMode?>("shareMeetingChatHistoryDefault"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MeetingChatHistoryDefaultMode?>("shareMeetingChatHistoryDefault"); }
             set { BackingStore?.Set("shareMeetingChatHistoryDefault", value); }
         }
         /// <summary>The subject of the online meeting.</summary>
@@ -211,33 +211,33 @@ namespace Microsoft.Graph.Models
         /// <summary>Specifies whether the client application should apply a watermark to a content type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WatermarkProtectionValues? WatermarkProtection
+        public Microsoft.Graph.Models.WatermarkProtectionValues? WatermarkProtection
         {
-            get { return BackingStore?.Get<WatermarkProtectionValues?>("watermarkProtection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WatermarkProtectionValues?>("watermarkProtection"); }
             set { BackingStore?.Set("watermarkProtection", value); }
         }
 #nullable restore
 #else
-        public WatermarkProtectionValues WatermarkProtection
+        public Microsoft.Graph.Models.WatermarkProtectionValues WatermarkProtection
         {
-            get { return BackingStore?.Get<WatermarkProtectionValues>("watermarkProtection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WatermarkProtectionValues>("watermarkProtection"); }
             set { BackingStore?.Set("watermarkProtection", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnlineMeetingBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnlineMeetingBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnlineMeetingBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OnlineMeetingBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.onlineMeeting" => new OnlineMeeting(),
-                "#microsoft.graph.virtualEventSession" => new VirtualEventSession(),
-                _ => new OnlineMeetingBase(),
+                "#microsoft.graph.onlineMeeting" => new Microsoft.Graph.Models.OnlineMeeting(),
+                "#microsoft.graph.virtualEventSession" => new Microsoft.Graph.Models.VirtualEventSession(),
+                _ => new Microsoft.Graph.Models.OnlineMeetingBase(),
             };
         }
         /// <summary>
@@ -250,23 +250,23 @@ namespace Microsoft.Graph.Models
             {
                 { "allowAttendeeToEnableCamera", n => { AllowAttendeeToEnableCamera = n.GetBoolValue(); } },
                 { "allowAttendeeToEnableMic", n => { AllowAttendeeToEnableMic = n.GetBoolValue(); } },
-                { "allowMeetingChat", n => { AllowMeetingChat = n.GetEnumValue<MeetingChatMode>(); } },
+                { "allowMeetingChat", n => { AllowMeetingChat = n.GetEnumValue<Microsoft.Graph.Models.MeetingChatMode>(); } },
                 { "allowParticipantsToChangeName", n => { AllowParticipantsToChangeName = n.GetBoolValue(); } },
                 { "allowTeamworkReactions", n => { AllowTeamworkReactions = n.GetBoolValue(); } },
-                { "allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
-                { "attendanceReports", n => { AttendanceReports = n.GetCollectionOfObjectValues<MeetingAttendanceReport>(MeetingAttendanceReport.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<Microsoft.Graph.Models.OnlineMeetingPresenters>(); } },
+                { "attendanceReports", n => { AttendanceReports = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MeetingAttendanceReport>(Microsoft.Graph.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "audioConferencing", n => { AudioConferencing = n.GetObjectValue<Microsoft.Graph.Models.AudioConferencing>(Microsoft.Graph.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
                 { "chatInfo", n => { ChatInfo = n.GetObjectValue<Microsoft.Graph.Models.ChatInfo>(Microsoft.Graph.Models.ChatInfo.CreateFromDiscriminatorValue); } },
                 { "isEntryExitAnnounced", n => { IsEntryExitAnnounced = n.GetBoolValue(); } },
-                { "joinInformation", n => { JoinInformation = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "joinInformation", n => { JoinInformation = n.GetObjectValue<Microsoft.Graph.Models.ItemBody>(Microsoft.Graph.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "joinMeetingIdSettings", n => { JoinMeetingIdSettings = n.GetObjectValue<Microsoft.Graph.Models.JoinMeetingIdSettings>(Microsoft.Graph.Models.JoinMeetingIdSettings.CreateFromDiscriminatorValue); } },
                 { "joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
                 { "lobbyBypassSettings", n => { LobbyBypassSettings = n.GetObjectValue<Microsoft.Graph.Models.LobbyBypassSettings>(Microsoft.Graph.Models.LobbyBypassSettings.CreateFromDiscriminatorValue); } },
                 { "recordAutomatically", n => { RecordAutomatically = n.GetBoolValue(); } },
-                { "shareMeetingChatHistoryDefault", n => { ShareMeetingChatHistoryDefault = n.GetEnumValue<MeetingChatHistoryDefaultMode>(); } },
+                { "shareMeetingChatHistoryDefault", n => { ShareMeetingChatHistoryDefault = n.GetEnumValue<Microsoft.Graph.Models.MeetingChatHistoryDefaultMode>(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "videoTeleconferenceId", n => { VideoTeleconferenceId = n.GetStringValue(); } },
-                { "watermarkProtection", n => { WatermarkProtection = n.GetObjectValue<WatermarkProtectionValues>(WatermarkProtectionValues.CreateFromDiscriminatorValue); } },
+                { "watermarkProtection", n => { WatermarkProtection = n.GetObjectValue<Microsoft.Graph.Models.WatermarkProtectionValues>(Microsoft.Graph.Models.WatermarkProtectionValues.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -279,23 +279,23 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteBoolValue("allowAttendeeToEnableCamera", AllowAttendeeToEnableCamera);
             writer.WriteBoolValue("allowAttendeeToEnableMic", AllowAttendeeToEnableMic);
-            writer.WriteEnumValue<OnlineMeetingPresenters>("allowedPresenters", AllowedPresenters);
-            writer.WriteEnumValue<MeetingChatMode>("allowMeetingChat", AllowMeetingChat);
+            writer.WriteEnumValue<Microsoft.Graph.Models.OnlineMeetingPresenters>("allowedPresenters", AllowedPresenters);
+            writer.WriteEnumValue<Microsoft.Graph.Models.MeetingChatMode>("allowMeetingChat", AllowMeetingChat);
             writer.WriteBoolValue("allowParticipantsToChangeName", AllowParticipantsToChangeName);
             writer.WriteBoolValue("allowTeamworkReactions", AllowTeamworkReactions);
-            writer.WriteCollectionOfObjectValues<MeetingAttendanceReport>("attendanceReports", AttendanceReports);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MeetingAttendanceReport>("attendanceReports", AttendanceReports);
             writer.WriteObjectValue<Microsoft.Graph.Models.AudioConferencing>("audioConferencing", AudioConferencing);
             writer.WriteObjectValue<Microsoft.Graph.Models.ChatInfo>("chatInfo", ChatInfo);
             writer.WriteBoolValue("isEntryExitAnnounced", IsEntryExitAnnounced);
-            writer.WriteObjectValue<ItemBody>("joinInformation", JoinInformation);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemBody>("joinInformation", JoinInformation);
             writer.WriteObjectValue<Microsoft.Graph.Models.JoinMeetingIdSettings>("joinMeetingIdSettings", JoinMeetingIdSettings);
             writer.WriteStringValue("joinWebUrl", JoinWebUrl);
             writer.WriteObjectValue<Microsoft.Graph.Models.LobbyBypassSettings>("lobbyBypassSettings", LobbyBypassSettings);
             writer.WriteBoolValue("recordAutomatically", RecordAutomatically);
-            writer.WriteEnumValue<MeetingChatHistoryDefaultMode>("shareMeetingChatHistoryDefault", ShareMeetingChatHistoryDefault);
+            writer.WriteEnumValue<Microsoft.Graph.Models.MeetingChatHistoryDefaultMode>("shareMeetingChatHistoryDefault", ShareMeetingChatHistoryDefault);
             writer.WriteStringValue("subject", Subject);
             writer.WriteStringValue("videoTeleconferenceId", VideoTeleconferenceId);
-            writer.WriteObjectValue<WatermarkProtectionValues>("watermarkProtection", WatermarkProtection);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WatermarkProtectionValues>("watermarkProtection", WatermarkProtection);
         }
     }
 }

@@ -48,13 +48,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The theme property</summary>
-        public ScheduleEntityTheme? Theme
+        public Microsoft.Graph.Models.ScheduleEntityTheme? Theme
         {
-            get { return BackingStore?.Get<ScheduleEntityTheme?>("theme"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ScheduleEntityTheme?>("theme"); }
             set { BackingStore?.Set("theme", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ScheduleEntity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ScheduleEntity"/> and sets the default values.
         /// </summary>
         public ScheduleEntity()
         {
@@ -64,18 +64,18 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ScheduleEntity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ScheduleEntity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ScheduleEntity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ScheduleEntity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.openShiftItem" => new OpenShiftItem(),
-                "#microsoft.graph.shiftItem" => new ShiftItem(),
-                "#microsoft.graph.timeOffItem" => new TimeOffItem(),
-                _ => new ScheduleEntity(),
+                "#microsoft.graph.openShiftItem" => new Microsoft.Graph.Models.OpenShiftItem(),
+                "#microsoft.graph.shiftItem" => new Microsoft.Graph.Models.ShiftItem(),
+                "#microsoft.graph.timeOffItem" => new Microsoft.Graph.Models.TimeOffItem(),
+                _ => new Microsoft.Graph.Models.ScheduleEntity(),
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Models
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                { "theme", n => { Theme = n.GetEnumValue<ScheduleEntityTheme>(); } },
+                { "theme", n => { Theme = n.GetEnumValue<Microsoft.Graph.Models.ScheduleEntityTheme>(); } },
             };
         }
         /// <summary>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
-            writer.WriteEnumValue<ScheduleEntityTheme>("theme", Theme);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ScheduleEntityTheme>("theme", Theme);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

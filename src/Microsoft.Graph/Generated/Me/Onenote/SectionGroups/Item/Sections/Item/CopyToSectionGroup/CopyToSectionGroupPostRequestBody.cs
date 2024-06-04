@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Me.Onenote.SectionGroups.Item.Sections.Item.CopyToSect
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CopyToSectionGroupPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Onenote.SectionGroups.Item.Sections.Item.CopyToSectionGroup.CopyToSectionGroupPostRequestBody"/> and sets the default values.
         /// </summary>
         public CopyToSectionGroupPostRequestBody()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Me.Onenote.SectionGroups.Item.Sections.Item.CopyToSect
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CopyToSectionGroupPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Onenote.SectionGroups.Item.Sections.Item.CopyToSectionGroup.CopyToSectionGroupPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CopyToSectionGroupPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Me.Onenote.SectionGroups.Item.Sections.Item.CopyToSectionGroup.CopyToSectionGroupPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CopyToSectionGroupPostRequestBody();
+            return new Microsoft.Graph.Me.Onenote.SectionGroups.Item.Sections.Item.CopyToSectionGroup.CopyToSectionGroupPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

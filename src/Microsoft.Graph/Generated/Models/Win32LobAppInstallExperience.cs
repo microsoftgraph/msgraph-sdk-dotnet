@@ -21,9 +21,9 @@ namespace Microsoft.Graph.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates the type of restart action.</summary>
-        public Win32LobAppRestartBehavior? DeviceRestartBehavior
+        public Microsoft.Graph.Models.Win32LobAppRestartBehavior? DeviceRestartBehavior
         {
-            get { return BackingStore?.Get<Win32LobAppRestartBehavior?>("deviceRestartBehavior"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Win32LobAppRestartBehavior?>("deviceRestartBehavior"); }
             set { BackingStore?.Set("deviceRestartBehavior", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -43,13 +43,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Indicates the type of execution context the app runs in.</summary>
-        public RunAsAccountType? RunAsAccount
+        public Microsoft.Graph.Models.RunAsAccountType? RunAsAccount
         {
-            get { return BackingStore?.Get<RunAsAccountType?>("runAsAccount"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RunAsAccountType?>("runAsAccount"); }
             set { BackingStore?.Set("runAsAccount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Win32LobAppInstallExperience"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Win32LobAppInstallExperience"/> and sets the default values.
         /// </summary>
         public Win32LobAppInstallExperience()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Win32LobAppInstallExperience"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Win32LobAppInstallExperience"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Win32LobAppInstallExperience CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Win32LobAppInstallExperience CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Win32LobAppInstallExperience();
+            return new Microsoft.Graph.Models.Win32LobAppInstallExperience();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,9 +74,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deviceRestartBehavior", n => { DeviceRestartBehavior = n.GetEnumValue<Win32LobAppRestartBehavior>(); } },
+                { "deviceRestartBehavior", n => { DeviceRestartBehavior = n.GetEnumValue<Microsoft.Graph.Models.Win32LobAppRestartBehavior>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "runAsAccount", n => { RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
+                { "runAsAccount", n => { RunAsAccount = n.GetEnumValue<Microsoft.Graph.Models.RunAsAccountType>(); } },
             };
         }
         /// <summary>
@@ -86,9 +86,9 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<Win32LobAppRestartBehavior>("deviceRestartBehavior", DeviceRestartBehavior);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Win32LobAppRestartBehavior>("deviceRestartBehavior", DeviceRestartBehavior);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<RunAsAccountType>("runAsAccount", RunAsAccount);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RunAsAccountType>("runAsAccount", RunAsAccount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

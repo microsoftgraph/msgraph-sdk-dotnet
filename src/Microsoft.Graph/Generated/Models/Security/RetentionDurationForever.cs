@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class RetentionDurationForever : RetentionDuration, IParsable
+    public class RetentionDurationForever : Microsoft.Graph.Models.Security.RetentionDuration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="RetentionDurationForever"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.RetentionDurationForever"/> and sets the default values.
         /// </summary>
         public RetentionDurationForever() : base()
         {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RetentionDurationForever"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.RetentionDurationForever"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RetentionDurationForever CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.RetentionDurationForever CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RetentionDurationForever();
+            return new Microsoft.Graph.Models.Security.RetentionDurationForever();
         }
         /// <summary>
         /// The deserialization information for the current model

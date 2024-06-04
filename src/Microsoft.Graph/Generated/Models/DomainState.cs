@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DomainState"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.DomainState"/> and sets the default values.
         /// </summary>
         public DomainState()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DomainState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DomainState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DomainState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.DomainState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DomainState();
+            return new Microsoft.Graph.Models.DomainState();
         }
         /// <summary>
         /// The deserialization information for the current model

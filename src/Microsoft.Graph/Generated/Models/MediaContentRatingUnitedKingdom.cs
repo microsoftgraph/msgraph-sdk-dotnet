@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Movies rating labels in United Kingdom</summary>
-        public RatingUnitedKingdomMoviesType? MovieRating
+        public Microsoft.Graph.Models.RatingUnitedKingdomMoviesType? MovieRating
         {
-            get { return BackingStore?.Get<RatingUnitedKingdomMoviesType?>("movieRating"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RatingUnitedKingdomMoviesType?>("movieRating"); }
             set { BackingStore?.Set("movieRating", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -42,13 +42,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>TV content rating labels in United Kingdom</summary>
-        public RatingUnitedKingdomTelevisionType? TvRating
+        public Microsoft.Graph.Models.RatingUnitedKingdomTelevisionType? TvRating
         {
-            get { return BackingStore?.Get<RatingUnitedKingdomTelevisionType?>("tvRating"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RatingUnitedKingdomTelevisionType?>("tvRating"); }
             set { BackingStore?.Set("tvRating", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MediaContentRatingUnitedKingdom"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MediaContentRatingUnitedKingdom"/> and sets the default values.
         /// </summary>
         public MediaContentRatingUnitedKingdom()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MediaContentRatingUnitedKingdom"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MediaContentRatingUnitedKingdom"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MediaContentRatingUnitedKingdom CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.MediaContentRatingUnitedKingdom CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MediaContentRatingUnitedKingdom();
+            return new Microsoft.Graph.Models.MediaContentRatingUnitedKingdom();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,9 +73,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "movieRating", n => { MovieRating = n.GetEnumValue<RatingUnitedKingdomMoviesType>(); } },
+                { "movieRating", n => { MovieRating = n.GetEnumValue<Microsoft.Graph.Models.RatingUnitedKingdomMoviesType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "tvRating", n => { TvRating = n.GetEnumValue<RatingUnitedKingdomTelevisionType>(); } },
+                { "tvRating", n => { TvRating = n.GetEnumValue<Microsoft.Graph.Models.RatingUnitedKingdomTelevisionType>(); } },
             };
         }
         /// <summary>
@@ -85,9 +85,9 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<RatingUnitedKingdomMoviesType>("movieRating", MovieRating);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RatingUnitedKingdomMoviesType>("movieRating", MovieRating);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<RatingUnitedKingdomTelevisionType>("tvRating", TvRating);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RatingUnitedKingdomTelevisionType>("tvRating", TvRating);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

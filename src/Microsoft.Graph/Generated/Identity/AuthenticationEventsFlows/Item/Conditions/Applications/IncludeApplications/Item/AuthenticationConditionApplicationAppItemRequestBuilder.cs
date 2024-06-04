@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.App
     public class AuthenticationConditionApplicationAppItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationConditionApplicationAppItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Item.AuthenticationConditionApplicationAppItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.App
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationConditionApplicationAppItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Item.AuthenticationConditionApplicationAppItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,11 +33,12 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.App
         {
         }
         /// <summary>
-        /// Delete navigation property includeApplications for identity
+        /// Remove or unlink an application from an authenticationEventsFlow object. This disables the customized authentication experience defined for the application.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationconditionapplication-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -50,60 +51,60 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.App
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get includeApplications from identity
         /// </summary>
-        /// <returns>A <see cref="AuthenticationConditionApplication"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationConditionApplication"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationConditionApplication?> GetAsync(Action<RequestConfiguration<AuthenticationConditionApplicationAppItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationConditionApplication?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Item.AuthenticationConditionApplicationAppItemRequestBuilder.AuthenticationConditionApplicationAppItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AuthenticationConditionApplication> GetAsync(Action<RequestConfiguration<AuthenticationConditionApplicationAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationConditionApplication> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Item.AuthenticationConditionApplicationAppItemRequestBuilder.AuthenticationConditionApplicationAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AuthenticationConditionApplication>(requestInfo, AuthenticationConditionApplication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthenticationConditionApplication>(requestInfo, Microsoft.Graph.Models.AuthenticationConditionApplication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property includeApplications in identity
         /// </summary>
-        /// <returns>A <see cref="AuthenticationConditionApplication"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationConditionApplication"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationConditionApplication?> PatchAsync(AuthenticationConditionApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationConditionApplication?> PatchAsync(Microsoft.Graph.Models.AuthenticationConditionApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AuthenticationConditionApplication> PatchAsync(AuthenticationConditionApplication body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationConditionApplication> PatchAsync(Microsoft.Graph.Models.AuthenticationConditionApplication body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AuthenticationConditionApplication>(requestInfo, AuthenticationConditionApplication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthenticationConditionApplication>(requestInfo, Microsoft.Graph.Models.AuthenticationConditionApplication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property includeApplications for identity
+        /// Remove or unlink an application from an authenticationEventsFlow object. This disables the customized authentication experience defined for the application.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,11 +129,11 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.App
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthenticationConditionApplicationAppItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Item.AuthenticationConditionApplicationAppItemRequestBuilder.AuthenticationConditionApplicationAppItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthenticationConditionApplicationAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Item.AuthenticationConditionApplicationAppItemRequestBuilder.AuthenticationConditionApplicationAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -148,11 +149,11 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.App
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(AuthenticationConditionApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.AuthenticationConditionApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(AuthenticationConditionApplication body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.AuthenticationConditionApplication body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -165,11 +166,11 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.App
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AuthenticationConditionApplicationAppItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Item.AuthenticationConditionApplicationAppItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AuthenticationConditionApplicationAppItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Item.AuthenticationConditionApplicationAppItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new AuthenticationConditionApplicationAppItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Item.AuthenticationConditionApplicationAppItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -208,7 +209,7 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.App
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AuthenticationConditionApplicationAppItemRequestBuilderGetRequestConfiguration : RequestConfiguration<AuthenticationConditionApplicationAppItemRequestBuilderGetQueryParameters>
+        public class AuthenticationConditionApplicationAppItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Item.AuthenticationConditionApplicationAppItemRequestBuilder.AuthenticationConditionApplicationAppItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

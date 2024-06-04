@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ServiceHostedMediaConfig : MediaConfig, IParsable
+    public class ServiceHostedMediaConfig : Microsoft.Graph.Models.MediaConfig, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The list of media to pre-fetch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MediaInfo>? PreFetchMedia
+        public List<Microsoft.Graph.Models.MediaInfo>? PreFetchMedia
         {
-            get { return BackingStore?.Get<List<MediaInfo>?>("preFetchMedia"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MediaInfo>?>("preFetchMedia"); }
             set { BackingStore?.Set("preFetchMedia", value); }
         }
 #nullable restore
 #else
-        public List<MediaInfo> PreFetchMedia
+        public List<Microsoft.Graph.Models.MediaInfo> PreFetchMedia
         {
-            get { return BackingStore?.Get<List<MediaInfo>>("preFetchMedia"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MediaInfo>>("preFetchMedia"); }
             set { BackingStore?.Set("preFetchMedia", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ServiceHostedMediaConfig"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ServiceHostedMediaConfig"/> and sets the default values.
         /// </summary>
         public ServiceHostedMediaConfig() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ServiceHostedMediaConfig"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ServiceHostedMediaConfig"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ServiceHostedMediaConfig CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ServiceHostedMediaConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ServiceHostedMediaConfig();
+            return new Microsoft.Graph.Models.ServiceHostedMediaConfig();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "preFetchMedia", n => { PreFetchMedia = n.GetCollectionOfObjectValues<MediaInfo>(MediaInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "preFetchMedia", n => { PreFetchMedia = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MediaInfo>(Microsoft.Graph.Models.MediaInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MediaInfo>("preFetchMedia", PreFetchMedia);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MediaInfo>("preFetchMedia", PreFetchMedia);
         }
     }
 }

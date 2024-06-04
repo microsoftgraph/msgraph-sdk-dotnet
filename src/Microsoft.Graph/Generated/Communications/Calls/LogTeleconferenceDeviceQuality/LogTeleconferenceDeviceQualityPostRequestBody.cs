@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Communications.Calls.LogTeleconferenceDeviceQuality
         /// <summary>The quality property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeleconferenceDeviceQuality? Quality
+        public Microsoft.Graph.Models.TeleconferenceDeviceQuality? Quality
         {
-            get { return BackingStore?.Get<TeleconferenceDeviceQuality?>("quality"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeleconferenceDeviceQuality?>("quality"); }
             set { BackingStore?.Set("quality", value); }
         }
 #nullable restore
 #else
-        public TeleconferenceDeviceQuality Quality
+        public Microsoft.Graph.Models.TeleconferenceDeviceQuality Quality
         {
-            get { return BackingStore?.Get<TeleconferenceDeviceQuality>("quality"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeleconferenceDeviceQuality>("quality"); }
             set { BackingStore?.Set("quality", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="LogTeleconferenceDeviceQualityPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Communications.Calls.LogTeleconferenceDeviceQuality.LogTeleconferenceDeviceQualityPostRequestBody"/> and sets the default values.
         /// </summary>
         public LogTeleconferenceDeviceQualityPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Communications.Calls.LogTeleconferenceDeviceQuality
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LogTeleconferenceDeviceQualityPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Communications.Calls.LogTeleconferenceDeviceQuality.LogTeleconferenceDeviceQualityPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static LogTeleconferenceDeviceQualityPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Communications.Calls.LogTeleconferenceDeviceQuality.LogTeleconferenceDeviceQualityPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LogTeleconferenceDeviceQualityPostRequestBody();
+            return new Microsoft.Graph.Communications.Calls.LogTeleconferenceDeviceQuality.LogTeleconferenceDeviceQualityPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Communications.Calls.LogTeleconferenceDeviceQuality
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "quality", n => { Quality = n.GetObjectValue<TeleconferenceDeviceQuality>(TeleconferenceDeviceQuality.CreateFromDiscriminatorValue); } },
+                { "quality", n => { Quality = n.GetObjectValue<Microsoft.Graph.Models.TeleconferenceDeviceQuality>(Microsoft.Graph.Models.TeleconferenceDeviceQuality.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Communications.Calls.LogTeleconferenceDeviceQuality
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<TeleconferenceDeviceQuality>("quality", Quality);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TeleconferenceDeviceQuality>("quality", Quality);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

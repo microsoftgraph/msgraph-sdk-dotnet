@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CustomExtensionData"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CustomExtensionData"/> and sets the default values.
         /// </summary>
         public CustomExtensionData()
         {
@@ -47,18 +47,18 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomExtensionData"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CustomExtensionData"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CustomExtensionData CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CustomExtensionData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.accessPackageAssignmentRequestCallbackData" => new AccessPackageAssignmentRequestCallbackData(),
-                "#microsoft.graph.identityGovernance.customTaskExtensionCallbackData" => new CustomTaskExtensionCallbackData(),
-                "#microsoft.graph.identityGovernance.customTaskExtensionCalloutData" => new CustomTaskExtensionCalloutData(),
-                _ => new CustomExtensionData(),
+                "#microsoft.graph.accessPackageAssignmentRequestCallbackData" => new Microsoft.Graph.Models.AccessPackageAssignmentRequestCallbackData(),
+                "#microsoft.graph.identityGovernance.customTaskExtensionCallbackData" => new Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtensionCallbackData(),
+                "#microsoft.graph.identityGovernance.customTaskExtensionCalloutData" => new Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtensionCalloutData(),
+                _ => new Microsoft.Graph.Models.CustomExtensionData(),
             };
         }
         /// <summary>

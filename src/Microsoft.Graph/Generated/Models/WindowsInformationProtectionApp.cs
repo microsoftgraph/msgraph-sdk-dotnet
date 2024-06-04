@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsInformationProtectionApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WindowsInformationProtectionApp"/> and sets the default values.
         /// </summary>
         public WindowsInformationProtectionApp()
         {
@@ -117,17 +117,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsInformationProtectionApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsInformationProtectionApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WindowsInformationProtectionApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.WindowsInformationProtectionApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windowsInformationProtectionDesktopApp" => new WindowsInformationProtectionDesktopApp(),
-                "#microsoft.graph.windowsInformationProtectionStoreApp" => new WindowsInformationProtectionStoreApp(),
-                _ => new WindowsInformationProtectionApp(),
+                "#microsoft.graph.windowsInformationProtectionDesktopApp" => new Microsoft.Graph.Models.WindowsInformationProtectionDesktopApp(),
+                "#microsoft.graph.windowsInformationProtectionStoreApp" => new Microsoft.Graph.Models.WindowsInformationProtectionStoreApp(),
+                _ => new Microsoft.Graph.Models.WindowsInformationProtectionApp(),
             };
         }
         /// <summary>

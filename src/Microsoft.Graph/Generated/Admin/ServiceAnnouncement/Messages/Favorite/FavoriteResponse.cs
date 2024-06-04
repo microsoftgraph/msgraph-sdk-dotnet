@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite
 {
     [Obsolete("This class is obsolete. Use FavoritePostResponse instead.")]
     #pragma warning disable CS1591
-    public class FavoriteResponse : FavoritePostResponse, IParsable
+    public class FavoriteResponse : Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoritePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FavoriteResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoriteResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FavoriteResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoriteResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FavoriteResponse();
+            return new Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoriteResponse();
         }
     }
 }

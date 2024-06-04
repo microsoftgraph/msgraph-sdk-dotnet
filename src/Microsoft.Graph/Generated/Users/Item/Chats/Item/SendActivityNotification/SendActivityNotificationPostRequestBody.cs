@@ -45,32 +45,32 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.SendActivityNotification
         /// <summary>The previewText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? PreviewText
+        public Microsoft.Graph.Models.ItemBody? PreviewText
         {
-            get { return BackingStore?.Get<ItemBody?>("previewText"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemBody?>("previewText"); }
             set { BackingStore?.Set("previewText", value); }
         }
 #nullable restore
 #else
-        public ItemBody PreviewText
+        public Microsoft.Graph.Models.ItemBody PreviewText
         {
-            get { return BackingStore?.Get<ItemBody>("previewText"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemBody>("previewText"); }
             set { BackingStore?.Set("previewText", value); }
         }
 #endif
         /// <summary>The recipient property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkNotificationRecipient? Recipient
+        public Microsoft.Graph.Models.TeamworkNotificationRecipient? Recipient
         {
-            get { return BackingStore?.Get<TeamworkNotificationRecipient?>("recipient"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamworkNotificationRecipient?>("recipient"); }
             set { BackingStore?.Set("recipient", value); }
         }
 #nullable restore
 #else
-        public TeamworkNotificationRecipient Recipient
+        public Microsoft.Graph.Models.TeamworkNotificationRecipient Recipient
         {
-            get { return BackingStore?.Get<TeamworkNotificationRecipient>("recipient"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamworkNotificationRecipient>("recipient"); }
             set { BackingStore?.Set("recipient", value); }
         }
 #endif
@@ -109,21 +109,21 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.SendActivityNotification
         /// <summary>The topic property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkActivityTopic? Topic
+        public Microsoft.Graph.Models.TeamworkActivityTopic? Topic
         {
-            get { return BackingStore?.Get<TeamworkActivityTopic?>("topic"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamworkActivityTopic?>("topic"); }
             set { BackingStore?.Set("topic", value); }
         }
 #nullable restore
 #else
-        public TeamworkActivityTopic Topic
+        public Microsoft.Graph.Models.TeamworkActivityTopic Topic
         {
-            get { return BackingStore?.Get<TeamworkActivityTopic>("topic"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamworkActivityTopic>("topic"); }
             set { BackingStore?.Set("topic", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SendActivityNotificationPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Chats.Item.SendActivityNotification.SendActivityNotificationPostRequestBody"/> and sets the default values.
         /// </summary>
         public SendActivityNotificationPostRequestBody()
         {
@@ -133,12 +133,12 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.SendActivityNotification
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SendActivityNotificationPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Chats.Item.SendActivityNotification.SendActivityNotificationPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SendActivityNotificationPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Users.Item.Chats.Item.SendActivityNotification.SendActivityNotificationPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SendActivityNotificationPostRequestBody();
+            return new Microsoft.Graph.Users.Item.Chats.Item.SendActivityNotification.SendActivityNotificationPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -150,11 +150,11 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.SendActivityNotification
             {
                 { "activityType", n => { ActivityType = n.GetStringValue(); } },
                 { "chainId", n => { ChainId = n.GetLongValue(); } },
-                { "previewText", n => { PreviewText = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                { "recipient", n => { Recipient = n.GetObjectValue<TeamworkNotificationRecipient>(TeamworkNotificationRecipient.CreateFromDiscriminatorValue); } },
+                { "previewText", n => { PreviewText = n.GetObjectValue<Microsoft.Graph.Models.ItemBody>(Microsoft.Graph.Models.ItemBody.CreateFromDiscriminatorValue); } },
+                { "recipient", n => { Recipient = n.GetObjectValue<Microsoft.Graph.Models.TeamworkNotificationRecipient>(Microsoft.Graph.Models.TeamworkNotificationRecipient.CreateFromDiscriminatorValue); } },
                 { "teamsAppId", n => { TeamsAppId = n.GetStringValue(); } },
                 { "templateParameters", n => { TemplateParameters = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>(Microsoft.Graph.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "topic", n => { Topic = n.GetObjectValue<TeamworkActivityTopic>(TeamworkActivityTopic.CreateFromDiscriminatorValue); } },
+                { "topic", n => { Topic = n.GetObjectValue<Microsoft.Graph.Models.TeamworkActivityTopic>(Microsoft.Graph.Models.TeamworkActivityTopic.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -166,11 +166,11 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.SendActivityNotification
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("activityType", ActivityType);
             writer.WriteLongValue("chainId", ChainId);
-            writer.WriteObjectValue<ItemBody>("previewText", PreviewText);
-            writer.WriteObjectValue<TeamworkNotificationRecipient>("recipient", Recipient);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemBody>("previewText", PreviewText);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TeamworkNotificationRecipient>("recipient", Recipient);
             writer.WriteStringValue("teamsAppId", TeamsAppId);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>("templateParameters", TemplateParameters);
-            writer.WriteObjectValue<TeamworkActivityTopic>("topic", Topic);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TeamworkActivityTopic>("topic", Topic);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

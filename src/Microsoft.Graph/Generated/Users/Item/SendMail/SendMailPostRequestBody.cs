@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Users.Item.SendMail
             set { BackingStore?.Set("SaveToSentItems", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SendMailPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.SendMail.SendMailPostRequestBody"/> and sets the default values.
         /// </summary>
         public SendMailPostRequestBody()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Users.Item.SendMail
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SendMailPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.SendMail.SendMailPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SendMailPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Users.Item.SendMail.SendMailPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SendMailPostRequestBody();
+            return new Microsoft.Graph.Users.Item.SendMail.SendMailPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

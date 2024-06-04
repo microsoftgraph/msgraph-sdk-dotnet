@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.
     public class ParentNotebookRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ParentNotebookRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.ParentNotebook.ParentNotebookRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ParentNotebookRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.ParentNotebook.ParentNotebookRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.
         /// <summary>
         /// The notebook that contains the page.  Read-only.
         /// </summary>
-        /// <returns>A <see cref="Notebook"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Notebook"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Notebook?> GetAsync(Action<RequestConfiguration<ParentNotebookRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Notebook?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.ParentNotebook.ParentNotebookRequestBuilder.ParentNotebookRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Notebook> GetAsync(Action<RequestConfiguration<ParentNotebookRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Notebook> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.ParentNotebook.ParentNotebookRequestBuilder.ParentNotebookRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Notebook>(requestInfo, Notebook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Notebook>(requestInfo, Microsoft.Graph.Models.Notebook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The notebook that contains the page.  Read-only.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ParentNotebookRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.ParentNotebook.ParentNotebookRequestBuilder.ParentNotebookRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ParentNotebookRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.ParentNotebook.ParentNotebookRequestBuilder.ParentNotebookRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ParentNotebookRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.ParentNotebook.ParentNotebookRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ParentNotebookRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.ParentNotebook.ParentNotebookRequestBuilder WithUrl(string rawUrl)
         {
-            return new ParentNotebookRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.ParentNotebook.ParentNotebookRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The notebook that contains the page.  Read-only.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ParentNotebookRequestBuilderGetRequestConfiguration : RequestConfiguration<ParentNotebookRequestBuilderGetQueryParameters>
+        public class ParentNotebookRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.ParentNotebook.ParentNotebookRequestBuilder.ParentNotebookRequestBuilderGetQueryParameters>
         {
         }
     }

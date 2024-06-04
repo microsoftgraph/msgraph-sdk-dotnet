@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class UnifiedGroupSource : DataSource, IParsable
+    public class UnifiedGroupSource : Microsoft.Graph.Models.Security.DataSource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The group property</summary>
@@ -27,13 +27,13 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>Specifies which sources are included in this group. Possible values are: mailbox, site.</summary>
-        public SourceType? IncludedSources
+        public Microsoft.Graph.Models.Security.SourceType? IncludedSources
         {
-            get { return BackingStore?.Get<SourceType?>("includedSources"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.SourceType?>("includedSources"); }
             set { BackingStore?.Set("includedSources", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UnifiedGroupSource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.UnifiedGroupSource"/> and sets the default values.
         /// </summary>
         public UnifiedGroupSource() : base()
         {
@@ -42,12 +42,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedGroupSource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.UnifiedGroupSource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnifiedGroupSource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.UnifiedGroupSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedGroupSource();
+            return new Microsoft.Graph.Models.Security.UnifiedGroupSource();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models.Security
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "group", n => { Group = n.GetObjectValue<Microsoft.Graph.Models.Group>(Microsoft.Graph.Models.Group.CreateFromDiscriminatorValue); } },
-                { "includedSources", n => { IncludedSources = n.GetEnumValue<SourceType>(); } },
+                { "includedSources", n => { IncludedSources = n.GetEnumValue<Microsoft.Graph.Models.Security.SourceType>(); } },
             };
         }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Models.Security
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Models.Group>("group", Group);
-            writer.WriteEnumValue<SourceType>("includedSources", IncludedSources);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.SourceType>("includedSources", IncludedSources);
         }
     }
 }

@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZones
 {
     [Obsolete("This class is obsolete. Use SupportedTimeZonesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class SupportedTimeZonesResponse : SupportedTimeZonesGetResponse, IParsable
+    public class SupportedTimeZonesResponse : Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SupportedTimeZonesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SupportedTimeZonesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SupportedTimeZonesResponse();
+            return new Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesResponse();
         }
     }
 }

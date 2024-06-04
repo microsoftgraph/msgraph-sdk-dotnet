@@ -24,42 +24,42 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item
     public class UserExperienceAnalyticsBaselineItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the appHealthMetrics property of the microsoft.graph.userExperienceAnalyticsBaseline entity.</summary>
-        public AppHealthMetricsRequestBuilder AppHealthMetrics
+        public Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.AppHealthMetrics.AppHealthMetricsRequestBuilder AppHealthMetrics
         {
-            get => new AppHealthMetricsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.AppHealthMetrics.AppHealthMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the batteryHealthMetrics property of the microsoft.graph.userExperienceAnalyticsBaseline entity.</summary>
-        public BatteryHealthMetricsRequestBuilder BatteryHealthMetrics
+        public Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.BatteryHealthMetrics.BatteryHealthMetricsRequestBuilder BatteryHealthMetrics
         {
-            get => new BatteryHealthMetricsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.BatteryHealthMetrics.BatteryHealthMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the bestPracticesMetrics property of the microsoft.graph.userExperienceAnalyticsBaseline entity.</summary>
-        public BestPracticesMetricsRequestBuilder BestPracticesMetrics
+        public Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.BestPracticesMetrics.BestPracticesMetricsRequestBuilder BestPracticesMetrics
         {
-            get => new BestPracticesMetricsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.BestPracticesMetrics.BestPracticesMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceBootPerformanceMetrics property of the microsoft.graph.userExperienceAnalyticsBaseline entity.</summary>
-        public DeviceBootPerformanceMetricsRequestBuilder DeviceBootPerformanceMetrics
+        public Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.DeviceBootPerformanceMetrics.DeviceBootPerformanceMetricsRequestBuilder DeviceBootPerformanceMetrics
         {
-            get => new DeviceBootPerformanceMetricsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.DeviceBootPerformanceMetrics.DeviceBootPerformanceMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the rebootAnalyticsMetrics property of the microsoft.graph.userExperienceAnalyticsBaseline entity.</summary>
-        public RebootAnalyticsMetricsRequestBuilder RebootAnalyticsMetrics
+        public Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.RebootAnalyticsMetrics.RebootAnalyticsMetricsRequestBuilder RebootAnalyticsMetrics
         {
-            get => new RebootAnalyticsMetricsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.RebootAnalyticsMetrics.RebootAnalyticsMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resourcePerformanceMetrics property of the microsoft.graph.userExperienceAnalyticsBaseline entity.</summary>
-        public ResourcePerformanceMetricsRequestBuilder ResourcePerformanceMetrics
+        public Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.ResourcePerformanceMetrics.ResourcePerformanceMetricsRequestBuilder ResourcePerformanceMetrics
         {
-            get => new ResourcePerformanceMetricsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.ResourcePerformanceMetrics.ResourcePerformanceMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the workFromAnywhereMetrics property of the microsoft.graph.userExperienceAnalyticsBaseline entity.</summary>
-        public WorkFromAnywhereMetricsRequestBuilder WorkFromAnywhereMetrics
+        public Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.WorkFromAnywhereMetrics.WorkFromAnywhereMetricsRequestBuilder WorkFromAnywhereMetrics
         {
-            get => new WorkFromAnywhereMetricsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.WorkFromAnywhereMetrics.WorkFromAnywhereMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserExperienceAnalyticsBaselineItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.UserExperienceAnalyticsBaselineItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserExperienceAnalyticsBaselineItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.UserExperienceAnalyticsBaselineItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -92,57 +92,57 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// User experience analytics baselines
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsBaseline"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsBaseline"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserExperienceAnalyticsBaseline?> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsBaselineItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsBaseline?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.UserExperienceAnalyticsBaselineItemRequestBuilder.UserExperienceAnalyticsBaselineItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UserExperienceAnalyticsBaseline> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsBaselineItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsBaseline> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.UserExperienceAnalyticsBaselineItemRequestBuilder.UserExperienceAnalyticsBaselineItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsBaseline>(requestInfo, UserExperienceAnalyticsBaseline.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserExperienceAnalyticsBaseline>(requestInfo, Microsoft.Graph.Models.UserExperienceAnalyticsBaseline.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property userExperienceAnalyticsBaselines in deviceManagement
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsBaseline"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsBaseline"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserExperienceAnalyticsBaseline?> PatchAsync(UserExperienceAnalyticsBaseline body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsBaseline?> PatchAsync(Microsoft.Graph.Models.UserExperienceAnalyticsBaseline body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UserExperienceAnalyticsBaseline> PatchAsync(UserExperienceAnalyticsBaseline body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsBaseline> PatchAsync(Microsoft.Graph.Models.UserExperienceAnalyticsBaseline body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsBaseline>(requestInfo, UserExperienceAnalyticsBaseline.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserExperienceAnalyticsBaseline>(requestInfo, Microsoft.Graph.Models.UserExperienceAnalyticsBaseline.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property userExperienceAnalyticsBaselines for deviceManagement
@@ -170,11 +170,11 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsBaselineItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.UserExperienceAnalyticsBaselineItemRequestBuilder.UserExperienceAnalyticsBaselineItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsBaselineItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.UserExperienceAnalyticsBaselineItemRequestBuilder.UserExperienceAnalyticsBaselineItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -190,11 +190,11 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(UserExperienceAnalyticsBaseline body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.UserExperienceAnalyticsBaseline body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(UserExperienceAnalyticsBaseline body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.UserExperienceAnalyticsBaseline body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -207,11 +207,11 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsBaselineItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.UserExperienceAnalyticsBaselineItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UserExperienceAnalyticsBaselineItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.UserExperienceAnalyticsBaselineItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new UserExperienceAnalyticsBaselineItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.UserExperienceAnalyticsBaselineItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -250,7 +250,7 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserExperienceAnalyticsBaselineItemRequestBuilderGetRequestConfiguration : RequestConfiguration<UserExperienceAnalyticsBaselineItemRequestBuilderGetQueryParameters>
+        public class UserExperienceAnalyticsBaselineItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.UserExperienceAnalyticsBaselineItemRequestBuilder.UserExperienceAnalyticsBaselineItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

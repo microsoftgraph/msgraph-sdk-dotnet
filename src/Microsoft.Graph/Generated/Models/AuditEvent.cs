@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// A class containing the properties for Audit Event.
     /// </summary>
-    public class AuditEvent : Entity, IParsable
+    public class AuditEvent : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Friendly name of the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,16 +84,16 @@ namespace Microsoft.Graph.Models
         /// <summary>AAD user and application that are associated with the audit event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuditActor? Actor
+        public Microsoft.Graph.Models.AuditActor? Actor
         {
-            get { return BackingStore?.Get<AuditActor?>("actor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuditActor?>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
 #nullable restore
 #else
-        public AuditActor Actor
+        public Microsoft.Graph.Models.AuditActor Actor
         {
-            get { return BackingStore?.Get<AuditActor>("actor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuditActor>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
 #endif
@@ -154,28 +154,28 @@ namespace Microsoft.Graph.Models
         /// <summary>Resources being modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuditResource>? Resources
+        public List<Microsoft.Graph.Models.AuditResource>? Resources
         {
-            get { return BackingStore?.Get<List<AuditResource>?>("resources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuditResource>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #nullable restore
 #else
-        public List<AuditResource> Resources
+        public List<Microsoft.Graph.Models.AuditResource> Resources
         {
-            get { return BackingStore?.Get<List<AuditResource>>("resources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuditResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuditEvent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuditEvent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuditEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AuditEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuditEvent();
+            return new Microsoft.Graph.Models.AuditEvent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -190,12 +190,12 @@ namespace Microsoft.Graph.Models
                 { "activityOperationType", n => { ActivityOperationType = n.GetStringValue(); } },
                 { "activityResult", n => { ActivityResult = n.GetStringValue(); } },
                 { "activityType", n => { ActivityType = n.GetStringValue(); } },
-                { "actor", n => { Actor = n.GetObjectValue<AuditActor>(AuditActor.CreateFromDiscriminatorValue); } },
+                { "actor", n => { Actor = n.GetObjectValue<Microsoft.Graph.Models.AuditActor>(Microsoft.Graph.Models.AuditActor.CreateFromDiscriminatorValue); } },
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "componentName", n => { ComponentName = n.GetStringValue(); } },
                 { "correlationId", n => { CorrelationId = n.GetGuidValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "resources", n => { Resources = n.GetCollectionOfObjectValues<AuditResource>(AuditResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AuditResource>(Microsoft.Graph.Models.AuditResource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -211,12 +211,12 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("activityOperationType", ActivityOperationType);
             writer.WriteStringValue("activityResult", ActivityResult);
             writer.WriteStringValue("activityType", ActivityType);
-            writer.WriteObjectValue<AuditActor>("actor", Actor);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AuditActor>("actor", Actor);
             writer.WriteStringValue("category", Category);
             writer.WriteStringValue("componentName", ComponentName);
             writer.WriteGuidValue("correlationId", CorrelationId);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<AuditResource>("resources", Resources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AuditResource>("resources", Resources);
         }
     }
 }

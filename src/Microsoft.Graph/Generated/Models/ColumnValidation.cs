@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Localized messages that explain what is needed for this column&apos;s value to be considered valid. User will be prompted with this message if validation fails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DisplayNameLocalization>? Descriptions
+        public List<Microsoft.Graph.Models.DisplayNameLocalization>? Descriptions
         {
-            get { return BackingStore?.Get<List<DisplayNameLocalization>?>("descriptions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DisplayNameLocalization>?>("descriptions"); }
             set { BackingStore?.Set("descriptions", value); }
         }
 #nullable restore
 #else
-        public List<DisplayNameLocalization> Descriptions
+        public List<Microsoft.Graph.Models.DisplayNameLocalization> Descriptions
         {
-            get { return BackingStore?.Get<List<DisplayNameLocalization>>("descriptions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DisplayNameLocalization>>("descriptions"); }
             set { BackingStore?.Set("descriptions", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ColumnValidation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ColumnValidation"/> and sets the default values.
         /// </summary>
         public ColumnValidation()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ColumnValidation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ColumnValidation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ColumnValidation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ColumnValidation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ColumnValidation();
+            return new Microsoft.Graph.Models.ColumnValidation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "defaultLanguage", n => { DefaultLanguage = n.GetStringValue(); } },
-                { "descriptions", n => { Descriptions = n.GetCollectionOfObjectValues<DisplayNameLocalization>(DisplayNameLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "descriptions", n => { Descriptions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DisplayNameLocalization>(Microsoft.Graph.Models.DisplayNameLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "formula", n => { Formula = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("defaultLanguage", DefaultLanguage);
-            writer.WriteCollectionOfObjectValues<DisplayNameLocalization>("descriptions", Descriptions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DisplayNameLocalization>("descriptions", Descriptions);
             writer.WriteStringValue("formula", Formula);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

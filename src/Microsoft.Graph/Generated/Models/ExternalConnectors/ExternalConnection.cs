@@ -77,32 +77,32 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         /// <summary>The groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalGroup>? Groups
+        public List<Microsoft.Graph.Models.ExternalConnectors.ExternalGroup>? Groups
         {
-            get { return BackingStore?.Get<List<ExternalGroup>?>("groups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.ExternalGroup>?>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
 #nullable restore
 #else
-        public List<ExternalGroup> Groups
+        public List<Microsoft.Graph.Models.ExternalConnectors.ExternalGroup> Groups
         {
-            get { return BackingStore?.Get<List<ExternalGroup>>("groups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.ExternalGroup>>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
 #endif
         /// <summary>The items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalItem>? Items
+        public List<Microsoft.Graph.Models.ExternalConnectors.ExternalItem>? Items
         {
-            get { return BackingStore?.Get<List<ExternalItem>?>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.ExternalItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<ExternalItem> Items
+        public List<Microsoft.Graph.Models.ExternalConnectors.ExternalItem> Items
         {
-            get { return BackingStore?.Get<List<ExternalItem>>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.ExternalItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #endif
@@ -125,16 +125,16 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         /// <summary>The operations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConnectionOperation>? Operations
+        public List<Microsoft.Graph.Models.ExternalConnectors.ConnectionOperation>? Operations
         {
-            get { return BackingStore?.Get<List<ConnectionOperation>?>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.ConnectionOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<ConnectionOperation> Operations
+        public List<Microsoft.Graph.Models.ExternalConnectors.ConnectionOperation> Operations
         {
-            get { return BackingStore?.Get<List<ConnectionOperation>>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.ConnectionOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #endif
@@ -171,20 +171,20 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         }
 #endif
         /// <summary>Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.</summary>
-        public ConnectionState? State
+        public Microsoft.Graph.Models.ExternalConnectors.ConnectionState? State
         {
-            get { return BackingStore?.Get<ConnectionState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.ConnectionState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExternalConnection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ExternalConnectors.ExternalConnection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExternalConnection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ExternalConnectors.ExternalConnection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExternalConnection();
+            return new Microsoft.Graph.Models.ExternalConnectors.ExternalConnection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -198,13 +198,13 @@ namespace Microsoft.Graph.Models.ExternalConnectors
                 { "configuration", n => { Configuration = n.GetObjectValue<Microsoft.Graph.Models.ExternalConnectors.Configuration>(Microsoft.Graph.Models.ExternalConnectors.Configuration.CreateFromDiscriminatorValue); } },
                 { "connectorId", n => { ConnectorId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "groups", n => { Groups = n.GetCollectionOfObjectValues<ExternalGroup>(ExternalGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<ExternalItem>(ExternalItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groups", n => { Groups = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.ExternalGroup>(Microsoft.Graph.Models.ExternalConnectors.ExternalGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.ExternalItem>(Microsoft.Graph.Models.ExternalConnectors.ExternalItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "operations", n => { Operations = n.GetCollectionOfObjectValues<ConnectionOperation>(ConnectionOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.ConnectionOperation>(Microsoft.Graph.Models.ExternalConnectors.ConnectionOperation.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "schema", n => { Schema = n.GetObjectValue<Microsoft.Graph.Models.ExternalConnectors.Schema>(Microsoft.Graph.Models.ExternalConnectors.Schema.CreateFromDiscriminatorValue); } },
                 { "searchSettings", n => { SearchSettings = n.GetObjectValue<Microsoft.Graph.Models.ExternalConnectors.SearchSettings>(Microsoft.Graph.Models.ExternalConnectors.SearchSettings.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetEnumValue<ConnectionState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Models.ExternalConnectors.ConnectionState>(); } },
             };
         }
         /// <summary>
@@ -219,10 +219,10 @@ namespace Microsoft.Graph.Models.ExternalConnectors
             writer.WriteObjectValue<Microsoft.Graph.Models.ExternalConnectors.Configuration>("configuration", Configuration);
             writer.WriteStringValue("connectorId", ConnectorId);
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfObjectValues<ExternalGroup>("groups", Groups);
-            writer.WriteCollectionOfObjectValues<ExternalItem>("items", Items);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.ExternalGroup>("groups", Groups);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.ExternalItem>("items", Items);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<ConnectionOperation>("operations", Operations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.ConnectionOperation>("operations", Operations);
             writer.WriteObjectValue<Microsoft.Graph.Models.ExternalConnectors.Schema>("schema", Schema);
             writer.WriteObjectValue<Microsoft.Graph.Models.ExternalConnectors.SearchSettings>("searchSettings", SearchSettings);
         }

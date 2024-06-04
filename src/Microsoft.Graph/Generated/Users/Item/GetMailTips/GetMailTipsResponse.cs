@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Users.Item.GetMailTips
 {
     [Obsolete("This class is obsolete. Use GetMailTipsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetMailTipsResponse : GetMailTipsPostResponse, IParsable
+    public class GetMailTipsResponse : Microsoft.Graph.Users.Item.GetMailTips.GetMailTipsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetMailTipsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.GetMailTips.GetMailTipsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetMailTipsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Users.Item.GetMailTips.GetMailTipsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetMailTipsResponse();
+            return new Microsoft.Graph.Users.Item.GetMailTips.GetMailTipsResponse();
         }
     }
 }

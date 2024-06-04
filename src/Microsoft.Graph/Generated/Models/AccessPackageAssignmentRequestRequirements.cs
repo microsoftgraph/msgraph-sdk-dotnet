@@ -104,37 +104,37 @@ namespace Microsoft.Graph.Models
         /// <summary>The questions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageQuestion>? Questions
+        public List<Microsoft.Graph.Models.AccessPackageQuestion>? Questions
         {
-            get { return BackingStore?.Get<List<AccessPackageQuestion>?>("questions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageQuestion>?>("questions"); }
             set { BackingStore?.Set("questions", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageQuestion> Questions
+        public List<Microsoft.Graph.Models.AccessPackageQuestion> Questions
         {
-            get { return BackingStore?.Get<List<AccessPackageQuestion>>("questions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageQuestion>>("questions"); }
             set { BackingStore?.Set("questions", value); }
         }
 #endif
         /// <summary>Schedule restrictions enforced, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EntitlementManagementSchedule? Schedule
+        public Microsoft.Graph.Models.EntitlementManagementSchedule? Schedule
         {
-            get { return BackingStore?.Get<EntitlementManagementSchedule?>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EntitlementManagementSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public EntitlementManagementSchedule Schedule
+        public Microsoft.Graph.Models.EntitlementManagementSchedule Schedule
         {
-            get { return BackingStore?.Get<EntitlementManagementSchedule>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EntitlementManagementSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessPackageAssignmentRequestRequirements"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AccessPackageAssignmentRequestRequirements"/> and sets the default values.
         /// </summary>
         public AccessPackageAssignmentRequestRequirements()
         {
@@ -144,12 +144,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageAssignmentRequestRequirements"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackageAssignmentRequestRequirements"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessPackageAssignmentRequestRequirements CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AccessPackageAssignmentRequestRequirements CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageAssignmentRequestRequirements();
+            return new Microsoft.Graph.Models.AccessPackageAssignmentRequestRequirements();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -166,8 +166,8 @@ namespace Microsoft.Graph.Models
                 { "policyDescription", n => { PolicyDescription = n.GetStringValue(); } },
                 { "policyDisplayName", n => { PolicyDisplayName = n.GetStringValue(); } },
                 { "policyId", n => { PolicyId = n.GetStringValue(); } },
-                { "questions", n => { Questions = n.GetCollectionOfObjectValues<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<EntitlementManagementSchedule>(EntitlementManagementSchedule.CreateFromDiscriminatorValue); } },
+                { "questions", n => { Questions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageQuestion>(Microsoft.Graph.Models.AccessPackageQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<Microsoft.Graph.Models.EntitlementManagementSchedule>(Microsoft.Graph.Models.EntitlementManagementSchedule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -184,8 +184,8 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("policyDescription", PolicyDescription);
             writer.WriteStringValue("policyDisplayName", PolicyDisplayName);
             writer.WriteStringValue("policyId", PolicyId);
-            writer.WriteCollectionOfObjectValues<AccessPackageQuestion>("questions", Questions);
-            writer.WriteObjectValue<EntitlementManagementSchedule>("schedule", Schedule);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageQuestion>("questions", Questions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EntitlementManagementSchedule>("schedule", Schedule);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

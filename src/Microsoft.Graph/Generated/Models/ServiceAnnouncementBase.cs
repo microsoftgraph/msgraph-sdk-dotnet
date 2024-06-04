@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ServiceAnnouncementBase : Entity, IParsable
+    public class ServiceAnnouncementBase : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>More details about service event. This property doesn&apos;t support filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? Details
+        public List<Microsoft.Graph.Models.KeyValuePair>? Details
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("details"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValuePair>?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> Details
+        public List<Microsoft.Graph.Models.KeyValuePair> Details
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("details"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValuePair>>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #endif
@@ -63,17 +63,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ServiceAnnouncementBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ServiceAnnouncementBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ServiceAnnouncementBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ServiceAnnouncementBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.serviceHealthIssue" => new ServiceHealthIssue(),
-                "#microsoft.graph.serviceUpdateMessage" => new ServiceUpdateMessage(),
-                _ => new ServiceAnnouncementBase(),
+                "#microsoft.graph.serviceHealthIssue" => new Microsoft.Graph.Models.ServiceHealthIssue(),
+                "#microsoft.graph.serviceUpdateMessage" => new Microsoft.Graph.Models.ServiceUpdateMessage(),
+                _ => new Microsoft.Graph.Models.ServiceAnnouncementBase(),
             };
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "details", n => { Details = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "details", n => { Details = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>(Microsoft.Graph.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("details", Details);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>("details", Details);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);

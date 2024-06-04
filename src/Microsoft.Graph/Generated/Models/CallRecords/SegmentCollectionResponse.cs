@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Models.CallRecords
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Segment>? Value
+        public List<Microsoft.Graph.Models.CallRecords.Segment>? Value
         {
-            get { return BackingStore?.Get<List<Segment>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRecords.Segment>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Segment> Value
+        public List<Microsoft.Graph.Models.CallRecords.Segment> Value
         {
-            get { return BackingStore?.Get<List<Segment>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRecords.Segment>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SegmentCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CallRecords.SegmentCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SegmentCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CallRecords.SegmentCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SegmentCollectionResponse();
+            return new Microsoft.Graph.Models.CallRecords.SegmentCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.CallRecords
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<Segment>(Segment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CallRecords.Segment>(Microsoft.Graph.Models.CallRecords.Segment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models.CallRecords
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Segment>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CallRecords.Segment>("value", Value);
         }
     }
 }

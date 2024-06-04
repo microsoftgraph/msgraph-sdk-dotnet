@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Domains.Item.Promote
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PromotePostResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Domains.Item.Promote.PromotePostResponse"/> and sets the default values.
         /// </summary>
         public PromotePostResponse()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Domains.Item.Promote
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PromotePostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Domains.Item.Promote.PromotePostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PromotePostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Domains.Item.Promote.PromotePostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PromotePostResponse();
+            return new Microsoft.Graph.Domains.Item.Promote.PromotePostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

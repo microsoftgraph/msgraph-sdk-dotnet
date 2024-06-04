@@ -23,21 +23,21 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Secrets
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SynchronizationSecretKeyStringValuePair>? Value
+        public List<Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair>? Value
         {
-            get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<SynchronizationSecretKeyStringValuePair> Value
+        public List<Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair> Value
         {
-            get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SecretsPutRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.ServicePrincipals.Item.Synchronization.Secrets.SecretsPutRequestBody"/> and sets the default values.
         /// </summary>
         public SecretsPutRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Secrets
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SecretsPutRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.ServicePrincipals.Item.Synchronization.Secrets.SecretsPutRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SecretsPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.ServicePrincipals.Item.Synchronization.Secrets.SecretsPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SecretsPutRequestBody();
+            return new Microsoft.Graph.ServicePrincipals.Item.Synchronization.Secrets.SecretsPutRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Secrets
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<SynchronizationSecretKeyStringValuePair>(SynchronizationSecretKeyStringValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair>(Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Secrets
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<SynchronizationSecretKeyStringValuePair>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

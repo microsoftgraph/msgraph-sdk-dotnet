@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class EducationRubricCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class EducationRubricCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationRubric>? Value
+        public List<Microsoft.Graph.Models.EducationRubric>? Value
         {
-            get { return BackingStore?.Get<List<EducationRubric>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationRubric>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<EducationRubric> Value
+        public List<Microsoft.Graph.Models.EducationRubric> Value
         {
-            get { return BackingStore?.Get<List<EducationRubric>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationRubric>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationRubricCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationRubricCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationRubricCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EducationRubricCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationRubricCollectionResponse();
+            return new Microsoft.Graph.Models.EducationRubricCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<EducationRubric>(EducationRubric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.EducationRubric>(Microsoft.Graph.Models.EducationRubric.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<EducationRubric>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.EducationRubric>("value", Value);
         }
     }
 }

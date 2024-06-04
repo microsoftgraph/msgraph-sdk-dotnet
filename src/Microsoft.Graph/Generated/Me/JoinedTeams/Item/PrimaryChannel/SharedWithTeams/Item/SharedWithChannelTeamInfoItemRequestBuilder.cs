@@ -19,17 +19,17 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Ite
     public class SharedWithChannelTeamInfoItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.</summary>
-        public AllowedMembersRequestBuilder AllowedMembers
+        public Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Item.AllowedMembers.AllowedMembersRequestBuilder AllowedMembers
         {
-            get => new AllowedMembersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Item.AllowedMembers.AllowedMembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the team property of the microsoft.graph.teamInfo entity.</summary>
-        public TeamRequestBuilder Team
+        public Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Item.Team.TeamRequestBuilder Team
         {
-            get => new TeamRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Item.Team.TeamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="SharedWithChannelTeamInfoItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Item.SharedWithChannelTeamInfoItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Ite
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SharedWithChannelTeamInfoItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Item.SharedWithChannelTeamInfoItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Ite
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,57 +62,57 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Ite
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A collection of teams with which a channel is shared.
         /// </summary>
-        /// <returns>A <see cref="SharedWithChannelTeamInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SharedWithChannelTeamInfo"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SharedWithChannelTeamInfo?> GetAsync(Action<RequestConfiguration<SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SharedWithChannelTeamInfo?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Item.SharedWithChannelTeamInfoItemRequestBuilder.SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SharedWithChannelTeamInfo> GetAsync(Action<RequestConfiguration<SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SharedWithChannelTeamInfo> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Item.SharedWithChannelTeamInfoItemRequestBuilder.SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SharedWithChannelTeamInfo>(requestInfo, SharedWithChannelTeamInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SharedWithChannelTeamInfo>(requestInfo, Microsoft.Graph.Models.SharedWithChannelTeamInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property sharedWithTeams in me
         /// </summary>
-        /// <returns>A <see cref="SharedWithChannelTeamInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SharedWithChannelTeamInfo"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SharedWithChannelTeamInfo?> PatchAsync(SharedWithChannelTeamInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SharedWithChannelTeamInfo?> PatchAsync(Microsoft.Graph.Models.SharedWithChannelTeamInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SharedWithChannelTeamInfo> PatchAsync(SharedWithChannelTeamInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SharedWithChannelTeamInfo> PatchAsync(Microsoft.Graph.Models.SharedWithChannelTeamInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SharedWithChannelTeamInfo>(requestInfo, SharedWithChannelTeamInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SharedWithChannelTeamInfo>(requestInfo, Microsoft.Graph.Models.SharedWithChannelTeamInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property sharedWithTeams for me
@@ -140,11 +140,11 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Item.SharedWithChannelTeamInfoItemRequestBuilder.SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Item.SharedWithChannelTeamInfoItemRequestBuilder.SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -160,11 +160,11 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(SharedWithChannelTeamInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.SharedWithChannelTeamInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(SharedWithChannelTeamInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.SharedWithChannelTeamInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -177,11 +177,11 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Ite
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SharedWithChannelTeamInfoItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Item.SharedWithChannelTeamInfoItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SharedWithChannelTeamInfoItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Item.SharedWithChannelTeamInfoItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new SharedWithChannelTeamInfoItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Item.SharedWithChannelTeamInfoItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Ite
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SharedWithChannelTeamInfoItemRequestBuilderGetRequestConfiguration : RequestConfiguration<SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters>
+        public class SharedWithChannelTeamInfoItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Item.SharedWithChannelTeamInfoItemRequestBuilder.SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

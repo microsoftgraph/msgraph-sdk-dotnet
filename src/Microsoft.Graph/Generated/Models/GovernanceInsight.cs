@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class GovernanceInsight : Entity, IParsable
+    public class GovernanceInsight : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates when the insight was created.</summary>
@@ -19,17 +19,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GovernanceInsight"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.GovernanceInsight"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GovernanceInsight CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.GovernanceInsight CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.membershipOutlierInsight" => new MembershipOutlierInsight(),
-                "#microsoft.graph.userSignInInsight" => new UserSignInInsight(),
-                _ => new GovernanceInsight(),
+                "#microsoft.graph.membershipOutlierInsight" => new Microsoft.Graph.Models.MembershipOutlierInsight(),
+                "#microsoft.graph.userSignInInsight" => new Microsoft.Graph.Models.UserSignInInsight(),
+                _ => new Microsoft.Graph.Models.GovernanceInsight(),
             };
         }
         /// <summary>

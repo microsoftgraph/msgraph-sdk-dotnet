@@ -9,34 +9,34 @@ using System;
 namespace Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime
 {
     #pragma warning disable CS1591
-    public class GetPstnCallsWithFromDateTimeWithToDateTimeGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetPstnCallsWithFromDateTimeWithToDateTimeGetResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PstnCallLogRow>? Value
+        public List<Microsoft.Graph.Models.CallRecords.PstnCallLogRow>? Value
         {
-            get { return BackingStore?.Get<List<PstnCallLogRow>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRecords.PstnCallLogRow>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<PstnCallLogRow> Value
+        public List<Microsoft.Graph.Models.CallRecords.PstnCallLogRow> Value
         {
-            get { return BackingStore?.Get<List<PstnCallLogRow>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRecords.PstnCallLogRow>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetPstnCallsWithFromDateTimeWithToDateTimeGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime.GetPstnCallsWithFromDateTimeWithToDateTimeGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetPstnCallsWithFromDateTimeWithToDateTimeGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime.GetPstnCallsWithFromDateTimeWithToDateTimeGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetPstnCallsWithFromDateTimeWithToDateTimeGetResponse();
+            return new Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime.GetPstnCallsWithFromDateTimeWithToDateTimeGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGe
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<PstnCallLogRow>(PstnCallLogRow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CallRecords.PstnCallLogRow>(Microsoft.Graph.Models.CallRecords.PstnCallLogRow.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGe
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<PstnCallLogRow>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CallRecords.PstnCallLogRow>("value", Value);
         }
     }
 }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ConditionalAccessTemplate : Entity, IParsable
+    public class ConditionalAccessTemplate : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The user-friendly name of the template.</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessPolicyDetail? Details
+        public Microsoft.Graph.Models.ConditionalAccessPolicyDetail? Details
         {
-            get { return BackingStore?.Get<ConditionalAccessPolicyDetail?>("details"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessPolicyDetail?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessPolicyDetail Details
+        public Microsoft.Graph.Models.ConditionalAccessPolicyDetail Details
         {
-            get { return BackingStore?.Get<ConditionalAccessPolicyDetail>("details"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessPolicyDetail>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #endif
@@ -59,20 +59,20 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The scenarios property</summary>
-        public TemplateScenarios? Scenarios
+        public Microsoft.Graph.Models.TemplateScenarios? Scenarios
         {
-            get { return BackingStore?.Get<TemplateScenarios?>("scenarios"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TemplateScenarios?>("scenarios"); }
             set { BackingStore?.Set("scenarios", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ConditionalAccessTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ConditionalAccessTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ConditionalAccessTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessTemplate();
+            return new Microsoft.Graph.Models.ConditionalAccessTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,9 +83,9 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "details", n => { Details = n.GetObjectValue<ConditionalAccessPolicyDetail>(ConditionalAccessPolicyDetail.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessPolicyDetail>(Microsoft.Graph.Models.ConditionalAccessPolicyDetail.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "scenarios", n => { Scenarios = n.GetEnumValue<TemplateScenarios>(); } },
+                { "scenarios", n => { Scenarios = n.GetEnumValue<Microsoft.Graph.Models.TemplateScenarios>(); } },
             };
         }
         /// <summary>
@@ -97,9 +97,9 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<ConditionalAccessPolicyDetail>("details", Details);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessPolicyDetail>("details", Details);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<TemplateScenarios>("scenarios", Scenarios);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TemplateScenarios>("scenarios", Scenarios);
         }
     }
 }

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Teams.Item.IncomingChannels
     public class IncomingChannelsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Teams.Item.IncomingChannels.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Teams.Item.IncomingChannels.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the incomingChannels property of the microsoft.graph.team entity.</summary>
         /// <param name="position">The unique identifier of channel</param>
-        /// <returns>A <see cref="ChannelItemRequestBuilder"/></returns>
-        public ChannelItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Teams.Item.IncomingChannels.Item.ChannelItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Teams.Item.IncomingChannels.Item.ChannelItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("channel%2Did", position);
-                return new ChannelItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Teams.Item.IncomingChannels.Item.ChannelItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IncomingChannelsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teams.Item.IncomingChannels.IncomingChannelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Teams.Item.IncomingChannels
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="IncomingChannelsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teams.Item.IncomingChannels.IncomingChannelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,25 +55,25 @@ namespace Microsoft.Graph.Teams.Item.IncomingChannels
         /// Get the list of incoming channels (channels shared with a team).
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-list-incomingchannels?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ChannelCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ChannelCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ChannelCollectionResponse?> GetAsync(Action<RequestConfiguration<IncomingChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ChannelCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.IncomingChannels.IncomingChannelsRequestBuilder.IncomingChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ChannelCollectionResponse> GetAsync(Action<RequestConfiguration<IncomingChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ChannelCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.IncomingChannels.IncomingChannelsRequestBuilder.IncomingChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ChannelCollectionResponse>(requestInfo, ChannelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ChannelCollectionResponse>(requestInfo, Microsoft.Graph.Models.ChannelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the list of incoming channels (channels shared with a team).
@@ -82,11 +82,11 @@ namespace Microsoft.Graph.Teams.Item.IncomingChannels
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IncomingChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.IncomingChannels.IncomingChannelsRequestBuilder.IncomingChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IncomingChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.IncomingChannels.IncomingChannelsRequestBuilder.IncomingChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -97,11 +97,11 @@ namespace Microsoft.Graph.Teams.Item.IncomingChannels
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="IncomingChannelsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Teams.Item.IncomingChannels.IncomingChannelsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public IncomingChannelsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Teams.Item.IncomingChannels.IncomingChannelsRequestBuilder WithUrl(string rawUrl)
         {
-            return new IncomingChannelsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Teams.Item.IncomingChannels.IncomingChannelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the list of incoming channels (channels shared with a team).
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Teams.Item.IncomingChannels
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class IncomingChannelsRequestBuilderGetRequestConfiguration : RequestConfiguration<IncomingChannelsRequestBuilderGetQueryParameters>
+        public class IncomingChannelsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Teams.Item.IncomingChannels.IncomingChannelsRequestBuilder.IncomingChannelsRequestBuilderGetQueryParameters>
         {
         }
     }

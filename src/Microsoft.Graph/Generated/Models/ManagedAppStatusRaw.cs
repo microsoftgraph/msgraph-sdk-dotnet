@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Represents an un-typed status report about organizations app protection and configuration.
     /// </summary>
-    public class ManagedAppStatusRaw : ManagedAppStatus, IParsable
+    public class ManagedAppStatusRaw : Microsoft.Graph.Models.ManagedAppStatus, IParsable
     {
         /// <summary>Status report content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Content
+        public UntypedNode? Content
         {
-            get { return BackingStore?.Get<Json?>("content"); }
+            get { return BackingStore?.Get<UntypedNode?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public Json Content
+        public UntypedNode Content
         {
-            get { return BackingStore?.Get<Json>("content"); }
+            get { return BackingStore?.Get<UntypedNode>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ManagedAppStatusRaw"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ManagedAppStatusRaw"/> and sets the default values.
         /// </summary>
         public ManagedAppStatusRaw() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedAppStatusRaw"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedAppStatusRaw"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedAppStatusRaw CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ManagedAppStatusRaw CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedAppStatusRaw();
+            return new Microsoft.Graph.Models.ManagedAppStatusRaw();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "content", n => { Content = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<Json>("content", Content);
+            writer.WriteObjectValue<UntypedNode>("content", Content);
         }
     }
 }

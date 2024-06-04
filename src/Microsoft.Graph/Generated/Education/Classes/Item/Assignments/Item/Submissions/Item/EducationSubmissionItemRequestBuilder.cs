@@ -26,52 +26,52 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.It
     public class EducationSubmissionItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the excuse method.</summary>
-        public ExcuseRequestBuilder Excuse
+        public Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.Excuse.ExcuseRequestBuilder Excuse
         {
-            get => new ExcuseRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.Excuse.ExcuseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the outcomes property of the microsoft.graph.educationSubmission entity.</summary>
-        public OutcomesRequestBuilder Outcomes
+        public Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.Outcomes.OutcomesRequestBuilder Outcomes
         {
-            get => new OutcomesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.Outcomes.OutcomesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reassign method.</summary>
-        public ReassignRequestBuilder Reassign
+        public Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.Reassign.ReassignRequestBuilder Reassign
         {
-            get => new ReassignRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.Reassign.ReassignRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resources property of the microsoft.graph.educationSubmission entity.</summary>
-        public ResourcesRequestBuilder Resources
+        public Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.Resources.ResourcesRequestBuilder Resources
         {
-            get => new ResourcesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.Resources.ResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the return method.</summary>
-        public ReturnRequestBuilder Return
+        public Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.Return.ReturnRequestBuilder Return
         {
-            get => new ReturnRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.Return.ReturnRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setUpResourcesFolder method.</summary>
-        public SetUpResourcesFolderRequestBuilder SetUpResourcesFolder
+        public Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.SetUpResourcesFolder.SetUpResourcesFolderRequestBuilder SetUpResourcesFolder
         {
-            get => new SetUpResourcesFolderRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.SetUpResourcesFolder.SetUpResourcesFolderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the submit method.</summary>
-        public SubmitRequestBuilder Submit
+        public Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.Submit.SubmitRequestBuilder Submit
         {
-            get => new SubmitRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.Submit.SubmitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the submittedResources property of the microsoft.graph.educationSubmission entity.</summary>
-        public SubmittedResourcesRequestBuilder SubmittedResources
+        public Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.SubmittedResources.SubmittedResourcesRequestBuilder SubmittedResources
         {
-            get => new SubmittedResourcesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.SubmittedResources.SubmittedResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unsubmit method.</summary>
-        public UnsubmitRequestBuilder Unsubmit
+        public Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.Unsubmit.UnsubmitRequestBuilder Unsubmit
         {
-            get => new UnsubmitRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.Unsubmit.UnsubmitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="EducationSubmissionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.EducationSubmissionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.It
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="EducationSubmissionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.EducationSubmissionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.It
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -104,57 +104,58 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.It
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Once published, there&apos;s a submission object for each student representing their work and grade. Read-only. Nullable.
+        /// Retrieve a particular submission. Only teachers, students, and applications with application permissions can perform this operation. A submission object represents a student&apos;s work for an assignment. Resources associated with the submission represent this work. Only the assignedTo student can see and modify the submission. A teacher or application with application permissions has full access to all submissions. The grade and feedback from a teacher are part of the educationOutcome associated with this object. Only teachers or applications with application permissions can add or change grades and feedback. Students will not see the grade or feedback until the assignment has been released.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsubmission-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="EducationSubmission"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationSubmission"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationSubmission?> GetAsync(Action<RequestConfiguration<EducationSubmissionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationSubmission?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.EducationSubmissionItemRequestBuilder.EducationSubmissionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationSubmission> GetAsync(Action<RequestConfiguration<EducationSubmissionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationSubmission> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.EducationSubmissionItemRequestBuilder.EducationSubmissionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationSubmission>(requestInfo, EducationSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EducationSubmission>(requestInfo, Microsoft.Graph.Models.EducationSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property submissions in education
         /// </summary>
-        /// <returns>A <see cref="EducationSubmission"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationSubmission"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationSubmission?> PatchAsync(EducationSubmission body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationSubmission?> PatchAsync(Microsoft.Graph.Models.EducationSubmission body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationSubmission> PatchAsync(EducationSubmission body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationSubmission> PatchAsync(Microsoft.Graph.Models.EducationSubmission body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationSubmission>(requestInfo, EducationSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EducationSubmission>(requestInfo, Microsoft.Graph.Models.EducationSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property submissions for education
@@ -176,17 +177,17 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.It
             return requestInfo;
         }
         /// <summary>
-        /// Once published, there&apos;s a submission object for each student representing their work and grade. Read-only. Nullable.
+        /// Retrieve a particular submission. Only teachers, students, and applications with application permissions can perform this operation. A submission object represents a student&apos;s work for an assignment. Resources associated with the submission represent this work. Only the assignedTo student can see and modify the submission. A teacher or application with application permissions has full access to all submissions. The grade and feedback from a teacher are part of the educationOutcome associated with this object. Only teachers or applications with application permissions can add or change grades and feedback. Students will not see the grade or feedback until the assignment has been released.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationSubmissionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.EducationSubmissionItemRequestBuilder.EducationSubmissionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationSubmissionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.EducationSubmissionItemRequestBuilder.EducationSubmissionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -202,11 +203,11 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(EducationSubmission body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.EducationSubmission body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(EducationSubmission body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.EducationSubmission body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -219,11 +220,11 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.It
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="EducationSubmissionItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.EducationSubmissionItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EducationSubmissionItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.EducationSubmissionItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new EducationSubmissionItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.EducationSubmissionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -233,7 +234,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.It
         {
         }
         /// <summary>
-        /// Once published, there&apos;s a submission object for each student representing their work and grade. Read-only. Nullable.
+        /// Retrieve a particular submission. Only teachers, students, and applications with application permissions can perform this operation. A submission object represents a student&apos;s work for an assignment. Resources associated with the submission represent this work. Only the assignedTo student can see and modify the submission. A teacher or application with application permissions has full access to all submissions. The grade and feedback from a teacher are part of the educationOutcome associated with this object. Only teachers or applications with application permissions can add or change grades and feedback. Students will not see the grade or feedback until the assignment has been released.
         /// </summary>
         public class EducationSubmissionItemRequestBuilderGetQueryParameters 
         {
@@ -262,7 +263,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.It
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EducationSubmissionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EducationSubmissionItemRequestBuilderGetQueryParameters>
+        public class EducationSubmissionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.EducationSubmissionItemRequestBuilder.EducationSubmissionItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -39,21 +39,21 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Invite
         /// <summary>The participants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<InvitationParticipantInfo>? Participants
+        public List<Microsoft.Graph.Models.InvitationParticipantInfo>? Participants
         {
-            get { return BackingStore?.Get<List<InvitationParticipantInfo>?>("participants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.InvitationParticipantInfo>?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #nullable restore
 #else
-        public List<InvitationParticipantInfo> Participants
+        public List<Microsoft.Graph.Models.InvitationParticipantInfo> Participants
         {
-            get { return BackingStore?.Get<List<InvitationParticipantInfo>>("participants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.InvitationParticipantInfo>>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="InvitePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Communications.Calls.Item.Participants.Invite.InvitePostRequestBody"/> and sets the default values.
         /// </summary>
         public InvitePostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Invite
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InvitePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Communications.Calls.Item.Participants.Invite.InvitePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static InvitePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Communications.Calls.Item.Participants.Invite.InvitePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InvitePostRequestBody();
+            return new Microsoft.Graph.Communications.Calls.Item.Participants.Invite.InvitePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Invite
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "clientContext", n => { ClientContext = n.GetStringValue(); } },
-                { "participants", n => { Participants = n.GetCollectionOfObjectValues<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "participants", n => { Participants = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.InvitationParticipantInfo>(Microsoft.Graph.Models.InvitationParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Invite
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("clientContext", ClientContext);
-            writer.WriteCollectionOfObjectValues<InvitationParticipantInfo>("participants", Participants);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.InvitationParticipantInfo>("participants", Participants);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class MeetingAttendanceReport : Entity, IParsable
+    public class MeetingAttendanceReport : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of attendance records of an attendance report. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttendanceRecord>? AttendanceRecords
+        public List<Microsoft.Graph.Models.AttendanceRecord>? AttendanceRecords
         {
-            get { return BackingStore?.Get<List<AttendanceRecord>?>("attendanceRecords"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttendanceRecord>?>("attendanceRecords"); }
             set { BackingStore?.Set("attendanceRecords", value); }
         }
 #nullable restore
 #else
-        public List<AttendanceRecord> AttendanceRecords
+        public List<Microsoft.Graph.Models.AttendanceRecord> AttendanceRecords
         {
-            get { return BackingStore?.Get<List<AttendanceRecord>>("attendanceRecords"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttendanceRecord>>("attendanceRecords"); }
             set { BackingStore?.Set("attendanceRecords", value); }
         }
 #endif
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MeetingAttendanceReport"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MeetingAttendanceReport"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MeetingAttendanceReport CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MeetingAttendanceReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MeetingAttendanceReport();
+            return new Microsoft.Graph.Models.MeetingAttendanceReport();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "attendanceRecords", n => { AttendanceRecords = n.GetCollectionOfObjectValues<AttendanceRecord>(AttendanceRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attendanceRecords", n => { AttendanceRecords = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AttendanceRecord>(Microsoft.Graph.Models.AttendanceRecord.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "meetingEndDateTime", n => { MeetingEndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "meetingStartDateTime", n => { MeetingStartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "totalParticipantCount", n => { TotalParticipantCount = n.GetIntValue(); } },
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AttendanceRecord>("attendanceRecords", AttendanceRecords);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AttendanceRecord>("attendanceRecords", AttendanceRecords);
             writer.WriteDateTimeOffsetValue("meetingEndDateTime", MeetingEndDateTime);
             writer.WriteDateTimeOffsetValue("meetingStartDateTime", MeetingStartDateTime);
             writer.WriteIntValue("totalParticipantCount", TotalParticipantCount);

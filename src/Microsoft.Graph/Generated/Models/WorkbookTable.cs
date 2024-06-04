@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookTable : Entity, IParsable
+    public class WorkbookTable : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents a collection of all the columns in the table. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookTableColumn>? Columns
+        public List<Microsoft.Graph.Models.WorkbookTableColumn>? Columns
         {
-            get { return BackingStore?.Get<List<WorkbookTableColumn>?>("columns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookTableColumn>?>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookTableColumn> Columns
+        public List<Microsoft.Graph.Models.WorkbookTableColumn> Columns
         {
-            get { return BackingStore?.Get<List<WorkbookTableColumn>>("columns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookTableColumn>>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
 #endif
@@ -73,16 +73,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Represents a collection of all the rows in the table. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookTableRow>? Rows
+        public List<Microsoft.Graph.Models.WorkbookTableRow>? Rows
         {
-            get { return BackingStore?.Get<List<WorkbookTableRow>?>("rows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookTableRow>?>("rows"); }
             set { BackingStore?.Set("rows", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookTableRow> Rows
+        public List<Microsoft.Graph.Models.WorkbookTableRow> Rows
         {
-            get { return BackingStore?.Get<List<WorkbookTableRow>>("rows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookTableRow>>("rows"); }
             set { BackingStore?.Set("rows", value); }
         }
 #endif
@@ -119,16 +119,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Represents the sorting for the table. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookTableSort? Sort
+        public Microsoft.Graph.Models.WorkbookTableSort? Sort
         {
-            get { return BackingStore?.Get<WorkbookTableSort?>("sort"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookTableSort?>("sort"); }
             set { BackingStore?.Set("sort", value); }
         }
 #nullable restore
 #else
-        public WorkbookTableSort Sort
+        public Microsoft.Graph.Models.WorkbookTableSort Sort
         {
-            get { return BackingStore?.Get<WorkbookTableSort>("sort"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookTableSort>("sort"); }
             set { BackingStore?.Set("sort", value); }
         }
 #endif
@@ -151,28 +151,28 @@ namespace Microsoft.Graph.Models
         /// <summary>The worksheet containing the current table. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookWorksheet? Worksheet
+        public Microsoft.Graph.Models.WorkbookWorksheet? Worksheet
         {
-            get { return BackingStore?.Get<WorkbookWorksheet?>("worksheet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookWorksheet?>("worksheet"); }
             set { BackingStore?.Set("worksheet", value); }
         }
 #nullable restore
 #else
-        public WorkbookWorksheet Worksheet
+        public Microsoft.Graph.Models.WorkbookWorksheet Worksheet
         {
-            get { return BackingStore?.Get<WorkbookWorksheet>("worksheet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookWorksheet>("worksheet"); }
             set { BackingStore?.Set("worksheet", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookTable"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookTable"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookTable CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WorkbookTable CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookTable();
+            return new Microsoft.Graph.Models.WorkbookTable();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -182,20 +182,20 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "columns", n => { Columns = n.GetCollectionOfObjectValues<WorkbookTableColumn>(WorkbookTableColumn.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "columns", n => { Columns = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookTableColumn>(Microsoft.Graph.Models.WorkbookTableColumn.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "highlightFirstColumn", n => { HighlightFirstColumn = n.GetBoolValue(); } },
                 { "highlightLastColumn", n => { HighlightLastColumn = n.GetBoolValue(); } },
                 { "legacyId", n => { LegacyId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "rows", n => { Rows = n.GetCollectionOfObjectValues<WorkbookTableRow>(WorkbookTableRow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rows", n => { Rows = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookTableRow>(Microsoft.Graph.Models.WorkbookTableRow.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "showBandedColumns", n => { ShowBandedColumns = n.GetBoolValue(); } },
                 { "showBandedRows", n => { ShowBandedRows = n.GetBoolValue(); } },
                 { "showFilterButton", n => { ShowFilterButton = n.GetBoolValue(); } },
                 { "showHeaders", n => { ShowHeaders = n.GetBoolValue(); } },
                 { "showTotals", n => { ShowTotals = n.GetBoolValue(); } },
-                { "sort", n => { Sort = n.GetObjectValue<WorkbookTableSort>(WorkbookTableSort.CreateFromDiscriminatorValue); } },
+                { "sort", n => { Sort = n.GetObjectValue<Microsoft.Graph.Models.WorkbookTableSort>(Microsoft.Graph.Models.WorkbookTableSort.CreateFromDiscriminatorValue); } },
                 { "style", n => { Style = n.GetStringValue(); } },
-                { "worksheet", n => { Worksheet = n.GetObjectValue<WorkbookWorksheet>(WorkbookWorksheet.CreateFromDiscriminatorValue); } },
+                { "worksheet", n => { Worksheet = n.GetObjectValue<Microsoft.Graph.Models.WorkbookWorksheet>(Microsoft.Graph.Models.WorkbookWorksheet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -206,20 +206,20 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<WorkbookTableColumn>("columns", Columns);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookTableColumn>("columns", Columns);
             writer.WriteBoolValue("highlightFirstColumn", HighlightFirstColumn);
             writer.WriteBoolValue("highlightLastColumn", HighlightLastColumn);
             writer.WriteStringValue("legacyId", LegacyId);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<WorkbookTableRow>("rows", Rows);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookTableRow>("rows", Rows);
             writer.WriteBoolValue("showBandedColumns", ShowBandedColumns);
             writer.WriteBoolValue("showBandedRows", ShowBandedRows);
             writer.WriteBoolValue("showFilterButton", ShowFilterButton);
             writer.WriteBoolValue("showHeaders", ShowHeaders);
             writer.WriteBoolValue("showTotals", ShowTotals);
-            writer.WriteObjectValue<WorkbookTableSort>("sort", Sort);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookTableSort>("sort", Sort);
             writer.WriteStringValue("style", Style);
-            writer.WriteObjectValue<WorkbookWorksheet>("worksheet", Worksheet);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookWorksheet>("worksheet", Worksheet);
         }
     }
 }

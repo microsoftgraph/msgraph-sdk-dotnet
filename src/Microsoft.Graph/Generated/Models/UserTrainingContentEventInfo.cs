@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("potentialScoreImpact", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserTrainingContentEventInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.UserTrainingContentEventInfo"/> and sets the default values.
         /// </summary>
         public UserTrainingContentEventInfo()
         {
@@ -106,12 +106,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserTrainingContentEventInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserTrainingContentEventInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserTrainingContentEventInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.UserTrainingContentEventInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserTrainingContentEventInfo();
+            return new Microsoft.Graph.Models.UserTrainingContentEventInfo();
         }
         /// <summary>
         /// The deserialization information for the current model

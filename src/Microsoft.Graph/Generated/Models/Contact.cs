@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Contact : OutlookItem, IParsable
+    public class Contact : Microsoft.Graph.Models.OutlookItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the contact&apos;s assistant.</summary>
@@ -35,16 +35,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The contact&apos;s business address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PhysicalAddress? BusinessAddress
+        public Microsoft.Graph.Models.PhysicalAddress? BusinessAddress
         {
-            get { return BackingStore?.Get<PhysicalAddress?>("businessAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PhysicalAddress?>("businessAddress"); }
             set { BackingStore?.Set("businessAddress", value); }
         }
 #nullable restore
 #else
-        public PhysicalAddress BusinessAddress
+        public Microsoft.Graph.Models.PhysicalAddress BusinessAddress
         {
-            get { return BackingStore?.Get<PhysicalAddress>("businessAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PhysicalAddress>("businessAddress"); }
             set { BackingStore?.Set("businessAddress", value); }
         }
 #endif
@@ -147,32 +147,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The contact&apos;s email addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EmailAddress>? EmailAddresses
+        public List<Microsoft.Graph.Models.EmailAddress>? EmailAddresses
         {
-            get { return BackingStore?.Get<List<EmailAddress>?>("emailAddresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EmailAddress>?>("emailAddresses"); }
             set { BackingStore?.Set("emailAddresses", value); }
         }
 #nullable restore
 #else
-        public List<EmailAddress> EmailAddresses
+        public List<Microsoft.Graph.Models.EmailAddress> EmailAddresses
         {
-            get { return BackingStore?.Get<List<EmailAddress>>("emailAddresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EmailAddress>>("emailAddresses"); }
             set { BackingStore?.Set("emailAddresses", value); }
         }
 #endif
         /// <summary>The collection of open extensions defined for the contact. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions
+        public List<Microsoft.Graph.Models.Extension>? Extensions
         {
-            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions
+        public List<Microsoft.Graph.Models.Extension> Extensions
         {
-            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("fileAs", value); }
         }
 #endif
-        /// <summary>The contact&apos;s generation.</summary>
+        /// <summary>The contact&apos;s suffix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Generation
@@ -227,16 +227,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The contact&apos;s home address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PhysicalAddress? HomeAddress
+        public Microsoft.Graph.Models.PhysicalAddress? HomeAddress
         {
-            get { return BackingStore?.Get<PhysicalAddress?>("homeAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PhysicalAddress?>("homeAddress"); }
             set { BackingStore?.Set("homeAddress", value); }
         }
 #nullable restore
 #else
-        public PhysicalAddress HomeAddress
+        public Microsoft.Graph.Models.PhysicalAddress HomeAddress
         {
-            get { return BackingStore?.Get<PhysicalAddress>("homeAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PhysicalAddress>("homeAddress"); }
             set { BackingStore?.Set("homeAddress", value); }
         }
 #endif
@@ -355,16 +355,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of multi-value extended properties defined for the contact. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
+        public List<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
+        public List<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #endif
@@ -403,16 +403,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Other addresses for the contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PhysicalAddress? OtherAddress
+        public Microsoft.Graph.Models.PhysicalAddress? OtherAddress
         {
-            get { return BackingStore?.Get<PhysicalAddress?>("otherAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PhysicalAddress?>("otherAddress"); }
             set { BackingStore?.Set("otherAddress", value); }
         }
 #nullable restore
 #else
-        public PhysicalAddress OtherAddress
+        public Microsoft.Graph.Models.PhysicalAddress OtherAddress
         {
-            get { return BackingStore?.Get<PhysicalAddress>("otherAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PhysicalAddress>("otherAddress"); }
             set { BackingStore?.Set("otherAddress", value); }
         }
 #endif
@@ -451,16 +451,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Optional contact picture. You can get or set a photo for a contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProfilePhoto? Photo
+        public Microsoft.Graph.Models.ProfilePhoto? Photo
         {
-            get { return BackingStore?.Get<ProfilePhoto?>("photo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ProfilePhoto?>("photo"); }
             set { BackingStore?.Set("photo", value); }
         }
 #nullable restore
 #else
-        public ProfilePhoto Photo
+        public Microsoft.Graph.Models.ProfilePhoto Photo
         {
-            get { return BackingStore?.Get<ProfilePhoto>("photo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ProfilePhoto>("photo"); }
             set { BackingStore?.Set("photo", value); }
         }
 #endif
@@ -483,16 +483,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of single-value extended properties defined for the contact. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
+        public List<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
+        public List<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #endif
@@ -593,7 +593,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Contact"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Contact"/> and sets the default values.
         /// </summary>
         public Contact() : base()
         {
@@ -602,12 +602,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Contact"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Contact"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Contact CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Contact CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Contact();
+            return new Microsoft.Graph.Models.Contact();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -619,19 +619,19 @@ namespace Microsoft.Graph.Models
             {
                 { "assistantName", n => { AssistantName = n.GetStringValue(); } },
                 { "birthday", n => { Birthday = n.GetDateTimeOffsetValue(); } },
-                { "businessAddress", n => { BusinessAddress = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
+                { "businessAddress", n => { BusinessAddress = n.GetObjectValue<Microsoft.Graph.Models.PhysicalAddress>(Microsoft.Graph.Models.PhysicalAddress.CreateFromDiscriminatorValue); } },
                 { "businessHomePage", n => { BusinessHomePage = n.GetStringValue(); } },
                 { "businessPhones", n => { BusinessPhones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "children", n => { Children = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "companyName", n => { CompanyName = n.GetStringValue(); } },
                 { "department", n => { Department = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "emailAddresses", n => { EmailAddresses = n.GetCollectionOfObjectValues<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "emailAddresses", n => { EmailAddresses = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.EmailAddress>(Microsoft.Graph.Models.EmailAddress.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Extension>(Microsoft.Graph.Models.Extension.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "fileAs", n => { FileAs = n.GetStringValue(); } },
                 { "generation", n => { Generation = n.GetStringValue(); } },
                 { "givenName", n => { GivenName = n.GetStringValue(); } },
-                { "homeAddress", n => { HomeAddress = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
+                { "homeAddress", n => { HomeAddress = n.GetObjectValue<Microsoft.Graph.Models.PhysicalAddress>(Microsoft.Graph.Models.PhysicalAddress.CreateFromDiscriminatorValue); } },
                 { "homePhones", n => { HomePhones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "imAddresses", n => { ImAddresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "initials", n => { Initials = n.GetStringValue(); } },
@@ -639,15 +639,15 @@ namespace Microsoft.Graph.Models
                 { "manager", n => { Manager = n.GetStringValue(); } },
                 { "middleName", n => { MiddleName = n.GetStringValue(); } },
                 { "mobilePhone", n => { MobilePhone = n.GetStringValue(); } },
-                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>(Microsoft.Graph.Models.MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "nickName", n => { NickName = n.GetStringValue(); } },
                 { "officeLocation", n => { OfficeLocation = n.GetStringValue(); } },
-                { "otherAddress", n => { OtherAddress = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
+                { "otherAddress", n => { OtherAddress = n.GetObjectValue<Microsoft.Graph.Models.PhysicalAddress>(Microsoft.Graph.Models.PhysicalAddress.CreateFromDiscriminatorValue); } },
                 { "parentFolderId", n => { ParentFolderId = n.GetStringValue(); } },
                 { "personalNotes", n => { PersonalNotes = n.GetStringValue(); } },
-                { "photo", n => { Photo = n.GetObjectValue<ProfilePhoto>(ProfilePhoto.CreateFromDiscriminatorValue); } },
+                { "photo", n => { Photo = n.GetObjectValue<Microsoft.Graph.Models.ProfilePhoto>(Microsoft.Graph.Models.ProfilePhoto.CreateFromDiscriminatorValue); } },
                 { "profession", n => { Profession = n.GetStringValue(); } },
-                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>(Microsoft.Graph.Models.SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "spouseName", n => { SpouseName = n.GetStringValue(); } },
                 { "surname", n => { Surname = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -666,19 +666,19 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("assistantName", AssistantName);
             writer.WriteDateTimeOffsetValue("birthday", Birthday);
-            writer.WriteObjectValue<PhysicalAddress>("businessAddress", BusinessAddress);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PhysicalAddress>("businessAddress", BusinessAddress);
             writer.WriteStringValue("businessHomePage", BusinessHomePage);
             writer.WriteCollectionOfPrimitiveValues<string>("businessPhones", BusinessPhones);
             writer.WriteCollectionOfPrimitiveValues<string>("children", Children);
             writer.WriteStringValue("companyName", CompanyName);
             writer.WriteStringValue("department", Department);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<EmailAddress>("emailAddresses", EmailAddresses);
-            writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.EmailAddress>("emailAddresses", EmailAddresses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Extension>("extensions", Extensions);
             writer.WriteStringValue("fileAs", FileAs);
             writer.WriteStringValue("generation", Generation);
             writer.WriteStringValue("givenName", GivenName);
-            writer.WriteObjectValue<PhysicalAddress>("homeAddress", HomeAddress);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PhysicalAddress>("homeAddress", HomeAddress);
             writer.WriteCollectionOfPrimitiveValues<string>("homePhones", HomePhones);
             writer.WriteCollectionOfPrimitiveValues<string>("imAddresses", ImAddresses);
             writer.WriteStringValue("initials", Initials);
@@ -686,15 +686,15 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("manager", Manager);
             writer.WriteStringValue("middleName", MiddleName);
             writer.WriteStringValue("mobilePhone", MobilePhone);
-            writer.WriteCollectionOfObjectValues<MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
             writer.WriteStringValue("nickName", NickName);
             writer.WriteStringValue("officeLocation", OfficeLocation);
-            writer.WriteObjectValue<PhysicalAddress>("otherAddress", OtherAddress);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PhysicalAddress>("otherAddress", OtherAddress);
             writer.WriteStringValue("parentFolderId", ParentFolderId);
             writer.WriteStringValue("personalNotes", PersonalNotes);
-            writer.WriteObjectValue<ProfilePhoto>("photo", Photo);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ProfilePhoto>("photo", Photo);
             writer.WriteStringValue("profession", Profession);
-            writer.WriteCollectionOfObjectValues<SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
             writer.WriteStringValue("spouseName", SpouseName);
             writer.WriteStringValue("surname", Surname);
             writer.WriteStringValue("title", Title);

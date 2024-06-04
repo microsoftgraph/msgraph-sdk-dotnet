@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("v8_1", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsMinimumOperatingSystem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WindowsMinimumOperatingSystem"/> and sets the default values.
         /// </summary>
         public WindowsMinimumOperatingSystem()
         {
@@ -65,12 +65,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsMinimumOperatingSystem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsMinimumOperatingSystem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WindowsMinimumOperatingSystem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.WindowsMinimumOperatingSystem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsMinimumOperatingSystem();
+            return new Microsoft.Graph.Models.WindowsMinimumOperatingSystem();
         }
         /// <summary>
         /// The deserialization information for the current model

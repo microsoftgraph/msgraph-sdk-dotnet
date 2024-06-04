@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.Sites
     public class SitesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="SitesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.GetByPathWithPath.Sites.SitesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.Sites
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SitesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.GetByPathWithPath.Sites.SitesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.Sites
         /// <summary>
         /// The collection of the sub-sites under this site.
         /// </summary>
-        /// <returns>A <see cref="SiteCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SiteCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SiteCollectionResponse?> GetAsync(Action<RequestConfiguration<SitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SiteCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.GetByPathWithPath.Sites.SitesRequestBuilder.SitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SiteCollectionResponse> GetAsync(Action<RequestConfiguration<SitesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SiteCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.GetByPathWithPath.Sites.SitesRequestBuilder.SitesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SiteCollectionResponse>(requestInfo, SiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SiteCollectionResponse>(requestInfo, Microsoft.Graph.Models.SiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The collection of the sub-sites under this site.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.Sites
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SitesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.GetByPathWithPath.Sites.SitesRequestBuilder.SitesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SitesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.GetByPathWithPath.Sites.SitesRequestBuilder.SitesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.Sites
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SitesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Sites.Item.GetByPathWithPath.Sites.SitesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SitesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Sites.Item.GetByPathWithPath.Sites.SitesRequestBuilder WithUrl(string rawUrl)
         {
-            return new SitesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Sites.Item.GetByPathWithPath.Sites.SitesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The collection of the sub-sites under this site.
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.Sites
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SitesRequestBuilderGetRequestConfiguration : RequestConfiguration<SitesRequestBuilderGetQueryParameters>
+        public class SitesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Sites.Item.GetByPathWithPath.Sites.SitesRequestBuilder.SitesRequestBuilderGetQueryParameters>
         {
         }
     }

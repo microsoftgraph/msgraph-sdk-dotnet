@@ -29,9 +29,9 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The processingStatus property</summary>
-        public LifecycleWorkflowProcessingStatus? ProcessingStatus
+        public Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus? ProcessingStatus
         {
-            get { return BackingStore?.Get<LifecycleWorkflowProcessingStatus?>("processingStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus?>("processingStatus"); }
             set { BackingStore?.Set("processingStatus", value); }
         }
         /// <summary>The unique identifier of the associated run.</summary>
@@ -65,16 +65,16 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>The task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TaskObject? Task
+        public Microsoft.Graph.Models.IdentityGovernance.TaskObject? Task
         {
-            get { return BackingStore?.Get<TaskObject?>("task"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.TaskObject?>("task"); }
             set { BackingStore?.Set("task", value); }
         }
 #nullable restore
 #else
-        public TaskObject Task
+        public Microsoft.Graph.Models.IdentityGovernance.TaskObject Task
         {
-            get { return BackingStore?.Get<TaskObject>("task"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.TaskObject>("task"); }
             set { BackingStore?.Set("task", value); }
         }
 #endif
@@ -97,16 +97,16 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>The related lifecycle workflow taskProcessingResults.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TaskProcessingResult>? TaskProcessingResults
+        public List<Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult>? TaskProcessingResults
         {
-            get { return BackingStore?.Get<List<TaskProcessingResult>?>("taskProcessingResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult>?>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
 #nullable restore
 #else
-        public List<TaskProcessingResult> TaskProcessingResults
+        public List<Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult> TaskProcessingResults
         {
-            get { return BackingStore?.Get<List<TaskProcessingResult>>("taskProcessingResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult>>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
 #endif
@@ -125,12 +125,12 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TaskReport"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityGovernance.TaskReport"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TaskReport CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IdentityGovernance.TaskReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TaskReport();
+            return new Microsoft.Graph.Models.IdentityGovernance.TaskReport();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -143,13 +143,13 @@ namespace Microsoft.Graph.Models.IdentityGovernance
                 { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "failedUsersCount", n => { FailedUsersCount = n.GetIntValue(); } },
                 { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "processingStatus", n => { ProcessingStatus = n.GetEnumValue<LifecycleWorkflowProcessingStatus>(); } },
+                { "processingStatus", n => { ProcessingStatus = n.GetEnumValue<Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus>(); } },
                 { "runId", n => { RunId = n.GetStringValue(); } },
                 { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "successfulUsersCount", n => { SuccessfulUsersCount = n.GetIntValue(); } },
-                { "task", n => { Task = n.GetObjectValue<TaskObject>(TaskObject.CreateFromDiscriminatorValue); } },
+                { "task", n => { Task = n.GetObjectValue<Microsoft.Graph.Models.IdentityGovernance.TaskObject>(Microsoft.Graph.Models.IdentityGovernance.TaskObject.CreateFromDiscriminatorValue); } },
                 { "taskDefinition", n => { TaskDefinition = n.GetObjectValue<Microsoft.Graph.Models.IdentityGovernance.TaskDefinition>(Microsoft.Graph.Models.IdentityGovernance.TaskDefinition.CreateFromDiscriminatorValue); } },
-                { "taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<TaskProcessingResult>(TaskProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult>(Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "totalUsersCount", n => { TotalUsersCount = n.GetIntValue(); } },
                 { "unprocessedUsersCount", n => { UnprocessedUsersCount = n.GetIntValue(); } },
             };
@@ -165,13 +165,13 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
             writer.WriteIntValue("failedUsersCount", FailedUsersCount);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
-            writer.WriteEnumValue<LifecycleWorkflowProcessingStatus>("processingStatus", ProcessingStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus>("processingStatus", ProcessingStatus);
             writer.WriteStringValue("runId", RunId);
             writer.WriteDateTimeOffsetValue("startedDateTime", StartedDateTime);
             writer.WriteIntValue("successfulUsersCount", SuccessfulUsersCount);
-            writer.WriteObjectValue<TaskObject>("task", Task);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentityGovernance.TaskObject>("task", Task);
             writer.WriteObjectValue<Microsoft.Graph.Models.IdentityGovernance.TaskDefinition>("taskDefinition", TaskDefinition);
-            writer.WriteCollectionOfObjectValues<TaskProcessingResult>("taskProcessingResults", TaskProcessingResults);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult>("taskProcessingResults", TaskProcessingResults);
             writer.WriteIntValue("totalUsersCount", TotalUsersCount);
             writer.WriteIntValue("unprocessedUsersCount", UnprocessedUsersCount);
         }

@@ -39,21 +39,21 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Restore
         /// <summary>The parentReference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemReference? ParentReference
+        public Microsoft.Graph.Models.ItemReference? ParentReference
         {
-            get { return BackingStore?.Get<ItemReference?>("parentReference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemReference?>("parentReference"); }
             set { BackingStore?.Set("parentReference", value); }
         }
 #nullable restore
 #else
-        public ItemReference ParentReference
+        public Microsoft.Graph.Models.ItemReference ParentReference
         {
-            get { return BackingStore?.Get<ItemReference>("parentReference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemReference>("parentReference"); }
             set { BackingStore?.Set("parentReference", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RestorePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Restore.RestorePostRequestBody"/> and sets the default values.
         /// </summary>
         public RestorePostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Restore
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RestorePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Restore.RestorePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RestorePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Drives.Item.Items.Item.Restore.RestorePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RestorePostRequestBody();
+            return new Microsoft.Graph.Drives.Item.Items.Item.Restore.RestorePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Restore
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parentReference", n => { ParentReference = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
+                { "parentReference", n => { ParentReference = n.GetObjectValue<Microsoft.Graph.Models.ItemReference>(Microsoft.Graph.Models.ItemReference.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Restore
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<ItemReference>("parentReference", ParentReference);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemReference>("parentReference", ParentReference);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

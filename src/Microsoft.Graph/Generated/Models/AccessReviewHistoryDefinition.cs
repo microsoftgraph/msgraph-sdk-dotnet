@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AccessReviewHistoryDefinition : Entity, IParsable
+    public class AccessReviewHistoryDefinition : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? CreatedBy
+        public Microsoft.Graph.Models.UserIdentity? CreatedBy
         {
-            get { return BackingStore?.Get<UserIdentity?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public UserIdentity CreatedBy
+        public Microsoft.Graph.Models.UserIdentity CreatedBy
         {
-            get { return BackingStore?.Get<UserIdentity>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -35,16 +35,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions are included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewHistoryDecisionFilter?>? Decisions
+        public List<Microsoft.Graph.Models.AccessReviewHistoryDecisionFilter?>? Decisions
         {
-            get { return BackingStore?.Get<List<AccessReviewHistoryDecisionFilter?>?>("decisions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewHistoryDecisionFilter?>?>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewHistoryDecisionFilter?> Decisions
+        public List<Microsoft.Graph.Models.AccessReviewHistoryDecisionFilter?> Decisions
         {
-            get { return BackingStore?.Get<List<AccessReviewHistoryDecisionFilter?>>("decisions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewHistoryDecisionFilter?>>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
 #endif
@@ -67,16 +67,16 @@ namespace Microsoft.Graph.Models
         /// <summary>If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that doesn&apos;t recur will have exactly one instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewHistoryInstance>? Instances
+        public List<Microsoft.Graph.Models.AccessReviewHistoryInstance>? Instances
         {
-            get { return BackingStore?.Get<List<AccessReviewHistoryInstance>?>("instances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewHistoryInstance>?>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewHistoryInstance> Instances
+        public List<Microsoft.Graph.Models.AccessReviewHistoryInstance> Instances
         {
-            get { return BackingStore?.Get<List<AccessReviewHistoryInstance>>("instances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewHistoryInstance>>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
 #endif
@@ -95,50 +95,50 @@ namespace Microsoft.Graph.Models
         /// <summary>The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime aren&apos;t defined. Not supported yet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessReviewHistoryScheduleSettings? ScheduleSettings
+        public Microsoft.Graph.Models.AccessReviewHistoryScheduleSettings? ScheduleSettings
         {
-            get { return BackingStore?.Get<AccessReviewHistoryScheduleSettings?>("scheduleSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessReviewHistoryScheduleSettings?>("scheduleSettings"); }
             set { BackingStore?.Set("scheduleSettings", value); }
         }
 #nullable restore
 #else
-        public AccessReviewHistoryScheduleSettings ScheduleSettings
+        public Microsoft.Graph.Models.AccessReviewHistoryScheduleSettings ScheduleSettings
         {
-            get { return BackingStore?.Get<AccessReviewHistoryScheduleSettings>("scheduleSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessReviewHistoryScheduleSettings>("scheduleSettings"); }
             set { BackingStore?.Set("scheduleSettings", value); }
         }
 #endif
         /// <summary>Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewScope>? Scopes
+        public List<Microsoft.Graph.Models.AccessReviewScope>? Scopes
         {
-            get { return BackingStore?.Get<List<AccessReviewScope>?>("scopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewScope>?>("scopes"); }
             set { BackingStore?.Set("scopes", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewScope> Scopes
+        public List<Microsoft.Graph.Models.AccessReviewScope> Scopes
         {
-            get { return BackingStore?.Get<List<AccessReviewScope>>("scopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewScope>>("scopes"); }
             set { BackingStore?.Set("scopes", value); }
         }
 #endif
         /// <summary>Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.</summary>
-        public AccessReviewHistoryStatus? Status
+        public Microsoft.Graph.Models.AccessReviewHistoryStatus? Status
         {
-            get { return BackingStore?.Get<AccessReviewHistoryStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessReviewHistoryStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewHistoryDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessReviewHistoryDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessReviewHistoryDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AccessReviewHistoryDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessReviewHistoryDefinition();
+            return new Microsoft.Graph.Models.AccessReviewHistoryDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -148,16 +148,16 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.UserIdentity>(Microsoft.Graph.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "decisions", n => { Decisions = n.GetCollectionOfEnumValues<AccessReviewHistoryDecisionFilter>()?.ToList(); } },
+                { "decisions", n => { Decisions = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.AccessReviewHistoryDecisionFilter>()?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "instances", n => { Instances = n.GetCollectionOfObjectValues<AccessReviewHistoryInstance>(AccessReviewHistoryInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "instances", n => { Instances = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewHistoryInstance>(Microsoft.Graph.Models.AccessReviewHistoryInstance.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "reviewHistoryPeriodEndDateTime", n => { ReviewHistoryPeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "reviewHistoryPeriodStartDateTime", n => { ReviewHistoryPeriodStartDateTime = n.GetDateTimeOffsetValue(); } },
-                { "scheduleSettings", n => { ScheduleSettings = n.GetObjectValue<AccessReviewHistoryScheduleSettings>(AccessReviewHistoryScheduleSettings.CreateFromDiscriminatorValue); } },
-                { "scopes", n => { Scopes = n.GetCollectionOfObjectValues<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "status", n => { Status = n.GetEnumValue<AccessReviewHistoryStatus>(); } },
+                { "scheduleSettings", n => { ScheduleSettings = n.GetObjectValue<Microsoft.Graph.Models.AccessReviewHistoryScheduleSettings>(Microsoft.Graph.Models.AccessReviewHistoryScheduleSettings.CreateFromDiscriminatorValue); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewScope>(Microsoft.Graph.Models.AccessReviewScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.AccessReviewHistoryStatus>(); } },
             };
         }
         /// <summary>
@@ -168,16 +168,16 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<UserIdentity>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteCollectionOfEnumValues<AccessReviewHistoryDecisionFilter>("decisions", Decisions);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.AccessReviewHistoryDecisionFilter>("decisions", Decisions);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<AccessReviewHistoryInstance>("instances", Instances);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewHistoryInstance>("instances", Instances);
             writer.WriteDateTimeOffsetValue("reviewHistoryPeriodEndDateTime", ReviewHistoryPeriodEndDateTime);
             writer.WriteDateTimeOffsetValue("reviewHistoryPeriodStartDateTime", ReviewHistoryPeriodStartDateTime);
-            writer.WriteObjectValue<AccessReviewHistoryScheduleSettings>("scheduleSettings", ScheduleSettings);
-            writer.WriteCollectionOfObjectValues<AccessReviewScope>("scopes", Scopes);
-            writer.WriteEnumValue<AccessReviewHistoryStatus>("status", Status);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AccessReviewHistoryScheduleSettings>("scheduleSettings", ScheduleSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewScope>("scopes", Scopes);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AccessReviewHistoryStatus>("status", Status);
         }
     }
 }

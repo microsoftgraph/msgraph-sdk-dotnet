@@ -54,16 +54,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The identity that the call is happening on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? OnBehalfOf
+        public Microsoft.Graph.Models.IdentitySet? OnBehalfOf
         {
-            get { return BackingStore?.Get<IdentitySet?>("onBehalfOf"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("onBehalfOf"); }
             set { BackingStore?.Set("onBehalfOf", value); }
         }
 #nullable restore
 #else
-        public IdentitySet OnBehalfOf
+        public Microsoft.Graph.Models.IdentitySet OnBehalfOf
         {
-            get { return BackingStore?.Get<IdentitySet>("onBehalfOf"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("onBehalfOf"); }
             set { BackingStore?.Set("onBehalfOf", value); }
         }
 #endif
@@ -86,21 +86,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The identity that transferred the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Transferor
+        public Microsoft.Graph.Models.IdentitySet? Transferor
         {
-            get { return BackingStore?.Get<IdentitySet?>("transferor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("transferor"); }
             set { BackingStore?.Set("transferor", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Transferor
+        public Microsoft.Graph.Models.IdentitySet Transferor
         {
-            get { return BackingStore?.Get<IdentitySet>("transferor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("transferor"); }
             set { BackingStore?.Set("transferor", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IncomingContext"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IncomingContext"/> and sets the default values.
         /// </summary>
         public IncomingContext()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IncomingContext"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IncomingContext"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IncomingContext CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.IncomingContext CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IncomingContext();
+            return new Microsoft.Graph.Models.IncomingContext();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -127,9 +127,9 @@ namespace Microsoft.Graph.Models
             {
                 { "observedParticipantId", n => { ObservedParticipantId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "onBehalfOf", n => { OnBehalfOf = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "onBehalfOf", n => { OnBehalfOf = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "sourceParticipantId", n => { SourceParticipantId = n.GetStringValue(); } },
-                { "transferor", n => { Transferor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "transferor", n => { Transferor = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -141,9 +141,9 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("observedParticipantId", ObservedParticipantId);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<IdentitySet>("onBehalfOf", OnBehalfOf);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("onBehalfOf", OnBehalfOf);
             writer.WriteStringValue("sourceParticipantId", SourceParticipantId);
-            writer.WriteObjectValue<IdentitySet>("transferor", Transferor);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("transferor", Transferor);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

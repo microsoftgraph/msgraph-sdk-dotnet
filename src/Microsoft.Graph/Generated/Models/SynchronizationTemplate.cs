@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SynchronizationTemplate : Entity, IParsable
+    public class SynchronizationTemplate : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Identifier of the application this template belongs to.</summary>
@@ -63,44 +63,44 @@ namespace Microsoft.Graph.Models
         /// <summary>Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SynchronizationMetadataEntry>? Metadata
+        public List<Microsoft.Graph.Models.SynchronizationMetadataEntry>? Metadata
         {
-            get { return BackingStore?.Get<List<SynchronizationMetadataEntry>?>("metadata"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SynchronizationMetadataEntry>?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public List<SynchronizationMetadataEntry> Metadata
+        public List<Microsoft.Graph.Models.SynchronizationMetadataEntry> Metadata
         {
-            get { return BackingStore?.Get<List<SynchronizationMetadataEntry>>("metadata"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SynchronizationMetadataEntry>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
         /// <summary>Default synchronization schema for the jobs based on this template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationSchema? Schema
+        public Microsoft.Graph.Models.SynchronizationSchema? Schema
         {
-            get { return BackingStore?.Get<SynchronizationSchema?>("schema"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SynchronizationSchema?>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
 #nullable restore
 #else
-        public SynchronizationSchema Schema
+        public Microsoft.Graph.Models.SynchronizationSchema Schema
         {
-            get { return BackingStore?.Get<SynchronizationSchema>("schema"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SynchronizationSchema>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SynchronizationTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SynchronizationTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SynchronizationTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SynchronizationTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SynchronizationTemplate();
+            return new Microsoft.Graph.Models.SynchronizationTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,8 +115,8 @@ namespace Microsoft.Graph.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "discoverable", n => { Discoverable = n.GetBoolValue(); } },
                 { "factoryTag", n => { FactoryTag = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<SynchronizationMetadataEntry>(SynchronizationMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "schema", n => { Schema = n.GetObjectValue<SynchronizationSchema>(SynchronizationSchema.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SynchronizationMetadataEntry>(Microsoft.Graph.Models.SynchronizationMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "schema", n => { Schema = n.GetObjectValue<Microsoft.Graph.Models.SynchronizationSchema>(Microsoft.Graph.Models.SynchronizationSchema.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -132,8 +132,8 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("discoverable", Discoverable);
             writer.WriteStringValue("factoryTag", FactoryTag);
-            writer.WriteCollectionOfObjectValues<SynchronizationMetadataEntry>("metadata", Metadata);
-            writer.WriteObjectValue<SynchronizationSchema>("schema", Schema);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SynchronizationMetadataEntry>("metadata", Metadata);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SynchronizationSchema>("schema", Schema);
         }
     }
 }

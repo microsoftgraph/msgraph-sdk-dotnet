@@ -20,22 +20,22 @@ namespace Microsoft.Graph.Education.Schools.Item
     public class EducationSchoolItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the administrativeUnit property of the microsoft.graph.educationSchool entity.</summary>
-        public AdministrativeUnitRequestBuilder AdministrativeUnit
+        public Microsoft.Graph.Education.Schools.Item.AdministrativeUnit.AdministrativeUnitRequestBuilder AdministrativeUnit
         {
-            get => new AdministrativeUnitRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Schools.Item.AdministrativeUnit.AdministrativeUnitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the classes property of the microsoft.graph.educationSchool entity.</summary>
-        public ClassesRequestBuilder Classes
+        public Microsoft.Graph.Education.Schools.Item.Classes.ClassesRequestBuilder Classes
         {
-            get => new ClassesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Schools.Item.Classes.ClassesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the users property of the microsoft.graph.educationSchool entity.</summary>
-        public UsersRequestBuilder Users
+        public Microsoft.Graph.Education.Schools.Item.Users.UsersRequestBuilder Users
         {
-            get => new UsersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Schools.Item.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="EducationSchoolItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Schools.Item.EducationSchoolItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Education.Schools.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="EducationSchoolItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Schools.Item.EducationSchoolItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Education.Schools.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Education.Schools.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -77,51 +77,51 @@ namespace Microsoft.Graph.Education.Schools.Item
         /// Read the properties and relationships of an educationSchool object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="EducationSchool"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationSchool"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationSchool?> GetAsync(Action<RequestConfiguration<EducationSchoolItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationSchool?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Education.Schools.Item.EducationSchoolItemRequestBuilder.EducationSchoolItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationSchool> GetAsync(Action<RequestConfiguration<EducationSchoolItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationSchool> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Education.Schools.Item.EducationSchoolItemRequestBuilder.EducationSchoolItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationSchool>(requestInfo, EducationSchool.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EducationSchool>(requestInfo, Microsoft.Graph.Models.EducationSchool.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of an educationSchool object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="EducationSchool"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationSchool"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationSchool?> PatchAsync(EducationSchool body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationSchool?> PatchAsync(Microsoft.Graph.Models.EducationSchool body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationSchool> PatchAsync(EducationSchool body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationSchool> PatchAsync(Microsoft.Graph.Models.EducationSchool body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationSchool>(requestInfo, EducationSchool.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EducationSchool>(requestInfo, Microsoft.Graph.Models.EducationSchool.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a school.
@@ -149,11 +149,11 @@ namespace Microsoft.Graph.Education.Schools.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationSchoolItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Education.Schools.Item.EducationSchoolItemRequestBuilder.EducationSchoolItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationSchoolItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Education.Schools.Item.EducationSchoolItemRequestBuilder.EducationSchoolItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -169,11 +169,11 @@ namespace Microsoft.Graph.Education.Schools.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(EducationSchool body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.EducationSchool body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(EducationSchool body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.EducationSchool body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -186,11 +186,11 @@ namespace Microsoft.Graph.Education.Schools.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="EducationSchoolItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Education.Schools.Item.EducationSchoolItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EducationSchoolItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Education.Schools.Item.EducationSchoolItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new EducationSchoolItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Education.Schools.Item.EducationSchoolItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -229,7 +229,7 @@ namespace Microsoft.Graph.Education.Schools.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EducationSchoolItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EducationSchoolItemRequestBuilderGetQueryParameters>
+        public class EducationSchoolItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Education.Schools.Item.EducationSchoolItemRequestBuilder.EducationSchoolItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

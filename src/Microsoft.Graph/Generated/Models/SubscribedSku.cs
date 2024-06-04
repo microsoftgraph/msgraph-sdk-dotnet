@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SubscribedSku : Entity, IParsable
+    public class SubscribedSku : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The unique ID of the account this SKU belongs to.</summary>
@@ -83,32 +83,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Information about the number and status of prepaid licenses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LicenseUnitsDetail? PrepaidUnits
+        public Microsoft.Graph.Models.LicenseUnitsDetail? PrepaidUnits
         {
-            get { return BackingStore?.Get<LicenseUnitsDetail?>("prepaidUnits"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.LicenseUnitsDetail?>("prepaidUnits"); }
             set { BackingStore?.Set("prepaidUnits", value); }
         }
 #nullable restore
 #else
-        public LicenseUnitsDetail PrepaidUnits
+        public Microsoft.Graph.Models.LicenseUnitsDetail PrepaidUnits
         {
-            get { return BackingStore?.Get<LicenseUnitsDetail>("prepaidUnits"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.LicenseUnitsDetail>("prepaidUnits"); }
             set { BackingStore?.Set("prepaidUnits", value); }
         }
 #endif
         /// <summary>Information about the service plans that are available with the SKU. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServicePlanInfo>? ServicePlans
+        public List<Microsoft.Graph.Models.ServicePlanInfo>? ServicePlans
         {
-            get { return BackingStore?.Get<List<ServicePlanInfo>?>("servicePlans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ServicePlanInfo>?>("servicePlans"); }
             set { BackingStore?.Set("servicePlans", value); }
         }
 #nullable restore
 #else
-        public List<ServicePlanInfo> ServicePlans
+        public List<Microsoft.Graph.Models.ServicePlanInfo> ServicePlans
         {
-            get { return BackingStore?.Get<List<ServicePlanInfo>>("servicePlans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ServicePlanInfo>>("servicePlans"); }
             set { BackingStore?.Set("servicePlans", value); }
         }
 #endif
@@ -153,12 +153,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SubscribedSku"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SubscribedSku"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SubscribedSku CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SubscribedSku CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SubscribedSku();
+            return new Microsoft.Graph.Models.SubscribedSku();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -173,8 +173,8 @@ namespace Microsoft.Graph.Models
                 { "appliesTo", n => { AppliesTo = n.GetStringValue(); } },
                 { "capabilityStatus", n => { CapabilityStatus = n.GetStringValue(); } },
                 { "consumedUnits", n => { ConsumedUnits = n.GetIntValue(); } },
-                { "prepaidUnits", n => { PrepaidUnits = n.GetObjectValue<LicenseUnitsDetail>(LicenseUnitsDetail.CreateFromDiscriminatorValue); } },
-                { "servicePlans", n => { ServicePlans = n.GetCollectionOfObjectValues<ServicePlanInfo>(ServicePlanInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "prepaidUnits", n => { PrepaidUnits = n.GetObjectValue<Microsoft.Graph.Models.LicenseUnitsDetail>(Microsoft.Graph.Models.LicenseUnitsDetail.CreateFromDiscriminatorValue); } },
+                { "servicePlans", n => { ServicePlans = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ServicePlanInfo>(Microsoft.Graph.Models.ServicePlanInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "skuId", n => { SkuId = n.GetGuidValue(); } },
                 { "skuPartNumber", n => { SkuPartNumber = n.GetStringValue(); } },
                 { "subscriptionIds", n => { SubscriptionIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -193,8 +193,8 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("appliesTo", AppliesTo);
             writer.WriteStringValue("capabilityStatus", CapabilityStatus);
             writer.WriteIntValue("consumedUnits", ConsumedUnits);
-            writer.WriteObjectValue<LicenseUnitsDetail>("prepaidUnits", PrepaidUnits);
-            writer.WriteCollectionOfObjectValues<ServicePlanInfo>("servicePlans", ServicePlans);
+            writer.WriteObjectValue<Microsoft.Graph.Models.LicenseUnitsDetail>("prepaidUnits", PrepaidUnits);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ServicePlanInfo>("servicePlans", ServicePlans);
             writer.WriteGuidValue("skuId", SkuId);
             writer.WriteStringValue("skuPartNumber", SkuPartNumber);
             writer.WriteCollectionOfPrimitiveValues<string>("subscriptionIds", SubscriptionIds);

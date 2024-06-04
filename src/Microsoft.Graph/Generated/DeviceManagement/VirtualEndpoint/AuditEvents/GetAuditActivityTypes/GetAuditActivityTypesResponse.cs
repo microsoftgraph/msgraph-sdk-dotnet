@@ -8,18 +8,18 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditA
 {
     [Obsolete("This class is obsolete. Use GetAuditActivityTypesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetAuditActivityTypesResponse : GetAuditActivityTypesGetResponse, IParsable
+    public class GetAuditActivityTypesResponse : Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes.GetAuditActivityTypesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetAuditActivityTypesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes.GetAuditActivityTypesResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetAuditActivityTypesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes.GetAuditActivityTypesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetAuditActivityTypesResponse();
+            return new Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes.GetAuditActivityTypesResponse();
         }
     }
 }

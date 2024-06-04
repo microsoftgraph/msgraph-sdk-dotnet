@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SynchronizationSchema : Entity, IParsable
+    public class SynchronizationSchema : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Contains the collection of directories and all of their objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryDefinition>? Directories
+        public List<Microsoft.Graph.Models.DirectoryDefinition>? Directories
         {
-            get { return BackingStore?.Get<List<DirectoryDefinition>?>("directories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryDefinition>?>("directories"); }
             set { BackingStore?.Set("directories", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryDefinition> Directories
+        public List<Microsoft.Graph.Models.DirectoryDefinition> Directories
         {
-            get { return BackingStore?.Get<List<DirectoryDefinition>>("directories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryDefinition>>("directories"); }
             set { BackingStore?.Set("directories", value); }
         }
 #endif
         /// <summary>A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SynchronizationRule>? SynchronizationRules
+        public List<Microsoft.Graph.Models.SynchronizationRule>? SynchronizationRules
         {
-            get { return BackingStore?.Get<List<SynchronizationRule>?>("synchronizationRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SynchronizationRule>?>("synchronizationRules"); }
             set { BackingStore?.Set("synchronizationRules", value); }
         }
 #nullable restore
 #else
-        public List<SynchronizationRule> SynchronizationRules
+        public List<Microsoft.Graph.Models.SynchronizationRule> SynchronizationRules
         {
-            get { return BackingStore?.Get<List<SynchronizationRule>>("synchronizationRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SynchronizationRule>>("synchronizationRules"); }
             set { BackingStore?.Set("synchronizationRules", value); }
         }
 #endif
@@ -61,12 +61,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SynchronizationSchema"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SynchronizationSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SynchronizationSchema CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SynchronizationSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SynchronizationSchema();
+            return new Microsoft.Graph.Models.SynchronizationSchema();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,8 +76,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "directories", n => { Directories = n.GetCollectionOfObjectValues<DirectoryDefinition>(DirectoryDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "synchronizationRules", n => { SynchronizationRules = n.GetCollectionOfObjectValues<SynchronizationRule>(SynchronizationRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "directories", n => { Directories = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryDefinition>(Microsoft.Graph.Models.DirectoryDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "synchronizationRules", n => { SynchronizationRules = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SynchronizationRule>(Microsoft.Graph.Models.SynchronizationRule.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DirectoryDefinition>("directories", Directories);
-            writer.WriteCollectionOfObjectValues<SynchronizationRule>("synchronizationRules", SynchronizationRules);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryDefinition>("directories", Directories);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SynchronizationRule>("synchronizationRules", SynchronizationRules);
             writer.WriteStringValue("version", Version);
         }
     }

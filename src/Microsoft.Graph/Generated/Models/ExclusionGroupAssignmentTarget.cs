@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Represents a group that should be excluded from an assignment.
     /// </summary>
-    public class ExclusionGroupAssignmentTarget : GroupAssignmentTarget, IParsable
+    public class ExclusionGroupAssignmentTarget : Microsoft.Graph.Models.GroupAssignmentTarget, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="ExclusionGroupAssignmentTarget"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ExclusionGroupAssignmentTarget"/> and sets the default values.
         /// </summary>
         public ExclusionGroupAssignmentTarget() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExclusionGroupAssignmentTarget"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ExclusionGroupAssignmentTarget"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExclusionGroupAssignmentTarget CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ExclusionGroupAssignmentTarget CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExclusionGroupAssignmentTarget();
+            return new Microsoft.Graph.Models.ExclusionGroupAssignmentTarget();
         }
         /// <summary>
         /// The deserialization information for the current model

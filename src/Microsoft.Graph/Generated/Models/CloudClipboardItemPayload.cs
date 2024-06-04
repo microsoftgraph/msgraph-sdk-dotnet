@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CloudClipboardItemPayload"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CloudClipboardItemPayload"/> and sets the default values.
         /// </summary>
         public CloudClipboardItemPayload()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudClipboardItemPayload"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudClipboardItemPayload"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudClipboardItemPayload CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CloudClipboardItemPayload CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudClipboardItemPayload();
+            return new Microsoft.Graph.Models.CloudClipboardItemPayload();
         }
         /// <summary>
         /// The deserialization information for the current model

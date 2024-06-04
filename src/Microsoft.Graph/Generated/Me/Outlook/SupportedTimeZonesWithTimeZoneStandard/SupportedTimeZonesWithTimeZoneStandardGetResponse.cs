@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard
 {
     #pragma warning disable CS1591
-    public class SupportedTimeZonesWithTimeZoneStandardGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class SupportedTimeZonesWithTimeZoneStandardGetResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TimeZoneInformation>? Value
+        public List<Microsoft.Graph.Models.TimeZoneInformation>? Value
         {
-            get { return BackingStore?.Get<List<TimeZoneInformation>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TimeZoneInformation>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<TimeZoneInformation> Value
+        public List<Microsoft.Graph.Models.TimeZoneInformation> Value
         {
-            get { return BackingStore?.Get<List<TimeZoneInformation>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TimeZoneInformation>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SupportedTimeZonesWithTimeZoneStandardGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard.SupportedTimeZonesWithTimeZoneStandardGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SupportedTimeZonesWithTimeZoneStandardGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard.SupportedTimeZonesWithTimeZoneStandardGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SupportedTimeZonesWithTimeZoneStandardGetResponse();
+            return new Microsoft.Graph.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard.SupportedTimeZonesWithTimeZoneStandardGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<TimeZoneInformation>(TimeZoneInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TimeZoneInformation>(Microsoft.Graph.Models.TimeZoneInformation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<TimeZoneInformation>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TimeZoneInformation>("value", Value);
         }
     }
 }

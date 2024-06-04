@@ -7,82 +7,82 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ThumbnailSet : Entity, IParsable
+    public class ThumbnailSet : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A 1920x1920 scaled thumbnail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Thumbnail? Large
+        public Microsoft.Graph.Models.Thumbnail? Large
         {
-            get { return BackingStore?.Get<Thumbnail?>("large"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Thumbnail?>("large"); }
             set { BackingStore?.Set("large", value); }
         }
 #nullable restore
 #else
-        public Thumbnail Large
+        public Microsoft.Graph.Models.Thumbnail Large
         {
-            get { return BackingStore?.Get<Thumbnail>("large"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Thumbnail>("large"); }
             set { BackingStore?.Set("large", value); }
         }
 #endif
         /// <summary>A 176x176 scaled thumbnail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Thumbnail? Medium
+        public Microsoft.Graph.Models.Thumbnail? Medium
         {
-            get { return BackingStore?.Get<Thumbnail?>("medium"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Thumbnail?>("medium"); }
             set { BackingStore?.Set("medium", value); }
         }
 #nullable restore
 #else
-        public Thumbnail Medium
+        public Microsoft.Graph.Models.Thumbnail Medium
         {
-            get { return BackingStore?.Get<Thumbnail>("medium"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Thumbnail>("medium"); }
             set { BackingStore?.Set("medium", value); }
         }
 #endif
         /// <summary>A 48x48 cropped thumbnail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Thumbnail? Small
+        public Microsoft.Graph.Models.Thumbnail? Small
         {
-            get { return BackingStore?.Get<Thumbnail?>("small"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Thumbnail?>("small"); }
             set { BackingStore?.Set("small", value); }
         }
 #nullable restore
 #else
-        public Thumbnail Small
+        public Microsoft.Graph.Models.Thumbnail Small
         {
-            get { return BackingStore?.Get<Thumbnail>("small"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Thumbnail>("small"); }
             set { BackingStore?.Set("small", value); }
         }
 #endif
         /// <summary>A custom thumbnail image or the original image used to generate other thumbnails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Thumbnail? Source
+        public Microsoft.Graph.Models.Thumbnail? Source
         {
-            get { return BackingStore?.Get<Thumbnail?>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Thumbnail?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #nullable restore
 #else
-        public Thumbnail Source
+        public Microsoft.Graph.Models.Thumbnail Source
         {
-            get { return BackingStore?.Get<Thumbnail>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Thumbnail>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ThumbnailSet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ThumbnailSet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ThumbnailSet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ThumbnailSet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ThumbnailSet();
+            return new Microsoft.Graph.Models.ThumbnailSet();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,10 +92,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "large", n => { Large = n.GetObjectValue<Thumbnail>(Thumbnail.CreateFromDiscriminatorValue); } },
-                { "medium", n => { Medium = n.GetObjectValue<Thumbnail>(Thumbnail.CreateFromDiscriminatorValue); } },
-                { "small", n => { Small = n.GetObjectValue<Thumbnail>(Thumbnail.CreateFromDiscriminatorValue); } },
-                { "source", n => { Source = n.GetObjectValue<Thumbnail>(Thumbnail.CreateFromDiscriminatorValue); } },
+                { "large", n => { Large = n.GetObjectValue<Microsoft.Graph.Models.Thumbnail>(Microsoft.Graph.Models.Thumbnail.CreateFromDiscriminatorValue); } },
+                { "medium", n => { Medium = n.GetObjectValue<Microsoft.Graph.Models.Thumbnail>(Microsoft.Graph.Models.Thumbnail.CreateFromDiscriminatorValue); } },
+                { "small", n => { Small = n.GetObjectValue<Microsoft.Graph.Models.Thumbnail>(Microsoft.Graph.Models.Thumbnail.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetObjectValue<Microsoft.Graph.Models.Thumbnail>(Microsoft.Graph.Models.Thumbnail.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,10 +106,10 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<Thumbnail>("large", Large);
-            writer.WriteObjectValue<Thumbnail>("medium", Medium);
-            writer.WriteObjectValue<Thumbnail>("small", Small);
-            writer.WriteObjectValue<Thumbnail>("source", Source);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Thumbnail>("large", Large);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Thumbnail>("medium", Medium);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Thumbnail>("small", Small);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Thumbnail>("source", Source);
         }
     }
 }

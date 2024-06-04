@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Communications.GetPresencesByUserId
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GetPresencesByUserIdPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Communications.GetPresencesByUserId.GetPresencesByUserIdPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetPresencesByUserIdPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Communications.GetPresencesByUserId
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetPresencesByUserIdPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Communications.GetPresencesByUserId.GetPresencesByUserIdPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetPresencesByUserIdPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Communications.GetPresencesByUserId.GetPresencesByUserIdPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetPresencesByUserIdPostRequestBody();
+            return new Microsoft.Graph.Communications.GetPresencesByUserId.GetPresencesByUserIdPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

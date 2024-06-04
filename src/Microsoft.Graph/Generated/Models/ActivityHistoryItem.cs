@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ActivityHistoryItem : Entity, IParsable
+    public class ActivityHistoryItem : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.</summary>
@@ -19,16 +19,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The activity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserActivity? Activity
+        public Microsoft.Graph.Models.UserActivity? Activity
         {
-            get { return BackingStore?.Get<UserActivity?>("activity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserActivity?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #nullable restore
 #else
-        public UserActivity Activity
+        public Microsoft.Graph.Models.UserActivity Activity
         {
-            get { return BackingStore?.Get<UserActivity>("activity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserActivity>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #endif
@@ -87,12 +87,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ActivityHistoryItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ActivityHistoryItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ActivityHistoryItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ActivityHistoryItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ActivityHistoryItem();
+            return new Microsoft.Graph.Models.ActivityHistoryItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,13 +103,13 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "activeDurationSeconds", n => { ActiveDurationSeconds = n.GetIntValue(); } },
-                { "activity", n => { Activity = n.GetObjectValue<UserActivity>(UserActivity.CreateFromDiscriminatorValue); } },
+                { "activity", n => { Activity = n.GetObjectValue<Microsoft.Graph.Models.UserActivity>(Microsoft.Graph.Models.UserActivity.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastActiveDateTime", n => { LastActiveDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<Status>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.Status>(); } },
                 { "userTimezone", n => { UserTimezone = n.GetStringValue(); } },
             };
         }
@@ -122,13 +122,13 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("activeDurationSeconds", ActiveDurationSeconds);
-            writer.WriteObjectValue<UserActivity>("activity", Activity);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserActivity>("activity", Activity);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteDateTimeOffsetValue("lastActiveDateTime", LastActiveDateTime);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteDateTimeOffsetValue("startedDateTime", StartedDateTime);
-            writer.WriteEnumValue<Status>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Status>("status", Status);
             writer.WriteStringValue("userTimezone", UserTimezone);
         }
     }

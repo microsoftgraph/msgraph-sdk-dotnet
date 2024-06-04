@@ -22,39 +22,39 @@ namespace Microsoft.Graph.Me.RegisteredDevices
     public class RegisteredDevicesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Me.RegisteredDevices.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.RegisteredDevices.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to appRoleAssignment.</summary>
-        public GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
+        public Microsoft.Graph.Me.RegisteredDevices.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
         {
-            get => new GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.RegisteredDevices.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to device.</summary>
-        public GraphDeviceRequestBuilder GraphDevice
+        public Microsoft.Graph.Me.RegisteredDevices.GraphDevice.GraphDeviceRequestBuilder GraphDevice
         {
-            get => new GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.RegisteredDevices.GraphDevice.GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
-        public GraphEndpointRequestBuilder GraphEndpoint
+        public Microsoft.Graph.Me.RegisteredDevices.GraphEndpoint.GraphEndpointRequestBuilder GraphEndpoint
         {
-            get => new GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.RegisteredDevices.GraphEndpoint.GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the registeredDevices property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of directoryObject</param>
-        /// <returns>A <see cref="DirectoryObjectItemRequestBuilder"/></returns>
-        public DirectoryObjectItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Me.RegisteredDevices.Item.DirectoryObjectItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Me.RegisteredDevices.Item.DirectoryObjectItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("directoryObject%2Did", position);
-                return new DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Me.RegisteredDevices.Item.DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RegisteredDevicesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.RegisteredDevices.RegisteredDevicesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Me.RegisteredDevices
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RegisteredDevicesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.RegisteredDevices.RegisteredDevicesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -73,25 +73,25 @@ namespace Microsoft.Graph.Me.RegisteredDevices
         /// Get the list of user&apos;s registered devices.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<RegisteredDevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.RegisteredDevices.RegisteredDevicesRequestBuilder.RegisteredDevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<RegisteredDevicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.RegisteredDevices.RegisteredDevicesRequestBuilder.RegisteredDevicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DirectoryObjectCollectionResponse>(requestInfo, Microsoft.Graph.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the list of user&apos;s registered devices.
@@ -100,11 +100,11 @@ namespace Microsoft.Graph.Me.RegisteredDevices
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RegisteredDevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.RegisteredDevices.RegisteredDevicesRequestBuilder.RegisteredDevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RegisteredDevicesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.RegisteredDevices.RegisteredDevicesRequestBuilder.RegisteredDevicesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -115,11 +115,11 @@ namespace Microsoft.Graph.Me.RegisteredDevices
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RegisteredDevicesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.RegisteredDevices.RegisteredDevicesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RegisteredDevicesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Me.RegisteredDevices.RegisteredDevicesRequestBuilder WithUrl(string rawUrl)
         {
-            return new RegisteredDevicesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Me.RegisteredDevices.RegisteredDevicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the list of user&apos;s registered devices.
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Me.RegisteredDevices
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RegisteredDevicesRequestBuilderGetRequestConfiguration : RequestConfiguration<RegisteredDevicesRequestBuilderGetQueryParameters>
+        public class RegisteredDevicesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.RegisteredDevices.RegisteredDevicesRequestBuilder.RegisteredDevicesRequestBuilderGetQueryParameters>
         {
         }
     }

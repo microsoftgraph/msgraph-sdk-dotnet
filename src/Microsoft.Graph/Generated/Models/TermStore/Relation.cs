@@ -13,23 +13,23 @@ namespace Microsoft.Graph.Models.TermStore
         /// <summary>The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Term? FromTerm
+        public Microsoft.Graph.Models.TermStore.Term? FromTerm
         {
-            get { return BackingStore?.Get<Term?>("fromTerm"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TermStore.Term?>("fromTerm"); }
             set { BackingStore?.Set("fromTerm", value); }
         }
 #nullable restore
 #else
-        public Term FromTerm
+        public Microsoft.Graph.Models.TermStore.Term FromTerm
         {
-            get { return BackingStore?.Get<Term>("fromTerm"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TermStore.Term>("fromTerm"); }
             set { BackingStore?.Set("fromTerm", value); }
         }
 #endif
         /// <summary>The type of relation. Possible values are: pin, reuse.</summary>
-        public RelationType? Relationship
+        public Microsoft.Graph.Models.TermStore.RelationType? Relationship
         {
-            get { return BackingStore?.Get<RelationType?>("relationship"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TermStore.RelationType?>("relationship"); }
             set { BackingStore?.Set("relationship", value); }
         }
         /// <summary>The [set] in which the relation is relevant.</summary>
@@ -51,28 +51,28 @@ namespace Microsoft.Graph.Models.TermStore
         /// <summary>The to [term] of the relation. The term to which the relationship is defined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Term? ToTerm
+        public Microsoft.Graph.Models.TermStore.Term? ToTerm
         {
-            get { return BackingStore?.Get<Term?>("toTerm"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TermStore.Term?>("toTerm"); }
             set { BackingStore?.Set("toTerm", value); }
         }
 #nullable restore
 #else
-        public Term ToTerm
+        public Microsoft.Graph.Models.TermStore.Term ToTerm
         {
-            get { return BackingStore?.Get<Term>("toTerm"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TermStore.Term>("toTerm"); }
             set { BackingStore?.Set("toTerm", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Relation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TermStore.Relation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Relation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TermStore.Relation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Relation();
+            return new Microsoft.Graph.Models.TermStore.Relation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,10 +82,10 @@ namespace Microsoft.Graph.Models.TermStore
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "fromTerm", n => { FromTerm = n.GetObjectValue<Term>(Term.CreateFromDiscriminatorValue); } },
-                { "relationship", n => { Relationship = n.GetEnumValue<RelationType>(); } },
+                { "fromTerm", n => { FromTerm = n.GetObjectValue<Microsoft.Graph.Models.TermStore.Term>(Microsoft.Graph.Models.TermStore.Term.CreateFromDiscriminatorValue); } },
+                { "relationship", n => { Relationship = n.GetEnumValue<Microsoft.Graph.Models.TermStore.RelationType>(); } },
                 { "set", n => { Set = n.GetObjectValue<Microsoft.Graph.Models.TermStore.Set>(Microsoft.Graph.Models.TermStore.Set.CreateFromDiscriminatorValue); } },
-                { "toTerm", n => { ToTerm = n.GetObjectValue<Term>(Term.CreateFromDiscriminatorValue); } },
+                { "toTerm", n => { ToTerm = n.GetObjectValue<Microsoft.Graph.Models.TermStore.Term>(Microsoft.Graph.Models.TermStore.Term.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -96,10 +96,10 @@ namespace Microsoft.Graph.Models.TermStore
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<Term>("fromTerm", FromTerm);
-            writer.WriteEnumValue<RelationType>("relationship", Relationship);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TermStore.Term>("fromTerm", FromTerm);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TermStore.RelationType>("relationship", Relationship);
             writer.WriteObjectValue<Microsoft.Graph.Models.TermStore.Set>("set", Set);
-            writer.WriteObjectValue<Term>("toTerm", ToTerm);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TermStore.Term>("toTerm", ToTerm);
         }
     }
 }

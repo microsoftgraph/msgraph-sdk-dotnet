@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="FileEncryptionInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.FileEncryptionInfo"/> and sets the default values.
         /// </summary>
         public FileEncryptionInfo()
         {
@@ -159,12 +159,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FileEncryptionInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.FileEncryptionInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static FileEncryptionInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.FileEncryptionInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FileEncryptionInfo();
+            return new Microsoft.Graph.Models.FileEncryptionInfo();
         }
         /// <summary>
         /// The deserialization information for the current model

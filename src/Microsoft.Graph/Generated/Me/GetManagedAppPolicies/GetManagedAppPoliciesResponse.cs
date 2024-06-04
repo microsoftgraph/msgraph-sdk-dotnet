@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Me.GetManagedAppPolicies
 {
     [Obsolete("This class is obsolete. Use GetManagedAppPoliciesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetManagedAppPoliciesResponse : GetManagedAppPoliciesGetResponse, IParsable
+    public class GetManagedAppPoliciesResponse : Microsoft.Graph.Me.GetManagedAppPolicies.GetManagedAppPoliciesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetManagedAppPoliciesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.GetManagedAppPolicies.GetManagedAppPoliciesResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetManagedAppPoliciesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Me.GetManagedAppPolicies.GetManagedAppPoliciesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetManagedAppPoliciesResponse();
+            return new Microsoft.Graph.Me.GetManagedAppPolicies.GetManagedAppPoliciesResponse();
         }
     }
 }

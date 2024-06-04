@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class RiskyServicePrincipalHistoryItem : RiskyServicePrincipal, IParsable
+    public class RiskyServicePrincipalHistoryItem : Microsoft.Graph.Models.RiskyServicePrincipal, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The activity related to service principal risk level change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RiskServicePrincipalActivity? Activity
+        public Microsoft.Graph.Models.RiskServicePrincipalActivity? Activity
         {
-            get { return BackingStore?.Get<RiskServicePrincipalActivity?>("activity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RiskServicePrincipalActivity?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #nullable restore
 #else
-        public RiskServicePrincipalActivity Activity
+        public Microsoft.Graph.Models.RiskServicePrincipalActivity Activity
         {
-            get { return BackingStore?.Get<RiskServicePrincipalActivity>("activity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RiskServicePrincipalActivity>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #endif
@@ -45,12 +45,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RiskyServicePrincipalHistoryItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RiskyServicePrincipalHistoryItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RiskyServicePrincipalHistoryItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.RiskyServicePrincipalHistoryItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RiskyServicePrincipalHistoryItem();
+            return new Microsoft.Graph.Models.RiskyServicePrincipalHistoryItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "activity", n => { Activity = n.GetObjectValue<RiskServicePrincipalActivity>(RiskServicePrincipalActivity.CreateFromDiscriminatorValue); } },
+                { "activity", n => { Activity = n.GetObjectValue<Microsoft.Graph.Models.RiskServicePrincipalActivity>(Microsoft.Graph.Models.RiskServicePrincipalActivity.CreateFromDiscriminatorValue); } },
                 { "initiatedBy", n => { InitiatedBy = n.GetStringValue(); } },
             };
         }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<RiskServicePrincipalActivity>("activity", Activity);
+            writer.WriteObjectValue<Microsoft.Graph.Models.RiskServicePrincipalActivity>("activity", Activity);
             writer.WriteStringValue("initiatedBy", InitiatedBy);
         }
     }

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration
     public class FederationConfigurationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Domains.Item.FederationConfiguration.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Domains.Item.FederationConfiguration.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the federationConfiguration property of the microsoft.graph.domain entity.</summary>
         /// <param name="position">The unique identifier of internalDomainFederation</param>
-        /// <returns>A <see cref="InternalDomainFederationItemRequestBuilder"/></returns>
-        public InternalDomainFederationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Domains.Item.FederationConfiguration.Item.InternalDomainFederationItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Domains.Item.FederationConfiguration.Item.InternalDomainFederationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("internalDomainFederation%2Did", position);
-                return new InternalDomainFederationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Domains.Item.FederationConfiguration.Item.InternalDomainFederationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="FederationConfigurationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Domains.Item.FederationConfiguration.FederationConfigurationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="FederationConfigurationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Domains.Item.FederationConfiguration.FederationConfigurationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration
         /// Read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-list-federationconfiguration?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="InternalDomainFederationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.InternalDomainFederationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<InternalDomainFederationCollectionResponse?> GetAsync(Action<RequestConfiguration<FederationConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.InternalDomainFederationCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Domains.Item.FederationConfiguration.FederationConfigurationRequestBuilder.FederationConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<InternalDomainFederationCollectionResponse> GetAsync(Action<RequestConfiguration<FederationConfigurationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.InternalDomainFederationCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Domains.Item.FederationConfiguration.FederationConfigurationRequestBuilder.FederationConfigurationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<InternalDomainFederationCollectionResponse>(requestInfo, InternalDomainFederationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.InternalDomainFederationCollectionResponse>(requestInfo, Microsoft.Graph.Models.InternalDomainFederationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new internalDomainFederation object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-post-federationconfiguration?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="InternalDomainFederation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.InternalDomainFederation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<InternalDomainFederation?> PostAsync(InternalDomainFederation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.InternalDomainFederation?> PostAsync(Microsoft.Graph.Models.InternalDomainFederation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<InternalDomainFederation> PostAsync(InternalDomainFederation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.InternalDomainFederation> PostAsync(Microsoft.Graph.Models.InternalDomainFederation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<InternalDomainFederation>(requestInfo, InternalDomainFederation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.InternalDomainFederation>(requestInfo, Microsoft.Graph.Models.InternalDomainFederation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FederationConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Domains.Item.FederationConfiguration.FederationConfigurationRequestBuilder.FederationConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FederationConfigurationRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Domains.Item.FederationConfiguration.FederationConfigurationRequestBuilder.FederationConfigurationRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(InternalDomainFederation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.InternalDomainFederation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(InternalDomainFederation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.InternalDomainFederation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="FederationConfigurationRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Domains.Item.FederationConfiguration.FederationConfigurationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FederationConfigurationRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Domains.Item.FederationConfiguration.FederationConfigurationRequestBuilder WithUrl(string rawUrl)
         {
-            return new FederationConfigurationRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Domains.Item.FederationConfiguration.FederationConfigurationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FederationConfigurationRequestBuilderGetRequestConfiguration : RequestConfiguration<FederationConfigurationRequestBuilderGetQueryParameters>
+        public class FederationConfigurationRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Domains.Item.FederationConfiguration.FederationConfigurationRequestBuilder.FederationConfigurationRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

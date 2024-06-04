@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AuthoredNote : Entity, IParsable
+    public class AuthoredNote : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Identity information about the note&apos;s author.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Author
+        public Microsoft.Graph.Models.Identity? Author
         {
-            get { return BackingStore?.Get<Identity?>("author"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity?>("author"); }
             set { BackingStore?.Set("author", value); }
         }
 #nullable restore
 #else
-        public Identity Author
+        public Microsoft.Graph.Models.Identity Author
         {
-            get { return BackingStore?.Get<Identity>("author"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity>("author"); }
             set { BackingStore?.Set("author", value); }
         }
 #endif
         /// <summary>The content of the note.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Content
+        public Microsoft.Graph.Models.ItemBody? Content
         {
-            get { return BackingStore?.Get<ItemBody?>("content"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemBody?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public ItemBody Content
+        public Microsoft.Graph.Models.ItemBody Content
         {
-            get { return BackingStore?.Get<ItemBody>("content"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemBody>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #endif
@@ -51,12 +51,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthoredNote"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthoredNote"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthoredNote CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AuthoredNote CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthoredNote();
+            return new Microsoft.Graph.Models.AuthoredNote();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,8 +66,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "author", n => { Author = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                { "content", n => { Content = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "author", n => { Author = n.GetObjectValue<Microsoft.Graph.Models.Identity>(Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetObjectValue<Microsoft.Graph.Models.ItemBody>(Microsoft.Graph.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<Identity>("author", Author);
-            writer.WriteObjectValue<ItemBody>("content", Content);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Identity>("author", Author);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemBody>("content", Content);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
         }
     }

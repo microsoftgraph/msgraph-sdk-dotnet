@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class MembershipOutlierInsight : GovernanceInsight, IParsable
+    public class MembershipOutlierInsight : Microsoft.Graph.Models.GovernanceInsight, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Navigation link to the container directory object. For example, to a group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? Container
+        public Microsoft.Graph.Models.DirectoryObject? Container
         {
-            get { return BackingStore?.Get<DirectoryObject?>("container"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject?>("container"); }
             set { BackingStore?.Set("container", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject Container
+        public Microsoft.Graph.Models.DirectoryObject Container
         {
-            get { return BackingStore?.Get<DirectoryObject>("container"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject>("container"); }
             set { BackingStore?.Set("container", value); }
         }
 #endif
@@ -45,32 +45,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Navigation link to a member object who modified the record. For example, to a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public User? LastModifiedBy
+        public Microsoft.Graph.Models.User? LastModifiedBy
         {
-            get { return BackingStore?.Get<User?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.User?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public User LastModifiedBy
+        public Microsoft.Graph.Models.User LastModifiedBy
         {
-            get { return BackingStore?.Get<User>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.User>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>Navigation link to a member object. For example, to a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? Member
+        public Microsoft.Graph.Models.DirectoryObject? Member
         {
-            get { return BackingStore?.Get<DirectoryObject?>("member"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject?>("member"); }
             set { BackingStore?.Set("member", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject Member
+        public Microsoft.Graph.Models.DirectoryObject Member
         {
-            get { return BackingStore?.Get<DirectoryObject>("member"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject>("member"); }
             set { BackingStore?.Set("member", value); }
         }
 #endif
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("outlierMemberType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MembershipOutlierInsight"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MembershipOutlierInsight"/> and sets the default values.
         /// </summary>
         public MembershipOutlierInsight() : base()
         {
@@ -112,12 +112,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MembershipOutlierInsight"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MembershipOutlierInsight"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MembershipOutlierInsight CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MembershipOutlierInsight CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MembershipOutlierInsight();
+            return new Microsoft.Graph.Models.MembershipOutlierInsight();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -127,13 +127,13 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "container", n => { Container = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "container", n => { Container = n.GetObjectValue<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
                 { "containerId", n => { ContainerId = n.GetStringValue(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<User>(User.CreateFromDiscriminatorValue); } },
-                { "member", n => { Member = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.User>(Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
+                { "member", n => { Member = n.GetObjectValue<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
                 { "memberId", n => { MemberId = n.GetStringValue(); } },
-                { "outlierContainerType", n => { OutlierContainerType = n.GetEnumValue<OutlierContainerType>(); } },
-                { "outlierMemberType", n => { OutlierMemberType = n.GetEnumValue<OutlierMemberType>(); } },
+                { "outlierContainerType", n => { OutlierContainerType = n.GetEnumValue<Microsoft.Graph.Models.OutlierContainerType>(); } },
+                { "outlierMemberType", n => { OutlierMemberType = n.GetEnumValue<Microsoft.Graph.Models.OutlierMemberType>(); } },
             };
         }
         /// <summary>
@@ -144,13 +144,13 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<DirectoryObject>("container", Container);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DirectoryObject>("container", Container);
             writer.WriteStringValue("containerId", ContainerId);
-            writer.WriteObjectValue<User>("lastModifiedBy", LastModifiedBy);
-            writer.WriteObjectValue<DirectoryObject>("member", Member);
+            writer.WriteObjectValue<Microsoft.Graph.Models.User>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DirectoryObject>("member", Member);
             writer.WriteStringValue("memberId", MemberId);
-            writer.WriteEnumValue<OutlierContainerType>("outlierContainerType", OutlierContainerType);
-            writer.WriteEnumValue<OutlierMemberType>("outlierMemberType", OutlierMemberType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.OutlierContainerType>("outlierContainerType", OutlierContainerType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.OutlierMemberType>("outlierMemberType", OutlierMemberType);
         }
     }
 }

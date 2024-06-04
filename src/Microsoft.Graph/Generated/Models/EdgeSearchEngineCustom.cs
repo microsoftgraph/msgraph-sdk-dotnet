@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Allows IT admins to set a custom default search engine for MDM-Controlled devices.
     /// </summary>
-    public class EdgeSearchEngineCustom : EdgeSearchEngineBase, IParsable
+    public class EdgeSearchEngineCustom : Microsoft.Graph.Models.EdgeSearchEngineBase, IParsable
     {
         /// <summary>Points to a https link containing the OpenSearch xml file that contains, at minimum, the short name and the URL to the search Engine.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EdgeSearchEngineCustom"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.EdgeSearchEngineCustom"/> and sets the default values.
         /// </summary>
         public EdgeSearchEngineCustom() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdgeSearchEngineCustom"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EdgeSearchEngineCustom"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdgeSearchEngineCustom CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EdgeSearchEngineCustom CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdgeSearchEngineCustom();
+            return new Microsoft.Graph.Models.EdgeSearchEngineCustom();
         }
         /// <summary>
         /// The deserialization information for the current model

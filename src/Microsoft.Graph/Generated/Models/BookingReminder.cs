@@ -59,13 +59,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("offset", value); }
         }
         /// <summary>The recipients property</summary>
-        public BookingReminderRecipients? Recipients
+        public Microsoft.Graph.Models.BookingReminderRecipients? Recipients
         {
-            get { return BackingStore?.Get<BookingReminderRecipients?>("recipients"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BookingReminderRecipients?>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="BookingReminder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.BookingReminder"/> and sets the default values.
         /// </summary>
         public BookingReminder()
         {
@@ -75,12 +75,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BookingReminder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BookingReminder"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BookingReminder CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.BookingReminder CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BookingReminder();
+            return new Microsoft.Graph.Models.BookingReminder();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Models
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "offset", n => { Offset = n.GetTimeSpanValue(); } },
-                { "recipients", n => { Recipients = n.GetEnumValue<BookingReminderRecipients>(); } },
+                { "recipients", n => { Recipients = n.GetEnumValue<Microsoft.Graph.Models.BookingReminderRecipients>(); } },
             };
         }
         /// <summary>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteTimeSpanValue("offset", Offset);
-            writer.WriteEnumValue<BookingReminderRecipients>("recipients", Recipients);
+            writer.WriteEnumValue<Microsoft.Graph.Models.BookingReminderRecipients>("recipients", Recipients);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

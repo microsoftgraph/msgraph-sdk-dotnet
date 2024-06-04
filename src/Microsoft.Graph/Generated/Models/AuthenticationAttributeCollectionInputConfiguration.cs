@@ -64,9 +64,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("hidden", value); }
         }
         /// <summary>The inputType property</summary>
-        public AuthenticationAttributeCollectionInputType? InputType
+        public Microsoft.Graph.Models.AuthenticationAttributeCollectionInputType? InputType
         {
-            get { return BackingStore?.Get<AuthenticationAttributeCollectionInputType?>("inputType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationAttributeCollectionInputType?>("inputType"); }
             set { BackingStore?.Set("inputType", value); }
         }
         /// <summary>The label of the attribute field that is displayed to end user, unless overridden.</summary>
@@ -104,16 +104,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The option values for certain multiple-option input types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationAttributeCollectionOptionConfiguration>? Options
+        public List<Microsoft.Graph.Models.AuthenticationAttributeCollectionOptionConfiguration>? Options
         {
-            get { return BackingStore?.Get<List<AuthenticationAttributeCollectionOptionConfiguration>?>("options"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationAttributeCollectionOptionConfiguration>?>("options"); }
             set { BackingStore?.Set("options", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationAttributeCollectionOptionConfiguration> Options
+        public List<Microsoft.Graph.Models.AuthenticationAttributeCollectionOptionConfiguration> Options
         {
-            get { return BackingStore?.Get<List<AuthenticationAttributeCollectionOptionConfiguration>>("options"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationAttributeCollectionOptionConfiguration>>("options"); }
             set { BackingStore?.Set("options", value); }
         }
 #endif
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("writeToDirectory", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationAttributeCollectionInputConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AuthenticationAttributeCollectionInputConfiguration"/> and sets the default values.
         /// </summary>
         public AuthenticationAttributeCollectionInputConfiguration()
         {
@@ -156,12 +156,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationAttributeCollectionInputConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationAttributeCollectionInputConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AuthenticationAttributeCollectionInputConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AuthenticationAttributeCollectionInputConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationAttributeCollectionInputConfiguration();
+            return new Microsoft.Graph.Models.AuthenticationAttributeCollectionInputConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -175,10 +175,10 @@ namespace Microsoft.Graph.Models
                 { "defaultValue", n => { DefaultValue = n.GetStringValue(); } },
                 { "editable", n => { Editable = n.GetBoolValue(); } },
                 { "hidden", n => { Hidden = n.GetBoolValue(); } },
-                { "inputType", n => { InputType = n.GetEnumValue<AuthenticationAttributeCollectionInputType>(); } },
+                { "inputType", n => { InputType = n.GetEnumValue<Microsoft.Graph.Models.AuthenticationAttributeCollectionInputType>(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "options", n => { Options = n.GetCollectionOfObjectValues<AuthenticationAttributeCollectionOptionConfiguration>(AuthenticationAttributeCollectionOptionConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "options", n => { Options = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationAttributeCollectionOptionConfiguration>(Microsoft.Graph.Models.AuthenticationAttributeCollectionOptionConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
                 { "validationRegEx", n => { ValidationRegEx = n.GetStringValue(); } },
                 { "writeToDirectory", n => { WriteToDirectory = n.GetBoolValue(); } },
@@ -195,10 +195,10 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("defaultValue", DefaultValue);
             writer.WriteBoolValue("editable", Editable);
             writer.WriteBoolValue("hidden", Hidden);
-            writer.WriteEnumValue<AuthenticationAttributeCollectionInputType>("inputType", InputType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AuthenticationAttributeCollectionInputType>("inputType", InputType);
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<AuthenticationAttributeCollectionOptionConfiguration>("options", Options);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationAttributeCollectionOptionConfiguration>("options", Options);
             writer.WriteBoolValue("required", Required);
             writer.WriteStringValue("validationRegEx", ValidationRegEx);
             writer.WriteBoolValue("writeToDirectory", WriteToDirectory);

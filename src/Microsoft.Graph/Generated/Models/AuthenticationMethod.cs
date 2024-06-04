@@ -7,29 +7,29 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AuthenticationMethod : Entity, IParsable
+    public class AuthenticationMethod : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationMethod"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationMethod"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.emailAuthenticationMethod" => new EmailAuthenticationMethod(),
-                "#microsoft.graph.fido2AuthenticationMethod" => new Fido2AuthenticationMethod(),
-                "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod" => new MicrosoftAuthenticatorAuthenticationMethod(),
-                "#microsoft.graph.passwordAuthenticationMethod" => new PasswordAuthenticationMethod(),
-                "#microsoft.graph.phoneAuthenticationMethod" => new PhoneAuthenticationMethod(),
-                "#microsoft.graph.softwareOathAuthenticationMethod" => new SoftwareOathAuthenticationMethod(),
-                "#microsoft.graph.temporaryAccessPassAuthenticationMethod" => new TemporaryAccessPassAuthenticationMethod(),
-                "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod" => new WindowsHelloForBusinessAuthenticationMethod(),
-                _ => new AuthenticationMethod(),
+                "#microsoft.graph.emailAuthenticationMethod" => new Microsoft.Graph.Models.EmailAuthenticationMethod(),
+                "#microsoft.graph.fido2AuthenticationMethod" => new Microsoft.Graph.Models.Fido2AuthenticationMethod(),
+                "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod" => new Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethod(),
+                "#microsoft.graph.passwordAuthenticationMethod" => new Microsoft.Graph.Models.PasswordAuthenticationMethod(),
+                "#microsoft.graph.phoneAuthenticationMethod" => new Microsoft.Graph.Models.PhoneAuthenticationMethod(),
+                "#microsoft.graph.softwareOathAuthenticationMethod" => new Microsoft.Graph.Models.SoftwareOathAuthenticationMethod(),
+                "#microsoft.graph.temporaryAccessPassAuthenticationMethod" => new Microsoft.Graph.Models.TemporaryAccessPassAuthenticationMethod(),
+                "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod" => new Microsoft.Graph.Models.WindowsHelloForBusinessAuthenticationMethod(),
+                _ => new Microsoft.Graph.Models.AuthenticationMethod(),
             };
         }
         /// <summary>

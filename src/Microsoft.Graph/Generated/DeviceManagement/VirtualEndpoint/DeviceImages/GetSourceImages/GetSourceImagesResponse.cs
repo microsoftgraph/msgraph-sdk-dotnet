@@ -8,18 +8,18 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourc
 {
     [Obsolete("This class is obsolete. Use GetSourceImagesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetSourceImagesResponse : GetSourceImagesGetResponse, IParsable
+    public class GetSourceImagesResponse : Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetSourceImagesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetSourceImagesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetSourceImagesResponse();
+            return new Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesResponse();
         }
     }
 }

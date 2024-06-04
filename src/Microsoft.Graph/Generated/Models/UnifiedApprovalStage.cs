@@ -28,16 +28,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The escalation approvers for this stage when the primary approvers don&apos;t respond.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubjectSet>? EscalationApprovers
+        public List<Microsoft.Graph.Models.SubjectSet>? EscalationApprovers
         {
-            get { return BackingStore?.Get<List<SubjectSet>?>("escalationApprovers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SubjectSet>?>("escalationApprovers"); }
             set { BackingStore?.Set("escalationApprovers", value); }
         }
 #nullable restore
 #else
-        public List<SubjectSet> EscalationApprovers
+        public List<Microsoft.Graph.Models.SubjectSet> EscalationApprovers
         {
-            get { return BackingStore?.Get<List<SubjectSet>>("escalationApprovers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SubjectSet>>("escalationApprovers"); }
             set { BackingStore?.Set("escalationApprovers", value); }
         }
 #endif
@@ -78,21 +78,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The primary approvers of this stage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubjectSet>? PrimaryApprovers
+        public List<Microsoft.Graph.Models.SubjectSet>? PrimaryApprovers
         {
-            get { return BackingStore?.Get<List<SubjectSet>?>("primaryApprovers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SubjectSet>?>("primaryApprovers"); }
             set { BackingStore?.Set("primaryApprovers", value); }
         }
 #nullable restore
 #else
-        public List<SubjectSet> PrimaryApprovers
+        public List<Microsoft.Graph.Models.SubjectSet> PrimaryApprovers
         {
-            get { return BackingStore?.Get<List<SubjectSet>>("primaryApprovers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SubjectSet>>("primaryApprovers"); }
             set { BackingStore?.Set("primaryApprovers", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UnifiedApprovalStage"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.UnifiedApprovalStage"/> and sets the default values.
         /// </summary>
         public UnifiedApprovalStage()
         {
@@ -102,12 +102,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedApprovalStage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedApprovalStage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UnifiedApprovalStage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.UnifiedApprovalStage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedApprovalStage();
+            return new Microsoft.Graph.Models.UnifiedApprovalStage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,12 +118,12 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "approvalStageTimeOutInDays", n => { ApprovalStageTimeOutInDays = n.GetIntValue(); } },
-                { "escalationApprovers", n => { EscalationApprovers = n.GetCollectionOfObjectValues<SubjectSet>(SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "escalationApprovers", n => { EscalationApprovers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SubjectSet>(Microsoft.Graph.Models.SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "escalationTimeInMinutes", n => { EscalationTimeInMinutes = n.GetIntValue(); } },
                 { "isApproverJustificationRequired", n => { IsApproverJustificationRequired = n.GetBoolValue(); } },
                 { "isEscalationEnabled", n => { IsEscalationEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "primaryApprovers", n => { PrimaryApprovers = n.GetCollectionOfObjectValues<SubjectSet>(SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "primaryApprovers", n => { PrimaryApprovers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SubjectSet>(Microsoft.Graph.Models.SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -134,12 +134,12 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("approvalStageTimeOutInDays", ApprovalStageTimeOutInDays);
-            writer.WriteCollectionOfObjectValues<SubjectSet>("escalationApprovers", EscalationApprovers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SubjectSet>("escalationApprovers", EscalationApprovers);
             writer.WriteIntValue("escalationTimeInMinutes", EscalationTimeInMinutes);
             writer.WriteBoolValue("isApproverJustificationRequired", IsApproverJustificationRequired);
             writer.WriteBoolValue("isEscalationEnabled", IsEscalationEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<SubjectSet>("primaryApprovers", PrimaryApprovers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SubjectSet>("primaryApprovers", PrimaryApprovers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

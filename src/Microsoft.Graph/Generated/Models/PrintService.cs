@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class PrintService : Entity, IParsable
+    public class PrintService : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Endpoints that can be used to access the service. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintServiceEndpoint>? Endpoints
+        public List<Microsoft.Graph.Models.PrintServiceEndpoint>? Endpoints
         {
-            get { return BackingStore?.Get<List<PrintServiceEndpoint>?>("endpoints"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PrintServiceEndpoint>?>("endpoints"); }
             set { BackingStore?.Set("endpoints", value); }
         }
 #nullable restore
 #else
-        public List<PrintServiceEndpoint> Endpoints
+        public List<Microsoft.Graph.Models.PrintServiceEndpoint> Endpoints
         {
-            get { return BackingStore?.Get<List<PrintServiceEndpoint>>("endpoints"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PrintServiceEndpoint>>("endpoints"); }
             set { BackingStore?.Set("endpoints", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrintService"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrintService"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrintService CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.PrintService CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrintService();
+            return new Microsoft.Graph.Models.PrintService();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "endpoints", n => { Endpoints = n.GetCollectionOfObjectValues<PrintServiceEndpoint>(PrintServiceEndpoint.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "endpoints", n => { Endpoints = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.PrintServiceEndpoint>(Microsoft.Graph.Models.PrintServiceEndpoint.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<PrintServiceEndpoint>("endpoints", Endpoints);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.PrintServiceEndpoint>("endpoints", Endpoints);
         }
     }
 }

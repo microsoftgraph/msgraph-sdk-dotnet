@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CalendarGroup : Entity, IParsable
+    public class CalendarGroup : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The calendars in the calendar group. Navigation property. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Calendar>? Calendars
+        public List<Microsoft.Graph.Models.Calendar>? Calendars
         {
-            get { return BackingStore?.Get<List<Calendar>?>("calendars"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Calendar>?>("calendars"); }
             set { BackingStore?.Set("calendars", value); }
         }
 #nullable restore
 #else
-        public List<Calendar> Calendars
+        public List<Microsoft.Graph.Models.Calendar> Calendars
         {
-            get { return BackingStore?.Get<List<Calendar>>("calendars"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Calendar>>("calendars"); }
             set { BackingStore?.Set("calendars", value); }
         }
 #endif
@@ -67,12 +67,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CalendarGroup"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CalendarGroup"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CalendarGroup CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CalendarGroup CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CalendarGroup();
+            return new Microsoft.Graph.Models.CalendarGroup();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "calendars", n => { Calendars = n.GetCollectionOfObjectValues<Calendar>(Calendar.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "calendars", n => { Calendars = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Calendar>(Microsoft.Graph.Models.Calendar.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "changeKey", n => { ChangeKey = n.GetStringValue(); } },
                 { "classId", n => { ClassId = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Calendar>("calendars", Calendars);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Calendar>("calendars", Calendars);
             writer.WriteStringValue("changeKey", ChangeKey);
             writer.WriteGuidValue("classId", ClassId);
             writer.WriteStringValue("name", Name);

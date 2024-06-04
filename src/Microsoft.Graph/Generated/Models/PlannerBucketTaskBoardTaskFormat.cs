@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class PlannerBucketTaskBoardTaskFormat : Entity, IParsable
+    public class PlannerBucketTaskBoardTaskFormat : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.</summary>
@@ -29,12 +29,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerBucketTaskBoardTaskFormat"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PlannerBucketTaskBoardTaskFormat"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PlannerBucketTaskBoardTaskFormat CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.PlannerBucketTaskBoardTaskFormat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerBucketTaskBoardTaskFormat();
+            return new Microsoft.Graph.Models.PlannerBucketTaskBoardTaskFormat();
         }
         /// <summary>
         /// The deserialization information for the current model

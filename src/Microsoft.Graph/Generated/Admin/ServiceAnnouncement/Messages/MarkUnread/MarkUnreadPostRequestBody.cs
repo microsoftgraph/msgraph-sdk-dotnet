@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MarkUnreadPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread.MarkUnreadPostRequestBody"/> and sets the default values.
         /// </summary>
         public MarkUnreadPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MarkUnreadPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread.MarkUnreadPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MarkUnreadPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread.MarkUnreadPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MarkUnreadPostRequestBody();
+            return new Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread.MarkUnreadPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

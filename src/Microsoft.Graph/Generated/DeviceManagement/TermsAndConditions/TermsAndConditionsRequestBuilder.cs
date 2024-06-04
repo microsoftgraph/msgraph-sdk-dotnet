@@ -19,24 +19,24 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions
     public class TermsAndConditionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.DeviceManagement.TermsAndConditions.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.TermsAndConditions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the termsAndConditions property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of termsAndConditions</param>
-        /// <returns>A <see cref="TermsAndConditionsItemRequestBuilder"/></returns>
-        public TermsAndConditionsItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.TermsAndConditionsItemRequestBuilder"/></returns>
+        public Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.TermsAndConditionsItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("termsAndConditions%2Did", position);
-                return new TermsAndConditionsItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.TermsAndConditionsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TermsAndConditionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.TermsAndConditions.TermsAndConditionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TermsAndConditionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.TermsAndConditions.TermsAndConditionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,25 +55,25 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions
         /// List properties and relationships of the termsAndConditions objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditions-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="TermsAndConditionsCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TermsAndConditionsCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TermsAndConditionsCollectionResponse?> GetAsync(Action<RequestConfiguration<TermsAndConditionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TermsAndConditionsCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.TermsAndConditions.TermsAndConditionsRequestBuilder.TermsAndConditionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TermsAndConditionsCollectionResponse> GetAsync(Action<RequestConfiguration<TermsAndConditionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TermsAndConditionsCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.TermsAndConditions.TermsAndConditionsRequestBuilder.TermsAndConditionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TermsAndConditionsCollectionResponse>(requestInfo, TermsAndConditionsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermsAndConditionsCollectionResponse>(requestInfo, Microsoft.Graph.Models.TermsAndConditionsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new termsAndConditions object.
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.TermsAndConditions?> PostAsync(Microsoft.Graph.Models.TermsAndConditions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermsAndConditions>(requestInfo, Microsoft.Graph.Models.TermsAndConditions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TermsAndConditionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.TermsAndConditions.TermsAndConditionsRequestBuilder.TermsAndConditionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TermsAndConditionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.TermsAndConditions.TermsAndConditionsRequestBuilder.TermsAndConditionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TermsAndConditionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.TermsAndConditions.TermsAndConditionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TermsAndConditionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceManagement.TermsAndConditions.TermsAndConditionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new TermsAndConditionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceManagement.TermsAndConditions.TermsAndConditionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List properties and relationships of the termsAndConditions objects.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TermsAndConditionsRequestBuilderGetRequestConfiguration : RequestConfiguration<TermsAndConditionsRequestBuilderGetQueryParameters>
+        public class TermsAndConditionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.TermsAndConditions.TermsAndConditionsRequestBuilder.TermsAndConditionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

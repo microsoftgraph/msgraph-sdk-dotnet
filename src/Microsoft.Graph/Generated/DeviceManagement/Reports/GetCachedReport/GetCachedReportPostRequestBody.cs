@@ -112,7 +112,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetCachedReport
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetCachedReportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.Reports.GetCachedReport.GetCachedReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetCachedReportPostRequestBody()
         {
@@ -122,12 +122,12 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetCachedReport
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetCachedReportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.Reports.GetCachedReport.GetCachedReportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetCachedReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.DeviceManagement.Reports.GetCachedReport.GetCachedReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetCachedReportPostRequestBody();
+            return new Microsoft.Graph.DeviceManagement.Reports.GetCachedReport.GetCachedReportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

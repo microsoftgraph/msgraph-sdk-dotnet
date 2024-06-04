@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AccessPackageAssignmentPolicy : Entity, IParsable
+    public class AccessPackageAssignmentPolicy : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Access package containing this policy. Read-only.  Supports $expand.</summary>
@@ -35,32 +35,32 @@ namespace Microsoft.Graph.Models
         /// <summary>This property is only present for an auto assignment policy; if absent, this is a request-based policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageAutomaticRequestSettings? AutomaticRequestSettings
+        public Microsoft.Graph.Models.AccessPackageAutomaticRequestSettings? AutomaticRequestSettings
         {
-            get { return BackingStore?.Get<AccessPackageAutomaticRequestSettings?>("automaticRequestSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageAutomaticRequestSettings?>("automaticRequestSettings"); }
             set { BackingStore?.Set("automaticRequestSettings", value); }
         }
 #nullable restore
 #else
-        public AccessPackageAutomaticRequestSettings AutomaticRequestSettings
+        public Microsoft.Graph.Models.AccessPackageAutomaticRequestSettings AutomaticRequestSettings
         {
-            get { return BackingStore?.Get<AccessPackageAutomaticRequestSettings>("automaticRequestSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageAutomaticRequestSettings>("automaticRequestSettings"); }
             set { BackingStore?.Set("automaticRequestSettings", value); }
         }
 #endif
         /// <summary>Catalog of the access package containing this policy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageCatalog? Catalog
+        public Microsoft.Graph.Models.AccessPackageCatalog? Catalog
         {
-            get { return BackingStore?.Get<AccessPackageCatalog?>("catalog"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageCatalog?>("catalog"); }
             set { BackingStore?.Set("catalog", value); }
         }
 #nullable restore
 #else
-        public AccessPackageCatalog Catalog
+        public Microsoft.Graph.Models.AccessPackageCatalog Catalog
         {
-            get { return BackingStore?.Get<AccessPackageCatalog>("catalog"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageCatalog>("catalog"); }
             set { BackingStore?.Set("catalog", value); }
         }
 #endif
@@ -73,16 +73,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomExtensionStageSetting>? CustomExtensionStageSettings
+        public List<Microsoft.Graph.Models.CustomExtensionStageSetting>? CustomExtensionStageSettings
         {
-            get { return BackingStore?.Get<List<CustomExtensionStageSetting>?>("customExtensionStageSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CustomExtensionStageSetting>?>("customExtensionStageSettings"); }
             set { BackingStore?.Set("customExtensionStageSettings", value); }
         }
 #nullable restore
 #else
-        public List<CustomExtensionStageSetting> CustomExtensionStageSettings
+        public List<Microsoft.Graph.Models.CustomExtensionStageSetting> CustomExtensionStageSettings
         {
-            get { return BackingStore?.Get<List<CustomExtensionStageSetting>>("customExtensionStageSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CustomExtensionStageSetting>>("customExtensionStageSettings"); }
             set { BackingStore?.Set("customExtensionStageSettings", value); }
         }
 #endif
@@ -121,16 +121,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The expiration date for assignments created in this policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExpirationPattern? Expiration
+        public Microsoft.Graph.Models.ExpirationPattern? Expiration
         {
-            get { return BackingStore?.Get<ExpirationPattern?>("expiration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExpirationPattern?>("expiration"); }
             set { BackingStore?.Set("expiration", value); }
         }
 #nullable restore
 #else
-        public ExpirationPattern Expiration
+        public Microsoft.Graph.Models.ExpirationPattern Expiration
         {
-            get { return BackingStore?.Get<ExpirationPattern>("expiration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExpirationPattern>("expiration"); }
             set { BackingStore?.Set("expiration", value); }
         }
 #endif
@@ -143,92 +143,92 @@ namespace Microsoft.Graph.Models
         /// <summary>Questions that are posed to the  requestor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageQuestion>? Questions
+        public List<Microsoft.Graph.Models.AccessPackageQuestion>? Questions
         {
-            get { return BackingStore?.Get<List<AccessPackageQuestion>?>("questions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageQuestion>?>("questions"); }
             set { BackingStore?.Set("questions", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageQuestion> Questions
+        public List<Microsoft.Graph.Models.AccessPackageQuestion> Questions
         {
-            get { return BackingStore?.Get<List<AccessPackageQuestion>>("questions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageQuestion>>("questions"); }
             set { BackingStore?.Set("questions", value); }
         }
 #endif
         /// <summary>Specifies the settings for approval of requests for an access package assignment through this policy. For example, if approval is required for new requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageAssignmentApprovalSettings? RequestApprovalSettings
+        public Microsoft.Graph.Models.AccessPackageAssignmentApprovalSettings? RequestApprovalSettings
         {
-            get { return BackingStore?.Get<AccessPackageAssignmentApprovalSettings?>("requestApprovalSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageAssignmentApprovalSettings?>("requestApprovalSettings"); }
             set { BackingStore?.Set("requestApprovalSettings", value); }
         }
 #nullable restore
 #else
-        public AccessPackageAssignmentApprovalSettings RequestApprovalSettings
+        public Microsoft.Graph.Models.AccessPackageAssignmentApprovalSettings RequestApprovalSettings
         {
-            get { return BackingStore?.Get<AccessPackageAssignmentApprovalSettings>("requestApprovalSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageAssignmentApprovalSettings>("requestApprovalSettings"); }
             set { BackingStore?.Set("requestApprovalSettings", value); }
         }
 #endif
         /// <summary>Provides additional settings to select who can create a request for an access package assignment through this policy, and what they can include in their request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageAssignmentRequestorSettings? RequestorSettings
+        public Microsoft.Graph.Models.AccessPackageAssignmentRequestorSettings? RequestorSettings
         {
-            get { return BackingStore?.Get<AccessPackageAssignmentRequestorSettings?>("requestorSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageAssignmentRequestorSettings?>("requestorSettings"); }
             set { BackingStore?.Set("requestorSettings", value); }
         }
 #nullable restore
 #else
-        public AccessPackageAssignmentRequestorSettings RequestorSettings
+        public Microsoft.Graph.Models.AccessPackageAssignmentRequestorSettings RequestorSettings
         {
-            get { return BackingStore?.Get<AccessPackageAssignmentRequestorSettings>("requestorSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageAssignmentRequestorSettings>("requestorSettings"); }
             set { BackingStore?.Set("requestorSettings", value); }
         }
 #endif
         /// <summary>Settings for access reviews of assignments through this policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageAssignmentReviewSettings? ReviewSettings
+        public Microsoft.Graph.Models.AccessPackageAssignmentReviewSettings? ReviewSettings
         {
-            get { return BackingStore?.Get<AccessPackageAssignmentReviewSettings?>("reviewSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageAssignmentReviewSettings?>("reviewSettings"); }
             set { BackingStore?.Set("reviewSettings", value); }
         }
 #nullable restore
 #else
-        public AccessPackageAssignmentReviewSettings ReviewSettings
+        public Microsoft.Graph.Models.AccessPackageAssignmentReviewSettings ReviewSettings
         {
-            get { return BackingStore?.Get<AccessPackageAssignmentReviewSettings>("reviewSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageAssignmentReviewSettings>("reviewSettings"); }
             set { BackingStore?.Set("reviewSettings", value); }
         }
 #endif
         /// <summary>The principals that can be assigned access from an access package through this policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubjectSet>? SpecificAllowedTargets
+        public List<Microsoft.Graph.Models.SubjectSet>? SpecificAllowedTargets
         {
-            get { return BackingStore?.Get<List<SubjectSet>?>("specificAllowedTargets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SubjectSet>?>("specificAllowedTargets"); }
             set { BackingStore?.Set("specificAllowedTargets", value); }
         }
 #nullable restore
 #else
-        public List<SubjectSet> SpecificAllowedTargets
+        public List<Microsoft.Graph.Models.SubjectSet> SpecificAllowedTargets
         {
-            get { return BackingStore?.Get<List<SubjectSet>>("specificAllowedTargets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SubjectSet>>("specificAllowedTargets"); }
             set { BackingStore?.Set("specificAllowedTargets", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageAssignmentPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackageAssignmentPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessPackageAssignmentPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AccessPackageAssignmentPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageAssignmentPolicy();
+            return new Microsoft.Graph.Models.AccessPackageAssignmentPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -239,20 +239,20 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "accessPackage", n => { AccessPackage = n.GetObjectValue<Microsoft.Graph.Models.AccessPackage>(Microsoft.Graph.Models.AccessPackage.CreateFromDiscriminatorValue); } },
-                { "allowedTargetScope", n => { AllowedTargetScope = n.GetEnumValue<AllowedTargetScope>(); } },
-                { "automaticRequestSettings", n => { AutomaticRequestSettings = n.GetObjectValue<AccessPackageAutomaticRequestSettings>(AccessPackageAutomaticRequestSettings.CreateFromDiscriminatorValue); } },
-                { "catalog", n => { Catalog = n.GetObjectValue<AccessPackageCatalog>(AccessPackageCatalog.CreateFromDiscriminatorValue); } },
+                { "allowedTargetScope", n => { AllowedTargetScope = n.GetEnumValue<Microsoft.Graph.Models.AllowedTargetScope>(); } },
+                { "automaticRequestSettings", n => { AutomaticRequestSettings = n.GetObjectValue<Microsoft.Graph.Models.AccessPackageAutomaticRequestSettings>(Microsoft.Graph.Models.AccessPackageAutomaticRequestSettings.CreateFromDiscriminatorValue); } },
+                { "catalog", n => { Catalog = n.GetObjectValue<Microsoft.Graph.Models.AccessPackageCatalog>(Microsoft.Graph.Models.AccessPackageCatalog.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "customExtensionStageSettings", n => { CustomExtensionStageSettings = n.GetCollectionOfObjectValues<CustomExtensionStageSetting>(CustomExtensionStageSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customExtensionStageSettings", n => { CustomExtensionStageSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CustomExtensionStageSetting>(Microsoft.Graph.Models.CustomExtensionStageSetting.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "expiration", n => { Expiration = n.GetObjectValue<ExpirationPattern>(ExpirationPattern.CreateFromDiscriminatorValue); } },
+                { "expiration", n => { Expiration = n.GetObjectValue<Microsoft.Graph.Models.ExpirationPattern>(Microsoft.Graph.Models.ExpirationPattern.CreateFromDiscriminatorValue); } },
                 { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "questions", n => { Questions = n.GetCollectionOfObjectValues<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "requestApprovalSettings", n => { RequestApprovalSettings = n.GetObjectValue<AccessPackageAssignmentApprovalSettings>(AccessPackageAssignmentApprovalSettings.CreateFromDiscriminatorValue); } },
-                { "requestorSettings", n => { RequestorSettings = n.GetObjectValue<AccessPackageAssignmentRequestorSettings>(AccessPackageAssignmentRequestorSettings.CreateFromDiscriminatorValue); } },
-                { "reviewSettings", n => { ReviewSettings = n.GetObjectValue<AccessPackageAssignmentReviewSettings>(AccessPackageAssignmentReviewSettings.CreateFromDiscriminatorValue); } },
-                { "specificAllowedTargets", n => { SpecificAllowedTargets = n.GetCollectionOfObjectValues<SubjectSet>(SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "questions", n => { Questions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageQuestion>(Microsoft.Graph.Models.AccessPackageQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "requestApprovalSettings", n => { RequestApprovalSettings = n.GetObjectValue<Microsoft.Graph.Models.AccessPackageAssignmentApprovalSettings>(Microsoft.Graph.Models.AccessPackageAssignmentApprovalSettings.CreateFromDiscriminatorValue); } },
+                { "requestorSettings", n => { RequestorSettings = n.GetObjectValue<Microsoft.Graph.Models.AccessPackageAssignmentRequestorSettings>(Microsoft.Graph.Models.AccessPackageAssignmentRequestorSettings.CreateFromDiscriminatorValue); } },
+                { "reviewSettings", n => { ReviewSettings = n.GetObjectValue<Microsoft.Graph.Models.AccessPackageAssignmentReviewSettings>(Microsoft.Graph.Models.AccessPackageAssignmentReviewSettings.CreateFromDiscriminatorValue); } },
+                { "specificAllowedTargets", n => { SpecificAllowedTargets = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SubjectSet>(Microsoft.Graph.Models.SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -264,20 +264,20 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Models.AccessPackage>("accessPackage", AccessPackage);
-            writer.WriteEnumValue<AllowedTargetScope>("allowedTargetScope", AllowedTargetScope);
-            writer.WriteObjectValue<AccessPackageAutomaticRequestSettings>("automaticRequestSettings", AutomaticRequestSettings);
-            writer.WriteObjectValue<AccessPackageCatalog>("catalog", Catalog);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AllowedTargetScope>("allowedTargetScope", AllowedTargetScope);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AccessPackageAutomaticRequestSettings>("automaticRequestSettings", AutomaticRequestSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AccessPackageCatalog>("catalog", Catalog);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteCollectionOfObjectValues<CustomExtensionStageSetting>("customExtensionStageSettings", CustomExtensionStageSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CustomExtensionStageSetting>("customExtensionStageSettings", CustomExtensionStageSettings);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<ExpirationPattern>("expiration", Expiration);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ExpirationPattern>("expiration", Expiration);
             writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
-            writer.WriteCollectionOfObjectValues<AccessPackageQuestion>("questions", Questions);
-            writer.WriteObjectValue<AccessPackageAssignmentApprovalSettings>("requestApprovalSettings", RequestApprovalSettings);
-            writer.WriteObjectValue<AccessPackageAssignmentRequestorSettings>("requestorSettings", RequestorSettings);
-            writer.WriteObjectValue<AccessPackageAssignmentReviewSettings>("reviewSettings", ReviewSettings);
-            writer.WriteCollectionOfObjectValues<SubjectSet>("specificAllowedTargets", SpecificAllowedTargets);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageQuestion>("questions", Questions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AccessPackageAssignmentApprovalSettings>("requestApprovalSettings", RequestApprovalSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AccessPackageAssignmentRequestorSettings>("requestorSettings", RequestorSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AccessPackageAssignmentReviewSettings>("reviewSettings", ReviewSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SubjectSet>("specificAllowedTargets", SpecificAllowedTargets);
         }
     }
 }

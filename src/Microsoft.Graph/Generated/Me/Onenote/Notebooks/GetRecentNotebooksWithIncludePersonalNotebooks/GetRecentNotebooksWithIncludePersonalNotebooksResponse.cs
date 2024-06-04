@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.GetRecentNotebooksWithIncludePers
 {
     [Obsolete("This class is obsolete. Use GetRecentNotebooksWithIncludePersonalNotebooksGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetRecentNotebooksWithIncludePersonalNotebooksResponse : GetRecentNotebooksWithIncludePersonalNotebooksGetResponse, IParsable
+    public class GetRecentNotebooksWithIncludePersonalNotebooksResponse : Microsoft.Graph.Me.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks.GetRecentNotebooksWithIncludePersonalNotebooksGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetRecentNotebooksWithIncludePersonalNotebooksResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks.GetRecentNotebooksWithIncludePersonalNotebooksResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetRecentNotebooksWithIncludePersonalNotebooksResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Me.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks.GetRecentNotebooksWithIncludePersonalNotebooksResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetRecentNotebooksWithIncludePersonalNotebooksResponse();
+            return new Microsoft.Graph.Me.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks.GetRecentNotebooksWithIncludePersonalNotebooksResponse();
         }
     }
 }

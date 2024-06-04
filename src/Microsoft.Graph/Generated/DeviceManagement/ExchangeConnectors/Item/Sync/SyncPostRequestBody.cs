@@ -21,13 +21,13 @@ namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item.Sync
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The type of Exchange Connector sync requested.</summary>
-        public DeviceManagementExchangeConnectorSyncType? SyncType
+        public Microsoft.Graph.Models.DeviceManagementExchangeConnectorSyncType? SyncType
         {
-            get { return BackingStore?.Get<DeviceManagementExchangeConnectorSyncType?>("syncType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceManagementExchangeConnectorSyncType?>("syncType"); }
             set { BackingStore?.Set("syncType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SyncPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item.Sync.SyncPostRequestBody"/> and sets the default values.
         /// </summary>
         public SyncPostRequestBody()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item.Sync
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SyncPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item.Sync.SyncPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SyncPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item.Sync.SyncPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SyncPostRequestBody();
+            return new Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item.Sync.SyncPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item.Sync
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "syncType", n => { SyncType = n.GetEnumValue<DeviceManagementExchangeConnectorSyncType>(); } },
+                { "syncType", n => { SyncType = n.GetEnumValue<Microsoft.Graph.Models.DeviceManagementExchangeConnectorSyncType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item.Sync
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<DeviceManagementExchangeConnectorSyncType>("syncType", SyncType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DeviceManagementExchangeConnectorSyncType>("syncType", SyncType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

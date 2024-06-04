@@ -102,16 +102,16 @@ namespace Microsoft.Graph.Models
         /// <summary>An icon applied to a cell via conditional formatting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookIcon? Icon
+        public Microsoft.Graph.Models.WorkbookIcon? Icon
         {
-            get { return BackingStore?.Get<WorkbookIcon?>("icon"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookIcon?>("icon"); }
             set { BackingStore?.Set("icon", value); }
         }
 #nullable restore
 #else
-        public WorkbookIcon Icon
+        public Microsoft.Graph.Models.WorkbookIcon Icon
         {
-            get { return BackingStore?.Get<WorkbookIcon>("icon"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookIcon>("icon"); }
             set { BackingStore?.Set("icon", value); }
         }
 #endif
@@ -150,21 +150,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The values that appear in the cell.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Values
+        public UntypedNode? Values
         {
-            get { return BackingStore?.Get<Json?>("values"); }
+            get { return BackingStore?.Get<UntypedNode?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public Json Values
+        public UntypedNode Values
         {
-            get { return BackingStore?.Get<Json>("values"); }
+            get { return BackingStore?.Get<UntypedNode>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WorkbookFilterCriteria"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WorkbookFilterCriteria"/> and sets the default values.
         /// </summary>
         public WorkbookFilterCriteria()
         {
@@ -174,12 +174,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookFilterCriteria"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookFilterCriteria"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WorkbookFilterCriteria CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.WorkbookFilterCriteria CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookFilterCriteria();
+            return new Microsoft.Graph.Models.WorkbookFilterCriteria();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -194,10 +194,10 @@ namespace Microsoft.Graph.Models
                 { "criterion2", n => { Criterion2 = n.GetStringValue(); } },
                 { "dynamicCriteria", n => { DynamicCriteria = n.GetStringValue(); } },
                 { "filterOn", n => { FilterOn = n.GetStringValue(); } },
-                { "icon", n => { Icon = n.GetObjectValue<WorkbookIcon>(WorkbookIcon.CreateFromDiscriminatorValue); } },
+                { "icon", n => { Icon = n.GetObjectValue<Microsoft.Graph.Models.WorkbookIcon>(Microsoft.Graph.Models.WorkbookIcon.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "operator", n => { Operator = n.GetStringValue(); } },
-                { "values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "values", n => { Values = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -212,10 +212,10 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("criterion2", Criterion2);
             writer.WriteStringValue("dynamicCriteria", DynamicCriteria);
             writer.WriteStringValue("filterOn", FilterOn);
-            writer.WriteObjectValue<WorkbookIcon>("icon", Icon);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookIcon>("icon", Icon);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("operator", Operator);
-            writer.WriteObjectValue<Json>("values", Values);
+            writer.WriteObjectValue<UntypedNode>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

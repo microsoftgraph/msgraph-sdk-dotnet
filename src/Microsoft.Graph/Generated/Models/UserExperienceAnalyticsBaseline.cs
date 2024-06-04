@@ -9,53 +9,53 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics baseline entity contains baseline values against which to compare the user experience analytics scores.
     /// </summary>
-    public class UserExperienceAnalyticsBaseline : Entity, IParsable
+    public class UserExperienceAnalyticsBaseline : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The scores and insights for the application health metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserExperienceAnalyticsCategory? AppHealthMetrics
+        public Microsoft.Graph.Models.UserExperienceAnalyticsCategory? AppHealthMetrics
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory?>("appHealthMetrics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsCategory?>("appHealthMetrics"); }
             set { BackingStore?.Set("appHealthMetrics", value); }
         }
 #nullable restore
 #else
-        public UserExperienceAnalyticsCategory AppHealthMetrics
+        public Microsoft.Graph.Models.UserExperienceAnalyticsCategory AppHealthMetrics
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("appHealthMetrics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>("appHealthMetrics"); }
             set { BackingStore?.Set("appHealthMetrics", value); }
         }
 #endif
         /// <summary>The scores and insights for the battery health metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserExperienceAnalyticsCategory? BatteryHealthMetrics
+        public Microsoft.Graph.Models.UserExperienceAnalyticsCategory? BatteryHealthMetrics
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory?>("batteryHealthMetrics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsCategory?>("batteryHealthMetrics"); }
             set { BackingStore?.Set("batteryHealthMetrics", value); }
         }
 #nullable restore
 #else
-        public UserExperienceAnalyticsCategory BatteryHealthMetrics
+        public Microsoft.Graph.Models.UserExperienceAnalyticsCategory BatteryHealthMetrics
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("batteryHealthMetrics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>("batteryHealthMetrics"); }
             set { BackingStore?.Set("batteryHealthMetrics", value); }
         }
 #endif
         /// <summary>The scores and insights for the best practices metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserExperienceAnalyticsCategory? BestPracticesMetrics
+        public Microsoft.Graph.Models.UserExperienceAnalyticsCategory? BestPracticesMetrics
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory?>("bestPracticesMetrics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsCategory?>("bestPracticesMetrics"); }
             set { BackingStore?.Set("bestPracticesMetrics", value); }
         }
 #nullable restore
 #else
-        public UserExperienceAnalyticsCategory BestPracticesMetrics
+        public Microsoft.Graph.Models.UserExperienceAnalyticsCategory BestPracticesMetrics
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("bestPracticesMetrics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>("bestPracticesMetrics"); }
             set { BackingStore?.Set("bestPracticesMetrics", value); }
         }
 #endif
@@ -68,16 +68,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The scores and insights for the device boot performance metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserExperienceAnalyticsCategory? DeviceBootPerformanceMetrics
+        public Microsoft.Graph.Models.UserExperienceAnalyticsCategory? DeviceBootPerformanceMetrics
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory?>("deviceBootPerformanceMetrics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsCategory?>("deviceBootPerformanceMetrics"); }
             set { BackingStore?.Set("deviceBootPerformanceMetrics", value); }
         }
 #nullable restore
 #else
-        public UserExperienceAnalyticsCategory DeviceBootPerformanceMetrics
+        public Microsoft.Graph.Models.UserExperienceAnalyticsCategory DeviceBootPerformanceMetrics
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("deviceBootPerformanceMetrics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>("deviceBootPerformanceMetrics"); }
             set { BackingStore?.Set("deviceBootPerformanceMetrics", value); }
         }
 #endif
@@ -106,60 +106,60 @@ namespace Microsoft.Graph.Models
         /// <summary>The scores and insights for the reboot analytics metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserExperienceAnalyticsCategory? RebootAnalyticsMetrics
+        public Microsoft.Graph.Models.UserExperienceAnalyticsCategory? RebootAnalyticsMetrics
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory?>("rebootAnalyticsMetrics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsCategory?>("rebootAnalyticsMetrics"); }
             set { BackingStore?.Set("rebootAnalyticsMetrics", value); }
         }
 #nullable restore
 #else
-        public UserExperienceAnalyticsCategory RebootAnalyticsMetrics
+        public Microsoft.Graph.Models.UserExperienceAnalyticsCategory RebootAnalyticsMetrics
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("rebootAnalyticsMetrics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>("rebootAnalyticsMetrics"); }
             set { BackingStore?.Set("rebootAnalyticsMetrics", value); }
         }
 #endif
         /// <summary>The scores and insights for the resource performance metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserExperienceAnalyticsCategory? ResourcePerformanceMetrics
+        public Microsoft.Graph.Models.UserExperienceAnalyticsCategory? ResourcePerformanceMetrics
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory?>("resourcePerformanceMetrics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsCategory?>("resourcePerformanceMetrics"); }
             set { BackingStore?.Set("resourcePerformanceMetrics", value); }
         }
 #nullable restore
 #else
-        public UserExperienceAnalyticsCategory ResourcePerformanceMetrics
+        public Microsoft.Graph.Models.UserExperienceAnalyticsCategory ResourcePerformanceMetrics
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("resourcePerformanceMetrics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>("resourcePerformanceMetrics"); }
             set { BackingStore?.Set("resourcePerformanceMetrics", value); }
         }
 #endif
         /// <summary>The scores and insights for the work from anywhere metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserExperienceAnalyticsCategory? WorkFromAnywhereMetrics
+        public Microsoft.Graph.Models.UserExperienceAnalyticsCategory? WorkFromAnywhereMetrics
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory?>("workFromAnywhereMetrics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsCategory?>("workFromAnywhereMetrics"); }
             set { BackingStore?.Set("workFromAnywhereMetrics", value); }
         }
 #nullable restore
 #else
-        public UserExperienceAnalyticsCategory WorkFromAnywhereMetrics
+        public Microsoft.Graph.Models.UserExperienceAnalyticsCategory WorkFromAnywhereMetrics
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("workFromAnywhereMetrics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>("workFromAnywhereMetrics"); }
             set { BackingStore?.Set("workFromAnywhereMetrics", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsBaseline"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsBaseline"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsBaseline CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserExperienceAnalyticsBaseline CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsBaseline();
+            return new Microsoft.Graph.Models.UserExperienceAnalyticsBaseline();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -169,16 +169,16 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "appHealthMetrics", n => { AppHealthMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
-                { "batteryHealthMetrics", n => { BatteryHealthMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
-                { "bestPracticesMetrics", n => { BestPracticesMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
+                { "appHealthMetrics", n => { AppHealthMetrics = n.GetObjectValue<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>(Microsoft.Graph.Models.UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
+                { "batteryHealthMetrics", n => { BatteryHealthMetrics = n.GetObjectValue<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>(Microsoft.Graph.Models.UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
+                { "bestPracticesMetrics", n => { BestPracticesMetrics = n.GetObjectValue<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>(Microsoft.Graph.Models.UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "deviceBootPerformanceMetrics", n => { DeviceBootPerformanceMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
+                { "deviceBootPerformanceMetrics", n => { DeviceBootPerformanceMetrics = n.GetObjectValue<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>(Microsoft.Graph.Models.UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
-                { "rebootAnalyticsMetrics", n => { RebootAnalyticsMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
-                { "resourcePerformanceMetrics", n => { ResourcePerformanceMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
-                { "workFromAnywhereMetrics", n => { WorkFromAnywhereMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
+                { "rebootAnalyticsMetrics", n => { RebootAnalyticsMetrics = n.GetObjectValue<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>(Microsoft.Graph.Models.UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
+                { "resourcePerformanceMetrics", n => { ResourcePerformanceMetrics = n.GetObjectValue<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>(Microsoft.Graph.Models.UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
+                { "workFromAnywhereMetrics", n => { WorkFromAnywhereMetrics = n.GetObjectValue<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>(Microsoft.Graph.Models.UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -189,16 +189,16 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<UserExperienceAnalyticsCategory>("appHealthMetrics", AppHealthMetrics);
-            writer.WriteObjectValue<UserExperienceAnalyticsCategory>("batteryHealthMetrics", BatteryHealthMetrics);
-            writer.WriteObjectValue<UserExperienceAnalyticsCategory>("bestPracticesMetrics", BestPracticesMetrics);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>("appHealthMetrics", AppHealthMetrics);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>("batteryHealthMetrics", BatteryHealthMetrics);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>("bestPracticesMetrics", BestPracticesMetrics);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<UserExperienceAnalyticsCategory>("deviceBootPerformanceMetrics", DeviceBootPerformanceMetrics);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>("deviceBootPerformanceMetrics", DeviceBootPerformanceMetrics);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isBuiltIn", IsBuiltIn);
-            writer.WriteObjectValue<UserExperienceAnalyticsCategory>("rebootAnalyticsMetrics", RebootAnalyticsMetrics);
-            writer.WriteObjectValue<UserExperienceAnalyticsCategory>("resourcePerformanceMetrics", ResourcePerformanceMetrics);
-            writer.WriteObjectValue<UserExperienceAnalyticsCategory>("workFromAnywhereMetrics", WorkFromAnywhereMetrics);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>("rebootAnalyticsMetrics", RebootAnalyticsMetrics);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>("resourcePerformanceMetrics", ResourcePerformanceMetrics);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserExperienceAnalyticsCategory>("workFromAnywhereMetrics", WorkFromAnywhereMetrics);
         }
     }
 }

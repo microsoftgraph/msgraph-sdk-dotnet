@@ -18,12 +18,12 @@ namespace Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item
     public class WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the device property of the microsoft.graph.windowsHelloForBusinessAuthenticationMethod entity.</summary>
-        public DeviceRequestBuilder Device
+        public Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item.Device.DeviceRequestBuilder Device
         {
-            get => new DeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item.Device.DeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -56,32 +56,32 @@ namespace Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents the Windows Hello for Business authentication method registered to a user for authentication.
         /// </summary>
-        /// <returns>A <see cref="WindowsHelloForBusinessAuthenticationMethod"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsHelloForBusinessAuthenticationMethod"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsHelloForBusinessAuthenticationMethod?> GetAsync(Action<RequestConfiguration<WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WindowsHelloForBusinessAuthenticationMethod?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WindowsHelloForBusinessAuthenticationMethod> GetAsync(Action<RequestConfiguration<WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WindowsHelloForBusinessAuthenticationMethod> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WindowsHelloForBusinessAuthenticationMethod>(requestInfo, WindowsHelloForBusinessAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WindowsHelloForBusinessAuthenticationMethod>(requestInfo, Microsoft.Graph.Models.WindowsHelloForBusinessAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property windowsHelloForBusinessMethods for me
@@ -109,11 +109,11 @@ namespace Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -124,11 +124,11 @@ namespace Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetRequestConfiguration : RequestConfiguration<WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters>
+        public class WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters>
         {
         }
     }

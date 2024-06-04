@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ThreatAssessmentResult : Entity, IParsable
+    public class ThreatAssessmentResult : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
@@ -33,20 +33,20 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The threat assessment result type. Possible values are: checkPolicy, rescan.</summary>
-        public ThreatAssessmentResultType? ResultType
+        public Microsoft.Graph.Models.ThreatAssessmentResultType? ResultType
         {
-            get { return BackingStore?.Get<ThreatAssessmentResultType?>("resultType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ThreatAssessmentResultType?>("resultType"); }
             set { BackingStore?.Set("resultType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ThreatAssessmentResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ThreatAssessmentResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ThreatAssessmentResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ThreatAssessmentResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ThreatAssessmentResult();
+            return new Microsoft.Graph.Models.ThreatAssessmentResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models
             {
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "resultType", n => { ResultType = n.GetEnumValue<ThreatAssessmentResultType>(); } },
+                { "resultType", n => { ResultType = n.GetEnumValue<Microsoft.Graph.Models.ThreatAssessmentResultType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("message", Message);
-            writer.WriteEnumValue<ThreatAssessmentResultType>("resultType", ResultType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ThreatAssessmentResultType>("resultType", ResultType);
         }
     }
 }

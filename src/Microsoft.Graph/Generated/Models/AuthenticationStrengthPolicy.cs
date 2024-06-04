@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AuthenticationStrengthPolicy : Entity, IParsable
+    public class AuthenticationStrengthPolicy : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of authentication method modes that are required be used to satify this authentication strength.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodModes?>? AllowedCombinations
+        public List<Microsoft.Graph.Models.AuthenticationMethodModes?>? AllowedCombinations
         {
-            get { return BackingStore?.Get<List<AuthenticationMethodModes?>?>("allowedCombinations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationMethodModes?>?>("allowedCombinations"); }
             set { BackingStore?.Set("allowedCombinations", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodModes?> AllowedCombinations
+        public List<Microsoft.Graph.Models.AuthenticationMethodModes?> AllowedCombinations
         {
-            get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("allowedCombinations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationMethodModes?>>("allowedCombinations"); }
             set { BackingStore?.Set("allowedCombinations", value); }
         }
 #endif
         /// <summary>Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationCombinationConfiguration>? CombinationConfigurations
+        public List<Microsoft.Graph.Models.AuthenticationCombinationConfiguration>? CombinationConfigurations
         {
-            get { return BackingStore?.Get<List<AuthenticationCombinationConfiguration>?>("combinationConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationCombinationConfiguration>?>("combinationConfigurations"); }
             set { BackingStore?.Set("combinationConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationCombinationConfiguration> CombinationConfigurations
+        public List<Microsoft.Graph.Models.AuthenticationCombinationConfiguration> CombinationConfigurations
         {
-            get { return BackingStore?.Get<List<AuthenticationCombinationConfiguration>>("combinationConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationCombinationConfiguration>>("combinationConfigurations"); }
             set { BackingStore?.Set("combinationConfigurations", value); }
         }
 #endif
@@ -87,26 +87,26 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("modifiedDateTime", value); }
         }
         /// <summary>The policyType property</summary>
-        public AuthenticationStrengthPolicyType? PolicyType
+        public Microsoft.Graph.Models.AuthenticationStrengthPolicyType? PolicyType
         {
-            get { return BackingStore?.Get<AuthenticationStrengthPolicyType?>("policyType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationStrengthPolicyType?>("policyType"); }
             set { BackingStore?.Set("policyType", value); }
         }
         /// <summary>The requirementsSatisfied property</summary>
-        public AuthenticationStrengthRequirements? RequirementsSatisfied
+        public Microsoft.Graph.Models.AuthenticationStrengthRequirements? RequirementsSatisfied
         {
-            get { return BackingStore?.Get<AuthenticationStrengthRequirements?>("requirementsSatisfied"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationStrengthRequirements?>("requirementsSatisfied"); }
             set { BackingStore?.Set("requirementsSatisfied", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationStrengthPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationStrengthPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthenticationStrengthPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AuthenticationStrengthPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationStrengthPolicy();
+            return new Microsoft.Graph.Models.AuthenticationStrengthPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,14 +116,14 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowedCombinations", n => { AllowedCombinations = n.GetCollectionOfEnumValues<AuthenticationMethodModes>()?.ToList(); } },
-                { "combinationConfigurations", n => { CombinationConfigurations = n.GetCollectionOfObjectValues<AuthenticationCombinationConfiguration>(AuthenticationCombinationConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "allowedCombinations", n => { AllowedCombinations = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.AuthenticationMethodModes>()?.ToList(); } },
+                { "combinationConfigurations", n => { CombinationConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationCombinationConfiguration>(Microsoft.Graph.Models.AuthenticationCombinationConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "policyType", n => { PolicyType = n.GetEnumValue<AuthenticationStrengthPolicyType>(); } },
-                { "requirementsSatisfied", n => { RequirementsSatisfied = n.GetEnumValue<AuthenticationStrengthRequirements>(); } },
+                { "policyType", n => { PolicyType = n.GetEnumValue<Microsoft.Graph.Models.AuthenticationStrengthPolicyType>(); } },
+                { "requirementsSatisfied", n => { RequirementsSatisfied = n.GetEnumValue<Microsoft.Graph.Models.AuthenticationStrengthRequirements>(); } },
             };
         }
         /// <summary>
@@ -134,14 +134,14 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfEnumValues<AuthenticationMethodModes>("allowedCombinations", AllowedCombinations);
-            writer.WriteCollectionOfObjectValues<AuthenticationCombinationConfiguration>("combinationConfigurations", CombinationConfigurations);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.AuthenticationMethodModes>("allowedCombinations", AllowedCombinations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationCombinationConfiguration>("combinationConfigurations", CombinationConfigurations);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
-            writer.WriteEnumValue<AuthenticationStrengthPolicyType>("policyType", PolicyType);
-            writer.WriteEnumValue<AuthenticationStrengthRequirements>("requirementsSatisfied", RequirementsSatisfied);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AuthenticationStrengthPolicyType>("policyType", PolicyType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AuthenticationStrengthRequirements>("requirementsSatisfied", RequirementsSatisfied);
         }
     }
 }

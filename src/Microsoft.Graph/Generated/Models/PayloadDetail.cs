@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The coachmarks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PayloadCoachmark>? Coachmarks
+        public List<Microsoft.Graph.Models.PayloadCoachmark>? Coachmarks
         {
-            get { return BackingStore?.Get<List<PayloadCoachmark>?>("coachmarks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PayloadCoachmark>?>("coachmarks"); }
             set { BackingStore?.Set("coachmarks", value); }
         }
 #nullable restore
 #else
-        public List<PayloadCoachmark> Coachmarks
+        public List<Microsoft.Graph.Models.PayloadCoachmark> Coachmarks
         {
-            get { return BackingStore?.Get<List<PayloadCoachmark>>("coachmarks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PayloadCoachmark>>("coachmarks"); }
             set { BackingStore?.Set("coachmarks", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PayloadDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.PayloadDetail"/> and sets the default values.
         /// </summary>
         public PayloadDetail()
         {
@@ -94,16 +94,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PayloadDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PayloadDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PayloadDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.PayloadDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.emailPayloadDetail" => new EmailPayloadDetail(),
-                _ => new PayloadDetail(),
+                "#microsoft.graph.emailPayloadDetail" => new Microsoft.Graph.Models.EmailPayloadDetail(),
+                _ => new Microsoft.Graph.Models.PayloadDetail(),
             };
         }
         /// <summary>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "coachmarks", n => { Coachmarks = n.GetCollectionOfObjectValues<PayloadCoachmark>(PayloadCoachmark.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "coachmarks", n => { Coachmarks = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.PayloadCoachmark>(Microsoft.Graph.Models.PayloadCoachmark.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "phishingUrl", n => { PhishingUrl = n.GetStringValue(); } },
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<PayloadCoachmark>("coachmarks", Coachmarks);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.PayloadCoachmark>("coachmarks", Coachmarks);
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("phishingUrl", PhishingUrl);

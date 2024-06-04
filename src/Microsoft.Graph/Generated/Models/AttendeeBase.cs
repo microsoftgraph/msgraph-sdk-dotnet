@@ -7,17 +7,17 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AttendeeBase : Recipient, IParsable
+    public class AttendeeBase : Microsoft.Graph.Models.Recipient, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.</summary>
-        public AttendeeType? Type
+        public Microsoft.Graph.Models.AttendeeType? Type
         {
-            get { return BackingStore?.Get<AttendeeType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AttendeeType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AttendeeBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AttendeeBase"/> and sets the default values.
         /// </summary>
         public AttendeeBase() : base()
         {
@@ -26,16 +26,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AttendeeBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AttendeeBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AttendeeBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AttendeeBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.attendee" => new Attendee(),
-                _ => new AttendeeBase(),
+                "#microsoft.graph.attendee" => new Microsoft.Graph.Models.Attendee(),
+                _ => new Microsoft.Graph.Models.AttendeeBase(),
             };
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "type", n => { Type = n.GetEnumValue<AttendeeType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Models.AttendeeType>(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AttendeeType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AttendeeType>("type", Type);
         }
     }
 }

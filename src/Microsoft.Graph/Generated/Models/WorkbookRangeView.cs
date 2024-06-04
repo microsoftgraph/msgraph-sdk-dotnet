@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookRangeView : Entity, IParsable
+    public class WorkbookRangeView : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the cell addresses</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? CellAddresses
+        public UntypedNode? CellAddresses
         {
-            get { return BackingStore?.Get<Json?>("cellAddresses"); }
+            get { return BackingStore?.Get<UntypedNode?>("cellAddresses"); }
             set { BackingStore?.Set("cellAddresses", value); }
         }
 #nullable restore
 #else
-        public Json CellAddresses
+        public UntypedNode CellAddresses
         {
-            get { return BackingStore?.Get<Json>("cellAddresses"); }
+            get { return BackingStore?.Get<UntypedNode>("cellAddresses"); }
             set { BackingStore?.Set("cellAddresses", value); }
         }
 #endif
@@ -35,48 +35,48 @@ namespace Microsoft.Graph.Models
         /// <summary>Represents the formula in A1-style notation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Formulas
+        public UntypedNode? Formulas
         {
-            get { return BackingStore?.Get<Json?>("formulas"); }
+            get { return BackingStore?.Get<UntypedNode?>("formulas"); }
             set { BackingStore?.Set("formulas", value); }
         }
 #nullable restore
 #else
-        public Json Formulas
+        public UntypedNode Formulas
         {
-            get { return BackingStore?.Get<Json>("formulas"); }
+            get { return BackingStore?.Get<UntypedNode>("formulas"); }
             set { BackingStore?.Set("formulas", value); }
         }
 #endif
         /// <summary>Represents the formula in A1-style notation, in the user&apos;s language and number-formatting locale. For example, the English &apos;=SUM(A1, 1.5)&apos; formula would become &apos;=SUMME(A1; 1,5)&apos; in German.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? FormulasLocal
+        public UntypedNode? FormulasLocal
         {
-            get { return BackingStore?.Get<Json?>("formulasLocal"); }
+            get { return BackingStore?.Get<UntypedNode?>("formulasLocal"); }
             set { BackingStore?.Set("formulasLocal", value); }
         }
 #nullable restore
 #else
-        public Json FormulasLocal
+        public UntypedNode FormulasLocal
         {
-            get { return BackingStore?.Get<Json>("formulasLocal"); }
+            get { return BackingStore?.Get<UntypedNode>("formulasLocal"); }
             set { BackingStore?.Set("formulasLocal", value); }
         }
 #endif
         /// <summary>Represents the formula in R1C1-style notation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? FormulasR1C1
+        public UntypedNode? FormulasR1C1
         {
-            get { return BackingStore?.Get<Json?>("formulasR1C1"); }
+            get { return BackingStore?.Get<UntypedNode?>("formulasR1C1"); }
             set { BackingStore?.Set("formulasR1C1", value); }
         }
 #nullable restore
 #else
-        public Json FormulasR1C1
+        public UntypedNode FormulasR1C1
         {
-            get { return BackingStore?.Get<Json>("formulasR1C1"); }
+            get { return BackingStore?.Get<UntypedNode>("formulasR1C1"); }
             set { BackingStore?.Set("formulasR1C1", value); }
         }
 #endif
@@ -89,16 +89,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Represents Excel&apos;s number format code for the given cell. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? NumberFormat
+        public UntypedNode? NumberFormat
         {
-            get { return BackingStore?.Get<Json?>("numberFormat"); }
+            get { return BackingStore?.Get<UntypedNode?>("numberFormat"); }
             set { BackingStore?.Set("numberFormat", value); }
         }
 #nullable restore
 #else
-        public Json NumberFormat
+        public UntypedNode NumberFormat
         {
-            get { return BackingStore?.Get<Json>("numberFormat"); }
+            get { return BackingStore?.Get<UntypedNode>("numberFormat"); }
             set { BackingStore?.Set("numberFormat", value); }
         }
 #endif
@@ -111,76 +111,76 @@ namespace Microsoft.Graph.Models
         /// <summary>Represents a collection of range views associated with the range. Read-only. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookRangeView>? Rows
+        public List<Microsoft.Graph.Models.WorkbookRangeView>? Rows
         {
-            get { return BackingStore?.Get<List<WorkbookRangeView>?>("rows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookRangeView>?>("rows"); }
             set { BackingStore?.Set("rows", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookRangeView> Rows
+        public List<Microsoft.Graph.Models.WorkbookRangeView> Rows
         {
-            get { return BackingStore?.Get<List<WorkbookRangeView>>("rows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookRangeView>>("rows"); }
             set { BackingStore?.Set("rows", value); }
         }
 #endif
         /// <summary>Text values of the specified range. The Text value won&apos;t depend on the cell width. The # sign substitution that happens in Excel UI won&apos;t affect the text value returned by the API. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Text
+        public UntypedNode? Text
         {
-            get { return BackingStore?.Get<Json?>("text"); }
+            get { return BackingStore?.Get<UntypedNode?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public Json Text
+        public UntypedNode Text
         {
-            get { return BackingStore?.Get<Json>("text"); }
+            get { return BackingStore?.Get<UntypedNode>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #endif
         /// <summary>Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Values
+        public UntypedNode? Values
         {
-            get { return BackingStore?.Get<Json?>("values"); }
+            get { return BackingStore?.Get<UntypedNode?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public Json Values
+        public UntypedNode Values
         {
-            get { return BackingStore?.Get<Json>("values"); }
+            get { return BackingStore?.Get<UntypedNode>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #endif
         /// <summary>Represents the type of data of each cell. Read-only. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? ValueTypes
+        public UntypedNode? ValueTypes
         {
-            get { return BackingStore?.Get<Json?>("valueTypes"); }
+            get { return BackingStore?.Get<UntypedNode?>("valueTypes"); }
             set { BackingStore?.Set("valueTypes", value); }
         }
 #nullable restore
 #else
-        public Json ValueTypes
+        public UntypedNode ValueTypes
         {
-            get { return BackingStore?.Get<Json>("valueTypes"); }
+            get { return BackingStore?.Get<UntypedNode>("valueTypes"); }
             set { BackingStore?.Set("valueTypes", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookRangeView"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookRangeView"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookRangeView CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WorkbookRangeView CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookRangeView();
+            return new Microsoft.Graph.Models.WorkbookRangeView();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -190,18 +190,18 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "cellAddresses", n => { CellAddresses = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "cellAddresses", n => { CellAddresses = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "columnCount", n => { ColumnCount = n.GetIntValue(); } },
-                { "formulas", n => { Formulas = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "formulasLocal", n => { FormulasLocal = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "formulasR1C1", n => { FormulasR1C1 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "formulas", n => { Formulas = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "formulasLocal", n => { FormulasLocal = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "formulasR1C1", n => { FormulasR1C1 = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "index", n => { Index = n.GetIntValue(); } },
-                { "numberFormat", n => { NumberFormat = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "numberFormat", n => { NumberFormat = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "rowCount", n => { RowCount = n.GetIntValue(); } },
-                { "rows", n => { Rows = n.GetCollectionOfObjectValues<WorkbookRangeView>(WorkbookRangeView.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "text", n => { Text = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "valueTypes", n => { ValueTypes = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "rows", n => { Rows = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookRangeView>(Microsoft.Graph.Models.WorkbookRangeView.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "text", n => { Text = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "valueTypes", n => { ValueTypes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "values", n => { Values = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -212,18 +212,18 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<Json>("cellAddresses", CellAddresses);
+            writer.WriteObjectValue<UntypedNode>("cellAddresses", CellAddresses);
             writer.WriteIntValue("columnCount", ColumnCount);
-            writer.WriteObjectValue<Json>("formulas", Formulas);
-            writer.WriteObjectValue<Json>("formulasLocal", FormulasLocal);
-            writer.WriteObjectValue<Json>("formulasR1C1", FormulasR1C1);
+            writer.WriteObjectValue<UntypedNode>("formulas", Formulas);
+            writer.WriteObjectValue<UntypedNode>("formulasLocal", FormulasLocal);
+            writer.WriteObjectValue<UntypedNode>("formulasR1C1", FormulasR1C1);
             writer.WriteIntValue("index", Index);
-            writer.WriteObjectValue<Json>("numberFormat", NumberFormat);
+            writer.WriteObjectValue<UntypedNode>("numberFormat", NumberFormat);
             writer.WriteIntValue("rowCount", RowCount);
-            writer.WriteCollectionOfObjectValues<WorkbookRangeView>("rows", Rows);
-            writer.WriteObjectValue<Json>("text", Text);
-            writer.WriteObjectValue<Json>("values", Values);
-            writer.WriteObjectValue<Json>("valueTypes", ValueTypes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookRangeView>("rows", Rows);
+            writer.WriteObjectValue<UntypedNode>("text", Text);
+            writer.WriteObjectValue<UntypedNode>("values", Values);
+            writer.WriteObjectValue<UntypedNode>("valueTypes", ValueTypes);
         }
     }
 }

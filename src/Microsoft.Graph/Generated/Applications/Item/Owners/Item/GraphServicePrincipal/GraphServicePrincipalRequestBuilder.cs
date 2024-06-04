@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Applications.Item.Owners.Item.GraphServicePrincipal
     public class GraphServicePrincipalRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GraphServicePrincipalRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.Owners.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Applications.Item.Owners.Item.GraphServicePrincipal
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphServicePrincipalRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.Owners.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Applications.Item.Owners.Item.GraphServicePrincipal
         /// <summary>
         /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
         /// </summary>
-        /// <returns>A <see cref="ServicePrincipal"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ServicePrincipal"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ServicePrincipal?> GetAsync(Action<RequestConfiguration<GraphServicePrincipalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ServicePrincipal?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.Owners.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder.GraphServicePrincipalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ServicePrincipal> GetAsync(Action<RequestConfiguration<GraphServicePrincipalRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ServicePrincipal> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.Owners.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder.GraphServicePrincipalRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ServicePrincipal>(requestInfo, ServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ServicePrincipal>(requestInfo, Microsoft.Graph.Models.ServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Applications.Item.Owners.Item.GraphServicePrincipal
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphServicePrincipalRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.Owners.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder.GraphServicePrincipalRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphServicePrincipalRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.Owners.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder.GraphServicePrincipalRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Applications.Item.Owners.Item.GraphServicePrincipal
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GraphServicePrincipalRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Applications.Item.Owners.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GraphServicePrincipalRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Applications.Item.Owners.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder WithUrl(string rawUrl)
         {
-            return new GraphServicePrincipalRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Applications.Item.Owners.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Applications.Item.Owners.Item.GraphServicePrincipal
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphServicePrincipalRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphServicePrincipalRequestBuilderGetQueryParameters>
+        public class GraphServicePrincipalRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Applications.Item.Owners.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder.GraphServicePrincipalRequestBuilderGetQueryParameters>
         {
         }
     }

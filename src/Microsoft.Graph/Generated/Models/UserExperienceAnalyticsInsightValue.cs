@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserExperienceAnalyticsInsightValue"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsInsightValue"/> and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsInsightValue()
         {
@@ -47,17 +47,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsInsightValue"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsInsightValue"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserExperienceAnalyticsInsightValue CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.UserExperienceAnalyticsInsightValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.insightValueDouble" => new InsightValueDouble(),
-                "#microsoft.graph.insightValueInt" => new InsightValueInt(),
-                _ => new UserExperienceAnalyticsInsightValue(),
+                "#microsoft.graph.insightValueDouble" => new Microsoft.Graph.Models.InsightValueDouble(),
+                "#microsoft.graph.insightValueInt" => new Microsoft.Graph.Models.InsightValueInt(),
+                _ => new Microsoft.Graph.Models.UserExperienceAnalyticsInsightValue(),
             };
         }
         /// <summary>

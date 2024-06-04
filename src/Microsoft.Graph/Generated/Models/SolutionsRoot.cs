@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The bookingBusinesses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingBusiness>? BookingBusinesses
+        public List<Microsoft.Graph.Models.BookingBusiness>? BookingBusinesses
         {
-            get { return BackingStore?.Get<List<BookingBusiness>?>("bookingBusinesses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BookingBusiness>?>("bookingBusinesses"); }
             set { BackingStore?.Set("bookingBusinesses", value); }
         }
 #nullable restore
 #else
-        public List<BookingBusiness> BookingBusinesses
+        public List<Microsoft.Graph.Models.BookingBusiness> BookingBusinesses
         {
-            get { return BackingStore?.Get<List<BookingBusiness>>("bookingBusinesses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BookingBusiness>>("bookingBusinesses"); }
             set { BackingStore?.Set("bookingBusinesses", value); }
         }
 #endif
         /// <summary>The bookingCurrencies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingCurrency>? BookingCurrencies
+        public List<Microsoft.Graph.Models.BookingCurrency>? BookingCurrencies
         {
-            get { return BackingStore?.Get<List<BookingCurrency>?>("bookingCurrencies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BookingCurrency>?>("bookingCurrencies"); }
             set { BackingStore?.Set("bookingCurrencies", value); }
         }
 #nullable restore
 #else
-        public List<BookingCurrency> BookingCurrencies
+        public List<Microsoft.Graph.Models.BookingCurrency> BookingCurrencies
         {
-            get { return BackingStore?.Get<List<BookingCurrency>>("bookingCurrencies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BookingCurrency>>("bookingCurrencies"); }
             set { BackingStore?.Set("bookingCurrencies", value); }
         }
 #endif
@@ -70,21 +70,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The virtualEvents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VirtualEventsRoot? VirtualEvents
+        public Microsoft.Graph.Models.VirtualEventsRoot? VirtualEvents
         {
-            get { return BackingStore?.Get<VirtualEventsRoot?>("virtualEvents"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.VirtualEventsRoot?>("virtualEvents"); }
             set { BackingStore?.Set("virtualEvents", value); }
         }
 #nullable restore
 #else
-        public VirtualEventsRoot VirtualEvents
+        public Microsoft.Graph.Models.VirtualEventsRoot VirtualEvents
         {
-            get { return BackingStore?.Get<VirtualEventsRoot>("virtualEvents"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.VirtualEventsRoot>("virtualEvents"); }
             set { BackingStore?.Set("virtualEvents", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SolutionsRoot"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SolutionsRoot"/> and sets the default values.
         /// </summary>
         public SolutionsRoot()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SolutionsRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SolutionsRoot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SolutionsRoot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SolutionsRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SolutionsRoot();
+            return new Microsoft.Graph.Models.SolutionsRoot();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,10 +109,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bookingBusinesses", n => { BookingBusinesses = n.GetCollectionOfObjectValues<BookingBusiness>(BookingBusiness.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "bookingCurrencies", n => { BookingCurrencies = n.GetCollectionOfObjectValues<BookingCurrency>(BookingCurrency.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "bookingBusinesses", n => { BookingBusinesses = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.BookingBusiness>(Microsoft.Graph.Models.BookingBusiness.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "bookingCurrencies", n => { BookingCurrencies = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.BookingCurrency>(Microsoft.Graph.Models.BookingCurrency.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "virtualEvents", n => { VirtualEvents = n.GetObjectValue<VirtualEventsRoot>(VirtualEventsRoot.CreateFromDiscriminatorValue); } },
+                { "virtualEvents", n => { VirtualEvents = n.GetObjectValue<Microsoft.Graph.Models.VirtualEventsRoot>(Microsoft.Graph.Models.VirtualEventsRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -122,10 +122,10 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<BookingBusiness>("bookingBusinesses", BookingBusinesses);
-            writer.WriteCollectionOfObjectValues<BookingCurrency>("bookingCurrencies", BookingCurrencies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.BookingBusiness>("bookingBusinesses", BookingBusinesses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.BookingCurrency>("bookingCurrencies", BookingCurrencies);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<VirtualEventsRoot>("virtualEvents", VirtualEvents);
+            writer.WriteObjectValue<Microsoft.Graph.Models.VirtualEventsRoot>("virtualEvents", VirtualEvents);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

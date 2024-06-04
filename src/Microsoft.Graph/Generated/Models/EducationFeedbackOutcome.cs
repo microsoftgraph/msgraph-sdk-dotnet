@@ -7,43 +7,43 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class EducationFeedbackOutcome : EducationOutcome, IParsable
+    public class EducationFeedbackOutcome : Microsoft.Graph.Models.EducationOutcome, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Teacher&apos;s written feedback to the student.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationFeedback? Feedback
+        public Microsoft.Graph.Models.EducationFeedback? Feedback
         {
-            get { return BackingStore?.Get<EducationFeedback?>("feedback"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationFeedback?>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
 #nullable restore
 #else
-        public EducationFeedback Feedback
+        public Microsoft.Graph.Models.EducationFeedback Feedback
         {
-            get { return BackingStore?.Get<EducationFeedback>("feedback"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationFeedback>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
 #endif
         /// <summary>A copy of the feedback property that is made when the grade is released to the student.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationFeedback? PublishedFeedback
+        public Microsoft.Graph.Models.EducationFeedback? PublishedFeedback
         {
-            get { return BackingStore?.Get<EducationFeedback?>("publishedFeedback"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationFeedback?>("publishedFeedback"); }
             set { BackingStore?.Set("publishedFeedback", value); }
         }
 #nullable restore
 #else
-        public EducationFeedback PublishedFeedback
+        public Microsoft.Graph.Models.EducationFeedback PublishedFeedback
         {
-            get { return BackingStore?.Get<EducationFeedback>("publishedFeedback"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationFeedback>("publishedFeedback"); }
             set { BackingStore?.Set("publishedFeedback", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EducationFeedbackOutcome"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.EducationFeedbackOutcome"/> and sets the default values.
         /// </summary>
         public EducationFeedbackOutcome() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationFeedbackOutcome"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationFeedbackOutcome"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationFeedbackOutcome CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EducationFeedbackOutcome CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationFeedbackOutcome();
+            return new Microsoft.Graph.Models.EducationFeedbackOutcome();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,8 +67,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "feedback", n => { Feedback = n.GetObjectValue<EducationFeedback>(EducationFeedback.CreateFromDiscriminatorValue); } },
-                { "publishedFeedback", n => { PublishedFeedback = n.GetObjectValue<EducationFeedback>(EducationFeedback.CreateFromDiscriminatorValue); } },
+                { "feedback", n => { Feedback = n.GetObjectValue<Microsoft.Graph.Models.EducationFeedback>(Microsoft.Graph.Models.EducationFeedback.CreateFromDiscriminatorValue); } },
+                { "publishedFeedback", n => { PublishedFeedback = n.GetObjectValue<Microsoft.Graph.Models.EducationFeedback>(Microsoft.Graph.Models.EducationFeedback.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<EducationFeedback>("feedback", Feedback);
-            writer.WriteObjectValue<EducationFeedback>("publishedFeedback", PublishedFeedback);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EducationFeedback>("feedback", Feedback);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EducationFeedback>("publishedFeedback", PublishedFeedback);
         }
     }
 }

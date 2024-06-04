@@ -7,50 +7,50 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookChartDataLabelFormat : Entity, IParsable
+    public class WorkbookChartDataLabelFormat : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the fill format of the current chart data label. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartFill? Fill
+        public Microsoft.Graph.Models.WorkbookChartFill? Fill
         {
-            get { return BackingStore?.Get<WorkbookChartFill?>("fill"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartFill?>("fill"); }
             set { BackingStore?.Set("fill", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartFill Fill
+        public Microsoft.Graph.Models.WorkbookChartFill Fill
         {
-            get { return BackingStore?.Get<WorkbookChartFill>("fill"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartFill>("fill"); }
             set { BackingStore?.Set("fill", value); }
         }
 #endif
         /// <summary>Represents the font attributes (font name, font size, color, etc.) for a chart data label. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartFont? Font
+        public Microsoft.Graph.Models.WorkbookChartFont? Font
         {
-            get { return BackingStore?.Get<WorkbookChartFont?>("font"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartFont?>("font"); }
             set { BackingStore?.Set("font", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartFont Font
+        public Microsoft.Graph.Models.WorkbookChartFont Font
         {
-            get { return BackingStore?.Get<WorkbookChartFont>("font"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartFont>("font"); }
             set { BackingStore?.Set("font", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookChartDataLabelFormat"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookChartDataLabelFormat"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookChartDataLabelFormat CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WorkbookChartDataLabelFormat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookChartDataLabelFormat();
+            return new Microsoft.Graph.Models.WorkbookChartDataLabelFormat();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "fill", n => { Fill = n.GetObjectValue<WorkbookChartFill>(WorkbookChartFill.CreateFromDiscriminatorValue); } },
-                { "font", n => { Font = n.GetObjectValue<WorkbookChartFont>(WorkbookChartFont.CreateFromDiscriminatorValue); } },
+                { "fill", n => { Fill = n.GetObjectValue<Microsoft.Graph.Models.WorkbookChartFill>(Microsoft.Graph.Models.WorkbookChartFill.CreateFromDiscriminatorValue); } },
+                { "font", n => { Font = n.GetObjectValue<Microsoft.Graph.Models.WorkbookChartFont>(Microsoft.Graph.Models.WorkbookChartFont.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<WorkbookChartFill>("fill", Fill);
-            writer.WriteObjectValue<WorkbookChartFont>("font", Font);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookChartFill>("fill", Fill);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookChartFont>("font", Font);
         }
     }
 }

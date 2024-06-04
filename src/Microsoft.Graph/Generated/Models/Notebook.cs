@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Notebook : OnenoteEntityHierarchyModel, IParsable
+    public class Notebook : Microsoft.Graph.Models.OnenoteEntityHierarchyModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether this is the user&apos;s default notebook. Read-only.</summary>
@@ -25,32 +25,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote native client if it&apos;s installed. The oneNoteWebURL link opens the notebook in OneNote on the web.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public NotebookLinks? Links
+        public Microsoft.Graph.Models.NotebookLinks? Links
         {
-            get { return BackingStore?.Get<NotebookLinks?>("links"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.NotebookLinks?>("links"); }
             set { BackingStore?.Set("links", value); }
         }
 #nullable restore
 #else
-        public NotebookLinks Links
+        public Microsoft.Graph.Models.NotebookLinks Links
         {
-            get { return BackingStore?.Get<NotebookLinks>("links"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.NotebookLinks>("links"); }
             set { BackingStore?.Set("links", value); }
         }
 #endif
         /// <summary>The section groups in the notebook. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SectionGroup>? SectionGroups
+        public List<Microsoft.Graph.Models.SectionGroup>? SectionGroups
         {
-            get { return BackingStore?.Get<List<SectionGroup>?>("sectionGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SectionGroup>?>("sectionGroups"); }
             set { BackingStore?.Set("sectionGroups", value); }
         }
 #nullable restore
 #else
-        public List<SectionGroup> SectionGroups
+        public List<Microsoft.Graph.Models.SectionGroup> SectionGroups
         {
-            get { return BackingStore?.Get<List<SectionGroup>>("sectionGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SectionGroup>>("sectionGroups"); }
             set { BackingStore?.Set("sectionGroups", value); }
         }
 #endif
@@ -73,16 +73,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The sections in the notebook. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnenoteSection>? Sections
+        public List<Microsoft.Graph.Models.OnenoteSection>? Sections
         {
-            get { return BackingStore?.Get<List<OnenoteSection>?>("sections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnenoteSection>?>("sections"); }
             set { BackingStore?.Set("sections", value); }
         }
 #nullable restore
 #else
-        public List<OnenoteSection> Sections
+        public List<Microsoft.Graph.Models.OnenoteSection> Sections
         {
-            get { return BackingStore?.Get<List<OnenoteSection>>("sections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnenoteSection>>("sections"); }
             set { BackingStore?.Set("sections", value); }
         }
 #endif
@@ -103,13 +103,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.</summary>
-        public OnenoteUserRole? UserRole
+        public Microsoft.Graph.Models.OnenoteUserRole? UserRole
         {
-            get { return BackingStore?.Get<OnenoteUserRole?>("userRole"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnenoteUserRole?>("userRole"); }
             set { BackingStore?.Set("userRole", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Notebook"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Notebook"/> and sets the default values.
         /// </summary>
         public Notebook() : base()
         {
@@ -118,12 +118,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Notebook"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Notebook"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Notebook CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Notebook CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Notebook();
+            return new Microsoft.Graph.Models.Notebook();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -135,12 +135,12 @@ namespace Microsoft.Graph.Models
             {
                 { "isDefault", n => { IsDefault = n.GetBoolValue(); } },
                 { "isShared", n => { IsShared = n.GetBoolValue(); } },
-                { "links", n => { Links = n.GetObjectValue<NotebookLinks>(NotebookLinks.CreateFromDiscriminatorValue); } },
-                { "sectionGroups", n => { SectionGroups = n.GetCollectionOfObjectValues<SectionGroup>(SectionGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "links", n => { Links = n.GetObjectValue<Microsoft.Graph.Models.NotebookLinks>(Microsoft.Graph.Models.NotebookLinks.CreateFromDiscriminatorValue); } },
+                { "sectionGroups", n => { SectionGroups = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SectionGroup>(Microsoft.Graph.Models.SectionGroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "sectionGroupsUrl", n => { SectionGroupsUrl = n.GetStringValue(); } },
-                { "sections", n => { Sections = n.GetCollectionOfObjectValues<OnenoteSection>(OnenoteSection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sections", n => { Sections = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OnenoteSection>(Microsoft.Graph.Models.OnenoteSection.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "sectionsUrl", n => { SectionsUrl = n.GetStringValue(); } },
-                { "userRole", n => { UserRole = n.GetEnumValue<OnenoteUserRole>(); } },
+                { "userRole", n => { UserRole = n.GetEnumValue<Microsoft.Graph.Models.OnenoteUserRole>(); } },
             };
         }
         /// <summary>
@@ -153,12 +153,12 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteBoolValue("isDefault", IsDefault);
             writer.WriteBoolValue("isShared", IsShared);
-            writer.WriteObjectValue<NotebookLinks>("links", Links);
-            writer.WriteCollectionOfObjectValues<SectionGroup>("sectionGroups", SectionGroups);
+            writer.WriteObjectValue<Microsoft.Graph.Models.NotebookLinks>("links", Links);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SectionGroup>("sectionGroups", SectionGroups);
             writer.WriteStringValue("sectionGroupsUrl", SectionGroupsUrl);
-            writer.WriteCollectionOfObjectValues<OnenoteSection>("sections", Sections);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OnenoteSection>("sections", Sections);
             writer.WriteStringValue("sectionsUrl", SectionsUrl);
-            writer.WriteEnumValue<OnenoteUserRole>("userRole", UserRole);
+            writer.WriteEnumValue<Microsoft.Graph.Models.OnenoteUserRole>("userRole", UserRole);
         }
     }
 }

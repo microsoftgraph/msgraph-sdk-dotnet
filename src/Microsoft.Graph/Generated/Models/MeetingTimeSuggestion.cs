@@ -44,32 +44,32 @@ namespace Microsoft.Graph.Models
         /// <summary>An array that specifies the name and geographic location of each meeting location for this meeting suggestion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Location>? Locations
+        public List<Microsoft.Graph.Models.Location>? Locations
         {
-            get { return BackingStore?.Get<List<Location>?>("locations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Location>?>("locations"); }
             set { BackingStore?.Set("locations", value); }
         }
 #nullable restore
 #else
-        public List<Location> Locations
+        public List<Microsoft.Graph.Models.Location> Locations
         {
-            get { return BackingStore?.Get<List<Location>>("locations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Location>>("locations"); }
             set { BackingStore?.Set("locations", value); }
         }
 #endif
         /// <summary>A time period suggested for the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeSlot? MeetingTimeSlot
+        public Microsoft.Graph.Models.TimeSlot? MeetingTimeSlot
         {
-            get { return BackingStore?.Get<TimeSlot?>("meetingTimeSlot"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TimeSlot?>("meetingTimeSlot"); }
             set { BackingStore?.Set("meetingTimeSlot", value); }
         }
 #nullable restore
 #else
-        public TimeSlot MeetingTimeSlot
+        public Microsoft.Graph.Models.TimeSlot MeetingTimeSlot
         {
-            get { return BackingStore?.Get<TimeSlot>("meetingTimeSlot"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TimeSlot>("meetingTimeSlot"); }
             set { BackingStore?.Set("meetingTimeSlot", value); }
         }
 #endif
@@ -96,9 +96,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("order", value); }
         }
         /// <summary>Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
-        public FreeBusyStatus? OrganizerAvailability
+        public Microsoft.Graph.Models.FreeBusyStatus? OrganizerAvailability
         {
-            get { return BackingStore?.Get<FreeBusyStatus?>("organizerAvailability"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.FreeBusyStatus?>("organizerAvailability"); }
             set { BackingStore?.Set("organizerAvailability", value); }
         }
         /// <summary>Reason for suggesting the meeting time.</summary>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MeetingTimeSuggestion"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MeetingTimeSuggestion"/> and sets the default values.
         /// </summary>
         public MeetingTimeSuggestion()
         {
@@ -128,12 +128,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MeetingTimeSuggestion"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MeetingTimeSuggestion"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MeetingTimeSuggestion CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.MeetingTimeSuggestion CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MeetingTimeSuggestion();
+            return new Microsoft.Graph.Models.MeetingTimeSuggestion();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Models
             {
                 { "attendeeAvailability", n => { AttendeeAvailability = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AttendeeAvailability>(Microsoft.Graph.Models.AttendeeAvailability.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "confidence", n => { Confidence = n.GetDoubleValue(); } },
-                { "locations", n => { Locations = n.GetCollectionOfObjectValues<Location>(Location.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "meetingTimeSlot", n => { MeetingTimeSlot = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
+                { "locations", n => { Locations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Location>(Microsoft.Graph.Models.Location.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "meetingTimeSlot", n => { MeetingTimeSlot = n.GetObjectValue<Microsoft.Graph.Models.TimeSlot>(Microsoft.Graph.Models.TimeSlot.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "order", n => { Order = n.GetIntValue(); } },
-                { "organizerAvailability", n => { OrganizerAvailability = n.GetEnumValue<FreeBusyStatus>(); } },
+                { "organizerAvailability", n => { OrganizerAvailability = n.GetEnumValue<Microsoft.Graph.Models.FreeBusyStatus>(); } },
                 { "suggestionReason", n => { SuggestionReason = n.GetStringValue(); } },
             };
         }
@@ -162,11 +162,11 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AttendeeAvailability>("attendeeAvailability", AttendeeAvailability);
             writer.WriteDoubleValue("confidence", Confidence);
-            writer.WriteCollectionOfObjectValues<Location>("locations", Locations);
-            writer.WriteObjectValue<TimeSlot>("meetingTimeSlot", MeetingTimeSlot);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Location>("locations", Locations);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TimeSlot>("meetingTimeSlot", MeetingTimeSlot);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("order", Order);
-            writer.WriteEnumValue<FreeBusyStatus>("organizerAvailability", OrganizerAvailability);
+            writer.WriteEnumValue<Microsoft.Graph.Models.FreeBusyStatus>("organizerAvailability", OrganizerAvailability);
             writer.WriteStringValue("suggestionReason", SuggestionReason);
             writer.WriteAdditionalData(AdditionalData);
         }

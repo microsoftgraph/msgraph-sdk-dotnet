@@ -26,7 +26,7 @@ namespace Microsoft.Graph.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryW
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryWithDomainName.VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponse"/> and sets the default values.
         /// </summary>
         public VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponse()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryW
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryWithDomainName.VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryWithDomainName.VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponse();
+            return new Microsoft.Graph.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryWithDomainName.VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

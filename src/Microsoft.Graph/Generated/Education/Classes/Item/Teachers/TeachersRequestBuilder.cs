@@ -20,29 +20,29 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers
     public class TeachersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Education.Classes.Item.Teachers.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Classes.Item.Teachers.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of educationRoot entities.</summary>
-        public RefRequestBuilder Ref
+        public Microsoft.Graph.Education.Classes.Item.Teachers.Ref.RefRequestBuilder Ref
         {
-            get => new RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Classes.Item.Teachers.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.education.classes.item.teachers.item collection</summary>
         /// <param name="position">The unique identifier of educationUser</param>
-        /// <returns>A <see cref="EducationUserItemRequestBuilder"/></returns>
-        public EducationUserItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Education.Classes.Item.Teachers.Item.EducationUserItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Education.Classes.Item.Teachers.Item.EducationUserItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("educationUser%2Did", position);
-                return new EducationUserItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Education.Classes.Item.Teachers.Item.EducationUserItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TeachersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Classes.Item.Teachers.TeachersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TeachersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Classes.Item.Teachers.TeachersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,25 +61,25 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers
         /// Retrieve a list of teachers for a class. Delegated tokens must be members of the class to get the teacher list.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-list-teachers?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="EducationUserCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationUserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationUserCollectionResponse?> GetAsync(Action<RequestConfiguration<TeachersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationUserCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Education.Classes.Item.Teachers.TeachersRequestBuilder.TeachersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationUserCollectionResponse> GetAsync(Action<RequestConfiguration<TeachersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationUserCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Education.Classes.Item.Teachers.TeachersRequestBuilder.TeachersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationUserCollectionResponse>(requestInfo, EducationUserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EducationUserCollectionResponse>(requestInfo, Microsoft.Graph.Models.EducationUserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of teachers for a class. Delegated tokens must be members of the class to get the teacher list.
@@ -88,11 +88,11 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TeachersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Education.Classes.Item.Teachers.TeachersRequestBuilder.TeachersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TeachersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Education.Classes.Item.Teachers.TeachersRequestBuilder.TeachersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -103,11 +103,11 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TeachersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Education.Classes.Item.Teachers.TeachersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TeachersRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Education.Classes.Item.Teachers.TeachersRequestBuilder WithUrl(string rawUrl)
         {
-            return new TeachersRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Education.Classes.Item.Teachers.TeachersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of teachers for a class. Delegated tokens must be members of the class to get the teacher list.
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TeachersRequestBuilderGetRequestConfiguration : RequestConfiguration<TeachersRequestBuilderGetQueryParameters>
+        public class TeachersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Education.Classes.Item.Teachers.TeachersRequestBuilder.TeachersRequestBuilderGetQueryParameters>
         {
         }
     }

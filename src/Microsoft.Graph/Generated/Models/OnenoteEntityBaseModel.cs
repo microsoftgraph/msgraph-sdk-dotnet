@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OnenoteEntityBaseModel : Entity, IParsable
+    public class OnenoteEntityBaseModel : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The endpoint where you can get details about the page. Read-only.</summary>
@@ -29,22 +29,22 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnenoteEntityBaseModel"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnenoteEntityBaseModel"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnenoteEntityBaseModel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OnenoteEntityBaseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.notebook" => new Notebook(),
-                "#microsoft.graph.onenoteEntityHierarchyModel" => new OnenoteEntityHierarchyModel(),
-                "#microsoft.graph.onenoteEntitySchemaObjectModel" => new OnenoteEntitySchemaObjectModel(),
-                "#microsoft.graph.onenotePage" => new OnenotePage(),
-                "#microsoft.graph.onenoteResource" => new OnenoteResource(),
-                "#microsoft.graph.onenoteSection" => new OnenoteSection(),
-                "#microsoft.graph.sectionGroup" => new SectionGroup(),
-                _ => new OnenoteEntityBaseModel(),
+                "#microsoft.graph.notebook" => new Microsoft.Graph.Models.Notebook(),
+                "#microsoft.graph.onenoteEntityHierarchyModel" => new Microsoft.Graph.Models.OnenoteEntityHierarchyModel(),
+                "#microsoft.graph.onenoteEntitySchemaObjectModel" => new Microsoft.Graph.Models.OnenoteEntitySchemaObjectModel(),
+                "#microsoft.graph.onenotePage" => new Microsoft.Graph.Models.OnenotePage(),
+                "#microsoft.graph.onenoteResource" => new Microsoft.Graph.Models.OnenoteResource(),
+                "#microsoft.graph.onenoteSection" => new Microsoft.Graph.Models.OnenoteSection(),
+                "#microsoft.graph.sectionGroup" => new Microsoft.Graph.Models.SectionGroup(),
+                _ => new Microsoft.Graph.Models.OnenoteEntityBaseModel(),
             };
         }
         /// <summary>

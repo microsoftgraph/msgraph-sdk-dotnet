@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class TeamInfo : Entity, IParsable
+    public class TeamInfo : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the team.</summary>
@@ -61,17 +61,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeamInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TeamInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.associatedTeamInfo" => new AssociatedTeamInfo(),
-                "#microsoft.graph.sharedWithChannelTeamInfo" => new SharedWithChannelTeamInfo(),
-                _ => new TeamInfo(),
+                "#microsoft.graph.associatedTeamInfo" => new Microsoft.Graph.Models.AssociatedTeamInfo(),
+                "#microsoft.graph.sharedWithChannelTeamInfo" => new Microsoft.Graph.Models.SharedWithChannelTeamInfo(),
+                _ => new Microsoft.Graph.Models.TeamInfo(),
             };
         }
         /// <summary>

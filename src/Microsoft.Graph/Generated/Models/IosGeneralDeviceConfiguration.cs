@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the iosGeneralDeviceConfiguration resource.
     /// </summary>
-    public class IosGeneralDeviceConfiguration : DeviceConfiguration, IParsable
+    public class IosGeneralDeviceConfiguration : Microsoft.Graph.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Indicates whether or not to allow account modification when the device is in supervised mode.</summary>
         public bool? AccountBlockModification
@@ -62,16 +62,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Gets or sets the list of iOS apps allowed to autonomously enter Single App Mode. Supervised only. iOS 7.0 and later. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? AppsSingleAppModeList
+        public List<Microsoft.Graph.Models.AppListItem>? AppsSingleAppModeList
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("appsSingleAppModeList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AppListItem>?>("appsSingleAppModeList"); }
             set { BackingStore?.Set("appsSingleAppModeList", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> AppsSingleAppModeList
+        public List<Microsoft.Graph.Models.AppListItem> AppsSingleAppModeList
         {
-            get { return BackingStore?.Get<List<AppListItem>>("appsSingleAppModeList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AppListItem>>("appsSingleAppModeList"); }
             set { BackingStore?.Set("appsSingleAppModeList", value); }
         }
 #endif
@@ -108,23 +108,23 @@ namespace Microsoft.Graph.Models
         /// <summary>List of apps in the visibility list (either visible/launchable apps list or hidden/unlaunchable apps list, controlled by AppsVisibilityListType) (iOS 9.3 and later). This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? AppsVisibilityList
+        public List<Microsoft.Graph.Models.AppListItem>? AppsVisibilityList
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("appsVisibilityList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AppListItem>?>("appsVisibilityList"); }
             set { BackingStore?.Set("appsVisibilityList", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> AppsVisibilityList
+        public List<Microsoft.Graph.Models.AppListItem> AppsVisibilityList
         {
-            get { return BackingStore?.Get<List<AppListItem>>("appsVisibilityList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AppListItem>>("appsVisibilityList"); }
             set { BackingStore?.Set("appsVisibilityList", value); }
         }
 #endif
         /// <summary>Possible values of the compliance app list.</summary>
-        public AppListType? AppsVisibilityListType
+        public Microsoft.Graph.Models.AppListType? AppsVisibilityListType
         {
-            get { return BackingStore?.Get<AppListType?>("appsVisibilityListType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AppListType?>("appsVisibilityListType"); }
             set { BackingStore?.Set("appsVisibilityListType", value); }
         }
         /// <summary>Indicates whether or not to allow modification of Bluetooth settings when the device is in supervised mode (iOS 10.0 and later).</summary>
@@ -188,24 +188,24 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("classroomAppForceUnpromptedScreenObservation", value); }
         }
         /// <summary>Possible values of the compliance app list.</summary>
-        public AppListType? CompliantAppListType
+        public Microsoft.Graph.Models.AppListType? CompliantAppListType
         {
-            get { return BackingStore?.Get<AppListType?>("compliantAppListType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AppListType?>("compliantAppListType"); }
             set { BackingStore?.Set("compliantAppListType", value); }
         }
         /// <summary>List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? CompliantAppsList
+        public List<Microsoft.Graph.Models.AppListItem>? CompliantAppsList
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("compliantAppsList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AppListItem>?>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> CompliantAppsList
+        public List<Microsoft.Graph.Models.AppListItem> CompliantAppsList
         {
-            get { return BackingStore?.Get<List<AppListItem>>("compliantAppsList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AppListItem>>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
 #endif
@@ -604,9 +604,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("lockScreenBlockTodayView", value); }
         }
         /// <summary>Apps rating as in media content</summary>
-        public RatingAppsType? MediaContentRatingApps
+        public Microsoft.Graph.Models.RatingAppsType? MediaContentRatingApps
         {
-            get { return BackingStore?.Get<RatingAppsType?>("mediaContentRatingApps"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RatingAppsType?>("mediaContentRatingApps"); }
             set { BackingStore?.Set("mediaContentRatingApps", value); }
         }
         /// <summary>Media content rating settings for Australia</summary>
@@ -762,16 +762,16 @@ namespace Microsoft.Graph.Models
         /// <summary>List of managed apps and the network rules that applies to them. This collection can contain a maximum of 1000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosNetworkUsageRule>? NetworkUsageRules
+        public List<Microsoft.Graph.Models.IosNetworkUsageRule>? NetworkUsageRules
         {
-            get { return BackingStore?.Get<List<IosNetworkUsageRule>?>("networkUsageRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IosNetworkUsageRule>?>("networkUsageRules"); }
             set { BackingStore?.Set("networkUsageRules", value); }
         }
 #nullable restore
 #else
-        public List<IosNetworkUsageRule> NetworkUsageRules
+        public List<Microsoft.Graph.Models.IosNetworkUsageRule> NetworkUsageRules
         {
-            get { return BackingStore?.Get<List<IosNetworkUsageRule>>("networkUsageRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IosNetworkUsageRule>>("networkUsageRules"); }
             set { BackingStore?.Set("networkUsageRules", value); }
         }
 #endif
@@ -848,9 +848,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("passcodeRequired", value); }
         }
         /// <summary>Possible values of required passwords.</summary>
-        public RequiredPasswordType? PasscodeRequiredType
+        public Microsoft.Graph.Models.RequiredPasswordType? PasscodeRequiredType
         {
-            get { return BackingStore?.Get<RequiredPasswordType?>("passcodeRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RequiredPasswordType?>("passcodeRequiredType"); }
             set { BackingStore?.Set("passcodeRequiredType", value); }
         }
         /// <summary>Number of sign in failures allowed before wiping the device. Valid values 2 to 11</summary>
@@ -890,9 +890,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("safariBlockPopups", value); }
         }
         /// <summary>Web Browser Cookie Settings.</summary>
-        public WebBrowserCookieSettings? SafariCookieSettings
+        public Microsoft.Graph.Models.WebBrowserCookieSettings? SafariCookieSettings
         {
-            get { return BackingStore?.Get<WebBrowserCookieSettings?>("safariCookieSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WebBrowserCookieSettings?>("safariCookieSettings"); }
             set { BackingStore?.Set("safariCookieSettings", value); }
         }
         /// <summary>URLs matching the patterns listed here will be considered managed.</summary>
@@ -988,7 +988,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("wiFiConnectOnlyToConfiguredNetworks", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IosGeneralDeviceConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IosGeneralDeviceConfiguration"/> and sets the default values.
         /// </summary>
         public IosGeneralDeviceConfiguration() : base()
         {
@@ -997,12 +997,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosGeneralDeviceConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IosGeneralDeviceConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IosGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosGeneralDeviceConfiguration();
+            return new Microsoft.Graph.Models.IosGeneralDeviceConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -1025,9 +1025,9 @@ namespace Microsoft.Graph.Models
                 { "appleNewsBlocked", n => { AppleNewsBlocked = n.GetBoolValue(); } },
                 { "appleWatchBlockPairing", n => { AppleWatchBlockPairing = n.GetBoolValue(); } },
                 { "appleWatchForceWristDetection", n => { AppleWatchForceWristDetection = n.GetBoolValue(); } },
-                { "appsSingleAppModeList", n => { AppsSingleAppModeList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "appsVisibilityList", n => { AppsVisibilityList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "appsVisibilityListType", n => { AppsVisibilityListType = n.GetEnumValue<AppListType>(); } },
+                { "appsSingleAppModeList", n => { AppsSingleAppModeList = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AppListItem>(Microsoft.Graph.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appsVisibilityList", n => { AppsVisibilityList = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AppListItem>(Microsoft.Graph.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appsVisibilityListType", n => { AppsVisibilityListType = n.GetEnumValue<Microsoft.Graph.Models.AppListType>(); } },
                 { "bluetoothBlockModification", n => { BluetoothBlockModification = n.GetBoolValue(); } },
                 { "cameraBlocked", n => { CameraBlocked = n.GetBoolValue(); } },
                 { "cellularBlockDataRoaming", n => { CellularBlockDataRoaming = n.GetBoolValue(); } },
@@ -1038,8 +1038,8 @@ namespace Microsoft.Graph.Models
                 { "certificatesBlockUntrustedTlsCertificates", n => { CertificatesBlockUntrustedTlsCertificates = n.GetBoolValue(); } },
                 { "classroomAppBlockRemoteScreenObservation", n => { ClassroomAppBlockRemoteScreenObservation = n.GetBoolValue(); } },
                 { "classroomAppForceUnpromptedScreenObservation", n => { ClassroomAppForceUnpromptedScreenObservation = n.GetBoolValue(); } },
-                { "compliantAppListType", n => { CompliantAppListType = n.GetEnumValue<AppListType>(); } },
-                { "compliantAppsList", n => { CompliantAppsList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "compliantAppListType", n => { CompliantAppListType = n.GetEnumValue<Microsoft.Graph.Models.AppListType>(); } },
+                { "compliantAppsList", n => { CompliantAppsList = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AppListItem>(Microsoft.Graph.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "configurationProfileBlockChanges", n => { ConfigurationProfileBlockChanges = n.GetBoolValue(); } },
                 { "definitionLookupBlocked", n => { DefinitionLookupBlocked = n.GetBoolValue(); } },
                 { "deviceBlockEnableRestrictions", n => { DeviceBlockEnableRestrictions = n.GetBoolValue(); } },
@@ -1099,7 +1099,7 @@ namespace Microsoft.Graph.Models
                 { "lockScreenBlockNotificationView", n => { LockScreenBlockNotificationView = n.GetBoolValue(); } },
                 { "lockScreenBlockPassbook", n => { LockScreenBlockPassbook = n.GetBoolValue(); } },
                 { "lockScreenBlockTodayView", n => { LockScreenBlockTodayView = n.GetBoolValue(); } },
-                { "mediaContentRatingApps", n => { MediaContentRatingApps = n.GetEnumValue<RatingAppsType>(); } },
+                { "mediaContentRatingApps", n => { MediaContentRatingApps = n.GetEnumValue<Microsoft.Graph.Models.RatingAppsType>(); } },
                 { "mediaContentRatingAustralia", n => { MediaContentRatingAustralia = n.GetObjectValue<Microsoft.Graph.Models.MediaContentRatingAustralia>(Microsoft.Graph.Models.MediaContentRatingAustralia.CreateFromDiscriminatorValue); } },
                 { "mediaContentRatingCanada", n => { MediaContentRatingCanada = n.GetObjectValue<Microsoft.Graph.Models.MediaContentRatingCanada>(Microsoft.Graph.Models.MediaContentRatingCanada.CreateFromDiscriminatorValue); } },
                 { "mediaContentRatingFrance", n => { MediaContentRatingFrance = n.GetObjectValue<Microsoft.Graph.Models.MediaContentRatingFrance>(Microsoft.Graph.Models.MediaContentRatingFrance.CreateFromDiscriminatorValue); } },
@@ -1110,7 +1110,7 @@ namespace Microsoft.Graph.Models
                 { "mediaContentRatingUnitedKingdom", n => { MediaContentRatingUnitedKingdom = n.GetObjectValue<Microsoft.Graph.Models.MediaContentRatingUnitedKingdom>(Microsoft.Graph.Models.MediaContentRatingUnitedKingdom.CreateFromDiscriminatorValue); } },
                 { "mediaContentRatingUnitedStates", n => { MediaContentRatingUnitedStates = n.GetObjectValue<Microsoft.Graph.Models.MediaContentRatingUnitedStates>(Microsoft.Graph.Models.MediaContentRatingUnitedStates.CreateFromDiscriminatorValue); } },
                 { "messagesBlocked", n => { MessagesBlocked = n.GetBoolValue(); } },
-                { "networkUsageRules", n => { NetworkUsageRules = n.GetCollectionOfObjectValues<IosNetworkUsageRule>(IosNetworkUsageRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "networkUsageRules", n => { NetworkUsageRules = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IosNetworkUsageRule>(Microsoft.Graph.Models.IosNetworkUsageRule.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "notificationsBlockSettingsModification", n => { NotificationsBlockSettingsModification = n.GetBoolValue(); } },
                 { "passcodeBlockFingerprintModification", n => { PasscodeBlockFingerprintModification = n.GetBoolValue(); } },
                 { "passcodeBlockFingerprintUnlock", n => { PasscodeBlockFingerprintUnlock = n.GetBoolValue(); } },
@@ -1123,14 +1123,14 @@ namespace Microsoft.Graph.Models
                 { "passcodeMinutesOfInactivityBeforeScreenTimeout", n => { PasscodeMinutesOfInactivityBeforeScreenTimeout = n.GetIntValue(); } },
                 { "passcodePreviousPasscodeBlockCount", n => { PasscodePreviousPasscodeBlockCount = n.GetIntValue(); } },
                 { "passcodeRequired", n => { PasscodeRequired = n.GetBoolValue(); } },
-                { "passcodeRequiredType", n => { PasscodeRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
+                { "passcodeRequiredType", n => { PasscodeRequiredType = n.GetEnumValue<Microsoft.Graph.Models.RequiredPasswordType>(); } },
                 { "passcodeSignInFailureCountBeforeWipe", n => { PasscodeSignInFailureCountBeforeWipe = n.GetIntValue(); } },
                 { "podcastsBlocked", n => { PodcastsBlocked = n.GetBoolValue(); } },
                 { "safariBlockAutofill", n => { SafariBlockAutofill = n.GetBoolValue(); } },
                 { "safariBlockJavaScript", n => { SafariBlockJavaScript = n.GetBoolValue(); } },
                 { "safariBlockPopups", n => { SafariBlockPopups = n.GetBoolValue(); } },
                 { "safariBlocked", n => { SafariBlocked = n.GetBoolValue(); } },
-                { "safariCookieSettings", n => { SafariCookieSettings = n.GetEnumValue<WebBrowserCookieSettings>(); } },
+                { "safariCookieSettings", n => { SafariCookieSettings = n.GetEnumValue<Microsoft.Graph.Models.WebBrowserCookieSettings>(); } },
                 { "safariManagedDomains", n => { SafariManagedDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "safariPasswordAutoFillDomains", n => { SafariPasswordAutoFillDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "safariRequireFraudWarning", n => { SafariRequireFraudWarning = n.GetBoolValue(); } },
@@ -1161,14 +1161,14 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("appleNewsBlocked", AppleNewsBlocked);
             writer.WriteBoolValue("appleWatchBlockPairing", AppleWatchBlockPairing);
             writer.WriteBoolValue("appleWatchForceWristDetection", AppleWatchForceWristDetection);
-            writer.WriteCollectionOfObjectValues<AppListItem>("appsSingleAppModeList", AppsSingleAppModeList);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AppListItem>("appsSingleAppModeList", AppsSingleAppModeList);
             writer.WriteBoolValue("appStoreBlockAutomaticDownloads", AppStoreBlockAutomaticDownloads);
             writer.WriteBoolValue("appStoreBlocked", AppStoreBlocked);
             writer.WriteBoolValue("appStoreBlockInAppPurchases", AppStoreBlockInAppPurchases);
             writer.WriteBoolValue("appStoreBlockUIAppInstallation", AppStoreBlockUIAppInstallation);
             writer.WriteBoolValue("appStoreRequirePassword", AppStoreRequirePassword);
-            writer.WriteCollectionOfObjectValues<AppListItem>("appsVisibilityList", AppsVisibilityList);
-            writer.WriteEnumValue<AppListType>("appsVisibilityListType", AppsVisibilityListType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AppListItem>("appsVisibilityList", AppsVisibilityList);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AppListType>("appsVisibilityListType", AppsVisibilityListType);
             writer.WriteBoolValue("bluetoothBlockModification", BluetoothBlockModification);
             writer.WriteBoolValue("cameraBlocked", CameraBlocked);
             writer.WriteBoolValue("cellularBlockDataRoaming", CellularBlockDataRoaming);
@@ -1179,8 +1179,8 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("certificatesBlockUntrustedTlsCertificates", CertificatesBlockUntrustedTlsCertificates);
             writer.WriteBoolValue("classroomAppBlockRemoteScreenObservation", ClassroomAppBlockRemoteScreenObservation);
             writer.WriteBoolValue("classroomAppForceUnpromptedScreenObservation", ClassroomAppForceUnpromptedScreenObservation);
-            writer.WriteEnumValue<AppListType>("compliantAppListType", CompliantAppListType);
-            writer.WriteCollectionOfObjectValues<AppListItem>("compliantAppsList", CompliantAppsList);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AppListType>("compliantAppListType", CompliantAppListType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AppListItem>("compliantAppsList", CompliantAppsList);
             writer.WriteBoolValue("configurationProfileBlockChanges", ConfigurationProfileBlockChanges);
             writer.WriteBoolValue("definitionLookupBlocked", DefinitionLookupBlocked);
             writer.WriteBoolValue("deviceBlockEnableRestrictions", DeviceBlockEnableRestrictions);
@@ -1240,7 +1240,7 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("lockScreenBlockNotificationView", LockScreenBlockNotificationView);
             writer.WriteBoolValue("lockScreenBlockPassbook", LockScreenBlockPassbook);
             writer.WriteBoolValue("lockScreenBlockTodayView", LockScreenBlockTodayView);
-            writer.WriteEnumValue<RatingAppsType>("mediaContentRatingApps", MediaContentRatingApps);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RatingAppsType>("mediaContentRatingApps", MediaContentRatingApps);
             writer.WriteObjectValue<Microsoft.Graph.Models.MediaContentRatingAustralia>("mediaContentRatingAustralia", MediaContentRatingAustralia);
             writer.WriteObjectValue<Microsoft.Graph.Models.MediaContentRatingCanada>("mediaContentRatingCanada", MediaContentRatingCanada);
             writer.WriteObjectValue<Microsoft.Graph.Models.MediaContentRatingFrance>("mediaContentRatingFrance", MediaContentRatingFrance);
@@ -1251,7 +1251,7 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<Microsoft.Graph.Models.MediaContentRatingUnitedKingdom>("mediaContentRatingUnitedKingdom", MediaContentRatingUnitedKingdom);
             writer.WriteObjectValue<Microsoft.Graph.Models.MediaContentRatingUnitedStates>("mediaContentRatingUnitedStates", MediaContentRatingUnitedStates);
             writer.WriteBoolValue("messagesBlocked", MessagesBlocked);
-            writer.WriteCollectionOfObjectValues<IosNetworkUsageRule>("networkUsageRules", NetworkUsageRules);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IosNetworkUsageRule>("networkUsageRules", NetworkUsageRules);
             writer.WriteBoolValue("notificationsBlockSettingsModification", NotificationsBlockSettingsModification);
             writer.WriteBoolValue("passcodeBlockFingerprintModification", PasscodeBlockFingerprintModification);
             writer.WriteBoolValue("passcodeBlockFingerprintUnlock", PasscodeBlockFingerprintUnlock);
@@ -1264,14 +1264,14 @@ namespace Microsoft.Graph.Models
             writer.WriteIntValue("passcodeMinutesOfInactivityBeforeScreenTimeout", PasscodeMinutesOfInactivityBeforeScreenTimeout);
             writer.WriteIntValue("passcodePreviousPasscodeBlockCount", PasscodePreviousPasscodeBlockCount);
             writer.WriteBoolValue("passcodeRequired", PasscodeRequired);
-            writer.WriteEnumValue<RequiredPasswordType>("passcodeRequiredType", PasscodeRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RequiredPasswordType>("passcodeRequiredType", PasscodeRequiredType);
             writer.WriteIntValue("passcodeSignInFailureCountBeforeWipe", PasscodeSignInFailureCountBeforeWipe);
             writer.WriteBoolValue("podcastsBlocked", PodcastsBlocked);
             writer.WriteBoolValue("safariBlockAutofill", SafariBlockAutofill);
             writer.WriteBoolValue("safariBlocked", SafariBlocked);
             writer.WriteBoolValue("safariBlockJavaScript", SafariBlockJavaScript);
             writer.WriteBoolValue("safariBlockPopups", SafariBlockPopups);
-            writer.WriteEnumValue<WebBrowserCookieSettings>("safariCookieSettings", SafariCookieSettings);
+            writer.WriteEnumValue<Microsoft.Graph.Models.WebBrowserCookieSettings>("safariCookieSettings", SafariCookieSettings);
             writer.WriteCollectionOfPrimitiveValues<string>("safariManagedDomains", SafariManagedDomains);
             writer.WriteCollectionOfPrimitiveValues<string>("safariPasswordAutoFillDomains", SafariPasswordAutoFillDomains);
             writer.WriteBoolValue("safariRequireFraudWarning", SafariRequireFraudWarning);

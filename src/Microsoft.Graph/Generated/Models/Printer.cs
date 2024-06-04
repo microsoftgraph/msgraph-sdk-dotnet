@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Printer : PrinterBase, IParsable
+    public class Printer : Microsoft.Graph.Models.PrinterBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The connectors that are associated with the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintConnector>? Connectors
+        public List<Microsoft.Graph.Models.PrintConnector>? Connectors
         {
-            get { return BackingStore?.Get<List<PrintConnector>?>("connectors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PrintConnector>?>("connectors"); }
             set { BackingStore?.Set("connectors", value); }
         }
 #nullable restore
 #else
-        public List<PrintConnector> Connectors
+        public List<Microsoft.Graph.Models.PrintConnector> Connectors
         {
-            get { return BackingStore?.Get<List<PrintConnector>>("connectors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PrintConnector>>("connectors"); }
             set { BackingStore?.Set("connectors", value); }
         }
 #endif
@@ -53,37 +53,37 @@ namespace Microsoft.Graph.Models
         /// <summary>The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrinterShare>? Shares
+        public List<Microsoft.Graph.Models.PrinterShare>? Shares
         {
-            get { return BackingStore?.Get<List<PrinterShare>?>("shares"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PrinterShare>?>("shares"); }
             set { BackingStore?.Set("shares", value); }
         }
 #nullable restore
 #else
-        public List<PrinterShare> Shares
+        public List<Microsoft.Graph.Models.PrinterShare> Shares
         {
-            get { return BackingStore?.Get<List<PrinterShare>>("shares"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PrinterShare>>("shares"); }
             set { BackingStore?.Set("shares", value); }
         }
 #endif
         /// <summary>A list of task triggers that are associated with the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintTaskTrigger>? TaskTriggers
+        public List<Microsoft.Graph.Models.PrintTaskTrigger>? TaskTriggers
         {
-            get { return BackingStore?.Get<List<PrintTaskTrigger>?>("taskTriggers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PrintTaskTrigger>?>("taskTriggers"); }
             set { BackingStore?.Set("taskTriggers", value); }
         }
 #nullable restore
 #else
-        public List<PrintTaskTrigger> TaskTriggers
+        public List<Microsoft.Graph.Models.PrintTaskTrigger> TaskTriggers
         {
-            get { return BackingStore?.Get<List<PrintTaskTrigger>>("taskTriggers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PrintTaskTrigger>>("taskTriggers"); }
             set { BackingStore?.Set("taskTriggers", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Printer"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Printer"/> and sets the default values.
         /// </summary>
         public Printer() : base()
         {
@@ -92,12 +92,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Printer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Printer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Printer CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Printer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Printer();
+            return new Microsoft.Graph.Models.Printer();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,13 +107,13 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "connectors", n => { Connectors = n.GetCollectionOfObjectValues<PrintConnector>(PrintConnector.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "connectors", n => { Connectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.PrintConnector>(Microsoft.Graph.Models.PrintConnector.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "hasPhysicalDevice", n => { HasPhysicalDevice = n.GetBoolValue(); } },
                 { "isShared", n => { IsShared = n.GetBoolValue(); } },
                 { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "registeredDateTime", n => { RegisteredDateTime = n.GetDateTimeOffsetValue(); } },
-                { "shares", n => { Shares = n.GetCollectionOfObjectValues<PrinterShare>(PrinterShare.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "taskTriggers", n => { TaskTriggers = n.GetCollectionOfObjectValues<PrintTaskTrigger>(PrintTaskTrigger.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "shares", n => { Shares = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.PrinterShare>(Microsoft.Graph.Models.PrinterShare.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "taskTriggers", n => { TaskTriggers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.PrintTaskTrigger>(Microsoft.Graph.Models.PrintTaskTrigger.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -124,13 +124,13 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<PrintConnector>("connectors", Connectors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.PrintConnector>("connectors", Connectors);
             writer.WriteBoolValue("hasPhysicalDevice", HasPhysicalDevice);
             writer.WriteBoolValue("isShared", IsShared);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
             writer.WriteDateTimeOffsetValue("registeredDateTime", RegisteredDateTime);
-            writer.WriteCollectionOfObjectValues<PrinterShare>("shares", Shares);
-            writer.WriteCollectionOfObjectValues<PrintTaskTrigger>("taskTriggers", TaskTriggers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.PrinterShare>("shares", Shares);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.PrintTaskTrigger>("taskTriggers", TaskTriggers);
         }
     }
 }

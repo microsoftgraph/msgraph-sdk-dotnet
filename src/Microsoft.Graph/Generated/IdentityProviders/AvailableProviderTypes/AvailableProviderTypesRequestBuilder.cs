@@ -16,7 +16,7 @@ namespace Microsoft.Graph.IdentityProviders.AvailableProviderTypes
     public class AvailableProviderTypesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="AvailableProviderTypesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.IdentityProviders.AvailableProviderTypes
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AvailableProviderTypesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,51 +35,51 @@ namespace Microsoft.Graph.IdentityProviders.AvailableProviderTypes
         /// Retrieves all identity provider types available in a directory.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityprovider-list-availableprovidertypes?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="AvailableProviderTypesGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AvailableProviderTypesGetResponse?> GetAsAvailableProviderTypesGetResponseAsync(Action<RequestConfiguration<AvailableProviderTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesGetResponse?> GetAsAvailableProviderTypesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesRequestBuilder.AvailableProviderTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AvailableProviderTypesGetResponse> GetAsAvailableProviderTypesGetResponseAsync(Action<RequestConfiguration<AvailableProviderTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesGetResponse> GetAsAvailableProviderTypesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesRequestBuilder.AvailableProviderTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AvailableProviderTypesGetResponse>(requestInfo, AvailableProviderTypesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesGetResponse>(requestInfo, Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves all identity provider types available in a directory.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityprovider-list-availableprovidertypes?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="AvailableProviderTypesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsAvailableProviderTypesGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AvailableProviderTypesResponse?> GetAsync(Action<RequestConfiguration<AvailableProviderTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesRequestBuilder.AvailableProviderTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AvailableProviderTypesResponse> GetAsync(Action<RequestConfiguration<AvailableProviderTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesRequestBuilder.AvailableProviderTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AvailableProviderTypesResponse>(requestInfo, AvailableProviderTypesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesResponse>(requestInfo, Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves all identity provider types available in a directory.
@@ -89,11 +89,11 @@ namespace Microsoft.Graph.IdentityProviders.AvailableProviderTypes
         [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AvailableProviderTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesRequestBuilder.AvailableProviderTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AvailableProviderTypesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesRequestBuilder.AvailableProviderTypesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -104,12 +104,12 @@ namespace Microsoft.Graph.IdentityProviders.AvailableProviderTypes
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AvailableProviderTypesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider")]
-        public AvailableProviderTypesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesRequestBuilder WithUrl(string rawUrl)
         {
-            return new AvailableProviderTypesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieves all identity provider types available in a directory.
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.IdentityProviders.AvailableProviderTypes
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AvailableProviderTypesRequestBuilderGetRequestConfiguration : RequestConfiguration<AvailableProviderTypesRequestBuilderGetQueryParameters>
+        public class AvailableProviderTypesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesRequestBuilder.AvailableProviderTypesRequestBuilderGetQueryParameters>
         {
         }
     }

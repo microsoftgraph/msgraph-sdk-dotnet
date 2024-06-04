@@ -38,32 +38,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Specifies the pattern for recurrence</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PatternedRecurrence? Recurrence
+        public Microsoft.Graph.Models.PatternedRecurrence? Recurrence
         {
-            get { return BackingStore?.Get<PatternedRecurrence?>("recurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PatternedRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #nullable restore
 #else
-        public PatternedRecurrence Recurrence
+        public Microsoft.Graph.Models.PatternedRecurrence Recurrence
         {
-            get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PatternedRecurrence>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #endif
         /// <summary>The time slot(s) preferred by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TimeRange>? TimeSlots
+        public List<Microsoft.Graph.Models.TimeRange>? TimeSlots
         {
-            get { return BackingStore?.Get<List<TimeRange>?>("timeSlots"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TimeRange>?>("timeSlots"); }
             set { BackingStore?.Set("timeSlots", value); }
         }
 #nullable restore
 #else
-        public List<TimeRange> TimeSlots
+        public List<Microsoft.Graph.Models.TimeRange> TimeSlots
         {
-            get { return BackingStore?.Get<List<TimeRange>>("timeSlots"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TimeRange>>("timeSlots"); }
             set { BackingStore?.Set("timeSlots", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ShiftAvailability"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ShiftAvailability"/> and sets the default values.
         /// </summary>
         public ShiftAvailability()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ShiftAvailability"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ShiftAvailability"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ShiftAvailability CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ShiftAvailability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ShiftAvailability();
+            return new Microsoft.Graph.Models.ShiftAvailability();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,8 +110,8 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
-                { "timeSlots", n => { TimeSlots = n.GetCollectionOfObjectValues<TimeRange>(TimeRange.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recurrence", n => { Recurrence = n.GetObjectValue<Microsoft.Graph.Models.PatternedRecurrence>(Microsoft.Graph.Models.PatternedRecurrence.CreateFromDiscriminatorValue); } },
+                { "timeSlots", n => { TimeSlots = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TimeRange>(Microsoft.Graph.Models.TimeRange.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "timeZone", n => { TimeZone = n.GetStringValue(); } },
             };
         }
@@ -123,8 +123,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<PatternedRecurrence>("recurrence", Recurrence);
-            writer.WriteCollectionOfObjectValues<TimeRange>("timeSlots", TimeSlots);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PatternedRecurrence>("recurrence", Recurrence);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TimeRange>("timeSlots", TimeSlots);
             writer.WriteStringValue("timeZone", TimeZone);
             writer.WriteAdditionalData(AdditionalData);
         }

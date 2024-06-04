@@ -22,39 +22,39 @@ namespace Microsoft.Graph.Models
         /// <summary>The date and time that the follow-up was finished.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? CompletedDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? CompletedDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("completedDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone CompletedDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone CompletedDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("completedDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
 #endif
         /// <summary>The date and time that the follow-up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you get a 400 Bad Request response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? DueDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? DueDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("dueDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone DueDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone DueDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("dueDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
 #endif
         /// <summary>The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.</summary>
-        public FollowupFlagStatus? FlagStatus
+        public Microsoft.Graph.Models.FollowupFlagStatus? FlagStatus
         {
-            get { return BackingStore?.Get<FollowupFlagStatus?>("flagStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.FollowupFlagStatus?>("flagStatus"); }
             set { BackingStore?.Set("flagStatus", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -76,21 +76,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The date and time that the follow-up is to begin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? StartDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? StartDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone StartDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone StartDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="FollowupFlag"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.FollowupFlag"/> and sets the default values.
         /// </summary>
         public FollowupFlag()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FollowupFlag"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.FollowupFlag"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static FollowupFlag CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.FollowupFlag CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FollowupFlag();
+            return new Microsoft.Graph.Models.FollowupFlag();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,11 +115,11 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "completedDateTime", n => { CompletedDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                { "dueDateTime", n => { DueDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                { "flagStatus", n => { FlagStatus = n.GetEnumValue<FollowupFlagStatus>(); } },
+                { "completedDateTime", n => { CompletedDateTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "dueDateTime", n => { DueDateTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "flagStatus", n => { FlagStatus = n.GetEnumValue<Microsoft.Graph.Models.FollowupFlagStatus>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "startDateTime", n => { StartDateTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -129,11 +129,11 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<DateTimeTimeZone>("completedDateTime", CompletedDateTime);
-            writer.WriteObjectValue<DateTimeTimeZone>("dueDateTime", DueDateTime);
-            writer.WriteEnumValue<FollowupFlagStatus>("flagStatus", FlagStatus);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("completedDateTime", CompletedDateTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("dueDateTime", DueDateTime);
+            writer.WriteEnumValue<Microsoft.Graph.Models.FollowupFlagStatus>("flagStatus", FlagStatus);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<DateTimeTimeZone>("startDateTime", StartDateTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("startDateTime", StartDateTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
