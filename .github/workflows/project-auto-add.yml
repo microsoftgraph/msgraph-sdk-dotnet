@@ -9,11 +9,11 @@ on:
     types:
       - opened
     branches:
-      - 'dev'
+      - "dev"
 
 jobs:
   track_issue:
-    if: github.actor != 'dependabot[bot]'
+    if: github.actor != 'dependabot[bot]' && github.event.pull_request.head.repo.fork == false
     runs-on: ubuntu-latest
     steps:
       - name: Generate token
