@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CloudClipboardItem : Entity, IParsable
+    public class CloudClipboardItem : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Set by the server. DateTime in UTC when the object was created on the server.</summary>
@@ -31,28 +31,28 @@ namespace Microsoft.Graph.Models
         /// <summary>A cloudClipboardItem can have multiple cloudClipboardItemPayload objects in the payloads. A window can place more than one clipboard object on the clipboard. Each one represents the same information in a different clipboard format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudClipboardItemPayload>? Payloads
+        public List<Microsoft.Graph.Models.CloudClipboardItemPayload>? Payloads
         {
-            get { return BackingStore?.Get<List<CloudClipboardItemPayload>?>("payloads"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CloudClipboardItemPayload>?>("payloads"); }
             set { BackingStore?.Set("payloads", value); }
         }
 #nullable restore
 #else
-        public List<CloudClipboardItemPayload> Payloads
+        public List<Microsoft.Graph.Models.CloudClipboardItemPayload> Payloads
         {
-            get { return BackingStore?.Get<List<CloudClipboardItemPayload>>("payloads"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CloudClipboardItemPayload>>("payloads"); }
             set { BackingStore?.Set("payloads", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudClipboardItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudClipboardItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudClipboardItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CloudClipboardItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudClipboardItem();
+            return new Microsoft.Graph.Models.CloudClipboardItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "payloads", n => { Payloads = n.GetCollectionOfObjectValues<CloudClipboardItemPayload>(CloudClipboardItemPayload.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "payloads", n => { Payloads = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CloudClipboardItemPayload>(Microsoft.Graph.Models.CloudClipboardItemPayload.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteCollectionOfObjectValues<CloudClipboardItemPayload>("payloads", Payloads);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CloudClipboardItemPayload>("payloads", Payloads);
         }
     }
 }

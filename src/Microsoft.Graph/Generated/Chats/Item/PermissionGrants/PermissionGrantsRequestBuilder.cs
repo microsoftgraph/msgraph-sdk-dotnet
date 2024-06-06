@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Chats.Item.PermissionGrants
     public class PermissionGrantsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Chats.Item.PermissionGrants.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Chats.Item.PermissionGrants.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.chat entity.</summary>
         /// <param name="position">The unique identifier of resourceSpecificPermissionGrant</param>
-        /// <returns>A <see cref="ResourceSpecificPermissionGrantItemRequestBuilder"/></returns>
-        public ResourceSpecificPermissionGrantItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Chats.Item.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Chats.Item.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("resourceSpecificPermissionGrant%2Did", position);
-                return new ResourceSpecificPermissionGrantItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Chats.Item.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PermissionGrantsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Chats.Item.PermissionGrants.PermissionGrantsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Chats.Item.PermissionGrants
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PermissionGrantsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Chats.Item.PermissionGrants.PermissionGrantsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +55,50 @@ namespace Microsoft.Graph.Chats.Item.PermissionGrants
         /// List all resource-specific permission grants on the chat. This list specifies the Microsoft Entra apps that have access to the chat, along with the corresponding resource-specific access that each app has.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-list-permissiongrants?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ResourceSpecificPermissionGrantCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ResourceSpecificPermissionGrantCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ResourceSpecificPermissionGrantCollectionResponse?> GetAsync(Action<RequestConfiguration<PermissionGrantsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ResourceSpecificPermissionGrantCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Chats.Item.PermissionGrants.PermissionGrantsRequestBuilder.PermissionGrantsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ResourceSpecificPermissionGrantCollectionResponse> GetAsync(Action<RequestConfiguration<PermissionGrantsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ResourceSpecificPermissionGrantCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Chats.Item.PermissionGrants.PermissionGrantsRequestBuilder.PermissionGrantsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ResourceSpecificPermissionGrantCollectionResponse>(requestInfo, ResourceSpecificPermissionGrantCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ResourceSpecificPermissionGrantCollectionResponse>(requestInfo, Microsoft.Graph.Models.ResourceSpecificPermissionGrantCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to permissionGrants for chats
         /// </summary>
-        /// <returns>A <see cref="ResourceSpecificPermissionGrant"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ResourceSpecificPermissionGrant"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ResourceSpecificPermissionGrant?> PostAsync(ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ResourceSpecificPermissionGrant?> PostAsync(Microsoft.Graph.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ResourceSpecificPermissionGrant> PostAsync(ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ResourceSpecificPermissionGrant> PostAsync(Microsoft.Graph.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ResourceSpecificPermissionGrant>(requestInfo, ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ResourceSpecificPermissionGrant>(requestInfo, Microsoft.Graph.Models.ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all resource-specific permission grants on the chat. This list specifies the Microsoft Entra apps that have access to the chat, along with the corresponding resource-specific access that each app has.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Chats.Item.PermissionGrants
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PermissionGrantsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Chats.Item.PermissionGrants.PermissionGrantsRequestBuilder.PermissionGrantsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PermissionGrantsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Chats.Item.PermissionGrants.PermissionGrantsRequestBuilder.PermissionGrantsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Chats.Item.PermissionGrants
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.Chats.Item.PermissionGrants
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PermissionGrantsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Chats.Item.PermissionGrants.PermissionGrantsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PermissionGrantsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Chats.Item.PermissionGrants.PermissionGrantsRequestBuilder WithUrl(string rawUrl)
         {
-            return new PermissionGrantsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Chats.Item.PermissionGrants.PermissionGrantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List all resource-specific permission grants on the chat. This list specifies the Microsoft Entra apps that have access to the chat, along with the corresponding resource-specific access that each app has.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Chats.Item.PermissionGrants
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PermissionGrantsRequestBuilderGetRequestConfiguration : RequestConfiguration<PermissionGrantsRequestBuilderGetQueryParameters>
+        public class PermissionGrantsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Chats.Item.PermissionGrants.PermissionGrantsRequestBuilder.PermissionGrantsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

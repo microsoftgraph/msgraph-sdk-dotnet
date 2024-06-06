@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookPivotTableCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class WorkbookPivotTableCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookPivotTable>? Value
+        public List<Microsoft.Graph.Models.WorkbookPivotTable>? Value
         {
-            get { return BackingStore?.Get<List<WorkbookPivotTable>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookPivotTable>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookPivotTable> Value
+        public List<Microsoft.Graph.Models.WorkbookPivotTable> Value
         {
-            get { return BackingStore?.Get<List<WorkbookPivotTable>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookPivotTable>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookPivotTableCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookPivotTableCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookPivotTableCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WorkbookPivotTableCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookPivotTableCollectionResponse();
+            return new Microsoft.Graph.Models.WorkbookPivotTableCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<WorkbookPivotTable>(WorkbookPivotTable.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookPivotTable>(Microsoft.Graph.Models.WorkbookPivotTable.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<WorkbookPivotTable>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookPivotTable>("value", Value);
         }
     }
 }

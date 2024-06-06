@@ -19,24 +19,24 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
     public class TargetDeviceGroupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.TargetDeviceGroups.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.TargetDeviceGroups.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the targetDeviceGroups property of the microsoft.graph.remoteDesktopSecurityConfiguration entity.</summary>
         /// <param name="position">The unique identifier of targetDeviceGroup</param>
-        /// <returns>A <see cref="TargetDeviceGroupItemRequestBuilder"/></returns>
-        public TargetDeviceGroupItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.TargetDeviceGroups.Item.TargetDeviceGroupItemRequestBuilder"/></returns>
+        public Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.TargetDeviceGroups.Item.TargetDeviceGroupItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("targetDeviceGroup%2Did", position);
-                return new TargetDeviceGroupItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.TargetDeviceGroups.Item.TargetDeviceGroupItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TargetDeviceGroupsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.TargetDeviceGroups.TargetDeviceGroupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TargetDeviceGroupsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.TargetDeviceGroups.TargetDeviceGroupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
         /// Get a list of the targetDeviceGroup objects and their properties on the remoteDesktopSecurityConfiguration resource on the servicePrincipal. Any user authenticating using the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to a Microsoft Entra joined or Microsoft Entra hybrid joined device that belongs to the targetDeviceGroup will get SSO.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-list-targetdevicegroups?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="TargetDeviceGroupCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TargetDeviceGroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TargetDeviceGroupCollectionResponse?> GetAsync(Action<RequestConfiguration<TargetDeviceGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TargetDeviceGroupCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.TargetDeviceGroups.TargetDeviceGroupsRequestBuilder.TargetDeviceGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TargetDeviceGroupCollectionResponse> GetAsync(Action<RequestConfiguration<TargetDeviceGroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TargetDeviceGroupCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.TargetDeviceGroups.TargetDeviceGroupsRequestBuilder.TargetDeviceGroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TargetDeviceGroupCollectionResponse>(requestInfo, TargetDeviceGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TargetDeviceGroupCollectionResponse>(requestInfo, Microsoft.Graph.Models.TargetDeviceGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal. You can configure a maximum of 10 target device groups for the remoteDesktopSecurityConfiguraiton object on the servicePrincipal.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-post-targetdevicegroups?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="TargetDeviceGroup"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TargetDeviceGroup"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TargetDeviceGroup?> PostAsync(TargetDeviceGroup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TargetDeviceGroup?> PostAsync(Microsoft.Graph.Models.TargetDeviceGroup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TargetDeviceGroup> PostAsync(TargetDeviceGroup body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TargetDeviceGroup> PostAsync(Microsoft.Graph.Models.TargetDeviceGroup body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TargetDeviceGroup>(requestInfo, TargetDeviceGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TargetDeviceGroup>(requestInfo, Microsoft.Graph.Models.TargetDeviceGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the targetDeviceGroup objects and their properties on the remoteDesktopSecurityConfiguration resource on the servicePrincipal. Any user authenticating using the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to a Microsoft Entra joined or Microsoft Entra hybrid joined device that belongs to the targetDeviceGroup will get SSO.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TargetDeviceGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.TargetDeviceGroups.TargetDeviceGroupsRequestBuilder.TargetDeviceGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TargetDeviceGroupsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.TargetDeviceGroups.TargetDeviceGroupsRequestBuilder.TargetDeviceGroupsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(TargetDeviceGroup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.TargetDeviceGroup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(TargetDeviceGroup body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.TargetDeviceGroup body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TargetDeviceGroupsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.TargetDeviceGroups.TargetDeviceGroupsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TargetDeviceGroupsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.TargetDeviceGroups.TargetDeviceGroupsRequestBuilder WithUrl(string rawUrl)
         {
-            return new TargetDeviceGroupsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.TargetDeviceGroups.TargetDeviceGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the targetDeviceGroup objects and their properties on the remoteDesktopSecurityConfiguration resource on the servicePrincipal. Any user authenticating using the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to a Microsoft Entra joined or Microsoft Entra hybrid joined device that belongs to the targetDeviceGroup will get SSO.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TargetDeviceGroupsRequestBuilderGetRequestConfiguration : RequestConfiguration<TargetDeviceGroupsRequestBuilderGetQueryParameters>
+        public class TargetDeviceGroupsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.TargetDeviceGroups.TargetDeviceGroupsRequestBuilder.TargetDeviceGroupsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

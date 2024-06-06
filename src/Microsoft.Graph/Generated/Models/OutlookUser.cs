@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OutlookUser : Entity, IParsable
+    public class OutlookUser : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A list of categories defined for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OutlookCategory>? MasterCategories
+        public List<Microsoft.Graph.Models.OutlookCategory>? MasterCategories
         {
-            get { return BackingStore?.Get<List<OutlookCategory>?>("masterCategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OutlookCategory>?>("masterCategories"); }
             set { BackingStore?.Set("masterCategories", value); }
         }
 #nullable restore
 #else
-        public List<OutlookCategory> MasterCategories
+        public List<Microsoft.Graph.Models.OutlookCategory> MasterCategories
         {
-            get { return BackingStore?.Get<List<OutlookCategory>>("masterCategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OutlookCategory>>("masterCategories"); }
             set { BackingStore?.Set("masterCategories", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OutlookUser"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OutlookUser"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OutlookUser CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OutlookUser CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OutlookUser();
+            return new Microsoft.Graph.Models.OutlookUser();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "masterCategories", n => { MasterCategories = n.GetCollectionOfObjectValues<OutlookCategory>(OutlookCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "masterCategories", n => { MasterCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OutlookCategory>(Microsoft.Graph.Models.OutlookCategory.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<OutlookCategory>("masterCategories", MasterCategories);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OutlookCategory>("masterCategories", MasterCategories);
         }
     }
 }

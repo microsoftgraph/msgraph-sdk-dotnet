@@ -28,16 +28,16 @@ namespace Microsoft.Graph.Models
         /// <summary>A list of all checks that have been run on the connection. Read-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcOnPremisesConnectionHealthCheck>? HealthChecks
+        public List<Microsoft.Graph.Models.CloudPcOnPremisesConnectionHealthCheck>? HealthChecks
         {
-            get { return BackingStore?.Get<List<CloudPcOnPremisesConnectionHealthCheck>?>("healthChecks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CloudPcOnPremisesConnectionHealthCheck>?>("healthChecks"); }
             set { BackingStore?.Set("healthChecks", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcOnPremisesConnectionHealthCheck> HealthChecks
+        public List<Microsoft.Graph.Models.CloudPcOnPremisesConnectionHealthCheck> HealthChecks
         {
-            get { return BackingStore?.Get<List<CloudPcOnPremisesConnectionHealthCheck>>("healthChecks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CloudPcOnPremisesConnectionHealthCheck>>("healthChecks"); }
             set { BackingStore?.Set("healthChecks", value); }
         }
 #endif
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcOnPremisesConnectionStatusDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail"/> and sets the default values.
         /// </summary>
         public CloudPcOnPremisesConnectionStatusDetail()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcOnPremisesConnectionStatusDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcOnPremisesConnectionStatusDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcOnPremisesConnectionStatusDetail();
+            return new Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                { "healthChecks", n => { HealthChecks = n.GetCollectionOfObjectValues<CloudPcOnPremisesConnectionHealthCheck>(CloudPcOnPremisesConnectionHealthCheck.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "healthChecks", n => { HealthChecks = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CloudPcOnPremisesConnectionHealthCheck>(Microsoft.Graph.Models.CloudPcOnPremisesConnectionHealthCheck.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
-            writer.WriteCollectionOfObjectValues<CloudPcOnPremisesConnectionHealthCheck>("healthChecks", HealthChecks);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CloudPcOnPremisesConnectionHealthCheck>("healthChecks", HealthChecks);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteAdditionalData(AdditionalData);

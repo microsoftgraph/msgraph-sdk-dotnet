@@ -21,29 +21,29 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows
     public class RowsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the add method.</summary>
-        public AddRequestBuilder Add
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Add.AddRequestBuilder Add
         {
-            get => new AddRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Add.AddRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the count method.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the rows property of the microsoft.graph.workbookTable entity.</summary>
         /// <param name="position">The unique identifier of workbookTableRow</param>
-        /// <returns>A <see cref="WorkbookTableRowItemRequestBuilder"/></returns>
-        public WorkbookTableRowItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item.WorkbookTableRowItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item.WorkbookTableRowItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("workbookTableRow%2Did", position);
-                return new WorkbookTableRowItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item.WorkbookTableRowItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RowsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.RowsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RowsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.RowsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,60 +61,60 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows
         /// <summary>
         /// Represents a collection of all the rows in the table. Read-only.
         /// </summary>
-        /// <returns>A <see cref="WorkbookTableRowCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookTableRowCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookTableRowCollectionResponse?> GetAsync(Action<RequestConfiguration<RowsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookTableRowCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.RowsRequestBuilder.RowsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WorkbookTableRowCollectionResponse> GetAsync(Action<RequestConfiguration<RowsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookTableRowCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.RowsRequestBuilder.RowsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WorkbookTableRowCollectionResponse>(requestInfo, WorkbookTableRowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkbookTableRowCollectionResponse>(requestInfo, Microsoft.Graph.Models.WorkbookTableRowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the itemAt method.
         /// </summary>
-        /// <returns>A <see cref="ItemAtWithIndexRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.ItemAtWithIndex.ItemAtWithIndexRequestBuilder"/></returns>
         /// <param name="index">Usage: index={index}</param>
-        public ItemAtWithIndexRequestBuilder ItemAtWithIndex(int? index)
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.ItemAtWithIndex.ItemAtWithIndexRequestBuilder ItemAtWithIndex(int? index)
         {
             _ = index ?? throw new ArgumentNullException(nameof(index));
-            return new ItemAtWithIndexRequestBuilder(PathParameters, RequestAdapter, index);
+            return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.ItemAtWithIndex.ItemAtWithIndexRequestBuilder(PathParameters, RequestAdapter, index);
         }
         /// <summary>
         /// Create new navigation property to rows for drives
         /// </summary>
-        /// <returns>A <see cref="WorkbookTableRow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookTableRow"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookTableRow?> PostAsync(WorkbookTableRow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookTableRow?> PostAsync(Microsoft.Graph.Models.WorkbookTableRow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WorkbookTableRow> PostAsync(WorkbookTableRow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookTableRow> PostAsync(Microsoft.Graph.Models.WorkbookTableRow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WorkbookTableRow>(requestInfo, WorkbookTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkbookTableRow>(requestInfo, Microsoft.Graph.Models.WorkbookTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents a collection of all the rows in the table. Read-only.
@@ -123,11 +123,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RowsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.RowsRequestBuilder.RowsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RowsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.RowsRequestBuilder.RowsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(WorkbookTableRow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.WorkbookTableRow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(WorkbookTableRow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.WorkbookTableRow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -160,11 +160,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RowsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.RowsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RowsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.RowsRequestBuilder WithUrl(string rawUrl)
         {
-            return new RowsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.RowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Represents a collection of all the rows in the table. Read-only.
@@ -235,7 +235,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RowsRequestBuilderGetRequestConfiguration : RequestConfiguration<RowsRequestBuilderGetQueryParameters>
+        public class RowsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.RowsRequestBuilder.RowsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Person : Entity, IParsable
+    public class Person : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The person&apos;s birthday.</summary>
@@ -179,32 +179,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The person&apos;s phone numbers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Phone>? Phones
+        public List<Microsoft.Graph.Models.Phone>? Phones
         {
-            get { return BackingStore?.Get<List<Phone>?>("phones"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Phone>?>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
 #nullable restore
 #else
-        public List<Phone> Phones
+        public List<Microsoft.Graph.Models.Phone> Phones
         {
-            get { return BackingStore?.Get<List<Phone>>("phones"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Phone>>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
 #endif
         /// <summary>The person&apos;s addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Location>? PostalAddresses
+        public List<Microsoft.Graph.Models.Location>? PostalAddresses
         {
-            get { return BackingStore?.Get<List<Location>?>("postalAddresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Location>?>("postalAddresses"); }
             set { BackingStore?.Set("postalAddresses", value); }
         }
 #nullable restore
 #else
-        public List<Location> PostalAddresses
+        public List<Microsoft.Graph.Models.Location> PostalAddresses
         {
-            get { return BackingStore?.Get<List<Location>>("postalAddresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Location>>("postalAddresses"); }
             set { BackingStore?.Set("postalAddresses", value); }
         }
 #endif
@@ -227,16 +227,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The person&apos;s email addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ScoredEmailAddress>? ScoredEmailAddresses
+        public List<Microsoft.Graph.Models.ScoredEmailAddress>? ScoredEmailAddresses
         {
-            get { return BackingStore?.Get<List<ScoredEmailAddress>?>("scoredEmailAddresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ScoredEmailAddress>?>("scoredEmailAddresses"); }
             set { BackingStore?.Set("scoredEmailAddresses", value); }
         }
 #nullable restore
 #else
-        public List<ScoredEmailAddress> ScoredEmailAddresses
+        public List<Microsoft.Graph.Models.ScoredEmailAddress> ScoredEmailAddresses
         {
-            get { return BackingStore?.Get<List<ScoredEmailAddress>>("scoredEmailAddresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ScoredEmailAddress>>("scoredEmailAddresses"); }
             set { BackingStore?.Set("scoredEmailAddresses", value); }
         }
 #endif
@@ -275,16 +275,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The person&apos;s websites.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Website>? Websites
+        public List<Microsoft.Graph.Models.Website>? Websites
         {
-            get { return BackingStore?.Get<List<Website>?>("websites"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Website>?>("websites"); }
             set { BackingStore?.Set("websites", value); }
         }
 #nullable restore
 #else
-        public List<Website> Websites
+        public List<Microsoft.Graph.Models.Website> Websites
         {
-            get { return BackingStore?.Get<List<Website>>("websites"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Website>>("websites"); }
             set { BackingStore?.Set("websites", value); }
         }
 #endif
@@ -307,12 +307,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Person"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Person"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Person CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Person CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Person();
+            return new Microsoft.Graph.Models.Person();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -333,13 +333,13 @@ namespace Microsoft.Graph.Models
                 { "officeLocation", n => { OfficeLocation = n.GetStringValue(); } },
                 { "personNotes", n => { PersonNotes = n.GetStringValue(); } },
                 { "personType", n => { PersonType = n.GetObjectValue<Microsoft.Graph.Models.PersonType>(Microsoft.Graph.Models.PersonType.CreateFromDiscriminatorValue); } },
-                { "phones", n => { Phones = n.GetCollectionOfObjectValues<Phone>(Phone.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "postalAddresses", n => { PostalAddresses = n.GetCollectionOfObjectValues<Location>(Location.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "phones", n => { Phones = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Phone>(Microsoft.Graph.Models.Phone.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "postalAddresses", n => { PostalAddresses = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Location>(Microsoft.Graph.Models.Location.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "profession", n => { Profession = n.GetStringValue(); } },
-                { "scoredEmailAddresses", n => { ScoredEmailAddresses = n.GetCollectionOfObjectValues<ScoredEmailAddress>(ScoredEmailAddress.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scoredEmailAddresses", n => { ScoredEmailAddresses = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ScoredEmailAddress>(Microsoft.Graph.Models.ScoredEmailAddress.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "surname", n => { Surname = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                { "websites", n => { Websites = n.GetCollectionOfObjectValues<Website>(Website.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "websites", n => { Websites = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Website>(Microsoft.Graph.Models.Website.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "yomiCompany", n => { YomiCompany = n.GetStringValue(); } },
             };
         }
@@ -362,13 +362,13 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("officeLocation", OfficeLocation);
             writer.WriteStringValue("personNotes", PersonNotes);
             writer.WriteObjectValue<Microsoft.Graph.Models.PersonType>("personType", PersonType);
-            writer.WriteCollectionOfObjectValues<Phone>("phones", Phones);
-            writer.WriteCollectionOfObjectValues<Location>("postalAddresses", PostalAddresses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Phone>("phones", Phones);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Location>("postalAddresses", PostalAddresses);
             writer.WriteStringValue("profession", Profession);
-            writer.WriteCollectionOfObjectValues<ScoredEmailAddress>("scoredEmailAddresses", ScoredEmailAddresses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ScoredEmailAddress>("scoredEmailAddresses", ScoredEmailAddresses);
             writer.WriteStringValue("surname", Surname);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
-            writer.WriteCollectionOfObjectValues<Website>("websites", Websites);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Website>("websites", Websites);
             writer.WriteStringValue("yomiCompany", YomiCompany);
         }
     }

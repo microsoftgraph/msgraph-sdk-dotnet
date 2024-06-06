@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// You purchase multiple licenses for iOS apps through the Apple Volume Purchase Program for Business or Education. This involves setting up an Apple VPP account from the Apple website and uploading the Apple VPP Business or Education token to Intune. You can then synchronize your volume purchase information with Intune and track your volume-purchased app use. You can upload multiple Apple VPP Business or Education tokens.
     /// </summary>
-    public class VppToken : Entity, IParsable
+    public class VppToken : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The apple Id associated with the given Apple Volume Purchase Program Token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,9 +68,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>Possible sync statuses associated with an Apple Volume Purchase Program token.</summary>
-        public VppTokenSyncStatus? LastSyncStatus
+        public Microsoft.Graph.Models.VppTokenSyncStatus? LastSyncStatus
         {
-            get { return BackingStore?.Get<VppTokenSyncStatus?>("lastSyncStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.VppTokenSyncStatus?>("lastSyncStatus"); }
             set { BackingStore?.Set("lastSyncStatus", value); }
         }
         /// <summary>The organization associated with the Apple Volume Purchase Program Token</summary>
@@ -90,9 +90,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Possible states associated with an Apple Volume Purchase Program token.</summary>
-        public VppTokenState? State
+        public Microsoft.Graph.Models.VppTokenState? State
         {
-            get { return BackingStore?.Get<VppTokenState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.VppTokenState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.</summary>
@@ -120,12 +120,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VppToken"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.VppToken"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VppToken CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.VppToken CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VppToken();
+            return new Microsoft.Graph.Models.VppToken();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -141,11 +141,11 @@ namespace Microsoft.Graph.Models
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                { "lastSyncStatus", n => { LastSyncStatus = n.GetEnumValue<VppTokenSyncStatus>(); } },
+                { "lastSyncStatus", n => { LastSyncStatus = n.GetEnumValue<Microsoft.Graph.Models.VppTokenSyncStatus>(); } },
                 { "organizationName", n => { OrganizationName = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<VppTokenState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Models.VppTokenState>(); } },
                 { "token", n => { Token = n.GetStringValue(); } },
-                { "vppTokenAccountType", n => { VppTokenAccountType = n.GetEnumValue<VppTokenAccountType>(); } },
+                { "vppTokenAccountType", n => { VppTokenAccountType = n.GetEnumValue<Microsoft.Graph.Models.VppTokenAccountType>(); } },
             };
         }
         /// <summary>
@@ -162,11 +162,11 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
-            writer.WriteEnumValue<VppTokenSyncStatus>("lastSyncStatus", LastSyncStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.VppTokenSyncStatus>("lastSyncStatus", LastSyncStatus);
             writer.WriteStringValue("organizationName", OrganizationName);
-            writer.WriteEnumValue<VppTokenState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Models.VppTokenState>("state", State);
             writer.WriteStringValue("token", Token);
-            writer.WriteEnumValue<VppTokenAccountType>("vppTokenAccountType", VppTokenAccountType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.VppTokenAccountType>("vppTokenAccountType", VppTokenAccountType);
         }
     }
 }

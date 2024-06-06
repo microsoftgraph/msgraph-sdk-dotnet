@@ -23,16 +23,16 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookSortField>? Fields
+        public List<Microsoft.Graph.Models.WorkbookSortField>? Fields
         {
-            get { return BackingStore?.Get<List<WorkbookSortField>?>("fields"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookSortField>?>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookSortField> Fields
+        public List<Microsoft.Graph.Models.WorkbookSortField> Fields
         {
-            get { return BackingStore?.Get<List<WorkbookSortField>>("fields"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookSortField>>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
 #endif
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ApplyPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Sort.Apply.ApplyPostRequestBody"/> and sets the default values.
         /// </summary>
         public ApplyPostRequestBody()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ApplyPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Sort.Apply.ApplyPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ApplyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Sort.Apply.ApplyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ApplyPostRequestBody();
+            return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Sort.Apply.ApplyPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fields", n => { Fields = n.GetCollectionOfObjectValues<WorkbookSortField>(WorkbookSortField.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "fields", n => { Fields = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookSortField>(Microsoft.Graph.Models.WorkbookSortField.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "matchCase", n => { MatchCase = n.GetBoolValue(); } },
                 { "method", n => { Method = n.GetStringValue(); } },
             };
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<WorkbookSortField>("fields", Fields);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookSortField>("fields", Fields);
             writer.WriteBoolValue("matchCase", MatchCase);
             writer.WriteStringValue("method", Method);
             writer.WriteAdditionalData(AdditionalData);

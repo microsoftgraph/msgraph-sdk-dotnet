@@ -19,24 +19,24 @@ namespace Microsoft.Graph.TeamsTemplates
     public class TeamsTemplatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.TeamsTemplates.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.TeamsTemplates.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of teamsTemplate entities.</summary>
         /// <param name="position">The unique identifier of teamsTemplate</param>
-        /// <returns>A <see cref="TeamsTemplateItemRequestBuilder"/></returns>
-        public TeamsTemplateItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.TeamsTemplates.Item.TeamsTemplateItemRequestBuilder"/></returns>
+        public Microsoft.Graph.TeamsTemplates.Item.TeamsTemplateItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("teamsTemplate%2Did", position);
-                return new TeamsTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.TeamsTemplates.Item.TeamsTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TeamsTemplatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.TeamsTemplates.TeamsTemplatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.TeamsTemplates
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TeamsTemplatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.TeamsTemplates.TeamsTemplatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.TeamsTemplates
         /// <summary>
         /// Get entities from teamsTemplates
         /// </summary>
-        /// <returns>A <see cref="TeamsTemplateCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamsTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TeamsTemplateCollectionResponse?> GetAsync(Action<RequestConfiguration<TeamsTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TeamsTemplateCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.TeamsTemplates.TeamsTemplatesRequestBuilder.TeamsTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TeamsTemplateCollectionResponse> GetAsync(Action<RequestConfiguration<TeamsTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TeamsTemplateCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.TeamsTemplates.TeamsTemplatesRequestBuilder.TeamsTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TeamsTemplateCollectionResponse>(requestInfo, TeamsTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TeamsTemplateCollectionResponse>(requestInfo, Microsoft.Graph.Models.TeamsTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to teamsTemplates
         /// </summary>
-        /// <returns>A <see cref="TeamsTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamsTemplate"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TeamsTemplate?> PostAsync(TeamsTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TeamsTemplate?> PostAsync(Microsoft.Graph.Models.TeamsTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TeamsTemplate> PostAsync(TeamsTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TeamsTemplate> PostAsync(Microsoft.Graph.Models.TeamsTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TeamsTemplate>(requestInfo, TeamsTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TeamsTemplate>(requestInfo, Microsoft.Graph.Models.TeamsTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from teamsTemplates
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.TeamsTemplates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TeamsTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.TeamsTemplates.TeamsTemplatesRequestBuilder.TeamsTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TeamsTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.TeamsTemplates.TeamsTemplatesRequestBuilder.TeamsTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.TeamsTemplates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(TeamsTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.TeamsTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(TeamsTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.TeamsTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.TeamsTemplates
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TeamsTemplatesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.TeamsTemplates.TeamsTemplatesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TeamsTemplatesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.TeamsTemplates.TeamsTemplatesRequestBuilder WithUrl(string rawUrl)
         {
-            return new TeamsTemplatesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.TeamsTemplates.TeamsTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get entities from teamsTemplates
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.TeamsTemplates
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TeamsTemplatesRequestBuilderGetRequestConfiguration : RequestConfiguration<TeamsTemplatesRequestBuilderGetQueryParameters>
+        public class TeamsTemplatesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.TeamsTemplates.TeamsTemplatesRequestBuilder.TeamsTemplatesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

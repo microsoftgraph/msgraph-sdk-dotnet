@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Me.GetManagedAppPolicies
 {
     #pragma warning disable CS1591
-    public class GetManagedAppPoliciesGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetManagedAppPoliciesGetResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppPolicy>? Value
+        public List<Microsoft.Graph.Models.ManagedAppPolicy>? Value
         {
-            get { return BackingStore?.Get<List<ManagedAppPolicy>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppPolicy>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppPolicy> Value
+        public List<Microsoft.Graph.Models.ManagedAppPolicy> Value
         {
-            get { return BackingStore?.Get<List<ManagedAppPolicy>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppPolicy>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetManagedAppPoliciesGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.GetManagedAppPolicies.GetManagedAppPoliciesGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetManagedAppPoliciesGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Me.GetManagedAppPolicies.GetManagedAppPoliciesGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetManagedAppPoliciesGetResponse();
+            return new Microsoft.Graph.Me.GetManagedAppPolicies.GetManagedAppPoliciesGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Me.GetManagedAppPolicies
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppPolicy>(Microsoft.Graph.Models.ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Me.GetManagedAppPolicies
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ManagedAppPolicy>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppPolicy>("value", Value);
         }
     }
 }

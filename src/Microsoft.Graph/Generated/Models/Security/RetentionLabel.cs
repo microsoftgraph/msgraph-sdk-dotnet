@@ -85,16 +85,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>Represents out-of-the-box values that provide more options to improve the manageability and organization of the content you need to label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FilePlanDescriptor? Descriptors
+        public Microsoft.Graph.Models.Security.FilePlanDescriptor? Descriptors
         {
-            get { return BackingStore?.Get<FilePlanDescriptor?>("descriptors"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FilePlanDescriptor?>("descriptors"); }
             set { BackingStore?.Set("descriptors", value); }
         }
 #nullable restore
 #else
-        public FilePlanDescriptor Descriptors
+        public Microsoft.Graph.Models.Security.FilePlanDescriptor Descriptors
         {
-            get { return BackingStore?.Get<FilePlanDescriptor>("descriptors"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FilePlanDescriptor>("descriptors"); }
             set { BackingStore?.Set("descriptors", value); }
         }
 #endif
@@ -117,16 +117,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>When action at the end of retention is chosen as &apos;dispositionReview&apos;, dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DispositionReviewStage>? DispositionReviewStages
+        public List<Microsoft.Graph.Models.Security.DispositionReviewStage>? DispositionReviewStages
         {
-            get { return BackingStore?.Get<List<DispositionReviewStage>?>("dispositionReviewStages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.DispositionReviewStage>?>("dispositionReviewStages"); }
             set { BackingStore?.Set("dispositionReviewStages", value); }
         }
 #nullable restore
 #else
-        public List<DispositionReviewStage> DispositionReviewStages
+        public List<Microsoft.Graph.Models.Security.DispositionReviewStage> DispositionReviewStages
         {
-            get { return BackingStore?.Get<List<DispositionReviewStage>>("dispositionReviewStages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.DispositionReviewStage>>("dispositionReviewStages"); }
             set { BackingStore?.Set("dispositionReviewStages", value); }
         }
 #endif
@@ -215,12 +215,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RetentionLabel"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.RetentionLabel"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RetentionLabel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.RetentionLabel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RetentionLabel();
+            return new Microsoft.Graph.Models.Security.RetentionLabel();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -230,23 +230,23 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "actionAfterRetentionPeriod", n => { ActionAfterRetentionPeriod = n.GetEnumValue<ActionAfterRetentionPeriod>(); } },
-                { "behaviorDuringRetentionPeriod", n => { BehaviorDuringRetentionPeriod = n.GetEnumValue<BehaviorDuringRetentionPeriod>(); } },
+                { "actionAfterRetentionPeriod", n => { ActionAfterRetentionPeriod = n.GetEnumValue<Microsoft.Graph.Models.Security.ActionAfterRetentionPeriod>(); } },
+                { "behaviorDuringRetentionPeriod", n => { BehaviorDuringRetentionPeriod = n.GetEnumValue<Microsoft.Graph.Models.Security.BehaviorDuringRetentionPeriod>(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "defaultRecordBehavior", n => { DefaultRecordBehavior = n.GetEnumValue<DefaultRecordBehavior>(); } },
+                { "defaultRecordBehavior", n => { DefaultRecordBehavior = n.GetEnumValue<Microsoft.Graph.Models.Security.DefaultRecordBehavior>(); } },
                 { "descriptionForAdmins", n => { DescriptionForAdmins = n.GetStringValue(); } },
                 { "descriptionForUsers", n => { DescriptionForUsers = n.GetStringValue(); } },
-                { "descriptors", n => { Descriptors = n.GetObjectValue<FilePlanDescriptor>(FilePlanDescriptor.CreateFromDiscriminatorValue); } },
+                { "descriptors", n => { Descriptors = n.GetObjectValue<Microsoft.Graph.Models.Security.FilePlanDescriptor>(Microsoft.Graph.Models.Security.FilePlanDescriptor.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "dispositionReviewStages", n => { DispositionReviewStages = n.GetCollectionOfObjectValues<DispositionReviewStage>(DispositionReviewStage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dispositionReviewStages", n => { DispositionReviewStages = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.DispositionReviewStage>(Microsoft.Graph.Models.Security.DispositionReviewStage.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isInUse", n => { IsInUse = n.GetBoolValue(); } },
                 { "labelToBeApplied", n => { LabelToBeApplied = n.GetStringValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "retentionDuration", n => { RetentionDuration = n.GetObjectValue<Microsoft.Graph.Models.Security.RetentionDuration>(Microsoft.Graph.Models.Security.RetentionDuration.CreateFromDiscriminatorValue); } },
                 { "retentionEventType", n => { RetentionEventType = n.GetObjectValue<Microsoft.Graph.Models.Security.RetentionEventType>(Microsoft.Graph.Models.Security.RetentionEventType.CreateFromDiscriminatorValue); } },
-                { "retentionTrigger", n => { RetentionTrigger = n.GetEnumValue<RetentionTrigger>(); } },
+                { "retentionTrigger", n => { RetentionTrigger = n.GetEnumValue<Microsoft.Graph.Models.Security.RetentionTrigger>(); } },
             };
         }
         /// <summary>
@@ -257,23 +257,23 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<ActionAfterRetentionPeriod>("actionAfterRetentionPeriod", ActionAfterRetentionPeriod);
-            writer.WriteEnumValue<BehaviorDuringRetentionPeriod>("behaviorDuringRetentionPeriod", BehaviorDuringRetentionPeriod);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.ActionAfterRetentionPeriod>("actionAfterRetentionPeriod", ActionAfterRetentionPeriod);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.BehaviorDuringRetentionPeriod>("behaviorDuringRetentionPeriod", BehaviorDuringRetentionPeriod);
             writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteEnumValue<DefaultRecordBehavior>("defaultRecordBehavior", DefaultRecordBehavior);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.DefaultRecordBehavior>("defaultRecordBehavior", DefaultRecordBehavior);
             writer.WriteStringValue("descriptionForAdmins", DescriptionForAdmins);
             writer.WriteStringValue("descriptionForUsers", DescriptionForUsers);
-            writer.WriteObjectValue<FilePlanDescriptor>("descriptors", Descriptors);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.FilePlanDescriptor>("descriptors", Descriptors);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<DispositionReviewStage>("dispositionReviewStages", DispositionReviewStages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.DispositionReviewStage>("dispositionReviewStages", DispositionReviewStages);
             writer.WriteBoolValue("isInUse", IsInUse);
             writer.WriteStringValue("labelToBeApplied", LabelToBeApplied);
             writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Models.Security.RetentionDuration>("retentionDuration", RetentionDuration);
             writer.WriteObjectValue<Microsoft.Graph.Models.Security.RetentionEventType>("retentionEventType", RetentionEventType);
-            writer.WriteEnumValue<RetentionTrigger>("retentionTrigger", RetentionTrigger);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.RetentionTrigger>("retentionTrigger", RetentionTrigger);
         }
     }
 }

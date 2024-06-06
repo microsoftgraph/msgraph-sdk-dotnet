@@ -19,85 +19,85 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions
     public class ExtensionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.event entity.</summary>
         /// <param name="position">The unique identifier of extension</param>
-        /// <returns>A <see cref="ExtensionItemRequestBuilder"/></returns>
-        public ExtensionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions.Item.ExtensionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions.Item.ExtensionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("extension%2Did", position);
-                return new ExtensionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions.Item.ExtensionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ExtensionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions.ExtensionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExtensionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/extensions{?%24count,%24expand,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters)
+        public ExtensionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/extensions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ExtensionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions.ExtensionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExtensionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/extensions{?%24count,%24expand,%24filter,%24orderby,%24select,%24skip,%24top}", rawUrl)
+        public ExtensionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/extensions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
         {
         }
         /// <summary>
         /// The collection of open extensions defined for the event. Nullable.
         /// </summary>
-        /// <returns>A <see cref="ExtensionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ExtensionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ExtensionCollectionResponse?> GetAsync(Action<RequestConfiguration<ExtensionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ExtensionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions.ExtensionsRequestBuilder.ExtensionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ExtensionCollectionResponse> GetAsync(Action<RequestConfiguration<ExtensionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ExtensionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions.ExtensionsRequestBuilder.ExtensionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ExtensionCollectionResponse>(requestInfo, ExtensionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ExtensionCollectionResponse>(requestInfo, Microsoft.Graph.Models.ExtensionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to extensions for users
         /// </summary>
-        /// <returns>A <see cref="Extension"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Extension"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Extension?> PostAsync(Extension body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Extension?> PostAsync(Microsoft.Graph.Models.Extension body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Extension> PostAsync(Extension body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Extension> PostAsync(Microsoft.Graph.Models.Extension body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Extension>(requestInfo, Extension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Extension>(requestInfo, Microsoft.Graph.Models.Extension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The collection of open extensions defined for the event. Nullable.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ExtensionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions.ExtensionsRequestBuilder.ExtensionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ExtensionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions.ExtensionsRequestBuilder.ExtensionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Extension body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Extension body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Extension body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Extension body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ExtensionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions.ExtensionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ExtensionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions.ExtensionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ExtensionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions.ExtensionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The collection of open extensions defined for the event. Nullable.
@@ -187,6 +187,16 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
 #endif
+            /// <summary>Search items by search phrases</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24search")]
+            public string Search { get; set; }
+#endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -208,7 +218,7 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ExtensionsRequestBuilderGetRequestConfiguration : RequestConfiguration<ExtensionsRequestBuilderGetQueryParameters>
+        public class ExtensionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.Calendars.Item.CalendarView.Item.Extensions.ExtensionsRequestBuilder.ExtensionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

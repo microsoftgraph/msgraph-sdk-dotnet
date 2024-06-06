@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     /// </summary>
-    public class ManagedAppRegistration : Entity, IParsable
+    public class ManagedAppRegistration : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The app package Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MobileAppIdentifier? AppIdentifier
+        public Microsoft.Graph.Models.MobileAppIdentifier? AppIdentifier
         {
-            get { return BackingStore?.Get<MobileAppIdentifier?>("appIdentifier"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MobileAppIdentifier?>("appIdentifier"); }
             set { BackingStore?.Set("appIdentifier", value); }
         }
 #nullable restore
 #else
-        public MobileAppIdentifier AppIdentifier
+        public Microsoft.Graph.Models.MobileAppIdentifier AppIdentifier
         {
-            get { return BackingStore?.Get<MobileAppIdentifier>("appIdentifier"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MobileAppIdentifier>("appIdentifier"); }
             set { BackingStore?.Set("appIdentifier", value); }
         }
 #endif
@@ -46,16 +46,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Zero or more policys already applied on the registered app when it last synchronized with managment service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppPolicy>? AppliedPolicies
+        public List<Microsoft.Graph.Models.ManagedAppPolicy>? AppliedPolicies
         {
-            get { return BackingStore?.Get<List<ManagedAppPolicy>?>("appliedPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppPolicy>?>("appliedPolicies"); }
             set { BackingStore?.Set("appliedPolicies", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppPolicy> AppliedPolicies
+        public List<Microsoft.Graph.Models.ManagedAppPolicy> AppliedPolicies
         {
-            get { return BackingStore?.Get<List<ManagedAppPolicy>>("appliedPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppPolicy>>("appliedPolicies"); }
             set { BackingStore?.Set("appliedPolicies", value); }
         }
 #endif
@@ -116,32 +116,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Zero or more reasons an app registration is flagged. E.g. app running on rooted device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppFlaggedReason?>? FlaggedReasons
+        public List<Microsoft.Graph.Models.ManagedAppFlaggedReason?>? FlaggedReasons
         {
-            get { return BackingStore?.Get<List<ManagedAppFlaggedReason?>?>("flaggedReasons"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppFlaggedReason?>?>("flaggedReasons"); }
             set { BackingStore?.Set("flaggedReasons", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppFlaggedReason?> FlaggedReasons
+        public List<Microsoft.Graph.Models.ManagedAppFlaggedReason?> FlaggedReasons
         {
-            get { return BackingStore?.Get<List<ManagedAppFlaggedReason?>>("flaggedReasons"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppFlaggedReason?>>("flaggedReasons"); }
             set { BackingStore?.Set("flaggedReasons", value); }
         }
 #endif
         /// <summary>Zero or more policies admin intended for the app as of now.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppPolicy>? IntendedPolicies
+        public List<Microsoft.Graph.Models.ManagedAppPolicy>? IntendedPolicies
         {
-            get { return BackingStore?.Get<List<ManagedAppPolicy>?>("intendedPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppPolicy>?>("intendedPolicies"); }
             set { BackingStore?.Set("intendedPolicies", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppPolicy> IntendedPolicies
+        public List<Microsoft.Graph.Models.ManagedAppPolicy> IntendedPolicies
         {
-            get { return BackingStore?.Get<List<ManagedAppPolicy>>("intendedPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppPolicy>>("intendedPolicies"); }
             set { BackingStore?.Set("intendedPolicies", value); }
         }
 #endif
@@ -170,16 +170,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Zero or more long running operations triggered on the app registration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppOperation>? Operations
+        public List<Microsoft.Graph.Models.ManagedAppOperation>? Operations
         {
-            get { return BackingStore?.Get<List<ManagedAppOperation>?>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppOperation> Operations
+        public List<Microsoft.Graph.Models.ManagedAppOperation> Operations
         {
-            get { return BackingStore?.Get<List<ManagedAppOperation>>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #endif
@@ -234,17 +234,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedAppRegistration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedAppRegistration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedAppRegistration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ManagedAppRegistration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.androidManagedAppRegistration" => new AndroidManagedAppRegistration(),
-                "#microsoft.graph.iosManagedAppRegistration" => new IosManagedAppRegistration(),
-                _ => new ManagedAppRegistration(),
+                "#microsoft.graph.androidManagedAppRegistration" => new Microsoft.Graph.Models.AndroidManagedAppRegistration(),
+                "#microsoft.graph.iosManagedAppRegistration" => new Microsoft.Graph.Models.IosManagedAppRegistration(),
+                _ => new Microsoft.Graph.Models.ManagedAppRegistration(),
             };
         }
         /// <summary>
@@ -255,18 +255,18 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "appIdentifier", n => { AppIdentifier = n.GetObjectValue<MobileAppIdentifier>(MobileAppIdentifier.CreateFromDiscriminatorValue); } },
+                { "appIdentifier", n => { AppIdentifier = n.GetObjectValue<Microsoft.Graph.Models.MobileAppIdentifier>(Microsoft.Graph.Models.MobileAppIdentifier.CreateFromDiscriminatorValue); } },
                 { "applicationVersion", n => { ApplicationVersion = n.GetStringValue(); } },
-                { "appliedPolicies", n => { AppliedPolicies = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appliedPolicies", n => { AppliedPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppPolicy>(Microsoft.Graph.Models.ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
                 { "deviceTag", n => { DeviceTag = n.GetStringValue(); } },
                 { "deviceType", n => { DeviceType = n.GetStringValue(); } },
-                { "flaggedReasons", n => { FlaggedReasons = n.GetCollectionOfEnumValues<ManagedAppFlaggedReason>()?.ToList(); } },
-                { "intendedPolicies", n => { IntendedPolicies = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "flaggedReasons", n => { FlaggedReasons = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.ManagedAppFlaggedReason>()?.ToList(); } },
+                { "intendedPolicies", n => { IntendedPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppPolicy>(Microsoft.Graph.Models.ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "managementSdkVersion", n => { ManagementSdkVersion = n.GetStringValue(); } },
-                { "operations", n => { Operations = n.GetCollectionOfObjectValues<ManagedAppOperation>(ManagedAppOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppOperation>(Microsoft.Graph.Models.ManagedAppOperation.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "platformVersion", n => { PlatformVersion = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
@@ -280,18 +280,18 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MobileAppIdentifier>("appIdentifier", AppIdentifier);
+            writer.WriteObjectValue<Microsoft.Graph.Models.MobileAppIdentifier>("appIdentifier", AppIdentifier);
             writer.WriteStringValue("applicationVersion", ApplicationVersion);
-            writer.WriteCollectionOfObjectValues<ManagedAppPolicy>("appliedPolicies", AppliedPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppPolicy>("appliedPolicies", AppliedPolicies);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteStringValue("deviceTag", DeviceTag);
             writer.WriteStringValue("deviceType", DeviceType);
-            writer.WriteCollectionOfEnumValues<ManagedAppFlaggedReason>("flaggedReasons", FlaggedReasons);
-            writer.WriteCollectionOfObjectValues<ManagedAppPolicy>("intendedPolicies", IntendedPolicies);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.ManagedAppFlaggedReason>("flaggedReasons", FlaggedReasons);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppPolicy>("intendedPolicies", IntendedPolicies);
             writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
             writer.WriteStringValue("managementSdkVersion", ManagementSdkVersion);
-            writer.WriteCollectionOfObjectValues<ManagedAppOperation>("operations", Operations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppOperation>("operations", Operations);
             writer.WriteStringValue("platformVersion", PlatformVersion);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("version", Version);

@@ -21,34 +21,34 @@ namespace Microsoft.Graph.Contacts.Item.TransitiveMemberOf
     public class TransitiveMemberOfRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Contacts.Item.TransitiveMemberOf.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Contacts.Item.TransitiveMemberOf.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to administrativeUnit.</summary>
-        public GraphAdministrativeUnitRequestBuilder GraphAdministrativeUnit
+        public Microsoft.Graph.Contacts.Item.TransitiveMemberOf.GraphAdministrativeUnit.GraphAdministrativeUnitRequestBuilder GraphAdministrativeUnit
         {
-            get => new GraphAdministrativeUnitRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Contacts.Item.TransitiveMemberOf.GraphAdministrativeUnit.GraphAdministrativeUnitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
-        public GraphGroupRequestBuilder GraphGroup
+        public Microsoft.Graph.Contacts.Item.TransitiveMemberOf.GraphGroup.GraphGroupRequestBuilder GraphGroup
         {
-            get => new GraphGroupRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Contacts.Item.TransitiveMemberOf.GraphGroup.GraphGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.</summary>
         /// <param name="position">The unique identifier of directoryObject</param>
-        /// <returns>A <see cref="DirectoryObjectItemRequestBuilder"/></returns>
-        public DirectoryObjectItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Contacts.Item.TransitiveMemberOf.Item.DirectoryObjectItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Contacts.Item.TransitiveMemberOf.Item.DirectoryObjectItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("directoryObject%2Did", position);
-                return new DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Contacts.Item.TransitiveMemberOf.Item.DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TransitiveMemberOfRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Contacts.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Contacts.Item.TransitiveMemberOf
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TransitiveMemberOfRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Contacts.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,25 +67,25 @@ namespace Microsoft.Graph.Contacts.Item.TransitiveMemberOf
         /// Get groups that this organizational contact is a member of. The API request is transitive, and returns all groups the organizational contact is a nested member of.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-list-transitivememberof?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<TransitiveMemberOfRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Contacts.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder.TransitiveMemberOfRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<TransitiveMemberOfRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Contacts.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder.TransitiveMemberOfRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DirectoryObjectCollectionResponse>(requestInfo, Microsoft.Graph.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get groups that this organizational contact is a member of. The API request is transitive, and returns all groups the organizational contact is a nested member of.
@@ -94,11 +94,11 @@ namespace Microsoft.Graph.Contacts.Item.TransitiveMemberOf
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TransitiveMemberOfRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Contacts.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder.TransitiveMemberOfRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TransitiveMemberOfRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Contacts.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder.TransitiveMemberOfRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -109,11 +109,11 @@ namespace Microsoft.Graph.Contacts.Item.TransitiveMemberOf
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TransitiveMemberOfRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Contacts.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TransitiveMemberOfRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Contacts.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder WithUrl(string rawUrl)
         {
-            return new TransitiveMemberOfRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Contacts.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get groups that this organizational contact is a member of. The API request is transitive, and returns all groups the organizational contact is a nested member of.
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Contacts.Item.TransitiveMemberOf
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TransitiveMemberOfRequestBuilderGetRequestConfiguration : RequestConfiguration<TransitiveMemberOfRequestBuilderGetQueryParameters>
+        public class TransitiveMemberOfRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Contacts.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder.TransitiveMemberOfRequestBuilderGetQueryParameters>
         {
         }
     }

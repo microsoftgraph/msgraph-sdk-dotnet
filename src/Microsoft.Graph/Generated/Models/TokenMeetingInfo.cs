@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class TokenMeetingInfo : MeetingInfo, IParsable
+    public class TokenMeetingInfo : Microsoft.Graph.Models.MeetingInfo, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The token used to join the call.</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TokenMeetingInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TokenMeetingInfo"/> and sets the default values.
         /// </summary>
         public TokenMeetingInfo() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TokenMeetingInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TokenMeetingInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TokenMeetingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TokenMeetingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TokenMeetingInfo();
+            return new Microsoft.Graph.Models.TokenMeetingInfo();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Represents a booked appointment of a service by a customer in a business.
     /// </summary>
-    public class BookingAppointment : Entity, IParsable
+    public class BookingAppointment : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Additional information that is sent to the customer when an appointment is confirmed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,16 +110,16 @@ namespace Microsoft.Graph.Models
         /// <summary>A collection of customer properties for an appointment. An appointment contains a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingCustomerInformationBase>? Customers
+        public List<Microsoft.Graph.Models.BookingCustomerInformationBase>? Customers
         {
-            get { return BackingStore?.Get<List<BookingCustomerInformationBase>?>("customers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BookingCustomerInformationBase>?>("customers"); }
             set { BackingStore?.Set("customers", value); }
         }
 #nullable restore
 #else
-        public List<BookingCustomerInformationBase> Customers
+        public List<Microsoft.Graph.Models.BookingCustomerInformationBase> Customers
         {
-            get { return BackingStore?.Get<List<BookingCustomerInformationBase>>("customers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BookingCustomerInformationBase>>("customers"); }
             set { BackingStore?.Set("customers", value); }
         }
 #endif
@@ -148,16 +148,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The endDateTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? EndDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? EndDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("endDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone EndDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone EndDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("endDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
 #endif
@@ -220,24 +220,24 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("price", value); }
         }
         /// <summary>Represents the type of pricing of a booking service.</summary>
-        public BookingPriceType? PriceType
+        public Microsoft.Graph.Models.BookingPriceType? PriceType
         {
-            get { return BackingStore?.Get<BookingPriceType?>("priceType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BookingPriceType?>("priceType"); }
             set { BackingStore?.Set("priceType", value); }
         }
         /// <summary>The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingReminder>? Reminders
+        public List<Microsoft.Graph.Models.BookingReminder>? Reminders
         {
-            get { return BackingStore?.Get<List<BookingReminder>?>("reminders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BookingReminder>?>("reminders"); }
             set { BackingStore?.Set("reminders", value); }
         }
 #nullable restore
 #else
-        public List<BookingReminder> Reminders
+        public List<Microsoft.Graph.Models.BookingReminder> Reminders
         {
-            get { return BackingStore?.Get<List<BookingReminder>>("reminders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BookingReminder>>("reminders"); }
             set { BackingStore?.Set("reminders", value); }
         }
 #endif
@@ -276,16 +276,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The location where the service is delivered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Location? ServiceLocation
+        public Microsoft.Graph.Models.Location? ServiceLocation
         {
-            get { return BackingStore?.Get<Location?>("serviceLocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Location?>("serviceLocation"); }
             set { BackingStore?.Set("serviceLocation", value); }
         }
 #nullable restore
 #else
-        public Location ServiceLocation
+        public Microsoft.Graph.Models.Location ServiceLocation
         {
-            get { return BackingStore?.Get<Location>("serviceLocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Location>("serviceLocation"); }
             set { BackingStore?.Set("serviceLocation", value); }
         }
 #endif
@@ -346,28 +346,28 @@ namespace Microsoft.Graph.Models
         /// <summary>The startDateTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? StartDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? StartDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone StartDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone StartDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BookingAppointment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BookingAppointment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BookingAppointment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.BookingAppointment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BookingAppointment();
+            return new Microsoft.Graph.Models.BookingAppointment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -384,9 +384,9 @@ namespace Microsoft.Graph.Models
                 { "customerNotes", n => { CustomerNotes = n.GetStringValue(); } },
                 { "customerPhone", n => { CustomerPhone = n.GetStringValue(); } },
                 { "customerTimeZone", n => { CustomerTimeZone = n.GetStringValue(); } },
-                { "customers", n => { Customers = n.GetCollectionOfObjectValues<BookingCustomerInformationBase>(BookingCustomerInformationBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customers", n => { Customers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.BookingCustomerInformationBase>(Microsoft.Graph.Models.BookingCustomerInformationBase.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "duration", n => { Duration = n.GetTimeSpanValue(); } },
-                { "endDateTime", n => { EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "endDateTime", n => { EndDateTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "filledAttendeesCount", n => { FilledAttendeesCount = n.GetIntValue(); } },
                 { "isLocationOnline", n => { IsLocationOnline = n.GetBoolValue(); } },
                 { "joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
@@ -395,16 +395,16 @@ namespace Microsoft.Graph.Models
                 { "postBuffer", n => { PostBuffer = n.GetTimeSpanValue(); } },
                 { "preBuffer", n => { PreBuffer = n.GetTimeSpanValue(); } },
                 { "price", n => { Price = n.GetDoubleValue(); } },
-                { "priceType", n => { PriceType = n.GetEnumValue<BookingPriceType>(); } },
-                { "reminders", n => { Reminders = n.GetCollectionOfObjectValues<BookingReminder>(BookingReminder.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "priceType", n => { PriceType = n.GetEnumValue<Microsoft.Graph.Models.BookingPriceType>(); } },
+                { "reminders", n => { Reminders = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.BookingReminder>(Microsoft.Graph.Models.BookingReminder.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "selfServiceAppointmentId", n => { SelfServiceAppointmentId = n.GetStringValue(); } },
                 { "serviceId", n => { ServiceId = n.GetStringValue(); } },
-                { "serviceLocation", n => { ServiceLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
+                { "serviceLocation", n => { ServiceLocation = n.GetObjectValue<Microsoft.Graph.Models.Location>(Microsoft.Graph.Models.Location.CreateFromDiscriminatorValue); } },
                 { "serviceName", n => { ServiceName = n.GetStringValue(); } },
                 { "serviceNotes", n => { ServiceNotes = n.GetStringValue(); } },
                 { "smsNotificationsEnabled", n => { SmsNotificationsEnabled = n.GetBoolValue(); } },
                 { "staffMemberIds", n => { StaffMemberIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "startDateTime", n => { StartDateTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -421,9 +421,9 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("customerName", CustomerName);
             writer.WriteStringValue("customerNotes", CustomerNotes);
             writer.WriteStringValue("customerPhone", CustomerPhone);
-            writer.WriteCollectionOfObjectValues<BookingCustomerInformationBase>("customers", Customers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.BookingCustomerInformationBase>("customers", Customers);
             writer.WriteStringValue("customerTimeZone", CustomerTimeZone);
-            writer.WriteObjectValue<DateTimeTimeZone>("endDateTime", EndDateTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("endDateTime", EndDateTime);
             writer.WriteBoolValue("isLocationOnline", IsLocationOnline);
             writer.WriteStringValue("joinWebUrl", JoinWebUrl);
             writer.WriteIntValue("maximumAttendeesCount", MaximumAttendeesCount);
@@ -431,16 +431,16 @@ namespace Microsoft.Graph.Models
             writer.WriteTimeSpanValue("postBuffer", PostBuffer);
             writer.WriteTimeSpanValue("preBuffer", PreBuffer);
             writer.WriteDoubleValue("price", Price);
-            writer.WriteEnumValue<BookingPriceType>("priceType", PriceType);
-            writer.WriteCollectionOfObjectValues<BookingReminder>("reminders", Reminders);
+            writer.WriteEnumValue<Microsoft.Graph.Models.BookingPriceType>("priceType", PriceType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.BookingReminder>("reminders", Reminders);
             writer.WriteStringValue("selfServiceAppointmentId", SelfServiceAppointmentId);
             writer.WriteStringValue("serviceId", ServiceId);
-            writer.WriteObjectValue<Location>("serviceLocation", ServiceLocation);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Location>("serviceLocation", ServiceLocation);
             writer.WriteStringValue("serviceName", ServiceName);
             writer.WriteStringValue("serviceNotes", ServiceNotes);
             writer.WriteBoolValue("smsNotificationsEnabled", SmsNotificationsEnabled);
             writer.WriteCollectionOfPrimitiveValues<string>("staffMemberIds", StaffMemberIds);
-            writer.WriteObjectValue<DateTimeTimeZone>("startDateTime", StartDateTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("startDateTime", StartDateTime);
         }
     }
 }

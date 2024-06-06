@@ -7,18 +7,18 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class FileStorageContainerCustomPropertyDictionary : Dictionary, IParsable
+    public class FileStorageContainerCustomPropertyDictionary : Microsoft.Graph.Models.Dictionary, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FileStorageContainerCustomPropertyDictionary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.FileStorageContainerCustomPropertyDictionary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FileStorageContainerCustomPropertyDictionary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.FileStorageContainerCustomPropertyDictionary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FileStorageContainerCustomPropertyDictionary();
+            return new Microsoft.Graph.Models.FileStorageContainerCustomPropertyDictionary();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -7,43 +7,43 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class PrincipalResourceMembershipsScope : AccessReviewScope, IParsable
+    public class PrincipalResourceMembershipsScope : Microsoft.Graph.Models.AccessReviewScope, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Defines the scopes of the principals whose access to resources are reviewed in the access review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewScope>? PrincipalScopes
+        public List<Microsoft.Graph.Models.AccessReviewScope>? PrincipalScopes
         {
-            get { return BackingStore?.Get<List<AccessReviewScope>?>("principalScopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewScope>?>("principalScopes"); }
             set { BackingStore?.Set("principalScopes", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewScope> PrincipalScopes
+        public List<Microsoft.Graph.Models.AccessReviewScope> PrincipalScopes
         {
-            get { return BackingStore?.Get<List<AccessReviewScope>>("principalScopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewScope>>("principalScopes"); }
             set { BackingStore?.Set("principalScopes", value); }
         }
 #endif
         /// <summary>Defines the scopes of the resources for which access is reviewed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewScope>? ResourceScopes
+        public List<Microsoft.Graph.Models.AccessReviewScope>? ResourceScopes
         {
-            get { return BackingStore?.Get<List<AccessReviewScope>?>("resourceScopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewScope>?>("resourceScopes"); }
             set { BackingStore?.Set("resourceScopes", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewScope> ResourceScopes
+        public List<Microsoft.Graph.Models.AccessReviewScope> ResourceScopes
         {
-            get { return BackingStore?.Get<List<AccessReviewScope>>("resourceScopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewScope>>("resourceScopes"); }
             set { BackingStore?.Set("resourceScopes", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PrincipalResourceMembershipsScope"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.PrincipalResourceMembershipsScope"/> and sets the default values.
         /// </summary>
         public PrincipalResourceMembershipsScope() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrincipalResourceMembershipsScope"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrincipalResourceMembershipsScope"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrincipalResourceMembershipsScope CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.PrincipalResourceMembershipsScope CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrincipalResourceMembershipsScope();
+            return new Microsoft.Graph.Models.PrincipalResourceMembershipsScope();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,8 +67,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "principalScopes", n => { PrincipalScopes = n.GetCollectionOfObjectValues<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "resourceScopes", n => { ResourceScopes = n.GetCollectionOfObjectValues<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "principalScopes", n => { PrincipalScopes = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewScope>(Microsoft.Graph.Models.AccessReviewScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resourceScopes", n => { ResourceScopes = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewScope>(Microsoft.Graph.Models.AccessReviewScope.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AccessReviewScope>("principalScopes", PrincipalScopes);
-            writer.WriteCollectionOfObjectValues<AccessReviewScope>("resourceScopes", ResourceScopes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewScope>("principalScopes", PrincipalScopes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewScope>("resourceScopes", ResourceScopes);
         }
     }
 }

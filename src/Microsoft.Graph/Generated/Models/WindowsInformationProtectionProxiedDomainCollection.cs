@@ -55,21 +55,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Collection of proxied domains</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProxiedDomain>? ProxiedDomains
+        public List<Microsoft.Graph.Models.ProxiedDomain>? ProxiedDomains
         {
-            get { return BackingStore?.Get<List<ProxiedDomain>?>("proxiedDomains"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ProxiedDomain>?>("proxiedDomains"); }
             set { BackingStore?.Set("proxiedDomains", value); }
         }
 #nullable restore
 #else
-        public List<ProxiedDomain> ProxiedDomains
+        public List<Microsoft.Graph.Models.ProxiedDomain> ProxiedDomains
         {
-            get { return BackingStore?.Get<List<ProxiedDomain>>("proxiedDomains"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ProxiedDomain>>("proxiedDomains"); }
             set { BackingStore?.Set("proxiedDomains", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsInformationProtectionProxiedDomainCollection"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WindowsInformationProtectionProxiedDomainCollection"/> and sets the default values.
         /// </summary>
         public WindowsInformationProtectionProxiedDomainCollection()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsInformationProtectionProxiedDomainCollection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsInformationProtectionProxiedDomainCollection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WindowsInformationProtectionProxiedDomainCollection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.WindowsInformationProtectionProxiedDomainCollection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsInformationProtectionProxiedDomainCollection();
+            return new Microsoft.Graph.Models.WindowsInformationProtectionProxiedDomainCollection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Models
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "proxiedDomains", n => { ProxiedDomains = n.GetCollectionOfObjectValues<ProxiedDomain>(ProxiedDomain.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "proxiedDomains", n => { ProxiedDomains = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ProxiedDomain>(Microsoft.Graph.Models.ProxiedDomain.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<ProxiedDomain>("proxiedDomains", ProxiedDomains);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ProxiedDomain>("proxiedDomains", ProxiedDomains);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

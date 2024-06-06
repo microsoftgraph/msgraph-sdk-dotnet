@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Communications.GetPresencesByUserId
 {
     [Obsolete("This class is obsolete. Use GetPresencesByUserIdPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetPresencesByUserIdResponse : GetPresencesByUserIdPostResponse, IParsable
+    public class GetPresencesByUserIdResponse : Microsoft.Graph.Communications.GetPresencesByUserId.GetPresencesByUserIdPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetPresencesByUserIdResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Communications.GetPresencesByUserId.GetPresencesByUserIdResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetPresencesByUserIdResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Communications.GetPresencesByUserId.GetPresencesByUserIdResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetPresencesByUserIdResponse();
+            return new Microsoft.Graph.Communications.GetPresencesByUserId.GetPresencesByUserIdResponse();
         }
     }
 }

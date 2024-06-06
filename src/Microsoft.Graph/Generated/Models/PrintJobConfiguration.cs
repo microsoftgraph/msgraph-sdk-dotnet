@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("collate", value); }
         }
         /// <summary>The color mode the printer should use to print the job. Valid values are described in the table below. Read-only.</summary>
-        public PrintColorMode? ColorMode
+        public Microsoft.Graph.Models.PrintColorMode? ColorMode
         {
-            get { return BackingStore?.Get<PrintColorMode?>("colorMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrintColorMode?>("colorMode"); }
             set { BackingStore?.Set("colorMode", value); }
         }
         /// <summary>The number of copies that should be printed. Read-only.</summary>
@@ -44,30 +44,30 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("dpi", value); }
         }
         /// <summary>The duplex mode the printer should use when printing the job. Valid values are described in the table below. Read-only.</summary>
-        public PrintDuplexMode? DuplexMode
+        public Microsoft.Graph.Models.PrintDuplexMode? DuplexMode
         {
-            get { return BackingStore?.Get<PrintDuplexMode?>("duplexMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrintDuplexMode?>("duplexMode"); }
             set { BackingStore?.Set("duplexMode", value); }
         }
         /// <summary>The orientation to use when feeding media into the printer. Valid values are described in the following table. Read-only.</summary>
-        public PrinterFeedOrientation? FeedOrientation
+        public Microsoft.Graph.Models.PrinterFeedOrientation? FeedOrientation
         {
-            get { return BackingStore?.Get<PrinterFeedOrientation?>("feedOrientation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrinterFeedOrientation?>("feedOrientation"); }
             set { BackingStore?.Set("feedOrientation", value); }
         }
         /// <summary>Finishing processes to use when printing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintFinishing?>? Finishings
+        public List<Microsoft.Graph.Models.PrintFinishing?>? Finishings
         {
-            get { return BackingStore?.Get<List<PrintFinishing?>?>("finishings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PrintFinishing?>?>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
 #nullable restore
 #else
-        public List<PrintFinishing?> Finishings
+        public List<Microsoft.Graph.Models.PrintFinishing?> Finishings
         {
-            get { return BackingStore?.Get<List<PrintFinishing?>>("finishings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PrintFinishing?>>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
 #endif
@@ -96,16 +96,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The margin settings to use when printing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrintMargin? Margin
+        public Microsoft.Graph.Models.PrintMargin? Margin
         {
-            get { return BackingStore?.Get<PrintMargin?>("margin"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrintMargin?>("margin"); }
             set { BackingStore?.Set("margin", value); }
         }
 #nullable restore
 #else
-        public PrintMargin Margin
+        public Microsoft.Graph.Models.PrintMargin Margin
         {
-            get { return BackingStore?.Get<PrintMargin>("margin"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrintMargin>("margin"); }
             set { BackingStore?.Set("margin", value); }
         }
 #endif
@@ -142,9 +142,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.</summary>
-        public PrintMultipageLayout? MultipageLayout
+        public Microsoft.Graph.Models.PrintMultipageLayout? MultipageLayout
         {
-            get { return BackingStore?.Get<PrintMultipageLayout?>("multipageLayout"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrintMultipageLayout?>("multipageLayout"); }
             set { BackingStore?.Set("multipageLayout", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -164,9 +164,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The orientation setting the printer should use when printing the job. Valid values are described in the following table.</summary>
-        public PrintOrientation? Orientation
+        public Microsoft.Graph.Models.PrintOrientation? Orientation
         {
-            get { return BackingStore?.Get<PrintOrientation?>("orientation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrintOrientation?>("orientation"); }
             set { BackingStore?.Set("orientation", value); }
         }
         /// <summary>The output bin to place completed prints into. See the printer&apos;s capabilities for a list of supported output bins.</summary>
@@ -188,16 +188,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The page ranges to print. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IntegerRange>? PageRanges
+        public List<Microsoft.Graph.Models.IntegerRange>? PageRanges
         {
-            get { return BackingStore?.Get<List<IntegerRange>?>("pageRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IntegerRange>?>("pageRanges"); }
             set { BackingStore?.Set("pageRanges", value); }
         }
 #nullable restore
 #else
-        public List<IntegerRange> PageRanges
+        public List<Microsoft.Graph.Models.IntegerRange> PageRanges
         {
-            get { return BackingStore?.Get<List<IntegerRange>>("pageRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IntegerRange>>("pageRanges"); }
             set { BackingStore?.Set("pageRanges", value); }
         }
 #endif
@@ -208,19 +208,19 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("pagesPerSheet", value); }
         }
         /// <summary>The print quality to use when printing the job. Valid values are described in the table below. Read-only.</summary>
-        public PrintQuality? Quality
+        public Microsoft.Graph.Models.PrintQuality? Quality
         {
-            get { return BackingStore?.Get<PrintQuality?>("quality"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrintQuality?>("quality"); }
             set { BackingStore?.Set("quality", value); }
         }
         /// <summary>Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.</summary>
-        public PrintScaling? Scaling
+        public Microsoft.Graph.Models.PrintScaling? Scaling
         {
-            get { return BackingStore?.Get<PrintScaling?>("scaling"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrintScaling?>("scaling"); }
             set { BackingStore?.Set("scaling", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrintJobConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.PrintJobConfiguration"/> and sets the default values.
         /// </summary>
         public PrintJobConfiguration()
         {
@@ -230,12 +230,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrintJobConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrintJobConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PrintJobConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.PrintJobConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrintJobConfiguration();
+            return new Microsoft.Graph.Models.PrintJobConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -246,25 +246,25 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "collate", n => { Collate = n.GetBoolValue(); } },
-                { "colorMode", n => { ColorMode = n.GetEnumValue<PrintColorMode>(); } },
+                { "colorMode", n => { ColorMode = n.GetEnumValue<Microsoft.Graph.Models.PrintColorMode>(); } },
                 { "copies", n => { Copies = n.GetIntValue(); } },
                 { "dpi", n => { Dpi = n.GetIntValue(); } },
-                { "duplexMode", n => { DuplexMode = n.GetEnumValue<PrintDuplexMode>(); } },
-                { "feedOrientation", n => { FeedOrientation = n.GetEnumValue<PrinterFeedOrientation>(); } },
-                { "finishings", n => { Finishings = n.GetCollectionOfEnumValues<PrintFinishing>()?.ToList(); } },
+                { "duplexMode", n => { DuplexMode = n.GetEnumValue<Microsoft.Graph.Models.PrintDuplexMode>(); } },
+                { "feedOrientation", n => { FeedOrientation = n.GetEnumValue<Microsoft.Graph.Models.PrinterFeedOrientation>(); } },
+                { "finishings", n => { Finishings = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.PrintFinishing>()?.ToList(); } },
                 { "fitPdfToPage", n => { FitPdfToPage = n.GetBoolValue(); } },
                 { "inputBin", n => { InputBin = n.GetStringValue(); } },
-                { "margin", n => { Margin = n.GetObjectValue<PrintMargin>(PrintMargin.CreateFromDiscriminatorValue); } },
+                { "margin", n => { Margin = n.GetObjectValue<Microsoft.Graph.Models.PrintMargin>(Microsoft.Graph.Models.PrintMargin.CreateFromDiscriminatorValue); } },
                 { "mediaSize", n => { MediaSize = n.GetStringValue(); } },
                 { "mediaType", n => { MediaType = n.GetStringValue(); } },
-                { "multipageLayout", n => { MultipageLayout = n.GetEnumValue<PrintMultipageLayout>(); } },
+                { "multipageLayout", n => { MultipageLayout = n.GetEnumValue<Microsoft.Graph.Models.PrintMultipageLayout>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "orientation", n => { Orientation = n.GetEnumValue<PrintOrientation>(); } },
+                { "orientation", n => { Orientation = n.GetEnumValue<Microsoft.Graph.Models.PrintOrientation>(); } },
                 { "outputBin", n => { OutputBin = n.GetStringValue(); } },
-                { "pageRanges", n => { PageRanges = n.GetCollectionOfObjectValues<IntegerRange>(IntegerRange.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "pageRanges", n => { PageRanges = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IntegerRange>(Microsoft.Graph.Models.IntegerRange.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "pagesPerSheet", n => { PagesPerSheet = n.GetIntValue(); } },
-                { "quality", n => { Quality = n.GetEnumValue<PrintQuality>(); } },
-                { "scaling", n => { Scaling = n.GetEnumValue<PrintScaling>(); } },
+                { "quality", n => { Quality = n.GetEnumValue<Microsoft.Graph.Models.PrintQuality>(); } },
+                { "scaling", n => { Scaling = n.GetEnumValue<Microsoft.Graph.Models.PrintScaling>(); } },
             };
         }
         /// <summary>
@@ -275,25 +275,25 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("collate", Collate);
-            writer.WriteEnumValue<PrintColorMode>("colorMode", ColorMode);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PrintColorMode>("colorMode", ColorMode);
             writer.WriteIntValue("copies", Copies);
             writer.WriteIntValue("dpi", Dpi);
-            writer.WriteEnumValue<PrintDuplexMode>("duplexMode", DuplexMode);
-            writer.WriteEnumValue<PrinterFeedOrientation>("feedOrientation", FeedOrientation);
-            writer.WriteCollectionOfEnumValues<PrintFinishing>("finishings", Finishings);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PrintDuplexMode>("duplexMode", DuplexMode);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PrinterFeedOrientation>("feedOrientation", FeedOrientation);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.PrintFinishing>("finishings", Finishings);
             writer.WriteBoolValue("fitPdfToPage", FitPdfToPage);
             writer.WriteStringValue("inputBin", InputBin);
-            writer.WriteObjectValue<PrintMargin>("margin", Margin);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PrintMargin>("margin", Margin);
             writer.WriteStringValue("mediaSize", MediaSize);
             writer.WriteStringValue("mediaType", MediaType);
-            writer.WriteEnumValue<PrintMultipageLayout>("multipageLayout", MultipageLayout);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PrintMultipageLayout>("multipageLayout", MultipageLayout);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<PrintOrientation>("orientation", Orientation);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PrintOrientation>("orientation", Orientation);
             writer.WriteStringValue("outputBin", OutputBin);
-            writer.WriteCollectionOfObjectValues<IntegerRange>("pageRanges", PageRanges);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IntegerRange>("pageRanges", PageRanges);
             writer.WriteIntValue("pagesPerSheet", PagesPerSheet);
-            writer.WriteEnumValue<PrintQuality>("quality", Quality);
-            writer.WriteEnumValue<PrintScaling>("scaling", Scaling);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PrintQuality>("quality", Quality);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PrintScaling>("scaling", Scaling);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

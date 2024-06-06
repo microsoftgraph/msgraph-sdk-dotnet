@@ -18,12 +18,12 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplate
     public class WorkflowTemplateItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the tasks property of the microsoft.graph.identityGovernance.workflowTemplate entity.</summary>
-        public TasksRequestBuilder Tasks
+        public Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates.Item.Tasks.TasksRequestBuilder Tasks
         {
-            get => new TasksRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates.Item.Tasks.TasksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WorkflowTemplateItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates.Item.WorkflowTemplateItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplate
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WorkflowTemplateItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates.Item.WorkflowTemplateItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -42,25 +42,25 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplate
         /// Read the properties and relationships of a workflowTemplate object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflowtemplate-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="WorkflowTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkflowTemplate?> GetAsync(Action<RequestConfiguration<WorkflowTemplateItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates.Item.WorkflowTemplateItemRequestBuilder.WorkflowTemplateItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WorkflowTemplate> GetAsync(Action<RequestConfiguration<WorkflowTemplateItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates.Item.WorkflowTemplateItemRequestBuilder.WorkflowTemplateItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WorkflowTemplate>(requestInfo, WorkflowTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate>(requestInfo, Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of a workflowTemplate object.
@@ -69,11 +69,11 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplate
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WorkflowTemplateItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates.Item.WorkflowTemplateItemRequestBuilder.WorkflowTemplateItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WorkflowTemplateItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates.Item.WorkflowTemplateItemRequestBuilder.WorkflowTemplateItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -84,11 +84,11 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplate
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WorkflowTemplateItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates.Item.WorkflowTemplateItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WorkflowTemplateItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates.Item.WorkflowTemplateItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WorkflowTemplateItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates.Item.WorkflowTemplateItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Read the properties and relationships of a workflowTemplate object.
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplate
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WorkflowTemplateItemRequestBuilderGetRequestConfiguration : RequestConfiguration<WorkflowTemplateItemRequestBuilderGetQueryParameters>
+        public class WorkflowTemplateItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates.Item.WorkflowTemplateItemRequestBuilder.WorkflowTemplateItemRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the iosCustomConfiguration resource.
     /// </summary>
-    public class IosCustomConfiguration : DeviceConfiguration, IParsable
+    public class IosCustomConfiguration : Microsoft.Graph.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Payload. (UTF8 encoded byte array)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IosCustomConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IosCustomConfiguration"/> and sets the default values.
         /// </summary>
         public IosCustomConfiguration() : base()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosCustomConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IosCustomConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosCustomConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IosCustomConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosCustomConfiguration();
+            return new Microsoft.Graph.Models.IosCustomConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

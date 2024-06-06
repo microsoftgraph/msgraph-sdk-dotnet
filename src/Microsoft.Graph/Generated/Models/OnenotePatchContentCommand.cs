@@ -12,9 +12,9 @@ namespace Microsoft.Graph.Models
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
-        public OnenotePatchActionType? Action
+        public Microsoft.Graph.Models.OnenotePatchActionType? Action
         {
-            get { return BackingStore?.Get<OnenotePatchActionType?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnenotePatchActionType?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -58,9 +58,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The location to add the supplied content, relative to the target element. The possible values are: after (default) or before.</summary>
-        public OnenotePatchInsertPosition? Position
+        public Microsoft.Graph.Models.OnenotePatchInsertPosition? Position
         {
-            get { return BackingStore?.Get<OnenotePatchInsertPosition?>("position"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnenotePatchInsertPosition?>("position"); }
             set { BackingStore?.Set("position", value); }
         }
         /// <summary>The element to update. Must be the #&lt;data-id&gt; or the generated &lt;id&gt; of the element, or the body or title keyword.</summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnenotePatchContentCommand"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OnenotePatchContentCommand"/> and sets the default values.
         /// </summary>
         public OnenotePatchContentCommand()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnenotePatchContentCommand"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnenotePatchContentCommand"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OnenotePatchContentCommand CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.OnenotePatchContentCommand CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnenotePatchContentCommand();
+            return new Microsoft.Graph.Models.OnenotePatchContentCommand();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,10 +105,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<OnenotePatchActionType>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Models.OnenotePatchActionType>(); } },
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "position", n => { Position = n.GetEnumValue<OnenotePatchInsertPosition>(); } },
+                { "position", n => { Position = n.GetEnumValue<Microsoft.Graph.Models.OnenotePatchInsertPosition>(); } },
                 { "target", n => { Target = n.GetStringValue(); } },
             };
         }
@@ -119,10 +119,10 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<OnenotePatchActionType>("action", Action);
+            writer.WriteEnumValue<Microsoft.Graph.Models.OnenotePatchActionType>("action", Action);
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<OnenotePatchInsertPosition>("position", Position);
+            writer.WriteEnumValue<Microsoft.Graph.Models.OnenotePatchInsertPosition>("position", Position);
             writer.WriteStringValue("target", Target);
             writer.WriteAdditionalData(AdditionalData);
         }

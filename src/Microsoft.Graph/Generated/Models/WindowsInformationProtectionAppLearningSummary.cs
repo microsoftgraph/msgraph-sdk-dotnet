@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Windows Information Protection AppLearning Summary entity.
     /// </summary>
-    public class WindowsInformationProtectionAppLearningSummary : Entity, IParsable
+    public class WindowsInformationProtectionAppLearningSummary : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Application Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,12 +42,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsInformationProtectionAppLearningSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsInformationProtectionAppLearningSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsInformationProtectionAppLearningSummary();
+            return new Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "applicationName", n => { ApplicationName = n.GetStringValue(); } },
-                { "applicationType", n => { ApplicationType = n.GetEnumValue<ApplicationType>(); } },
+                { "applicationType", n => { ApplicationType = n.GetEnumValue<Microsoft.Graph.Models.ApplicationType>(); } },
                 { "deviceCount", n => { DeviceCount = n.GetIntValue(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("applicationName", ApplicationName);
-            writer.WriteEnumValue<ApplicationType>("applicationType", ApplicationType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ApplicationType>("applicationType", ApplicationType);
             writer.WriteIntValue("deviceCount", DeviceCount);
         }
     }

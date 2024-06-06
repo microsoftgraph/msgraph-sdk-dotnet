@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class SiteSource : DataSource, IParsable
+    public class SiteSource : Microsoft.Graph.Models.Security.DataSource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The site property</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SiteSource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.SiteSource"/> and sets the default values.
         /// </summary>
         public SiteSource() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SiteSource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.SiteSource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SiteSource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.SiteSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SiteSource();
+            return new Microsoft.Graph.Models.Security.SiteSource();
         }
         /// <summary>
         /// The deserialization information for the current model

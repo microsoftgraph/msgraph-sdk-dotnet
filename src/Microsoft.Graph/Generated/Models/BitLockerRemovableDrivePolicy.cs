@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("blockCrossOrganizationWriteAccess", value); }
         }
         /// <summary>Select the encryption method for removable  drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.</summary>
-        public BitLockerEncryptionMethod? EncryptionMethod
+        public Microsoft.Graph.Models.BitLockerEncryptionMethod? EncryptionMethod
         {
-            get { return BackingStore?.Get<BitLockerEncryptionMethod?>("encryptionMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BitLockerEncryptionMethod?>("encryptionMethod"); }
             set { BackingStore?.Set("encryptionMethod", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("requireEncryptionForWriteAccess", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="BitLockerRemovableDrivePolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.BitLockerRemovableDrivePolicy"/> and sets the default values.
         /// </summary>
         public BitLockerRemovableDrivePolicy()
         {
@@ -65,12 +65,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BitLockerRemovableDrivePolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BitLockerRemovableDrivePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BitLockerRemovableDrivePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.BitLockerRemovableDrivePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BitLockerRemovableDrivePolicy();
+            return new Microsoft.Graph.Models.BitLockerRemovableDrivePolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "blockCrossOrganizationWriteAccess", n => { BlockCrossOrganizationWriteAccess = n.GetBoolValue(); } },
-                { "encryptionMethod", n => { EncryptionMethod = n.GetEnumValue<BitLockerEncryptionMethod>(); } },
+                { "encryptionMethod", n => { EncryptionMethod = n.GetEnumValue<Microsoft.Graph.Models.BitLockerEncryptionMethod>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "requireEncryptionForWriteAccess", n => { RequireEncryptionForWriteAccess = n.GetBoolValue(); } },
             };
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("blockCrossOrganizationWriteAccess", BlockCrossOrganizationWriteAccess);
-            writer.WriteEnumValue<BitLockerEncryptionMethod>("encryptionMethod", EncryptionMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Models.BitLockerEncryptionMethod>("encryptionMethod", EncryptionMethod);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("requireEncryptionForWriteAccess", RequireEncryptionForWriteAccess);
             writer.WriteAdditionalData(AdditionalData);

@@ -7,54 +7,54 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class Host : Artifact, IParsable
+    public class Host : Microsoft.Graph.Models.Security.Artifact, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostPair>? ChildHostPairs
+        public List<Microsoft.Graph.Models.Security.HostPair>? ChildHostPairs
         {
-            get { return BackingStore?.Get<List<HostPair>?>("childHostPairs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostPair>?>("childHostPairs"); }
             set { BackingStore?.Set("childHostPairs", value); }
         }
 #nullable restore
 #else
-        public List<HostPair> ChildHostPairs
+        public List<Microsoft.Graph.Models.Security.HostPair> ChildHostPairs
         {
-            get { return BackingStore?.Get<List<HostPair>>("childHostPairs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostPair>>("childHostPairs"); }
             set { BackingStore?.Set("childHostPairs", value); }
         }
 #endif
         /// <summary>The hostComponents that are associated with this host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostComponent>? Components
+        public List<Microsoft.Graph.Models.Security.HostComponent>? Components
         {
-            get { return BackingStore?.Get<List<HostComponent>?>("components"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostComponent>?>("components"); }
             set { BackingStore?.Set("components", value); }
         }
 #nullable restore
 #else
-        public List<HostComponent> Components
+        public List<Microsoft.Graph.Models.Security.HostComponent> Components
         {
-            get { return BackingStore?.Get<List<HostComponent>>("components"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostComponent>>("components"); }
             set { BackingStore?.Set("components", value); }
         }
 #endif
         /// <summary>The hostCookies that are associated with this host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostCookie>? Cookies
+        public List<Microsoft.Graph.Models.Security.HostCookie>? Cookies
         {
-            get { return BackingStore?.Get<List<HostCookie>?>("cookies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostCookie>?>("cookies"); }
             set { BackingStore?.Set("cookies", value); }
         }
 #nullable restore
 #else
-        public List<HostCookie> Cookies
+        public List<Microsoft.Graph.Models.Security.HostCookie> Cookies
         {
-            get { return BackingStore?.Get<List<HostCookie>>("cookies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostCookie>>("cookies"); }
             set { BackingStore?.Set("cookies", value); }
         }
 #endif
@@ -67,16 +67,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The hostPairs that are associated with this host, where this host is either the parentHost or childHost.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostPair>? HostPairs
+        public List<Microsoft.Graph.Models.Security.HostPair>? HostPairs
         {
-            get { return BackingStore?.Get<List<HostPair>?>("hostPairs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostPair>?>("hostPairs"); }
             set { BackingStore?.Set("hostPairs", value); }
         }
 #nullable restore
 #else
-        public List<HostPair> HostPairs
+        public List<Microsoft.Graph.Models.Security.HostPair> HostPairs
         {
-            get { return BackingStore?.Get<List<HostPair>>("hostPairs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostPair>>("hostPairs"); }
             set { BackingStore?.Set("hostPairs", value); }
         }
 #endif
@@ -89,149 +89,149 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The hostPairs that are associated with a host, where that host is the childHost and has an incoming pairing with a parentHost.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostPair>? ParentHostPairs
+        public List<Microsoft.Graph.Models.Security.HostPair>? ParentHostPairs
         {
-            get { return BackingStore?.Get<List<HostPair>?>("parentHostPairs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostPair>?>("parentHostPairs"); }
             set { BackingStore?.Set("parentHostPairs", value); }
         }
 #nullable restore
 #else
-        public List<HostPair> ParentHostPairs
+        public List<Microsoft.Graph.Models.Security.HostPair> ParentHostPairs
         {
-            get { return BackingStore?.Get<List<HostPair>>("parentHostPairs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostPair>>("parentHostPairs"); }
             set { BackingStore?.Set("parentHostPairs", value); }
         }
 #endif
         /// <summary>Passive DNS retrieval about this host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PassiveDnsRecord>? PassiveDns
+        public List<Microsoft.Graph.Models.Security.PassiveDnsRecord>? PassiveDns
         {
-            get { return BackingStore?.Get<List<PassiveDnsRecord>?>("passiveDns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.PassiveDnsRecord>?>("passiveDns"); }
             set { BackingStore?.Set("passiveDns", value); }
         }
 #nullable restore
 #else
-        public List<PassiveDnsRecord> PassiveDns
+        public List<Microsoft.Graph.Models.Security.PassiveDnsRecord> PassiveDns
         {
-            get { return BackingStore?.Get<List<PassiveDnsRecord>>("passiveDns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.PassiveDnsRecord>>("passiveDns"); }
             set { BackingStore?.Set("passiveDns", value); }
         }
 #endif
         /// <summary>Reverse passive DNS retrieval about this host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PassiveDnsRecord>? PassiveDnsReverse
+        public List<Microsoft.Graph.Models.Security.PassiveDnsRecord>? PassiveDnsReverse
         {
-            get { return BackingStore?.Get<List<PassiveDnsRecord>?>("passiveDnsReverse"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.PassiveDnsRecord>?>("passiveDnsReverse"); }
             set { BackingStore?.Set("passiveDnsReverse", value); }
         }
 #nullable restore
 #else
-        public List<PassiveDnsRecord> PassiveDnsReverse
+        public List<Microsoft.Graph.Models.Security.PassiveDnsRecord> PassiveDnsReverse
         {
-            get { return BackingStore?.Get<List<PassiveDnsRecord>>("passiveDnsReverse"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.PassiveDnsRecord>>("passiveDnsReverse"); }
             set { BackingStore?.Set("passiveDnsReverse", value); }
         }
 #endif
         /// <summary>The hostPorts associated with a host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostPort>? Ports
+        public List<Microsoft.Graph.Models.Security.HostPort>? Ports
         {
-            get { return BackingStore?.Get<List<HostPort>?>("ports"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostPort>?>("ports"); }
             set { BackingStore?.Set("ports", value); }
         }
 #nullable restore
 #else
-        public List<HostPort> Ports
+        public List<Microsoft.Graph.Models.Security.HostPort> Ports
         {
-            get { return BackingStore?.Get<List<HostPort>>("ports"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostPort>>("ports"); }
             set { BackingStore?.Set("ports", value); }
         }
 #endif
         /// <summary>Represents a calculated reputation of this host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public HostReputation? Reputation
+        public Microsoft.Graph.Models.Security.HostReputation? Reputation
         {
-            get { return BackingStore?.Get<HostReputation?>("reputation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.HostReputation?>("reputation"); }
             set { BackingStore?.Set("reputation", value); }
         }
 #nullable restore
 #else
-        public HostReputation Reputation
+        public Microsoft.Graph.Models.Security.HostReputation Reputation
         {
-            get { return BackingStore?.Get<HostReputation>("reputation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.HostReputation>("reputation"); }
             set { BackingStore?.Set("reputation", value); }
         }
 #endif
         /// <summary>The hostSslCertificates that are associated with this host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostSslCertificate>? SslCertificates
+        public List<Microsoft.Graph.Models.Security.HostSslCertificate>? SslCertificates
         {
-            get { return BackingStore?.Get<List<HostSslCertificate>?>("sslCertificates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostSslCertificate>?>("sslCertificates"); }
             set { BackingStore?.Set("sslCertificates", value); }
         }
 #nullable restore
 #else
-        public List<HostSslCertificate> SslCertificates
+        public List<Microsoft.Graph.Models.Security.HostSslCertificate> SslCertificates
         {
-            get { return BackingStore?.Get<List<HostSslCertificate>>("sslCertificates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostSslCertificate>>("sslCertificates"); }
             set { BackingStore?.Set("sslCertificates", value); }
         }
 #endif
         /// <summary>The subdomains that are associated with this host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Subdomain>? Subdomains
+        public List<Microsoft.Graph.Models.Security.Subdomain>? Subdomains
         {
-            get { return BackingStore?.Get<List<Subdomain>?>("subdomains"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.Subdomain>?>("subdomains"); }
             set { BackingStore?.Set("subdomains", value); }
         }
 #nullable restore
 #else
-        public List<Subdomain> Subdomains
+        public List<Microsoft.Graph.Models.Security.Subdomain> Subdomains
         {
-            get { return BackingStore?.Get<List<Subdomain>>("subdomains"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.Subdomain>>("subdomains"); }
             set { BackingStore?.Set("subdomains", value); }
         }
 #endif
         /// <summary>The hostTrackers that are associated with this host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostTracker>? Trackers
+        public List<Microsoft.Graph.Models.Security.HostTracker>? Trackers
         {
-            get { return BackingStore?.Get<List<HostTracker>?>("trackers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostTracker>?>("trackers"); }
             set { BackingStore?.Set("trackers", value); }
         }
 #nullable restore
 #else
-        public List<HostTracker> Trackers
+        public List<Microsoft.Graph.Models.Security.HostTracker> Trackers
         {
-            get { return BackingStore?.Get<List<HostTracker>>("trackers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostTracker>>("trackers"); }
             set { BackingStore?.Set("trackers", value); }
         }
 #endif
         /// <summary>The most recent whoisRecord for this host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WhoisRecord? Whois
+        public Microsoft.Graph.Models.Security.WhoisRecord? Whois
         {
-            get { return BackingStore?.Get<WhoisRecord?>("whois"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisRecord?>("whois"); }
             set { BackingStore?.Set("whois", value); }
         }
 #nullable restore
 #else
-        public WhoisRecord Whois
+        public Microsoft.Graph.Models.Security.WhoisRecord Whois
         {
-            get { return BackingStore?.Get<WhoisRecord>("whois"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisRecord>("whois"); }
             set { BackingStore?.Set("whois", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Host"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.Host"/> and sets the default values.
         /// </summary>
         public Host() : base()
         {
@@ -240,17 +240,17 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Host"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.Host"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Host CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.Host CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.hostname" => new Hostname(),
-                "#microsoft.graph.security.ipAddress" => new IpAddress(),
-                _ => new Host(),
+                "#microsoft.graph.security.hostname" => new Microsoft.Graph.Models.Security.Hostname(),
+                "#microsoft.graph.security.ipAddress" => new Microsoft.Graph.Models.Security.IpAddress(),
+                _ => new Microsoft.Graph.Models.Security.Host(),
             };
         }
         /// <summary>
@@ -261,21 +261,21 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "childHostPairs", n => { ChildHostPairs = n.GetCollectionOfObjectValues<HostPair>(HostPair.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "components", n => { Components = n.GetCollectionOfObjectValues<HostComponent>(HostComponent.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "cookies", n => { Cookies = n.GetCollectionOfObjectValues<HostCookie>(HostCookie.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "childHostPairs", n => { ChildHostPairs = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostPair>(Microsoft.Graph.Models.Security.HostPair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "components", n => { Components = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostComponent>(Microsoft.Graph.Models.Security.HostComponent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "cookies", n => { Cookies = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostCookie>(Microsoft.Graph.Models.Security.HostCookie.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                { "hostPairs", n => { HostPairs = n.GetCollectionOfObjectValues<HostPair>(HostPair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hostPairs", n => { HostPairs = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostPair>(Microsoft.Graph.Models.Security.HostPair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                { "parentHostPairs", n => { ParentHostPairs = n.GetCollectionOfObjectValues<HostPair>(HostPair.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "passiveDns", n => { PassiveDns = n.GetCollectionOfObjectValues<PassiveDnsRecord>(PassiveDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "passiveDnsReverse", n => { PassiveDnsReverse = n.GetCollectionOfObjectValues<PassiveDnsRecord>(PassiveDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "ports", n => { Ports = n.GetCollectionOfObjectValues<HostPort>(HostPort.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "reputation", n => { Reputation = n.GetObjectValue<HostReputation>(HostReputation.CreateFromDiscriminatorValue); } },
-                { "sslCertificates", n => { SslCertificates = n.GetCollectionOfObjectValues<HostSslCertificate>(HostSslCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "subdomains", n => { Subdomains = n.GetCollectionOfObjectValues<Subdomain>(Subdomain.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "trackers", n => { Trackers = n.GetCollectionOfObjectValues<HostTracker>(HostTracker.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "whois", n => { Whois = n.GetObjectValue<WhoisRecord>(WhoisRecord.CreateFromDiscriminatorValue); } },
+                { "parentHostPairs", n => { ParentHostPairs = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostPair>(Microsoft.Graph.Models.Security.HostPair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "passiveDns", n => { PassiveDns = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.PassiveDnsRecord>(Microsoft.Graph.Models.Security.PassiveDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "passiveDnsReverse", n => { PassiveDnsReverse = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.PassiveDnsRecord>(Microsoft.Graph.Models.Security.PassiveDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ports", n => { Ports = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostPort>(Microsoft.Graph.Models.Security.HostPort.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "reputation", n => { Reputation = n.GetObjectValue<Microsoft.Graph.Models.Security.HostReputation>(Microsoft.Graph.Models.Security.HostReputation.CreateFromDiscriminatorValue); } },
+                { "sslCertificates", n => { SslCertificates = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostSslCertificate>(Microsoft.Graph.Models.Security.HostSslCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "subdomains", n => { Subdomains = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.Subdomain>(Microsoft.Graph.Models.Security.Subdomain.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "trackers", n => { Trackers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostTracker>(Microsoft.Graph.Models.Security.HostTracker.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "whois", n => { Whois = n.GetObjectValue<Microsoft.Graph.Models.Security.WhoisRecord>(Microsoft.Graph.Models.Security.WhoisRecord.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -286,21 +286,21 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<HostPair>("childHostPairs", ChildHostPairs);
-            writer.WriteCollectionOfObjectValues<HostComponent>("components", Components);
-            writer.WriteCollectionOfObjectValues<HostCookie>("cookies", Cookies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostPair>("childHostPairs", ChildHostPairs);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostComponent>("components", Components);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostCookie>("cookies", Cookies);
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
-            writer.WriteCollectionOfObjectValues<HostPair>("hostPairs", HostPairs);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostPair>("hostPairs", HostPairs);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
-            writer.WriteCollectionOfObjectValues<HostPair>("parentHostPairs", ParentHostPairs);
-            writer.WriteCollectionOfObjectValues<PassiveDnsRecord>("passiveDns", PassiveDns);
-            writer.WriteCollectionOfObjectValues<PassiveDnsRecord>("passiveDnsReverse", PassiveDnsReverse);
-            writer.WriteCollectionOfObjectValues<HostPort>("ports", Ports);
-            writer.WriteObjectValue<HostReputation>("reputation", Reputation);
-            writer.WriteCollectionOfObjectValues<HostSslCertificate>("sslCertificates", SslCertificates);
-            writer.WriteCollectionOfObjectValues<Subdomain>("subdomains", Subdomains);
-            writer.WriteCollectionOfObjectValues<HostTracker>("trackers", Trackers);
-            writer.WriteObjectValue<WhoisRecord>("whois", Whois);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostPair>("parentHostPairs", ParentHostPairs);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.PassiveDnsRecord>("passiveDns", PassiveDns);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.PassiveDnsRecord>("passiveDnsReverse", PassiveDnsReverse);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostPort>("ports", Ports);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.HostReputation>("reputation", Reputation);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostSslCertificate>("sslCertificates", SslCertificates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.Subdomain>("subdomains", Subdomains);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostTracker>("trackers", Trackers);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.WhoisRecord>("whois", Whois);
         }
     }
 }

@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class PlannerTaskDetails : Entity, IParsable
+    public class PlannerTaskDetails : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The collection of checklist items on the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerChecklistItems? Checklist
+        public Microsoft.Graph.Models.PlannerChecklistItems? Checklist
         {
-            get { return BackingStore?.Get<PlannerChecklistItems?>("checklist"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PlannerChecklistItems?>("checklist"); }
             set { BackingStore?.Set("checklist", value); }
         }
 #nullable restore
 #else
-        public PlannerChecklistItems Checklist
+        public Microsoft.Graph.Models.PlannerChecklistItems Checklist
         {
-            get { return BackingStore?.Get<PlannerChecklistItems>("checklist"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PlannerChecklistItems>("checklist"); }
             set { BackingStore?.Set("checklist", value); }
         }
 #endif
@@ -43,36 +43,36 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.</summary>
-        public PlannerPreviewType? PreviewType
+        public Microsoft.Graph.Models.PlannerPreviewType? PreviewType
         {
-            get { return BackingStore?.Get<PlannerPreviewType?>("previewType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PlannerPreviewType?>("previewType"); }
             set { BackingStore?.Set("previewType", value); }
         }
         /// <summary>The collection of references on the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerExternalReferences? References
+        public Microsoft.Graph.Models.PlannerExternalReferences? References
         {
-            get { return BackingStore?.Get<PlannerExternalReferences?>("references"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PlannerExternalReferences?>("references"); }
             set { BackingStore?.Set("references", value); }
         }
 #nullable restore
 #else
-        public PlannerExternalReferences References
+        public Microsoft.Graph.Models.PlannerExternalReferences References
         {
-            get { return BackingStore?.Get<PlannerExternalReferences>("references"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PlannerExternalReferences>("references"); }
             set { BackingStore?.Set("references", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerTaskDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PlannerTaskDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PlannerTaskDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.PlannerTaskDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerTaskDetails();
+            return new Microsoft.Graph.Models.PlannerTaskDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,10 +82,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "checklist", n => { Checklist = n.GetObjectValue<PlannerChecklistItems>(PlannerChecklistItems.CreateFromDiscriminatorValue); } },
+                { "checklist", n => { Checklist = n.GetObjectValue<Microsoft.Graph.Models.PlannerChecklistItems>(Microsoft.Graph.Models.PlannerChecklistItems.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "previewType", n => { PreviewType = n.GetEnumValue<PlannerPreviewType>(); } },
-                { "references", n => { References = n.GetObjectValue<PlannerExternalReferences>(PlannerExternalReferences.CreateFromDiscriminatorValue); } },
+                { "previewType", n => { PreviewType = n.GetEnumValue<Microsoft.Graph.Models.PlannerPreviewType>(); } },
+                { "references", n => { References = n.GetObjectValue<Microsoft.Graph.Models.PlannerExternalReferences>(Microsoft.Graph.Models.PlannerExternalReferences.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -96,10 +96,10 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<PlannerChecklistItems>("checklist", Checklist);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PlannerChecklistItems>("checklist", Checklist);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<PlannerPreviewType>("previewType", PreviewType);
-            writer.WriteObjectValue<PlannerExternalReferences>("references", References);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PlannerPreviewType>("previewType", PreviewType);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PlannerExternalReferences>("references", References);
         }
     }
 }

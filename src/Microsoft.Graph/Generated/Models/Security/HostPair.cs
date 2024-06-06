@@ -13,16 +13,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The childHost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Host? ChildHost
+        public Microsoft.Graph.Models.Security.Host? ChildHost
         {
-            get { return BackingStore?.Get<Host?>("childHost"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Host?>("childHost"); }
             set { BackingStore?.Set("childHost", value); }
         }
 #nullable restore
 #else
-        public Host ChildHost
+        public Microsoft.Graph.Models.Security.Host ChildHost
         {
-            get { return BackingStore?.Get<Host>("childHost"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Host>("childHost"); }
             set { BackingStore?.Set("childHost", value); }
         }
 #endif
@@ -57,28 +57,28 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The parentHost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Host? ParentHost
+        public Microsoft.Graph.Models.Security.Host? ParentHost
         {
-            get { return BackingStore?.Get<Host?>("parentHost"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Host?>("parentHost"); }
             set { BackingStore?.Set("parentHost", value); }
         }
 #nullable restore
 #else
-        public Host ParentHost
+        public Microsoft.Graph.Models.Security.Host ParentHost
         {
-            get { return BackingStore?.Get<Host>("parentHost"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Host>("parentHost"); }
             set { BackingStore?.Set("parentHost", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HostPair"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.HostPair"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new HostPair CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.HostPair CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HostPair();
+            return new Microsoft.Graph.Models.Security.HostPair();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,11 +88,11 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "childHost", n => { ChildHost = n.GetObjectValue<Host>(Host.CreateFromDiscriminatorValue); } },
+                { "childHost", n => { ChildHost = n.GetObjectValue<Microsoft.Graph.Models.Security.Host>(Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue); } },
                 { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "linkKind", n => { LinkKind = n.GetStringValue(); } },
-                { "parentHost", n => { ParentHost = n.GetObjectValue<Host>(Host.CreateFromDiscriminatorValue); } },
+                { "parentHost", n => { ParentHost = n.GetObjectValue<Microsoft.Graph.Models.Security.Host>(Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -103,11 +103,11 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<Host>("childHost", ChildHost);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.Host>("childHost", ChildHost);
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
             writer.WriteStringValue("linkKind", LinkKind);
-            writer.WriteObjectValue<Host>("parentHost", ParentHost);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.Host>("parentHost", ParentHost);
         }
     }
 }

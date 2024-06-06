@@ -19,24 +19,24 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies
     public class ProvisioningPoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.</summary>
         /// <param name="position">The unique identifier of cloudPcProvisioningPolicy</param>
-        /// <returns>A <see cref="CloudPcProvisioningPolicyItemRequestBuilder"/></returns>
-        public CloudPcProvisioningPolicyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.CloudPcProvisioningPolicyItemRequestBuilder"/></returns>
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.CloudPcProvisioningPolicyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("cloudPcProvisioningPolicy%2Did", position);
-                return new CloudPcProvisioningPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.CloudPcProvisioningPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProvisioningPoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProvisioningPoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies
         /// List properties and relationships of the cloudPcProvisioningPolicy objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-provisioningpolicies?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="CloudPcProvisioningPolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudPcProvisioningPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPcProvisioningPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<ProvisioningPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CloudPcProvisioningPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder.ProvisioningPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudPcProvisioningPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<ProvisioningPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CloudPcProvisioningPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder.ProvisioningPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudPcProvisioningPolicyCollectionResponse>(requestInfo, CloudPcProvisioningPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CloudPcProvisioningPolicyCollectionResponse>(requestInfo, Microsoft.Graph.Models.CloudPcProvisioningPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new cloudPcProvisioningPolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-post-provisioningpolicies?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="CloudPcProvisioningPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudPcProvisioningPolicy"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPcProvisioningPolicy?> PostAsync(CloudPcProvisioningPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CloudPcProvisioningPolicy?> PostAsync(Microsoft.Graph.Models.CloudPcProvisioningPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudPcProvisioningPolicy> PostAsync(CloudPcProvisioningPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CloudPcProvisioningPolicy> PostAsync(Microsoft.Graph.Models.CloudPcProvisioningPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudPcProvisioningPolicy>(requestInfo, CloudPcProvisioningPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CloudPcProvisioningPolicy>(requestInfo, Microsoft.Graph.Models.CloudPcProvisioningPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List properties and relationships of the cloudPcProvisioningPolicy objects.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProvisioningPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder.ProvisioningPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProvisioningPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder.ProvisioningPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(CloudPcProvisioningPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.CloudPcProvisioningPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(CloudPcProvisioningPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.CloudPcProvisioningPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ProvisioningPoliciesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ProvisioningPoliciesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder WithUrl(string rawUrl)
         {
-            return new ProvisioningPoliciesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List properties and relationships of the cloudPcProvisioningPolicy objects.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ProvisioningPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<ProvisioningPoliciesRequestBuilderGetQueryParameters>
+        public class ProvisioningPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder.ProvisioningPoliciesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

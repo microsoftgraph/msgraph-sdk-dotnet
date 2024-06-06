@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Windows Defender last scan result
     /// </summary>
-    public class WindowsDefenderScanActionResult : DeviceActionResult, IParsable
+    public class WindowsDefenderScanActionResult : Microsoft.Graph.Models.DeviceActionResult, IParsable
     {
         /// <summary>Scan type either full scan or quick scan</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,12 +30,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsDefenderScanActionResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsDefenderScanActionResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsDefenderScanActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WindowsDefenderScanActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsDefenderScanActionResult();
+            return new Microsoft.Graph.Models.WindowsDefenderScanActionResult();
         }
         /// <summary>
         /// The deserialization information for the current model

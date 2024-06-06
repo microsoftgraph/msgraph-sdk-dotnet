@@ -13,60 +13,60 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The OCR (Optical Character Recognition) settings for the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OcrSettings? Ocr
+        public Microsoft.Graph.Models.Security.OcrSettings? Ocr
         {
-            get { return BackingStore?.Get<OcrSettings?>("ocr"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.OcrSettings?>("ocr"); }
             set { BackingStore?.Set("ocr", value); }
         }
 #nullable restore
 #else
-        public OcrSettings Ocr
+        public Microsoft.Graph.Models.Security.OcrSettings Ocr
         {
-            get { return BackingStore?.Get<OcrSettings>("ocr"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.OcrSettings>("ocr"); }
             set { BackingStore?.Set("ocr", value); }
         }
 #endif
         /// <summary>The redundancy (near duplicate and email threading) detection settings for the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RedundancyDetectionSettings? RedundancyDetection
+        public Microsoft.Graph.Models.Security.RedundancyDetectionSettings? RedundancyDetection
         {
-            get { return BackingStore?.Get<RedundancyDetectionSettings?>("redundancyDetection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.RedundancyDetectionSettings?>("redundancyDetection"); }
             set { BackingStore?.Set("redundancyDetection", value); }
         }
 #nullable restore
 #else
-        public RedundancyDetectionSettings RedundancyDetection
+        public Microsoft.Graph.Models.Security.RedundancyDetectionSettings RedundancyDetection
         {
-            get { return BackingStore?.Get<RedundancyDetectionSettings>("redundancyDetection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.RedundancyDetectionSettings>("redundancyDetection"); }
             set { BackingStore?.Set("redundancyDetection", value); }
         }
 #endif
         /// <summary>The Topic Modeling (Themes) settings for the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TopicModelingSettings? TopicModeling
+        public Microsoft.Graph.Models.Security.TopicModelingSettings? TopicModeling
         {
-            get { return BackingStore?.Get<TopicModelingSettings?>("topicModeling"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.TopicModelingSettings?>("topicModeling"); }
             set { BackingStore?.Set("topicModeling", value); }
         }
 #nullable restore
 #else
-        public TopicModelingSettings TopicModeling
+        public Microsoft.Graph.Models.Security.TopicModelingSettings TopicModeling
         {
-            get { return BackingStore?.Get<TopicModelingSettings>("topicModeling"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.TopicModelingSettings>("topicModeling"); }
             set { BackingStore?.Set("topicModeling", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryCaseSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.EdiscoveryCaseSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdiscoveryCaseSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.EdiscoveryCaseSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdiscoveryCaseSettings();
+            return new Microsoft.Graph.Models.Security.EdiscoveryCaseSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,9 +76,9 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "ocr", n => { Ocr = n.GetObjectValue<OcrSettings>(OcrSettings.CreateFromDiscriminatorValue); } },
-                { "redundancyDetection", n => { RedundancyDetection = n.GetObjectValue<RedundancyDetectionSettings>(RedundancyDetectionSettings.CreateFromDiscriminatorValue); } },
-                { "topicModeling", n => { TopicModeling = n.GetObjectValue<TopicModelingSettings>(TopicModelingSettings.CreateFromDiscriminatorValue); } },
+                { "ocr", n => { Ocr = n.GetObjectValue<Microsoft.Graph.Models.Security.OcrSettings>(Microsoft.Graph.Models.Security.OcrSettings.CreateFromDiscriminatorValue); } },
+                { "redundancyDetection", n => { RedundancyDetection = n.GetObjectValue<Microsoft.Graph.Models.Security.RedundancyDetectionSettings>(Microsoft.Graph.Models.Security.RedundancyDetectionSettings.CreateFromDiscriminatorValue); } },
+                { "topicModeling", n => { TopicModeling = n.GetObjectValue<Microsoft.Graph.Models.Security.TopicModelingSettings>(Microsoft.Graph.Models.Security.TopicModelingSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<OcrSettings>("ocr", Ocr);
-            writer.WriteObjectValue<RedundancyDetectionSettings>("redundancyDetection", RedundancyDetection);
-            writer.WriteObjectValue<TopicModelingSettings>("topicModeling", TopicModeling);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.OcrSettings>("ocr", Ocr);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.RedundancyDetectionSettings>("redundancyDetection", RedundancyDetection);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.TopicModelingSettings>("topicModeling", TopicModeling);
         }
     }
 }

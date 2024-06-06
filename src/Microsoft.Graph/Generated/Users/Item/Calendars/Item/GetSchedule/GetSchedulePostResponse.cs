@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule
 {
     #pragma warning disable CS1591
-    public class GetSchedulePostResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetSchedulePostResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ScheduleInformation>? Value
+        public List<Microsoft.Graph.Models.ScheduleInformation>? Value
         {
-            get { return BackingStore?.Get<List<ScheduleInformation>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ScheduleInformation>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ScheduleInformation> Value
+        public List<Microsoft.Graph.Models.ScheduleInformation> Value
         {
-            get { return BackingStore?.Get<List<ScheduleInformation>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ScheduleInformation>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetSchedulePostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulePostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetSchedulePostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulePostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetSchedulePostResponse();
+            return new Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulePostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<ScheduleInformation>(ScheduleInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ScheduleInformation>(Microsoft.Graph.Models.ScheduleInformation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ScheduleInformation>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ScheduleInformation>("value", Value);
         }
     }
 }

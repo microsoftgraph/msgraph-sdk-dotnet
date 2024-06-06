@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Invitations.Item.InvitedUserSponsors
     public class InvitedUserSponsorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Invitations.Item.InvitedUserSponsors.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Invitations.Item.InvitedUserSponsors.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the invitedUserSponsors property of the microsoft.graph.invitation entity.</summary>
         /// <param name="position">The unique identifier of directoryObject</param>
-        /// <returns>A <see cref="DirectoryObjectItemRequestBuilder"/></returns>
-        public DirectoryObjectItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Invitations.Item.InvitedUserSponsors.Item.DirectoryObjectItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Invitations.Item.InvitedUserSponsors.Item.DirectoryObjectItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("directoryObject%2Did", position);
-                return new DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Invitations.Item.InvitedUserSponsors.Item.DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="InvitedUserSponsorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Invitations.Item.InvitedUserSponsors.InvitedUserSponsorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Invitations.Item.InvitedUserSponsors
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="InvitedUserSponsorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Invitations.Item.InvitedUserSponsors.InvitedUserSponsorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.Invitations.Item.InvitedUserSponsors
         /// <summary>
         /// The users or groups who are sponsors of the invited user. Sponsors are users and groups that are responsible for guest users&apos; privileges in the tenant and for keeping the guest users&apos; information and access up to date.
         /// </summary>
-        /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<InvitedUserSponsorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Invitations.Item.InvitedUserSponsors.InvitedUserSponsorsRequestBuilder.InvitedUserSponsorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<InvitedUserSponsorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Invitations.Item.InvitedUserSponsors.InvitedUserSponsorsRequestBuilder.InvitedUserSponsorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DirectoryObjectCollectionResponse>(requestInfo, Microsoft.Graph.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The users or groups who are sponsors of the invited user. Sponsors are users and groups that are responsible for guest users&apos; privileges in the tenant and for keeping the guest users&apos; information and access up to date.
@@ -81,11 +81,11 @@ namespace Microsoft.Graph.Invitations.Item.InvitedUserSponsors
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InvitedUserSponsorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Invitations.Item.InvitedUserSponsors.InvitedUserSponsorsRequestBuilder.InvitedUserSponsorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InvitedUserSponsorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Invitations.Item.InvitedUserSponsors.InvitedUserSponsorsRequestBuilder.InvitedUserSponsorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -96,11 +96,11 @@ namespace Microsoft.Graph.Invitations.Item.InvitedUserSponsors
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="InvitedUserSponsorsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Invitations.Item.InvitedUserSponsors.InvitedUserSponsorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public InvitedUserSponsorsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Invitations.Item.InvitedUserSponsors.InvitedUserSponsorsRequestBuilder WithUrl(string rawUrl)
         {
-            return new InvitedUserSponsorsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Invitations.Item.InvitedUserSponsors.InvitedUserSponsorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The users or groups who are sponsors of the invited user. Sponsors are users and groups that are responsible for guest users&apos; privileges in the tenant and for keeping the guest users&apos; information and access up to date.
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Invitations.Item.InvitedUserSponsors
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InvitedUserSponsorsRequestBuilderGetRequestConfiguration : RequestConfiguration<InvitedUserSponsorsRequestBuilderGetQueryParameters>
+        public class InvitedUserSponsorsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Invitations.Item.InvitedUserSponsors.InvitedUserSponsorsRequestBuilder.InvitedUserSponsorsRequestBuilderGetQueryParameters>
         {
         }
     }

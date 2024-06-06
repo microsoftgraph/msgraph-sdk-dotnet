@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AlertCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class AlertCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Alert>? Value
+        public List<Microsoft.Graph.Models.Alert>? Value
         {
-            get { return BackingStore?.Get<List<Alert>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Alert>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Alert> Value
+        public List<Microsoft.Graph.Models.Alert> Value
         {
-            get { return BackingStore?.Get<List<Alert>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Alert>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AlertCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AlertCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AlertCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AlertCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AlertCollectionResponse();
+            return new Microsoft.Graph.Models.AlertCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<Alert>(Alert.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Alert>(Microsoft.Graph.Models.Alert.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Alert>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Alert>("value", Value);
         }
     }
 }

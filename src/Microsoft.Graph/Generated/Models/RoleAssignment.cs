@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
     /// </summary>
-    public class RoleAssignment : Entity, IParsable
+    public class RoleAssignment : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Description of the Role Assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,16 +78,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RoleAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RoleAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RoleAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.RoleAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.deviceAndAppManagementRoleAssignment" => new DeviceAndAppManagementRoleAssignment(),
-                _ => new RoleAssignment(),
+                "#microsoft.graph.deviceAndAppManagementRoleAssignment" => new Microsoft.Graph.Models.DeviceAndAppManagementRoleAssignment(),
+                _ => new Microsoft.Graph.Models.RoleAssignment(),
             };
         }
         /// <summary>

@@ -28,16 +28,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The content of the service issue post. The supported value for the contentType property is html.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Description
+        public Microsoft.Graph.Models.ItemBody? Description
         {
-            get { return BackingStore?.Get<ItemBody?>("description"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemBody?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public ItemBody Description
+        public Microsoft.Graph.Models.ItemBody Description
         {
-            get { return BackingStore?.Get<ItemBody>("description"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemBody>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("postType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ServiceHealthIssuePost"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ServiceHealthIssuePost"/> and sets the default values.
         /// </summary>
         public ServiceHealthIssuePost()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ServiceHealthIssuePost"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ServiceHealthIssuePost"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ServiceHealthIssuePost CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ServiceHealthIssuePost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ServiceHealthIssuePost();
+            return new Microsoft.Graph.Models.ServiceHealthIssuePost();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,9 +90,9 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "description", n => { Description = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<Microsoft.Graph.Models.ItemBody>(Microsoft.Graph.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "postType", n => { PostType = n.GetEnumValue<PostType>(); } },
+                { "postType", n => { PostType = n.GetEnumValue<Microsoft.Graph.Models.PostType>(); } },
             };
         }
         /// <summary>
@@ -103,9 +103,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<ItemBody>("description", Description);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemBody>("description", Description);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<PostType>("postType", PostType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PostType>("postType", PostType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

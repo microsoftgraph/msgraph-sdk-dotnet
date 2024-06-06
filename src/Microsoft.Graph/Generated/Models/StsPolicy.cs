@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class StsPolicy : PolicyBase, IParsable
+    public class StsPolicy : Microsoft.Graph.Models.PolicyBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The appliesTo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? AppliesTo
+        public List<Microsoft.Graph.Models.DirectoryObject>? AppliesTo
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("appliesTo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> AppliesTo
+        public List<Microsoft.Graph.Models.DirectoryObject> AppliesTo
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("appliesTo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
 #endif
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("isOrganizationDefault", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="StsPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.StsPolicy"/> and sets the default values.
         /// </summary>
         public StsPolicy() : base()
         {
@@ -58,20 +58,20 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="StsPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.StsPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new StsPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.StsPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.activityBasedTimeoutPolicy" => new ActivityBasedTimeoutPolicy(),
-                "#microsoft.graph.claimsMappingPolicy" => new ClaimsMappingPolicy(),
-                "#microsoft.graph.homeRealmDiscoveryPolicy" => new HomeRealmDiscoveryPolicy(),
-                "#microsoft.graph.tokenIssuancePolicy" => new TokenIssuancePolicy(),
-                "#microsoft.graph.tokenLifetimePolicy" => new TokenLifetimePolicy(),
-                _ => new StsPolicy(),
+                "#microsoft.graph.activityBasedTimeoutPolicy" => new Microsoft.Graph.Models.ActivityBasedTimeoutPolicy(),
+                "#microsoft.graph.claimsMappingPolicy" => new Microsoft.Graph.Models.ClaimsMappingPolicy(),
+                "#microsoft.graph.homeRealmDiscoveryPolicy" => new Microsoft.Graph.Models.HomeRealmDiscoveryPolicy(),
+                "#microsoft.graph.tokenIssuancePolicy" => new Microsoft.Graph.Models.TokenIssuancePolicy(),
+                "#microsoft.graph.tokenLifetimePolicy" => new Microsoft.Graph.Models.TokenLifetimePolicy(),
+                _ => new Microsoft.Graph.Models.StsPolicy(),
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "appliesTo", n => { AppliesTo = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appliesTo", n => { AppliesTo = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "definition", n => { Definition = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "isOrganizationDefault", n => { IsOrganizationDefault = n.GetBoolValue(); } },
             };
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("appliesTo", AppliesTo);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("appliesTo", AppliesTo);
             writer.WriteCollectionOfPrimitiveValues<string>("definition", Definition);
             writer.WriteBoolValue("isOrganizationDefault", IsOrganizationDefault);
         }

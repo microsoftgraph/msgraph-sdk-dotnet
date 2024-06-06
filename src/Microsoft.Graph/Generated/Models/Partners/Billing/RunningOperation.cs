@@ -7,18 +7,18 @@ using System;
 namespace Microsoft.Graph.Models.Partners.Billing
 {
     #pragma warning disable CS1591
-    public class RunningOperation : Operation, IParsable
+    public class RunningOperation : Microsoft.Graph.Models.Partners.Billing.Operation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RunningOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Partners.Billing.RunningOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RunningOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Partners.Billing.RunningOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RunningOperation();
+            return new Microsoft.Graph.Models.Partners.Billing.RunningOperation();
         }
         /// <summary>
         /// The deserialization information for the current model

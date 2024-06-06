@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class DomainDnsRecord : Entity, IParsable
+    public class DomainDnsRecord : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>If false, the customer must configure this record at the DNS host for Microsoft Online Services to operate correctly with the domain.</summary>
@@ -73,20 +73,20 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DomainDnsRecord"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DomainDnsRecord"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DomainDnsRecord CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DomainDnsRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.domainDnsCnameRecord" => new DomainDnsCnameRecord(),
-                "#microsoft.graph.domainDnsMxRecord" => new DomainDnsMxRecord(),
-                "#microsoft.graph.domainDnsSrvRecord" => new DomainDnsSrvRecord(),
-                "#microsoft.graph.domainDnsTxtRecord" => new DomainDnsTxtRecord(),
-                "#microsoft.graph.domainDnsUnavailableRecord" => new DomainDnsUnavailableRecord(),
-                _ => new DomainDnsRecord(),
+                "#microsoft.graph.domainDnsCnameRecord" => new Microsoft.Graph.Models.DomainDnsCnameRecord(),
+                "#microsoft.graph.domainDnsMxRecord" => new Microsoft.Graph.Models.DomainDnsMxRecord(),
+                "#microsoft.graph.domainDnsSrvRecord" => new Microsoft.Graph.Models.DomainDnsSrvRecord(),
+                "#microsoft.graph.domainDnsTxtRecord" => new Microsoft.Graph.Models.DomainDnsTxtRecord(),
+                "#microsoft.graph.domainDnsUnavailableRecord" => new Microsoft.Graph.Models.DomainDnsUnavailableRecord(),
+                _ => new Microsoft.Graph.Models.DomainDnsRecord(),
             };
         }
         /// <summary>

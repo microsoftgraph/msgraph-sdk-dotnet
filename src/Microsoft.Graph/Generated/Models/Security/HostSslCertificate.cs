@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class HostSslCertificate : Artifact, IParsable
+    public class HostSslCertificate : Microsoft.Graph.Models.Security.Artifact, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The first date and time when this hostSslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
@@ -41,16 +41,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The ports related with this hostSslCertificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostSslCertificatePort>? Ports
+        public List<Microsoft.Graph.Models.Security.HostSslCertificatePort>? Ports
         {
-            get { return BackingStore?.Get<List<HostSslCertificatePort>?>("ports"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostSslCertificatePort>?>("ports"); }
             set { BackingStore?.Set("ports", value); }
         }
 #nullable restore
 #else
-        public List<HostSslCertificatePort> Ports
+        public List<Microsoft.Graph.Models.Security.HostSslCertificatePort> Ports
         {
-            get { return BackingStore?.Get<List<HostSslCertificatePort>>("ports"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostSslCertificatePort>>("ports"); }
             set { BackingStore?.Set("ports", value); }
         }
 #endif
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="HostSslCertificate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.HostSslCertificate"/> and sets the default values.
         /// </summary>
         public HostSslCertificate() : base()
         {
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HostSslCertificate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.HostSslCertificate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new HostSslCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.HostSslCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HostSslCertificate();
+            return new Microsoft.Graph.Models.Security.HostSslCertificate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models.Security
                 { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "host", n => { Host = n.GetObjectValue<Microsoft.Graph.Models.Security.Host>(Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue); } },
                 { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                { "ports", n => { Ports = n.GetCollectionOfObjectValues<HostSslCertificatePort>(HostSslCertificatePort.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ports", n => { Ports = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostSslCertificatePort>(Microsoft.Graph.Models.Security.HostSslCertificatePort.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "sslCertificate", n => { SslCertificate = n.GetObjectValue<Microsoft.Graph.Models.Security.SslCertificate>(Microsoft.Graph.Models.Security.SslCertificate.CreateFromDiscriminatorValue); } },
             };
         }
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Models.Security.Host>("host", Host);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
-            writer.WriteCollectionOfObjectValues<HostSslCertificatePort>("ports", Ports);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostSslCertificatePort>("ports", Ports);
             writer.WriteObjectValue<Microsoft.Graph.Models.Security.SslCertificate>("sslCertificate", SslCertificate);
         }
     }

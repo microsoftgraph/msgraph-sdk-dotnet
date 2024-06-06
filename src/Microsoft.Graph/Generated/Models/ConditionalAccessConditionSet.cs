@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Applications and user actions included in and excluded from the policy. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessApplications? Applications
+        public Microsoft.Graph.Models.ConditionalAccessApplications? Applications
         {
-            get { return BackingStore?.Get<ConditionalAccessApplications?>("applications"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessApplications?>("applications"); }
             set { BackingStore?.Set("applications", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessApplications Applications
+        public Microsoft.Graph.Models.ConditionalAccessApplications Applications
         {
-            get { return BackingStore?.Get<ConditionalAccessApplications>("applications"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessApplications>("applications"); }
             set { BackingStore?.Set("applications", value); }
         }
 #endif
@@ -38,64 +38,64 @@ namespace Microsoft.Graph.Models
         /// <summary>Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessClientApplications? ClientApplications
+        public Microsoft.Graph.Models.ConditionalAccessClientApplications? ClientApplications
         {
-            get { return BackingStore?.Get<ConditionalAccessClientApplications?>("clientApplications"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessClientApplications?>("clientApplications"); }
             set { BackingStore?.Set("clientApplications", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessClientApplications ClientApplications
+        public Microsoft.Graph.Models.ConditionalAccessClientApplications ClientApplications
         {
-            get { return BackingStore?.Get<ConditionalAccessClientApplications>("clientApplications"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessClientApplications>("clientApplications"); }
             set { BackingStore?.Set("clientApplications", value); }
         }
 #endif
         /// <summary>Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync which includes EAS supported and unsupported platforms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConditionalAccessClientApp?>? ClientAppTypes
+        public List<Microsoft.Graph.Models.ConditionalAccessClientApp?>? ClientAppTypes
         {
-            get { return BackingStore?.Get<List<ConditionalAccessClientApp?>?>("clientAppTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConditionalAccessClientApp?>?>("clientAppTypes"); }
             set { BackingStore?.Set("clientAppTypes", value); }
         }
 #nullable restore
 #else
-        public List<ConditionalAccessClientApp?> ClientAppTypes
+        public List<Microsoft.Graph.Models.ConditionalAccessClientApp?> ClientAppTypes
         {
-            get { return BackingStore?.Get<List<ConditionalAccessClientApp?>>("clientAppTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConditionalAccessClientApp?>>("clientAppTypes"); }
             set { BackingStore?.Set("clientAppTypes", value); }
         }
 #endif
         /// <summary>Devices in the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessDevices? Devices
+        public Microsoft.Graph.Models.ConditionalAccessDevices? Devices
         {
-            get { return BackingStore?.Get<ConditionalAccessDevices?>("devices"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessDevices?>("devices"); }
             set { BackingStore?.Set("devices", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessDevices Devices
+        public Microsoft.Graph.Models.ConditionalAccessDevices Devices
         {
-            get { return BackingStore?.Get<ConditionalAccessDevices>("devices"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessDevices>("devices"); }
             set { BackingStore?.Set("devices", value); }
         }
 #endif
         /// <summary>Locations included in and excluded from the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessLocations? Locations
+        public Microsoft.Graph.Models.ConditionalAccessLocations? Locations
         {
-            get { return BackingStore?.Get<ConditionalAccessLocations?>("locations"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessLocations?>("locations"); }
             set { BackingStore?.Set("locations", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessLocations Locations
+        public Microsoft.Graph.Models.ConditionalAccessLocations Locations
         {
-            get { return BackingStore?.Get<ConditionalAccessLocations>("locations"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessLocations>("locations"); }
             set { BackingStore?.Set("locations", value); }
         }
 #endif
@@ -118,85 +118,85 @@ namespace Microsoft.Graph.Models
         /// <summary>Platforms included in and excluded from the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessPlatforms? Platforms
+        public Microsoft.Graph.Models.ConditionalAccessPlatforms? Platforms
         {
-            get { return BackingStore?.Get<ConditionalAccessPlatforms?>("platforms"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessPlatforms?>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessPlatforms Platforms
+        public Microsoft.Graph.Models.ConditionalAccessPlatforms Platforms
         {
-            get { return BackingStore?.Get<ConditionalAccessPlatforms>("platforms"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessPlatforms>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
 #endif
         /// <summary>Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RiskLevel?>? ServicePrincipalRiskLevels
+        public List<Microsoft.Graph.Models.RiskLevel?>? ServicePrincipalRiskLevels
         {
-            get { return BackingStore?.Get<List<RiskLevel?>?>("servicePrincipalRiskLevels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.RiskLevel?>?>("servicePrincipalRiskLevels"); }
             set { BackingStore?.Set("servicePrincipalRiskLevels", value); }
         }
 #nullable restore
 #else
-        public List<RiskLevel?> ServicePrincipalRiskLevels
+        public List<Microsoft.Graph.Models.RiskLevel?> ServicePrincipalRiskLevels
         {
-            get { return BackingStore?.Get<List<RiskLevel?>>("servicePrincipalRiskLevels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.RiskLevel?>>("servicePrincipalRiskLevels"); }
             set { BackingStore?.Set("servicePrincipalRiskLevels", value); }
         }
 #endif
         /// <summary>Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RiskLevel?>? SignInRiskLevels
+        public List<Microsoft.Graph.Models.RiskLevel?>? SignInRiskLevels
         {
-            get { return BackingStore?.Get<List<RiskLevel?>?>("signInRiskLevels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.RiskLevel?>?>("signInRiskLevels"); }
             set { BackingStore?.Set("signInRiskLevels", value); }
         }
 #nullable restore
 #else
-        public List<RiskLevel?> SignInRiskLevels
+        public List<Microsoft.Graph.Models.RiskLevel?> SignInRiskLevels
         {
-            get { return BackingStore?.Get<List<RiskLevel?>>("signInRiskLevels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.RiskLevel?>>("signInRiskLevels"); }
             set { BackingStore?.Set("signInRiskLevels", value); }
         }
 #endif
         /// <summary>User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RiskLevel?>? UserRiskLevels
+        public List<Microsoft.Graph.Models.RiskLevel?>? UserRiskLevels
         {
-            get { return BackingStore?.Get<List<RiskLevel?>?>("userRiskLevels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.RiskLevel?>?>("userRiskLevels"); }
             set { BackingStore?.Set("userRiskLevels", value); }
         }
 #nullable restore
 #else
-        public List<RiskLevel?> UserRiskLevels
+        public List<Microsoft.Graph.Models.RiskLevel?> UserRiskLevels
         {
-            get { return BackingStore?.Get<List<RiskLevel?>>("userRiskLevels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.RiskLevel?>>("userRiskLevels"); }
             set { BackingStore?.Set("userRiskLevels", value); }
         }
 #endif
         /// <summary>Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessUsers? Users
+        public Microsoft.Graph.Models.ConditionalAccessUsers? Users
         {
-            get { return BackingStore?.Get<ConditionalAccessUsers?>("users"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessUsers?>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessUsers Users
+        public Microsoft.Graph.Models.ConditionalAccessUsers Users
         {
-            get { return BackingStore?.Get<ConditionalAccessUsers>("users"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessUsers>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ConditionalAccessConditionSet"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ConditionalAccessConditionSet"/> and sets the default values.
         /// </summary>
         public ConditionalAccessConditionSet()
         {
@@ -206,12 +206,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessConditionSet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ConditionalAccessConditionSet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConditionalAccessConditionSet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ConditionalAccessConditionSet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessConditionSet();
+            return new Microsoft.Graph.Models.ConditionalAccessConditionSet();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -221,17 +221,17 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "applications", n => { Applications = n.GetObjectValue<ConditionalAccessApplications>(ConditionalAccessApplications.CreateFromDiscriminatorValue); } },
-                { "clientAppTypes", n => { ClientAppTypes = n.GetCollectionOfEnumValues<ConditionalAccessClientApp>()?.ToList(); } },
-                { "clientApplications", n => { ClientApplications = n.GetObjectValue<ConditionalAccessClientApplications>(ConditionalAccessClientApplications.CreateFromDiscriminatorValue); } },
-                { "devices", n => { Devices = n.GetObjectValue<ConditionalAccessDevices>(ConditionalAccessDevices.CreateFromDiscriminatorValue); } },
-                { "locations", n => { Locations = n.GetObjectValue<ConditionalAccessLocations>(ConditionalAccessLocations.CreateFromDiscriminatorValue); } },
+                { "applications", n => { Applications = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessApplications>(Microsoft.Graph.Models.ConditionalAccessApplications.CreateFromDiscriminatorValue); } },
+                { "clientAppTypes", n => { ClientAppTypes = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.ConditionalAccessClientApp>()?.ToList(); } },
+                { "clientApplications", n => { ClientApplications = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessClientApplications>(Microsoft.Graph.Models.ConditionalAccessClientApplications.CreateFromDiscriminatorValue); } },
+                { "devices", n => { Devices = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessDevices>(Microsoft.Graph.Models.ConditionalAccessDevices.CreateFromDiscriminatorValue); } },
+                { "locations", n => { Locations = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessLocations>(Microsoft.Graph.Models.ConditionalAccessLocations.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "platforms", n => { Platforms = n.GetObjectValue<ConditionalAccessPlatforms>(ConditionalAccessPlatforms.CreateFromDiscriminatorValue); } },
-                { "servicePrincipalRiskLevels", n => { ServicePrincipalRiskLevels = n.GetCollectionOfEnumValues<RiskLevel>()?.ToList(); } },
-                { "signInRiskLevels", n => { SignInRiskLevels = n.GetCollectionOfEnumValues<RiskLevel>()?.ToList(); } },
-                { "userRiskLevels", n => { UserRiskLevels = n.GetCollectionOfEnumValues<RiskLevel>()?.ToList(); } },
-                { "users", n => { Users = n.GetObjectValue<ConditionalAccessUsers>(ConditionalAccessUsers.CreateFromDiscriminatorValue); } },
+                { "platforms", n => { Platforms = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessPlatforms>(Microsoft.Graph.Models.ConditionalAccessPlatforms.CreateFromDiscriminatorValue); } },
+                { "servicePrincipalRiskLevels", n => { ServicePrincipalRiskLevels = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.RiskLevel>()?.ToList(); } },
+                { "signInRiskLevels", n => { SignInRiskLevels = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.RiskLevel>()?.ToList(); } },
+                { "userRiskLevels", n => { UserRiskLevels = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.RiskLevel>()?.ToList(); } },
+                { "users", n => { Users = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessUsers>(Microsoft.Graph.Models.ConditionalAccessUsers.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -241,17 +241,17 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ConditionalAccessApplications>("applications", Applications);
-            writer.WriteObjectValue<ConditionalAccessClientApplications>("clientApplications", ClientApplications);
-            writer.WriteCollectionOfEnumValues<ConditionalAccessClientApp>("clientAppTypes", ClientAppTypes);
-            writer.WriteObjectValue<ConditionalAccessDevices>("devices", Devices);
-            writer.WriteObjectValue<ConditionalAccessLocations>("locations", Locations);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessApplications>("applications", Applications);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessClientApplications>("clientApplications", ClientApplications);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.ConditionalAccessClientApp>("clientAppTypes", ClientAppTypes);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessDevices>("devices", Devices);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessLocations>("locations", Locations);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<ConditionalAccessPlatforms>("platforms", Platforms);
-            writer.WriteCollectionOfEnumValues<RiskLevel>("servicePrincipalRiskLevels", ServicePrincipalRiskLevels);
-            writer.WriteCollectionOfEnumValues<RiskLevel>("signInRiskLevels", SignInRiskLevels);
-            writer.WriteCollectionOfEnumValues<RiskLevel>("userRiskLevels", UserRiskLevels);
-            writer.WriteObjectValue<ConditionalAccessUsers>("users", Users);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessPlatforms>("platforms", Platforms);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.RiskLevel>("servicePrincipalRiskLevels", ServicePrincipalRiskLevels);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.RiskLevel>("signInRiskLevels", SignInRiskLevels);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.RiskLevel>("userRiskLevels", UserRiskLevels);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessUsers>("users", Users);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

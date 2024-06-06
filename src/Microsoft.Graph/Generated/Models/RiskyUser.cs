@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class RiskyUser : Entity, IParsable
+    public class RiskyUser : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The activity related to user risk level change</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RiskyUserHistoryItem>? History
+        public List<Microsoft.Graph.Models.RiskyUserHistoryItem>? History
         {
-            get { return BackingStore?.Get<List<RiskyUserHistoryItem>?>("history"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.RiskyUserHistoryItem>?>("history"); }
             set { BackingStore?.Set("history", value); }
         }
 #nullable restore
 #else
-        public List<RiskyUserHistoryItem> History
+        public List<Microsoft.Graph.Models.RiskyUserHistoryItem> History
         {
-            get { return BackingStore?.Get<List<RiskyUserHistoryItem>>("history"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.RiskyUserHistoryItem>>("history"); }
             set { BackingStore?.Set("history", value); }
         }
 #endif
@@ -97,16 +97,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RiskyUser"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RiskyUser"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RiskyUser CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.RiskyUser CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.riskyUserHistoryItem" => new RiskyUserHistoryItem(),
-                _ => new RiskyUser(),
+                "#microsoft.graph.riskyUserHistoryItem" => new Microsoft.Graph.Models.RiskyUserHistoryItem(),
+                _ => new Microsoft.Graph.Models.RiskyUser(),
             };
         }
         /// <summary>
@@ -117,13 +117,13 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "history", n => { History = n.GetCollectionOfObjectValues<RiskyUserHistoryItem>(RiskyUserHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "history", n => { History = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.RiskyUserHistoryItem>(Microsoft.Graph.Models.RiskyUserHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
                 { "isProcessing", n => { IsProcessing = n.GetBoolValue(); } },
-                { "riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
+                { "riskDetail", n => { RiskDetail = n.GetEnumValue<Microsoft.Graph.Models.RiskDetail>(); } },
                 { "riskLastUpdatedDateTime", n => { RiskLastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "riskLevel", n => { RiskLevel = n.GetEnumValue<RiskLevel>(); } },
-                { "riskState", n => { RiskState = n.GetEnumValue<RiskState>(); } },
+                { "riskLevel", n => { RiskLevel = n.GetEnumValue<Microsoft.Graph.Models.RiskLevel>(); } },
+                { "riskState", n => { RiskState = n.GetEnumValue<Microsoft.Graph.Models.RiskState>(); } },
                 { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
@@ -136,13 +136,13 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<RiskyUserHistoryItem>("history", History);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.RiskyUserHistoryItem>("history", History);
             writer.WriteBoolValue("isDeleted", IsDeleted);
             writer.WriteBoolValue("isProcessing", IsProcessing);
-            writer.WriteEnumValue<RiskDetail>("riskDetail", RiskDetail);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RiskDetail>("riskDetail", RiskDetail);
             writer.WriteDateTimeOffsetValue("riskLastUpdatedDateTime", RiskLastUpdatedDateTime);
-            writer.WriteEnumValue<RiskLevel>("riskLevel", RiskLevel);
-            writer.WriteEnumValue<RiskState>("riskState", RiskState);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RiskLevel>("riskLevel", RiskLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RiskState>("riskState", RiskState);
             writer.WriteStringValue("userDisplayName", UserDisplayName);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
         }

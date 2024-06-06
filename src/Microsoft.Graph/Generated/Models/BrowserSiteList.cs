@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// A singleton entity which is used to specify IE mode site list metadata
     /// </summary>
-    public class BrowserSiteList : Entity, IParsable
+    public class BrowserSiteList : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The description of the site list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,16 +46,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The user who last modified the site list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -68,16 +68,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The user who published the site list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? PublishedBy
+        public Microsoft.Graph.Models.IdentitySet? PublishedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("publishedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("publishedBy"); }
             set { BackingStore?.Set("publishedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet PublishedBy
+        public Microsoft.Graph.Models.IdentitySet PublishedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("publishedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("publishedBy"); }
             set { BackingStore?.Set("publishedBy", value); }
         }
 #endif
@@ -106,50 +106,50 @@ namespace Microsoft.Graph.Models
         /// <summary>A collection of shared cookies defined for the site list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BrowserSharedCookie>? SharedCookies
+        public List<Microsoft.Graph.Models.BrowserSharedCookie>? SharedCookies
         {
-            get { return BackingStore?.Get<List<BrowserSharedCookie>?>("sharedCookies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BrowserSharedCookie>?>("sharedCookies"); }
             set { BackingStore?.Set("sharedCookies", value); }
         }
 #nullable restore
 #else
-        public List<BrowserSharedCookie> SharedCookies
+        public List<Microsoft.Graph.Models.BrowserSharedCookie> SharedCookies
         {
-            get { return BackingStore?.Get<List<BrowserSharedCookie>>("sharedCookies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BrowserSharedCookie>>("sharedCookies"); }
             set { BackingStore?.Set("sharedCookies", value); }
         }
 #endif
         /// <summary>A collection of sites defined for the site list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BrowserSite>? Sites
+        public List<Microsoft.Graph.Models.BrowserSite>? Sites
         {
-            get { return BackingStore?.Get<List<BrowserSite>?>("sites"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BrowserSite>?>("sites"); }
             set { BackingStore?.Set("sites", value); }
         }
 #nullable restore
 #else
-        public List<BrowserSite> Sites
+        public List<Microsoft.Graph.Models.BrowserSite> Sites
         {
-            get { return BackingStore?.Get<List<BrowserSite>>("sites"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BrowserSite>>("sites"); }
             set { BackingStore?.Set("sites", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public BrowserSiteListStatus? Status
+        public Microsoft.Graph.Models.BrowserSiteListStatus? Status
         {
-            get { return BackingStore?.Get<BrowserSiteListStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BrowserSiteListStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BrowserSiteList"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BrowserSiteList"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BrowserSiteList CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.BrowserSiteList CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BrowserSiteList();
+            return new Microsoft.Graph.Models.BrowserSiteList();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -161,14 +161,14 @@ namespace Microsoft.Graph.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "publishedBy", n => { PublishedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "publishedBy", n => { PublishedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "publishedDateTime", n => { PublishedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "revision", n => { Revision = n.GetStringValue(); } },
-                { "sharedCookies", n => { SharedCookies = n.GetCollectionOfObjectValues<BrowserSharedCookie>(BrowserSharedCookie.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sites", n => { Sites = n.GetCollectionOfObjectValues<BrowserSite>(BrowserSite.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "status", n => { Status = n.GetEnumValue<BrowserSiteListStatus>(); } },
+                { "sharedCookies", n => { SharedCookies = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.BrowserSharedCookie>(Microsoft.Graph.Models.BrowserSharedCookie.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sites", n => { Sites = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.BrowserSite>(Microsoft.Graph.Models.BrowserSite.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.BrowserSiteListStatus>(); } },
             };
         }
         /// <summary>
@@ -181,14 +181,14 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteObjectValue<IdentitySet>("publishedBy", PublishedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("publishedBy", PublishedBy);
             writer.WriteDateTimeOffsetValue("publishedDateTime", PublishedDateTime);
             writer.WriteStringValue("revision", Revision);
-            writer.WriteCollectionOfObjectValues<BrowserSharedCookie>("sharedCookies", SharedCookies);
-            writer.WriteCollectionOfObjectValues<BrowserSite>("sites", Sites);
-            writer.WriteEnumValue<BrowserSiteListStatus>("status", Status);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.BrowserSharedCookie>("sharedCookies", SharedCookies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.BrowserSite>("sites", Sites);
+            writer.WriteEnumValue<Microsoft.Graph.Models.BrowserSiteListStatus>("status", Status);
         }
     }
 }

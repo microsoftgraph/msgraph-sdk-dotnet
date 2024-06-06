@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.GetActivitiesByInterval
 {
     [Obsolete("This class is obsolete. Use GetActivitiesByIntervalGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetActivitiesByIntervalResponse : GetActivitiesByIntervalGetResponse, IParsable
+    public class GetActivitiesByIntervalResponse : Microsoft.Graph.Drives.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetActivitiesByIntervalResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetActivitiesByIntervalResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Drives.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetActivitiesByIntervalResponse();
+            return new Microsoft.Graph.Drives.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalResponse();
         }
     }
 }

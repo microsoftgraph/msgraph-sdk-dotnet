@@ -11,9 +11,9 @@ namespace Microsoft.Graph.Models.IdentityGovernance
     #pragma warning restore CS1591
     {
         /// <summary>The category property</summary>
-        public LifecycleTaskCategory? Category
+        public Microsoft.Graph.Models.IdentityGovernance.LifecycleTaskCategory? Category
         {
-            get { return BackingStore?.Get<LifecycleTaskCategory?>("category"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.LifecycleTaskCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>Defines if the workflow will continue if the task has an error.</summary>
@@ -57,16 +57,16 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>The parameters that must be supplied when creating a workflow task object.Supports $filter(any).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Parameter>? Parameters
+        public List<Microsoft.Graph.Models.IdentityGovernance.Parameter>? Parameters
         {
-            get { return BackingStore?.Get<List<Parameter>?>("parameters"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.Parameter>?>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
 #nullable restore
 #else
-        public List<Parameter> Parameters
+        public List<Microsoft.Graph.Models.IdentityGovernance.Parameter> Parameters
         {
-            get { return BackingStore?.Get<List<Parameter>>("parameters"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.Parameter>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
 #endif
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TaskDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityGovernance.TaskDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TaskDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IdentityGovernance.TaskDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TaskDefinition();
+            return new Microsoft.Graph.Models.IdentityGovernance.TaskDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,11 +94,11 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "category", n => { Category = n.GetEnumValue<LifecycleTaskCategory>(); } },
+                { "category", n => { Category = n.GetEnumValue<Microsoft.Graph.Models.IdentityGovernance.LifecycleTaskCategory>(); } },
                 { "continueOnError", n => { ContinueOnError = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<Parameter>(Parameter.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.Parameter>(Microsoft.Graph.Models.IdentityGovernance.Parameter.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
             };
         }
@@ -110,11 +110,11 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<LifecycleTaskCategory>("category", Category);
+            writer.WriteEnumValue<Microsoft.Graph.Models.IdentityGovernance.LifecycleTaskCategory>("category", Category);
             writer.WriteBoolValue("continueOnError", ContinueOnError);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<Parameter>("parameters", Parameters);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.Parameter>("parameters", Parameters);
             writer.WriteIntValue("version", Version);
         }
     }

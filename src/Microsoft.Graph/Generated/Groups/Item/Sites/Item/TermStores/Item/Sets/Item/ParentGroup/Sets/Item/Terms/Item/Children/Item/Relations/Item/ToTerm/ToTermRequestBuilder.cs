@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets.Item.Paren
     public class ToTermRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ToTermRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Item.Relations.Item.ToTerm.ToTermRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets.Item.Paren
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ToTermRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Item.Relations.Item.ToTerm.ToTermRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets.Item.Paren
         /// <summary>
         /// The to [term] of the relation. The term to which the relationship is defined.
         /// </summary>
-        /// <returns>A <see cref="Term"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TermStore.Term"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Term?> GetAsync(Action<RequestConfiguration<ToTermRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TermStore.Term?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Item.Relations.Item.ToTerm.ToTermRequestBuilder.ToTermRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Term> GetAsync(Action<RequestConfiguration<ToTermRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TermStore.Term> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Item.Relations.Item.ToTerm.ToTermRequestBuilder.ToTermRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Term>(requestInfo, Term.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermStore.Term>(requestInfo, Microsoft.Graph.Models.TermStore.Term.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The to [term] of the relation. The term to which the relationship is defined.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets.Item.Paren
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ToTermRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Item.Relations.Item.ToTerm.ToTermRequestBuilder.ToTermRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ToTermRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Item.Relations.Item.ToTerm.ToTermRequestBuilder.ToTermRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets.Item.Paren
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ToTermRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Item.Relations.Item.ToTerm.ToTermRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ToTermRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Item.Relations.Item.ToTerm.ToTermRequestBuilder WithUrl(string rawUrl)
         {
-            return new ToTermRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Item.Relations.Item.ToTerm.ToTermRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The to [term] of the relation. The term to which the relationship is defined.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets.Item.Paren
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ToTermRequestBuilderGetRequestConfiguration : RequestConfiguration<ToTermRequestBuilderGetQueryParameters>
+        public class ToTermRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Item.Relations.Item.ToTerm.ToTermRequestBuilder.ToTermRequestBuilderGetQueryParameters>
         {
         }
     }

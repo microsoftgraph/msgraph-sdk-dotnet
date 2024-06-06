@@ -29,28 +29,28 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         /// <summary>The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Property>? Properties
+        public List<Microsoft.Graph.Models.ExternalConnectors.Property>? Properties
         {
-            get { return BackingStore?.Get<List<Property>?>("properties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.Property>?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #nullable restore
 #else
-        public List<Property> Properties
+        public List<Microsoft.Graph.Models.ExternalConnectors.Property> Properties
         {
-            get { return BackingStore?.Get<List<Property>>("properties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.Property>>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Schema"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ExternalConnectors.Schema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Schema CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ExternalConnectors.Schema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Schema();
+            return new Microsoft.Graph.Models.ExternalConnectors.Schema();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "baseType", n => { BaseType = n.GetStringValue(); } },
-                { "properties", n => { Properties = n.GetCollectionOfObjectValues<Property>(Property.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "properties", n => { Properties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.Property>(Microsoft.Graph.Models.ExternalConnectors.Property.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("baseType", BaseType);
-            writer.WriteCollectionOfObjectValues<Property>("properties", Properties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.Property>("properties", Properties);
         }
     }
 }

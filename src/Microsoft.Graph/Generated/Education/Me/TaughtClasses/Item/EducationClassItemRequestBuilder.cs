@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Education.Me.TaughtClasses.Item
     public class EducationClassItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="EducationClassItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Me.TaughtClasses.Item.EducationClassItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Education.Me.TaughtClasses.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="EducationClassItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Me.TaughtClasses.Item.EducationClassItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Education.Me.TaughtClasses.Item
         /// <summary>
         /// Classes for which the user is a teacher.
         /// </summary>
-        /// <returns>A <see cref="EducationClass"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationClass"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationClass?> GetAsync(Action<RequestConfiguration<EducationClassItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationClass?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Education.Me.TaughtClasses.Item.EducationClassItemRequestBuilder.EducationClassItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationClass> GetAsync(Action<RequestConfiguration<EducationClassItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationClass> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Education.Me.TaughtClasses.Item.EducationClassItemRequestBuilder.EducationClassItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationClass>(requestInfo, EducationClass.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EducationClass>(requestInfo, Microsoft.Graph.Models.EducationClass.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Classes for which the user is a teacher.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Education.Me.TaughtClasses.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationClassItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Education.Me.TaughtClasses.Item.EducationClassItemRequestBuilder.EducationClassItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationClassItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Education.Me.TaughtClasses.Item.EducationClassItemRequestBuilder.EducationClassItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Education.Me.TaughtClasses.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="EducationClassItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Education.Me.TaughtClasses.Item.EducationClassItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EducationClassItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Education.Me.TaughtClasses.Item.EducationClassItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new EducationClassItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Education.Me.TaughtClasses.Item.EducationClassItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Classes for which the user is a teacher.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Education.Me.TaughtClasses.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EducationClassItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EducationClassItemRequestBuilderGetQueryParameters>
+        public class EducationClassItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Education.Me.TaughtClasses.Item.EducationClassItemRequestBuilder.EducationClassItemRequestBuilderGetQueryParameters>
         {
         }
     }

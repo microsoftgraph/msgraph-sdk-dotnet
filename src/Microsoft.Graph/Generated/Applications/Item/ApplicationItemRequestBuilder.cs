@@ -39,112 +39,112 @@ namespace Microsoft.Graph.Applications.Item
     public class ApplicationItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the addKey method.</summary>
-        public AddKeyRequestBuilder AddKey
+        public Microsoft.Graph.Applications.Item.AddKey.AddKeyRequestBuilder AddKey
         {
-            get => new AddKeyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.AddKey.AddKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the addPassword method.</summary>
-        public AddPasswordRequestBuilder AddPassword
+        public Microsoft.Graph.Applications.Item.AddPassword.AddPasswordRequestBuilder AddPassword
         {
-            get => new AddPasswordRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.AddPassword.AddPasswordRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appManagementPolicies property of the microsoft.graph.application entity.</summary>
-        public AppManagementPoliciesRequestBuilder AppManagementPolicies
+        public Microsoft.Graph.Applications.Item.AppManagementPolicies.AppManagementPoliciesRequestBuilder AppManagementPolicies
         {
-            get => new AppManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.AppManagementPolicies.AppManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        public CheckMemberGroupsRequestBuilder CheckMemberGroups
+        public Microsoft.Graph.Applications.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder CheckMemberGroups
         {
-            get => new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        public CheckMemberObjectsRequestBuilder CheckMemberObjects
+        public Microsoft.Graph.Applications.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder CheckMemberObjects
         {
-            get => new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the createdOnBehalfOf property of the microsoft.graph.application entity.</summary>
-        public CreatedOnBehalfOfRequestBuilder CreatedOnBehalfOf
+        public Microsoft.Graph.Applications.Item.CreatedOnBehalfOf.CreatedOnBehalfOfRequestBuilder CreatedOnBehalfOf
         {
-            get => new CreatedOnBehalfOfRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.CreatedOnBehalfOf.CreatedOnBehalfOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensionProperties property of the microsoft.graph.application entity.</summary>
-        public ExtensionPropertiesRequestBuilder ExtensionProperties
+        public Microsoft.Graph.Applications.Item.ExtensionProperties.ExtensionPropertiesRequestBuilder ExtensionProperties
         {
-            get => new ExtensionPropertiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.ExtensionProperties.ExtensionPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.</summary>
-        public FederatedIdentityCredentialsRequestBuilder FederatedIdentityCredentials
+        public Microsoft.Graph.Applications.Item.FederatedIdentityCredentials.FederatedIdentityCredentialsRequestBuilder FederatedIdentityCredentials
         {
-            get => new FederatedIdentityCredentialsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.FederatedIdentityCredentials.FederatedIdentityCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        public GetMemberGroupsRequestBuilder GetMemberGroups
+        public Microsoft.Graph.Applications.Item.GetMemberGroups.GetMemberGroupsRequestBuilder GetMemberGroups
         {
-            get => new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.GetMemberGroups.GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        public GetMemberObjectsRequestBuilder GetMemberObjects
+        public Microsoft.Graph.Applications.Item.GetMemberObjects.GetMemberObjectsRequestBuilder GetMemberObjects
         {
-            get => new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.GetMemberObjects.GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.application entity.</summary>
-        public HomeRealmDiscoveryPoliciesRequestBuilder HomeRealmDiscoveryPolicies
+        public Microsoft.Graph.Applications.Item.HomeRealmDiscoveryPolicies.HomeRealmDiscoveryPoliciesRequestBuilder HomeRealmDiscoveryPolicies
         {
-            get => new HomeRealmDiscoveryPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.HomeRealmDiscoveryPolicies.HomeRealmDiscoveryPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the media for the application entity.</summary>
-        public LogoRequestBuilder Logo
+        public Microsoft.Graph.Applications.Item.Logo.LogoRequestBuilder Logo
         {
-            get => new LogoRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.Logo.LogoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the owners property of the microsoft.graph.application entity.</summary>
-        public OwnersRequestBuilder Owners
+        public Microsoft.Graph.Applications.Item.Owners.OwnersRequestBuilder Owners
         {
-            get => new OwnersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.Owners.OwnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeKey method.</summary>
-        public RemoveKeyRequestBuilder RemoveKey
+        public Microsoft.Graph.Applications.Item.RemoveKey.RemoveKeyRequestBuilder RemoveKey
         {
-            get => new RemoveKeyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.RemoveKey.RemoveKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removePassword method.</summary>
-        public RemovePasswordRequestBuilder RemovePassword
+        public Microsoft.Graph.Applications.Item.RemovePassword.RemovePasswordRequestBuilder RemovePassword
         {
-            get => new RemovePasswordRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.RemovePassword.RemovePasswordRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
-        public RestoreRequestBuilder Restore
+        public Microsoft.Graph.Applications.Item.Restore.RestoreRequestBuilder Restore
         {
-            get => new RestoreRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setVerifiedPublisher method.</summary>
-        public SetVerifiedPublisherRequestBuilder SetVerifiedPublisher
+        public Microsoft.Graph.Applications.Item.SetVerifiedPublisher.SetVerifiedPublisherRequestBuilder SetVerifiedPublisher
         {
-            get => new SetVerifiedPublisherRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.SetVerifiedPublisher.SetVerifiedPublisherRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the synchronization property of the microsoft.graph.application entity.</summary>
-        public SynchronizationRequestBuilder Synchronization
+        public Microsoft.Graph.Applications.Item.Synchronization.SynchronizationRequestBuilder Synchronization
         {
-            get => new SynchronizationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.Synchronization.SynchronizationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.application entity.</summary>
-        public TokenIssuancePoliciesRequestBuilder TokenIssuancePolicies
+        public Microsoft.Graph.Applications.Item.TokenIssuancePolicies.TokenIssuancePoliciesRequestBuilder TokenIssuancePolicies
         {
-            get => new TokenIssuancePoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.TokenIssuancePolicies.TokenIssuancePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.application entity.</summary>
-        public TokenLifetimePoliciesRequestBuilder TokenLifetimePolicies
+        public Microsoft.Graph.Applications.Item.TokenLifetimePolicies.TokenLifetimePoliciesRequestBuilder TokenLifetimePolicies
         {
-            get => new TokenLifetimePoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.TokenLifetimePolicies.TokenLifetimePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unsetVerifiedPublisher method.</summary>
-        public UnsetVerifiedPublisherRequestBuilder UnsetVerifiedPublisher
+        public Microsoft.Graph.Applications.Item.UnsetVerifiedPublisher.UnsetVerifiedPublisherRequestBuilder UnsetVerifiedPublisher
         {
-            get => new UnsetVerifiedPublisherRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.UnsetVerifiedPublisher.UnsetVerifiedPublisherRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ApplicationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.ApplicationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Applications.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ApplicationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.ApplicationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Applications.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -178,19 +178,19 @@ namespace Microsoft.Graph.Applications.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.
         /// </summary>
-        /// <returns>A <see cref="FederatedIdentityCredentialsWithNameRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName.FederatedIdentityCredentialsWithNameRequestBuilder"/></returns>
         /// <param name="name">Alternate key of federatedIdentityCredential</param>
-        public FederatedIdentityCredentialsWithNameRequestBuilder FederatedIdentityCredentialsWithName(string name)
+        public Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName.FederatedIdentityCredentialsWithNameRequestBuilder FederatedIdentityCredentialsWithName(string name)
         {
             if(string.IsNullOrEmpty(name)) throw new ArgumentNullException(nameof(name));
-            return new FederatedIdentityCredentialsWithNameRequestBuilder(PathParameters, RequestAdapter, name);
+            return new Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName.FederatedIdentityCredentialsWithNameRequestBuilder(PathParameters, RequestAdapter, name);
         }
         /// <summary>
         /// Get the properties and relationships of an application object.
@@ -199,20 +199,20 @@ namespace Microsoft.Graph.Applications.Item
         /// <returns>A <see cref="Microsoft.Graph.Models.Application"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Application?> GetAsync(Action<RequestConfiguration<ApplicationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Application?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.ApplicationItemRequestBuilder.ApplicationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Application> GetAsync(Action<RequestConfiguration<ApplicationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Application> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.ApplicationItemRequestBuilder.ApplicationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Application>(requestInfo, Microsoft.Graph.Models.Application.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -224,7 +224,7 @@ namespace Microsoft.Graph.Applications.Item
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.Application?> PatchAsync(Microsoft.Graph.Models.Application body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -238,7 +238,7 @@ namespace Microsoft.Graph.Applications.Item
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Application>(requestInfo, Microsoft.Graph.Models.Application.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -268,11 +268,11 @@ namespace Microsoft.Graph.Applications.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ApplicationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.ApplicationItemRequestBuilder.ApplicationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ApplicationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.ApplicationItemRequestBuilder.ApplicationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -305,11 +305,11 @@ namespace Microsoft.Graph.Applications.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ApplicationItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Applications.Item.ApplicationItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ApplicationItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Applications.Item.ApplicationItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new ApplicationItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Applications.Item.ApplicationItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -348,7 +348,7 @@ namespace Microsoft.Graph.Applications.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ApplicationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ApplicationItemRequestBuilderGetQueryParameters>
+        public class ApplicationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Applications.Item.ApplicationItemRequestBuilder.ApplicationItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

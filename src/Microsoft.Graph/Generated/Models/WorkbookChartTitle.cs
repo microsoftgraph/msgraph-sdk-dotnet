@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookChartTitle : Entity, IParsable
+    public class WorkbookChartTitle : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the formatting of a chart title, which includes fill and font formatting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartTitleFormat? Format
+        public Microsoft.Graph.Models.WorkbookChartTitleFormat? Format
         {
-            get { return BackingStore?.Get<WorkbookChartTitleFormat?>("format"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartTitleFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartTitleFormat Format
+        public Microsoft.Graph.Models.WorkbookChartTitleFormat Format
         {
-            get { return BackingStore?.Get<WorkbookChartTitleFormat>("format"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartTitleFormat>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #endif
@@ -57,12 +57,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookChartTitle"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookChartTitle"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookChartTitle CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WorkbookChartTitle CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookChartTitle();
+            return new Microsoft.Graph.Models.WorkbookChartTitle();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "format", n => { Format = n.GetObjectValue<WorkbookChartTitleFormat>(WorkbookChartTitleFormat.CreateFromDiscriminatorValue); } },
+                { "format", n => { Format = n.GetObjectValue<Microsoft.Graph.Models.WorkbookChartTitleFormat>(Microsoft.Graph.Models.WorkbookChartTitleFormat.CreateFromDiscriminatorValue); } },
                 { "overlay", n => { Overlay = n.GetBoolValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "visible", n => { Visible = n.GetBoolValue(); } },
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<WorkbookChartTitleFormat>("format", Format);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookChartTitleFormat>("format", Format);
             writer.WriteBoolValue("overlay", Overlay);
             writer.WriteStringValue("text", Text);
             writer.WriteBoolValue("visible", Visible);

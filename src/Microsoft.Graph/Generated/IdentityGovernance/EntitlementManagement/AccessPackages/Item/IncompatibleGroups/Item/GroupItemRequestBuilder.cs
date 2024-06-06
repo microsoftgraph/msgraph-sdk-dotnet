@@ -15,17 +15,17 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
     public class GroupItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of identityGovernance entities.</summary>
-        public RefRequestBuilder Ref
+        public Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleGroups.Item.Ref.RefRequestBuilder Ref
         {
-            get => new RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleGroups.Item.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The serviceProvisioningErrors property</summary>
-        public ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
+        public Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleGroups.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
         {
-            get => new ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleGroups.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleGroups.Item.GroupItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleGroups.Item.GroupItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

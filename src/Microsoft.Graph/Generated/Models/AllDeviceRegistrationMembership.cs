@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AllDeviceRegistrationMembership : DeviceRegistrationMembership, IParsable
+    public class AllDeviceRegistrationMembership : Microsoft.Graph.Models.DeviceRegistrationMembership, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="AllDeviceRegistrationMembership"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AllDeviceRegistrationMembership"/> and sets the default values.
         /// </summary>
         public AllDeviceRegistrationMembership() : base()
         {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AllDeviceRegistrationMembership"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AllDeviceRegistrationMembership"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AllDeviceRegistrationMembership CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AllDeviceRegistrationMembership CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AllDeviceRegistrationMembership();
+            return new Microsoft.Graph.Models.AllDeviceRegistrationMembership();
         }
         /// <summary>
         /// The deserialization information for the current model

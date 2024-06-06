@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Teams.GetAllMessages
     public class GetAllMessagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetAllMessagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Teams.GetAllMessages
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetAllMessagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,49 +34,49 @@ namespace Microsoft.Graph.Teams.GetAllMessages
         /// <summary>
         /// Invoke function getAllMessages
         /// </summary>
-        /// <returns>A <see cref="GetAllMessagesGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAllMessagesGetResponse?> GetAsGetAllMessagesGetResponseAsync(Action<RequestConfiguration<GetAllMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesGetResponse?> GetAsGetAllMessagesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetAllMessagesGetResponse> GetAsGetAllMessagesGetResponseAsync(Action<RequestConfiguration<GetAllMessagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesGetResponse> GetAsGetAllMessagesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetAllMessagesGetResponse>(requestInfo, GetAllMessagesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesGetResponse>(requestInfo, Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getAllMessages
         /// </summary>
-        /// <returns>A <see cref="GetAllMessagesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetAllMessagesGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAllMessagesResponse?> GetAsync(Action<RequestConfiguration<GetAllMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetAllMessagesResponse> GetAsync(Action<RequestConfiguration<GetAllMessagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetAllMessagesResponse>(requestInfo, GetAllMessagesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesResponse>(requestInfo, Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getAllMessages
@@ -85,11 +85,11 @@ namespace Microsoft.Graph.Teams.GetAllMessages
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAllMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAllMessagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -100,11 +100,11 @@ namespace Microsoft.Graph.Teams.GetAllMessages
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetAllMessagesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetAllMessagesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetAllMessagesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getAllMessages
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Teams.GetAllMessages
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetAllMessagesRequestBuilderGetRequestConfiguration : RequestConfiguration<GetAllMessagesRequestBuilderGetQueryParameters>
+        public class GetAllMessagesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>
         {
         }
     }

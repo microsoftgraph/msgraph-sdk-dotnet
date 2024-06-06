@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Movies rating labels in Australia</summary>
-        public RatingAustraliaMoviesType? MovieRating
+        public Microsoft.Graph.Models.RatingAustraliaMoviesType? MovieRating
         {
-            get { return BackingStore?.Get<RatingAustraliaMoviesType?>("movieRating"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RatingAustraliaMoviesType?>("movieRating"); }
             set { BackingStore?.Set("movieRating", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -42,13 +42,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>TV content rating labels in Australia</summary>
-        public RatingAustraliaTelevisionType? TvRating
+        public Microsoft.Graph.Models.RatingAustraliaTelevisionType? TvRating
         {
-            get { return BackingStore?.Get<RatingAustraliaTelevisionType?>("tvRating"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RatingAustraliaTelevisionType?>("tvRating"); }
             set { BackingStore?.Set("tvRating", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MediaContentRatingAustralia"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MediaContentRatingAustralia"/> and sets the default values.
         /// </summary>
         public MediaContentRatingAustralia()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MediaContentRatingAustralia"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MediaContentRatingAustralia"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MediaContentRatingAustralia CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.MediaContentRatingAustralia CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MediaContentRatingAustralia();
+            return new Microsoft.Graph.Models.MediaContentRatingAustralia();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,9 +73,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "movieRating", n => { MovieRating = n.GetEnumValue<RatingAustraliaMoviesType>(); } },
+                { "movieRating", n => { MovieRating = n.GetEnumValue<Microsoft.Graph.Models.RatingAustraliaMoviesType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "tvRating", n => { TvRating = n.GetEnumValue<RatingAustraliaTelevisionType>(); } },
+                { "tvRating", n => { TvRating = n.GetEnumValue<Microsoft.Graph.Models.RatingAustraliaTelevisionType>(); } },
             };
         }
         /// <summary>
@@ -85,9 +85,9 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<RatingAustraliaMoviesType>("movieRating", MovieRating);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RatingAustraliaMoviesType>("movieRating", MovieRating);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<RatingAustraliaTelevisionType>("tvRating", TvRating);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RatingAustraliaTelevisionType>("tvRating", TvRating);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

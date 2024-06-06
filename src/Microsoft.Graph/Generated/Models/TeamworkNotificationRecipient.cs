@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkNotificationRecipient"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TeamworkNotificationRecipient"/> and sets the default values.
         /// </summary>
         public TeamworkNotificationRecipient()
         {
@@ -46,19 +46,19 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkNotificationRecipient"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamworkNotificationRecipient"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamworkNotificationRecipient CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.TeamworkNotificationRecipient CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.aadUserNotificationRecipient" => new AadUserNotificationRecipient(),
-                "#microsoft.graph.channelMembersNotificationRecipient" => new ChannelMembersNotificationRecipient(),
-                "#microsoft.graph.chatMembersNotificationRecipient" => new ChatMembersNotificationRecipient(),
-                "#microsoft.graph.teamMembersNotificationRecipient" => new TeamMembersNotificationRecipient(),
-                _ => new TeamworkNotificationRecipient(),
+                "#microsoft.graph.aadUserNotificationRecipient" => new Microsoft.Graph.Models.AadUserNotificationRecipient(),
+                "#microsoft.graph.channelMembersNotificationRecipient" => new Microsoft.Graph.Models.ChannelMembersNotificationRecipient(),
+                "#microsoft.graph.chatMembersNotificationRecipient" => new Microsoft.Graph.Models.ChatMembersNotificationRecipient(),
+                "#microsoft.graph.teamMembersNotificationRecipient" => new Microsoft.Graph.Models.TeamMembersNotificationRecipient(),
+                _ => new Microsoft.Graph.Models.TeamworkNotificationRecipient(),
             };
         }
         /// <summary>

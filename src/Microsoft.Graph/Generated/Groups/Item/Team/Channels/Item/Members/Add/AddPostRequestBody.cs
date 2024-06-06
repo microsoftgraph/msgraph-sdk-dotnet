@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.Members.Add
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConversationMember>? Values
+        public List<Microsoft.Graph.Models.ConversationMember>? Values
         {
-            get { return BackingStore?.Get<List<ConversationMember>?>("values"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConversationMember>?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public List<ConversationMember> Values
+        public List<Microsoft.Graph.Models.ConversationMember> Values
         {
-            get { return BackingStore?.Get<List<ConversationMember>>("values"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConversationMember>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AddPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Team.Channels.Item.Members.Add.AddPostRequestBody"/> and sets the default values.
         /// </summary>
         public AddPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.Members.Add
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AddPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Team.Channels.Item.Members.Add.AddPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AddPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Groups.Item.Team.Channels.Item.Members.Add.AddPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AddPostRequestBody();
+            return new Microsoft.Graph.Groups.Item.Team.Channels.Item.Members.Add.AddPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.Members.Add
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "values", n => { Values = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "values", n => { Values = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ConversationMember>(Microsoft.Graph.Models.ConversationMember.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.Members.Add
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<ConversationMember>("values", Values);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ConversationMember>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

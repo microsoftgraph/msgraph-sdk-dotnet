@@ -70,21 +70,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The servicePrincipalFilter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessFilter? ServicePrincipalFilter
+        public Microsoft.Graph.Models.ConditionalAccessFilter? ServicePrincipalFilter
         {
-            get { return BackingStore?.Get<ConditionalAccessFilter?>("servicePrincipalFilter"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessFilter?>("servicePrincipalFilter"); }
             set { BackingStore?.Set("servicePrincipalFilter", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessFilter ServicePrincipalFilter
+        public Microsoft.Graph.Models.ConditionalAccessFilter ServicePrincipalFilter
         {
-            get { return BackingStore?.Get<ConditionalAccessFilter>("servicePrincipalFilter"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessFilter>("servicePrincipalFilter"); }
             set { BackingStore?.Set("servicePrincipalFilter", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ConditionalAccessClientApplications"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ConditionalAccessClientApplications"/> and sets the default values.
         /// </summary>
         public ConditionalAccessClientApplications()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessClientApplications"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ConditionalAccessClientApplications"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConditionalAccessClientApplications CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ConditionalAccessClientApplications CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessClientApplications();
+            return new Microsoft.Graph.Models.ConditionalAccessClientApplications();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Models
                 { "excludeServicePrincipals", n => { ExcludeServicePrincipals = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "includeServicePrincipals", n => { IncludeServicePrincipals = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "servicePrincipalFilter", n => { ServicePrincipalFilter = n.GetObjectValue<ConditionalAccessFilter>(ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
+                { "servicePrincipalFilter", n => { ServicePrincipalFilter = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessFilter>(Microsoft.Graph.Models.ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfPrimitiveValues<string>("excludeServicePrincipals", ExcludeServicePrincipals);
             writer.WriteCollectionOfPrimitiveValues<string>("includeServicePrincipals", IncludeServicePrincipals);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<ConditionalAccessFilter>("servicePrincipalFilter", ServicePrincipalFilter);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessFilter>("servicePrincipalFilter", ServicePrincipalFilter);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IosHomeScreenItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IosHomeScreenItem"/> and sets the default values.
         /// </summary>
         public IosHomeScreenItem()
         {
@@ -63,17 +63,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosHomeScreenItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IosHomeScreenItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IosHomeScreenItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.IosHomeScreenItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.iosHomeScreenApp" => new IosHomeScreenApp(),
-                "#microsoft.graph.iosHomeScreenFolder" => new IosHomeScreenFolder(),
-                _ => new IosHomeScreenItem(),
+                "#microsoft.graph.iosHomeScreenApp" => new Microsoft.Graph.Models.IosHomeScreenApp(),
+                "#microsoft.graph.iosHomeScreenFolder" => new Microsoft.Graph.Models.IosHomeScreenFolder(),
+                _ => new Microsoft.Graph.Models.IosHomeScreenItem(),
             };
         }
         /// <summary>

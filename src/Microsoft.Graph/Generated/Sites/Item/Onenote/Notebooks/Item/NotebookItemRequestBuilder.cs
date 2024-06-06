@@ -20,22 +20,22 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item
     public class NotebookItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the copyNotebook method.</summary>
-        public CopyNotebookRequestBuilder CopyNotebook
+        public Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.CopyNotebook.CopyNotebookRequestBuilder CopyNotebook
         {
-            get => new CopyNotebookRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.CopyNotebook.CopyNotebookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sectionGroups property of the microsoft.graph.notebook entity.</summary>
-        public SectionGroupsRequestBuilder SectionGroups
+        public Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.SectionGroups.SectionGroupsRequestBuilder SectionGroups
         {
-            get => new SectionGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.SectionGroups.SectionGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sections property of the microsoft.graph.notebook entity.</summary>
-        public SectionsRequestBuilder Sections
+        public Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.Sections.SectionsRequestBuilder Sections
         {
-            get => new SectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.Sections.SectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="NotebookItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.NotebookItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="NotebookItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.NotebookItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -68,57 +68,57 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
         /// </summary>
-        /// <returns>A <see cref="Notebook"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Notebook"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Notebook?> GetAsync(Action<RequestConfiguration<NotebookItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Notebook?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.NotebookItemRequestBuilder.NotebookItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Notebook> GetAsync(Action<RequestConfiguration<NotebookItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Notebook> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.NotebookItemRequestBuilder.NotebookItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Notebook>(requestInfo, Notebook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Notebook>(requestInfo, Microsoft.Graph.Models.Notebook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property notebooks in sites
         /// </summary>
-        /// <returns>A <see cref="Notebook"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Notebook"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Notebook?> PatchAsync(Notebook body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Notebook?> PatchAsync(Microsoft.Graph.Models.Notebook body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Notebook> PatchAsync(Notebook body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Notebook> PatchAsync(Microsoft.Graph.Models.Notebook body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Notebook>(requestInfo, Notebook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Notebook>(requestInfo, Microsoft.Graph.Models.Notebook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property notebooks for sites
@@ -146,11 +146,11 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<NotebookItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.NotebookItemRequestBuilder.NotebookItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<NotebookItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.NotebookItemRequestBuilder.NotebookItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -166,11 +166,11 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Notebook body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Notebook body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Notebook body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Notebook body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -183,11 +183,11 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="NotebookItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.NotebookItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public NotebookItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.NotebookItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new NotebookItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.NotebookItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class NotebookItemRequestBuilderGetRequestConfiguration : RequestConfiguration<NotebookItemRequestBuilderGetQueryParameters>
+        public class NotebookItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.NotebookItemRequestBuilder.NotebookItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

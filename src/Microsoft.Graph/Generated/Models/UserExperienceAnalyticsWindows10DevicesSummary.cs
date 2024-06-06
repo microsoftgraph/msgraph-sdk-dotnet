@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("unsupportedOSversionDeviceCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserExperienceAnalyticsWindows10DevicesSummary"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsWindows10DevicesSummary"/> and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsWindows10DevicesSummary()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsWindows10DevicesSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsWindows10DevicesSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserExperienceAnalyticsWindows10DevicesSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.UserExperienceAnalyticsWindows10DevicesSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsWindows10DevicesSummary();
+            return new Microsoft.Graph.Models.UserExperienceAnalyticsWindows10DevicesSummary();
         }
         /// <summary>
         /// The deserialization information for the current model

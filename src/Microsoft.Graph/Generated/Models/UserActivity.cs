@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UserActivity : Entity, IParsable
+    public class UserActivity : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.</summary>
@@ -77,16 +77,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? ContentInfo
+        public UntypedNode? ContentInfo
         {
-            get { return BackingStore?.Get<Json?>("contentInfo"); }
+            get { return BackingStore?.Get<UntypedNode?>("contentInfo"); }
             set { BackingStore?.Set("contentInfo", value); }
         }
 #nullable restore
 #else
-        public Json ContentInfo
+        public UntypedNode ContentInfo
         {
-            get { return BackingStore?.Get<Json>("contentInfo"); }
+            get { return BackingStore?.Get<UntypedNode>("contentInfo"); }
             set { BackingStore?.Set("contentInfo", value); }
         }
 #endif
@@ -137,16 +137,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Optional. NavigationProperty/Containment; navigation property to the activity&apos;s historyItems.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ActivityHistoryItem>? HistoryItems
+        public List<Microsoft.Graph.Models.ActivityHistoryItem>? HistoryItems
         {
-            get { return BackingStore?.Get<List<ActivityHistoryItem>?>("historyItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ActivityHistoryItem>?>("historyItems"); }
             set { BackingStore?.Set("historyItems", value); }
         }
 #nullable restore
 #else
-        public List<ActivityHistoryItem> HistoryItems
+        public List<Microsoft.Graph.Models.ActivityHistoryItem> HistoryItems
         {
-            get { return BackingStore?.Get<List<ActivityHistoryItem>>("historyItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ActivityHistoryItem>>("historyItems"); }
             set { BackingStore?.Set("historyItems", value); }
         }
 #endif
@@ -181,28 +181,28 @@ namespace Microsoft.Graph.Models
         /// <summary>The visualElements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VisualInfo? VisualElements
+        public Microsoft.Graph.Models.VisualInfo? VisualElements
         {
-            get { return BackingStore?.Get<VisualInfo?>("visualElements"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.VisualInfo?>("visualElements"); }
             set { BackingStore?.Set("visualElements", value); }
         }
 #nullable restore
 #else
-        public VisualInfo VisualElements
+        public Microsoft.Graph.Models.VisualInfo VisualElements
         {
-            get { return BackingStore?.Get<VisualInfo>("visualElements"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.VisualInfo>("visualElements"); }
             set { BackingStore?.Set("visualElements", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserActivity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserActivity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserActivity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserActivity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserActivity();
+            return new Microsoft.Graph.Models.UserActivity();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -216,16 +216,16 @@ namespace Microsoft.Graph.Models
                 { "activitySourceHost", n => { ActivitySourceHost = n.GetStringValue(); } },
                 { "appActivityId", n => { AppActivityId = n.GetStringValue(); } },
                 { "appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
-                { "contentInfo", n => { ContentInfo = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "contentInfo", n => { ContentInfo = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "contentUrl", n => { ContentUrl = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "fallbackUrl", n => { FallbackUrl = n.GetStringValue(); } },
-                { "historyItems", n => { HistoryItems = n.GetCollectionOfObjectValues<ActivityHistoryItem>(ActivityHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "historyItems", n => { HistoryItems = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ActivityHistoryItem>(Microsoft.Graph.Models.ActivityHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<Status>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.Status>(); } },
                 { "userTimezone", n => { UserTimezone = n.GetStringValue(); } },
-                { "visualElements", n => { VisualElements = n.GetObjectValue<VisualInfo>(VisualInfo.CreateFromDiscriminatorValue); } },
+                { "visualElements", n => { VisualElements = n.GetObjectValue<Microsoft.Graph.Models.VisualInfo>(Microsoft.Graph.Models.VisualInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -240,16 +240,16 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("activitySourceHost", ActivitySourceHost);
             writer.WriteStringValue("appActivityId", AppActivityId);
             writer.WriteStringValue("appDisplayName", AppDisplayName);
-            writer.WriteObjectValue<Json>("contentInfo", ContentInfo);
+            writer.WriteObjectValue<UntypedNode>("contentInfo", ContentInfo);
             writer.WriteStringValue("contentUrl", ContentUrl);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteStringValue("fallbackUrl", FallbackUrl);
-            writer.WriteCollectionOfObjectValues<ActivityHistoryItem>("historyItems", HistoryItems);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ActivityHistoryItem>("historyItems", HistoryItems);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteEnumValue<Status>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Status>("status", Status);
             writer.WriteStringValue("userTimezone", UserTimezone);
-            writer.WriteObjectValue<VisualInfo>("visualElements", VisualElements);
+            writer.WriteObjectValue<Microsoft.Graph.Models.VisualInfo>("visualElements", VisualElements);
         }
     }
 }

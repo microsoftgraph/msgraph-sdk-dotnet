@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// This class contains compliance settings for Android.
     /// </summary>
-    public class AndroidCompliancePolicy : DeviceCompliancePolicy, IParsable
+    public class AndroidCompliancePolicy : Microsoft.Graph.Models.DeviceCompliancePolicy, IParsable
     {
         /// <summary>Require that devices have enabled device threat protection.</summary>
         public bool? DeviceThreatProtectionEnabled
@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("deviceThreatProtectionEnabled", value); }
         }
         /// <summary>Device threat protection levels for the Device Threat Protection API.</summary>
-        public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel
+        public Microsoft.Graph.Models.DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel
         {
-            get { return BackingStore?.Get<DeviceThreatProtectionLevel?>("deviceThreatProtectionRequiredSecurityLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceThreatProtectionLevel?>("deviceThreatProtectionRequiredSecurityLevel"); }
             set { BackingStore?.Set("deviceThreatProtectionRequiredSecurityLevel", value); }
         }
         /// <summary>Minimum Android security patch level.</summary>
@@ -102,9 +102,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("passwordRequired", value); }
         }
         /// <summary>Android required password type.</summary>
-        public AndroidRequiredPasswordType? PasswordRequiredType
+        public Microsoft.Graph.Models.AndroidRequiredPasswordType? PasswordRequiredType
         {
-            get { return BackingStore?.Get<AndroidRequiredPasswordType?>("passwordRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AndroidRequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Devices must not be jailbroken or rooted.</summary>
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AndroidCompliancePolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AndroidCompliancePolicy"/> and sets the default values.
         /// </summary>
         public AndroidCompliancePolicy() : base()
         {
@@ -177,12 +177,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidCompliancePolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AndroidCompliancePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AndroidCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidCompliancePolicy();
+            return new Microsoft.Graph.Models.AndroidCompliancePolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "deviceThreatProtectionEnabled", n => { DeviceThreatProtectionEnabled = n.GetBoolValue(); } },
-                { "deviceThreatProtectionRequiredSecurityLevel", n => { DeviceThreatProtectionRequiredSecurityLevel = n.GetEnumValue<DeviceThreatProtectionLevel>(); } },
+                { "deviceThreatProtectionRequiredSecurityLevel", n => { DeviceThreatProtectionRequiredSecurityLevel = n.GetEnumValue<Microsoft.Graph.Models.DeviceThreatProtectionLevel>(); } },
                 { "minAndroidSecurityPatchLevel", n => { MinAndroidSecurityPatchLevel = n.GetStringValue(); } },
                 { "osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
                 { "osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.Models
                 { "passwordMinutesOfInactivityBeforeLock", n => { PasswordMinutesOfInactivityBeforeLock = n.GetIntValue(); } },
                 { "passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
                 { "passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
-                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<AndroidRequiredPasswordType>(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<Microsoft.Graph.Models.AndroidRequiredPasswordType>(); } },
                 { "securityBlockJailbrokenDevices", n => { SecurityBlockJailbrokenDevices = n.GetBoolValue(); } },
                 { "securityDisableUsbDebugging", n => { SecurityDisableUsbDebugging = n.GetBoolValue(); } },
                 { "securityPreventInstallAppsFromUnknownSources", n => { SecurityPreventInstallAppsFromUnknownSources = n.GetBoolValue(); } },
@@ -224,7 +224,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("deviceThreatProtectionEnabled", DeviceThreatProtectionEnabled);
-            writer.WriteEnumValue<DeviceThreatProtectionLevel>("deviceThreatProtectionRequiredSecurityLevel", DeviceThreatProtectionRequiredSecurityLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DeviceThreatProtectionLevel>("deviceThreatProtectionRequiredSecurityLevel", DeviceThreatProtectionRequiredSecurityLevel);
             writer.WriteStringValue("minAndroidSecurityPatchLevel", MinAndroidSecurityPatchLevel);
             writer.WriteStringValue("osMaximumVersion", OsMaximumVersion);
             writer.WriteStringValue("osMinimumVersion", OsMinimumVersion);
@@ -233,7 +233,7 @@ namespace Microsoft.Graph.Models
             writer.WriteIntValue("passwordMinutesOfInactivityBeforeLock", PasswordMinutesOfInactivityBeforeLock);
             writer.WriteIntValue("passwordPreviousPasswordBlockCount", PasswordPreviousPasswordBlockCount);
             writer.WriteBoolValue("passwordRequired", PasswordRequired);
-            writer.WriteEnumValue<AndroidRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AndroidRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
             writer.WriteBoolValue("securityBlockJailbrokenDevices", SecurityBlockJailbrokenDevices);
             writer.WriteBoolValue("securityDisableUsbDebugging", SecurityDisableUsbDebugging);
             writer.WriteBoolValue("securityPreventInstallAppsFromUnknownSources", SecurityPreventInstallAppsFromUnknownSources);

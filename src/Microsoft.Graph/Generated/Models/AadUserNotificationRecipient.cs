@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AadUserNotificationRecipient : TeamworkNotificationRecipient, IParsable
+    public class AadUserNotificationRecipient : Microsoft.Graph.Models.TeamworkNotificationRecipient, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Microsoft Entra user identifier. Use the List users method to get this ID.</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AadUserNotificationRecipient"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AadUserNotificationRecipient"/> and sets the default values.
         /// </summary>
         public AadUserNotificationRecipient() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AadUserNotificationRecipient"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AadUserNotificationRecipient"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AadUserNotificationRecipient CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AadUserNotificationRecipient CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AadUserNotificationRecipient();
+            return new Microsoft.Graph.Models.AadUserNotificationRecipient();
         }
         /// <summary>
         /// The deserialization information for the current model

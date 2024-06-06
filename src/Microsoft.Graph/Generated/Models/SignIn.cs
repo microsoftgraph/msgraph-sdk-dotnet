@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SignIn : Entity, IParsable
+    public class SignIn : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>App name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).</summary>
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Provides a list of conditional access policies that the corresponding sign-in activity triggers. Apps need more Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppliedConditionalAccessPolicy>? AppliedConditionalAccessPolicies
+        public List<Microsoft.Graph.Models.AppliedConditionalAccessPolicy>? AppliedConditionalAccessPolicies
         {
-            get { return BackingStore?.Get<List<AppliedConditionalAccessPolicy>?>("appliedConditionalAccessPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AppliedConditionalAccessPolicy>?>("appliedConditionalAccessPolicies"); }
             set { BackingStore?.Set("appliedConditionalAccessPolicies", value); }
         }
 #nullable restore
 #else
-        public List<AppliedConditionalAccessPolicy> AppliedConditionalAccessPolicies
+        public List<Microsoft.Graph.Models.AppliedConditionalAccessPolicy> AppliedConditionalAccessPolicies
         {
-            get { return BackingStore?.Get<List<AppliedConditionalAccessPolicy>>("appliedConditionalAccessPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AppliedConditionalAccessPolicy>>("appliedConditionalAccessPolicies"); }
             set { BackingStore?.Set("appliedConditionalAccessPolicies", value); }
         }
 #endif
@@ -143,16 +143,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Provides the city, state, and country code where the sign-in originated.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInLocation? Location
+        public Microsoft.Graph.Models.SignInLocation? Location
         {
-            get { return BackingStore?.Get<SignInLocation?>("location"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SignInLocation?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public SignInLocation Location
+        public Microsoft.Graph.Models.SignInLocation Location
         {
-            get { return BackingStore?.Get<SignInLocation>("location"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SignInLocation>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #endif
@@ -197,16 +197,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The riskEventTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RiskEventType?>? RiskEventTypes
+        public List<Microsoft.Graph.Models.RiskEventType?>? RiskEventTypes
         {
-            get { return BackingStore?.Get<List<RiskEventType?>?>("riskEventTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.RiskEventType?>?>("riskEventTypes"); }
             set { BackingStore?.Set("riskEventTypes", value); }
         }
 #nullable restore
 #else
-        public List<RiskEventType?> RiskEventTypes
+        public List<Microsoft.Graph.Models.RiskEventType?> RiskEventTypes
         {
-            get { return BackingStore?.Get<List<RiskEventType?>>("riskEventTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.RiskEventType?>>("riskEventTypes"); }
             set { BackingStore?.Set("riskEventTypes", value); }
         }
 #endif
@@ -227,15 +227,15 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn&apos;t enabled for Microsoft Entra ID Protection.  Supports $filter (eq).  Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
-        public RiskLevel? RiskLevelAggregated
+        public Microsoft.Graph.Models.RiskLevel? RiskLevelAggregated
         {
-            get { return BackingStore?.Get<RiskLevel?>("riskLevelAggregated"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RiskLevel?>("riskLevelAggregated"); }
             set { BackingStore?.Set("riskLevelAggregated", value); }
         }
         /// <summary>Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn&apos;t enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
-        public RiskLevel? RiskLevelDuringSignIn
+        public Microsoft.Graph.Models.RiskLevel? RiskLevelDuringSignIn
         {
-            get { return BackingStore?.Get<RiskLevel?>("riskLevelDuringSignIn"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RiskLevel?>("riskLevelDuringSignIn"); }
             set { BackingStore?.Set("riskLevelDuringSignIn", value); }
         }
         /// <summary>Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.  Supports $filter (eq).</summary>
@@ -247,16 +247,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Sign-in status. Includes the error code and description of the error (if a sign-in failure occurs).  Supports $filter (eq) on errorCode property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInStatus? Status
+        public Microsoft.Graph.Models.SignInStatus? Status
         {
-            get { return BackingStore?.Get<SignInStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SignInStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public SignInStatus Status
+        public Microsoft.Graph.Models.SignInStatus Status
         {
-            get { return BackingStore?.Get<SignInStatus>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SignInStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #endif
@@ -311,12 +311,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SignIn"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SignIn"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SignIn CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SignIn CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SignIn();
+            return new Microsoft.Graph.Models.SignIn();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -328,24 +328,24 @@ namespace Microsoft.Graph.Models
             {
                 { "appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
                 { "appId", n => { AppId = n.GetStringValue(); } },
-                { "appliedConditionalAccessPolicies", n => { AppliedConditionalAccessPolicies = n.GetCollectionOfObjectValues<AppliedConditionalAccessPolicy>(AppliedConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appliedConditionalAccessPolicies", n => { AppliedConditionalAccessPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AppliedConditionalAccessPolicy>(Microsoft.Graph.Models.AppliedConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "clientAppUsed", n => { ClientAppUsed = n.GetStringValue(); } },
-                { "conditionalAccessStatus", n => { ConditionalAccessStatus = n.GetEnumValue<ConditionalAccessStatus>(); } },
+                { "conditionalAccessStatus", n => { ConditionalAccessStatus = n.GetEnumValue<Microsoft.Graph.Models.ConditionalAccessStatus>(); } },
                 { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "deviceDetail", n => { DeviceDetail = n.GetObjectValue<Microsoft.Graph.Models.DeviceDetail>(Microsoft.Graph.Models.DeviceDetail.CreateFromDiscriminatorValue); } },
                 { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 { "isInteractive", n => { IsInteractive = n.GetBoolValue(); } },
-                { "location", n => { Location = n.GetObjectValue<SignInLocation>(SignInLocation.CreateFromDiscriminatorValue); } },
+                { "location", n => { Location = n.GetObjectValue<Microsoft.Graph.Models.SignInLocation>(Microsoft.Graph.Models.SignInLocation.CreateFromDiscriminatorValue); } },
                 { "resourceDisplayName", n => { ResourceDisplayName = n.GetStringValue(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
-                { "riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
-                { "riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfEnumValues<RiskEventType>()?.ToList(); } },
+                { "riskDetail", n => { RiskDetail = n.GetEnumValue<Microsoft.Graph.Models.RiskDetail>(); } },
+                { "riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.RiskEventType>()?.ToList(); } },
                 { "riskEventTypes_v2", n => { RiskEventTypesV2 = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "riskLevelAggregated", n => { RiskLevelAggregated = n.GetEnumValue<RiskLevel>(); } },
-                { "riskLevelDuringSignIn", n => { RiskLevelDuringSignIn = n.GetEnumValue<RiskLevel>(); } },
-                { "riskState", n => { RiskState = n.GetEnumValue<RiskState>(); } },
-                { "status", n => { Status = n.GetObjectValue<SignInStatus>(SignInStatus.CreateFromDiscriminatorValue); } },
+                { "riskLevelAggregated", n => { RiskLevelAggregated = n.GetEnumValue<Microsoft.Graph.Models.RiskLevel>(); } },
+                { "riskLevelDuringSignIn", n => { RiskLevelDuringSignIn = n.GetEnumValue<Microsoft.Graph.Models.RiskLevel>(); } },
+                { "riskState", n => { RiskState = n.GetEnumValue<Microsoft.Graph.Models.RiskState>(); } },
+                { "status", n => { Status = n.GetObjectValue<Microsoft.Graph.Models.SignInStatus>(Microsoft.Graph.Models.SignInStatus.CreateFromDiscriminatorValue); } },
                 { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
@@ -361,24 +361,24 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("appDisplayName", AppDisplayName);
             writer.WriteStringValue("appId", AppId);
-            writer.WriteCollectionOfObjectValues<AppliedConditionalAccessPolicy>("appliedConditionalAccessPolicies", AppliedConditionalAccessPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AppliedConditionalAccessPolicy>("appliedConditionalAccessPolicies", AppliedConditionalAccessPolicies);
             writer.WriteStringValue("clientAppUsed", ClientAppUsed);
-            writer.WriteEnumValue<ConditionalAccessStatus>("conditionalAccessStatus", ConditionalAccessStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ConditionalAccessStatus>("conditionalAccessStatus", ConditionalAccessStatus);
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Models.DeviceDetail>("deviceDetail", DeviceDetail);
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteBoolValue("isInteractive", IsInteractive);
-            writer.WriteObjectValue<SignInLocation>("location", Location);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SignInLocation>("location", Location);
             writer.WriteStringValue("resourceDisplayName", ResourceDisplayName);
             writer.WriteStringValue("resourceId", ResourceId);
-            writer.WriteEnumValue<RiskDetail>("riskDetail", RiskDetail);
-            writer.WriteCollectionOfEnumValues<RiskEventType>("riskEventTypes", RiskEventTypes);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RiskDetail>("riskDetail", RiskDetail);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.RiskEventType>("riskEventTypes", RiskEventTypes);
             writer.WriteCollectionOfPrimitiveValues<string>("riskEventTypes_v2", RiskEventTypesV2);
-            writer.WriteEnumValue<RiskLevel>("riskLevelAggregated", RiskLevelAggregated);
-            writer.WriteEnumValue<RiskLevel>("riskLevelDuringSignIn", RiskLevelDuringSignIn);
-            writer.WriteEnumValue<RiskState>("riskState", RiskState);
-            writer.WriteObjectValue<SignInStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RiskLevel>("riskLevelAggregated", RiskLevelAggregated);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RiskLevel>("riskLevelDuringSignIn", RiskLevelDuringSignIn);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RiskState>("riskState", RiskState);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SignInStatus>("status", Status);
             writer.WriteStringValue("userDisplayName", UserDisplayName);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);

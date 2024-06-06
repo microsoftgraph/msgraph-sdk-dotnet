@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
             set { BackingStore?.Set("percent", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ApplyTopPercentFilterPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.ApplyTopPercentFilter.ApplyTopPercentFilterPostRequestBody"/> and sets the default values.
         /// </summary>
         public ApplyTopPercentFilterPostRequestBody()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ApplyTopPercentFilterPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.ApplyTopPercentFilter.ApplyTopPercentFilterPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ApplyTopPercentFilterPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.ApplyTopPercentFilter.ApplyTopPercentFilterPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ApplyTopPercentFilterPostRequestBody();
+            return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.ApplyTopPercentFilter.ApplyTopPercentFilterPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

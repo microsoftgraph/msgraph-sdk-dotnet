@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The type of resource-specific permission.</summary>
-        public TeamsAppResourceSpecificPermissionType? PermissionType
+        public Microsoft.Graph.Models.TeamsAppResourceSpecificPermissionType? PermissionType
         {
-            get { return BackingStore?.Get<TeamsAppResourceSpecificPermissionType?>("permissionType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsAppResourceSpecificPermissionType?>("permissionType"); }
             set { BackingStore?.Set("permissionType", value); }
         }
         /// <summary>The name of the resource-specific permission.</summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TeamsAppResourceSpecificPermission"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TeamsAppResourceSpecificPermission"/> and sets the default values.
         /// </summary>
         public TeamsAppResourceSpecificPermission()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamsAppResourceSpecificPermission"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamsAppResourceSpecificPermission"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamsAppResourceSpecificPermission CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.TeamsAppResourceSpecificPermission CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamsAppResourceSpecificPermission();
+            return new Microsoft.Graph.Models.TeamsAppResourceSpecificPermission();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "permissionType", n => { PermissionType = n.GetEnumValue<TeamsAppResourceSpecificPermissionType>(); } },
+                { "permissionType", n => { PermissionType = n.GetEnumValue<Microsoft.Graph.Models.TeamsAppResourceSpecificPermissionType>(); } },
                 { "permissionValue", n => { PermissionValue = n.GetStringValue(); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<TeamsAppResourceSpecificPermissionType>("permissionType", PermissionType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TeamsAppResourceSpecificPermissionType>("permissionType", PermissionType);
             writer.WriteStringValue("permissionValue", PermissionValue);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class EventMessageResponse : EventMessage, IParsable
+    public class EventMessageResponse : Microsoft.Graph.Models.EventMessage, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>An alternate date/time proposed by an invitee for a meeting request to start and end. Read-only. Not filterable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeSlot? ProposedNewTime
+        public Microsoft.Graph.Models.TimeSlot? ProposedNewTime
         {
-            get { return BackingStore?.Get<TimeSlot?>("proposedNewTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TimeSlot?>("proposedNewTime"); }
             set { BackingStore?.Set("proposedNewTime", value); }
         }
 #nullable restore
 #else
-        public TimeSlot ProposedNewTime
+        public Microsoft.Graph.Models.TimeSlot ProposedNewTime
         {
-            get { return BackingStore?.Get<TimeSlot>("proposedNewTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TimeSlot>("proposedNewTime"); }
             set { BackingStore?.Set("proposedNewTime", value); }
         }
 #endif
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("responseType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="EventMessageResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.EventMessageResponse"/> and sets the default values.
         /// </summary>
         public EventMessageResponse() : base()
         {
@@ -42,12 +42,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EventMessageResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EventMessageResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EventMessageResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EventMessageResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EventMessageResponse();
+            return new Microsoft.Graph.Models.EventMessageResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,8 +57,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "proposedNewTime", n => { ProposedNewTime = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
-                { "responseType", n => { ResponseType = n.GetEnumValue<ResponseType>(); } },
+                { "proposedNewTime", n => { ProposedNewTime = n.GetObjectValue<Microsoft.Graph.Models.TimeSlot>(Microsoft.Graph.Models.TimeSlot.CreateFromDiscriminatorValue); } },
+                { "responseType", n => { ResponseType = n.GetEnumValue<Microsoft.Graph.Models.ResponseType>(); } },
             };
         }
         /// <summary>
@@ -69,8 +69,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<TimeSlot>("proposedNewTime", ProposedNewTime);
-            writer.WriteEnumValue<ResponseType>("responseType", ResponseType);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TimeSlot>("proposedNewTime", ProposedNewTime);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ResponseType>("responseType", ResponseType);
         }
     }
 }

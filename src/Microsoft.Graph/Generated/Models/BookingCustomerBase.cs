@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Booking entities that provide a display name.
     /// </summary>
-    public class BookingCustomerBase : Entity, IParsable
+    public class BookingCustomerBase : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BookingCustomerBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BookingCustomerBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BookingCustomerBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.BookingCustomerBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.bookingCustomer" => new BookingCustomer(),
-                _ => new BookingCustomerBase(),
+                "#microsoft.graph.bookingCustomer" => new Microsoft.Graph.Models.BookingCustomer(),
+                _ => new Microsoft.Graph.Models.BookingCustomerBase(),
             };
         }
         /// <summary>

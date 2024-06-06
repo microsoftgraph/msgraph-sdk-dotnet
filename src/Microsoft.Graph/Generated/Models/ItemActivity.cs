@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ItemActivity : Entity, IParsable
+    public class ItemActivity : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>An item was accessed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessAction? Access
+        public Microsoft.Graph.Models.AccessAction? Access
         {
-            get { return BackingStore?.Get<AccessAction?>("access"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessAction?>("access"); }
             set { BackingStore?.Set("access", value); }
         }
 #nullable restore
 #else
-        public AccessAction Access
+        public Microsoft.Graph.Models.AccessAction Access
         {
-            get { return BackingStore?.Get<AccessAction>("access"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessAction>("access"); }
             set { BackingStore?.Set("access", value); }
         }
 #endif
@@ -35,16 +35,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Identity of who performed the action. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Actor
+        public Microsoft.Graph.Models.IdentitySet? Actor
         {
-            get { return BackingStore?.Get<IdentitySet?>("actor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Actor
+        public Microsoft.Graph.Models.IdentitySet Actor
         {
-            get { return BackingStore?.Get<IdentitySet>("actor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
 #endif
@@ -67,12 +67,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ItemActivity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ItemActivity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ItemActivity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ItemActivity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ItemActivity();
+            return new Microsoft.Graph.Models.ItemActivity();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,9 +82,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "access", n => { Access = n.GetObjectValue<AccessAction>(AccessAction.CreateFromDiscriminatorValue); } },
+                { "access", n => { Access = n.GetObjectValue<Microsoft.Graph.Models.AccessAction>(Microsoft.Graph.Models.AccessAction.CreateFromDiscriminatorValue); } },
                 { "activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                { "actor", n => { Actor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "actor", n => { Actor = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "driveItem", n => { DriveItem = n.GetObjectValue<Microsoft.Graph.Models.DriveItem>(Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue); } },
             };
         }
@@ -96,9 +96,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AccessAction>("access", Access);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AccessAction>("access", Access);
             writer.WriteDateTimeOffsetValue("activityDateTime", ActivityDateTime);
-            writer.WriteObjectValue<IdentitySet>("actor", Actor);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("actor", Actor);
             writer.WriteObjectValue<Microsoft.Graph.Models.DriveItem>("driveItem", DriveItem);
         }
     }

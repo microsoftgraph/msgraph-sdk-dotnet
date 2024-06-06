@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations
     public class WorkforceIntegrationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Teamwork.WorkforceIntegrations.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Teamwork.WorkforceIntegrations.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.</summary>
         /// <param name="position">The unique identifier of workforceIntegration</param>
-        /// <returns>A <see cref="WorkforceIntegrationItemRequestBuilder"/></returns>
-        public WorkforceIntegrationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Teamwork.WorkforceIntegrations.Item.WorkforceIntegrationItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Teamwork.WorkforceIntegrations.Item.WorkforceIntegrationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("workforceIntegration%2Did", position);
-                return new WorkforceIntegrationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Teamwork.WorkforceIntegrations.Item.WorkforceIntegrationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WorkforceIntegrationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teamwork.WorkforceIntegrations.WorkforceIntegrationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WorkforceIntegrationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teamwork.WorkforceIntegrations.WorkforceIntegrationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations
         /// Retrieve a list of workforceIntegration objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/workforceintegration-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="WorkforceIntegrationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkforceIntegrationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkforceIntegrationCollectionResponse?> GetAsync(Action<RequestConfiguration<WorkforceIntegrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkforceIntegrationCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teamwork.WorkforceIntegrations.WorkforceIntegrationsRequestBuilder.WorkforceIntegrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WorkforceIntegrationCollectionResponse> GetAsync(Action<RequestConfiguration<WorkforceIntegrationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkforceIntegrationCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teamwork.WorkforceIntegrations.WorkforceIntegrationsRequestBuilder.WorkforceIntegrationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WorkforceIntegrationCollectionResponse>(requestInfo, WorkforceIntegrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkforceIntegrationCollectionResponse>(requestInfo, Microsoft.Graph.Models.WorkforceIntegrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new workforceIntegration object.You can set up which entities you want to receive Shifts synchronous change notifications on and set entities to configure filtering by WFM rules eligibility for, including swap requests.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/workforceintegration-post?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="WorkforceIntegration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkforceIntegration"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkforceIntegration?> PostAsync(WorkforceIntegration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkforceIntegration?> PostAsync(Microsoft.Graph.Models.WorkforceIntegration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WorkforceIntegration> PostAsync(WorkforceIntegration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkforceIntegration> PostAsync(Microsoft.Graph.Models.WorkforceIntegration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WorkforceIntegration>(requestInfo, WorkforceIntegration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkforceIntegration>(requestInfo, Microsoft.Graph.Models.WorkforceIntegration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of workforceIntegration objects.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WorkforceIntegrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teamwork.WorkforceIntegrations.WorkforceIntegrationsRequestBuilder.WorkforceIntegrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WorkforceIntegrationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teamwork.WorkforceIntegrations.WorkforceIntegrationsRequestBuilder.WorkforceIntegrationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(WorkforceIntegration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.WorkforceIntegration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(WorkforceIntegration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.WorkforceIntegration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WorkforceIntegrationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Teamwork.WorkforceIntegrations.WorkforceIntegrationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WorkforceIntegrationsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Teamwork.WorkforceIntegrations.WorkforceIntegrationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new WorkforceIntegrationsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Teamwork.WorkforceIntegrations.WorkforceIntegrationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of workforceIntegration objects.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WorkforceIntegrationsRequestBuilderGetRequestConfiguration : RequestConfiguration<WorkforceIntegrationsRequestBuilderGetQueryParameters>
+        public class WorkforceIntegrationsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Teamwork.WorkforceIntegrations.WorkforceIntegrationsRequestBuilder.WorkforceIntegrationsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

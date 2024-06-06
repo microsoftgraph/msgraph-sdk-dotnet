@@ -7,43 +7,43 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Attendee : AttendeeBase, IParsable
+    public class Attendee : Microsoft.Graph.Models.AttendeeBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn&apos;t proposed another time, then this property isn&apos;t included in a response of a GET event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeSlot? ProposedNewTime
+        public Microsoft.Graph.Models.TimeSlot? ProposedNewTime
         {
-            get { return BackingStore?.Get<TimeSlot?>("proposedNewTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TimeSlot?>("proposedNewTime"); }
             set { BackingStore?.Set("proposedNewTime", value); }
         }
 #nullable restore
 #else
-        public TimeSlot ProposedNewTime
+        public Microsoft.Graph.Models.TimeSlot ProposedNewTime
         {
-            get { return BackingStore?.Get<TimeSlot>("proposedNewTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TimeSlot>("proposedNewTime"); }
             set { BackingStore?.Set("proposedNewTime", value); }
         }
 #endif
         /// <summary>The attendee&apos;s response (none, accepted, declined, etc.) for the event and date-time that the response was sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ResponseStatus? Status
+        public Microsoft.Graph.Models.ResponseStatus? Status
         {
-            get { return BackingStore?.Get<ResponseStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ResponseStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public ResponseStatus Status
+        public Microsoft.Graph.Models.ResponseStatus Status
         {
-            get { return BackingStore?.Get<ResponseStatus>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ResponseStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Attendee"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Attendee"/> and sets the default values.
         /// </summary>
         public Attendee() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Attendee"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Attendee"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Attendee CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Attendee CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Attendee();
+            return new Microsoft.Graph.Models.Attendee();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,8 +67,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "proposedNewTime", n => { ProposedNewTime = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<ResponseStatus>(ResponseStatus.CreateFromDiscriminatorValue); } },
+                { "proposedNewTime", n => { ProposedNewTime = n.GetObjectValue<Microsoft.Graph.Models.TimeSlot>(Microsoft.Graph.Models.TimeSlot.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<Microsoft.Graph.Models.ResponseStatus>(Microsoft.Graph.Models.ResponseStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<TimeSlot>("proposedNewTime", ProposedNewTime);
-            writer.WriteObjectValue<ResponseStatus>("status", Status);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TimeSlot>("proposedNewTime", ProposedNewTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ResponseStatus>("status", Status);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Groups.Item.Team.PrimaryChannel.DoesUserHaveAccessuser
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameGetResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Team.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameGetResponse"/> and sets the default values.
         /// </summary>
         public DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameGetResponse()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Groups.Item.Team.PrimaryChannel.DoesUserHaveAccessuser
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Team.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Groups.Item.Team.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameGetResponse();
+            return new Microsoft.Graph.Groups.Item.Team.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

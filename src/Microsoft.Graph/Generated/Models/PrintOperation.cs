@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class PrintOperation : Entity, IParsable
+    public class PrintOperation : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The DateTimeOffset when the operation was created. Read-only.</summary>
@@ -19,32 +19,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrintOperationStatus? Status
+        public Microsoft.Graph.Models.PrintOperationStatus? Status
         {
-            get { return BackingStore?.Get<PrintOperationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrintOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public PrintOperationStatus Status
+        public Microsoft.Graph.Models.PrintOperationStatus Status
         {
-            get { return BackingStore?.Get<PrintOperationStatus>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrintOperationStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrintOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrintOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrintOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.PrintOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.printerCreateOperation" => new PrinterCreateOperation(),
-                _ => new PrintOperation(),
+                "#microsoft.graph.printerCreateOperation" => new Microsoft.Graph.Models.PrinterCreateOperation(),
+                _ => new Microsoft.Graph.Models.PrintOperation(),
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetObjectValue<PrintOperationStatus>(PrintOperationStatus.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<Microsoft.Graph.Models.PrintOperationStatus>(Microsoft.Graph.Models.PrintOperationStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<PrintOperationStatus>("status", Status);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PrintOperationStatus>("status", Status);
         }
     }
 }

@@ -20,29 +20,29 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents
     public class AuditEventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAuditActivityTypes method.</summary>
-        public GetAuditActivityTypesRequestBuilder GetAuditActivityTypes
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes.GetAuditActivityTypesRequestBuilder GetAuditActivityTypes
         {
-            get => new GetAuditActivityTypesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes.GetAuditActivityTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the auditEvents property of the microsoft.graph.virtualEndpoint entity.</summary>
         /// <param name="position">The unique identifier of cloudPcAuditEvent</param>
-        /// <returns>A <see cref="CloudPcAuditEventItemRequestBuilder"/></returns>
-        public CloudPcAuditEventItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.Item.CloudPcAuditEventItemRequestBuilder"/></returns>
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.Item.CloudPcAuditEventItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("cloudPcAuditEvent%2Did", position);
-                return new CloudPcAuditEventItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.Item.CloudPcAuditEventItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuditEventsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.AuditEventsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuditEventsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.AuditEventsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,50 +61,50 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents
         /// List all the cloudPcAuditEvent objects for the tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-auditevents?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="CloudPcAuditEventCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudPcAuditEventCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPcAuditEventCollectionResponse?> GetAsync(Action<RequestConfiguration<AuditEventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CloudPcAuditEventCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.AuditEventsRequestBuilder.AuditEventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudPcAuditEventCollectionResponse> GetAsync(Action<RequestConfiguration<AuditEventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CloudPcAuditEventCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.AuditEventsRequestBuilder.AuditEventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudPcAuditEventCollectionResponse>(requestInfo, CloudPcAuditEventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CloudPcAuditEventCollectionResponse>(requestInfo, Microsoft.Graph.Models.CloudPcAuditEventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to auditEvents for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="CloudPcAuditEvent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudPcAuditEvent"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPcAuditEvent?> PostAsync(CloudPcAuditEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CloudPcAuditEvent?> PostAsync(Microsoft.Graph.Models.CloudPcAuditEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudPcAuditEvent> PostAsync(CloudPcAuditEvent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CloudPcAuditEvent> PostAsync(Microsoft.Graph.Models.CloudPcAuditEvent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudPcAuditEvent>(requestInfo, CloudPcAuditEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CloudPcAuditEvent>(requestInfo, Microsoft.Graph.Models.CloudPcAuditEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all the cloudPcAuditEvent objects for the tenant.
@@ -113,11 +113,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuditEventsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.AuditEventsRequestBuilder.AuditEventsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuditEventsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.AuditEventsRequestBuilder.AuditEventsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -133,11 +133,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(CloudPcAuditEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.CloudPcAuditEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(CloudPcAuditEvent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.CloudPcAuditEvent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -150,11 +150,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AuditEventsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.AuditEventsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AuditEventsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.AuditEventsRequestBuilder WithUrl(string rawUrl)
         {
-            return new AuditEventsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.AuditEventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List all the cloudPcAuditEvent objects for the tenant.
@@ -225,7 +225,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AuditEventsRequestBuilderGetRequestConfiguration : RequestConfiguration<AuditEventsRequestBuilderGetQueryParameters>
+        public class AuditEventsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.AuditEventsRequestBuilder.AuditEventsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

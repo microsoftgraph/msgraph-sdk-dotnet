@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Users.Item.RevokeSignInSessions
     public class RevokeSignInSessionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="RevokeSignInSessionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Users.Item.RevokeSignInSessions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RevokeSignInSessionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,50 +35,50 @@ namespace Microsoft.Graph.Users.Item.RevokeSignInSessions
         /// Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="RevokeSignInSessionsPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsPostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RevokeSignInSessionsPostResponse?> PostAsRevokeSignInSessionsPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsPostResponse?> PostAsRevokeSignInSessionsPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<RevokeSignInSessionsPostResponse> PostAsRevokeSignInSessionsPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsPostResponse> PostAsRevokeSignInSessionsPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<RevokeSignInSessionsPostResponse>(requestInfo, RevokeSignInSessionsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsPostResponse>(requestInfo, Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="RevokeSignInSessionsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use PostAsRevokeSignInSessionsPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RevokeSignInSessionsResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<RevokeSignInSessionsResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<RevokeSignInSessionsResponse>(requestInfo, RevokeSignInSessionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsResponse>(requestInfo, Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device.
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Users.Item.RevokeSignInSessions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RevokeSignInSessionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RevokeSignInSessionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new RevokeSignInSessionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceReque
     public class AccessPackagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.AccessPackages.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.AccessPackages.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.</summary>
         /// <param name="position">The unique identifier of accessPackage</param>
-        /// <returns>A <see cref="AccessPackageItemRequestBuilder"/></returns>
-        public AccessPackageItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.AccessPackages.Item.AccessPackageItemRequestBuilder"/></returns>
+        public Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.AccessPackages.Item.AccessPackageItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("accessPackage%2Did", position);
-                return new AccessPackageItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.AccessPackages.Item.AccessPackageItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AccessPackagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.AccessPackages.AccessPackagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceReque
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AccessPackagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.AccessPackages.AccessPackagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceReque
         /// <summary>
         /// The access packages in this catalog. Read-only. Nullable.
         /// </summary>
-        /// <returns>A <see cref="AccessPackageCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AccessPackageCollectionResponse?> GetAsync(Action<RequestConfiguration<AccessPackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AccessPackageCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.AccessPackages.AccessPackagesRequestBuilder.AccessPackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AccessPackageCollectionResponse> GetAsync(Action<RequestConfiguration<AccessPackagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AccessPackageCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.AccessPackages.AccessPackagesRequestBuilder.AccessPackagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AccessPackageCollectionResponse>(requestInfo, AccessPackageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AccessPackageCollectionResponse>(requestInfo, Microsoft.Graph.Models.AccessPackageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The access packages in this catalog. Read-only. Nullable.
@@ -81,11 +81,11 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceReque
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AccessPackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.AccessPackages.AccessPackagesRequestBuilder.AccessPackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AccessPackagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.AccessPackages.AccessPackagesRequestBuilder.AccessPackagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -96,11 +96,11 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceReque
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AccessPackagesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.AccessPackages.AccessPackagesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AccessPackagesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.AccessPackages.AccessPackagesRequestBuilder WithUrl(string rawUrl)
         {
-            return new AccessPackagesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.AccessPackages.AccessPackagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The access packages in this catalog. Read-only. Nullable.
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceReque
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AccessPackagesRequestBuilderGetRequestConfiguration : RequestConfiguration<AccessPackagesRequestBuilderGetQueryParameters>
+        public class AccessPackagesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.AccessPackages.AccessPackagesRequestBuilder.AccessPackagesRequestBuilderGetQueryParameters>
         {
         }
     }

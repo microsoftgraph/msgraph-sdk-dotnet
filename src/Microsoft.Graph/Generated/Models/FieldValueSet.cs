@@ -7,18 +7,18 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class FieldValueSet : Entity, IParsable
+    public class FieldValueSet : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FieldValueSet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.FieldValueSet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FieldValueSet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.FieldValueSet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FieldValueSet();
+            return new Microsoft.Graph.Models.FieldValueSet();
         }
         /// <summary>
         /// The deserialization information for the current model

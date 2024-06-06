@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetComp
     public class GetCompatibleHubContentTypesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetCompatibleHubContentTypesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetComp
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetCompatibleHubContentTypesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,50 +35,50 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetComp
         /// Get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a &apos;push everywhere&apos; to &apos;pull as needed&apos; approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetCompatibleHubContentTypesGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetCompatibleHubContentTypesGetResponse?> GetAsGetCompatibleHubContentTypesGetResponseAsync(Action<RequestConfiguration<GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesGetResponse?> GetAsGetCompatibleHubContentTypesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesRequestBuilder.GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetCompatibleHubContentTypesGetResponse> GetAsGetCompatibleHubContentTypesGetResponseAsync(Action<RequestConfiguration<GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesGetResponse> GetAsGetCompatibleHubContentTypesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesRequestBuilder.GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetCompatibleHubContentTypesGetResponse>(requestInfo, GetCompatibleHubContentTypesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesGetResponse>(requestInfo, Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a &apos;push everywhere&apos; to &apos;pull as needed&apos; approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetCompatibleHubContentTypesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetCompatibleHubContentTypesGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetCompatibleHubContentTypesResponse?> GetAsync(Action<RequestConfiguration<GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesRequestBuilder.GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetCompatibleHubContentTypesResponse> GetAsync(Action<RequestConfiguration<GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesRequestBuilder.GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetCompatibleHubContentTypesResponse>(requestInfo, GetCompatibleHubContentTypesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesResponse>(requestInfo, Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a &apos;push everywhere&apos; to &apos;pull as needed&apos; approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetComp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesRequestBuilder.GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesRequestBuilder.GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetComp
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetCompatibleHubContentTypesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetCompatibleHubContentTypesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetCompatibleHubContentTypesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a &apos;push everywhere&apos; to &apos;pull as needed&apos; approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetComp
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration : RequestConfiguration<GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>
+        public class GetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesRequestBuilder.GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class GitHubUserEvidence : AlertEvidence, IParsable
+    public class GitHubUserEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The email property</summary>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GitHubUserEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.GitHubUserEvidence"/> and sets the default values.
         /// </summary>
         public GitHubUserEvidence() : base()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GitHubUserEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.GitHubUserEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GitHubUserEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.GitHubUserEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GitHubUserEvidence();
+            return new Microsoft.Graph.Models.Security.GitHubUserEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model

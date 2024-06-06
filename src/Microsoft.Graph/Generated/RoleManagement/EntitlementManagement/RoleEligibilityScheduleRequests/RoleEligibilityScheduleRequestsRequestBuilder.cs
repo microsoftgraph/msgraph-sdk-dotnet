@@ -20,24 +20,24 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
     public class RoleEligibilityScheduleRequestsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleEligibilityScheduleRequests property of the microsoft.graph.rbacApplication entity.</summary>
         /// <param name="position">The unique identifier of unifiedRoleEligibilityScheduleRequest</param>
-        /// <returns>A <see cref="UnifiedRoleEligibilityScheduleRequestItemRequestBuilder"/></returns>
-        public UnifiedRoleEligibilityScheduleRequestItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.UnifiedRoleEligibilityScheduleRequestItemRequestBuilder"/></returns>
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.UnifiedRoleEligibilityScheduleRequestItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("unifiedRoleEligibilityScheduleRequest%2Did", position);
-                return new UnifiedRoleEligibilityScheduleRequestItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.UnifiedRoleEligibilityScheduleRequestItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RoleEligibilityScheduleRequestsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RoleEligibilityScheduleRequestsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,60 +55,60 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
         /// <summary>
         /// Provides operations to call the filterByCurrentUser method.
         /// </summary>
-        /// <returns>A <see cref="FilterByCurrentUserWithOnRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder"/></returns>
         /// <param name="on">Usage: on=&apos;{on}&apos;</param>
-        public FilterByCurrentUserWithOnRequestBuilder FilterByCurrentUserWithOn(string on)
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder FilterByCurrentUserWithOn(string on)
         {
             if(string.IsNullOrEmpty(on)) throw new ArgumentNullException(nameof(on));
-            return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
+            return new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
         /// Requests for role eligibilities for principals through PIM.
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleEligibilityScheduleRequestCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleEligibilityScheduleRequestCollectionResponse?> GetAsync(Action<RequestConfiguration<RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequestCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder.RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedRoleEligibilityScheduleRequestCollectionResponse> GetAsync(Action<RequestConfiguration<RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequestCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder.RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedRoleEligibilityScheduleRequestCollectionResponse>(requestInfo, UnifiedRoleEligibilityScheduleRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequestCollectionResponse>(requestInfo, Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to roleEligibilityScheduleRequests for roleManagement
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleEligibilityScheduleRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequest"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleEligibilityScheduleRequest?> PostAsync(UnifiedRoleEligibilityScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequest?> PostAsync(Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedRoleEligibilityScheduleRequest> PostAsync(UnifiedRoleEligibilityScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequest> PostAsync(Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedRoleEligibilityScheduleRequest>(requestInfo, UnifiedRoleEligibilityScheduleRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequest>(requestInfo, Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Requests for role eligibilities for principals through PIM.
@@ -117,11 +117,11 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder.RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder.RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -137,11 +137,11 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(UnifiedRoleEligibilityScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(UnifiedRoleEligibilityScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -154,11 +154,11 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RoleEligibilityScheduleRequestsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RoleEligibilityScheduleRequestsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder WithUrl(string rawUrl)
         {
-            return new RoleEligibilityScheduleRequestsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Requests for role eligibilities for principals through PIM.
@@ -229,7 +229,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RoleEligibilityScheduleRequestsRequestBuilderGetRequestConfiguration : RequestConfiguration<RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters>
+        public class RoleEligibilityScheduleRequestsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder.RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

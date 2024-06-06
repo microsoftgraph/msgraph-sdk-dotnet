@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.Content
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IsPublishedGetResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.ContentTypes.Item.IsPublished.IsPublishedGetResponse"/> and sets the default values.
         /// </summary>
         public IsPublishedGetResponse()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.Content
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IsPublishedGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.ContentTypes.Item.IsPublished.IsPublishedGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IsPublishedGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.ContentTypes.Item.IsPublished.IsPublishedGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IsPublishedGetResponse();
+            return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.ContentTypes.Item.IsPublished.IsPublishedGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

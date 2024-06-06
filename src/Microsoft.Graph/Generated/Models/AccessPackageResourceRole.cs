@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AccessPackageResourceRole : Entity, IParsable
+    public class AccessPackageResourceRole : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A description for the resource role.</summary>
@@ -77,28 +77,28 @@ namespace Microsoft.Graph.Models
         /// <summary>The resource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageResource? Resource
+        public Microsoft.Graph.Models.AccessPackageResource? Resource
         {
-            get { return BackingStore?.Get<AccessPackageResource?>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public AccessPackageResource Resource
+        public Microsoft.Graph.Models.AccessPackageResource Resource
         {
-            get { return BackingStore?.Get<AccessPackageResource>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageResourceRole"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackageResourceRole"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessPackageResourceRole CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AccessPackageResourceRole CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageResourceRole();
+            return new Microsoft.Graph.Models.AccessPackageResourceRole();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "originId", n => { OriginId = n.GetStringValue(); } },
                 { "originSystem", n => { OriginSystem = n.GetStringValue(); } },
-                { "resource", n => { Resource = n.GetObjectValue<AccessPackageResource>(AccessPackageResource.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<Microsoft.Graph.Models.AccessPackageResource>(Microsoft.Graph.Models.AccessPackageResource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("originId", OriginId);
             writer.WriteStringValue("originSystem", OriginSystem);
-            writer.WriteObjectValue<AccessPackageResource>("resource", Resource);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AccessPackageResource>("resource", Resource);
         }
     }
 }

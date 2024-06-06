@@ -31,77 +31,77 @@ namespace Microsoft.Graph.Security
     public class SecurityRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the alerts property of the microsoft.graph.security entity.</summary>
-        public AlertsRequestBuilder Alerts
+        public Microsoft.Graph.Security.Alerts.AlertsRequestBuilder Alerts
         {
-            get => new AlertsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Alerts.AlertsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.</summary>
-        public Alerts_v2RequestBuilder Alerts_v2
+        public Microsoft.Graph.Security.Alerts_v2.Alerts_v2RequestBuilder Alerts_v2
         {
-            get => new Alerts_v2RequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Alerts_v2.Alerts_v2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.</summary>
-        public AttackSimulationRequestBuilder AttackSimulation
+        public Microsoft.Graph.Security.AttackSimulation.AttackSimulationRequestBuilder AttackSimulation
         {
-            get => new AttackSimulationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.AttackSimulation.AttackSimulationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cases property of the microsoft.graph.security entity.</summary>
-        public CasesRequestBuilder Cases
+        public Microsoft.Graph.Security.Cases.CasesRequestBuilder Cases
         {
-            get => new CasesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Cases.CasesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the identities property of the microsoft.graph.security entity.</summary>
-        public IdentitiesRequestBuilder Identities
+        public Microsoft.Graph.Security.Identities.IdentitiesRequestBuilder Identities
         {
-            get => new IdentitiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Identities.IdentitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the incidents property of the microsoft.graph.security entity.</summary>
-        public IncidentsRequestBuilder Incidents
+        public Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder Incidents
         {
-            get => new IncidentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the labels property of the microsoft.graph.security entity.</summary>
-        public LabelsRequestBuilder Labels
+        public Microsoft.Graph.Security.Labels.LabelsRequestBuilder Labels
         {
-            get => new LabelsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Labels.LabelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the runHuntingQuery method.</summary>
-        public MicrosoftGraphSecurityRunHuntingQueryRequestBuilder MicrosoftGraphSecurityRunHuntingQuery
+        public Microsoft.Graph.Security.MicrosoftGraphSecurityRunHuntingQuery.MicrosoftGraphSecurityRunHuntingQueryRequestBuilder MicrosoftGraphSecurityRunHuntingQuery
         {
-            get => new MicrosoftGraphSecurityRunHuntingQueryRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.MicrosoftGraphSecurityRunHuntingQuery.MicrosoftGraphSecurityRunHuntingQueryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.</summary>
-        public SecureScoreControlProfilesRequestBuilder SecureScoreControlProfiles
+        public Microsoft.Graph.Security.SecureScoreControlProfiles.SecureScoreControlProfilesRequestBuilder SecureScoreControlProfiles
         {
-            get => new SecureScoreControlProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.SecureScoreControlProfiles.SecureScoreControlProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the secureScores property of the microsoft.graph.security entity.</summary>
-        public SecureScoresRequestBuilder SecureScores
+        public Microsoft.Graph.Security.SecureScores.SecureScoresRequestBuilder SecureScores
         {
-            get => new SecureScoresRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.SecureScores.SecureScoresRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.</summary>
-        public SubjectRightsRequestsRequestBuilder SubjectRightsRequests
+        public Microsoft.Graph.Security.SubjectRightsRequests.SubjectRightsRequestsRequestBuilder SubjectRightsRequests
         {
-            get => new SubjectRightsRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.SubjectRightsRequests.SubjectRightsRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the threatIntelligence property of the microsoft.graph.security entity.</summary>
-        public ThreatIntelligenceRequestBuilder ThreatIntelligence
+        public Microsoft.Graph.Security.ThreatIntelligence.ThreatIntelligenceRequestBuilder ThreatIntelligence
         {
-            get => new ThreatIntelligenceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.ThreatIntelligence.ThreatIntelligenceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the triggers property of the microsoft.graph.security entity.</summary>
-        public TriggersRequestBuilder Triggers
+        public Microsoft.Graph.Security.Triggers.TriggersRequestBuilder Triggers
         {
-            get => new TriggersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Triggers.TriggersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the triggerTypes property of the microsoft.graph.security entity.</summary>
-        public TriggerTypesRequestBuilder TriggerTypes
+        public Microsoft.Graph.Security.TriggerTypes.TriggerTypesRequestBuilder TriggerTypes
         {
-            get => new TriggerTypesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.TriggerTypes.TriggerTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="SecurityRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.SecurityRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Security
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SecurityRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.SecurityRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -122,20 +122,20 @@ namespace Microsoft.Graph.Security
         /// <returns>A <see cref="Microsoft.Graph.Models.Security.Security"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.Security?> GetAsync(Action<RequestConfiguration<SecurityRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.Security?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.SecurityRequestBuilder.SecurityRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.Security> GetAsync(Action<RequestConfiguration<SecurityRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.Security> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.SecurityRequestBuilder.SecurityRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.Security>(requestInfo, Microsoft.Graph.Models.Security.Security.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Security
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.Security.Security?> PatchAsync(Microsoft.Graph.Models.Security.Security body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Security
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.Security>(requestInfo, Microsoft.Graph.Models.Security.Security.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -171,11 +171,11 @@ namespace Microsoft.Graph.Security
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SecurityRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.SecurityRequestBuilder.SecurityRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SecurityRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.SecurityRequestBuilder.SecurityRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -208,11 +208,11 @@ namespace Microsoft.Graph.Security
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SecurityRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.SecurityRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SecurityRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.SecurityRequestBuilder WithUrl(string rawUrl)
         {
-            return new SecurityRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.SecurityRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get security
@@ -244,7 +244,7 @@ namespace Microsoft.Graph.Security
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SecurityRequestBuilderGetRequestConfiguration : RequestConfiguration<SecurityRequestBuilderGetQueryParameters>
+        public class SecurityRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.SecurityRequestBuilder.SecurityRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

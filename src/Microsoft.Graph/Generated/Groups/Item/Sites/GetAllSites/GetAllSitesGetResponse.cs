@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Groups.Item.Sites.GetAllSites
 {
     #pragma warning disable CS1591
-    public class GetAllSitesGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetAllSitesGetResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
@@ -30,12 +30,12 @@ namespace Microsoft.Graph.Groups.Item.Sites.GetAllSites
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetAllSitesGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Sites.GetAllSites.GetAllSitesGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetAllSitesGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Groups.Item.Sites.GetAllSites.GetAllSitesGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetAllSitesGetResponse();
+            return new Microsoft.Graph.Groups.Item.Sites.GetAllSites.GetAllSitesGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

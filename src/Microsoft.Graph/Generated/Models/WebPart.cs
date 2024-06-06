@@ -7,23 +7,23 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WebPart : Entity, IParsable
+    public class WebPart : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WebPart"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WebPart"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WebPart CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WebPart CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.standardWebPart" => new StandardWebPart(),
-                "#microsoft.graph.textWebPart" => new TextWebPart(),
-                _ => new WebPart(),
+                "#microsoft.graph.standardWebPart" => new Microsoft.Graph.Models.StandardWebPart(),
+                "#microsoft.graph.textWebPart" => new Microsoft.Graph.Models.TextWebPart(),
+                _ => new Microsoft.Graph.Models.WebPart(),
             };
         }
         /// <summary>

@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item
     public class NamedLocationItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="NamedLocationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item.NamedLocationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="NamedLocationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item.NamedLocationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item
         {
         }
         /// <summary>
-        /// Delete an ipNamedLocation object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0" />
+        /// Delete a countryNamedLocation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/countrynamedlocation-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -51,62 +51,62 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an ipNamedLocation object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-1.0" />
+        /// Retrieve the properties and relationships of a countryNamedLocation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/countrynamedlocation-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="NamedLocation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.NamedLocation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<NamedLocation?> GetAsync(Action<RequestConfiguration<NamedLocationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.NamedLocation?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item.NamedLocationItemRequestBuilder.NamedLocationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<NamedLocation> GetAsync(Action<RequestConfiguration<NamedLocationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.NamedLocation> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item.NamedLocationItemRequestBuilder.NamedLocationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<NamedLocation>(requestInfo, NamedLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.NamedLocation>(requestInfo, Microsoft.Graph.Models.NamedLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of an ipNamedLocation object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="NamedLocation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.NamedLocation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<NamedLocation?> PatchAsync(NamedLocation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.NamedLocation?> PatchAsync(Microsoft.Graph.Models.NamedLocation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<NamedLocation> PatchAsync(NamedLocation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.NamedLocation> PatchAsync(Microsoft.Graph.Models.NamedLocation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<NamedLocation>(requestInfo, NamedLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.NamedLocation>(requestInfo, Microsoft.Graph.Models.NamedLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an ipNamedLocation object.
+        /// Delete a countryNamedLocation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -125,17 +125,17 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an ipNamedLocation object.
+        /// Retrieve the properties and relationships of a countryNamedLocation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<NamedLocationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item.NamedLocationItemRequestBuilder.NamedLocationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<NamedLocationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item.NamedLocationItemRequestBuilder.NamedLocationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -151,11 +151,11 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(NamedLocation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.NamedLocation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(NamedLocation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.NamedLocation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -168,11 +168,11 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="NamedLocationItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item.NamedLocationItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public NamedLocationItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item.NamedLocationItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new NamedLocationItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item.NamedLocationItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an ipNamedLocation object.
+        /// Retrieve the properties and relationships of a countryNamedLocation object.
         /// </summary>
         public class NamedLocationItemRequestBuilderGetQueryParameters 
         {
@@ -211,7 +211,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class NamedLocationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<NamedLocationItemRequestBuilderGetQueryParameters>
+        public class NamedLocationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item.NamedLocationItemRequestBuilder.NamedLocationItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

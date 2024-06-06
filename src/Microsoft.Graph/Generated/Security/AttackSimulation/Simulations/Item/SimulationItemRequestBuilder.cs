@@ -20,22 +20,22 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item
     public class SimulationItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the landingPage property of the microsoft.graph.simulation entity.</summary>
-        public LandingPageRequestBuilder LandingPage
+        public Microsoft.Graph.Security.AttackSimulation.Simulations.Item.LandingPage.LandingPageRequestBuilder LandingPage
         {
-            get => new LandingPageRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.AttackSimulation.Simulations.Item.LandingPage.LandingPageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the loginPage property of the microsoft.graph.simulation entity.</summary>
-        public LoginPageRequestBuilder LoginPage
+        public Microsoft.Graph.Security.AttackSimulation.Simulations.Item.LoginPage.LoginPageRequestBuilder LoginPage
         {
-            get => new LoginPageRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.AttackSimulation.Simulations.Item.LoginPage.LoginPageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the payload property of the microsoft.graph.simulation entity.</summary>
-        public PayloadRequestBuilder Payload
+        public Microsoft.Graph.Security.AttackSimulation.Simulations.Item.Payload.PayloadRequestBuilder Payload
         {
-            get => new PayloadRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.AttackSimulation.Simulations.Item.Payload.PayloadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="SimulationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.AttackSimulation.Simulations.Item.SimulationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SimulationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.AttackSimulation.Simulations.Item.SimulationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -77,51 +77,51 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item
         /// Get an attack simulation campaign for a tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/simulation-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Simulation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Simulation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Simulation?> GetAsync(Action<RequestConfiguration<SimulationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Simulation?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.AttackSimulation.Simulations.Item.SimulationItemRequestBuilder.SimulationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Simulation> GetAsync(Action<RequestConfiguration<SimulationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Simulation> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.AttackSimulation.Simulations.Item.SimulationItemRequestBuilder.SimulationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Simulation>(requestInfo, Simulation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Simulation>(requestInfo, Microsoft.Graph.Models.Simulation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update an attack simulation campaign for a tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/simulation-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Simulation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Simulation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Simulation?> PatchAsync(Simulation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Simulation?> PatchAsync(Microsoft.Graph.Models.Simulation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Simulation> PatchAsync(Simulation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Simulation> PatchAsync(Microsoft.Graph.Models.Simulation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Simulation>(requestInfo, Simulation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Simulation>(requestInfo, Microsoft.Graph.Models.Simulation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete an attack simulation campaign for a tenant.
@@ -149,11 +149,11 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SimulationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.AttackSimulation.Simulations.Item.SimulationItemRequestBuilder.SimulationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SimulationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.AttackSimulation.Simulations.Item.SimulationItemRequestBuilder.SimulationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -169,11 +169,11 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Simulation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Simulation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Simulation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Simulation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -186,11 +186,11 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SimulationItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.AttackSimulation.Simulations.Item.SimulationItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SimulationItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.AttackSimulation.Simulations.Item.SimulationItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new SimulationItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.AttackSimulation.Simulations.Item.SimulationItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -229,7 +229,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SimulationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<SimulationItemRequestBuilderGetQueryParameters>
+        public class SimulationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.AttackSimulation.Simulations.Item.SimulationItemRequestBuilder.SimulationItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

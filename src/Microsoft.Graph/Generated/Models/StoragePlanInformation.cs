@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("upgradeAvailable", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="StoragePlanInformation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.StoragePlanInformation"/> and sets the default values.
         /// </summary>
         public StoragePlanInformation()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="StoragePlanInformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.StoragePlanInformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static StoragePlanInformation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.StoragePlanInformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new StoragePlanInformation();
+            return new Microsoft.Graph.Models.StoragePlanInformation();
         }
         /// <summary>
         /// The deserialization information for the current model

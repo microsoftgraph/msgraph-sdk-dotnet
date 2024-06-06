@@ -68,13 +68,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The sourceType property</summary>
-        public SettingSourceType? SourceType
+        public Microsoft.Graph.Models.SettingSourceType? SourceType
         {
-            get { return BackingStore?.Get<SettingSourceType?>("sourceType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SettingSourceType?>("sourceType"); }
             set { BackingStore?.Set("sourceType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SettingSource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SettingSource"/> and sets the default values.
         /// </summary>
         public SettingSource()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SettingSource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SettingSource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SettingSource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SettingSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SettingSource();
+            return new Microsoft.Graph.Models.SettingSource();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "sourceType", n => { SourceType = n.GetEnumValue<SettingSourceType>(); } },
+                { "sourceType", n => { SourceType = n.GetEnumValue<Microsoft.Graph.Models.SettingSourceType>(); } },
             };
         }
         /// <summary>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<SettingSourceType>("sourceType", SourceType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SettingSourceType>("sourceType", SourceType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class CitationTemplate : FilePlanDescriptorTemplate, IParsable
+    public class CitationTemplate : Microsoft.Graph.Models.Security.FilePlanDescriptorTemplate, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the jurisdiction or agency that published the citation.</summary>
@@ -45,12 +45,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CitationTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.CitationTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CitationTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.CitationTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CitationTemplate();
+            return new Microsoft.Graph.Models.Security.CitationTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model

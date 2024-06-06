@@ -19,17 +19,17 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser
     public class LastModifiedByUserRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The mailboxSettings property</summary>
-        public MailboxSettingsRequestBuilder MailboxSettings
+        public Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser.MailboxSettings.MailboxSettingsRequestBuilder MailboxSettings
         {
-            get => new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser.MailboxSettings.MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The serviceProvisioningErrors property</summary>
-        public ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
+        public Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
         {
-            get => new ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="LastModifiedByUserRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser.LastModifiedByUserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LastModifiedByUserRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser.LastModifiedByUserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,20 +50,20 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser
         /// <returns>A <see cref="Microsoft.Graph.Models.User"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.User?> GetAsync(Action<RequestConfiguration<LastModifiedByUserRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.User?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser.LastModifiedByUserRequestBuilder.LastModifiedByUserRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.User> GetAsync(Action<RequestConfiguration<LastModifiedByUserRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.User> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser.LastModifiedByUserRequestBuilder.LastModifiedByUserRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.User>(requestInfo, Microsoft.Graph.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -74,11 +74,11 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LastModifiedByUserRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser.LastModifiedByUserRequestBuilder.LastModifiedByUserRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LastModifiedByUserRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser.LastModifiedByUserRequestBuilder.LastModifiedByUserRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -89,11 +89,11 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="LastModifiedByUserRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser.LastModifiedByUserRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LastModifiedByUserRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser.LastModifiedByUserRequestBuilder WithUrl(string rawUrl)
         {
-            return new LastModifiedByUserRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser.LastModifiedByUserRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Identity of the user who last modified the item. Read-only.
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class LastModifiedByUserRequestBuilderGetRequestConfiguration : RequestConfiguration<LastModifiedByUserRequestBuilderGetQueryParameters>
+        public class LastModifiedByUserRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser.LastModifiedByUserRequestBuilder.LastModifiedByUserRequestBuilderGetQueryParameters>
         {
         }
     }

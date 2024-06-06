@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages.Item.ReplyAll
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ReplyAllPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.MailFolders.Item.Messages.Item.ReplyAll.ReplyAllPostRequestBody"/> and sets the default values.
         /// </summary>
         public ReplyAllPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages.Item.ReplyAll
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ReplyAllPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.MailFolders.Item.Messages.Item.ReplyAll.ReplyAllPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ReplyAllPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Me.MailFolders.Item.Messages.Item.ReplyAll.ReplyAllPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ReplyAllPostRequestBody();
+            return new Microsoft.Graph.Me.MailFolders.Item.Messages.Item.ReplyAll.ReplyAllPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

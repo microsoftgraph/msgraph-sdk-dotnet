@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Groups.Item.GroupLifecyclePolicies
     public class GroupLifecyclePoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.</summary>
         /// <param name="position">The unique identifier of groupLifecyclePolicy</param>
-        /// <returns>A <see cref="GroupLifecyclePolicyItemRequestBuilder"/></returns>
-        public GroupLifecyclePolicyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.GroupLifecyclePolicyItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.GroupLifecyclePolicyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("groupLifecyclePolicy%2Did", position);
-                return new GroupLifecyclePolicyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.GroupLifecyclePolicyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupLifecyclePoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Groups.Item.GroupLifecyclePolicies
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupLifecyclePoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +55,50 @@ namespace Microsoft.Graph.Groups.Item.GroupLifecyclePolicies
         /// Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-grouplifecyclepolicies?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GroupLifecyclePolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.GroupLifecyclePolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GroupLifecyclePolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<GroupLifecyclePoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.GroupLifecyclePolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder.GroupLifecyclePoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GroupLifecyclePolicyCollectionResponse> GetAsync(Action<RequestConfiguration<GroupLifecyclePoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.GroupLifecyclePolicyCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder.GroupLifecyclePoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GroupLifecyclePolicyCollectionResponse>(requestInfo, GroupLifecyclePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.GroupLifecyclePolicyCollectionResponse>(requestInfo, Microsoft.Graph.Models.GroupLifecyclePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to groupLifecyclePolicies for groups
         /// </summary>
-        /// <returns>A <see cref="GroupLifecyclePolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.GroupLifecyclePolicy"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GroupLifecyclePolicy?> PostAsync(GroupLifecyclePolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.GroupLifecyclePolicy?> PostAsync(Microsoft.Graph.Models.GroupLifecyclePolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GroupLifecyclePolicy> PostAsync(GroupLifecyclePolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.GroupLifecyclePolicy> PostAsync(Microsoft.Graph.Models.GroupLifecyclePolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GroupLifecyclePolicy>(requestInfo, GroupLifecyclePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.GroupLifecyclePolicy>(requestInfo, Microsoft.Graph.Models.GroupLifecyclePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Groups.Item.GroupLifecyclePolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupLifecyclePoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder.GroupLifecyclePoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupLifecyclePoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder.GroupLifecyclePoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Groups.Item.GroupLifecyclePolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(GroupLifecyclePolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.GroupLifecyclePolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(GroupLifecyclePolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.GroupLifecyclePolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.Groups.Item.GroupLifecyclePolicies
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GroupLifecyclePoliciesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GroupLifecyclePoliciesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder WithUrl(string rawUrl)
         {
-            return new GroupLifecyclePoliciesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Groups.Item.GroupLifecyclePolicies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<GroupLifecyclePoliciesRequestBuilderGetQueryParameters>
+        public class GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder.GroupLifecyclePoliciesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Delta
     public class DeltaRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="DeltaRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Delta
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeltaRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,50 +35,50 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Delta
         /// Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.The service starts enumerating the drive&apos;s hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink, as described below.Your app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you have finished receiving all the changes, you may apply them to your local state.To check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.Items with this property set should be removed from your local state.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="DeltaGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeltaGetResponse?> GetAsDeltaGetResponseAsync(Action<RequestConfiguration<DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaGetResponse?> GetAsDeltaGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeltaGetResponse> GetAsDeltaGetResponseAsync(Action<RequestConfiguration<DeltaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaGetResponse> GetAsDeltaGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeltaGetResponse>(requestInfo, DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaGetResponse>(requestInfo, Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.The service starts enumerating the drive&apos;s hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink, as described below.Your app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you have finished receiving all the changes, you may apply them to your local state.To check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.Items with this property set should be removed from your local state.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="DeltaResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsDeltaGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeltaResponse?> GetAsync(Action<RequestConfiguration<DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeltaResponse> GetAsync(Action<RequestConfiguration<DeltaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeltaResponse>(requestInfo, DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaResponse>(requestInfo, Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.The service starts enumerating the drive&apos;s hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink, as described below.Your app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you have finished receiving all the changes, you may apply them to your local state.To check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.Items with this property set should be removed from your local state.
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Delta
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeltaRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Delta
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DeltaRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeltaRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaRequestBuilder WithUrl(string rawUrl)
         {
-            return new DeltaRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.The service starts enumerating the drive&apos;s hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink, as described below.Your app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you have finished receiving all the changes, you may apply them to your local state.To check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.Items with this property set should be removed from your local state.
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Delta
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeltaRequestBuilderGetRequestConfiguration : RequestConfiguration<DeltaRequestBuilderGetQueryParameters>
+        public class DeltaRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>
         {
         }
     }

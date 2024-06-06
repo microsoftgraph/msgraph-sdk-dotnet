@@ -7,9 +7,25 @@ using System;
 namespace Microsoft.Graph.Models.CallRecords
 {
     #pragma warning disable CS1591
-    public class ParticipantEndpoint : Endpoint, IParsable
+    public class ParticipantEndpoint : Microsoft.Graph.Models.CallRecords.Endpoint, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Identity associated with the endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Models.Identity? AssociatedIdentity
+        {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity?>("associatedIdentity"); }
+            set { BackingStore?.Set("associatedIdentity", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Models.Identity AssociatedIdentity
+        {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity>("associatedIdentity"); }
+            set { BackingStore?.Set("associatedIdentity", value); }
+        }
+#endif
         /// <summary>CPU number of cores used by the media endpoint.</summary>
         public int? CpuCoresCount
         {
@@ -41,20 +57,20 @@ namespace Microsoft.Graph.Models.CallRecords
         /// <summary>The feedback provided by the user of this endpoint about the quality of the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserFeedback? Feedback
+        public Microsoft.Graph.Models.CallRecords.UserFeedback? Feedback
         {
-            get { return BackingStore?.Get<UserFeedback?>("feedback"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.UserFeedback?>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
 #nullable restore
 #else
-        public UserFeedback Feedback
+        public Microsoft.Graph.Models.CallRecords.UserFeedback Feedback
         {
-            get { return BackingStore?.Get<UserFeedback>("feedback"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.UserFeedback>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
 #endif
-        /// <summary>Identity associated with the endpoint.</summary>
+        /// <summary>Identity associated with the endpoint. The identity property is deprecated and will stop returning data on June 30, 2026. Going forward, use the associatedIdentity property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Models.IdentitySet? Identity
@@ -87,7 +103,7 @@ namespace Microsoft.Graph.Models.CallRecords
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ParticipantEndpoint"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CallRecords.ParticipantEndpoint"/> and sets the default values.
         /// </summary>
         public ParticipantEndpoint() : base()
         {
@@ -96,12 +112,12 @@ namespace Microsoft.Graph.Models.CallRecords
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ParticipantEndpoint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CallRecords.ParticipantEndpoint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ParticipantEndpoint CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CallRecords.ParticipantEndpoint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ParticipantEndpoint();
+            return new Microsoft.Graph.Models.CallRecords.ParticipantEndpoint();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,10 +127,11 @@ namespace Microsoft.Graph.Models.CallRecords
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "associatedIdentity", n => { AssociatedIdentity = n.GetObjectValue<Microsoft.Graph.Models.Identity>(Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "cpuCoresCount", n => { CpuCoresCount = n.GetIntValue(); } },
                 { "cpuName", n => { CpuName = n.GetStringValue(); } },
                 { "cpuProcessorSpeedInMhz", n => { CpuProcessorSpeedInMhz = n.GetIntValue(); } },
-                { "feedback", n => { Feedback = n.GetObjectValue<UserFeedback>(UserFeedback.CreateFromDiscriminatorValue); } },
+                { "feedback", n => { Feedback = n.GetObjectValue<Microsoft.Graph.Models.CallRecords.UserFeedback>(Microsoft.Graph.Models.CallRecords.UserFeedback.CreateFromDiscriminatorValue); } },
                 { "identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -127,10 +144,11 @@ namespace Microsoft.Graph.Models.CallRecords
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Identity>("associatedIdentity", AssociatedIdentity);
             writer.WriteIntValue("cpuCoresCount", CpuCoresCount);
             writer.WriteStringValue("cpuName", CpuName);
             writer.WriteIntValue("cpuProcessorSpeedInMhz", CpuProcessorSpeedInMhz);
-            writer.WriteObjectValue<UserFeedback>("feedback", Feedback);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CallRecords.UserFeedback>("feedback", Feedback);
             writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("identity", Identity);
             writer.WriteStringValue("name", Name);
         }

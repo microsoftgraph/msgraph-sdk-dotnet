@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.Policies
     public class PoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Identity.ConditionalAccess.Policies.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Identity.ConditionalAccess.Policies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         /// <param name="position">The unique identifier of conditionalAccessPolicy</param>
-        /// <returns>A <see cref="ConditionalAccessPolicyItemRequestBuilder"/></returns>
-        public ConditionalAccessPolicyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Identity.ConditionalAccess.Policies.Item.ConditionalAccessPolicyItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Identity.ConditionalAccess.Policies.Item.ConditionalAccessPolicyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("conditionalAccessPolicy%2Did", position);
-                return new ConditionalAccessPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Identity.ConditionalAccess.Policies.Item.ConditionalAccessPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.ConditionalAccess.Policies.PoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.Policies
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.ConditionalAccess.Policies.PoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.Policies
         /// Retrieve a list of conditionalAccessPolicy objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/conditionalaccessroot-list-policies?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessPolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ConditionalAccessPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ConditionalAccessPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<PoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ConditionalAccessPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.Policies.PoliciesRequestBuilder.PoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ConditionalAccessPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<PoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ConditionalAccessPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.Policies.PoliciesRequestBuilder.PoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ConditionalAccessPolicyCollectionResponse>(requestInfo, ConditionalAccessPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ConditionalAccessPolicyCollectionResponse>(requestInfo, Microsoft.Graph.Models.ConditionalAccessPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new conditionalAccessPolicy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/conditionalaccessroot-post-policies?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ConditionalAccessPolicy"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ConditionalAccessPolicy?> PostAsync(ConditionalAccessPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ConditionalAccessPolicy?> PostAsync(Microsoft.Graph.Models.ConditionalAccessPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ConditionalAccessPolicy> PostAsync(ConditionalAccessPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ConditionalAccessPolicy> PostAsync(Microsoft.Graph.Models.ConditionalAccessPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ConditionalAccessPolicy>(requestInfo, ConditionalAccessPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ConditionalAccessPolicy>(requestInfo, Microsoft.Graph.Models.ConditionalAccessPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of conditionalAccessPolicy objects.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.Policies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.Policies.PoliciesRequestBuilder.PoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.Policies.PoliciesRequestBuilder.PoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.Policies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ConditionalAccessPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ConditionalAccessPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ConditionalAccessPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ConditionalAccessPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.Policies
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PoliciesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Identity.ConditionalAccess.Policies.PoliciesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PoliciesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Identity.ConditionalAccess.Policies.PoliciesRequestBuilder WithUrl(string rawUrl)
         {
-            return new PoliciesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Identity.ConditionalAccess.Policies.PoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of conditionalAccessPolicy objects.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.Policies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<PoliciesRequestBuilderGetQueryParameters>
+        public class PoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.Policies.PoliciesRequestBuilder.PoliciesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

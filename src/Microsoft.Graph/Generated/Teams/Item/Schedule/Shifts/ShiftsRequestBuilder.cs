@@ -19,87 +19,87 @@ namespace Microsoft.Graph.Teams.Item.Schedule.Shifts
     public class ShiftsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Teams.Item.Schedule.Shifts.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Teams.Item.Schedule.Shifts.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the shifts property of the microsoft.graph.schedule entity.</summary>
         /// <param name="position">The unique identifier of shift</param>
-        /// <returns>A <see cref="ShiftItemRequestBuilder"/></returns>
-        public ShiftItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Teams.Item.Schedule.Shifts.Item.ShiftItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Teams.Item.Schedule.Shifts.Item.ShiftItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("shift%2Did", position);
-                return new ShiftItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Teams.Item.Schedule.Shifts.Item.ShiftItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ShiftsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teams.Item.Schedule.Shifts.ShiftsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ShiftsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/shifts{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        public ShiftsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/shifts{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ShiftsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teams.Item.Schedule.Shifts.ShiftsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ShiftsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/shifts{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        public ShiftsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/shifts{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
         {
         }
         /// <summary>
         /// Get the list of shift instances in a schedule.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ShiftCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ShiftCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ShiftCollectionResponse?> GetAsync(Action<RequestConfiguration<ShiftsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ShiftCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Schedule.Shifts.ShiftsRequestBuilder.ShiftsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ShiftCollectionResponse> GetAsync(Action<RequestConfiguration<ShiftsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ShiftCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Schedule.Shifts.ShiftsRequestBuilder.ShiftsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ShiftCollectionResponse>(requestInfo, ShiftCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ShiftCollectionResponse>(requestInfo, Microsoft.Graph.Models.ShiftCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-post-shifts?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Shift"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Shift"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Shift?> PostAsync(Shift body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Shift?> PostAsync(Microsoft.Graph.Models.Shift body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Shift> PostAsync(Shift body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Shift> PostAsync(Microsoft.Graph.Models.Shift body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Shift>(requestInfo, Shift.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Shift>(requestInfo, Microsoft.Graph.Models.Shift.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the list of shift instances in a schedule.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Teams.Item.Schedule.Shifts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ShiftsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Schedule.Shifts.ShiftsRequestBuilder.ShiftsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ShiftsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Schedule.Shifts.ShiftsRequestBuilder.ShiftsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Teams.Item.Schedule.Shifts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Shift body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Shift body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Shift body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Shift body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Teams.Item.Schedule.Shifts
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ShiftsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Teams.Item.Schedule.Shifts.ShiftsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ShiftsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Teams.Item.Schedule.Shifts.ShiftsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ShiftsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Teams.Item.Schedule.Shifts.ShiftsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the list of shift instances in a schedule.
@@ -159,6 +159,16 @@ namespace Microsoft.Graph.Teams.Item.Schedule.Shifts
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -210,7 +220,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.Shifts
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ShiftsRequestBuilderGetRequestConfiguration : RequestConfiguration<ShiftsRequestBuilderGetQueryParameters>
+        public class ShiftsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Teams.Item.Schedule.Shifts.ShiftsRequestBuilder.ShiftsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

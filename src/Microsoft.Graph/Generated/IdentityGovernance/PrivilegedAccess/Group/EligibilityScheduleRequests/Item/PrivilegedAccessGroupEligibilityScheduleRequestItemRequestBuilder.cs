@@ -21,9 +21,9 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
     public class PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the cancel method.</summary>
-        public CancelRequestBuilder Cancel
+        public Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.Cancel.CancelRequestBuilder Cancel
         {
-            get => new CancelRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the group property of the microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest entity.</summary>
         public Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.Group.GroupRequestBuilder Group
@@ -31,17 +31,17 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             get => new Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.Group.GroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the principal property of the microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest entity.</summary>
-        public PrincipalRequestBuilder Principal
+        public Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.Principal.PrincipalRequestBuilder Principal
         {
-            get => new PrincipalRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.Principal.PrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the targetSchedule property of the microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest entity.</summary>
-        public TargetScheduleRequestBuilder TargetSchedule
+        public Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.TargetSchedule.TargetScheduleRequestBuilder TargetSchedule
         {
-            get => new TargetScheduleRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.TargetSchedule.TargetScheduleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -82,50 +82,50 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
         /// Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleRequest object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="PrivilegedAccessGroupEligibilityScheduleRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrivilegedAccessGroupEligibilityScheduleRequest?> GetAsync(Action<RequestConfiguration<PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder.PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PrivilegedAccessGroupEligibilityScheduleRequest> GetAsync(Action<RequestConfiguration<PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder.PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PrivilegedAccessGroupEligibilityScheduleRequest>(requestInfo, PrivilegedAccessGroupEligibilityScheduleRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest>(requestInfo, Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property eligibilityScheduleRequests in identityGovernance
         /// </summary>
-        /// <returns>A <see cref="PrivilegedAccessGroupEligibilityScheduleRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrivilegedAccessGroupEligibilityScheduleRequest?> PatchAsync(PrivilegedAccessGroupEligibilityScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest?> PatchAsync(Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PrivilegedAccessGroupEligibilityScheduleRequest> PatchAsync(PrivilegedAccessGroupEligibilityScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest> PatchAsync(Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PrivilegedAccessGroupEligibilityScheduleRequest>(requestInfo, PrivilegedAccessGroupEligibilityScheduleRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest>(requestInfo, Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property eligibilityScheduleRequests for identityGovernance
@@ -153,11 +153,11 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder.PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder.PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -173,11 +173,11 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(PrivilegedAccessGroupEligibilityScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(PrivilegedAccessGroupEligibilityScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -190,11 +190,11 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -233,7 +233,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilderGetRequestConfiguration : RequestConfiguration<PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilderGetQueryParameters>
+        public class PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder.PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

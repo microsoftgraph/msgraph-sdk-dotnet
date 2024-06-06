@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Device protection status entity.
     /// </summary>
-    public class WindowsProtectionState : Entity, IParsable
+    public class WindowsProtectionState : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Current anti malware version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,23 +30,23 @@ namespace Microsoft.Graph.Models
         /// <summary>Device malware list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsDeviceMalwareState>? DetectedMalwareState
+        public List<Microsoft.Graph.Models.WindowsDeviceMalwareState>? DetectedMalwareState
         {
-            get { return BackingStore?.Get<List<WindowsDeviceMalwareState>?>("detectedMalwareState"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsDeviceMalwareState>?>("detectedMalwareState"); }
             set { BackingStore?.Set("detectedMalwareState", value); }
         }
 #nullable restore
 #else
-        public List<WindowsDeviceMalwareState> DetectedMalwareState
+        public List<Microsoft.Graph.Models.WindowsDeviceMalwareState> DetectedMalwareState
         {
-            get { return BackingStore?.Get<List<WindowsDeviceMalwareState>>("detectedMalwareState"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsDeviceMalwareState>>("detectedMalwareState"); }
             set { BackingStore?.Set("detectedMalwareState", value); }
         }
 #endif
         /// <summary>Indicates device&apos;s health state. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.</summary>
-        public WindowsDeviceHealthState? DeviceState
+        public Microsoft.Graph.Models.WindowsDeviceHealthState? DeviceState
         {
-            get { return BackingStore?.Get<WindowsDeviceHealthState?>("deviceState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsDeviceHealthState?>("deviceState"); }
             set { BackingStore?.Set("deviceState", value); }
         }
         /// <summary>Current endpoint protection engine&apos;s version</summary>
@@ -146,9 +146,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("networkInspectionSystemEnabled", value); }
         }
         /// <summary>Product Status of Windows Defender Antivirus. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall.</summary>
-        public WindowsDefenderProductStatus? ProductStatus
+        public Microsoft.Graph.Models.WindowsDefenderProductStatus? ProductStatus
         {
-            get { return BackingStore?.Get<WindowsDefenderProductStatus?>("productStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsDefenderProductStatus?>("productStatus"); }
             set { BackingStore?.Set("productStatus", value); }
         }
         /// <summary>When TRUE indicates quick scan is overdue, when FALSE indicates quick scan is not overdue. Defaults to setting on client device.</summary>
@@ -200,12 +200,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsProtectionState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsProtectionState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsProtectionState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WindowsProtectionState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsProtectionState();
+            return new Microsoft.Graph.Models.WindowsProtectionState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -216,8 +216,8 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "antiMalwareVersion", n => { AntiMalwareVersion = n.GetStringValue(); } },
-                { "detectedMalwareState", n => { DetectedMalwareState = n.GetCollectionOfObjectValues<WindowsDeviceMalwareState>(WindowsDeviceMalwareState.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "deviceState", n => { DeviceState = n.GetEnumValue<WindowsDeviceHealthState>(); } },
+                { "detectedMalwareState", n => { DetectedMalwareState = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WindowsDeviceMalwareState>(Microsoft.Graph.Models.WindowsDeviceMalwareState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceState", n => { DeviceState = n.GetEnumValue<Microsoft.Graph.Models.WindowsDeviceHealthState>(); } },
                 { "engineVersion", n => { EngineVersion = n.GetStringValue(); } },
                 { "fullScanOverdue", n => { FullScanOverdue = n.GetBoolValue(); } },
                 { "fullScanRequired", n => { FullScanRequired = n.GetBoolValue(); } },
@@ -229,7 +229,7 @@ namespace Microsoft.Graph.Models
                 { "lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "malwareProtectionEnabled", n => { MalwareProtectionEnabled = n.GetBoolValue(); } },
                 { "networkInspectionSystemEnabled", n => { NetworkInspectionSystemEnabled = n.GetBoolValue(); } },
-                { "productStatus", n => { ProductStatus = n.GetEnumValue<WindowsDefenderProductStatus>(); } },
+                { "productStatus", n => { ProductStatus = n.GetEnumValue<Microsoft.Graph.Models.WindowsDefenderProductStatus>(); } },
                 { "quickScanOverdue", n => { QuickScanOverdue = n.GetBoolValue(); } },
                 { "realTimeProtectionEnabled", n => { RealTimeProtectionEnabled = n.GetBoolValue(); } },
                 { "rebootRequired", n => { RebootRequired = n.GetBoolValue(); } },
@@ -247,8 +247,8 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("antiMalwareVersion", AntiMalwareVersion);
-            writer.WriteCollectionOfObjectValues<WindowsDeviceMalwareState>("detectedMalwareState", DetectedMalwareState);
-            writer.WriteEnumValue<WindowsDeviceHealthState>("deviceState", DeviceState);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WindowsDeviceMalwareState>("detectedMalwareState", DetectedMalwareState);
+            writer.WriteEnumValue<Microsoft.Graph.Models.WindowsDeviceHealthState>("deviceState", DeviceState);
             writer.WriteStringValue("engineVersion", EngineVersion);
             writer.WriteBoolValue("fullScanOverdue", FullScanOverdue);
             writer.WriteBoolValue("fullScanRequired", FullScanRequired);
@@ -260,7 +260,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("lastReportedDateTime", LastReportedDateTime);
             writer.WriteBoolValue("malwareProtectionEnabled", MalwareProtectionEnabled);
             writer.WriteBoolValue("networkInspectionSystemEnabled", NetworkInspectionSystemEnabled);
-            writer.WriteEnumValue<WindowsDefenderProductStatus>("productStatus", ProductStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.WindowsDefenderProductStatus>("productStatus", ProductStatus);
             writer.WriteBoolValue("quickScanOverdue", QuickScanOverdue);
             writer.WriteBoolValue("realTimeProtectionEnabled", RealTimeProtectionEnabled);
             writer.WriteBoolValue("rebootRequired", RebootRequired);

@@ -18,12 +18,12 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
     public class ItemAtWithIndexRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the format property of the microsoft.graph.workbookChartPoint entity.</summary>
-        public FormatRequestBuilder Format
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.Item.Points.ItemAtWithIndex.Format.FormatRequestBuilder Format
         {
-            get => new FormatRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.Item.Points.ItemAtWithIndex.Format.FormatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemAtWithIndexRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.Item.Points.ItemAtWithIndex.ItemAtWithIndexRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="index">Usage: index={index}</param>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             if (index != null) PathParameters.Add("index", index);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemAtWithIndexRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.Item.Points.ItemAtWithIndex.ItemAtWithIndexRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,25 +44,25 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// Retrieve a point based on its position within the series.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartpointscollection-itemat?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="WorkbookChartPoint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookChartPoint"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookChartPoint?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookChartPoint?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WorkbookChartPoint> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookChartPoint> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WorkbookChartPoint>(requestInfo, WorkbookChartPoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkbookChartPoint>(requestInfo, Microsoft.Graph.Models.WorkbookChartPoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a point based on its position within the series.
@@ -86,11 +86,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ItemAtWithIndexRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.Item.Points.ItemAtWithIndex.ItemAtWithIndexRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ItemAtWithIndexRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.Item.Points.ItemAtWithIndex.ItemAtWithIndexRequestBuilder WithUrl(string rawUrl)
         {
-            return new ItemAtWithIndexRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.Item.Points.ItemAtWithIndex.ItemAtWithIndexRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MobileAppAssignmentSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MobileAppAssignmentSettings"/> and sets the default values.
         /// </summary>
         public MobileAppAssignmentSettings()
         {
@@ -47,23 +47,23 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileAppAssignmentSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MobileAppAssignmentSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MobileAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.MobileAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.iosLobAppAssignmentSettings" => new IosLobAppAssignmentSettings(),
-                "#microsoft.graph.iosStoreAppAssignmentSettings" => new IosStoreAppAssignmentSettings(),
-                "#microsoft.graph.iosVppAppAssignmentSettings" => new IosVppAppAssignmentSettings(),
-                "#microsoft.graph.macOsLobAppAssignmentSettings" => new MacOsLobAppAssignmentSettings(),
-                "#microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings" => new MicrosoftStoreForBusinessAppAssignmentSettings(),
-                "#microsoft.graph.win32LobAppAssignmentSettings" => new Win32LobAppAssignmentSettings(),
-                "#microsoft.graph.windowsAppXAppAssignmentSettings" => new WindowsAppXAppAssignmentSettings(),
-                "#microsoft.graph.windowsUniversalAppXAppAssignmentSettings" => new WindowsUniversalAppXAppAssignmentSettings(),
-                _ => new MobileAppAssignmentSettings(),
+                "#microsoft.graph.iosLobAppAssignmentSettings" => new Microsoft.Graph.Models.IosLobAppAssignmentSettings(),
+                "#microsoft.graph.iosStoreAppAssignmentSettings" => new Microsoft.Graph.Models.IosStoreAppAssignmentSettings(),
+                "#microsoft.graph.iosVppAppAssignmentSettings" => new Microsoft.Graph.Models.IosVppAppAssignmentSettings(),
+                "#microsoft.graph.macOsLobAppAssignmentSettings" => new Microsoft.Graph.Models.MacOsLobAppAssignmentSettings(),
+                "#microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings" => new Microsoft.Graph.Models.MicrosoftStoreForBusinessAppAssignmentSettings(),
+                "#microsoft.graph.win32LobAppAssignmentSettings" => new Microsoft.Graph.Models.Win32LobAppAssignmentSettings(),
+                "#microsoft.graph.windowsAppXAppAssignmentSettings" => new Microsoft.Graph.Models.WindowsAppXAppAssignmentSettings(),
+                "#microsoft.graph.windowsUniversalAppXAppAssignmentSettings" => new Microsoft.Graph.Models.WindowsUniversalAppXAppAssignmentSettings(),
+                _ => new Microsoft.Graph.Models.MobileAppAssignmentSettings(),
             };
         }
         /// <summary>

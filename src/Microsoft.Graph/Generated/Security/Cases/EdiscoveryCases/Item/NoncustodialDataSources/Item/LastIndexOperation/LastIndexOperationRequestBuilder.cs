@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
     public class LastIndexOperationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="LastIndexOperationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.LastIndexOperation.LastIndexOperationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LastIndexOperationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.LastIndexOperation.LastIndexOperationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
         /// <summary>
         /// Operation entity that represents the latest indexing for the noncustodial data source.
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryIndexOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.EdiscoveryIndexOperation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EdiscoveryIndexOperation?> GetAsync(Action<RequestConfiguration<LastIndexOperationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.EdiscoveryIndexOperation?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.LastIndexOperation.LastIndexOperationRequestBuilder.LastIndexOperationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EdiscoveryIndexOperation> GetAsync(Action<RequestConfiguration<LastIndexOperationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.EdiscoveryIndexOperation> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.LastIndexOperation.LastIndexOperationRequestBuilder.LastIndexOperationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EdiscoveryIndexOperation>(requestInfo, EdiscoveryIndexOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.EdiscoveryIndexOperation>(requestInfo, Microsoft.Graph.Models.Security.EdiscoveryIndexOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Operation entity that represents the latest indexing for the noncustodial data source.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LastIndexOperationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.LastIndexOperation.LastIndexOperationRequestBuilder.LastIndexOperationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LastIndexOperationRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.LastIndexOperation.LastIndexOperationRequestBuilder.LastIndexOperationRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="LastIndexOperationRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.LastIndexOperation.LastIndexOperationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LastIndexOperationRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.LastIndexOperation.LastIndexOperationRequestBuilder WithUrl(string rawUrl)
         {
-            return new LastIndexOperationRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.LastIndexOperation.LastIndexOperationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Operation entity that represents the latest indexing for the noncustodial data source.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class LastIndexOperationRequestBuilderGetRequestConfiguration : RequestConfiguration<LastIndexOperationRequestBuilderGetQueryParameters>
+        public class LastIndexOperationRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.LastIndexOperation.LastIndexOperationRequestBuilder.LastIndexOperationRequestBuilderGetQueryParameters>
         {
         }
     }

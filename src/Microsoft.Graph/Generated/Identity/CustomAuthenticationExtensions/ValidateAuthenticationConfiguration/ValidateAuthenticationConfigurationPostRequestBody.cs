@@ -21,16 +21,16 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.ValidateAuthen
         /// <summary>The authenticationConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomExtensionAuthenticationConfiguration? AuthenticationConfiguration
+        public Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration? AuthenticationConfiguration
         {
-            get { return BackingStore?.Get<CustomExtensionAuthenticationConfiguration?>("authenticationConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration?>("authenticationConfiguration"); }
             set { BackingStore?.Set("authenticationConfiguration", value); }
         }
 #nullable restore
 #else
-        public CustomExtensionAuthenticationConfiguration AuthenticationConfiguration
+        public Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration AuthenticationConfiguration
         {
-            get { return BackingStore?.Get<CustomExtensionAuthenticationConfiguration>("authenticationConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration>("authenticationConfiguration"); }
             set { BackingStore?.Set("authenticationConfiguration", value); }
         }
 #endif
@@ -39,21 +39,21 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.ValidateAuthen
         /// <summary>The endpointConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomExtensionEndpointConfiguration? EndpointConfiguration
+        public Microsoft.Graph.Models.CustomExtensionEndpointConfiguration? EndpointConfiguration
         {
-            get { return BackingStore?.Get<CustomExtensionEndpointConfiguration?>("endpointConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomExtensionEndpointConfiguration?>("endpointConfiguration"); }
             set { BackingStore?.Set("endpointConfiguration", value); }
         }
 #nullable restore
 #else
-        public CustomExtensionEndpointConfiguration EndpointConfiguration
+        public Microsoft.Graph.Models.CustomExtensionEndpointConfiguration EndpointConfiguration
         {
-            get { return BackingStore?.Get<CustomExtensionEndpointConfiguration>("endpointConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomExtensionEndpointConfiguration>("endpointConfiguration"); }
             set { BackingStore?.Set("endpointConfiguration", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ValidateAuthenticationConfigurationPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.CustomAuthenticationExtensions.ValidateAuthenticationConfiguration.ValidateAuthenticationConfigurationPostRequestBody"/> and sets the default values.
         /// </summary>
         public ValidateAuthenticationConfigurationPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.ValidateAuthen
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ValidateAuthenticationConfigurationPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Identity.CustomAuthenticationExtensions.ValidateAuthenticationConfiguration.ValidateAuthenticationConfigurationPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ValidateAuthenticationConfigurationPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Identity.CustomAuthenticationExtensions.ValidateAuthenticationConfiguration.ValidateAuthenticationConfigurationPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ValidateAuthenticationConfigurationPostRequestBody();
+            return new Microsoft.Graph.Identity.CustomAuthenticationExtensions.ValidateAuthenticationConfiguration.ValidateAuthenticationConfigurationPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.ValidateAuthen
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authenticationConfiguration", n => { AuthenticationConfiguration = n.GetObjectValue<CustomExtensionAuthenticationConfiguration>(CustomExtensionAuthenticationConfiguration.CreateFromDiscriminatorValue); } },
-                { "endpointConfiguration", n => { EndpointConfiguration = n.GetObjectValue<CustomExtensionEndpointConfiguration>(CustomExtensionEndpointConfiguration.CreateFromDiscriminatorValue); } },
+                { "authenticationConfiguration", n => { AuthenticationConfiguration = n.GetObjectValue<Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration>(Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration.CreateFromDiscriminatorValue); } },
+                { "endpointConfiguration", n => { EndpointConfiguration = n.GetObjectValue<Microsoft.Graph.Models.CustomExtensionEndpointConfiguration>(Microsoft.Graph.Models.CustomExtensionEndpointConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.ValidateAuthen
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<CustomExtensionAuthenticationConfiguration>("authenticationConfiguration", AuthenticationConfiguration);
-            writer.WriteObjectValue<CustomExtensionEndpointConfiguration>("endpointConfiguration", EndpointConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration>("authenticationConfiguration", AuthenticationConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CustomExtensionEndpointConfiguration>("endpointConfiguration", EndpointConfiguration);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

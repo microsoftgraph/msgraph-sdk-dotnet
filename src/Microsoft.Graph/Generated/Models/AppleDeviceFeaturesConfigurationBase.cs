@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Apple device features configuration profile.
     /// </summary>
-    public class AppleDeviceFeaturesConfigurationBase : DeviceConfiguration, IParsable
+    public class AppleDeviceFeaturesConfigurationBase : Microsoft.Graph.Models.DeviceConfiguration, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="AppleDeviceFeaturesConfigurationBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AppleDeviceFeaturesConfigurationBase"/> and sets the default values.
         /// </summary>
         public AppleDeviceFeaturesConfigurationBase() : base()
         {
@@ -21,17 +21,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppleDeviceFeaturesConfigurationBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AppleDeviceFeaturesConfigurationBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AppleDeviceFeaturesConfigurationBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AppleDeviceFeaturesConfigurationBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.iosDeviceFeaturesConfiguration" => new IosDeviceFeaturesConfiguration(),
-                "#microsoft.graph.macOSDeviceFeaturesConfiguration" => new MacOSDeviceFeaturesConfiguration(),
-                _ => new AppleDeviceFeaturesConfigurationBase(),
+                "#microsoft.graph.iosDeviceFeaturesConfiguration" => new Microsoft.Graph.Models.IosDeviceFeaturesConfiguration(),
+                "#microsoft.graph.macOSDeviceFeaturesConfiguration" => new Microsoft.Graph.Models.MacOSDeviceFeaturesConfiguration(),
+                _ => new Microsoft.Graph.Models.AppleDeviceFeaturesConfigurationBase(),
             };
         }
         /// <summary>

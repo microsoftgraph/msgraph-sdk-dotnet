@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances
     public class InstancesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the instances property of the microsoft.graph.windowsSetting entity.</summary>
         /// <param name="position">The unique identifier of windowsSettingInstance</param>
-        /// <returns>A <see cref="WindowsSettingInstanceItemRequestBuilder"/></returns>
-        public WindowsSettingInstanceItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances.Item.WindowsSettingInstanceItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances.Item.WindowsSettingInstanceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("windowsSettingInstance%2Did", position);
-                return new WindowsSettingInstanceItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances.Item.WindowsSettingInstanceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="InstancesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances.InstancesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="InstancesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances.InstancesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances
         /// <summary>
         /// A collection of setting values for a given windowsSetting.
         /// </summary>
-        /// <returns>A <see cref="WindowsSettingInstanceCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsSettingInstanceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsSettingInstanceCollectionResponse?> GetAsync(Action<RequestConfiguration<InstancesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WindowsSettingInstanceCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances.InstancesRequestBuilder.InstancesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WindowsSettingInstanceCollectionResponse> GetAsync(Action<RequestConfiguration<InstancesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WindowsSettingInstanceCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances.InstancesRequestBuilder.InstancesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WindowsSettingInstanceCollectionResponse>(requestInfo, WindowsSettingInstanceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WindowsSettingInstanceCollectionResponse>(requestInfo, Microsoft.Graph.Models.WindowsSettingInstanceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to instances for users
         /// </summary>
-        /// <returns>A <see cref="WindowsSettingInstance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsSettingInstance"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsSettingInstance?> PostAsync(WindowsSettingInstance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WindowsSettingInstance?> PostAsync(Microsoft.Graph.Models.WindowsSettingInstance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WindowsSettingInstance> PostAsync(WindowsSettingInstance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WindowsSettingInstance> PostAsync(Microsoft.Graph.Models.WindowsSettingInstance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WindowsSettingInstance>(requestInfo, WindowsSettingInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WindowsSettingInstance>(requestInfo, Microsoft.Graph.Models.WindowsSettingInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A collection of setting values for a given windowsSetting.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InstancesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances.InstancesRequestBuilder.InstancesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InstancesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances.InstancesRequestBuilder.InstancesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(WindowsSettingInstance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.WindowsSettingInstance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(WindowsSettingInstance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.WindowsSettingInstance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="InstancesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances.InstancesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public InstancesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances.InstancesRequestBuilder WithUrl(string rawUrl)
         {
-            return new InstancesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances.InstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// A collection of setting values for a given windowsSetting.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InstancesRequestBuilderGetRequestConfiguration : RequestConfiguration<InstancesRequestBuilderGetQueryParameters>
+        public class InstancesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances.InstancesRequestBuilder.InstancesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

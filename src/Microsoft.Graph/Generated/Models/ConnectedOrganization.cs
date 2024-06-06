@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ConnectedOrganization : Entity, IParsable
+    public class ConnectedOrganization : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
@@ -51,48 +51,48 @@ namespace Microsoft.Graph.Models
         /// <summary>The externalSponsors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? ExternalSponsors
+        public List<Microsoft.Graph.Models.DirectoryObject>? ExternalSponsors
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("externalSponsors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("externalSponsors"); }
             set { BackingStore?.Set("externalSponsors", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> ExternalSponsors
+        public List<Microsoft.Graph.Models.DirectoryObject> ExternalSponsors
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("externalSponsors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("externalSponsors"); }
             set { BackingStore?.Set("externalSponsors", value); }
         }
 #endif
         /// <summary>The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation, or socialIdentitySource. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IdentitySource>? IdentitySources
+        public List<Microsoft.Graph.Models.IdentitySource>? IdentitySources
         {
-            get { return BackingStore?.Get<List<IdentitySource>?>("identitySources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentitySource>?>("identitySources"); }
             set { BackingStore?.Set("identitySources", value); }
         }
 #nullable restore
 #else
-        public List<IdentitySource> IdentitySources
+        public List<Microsoft.Graph.Models.IdentitySource> IdentitySources
         {
-            get { return BackingStore?.Get<List<IdentitySource>>("identitySources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentitySource>>("identitySources"); }
             set { BackingStore?.Set("identitySources", value); }
         }
 #endif
         /// <summary>The internalSponsors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? InternalSponsors
+        public List<Microsoft.Graph.Models.DirectoryObject>? InternalSponsors
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("internalSponsors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("internalSponsors"); }
             set { BackingStore?.Set("internalSponsors", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> InternalSponsors
+        public List<Microsoft.Graph.Models.DirectoryObject> InternalSponsors
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("internalSponsors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("internalSponsors"); }
             set { BackingStore?.Set("internalSponsors", value); }
         }
 #endif
@@ -103,20 +103,20 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("modifiedDateTime", value); }
         }
         /// <summary>The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.</summary>
-        public ConnectedOrganizationState? State
+        public Microsoft.Graph.Models.ConnectedOrganizationState? State
         {
-            get { return BackingStore?.Get<ConnectedOrganizationState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConnectedOrganizationState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConnectedOrganization"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ConnectedOrganization"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ConnectedOrganization CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ConnectedOrganization CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConnectedOrganization();
+            return new Microsoft.Graph.Models.ConnectedOrganization();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -129,11 +129,11 @@ namespace Microsoft.Graph.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "externalSponsors", n => { ExternalSponsors = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "identitySources", n => { IdentitySources = n.GetCollectionOfObjectValues<IdentitySource>(IdentitySource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "internalSponsors", n => { InternalSponsors = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "externalSponsors", n => { ExternalSponsors = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "identitySources", n => { IdentitySources = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentitySource>(Microsoft.Graph.Models.IdentitySource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "internalSponsors", n => { InternalSponsors = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "state", n => { State = n.GetEnumValue<ConnectedOrganizationState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Models.ConnectedOrganizationState>(); } },
             };
         }
         /// <summary>
@@ -147,11 +147,11 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("externalSponsors", ExternalSponsors);
-            writer.WriteCollectionOfObjectValues<IdentitySource>("identitySources", IdentitySources);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("internalSponsors", InternalSponsors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("externalSponsors", ExternalSponsors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentitySource>("identitySources", IdentitySources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("internalSponsors", InternalSponsors);
             writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
-            writer.WriteEnumValue<ConnectedOrganizationState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ConnectedOrganizationState>("state", State);
         }
     }
 }

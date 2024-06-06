@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Possible values are: GalleryApplicationIdentifier, GalleryApplicationKey, IsOAuthEnabled, IsSynchronizationAgentAssignmentRequired, IsSynchronizationAgentRequired, IsSynchronizationInPreview, OAuthSettings, SynchronizationLearnMoreIbizaFwLink, ConfigurationFields.</summary>
-        public SynchronizationMetadata? Key
+        public Microsoft.Graph.Models.SynchronizationMetadata? Key
         {
-            get { return BackingStore?.Get<SynchronizationMetadata?>("key"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SynchronizationMetadata?>("key"); }
             set { BackingStore?.Set("key", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SynchronizationMetadataEntry"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SynchronizationMetadataEntry"/> and sets the default values.
         /// </summary>
         public SynchronizationMetadataEntry()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SynchronizationMetadataEntry"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SynchronizationMetadataEntry"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SynchronizationMetadataEntry CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SynchronizationMetadataEntry CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SynchronizationMetadataEntry();
+            return new Microsoft.Graph.Models.SynchronizationMetadataEntry();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "key", n => { Key = n.GetEnumValue<SynchronizationMetadata>(); } },
+                { "key", n => { Key = n.GetEnumValue<Microsoft.Graph.Models.SynchronizationMetadata>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<SynchronizationMetadata>("key", Key);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SynchronizationMetadata>("key", Key);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);

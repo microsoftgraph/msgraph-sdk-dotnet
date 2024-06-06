@@ -61,16 +61,16 @@ namespace Microsoft.Graph.Me.OnlineMeetings.CreateOrGet
         /// <summary>The participants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MeetingParticipants? Participants
+        public Microsoft.Graph.Models.MeetingParticipants? Participants
         {
-            get { return BackingStore?.Get<MeetingParticipants?>("participants"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MeetingParticipants?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #nullable restore
 #else
-        public MeetingParticipants Participants
+        public Microsoft.Graph.Models.MeetingParticipants Participants
         {
-            get { return BackingStore?.Get<MeetingParticipants>("participants"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MeetingParticipants>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #endif
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Me.OnlineMeetings.CreateOrGet
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CreateOrGetPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.OnlineMeetings.CreateOrGet.CreateOrGetPostRequestBody"/> and sets the default values.
         /// </summary>
         public CreateOrGetPostRequestBody()
         {
@@ -107,12 +107,12 @@ namespace Microsoft.Graph.Me.OnlineMeetings.CreateOrGet
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CreateOrGetPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.OnlineMeetings.CreateOrGet.CreateOrGetPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CreateOrGetPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Me.OnlineMeetings.CreateOrGet.CreateOrGetPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CreateOrGetPostRequestBody();
+            return new Microsoft.Graph.Me.OnlineMeetings.CreateOrGet.CreateOrGetPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Me.OnlineMeetings.CreateOrGet
                 { "chatInfo", n => { ChatInfo = n.GetObjectValue<Microsoft.Graph.Models.ChatInfo>(Microsoft.Graph.Models.ChatInfo.CreateFromDiscriminatorValue); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
-                { "participants", n => { Participants = n.GetObjectValue<MeetingParticipants>(MeetingParticipants.CreateFromDiscriminatorValue); } },
+                { "participants", n => { Participants = n.GetObjectValue<Microsoft.Graph.Models.MeetingParticipants>(Microsoft.Graph.Models.MeetingParticipants.CreateFromDiscriminatorValue); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
             };
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Me.OnlineMeetings.CreateOrGet
             writer.WriteObjectValue<Microsoft.Graph.Models.ChatInfo>("chatInfo", ChatInfo);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteStringValue("externalId", ExternalId);
-            writer.WriteObjectValue<MeetingParticipants>("participants", Participants);
+            writer.WriteObjectValue<Microsoft.Graph.Models.MeetingParticipants>("participants", Participants);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteStringValue("subject", Subject);
             writer.WriteAdditionalData(AdditionalData);

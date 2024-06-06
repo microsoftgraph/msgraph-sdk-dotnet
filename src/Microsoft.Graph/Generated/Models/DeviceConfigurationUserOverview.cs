@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class DeviceConfigurationUserOverview : Entity, IParsable
+    public class DeviceConfigurationUserOverview : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Version of the policy for that overview</summary>
@@ -55,12 +55,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceConfigurationUserOverview"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceConfigurationUserOverview"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceConfigurationUserOverview CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeviceConfigurationUserOverview CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceConfigurationUserOverview();
+            return new Microsoft.Graph.Models.DeviceConfigurationUserOverview();
         }
         /// <summary>
         /// The deserialization information for the current model

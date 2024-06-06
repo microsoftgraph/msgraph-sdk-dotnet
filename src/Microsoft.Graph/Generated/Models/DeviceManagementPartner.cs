@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Entity which represents a connection to device management partner.
     /// </summary>
-    public class DeviceManagementPartner : Entity, IParsable
+    public class DeviceManagementPartner : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Partner display name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,16 +30,16 @@ namespace Microsoft.Graph.Models
         /// <summary>User groups that specifies whether enrollment is through partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementPartnerAssignment>? GroupsRequiringPartnerEnrollment
+        public List<Microsoft.Graph.Models.DeviceManagementPartnerAssignment>? GroupsRequiringPartnerEnrollment
         {
-            get { return BackingStore?.Get<List<DeviceManagementPartnerAssignment>?>("groupsRequiringPartnerEnrollment"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceManagementPartnerAssignment>?>("groupsRequiringPartnerEnrollment"); }
             set { BackingStore?.Set("groupsRequiringPartnerEnrollment", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementPartnerAssignment> GroupsRequiringPartnerEnrollment
+        public List<Microsoft.Graph.Models.DeviceManagementPartnerAssignment> GroupsRequiringPartnerEnrollment
         {
-            get { return BackingStore?.Get<List<DeviceManagementPartnerAssignment>>("groupsRequiringPartnerEnrollment"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceManagementPartnerAssignment>>("groupsRequiringPartnerEnrollment"); }
             set { BackingStore?.Set("groupsRequiringPartnerEnrollment", value); }
         }
 #endif
@@ -56,15 +56,15 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("lastHeartbeatDateTime", value); }
         }
         /// <summary>Partner App Type.</summary>
-        public DeviceManagementPartnerAppType? PartnerAppType
+        public Microsoft.Graph.Models.DeviceManagementPartnerAppType? PartnerAppType
         {
-            get { return BackingStore?.Get<DeviceManagementPartnerAppType?>("partnerAppType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceManagementPartnerAppType?>("partnerAppType"); }
             set { BackingStore?.Set("partnerAppType", value); }
         }
         /// <summary>Partner state of this tenant.</summary>
-        public DeviceManagementPartnerTenantState? PartnerState
+        public Microsoft.Graph.Models.DeviceManagementPartnerTenantState? PartnerState
         {
-            get { return BackingStore?.Get<DeviceManagementPartnerTenantState?>("partnerState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceManagementPartnerTenantState?>("partnerState"); }
             set { BackingStore?.Set("partnerState", value); }
         }
         /// <summary>Partner Single tenant App id</summary>
@@ -98,12 +98,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementPartner"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceManagementPartner"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementPartner CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeviceManagementPartner CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementPartner();
+            return new Microsoft.Graph.Models.DeviceManagementPartner();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -114,11 +114,11 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "groupsRequiringPartnerEnrollment", n => { GroupsRequiringPartnerEnrollment = n.GetCollectionOfObjectValues<DeviceManagementPartnerAssignment>(DeviceManagementPartnerAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groupsRequiringPartnerEnrollment", n => { GroupsRequiringPartnerEnrollment = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DeviceManagementPartnerAssignment>(Microsoft.Graph.Models.DeviceManagementPartnerAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isConfigured", n => { IsConfigured = n.GetBoolValue(); } },
                 { "lastHeartbeatDateTime", n => { LastHeartbeatDateTime = n.GetDateTimeOffsetValue(); } },
-                { "partnerAppType", n => { PartnerAppType = n.GetEnumValue<DeviceManagementPartnerAppType>(); } },
-                { "partnerState", n => { PartnerState = n.GetEnumValue<DeviceManagementPartnerTenantState>(); } },
+                { "partnerAppType", n => { PartnerAppType = n.GetEnumValue<Microsoft.Graph.Models.DeviceManagementPartnerAppType>(); } },
+                { "partnerState", n => { PartnerState = n.GetEnumValue<Microsoft.Graph.Models.DeviceManagementPartnerTenantState>(); } },
                 { "singleTenantAppId", n => { SingleTenantAppId = n.GetStringValue(); } },
                 { "whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime", n => { WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime = n.GetDateTimeOffsetValue(); } },
                 { "whenPartnerDevicesWillBeRemovedDateTime", n => { WhenPartnerDevicesWillBeRemovedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -133,11 +133,11 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<DeviceManagementPartnerAssignment>("groupsRequiringPartnerEnrollment", GroupsRequiringPartnerEnrollment);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DeviceManagementPartnerAssignment>("groupsRequiringPartnerEnrollment", GroupsRequiringPartnerEnrollment);
             writer.WriteBoolValue("isConfigured", IsConfigured);
             writer.WriteDateTimeOffsetValue("lastHeartbeatDateTime", LastHeartbeatDateTime);
-            writer.WriteEnumValue<DeviceManagementPartnerAppType>("partnerAppType", PartnerAppType);
-            writer.WriteEnumValue<DeviceManagementPartnerTenantState>("partnerState", PartnerState);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DeviceManagementPartnerAppType>("partnerAppType", PartnerAppType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DeviceManagementPartnerTenantState>("partnerState", PartnerState);
             writer.WriteStringValue("singleTenantAppId", SingleTenantAppId);
             writer.WriteDateTimeOffsetValue("whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime", WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime);
             writer.WriteDateTimeOffsetValue("whenPartnerDevicesWillBeRemovedDateTime", WhenPartnerDevicesWillBeRemovedDateTime);

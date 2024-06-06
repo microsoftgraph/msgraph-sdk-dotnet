@@ -54,21 +54,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The value of the parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AttributeMappingSource? Value
+        public Microsoft.Graph.Models.AttributeMappingSource? Value
         {
-            get { return BackingStore?.Get<AttributeMappingSource?>("value"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AttributeMappingSource?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public AttributeMappingSource Value
+        public Microsoft.Graph.Models.AttributeMappingSource Value
         {
-            get { return BackingStore?.Get<AttributeMappingSource>("value"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AttributeMappingSource>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="StringKeyAttributeMappingSourceValuePair"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.StringKeyAttributeMappingSourceValuePair"/> and sets the default values.
         /// </summary>
         public StringKeyAttributeMappingSourceValuePair()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="StringKeyAttributeMappingSourceValuePair"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.StringKeyAttributeMappingSourceValuePair"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static StringKeyAttributeMappingSourceValuePair CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.StringKeyAttributeMappingSourceValuePair CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new StringKeyAttributeMappingSourceValuePair();
+            return new Microsoft.Graph.Models.StringKeyAttributeMappingSourceValuePair();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Models
             {
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<AttributeMappingSource>(AttributeMappingSource.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<Microsoft.Graph.Models.AttributeMappingSource>(Microsoft.Graph.Models.AttributeMappingSource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("key", Key);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<AttributeMappingSource>("value", Value);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AttributeMappingSource>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

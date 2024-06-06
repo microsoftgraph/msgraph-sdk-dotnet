@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>The trustAffinityLevel property</summary>
-        public X509CertificateAffinityLevel? TrustAffinityLevel
+        public Microsoft.Graph.Models.X509CertificateAffinityLevel? TrustAffinityLevel
         {
-            get { return BackingStore?.Get<X509CertificateAffinityLevel?>("trustAffinityLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.X509CertificateAffinityLevel?>("trustAffinityLevel"); }
             set { BackingStore?.Set("trustAffinityLevel", value); }
         }
         /// <summary>Defines the Microsoft Entra user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, certificateUserIds. Required.</summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="X509CertificateUserBinding"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.X509CertificateUserBinding"/> and sets the default values.
         /// </summary>
         public X509CertificateUserBinding()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="X509CertificateUserBinding"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.X509CertificateUserBinding"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static X509CertificateUserBinding CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.X509CertificateUserBinding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new X509CertificateUserBinding();
+            return new Microsoft.Graph.Models.X509CertificateUserBinding();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Models
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
-                { "trustAffinityLevel", n => { TrustAffinityLevel = n.GetEnumValue<X509CertificateAffinityLevel>(); } },
+                { "trustAffinityLevel", n => { TrustAffinityLevel = n.GetEnumValue<Microsoft.Graph.Models.X509CertificateAffinityLevel>(); } },
                 { "userProperty", n => { UserProperty = n.GetStringValue(); } },
                 { "x509CertificateField", n => { X509CertificateField = n.GetStringValue(); } },
             };
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("priority", Priority);
-            writer.WriteEnumValue<X509CertificateAffinityLevel>("trustAffinityLevel", TrustAffinityLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Models.X509CertificateAffinityLevel>("trustAffinityLevel", TrustAffinityLevel);
             writer.WriteStringValue("userProperty", UserProperty);
             writer.WriteStringValue("x509CertificateField", X509CertificateField);
             writer.WriteAdditionalData(AdditionalData);

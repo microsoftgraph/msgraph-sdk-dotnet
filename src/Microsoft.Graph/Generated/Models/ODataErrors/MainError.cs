@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Models.ODataErrors
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ErrorDetails>? Details
+        public List<Microsoft.Graph.Models.ODataErrors.ErrorDetails>? Details
         {
-            get { return BackingStore?.Get<List<ErrorDetails>?>("details"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ODataErrors.ErrorDetails>?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #nullable restore
 #else
-        public List<ErrorDetails> Details
+        public List<Microsoft.Graph.Models.ODataErrors.ErrorDetails> Details
         {
-            get { return BackingStore?.Get<List<ErrorDetails>>("details"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ODataErrors.ErrorDetails>>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #endif
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Models.ODataErrors
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MainError"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ODataErrors.MainError"/> and sets the default values.
         /// </summary>
         public MainError()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Models.ODataErrors
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MainError"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ODataErrors.MainError"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MainError CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ODataErrors.MainError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MainError();
+            return new Microsoft.Graph.Models.ODataErrors.MainError();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Models.ODataErrors
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetStringValue(); } },
-                { "details", n => { Details = n.GetCollectionOfObjectValues<ErrorDetails>(ErrorDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "details", n => { Details = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ODataErrors.ErrorDetails>(Microsoft.Graph.Models.ODataErrors.ErrorDetails.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "innerError", n => { InnerError = n.GetObjectValue<Microsoft.Graph.Models.ODataErrors.InnerError>(Microsoft.Graph.Models.ODataErrors.InnerError.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "target", n => { Target = n.GetStringValue(); } },
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Models.ODataErrors
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
-            writer.WriteCollectionOfObjectValues<ErrorDetails>("details", Details);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ODataErrors.ErrorDetails>("details", Details);
             writer.WriteObjectValue<Microsoft.Graph.Models.ODataErrors.InnerError>("innerError", InnerError);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("target", Target);

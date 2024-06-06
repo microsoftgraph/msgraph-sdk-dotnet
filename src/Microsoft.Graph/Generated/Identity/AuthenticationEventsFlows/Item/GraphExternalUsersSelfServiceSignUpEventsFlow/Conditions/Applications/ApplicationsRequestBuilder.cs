@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalU
     public class ApplicationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the includeApplications property of the microsoft.graph.authenticationConditionsApplications entity.</summary>
-        public IncludeApplicationsRequestBuilder IncludeApplications
+        public Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder IncludeApplications
         {
-            get => new IncludeApplicationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ApplicationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.Conditions.Applications.ApplicationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalU
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ApplicationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.Conditions.Applications.ApplicationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

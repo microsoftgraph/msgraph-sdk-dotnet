@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryReviewSetQuery>? Value
+        public List<Microsoft.Graph.Models.Security.EdiscoveryReviewSetQuery>? Value
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewSetQuery>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryReviewSetQuery>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryReviewSetQuery> Value
+        public List<Microsoft.Graph.Models.Security.EdiscoveryReviewSetQuery> Value
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewSetQuery>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryReviewSetQuery>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryReviewSetQueryCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.EdiscoveryReviewSetQueryCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdiscoveryReviewSetQueryCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.EdiscoveryReviewSetQueryCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdiscoveryReviewSetQueryCollectionResponse();
+            return new Microsoft.Graph.Models.Security.EdiscoveryReviewSetQueryCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<EdiscoveryReviewSetQuery>(EdiscoveryReviewSetQuery.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryReviewSetQuery>(Microsoft.Graph.Models.Security.EdiscoveryReviewSetQuery.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<EdiscoveryReviewSetQuery>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryReviewSetQuery>("value", Value);
         }
     }
 }

@@ -7,17 +7,17 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class TeamworkConversationIdentity : Identity, IParsable
+    public class TeamworkConversationIdentity : Microsoft.Graph.Models.Identity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Type of conversation. Possible values are: team, channel, chat, and unknownFutureValue.</summary>
-        public TeamworkConversationIdentityType? ConversationIdentityType
+        public Microsoft.Graph.Models.TeamworkConversationIdentityType? ConversationIdentityType
         {
-            get { return BackingStore?.Get<TeamworkConversationIdentityType?>("conversationIdentityType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamworkConversationIdentityType?>("conversationIdentityType"); }
             set { BackingStore?.Set("conversationIdentityType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkConversationIdentity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TeamworkConversationIdentity"/> and sets the default values.
         /// </summary>
         public TeamworkConversationIdentity() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkConversationIdentity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamworkConversationIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeamworkConversationIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TeamworkConversationIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkConversationIdentity();
+            return new Microsoft.Graph.Models.TeamworkConversationIdentity();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "conversationIdentityType", n => { ConversationIdentityType = n.GetEnumValue<TeamworkConversationIdentityType>(); } },
+                { "conversationIdentityType", n => { ConversationIdentityType = n.GetEnumValue<Microsoft.Graph.Models.TeamworkConversationIdentityType>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<TeamworkConversationIdentityType>("conversationIdentityType", ConversationIdentityType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TeamworkConversationIdentityType>("conversationIdentityType", ConversationIdentityType);
         }
     }
 }

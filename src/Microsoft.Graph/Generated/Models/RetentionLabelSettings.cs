@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RetentionLabelSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.RetentionLabelSettings"/> and sets the default values.
         /// </summary>
         public RetentionLabelSettings()
         {
@@ -83,12 +83,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RetentionLabelSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RetentionLabelSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RetentionLabelSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.RetentionLabelSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RetentionLabelSettings();
+            return new Microsoft.Graph.Models.RetentionLabelSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "behaviorDuringRetentionPeriod", n => { BehaviorDuringRetentionPeriod = n.GetEnumValue<BehaviorDuringRetentionPeriod>(); } },
+                { "behaviorDuringRetentionPeriod", n => { BehaviorDuringRetentionPeriod = n.GetEnumValue<Microsoft.Graph.Models.Security.BehaviorDuringRetentionPeriod>(); } },
                 { "isContentUpdateAllowed", n => { IsContentUpdateAllowed = n.GetBoolValue(); } },
                 { "isDeleteAllowed", n => { IsDeleteAllowed = n.GetBoolValue(); } },
                 { "isLabelUpdateAllowed", n => { IsLabelUpdateAllowed = n.GetBoolValue(); } },
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<BehaviorDuringRetentionPeriod>("behaviorDuringRetentionPeriod", BehaviorDuringRetentionPeriod);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.BehaviorDuringRetentionPeriod>("behaviorDuringRetentionPeriod", BehaviorDuringRetentionPeriod);
             writer.WriteBoolValue("isContentUpdateAllowed", IsContentUpdateAllowed);
             writer.WriteBoolValue("isDeleteAllowed", IsDeleteAllowed);
             writer.WriteBoolValue("isLabelUpdateAllowed", IsLabelUpdateAllowed);

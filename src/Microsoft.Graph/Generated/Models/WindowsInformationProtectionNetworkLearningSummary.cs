@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Windows Information Protection Network learning Summary entity.
     /// </summary>
-    public class WindowsInformationProtectionNetworkLearningSummary : Entity, IParsable
+    public class WindowsInformationProtectionNetworkLearningSummary : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Device Count</summary>
         public int? DeviceCount
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsInformationProtectionNetworkLearningSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsInformationProtectionNetworkLearningSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsInformationProtectionNetworkLearningSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WindowsInformationProtectionNetworkLearningSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsInformationProtectionNetworkLearningSummary();
+            return new Microsoft.Graph.Models.WindowsInformationProtectionNetworkLearningSummary();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// A class that represents a contained app of a WindowsUniversalAppX app.
     /// </summary>
-    public class WindowsUniversalAppXContainedApp : MobileContainedApp, IParsable
+    public class WindowsUniversalAppXContainedApp : Microsoft.Graph.Models.MobileContainedApp, IParsable
     {
         /// <summary>The app user model ID of the contained app of a WindowsUniversalAppX app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsUniversalAppXContainedApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WindowsUniversalAppXContainedApp"/> and sets the default values.
         /// </summary>
         public WindowsUniversalAppXContainedApp() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsUniversalAppXContainedApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsUniversalAppXContainedApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsUniversalAppXContainedApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WindowsUniversalAppXContainedApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsUniversalAppXContainedApp();
+            return new Microsoft.Graph.Models.WindowsUniversalAppXContainedApp();
         }
         /// <summary>
         /// The deserialization information for the current model

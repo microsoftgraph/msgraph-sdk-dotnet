@@ -70,21 +70,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Defines whether users can be synchronized from the partner tenant. Key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CrossTenantUserSyncInbound? UserSyncInbound
+        public Microsoft.Graph.Models.CrossTenantUserSyncInbound? UserSyncInbound
         {
-            get { return BackingStore?.Get<CrossTenantUserSyncInbound?>("userSyncInbound"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CrossTenantUserSyncInbound?>("userSyncInbound"); }
             set { BackingStore?.Set("userSyncInbound", value); }
         }
 #nullable restore
 #else
-        public CrossTenantUserSyncInbound UserSyncInbound
+        public Microsoft.Graph.Models.CrossTenantUserSyncInbound UserSyncInbound
         {
-            get { return BackingStore?.Get<CrossTenantUserSyncInbound>("userSyncInbound"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CrossTenantUserSyncInbound>("userSyncInbound"); }
             set { BackingStore?.Set("userSyncInbound", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CrossTenantIdentitySyncPolicyPartner"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CrossTenantIdentitySyncPolicyPartner"/> and sets the default values.
         /// </summary>
         public CrossTenantIdentitySyncPolicyPartner()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CrossTenantIdentitySyncPolicyPartner"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CrossTenantIdentitySyncPolicyPartner"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CrossTenantIdentitySyncPolicyPartner CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CrossTenantIdentitySyncPolicyPartner CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CrossTenantIdentitySyncPolicyPartner();
+            return new Microsoft.Graph.Models.CrossTenantIdentitySyncPolicyPartner();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
-                { "userSyncInbound", n => { UserSyncInbound = n.GetObjectValue<CrossTenantUserSyncInbound>(CrossTenantUserSyncInbound.CreateFromDiscriminatorValue); } },
+                { "userSyncInbound", n => { UserSyncInbound = n.GetObjectValue<Microsoft.Graph.Models.CrossTenantUserSyncInbound>(Microsoft.Graph.Models.CrossTenantUserSyncInbound.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("tenantId", TenantId);
-            writer.WriteObjectValue<CrossTenantUserSyncInbound>("userSyncInbound", UserSyncInbound);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CrossTenantUserSyncInbound>("userSyncInbound", UserSyncInbound);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

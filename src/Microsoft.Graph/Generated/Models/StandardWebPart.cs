@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class StandardWebPart : WebPart, IParsable
+    public class StandardWebPart : Microsoft.Graph.Models.WebPart, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The instance identifier of the container text webPart. It only works for inline standard webPart in rich text webParts.</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Data of the webPart.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WebPartData? Data
+        public Microsoft.Graph.Models.WebPartData? Data
         {
-            get { return BackingStore?.Get<WebPartData?>("data"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WebPartData?>("data"); }
             set { BackingStore?.Set("data", value); }
         }
 #nullable restore
 #else
-        public WebPartData Data
+        public Microsoft.Graph.Models.WebPartData Data
         {
-            get { return BackingStore?.Get<WebPartData>("data"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WebPartData>("data"); }
             set { BackingStore?.Set("data", value); }
         }
 #endif
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="StandardWebPart"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.StandardWebPart"/> and sets the default values.
         /// </summary>
         public StandardWebPart() : base()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="StandardWebPart"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.StandardWebPart"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new StandardWebPart CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.StandardWebPart CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new StandardWebPart();
+            return new Microsoft.Graph.Models.StandardWebPart();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "containerTextWebPartId", n => { ContainerTextWebPartId = n.GetStringValue(); } },
-                { "data", n => { Data = n.GetObjectValue<WebPartData>(WebPartData.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<Microsoft.Graph.Models.WebPartData>(Microsoft.Graph.Models.WebPartData.CreateFromDiscriminatorValue); } },
                 { "webPartType", n => { WebPartType = n.GetStringValue(); } },
             };
         }
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("containerTextWebPartId", ContainerTextWebPartId);
-            writer.WriteObjectValue<WebPartData>("data", Data);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WebPartData>("data", Data);
             writer.WriteStringValue("webPartType", WebPartType);
         }
     }

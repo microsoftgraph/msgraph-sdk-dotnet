@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// This class contains compliance settings for IOS.
     /// </summary>
-    public class IosCompliancePolicy : DeviceCompliancePolicy, IParsable
+    public class IosCompliancePolicy : Microsoft.Graph.Models.DeviceCompliancePolicy, IParsable
     {
         /// <summary>Require that devices have enabled device threat protection .</summary>
         public bool? DeviceThreatProtectionEnabled
@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("deviceThreatProtectionEnabled", value); }
         }
         /// <summary>Device threat protection levels for the Device Threat Protection API.</summary>
-        public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel
+        public Microsoft.Graph.Models.DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel
         {
-            get { return BackingStore?.Get<DeviceThreatProtectionLevel?>("deviceThreatProtectionRequiredSecurityLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceThreatProtectionLevel?>("deviceThreatProtectionRequiredSecurityLevel"); }
             set { BackingStore?.Set("deviceThreatProtectionRequiredSecurityLevel", value); }
         }
         /// <summary>Indicates whether or not to require a managed email profile.</summary>
@@ -104,9 +104,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("passcodeRequired", value); }
         }
         /// <summary>Possible values of required passwords.</summary>
-        public RequiredPasswordType? PasscodeRequiredType
+        public Microsoft.Graph.Models.RequiredPasswordType? PasscodeRequiredType
         {
-            get { return BackingStore?.Get<RequiredPasswordType?>("passcodeRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RequiredPasswordType?>("passcodeRequiredType"); }
             set { BackingStore?.Set("passcodeRequiredType", value); }
         }
         /// <summary>Devices must not be jailbroken or rooted.</summary>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("securityBlockJailbrokenDevices", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IosCompliancePolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IosCompliancePolicy"/> and sets the default values.
         /// </summary>
         public IosCompliancePolicy() : base()
         {
@@ -125,12 +125,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosCompliancePolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IosCompliancePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IosCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosCompliancePolicy();
+            return new Microsoft.Graph.Models.IosCompliancePolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "deviceThreatProtectionEnabled", n => { DeviceThreatProtectionEnabled = n.GetBoolValue(); } },
-                { "deviceThreatProtectionRequiredSecurityLevel", n => { DeviceThreatProtectionRequiredSecurityLevel = n.GetEnumValue<DeviceThreatProtectionLevel>(); } },
+                { "deviceThreatProtectionRequiredSecurityLevel", n => { DeviceThreatProtectionRequiredSecurityLevel = n.GetEnumValue<Microsoft.Graph.Models.DeviceThreatProtectionLevel>(); } },
                 { "managedEmailProfileRequired", n => { ManagedEmailProfileRequired = n.GetBoolValue(); } },
                 { "osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
                 { "osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Models
                 { "passcodeMinutesOfInactivityBeforeLock", n => { PasscodeMinutesOfInactivityBeforeLock = n.GetIntValue(); } },
                 { "passcodePreviousPasscodeBlockCount", n => { PasscodePreviousPasscodeBlockCount = n.GetIntValue(); } },
                 { "passcodeRequired", n => { PasscodeRequired = n.GetBoolValue(); } },
-                { "passcodeRequiredType", n => { PasscodeRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
+                { "passcodeRequiredType", n => { PasscodeRequiredType = n.GetEnumValue<Microsoft.Graph.Models.RequiredPasswordType>(); } },
                 { "securityBlockJailbrokenDevices", n => { SecurityBlockJailbrokenDevices = n.GetBoolValue(); } },
             };
         }
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("deviceThreatProtectionEnabled", DeviceThreatProtectionEnabled);
-            writer.WriteEnumValue<DeviceThreatProtectionLevel>("deviceThreatProtectionRequiredSecurityLevel", DeviceThreatProtectionRequiredSecurityLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DeviceThreatProtectionLevel>("deviceThreatProtectionRequiredSecurityLevel", DeviceThreatProtectionRequiredSecurityLevel);
             writer.WriteBoolValue("managedEmailProfileRequired", ManagedEmailProfileRequired);
             writer.WriteStringValue("osMaximumVersion", OsMaximumVersion);
             writer.WriteStringValue("osMinimumVersion", OsMinimumVersion);
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Models
             writer.WriteIntValue("passcodeMinutesOfInactivityBeforeLock", PasscodeMinutesOfInactivityBeforeLock);
             writer.WriteIntValue("passcodePreviousPasscodeBlockCount", PasscodePreviousPasscodeBlockCount);
             writer.WriteBoolValue("passcodeRequired", PasscodeRequired);
-            writer.WriteEnumValue<RequiredPasswordType>("passcodeRequiredType", PasscodeRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RequiredPasswordType>("passcodeRequiredType", PasscodeRequiredType);
             writer.WriteBoolValue("securityBlockJailbrokenDevices", SecurityBlockJailbrokenDevices);
         }
     }

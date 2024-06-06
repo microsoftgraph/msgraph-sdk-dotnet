@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign
 {
     #pragma warning disable CS1591
-    public class AssignPostResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class AssignPostResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceCompliancePolicyAssignment>? Value
+        public List<Microsoft.Graph.Models.DeviceCompliancePolicyAssignment>? Value
         {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicyAssignment>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceCompliancePolicyAssignment>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<DeviceCompliancePolicyAssignment> Value
+        public List<Microsoft.Graph.Models.DeviceCompliancePolicyAssignment> Value
         {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicyAssignment>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceCompliancePolicyAssignment>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign.AssignPostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AssignPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign.AssignPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignPostResponse();
+            return new Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign.AssignPostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<DeviceCompliancePolicyAssignment>(DeviceCompliancePolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DeviceCompliancePolicyAssignment>(Microsoft.Graph.Models.DeviceCompliancePolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceCompliancePolicyAssignment>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DeviceCompliancePolicyAssignment>("value", Value);
         }
     }
 }

@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
     public class ItemAtWithIndexRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the dataBodyRange method.</summary>
-        public DataBodyRangeRequestBuilder DataBodyRange
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.ItemAtWithIndex.DataBodyRange.DataBodyRangeRequestBuilder DataBodyRange
         {
-            get => new DataBodyRangeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.ItemAtWithIndex.DataBodyRange.DataBodyRangeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the filter property of the microsoft.graph.workbookTableColumn entity.</summary>
-        public FilterRequestBuilder Filter
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.ItemAtWithIndex.Filter.FilterRequestBuilder Filter
         {
-            get => new FilterRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.ItemAtWithIndex.Filter.FilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the headerRowRange method.</summary>
-        public HeaderRowRangeRequestBuilder HeaderRowRange
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.ItemAtWithIndex.HeaderRowRange.HeaderRowRangeRequestBuilder HeaderRowRange
         {
-            get => new HeaderRowRangeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.ItemAtWithIndex.HeaderRowRange.HeaderRowRangeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the range method.</summary>
-        public RangeRequestBuilder Range
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.ItemAtWithIndex.RangeNamespace.RangeRequestBuilder Range
         {
-            get => new RangeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.ItemAtWithIndex.RangeNamespace.RangeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the totalRowRange method.</summary>
-        public TotalRowRangeRequestBuilder TotalRowRange
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.ItemAtWithIndex.TotalRowRange.TotalRowRangeRequestBuilder TotalRowRange
         {
-            get => new TotalRowRangeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.ItemAtWithIndex.TotalRowRange.TotalRowRangeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemAtWithIndexRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.ItemAtWithIndex.ItemAtWithIndexRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="index">Usage: index={index}</param>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
             if (index != null) PathParameters.Add("index", index);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemAtWithIndexRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.ItemAtWithIndex.ItemAtWithIndexRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -68,25 +68,25 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         /// Gets a column based on its position in the collection.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablecolumncollection-itemat?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="WorkbookTableColumn"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookTableColumn"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookTableColumn?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookTableColumn?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WorkbookTableColumn> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookTableColumn> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WorkbookTableColumn>(requestInfo, WorkbookTableColumn.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkbookTableColumn>(requestInfo, Microsoft.Graph.Models.WorkbookTableColumn.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets a column based on its position in the collection.
@@ -110,11 +110,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ItemAtWithIndexRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.ItemAtWithIndex.ItemAtWithIndexRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ItemAtWithIndexRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.ItemAtWithIndex.ItemAtWithIndexRequestBuilder WithUrl(string rawUrl)
         {
-            return new ItemAtWithIndexRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.ItemAtWithIndex.ItemAtWithIndexRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

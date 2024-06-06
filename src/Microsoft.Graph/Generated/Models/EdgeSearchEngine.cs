@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Allows IT admins to set a predefined default search engine for MDM-Controlled devices.
     /// </summary>
-    public class EdgeSearchEngine : EdgeSearchEngineBase, IParsable
+    public class EdgeSearchEngine : Microsoft.Graph.Models.EdgeSearchEngineBase, IParsable
     {
         /// <summary>Allows IT admind to set a predefined default search engine for MDM-Controlled devices</summary>
         public Microsoft.Graph.Models.EdgeSearchEngineType? EdgeSearchEngineType
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("edgeSearchEngineType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="EdgeSearchEngine"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.EdgeSearchEngine"/> and sets the default values.
         /// </summary>
         public EdgeSearchEngine() : base()
         {
@@ -27,12 +27,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdgeSearchEngine"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EdgeSearchEngine"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdgeSearchEngine CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EdgeSearchEngine CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdgeSearchEngine();
+            return new Microsoft.Graph.Models.EdgeSearchEngine();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "edgeSearchEngineType", n => { EdgeSearchEngineType = n.GetEnumValue<EdgeSearchEngineType>(); } },
+                { "edgeSearchEngineType", n => { EdgeSearchEngineType = n.GetEnumValue<Microsoft.Graph.Models.EdgeSearchEngineType>(); } },
             };
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<EdgeSearchEngineType>("edgeSearchEngineType", EdgeSearchEngineType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.EdgeSearchEngineType>("edgeSearchEngineType", EdgeSearchEngineType);
         }
     }
 }

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions
     public class VersionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the versions property of the microsoft.graph.listItem entity.</summary>
         /// <param name="position">The unique identifier of listItemVersion</param>
-        /// <returns>A <see cref="ListItemVersionItemRequestBuilder"/></returns>
-        public ListItemVersionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions.Item.ListItemVersionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions.Item.ListItemVersionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("listItemVersion%2Did", position);
-                return new ListItemVersionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions.Item.ListItemVersionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="VersionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions.VersionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="VersionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions.VersionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,65 +52,66 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions
         {
         }
         /// <summary>
-        /// The list of previous versions of the list item.
+        /// SharePoint can be configured to retain the history for list items. Previous versions may be retained for a finite period of time depending on admin settings which may be unique per user or location.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitem-list-versions?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ListItemVersionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ListItemVersionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ListItemVersionCollectionResponse?> GetAsync(Action<RequestConfiguration<VersionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ListItemVersionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions.VersionsRequestBuilder.VersionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ListItemVersionCollectionResponse> GetAsync(Action<RequestConfiguration<VersionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ListItemVersionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions.VersionsRequestBuilder.VersionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ListItemVersionCollectionResponse>(requestInfo, ListItemVersionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ListItemVersionCollectionResponse>(requestInfo, Microsoft.Graph.Models.ListItemVersionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to versions for sites
         /// </summary>
-        /// <returns>A <see cref="ListItemVersion"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ListItemVersion"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ListItemVersion?> PostAsync(ListItemVersion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ListItemVersion?> PostAsync(Microsoft.Graph.Models.ListItemVersion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ListItemVersion> PostAsync(ListItemVersion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ListItemVersion> PostAsync(Microsoft.Graph.Models.ListItemVersion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ListItemVersion>(requestInfo, ListItemVersion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ListItemVersion>(requestInfo, Microsoft.Graph.Models.ListItemVersion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of previous versions of the list item.
+        /// SharePoint can be configured to retain the history for list items. Previous versions may be retained for a finite period of time depending on admin settings which may be unique per user or location.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<VersionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions.VersionsRequestBuilder.VersionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<VersionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions.VersionsRequestBuilder.VersionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +127,11 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ListItemVersion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ListItemVersion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ListItemVersion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ListItemVersion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,14 +144,14 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="VersionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions.VersionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public VersionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions.VersionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new VersionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions.VersionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The list of previous versions of the list item.
+        /// SharePoint can be configured to retain the history for list items. Previous versions may be retained for a finite period of time depending on admin settings which may be unique per user or location.
         /// </summary>
         public class VersionsRequestBuilderGetQueryParameters 
         {
@@ -218,7 +219,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class VersionsRequestBuilderGetRequestConfiguration : RequestConfiguration<VersionsRequestBuilderGetQueryParameters>
+        public class VersionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Versions.VersionsRequestBuilder.VersionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

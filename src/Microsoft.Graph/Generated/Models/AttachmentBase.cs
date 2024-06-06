@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AttachmentBase : Entity, IParsable
+    public class AttachmentBase : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The MIME type.</summary>
@@ -57,16 +57,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AttachmentBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AttachmentBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AttachmentBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AttachmentBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.taskFileAttachment" => new TaskFileAttachment(),
-                _ => new AttachmentBase(),
+                "#microsoft.graph.taskFileAttachment" => new Microsoft.Graph.Models.TaskFileAttachment(),
+                _ => new Microsoft.Graph.Models.AttachmentBase(),
             };
         }
         /// <summary>

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.Loc
     public class LocalizedNotificationMessagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the localizedNotificationMessages property of the microsoft.graph.notificationMessageTemplate entity.</summary>
         /// <param name="position">The unique identifier of localizedNotificationMessage</param>
-        /// <returns>A <see cref="LocalizedNotificationMessageItemRequestBuilder"/></returns>
-        public LocalizedNotificationMessageItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages.Item.LocalizedNotificationMessageItemRequestBuilder"/></returns>
+        public Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages.Item.LocalizedNotificationMessageItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("localizedNotificationMessage%2Did", position);
-                return new LocalizedNotificationMessageItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages.Item.LocalizedNotificationMessageItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="LocalizedNotificationMessagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages.LocalizedNotificationMessagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.Loc
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LocalizedNotificationMessagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages.LocalizedNotificationMessagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.Loc
         /// List properties and relationships of the localizedNotificationMessage objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-notification-localizednotificationmessage-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="LocalizedNotificationMessageCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.LocalizedNotificationMessageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LocalizedNotificationMessageCollectionResponse?> GetAsync(Action<RequestConfiguration<LocalizedNotificationMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.LocalizedNotificationMessageCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages.LocalizedNotificationMessagesRequestBuilder.LocalizedNotificationMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<LocalizedNotificationMessageCollectionResponse> GetAsync(Action<RequestConfiguration<LocalizedNotificationMessagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.LocalizedNotificationMessageCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages.LocalizedNotificationMessagesRequestBuilder.LocalizedNotificationMessagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<LocalizedNotificationMessageCollectionResponse>(requestInfo, LocalizedNotificationMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.LocalizedNotificationMessageCollectionResponse>(requestInfo, Microsoft.Graph.Models.LocalizedNotificationMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new localizedNotificationMessage object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-notification-localizednotificationmessage-create?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="LocalizedNotificationMessage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.LocalizedNotificationMessage"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LocalizedNotificationMessage?> PostAsync(LocalizedNotificationMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.LocalizedNotificationMessage?> PostAsync(Microsoft.Graph.Models.LocalizedNotificationMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<LocalizedNotificationMessage> PostAsync(LocalizedNotificationMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.LocalizedNotificationMessage> PostAsync(Microsoft.Graph.Models.LocalizedNotificationMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<LocalizedNotificationMessage>(requestInfo, LocalizedNotificationMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.LocalizedNotificationMessage>(requestInfo, Microsoft.Graph.Models.LocalizedNotificationMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List properties and relationships of the localizedNotificationMessage objects.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.Loc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LocalizedNotificationMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages.LocalizedNotificationMessagesRequestBuilder.LocalizedNotificationMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LocalizedNotificationMessagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages.LocalizedNotificationMessagesRequestBuilder.LocalizedNotificationMessagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.Loc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(LocalizedNotificationMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.LocalizedNotificationMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(LocalizedNotificationMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.LocalizedNotificationMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.Loc
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="LocalizedNotificationMessagesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages.LocalizedNotificationMessagesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LocalizedNotificationMessagesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages.LocalizedNotificationMessagesRequestBuilder WithUrl(string rawUrl)
         {
-            return new LocalizedNotificationMessagesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages.LocalizedNotificationMessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List properties and relationships of the localizedNotificationMessage objects.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.Loc
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class LocalizedNotificationMessagesRequestBuilderGetRequestConfiguration : RequestConfiguration<LocalizedNotificationMessagesRequestBuilderGetQueryParameters>
+        public class LocalizedNotificationMessagesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages.LocalizedNotificationMessagesRequestBuilder.LocalizedNotificationMessagesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

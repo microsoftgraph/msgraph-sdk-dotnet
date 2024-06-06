@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CommsOperation : Entity, IParsable
+    public class CommsOperation : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Unique Client Context string. Max limit is 256 chars.</summary>
@@ -43,35 +43,35 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The status property</summary>
-        public OperationStatus? Status
+        public Microsoft.Graph.Models.OperationStatus? Status
         {
-            get { return BackingStore?.Get<OperationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CommsOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CommsOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CommsOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CommsOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.addLargeGalleryViewOperation" => new AddLargeGalleryViewOperation(),
-                "#microsoft.graph.cancelMediaProcessingOperation" => new CancelMediaProcessingOperation(),
-                "#microsoft.graph.inviteParticipantsOperation" => new InviteParticipantsOperation(),
-                "#microsoft.graph.muteParticipantOperation" => new MuteParticipantOperation(),
-                "#microsoft.graph.playPromptOperation" => new PlayPromptOperation(),
-                "#microsoft.graph.recordOperation" => new RecordOperation(),
-                "#microsoft.graph.sendDtmfTonesOperation" => new SendDtmfTonesOperation(),
-                "#microsoft.graph.startHoldMusicOperation" => new StartHoldMusicOperation(),
-                "#microsoft.graph.stopHoldMusicOperation" => new StopHoldMusicOperation(),
-                "#microsoft.graph.subscribeToToneOperation" => new SubscribeToToneOperation(),
-                "#microsoft.graph.unmuteParticipantOperation" => new UnmuteParticipantOperation(),
-                "#microsoft.graph.updateRecordingStatusOperation" => new UpdateRecordingStatusOperation(),
-                _ => new CommsOperation(),
+                "#microsoft.graph.addLargeGalleryViewOperation" => new Microsoft.Graph.Models.AddLargeGalleryViewOperation(),
+                "#microsoft.graph.cancelMediaProcessingOperation" => new Microsoft.Graph.Models.CancelMediaProcessingOperation(),
+                "#microsoft.graph.inviteParticipantsOperation" => new Microsoft.Graph.Models.InviteParticipantsOperation(),
+                "#microsoft.graph.muteParticipantOperation" => new Microsoft.Graph.Models.MuteParticipantOperation(),
+                "#microsoft.graph.playPromptOperation" => new Microsoft.Graph.Models.PlayPromptOperation(),
+                "#microsoft.graph.recordOperation" => new Microsoft.Graph.Models.RecordOperation(),
+                "#microsoft.graph.sendDtmfTonesOperation" => new Microsoft.Graph.Models.SendDtmfTonesOperation(),
+                "#microsoft.graph.startHoldMusicOperation" => new Microsoft.Graph.Models.StartHoldMusicOperation(),
+                "#microsoft.graph.stopHoldMusicOperation" => new Microsoft.Graph.Models.StopHoldMusicOperation(),
+                "#microsoft.graph.subscribeToToneOperation" => new Microsoft.Graph.Models.SubscribeToToneOperation(),
+                "#microsoft.graph.unmuteParticipantOperation" => new Microsoft.Graph.Models.UnmuteParticipantOperation(),
+                "#microsoft.graph.updateRecordingStatusOperation" => new Microsoft.Graph.Models.UpdateRecordingStatusOperation(),
+                _ => new Microsoft.Graph.Models.CommsOperation(),
             };
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models
             {
                 { "clientContext", n => { ClientContext = n.GetStringValue(); } },
                 { "resultInfo", n => { ResultInfo = n.GetObjectValue<Microsoft.Graph.Models.ResultInfo>(Microsoft.Graph.Models.ResultInfo.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<OperationStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.OperationStatus>(); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("clientContext", ClientContext);
             writer.WriteObjectValue<Microsoft.Graph.Models.ResultInfo>("resultInfo", ResultInfo);
-            writer.WriteEnumValue<OperationStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.OperationStatus>("status", Status);
         }
     }
 }

@@ -20,22 +20,22 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item
     public class AdministrativeUnitItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.administrativeUnit entity.</summary>
-        public ExtensionsRequestBuilder Extensions
+        public Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Extensions.ExtensionsRequestBuilder Extensions
         {
-            get => new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.administrativeUnit entity.</summary>
-        public MembersRequestBuilder Members
+        public Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Members.MembersRequestBuilder Members
         {
-            get => new MembersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the scopedRoleMembers property of the microsoft.graph.administrativeUnit entity.</summary>
-        public ScopedRoleMembersRequestBuilder ScopedRoleMembers
+        public Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRoleMembers.ScopedRoleMembersRequestBuilder ScopedRoleMembers
         {
-            get => new ScopedRoleMembersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRoleMembers.ScopedRoleMembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="AdministrativeUnitItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.AdministrativeUnitItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AdministrativeUnitItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.AdministrativeUnitItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -80,20 +80,20 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item
         /// <returns>A <see cref="Microsoft.Graph.Models.AdministrativeUnit"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.AdministrativeUnit?> GetAsync(Action<RequestConfiguration<AdministrativeUnitItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AdministrativeUnit?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.AdministrativeUnitItemRequestBuilder.AdministrativeUnitItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.AdministrativeUnit> GetAsync(Action<RequestConfiguration<AdministrativeUnitItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AdministrativeUnit> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.AdministrativeUnitItemRequestBuilder.AdministrativeUnitItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AdministrativeUnit>(requestInfo, Microsoft.Graph.Models.AdministrativeUnit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.AdministrativeUnit?> PatchAsync(Microsoft.Graph.Models.AdministrativeUnit body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AdministrativeUnit>(requestInfo, Microsoft.Graph.Models.AdministrativeUnit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -149,11 +149,11 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AdministrativeUnitItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.AdministrativeUnitItemRequestBuilder.AdministrativeUnitItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AdministrativeUnitItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.AdministrativeUnitItemRequestBuilder.AdministrativeUnitItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -186,11 +186,11 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AdministrativeUnitItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.AdministrativeUnitItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AdministrativeUnitItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.AdministrativeUnitItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new AdministrativeUnitItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.AdministrativeUnitItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -229,7 +229,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AdministrativeUnitItemRequestBuilderGetRequestConfiguration : RequestConfiguration<AdministrativeUnitItemRequestBuilderGetQueryParameters>
+        public class AdministrativeUnitItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.AdministrativeUnitItemRequestBuilder.AdministrativeUnitItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

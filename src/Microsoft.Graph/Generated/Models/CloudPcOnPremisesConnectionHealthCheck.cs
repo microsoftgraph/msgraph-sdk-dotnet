@@ -74,9 +74,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The type of error that occurred during this health check. Possible values are: endpointConnectivityCheckCloudPcUrlNotAllowListed, endpointConnectivityCheckWVDUrlNotAllowListed, etc. (The all possible values can refer to cloudPcOnPremisesConnectionHealthCheckErrorType) Read-Only.</summary>
-        public CloudPcOnPremisesConnectionHealthCheckErrorType? ErrorType
+        public Microsoft.Graph.Models.CloudPcOnPremisesConnectionHealthCheckErrorType? ErrorType
         {
-            get { return BackingStore?.Get<CloudPcOnPremisesConnectionHealthCheckErrorType?>("errorType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CloudPcOnPremisesConnectionHealthCheckErrorType?>("errorType"); }
             set { BackingStore?.Set("errorType", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -118,13 +118,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The status property</summary>
-        public CloudPcOnPremisesConnectionStatus? Status
+        public Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatus? Status
         {
-            get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcOnPremisesConnectionHealthCheck"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CloudPcOnPremisesConnectionHealthCheck"/> and sets the default values.
         /// </summary>
         public CloudPcOnPremisesConnectionHealthCheck()
         {
@@ -134,12 +134,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcOnPremisesConnectionHealthCheck"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudPcOnPremisesConnectionHealthCheck"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcOnPremisesConnectionHealthCheck CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CloudPcOnPremisesConnectionHealthCheck CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcOnPremisesConnectionHealthCheck();
+            return new Microsoft.Graph.Models.CloudPcOnPremisesConnectionHealthCheck();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -153,11 +153,11 @@ namespace Microsoft.Graph.Models
                 { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                { "errorType", n => { ErrorType = n.GetEnumValue<CloudPcOnPremisesConnectionHealthCheckErrorType>(); } },
+                { "errorType", n => { ErrorType = n.GetEnumValue<Microsoft.Graph.Models.CloudPcOnPremisesConnectionHealthCheckErrorType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "recommendedAction", n => { RecommendedAction = n.GetStringValue(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<CloudPcOnPremisesConnectionStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatus>(); } },
             };
         }
         /// <summary>
@@ -171,11 +171,11 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
-            writer.WriteEnumValue<CloudPcOnPremisesConnectionHealthCheckErrorType>("errorType", ErrorType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CloudPcOnPremisesConnectionHealthCheckErrorType>("errorType", ErrorType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("recommendedAction", RecommendedAction);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
-            writer.WriteEnumValue<CloudPcOnPremisesConnectionStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

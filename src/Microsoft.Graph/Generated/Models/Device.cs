@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Device : DirectoryObject, IParsable
+    public class Device : Microsoft.Graph.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers with at least the Cloud Device Administrator role can set this property.</summary>
@@ -19,16 +19,16 @@ namespace Microsoft.Graph.Models
         /// <summary>For internal use only. Not nullable. Supports $filter (eq, not, ge, le).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AlternativeSecurityId>? AlternativeSecurityIds
+        public List<Microsoft.Graph.Models.AlternativeSecurityId>? AlternativeSecurityIds
         {
-            get { return BackingStore?.Get<List<AlternativeSecurityId>?>("alternativeSecurityIds"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AlternativeSecurityId>?>("alternativeSecurityIds"); }
             set { BackingStore?.Set("alternativeSecurityIds", value); }
         }
 #nullable restore
 #else
-        public List<AlternativeSecurityId> AlternativeSecurityIds
+        public List<Microsoft.Graph.Models.AlternativeSecurityId> AlternativeSecurityIds
         {
-            get { return BackingStore?.Get<List<AlternativeSecurityId>>("alternativeSecurityIds"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AlternativeSecurityId>>("alternativeSecurityIds"); }
             set { BackingStore?.Set("alternativeSecurityIds", value); }
         }
 #endif
@@ -165,16 +165,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of open extensions defined for the device. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions
+        public List<Microsoft.Graph.Models.Extension>? Extensions
         {
-            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions
+        public List<Microsoft.Graph.Models.Extension> Extensions
         {
-            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
@@ -247,16 +247,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? MemberOf
+        public List<Microsoft.Graph.Models.DirectoryObject>? MemberOf
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("memberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> MemberOf
+        public List<Microsoft.Graph.Models.DirectoryObject> MemberOf
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("memberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
 #endif
@@ -371,32 +371,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? RegisteredOwners
+        public List<Microsoft.Graph.Models.DirectoryObject>? RegisteredOwners
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("registeredOwners"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("registeredOwners"); }
             set { BackingStore?.Set("registeredOwners", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> RegisteredOwners
+        public List<Microsoft.Graph.Models.DirectoryObject> RegisteredOwners
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("registeredOwners"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("registeredOwners"); }
             set { BackingStore?.Set("registeredOwners", value); }
         }
 #endif
         /// <summary>Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? RegisteredUsers
+        public List<Microsoft.Graph.Models.DirectoryObject>? RegisteredUsers
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("registeredUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("registeredUsers"); }
             set { BackingStore?.Set("registeredUsers", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> RegisteredUsers
+        public List<Microsoft.Graph.Models.DirectoryObject> RegisteredUsers
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("registeredUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("registeredUsers"); }
             set { BackingStore?.Set("registeredUsers", value); }
         }
 #endif
@@ -425,16 +425,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Groups and administrative units that the device is a member of. This operation is transitive. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? TransitiveMemberOf
+        public List<Microsoft.Graph.Models.DirectoryObject>? TransitiveMemberOf
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("transitiveMemberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("transitiveMemberOf"); }
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> TransitiveMemberOf
+        public List<Microsoft.Graph.Models.DirectoryObject> TransitiveMemberOf
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("transitiveMemberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("transitiveMemberOf"); }
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
 #endif
@@ -455,7 +455,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Device"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Device"/> and sets the default values.
         /// </summary>
         public Device() : base()
         {
@@ -464,12 +464,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Device"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Device"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Device CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Device CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Device();
+            return new Microsoft.Graph.Models.Device();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -480,7 +480,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "accountEnabled", n => { AccountEnabled = n.GetBoolValue(); } },
-                { "alternativeSecurityIds", n => { AlternativeSecurityIds = n.GetCollectionOfObjectValues<AlternativeSecurityId>(AlternativeSecurityId.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "alternativeSecurityIds", n => { AlternativeSecurityIds = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AlternativeSecurityId>(Microsoft.Graph.Models.AlternativeSecurityId.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "approximateLastSignInDateTime", n => { ApproximateLastSignInDateTime = n.GetDateTimeOffsetValue(); } },
                 { "complianceExpirationDateTime", n => { ComplianceExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "deviceCategory", n => { DeviceCategory = n.GetStringValue(); } },
@@ -491,14 +491,14 @@ namespace Microsoft.Graph.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "enrollmentProfileName", n => { EnrollmentProfileName = n.GetStringValue(); } },
                 { "enrollmentType", n => { EnrollmentType = n.GetStringValue(); } },
-                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Extension>(Microsoft.Graph.Models.Extension.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isCompliant", n => { IsCompliant = n.GetBoolValue(); } },
                 { "isManaged", n => { IsManaged = n.GetBoolValue(); } },
                 { "isRooted", n => { IsRooted = n.GetBoolValue(); } },
                 { "managementType", n => { ManagementType = n.GetStringValue(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 { "mdmAppId", n => { MdmAppId = n.GetStringValue(); } },
-                { "memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "onPremisesLastSyncDateTime", n => { OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "onPremisesSecurityIdentifier", n => { OnPremisesSecurityIdentifier = n.GetStringValue(); } },
@@ -507,11 +507,11 @@ namespace Microsoft.Graph.Models
                 { "operatingSystemVersion", n => { OperatingSystemVersion = n.GetStringValue(); } },
                 { "physicalIds", n => { PhysicalIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "profileType", n => { ProfileType = n.GetStringValue(); } },
-                { "registeredOwners", n => { RegisteredOwners = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "registeredUsers", n => { RegisteredUsers = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "registeredOwners", n => { RegisteredOwners = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "registeredUsers", n => { RegisteredUsers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "registrationDateTime", n => { RegistrationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "systemLabels", n => { SystemLabels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "transitiveMemberOf", n => { TransitiveMemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "transitiveMemberOf", n => { TransitiveMemberOf = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "trustType", n => { TrustType = n.GetStringValue(); } },
             };
         }
@@ -524,7 +524,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("accountEnabled", AccountEnabled);
-            writer.WriteCollectionOfObjectValues<AlternativeSecurityId>("alternativeSecurityIds", AlternativeSecurityIds);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AlternativeSecurityId>("alternativeSecurityIds", AlternativeSecurityIds);
             writer.WriteDateTimeOffsetValue("approximateLastSignInDateTime", ApproximateLastSignInDateTime);
             writer.WriteDateTimeOffsetValue("complianceExpirationDateTime", ComplianceExpirationDateTime);
             writer.WriteStringValue("deviceCategory", DeviceCategory);
@@ -535,14 +535,14 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("enrollmentProfileName", EnrollmentProfileName);
             writer.WriteStringValue("enrollmentType", EnrollmentType);
-            writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Extension>("extensions", Extensions);
             writer.WriteBoolValue("isCompliant", IsCompliant);
             writer.WriteBoolValue("isManaged", IsManaged);
             writer.WriteBoolValue("isRooted", IsRooted);
             writer.WriteStringValue("managementType", ManagementType);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("mdmAppId", MdmAppId);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("memberOf", MemberOf);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("memberOf", MemberOf);
             writer.WriteStringValue("model", Model);
             writer.WriteDateTimeOffsetValue("onPremisesLastSyncDateTime", OnPremisesLastSyncDateTime);
             writer.WriteStringValue("onPremisesSecurityIdentifier", OnPremisesSecurityIdentifier);
@@ -551,11 +551,11 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("operatingSystemVersion", OperatingSystemVersion);
             writer.WriteCollectionOfPrimitiveValues<string>("physicalIds", PhysicalIds);
             writer.WriteStringValue("profileType", ProfileType);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("registeredOwners", RegisteredOwners);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("registeredUsers", RegisteredUsers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("registeredOwners", RegisteredOwners);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("registeredUsers", RegisteredUsers);
             writer.WriteDateTimeOffsetValue("registrationDateTime", RegistrationDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("systemLabels", SystemLabels);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("transitiveMemberOf", TransitiveMemberOf);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("transitiveMemberOf", TransitiveMemberOf);
             writer.WriteStringValue("trustType", TrustType);
         }
     }

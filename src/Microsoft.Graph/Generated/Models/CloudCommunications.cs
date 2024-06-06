@@ -23,32 +23,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The callRecords property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CallRecord>? CallRecords
+        public List<Microsoft.Graph.Models.CallRecords.CallRecord>? CallRecords
         {
-            get { return BackingStore?.Get<List<CallRecord>?>("callRecords"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRecords.CallRecord>?>("callRecords"); }
             set { BackingStore?.Set("callRecords", value); }
         }
 #nullable restore
 #else
-        public List<CallRecord> CallRecords
+        public List<Microsoft.Graph.Models.CallRecords.CallRecord> CallRecords
         {
-            get { return BackingStore?.Get<List<CallRecord>>("callRecords"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRecords.CallRecord>>("callRecords"); }
             set { BackingStore?.Set("callRecords", value); }
         }
 #endif
         /// <summary>The calls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Call>? Calls
+        public List<Microsoft.Graph.Models.Call>? Calls
         {
-            get { return BackingStore?.Get<List<Call>?>("calls"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Call>?>("calls"); }
             set { BackingStore?.Set("calls", value); }
         }
 #nullable restore
 #else
-        public List<Call> Calls
+        public List<Microsoft.Graph.Models.Call> Calls
         {
-            get { return BackingStore?.Get<List<Call>>("calls"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Call>>("calls"); }
             set { BackingStore?.Set("calls", value); }
         }
 #endif
@@ -71,37 +71,37 @@ namespace Microsoft.Graph.Models
         /// <summary>The onlineMeetings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnlineMeeting>? OnlineMeetings
+        public List<Microsoft.Graph.Models.OnlineMeeting>? OnlineMeetings
         {
-            get { return BackingStore?.Get<List<OnlineMeeting>?>("onlineMeetings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnlineMeeting>?>("onlineMeetings"); }
             set { BackingStore?.Set("onlineMeetings", value); }
         }
 #nullable restore
 #else
-        public List<OnlineMeeting> OnlineMeetings
+        public List<Microsoft.Graph.Models.OnlineMeeting> OnlineMeetings
         {
-            get { return BackingStore?.Get<List<OnlineMeeting>>("onlineMeetings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnlineMeeting>>("onlineMeetings"); }
             set { BackingStore?.Set("onlineMeetings", value); }
         }
 #endif
         /// <summary>The presences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Presence>? Presences
+        public List<Microsoft.Graph.Models.Presence>? Presences
         {
-            get { return BackingStore?.Get<List<Presence>?>("presences"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Presence>?>("presences"); }
             set { BackingStore?.Set("presences", value); }
         }
 #nullable restore
 #else
-        public List<Presence> Presences
+        public List<Microsoft.Graph.Models.Presence> Presences
         {
-            get { return BackingStore?.Get<List<Presence>>("presences"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Presence>>("presences"); }
             set { BackingStore?.Set("presences", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CloudCommunications"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CloudCommunications"/> and sets the default values.
         /// </summary>
         public CloudCommunications()
         {
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudCommunications"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudCommunications"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudCommunications CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CloudCommunications CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudCommunications();
+            return new Microsoft.Graph.Models.CloudCommunications();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "callRecords", n => { CallRecords = n.GetCollectionOfObjectValues<CallRecord>(CallRecord.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "calls", n => { Calls = n.GetCollectionOfObjectValues<Call>(Call.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "callRecords", n => { CallRecords = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CallRecords.CallRecord>(Microsoft.Graph.Models.CallRecords.CallRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "calls", n => { Calls = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Call>(Microsoft.Graph.Models.Call.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "onlineMeetings", n => { OnlineMeetings = n.GetCollectionOfObjectValues<OnlineMeeting>(OnlineMeeting.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "presences", n => { Presences = n.GetCollectionOfObjectValues<Presence>(Presence.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "onlineMeetings", n => { OnlineMeetings = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OnlineMeeting>(Microsoft.Graph.Models.OnlineMeeting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "presences", n => { Presences = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Presence>(Microsoft.Graph.Models.Presence.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -140,11 +140,11 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<CallRecord>("callRecords", CallRecords);
-            writer.WriteCollectionOfObjectValues<Call>("calls", Calls);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CallRecords.CallRecord>("callRecords", CallRecords);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Call>("calls", Calls);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<OnlineMeeting>("onlineMeetings", OnlineMeetings);
-            writer.WriteCollectionOfObjectValues<Presence>("presences", Presences);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OnlineMeeting>("onlineMeetings", OnlineMeetings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Presence>("presences", Presences);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

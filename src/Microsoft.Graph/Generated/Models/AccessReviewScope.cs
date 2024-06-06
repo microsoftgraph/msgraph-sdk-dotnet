@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessReviewScope"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AccessReviewScope"/> and sets the default values.
         /// </summary>
         public AccessReviewScope()
         {
@@ -46,18 +46,18 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewScope"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessReviewScope"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessReviewScope CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AccessReviewScope CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.accessReviewInactiveUsersQueryScope" => new AccessReviewInactiveUsersQueryScope(),
-                "#microsoft.graph.accessReviewQueryScope" => new AccessReviewQueryScope(),
-                "#microsoft.graph.principalResourceMembershipsScope" => new PrincipalResourceMembershipsScope(),
-                _ => new AccessReviewScope(),
+                "#microsoft.graph.accessReviewInactiveUsersQueryScope" => new Microsoft.Graph.Models.AccessReviewInactiveUsersQueryScope(),
+                "#microsoft.graph.accessReviewQueryScope" => new Microsoft.Graph.Models.AccessReviewQueryScope(),
+                "#microsoft.graph.principalResourceMembershipsScope" => new Microsoft.Graph.Models.PrincipalResourceMembershipsScope(),
+                _ => new Microsoft.Graph.Models.AccessReviewScope(),
             };
         }
         /// <summary>

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.IdentityGovernance
 {
     #pragma warning disable CS1591
-    public class TimeBasedAttributeTrigger : WorkflowExecutionTrigger, IParsable
+    public class TimeBasedAttributeTrigger : Microsoft.Graph.Models.IdentityGovernance.WorkflowExecutionTrigger, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date. The value can range between -180 and 180 days.</summary>
@@ -17,13 +17,13 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             set { BackingStore?.Set("offsetInDays", value); }
         }
         /// <summary>The timeBasedAttribute property</summary>
-        public WorkflowTriggerTimeBasedAttribute? TimeBasedAttribute
+        public Microsoft.Graph.Models.IdentityGovernance.WorkflowTriggerTimeBasedAttribute? TimeBasedAttribute
         {
-            get { return BackingStore?.Get<WorkflowTriggerTimeBasedAttribute?>("timeBasedAttribute"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.WorkflowTriggerTimeBasedAttribute?>("timeBasedAttribute"); }
             set { BackingStore?.Set("timeBasedAttribute", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TimeBasedAttributeTrigger"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IdentityGovernance.TimeBasedAttributeTrigger"/> and sets the default values.
         /// </summary>
         public TimeBasedAttributeTrigger() : base()
         {
@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TimeBasedAttributeTrigger"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityGovernance.TimeBasedAttributeTrigger"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TimeBasedAttributeTrigger CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IdentityGovernance.TimeBasedAttributeTrigger CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TimeBasedAttributeTrigger();
+            return new Microsoft.Graph.Models.IdentityGovernance.TimeBasedAttributeTrigger();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "offsetInDays", n => { OffsetInDays = n.GetIntValue(); } },
-                { "timeBasedAttribute", n => { TimeBasedAttribute = n.GetEnumValue<WorkflowTriggerTimeBasedAttribute>(); } },
+                { "timeBasedAttribute", n => { TimeBasedAttribute = n.GetEnumValue<Microsoft.Graph.Models.IdentityGovernance.WorkflowTriggerTimeBasedAttribute>(); } },
             };
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("offsetInDays", OffsetInDays);
-            writer.WriteEnumValue<WorkflowTriggerTimeBasedAttribute>("timeBasedAttribute", TimeBasedAttribute);
+            writer.WriteEnumValue<Microsoft.Graph.Models.IdentityGovernance.WorkflowTriggerTimeBasedAttribute>("timeBasedAttribute", TimeBasedAttribute);
         }
     }
 }

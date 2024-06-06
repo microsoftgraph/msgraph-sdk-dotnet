@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class MultiTenantOrganization : Entity, IParsable
+    public class MultiTenantOrganization : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Date when multitenant organization was created. Read-only.</summary>
@@ -51,50 +51,50 @@ namespace Microsoft.Graph.Models
         /// <summary>Defines the status of a tenant joining a multitenant organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MultiTenantOrganizationJoinRequestRecord? JoinRequest
+        public Microsoft.Graph.Models.MultiTenantOrganizationJoinRequestRecord? JoinRequest
         {
-            get { return BackingStore?.Get<MultiTenantOrganizationJoinRequestRecord?>("joinRequest"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MultiTenantOrganizationJoinRequestRecord?>("joinRequest"); }
             set { BackingStore?.Set("joinRequest", value); }
         }
 #nullable restore
 #else
-        public MultiTenantOrganizationJoinRequestRecord JoinRequest
+        public Microsoft.Graph.Models.MultiTenantOrganizationJoinRequestRecord JoinRequest
         {
-            get { return BackingStore?.Get<MultiTenantOrganizationJoinRequestRecord>("joinRequest"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MultiTenantOrganizationJoinRequestRecord>("joinRequest"); }
             set { BackingStore?.Set("joinRequest", value); }
         }
 #endif
         /// <summary>State of the multitenant organization. The possible values are: active, inactive, unknownFutureValue. active indicates the multitenant organization is created. inactive indicates the multitenant organization isn&apos;t created. Read-only.</summary>
-        public MultiTenantOrganizationState? State
+        public Microsoft.Graph.Models.MultiTenantOrganizationState? State
         {
-            get { return BackingStore?.Get<MultiTenantOrganizationState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MultiTenantOrganizationState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>Defines tenants added to a multitenant organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MultiTenantOrganizationMember>? Tenants
+        public List<Microsoft.Graph.Models.MultiTenantOrganizationMember>? Tenants
         {
-            get { return BackingStore?.Get<List<MultiTenantOrganizationMember>?>("tenants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MultiTenantOrganizationMember>?>("tenants"); }
             set { BackingStore?.Set("tenants", value); }
         }
 #nullable restore
 #else
-        public List<MultiTenantOrganizationMember> Tenants
+        public List<Microsoft.Graph.Models.MultiTenantOrganizationMember> Tenants
         {
-            get { return BackingStore?.Get<List<MultiTenantOrganizationMember>>("tenants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MultiTenantOrganizationMember>>("tenants"); }
             set { BackingStore?.Set("tenants", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MultiTenantOrganization"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MultiTenantOrganization"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MultiTenantOrganization CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MultiTenantOrganization CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MultiTenantOrganization();
+            return new Microsoft.Graph.Models.MultiTenantOrganization();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,9 +107,9 @@ namespace Microsoft.Graph.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "joinRequest", n => { JoinRequest = n.GetObjectValue<MultiTenantOrganizationJoinRequestRecord>(MultiTenantOrganizationJoinRequestRecord.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetEnumValue<MultiTenantOrganizationState>(); } },
-                { "tenants", n => { Tenants = n.GetCollectionOfObjectValues<MultiTenantOrganizationMember>(MultiTenantOrganizationMember.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "joinRequest", n => { JoinRequest = n.GetObjectValue<Microsoft.Graph.Models.MultiTenantOrganizationJoinRequestRecord>(Microsoft.Graph.Models.MultiTenantOrganizationJoinRequestRecord.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Models.MultiTenantOrganizationState>(); } },
+                { "tenants", n => { Tenants = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MultiTenantOrganizationMember>(Microsoft.Graph.Models.MultiTenantOrganizationMember.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -123,9 +123,9 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<MultiTenantOrganizationJoinRequestRecord>("joinRequest", JoinRequest);
-            writer.WriteEnumValue<MultiTenantOrganizationState>("state", State);
-            writer.WriteCollectionOfObjectValues<MultiTenantOrganizationMember>("tenants", Tenants);
+            writer.WriteObjectValue<Microsoft.Graph.Models.MultiTenantOrganizationJoinRequestRecord>("joinRequest", JoinRequest);
+            writer.WriteEnumValue<Microsoft.Graph.Models.MultiTenantOrganizationState>("state", State);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MultiTenantOrganizationMember>("tenants", Tenants);
         }
     }
 }

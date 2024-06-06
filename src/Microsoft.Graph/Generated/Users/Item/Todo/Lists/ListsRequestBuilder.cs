@@ -20,29 +20,29 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists
     public class ListsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Users.Item.Todo.Lists.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Todo.Lists.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public DeltaRequestBuilder Delta
+        public Microsoft.Graph.Users.Item.Todo.Lists.Delta.DeltaRequestBuilder Delta
         {
-            get => new DeltaRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Todo.Lists.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the lists property of the microsoft.graph.todo entity.</summary>
         /// <param name="position">The unique identifier of todoTaskList</param>
-        /// <returns>A <see cref="TodoTaskListItemRequestBuilder"/></returns>
-        public TodoTaskListItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Todo.Lists.Item.TodoTaskListItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Users.Item.Todo.Lists.Item.TodoTaskListItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("todoTaskList%2Did", position);
-                return new TodoTaskListItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Users.Item.Todo.Lists.Item.TodoTaskListItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ListsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Todo.Lists.ListsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ListsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Todo.Lists.ListsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -60,50 +60,50 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists
         /// <summary>
         /// The task lists in the users mailbox.
         /// </summary>
-        /// <returns>A <see cref="TodoTaskListCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TodoTaskListCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TodoTaskListCollectionResponse?> GetAsync(Action<RequestConfiguration<ListsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TodoTaskListCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Todo.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TodoTaskListCollectionResponse> GetAsync(Action<RequestConfiguration<ListsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TodoTaskListCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Todo.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TodoTaskListCollectionResponse>(requestInfo, TodoTaskListCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TodoTaskListCollectionResponse>(requestInfo, Microsoft.Graph.Models.TodoTaskListCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to lists for users
         /// </summary>
-        /// <returns>A <see cref="TodoTaskList"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TodoTaskList"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TodoTaskList?> PostAsync(TodoTaskList body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TodoTaskList?> PostAsync(Microsoft.Graph.Models.TodoTaskList body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TodoTaskList> PostAsync(TodoTaskList body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TodoTaskList> PostAsync(Microsoft.Graph.Models.TodoTaskList body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TodoTaskList>(requestInfo, TodoTaskList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TodoTaskList>(requestInfo, Microsoft.Graph.Models.TodoTaskList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The task lists in the users mailbox.
@@ -112,11 +112,11 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ListsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Todo.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ListsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Todo.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -132,11 +132,11 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(TodoTaskList body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.TodoTaskList body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(TodoTaskList body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.TodoTaskList body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -149,11 +149,11 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ListsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Todo.Lists.ListsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ListsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.Todo.Lists.ListsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ListsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.Todo.Lists.ListsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The task lists in the users mailbox.
@@ -224,7 +224,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ListsRequestBuilderGetRequestConfiguration : RequestConfiguration<ListsRequestBuilderGetQueryParameters>
+        public class ListsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.Todo.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

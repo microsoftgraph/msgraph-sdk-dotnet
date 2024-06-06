@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The endDateTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? EndDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? EndDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("endDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone EndDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone EndDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("endDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
 #endif
@@ -70,27 +70,27 @@ namespace Microsoft.Graph.Models
         /// <summary>The startDateTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? StartDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? StartDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone StartDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone StartDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
         /// <summary>The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.</summary>
-        public BookingsAvailabilityStatus? Status
+        public Microsoft.Graph.Models.BookingsAvailabilityStatus? Status
         {
-            get { return BackingStore?.Get<BookingsAvailabilityStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BookingsAvailabilityStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AvailabilityItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AvailabilityItem"/> and sets the default values.
         /// </summary>
         public AvailabilityItem()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AvailabilityItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AvailabilityItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AvailabilityItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AvailabilityItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AvailabilityItem();
+            return new Microsoft.Graph.Models.AvailabilityItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,11 +115,11 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "endDateTime", n => { EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "endDateTime", n => { EndDateTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "serviceId", n => { ServiceId = n.GetStringValue(); } },
-                { "startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<BookingsAvailabilityStatus>(); } },
+                { "startDateTime", n => { StartDateTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.BookingsAvailabilityStatus>(); } },
             };
         }
         /// <summary>
@@ -129,11 +129,11 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<DateTimeTimeZone>("endDateTime", EndDateTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("endDateTime", EndDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("serviceId", ServiceId);
-            writer.WriteObjectValue<DateTimeTimeZone>("startDateTime", StartDateTime);
-            writer.WriteEnumValue<BookingsAvailabilityStatus>("status", Status);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("startDateTime", StartDateTime);
+            writer.WriteEnumValue<Microsoft.Graph.Models.BookingsAvailabilityStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

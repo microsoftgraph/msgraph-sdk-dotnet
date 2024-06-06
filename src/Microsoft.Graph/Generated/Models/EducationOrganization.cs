@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class EducationOrganization : Entity, IParsable
+    public class EducationOrganization : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Organization description.</summary>
@@ -43,9 +43,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Source where this organization was created from. Possible values are: sis, manual.</summary>
-        public EducationExternalSource? ExternalSource
+        public Microsoft.Graph.Models.EducationExternalSource? ExternalSource
         {
-            get { return BackingStore?.Get<EducationExternalSource?>("externalSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationExternalSource?>("externalSource"); }
             set { BackingStore?.Set("externalSource", value); }
         }
         /// <summary>The name of the external source this resource was generated from.</summary>
@@ -67,16 +67,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationOrganization"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationOrganization"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationOrganization CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EducationOrganization CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.educationSchool" => new EducationSchool(),
-                _ => new EducationOrganization(),
+                "#microsoft.graph.educationSchool" => new Microsoft.Graph.Models.EducationSchool(),
+                _ => new Microsoft.Graph.Models.EducationOrganization(),
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "externalSource", n => { ExternalSource = n.GetEnumValue<EducationExternalSource>(); } },
+                { "externalSource", n => { ExternalSource = n.GetEnumValue<Microsoft.Graph.Models.EducationExternalSource>(); } },
                 { "externalSourceDetail", n => { ExternalSourceDetail = n.GetStringValue(); } },
             };
         }
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<EducationExternalSource>("externalSource", ExternalSource);
+            writer.WriteEnumValue<Microsoft.Graph.Models.EducationExternalSource>("externalSource", ExternalSource);
             writer.WriteStringValue("externalSourceDetail", ExternalSourceDetail);
         }
     }

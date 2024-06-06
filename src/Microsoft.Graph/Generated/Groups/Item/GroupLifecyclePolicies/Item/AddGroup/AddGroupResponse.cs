@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.AddGroup
 {
     [Obsolete("This class is obsolete. Use AddGroupPostResponse instead.")]
     #pragma warning disable CS1591
-    public class AddGroupResponse : AddGroupPostResponse, IParsable
+    public class AddGroupResponse : Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.AddGroup.AddGroupPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AddGroupResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.AddGroup.AddGroupResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AddGroupResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.AddGroup.AddGroupResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AddGroupResponse();
+            return new Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.AddGroup.AddGroupResponse();
         }
     }
 }

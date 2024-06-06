@@ -20,90 +20,90 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments
     public class AttachmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createUploadSession method.</summary>
-        public CreateUploadSessionRequestBuilder CreateUploadSession
+        public Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.CreateUploadSession.CreateUploadSessionRequestBuilder CreateUploadSession
         {
-            get => new CreateUploadSessionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.CreateUploadSession.CreateUploadSessionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.todoTask entity.</summary>
         /// <param name="position">The unique identifier of attachmentBase</param>
-        /// <returns>A <see cref="AttachmentBaseItemRequestBuilder"/></returns>
-        public AttachmentBaseItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.Item.AttachmentBaseItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.Item.AttachmentBaseItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("attachmentBase%2Did", position);
-                return new AttachmentBaseItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.Item.AttachmentBaseItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AttachmentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.AttachmentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AttachmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachments{?%24count,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters)
+        public AttachmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AttachmentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.AttachmentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AttachmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachments{?%24count,%24filter,%24orderby,%24select,%24skip,%24top}", rawUrl)
+        public AttachmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
         {
         }
         /// <summary>
         /// A collection of file attachments for the task.
         /// </summary>
-        /// <returns>A <see cref="AttachmentBaseCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AttachmentBaseCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AttachmentBaseCollectionResponse?> GetAsync(Action<RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AttachmentBaseCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AttachmentBaseCollectionResponse> GetAsync(Action<RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AttachmentBaseCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AttachmentBaseCollectionResponse>(requestInfo, AttachmentBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AttachmentBaseCollectionResponse>(requestInfo, Microsoft.Graph.Models.AttachmentBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to attachments for users
         /// </summary>
-        /// <returns>A <see cref="AttachmentBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AttachmentBase"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AttachmentBase?> PostAsync(AttachmentBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AttachmentBase?> PostAsync(Microsoft.Graph.Models.AttachmentBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AttachmentBase> PostAsync(AttachmentBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AttachmentBase> PostAsync(Microsoft.Graph.Models.AttachmentBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AttachmentBase>(requestInfo, AttachmentBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AttachmentBase>(requestInfo, Microsoft.Graph.Models.AttachmentBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A collection of file attachments for the task.
@@ -112,11 +112,11 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -132,11 +132,11 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(AttachmentBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.AttachmentBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(AttachmentBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.AttachmentBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -149,11 +149,11 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AttachmentsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.AttachmentsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AttachmentsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.AttachmentsRequestBuilder WithUrl(string rawUrl)
         {
-            return new AttachmentsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.AttachmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// A collection of file attachments for the task.
@@ -163,6 +163,16 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -182,6 +192,16 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments
 #else
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
+#endif
+            /// <summary>Search items by search phrases</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24search")]
+            public string Search { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -204,7 +224,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AttachmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters>
+        public class AttachmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

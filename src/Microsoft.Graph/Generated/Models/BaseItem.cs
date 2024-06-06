@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class BaseItem : Entity, IParsable
+    public class BaseItem : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Identity of the user, device, or application that created the item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy
+        public Microsoft.Graph.Models.IdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy
+        public Microsoft.Graph.Models.IdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>Identity of the user who created the item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public User? CreatedByUser
+        public Microsoft.Graph.Models.User? CreatedByUser
         {
-            get { return BackingStore?.Get<User?>("createdByUser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.User?>("createdByUser"); }
             set { BackingStore?.Set("createdByUser", value); }
         }
 #nullable restore
 #else
-        public User CreatedByUser
+        public Microsoft.Graph.Models.User CreatedByUser
         {
-            get { return BackingStore?.Get<User>("createdByUser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.User>("createdByUser"); }
             set { BackingStore?.Set("createdByUser", value); }
         }
 #endif
@@ -83,32 +83,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Identity of the user, device, and application that last modified the item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>Identity of the user who last modified the item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public User? LastModifiedByUser
+        public Microsoft.Graph.Models.User? LastModifiedByUser
         {
-            get { return BackingStore?.Get<User?>("lastModifiedByUser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.User?>("lastModifiedByUser"); }
             set { BackingStore?.Set("lastModifiedByUser", value); }
         }
 #nullable restore
 #else
-        public User LastModifiedByUser
+        public Microsoft.Graph.Models.User LastModifiedByUser
         {
-            get { return BackingStore?.Get<User>("lastModifiedByUser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.User>("lastModifiedByUser"); }
             set { BackingStore?.Set("lastModifiedByUser", value); }
         }
 #endif
@@ -137,16 +137,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Parent information, if the item has a parent. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemReference? ParentReference
+        public Microsoft.Graph.Models.ItemReference? ParentReference
         {
-            get { return BackingStore?.Get<ItemReference?>("parentReference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemReference?>("parentReference"); }
             set { BackingStore?.Set("parentReference", value); }
         }
 #nullable restore
 #else
-        public ItemReference ParentReference
+        public Microsoft.Graph.Models.ItemReference ParentReference
         {
-            get { return BackingStore?.Get<ItemReference>("parentReference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemReference>("parentReference"); }
             set { BackingStore?.Set("parentReference", value); }
         }
 #endif
@@ -169,23 +169,23 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BaseItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BaseItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BaseItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.BaseItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.baseSitePage" => new BaseSitePage(),
-                "#microsoft.graph.drive" => new Drive(),
-                "#microsoft.graph.driveItem" => new DriveItem(),
-                "#microsoft.graph.list" => new List(),
-                "#microsoft.graph.listItem" => new ListItem(),
-                "#microsoft.graph.sharedDriveItem" => new SharedDriveItem(),
-                "#microsoft.graph.site" => new Site(),
-                "#microsoft.graph.sitePage" => new SitePage(),
-                _ => new BaseItem(),
+                "#microsoft.graph.baseSitePage" => new Microsoft.Graph.Models.BaseSitePage(),
+                "#microsoft.graph.drive" => new Microsoft.Graph.Models.Drive(),
+                "#microsoft.graph.driveItem" => new Microsoft.Graph.Models.DriveItem(),
+                "#microsoft.graph.list" => new Microsoft.Graph.Models.List(),
+                "#microsoft.graph.listItem" => new Microsoft.Graph.Models.ListItem(),
+                "#microsoft.graph.sharedDriveItem" => new Microsoft.Graph.Models.SharedDriveItem(),
+                "#microsoft.graph.site" => new Microsoft.Graph.Models.Site(),
+                "#microsoft.graph.sitePage" => new Microsoft.Graph.Models.SitePage(),
+                _ => new Microsoft.Graph.Models.BaseItem(),
             };
         }
         /// <summary>
@@ -196,16 +196,16 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                { "createdByUser", n => { CreatedByUser = n.GetObjectValue<User>(User.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdByUser", n => { CreatedByUser = n.GetObjectValue<Microsoft.Graph.Models.User>(Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "eTag", n => { ETag = n.GetStringValue(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                { "lastModifiedByUser", n => { LastModifiedByUser = n.GetObjectValue<User>(User.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedByUser", n => { LastModifiedByUser = n.GetObjectValue<Microsoft.Graph.Models.User>(Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parentReference", n => { ParentReference = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
+                { "parentReference", n => { ParentReference = n.GetObjectValue<Microsoft.Graph.Models.ItemReference>(Microsoft.Graph.Models.ItemReference.CreateFromDiscriminatorValue); } },
                 { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
@@ -217,16 +217,16 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
-            writer.WriteObjectValue<User>("createdByUser", CreatedByUser);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.User>("createdByUser", CreatedByUser);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("eTag", ETag);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
-            writer.WriteObjectValue<User>("lastModifiedByUser", LastModifiedByUser);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.User>("lastModifiedByUser", LastModifiedByUser);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<ItemReference>("parentReference", ParentReference);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemReference>("parentReference", ParentReference);
             writer.WriteStringValue("webUrl", WebUrl);
         }
     }

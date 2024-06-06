@@ -60,32 +60,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The email addresses of the recipients to which a message should be forwarded as an attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recipient>? ForwardAsAttachmentTo
+        public List<Microsoft.Graph.Models.Recipient>? ForwardAsAttachmentTo
         {
-            get { return BackingStore?.Get<List<Recipient>?>("forwardAsAttachmentTo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>?>("forwardAsAttachmentTo"); }
             set { BackingStore?.Set("forwardAsAttachmentTo", value); }
         }
 #nullable restore
 #else
-        public List<Recipient> ForwardAsAttachmentTo
+        public List<Microsoft.Graph.Models.Recipient> ForwardAsAttachmentTo
         {
-            get { return BackingStore?.Get<List<Recipient>>("forwardAsAttachmentTo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>>("forwardAsAttachmentTo"); }
             set { BackingStore?.Set("forwardAsAttachmentTo", value); }
         }
 #endif
         /// <summary>The email addresses of the recipients to which a message should be forwarded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recipient>? ForwardTo
+        public List<Microsoft.Graph.Models.Recipient>? ForwardTo
         {
-            get { return BackingStore?.Get<List<Recipient>?>("forwardTo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>?>("forwardTo"); }
             set { BackingStore?.Set("forwardTo", value); }
         }
 #nullable restore
 #else
-        public List<Recipient> ForwardTo
+        public List<Microsoft.Graph.Models.Recipient> ForwardTo
         {
-            get { return BackingStore?.Get<List<Recipient>>("forwardTo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>>("forwardTo"); }
             set { BackingStore?.Set("forwardTo", value); }
         }
 #endif
@@ -96,9 +96,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("markAsRead", value); }
         }
         /// <summary>Sets the importance of the message, which can be: low, normal, high.</summary>
-        public Importance? MarkImportance
+        public Microsoft.Graph.Models.Importance? MarkImportance
         {
-            get { return BackingStore?.Get<Importance?>("markImportance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Importance?>("markImportance"); }
             set { BackingStore?.Set("markImportance", value); }
         }
         /// <summary>The ID of the folder that a message will be moved to.</summary>
@@ -142,16 +142,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The email addresses to which a message should be redirected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recipient>? RedirectTo
+        public List<Microsoft.Graph.Models.Recipient>? RedirectTo
         {
-            get { return BackingStore?.Get<List<Recipient>?>("redirectTo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>?>("redirectTo"); }
             set { BackingStore?.Set("redirectTo", value); }
         }
 #nullable restore
 #else
-        public List<Recipient> RedirectTo
+        public List<Microsoft.Graph.Models.Recipient> RedirectTo
         {
-            get { return BackingStore?.Get<List<Recipient>>("redirectTo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>>("redirectTo"); }
             set { BackingStore?.Set("redirectTo", value); }
         }
 #endif
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("stopProcessingRules", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MessageRuleActions"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MessageRuleActions"/> and sets the default values.
         /// </summary>
         public MessageRuleActions()
         {
@@ -172,12 +172,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MessageRuleActions"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MessageRuleActions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MessageRuleActions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.MessageRuleActions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MessageRuleActions();
+            return new Microsoft.Graph.Models.MessageRuleActions();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -190,14 +190,14 @@ namespace Microsoft.Graph.Models
                 { "assignCategories", n => { AssignCategories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "copyToFolder", n => { CopyToFolder = n.GetStringValue(); } },
                 { "delete", n => { Delete = n.GetBoolValue(); } },
-                { "forwardAsAttachmentTo", n => { ForwardAsAttachmentTo = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "forwardTo", n => { ForwardTo = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "forwardAsAttachmentTo", n => { ForwardAsAttachmentTo = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>(Microsoft.Graph.Models.Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "forwardTo", n => { ForwardTo = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>(Microsoft.Graph.Models.Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "markAsRead", n => { MarkAsRead = n.GetBoolValue(); } },
-                { "markImportance", n => { MarkImportance = n.GetEnumValue<Importance>(); } },
+                { "markImportance", n => { MarkImportance = n.GetEnumValue<Microsoft.Graph.Models.Importance>(); } },
                 { "moveToFolder", n => { MoveToFolder = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "permanentDelete", n => { PermanentDelete = n.GetBoolValue(); } },
-                { "redirectTo", n => { RedirectTo = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "redirectTo", n => { RedirectTo = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>(Microsoft.Graph.Models.Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "stopProcessingRules", n => { StopProcessingRules = n.GetBoolValue(); } },
             };
         }
@@ -211,14 +211,14 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfPrimitiveValues<string>("assignCategories", AssignCategories);
             writer.WriteStringValue("copyToFolder", CopyToFolder);
             writer.WriteBoolValue("delete", Delete);
-            writer.WriteCollectionOfObjectValues<Recipient>("forwardAsAttachmentTo", ForwardAsAttachmentTo);
-            writer.WriteCollectionOfObjectValues<Recipient>("forwardTo", ForwardTo);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>("forwardAsAttachmentTo", ForwardAsAttachmentTo);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>("forwardTo", ForwardTo);
             writer.WriteBoolValue("markAsRead", MarkAsRead);
-            writer.WriteEnumValue<Importance>("markImportance", MarkImportance);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Importance>("markImportance", MarkImportance);
             writer.WriteStringValue("moveToFolder", MoveToFolder);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("permanentDelete", PermanentDelete);
-            writer.WriteCollectionOfObjectValues<Recipient>("redirectTo", RedirectTo);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>("redirectTo", RedirectTo);
             writer.WriteBoolValue("stopProcessingRules", StopProcessingRules);
             writer.WriteAdditionalData(AdditionalData);
         }

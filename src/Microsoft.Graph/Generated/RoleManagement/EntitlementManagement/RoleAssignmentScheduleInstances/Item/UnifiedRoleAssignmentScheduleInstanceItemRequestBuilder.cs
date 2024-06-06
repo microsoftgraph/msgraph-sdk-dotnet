@@ -22,32 +22,32 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
     public class UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the activatedUsing property of the microsoft.graph.unifiedRoleAssignmentScheduleInstance entity.</summary>
-        public ActivatedUsingRequestBuilder ActivatedUsing
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.ActivatedUsing.ActivatedUsingRequestBuilder ActivatedUsing
         {
-            get => new ActivatedUsingRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.ActivatedUsing.ActivatedUsingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appScope property of the microsoft.graph.unifiedRoleScheduleInstanceBase entity.</summary>
-        public AppScopeRequestBuilder AppScope
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.AppScope.AppScopeRequestBuilder AppScope
         {
-            get => new AppScopeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.AppScope.AppScopeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleScheduleInstanceBase entity.</summary>
-        public DirectoryScopeRequestBuilder DirectoryScope
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.DirectoryScope.DirectoryScopeRequestBuilder DirectoryScope
         {
-            get => new DirectoryScopeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.DirectoryScope.DirectoryScopeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the principal property of the microsoft.graph.unifiedRoleScheduleInstanceBase entity.</summary>
-        public PrincipalRequestBuilder Principal
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.Principal.PrincipalRequestBuilder Principal
         {
-            get => new PrincipalRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.Principal.PrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleScheduleInstanceBase entity.</summary>
-        public RoleDefinitionRequestBuilder RoleDefinition
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.RoleDefinition.RoleDefinitionRequestBuilder RoleDefinition
         {
-            get => new RoleDefinitionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.RoleDefinition.RoleDefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -80,57 +80,57 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Instances for active role assignments.
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleAssignmentScheduleInstance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleAssignmentScheduleInstance?> GetAsync(Action<RequestConfiguration<UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedRoleAssignmentScheduleInstance> GetAsync(Action<RequestConfiguration<UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance> GetAsync(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedRoleAssignmentScheduleInstance>(requestInfo, UnifiedRoleAssignmentScheduleInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance>(requestInfo, Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property roleAssignmentScheduleInstances in roleManagement
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleAssignmentScheduleInstance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleAssignmentScheduleInstance?> PatchAsync(UnifiedRoleAssignmentScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance?> PatchAsync(Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedRoleAssignmentScheduleInstance> PatchAsync(UnifiedRoleAssignmentScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance> PatchAsync(Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedRoleAssignmentScheduleInstance>(requestInfo, UnifiedRoleAssignmentScheduleInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance>(requestInfo, Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property roleAssignmentScheduleInstances for roleManagement
@@ -158,11 +158,11 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -178,11 +178,11 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(UnifiedRoleAssignmentScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(UnifiedRoleAssignmentScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -195,11 +195,11 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -238,7 +238,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters>
+        public class UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

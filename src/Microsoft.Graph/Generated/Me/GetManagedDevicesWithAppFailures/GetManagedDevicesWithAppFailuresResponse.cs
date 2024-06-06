@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Me.GetManagedDevicesWithAppFailures
 {
     [Obsolete("This class is obsolete. Use GetManagedDevicesWithAppFailuresGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetManagedDevicesWithAppFailuresResponse : GetManagedDevicesWithAppFailuresGetResponse, IParsable
+    public class GetManagedDevicesWithAppFailuresResponse : Microsoft.Graph.Me.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetManagedDevicesWithAppFailuresResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetManagedDevicesWithAppFailuresResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Me.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetManagedDevicesWithAppFailuresResponse();
+            return new Microsoft.Graph.Me.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresResponse();
         }
     }
 }

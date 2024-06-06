@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Entity for AppLogCollectionRequest contains all logs values.
     /// </summary>
-    public class AppLogCollectionRequest : Entity, IParsable
+    public class AppLogCollectionRequest : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Time at which the upload log request reached a completed state if not completed yet NULL will be returned.</summary>
         public DateTimeOffset? CompletedDateTime
@@ -50,20 +50,20 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>AppLogUploadStatus</summary>
-        public AppLogUploadState? Status
+        public Microsoft.Graph.Models.AppLogUploadState? Status
         {
-            get { return BackingStore?.Get<AppLogUploadState?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AppLogUploadState?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppLogCollectionRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AppLogCollectionRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AppLogCollectionRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AppLogCollectionRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AppLogCollectionRequest();
+            return new Microsoft.Graph.Models.AppLogCollectionRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models
                 { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "customLogFolders", n => { CustomLogFolders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<AppLogUploadState>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.AppLogUploadState>(); } },
             };
         }
         /// <summary>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("customLogFolders", CustomLogFolders);
             writer.WriteStringValue("errorMessage", ErrorMessage);
-            writer.WriteEnumValue<AppLogUploadState>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AppLogUploadState>("status", Status);
         }
     }
 }

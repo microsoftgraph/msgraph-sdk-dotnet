@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SchemaExtension : Entity, IParsable
+    public class SchemaExtension : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Description for the schema extension. Supports $filter (eq).</summary>
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of property names and types that make up the schema extension definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExtensionSchemaProperty>? Properties
+        public List<Microsoft.Graph.Models.ExtensionSchemaProperty>? Properties
         {
-            get { return BackingStore?.Get<List<ExtensionSchemaProperty>?>("properties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExtensionSchemaProperty>?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #nullable restore
 #else
-        public List<ExtensionSchemaProperty> Properties
+        public List<Microsoft.Graph.Models.ExtensionSchemaProperty> Properties
         {
-            get { return BackingStore?.Get<List<ExtensionSchemaProperty>>("properties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExtensionSchemaProperty>>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #endif
@@ -93,12 +93,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SchemaExtension"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SchemaExtension"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SchemaExtension CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SchemaExtension CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SchemaExtension();
+            return new Microsoft.Graph.Models.SchemaExtension();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
-                { "properties", n => { Properties = n.GetCollectionOfObjectValues<ExtensionSchemaProperty>(ExtensionSchemaProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "properties", n => { Properties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ExtensionSchemaProperty>(Microsoft.Graph.Models.ExtensionSchemaProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "targetTypes", n => { TargetTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("owner", Owner);
-            writer.WriteCollectionOfObjectValues<ExtensionSchemaProperty>("properties", Properties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ExtensionSchemaProperty>("properties", Properties);
             writer.WriteStringValue("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("targetTypes", TargetTypes);
         }

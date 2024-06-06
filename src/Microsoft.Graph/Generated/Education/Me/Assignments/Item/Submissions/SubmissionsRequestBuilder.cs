@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions
     public class SubmissionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.</summary>
         /// <param name="position">The unique identifier of educationSubmission</param>
-        /// <returns>A <see cref="EducationSubmissionItemRequestBuilder"/></returns>
-        public EducationSubmissionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Item.EducationSubmissionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Item.EducationSubmissionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("educationSubmission%2Did", position);
-                return new EducationSubmissionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Item.EducationSubmissionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SubmissionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Me.Assignments.Item.Submissions.SubmissionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SubmissionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Me.Assignments.Item.Submissions.SubmissionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions
         /// <summary>
         /// Once published, there&apos;s a submission object for each student representing their work and grade. Read-only. Nullable.
         /// </summary>
-        /// <returns>A <see cref="EducationSubmissionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationSubmissionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationSubmissionCollectionResponse?> GetAsync(Action<RequestConfiguration<SubmissionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationSubmissionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Education.Me.Assignments.Item.Submissions.SubmissionsRequestBuilder.SubmissionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationSubmissionCollectionResponse> GetAsync(Action<RequestConfiguration<SubmissionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationSubmissionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Education.Me.Assignments.Item.Submissions.SubmissionsRequestBuilder.SubmissionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationSubmissionCollectionResponse>(requestInfo, EducationSubmissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EducationSubmissionCollectionResponse>(requestInfo, Microsoft.Graph.Models.EducationSubmissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to submissions for education
         /// </summary>
-        /// <returns>A <see cref="EducationSubmission"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationSubmission"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationSubmission?> PostAsync(EducationSubmission body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationSubmission?> PostAsync(Microsoft.Graph.Models.EducationSubmission body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationSubmission> PostAsync(EducationSubmission body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationSubmission> PostAsync(Microsoft.Graph.Models.EducationSubmission body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationSubmission>(requestInfo, EducationSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EducationSubmission>(requestInfo, Microsoft.Graph.Models.EducationSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Once published, there&apos;s a submission object for each student representing their work and grade. Read-only. Nullable.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SubmissionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Education.Me.Assignments.Item.Submissions.SubmissionsRequestBuilder.SubmissionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SubmissionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Education.Me.Assignments.Item.Submissions.SubmissionsRequestBuilder.SubmissionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(EducationSubmission body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.EducationSubmission body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(EducationSubmission body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.EducationSubmission body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SubmissionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Education.Me.Assignments.Item.Submissions.SubmissionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SubmissionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Education.Me.Assignments.Item.Submissions.SubmissionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new SubmissionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Education.Me.Assignments.Item.Submissions.SubmissionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Once published, there&apos;s a submission object for each student representing their work and grade. Read-only. Nullable.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SubmissionsRequestBuilderGetRequestConfiguration : RequestConfiguration<SubmissionsRequestBuilderGetQueryParameters>
+        public class SubmissionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Education.Me.Assignments.Item.Submissions.SubmissionsRequestBuilder.SubmissionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

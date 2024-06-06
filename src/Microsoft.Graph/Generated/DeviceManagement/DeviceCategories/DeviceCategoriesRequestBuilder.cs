@@ -19,24 +19,24 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories
     public class DeviceCategoriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.DeviceManagement.DeviceCategories.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.DeviceCategories.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceCategories property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of deviceCategory</param>
-        /// <returns>A <see cref="DeviceCategoryItemRequestBuilder"/></returns>
-        public DeviceCategoryItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.DeviceCategories.Item.DeviceCategoryItemRequestBuilder"/></returns>
+        public Microsoft.Graph.DeviceManagement.DeviceCategories.Item.DeviceCategoryItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("deviceCategory%2Did", position);
-                return new DeviceCategoryItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.DeviceManagement.DeviceCategories.Item.DeviceCategoryItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceCategoriesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.DeviceCategories.DeviceCategoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceCategoriesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.DeviceCategories.DeviceCategoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,25 +55,25 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories
         /// List properties and relationships of the deviceCategory objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-devicecategory-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="DeviceCategoryCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceCategoryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceCategoryCollectionResponse?> GetAsync(Action<RequestConfiguration<DeviceCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeviceCategoryCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.DeviceCategories.DeviceCategoriesRequestBuilder.DeviceCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceCategoryCollectionResponse> GetAsync(Action<RequestConfiguration<DeviceCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeviceCategoryCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.DeviceCategories.DeviceCategoriesRequestBuilder.DeviceCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceCategoryCollectionResponse>(requestInfo, DeviceCategoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DeviceCategoryCollectionResponse>(requestInfo, Microsoft.Graph.Models.DeviceCategoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new deviceCategory object.
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.DeviceCategory?> PostAsync(Microsoft.Graph.Models.DeviceCategory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DeviceCategory>(requestInfo, Microsoft.Graph.Models.DeviceCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.DeviceCategories.DeviceCategoriesRequestBuilder.DeviceCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.DeviceCategories.DeviceCategoriesRequestBuilder.DeviceCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DeviceCategoriesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.DeviceCategories.DeviceCategoriesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeviceCategoriesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceManagement.DeviceCategories.DeviceCategoriesRequestBuilder WithUrl(string rawUrl)
         {
-            return new DeviceCategoriesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceManagement.DeviceCategories.DeviceCategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List properties and relationships of the deviceCategory objects.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceCategoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceCategoriesRequestBuilderGetQueryParameters>
+        public class DeviceCategoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.DeviceCategories.DeviceCategoriesRequestBuilder.DeviceCategoriesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

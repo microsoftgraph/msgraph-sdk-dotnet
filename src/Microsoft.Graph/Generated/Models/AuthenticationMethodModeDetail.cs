@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AuthenticationMethodModeDetail : Entity, IParsable
+    public class AuthenticationMethodModeDetail : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The authenticationMethod property</summary>
-        public BaseAuthenticationMethod? AuthenticationMethod
+        public Microsoft.Graph.Models.BaseAuthenticationMethod? AuthenticationMethod
         {
-            get { return BackingStore?.Get<BaseAuthenticationMethod?>("authenticationMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BaseAuthenticationMethod?>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>The display name of this mode</summary>
@@ -35,12 +35,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationMethodModeDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationMethodModeDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthenticationMethodModeDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AuthenticationMethodModeDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationMethodModeDetail();
+            return new Microsoft.Graph.Models.AuthenticationMethodModeDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<BaseAuthenticationMethod>(); } },
+                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<Microsoft.Graph.Models.BaseAuthenticationMethod>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
             };
         }
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<BaseAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Models.BaseAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
             writer.WriteStringValue("displayName", DisplayName);
         }
     }

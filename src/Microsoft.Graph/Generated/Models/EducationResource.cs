@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The individual who created the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy
+        public Microsoft.Graph.Models.IdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy
+        public Microsoft.Graph.Models.IdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -60,16 +60,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The last user to modify the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EducationResource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.EducationResource"/> and sets the default values.
         /// </summary>
         public EducationResource()
         {
@@ -106,25 +106,25 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationResource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationResource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EducationResource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.EducationResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.educationChannelResource" => new EducationChannelResource(),
-                "#microsoft.graph.educationExcelResource" => new EducationExcelResource(),
-                "#microsoft.graph.educationExternalResource" => new EducationExternalResource(),
-                "#microsoft.graph.educationFileResource" => new EducationFileResource(),
-                "#microsoft.graph.educationLinkedAssignmentResource" => new EducationLinkedAssignmentResource(),
-                "#microsoft.graph.educationLinkResource" => new EducationLinkResource(),
-                "#microsoft.graph.educationMediaResource" => new EducationMediaResource(),
-                "#microsoft.graph.educationPowerPointResource" => new EducationPowerPointResource(),
-                "#microsoft.graph.educationTeamsAppResource" => new EducationTeamsAppResource(),
-                "#microsoft.graph.educationWordResource" => new EducationWordResource(),
-                _ => new EducationResource(),
+                "#microsoft.graph.educationChannelResource" => new Microsoft.Graph.Models.EducationChannelResource(),
+                "#microsoft.graph.educationExcelResource" => new Microsoft.Graph.Models.EducationExcelResource(),
+                "#microsoft.graph.educationExternalResource" => new Microsoft.Graph.Models.EducationExternalResource(),
+                "#microsoft.graph.educationFileResource" => new Microsoft.Graph.Models.EducationFileResource(),
+                "#microsoft.graph.educationLinkedAssignmentResource" => new Microsoft.Graph.Models.EducationLinkedAssignmentResource(),
+                "#microsoft.graph.educationLinkResource" => new Microsoft.Graph.Models.EducationLinkResource(),
+                "#microsoft.graph.educationMediaResource" => new Microsoft.Graph.Models.EducationMediaResource(),
+                "#microsoft.graph.educationPowerPointResource" => new Microsoft.Graph.Models.EducationPowerPointResource(),
+                "#microsoft.graph.educationTeamsAppResource" => new Microsoft.Graph.Models.EducationTeamsAppResource(),
+                "#microsoft.graph.educationWordResource" => new Microsoft.Graph.Models.EducationWordResource(),
+                _ => new Microsoft.Graph.Models.EducationResource(),
             };
         }
         /// <summary>
@@ -135,10 +135,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };

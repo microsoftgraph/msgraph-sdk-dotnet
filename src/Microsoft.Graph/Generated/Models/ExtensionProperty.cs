@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ExtensionProperty : DirectoryObject, IParsable
+    public class ExtensionProperty : Microsoft.Graph.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Display name of the application object on which this extension property is defined. Read-only.</summary>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ExtensionProperty"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ExtensionProperty"/> and sets the default values.
         /// </summary>
         public ExtensionProperty() : base()
         {
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExtensionProperty"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ExtensionProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExtensionProperty CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ExtensionProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExtensionProperty();
+            return new Microsoft.Graph.Models.ExtensionProperty();
         }
         /// <summary>
         /// The deserialization information for the current model

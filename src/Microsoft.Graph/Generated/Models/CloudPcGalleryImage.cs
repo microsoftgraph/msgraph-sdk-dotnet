@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CloudPcGalleryImage : Entity, IParsable
+    public class CloudPcGalleryImage : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The display name of this gallery image. For example, Windows 11 Enterprise + Microsoft 365 Apps 22H2. Read-only.</summary>
@@ -100,20 +100,20 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("startDate", value); }
         }
         /// <summary>The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. The default value is supported. Read-only.</summary>
-        public CloudPcGalleryImageStatus? Status
+        public Microsoft.Graph.Models.CloudPcGalleryImageStatus? Status
         {
-            get { return BackingStore?.Get<CloudPcGalleryImageStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CloudPcGalleryImageStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcGalleryImage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudPcGalleryImage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPcGalleryImage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CloudPcGalleryImage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcGalleryImage();
+            return new Microsoft.Graph.Models.CloudPcGalleryImage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Models
                 { "sizeInGB", n => { SizeInGB = n.GetIntValue(); } },
                 { "skuName", n => { SkuName = n.GetStringValue(); } },
                 { "startDate", n => { StartDate = n.GetDateValue(); } },
-                { "status", n => { Status = n.GetEnumValue<CloudPcGalleryImageStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.CloudPcGalleryImageStatus>(); } },
             };
         }
         /// <summary>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Models
             writer.WriteIntValue("sizeInGB", SizeInGB);
             writer.WriteStringValue("skuName", SkuName);
             writer.WriteDateValue("startDate", StartDate);
-            writer.WriteEnumValue<CloudPcGalleryImageStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CloudPcGalleryImageStatus>("status", Status);
         }
     }
 }

@@ -9,33 +9,33 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties and inherited properties for Windows Universal AppX Line Of Business apps. Inherits from `mobileLobApp`.
     /// </summary>
-    public class WindowsUniversalAppX : MobileLobApp, IParsable
+    public class WindowsUniversalAppX : Microsoft.Graph.Models.MobileLobApp, IParsable
     {
         /// <summary>Contains properties for Windows architecture.</summary>
-        public WindowsArchitecture? ApplicableArchitectures
+        public Microsoft.Graph.Models.WindowsArchitecture? ApplicableArchitectures
         {
-            get { return BackingStore?.Get<WindowsArchitecture?>("applicableArchitectures"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsArchitecture?>("applicableArchitectures"); }
             set { BackingStore?.Set("applicableArchitectures", value); }
         }
         /// <summary>Contains properties for Windows device type. Multiple values can be selected. Default value is `none`.</summary>
-        public WindowsDeviceType? ApplicableDeviceTypes
+        public Microsoft.Graph.Models.WindowsDeviceType? ApplicableDeviceTypes
         {
-            get { return BackingStore?.Get<WindowsDeviceType?>("applicableDeviceTypes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsDeviceType?>("applicableDeviceTypes"); }
             set { BackingStore?.Set("applicableDeviceTypes", value); }
         }
         /// <summary>The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileContainedApp>? CommittedContainedApps
+        public List<Microsoft.Graph.Models.MobileContainedApp>? CommittedContainedApps
         {
-            get { return BackingStore?.Get<List<MobileContainedApp>?>("committedContainedApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MobileContainedApp>?>("committedContainedApps"); }
             set { BackingStore?.Set("committedContainedApps", value); }
         }
 #nullable restore
 #else
-        public List<MobileContainedApp> CommittedContainedApps
+        public List<Microsoft.Graph.Models.MobileContainedApp> CommittedContainedApps
         {
-            get { return BackingStore?.Get<List<MobileContainedApp>>("committedContainedApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MobileContainedApp>>("committedContainedApps"); }
             set { BackingStore?.Set("committedContainedApps", value); }
         }
 #endif
@@ -112,21 +112,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The minimum operating system required for a Windows mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem
+        public Microsoft.Graph.Models.WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem
         {
-            get { return BackingStore?.Get<WindowsMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #nullable restore
 #else
-        public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem
+        public Microsoft.Graph.Models.WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem
         {
-            get { return BackingStore?.Get<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsUniversalAppX"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WindowsUniversalAppX"/> and sets the default values.
         /// </summary>
         public WindowsUniversalAppX() : base()
         {
@@ -135,12 +135,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsUniversalAppX"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsUniversalAppX"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsUniversalAppX CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WindowsUniversalAppX CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsUniversalAppX();
+            return new Microsoft.Graph.Models.WindowsUniversalAppX();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -150,15 +150,15 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<WindowsArchitecture>(); } },
-                { "applicableDeviceTypes", n => { ApplicableDeviceTypes = n.GetEnumValue<WindowsDeviceType>(); } },
-                { "committedContainedApps", n => { CommittedContainedApps = n.GetCollectionOfObjectValues<MobileContainedApp>(MobileContainedApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<Microsoft.Graph.Models.WindowsArchitecture>(); } },
+                { "applicableDeviceTypes", n => { ApplicableDeviceTypes = n.GetEnumValue<Microsoft.Graph.Models.WindowsDeviceType>(); } },
+                { "committedContainedApps", n => { CommittedContainedApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MobileContainedApp>(Microsoft.Graph.Models.MobileContainedApp.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "identityName", n => { IdentityName = n.GetStringValue(); } },
                 { "identityPublisherHash", n => { IdentityPublisherHash = n.GetStringValue(); } },
                 { "identityResourceIdentifier", n => { IdentityResourceIdentifier = n.GetStringValue(); } },
                 { "identityVersion", n => { IdentityVersion = n.GetStringValue(); } },
                 { "isBundle", n => { IsBundle = n.GetBoolValue(); } },
-                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<WindowsMinimumOperatingSystem>(WindowsMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
+                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<Microsoft.Graph.Models.WindowsMinimumOperatingSystem>(Microsoft.Graph.Models.WindowsMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -169,15 +169,15 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<WindowsArchitecture>("applicableArchitectures", ApplicableArchitectures);
-            writer.WriteEnumValue<WindowsDeviceType>("applicableDeviceTypes", ApplicableDeviceTypes);
-            writer.WriteCollectionOfObjectValues<MobileContainedApp>("committedContainedApps", CommittedContainedApps);
+            writer.WriteEnumValue<Microsoft.Graph.Models.WindowsArchitecture>("applicableArchitectures", ApplicableArchitectures);
+            writer.WriteEnumValue<Microsoft.Graph.Models.WindowsDeviceType>("applicableDeviceTypes", ApplicableDeviceTypes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MobileContainedApp>("committedContainedApps", CommittedContainedApps);
             writer.WriteStringValue("identityName", IdentityName);
             writer.WriteStringValue("identityPublisherHash", IdentityPublisherHash);
             writer.WriteStringValue("identityResourceIdentifier", IdentityResourceIdentifier);
             writer.WriteStringValue("identityVersion", IdentityVersion);
             writer.WriteBoolValue("isBundle", IsBundle);
-            writer.WriteObjectValue<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem", MinimumSupportedOperatingSystem);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem", MinimumSupportedOperatingSystem);
         }
     }
 }

@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Identity of the user, device, and application which created the item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy
+        public Microsoft.Graph.Models.IdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy
+        public Microsoft.Graph.Models.IdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -44,16 +44,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Indicates that the remote item is a file. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FileObject? File
+        public Microsoft.Graph.Models.FileObject? File
         {
-            get { return BackingStore?.Get<FileObject?>("file"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.FileObject?>("file"); }
             set { BackingStore?.Set("file", value); }
         }
 #nullable restore
 #else
-        public FileObject File
+        public Microsoft.Graph.Models.FileObject File
         {
-            get { return BackingStore?.Get<FileObject>("file"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.FileObject>("file"); }
             set { BackingStore?.Set("file", value); }
         }
 #endif
@@ -124,16 +124,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Identity of the user, device, and application which last modified the item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -194,16 +194,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Properties of the parent of the remote item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemReference? ParentReference
+        public Microsoft.Graph.Models.ItemReference? ParentReference
         {
-            get { return BackingStore?.Get<ItemReference?>("parentReference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemReference?>("parentReference"); }
             set { BackingStore?.Set("parentReference", value); }
         }
 #nullable restore
 #else
-        public ItemReference ParentReference
+        public Microsoft.Graph.Models.ItemReference ParentReference
         {
-            get { return BackingStore?.Get<ItemReference>("parentReference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemReference>("parentReference"); }
             set { BackingStore?.Set("parentReference", value); }
         }
 #endif
@@ -310,7 +310,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RemoteItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.RemoteItem"/> and sets the default values.
         /// </summary>
         public RemoteItem()
         {
@@ -320,12 +320,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RemoteItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RemoteItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RemoteItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.RemoteItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RemoteItem();
+            return new Microsoft.Graph.Models.RemoteItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -335,19 +335,19 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "file", n => { File = n.GetObjectValue<FileObject>(FileObject.CreateFromDiscriminatorValue); } },
+                { "file", n => { File = n.GetObjectValue<Microsoft.Graph.Models.FileObject>(Microsoft.Graph.Models.FileObject.CreateFromDiscriminatorValue); } },
                 { "fileSystemInfo", n => { FileSystemInfo = n.GetObjectValue<Microsoft.Graph.Models.FileSystemInfo>(Microsoft.Graph.Models.FileSystemInfo.CreateFromDiscriminatorValue); } },
                 { "folder", n => { Folder = n.GetObjectValue<Microsoft.Graph.Models.Folder>(Microsoft.Graph.Models.Folder.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "image", n => { Image = n.GetObjectValue<Microsoft.Graph.Models.Image>(Microsoft.Graph.Models.Image.CreateFromDiscriminatorValue); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "package", n => { Package = n.GetObjectValue<Microsoft.Graph.Models.Package>(Microsoft.Graph.Models.Package.CreateFromDiscriminatorValue); } },
-                { "parentReference", n => { ParentReference = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
+                { "parentReference", n => { ParentReference = n.GetObjectValue<Microsoft.Graph.Models.ItemReference>(Microsoft.Graph.Models.ItemReference.CreateFromDiscriminatorValue); } },
                 { "shared", n => { Shared = n.GetObjectValue<Microsoft.Graph.Models.Shared>(Microsoft.Graph.Models.Shared.CreateFromDiscriminatorValue); } },
                 { "sharepointIds", n => { SharepointIds = n.GetObjectValue<Microsoft.Graph.Models.SharepointIds>(Microsoft.Graph.Models.SharepointIds.CreateFromDiscriminatorValue); } },
                 { "size", n => { Size = n.GetLongValue(); } },
@@ -364,19 +364,19 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<FileObject>("file", File);
+            writer.WriteObjectValue<Microsoft.Graph.Models.FileObject>("file", File);
             writer.WriteObjectValue<Microsoft.Graph.Models.FileSystemInfo>("fileSystemInfo", FileSystemInfo);
             writer.WriteObjectValue<Microsoft.Graph.Models.Folder>("folder", Folder);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<Microsoft.Graph.Models.Image>("image", Image);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<Microsoft.Graph.Models.Package>("package", Package);
-            writer.WriteObjectValue<ItemReference>("parentReference", ParentReference);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemReference>("parentReference", ParentReference);
             writer.WriteObjectValue<Microsoft.Graph.Models.Shared>("shared", Shared);
             writer.WriteObjectValue<Microsoft.Graph.Models.SharepointIds>("sharepointIds", SharepointIds);
             writer.WriteLongValue("size", Size);

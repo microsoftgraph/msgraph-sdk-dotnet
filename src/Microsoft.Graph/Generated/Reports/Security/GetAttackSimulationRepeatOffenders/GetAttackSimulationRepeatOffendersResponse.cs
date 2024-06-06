@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders
 {
     [Obsolete("This class is obsolete. Use GetAttackSimulationRepeatOffendersGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetAttackSimulationRepeatOffendersResponse : GetAttackSimulationRepeatOffendersGetResponse, IParsable
+    public class GetAttackSimulationRepeatOffendersResponse : Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetAttackSimulationRepeatOffendersResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetAttackSimulationRepeatOffendersResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetAttackSimulationRepeatOffendersResponse();
+            return new Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersResponse();
         }
     }
 }

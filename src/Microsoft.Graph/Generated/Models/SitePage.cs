@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SitePage : BaseSitePage, IParsable
+    public class SitePage : Microsoft.Graph.Models.BaseSitePage, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical sections.</summary>
@@ -27,24 +27,24 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Indicates the promotion kind of the sitePage. The possible values are: microsoftReserved, page, newsPost, unknownFutureValue.</summary>
-        public PagePromotionType? PromotionKind
+        public Microsoft.Graph.Models.PagePromotionType? PromotionKind
         {
-            get { return BackingStore?.Get<PagePromotionType?>("promotionKind"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PagePromotionType?>("promotionKind"); }
             set { BackingStore?.Set("promotionKind", value); }
         }
         /// <summary>Reactions information for the page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ReactionsFacet? Reactions
+        public Microsoft.Graph.Models.ReactionsFacet? Reactions
         {
-            get { return BackingStore?.Get<ReactionsFacet?>("reactions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ReactionsFacet?>("reactions"); }
             set { BackingStore?.Set("reactions", value); }
         }
 #nullable restore
 #else
-        public ReactionsFacet Reactions
+        public Microsoft.Graph.Models.ReactionsFacet Reactions
         {
-            get { return BackingStore?.Get<ReactionsFacet>("reactions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ReactionsFacet>("reactions"); }
             set { BackingStore?.Set("reactions", value); }
         }
 #endif
@@ -95,28 +95,28 @@ namespace Microsoft.Graph.Models
         /// <summary>Collection of webparts on the SharePoint page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WebPart>? WebParts
+        public List<Microsoft.Graph.Models.WebPart>? WebParts
         {
-            get { return BackingStore?.Get<List<WebPart>?>("webParts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WebPart>?>("webParts"); }
             set { BackingStore?.Set("webParts", value); }
         }
 #nullable restore
 #else
-        public List<WebPart> WebParts
+        public List<Microsoft.Graph.Models.WebPart> WebParts
         {
-            get { return BackingStore?.Get<List<WebPart>>("webParts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WebPart>>("webParts"); }
             set { BackingStore?.Set("webParts", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SitePage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SitePage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SitePage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SitePage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SitePage();
+            return new Microsoft.Graph.Models.SitePage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -127,13 +127,13 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "canvasLayout", n => { CanvasLayout = n.GetObjectValue<Microsoft.Graph.Models.CanvasLayout>(Microsoft.Graph.Models.CanvasLayout.CreateFromDiscriminatorValue); } },
-                { "promotionKind", n => { PromotionKind = n.GetEnumValue<PagePromotionType>(); } },
-                { "reactions", n => { Reactions = n.GetObjectValue<ReactionsFacet>(ReactionsFacet.CreateFromDiscriminatorValue); } },
+                { "promotionKind", n => { PromotionKind = n.GetEnumValue<Microsoft.Graph.Models.PagePromotionType>(); } },
+                { "reactions", n => { Reactions = n.GetObjectValue<Microsoft.Graph.Models.ReactionsFacet>(Microsoft.Graph.Models.ReactionsFacet.CreateFromDiscriminatorValue); } },
                 { "showComments", n => { ShowComments = n.GetBoolValue(); } },
                 { "showRecommendedPages", n => { ShowRecommendedPages = n.GetBoolValue(); } },
                 { "thumbnailWebUrl", n => { ThumbnailWebUrl = n.GetStringValue(); } },
                 { "titleArea", n => { TitleArea = n.GetObjectValue<Microsoft.Graph.Models.TitleArea>(Microsoft.Graph.Models.TitleArea.CreateFromDiscriminatorValue); } },
-                { "webParts", n => { WebParts = n.GetCollectionOfObjectValues<WebPart>(WebPart.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "webParts", n => { WebParts = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WebPart>(Microsoft.Graph.Models.WebPart.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -145,13 +145,13 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Models.CanvasLayout>("canvasLayout", CanvasLayout);
-            writer.WriteEnumValue<PagePromotionType>("promotionKind", PromotionKind);
-            writer.WriteObjectValue<ReactionsFacet>("reactions", Reactions);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PagePromotionType>("promotionKind", PromotionKind);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ReactionsFacet>("reactions", Reactions);
             writer.WriteBoolValue("showComments", ShowComments);
             writer.WriteBoolValue("showRecommendedPages", ShowRecommendedPages);
             writer.WriteStringValue("thumbnailWebUrl", ThumbnailWebUrl);
             writer.WriteObjectValue<Microsoft.Graph.Models.TitleArea>("titleArea", TitleArea);
-            writer.WriteCollectionOfObjectValues<WebPart>("webParts", WebParts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WebPart>("webParts", WebParts);
         }
     }
 }

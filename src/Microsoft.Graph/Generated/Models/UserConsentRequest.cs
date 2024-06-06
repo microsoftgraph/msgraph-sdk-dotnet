@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UserConsentRequest : Request, IParsable
+    public class UserConsentRequest : Microsoft.Graph.Models.Request, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Approval decisions associated with a request.</summary>
@@ -45,12 +45,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserConsentRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserConsentRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserConsentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserConsentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserConsentRequest();
+            return new Microsoft.Graph.Models.UserConsentRequest();
         }
         /// <summary>
         /// The deserialization information for the current model

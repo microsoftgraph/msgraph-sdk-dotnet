@@ -44,21 +44,21 @@ namespace Microsoft.Graph.Models
         /// <summary>A collection of properties defining the recommended view for the folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FolderView? View
+        public Microsoft.Graph.Models.FolderView? View
         {
-            get { return BackingStore?.Get<FolderView?>("view"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.FolderView?>("view"); }
             set { BackingStore?.Set("view", value); }
         }
 #nullable restore
 #else
-        public FolderView View
+        public Microsoft.Graph.Models.FolderView View
         {
-            get { return BackingStore?.Get<FolderView>("view"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.FolderView>("view"); }
             set { BackingStore?.Set("view", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Folder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Folder"/> and sets the default values.
         /// </summary>
         public Folder()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Folder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Folder"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Folder CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Folder CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Folder();
+            return new Microsoft.Graph.Models.Folder();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Models
             {
                 { "childCount", n => { ChildCount = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "view", n => { View = n.GetObjectValue<FolderView>(FolderView.CreateFromDiscriminatorValue); } },
+                { "view", n => { View = n.GetObjectValue<Microsoft.Graph.Models.FolderView>(Microsoft.Graph.Models.FolderView.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("childCount", ChildCount);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<FolderView>("view", View);
+            writer.WriteObjectValue<Microsoft.Graph.Models.FolderView>("view", View);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,18 +7,18 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class DeletedChat : Entity, IParsable
+    public class DeletedChat : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeletedChat"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeletedChat"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeletedChat CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeletedChat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeletedChat();
+            return new Microsoft.Graph.Models.DeletedChat();
         }
         /// <summary>
         /// The deserialization information for the current model

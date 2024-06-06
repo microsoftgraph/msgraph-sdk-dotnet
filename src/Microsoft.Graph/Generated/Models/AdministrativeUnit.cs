@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AdministrativeUnit : DirectoryObject, IParsable
+    public class AdministrativeUnit : Microsoft.Graph.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.</summary>
@@ -45,48 +45,48 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of open extensions defined for this administrative unit. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions
+        public List<Microsoft.Graph.Models.Extension>? Extensions
         {
-            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions
+        public List<Microsoft.Graph.Models.Extension> Extensions
         {
-            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
         /// <summary>Users and groups that are members of this administrative unit. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? Members
+        public List<Microsoft.Graph.Models.DirectoryObject>? Members
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("members"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> Members
+        public List<Microsoft.Graph.Models.DirectoryObject> Members
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("members"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #endif
         /// <summary>Scoped-role members of this administrative unit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ScopedRoleMembership>? ScopedRoleMembers
+        public List<Microsoft.Graph.Models.ScopedRoleMembership>? ScopedRoleMembers
         {
-            get { return BackingStore?.Get<List<ScopedRoleMembership>?>("scopedRoleMembers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ScopedRoleMembership>?>("scopedRoleMembers"); }
             set { BackingStore?.Set("scopedRoleMembers", value); }
         }
 #nullable restore
 #else
-        public List<ScopedRoleMembership> ScopedRoleMembers
+        public List<Microsoft.Graph.Models.ScopedRoleMembership> ScopedRoleMembers
         {
-            get { return BackingStore?.Get<List<ScopedRoleMembership>>("scopedRoleMembers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ScopedRoleMembership>>("scopedRoleMembers"); }
             set { BackingStore?.Set("scopedRoleMembers", value); }
         }
 #endif
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AdministrativeUnit"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AdministrativeUnit"/> and sets the default values.
         /// </summary>
         public AdministrativeUnit() : base()
         {
@@ -116,12 +116,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AdministrativeUnit"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AdministrativeUnit"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AdministrativeUnit CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AdministrativeUnit CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AdministrativeUnit();
+            return new Microsoft.Graph.Models.AdministrativeUnit();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -133,9 +133,9 @@ namespace Microsoft.Graph.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "members", n => { Members = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "scopedRoleMembers", n => { ScopedRoleMembers = n.GetCollectionOfObjectValues<ScopedRoleMembership>(ScopedRoleMembership.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Extension>(Microsoft.Graph.Models.Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "members", n => { Members = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scopedRoleMembers", n => { ScopedRoleMembers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ScopedRoleMembership>(Microsoft.Graph.Models.ScopedRoleMembership.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "visibility", n => { Visibility = n.GetStringValue(); } },
             };
         }
@@ -149,9 +149,9 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("members", Members);
-            writer.WriteCollectionOfObjectValues<ScopedRoleMembership>("scopedRoleMembers", ScopedRoleMembers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Extension>("extensions", Extensions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("members", Members);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ScopedRoleMembership>("scopedRoleMembers", ScopedRoleMembers);
             writer.WriteStringValue("visibility", Visibility);
         }
     }

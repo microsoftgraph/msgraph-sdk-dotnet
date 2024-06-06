@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource : AccessReviewInstanceDecisionItemResource, IParsable
+    public class AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource : Microsoft.Graph.Models.AccessReviewInstanceDecisionItemResource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Display name of the access package to which access has been granted.</summary>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource"/> and sets the default values.
         /// </summary>
         public AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource();
+            return new Microsoft.Graph.Models.AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource();
         }
         /// <summary>
         /// The deserialization information for the current model

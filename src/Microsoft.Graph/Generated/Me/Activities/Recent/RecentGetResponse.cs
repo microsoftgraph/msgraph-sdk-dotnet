@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Me.Activities.Recent
 {
     #pragma warning disable CS1591
-    public class RecentGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class RecentGetResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserActivity>? Value
+        public List<Microsoft.Graph.Models.UserActivity>? Value
         {
-            get { return BackingStore?.Get<List<UserActivity>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserActivity>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<UserActivity> Value
+        public List<Microsoft.Graph.Models.UserActivity> Value
         {
-            get { return BackingStore?.Get<List<UserActivity>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserActivity>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RecentGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Activities.Recent.RecentGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RecentGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Me.Activities.Recent.RecentGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RecentGetResponse();
+            return new Microsoft.Graph.Me.Activities.Recent.RecentGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Me.Activities.Recent
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<UserActivity>(UserActivity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UserActivity>(Microsoft.Graph.Models.UserActivity.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Me.Activities.Recent
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<UserActivity>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UserActivity>("value", Value);
         }
     }
 }

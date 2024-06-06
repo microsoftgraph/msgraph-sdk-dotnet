@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The innerError property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookOperationError? InnerError
+        public Microsoft.Graph.Models.WorkbookOperationError? InnerError
         {
-            get { return BackingStore?.Get<WorkbookOperationError?>("innerError"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookOperationError?>("innerError"); }
             set { BackingStore?.Set("innerError", value); }
         }
 #nullable restore
 #else
-        public WorkbookOperationError InnerError
+        public Microsoft.Graph.Models.WorkbookOperationError InnerError
         {
-            get { return BackingStore?.Get<WorkbookOperationError>("innerError"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookOperationError>("innerError"); }
             set { BackingStore?.Set("innerError", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WorkbookOperationError"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WorkbookOperationError"/> and sets the default values.
         /// </summary>
         public WorkbookOperationError()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookOperationError"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookOperationError"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WorkbookOperationError CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.WorkbookOperationError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookOperationError();
+            return new Microsoft.Graph.Models.WorkbookOperationError();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetStringValue(); } },
-                { "innerError", n => { InnerError = n.GetObjectValue<WorkbookOperationError>(WorkbookOperationError.CreateFromDiscriminatorValue); } },
+                { "innerError", n => { InnerError = n.GetObjectValue<Microsoft.Graph.Models.WorkbookOperationError>(Microsoft.Graph.Models.WorkbookOperationError.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
-            writer.WriteObjectValue<WorkbookOperationError>("innerError", InnerError);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookOperationError>("innerError", InnerError);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

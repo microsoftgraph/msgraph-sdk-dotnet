@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OpenShiftChangeRequest : ScheduleChangeRequest, IParsable
+    public class OpenShiftChangeRequest : Microsoft.Graph.Models.ScheduleChangeRequest, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>ID for the open shift.</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OpenShiftChangeRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OpenShiftChangeRequest"/> and sets the default values.
         /// </summary>
         public OpenShiftChangeRequest() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OpenShiftChangeRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OpenShiftChangeRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OpenShiftChangeRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OpenShiftChangeRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OpenShiftChangeRequest();
+            return new Microsoft.Graph.Models.OpenShiftChangeRequest();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Models.Partners.Billing
         /// <summary>The billed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BilledReconciliation? Billed
+        public Microsoft.Graph.Models.Partners.Billing.BilledReconciliation? Billed
         {
-            get { return BackingStore?.Get<BilledReconciliation?>("billed"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Partners.Billing.BilledReconciliation?>("billed"); }
             set { BackingStore?.Set("billed", value); }
         }
 #nullable restore
 #else
-        public BilledReconciliation Billed
+        public Microsoft.Graph.Models.Partners.Billing.BilledReconciliation Billed
         {
-            get { return BackingStore?.Get<BilledReconciliation>("billed"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Partners.Billing.BilledReconciliation>("billed"); }
             set { BackingStore?.Set("billed", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BillingReconciliation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Partners.Billing.BillingReconciliation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BillingReconciliation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Partners.Billing.BillingReconciliation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BillingReconciliation();
+            return new Microsoft.Graph.Models.Partners.Billing.BillingReconciliation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.Partners.Billing
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "billed", n => { Billed = n.GetObjectValue<BilledReconciliation>(BilledReconciliation.CreateFromDiscriminatorValue); } },
+                { "billed", n => { Billed = n.GetObjectValue<Microsoft.Graph.Models.Partners.Billing.BilledReconciliation>(Microsoft.Graph.Models.Partners.Billing.BilledReconciliation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models.Partners.Billing
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<BilledReconciliation>("billed", Billed);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Partners.Billing.BilledReconciliation>("billed", Billed);
         }
     }
 }

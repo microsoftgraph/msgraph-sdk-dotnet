@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Services
     public class ServicesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.</summary>
         /// <param name="position">The unique identifier of bookingService</param>
-        /// <returns>A <see cref="BookingServiceItemRequestBuilder"/></returns>
-        public BookingServiceItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.Item.BookingServiceItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.Item.BookingServiceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("bookingService%2Did", position);
-                return new BookingServiceItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.Item.BookingServiceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ServicesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.ServicesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Services
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ServicesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.ServicesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Services
         /// Get a list of bookingService objects in the specified bookingBusiness.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="BookingServiceCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BookingServiceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BookingServiceCollectionResponse?> GetAsync(Action<RequestConfiguration<ServicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.BookingServiceCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.ServicesRequestBuilder.ServicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BookingServiceCollectionResponse> GetAsync(Action<RequestConfiguration<ServicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.BookingServiceCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.ServicesRequestBuilder.ServicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<BookingServiceCollectionResponse>(requestInfo, BookingServiceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.BookingServiceCollectionResponse>(requestInfo, Microsoft.Graph.Models.BookingServiceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new bookingService for the specified bookingBusiness.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="BookingService"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BookingService"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BookingService?> PostAsync(BookingService body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.BookingService?> PostAsync(Microsoft.Graph.Models.BookingService body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BookingService> PostAsync(BookingService body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.BookingService> PostAsync(Microsoft.Graph.Models.BookingService body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<BookingService>(requestInfo, BookingService.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.BookingService>(requestInfo, Microsoft.Graph.Models.BookingService.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of bookingService objects in the specified bookingBusiness.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Services
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ServicesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.ServicesRequestBuilder.ServicesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ServicesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.ServicesRequestBuilder.ServicesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Services
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(BookingService body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.BookingService body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(BookingService body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.BookingService body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Services
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ServicesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.ServicesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ServicesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.ServicesRequestBuilder WithUrl(string rawUrl)
         {
-            return new ServicesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.ServicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of bookingService objects in the specified bookingBusiness.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Services
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ServicesRequestBuilderGetRequestConfiguration : RequestConfiguration<ServicesRequestBuilderGetQueryParameters>
+        public class ServicesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.ServicesRequestBuilder.ServicesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

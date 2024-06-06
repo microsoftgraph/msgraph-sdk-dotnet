@@ -28,29 +28,29 @@ namespace Microsoft.Graph.Models
         /// <summary>A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DayOfWeekObject?>? DaysOfWeek
+        public List<Microsoft.Graph.Models.DayOfWeekObject?>? DaysOfWeek
         {
-            get { return BackingStore?.Get<List<DayOfWeekObject?>?>("daysOfWeek"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DayOfWeekObject?>?>("daysOfWeek"); }
             set { BackingStore?.Set("daysOfWeek", value); }
         }
 #nullable restore
 #else
-        public List<DayOfWeekObject?> DaysOfWeek
+        public List<Microsoft.Graph.Models.DayOfWeekObject?> DaysOfWeek
         {
-            get { return BackingStore?.Get<List<DayOfWeekObject?>>("daysOfWeek"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DayOfWeekObject?>>("daysOfWeek"); }
             set { BackingStore?.Set("daysOfWeek", value); }
         }
 #endif
         /// <summary>The first day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. Default is sunday. Required if type is weekly.</summary>
-        public DayOfWeekObject? FirstDayOfWeek
+        public Microsoft.Graph.Models.DayOfWeekObject? FirstDayOfWeek
         {
-            get { return BackingStore?.Get<DayOfWeekObject?>("firstDayOfWeek"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DayOfWeekObject?>("firstDayOfWeek"); }
             set { BackingStore?.Set("firstDayOfWeek", value); }
         }
         /// <summary>Specifies on which instance of the allowed days specified in daysOfWeek the event occurs, counted from the first instance in the month. The possible values are: first, second, third, fourth, last. Default is first. Optional and used if type is relativeMonthly or relativeYearly.</summary>
-        public WeekIndex? Index
+        public Microsoft.Graph.Models.WeekIndex? Index
         {
-            get { return BackingStore?.Get<WeekIndex?>("index"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WeekIndex?>("index"); }
             set { BackingStore?.Set("index", value); }
         }
         /// <summary>The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.</summary>
@@ -82,13 +82,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.</summary>
-        public RecurrencePatternType? Type
+        public Microsoft.Graph.Models.RecurrencePatternType? Type
         {
-            get { return BackingStore?.Get<RecurrencePatternType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RecurrencePatternType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RecurrencePattern"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.RecurrencePattern"/> and sets the default values.
         /// </summary>
         public RecurrencePattern()
         {
@@ -98,12 +98,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RecurrencePattern"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RecurrencePattern"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RecurrencePattern CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.RecurrencePattern CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RecurrencePattern();
+            return new Microsoft.Graph.Models.RecurrencePattern();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -114,13 +114,13 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dayOfMonth", n => { DayOfMonth = n.GetIntValue(); } },
-                { "daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfEnumValues<DayOfWeekObject>()?.ToList(); } },
-                { "firstDayOfWeek", n => { FirstDayOfWeek = n.GetEnumValue<DayOfWeekObject>(); } },
-                { "index", n => { Index = n.GetEnumValue<WeekIndex>(); } },
+                { "daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.DayOfWeekObject>()?.ToList(); } },
+                { "firstDayOfWeek", n => { FirstDayOfWeek = n.GetEnumValue<Microsoft.Graph.Models.DayOfWeekObject>(); } },
+                { "index", n => { Index = n.GetEnumValue<Microsoft.Graph.Models.WeekIndex>(); } },
                 { "interval", n => { Interval = n.GetIntValue(); } },
                 { "month", n => { Month = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<RecurrencePatternType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Models.RecurrencePatternType>(); } },
             };
         }
         /// <summary>
@@ -131,13 +131,13 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("dayOfMonth", DayOfMonth);
-            writer.WriteCollectionOfEnumValues<DayOfWeekObject>("daysOfWeek", DaysOfWeek);
-            writer.WriteEnumValue<DayOfWeekObject>("firstDayOfWeek", FirstDayOfWeek);
-            writer.WriteEnumValue<WeekIndex>("index", Index);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.DayOfWeekObject>("daysOfWeek", DaysOfWeek);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DayOfWeekObject>("firstDayOfWeek", FirstDayOfWeek);
+            writer.WriteEnumValue<Microsoft.Graph.Models.WeekIndex>("index", Index);
             writer.WriteIntValue("interval", Interval);
             writer.WriteIntValue("month", Month);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<RecurrencePatternType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RecurrencePatternType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

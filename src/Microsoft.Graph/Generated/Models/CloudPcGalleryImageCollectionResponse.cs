@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CloudPcGalleryImageCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class CloudPcGalleryImageCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcGalleryImage>? Value
+        public List<Microsoft.Graph.Models.CloudPcGalleryImage>? Value
         {
-            get { return BackingStore?.Get<List<CloudPcGalleryImage>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CloudPcGalleryImage>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcGalleryImage> Value
+        public List<Microsoft.Graph.Models.CloudPcGalleryImage> Value
         {
-            get { return BackingStore?.Get<List<CloudPcGalleryImage>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CloudPcGalleryImage>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcGalleryImageCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudPcGalleryImageCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPcGalleryImageCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CloudPcGalleryImageCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcGalleryImageCollectionResponse();
+            return new Microsoft.Graph.Models.CloudPcGalleryImageCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<CloudPcGalleryImage>(CloudPcGalleryImage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CloudPcGalleryImage>(Microsoft.Graph.Models.CloudPcGalleryImage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<CloudPcGalleryImage>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CloudPcGalleryImage>("value", Value);
         }
     }
 }

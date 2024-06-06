@@ -22,23 +22,23 @@ namespace Microsoft.Graph.Models
         /// <summary>The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes isn&apos;t null or an empty String.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessExternalTenants? ExternalTenants
+        public Microsoft.Graph.Models.ConditionalAccessExternalTenants? ExternalTenants
         {
-            get { return BackingStore?.Get<ConditionalAccessExternalTenants?>("externalTenants"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessExternalTenants?>("externalTenants"); }
             set { BackingStore?.Set("externalTenants", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessExternalTenants ExternalTenants
+        public Microsoft.Graph.Models.ConditionalAccessExternalTenants ExternalTenants
         {
-            get { return BackingStore?.Get<ConditionalAccessExternalTenants>("externalTenants"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessExternalTenants>("externalTenants"); }
             set { BackingStore?.Set("externalTenants", value); }
         }
 #endif
         /// <summary>The guestOrExternalUserTypes property</summary>
-        public ConditionalAccessGuestOrExternalUserTypes? GuestOrExternalUserTypes
+        public Microsoft.Graph.Models.ConditionalAccessGuestOrExternalUserTypes? GuestOrExternalUserTypes
         {
-            get { return BackingStore?.Get<ConditionalAccessGuestOrExternalUserTypes?>("guestOrExternalUserTypes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessGuestOrExternalUserTypes?>("guestOrExternalUserTypes"); }
             set { BackingStore?.Set("guestOrExternalUserTypes", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ConditionalAccessGuestsOrExternalUsers"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ConditionalAccessGuestsOrExternalUsers"/> and sets the default values.
         /// </summary>
         public ConditionalAccessGuestsOrExternalUsers()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessGuestsOrExternalUsers"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ConditionalAccessGuestsOrExternalUsers"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConditionalAccessGuestsOrExternalUsers CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ConditionalAccessGuestsOrExternalUsers CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessGuestsOrExternalUsers();
+            return new Microsoft.Graph.Models.ConditionalAccessGuestsOrExternalUsers();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,8 +83,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "externalTenants", n => { ExternalTenants = n.GetObjectValue<ConditionalAccessExternalTenants>(ConditionalAccessExternalTenants.CreateFromDiscriminatorValue); } },
-                { "guestOrExternalUserTypes", n => { GuestOrExternalUserTypes = n.GetEnumValue<ConditionalAccessGuestOrExternalUserTypes>(); } },
+                { "externalTenants", n => { ExternalTenants = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessExternalTenants>(Microsoft.Graph.Models.ConditionalAccessExternalTenants.CreateFromDiscriminatorValue); } },
+                { "guestOrExternalUserTypes", n => { GuestOrExternalUserTypes = n.GetEnumValue<Microsoft.Graph.Models.ConditionalAccessGuestOrExternalUserTypes>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -95,8 +95,8 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ConditionalAccessExternalTenants>("externalTenants", ExternalTenants);
-            writer.WriteEnumValue<ConditionalAccessGuestOrExternalUserTypes>("guestOrExternalUserTypes", GuestOrExternalUserTypes);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessExternalTenants>("externalTenants", ExternalTenants);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ConditionalAccessGuestOrExternalUserTypes>("guestOrExternalUserTypes", GuestOrExternalUserTypes);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

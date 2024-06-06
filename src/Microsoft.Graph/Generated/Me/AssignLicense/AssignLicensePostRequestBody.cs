@@ -21,16 +21,16 @@ namespace Microsoft.Graph.Me.AssignLicense
         /// <summary>The addLicenses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignedLicense>? AddLicenses
+        public List<Microsoft.Graph.Models.AssignedLicense>? AddLicenses
         {
-            get { return BackingStore?.Get<List<AssignedLicense>?>("addLicenses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AssignedLicense>?>("addLicenses"); }
             set { BackingStore?.Set("addLicenses", value); }
         }
 #nullable restore
 #else
-        public List<AssignedLicense> AddLicenses
+        public List<Microsoft.Graph.Models.AssignedLicense> AddLicenses
         {
-            get { return BackingStore?.Get<List<AssignedLicense>>("addLicenses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AssignedLicense>>("addLicenses"); }
             set { BackingStore?.Set("addLicenses", value); }
         }
 #endif
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Me.AssignLicense
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AssignLicensePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.AssignLicense.AssignLicensePostRequestBody"/> and sets the default values.
         /// </summary>
         public AssignLicensePostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Me.AssignLicense
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignLicensePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.AssignLicense.AssignLicensePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignLicensePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Me.AssignLicense.AssignLicensePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignLicensePostRequestBody();
+            return new Microsoft.Graph.Me.AssignLicense.AssignLicensePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Me.AssignLicense
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "addLicenses", n => { AddLicenses = n.GetCollectionOfObjectValues<AssignedLicense>(AssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "addLicenses", n => { AddLicenses = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AssignedLicense>(Microsoft.Graph.Models.AssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "removeLicenses", n => { RemoveLicenses = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
             };
         }
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Me.AssignLicense
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<AssignedLicense>("addLicenses", AddLicenses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AssignedLicense>("addLicenses", AddLicenses);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("removeLicenses", RemoveLicenses);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStand
 {
     [Obsolete("This class is obsolete. Use SupportedTimeZonesWithTimeZoneStandardGetResponse instead.")]
     #pragma warning disable CS1591
-    public class SupportedTimeZonesWithTimeZoneStandardResponse : SupportedTimeZonesWithTimeZoneStandardGetResponse, IParsable
+    public class SupportedTimeZonesWithTimeZoneStandardResponse : Microsoft.Graph.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStandard.SupportedTimeZonesWithTimeZoneStandardGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SupportedTimeZonesWithTimeZoneStandardResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStandard.SupportedTimeZonesWithTimeZoneStandardResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SupportedTimeZonesWithTimeZoneStandardResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStandard.SupportedTimeZonesWithTimeZoneStandardResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SupportedTimeZonesWithTimeZoneStandardResponse();
+            return new Microsoft.Graph.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStandard.SupportedTimeZonesWithTimeZoneStandardResponse();
         }
     }
 }

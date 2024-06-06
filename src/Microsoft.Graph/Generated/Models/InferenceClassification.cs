@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class InferenceClassification : Entity, IParsable
+    public class InferenceClassification : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<InferenceClassificationOverride>? Overrides
+        public List<Microsoft.Graph.Models.InferenceClassificationOverride>? Overrides
         {
-            get { return BackingStore?.Get<List<InferenceClassificationOverride>?>("overrides"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.InferenceClassificationOverride>?>("overrides"); }
             set { BackingStore?.Set("overrides", value); }
         }
 #nullable restore
 #else
-        public List<InferenceClassificationOverride> Overrides
+        public List<Microsoft.Graph.Models.InferenceClassificationOverride> Overrides
         {
-            get { return BackingStore?.Get<List<InferenceClassificationOverride>>("overrides"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.InferenceClassificationOverride>>("overrides"); }
             set { BackingStore?.Set("overrides", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InferenceClassification"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.InferenceClassification"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new InferenceClassification CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.InferenceClassification CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InferenceClassification();
+            return new Microsoft.Graph.Models.InferenceClassification();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "overrides", n => { Overrides = n.GetCollectionOfObjectValues<InferenceClassificationOverride>(InferenceClassificationOverride.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "overrides", n => { Overrides = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.InferenceClassificationOverride>(Microsoft.Graph.Models.InferenceClassificationOverride.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<InferenceClassificationOverride>("overrides", Overrides);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.InferenceClassificationOverride>("overrides", Overrides);
         }
     }
 }

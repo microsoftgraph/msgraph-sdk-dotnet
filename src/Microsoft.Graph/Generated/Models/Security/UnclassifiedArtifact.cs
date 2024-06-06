@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class UnclassifiedArtifact : Artifact, IParsable
+    public class UnclassifiedArtifact : Microsoft.Graph.Models.Security.Artifact, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The kind for this unclassifiedArtifact resource, describing what this value means.</summary>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UnclassifiedArtifact"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.UnclassifiedArtifact"/> and sets the default values.
         /// </summary>
         public UnclassifiedArtifact() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnclassifiedArtifact"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.UnclassifiedArtifact"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnclassifiedArtifact CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.UnclassifiedArtifact CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnclassifiedArtifact();
+            return new Microsoft.Graph.Models.Security.UnclassifiedArtifact();
         }
         /// <summary>
         /// The deserialization information for the current model

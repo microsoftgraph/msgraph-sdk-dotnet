@@ -37,13 +37,13 @@ namespace Microsoft.Graph.Communications.Calls.Item.Reject
         }
 #endif
         /// <summary>The reason property</summary>
-        public RejectReason? Reason
+        public Microsoft.Graph.Models.RejectReason? Reason
         {
-            get { return BackingStore?.Get<RejectReason?>("reason"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RejectReason?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RejectPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Communications.Calls.Item.Reject.RejectPostRequestBody"/> and sets the default values.
         /// </summary>
         public RejectPostRequestBody()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Communications.Calls.Item.Reject
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RejectPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Communications.Calls.Item.Reject.RejectPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RejectPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Communications.Calls.Item.Reject.RejectPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RejectPostRequestBody();
+            return new Microsoft.Graph.Communications.Calls.Item.Reject.RejectPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Reject
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "callbackUri", n => { CallbackUri = n.GetStringValue(); } },
-                { "reason", n => { Reason = n.GetEnumValue<RejectReason>(); } },
+                { "reason", n => { Reason = n.GetEnumValue<Microsoft.Graph.Models.RejectReason>(); } },
             };
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Reject
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("callbackUri", CallbackUri);
-            writer.WriteEnumValue<RejectReason>("reason", Reason);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RejectReason>("reason", Reason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

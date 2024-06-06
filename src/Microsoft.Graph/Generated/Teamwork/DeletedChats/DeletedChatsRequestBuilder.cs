@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Teamwork.DeletedChats
     public class DeletedChatsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Teamwork.DeletedChats.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Teamwork.DeletedChats.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deletedChats property of the microsoft.graph.teamwork entity.</summary>
         /// <param name="position">The unique identifier of deletedChat</param>
-        /// <returns>A <see cref="DeletedChatItemRequestBuilder"/></returns>
-        public DeletedChatItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Teamwork.DeletedChats.Item.DeletedChatItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Teamwork.DeletedChats.Item.DeletedChatItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("deletedChat%2Did", position);
-                return new DeletedChatItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Teamwork.DeletedChats.Item.DeletedChatItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeletedChatsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teamwork.DeletedChats.DeletedChatsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Teamwork.DeletedChats
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeletedChatsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teamwork.DeletedChats.DeletedChatsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Teamwork.DeletedChats
         /// <summary>
         /// Read the properties and relationships of a deletedChat object.
         /// </summary>
-        /// <returns>A <see cref="DeletedChatCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeletedChatCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeletedChatCollectionResponse?> GetAsync(Action<RequestConfiguration<DeletedChatsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeletedChatCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teamwork.DeletedChats.DeletedChatsRequestBuilder.DeletedChatsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeletedChatCollectionResponse> GetAsync(Action<RequestConfiguration<DeletedChatsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeletedChatCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teamwork.DeletedChats.DeletedChatsRequestBuilder.DeletedChatsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeletedChatCollectionResponse>(requestInfo, DeletedChatCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DeletedChatCollectionResponse>(requestInfo, Microsoft.Graph.Models.DeletedChatCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to deletedChats for teamwork
         /// </summary>
-        /// <returns>A <see cref="DeletedChat"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeletedChat"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeletedChat?> PostAsync(DeletedChat body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeletedChat?> PostAsync(Microsoft.Graph.Models.DeletedChat body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeletedChat> PostAsync(DeletedChat body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeletedChat> PostAsync(Microsoft.Graph.Models.DeletedChat body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeletedChat>(requestInfo, DeletedChat.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DeletedChat>(requestInfo, Microsoft.Graph.Models.DeletedChat.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of a deletedChat object.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Teamwork.DeletedChats
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeletedChatsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teamwork.DeletedChats.DeletedChatsRequestBuilder.DeletedChatsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeletedChatsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teamwork.DeletedChats.DeletedChatsRequestBuilder.DeletedChatsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Teamwork.DeletedChats
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DeletedChat body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.DeletedChat body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DeletedChat body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.DeletedChat body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Teamwork.DeletedChats
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DeletedChatsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Teamwork.DeletedChats.DeletedChatsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeletedChatsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Teamwork.DeletedChats.DeletedChatsRequestBuilder WithUrl(string rawUrl)
         {
-            return new DeletedChatsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Teamwork.DeletedChats.DeletedChatsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Read the properties and relationships of a deletedChat object.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Teamwork.DeletedChats
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeletedChatsRequestBuilderGetRequestConfiguration : RequestConfiguration<DeletedChatsRequestBuilderGetQueryParameters>
+        public class DeletedChatsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Teamwork.DeletedChats.DeletedChatsRequestBuilder.DeletedChatsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

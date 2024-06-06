@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Represents app protection and configuration status for the organization.
     /// </summary>
-    public class ManagedAppStatus : Entity, IParsable
+    public class ManagedAppStatus : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Friendly name of the status report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,16 +46,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedAppStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedAppStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedAppStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ManagedAppStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.managedAppStatusRaw" => new ManagedAppStatusRaw(),
-                _ => new ManagedAppStatus(),
+                "#microsoft.graph.managedAppStatusRaw" => new Microsoft.Graph.Models.ManagedAppStatusRaw(),
+                _ => new Microsoft.Graph.Models.ManagedAppStatus(),
             };
         }
         /// <summary>

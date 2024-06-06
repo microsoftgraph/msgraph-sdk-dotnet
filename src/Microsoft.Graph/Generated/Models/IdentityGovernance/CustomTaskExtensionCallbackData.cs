@@ -11,13 +11,13 @@ namespace Microsoft.Graph.Models.IdentityGovernance
     #pragma warning restore CS1591
     {
         /// <summary>Operation status that&apos;s provided by the Azure Logic App indicating whenever the Azure Logic App has run successfully or not. Supported values: completed, failed, unknownFutureValue.</summary>
-        public CustomTaskExtensionOperationStatus? OperationStatus
+        public Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtensionOperationStatus? OperationStatus
         {
-            get { return BackingStore?.Get<CustomTaskExtensionOperationStatus?>("operationStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtensionOperationStatus?>("operationStatus"); }
             set { BackingStore?.Set("operationStatus", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CustomTaskExtensionCallbackData"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtensionCallbackData"/> and sets the default values.
         /// </summary>
         public CustomTaskExtensionCallbackData() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomTaskExtensionCallbackData"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtensionCallbackData"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CustomTaskExtensionCallbackData CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtensionCallbackData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CustomTaskExtensionCallbackData();
+            return new Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtensionCallbackData();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "operationStatus", n => { OperationStatus = n.GetEnumValue<CustomTaskExtensionOperationStatus>(); } },
+                { "operationStatus", n => { OperationStatus = n.GetEnumValue<Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtensionOperationStatus>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<CustomTaskExtensionOperationStatus>("operationStatus", OperationStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtensionOperationStatus>("operationStatus", OperationStatus);
         }
     }
 }

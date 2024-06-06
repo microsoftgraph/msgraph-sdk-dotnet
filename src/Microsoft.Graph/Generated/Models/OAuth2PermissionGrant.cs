@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OAuth2PermissionGrant : Entity, IParsable
+    public class OAuth2PermissionGrant : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The object id (not appId) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).</summary>
@@ -93,12 +93,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OAuth2PermissionGrant"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OAuth2PermissionGrant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OAuth2PermissionGrant CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OAuth2PermissionGrant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OAuth2PermissionGrant();
+            return new Microsoft.Graph.Models.OAuth2PermissionGrant();
         }
         /// <summary>
         /// The deserialization information for the current model

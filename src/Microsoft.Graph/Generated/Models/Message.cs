@@ -7,54 +7,54 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Message : OutlookItem, IParsable
+    public class Message : Microsoft.Graph.Models.OutlookItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The fileAttachment and itemAttachment attachments for the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Attachment>? Attachments
+        public List<Microsoft.Graph.Models.Attachment>? Attachments
         {
-            get { return BackingStore?.Get<List<Attachment>?>("attachments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Attachment>?>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
 #nullable restore
 #else
-        public List<Attachment> Attachments
+        public List<Microsoft.Graph.Models.Attachment> Attachments
         {
-            get { return BackingStore?.Get<List<Attachment>>("attachments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Attachment>>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
 #endif
         /// <summary>The Bcc: recipients for the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recipient>? BccRecipients
+        public List<Microsoft.Graph.Models.Recipient>? BccRecipients
         {
-            get { return BackingStore?.Get<List<Recipient>?>("bccRecipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>?>("bccRecipients"); }
             set { BackingStore?.Set("bccRecipients", value); }
         }
 #nullable restore
 #else
-        public List<Recipient> BccRecipients
+        public List<Microsoft.Graph.Models.Recipient> BccRecipients
         {
-            get { return BackingStore?.Get<List<Recipient>>("bccRecipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>>("bccRecipients"); }
             set { BackingStore?.Set("bccRecipients", value); }
         }
 #endif
         /// <summary>The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Body
+        public Microsoft.Graph.Models.ItemBody? Body
         {
-            get { return BackingStore?.Get<ItemBody?>("body"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #nullable restore
 #else
-        public ItemBody Body
+        public Microsoft.Graph.Models.ItemBody Body
         {
-            get { return BackingStore?.Get<ItemBody>("body"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #endif
@@ -77,16 +77,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The Cc: recipients for the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recipient>? CcRecipients
+        public List<Microsoft.Graph.Models.Recipient>? CcRecipients
         {
-            get { return BackingStore?.Get<List<Recipient>?>("ccRecipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>?>("ccRecipients"); }
             set { BackingStore?.Set("ccRecipients", value); }
         }
 #nullable restore
 #else
-        public List<Recipient> CcRecipients
+        public List<Microsoft.Graph.Models.Recipient> CcRecipients
         {
-            get { return BackingStore?.Get<List<Recipient>>("ccRecipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>>("ccRecipients"); }
             set { BackingStore?.Set("ccRecipients", value); }
         }
 #endif
@@ -125,48 +125,48 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of open extensions defined for the message. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions
+        public List<Microsoft.Graph.Models.Extension>? Extensions
         {
-            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions
+        public List<Microsoft.Graph.Models.Extension> Extensions
         {
-            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
         /// <summary>The flag value that indicates the status, start date, due date, or completion date for the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FollowupFlag? Flag
+        public Microsoft.Graph.Models.FollowupFlag? Flag
         {
-            get { return BackingStore?.Get<FollowupFlag?>("flag"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.FollowupFlag?>("flag"); }
             set { BackingStore?.Set("flag", value); }
         }
 #nullable restore
 #else
-        public FollowupFlag Flag
+        public Microsoft.Graph.Models.FollowupFlag Flag
         {
-            get { return BackingStore?.Get<FollowupFlag>("flag"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.FollowupFlag>("flag"); }
             set { BackingStore?.Set("flag", value); }
         }
 #endif
         /// <summary>The owner of the mailbox from which the message is sent. In most cases, this value is the same as the sender property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Recipient? From
+        public Microsoft.Graph.Models.Recipient? From
         {
-            get { return BackingStore?.Get<Recipient?>("from"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Recipient?>("from"); }
             set { BackingStore?.Set("from", value); }
         }
 #nullable restore
 #else
-        public Recipient From
+        public Microsoft.Graph.Models.Recipient From
         {
-            get { return BackingStore?.Get<Recipient>("from"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Recipient>("from"); }
             set { BackingStore?.Set("from", value); }
         }
 #endif
@@ -183,24 +183,24 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("importance", value); }
         }
         /// <summary>The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. The possible values are: focused or other.</summary>
-        public InferenceClassificationType? InferenceClassification
+        public Microsoft.Graph.Models.InferenceClassificationType? InferenceClassification
         {
-            get { return BackingStore?.Get<InferenceClassificationType?>("inferenceClassification"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.InferenceClassificationType?>("inferenceClassification"); }
             set { BackingStore?.Set("inferenceClassification", value); }
         }
         /// <summary>A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<InternetMessageHeader>? InternetMessageHeaders
+        public List<Microsoft.Graph.Models.InternetMessageHeader>? InternetMessageHeaders
         {
-            get { return BackingStore?.Get<List<InternetMessageHeader>?>("internetMessageHeaders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.InternetMessageHeader>?>("internetMessageHeaders"); }
             set { BackingStore?.Set("internetMessageHeaders", value); }
         }
 #nullable restore
 #else
-        public List<InternetMessageHeader> InternetMessageHeaders
+        public List<Microsoft.Graph.Models.InternetMessageHeader> InternetMessageHeaders
         {
-            get { return BackingStore?.Get<List<InternetMessageHeader>>("internetMessageHeaders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.InternetMessageHeader>>("internetMessageHeaders"); }
             set { BackingStore?.Set("internetMessageHeaders", value); }
         }
 #endif
@@ -247,16 +247,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of multi-value extended properties defined for the message. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
+        public List<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
+        public List<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #endif
@@ -285,32 +285,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The email addresses to use when replying.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recipient>? ReplyTo
+        public List<Microsoft.Graph.Models.Recipient>? ReplyTo
         {
-            get { return BackingStore?.Get<List<Recipient>?>("replyTo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>?>("replyTo"); }
             set { BackingStore?.Set("replyTo", value); }
         }
 #nullable restore
 #else
-        public List<Recipient> ReplyTo
+        public List<Microsoft.Graph.Models.Recipient> ReplyTo
         {
-            get { return BackingStore?.Get<List<Recipient>>("replyTo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>>("replyTo"); }
             set { BackingStore?.Set("replyTo", value); }
         }
 #endif
         /// <summary>The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, for a shared calendar, or as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Recipient? Sender
+        public Microsoft.Graph.Models.Recipient? Sender
         {
-            get { return BackingStore?.Get<Recipient?>("sender"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Recipient?>("sender"); }
             set { BackingStore?.Set("sender", value); }
         }
 #nullable restore
 #else
-        public Recipient Sender
+        public Microsoft.Graph.Models.Recipient Sender
         {
-            get { return BackingStore?.Get<Recipient>("sender"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Recipient>("sender"); }
             set { BackingStore?.Set("sender", value); }
         }
 #endif
@@ -323,16 +323,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of single-value extended properties defined for the message. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
+        public List<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
+        public List<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #endif
@@ -355,32 +355,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The To: recipients for the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recipient>? ToRecipients
+        public List<Microsoft.Graph.Models.Recipient>? ToRecipients
         {
-            get { return BackingStore?.Get<List<Recipient>?>("toRecipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>?>("toRecipients"); }
             set { BackingStore?.Set("toRecipients", value); }
         }
 #nullable restore
 #else
-        public List<Recipient> ToRecipients
+        public List<Microsoft.Graph.Models.Recipient> ToRecipients
         {
-            get { return BackingStore?.Get<List<Recipient>>("toRecipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>>("toRecipients"); }
             set { BackingStore?.Set("toRecipients", value); }
         }
 #endif
         /// <summary>The part of the body of the message that is unique to the current message. uniqueBody is not returned by default but can be retrieved for a given message by use of the ?$select=uniqueBody query. It can be in HTML or text format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? UniqueBody
+        public Microsoft.Graph.Models.ItemBody? UniqueBody
         {
-            get { return BackingStore?.Get<ItemBody?>("uniqueBody"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemBody?>("uniqueBody"); }
             set { BackingStore?.Set("uniqueBody", value); }
         }
 #nullable restore
 #else
-        public ItemBody UniqueBody
+        public Microsoft.Graph.Models.ItemBody UniqueBody
         {
-            get { return BackingStore?.Get<ItemBody>("uniqueBody"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemBody>("uniqueBody"); }
             set { BackingStore?.Set("uniqueBody", value); }
         }
 #endif
@@ -401,7 +401,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Message"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Message"/> and sets the default values.
         /// </summary>
         public Message() : base()
         {
@@ -410,19 +410,19 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Message"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Message"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Message CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Message CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.calendarSharingMessage" => new CalendarSharingMessage(),
-                "#microsoft.graph.eventMessage" => new EventMessage(),
-                "#microsoft.graph.eventMessageRequest" => new EventMessageRequest(),
-                "#microsoft.graph.eventMessageResponse" => new EventMessageResponse(),
-                _ => new Message(),
+                "#microsoft.graph.calendarSharingMessage" => new Microsoft.Graph.Models.CalendarSharingMessage(),
+                "#microsoft.graph.eventMessage" => new Microsoft.Graph.Models.EventMessage(),
+                "#microsoft.graph.eventMessageRequest" => new Microsoft.Graph.Models.EventMessageRequest(),
+                "#microsoft.graph.eventMessageResponse" => new Microsoft.Graph.Models.EventMessageResponse(),
+                _ => new Microsoft.Graph.Models.Message(),
             };
         }
         /// <summary>
@@ -433,35 +433,35 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<Attachment>(Attachment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "bccRecipients", n => { BccRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Attachment>(Microsoft.Graph.Models.Attachment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "bccRecipients", n => { BccRecipients = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>(Microsoft.Graph.Models.Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "body", n => { Body = n.GetObjectValue<Microsoft.Graph.Models.ItemBody>(Microsoft.Graph.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "bodyPreview", n => { BodyPreview = n.GetStringValue(); } },
-                { "ccRecipients", n => { CcRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ccRecipients", n => { CcRecipients = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>(Microsoft.Graph.Models.Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "conversationId", n => { ConversationId = n.GetStringValue(); } },
                 { "conversationIndex", n => { ConversationIndex = n.GetByteArrayValue(); } },
-                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "flag", n => { Flag = n.GetObjectValue<FollowupFlag>(FollowupFlag.CreateFromDiscriminatorValue); } },
-                { "from", n => { From = n.GetObjectValue<Recipient>(Recipient.CreateFromDiscriminatorValue); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Extension>(Microsoft.Graph.Models.Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "flag", n => { Flag = n.GetObjectValue<Microsoft.Graph.Models.FollowupFlag>(Microsoft.Graph.Models.FollowupFlag.CreateFromDiscriminatorValue); } },
+                { "from", n => { From = n.GetObjectValue<Microsoft.Graph.Models.Recipient>(Microsoft.Graph.Models.Recipient.CreateFromDiscriminatorValue); } },
                 { "hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
-                { "importance", n => { Importance = n.GetEnumValue<Importance>(); } },
-                { "inferenceClassification", n => { InferenceClassification = n.GetEnumValue<InferenceClassificationType>(); } },
-                { "internetMessageHeaders", n => { InternetMessageHeaders = n.GetCollectionOfObjectValues<InternetMessageHeader>(InternetMessageHeader.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "importance", n => { Importance = n.GetEnumValue<Microsoft.Graph.Models.Importance>(); } },
+                { "inferenceClassification", n => { InferenceClassification = n.GetEnumValue<Microsoft.Graph.Models.InferenceClassificationType>(); } },
+                { "internetMessageHeaders", n => { InternetMessageHeaders = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.InternetMessageHeader>(Microsoft.Graph.Models.InternetMessageHeader.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "internetMessageId", n => { InternetMessageId = n.GetStringValue(); } },
                 { "isDeliveryReceiptRequested", n => { IsDeliveryReceiptRequested = n.GetBoolValue(); } },
                 { "isDraft", n => { IsDraft = n.GetBoolValue(); } },
                 { "isRead", n => { IsRead = n.GetBoolValue(); } },
                 { "isReadReceiptRequested", n => { IsReadReceiptRequested = n.GetBoolValue(); } },
-                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>(Microsoft.Graph.Models.MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "parentFolderId", n => { ParentFolderId = n.GetStringValue(); } },
                 { "receivedDateTime", n => { ReceivedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "replyTo", n => { ReplyTo = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sender", n => { Sender = n.GetObjectValue<Recipient>(Recipient.CreateFromDiscriminatorValue); } },
+                { "replyTo", n => { ReplyTo = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>(Microsoft.Graph.Models.Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sender", n => { Sender = n.GetObjectValue<Microsoft.Graph.Models.Recipient>(Microsoft.Graph.Models.Recipient.CreateFromDiscriminatorValue); } },
                 { "sentDateTime", n => { SentDateTime = n.GetDateTimeOffsetValue(); } },
-                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>(Microsoft.Graph.Models.SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
-                { "toRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "uniqueBody", n => { UniqueBody = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "toRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>(Microsoft.Graph.Models.Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "uniqueBody", n => { UniqueBody = n.GetObjectValue<Microsoft.Graph.Models.ItemBody>(Microsoft.Graph.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "webLink", n => { WebLink = n.GetStringValue(); } },
             };
         }
@@ -473,35 +473,35 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Attachment>("attachments", Attachments);
-            writer.WriteCollectionOfObjectValues<Recipient>("bccRecipients", BccRecipients);
-            writer.WriteObjectValue<ItemBody>("body", Body);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Attachment>("attachments", Attachments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>("bccRecipients", BccRecipients);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemBody>("body", Body);
             writer.WriteStringValue("bodyPreview", BodyPreview);
-            writer.WriteCollectionOfObjectValues<Recipient>("ccRecipients", CcRecipients);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>("ccRecipients", CcRecipients);
             writer.WriteStringValue("conversationId", ConversationId);
             writer.WriteByteArrayValue("conversationIndex", ConversationIndex);
-            writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
-            writer.WriteObjectValue<FollowupFlag>("flag", Flag);
-            writer.WriteObjectValue<Recipient>("from", From);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Extension>("extensions", Extensions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.FollowupFlag>("flag", Flag);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Recipient>("from", From);
             writer.WriteBoolValue("hasAttachments", HasAttachments);
-            writer.WriteEnumValue<Importance>("importance", Importance);
-            writer.WriteEnumValue<InferenceClassificationType>("inferenceClassification", InferenceClassification);
-            writer.WriteCollectionOfObjectValues<InternetMessageHeader>("internetMessageHeaders", InternetMessageHeaders);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Importance>("importance", Importance);
+            writer.WriteEnumValue<Microsoft.Graph.Models.InferenceClassificationType>("inferenceClassification", InferenceClassification);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.InternetMessageHeader>("internetMessageHeaders", InternetMessageHeaders);
             writer.WriteStringValue("internetMessageId", InternetMessageId);
             writer.WriteBoolValue("isDeliveryReceiptRequested", IsDeliveryReceiptRequested);
             writer.WriteBoolValue("isDraft", IsDraft);
             writer.WriteBoolValue("isRead", IsRead);
             writer.WriteBoolValue("isReadReceiptRequested", IsReadReceiptRequested);
-            writer.WriteCollectionOfObjectValues<MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
             writer.WriteStringValue("parentFolderId", ParentFolderId);
             writer.WriteDateTimeOffsetValue("receivedDateTime", ReceivedDateTime);
-            writer.WriteCollectionOfObjectValues<Recipient>("replyTo", ReplyTo);
-            writer.WriteObjectValue<Recipient>("sender", Sender);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>("replyTo", ReplyTo);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Recipient>("sender", Sender);
             writer.WriteDateTimeOffsetValue("sentDateTime", SentDateTime);
-            writer.WriteCollectionOfObjectValues<SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
             writer.WriteStringValue("subject", Subject);
-            writer.WriteCollectionOfObjectValues<Recipient>("toRecipients", ToRecipients);
-            writer.WriteObjectValue<ItemBody>("uniqueBody", UniqueBody);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>("toRecipients", ToRecipients);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemBody>("uniqueBody", UniqueBody);
             writer.WriteStringValue("webLink", WebLink);
         }
     }

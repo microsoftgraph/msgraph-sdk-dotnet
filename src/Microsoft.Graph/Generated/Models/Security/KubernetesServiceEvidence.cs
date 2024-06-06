@@ -7,54 +7,54 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class KubernetesServiceEvidence : AlertEvidence, IParsable
+    public class KubernetesServiceEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The service cluster IP.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IpEvidence? ClusterIP
+        public Microsoft.Graph.Models.Security.IpEvidence? ClusterIP
         {
-            get { return BackingStore?.Get<IpEvidence?>("clusterIP"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.IpEvidence?>("clusterIP"); }
             set { BackingStore?.Set("clusterIP", value); }
         }
 #nullable restore
 #else
-        public IpEvidence ClusterIP
+        public Microsoft.Graph.Models.Security.IpEvidence ClusterIP
         {
-            get { return BackingStore?.Get<IpEvidence>("clusterIP"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.IpEvidence>("clusterIP"); }
             set { BackingStore?.Set("clusterIP", value); }
         }
 #endif
         /// <summary>The service external IPs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IpEvidence>? ExternalIPs
+        public List<Microsoft.Graph.Models.Security.IpEvidence>? ExternalIPs
         {
-            get { return BackingStore?.Get<List<IpEvidence>?>("externalIPs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.IpEvidence>?>("externalIPs"); }
             set { BackingStore?.Set("externalIPs", value); }
         }
 #nullable restore
 #else
-        public List<IpEvidence> ExternalIPs
+        public List<Microsoft.Graph.Models.Security.IpEvidence> ExternalIPs
         {
-            get { return BackingStore?.Get<List<IpEvidence>>("externalIPs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.IpEvidence>>("externalIPs"); }
             set { BackingStore?.Set("externalIPs", value); }
         }
 #endif
         /// <summary>The service labels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Dictionary? Labels
+        public Microsoft.Graph.Models.Security.Dictionary? Labels
         {
-            get { return BackingStore?.Get<Dictionary?>("labels"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Dictionary?>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
 #nullable restore
 #else
-        public Dictionary Labels
+        public Microsoft.Graph.Models.Security.Dictionary Labels
         {
-            get { return BackingStore?.Get<Dictionary>("labels"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Dictionary>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
 #endif
@@ -77,59 +77,59 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The service namespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public KubernetesNamespaceEvidence? Namespace
+        public Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence? Namespace
         {
-            get { return BackingStore?.Get<KubernetesNamespaceEvidence?>("namespace"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence?>("namespace"); }
             set { BackingStore?.Set("namespace", value); }
         }
 #nullable restore
 #else
-        public KubernetesNamespaceEvidence Namespace
+        public Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence Namespace
         {
-            get { return BackingStore?.Get<KubernetesNamespaceEvidence>("namespace"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence>("namespace"); }
             set { BackingStore?.Set("namespace", value); }
         }
 #endif
         /// <summary>The service selector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Dictionary? Selector
+        public Microsoft.Graph.Models.Security.Dictionary? Selector
         {
-            get { return BackingStore?.Get<Dictionary?>("selector"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Dictionary?>("selector"); }
             set { BackingStore?.Set("selector", value); }
         }
 #nullable restore
 #else
-        public Dictionary Selector
+        public Microsoft.Graph.Models.Security.Dictionary Selector
         {
-            get { return BackingStore?.Get<Dictionary>("selector"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Dictionary>("selector"); }
             set { BackingStore?.Set("selector", value); }
         }
 #endif
         /// <summary>The list of service ports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KubernetesServicePort>? ServicePorts
+        public List<Microsoft.Graph.Models.Security.KubernetesServicePort>? ServicePorts
         {
-            get { return BackingStore?.Get<List<KubernetesServicePort>?>("servicePorts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.KubernetesServicePort>?>("servicePorts"); }
             set { BackingStore?.Set("servicePorts", value); }
         }
 #nullable restore
 #else
-        public List<KubernetesServicePort> ServicePorts
+        public List<Microsoft.Graph.Models.Security.KubernetesServicePort> ServicePorts
         {
-            get { return BackingStore?.Get<List<KubernetesServicePort>>("servicePorts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.KubernetesServicePort>>("servicePorts"); }
             set { BackingStore?.Set("servicePorts", value); }
         }
 #endif
         /// <summary>The serviceType property</summary>
-        public KubernetesServiceType? ServiceType
+        public Microsoft.Graph.Models.Security.KubernetesServiceType? ServiceType
         {
-            get { return BackingStore?.Get<KubernetesServiceType?>("serviceType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.KubernetesServiceType?>("serviceType"); }
             set { BackingStore?.Set("serviceType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="KubernetesServiceEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.KubernetesServiceEvidence"/> and sets the default values.
         /// </summary>
         public KubernetesServiceEvidence() : base()
         {
@@ -138,12 +138,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="KubernetesServiceEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.KubernetesServiceEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new KubernetesServiceEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.KubernetesServiceEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new KubernetesServiceEvidence();
+            return new Microsoft.Graph.Models.Security.KubernetesServiceEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -153,14 +153,14 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "clusterIP", n => { ClusterIP = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
-                { "externalIPs", n => { ExternalIPs = n.GetCollectionOfObjectValues<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "labels", n => { Labels = n.GetObjectValue<Dictionary>(Dictionary.CreateFromDiscriminatorValue); } },
+                { "clusterIP", n => { ClusterIP = n.GetObjectValue<Microsoft.Graph.Models.Security.IpEvidence>(Microsoft.Graph.Models.Security.IpEvidence.CreateFromDiscriminatorValue); } },
+                { "externalIPs", n => { ExternalIPs = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.IpEvidence>(Microsoft.Graph.Models.Security.IpEvidence.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "labels", n => { Labels = n.GetObjectValue<Microsoft.Graph.Models.Security.Dictionary>(Microsoft.Graph.Models.Security.Dictionary.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "namespace", n => { Namespace = n.GetObjectValue<KubernetesNamespaceEvidence>(KubernetesNamespaceEvidence.CreateFromDiscriminatorValue); } },
-                { "selector", n => { Selector = n.GetObjectValue<Dictionary>(Dictionary.CreateFromDiscriminatorValue); } },
-                { "servicePorts", n => { ServicePorts = n.GetCollectionOfObjectValues<KubernetesServicePort>(KubernetesServicePort.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "serviceType", n => { ServiceType = n.GetEnumValue<KubernetesServiceType>(); } },
+                { "namespace", n => { Namespace = n.GetObjectValue<Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence>(Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence.CreateFromDiscriminatorValue); } },
+                { "selector", n => { Selector = n.GetObjectValue<Microsoft.Graph.Models.Security.Dictionary>(Microsoft.Graph.Models.Security.Dictionary.CreateFromDiscriminatorValue); } },
+                { "servicePorts", n => { ServicePorts = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.KubernetesServicePort>(Microsoft.Graph.Models.Security.KubernetesServicePort.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "serviceType", n => { ServiceType = n.GetEnumValue<Microsoft.Graph.Models.Security.KubernetesServiceType>(); } },
             };
         }
         /// <summary>
@@ -171,14 +171,14 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<IpEvidence>("clusterIP", ClusterIP);
-            writer.WriteCollectionOfObjectValues<IpEvidence>("externalIPs", ExternalIPs);
-            writer.WriteObjectValue<Dictionary>("labels", Labels);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.IpEvidence>("clusterIP", ClusterIP);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.IpEvidence>("externalIPs", ExternalIPs);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.Dictionary>("labels", Labels);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<KubernetesNamespaceEvidence>("namespace", Namespace);
-            writer.WriteObjectValue<Dictionary>("selector", Selector);
-            writer.WriteCollectionOfObjectValues<KubernetesServicePort>("servicePorts", ServicePorts);
-            writer.WriteEnumValue<KubernetesServiceType>("serviceType", ServiceType);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence>("namespace", Namespace);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.Dictionary>("selector", Selector);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.KubernetesServicePort>("servicePorts", ServicePorts);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.KubernetesServiceType>("serviceType", ServiceType);
         }
     }
 }

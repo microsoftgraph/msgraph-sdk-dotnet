@@ -8,18 +8,18 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerforma
 {
     [Obsolete("This class is obsolete. Use SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse instead.")]
     #pragma warning disable CS1591
-    public class SummarizeDevicePerformanceDevicesWithSummarizeByResponse : SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse, IParsable
+    public class SummarizeDevicePerformanceDevicesWithSummarizeByResponse : Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SummarizeDevicePerformanceDevicesWithSummarizeByResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SummarizeDevicePerformanceDevicesWithSummarizeByResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SummarizeDevicePerformanceDevicesWithSummarizeByResponse();
+            return new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByResponse();
         }
     }
 }

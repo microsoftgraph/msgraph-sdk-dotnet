@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Event representing an enrollment failure.
     /// </summary>
-    public class EnrollmentTroubleshootingEvent : DeviceManagementTroubleshootingEvent, IParsable
+    public class EnrollmentTroubleshootingEvent : Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent, IParsable
     {
         /// <summary>Azure AD device identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,15 +28,15 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Possible ways of adding a mobile device to management.</summary>
-        public DeviceEnrollmentType? EnrollmentType
+        public Microsoft.Graph.Models.DeviceEnrollmentType? EnrollmentType
         {
-            get { return BackingStore?.Get<DeviceEnrollmentType?>("enrollmentType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceEnrollmentType?>("enrollmentType"); }
             set { BackingStore?.Set("enrollmentType", value); }
         }
         /// <summary>Top level failure categories for enrollment.</summary>
-        public DeviceEnrollmentFailureReason? FailureCategory
+        public Microsoft.Graph.Models.DeviceEnrollmentFailureReason? FailureCategory
         {
-            get { return BackingStore?.Get<DeviceEnrollmentFailureReason?>("failureCategory"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceEnrollmentFailureReason?>("failureCategory"); }
             set { BackingStore?.Set("failureCategory", value); }
         }
         /// <summary>Detailed failure reason.</summary>
@@ -122,12 +122,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EnrollmentTroubleshootingEvent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EnrollmentTroubleshootingEvent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EnrollmentTroubleshootingEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EnrollmentTroubleshootingEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EnrollmentTroubleshootingEvent();
+            return new Microsoft.Graph.Models.EnrollmentTroubleshootingEvent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -138,8 +138,8 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
-                { "enrollmentType", n => { EnrollmentType = n.GetEnumValue<DeviceEnrollmentType>(); } },
-                { "failureCategory", n => { FailureCategory = n.GetEnumValue<DeviceEnrollmentFailureReason>(); } },
+                { "enrollmentType", n => { EnrollmentType = n.GetEnumValue<Microsoft.Graph.Models.DeviceEnrollmentType>(); } },
+                { "failureCategory", n => { FailureCategory = n.GetEnumValue<Microsoft.Graph.Models.DeviceEnrollmentFailureReason>(); } },
                 { "failureReason", n => { FailureReason = n.GetStringValue(); } },
                 { "managedDeviceIdentifier", n => { ManagedDeviceIdentifier = n.GetStringValue(); } },
                 { "operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
@@ -156,8 +156,8 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("deviceId", DeviceId);
-            writer.WriteEnumValue<DeviceEnrollmentType>("enrollmentType", EnrollmentType);
-            writer.WriteEnumValue<DeviceEnrollmentFailureReason>("failureCategory", FailureCategory);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DeviceEnrollmentType>("enrollmentType", EnrollmentType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DeviceEnrollmentFailureReason>("failureCategory", FailureCategory);
             writer.WriteStringValue("failureReason", FailureReason);
             writer.WriteStringValue("managedDeviceIdentifier", ManagedDeviceIdentifier);
             writer.WriteStringValue("operatingSystem", OperatingSystem);

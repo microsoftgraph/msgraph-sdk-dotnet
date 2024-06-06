@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UnifiedRoleManagementPolicyApprovalRule : UnifiedRoleManagementPolicyRule, IParsable
+    public class UnifiedRoleManagementPolicyApprovalRule : Microsoft.Graph.Models.UnifiedRoleManagementPolicyRule, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The settings for approval of the role assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ApprovalSettings? Setting
+        public Microsoft.Graph.Models.ApprovalSettings? Setting
         {
-            get { return BackingStore?.Get<ApprovalSettings?>("setting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ApprovalSettings?>("setting"); }
             set { BackingStore?.Set("setting", value); }
         }
 #nullable restore
 #else
-        public ApprovalSettings Setting
+        public Microsoft.Graph.Models.ApprovalSettings Setting
         {
-            get { return BackingStore?.Get<ApprovalSettings>("setting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ApprovalSettings>("setting"); }
             set { BackingStore?.Set("setting", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UnifiedRoleManagementPolicyApprovalRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.UnifiedRoleManagementPolicyApprovalRule"/> and sets the default values.
         /// </summary>
         public UnifiedRoleManagementPolicyApprovalRule() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleManagementPolicyApprovalRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRoleManagementPolicyApprovalRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnifiedRoleManagementPolicyApprovalRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UnifiedRoleManagementPolicyApprovalRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedRoleManagementPolicyApprovalRule();
+            return new Microsoft.Graph.Models.UnifiedRoleManagementPolicyApprovalRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "setting", n => { Setting = n.GetObjectValue<ApprovalSettings>(ApprovalSettings.CreateFromDiscriminatorValue); } },
+                { "setting", n => { Setting = n.GetObjectValue<Microsoft.Graph.Models.ApprovalSettings>(Microsoft.Graph.Models.ApprovalSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ApprovalSettings>("setting", Setting);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ApprovalSettings>("setting", Setting);
         }
     }
 }

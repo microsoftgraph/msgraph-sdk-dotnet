@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Me.Chats.Item.Members.Add
 {
     #pragma warning disable CS1591
-    public class AddPostResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class AddPostResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ActionResultPart>? Value
+        public List<Microsoft.Graph.Models.ActionResultPart>? Value
         {
-            get { return BackingStore?.Get<List<ActionResultPart>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ActionResultPart>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ActionResultPart> Value
+        public List<Microsoft.Graph.Models.ActionResultPart> Value
         {
-            get { return BackingStore?.Get<List<ActionResultPart>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ActionResultPart>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AddPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Chats.Item.Members.Add.AddPostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AddPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Me.Chats.Item.Members.Add.AddPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AddPostResponse();
+            return new Microsoft.Graph.Me.Chats.Item.Members.Add.AddPostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Members.Add
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<ActionResultPart>(ActionResultPart.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ActionResultPart>(Microsoft.Graph.Models.ActionResultPart.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Members.Add
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ActionResultPart>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ActionResultPart>("value", Value);
         }
     }
 }

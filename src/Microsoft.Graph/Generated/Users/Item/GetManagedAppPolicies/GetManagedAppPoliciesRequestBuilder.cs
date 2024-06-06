@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Users.Item.GetManagedAppPolicies
     public class GetManagedAppPoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetManagedAppPoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Users.Item.GetManagedAppPolicies
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetManagedAppPoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,50 +35,50 @@ namespace Microsoft.Graph.Users.Item.GetManagedAppPolicies
         /// Gets app restrictions for a given user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedapppolicies?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetManagedAppPoliciesGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetManagedAppPoliciesGetResponse?> GetAsGetManagedAppPoliciesGetResponseAsync(Action<RequestConfiguration<GetManagedAppPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesGetResponse?> GetAsGetManagedAppPoliciesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder.GetManagedAppPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetManagedAppPoliciesGetResponse> GetAsGetManagedAppPoliciesGetResponseAsync(Action<RequestConfiguration<GetManagedAppPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesGetResponse> GetAsGetManagedAppPoliciesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder.GetManagedAppPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetManagedAppPoliciesGetResponse>(requestInfo, GetManagedAppPoliciesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesGetResponse>(requestInfo, Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets app restrictions for a given user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedapppolicies?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetManagedAppPoliciesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetManagedAppPoliciesGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetManagedAppPoliciesResponse?> GetAsync(Action<RequestConfiguration<GetManagedAppPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder.GetManagedAppPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetManagedAppPoliciesResponse> GetAsync(Action<RequestConfiguration<GetManagedAppPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder.GetManagedAppPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetManagedAppPoliciesResponse>(requestInfo, GetManagedAppPoliciesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesResponse>(requestInfo, Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets app restrictions for a given user.
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Users.Item.GetManagedAppPolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetManagedAppPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder.GetManagedAppPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetManagedAppPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder.GetManagedAppPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Users.Item.GetManagedAppPolicies
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetManagedAppPoliciesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetManagedAppPoliciesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetManagedAppPoliciesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets app restrictions for a given user.
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Users.Item.GetManagedAppPolicies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetManagedAppPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<GetManagedAppPoliciesRequestBuilderGetQueryParameters>
+        public class GetManagedAppPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder.GetManagedAppPoliciesRequestBuilderGetQueryParameters>
         {
         }
     }

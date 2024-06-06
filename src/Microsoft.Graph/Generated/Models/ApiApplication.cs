@@ -44,16 +44,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PermissionScope>? Oauth2PermissionScopes
+        public List<Microsoft.Graph.Models.PermissionScope>? Oauth2PermissionScopes
         {
-            get { return BackingStore?.Get<List<PermissionScope>?>("oauth2PermissionScopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PermissionScope>?>("oauth2PermissionScopes"); }
             set { BackingStore?.Set("oauth2PermissionScopes", value); }
         }
 #nullable restore
 #else
-        public List<PermissionScope> Oauth2PermissionScopes
+        public List<Microsoft.Graph.Models.PermissionScope> Oauth2PermissionScopes
         {
-            get { return BackingStore?.Get<List<PermissionScope>>("oauth2PermissionScopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PermissionScope>>("oauth2PermissionScopes"); }
             set { BackingStore?.Set("oauth2PermissionScopes", value); }
         }
 #endif
@@ -76,16 +76,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Lists the client applications that are preauthorized with the specified delegated permissions to access this application&apos;s APIs. Users aren&apos;t required to consent to any preauthorized application (for the permissions specified). However, any other permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PreAuthorizedApplication>? PreAuthorizedApplications
+        public List<Microsoft.Graph.Models.PreAuthorizedApplication>? PreAuthorizedApplications
         {
-            get { return BackingStore?.Get<List<PreAuthorizedApplication>?>("preAuthorizedApplications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PreAuthorizedApplication>?>("preAuthorizedApplications"); }
             set { BackingStore?.Set("preAuthorizedApplications", value); }
         }
 #nullable restore
 #else
-        public List<PreAuthorizedApplication> PreAuthorizedApplications
+        public List<Microsoft.Graph.Models.PreAuthorizedApplication> PreAuthorizedApplications
         {
-            get { return BackingStore?.Get<List<PreAuthorizedApplication>>("preAuthorizedApplications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PreAuthorizedApplication>>("preAuthorizedApplications"); }
             set { BackingStore?.Set("preAuthorizedApplications", value); }
         }
 #endif
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("requestedAccessTokenVersion", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ApiApplication"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ApiApplication"/> and sets the default values.
         /// </summary>
         public ApiApplication()
         {
@@ -106,12 +106,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ApiApplication"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ApiApplication"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ApiApplication CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ApiApplication CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ApiApplication();
+            return new Microsoft.Graph.Models.ApiApplication();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -123,9 +123,9 @@ namespace Microsoft.Graph.Models
             {
                 { "acceptMappedClaims", n => { AcceptMappedClaims = n.GetBoolValue(); } },
                 { "knownClientApplications", n => { KnownClientApplications = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
-                { "oauth2PermissionScopes", n => { Oauth2PermissionScopes = n.GetCollectionOfObjectValues<PermissionScope>(PermissionScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "oauth2PermissionScopes", n => { Oauth2PermissionScopes = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.PermissionScope>(Microsoft.Graph.Models.PermissionScope.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "preAuthorizedApplications", n => { PreAuthorizedApplications = n.GetCollectionOfObjectValues<PreAuthorizedApplication>(PreAuthorizedApplication.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "preAuthorizedApplications", n => { PreAuthorizedApplications = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.PreAuthorizedApplication>(Microsoft.Graph.Models.PreAuthorizedApplication.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "requestedAccessTokenVersion", n => { RequestedAccessTokenVersion = n.GetIntValue(); } },
             };
         }
@@ -138,9 +138,9 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("acceptMappedClaims", AcceptMappedClaims);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("knownClientApplications", KnownClientApplications);
-            writer.WriteCollectionOfObjectValues<PermissionScope>("oauth2PermissionScopes", Oauth2PermissionScopes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.PermissionScope>("oauth2PermissionScopes", Oauth2PermissionScopes);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<PreAuthorizedApplication>("preAuthorizedApplications", PreAuthorizedApplications);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.PreAuthorizedApplication>("preAuthorizedApplications", PreAuthorizedApplications);
             writer.WriteIntValue("requestedAccessTokenVersion", RequestedAccessTokenVersion);
             writer.WriteAdditionalData(AdditionalData);
         }

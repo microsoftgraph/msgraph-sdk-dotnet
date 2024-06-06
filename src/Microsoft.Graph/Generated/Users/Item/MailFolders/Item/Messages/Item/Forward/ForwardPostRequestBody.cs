@@ -55,21 +55,21 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Forward
         /// <summary>The ToRecipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recipient>? ToRecipients
+        public List<Microsoft.Graph.Models.Recipient>? ToRecipients
         {
-            get { return BackingStore?.Get<List<Recipient>?>("ToRecipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>?>("ToRecipients"); }
             set { BackingStore?.Set("ToRecipients", value); }
         }
 #nullable restore
 #else
-        public List<Recipient> ToRecipients
+        public List<Microsoft.Graph.Models.Recipient> ToRecipients
         {
-            get { return BackingStore?.Get<List<Recipient>>("ToRecipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>>("ToRecipients"); }
             set { BackingStore?.Set("ToRecipients", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ForwardPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Forward.ForwardPostRequestBody"/> and sets the default values.
         /// </summary>
         public ForwardPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Forward
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ForwardPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Forward.ForwardPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ForwardPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Forward.ForwardPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ForwardPostRequestBody();
+            return new Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Forward.ForwardPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Forward
             {
                 { "Comment", n => { Comment = n.GetStringValue(); } },
                 { "Message", n => { Message = n.GetObjectValue<Microsoft.Graph.Models.Message>(Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue); } },
-                { "ToRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ToRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>(Microsoft.Graph.Models.Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Forward
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("Comment", Comment);
             writer.WriteObjectValue<Microsoft.Graph.Models.Message>("Message", Message);
-            writer.WriteCollectionOfObjectValues<Recipient>("ToRecipients", ToRecipients);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>("ToRecipients", ToRecipients);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -38,37 +38,37 @@ namespace Microsoft.Graph.Models
         /// <summary>Opens the notebook in the OneNote native client if it&apos;s installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExternalLink? OneNoteClientUrl
+        public Microsoft.Graph.Models.ExternalLink? OneNoteClientUrl
         {
-            get { return BackingStore?.Get<ExternalLink?>("oneNoteClientUrl"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalLink?>("oneNoteClientUrl"); }
             set { BackingStore?.Set("oneNoteClientUrl", value); }
         }
 #nullable restore
 #else
-        public ExternalLink OneNoteClientUrl
+        public Microsoft.Graph.Models.ExternalLink OneNoteClientUrl
         {
-            get { return BackingStore?.Get<ExternalLink>("oneNoteClientUrl"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalLink>("oneNoteClientUrl"); }
             set { BackingStore?.Set("oneNoteClientUrl", value); }
         }
 #endif
         /// <summary>Opens the notebook in OneNote on the web.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExternalLink? OneNoteWebUrl
+        public Microsoft.Graph.Models.ExternalLink? OneNoteWebUrl
         {
-            get { return BackingStore?.Get<ExternalLink?>("oneNoteWebUrl"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalLink?>("oneNoteWebUrl"); }
             set { BackingStore?.Set("oneNoteWebUrl", value); }
         }
 #nullable restore
 #else
-        public ExternalLink OneNoteWebUrl
+        public Microsoft.Graph.Models.ExternalLink OneNoteWebUrl
         {
-            get { return BackingStore?.Get<ExternalLink>("oneNoteWebUrl"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalLink>("oneNoteWebUrl"); }
             set { BackingStore?.Set("oneNoteWebUrl", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="NotebookLinks"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.NotebookLinks"/> and sets the default values.
         /// </summary>
         public NotebookLinks()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="NotebookLinks"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.NotebookLinks"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static NotebookLinks CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.NotebookLinks CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new NotebookLinks();
+            return new Microsoft.Graph.Models.NotebookLinks();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,8 +94,8 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "oneNoteClientUrl", n => { OneNoteClientUrl = n.GetObjectValue<ExternalLink>(ExternalLink.CreateFromDiscriminatorValue); } },
-                { "oneNoteWebUrl", n => { OneNoteWebUrl = n.GetObjectValue<ExternalLink>(ExternalLink.CreateFromDiscriminatorValue); } },
+                { "oneNoteClientUrl", n => { OneNoteClientUrl = n.GetObjectValue<Microsoft.Graph.Models.ExternalLink>(Microsoft.Graph.Models.ExternalLink.CreateFromDiscriminatorValue); } },
+                { "oneNoteWebUrl", n => { OneNoteWebUrl = n.GetObjectValue<Microsoft.Graph.Models.ExternalLink>(Microsoft.Graph.Models.ExternalLink.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,8 +106,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<ExternalLink>("oneNoteClientUrl", OneNoteClientUrl);
-            writer.WriteObjectValue<ExternalLink>("oneNoteWebUrl", OneNoteWebUrl);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ExternalLink>("oneNoteClientUrl", OneNoteClientUrl);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ExternalLink>("oneNoteWebUrl", OneNoteWebUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

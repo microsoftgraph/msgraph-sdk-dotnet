@@ -9,34 +9,34 @@ using System;
 namespace Microsoft.Graph.External.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities
 {
     #pragma warning disable CS1591
-    public class AddActivitiesPostResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class AddActivitiesPostResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalActivityResult>? Value
+        public List<Microsoft.Graph.Models.ExternalConnectors.ExternalActivityResult>? Value
         {
-            get { return BackingStore?.Get<List<ExternalActivityResult>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.ExternalActivityResult>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ExternalActivityResult> Value
+        public List<Microsoft.Graph.Models.ExternalConnectors.ExternalActivityResult> Value
         {
-            get { return BackingStore?.Get<List<ExternalActivityResult>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.ExternalActivityResult>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AddActivitiesPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.External.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.AddActivitiesPostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AddActivitiesPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.External.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.AddActivitiesPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AddActivitiesPostResponse();
+            return new Microsoft.Graph.External.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.AddActivitiesPostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.External.Connections.Item.Items.Item.MicrosoftGraphExt
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<ExternalActivityResult>(ExternalActivityResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.ExternalActivityResult>(Microsoft.Graph.Models.ExternalConnectors.ExternalActivityResult.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.External.Connections.Item.Items.Item.MicrosoftGraphExt
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ExternalActivityResult>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.ExternalActivityResult>("value", Value);
         }
     }
 }

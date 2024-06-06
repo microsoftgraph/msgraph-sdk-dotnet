@@ -37,13 +37,13 @@ namespace Microsoft.Graph.Communications.Calls.Item.UpdateRecordingStatus
         }
 #endif
         /// <summary>The status property</summary>
-        public RecordingStatus? Status
+        public Microsoft.Graph.Models.RecordingStatus? Status
         {
-            get { return BackingStore?.Get<RecordingStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RecordingStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UpdateRecordingStatusPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Communications.Calls.Item.UpdateRecordingStatus.UpdateRecordingStatusPostRequestBody"/> and sets the default values.
         /// </summary>
         public UpdateRecordingStatusPostRequestBody()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Communications.Calls.Item.UpdateRecordingStatus
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpdateRecordingStatusPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Communications.Calls.Item.UpdateRecordingStatus.UpdateRecordingStatusPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UpdateRecordingStatusPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Communications.Calls.Item.UpdateRecordingStatus.UpdateRecordingStatusPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpdateRecordingStatusPostRequestBody();
+            return new Microsoft.Graph.Communications.Calls.Item.UpdateRecordingStatus.UpdateRecordingStatusPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.UpdateRecordingStatus
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "clientContext", n => { ClientContext = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<RecordingStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.RecordingStatus>(); } },
             };
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.UpdateRecordingStatus
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("clientContext", ClientContext);
-            writer.WriteEnumValue<RecordingStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RecordingStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

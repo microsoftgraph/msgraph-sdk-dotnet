@@ -7,59 +7,59 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SharePointIdentitySet : IdentitySet, IParsable
+    public class SharePointIdentitySet : Microsoft.Graph.Models.IdentitySet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The group associated with this action. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Group
+        public Microsoft.Graph.Models.Identity? Group
         {
-            get { return BackingStore?.Get<Identity?>("group"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity?>("group"); }
             set { BackingStore?.Set("group", value); }
         }
 #nullable restore
 #else
-        public Identity Group
+        public Microsoft.Graph.Models.Identity Group
         {
-            get { return BackingStore?.Get<Identity>("group"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity>("group"); }
             set { BackingStore?.Set("group", value); }
         }
 #endif
         /// <summary>The SharePoint group associated with this action. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharePointIdentity? SiteGroup
+        public Microsoft.Graph.Models.SharePointIdentity? SiteGroup
         {
-            get { return BackingStore?.Get<SharePointIdentity?>("siteGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SharePointIdentity?>("siteGroup"); }
             set { BackingStore?.Set("siteGroup", value); }
         }
 #nullable restore
 #else
-        public SharePointIdentity SiteGroup
+        public Microsoft.Graph.Models.SharePointIdentity SiteGroup
         {
-            get { return BackingStore?.Get<SharePointIdentity>("siteGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SharePointIdentity>("siteGroup"); }
             set { BackingStore?.Set("siteGroup", value); }
         }
 #endif
         /// <summary>The SharePoint user associated with this action. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharePointIdentity? SiteUser
+        public Microsoft.Graph.Models.SharePointIdentity? SiteUser
         {
-            get { return BackingStore?.Get<SharePointIdentity?>("siteUser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SharePointIdentity?>("siteUser"); }
             set { BackingStore?.Set("siteUser", value); }
         }
 #nullable restore
 #else
-        public SharePointIdentity SiteUser
+        public Microsoft.Graph.Models.SharePointIdentity SiteUser
         {
-            get { return BackingStore?.Get<SharePointIdentity>("siteUser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SharePointIdentity>("siteUser"); }
             set { BackingStore?.Set("siteUser", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SharePointIdentitySet"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SharePointIdentitySet"/> and sets the default values.
         /// </summary>
         public SharePointIdentitySet() : base()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SharePointIdentitySet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SharePointIdentitySet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SharePointIdentitySet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SharePointIdentitySet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SharePointIdentitySet();
+            return new Microsoft.Graph.Models.SharePointIdentitySet();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,9 +83,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "group", n => { Group = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                { "siteGroup", n => { SiteGroup = n.GetObjectValue<SharePointIdentity>(SharePointIdentity.CreateFromDiscriminatorValue); } },
-                { "siteUser", n => { SiteUser = n.GetObjectValue<SharePointIdentity>(SharePointIdentity.CreateFromDiscriminatorValue); } },
+                { "group", n => { Group = n.GetObjectValue<Microsoft.Graph.Models.Identity>(Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
+                { "siteGroup", n => { SiteGroup = n.GetObjectValue<Microsoft.Graph.Models.SharePointIdentity>(Microsoft.Graph.Models.SharePointIdentity.CreateFromDiscriminatorValue); } },
+                { "siteUser", n => { SiteUser = n.GetObjectValue<Microsoft.Graph.Models.SharePointIdentity>(Microsoft.Graph.Models.SharePointIdentity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -96,9 +96,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<Identity>("group", Group);
-            writer.WriteObjectValue<SharePointIdentity>("siteGroup", SiteGroup);
-            writer.WriteObjectValue<SharePointIdentity>("siteUser", SiteUser);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Identity>("group", Group);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SharePointIdentity>("siteGroup", SiteGroup);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SharePointIdentity>("siteUser", SiteUser);
         }
     }
 }

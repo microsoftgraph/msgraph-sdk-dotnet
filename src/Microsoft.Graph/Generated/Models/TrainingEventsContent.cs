@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Models
         /// <summary>List of assigned trainings and their information in an attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignedTrainingInfo>? AssignedTrainingsInfos
+        public List<Microsoft.Graph.Models.AssignedTrainingInfo>? AssignedTrainingsInfos
         {
-            get { return BackingStore?.Get<List<AssignedTrainingInfo>?>("assignedTrainingsInfos"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AssignedTrainingInfo>?>("assignedTrainingsInfos"); }
             set { BackingStore?.Set("assignedTrainingsInfos", value); }
         }
 #nullable restore
 #else
-        public List<AssignedTrainingInfo> AssignedTrainingsInfos
+        public List<Microsoft.Graph.Models.AssignedTrainingInfo> AssignedTrainingsInfos
         {
-            get { return BackingStore?.Get<List<AssignedTrainingInfo>>("assignedTrainingsInfos"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AssignedTrainingInfo>>("assignedTrainingsInfos"); }
             set { BackingStore?.Set("assignedTrainingsInfos", value); }
         }
 #endif
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("trainingsAssignedUserCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TrainingEventsContent"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TrainingEventsContent"/> and sets the default values.
         /// </summary>
         public TrainingEventsContent()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TrainingEventsContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TrainingEventsContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TrainingEventsContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.TrainingEventsContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TrainingEventsContent();
+            return new Microsoft.Graph.Models.TrainingEventsContent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignedTrainingsInfos", n => { AssignedTrainingsInfos = n.GetCollectionOfObjectValues<AssignedTrainingInfo>(AssignedTrainingInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignedTrainingsInfos", n => { AssignedTrainingsInfos = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AssignedTrainingInfo>(Microsoft.Graph.Models.AssignedTrainingInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "trainingsAssignedUserCount", n => { TrainingsAssignedUserCount = n.GetIntValue(); } },
             };
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<AssignedTrainingInfo>("assignedTrainingsInfos", AssignedTrainingsInfos);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AssignedTrainingInfo>("assignedTrainingsInfos", AssignedTrainingsInfos);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("trainingsAssignedUserCount", TrainingsAssignedUserCount);
             writer.WriteAdditionalData(AdditionalData);

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CustomTimeZone : TimeZoneBase, IParsable
+    public class CustomTimeZone : Microsoft.Graph.Models.TimeZoneBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The time offset of the time zone from Coordinated Universal Time (UTC). This value is in minutes. Time zones that are ahead of UTC have a positive offset; time zones that are behind UTC have a negative offset.</summary>
@@ -19,37 +19,37 @@ namespace Microsoft.Graph.Models
         /// <summary>Specifies when the time zone switches from standard time to daylight saving time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DaylightTimeZoneOffset? DaylightOffset
+        public Microsoft.Graph.Models.DaylightTimeZoneOffset? DaylightOffset
         {
-            get { return BackingStore?.Get<DaylightTimeZoneOffset?>("daylightOffset"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DaylightTimeZoneOffset?>("daylightOffset"); }
             set { BackingStore?.Set("daylightOffset", value); }
         }
 #nullable restore
 #else
-        public DaylightTimeZoneOffset DaylightOffset
+        public Microsoft.Graph.Models.DaylightTimeZoneOffset DaylightOffset
         {
-            get { return BackingStore?.Get<DaylightTimeZoneOffset>("daylightOffset"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DaylightTimeZoneOffset>("daylightOffset"); }
             set { BackingStore?.Set("daylightOffset", value); }
         }
 #endif
         /// <summary>Specifies when the time zone switches from daylight saving time to standard time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public StandardTimeZoneOffset? StandardOffset
+        public Microsoft.Graph.Models.StandardTimeZoneOffset? StandardOffset
         {
-            get { return BackingStore?.Get<StandardTimeZoneOffset?>("standardOffset"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.StandardTimeZoneOffset?>("standardOffset"); }
             set { BackingStore?.Set("standardOffset", value); }
         }
 #nullable restore
 #else
-        public StandardTimeZoneOffset StandardOffset
+        public Microsoft.Graph.Models.StandardTimeZoneOffset StandardOffset
         {
-            get { return BackingStore?.Get<StandardTimeZoneOffset>("standardOffset"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.StandardTimeZoneOffset>("standardOffset"); }
             set { BackingStore?.Set("standardOffset", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CustomTimeZone"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CustomTimeZone"/> and sets the default values.
         /// </summary>
         public CustomTimeZone() : base()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomTimeZone"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CustomTimeZone"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CustomTimeZone CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CustomTimeZone CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CustomTimeZone();
+            return new Microsoft.Graph.Models.CustomTimeZone();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "bias", n => { Bias = n.GetIntValue(); } },
-                { "daylightOffset", n => { DaylightOffset = n.GetObjectValue<DaylightTimeZoneOffset>(DaylightTimeZoneOffset.CreateFromDiscriminatorValue); } },
-                { "standardOffset", n => { StandardOffset = n.GetObjectValue<StandardTimeZoneOffset>(StandardTimeZoneOffset.CreateFromDiscriminatorValue); } },
+                { "daylightOffset", n => { DaylightOffset = n.GetObjectValue<Microsoft.Graph.Models.DaylightTimeZoneOffset>(Microsoft.Graph.Models.DaylightTimeZoneOffset.CreateFromDiscriminatorValue); } },
+                { "standardOffset", n => { StandardOffset = n.GetObjectValue<Microsoft.Graph.Models.StandardTimeZoneOffset>(Microsoft.Graph.Models.StandardTimeZoneOffset.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,8 +87,8 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("bias", Bias);
-            writer.WriteObjectValue<DaylightTimeZoneOffset>("daylightOffset", DaylightOffset);
-            writer.WriteObjectValue<StandardTimeZoneOffset>("standardOffset", StandardOffset);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DaylightTimeZoneOffset>("daylightOffset", DaylightOffset);
+            writer.WriteObjectValue<Microsoft.Graph.Models.StandardTimeZoneOffset>("standardOffset", StandardOffset);
         }
     }
 }

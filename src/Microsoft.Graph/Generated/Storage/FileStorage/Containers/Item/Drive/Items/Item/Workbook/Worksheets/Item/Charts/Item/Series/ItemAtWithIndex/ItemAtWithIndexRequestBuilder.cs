@@ -19,17 +19,17 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
     public class ItemAtWithIndexRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the format property of the microsoft.graph.workbookChartSeries entity.</summary>
-        public FormatRequestBuilder Format
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.ItemAtWithIndex.Format.FormatRequestBuilder Format
         {
-            get => new FormatRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.ItemAtWithIndex.Format.FormatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the points property of the microsoft.graph.workbookChartSeries entity.</summary>
-        public PointsRequestBuilder Points
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.ItemAtWithIndex.Points.PointsRequestBuilder Points
         {
-            get => new PointsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.ItemAtWithIndex.Points.PointsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemAtWithIndexRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.ItemAtWithIndex.ItemAtWithIndexRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="index">Usage: index={index}</param>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
             if (index != null) PathParameters.Add("index", index);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemAtWithIndexRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.ItemAtWithIndex.ItemAtWithIndexRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,25 +50,25 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
         /// Retrieves a series based on its position in the collection
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartseriescollection-itemat?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="WorkbookChartSeries"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookChartSeries"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookChartSeries?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookChartSeries?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WorkbookChartSeries> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookChartSeries> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WorkbookChartSeries>(requestInfo, WorkbookChartSeries.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkbookChartSeries>(requestInfo, Microsoft.Graph.Models.WorkbookChartSeries.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a series based on its position in the collection
@@ -92,11 +92,11 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ItemAtWithIndexRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.ItemAtWithIndex.ItemAtWithIndexRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ItemAtWithIndexRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.ItemAtWithIndex.ItemAtWithIndexRequestBuilder WithUrl(string rawUrl)
         {
-            return new ItemAtWithIndexRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.ItemAtWithIndex.ItemAtWithIndexRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

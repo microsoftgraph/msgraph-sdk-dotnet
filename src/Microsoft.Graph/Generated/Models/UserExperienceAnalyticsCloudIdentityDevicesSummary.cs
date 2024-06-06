@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserExperienceAnalyticsCloudIdentityDevicesSummary"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsCloudIdentityDevicesSummary"/> and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsCloudIdentityDevicesSummary()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsCloudIdentityDevicesSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsCloudIdentityDevicesSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserExperienceAnalyticsCloudIdentityDevicesSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.UserExperienceAnalyticsCloudIdentityDevicesSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsCloudIdentityDevicesSummary();
+            return new Microsoft.Graph.Models.UserExperienceAnalyticsCloudIdentityDevicesSummary();
         }
         /// <summary>
         /// The deserialization information for the current model

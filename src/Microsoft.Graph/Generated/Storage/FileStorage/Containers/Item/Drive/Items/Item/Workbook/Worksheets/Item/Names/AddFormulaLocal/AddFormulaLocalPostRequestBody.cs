@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AddFormulaLocalPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Names.AddFormulaLocal.AddFormulaLocalPostRequestBody"/> and sets the default values.
         /// </summary>
         public AddFormulaLocalPostRequestBody()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AddFormulaLocalPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Names.AddFormulaLocal.AddFormulaLocalPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AddFormulaLocalPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Names.AddFormulaLocal.AddFormulaLocalPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AddFormulaLocalPostRequestBody();
+            return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Names.AddFormulaLocal.AddFormulaLocalPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

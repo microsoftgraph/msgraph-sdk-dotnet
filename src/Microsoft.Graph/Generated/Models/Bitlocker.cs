@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Bitlocker : Entity, IParsable
+    public class Bitlocker : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The recovery keys associated with the bitlocker entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BitlockerRecoveryKey>? RecoveryKeys
+        public List<Microsoft.Graph.Models.BitlockerRecoveryKey>? RecoveryKeys
         {
-            get { return BackingStore?.Get<List<BitlockerRecoveryKey>?>("recoveryKeys"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BitlockerRecoveryKey>?>("recoveryKeys"); }
             set { BackingStore?.Set("recoveryKeys", value); }
         }
 #nullable restore
 #else
-        public List<BitlockerRecoveryKey> RecoveryKeys
+        public List<Microsoft.Graph.Models.BitlockerRecoveryKey> RecoveryKeys
         {
-            get { return BackingStore?.Get<List<BitlockerRecoveryKey>>("recoveryKeys"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BitlockerRecoveryKey>>("recoveryKeys"); }
             set { BackingStore?.Set("recoveryKeys", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Bitlocker"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Bitlocker"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Bitlocker CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Bitlocker CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Bitlocker();
+            return new Microsoft.Graph.Models.Bitlocker();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "recoveryKeys", n => { RecoveryKeys = n.GetCollectionOfObjectValues<BitlockerRecoveryKey>(BitlockerRecoveryKey.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recoveryKeys", n => { RecoveryKeys = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.BitlockerRecoveryKey>(Microsoft.Graph.Models.BitlockerRecoveryKey.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<BitlockerRecoveryKey>("recoveryKeys", RecoveryKeys);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.BitlockerRecoveryKey>("recoveryKeys", RecoveryKeys);
         }
     }
 }

@@ -13,16 +13,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The body property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FormattedContent? Body
+        public Microsoft.Graph.Models.Security.FormattedContent? Body
         {
-            get { return BackingStore?.Get<FormattedContent?>("body"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FormattedContent?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #nullable restore
 #else
-        public FormattedContent Body
+        public Microsoft.Graph.Models.Security.FormattedContent Body
         {
-            get { return BackingStore?.Get<FormattedContent>("body"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FormattedContent>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #endif
@@ -51,16 +51,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>Indicators related to this article.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ArticleIndicator>? Indicators
+        public List<Microsoft.Graph.Models.Security.ArticleIndicator>? Indicators
         {
-            get { return BackingStore?.Get<List<ArticleIndicator>?>("indicators"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.ArticleIndicator>?>("indicators"); }
             set { BackingStore?.Set("indicators", value); }
         }
 #nullable restore
 #else
-        public List<ArticleIndicator> Indicators
+        public List<Microsoft.Graph.Models.Security.ArticleIndicator> Indicators
         {
-            get { return BackingStore?.Get<List<ArticleIndicator>>("indicators"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.ArticleIndicator>>("indicators"); }
             set { BackingStore?.Set("indicators", value); }
         }
 #endif
@@ -79,16 +79,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FormattedContent? Summary
+        public Microsoft.Graph.Models.Security.FormattedContent? Summary
         {
-            get { return BackingStore?.Get<FormattedContent?>("summary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FormattedContent?>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
 #nullable restore
 #else
-        public FormattedContent Summary
+        public Microsoft.Graph.Models.Security.FormattedContent Summary
         {
-            get { return BackingStore?.Get<FormattedContent>("summary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FormattedContent>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
 #endif
@@ -127,12 +127,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Article"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.Article"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Article CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.Article CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Article();
+            return new Microsoft.Graph.Models.Security.Article();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -142,13 +142,13 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "body", n => { Body = n.GetObjectValue<FormattedContent>(FormattedContent.CreateFromDiscriminatorValue); } },
+                { "body", n => { Body = n.GetObjectValue<Microsoft.Graph.Models.Security.FormattedContent>(Microsoft.Graph.Models.Security.FormattedContent.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "imageUrl", n => { ImageUrl = n.GetStringValue(); } },
-                { "indicators", n => { Indicators = n.GetCollectionOfObjectValues<ArticleIndicator>(ArticleIndicator.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "indicators", n => { Indicators = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.ArticleIndicator>(Microsoft.Graph.Models.Security.ArticleIndicator.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isFeatured", n => { IsFeatured = n.GetBoolValue(); } },
                 { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "summary", n => { Summary = n.GetObjectValue<FormattedContent>(FormattedContent.CreateFromDiscriminatorValue); } },
+                { "summary", n => { Summary = n.GetObjectValue<Microsoft.Graph.Models.Security.FormattedContent>(Microsoft.Graph.Models.Security.FormattedContent.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
@@ -161,13 +161,13 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<FormattedContent>("body", Body);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.FormattedContent>("body", Body);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("imageUrl", ImageUrl);
-            writer.WriteCollectionOfObjectValues<ArticleIndicator>("indicators", Indicators);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.ArticleIndicator>("indicators", Indicators);
             writer.WriteBoolValue("isFeatured", IsFeatured);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
-            writer.WriteObjectValue<FormattedContent>("summary", Summary);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.FormattedContent>("summary", Summary);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("title", Title);
         }

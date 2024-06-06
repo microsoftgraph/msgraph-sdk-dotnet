@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class MacOSDmgAppCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class MacOSDmgAppCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MacOSDmgApp>? Value
+        public List<Microsoft.Graph.Models.MacOSDmgApp>? Value
         {
-            get { return BackingStore?.Get<List<MacOSDmgApp>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MacOSDmgApp>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<MacOSDmgApp> Value
+        public List<Microsoft.Graph.Models.MacOSDmgApp> Value
         {
-            get { return BackingStore?.Get<List<MacOSDmgApp>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MacOSDmgApp>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOSDmgAppCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MacOSDmgAppCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSDmgAppCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MacOSDmgAppCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSDmgAppCollectionResponse();
+            return new Microsoft.Graph.Models.MacOSDmgAppCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<MacOSDmgApp>(MacOSDmgApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MacOSDmgApp>(Microsoft.Graph.Models.MacOSDmgApp.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MacOSDmgApp>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MacOSDmgApp>("value", Value);
         }
     }
 }

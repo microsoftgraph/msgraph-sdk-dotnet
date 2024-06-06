@@ -9,49 +9,49 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains content properties for a specific app version. Each mobileAppContent can have multiple mobileAppContentFile.
     /// </summary>
-    public class MobileAppContent : Entity, IParsable
+    public class MobileAppContent : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The collection of contained apps in a MobileLobApp acting as a package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileContainedApp>? ContainedApps
+        public List<Microsoft.Graph.Models.MobileContainedApp>? ContainedApps
         {
-            get { return BackingStore?.Get<List<MobileContainedApp>?>("containedApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MobileContainedApp>?>("containedApps"); }
             set { BackingStore?.Set("containedApps", value); }
         }
 #nullable restore
 #else
-        public List<MobileContainedApp> ContainedApps
+        public List<Microsoft.Graph.Models.MobileContainedApp> ContainedApps
         {
-            get { return BackingStore?.Get<List<MobileContainedApp>>("containedApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MobileContainedApp>>("containedApps"); }
             set { BackingStore?.Set("containedApps", value); }
         }
 #endif
         /// <summary>The list of files for this app content version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppContentFile>? Files
+        public List<Microsoft.Graph.Models.MobileAppContentFile>? Files
         {
-            get { return BackingStore?.Get<List<MobileAppContentFile>?>("files"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MobileAppContentFile>?>("files"); }
             set { BackingStore?.Set("files", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppContentFile> Files
+        public List<Microsoft.Graph.Models.MobileAppContentFile> Files
         {
-            get { return BackingStore?.Get<List<MobileAppContentFile>>("files"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MobileAppContentFile>>("files"); }
             set { BackingStore?.Set("files", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileAppContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MobileAppContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileAppContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MobileAppContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MobileAppContent();
+            return new Microsoft.Graph.Models.MobileAppContent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,8 +61,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "containedApps", n => { ContainedApps = n.GetCollectionOfObjectValues<MobileContainedApp>(MobileContainedApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "files", n => { Files = n.GetCollectionOfObjectValues<MobileAppContentFile>(MobileAppContentFile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "containedApps", n => { ContainedApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MobileContainedApp>(Microsoft.Graph.Models.MobileContainedApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "files", n => { Files = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MobileAppContentFile>(Microsoft.Graph.Models.MobileAppContentFile.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -73,8 +73,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MobileContainedApp>("containedApps", ContainedApps);
-            writer.WriteCollectionOfObjectValues<MobileAppContentFile>("files", Files);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MobileContainedApp>("containedApps", ContainedApps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MobileAppContentFile>("files", Files);
         }
     }
 }

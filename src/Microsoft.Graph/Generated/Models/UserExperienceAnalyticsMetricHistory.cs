@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics metric history.
     /// </summary>
-    public class UserExperienceAnalyticsMetricHistory : Entity, IParsable
+    public class UserExperienceAnalyticsMetricHistory : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The Intune device id of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsMetricHistory"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsMetricHistory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsMetricHistory CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserExperienceAnalyticsMetricHistory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsMetricHistory();
+            return new Microsoft.Graph.Models.UserExperienceAnalyticsMetricHistory();
         }
         /// <summary>
         /// The deserialization information for the current model

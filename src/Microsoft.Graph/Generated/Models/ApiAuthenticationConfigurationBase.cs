@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ApiAuthenticationConfigurationBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ApiAuthenticationConfigurationBase"/> and sets the default values.
         /// </summary>
         public ApiAuthenticationConfigurationBase()
         {
@@ -46,18 +46,18 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ApiAuthenticationConfigurationBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ApiAuthenticationConfigurationBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ApiAuthenticationConfigurationBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ApiAuthenticationConfigurationBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.basicAuthentication" => new BasicAuthentication(),
-                "#microsoft.graph.clientCertificateAuthentication" => new ClientCertificateAuthentication(),
-                "#microsoft.graph.pkcs12Certificate" => new Pkcs12Certificate(),
-                _ => new ApiAuthenticationConfigurationBase(),
+                "#microsoft.graph.basicAuthentication" => new Microsoft.Graph.Models.BasicAuthentication(),
+                "#microsoft.graph.clientCertificateAuthentication" => new Microsoft.Graph.Models.ClientCertificateAuthentication(),
+                "#microsoft.graph.pkcs12Certificate" => new Microsoft.Graph.Models.Pkcs12Certificate(),
+                _ => new Microsoft.Graph.Models.ApiAuthenticationConfigurationBase(),
             };
         }
         /// <summary>

@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class PinnedChatMessageInfo : Entity, IParsable
+    public class PinnedChatMessageInfo : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents details about the chat message that is pinned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ChatMessage? Message
+        public Microsoft.Graph.Models.ChatMessage? Message
         {
-            get { return BackingStore?.Get<ChatMessage?>("message"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ChatMessage?>("message"); }
             set { BackingStore?.Set("message", value); }
         }
 #nullable restore
 #else
-        public ChatMessage Message
+        public Microsoft.Graph.Models.ChatMessage Message
         {
-            get { return BackingStore?.Get<ChatMessage>("message"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ChatMessage>("message"); }
             set { BackingStore?.Set("message", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PinnedChatMessageInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PinnedChatMessageInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PinnedChatMessageInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.PinnedChatMessageInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PinnedChatMessageInfo();
+            return new Microsoft.Graph.Models.PinnedChatMessageInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "message", n => { Message = n.GetObjectValue<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue); } },
+                { "message", n => { Message = n.GetObjectValue<Microsoft.Graph.Models.ChatMessage>(Microsoft.Graph.Models.ChatMessage.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ChatMessage>("message", Message);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ChatMessage>("message", Message);
         }
     }
 }

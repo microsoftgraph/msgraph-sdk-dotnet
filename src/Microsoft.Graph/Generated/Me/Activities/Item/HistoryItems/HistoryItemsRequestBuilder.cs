@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Me.Activities.Item.HistoryItems
     public class HistoryItemsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Me.Activities.Item.HistoryItems.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Activities.Item.HistoryItems.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the historyItems property of the microsoft.graph.userActivity entity.</summary>
         /// <param name="position">The unique identifier of activityHistoryItem</param>
-        /// <returns>A <see cref="ActivityHistoryItemItemRequestBuilder"/></returns>
-        public ActivityHistoryItemItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Me.Activities.Item.HistoryItems.Item.ActivityHistoryItemItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Me.Activities.Item.HistoryItems.Item.ActivityHistoryItemItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("activityHistoryItem%2Did", position);
-                return new ActivityHistoryItemItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Me.Activities.Item.HistoryItems.Item.ActivityHistoryItemItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="HistoryItemsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Activities.Item.HistoryItems.HistoryItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Me.Activities.Item.HistoryItems
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="HistoryItemsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Activities.Item.HistoryItems.HistoryItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Me.Activities.Item.HistoryItems
         /// <summary>
         /// Optional. NavigationProperty/Containment; navigation property to the activity&apos;s historyItems.
         /// </summary>
-        /// <returns>A <see cref="ActivityHistoryItemCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ActivityHistoryItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ActivityHistoryItemCollectionResponse?> GetAsync(Action<RequestConfiguration<HistoryItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ActivityHistoryItemCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Activities.Item.HistoryItems.HistoryItemsRequestBuilder.HistoryItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ActivityHistoryItemCollectionResponse> GetAsync(Action<RequestConfiguration<HistoryItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ActivityHistoryItemCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Activities.Item.HistoryItems.HistoryItemsRequestBuilder.HistoryItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ActivityHistoryItemCollectionResponse>(requestInfo, ActivityHistoryItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ActivityHistoryItemCollectionResponse>(requestInfo, Microsoft.Graph.Models.ActivityHistoryItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to historyItems for me
         /// </summary>
-        /// <returns>A <see cref="ActivityHistoryItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ActivityHistoryItem"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ActivityHistoryItem?> PostAsync(ActivityHistoryItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ActivityHistoryItem?> PostAsync(Microsoft.Graph.Models.ActivityHistoryItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ActivityHistoryItem> PostAsync(ActivityHistoryItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ActivityHistoryItem> PostAsync(Microsoft.Graph.Models.ActivityHistoryItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ActivityHistoryItem>(requestInfo, ActivityHistoryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ActivityHistoryItem>(requestInfo, Microsoft.Graph.Models.ActivityHistoryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Optional. NavigationProperty/Containment; navigation property to the activity&apos;s historyItems.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Me.Activities.Item.HistoryItems
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HistoryItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Activities.Item.HistoryItems.HistoryItemsRequestBuilder.HistoryItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HistoryItemsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Activities.Item.HistoryItems.HistoryItemsRequestBuilder.HistoryItemsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Me.Activities.Item.HistoryItems
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ActivityHistoryItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ActivityHistoryItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ActivityHistoryItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ActivityHistoryItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Me.Activities.Item.HistoryItems
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="HistoryItemsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Activities.Item.HistoryItems.HistoryItemsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public HistoryItemsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Me.Activities.Item.HistoryItems.HistoryItemsRequestBuilder WithUrl(string rawUrl)
         {
-            return new HistoryItemsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Me.Activities.Item.HistoryItems.HistoryItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Optional. NavigationProperty/Containment; navigation property to the activity&apos;s historyItems.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Me.Activities.Item.HistoryItems
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class HistoryItemsRequestBuilderGetRequestConfiguration : RequestConfiguration<HistoryItemsRequestBuilderGetQueryParameters>
+        public class HistoryItemsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.Activities.Item.HistoryItems.HistoryItemsRequestBuilder.HistoryItemsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

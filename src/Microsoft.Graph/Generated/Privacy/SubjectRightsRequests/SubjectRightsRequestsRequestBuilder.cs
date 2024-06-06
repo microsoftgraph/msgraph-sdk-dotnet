@@ -20,25 +20,25 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Privacy.SubjectRightsRequests.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Privacy.SubjectRightsRequests.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.</summary>
         /// <param name="position">The unique identifier of subjectRightsRequest</param>
-        /// <returns>A <see cref="SubjectRightsRequestItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Privacy.SubjectRightsRequests.Item.SubjectRightsRequestItemRequestBuilder"/></returns>
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
-        public SubjectRightsRequestItemRequestBuilder this[string position]
+        public Microsoft.Graph.Privacy.SubjectRightsRequests.Item.SubjectRightsRequestItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("subjectRightsRequest%2Did", position);
-                return new SubjectRightsRequestItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Privacy.SubjectRightsRequests.Item.SubjectRightsRequestItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SubjectRightsRequestsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Privacy.SubjectRightsRequests.SubjectRightsRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SubjectRightsRequestsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Privacy.SubjectRightsRequests.SubjectRightsRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -57,53 +57,53 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests
         /// Get a list of subjectRightsRequest objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="SubjectRightsRequestCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SubjectRightsRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SubjectRightsRequestCollectionResponse?> GetAsync(Action<RequestConfiguration<SubjectRightsRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SubjectRightsRequestCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Privacy.SubjectRightsRequests.SubjectRightsRequestsRequestBuilder.SubjectRightsRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SubjectRightsRequestCollectionResponse> GetAsync(Action<RequestConfiguration<SubjectRightsRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SubjectRightsRequestCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Privacy.SubjectRightsRequests.SubjectRightsRequestsRequestBuilder.SubjectRightsRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SubjectRightsRequestCollectionResponse>(requestInfo, SubjectRightsRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SubjectRightsRequestCollectionResponse>(requestInfo, Microsoft.Graph.Models.SubjectRightsRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new subjectRightsRequest object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-post?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="SubjectRightsRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SubjectRightsRequest"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SubjectRightsRequest?> PostAsync(SubjectRightsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SubjectRightsRequest?> PostAsync(Microsoft.Graph.Models.SubjectRightsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SubjectRightsRequest> PostAsync(SubjectRightsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SubjectRightsRequest> PostAsync(Microsoft.Graph.Models.SubjectRightsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SubjectRightsRequest>(requestInfo, SubjectRightsRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SubjectRightsRequest>(requestInfo, Microsoft.Graph.Models.SubjectRightsRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of subjectRightsRequest objects and their properties.
@@ -113,11 +113,11 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SubjectRightsRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Privacy.SubjectRightsRequests.SubjectRightsRequestsRequestBuilder.SubjectRightsRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SubjectRightsRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Privacy.SubjectRightsRequests.SubjectRightsRequestsRequestBuilder.SubjectRightsRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -134,11 +134,11 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(SubjectRightsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.SubjectRightsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(SubjectRightsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.SubjectRightsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -151,12 +151,12 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SubjectRightsRequestsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Privacy.SubjectRightsRequests.SubjectRightsRequestsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
-        public SubjectRightsRequestsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Privacy.SubjectRightsRequests.SubjectRightsRequestsRequestBuilder WithUrl(string rawUrl)
         {
-            return new SubjectRightsRequestsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Privacy.SubjectRightsRequests.SubjectRightsRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of subjectRightsRequest objects and their properties.
@@ -227,7 +227,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SubjectRightsRequestsRequestBuilderGetRequestConfiguration : RequestConfiguration<SubjectRightsRequestsRequestBuilderGetQueryParameters>
+        public class SubjectRightsRequestsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Privacy.SubjectRightsRequests.SubjectRightsRequestsRequestBuilder.SubjectRightsRequestsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.56.0] - 2024-06-06
+
+- Latest metadata updates from 4th June 2024.
+
+
 ## [5.55.0] - 2024-05-31
 
 - Latest metadata updates from 28th May 2024.

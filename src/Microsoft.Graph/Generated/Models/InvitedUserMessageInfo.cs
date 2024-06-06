@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Additional recipients the invitation message should be sent to. Currently only one additional recipient is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recipient>? CcRecipients
+        public List<Microsoft.Graph.Models.Recipient>? CcRecipients
         {
-            get { return BackingStore?.Get<List<Recipient>?>("ccRecipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>?>("ccRecipients"); }
             set { BackingStore?.Set("ccRecipients", value); }
         }
 #nullable restore
 #else
-        public List<Recipient> CcRecipients
+        public List<Microsoft.Graph.Models.Recipient> CcRecipients
         {
-            get { return BackingStore?.Get<List<Recipient>>("ccRecipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>>("ccRecipients"); }
             set { BackingStore?.Set("ccRecipients", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="InvitedUserMessageInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.InvitedUserMessageInfo"/> and sets the default values.
         /// </summary>
         public InvitedUserMessageInfo()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InvitedUserMessageInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.InvitedUserMessageInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static InvitedUserMessageInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.InvitedUserMessageInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InvitedUserMessageInfo();
+            return new Microsoft.Graph.Models.InvitedUserMessageInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ccRecipients", n => { CcRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ccRecipients", n => { CcRecipients = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>(Microsoft.Graph.Models.Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "customizedMessageBody", n => { CustomizedMessageBody = n.GetStringValue(); } },
                 { "messageLanguage", n => { MessageLanguage = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<Recipient>("ccRecipients", CcRecipients);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>("ccRecipients", CcRecipients);
             writer.WriteStringValue("customizedMessageBody", CustomizedMessageBody);
             writer.WriteStringValue("messageLanguage", MessageLanguage);
             writer.WriteStringValue("@odata.type", OdataType);

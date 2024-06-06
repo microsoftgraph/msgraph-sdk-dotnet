@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AssignmentOrder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AssignmentOrder"/> and sets the default values.
         /// </summary>
         public AssignmentOrder()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignmentOrder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AssignmentOrder"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignmentOrder CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AssignmentOrder CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignmentOrder();
+            return new Microsoft.Graph.Models.AssignmentOrder();
         }
         /// <summary>
         /// The deserialization information for the current model

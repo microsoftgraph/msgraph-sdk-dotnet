@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties and inherited properties for iOS web apps.
     /// </summary>
-    public class IosiPadOSWebClip : MobileApp, IParsable
+    public class IosiPadOSWebClip : Microsoft.Graph.Models.MobileApp, IParsable
     {
         /// <summary>Indicates iOS/iPadOS web clip app URL. Example: &apos;https://www.contoso.com&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("useManagedBrowser", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IosiPadOSWebClip"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IosiPadOSWebClip"/> and sets the default values.
         /// </summary>
         public IosiPadOSWebClip() : base()
         {
@@ -43,12 +43,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosiPadOSWebClip"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IosiPadOSWebClip"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosiPadOSWebClip CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IosiPadOSWebClip CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosiPadOSWebClip();
+            return new Microsoft.Graph.Models.IosiPadOSWebClip();
         }
         /// <summary>
         /// The deserialization information for the current model

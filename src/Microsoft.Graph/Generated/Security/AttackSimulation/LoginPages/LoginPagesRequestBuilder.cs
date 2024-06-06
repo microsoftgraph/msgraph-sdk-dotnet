@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Security.AttackSimulation.LoginPages
     public class LoginPagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Security.AttackSimulation.LoginPages.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.AttackSimulation.LoginPages.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the loginPages property of the microsoft.graph.attackSimulationRoot entity.</summary>
         /// <param name="position">The unique identifier of loginPage</param>
-        /// <returns>A <see cref="LoginPageItemRequestBuilder"/></returns>
-        public LoginPageItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Security.AttackSimulation.LoginPages.Item.LoginPageItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Security.AttackSimulation.LoginPages.Item.LoginPageItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("loginPage%2Did", position);
-                return new LoginPageItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Security.AttackSimulation.LoginPages.Item.LoginPageItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="LoginPagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.AttackSimulation.LoginPages.LoginPagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.LoginPages
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LoginPagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.AttackSimulation.LoginPages.LoginPagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,25 +55,25 @@ namespace Microsoft.Graph.Security.AttackSimulation.LoginPages
         /// Get a list of the loginPage objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/attacksimulationroot-list-loginpage?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="LoginPageCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.LoginPageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LoginPageCollectionResponse?> GetAsync(Action<RequestConfiguration<LoginPagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.LoginPageCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.AttackSimulation.LoginPages.LoginPagesRequestBuilder.LoginPagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<LoginPageCollectionResponse> GetAsync(Action<RequestConfiguration<LoginPagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.LoginPageCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.AttackSimulation.LoginPages.LoginPagesRequestBuilder.LoginPagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<LoginPageCollectionResponse>(requestInfo, LoginPageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.LoginPageCollectionResponse>(requestInfo, Microsoft.Graph.Models.LoginPageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to loginPages for security
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.LoginPages
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.LoginPage?> PostAsync(Microsoft.Graph.Models.LoginPage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.LoginPages
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.LoginPage>(requestInfo, Microsoft.Graph.Models.LoginPage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Security.AttackSimulation.LoginPages
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LoginPagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.AttackSimulation.LoginPages.LoginPagesRequestBuilder.LoginPagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LoginPagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.AttackSimulation.LoginPages.LoginPagesRequestBuilder.LoginPagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.Security.AttackSimulation.LoginPages
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="LoginPagesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.AttackSimulation.LoginPages.LoginPagesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LoginPagesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.AttackSimulation.LoginPages.LoginPagesRequestBuilder WithUrl(string rawUrl)
         {
-            return new LoginPagesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.AttackSimulation.LoginPages.LoginPagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the loginPage objects and their properties.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.LoginPages
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class LoginPagesRequestBuilderGetRequestConfiguration : RequestConfiguration<LoginPagesRequestBuilderGetQueryParameters>
+        public class LoginPagesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.AttackSimulation.LoginPages.LoginPagesRequestBuilder.LoginPagesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

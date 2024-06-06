@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WindowsHelloForBusinessAuthenticationMethod : AuthenticationMethod, IParsable
+    public class WindowsHelloForBusinessAuthenticationMethod : Microsoft.Graph.Models.AuthenticationMethod, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date and time that this Windows Hello for Business key was registered.</summary>
@@ -49,13 +49,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.</summary>
-        public AuthenticationMethodKeyStrength? KeyStrength
+        public Microsoft.Graph.Models.AuthenticationMethodKeyStrength? KeyStrength
         {
-            get { return BackingStore?.Get<AuthenticationMethodKeyStrength?>("keyStrength"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationMethodKeyStrength?>("keyStrength"); }
             set { BackingStore?.Set("keyStrength", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsHelloForBusinessAuthenticationMethod"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WindowsHelloForBusinessAuthenticationMethod"/> and sets the default values.
         /// </summary>
         public WindowsHelloForBusinessAuthenticationMethod() : base()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsHelloForBusinessAuthenticationMethod"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsHelloForBusinessAuthenticationMethod"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsHelloForBusinessAuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WindowsHelloForBusinessAuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsHelloForBusinessAuthenticationMethod();
+            return new Microsoft.Graph.Models.WindowsHelloForBusinessAuthenticationMethod();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "device", n => { Device = n.GetObjectValue<Microsoft.Graph.Models.Device>(Microsoft.Graph.Models.Device.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "keyStrength", n => { KeyStrength = n.GetEnumValue<AuthenticationMethodKeyStrength>(); } },
+                { "keyStrength", n => { KeyStrength = n.GetEnumValue<Microsoft.Graph.Models.AuthenticationMethodKeyStrength>(); } },
             };
         }
         /// <summary>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Models.Device>("device", Device);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<AuthenticationMethodKeyStrength>("keyStrength", KeyStrength);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AuthenticationMethodKeyStrength>("keyStrength", KeyStrength);
         }
     }
 }

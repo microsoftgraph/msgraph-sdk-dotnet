@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Teamwork : Entity, IParsable
+    public class Teamwork : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of deleted chats.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeletedChat>? DeletedChats
+        public List<Microsoft.Graph.Models.DeletedChat>? DeletedChats
         {
-            get { return BackingStore?.Get<List<DeletedChat>?>("deletedChats"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeletedChat>?>("deletedChats"); }
             set { BackingStore?.Set("deletedChats", value); }
         }
 #nullable restore
 #else
-        public List<DeletedChat> DeletedChats
+        public List<Microsoft.Graph.Models.DeletedChat> DeletedChats
         {
-            get { return BackingStore?.Get<List<DeletedChat>>("deletedChats"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeletedChat>>("deletedChats"); }
             set { BackingStore?.Set("deletedChats", value); }
         }
 #endif
         /// <summary>The deleted team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeletedTeam>? DeletedTeams
+        public List<Microsoft.Graph.Models.DeletedTeam>? DeletedTeams
         {
-            get { return BackingStore?.Get<List<DeletedTeam>?>("deletedTeams"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeletedTeam>?>("deletedTeams"); }
             set { BackingStore?.Set("deletedTeams", value); }
         }
 #nullable restore
 #else
-        public List<DeletedTeam> DeletedTeams
+        public List<Microsoft.Graph.Models.DeletedTeam> DeletedTeams
         {
-            get { return BackingStore?.Get<List<DeletedTeam>>("deletedTeams"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeletedTeam>>("deletedTeams"); }
             set { BackingStore?.Set("deletedTeams", value); }
         }
 #endif
@@ -83,28 +83,28 @@ namespace Microsoft.Graph.Models
         /// <summary>The workforceIntegrations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkforceIntegration>? WorkforceIntegrations
+        public List<Microsoft.Graph.Models.WorkforceIntegration>? WorkforceIntegrations
         {
-            get { return BackingStore?.Get<List<WorkforceIntegration>?>("workforceIntegrations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkforceIntegration>?>("workforceIntegrations"); }
             set { BackingStore?.Set("workforceIntegrations", value); }
         }
 #nullable restore
 #else
-        public List<WorkforceIntegration> WorkforceIntegrations
+        public List<Microsoft.Graph.Models.WorkforceIntegration> WorkforceIntegrations
         {
-            get { return BackingStore?.Get<List<WorkforceIntegration>>("workforceIntegrations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkforceIntegration>>("workforceIntegrations"); }
             set { BackingStore?.Set("workforceIntegrations", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Teamwork"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Teamwork"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Teamwork CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Teamwork CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Teamwork();
+            return new Microsoft.Graph.Models.Teamwork();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -114,12 +114,12 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "deletedChats", n => { DeletedChats = n.GetCollectionOfObjectValues<DeletedChat>(DeletedChat.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "deletedTeams", n => { DeletedTeams = n.GetCollectionOfObjectValues<DeletedTeam>(DeletedTeam.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deletedChats", n => { DeletedChats = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DeletedChat>(Microsoft.Graph.Models.DeletedChat.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deletedTeams", n => { DeletedTeams = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DeletedTeam>(Microsoft.Graph.Models.DeletedTeam.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isTeamsEnabled", n => { IsTeamsEnabled = n.GetBoolValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "teamsAppSettings", n => { TeamsAppSettings = n.GetObjectValue<Microsoft.Graph.Models.TeamsAppSettings>(Microsoft.Graph.Models.TeamsAppSettings.CreateFromDiscriminatorValue); } },
-                { "workforceIntegrations", n => { WorkforceIntegrations = n.GetCollectionOfObjectValues<WorkforceIntegration>(WorkforceIntegration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "workforceIntegrations", n => { WorkforceIntegrations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WorkforceIntegration>(Microsoft.Graph.Models.WorkforceIntegration.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -130,12 +130,12 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeletedChat>("deletedChats", DeletedChats);
-            writer.WriteCollectionOfObjectValues<DeletedTeam>("deletedTeams", DeletedTeams);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DeletedChat>("deletedChats", DeletedChats);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DeletedTeam>("deletedTeams", DeletedTeams);
             writer.WriteBoolValue("isTeamsEnabled", IsTeamsEnabled);
             writer.WriteStringValue("region", Region);
             writer.WriteObjectValue<Microsoft.Graph.Models.TeamsAppSettings>("teamsAppSettings", TeamsAppSettings);
-            writer.WriteCollectionOfObjectValues<WorkforceIntegration>("workforceIntegrations", WorkforceIntegrations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WorkforceIntegration>("workforceIntegrations", WorkforceIntegrations);
         }
     }
 }

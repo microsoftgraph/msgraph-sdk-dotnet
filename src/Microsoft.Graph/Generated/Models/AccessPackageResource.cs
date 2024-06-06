@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AccessPackageResource : Entity, IParsable
+    public class AccessPackageResource : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Contains information about the attributes to be collected from the requestor and sent to the resource application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResourceAttribute>? Attributes
+        public List<Microsoft.Graph.Models.AccessPackageResourceAttribute>? Attributes
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceAttribute>?>("attributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageResourceAttribute>?>("attributes"); }
             set { BackingStore?.Set("attributes", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResourceAttribute> Attributes
+        public List<Microsoft.Graph.Models.AccessPackageResourceAttribute> Attributes
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceAttribute>>("attributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageResourceAttribute>>("attributes"); }
             set { BackingStore?.Set("attributes", value); }
         }
 #endif
@@ -67,16 +67,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment&apos;s originId.Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageResourceEnvironment? Environment
+        public Microsoft.Graph.Models.AccessPackageResourceEnvironment? Environment
         {
-            get { return BackingStore?.Get<AccessPackageResourceEnvironment?>("environment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageResourceEnvironment?>("environment"); }
             set { BackingStore?.Set("environment", value); }
         }
 #nullable restore
 #else
-        public AccessPackageResourceEnvironment Environment
+        public Microsoft.Graph.Models.AccessPackageResourceEnvironment Environment
         {
-            get { return BackingStore?.Get<AccessPackageResourceEnvironment>("environment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageResourceEnvironment>("environment"); }
             set { BackingStore?.Set("environment", value); }
         }
 #endif
@@ -121,44 +121,44 @@ namespace Microsoft.Graph.Models
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResourceRole>? Roles
+        public List<Microsoft.Graph.Models.AccessPackageResourceRole>? Roles
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceRole>?>("roles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageResourceRole>?>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResourceRole> Roles
+        public List<Microsoft.Graph.Models.AccessPackageResourceRole> Roles
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceRole>>("roles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageResourceRole>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #endif
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResourceScope>? Scopes
+        public List<Microsoft.Graph.Models.AccessPackageResourceScope>? Scopes
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceScope>?>("scopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageResourceScope>?>("scopes"); }
             set { BackingStore?.Set("scopes", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResourceScope> Scopes
+        public List<Microsoft.Graph.Models.AccessPackageResourceScope> Scopes
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceScope>>("scopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageResourceScope>>("scopes"); }
             set { BackingStore?.Set("scopes", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageResource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackageResource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessPackageResource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AccessPackageResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageResource();
+            return new Microsoft.Graph.Models.AccessPackageResource();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -168,16 +168,16 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<AccessPackageResourceAttribute>(AccessPackageResourceAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageResourceAttribute>(Microsoft.Graph.Models.AccessPackageResourceAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "environment", n => { Environment = n.GetObjectValue<AccessPackageResourceEnvironment>(AccessPackageResourceEnvironment.CreateFromDiscriminatorValue); } },
+                { "environment", n => { Environment = n.GetObjectValue<Microsoft.Graph.Models.AccessPackageResourceEnvironment>(Microsoft.Graph.Models.AccessPackageResourceEnvironment.CreateFromDiscriminatorValue); } },
                 { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "originId", n => { OriginId = n.GetStringValue(); } },
                 { "originSystem", n => { OriginSystem = n.GetStringValue(); } },
-                { "roles", n => { Roles = n.GetCollectionOfObjectValues<AccessPackageResourceRole>(AccessPackageResourceRole.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "scopes", n => { Scopes = n.GetCollectionOfObjectValues<AccessPackageResourceScope>(AccessPackageResourceScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roles", n => { Roles = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageResourceRole>(Microsoft.Graph.Models.AccessPackageResourceRole.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageResourceScope>(Microsoft.Graph.Models.AccessPackageResourceScope.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -188,16 +188,16 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AccessPackageResourceAttribute>("attributes", Attributes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageResourceAttribute>("attributes", Attributes);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<AccessPackageResourceEnvironment>("environment", Environment);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AccessPackageResourceEnvironment>("environment", Environment);
             writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
             writer.WriteStringValue("originId", OriginId);
             writer.WriteStringValue("originSystem", OriginSystem);
-            writer.WriteCollectionOfObjectValues<AccessPackageResourceRole>("roles", Roles);
-            writer.WriteCollectionOfObjectValues<AccessPackageResourceScope>("scopes", Scopes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageResourceRole>("roles", Roles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageResourceScope>("scopes", Scopes);
         }
     }
 }

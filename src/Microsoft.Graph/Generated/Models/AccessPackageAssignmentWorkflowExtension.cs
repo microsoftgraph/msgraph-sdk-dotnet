@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AccessPackageAssignmentWorkflowExtension : CustomCalloutExtension, IParsable
+    public class AccessPackageAssignmentWorkflowExtension : Microsoft.Graph.Models.CustomCalloutExtension, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The callback configuration for a custom extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomExtensionCallbackConfiguration? CallbackConfiguration
+        public Microsoft.Graph.Models.CustomExtensionCallbackConfiguration? CallbackConfiguration
         {
-            get { return BackingStore?.Get<CustomExtensionCallbackConfiguration?>("callbackConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomExtensionCallbackConfiguration?>("callbackConfiguration"); }
             set { BackingStore?.Set("callbackConfiguration", value); }
         }
 #nullable restore
 #else
-        public CustomExtensionCallbackConfiguration CallbackConfiguration
+        public Microsoft.Graph.Models.CustomExtensionCallbackConfiguration CallbackConfiguration
         {
-            get { return BackingStore?.Get<CustomExtensionCallbackConfiguration>("callbackConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomExtensionCallbackConfiguration>("callbackConfiguration"); }
             set { BackingStore?.Set("callbackConfiguration", value); }
         }
 #endif
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AccessPackageAssignmentWorkflowExtension"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AccessPackageAssignmentWorkflowExtension"/> and sets the default values.
         /// </summary>
         public AccessPackageAssignmentWorkflowExtension() : base()
         {
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageAssignmentWorkflowExtension"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackageAssignmentWorkflowExtension"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessPackageAssignmentWorkflowExtension CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AccessPackageAssignmentWorkflowExtension CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageAssignmentWorkflowExtension();
+            return new Microsoft.Graph.Models.AccessPackageAssignmentWorkflowExtension();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "callbackConfiguration", n => { CallbackConfiguration = n.GetObjectValue<CustomExtensionCallbackConfiguration>(CustomExtensionCallbackConfiguration.CreateFromDiscriminatorValue); } },
+                { "callbackConfiguration", n => { CallbackConfiguration = n.GetObjectValue<Microsoft.Graph.Models.CustomExtensionCallbackConfiguration>(Microsoft.Graph.Models.CustomExtensionCallbackConfiguration.CreateFromDiscriminatorValue); } },
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<CustomExtensionCallbackConfiguration>("callbackConfiguration", CallbackConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CustomExtensionCallbackConfiguration>("callbackConfiguration", CallbackConfiguration);
             writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("lastModifiedBy", LastModifiedBy);

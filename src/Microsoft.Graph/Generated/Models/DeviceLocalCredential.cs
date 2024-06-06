@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class DeviceLocalCredential : Entity, IParsable
+    public class DeviceLocalCredential : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the local admin account for which LAPS is enabled.</summary>
@@ -67,12 +67,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceLocalCredential"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceLocalCredential"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceLocalCredential CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeviceLocalCredential CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceLocalCredential();
+            return new Microsoft.Graph.Models.DeviceLocalCredential();
         }
         /// <summary>
         /// The deserialization information for the current model

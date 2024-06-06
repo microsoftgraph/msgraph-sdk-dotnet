@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Represents an assignment to a group.
     /// </summary>
-    public class GroupAssignmentTarget : DeviceAndAppManagementAssignmentTarget, IParsable
+    public class GroupAssignmentTarget : Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget, IParsable
     {
         /// <summary>The group Id that is the target of the assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GroupAssignmentTarget"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.GroupAssignmentTarget"/> and sets the default values.
         /// </summary>
         public GroupAssignmentTarget() : base()
         {
@@ -37,16 +37,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GroupAssignmentTarget"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.GroupAssignmentTarget"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GroupAssignmentTarget CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.GroupAssignmentTarget CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.exclusionGroupAssignmentTarget" => new ExclusionGroupAssignmentTarget(),
-                _ => new GroupAssignmentTarget(),
+                "#microsoft.graph.exclusionGroupAssignmentTarget" => new Microsoft.Graph.Models.ExclusionGroupAssignmentTarget(),
+                _ => new Microsoft.Graph.Models.GroupAssignmentTarget(),
             };
         }
         /// <summary>

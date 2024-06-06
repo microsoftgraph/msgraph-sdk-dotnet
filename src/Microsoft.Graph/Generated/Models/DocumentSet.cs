@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Content types allowed in document set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ContentTypeInfo>? AllowedContentTypes
+        public List<Microsoft.Graph.Models.ContentTypeInfo>? AllowedContentTypes
         {
-            get { return BackingStore?.Get<List<ContentTypeInfo>?>("allowedContentTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ContentTypeInfo>?>("allowedContentTypes"); }
             set { BackingStore?.Set("allowedContentTypes", value); }
         }
 #nullable restore
 #else
-        public List<ContentTypeInfo> AllowedContentTypes
+        public List<Microsoft.Graph.Models.ContentTypeInfo> AllowedContentTypes
         {
-            get { return BackingStore?.Get<List<ContentTypeInfo>>("allowedContentTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ContentTypeInfo>>("allowedContentTypes"); }
             set { BackingStore?.Set("allowedContentTypes", value); }
         }
 #endif
@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Default contents of document set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DocumentSetContent>? DefaultContents
+        public List<Microsoft.Graph.Models.DocumentSetContent>? DefaultContents
         {
-            get { return BackingStore?.Get<List<DocumentSetContent>?>("defaultContents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DocumentSetContent>?>("defaultContents"); }
             set { BackingStore?.Set("defaultContents", value); }
         }
 #nullable restore
 #else
-        public List<DocumentSetContent> DefaultContents
+        public List<Microsoft.Graph.Models.DocumentSetContent> DefaultContents
         {
-            get { return BackingStore?.Get<List<DocumentSetContent>>("defaultContents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DocumentSetContent>>("defaultContents"); }
             set { BackingStore?.Set("defaultContents", value); }
         }
 #endif
@@ -76,16 +76,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The sharedColumns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ColumnDefinition>? SharedColumns
+        public List<Microsoft.Graph.Models.ColumnDefinition>? SharedColumns
         {
-            get { return BackingStore?.Get<List<ColumnDefinition>?>("sharedColumns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ColumnDefinition>?>("sharedColumns"); }
             set { BackingStore?.Set("sharedColumns", value); }
         }
 #nullable restore
 #else
-        public List<ColumnDefinition> SharedColumns
+        public List<Microsoft.Graph.Models.ColumnDefinition> SharedColumns
         {
-            get { return BackingStore?.Get<List<ColumnDefinition>>("sharedColumns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ColumnDefinition>>("sharedColumns"); }
             set { BackingStore?.Set("sharedColumns", value); }
         }
 #endif
@@ -98,16 +98,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The welcomePageColumns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ColumnDefinition>? WelcomePageColumns
+        public List<Microsoft.Graph.Models.ColumnDefinition>? WelcomePageColumns
         {
-            get { return BackingStore?.Get<List<ColumnDefinition>?>("welcomePageColumns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ColumnDefinition>?>("welcomePageColumns"); }
             set { BackingStore?.Set("welcomePageColumns", value); }
         }
 #nullable restore
 #else
-        public List<ColumnDefinition> WelcomePageColumns
+        public List<Microsoft.Graph.Models.ColumnDefinition> WelcomePageColumns
         {
-            get { return BackingStore?.Get<List<ColumnDefinition>>("welcomePageColumns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ColumnDefinition>>("welcomePageColumns"); }
             set { BackingStore?.Set("welcomePageColumns", value); }
         }
 #endif
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DocumentSet"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.DocumentSet"/> and sets the default values.
         /// </summary>
         public DocumentSet()
         {
@@ -138,12 +138,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DocumentSet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DocumentSet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DocumentSet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.DocumentSet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DocumentSet();
+            return new Microsoft.Graph.Models.DocumentSet();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -153,13 +153,13 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowedContentTypes", n => { AllowedContentTypes = n.GetCollectionOfObjectValues<ContentTypeInfo>(ContentTypeInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "defaultContents", n => { DefaultContents = n.GetCollectionOfObjectValues<DocumentSetContent>(DocumentSetContent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "allowedContentTypes", n => { AllowedContentTypes = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ContentTypeInfo>(Microsoft.Graph.Models.ContentTypeInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "defaultContents", n => { DefaultContents = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DocumentSetContent>(Microsoft.Graph.Models.DocumentSetContent.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "propagateWelcomePageChanges", n => { PropagateWelcomePageChanges = n.GetBoolValue(); } },
-                { "sharedColumns", n => { SharedColumns = n.GetCollectionOfObjectValues<ColumnDefinition>(ColumnDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sharedColumns", n => { SharedColumns = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ColumnDefinition>(Microsoft.Graph.Models.ColumnDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "shouldPrefixNameToFile", n => { ShouldPrefixNameToFile = n.GetBoolValue(); } },
-                { "welcomePageColumns", n => { WelcomePageColumns = n.GetCollectionOfObjectValues<ColumnDefinition>(ColumnDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "welcomePageColumns", n => { WelcomePageColumns = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ColumnDefinition>(Microsoft.Graph.Models.ColumnDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "welcomePageUrl", n => { WelcomePageUrl = n.GetStringValue(); } },
             };
         }
@@ -170,13 +170,13 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<ContentTypeInfo>("allowedContentTypes", AllowedContentTypes);
-            writer.WriteCollectionOfObjectValues<DocumentSetContent>("defaultContents", DefaultContents);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ContentTypeInfo>("allowedContentTypes", AllowedContentTypes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DocumentSetContent>("defaultContents", DefaultContents);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("propagateWelcomePageChanges", PropagateWelcomePageChanges);
-            writer.WriteCollectionOfObjectValues<ColumnDefinition>("sharedColumns", SharedColumns);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ColumnDefinition>("sharedColumns", SharedColumns);
             writer.WriteBoolValue("shouldPrefixNameToFile", ShouldPrefixNameToFile);
-            writer.WriteCollectionOfObjectValues<ColumnDefinition>("welcomePageColumns", WelcomePageColumns);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ColumnDefinition>("welcomePageColumns", WelcomePageColumns);
             writer.WriteStringValue("welcomePageUrl", WelcomePageUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

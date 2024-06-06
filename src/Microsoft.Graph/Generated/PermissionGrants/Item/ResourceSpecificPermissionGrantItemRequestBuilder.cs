@@ -22,32 +22,32 @@ namespace Microsoft.Graph.PermissionGrants.Item
     public class ResourceSpecificPermissionGrantItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        public CheckMemberGroupsRequestBuilder CheckMemberGroups
+        public Microsoft.Graph.PermissionGrants.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder CheckMemberGroups
         {
-            get => new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.PermissionGrants.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        public CheckMemberObjectsRequestBuilder CheckMemberObjects
+        public Microsoft.Graph.PermissionGrants.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder CheckMemberObjects
         {
-            get => new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.PermissionGrants.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        public GetMemberGroupsRequestBuilder GetMemberGroups
+        public Microsoft.Graph.PermissionGrants.Item.GetMemberGroups.GetMemberGroupsRequestBuilder GetMemberGroups
         {
-            get => new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.PermissionGrants.Item.GetMemberGroups.GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        public GetMemberObjectsRequestBuilder GetMemberObjects
+        public Microsoft.Graph.PermissionGrants.Item.GetMemberObjects.GetMemberObjectsRequestBuilder GetMemberObjects
         {
-            get => new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.PermissionGrants.Item.GetMemberObjects.GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
-        public RestoreRequestBuilder Restore
+        public Microsoft.Graph.PermissionGrants.Item.Restore.RestoreRequestBuilder Restore
         {
-            get => new RestoreRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.PermissionGrants.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ResourceSpecificPermissionGrantItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.PermissionGrants.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ResourceSpecificPermissionGrantItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.PermissionGrants.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -80,57 +80,57 @@ namespace Microsoft.Graph.PermissionGrants.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entity from permissionGrants by key
         /// </summary>
-        /// <returns>A <see cref="ResourceSpecificPermissionGrant"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ResourceSpecificPermissionGrant"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ResourceSpecificPermissionGrant?> GetAsync(Action<RequestConfiguration<ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ResourceSpecificPermissionGrant?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder.ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ResourceSpecificPermissionGrant> GetAsync(Action<RequestConfiguration<ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ResourceSpecificPermissionGrant> GetAsync(Action<RequestConfiguration<Microsoft.Graph.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder.ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ResourceSpecificPermissionGrant>(requestInfo, ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ResourceSpecificPermissionGrant>(requestInfo, Microsoft.Graph.Models.ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update entity in permissionGrants
         /// </summary>
-        /// <returns>A <see cref="ResourceSpecificPermissionGrant"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ResourceSpecificPermissionGrant"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ResourceSpecificPermissionGrant?> PatchAsync(ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ResourceSpecificPermissionGrant?> PatchAsync(Microsoft.Graph.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ResourceSpecificPermissionGrant> PatchAsync(ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ResourceSpecificPermissionGrant> PatchAsync(Microsoft.Graph.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ResourceSpecificPermissionGrant>(requestInfo, ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ResourceSpecificPermissionGrant>(requestInfo, Microsoft.Graph.Models.ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete entity from permissionGrants
@@ -158,11 +158,11 @@ namespace Microsoft.Graph.PermissionGrants.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder.ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder.ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -178,11 +178,11 @@ namespace Microsoft.Graph.PermissionGrants.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -195,11 +195,11 @@ namespace Microsoft.Graph.PermissionGrants.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ResourceSpecificPermissionGrantItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ResourceSpecificPermissionGrantItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new ResourceSpecificPermissionGrantItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -238,7 +238,7 @@ namespace Microsoft.Graph.PermissionGrants.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters>
+        public class ResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder.ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

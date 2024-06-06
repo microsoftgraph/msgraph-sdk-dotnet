@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MarkReadPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead.MarkReadPostRequestBody"/> and sets the default values.
         /// </summary>
         public MarkReadPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MarkReadPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead.MarkReadPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MarkReadPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead.MarkReadPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MarkReadPostRequestBody();
+            return new Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead.MarkReadPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

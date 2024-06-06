@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp : OnInteractiveAuthFlowStartHandler, IParsable
+    public class OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp : Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Optional. Specifies whether the authentication flow includes an option to sign up (create account) and sign in. Default value is false meaning only sign in is enabled.</summary>
@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("isSignUpAllowed", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp"/> and sets the default values.
         /// </summary>
         public OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp();
+            return new Microsoft.Graph.Models.OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp();
         }
         /// <summary>
         /// The deserialization information for the current model

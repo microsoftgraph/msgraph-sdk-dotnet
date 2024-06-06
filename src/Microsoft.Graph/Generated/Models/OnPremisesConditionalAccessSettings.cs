@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Singleton entity which represents the Exchange OnPremises Conditional Access Settings for a tenant.
     /// </summary>
-    public class OnPremisesConditionalAccessSettings : Entity, IParsable
+    public class OnPremisesConditionalAccessSettings : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Indicates if on premises conditional access is enabled for this organization</summary>
         public bool? Enabled
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnPremisesConditionalAccessSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnPremisesConditionalAccessSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnPremisesConditionalAccessSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OnPremisesConditionalAccessSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnPremisesConditionalAccessSettings();
+            return new Microsoft.Graph.Models.OnPremisesConditionalAccessSettings();
         }
         /// <summary>
         /// The deserialization information for the current model

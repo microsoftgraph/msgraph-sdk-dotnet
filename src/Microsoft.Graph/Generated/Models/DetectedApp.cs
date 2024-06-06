@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// A managed or unmanaged app that is installed on a managed device. Unmanaged apps will only appear for devices marked as corporate owned.
     /// </summary>
-    public class DetectedApp : Entity, IParsable
+    public class DetectedApp : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The number of devices that have installed this application</summary>
         public int? DeviceCount
@@ -36,23 +36,23 @@ namespace Microsoft.Graph.Models
         /// <summary>The devices that have the discovered application installed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDevice>? ManagedDevices
+        public List<Microsoft.Graph.Models.ManagedDevice>? ManagedDevices
         {
-            get { return BackingStore?.Get<List<ManagedDevice>?>("managedDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedDevice>?>("managedDevices"); }
             set { BackingStore?.Set("managedDevices", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDevice> ManagedDevices
+        public List<Microsoft.Graph.Models.ManagedDevice> ManagedDevices
         {
-            get { return BackingStore?.Get<List<ManagedDevice>>("managedDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedDevice>>("managedDevices"); }
             set { BackingStore?.Set("managedDevices", value); }
         }
 #endif
         /// <summary>Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0).</summary>
-        public DetectedAppPlatformType? Platform
+        public Microsoft.Graph.Models.DetectedAppPlatformType? Platform
         {
-            get { return BackingStore?.Get<DetectedAppPlatformType?>("platform"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DetectedAppPlatformType?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
         /// <summary>Indicates the publisher of the discovered application. For example: &apos;Microsoft&apos;.  The default value is an empty string.</summary>
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DetectedApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DetectedApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DetectedApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DetectedApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DetectedApp();
+            return new Microsoft.Graph.Models.DetectedApp();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,8 +113,8 @@ namespace Microsoft.Graph.Models
             {
                 { "deviceCount", n => { DeviceCount = n.GetIntValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "managedDevices", n => { ManagedDevices = n.GetCollectionOfObjectValues<ManagedDevice>(ManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "platform", n => { Platform = n.GetEnumValue<DetectedAppPlatformType>(); } },
+                { "managedDevices", n => { ManagedDevices = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ManagedDevice>(Microsoft.Graph.Models.ManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "platform", n => { Platform = n.GetEnumValue<Microsoft.Graph.Models.DetectedAppPlatformType>(); } },
                 { "publisher", n => { Publisher = n.GetStringValue(); } },
                 { "sizeInByte", n => { SizeInByte = n.GetLongValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
@@ -130,8 +130,8 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteIntValue("deviceCount", DeviceCount);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<ManagedDevice>("managedDevices", ManagedDevices);
-            writer.WriteEnumValue<DetectedAppPlatformType>("platform", Platform);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ManagedDevice>("managedDevices", ManagedDevices);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DetectedAppPlatformType>("platform", Platform);
             writer.WriteStringValue("publisher", Publisher);
             writer.WriteLongValue("sizeInByte", SizeInByte);
             writer.WriteStringValue("version", Version);

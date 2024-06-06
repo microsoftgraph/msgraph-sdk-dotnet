@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Drives.Item.List.Items.DeltaWithToken
 {
     [Obsolete("This class is obsolete. Use DeltaWithTokenGetResponse instead.")]
     #pragma warning disable CS1591
-    public class DeltaWithTokenResponse : DeltaWithTokenGetResponse, IParsable
+    public class DeltaWithTokenResponse : Microsoft.Graph.Drives.Item.List.Items.DeltaWithToken.DeltaWithTokenGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeltaWithTokenResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.List.Items.DeltaWithToken.DeltaWithTokenResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeltaWithTokenResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Drives.Item.List.Items.DeltaWithToken.DeltaWithTokenResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeltaWithTokenResponse();
+            return new Microsoft.Graph.Drives.Item.List.Items.DeltaWithToken.DeltaWithTokenResponse();
         }
     }
 }

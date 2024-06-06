@@ -7,70 +7,70 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CommunicationsIdentitySet : IdentitySet, IParsable
+    public class CommunicationsIdentitySet : Microsoft.Graph.Models.IdentitySet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The application instance associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? ApplicationInstance
+        public Microsoft.Graph.Models.Identity? ApplicationInstance
         {
-            get { return BackingStore?.Get<Identity?>("applicationInstance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity?>("applicationInstance"); }
             set { BackingStore?.Set("applicationInstance", value); }
         }
 #nullable restore
 #else
-        public Identity ApplicationInstance
+        public Microsoft.Graph.Models.Identity ApplicationInstance
         {
-            get { return BackingStore?.Get<Identity>("applicationInstance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity>("applicationInstance"); }
             set { BackingStore?.Set("applicationInstance", value); }
         }
 #endif
         /// <summary>An identity the participant would like to present itself as to the other participants in the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? AssertedIdentity
+        public Microsoft.Graph.Models.Identity? AssertedIdentity
         {
-            get { return BackingStore?.Get<Identity?>("assertedIdentity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity?>("assertedIdentity"); }
             set { BackingStore?.Set("assertedIdentity", value); }
         }
 #nullable restore
 #else
-        public Identity AssertedIdentity
+        public Microsoft.Graph.Models.Identity AssertedIdentity
         {
-            get { return BackingStore?.Get<Identity>("assertedIdentity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity>("assertedIdentity"); }
             set { BackingStore?.Set("assertedIdentity", value); }
         }
 #endif
         /// <summary>The Azure Communication Services user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? AzureCommunicationServicesUser
+        public Microsoft.Graph.Models.Identity? AzureCommunicationServicesUser
         {
-            get { return BackingStore?.Get<Identity?>("azureCommunicationServicesUser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity?>("azureCommunicationServicesUser"); }
             set { BackingStore?.Set("azureCommunicationServicesUser", value); }
         }
 #nullable restore
 #else
-        public Identity AzureCommunicationServicesUser
+        public Microsoft.Graph.Models.Identity AzureCommunicationServicesUser
         {
-            get { return BackingStore?.Get<Identity>("azureCommunicationServicesUser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity>("azureCommunicationServicesUser"); }
             set { BackingStore?.Set("azureCommunicationServicesUser", value); }
         }
 #endif
         /// <summary>The encrypted user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Encrypted
+        public Microsoft.Graph.Models.Identity? Encrypted
         {
-            get { return BackingStore?.Get<Identity?>("encrypted"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity?>("encrypted"); }
             set { BackingStore?.Set("encrypted", value); }
         }
 #nullable restore
 #else
-        public Identity Encrypted
+        public Microsoft.Graph.Models.Identity Encrypted
         {
-            get { return BackingStore?.Get<Identity>("encrypted"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity>("encrypted"); }
             set { BackingStore?.Set("encrypted", value); }
         }
 #endif
@@ -83,53 +83,53 @@ namespace Microsoft.Graph.Models
         /// <summary>The guest user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Guest
+        public Microsoft.Graph.Models.Identity? Guest
         {
-            get { return BackingStore?.Get<Identity?>("guest"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity?>("guest"); }
             set { BackingStore?.Set("guest", value); }
         }
 #nullable restore
 #else
-        public Identity Guest
+        public Microsoft.Graph.Models.Identity Guest
         {
-            get { return BackingStore?.Get<Identity>("guest"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity>("guest"); }
             set { BackingStore?.Set("guest", value); }
         }
 #endif
         /// <summary>The Skype for Business on-premises user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? OnPremises
+        public Microsoft.Graph.Models.Identity? OnPremises
         {
-            get { return BackingStore?.Get<Identity?>("onPremises"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity?>("onPremises"); }
             set { BackingStore?.Set("onPremises", value); }
         }
 #nullable restore
 #else
-        public Identity OnPremises
+        public Microsoft.Graph.Models.Identity OnPremises
         {
-            get { return BackingStore?.Get<Identity>("onPremises"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity>("onPremises"); }
             set { BackingStore?.Set("onPremises", value); }
         }
 #endif
         /// <summary>The phone user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Phone
+        public Microsoft.Graph.Models.Identity? Phone
         {
-            get { return BackingStore?.Get<Identity?>("phone"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity?>("phone"); }
             set { BackingStore?.Set("phone", value); }
         }
 #nullable restore
 #else
-        public Identity Phone
+        public Microsoft.Graph.Models.Identity Phone
         {
-            get { return BackingStore?.Get<Identity>("phone"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity>("phone"); }
             set { BackingStore?.Set("phone", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CommunicationsIdentitySet"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CommunicationsIdentitySet"/> and sets the default values.
         /// </summary>
         public CommunicationsIdentitySet() : base()
         {
@@ -138,12 +138,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CommunicationsIdentitySet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CommunicationsIdentitySet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CommunicationsIdentitySet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CommunicationsIdentitySet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CommunicationsIdentitySet();
+            return new Microsoft.Graph.Models.CommunicationsIdentitySet();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -153,14 +153,14 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "applicationInstance", n => { ApplicationInstance = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                { "assertedIdentity", n => { AssertedIdentity = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                { "azureCommunicationServicesUser", n => { AzureCommunicationServicesUser = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                { "encrypted", n => { Encrypted = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                { "endpointType", n => { EndpointType = n.GetEnumValue<EndpointType>(); } },
-                { "guest", n => { Guest = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                { "onPremises", n => { OnPremises = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                { "phone", n => { Phone = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "applicationInstance", n => { ApplicationInstance = n.GetObjectValue<Microsoft.Graph.Models.Identity>(Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
+                { "assertedIdentity", n => { AssertedIdentity = n.GetObjectValue<Microsoft.Graph.Models.Identity>(Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
+                { "azureCommunicationServicesUser", n => { AzureCommunicationServicesUser = n.GetObjectValue<Microsoft.Graph.Models.Identity>(Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
+                { "encrypted", n => { Encrypted = n.GetObjectValue<Microsoft.Graph.Models.Identity>(Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
+                { "endpointType", n => { EndpointType = n.GetEnumValue<Microsoft.Graph.Models.EndpointType>(); } },
+                { "guest", n => { Guest = n.GetObjectValue<Microsoft.Graph.Models.Identity>(Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
+                { "onPremises", n => { OnPremises = n.GetObjectValue<Microsoft.Graph.Models.Identity>(Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
+                { "phone", n => { Phone = n.GetObjectValue<Microsoft.Graph.Models.Identity>(Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -171,14 +171,14 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<Identity>("applicationInstance", ApplicationInstance);
-            writer.WriteObjectValue<Identity>("assertedIdentity", AssertedIdentity);
-            writer.WriteObjectValue<Identity>("azureCommunicationServicesUser", AzureCommunicationServicesUser);
-            writer.WriteObjectValue<Identity>("encrypted", Encrypted);
-            writer.WriteEnumValue<EndpointType>("endpointType", EndpointType);
-            writer.WriteObjectValue<Identity>("guest", Guest);
-            writer.WriteObjectValue<Identity>("onPremises", OnPremises);
-            writer.WriteObjectValue<Identity>("phone", Phone);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Identity>("applicationInstance", ApplicationInstance);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Identity>("assertedIdentity", AssertedIdentity);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Identity>("azureCommunicationServicesUser", AzureCommunicationServicesUser);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Identity>("encrypted", Encrypted);
+            writer.WriteEnumValue<Microsoft.Graph.Models.EndpointType>("endpointType", EndpointType);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Identity>("guest", Guest);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Identity>("onPremises", OnPremises);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Identity>("phone", Phone);
         }
     }
 }

@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Compliance management partner for all platforms
     /// </summary>
-    public class ComplianceManagementPartner : Entity, IParsable
+    public class ComplianceManagementPartner : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>User groups which enroll Android devices through partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ComplianceManagementPartnerAssignment>? AndroidEnrollmentAssignments
+        public List<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment>? AndroidEnrollmentAssignments
         {
-            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>?>("androidEnrollmentAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment>?>("androidEnrollmentAssignments"); }
             set { BackingStore?.Set("androidEnrollmentAssignments", value); }
         }
 #nullable restore
 #else
-        public List<ComplianceManagementPartnerAssignment> AndroidEnrollmentAssignments
+        public List<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment> AndroidEnrollmentAssignments
         {
-            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>("androidEnrollmentAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment>>("androidEnrollmentAssignments"); }
             set { BackingStore?.Set("androidEnrollmentAssignments", value); }
         }
 #endif
@@ -52,16 +52,16 @@ namespace Microsoft.Graph.Models
         /// <summary>User groups which enroll ios devices through partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ComplianceManagementPartnerAssignment>? IosEnrollmentAssignments
+        public List<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment>? IosEnrollmentAssignments
         {
-            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>?>("iosEnrollmentAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment>?>("iosEnrollmentAssignments"); }
             set { BackingStore?.Set("iosEnrollmentAssignments", value); }
         }
 #nullable restore
 #else
-        public List<ComplianceManagementPartnerAssignment> IosEnrollmentAssignments
+        public List<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment> IosEnrollmentAssignments
         {
-            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>("iosEnrollmentAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment>>("iosEnrollmentAssignments"); }
             set { BackingStore?.Set("iosEnrollmentAssignments", value); }
         }
 #endif
@@ -80,16 +80,16 @@ namespace Microsoft.Graph.Models
         /// <summary>User groups which enroll Mac devices through partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ComplianceManagementPartnerAssignment>? MacOsEnrollmentAssignments
+        public List<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment>? MacOsEnrollmentAssignments
         {
-            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>?>("macOsEnrollmentAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment>?>("macOsEnrollmentAssignments"); }
             set { BackingStore?.Set("macOsEnrollmentAssignments", value); }
         }
 #nullable restore
 #else
-        public List<ComplianceManagementPartnerAssignment> MacOsEnrollmentAssignments
+        public List<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment> MacOsEnrollmentAssignments
         {
-            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>("macOsEnrollmentAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment>>("macOsEnrollmentAssignments"); }
             set { BackingStore?.Set("macOsEnrollmentAssignments", value); }
         }
 #endif
@@ -100,20 +100,20 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("macOsOnboarded", value); }
         }
         /// <summary>Partner state of this tenant.</summary>
-        public DeviceManagementPartnerTenantState? PartnerState
+        public Microsoft.Graph.Models.DeviceManagementPartnerTenantState? PartnerState
         {
-            get { return BackingStore?.Get<DeviceManagementPartnerTenantState?>("partnerState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceManagementPartnerTenantState?>("partnerState"); }
             set { BackingStore?.Set("partnerState", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ComplianceManagementPartner"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ComplianceManagementPartner"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ComplianceManagementPartner CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ComplianceManagementPartner CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ComplianceManagementPartner();
+            return new Microsoft.Graph.Models.ComplianceManagementPartner();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -123,15 +123,15 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "androidEnrollmentAssignments", n => { AndroidEnrollmentAssignments = n.GetCollectionOfObjectValues<ComplianceManagementPartnerAssignment>(ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "androidEnrollmentAssignments", n => { AndroidEnrollmentAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment>(Microsoft.Graph.Models.ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "androidOnboarded", n => { AndroidOnboarded = n.GetBoolValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "iosEnrollmentAssignments", n => { IosEnrollmentAssignments = n.GetCollectionOfObjectValues<ComplianceManagementPartnerAssignment>(ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "iosEnrollmentAssignments", n => { IosEnrollmentAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment>(Microsoft.Graph.Models.ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "iosOnboarded", n => { IosOnboarded = n.GetBoolValue(); } },
                 { "lastHeartbeatDateTime", n => { LastHeartbeatDateTime = n.GetDateTimeOffsetValue(); } },
-                { "macOsEnrollmentAssignments", n => { MacOsEnrollmentAssignments = n.GetCollectionOfObjectValues<ComplianceManagementPartnerAssignment>(ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "macOsEnrollmentAssignments", n => { MacOsEnrollmentAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment>(Microsoft.Graph.Models.ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "macOsOnboarded", n => { MacOsOnboarded = n.GetBoolValue(); } },
-                { "partnerState", n => { PartnerState = n.GetEnumValue<DeviceManagementPartnerTenantState>(); } },
+                { "partnerState", n => { PartnerState = n.GetEnumValue<Microsoft.Graph.Models.DeviceManagementPartnerTenantState>(); } },
             };
         }
         /// <summary>
@@ -142,15 +142,15 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ComplianceManagementPartnerAssignment>("androidEnrollmentAssignments", AndroidEnrollmentAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment>("androidEnrollmentAssignments", AndroidEnrollmentAssignments);
             writer.WriteBoolValue("androidOnboarded", AndroidOnboarded);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<ComplianceManagementPartnerAssignment>("iosEnrollmentAssignments", IosEnrollmentAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment>("iosEnrollmentAssignments", IosEnrollmentAssignments);
             writer.WriteBoolValue("iosOnboarded", IosOnboarded);
             writer.WriteDateTimeOffsetValue("lastHeartbeatDateTime", LastHeartbeatDateTime);
-            writer.WriteCollectionOfObjectValues<ComplianceManagementPartnerAssignment>("macOsEnrollmentAssignments", MacOsEnrollmentAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ComplianceManagementPartnerAssignment>("macOsEnrollmentAssignments", MacOsEnrollmentAssignments);
             writer.WriteBoolValue("macOsOnboarded", MacOsOnboarded);
-            writer.WriteEnumValue<DeviceManagementPartnerTenantState>("partnerState", PartnerState);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DeviceManagementPartnerTenantState>("partnerState", PartnerState);
         }
     }
 }

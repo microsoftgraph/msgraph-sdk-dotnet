@@ -43,9 +43,9 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Mi
             set { BackingStore?.Set("exportOptions", value); }
         }
         /// <summary>The exportStructure property</summary>
-        public ExportFileStructure? ExportStructure
+        public Microsoft.Graph.Models.Security.ExportFileStructure? ExportStructure
         {
-            get { return BackingStore?.Get<ExportFileStructure?>("exportStructure"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.ExportFileStructure?>("exportStructure"); }
             set { BackingStore?.Set("exportStructure", value); }
         }
         /// <summary>The outputName property</summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Mi
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ExportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.MicrosoftGraphSecurityExport.ExportPostRequestBody"/> and sets the default values.
         /// </summary>
         public ExportPostRequestBody()
         {
@@ -75,12 +75,12 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Mi
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.MicrosoftGraphSecurityExport.ExportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ExportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.MicrosoftGraphSecurityExport.ExportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExportPostRequestBody();
+            return new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.MicrosoftGraphSecurityExport.ExportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -91,8 +91,8 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Mi
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "exportOptions", n => { ExportOptions = n.GetEnumValue<ExportOptions>(); } },
-                { "exportStructure", n => { ExportStructure = n.GetEnumValue<ExportFileStructure>(); } },
+                { "exportOptions", n => { ExportOptions = n.GetEnumValue<Microsoft.Graph.Models.Security.ExportOptions>(); } },
+                { "exportStructure", n => { ExportStructure = n.GetEnumValue<Microsoft.Graph.Models.Security.ExportFileStructure>(); } },
                 { "outputName", n => { OutputName = n.GetStringValue(); } },
             };
         }
@@ -104,8 +104,8 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Mi
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<ExportOptions>("exportOptions", ExportOptions);
-            writer.WriteEnumValue<ExportFileStructure>("exportStructure", ExportStructure);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.ExportOptions>("exportOptions", ExportOptions);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.ExportFileStructure>("exportStructure", ExportStructure);
             writer.WriteStringValue("outputName", OutputName);
             writer.WriteAdditionalData(AdditionalData);
         }

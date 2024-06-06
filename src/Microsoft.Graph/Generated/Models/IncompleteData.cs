@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("wasThrottled", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IncompleteData"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IncompleteData"/> and sets the default values.
         /// </summary>
         public IncompleteData()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IncompleteData"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IncompleteData"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IncompleteData CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.IncompleteData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IncompleteData();
+            return new Microsoft.Graph.Models.IncompleteData();
         }
         /// <summary>
         /// The deserialization information for the current model

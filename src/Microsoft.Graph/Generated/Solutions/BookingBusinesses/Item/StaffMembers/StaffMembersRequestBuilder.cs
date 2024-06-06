@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers
     public class StaffMembersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.</summary>
         /// <param name="position">The unique identifier of bookingStaffMemberBase</param>
-        /// <returns>A <see cref="BookingStaffMemberBaseItemRequestBuilder"/></returns>
-        public BookingStaffMemberBaseItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers.Item.BookingStaffMemberBaseItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers.Item.BookingStaffMemberBaseItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("bookingStaffMemberBase%2Did", position);
-                return new BookingStaffMemberBaseItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers.Item.BookingStaffMemberBaseItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="StaffMembersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers.StaffMembersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="StaffMembersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers.StaffMembersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers
         /// Get a list of bookingStaffMember objects in the specified bookingBusiness.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-list-staffmembers?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="BookingStaffMemberBaseCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BookingStaffMemberBaseCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BookingStaffMemberBaseCollectionResponse?> GetAsync(Action<RequestConfiguration<StaffMembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.BookingStaffMemberBaseCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers.StaffMembersRequestBuilder.StaffMembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BookingStaffMemberBaseCollectionResponse> GetAsync(Action<RequestConfiguration<StaffMembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.BookingStaffMemberBaseCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers.StaffMembersRequestBuilder.StaffMembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<BookingStaffMemberBaseCollectionResponse>(requestInfo, BookingStaffMemberBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.BookingStaffMemberBaseCollectionResponse>(requestInfo, Microsoft.Graph.Models.BookingStaffMemberBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new bookingStaffMember in the specified bookingBusiness.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-post-staffmembers?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="BookingStaffMemberBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BookingStaffMemberBase"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BookingStaffMemberBase?> PostAsync(BookingStaffMemberBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.BookingStaffMemberBase?> PostAsync(Microsoft.Graph.Models.BookingStaffMemberBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BookingStaffMemberBase> PostAsync(BookingStaffMemberBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.BookingStaffMemberBase> PostAsync(Microsoft.Graph.Models.BookingStaffMemberBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<BookingStaffMemberBase>(requestInfo, BookingStaffMemberBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.BookingStaffMemberBase>(requestInfo, Microsoft.Graph.Models.BookingStaffMemberBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of bookingStaffMember objects in the specified bookingBusiness.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StaffMembersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers.StaffMembersRequestBuilder.StaffMembersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StaffMembersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers.StaffMembersRequestBuilder.StaffMembersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(BookingStaffMemberBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.BookingStaffMemberBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(BookingStaffMemberBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.BookingStaffMemberBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="StaffMembersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers.StaffMembersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StaffMembersRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers.StaffMembersRequestBuilder WithUrl(string rawUrl)
         {
-            return new StaffMembersRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers.StaffMembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of bookingStaffMember objects in the specified bookingBusiness.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class StaffMembersRequestBuilderGetRequestConfiguration : RequestConfiguration<StaffMembersRequestBuilderGetQueryParameters>
+        public class StaffMembersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers.StaffMembersRequestBuilder.StaffMembersRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

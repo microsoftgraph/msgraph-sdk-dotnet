@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// A complex type to store the PowerShell script rule data for a Win32 LOB app.
     /// </summary>
-    public class Win32LobAppPowerShellScriptRule : Win32LobAppRule, IParsable
+    public class Win32LobAppPowerShellScriptRule : Microsoft.Graph.Models.Win32LobAppRule, IParsable
     {
         /// <summary>The script output comparison value. Do not specify a value if the rule is used for detection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,15 +50,15 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("enforceSignatureCheck", value); }
         }
         /// <summary>Contains all supported Powershell Script output detection type.</summary>
-        public Win32LobAppPowerShellScriptRuleOperationType? OperationType
+        public Microsoft.Graph.Models.Win32LobAppPowerShellScriptRuleOperationType? OperationType
         {
-            get { return BackingStore?.Get<Win32LobAppPowerShellScriptRuleOperationType?>("operationType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Win32LobAppPowerShellScriptRuleOperationType?>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
         }
         /// <summary>Contains properties for detection operator.</summary>
-        public Win32LobAppRuleOperator? Operator
+        public Microsoft.Graph.Models.Win32LobAppRuleOperator? Operator
         {
-            get { return BackingStore?.Get<Win32LobAppRuleOperator?>("operator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Win32LobAppRuleOperator?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>A value indicating whether the script should run as 32-bit.</summary>
@@ -68,9 +68,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("runAs32Bit", value); }
         }
         /// <summary>The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. Possible values are: system, user.</summary>
-        public RunAsAccountType? RunAsAccount
+        public Microsoft.Graph.Models.RunAsAccountType? RunAsAccount
         {
-            get { return BackingStore?.Get<RunAsAccountType?>("runAsAccount"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RunAsAccountType?>("runAsAccount"); }
             set { BackingStore?.Set("runAsAccount", value); }
         }
         /// <summary>The base64-encoded script content.</summary>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Win32LobAppPowerShellScriptRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Win32LobAppPowerShellScriptRule"/> and sets the default values.
         /// </summary>
         public Win32LobAppPowerShellScriptRule() : base()
         {
@@ -99,12 +99,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Win32LobAppPowerShellScriptRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Win32LobAppPowerShellScriptRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Win32LobAppPowerShellScriptRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Win32LobAppPowerShellScriptRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Win32LobAppPowerShellScriptRule();
+            return new Microsoft.Graph.Models.Win32LobAppPowerShellScriptRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -117,10 +117,10 @@ namespace Microsoft.Graph.Models
                 { "comparisonValue", n => { ComparisonValue = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "enforceSignatureCheck", n => { EnforceSignatureCheck = n.GetBoolValue(); } },
-                { "operationType", n => { OperationType = n.GetEnumValue<Win32LobAppPowerShellScriptRuleOperationType>(); } },
-                { "operator", n => { Operator = n.GetEnumValue<Win32LobAppRuleOperator>(); } },
+                { "operationType", n => { OperationType = n.GetEnumValue<Microsoft.Graph.Models.Win32LobAppPowerShellScriptRuleOperationType>(); } },
+                { "operator", n => { Operator = n.GetEnumValue<Microsoft.Graph.Models.Win32LobAppRuleOperator>(); } },
                 { "runAs32Bit", n => { RunAs32Bit = n.GetBoolValue(); } },
-                { "runAsAccount", n => { RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
+                { "runAsAccount", n => { RunAsAccount = n.GetEnumValue<Microsoft.Graph.Models.RunAsAccountType>(); } },
                 { "scriptContent", n => { ScriptContent = n.GetStringValue(); } },
             };
         }
@@ -135,10 +135,10 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("comparisonValue", ComparisonValue);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("enforceSignatureCheck", EnforceSignatureCheck);
-            writer.WriteEnumValue<Win32LobAppPowerShellScriptRuleOperationType>("operationType", OperationType);
-            writer.WriteEnumValue<Win32LobAppRuleOperator>("operator", Operator);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Win32LobAppPowerShellScriptRuleOperationType>("operationType", OperationType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Win32LobAppRuleOperator>("operator", Operator);
             writer.WriteBoolValue("runAs32Bit", RunAs32Bit);
-            writer.WriteEnumValue<RunAsAccountType>("runAsAccount", RunAsAccount);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RunAsAccountType>("runAsAccount", RunAsAccount);
             writer.WriteStringValue("scriptContent", ScriptContent);
         }
     }

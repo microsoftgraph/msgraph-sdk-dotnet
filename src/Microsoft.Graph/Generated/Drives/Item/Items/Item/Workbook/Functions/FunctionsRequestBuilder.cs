@@ -383,1837 +383,1837 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions
     public class FunctionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the abs method.</summary>
-        public AbsRequestBuilder Abs
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Abs.AbsRequestBuilder Abs
         {
-            get => new AbsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Abs.AbsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the accrInt method.</summary>
-        public AccrIntRequestBuilder AccrInt
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AccrInt.AccrIntRequestBuilder AccrInt
         {
-            get => new AccrIntRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AccrInt.AccrIntRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the accrIntM method.</summary>
-        public AccrIntMRequestBuilder AccrIntM
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AccrIntM.AccrIntMRequestBuilder AccrIntM
         {
-            get => new AccrIntMRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AccrIntM.AccrIntMRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the acos method.</summary>
-        public AcosRequestBuilder Acos
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Acos.AcosRequestBuilder Acos
         {
-            get => new AcosRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Acos.AcosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the acosh method.</summary>
-        public AcoshRequestBuilder Acosh
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Acosh.AcoshRequestBuilder Acosh
         {
-            get => new AcoshRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Acosh.AcoshRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the acot method.</summary>
-        public AcotRequestBuilder Acot
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Acot.AcotRequestBuilder Acot
         {
-            get => new AcotRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Acot.AcotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the acoth method.</summary>
-        public AcothRequestBuilder Acoth
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Acoth.AcothRequestBuilder Acoth
         {
-            get => new AcothRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Acoth.AcothRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the amorDegrc method.</summary>
-        public AmorDegrcRequestBuilder AmorDegrc
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AmorDegrc.AmorDegrcRequestBuilder AmorDegrc
         {
-            get => new AmorDegrcRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AmorDegrc.AmorDegrcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the amorLinc method.</summary>
-        public AmorLincRequestBuilder AmorLinc
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AmorLinc.AmorLincRequestBuilder AmorLinc
         {
-            get => new AmorLincRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AmorLinc.AmorLincRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the and method.</summary>
-        public AndRequestBuilder And
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.And.AndRequestBuilder And
         {
-            get => new AndRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.And.AndRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the arabic method.</summary>
-        public ArabicRequestBuilder Arabic
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Arabic.ArabicRequestBuilder Arabic
         {
-            get => new ArabicRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Arabic.ArabicRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the areas method.</summary>
-        public AreasRequestBuilder Areas
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Areas.AreasRequestBuilder Areas
         {
-            get => new AreasRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Areas.AreasRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the asc method.</summary>
-        public AscRequestBuilder Asc
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Asc.AscRequestBuilder Asc
         {
-            get => new AscRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Asc.AscRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the asin method.</summary>
-        public AsinRequestBuilder Asin
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Asin.AsinRequestBuilder Asin
         {
-            get => new AsinRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Asin.AsinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the asinh method.</summary>
-        public AsinhRequestBuilder Asinh
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Asinh.AsinhRequestBuilder Asinh
         {
-            get => new AsinhRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Asinh.AsinhRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the atan method.</summary>
-        public AtanRequestBuilder Atan
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Atan.AtanRequestBuilder Atan
         {
-            get => new AtanRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Atan.AtanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the atan2 method.</summary>
-        public Atan2RequestBuilder Atan2
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Atan2.Atan2RequestBuilder Atan2
         {
-            get => new Atan2RequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Atan2.Atan2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the atanh method.</summary>
-        public AtanhRequestBuilder Atanh
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Atanh.AtanhRequestBuilder Atanh
         {
-            get => new AtanhRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Atanh.AtanhRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the aveDev method.</summary>
-        public AveDevRequestBuilder AveDev
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AveDev.AveDevRequestBuilder AveDev
         {
-            get => new AveDevRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AveDev.AveDevRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the average method.</summary>
-        public AverageRequestBuilder Average
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Average.AverageRequestBuilder Average
         {
-            get => new AverageRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Average.AverageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the averageA method.</summary>
-        public AverageARequestBuilder AverageA
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AverageA.AverageARequestBuilder AverageA
         {
-            get => new AverageARequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AverageA.AverageARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the averageIf method.</summary>
-        public AverageIfRequestBuilder AverageIf
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AverageIf.AverageIfRequestBuilder AverageIf
         {
-            get => new AverageIfRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AverageIf.AverageIfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the averageIfs method.</summary>
-        public AverageIfsRequestBuilder AverageIfs
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AverageIfs.AverageIfsRequestBuilder AverageIfs
         {
-            get => new AverageIfsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AverageIfs.AverageIfsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bahtText method.</summary>
-        public BahtTextRequestBuilder BahtText
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.BahtText.BahtTextRequestBuilder BahtText
         {
-            get => new BahtTextRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.BahtText.BahtTextRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the base method.</summary>
-        public BaseRequestBuilderEscaped Base
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Base.BaseRequestBuilderEscaped Base
         {
-            get => new BaseRequestBuilderEscaped(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Base.BaseRequestBuilderEscaped(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the besselI method.</summary>
-        public BesselIRequestBuilder BesselI
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.BesselI.BesselIRequestBuilder BesselI
         {
-            get => new BesselIRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.BesselI.BesselIRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the besselJ method.</summary>
-        public BesselJRequestBuilder BesselJ
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.BesselJ.BesselJRequestBuilder BesselJ
         {
-            get => new BesselJRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.BesselJ.BesselJRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the besselK method.</summary>
-        public BesselKRequestBuilder BesselK
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.BesselK.BesselKRequestBuilder BesselK
         {
-            get => new BesselKRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.BesselK.BesselKRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the besselY method.</summary>
-        public BesselYRequestBuilder BesselY
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.BesselY.BesselYRequestBuilder BesselY
         {
-            get => new BesselYRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.BesselY.BesselYRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the beta_Dist method.</summary>
-        public Beta_DistRequestBuilder Beta_Dist
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Beta_Dist.Beta_DistRequestBuilder Beta_Dist
         {
-            get => new Beta_DistRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Beta_Dist.Beta_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the beta_Inv method.</summary>
-        public Beta_InvRequestBuilder Beta_Inv
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Beta_Inv.Beta_InvRequestBuilder Beta_Inv
         {
-            get => new Beta_InvRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Beta_Inv.Beta_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bin2Dec method.</summary>
-        public Bin2DecRequestBuilder Bin2Dec
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bin2Dec.Bin2DecRequestBuilder Bin2Dec
         {
-            get => new Bin2DecRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bin2Dec.Bin2DecRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bin2Hex method.</summary>
-        public Bin2HexRequestBuilder Bin2Hex
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bin2Hex.Bin2HexRequestBuilder Bin2Hex
         {
-            get => new Bin2HexRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bin2Hex.Bin2HexRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bin2Oct method.</summary>
-        public Bin2OctRequestBuilder Bin2Oct
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bin2Oct.Bin2OctRequestBuilder Bin2Oct
         {
-            get => new Bin2OctRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bin2Oct.Bin2OctRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the binom_Dist method.</summary>
-        public Binom_DistRequestBuilder Binom_Dist
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Dist.Binom_DistRequestBuilder Binom_Dist
         {
-            get => new Binom_DistRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Dist.Binom_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the binom_Dist_Range method.</summary>
-        public Binom_Dist_RangeRequestBuilder Binom_Dist_Range
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Dist_Range.Binom_Dist_RangeRequestBuilder Binom_Dist_Range
         {
-            get => new Binom_Dist_RangeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Dist_Range.Binom_Dist_RangeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the binom_Inv method.</summary>
-        public Binom_InvRequestBuilder Binom_Inv
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Inv.Binom_InvRequestBuilder Binom_Inv
         {
-            get => new Binom_InvRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Inv.Binom_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bitand method.</summary>
-        public BitandRequestBuilder Bitand
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bitand.BitandRequestBuilder Bitand
         {
-            get => new BitandRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bitand.BitandRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bitlshift method.</summary>
-        public BitlshiftRequestBuilder Bitlshift
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bitlshift.BitlshiftRequestBuilder Bitlshift
         {
-            get => new BitlshiftRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bitlshift.BitlshiftRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bitor method.</summary>
-        public BitorRequestBuilder Bitor
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bitor.BitorRequestBuilder Bitor
         {
-            get => new BitorRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bitor.BitorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bitrshift method.</summary>
-        public BitrshiftRequestBuilder Bitrshift
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bitrshift.BitrshiftRequestBuilder Bitrshift
         {
-            get => new BitrshiftRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bitrshift.BitrshiftRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bitxor method.</summary>
-        public BitxorRequestBuilder Bitxor
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bitxor.BitxorRequestBuilder Bitxor
         {
-            get => new BitxorRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bitxor.BitxorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the ceiling_Math method.</summary>
-        public Ceiling_MathRequestBuilder Ceiling_Math
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ceiling_Math.Ceiling_MathRequestBuilder Ceiling_Math
         {
-            get => new Ceiling_MathRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ceiling_Math.Ceiling_MathRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the ceiling_Precise method.</summary>
-        public Ceiling_PreciseRequestBuilder Ceiling_Precise
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ceiling_Precise.Ceiling_PreciseRequestBuilder Ceiling_Precise
         {
-            get => new Ceiling_PreciseRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ceiling_Precise.Ceiling_PreciseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the char method.</summary>
-        public CharRequestBuilder Char
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CharNamespace.CharRequestBuilder Char
         {
-            get => new CharRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CharNamespace.CharRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the chiSq_Dist method.</summary>
-        public ChiSq_DistRequestBuilder ChiSq_Dist
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ChiSq_Dist.ChiSq_DistRequestBuilder ChiSq_Dist
         {
-            get => new ChiSq_DistRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ChiSq_Dist.ChiSq_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the chiSq_Dist_RT method.</summary>
-        public ChiSq_Dist_RTRequestBuilder ChiSq_Dist_RT
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ChiSq_Dist_RT.ChiSq_Dist_RTRequestBuilder ChiSq_Dist_RT
         {
-            get => new ChiSq_Dist_RTRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ChiSq_Dist_RT.ChiSq_Dist_RTRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the chiSq_Inv method.</summary>
-        public ChiSq_InvRequestBuilder ChiSq_Inv
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ChiSq_Inv.ChiSq_InvRequestBuilder ChiSq_Inv
         {
-            get => new ChiSq_InvRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ChiSq_Inv.ChiSq_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the chiSq_Inv_RT method.</summary>
-        public ChiSq_Inv_RTRequestBuilder ChiSq_Inv_RT
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ChiSq_Inv_RT.ChiSq_Inv_RTRequestBuilder ChiSq_Inv_RT
         {
-            get => new ChiSq_Inv_RTRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ChiSq_Inv_RT.ChiSq_Inv_RTRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the choose method.</summary>
-        public ChooseRequestBuilder Choose
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Choose.ChooseRequestBuilder Choose
         {
-            get => new ChooseRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Choose.ChooseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the clean method.</summary>
-        public CleanRequestBuilder Clean
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Clean.CleanRequestBuilder Clean
         {
-            get => new CleanRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Clean.CleanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the code method.</summary>
-        public CodeRequestBuilder Code
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Code.CodeRequestBuilder Code
         {
-            get => new CodeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Code.CodeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the columns method.</summary>
-        public ColumnsRequestBuilder Columns
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Columns.ColumnsRequestBuilder Columns
         {
-            get => new ColumnsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Columns.ColumnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the combin method.</summary>
-        public CombinRequestBuilder Combin
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Combin.CombinRequestBuilder Combin
         {
-            get => new CombinRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Combin.CombinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the combina method.</summary>
-        public CombinaRequestBuilder Combina
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Combina.CombinaRequestBuilder Combina
         {
-            get => new CombinaRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Combina.CombinaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the complex method.</summary>
-        public ComplexRequestBuilder Complex
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Complex.ComplexRequestBuilder Complex
         {
-            get => new ComplexRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Complex.ComplexRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the concatenate method.</summary>
-        public ConcatenateRequestBuilder Concatenate
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Concatenate.ConcatenateRequestBuilder Concatenate
         {
-            get => new ConcatenateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Concatenate.ConcatenateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the confidence_Norm method.</summary>
-        public Confidence_NormRequestBuilder Confidence_Norm
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Confidence_Norm.Confidence_NormRequestBuilder Confidence_Norm
         {
-            get => new Confidence_NormRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Confidence_Norm.Confidence_NormRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the confidence_T method.</summary>
-        public Confidence_TRequestBuilder Confidence_T
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Confidence_T.Confidence_TRequestBuilder Confidence_T
         {
-            get => new Confidence_TRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Confidence_T.Confidence_TRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the convert method.</summary>
-        public ConvertRequestBuilder Convert
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ConvertNamespace.ConvertRequestBuilder Convert
         {
-            get => new ConvertRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ConvertNamespace.ConvertRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cos method.</summary>
-        public CosRequestBuilder Cos
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Cos.CosRequestBuilder Cos
         {
-            get => new CosRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Cos.CosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cosh method.</summary>
-        public CoshRequestBuilder Cosh
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Cosh.CoshRequestBuilder Cosh
         {
-            get => new CoshRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Cosh.CoshRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cot method.</summary>
-        public CotRequestBuilder Cot
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Cot.CotRequestBuilder Cot
         {
-            get => new CotRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Cot.CotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the coth method.</summary>
-        public CothRequestBuilder Coth
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Coth.CothRequestBuilder Coth
         {
-            get => new CothRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Coth.CothRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the count method.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the countA method.</summary>
-        public CountARequestBuilder CountA
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CountA.CountARequestBuilder CountA
         {
-            get => new CountARequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CountA.CountARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the countBlank method.</summary>
-        public CountBlankRequestBuilder CountBlank
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CountBlank.CountBlankRequestBuilder CountBlank
         {
-            get => new CountBlankRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CountBlank.CountBlankRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the countIf method.</summary>
-        public CountIfRequestBuilder CountIf
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CountIf.CountIfRequestBuilder CountIf
         {
-            get => new CountIfRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CountIf.CountIfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the countIfs method.</summary>
-        public CountIfsRequestBuilder CountIfs
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CountIfs.CountIfsRequestBuilder CountIfs
         {
-            get => new CountIfsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CountIfs.CountIfsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the coupDayBs method.</summary>
-        public CoupDayBsRequestBuilder CoupDayBs
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CoupDayBs.CoupDayBsRequestBuilder CoupDayBs
         {
-            get => new CoupDayBsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CoupDayBs.CoupDayBsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the coupDays method.</summary>
-        public CoupDaysRequestBuilder CoupDays
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CoupDays.CoupDaysRequestBuilder CoupDays
         {
-            get => new CoupDaysRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CoupDays.CoupDaysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the coupDaysNc method.</summary>
-        public CoupDaysNcRequestBuilder CoupDaysNc
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CoupDaysNc.CoupDaysNcRequestBuilder CoupDaysNc
         {
-            get => new CoupDaysNcRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CoupDaysNc.CoupDaysNcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the coupNcd method.</summary>
-        public CoupNcdRequestBuilder CoupNcd
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CoupNcd.CoupNcdRequestBuilder CoupNcd
         {
-            get => new CoupNcdRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CoupNcd.CoupNcdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the coupNum method.</summary>
-        public CoupNumRequestBuilder CoupNum
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CoupNum.CoupNumRequestBuilder CoupNum
         {
-            get => new CoupNumRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CoupNum.CoupNumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the coupPcd method.</summary>
-        public CoupPcdRequestBuilder CoupPcd
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CoupPcd.CoupPcdRequestBuilder CoupPcd
         {
-            get => new CoupPcdRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CoupPcd.CoupPcdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the csc method.</summary>
-        public CscRequestBuilder Csc
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Csc.CscRequestBuilder Csc
         {
-            get => new CscRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Csc.CscRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the csch method.</summary>
-        public CschRequestBuilder Csch
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Csch.CschRequestBuilder Csch
         {
-            get => new CschRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Csch.CschRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cumIPmt method.</summary>
-        public CumIPmtRequestBuilder CumIPmt
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CumIPmt.CumIPmtRequestBuilder CumIPmt
         {
-            get => new CumIPmtRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CumIPmt.CumIPmtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cumPrinc method.</summary>
-        public CumPrincRequestBuilder CumPrinc
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CumPrinc.CumPrincRequestBuilder CumPrinc
         {
-            get => new CumPrincRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CumPrinc.CumPrincRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the date method.</summary>
-        public DateRequestBuilder Date
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DateNamespace.DateRequestBuilder Date
         {
-            get => new DateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DateNamespace.DateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the datevalue method.</summary>
-        public DatevalueRequestBuilder Datevalue
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Datevalue.DatevalueRequestBuilder Datevalue
         {
-            get => new DatevalueRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Datevalue.DatevalueRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the daverage method.</summary>
-        public DaverageRequestBuilder Daverage
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Daverage.DaverageRequestBuilder Daverage
         {
-            get => new DaverageRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Daverage.DaverageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the day method.</summary>
-        public DayRequestBuilder Day
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Day.DayRequestBuilder Day
         {
-            get => new DayRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Day.DayRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the days method.</summary>
-        public DaysRequestBuilder Days
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Days.DaysRequestBuilder Days
         {
-            get => new DaysRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Days.DaysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the days360 method.</summary>
-        public Days360RequestBuilder Days360
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Days360.Days360RequestBuilder Days360
         {
-            get => new Days360RequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Days360.Days360RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the db method.</summary>
-        public DbRequestBuilder Db
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Db.DbRequestBuilder Db
         {
-            get => new DbRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Db.DbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dbcs method.</summary>
-        public DbcsRequestBuilder Dbcs
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dbcs.DbcsRequestBuilder Dbcs
         {
-            get => new DbcsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dbcs.DbcsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dcount method.</summary>
-        public DcountRequestBuilder Dcount
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dcount.DcountRequestBuilder Dcount
         {
-            get => new DcountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dcount.DcountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dcountA method.</summary>
-        public DcountARequestBuilder DcountA
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DcountA.DcountARequestBuilder DcountA
         {
-            get => new DcountARequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DcountA.DcountARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the ddb method.</summary>
-        public DdbRequestBuilder Ddb
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ddb.DdbRequestBuilder Ddb
         {
-            get => new DdbRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ddb.DdbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dec2Bin method.</summary>
-        public Dec2BinRequestBuilder Dec2Bin
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dec2Bin.Dec2BinRequestBuilder Dec2Bin
         {
-            get => new Dec2BinRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dec2Bin.Dec2BinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dec2Hex method.</summary>
-        public Dec2HexRequestBuilder Dec2Hex
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dec2Hex.Dec2HexRequestBuilder Dec2Hex
         {
-            get => new Dec2HexRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dec2Hex.Dec2HexRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dec2Oct method.</summary>
-        public Dec2OctRequestBuilder Dec2Oct
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dec2Oct.Dec2OctRequestBuilder Dec2Oct
         {
-            get => new Dec2OctRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dec2Oct.Dec2OctRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the decimal method.</summary>
-        public DecimalRequestBuilder Decimal
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DecimalNamespace.DecimalRequestBuilder Decimal
         {
-            get => new DecimalRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DecimalNamespace.DecimalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the degrees method.</summary>
-        public DegreesRequestBuilder Degrees
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Degrees.DegreesRequestBuilder Degrees
         {
-            get => new DegreesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Degrees.DegreesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public DeltaRequestBuilder Delta
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Delta.DeltaRequestBuilder Delta
         {
-            get => new DeltaRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the devSq method.</summary>
-        public DevSqRequestBuilder DevSq
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DevSq.DevSqRequestBuilder DevSq
         {
-            get => new DevSqRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DevSq.DevSqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dget method.</summary>
-        public DgetRequestBuilder Dget
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dget.DgetRequestBuilder Dget
         {
-            get => new DgetRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dget.DgetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the disc method.</summary>
-        public DiscRequestBuilder Disc
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Disc.DiscRequestBuilder Disc
         {
-            get => new DiscRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Disc.DiscRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dmax method.</summary>
-        public DmaxRequestBuilder Dmax
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dmax.DmaxRequestBuilder Dmax
         {
-            get => new DmaxRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dmax.DmaxRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dmin method.</summary>
-        public DminRequestBuilder Dmin
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dmin.DminRequestBuilder Dmin
         {
-            get => new DminRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dmin.DminRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dollar method.</summary>
-        public DollarRequestBuilder Dollar
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dollar.DollarRequestBuilder Dollar
         {
-            get => new DollarRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dollar.DollarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dollarDe method.</summary>
-        public DollarDeRequestBuilder DollarDe
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DollarDe.DollarDeRequestBuilder DollarDe
         {
-            get => new DollarDeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DollarDe.DollarDeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dollarFr method.</summary>
-        public DollarFrRequestBuilder DollarFr
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DollarFr.DollarFrRequestBuilder DollarFr
         {
-            get => new DollarFrRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DollarFr.DollarFrRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dproduct method.</summary>
-        public DproductRequestBuilder Dproduct
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dproduct.DproductRequestBuilder Dproduct
         {
-            get => new DproductRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dproduct.DproductRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dstDev method.</summary>
-        public DstDevRequestBuilder DstDev
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DstDev.DstDevRequestBuilder DstDev
         {
-            get => new DstDevRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DstDev.DstDevRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dstDevP method.</summary>
-        public DstDevPRequestBuilder DstDevP
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DstDevP.DstDevPRequestBuilder DstDevP
         {
-            get => new DstDevPRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DstDevP.DstDevPRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dsum method.</summary>
-        public DsumRequestBuilder Dsum
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dsum.DsumRequestBuilder Dsum
         {
-            get => new DsumRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dsum.DsumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the duration method.</summary>
-        public DurationRequestBuilder Duration
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Duration.DurationRequestBuilder Duration
         {
-            get => new DurationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Duration.DurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dvar method.</summary>
-        public DvarRequestBuilder Dvar
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dvar.DvarRequestBuilder Dvar
         {
-            get => new DvarRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dvar.DvarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dvarP method.</summary>
-        public DvarPRequestBuilder DvarP
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DvarP.DvarPRequestBuilder DvarP
         {
-            get => new DvarPRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DvarP.DvarPRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the ecma_Ceiling method.</summary>
-        public Ecma_CeilingRequestBuilder Ecma_Ceiling
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ecma_Ceiling.Ecma_CeilingRequestBuilder Ecma_Ceiling
         {
-            get => new Ecma_CeilingRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ecma_Ceiling.Ecma_CeilingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the edate method.</summary>
-        public EdateRequestBuilder Edate
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Edate.EdateRequestBuilder Edate
         {
-            get => new EdateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Edate.EdateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the effect method.</summary>
-        public EffectRequestBuilder Effect
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Effect.EffectRequestBuilder Effect
         {
-            get => new EffectRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Effect.EffectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the eoMonth method.</summary>
-        public EoMonthRequestBuilder EoMonth
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.EoMonth.EoMonthRequestBuilder EoMonth
         {
-            get => new EoMonthRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.EoMonth.EoMonthRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the erf method.</summary>
-        public ErfRequestBuilder Erf
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Erf.ErfRequestBuilder Erf
         {
-            get => new ErfRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Erf.ErfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the erf_Precise method.</summary>
-        public Erf_PreciseRequestBuilder Erf_Precise
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Erf_Precise.Erf_PreciseRequestBuilder Erf_Precise
         {
-            get => new Erf_PreciseRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Erf_Precise.Erf_PreciseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the erfC method.</summary>
-        public ErfCRequestBuilder ErfC
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ErfC.ErfCRequestBuilder ErfC
         {
-            get => new ErfCRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ErfC.ErfCRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the erfC_Precise method.</summary>
-        public ErfC_PreciseRequestBuilder ErfC_Precise
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ErfC_Precise.ErfC_PreciseRequestBuilder ErfC_Precise
         {
-            get => new ErfC_PreciseRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ErfC_Precise.ErfC_PreciseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the error_Type method.</summary>
-        public Error_TypeRequestBuilder Error_Type
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Error_Type.Error_TypeRequestBuilder Error_Type
         {
-            get => new Error_TypeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Error_Type.Error_TypeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the even method.</summary>
-        public EvenRequestBuilder Even
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Even.EvenRequestBuilder Even
         {
-            get => new EvenRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Even.EvenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the exact method.</summary>
-        public ExactRequestBuilder Exact
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Exact.ExactRequestBuilder Exact
         {
-            get => new ExactRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Exact.ExactRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the exp method.</summary>
-        public ExpRequestBuilder Exp
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Exp.ExpRequestBuilder Exp
         {
-            get => new ExpRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Exp.ExpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the expon_Dist method.</summary>
-        public Expon_DistRequestBuilder Expon_Dist
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Expon_Dist.Expon_DistRequestBuilder Expon_Dist
         {
-            get => new Expon_DistRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Expon_Dist.Expon_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the f_Dist method.</summary>
-        public F_DistRequestBuilder F_Dist
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.F_Dist.F_DistRequestBuilder F_Dist
         {
-            get => new F_DistRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.F_Dist.F_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the f_Dist_RT method.</summary>
-        public F_Dist_RTRequestBuilder F_Dist_RT
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.F_Dist_RT.F_Dist_RTRequestBuilder F_Dist_RT
         {
-            get => new F_Dist_RTRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.F_Dist_RT.F_Dist_RTRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the f_Inv method.</summary>
-        public F_InvRequestBuilder F_Inv
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.F_Inv.F_InvRequestBuilder F_Inv
         {
-            get => new F_InvRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.F_Inv.F_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the f_Inv_RT method.</summary>
-        public F_Inv_RTRequestBuilder F_Inv_RT
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.F_Inv_RT.F_Inv_RTRequestBuilder F_Inv_RT
         {
-            get => new F_Inv_RTRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.F_Inv_RT.F_Inv_RTRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the fact method.</summary>
-        public FactRequestBuilder Fact
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Fact.FactRequestBuilder Fact
         {
-            get => new FactRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Fact.FactRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the factDouble method.</summary>
-        public FactDoubleRequestBuilder FactDouble
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FactDouble.FactDoubleRequestBuilder FactDouble
         {
-            get => new FactDoubleRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FactDouble.FactDoubleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the false method.</summary>
-        public FalseRequestBuilder False
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.False.FalseRequestBuilder False
         {
-            get => new FalseRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.False.FalseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the find method.</summary>
-        public FindRequestBuilder Find
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Find.FindRequestBuilder Find
         {
-            get => new FindRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Find.FindRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the findB method.</summary>
-        public FindBRequestBuilder FindB
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FindB.FindBRequestBuilder FindB
         {
-            get => new FindBRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FindB.FindBRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the fisher method.</summary>
-        public FisherRequestBuilder Fisher
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Fisher.FisherRequestBuilder Fisher
         {
-            get => new FisherRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Fisher.FisherRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the fisherInv method.</summary>
-        public FisherInvRequestBuilder FisherInv
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FisherInv.FisherInvRequestBuilder FisherInv
         {
-            get => new FisherInvRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FisherInv.FisherInvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the fixed method.</summary>
-        public FixedRequestBuilder Fixed
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Fixed.FixedRequestBuilder Fixed
         {
-            get => new FixedRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Fixed.FixedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the floor_Math method.</summary>
-        public Floor_MathRequestBuilder Floor_Math
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Floor_Math.Floor_MathRequestBuilder Floor_Math
         {
-            get => new Floor_MathRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Floor_Math.Floor_MathRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the floor_Precise method.</summary>
-        public Floor_PreciseRequestBuilder Floor_Precise
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Floor_Precise.Floor_PreciseRequestBuilder Floor_Precise
         {
-            get => new Floor_PreciseRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Floor_Precise.Floor_PreciseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the fv method.</summary>
-        public FvRequestBuilder Fv
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Fv.FvRequestBuilder Fv
         {
-            get => new FvRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Fv.FvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the fvschedule method.</summary>
-        public FvscheduleRequestBuilder Fvschedule
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Fvschedule.FvscheduleRequestBuilder Fvschedule
         {
-            get => new FvscheduleRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Fvschedule.FvscheduleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the gamma method.</summary>
-        public GammaRequestBuilder Gamma
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gamma.GammaRequestBuilder Gamma
         {
-            get => new GammaRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gamma.GammaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the gamma_Dist method.</summary>
-        public Gamma_DistRequestBuilder Gamma_Dist
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gamma_Dist.Gamma_DistRequestBuilder Gamma_Dist
         {
-            get => new Gamma_DistRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gamma_Dist.Gamma_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the gamma_Inv method.</summary>
-        public Gamma_InvRequestBuilder Gamma_Inv
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gamma_Inv.Gamma_InvRequestBuilder Gamma_Inv
         {
-            get => new Gamma_InvRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gamma_Inv.Gamma_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the gammaLn method.</summary>
-        public GammaLnRequestBuilder GammaLn
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.GammaLn.GammaLnRequestBuilder GammaLn
         {
-            get => new GammaLnRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.GammaLn.GammaLnRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the gammaLn_Precise method.</summary>
-        public GammaLn_PreciseRequestBuilder GammaLn_Precise
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.GammaLn_Precise.GammaLn_PreciseRequestBuilder GammaLn_Precise
         {
-            get => new GammaLn_PreciseRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.GammaLn_Precise.GammaLn_PreciseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the gauss method.</summary>
-        public GaussRequestBuilder Gauss
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gauss.GaussRequestBuilder Gauss
         {
-            get => new GaussRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gauss.GaussRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the gcd method.</summary>
-        public GcdRequestBuilder Gcd
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gcd.GcdRequestBuilder Gcd
         {
-            get => new GcdRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gcd.GcdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the geoMean method.</summary>
-        public GeoMeanRequestBuilder GeoMean
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.GeoMean.GeoMeanRequestBuilder GeoMean
         {
-            get => new GeoMeanRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.GeoMean.GeoMeanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the geStep method.</summary>
-        public GeStepRequestBuilder GeStep
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.GeStep.GeStepRequestBuilder GeStep
         {
-            get => new GeStepRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.GeStep.GeStepRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the harMean method.</summary>
-        public HarMeanRequestBuilder HarMean
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.HarMean.HarMeanRequestBuilder HarMean
         {
-            get => new HarMeanRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.HarMean.HarMeanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hex2Bin method.</summary>
-        public Hex2BinRequestBuilder Hex2Bin
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hex2Bin.Hex2BinRequestBuilder Hex2Bin
         {
-            get => new Hex2BinRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hex2Bin.Hex2BinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hex2Dec method.</summary>
-        public Hex2DecRequestBuilder Hex2Dec
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hex2Dec.Hex2DecRequestBuilder Hex2Dec
         {
-            get => new Hex2DecRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hex2Dec.Hex2DecRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hex2Oct method.</summary>
-        public Hex2OctRequestBuilder Hex2Oct
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hex2Oct.Hex2OctRequestBuilder Hex2Oct
         {
-            get => new Hex2OctRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hex2Oct.Hex2OctRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hlookup method.</summary>
-        public HlookupRequestBuilder Hlookup
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hlookup.HlookupRequestBuilder Hlookup
         {
-            get => new HlookupRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hlookup.HlookupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hour method.</summary>
-        public HourRequestBuilder Hour
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hour.HourRequestBuilder Hour
         {
-            get => new HourRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hour.HourRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hyperlink method.</summary>
-        public HyperlinkRequestBuilder Hyperlink
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hyperlink.HyperlinkRequestBuilder Hyperlink
         {
-            get => new HyperlinkRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hyperlink.HyperlinkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hypGeom_Dist method.</summary>
-        public HypGeom_DistRequestBuilder HypGeom_Dist
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.HypGeom_Dist.HypGeom_DistRequestBuilder HypGeom_Dist
         {
-            get => new HypGeom_DistRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.HypGeom_Dist.HypGeom_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the if method.</summary>
-        public IfRequestBuilder If
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.If.IfRequestBuilder If
         {
-            get => new IfRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.If.IfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imAbs method.</summary>
-        public ImAbsRequestBuilder ImAbs
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImAbs.ImAbsRequestBuilder ImAbs
         {
-            get => new ImAbsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImAbs.ImAbsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imaginary method.</summary>
-        public ImaginaryRequestBuilder Imaginary
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Imaginary.ImaginaryRequestBuilder Imaginary
         {
-            get => new ImaginaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Imaginary.ImaginaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imArgument method.</summary>
-        public ImArgumentRequestBuilder ImArgument
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImArgument.ImArgumentRequestBuilder ImArgument
         {
-            get => new ImArgumentRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImArgument.ImArgumentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imConjugate method.</summary>
-        public ImConjugateRequestBuilder ImConjugate
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImConjugate.ImConjugateRequestBuilder ImConjugate
         {
-            get => new ImConjugateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImConjugate.ImConjugateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imCos method.</summary>
-        public ImCosRequestBuilder ImCos
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImCos.ImCosRequestBuilder ImCos
         {
-            get => new ImCosRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImCos.ImCosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imCosh method.</summary>
-        public ImCoshRequestBuilder ImCosh
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImCosh.ImCoshRequestBuilder ImCosh
         {
-            get => new ImCoshRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImCosh.ImCoshRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imCot method.</summary>
-        public ImCotRequestBuilder ImCot
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImCot.ImCotRequestBuilder ImCot
         {
-            get => new ImCotRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImCot.ImCotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imCsc method.</summary>
-        public ImCscRequestBuilder ImCsc
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImCsc.ImCscRequestBuilder ImCsc
         {
-            get => new ImCscRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImCsc.ImCscRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imCsch method.</summary>
-        public ImCschRequestBuilder ImCsch
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImCsch.ImCschRequestBuilder ImCsch
         {
-            get => new ImCschRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImCsch.ImCschRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imDiv method.</summary>
-        public ImDivRequestBuilder ImDiv
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImDiv.ImDivRequestBuilder ImDiv
         {
-            get => new ImDivRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImDiv.ImDivRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imExp method.</summary>
-        public ImExpRequestBuilder ImExp
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImExp.ImExpRequestBuilder ImExp
         {
-            get => new ImExpRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImExp.ImExpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imLn method.</summary>
-        public ImLnRequestBuilder ImLn
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImLn.ImLnRequestBuilder ImLn
         {
-            get => new ImLnRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImLn.ImLnRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imLog10 method.</summary>
-        public ImLog10RequestBuilder ImLog10
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImLog10.ImLog10RequestBuilder ImLog10
         {
-            get => new ImLog10RequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImLog10.ImLog10RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imLog2 method.</summary>
-        public ImLog2RequestBuilder ImLog2
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImLog2.ImLog2RequestBuilder ImLog2
         {
-            get => new ImLog2RequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImLog2.ImLog2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imPower method.</summary>
-        public ImPowerRequestBuilder ImPower
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImPower.ImPowerRequestBuilder ImPower
         {
-            get => new ImPowerRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImPower.ImPowerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imProduct method.</summary>
-        public ImProductRequestBuilder ImProduct
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImProduct.ImProductRequestBuilder ImProduct
         {
-            get => new ImProductRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImProduct.ImProductRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imReal method.</summary>
-        public ImRealRequestBuilder ImReal
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImReal.ImRealRequestBuilder ImReal
         {
-            get => new ImRealRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImReal.ImRealRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imSec method.</summary>
-        public ImSecRequestBuilder ImSec
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImSec.ImSecRequestBuilder ImSec
         {
-            get => new ImSecRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImSec.ImSecRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imSech method.</summary>
-        public ImSechRequestBuilder ImSech
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImSech.ImSechRequestBuilder ImSech
         {
-            get => new ImSechRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImSech.ImSechRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imSin method.</summary>
-        public ImSinRequestBuilder ImSin
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImSin.ImSinRequestBuilder ImSin
         {
-            get => new ImSinRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImSin.ImSinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imSinh method.</summary>
-        public ImSinhRequestBuilder ImSinh
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImSinh.ImSinhRequestBuilder ImSinh
         {
-            get => new ImSinhRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImSinh.ImSinhRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imSqrt method.</summary>
-        public ImSqrtRequestBuilder ImSqrt
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImSqrt.ImSqrtRequestBuilder ImSqrt
         {
-            get => new ImSqrtRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImSqrt.ImSqrtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imSub method.</summary>
-        public ImSubRequestBuilder ImSub
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImSub.ImSubRequestBuilder ImSub
         {
-            get => new ImSubRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImSub.ImSubRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imSum method.</summary>
-        public ImSumRequestBuilder ImSum
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImSum.ImSumRequestBuilder ImSum
         {
-            get => new ImSumRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImSum.ImSumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imTan method.</summary>
-        public ImTanRequestBuilder ImTan
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImTan.ImTanRequestBuilder ImTan
         {
-            get => new ImTanRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ImTan.ImTanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the int method.</summary>
-        public IntRequestBuilder Int
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Int.IntRequestBuilder Int
         {
-            get => new IntRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Int.IntRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the intRate method.</summary>
-        public IntRateRequestBuilder IntRate
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IntRate.IntRateRequestBuilder IntRate
         {
-            get => new IntRateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IntRate.IntRateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the ipmt method.</summary>
-        public IpmtRequestBuilder Ipmt
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ipmt.IpmtRequestBuilder Ipmt
         {
-            get => new IpmtRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ipmt.IpmtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the irr method.</summary>
-        public IrrRequestBuilder Irr
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Irr.IrrRequestBuilder Irr
         {
-            get => new IrrRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Irr.IrrRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isErr method.</summary>
-        public IsErrRequestBuilder IsErr
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsErr.IsErrRequestBuilder IsErr
         {
-            get => new IsErrRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsErr.IsErrRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isError method.</summary>
-        public IsErrorRequestBuilder IsError
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsError.IsErrorRequestBuilder IsError
         {
-            get => new IsErrorRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsError.IsErrorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isEven method.</summary>
-        public IsEvenRequestBuilder IsEven
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsEven.IsEvenRequestBuilder IsEven
         {
-            get => new IsEvenRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsEven.IsEvenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isFormula method.</summary>
-        public IsFormulaRequestBuilder IsFormula
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsFormula.IsFormulaRequestBuilder IsFormula
         {
-            get => new IsFormulaRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsFormula.IsFormulaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isLogical method.</summary>
-        public IsLogicalRequestBuilder IsLogical
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsLogical.IsLogicalRequestBuilder IsLogical
         {
-            get => new IsLogicalRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsLogical.IsLogicalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isNA method.</summary>
-        public IsNARequestBuilder IsNA
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsNA.IsNARequestBuilder IsNA
         {
-            get => new IsNARequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsNA.IsNARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isNonText method.</summary>
-        public IsNonTextRequestBuilder IsNonText
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsNonText.IsNonTextRequestBuilder IsNonText
         {
-            get => new IsNonTextRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsNonText.IsNonTextRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isNumber method.</summary>
-        public IsNumberRequestBuilder IsNumber
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsNumber.IsNumberRequestBuilder IsNumber
         {
-            get => new IsNumberRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsNumber.IsNumberRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the iso_Ceiling method.</summary>
-        public Iso_CeilingRequestBuilder Iso_Ceiling
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Iso_Ceiling.Iso_CeilingRequestBuilder Iso_Ceiling
         {
-            get => new Iso_CeilingRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Iso_Ceiling.Iso_CeilingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isOdd method.</summary>
-        public IsOddRequestBuilder IsOdd
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsOdd.IsOddRequestBuilder IsOdd
         {
-            get => new IsOddRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsOdd.IsOddRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isoWeekNum method.</summary>
-        public IsoWeekNumRequestBuilder IsoWeekNum
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsoWeekNum.IsoWeekNumRequestBuilder IsoWeekNum
         {
-            get => new IsoWeekNumRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsoWeekNum.IsoWeekNumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the ispmt method.</summary>
-        public IspmtRequestBuilder Ispmt
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ispmt.IspmtRequestBuilder Ispmt
         {
-            get => new IspmtRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ispmt.IspmtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isref method.</summary>
-        public IsrefRequestBuilder Isref
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Isref.IsrefRequestBuilder Isref
         {
-            get => new IsrefRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Isref.IsrefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isText method.</summary>
-        public IsTextRequestBuilder IsText
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsText.IsTextRequestBuilder IsText
         {
-            get => new IsTextRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.IsText.IsTextRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the kurt method.</summary>
-        public KurtRequestBuilder Kurt
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Kurt.KurtRequestBuilder Kurt
         {
-            get => new KurtRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Kurt.KurtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the large method.</summary>
-        public LargeRequestBuilder Large
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Large.LargeRequestBuilder Large
         {
-            get => new LargeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Large.LargeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the lcm method.</summary>
-        public LcmRequestBuilder Lcm
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Lcm.LcmRequestBuilder Lcm
         {
-            get => new LcmRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Lcm.LcmRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the left method.</summary>
-        public LeftRequestBuilder Left
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Left.LeftRequestBuilder Left
         {
-            get => new LeftRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Left.LeftRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the leftb method.</summary>
-        public LeftbRequestBuilder Leftb
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Leftb.LeftbRequestBuilder Leftb
         {
-            get => new LeftbRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Leftb.LeftbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the len method.</summary>
-        public LenRequestBuilder Len
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Len.LenRequestBuilder Len
         {
-            get => new LenRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Len.LenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the lenb method.</summary>
-        public LenbRequestBuilder Lenb
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Lenb.LenbRequestBuilder Lenb
         {
-            get => new LenbRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Lenb.LenbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the ln method.</summary>
-        public LnRequestBuilder Ln
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ln.LnRequestBuilder Ln
         {
-            get => new LnRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ln.LnRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the log method.</summary>
-        public LogRequestBuilder Log
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Log.LogRequestBuilder Log
         {
-            get => new LogRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Log.LogRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the log10 method.</summary>
-        public Log10RequestBuilder Log10
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Log10.Log10RequestBuilder Log10
         {
-            get => new Log10RequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Log10.Log10RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the logNorm_Dist method.</summary>
-        public LogNorm_DistRequestBuilder LogNorm_Dist
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.LogNorm_Dist.LogNorm_DistRequestBuilder LogNorm_Dist
         {
-            get => new LogNorm_DistRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.LogNorm_Dist.LogNorm_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the logNorm_Inv method.</summary>
-        public LogNorm_InvRequestBuilder LogNorm_Inv
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.LogNorm_Inv.LogNorm_InvRequestBuilder LogNorm_Inv
         {
-            get => new LogNorm_InvRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.LogNorm_Inv.LogNorm_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the lookup method.</summary>
-        public LookupRequestBuilder Lookup
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Lookup.LookupRequestBuilder Lookup
         {
-            get => new LookupRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Lookup.LookupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the lower method.</summary>
-        public LowerRequestBuilder Lower
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Lower.LowerRequestBuilder Lower
         {
-            get => new LowerRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Lower.LowerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the match method.</summary>
-        public MatchRequestBuilder Match
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Match.MatchRequestBuilder Match
         {
-            get => new MatchRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Match.MatchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the max method.</summary>
-        public MaxRequestBuilder Max
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Max.MaxRequestBuilder Max
         {
-            get => new MaxRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Max.MaxRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the maxA method.</summary>
-        public MaxARequestBuilder MaxA
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.MaxA.MaxARequestBuilder MaxA
         {
-            get => new MaxARequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.MaxA.MaxARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the mduration method.</summary>
-        public MdurationRequestBuilder Mduration
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mduration.MdurationRequestBuilder Mduration
         {
-            get => new MdurationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mduration.MdurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the median method.</summary>
-        public MedianRequestBuilder Median
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Median.MedianRequestBuilder Median
         {
-            get => new MedianRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Median.MedianRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the mid method.</summary>
-        public MidRequestBuilder Mid
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mid.MidRequestBuilder Mid
         {
-            get => new MidRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mid.MidRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the midb method.</summary>
-        public MidbRequestBuilder Midb
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Midb.MidbRequestBuilder Midb
         {
-            get => new MidbRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Midb.MidbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the min method.</summary>
-        public MinRequestBuilder Min
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Min.MinRequestBuilder Min
         {
-            get => new MinRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Min.MinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the minA method.</summary>
-        public MinARequestBuilder MinA
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.MinA.MinARequestBuilder MinA
         {
-            get => new MinARequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.MinA.MinARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the minute method.</summary>
-        public MinuteRequestBuilder Minute
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Minute.MinuteRequestBuilder Minute
         {
-            get => new MinuteRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Minute.MinuteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the mirr method.</summary>
-        public MirrRequestBuilder Mirr
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mirr.MirrRequestBuilder Mirr
         {
-            get => new MirrRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mirr.MirrRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the mod method.</summary>
-        public ModRequestBuilder Mod
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mod.ModRequestBuilder Mod
         {
-            get => new ModRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mod.ModRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the month method.</summary>
-        public MonthRequestBuilder Month
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Month.MonthRequestBuilder Month
         {
-            get => new MonthRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Month.MonthRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the mround method.</summary>
-        public MroundRequestBuilder Mround
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mround.MroundRequestBuilder Mround
         {
-            get => new MroundRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mround.MroundRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the multiNomial method.</summary>
-        public MultiNomialRequestBuilder MultiNomial
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.MultiNomial.MultiNomialRequestBuilder MultiNomial
         {
-            get => new MultiNomialRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.MultiNomial.MultiNomialRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the n method.</summary>
-        public NRequestBuilder N
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.N.NRequestBuilder N
         {
-            get => new NRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.N.NRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the na method.</summary>
-        public NaRequestBuilder Na
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Na.NaRequestBuilder Na
         {
-            get => new NaRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Na.NaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the negBinom_Dist method.</summary>
-        public NegBinom_DistRequestBuilder NegBinom_Dist
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.NegBinom_Dist.NegBinom_DistRequestBuilder NegBinom_Dist
         {
-            get => new NegBinom_DistRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.NegBinom_Dist.NegBinom_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the networkDays method.</summary>
-        public NetworkDaysRequestBuilder NetworkDays
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.NetworkDays.NetworkDaysRequestBuilder NetworkDays
         {
-            get => new NetworkDaysRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.NetworkDays.NetworkDaysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the networkDays_Intl method.</summary>
-        public NetworkDays_IntlRequestBuilder NetworkDays_Intl
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.NetworkDays_Intl.NetworkDays_IntlRequestBuilder NetworkDays_Intl
         {
-            get => new NetworkDays_IntlRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.NetworkDays_Intl.NetworkDays_IntlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the nominal method.</summary>
-        public NominalRequestBuilder Nominal
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Nominal.NominalRequestBuilder Nominal
         {
-            get => new NominalRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Nominal.NominalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the norm_Dist method.</summary>
-        public Norm_DistRequestBuilder Norm_Dist
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Norm_Dist.Norm_DistRequestBuilder Norm_Dist
         {
-            get => new Norm_DistRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Norm_Dist.Norm_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the norm_Inv method.</summary>
-        public Norm_InvRequestBuilder Norm_Inv
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Norm_Inv.Norm_InvRequestBuilder Norm_Inv
         {
-            get => new Norm_InvRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Norm_Inv.Norm_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the norm_S_Dist method.</summary>
-        public Norm_S_DistRequestBuilder Norm_S_Dist
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Norm_S_Dist.Norm_S_DistRequestBuilder Norm_S_Dist
         {
-            get => new Norm_S_DistRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Norm_S_Dist.Norm_S_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the norm_S_Inv method.</summary>
-        public Norm_S_InvRequestBuilder Norm_S_Inv
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Norm_S_Inv.Norm_S_InvRequestBuilder Norm_S_Inv
         {
-            get => new Norm_S_InvRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Norm_S_Inv.Norm_S_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the not method.</summary>
-        public NotRequestBuilder Not
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Not.NotRequestBuilder Not
         {
-            get => new NotRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Not.NotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the now method.</summary>
-        public NowRequestBuilder Now
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Now.NowRequestBuilder Now
         {
-            get => new NowRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Now.NowRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the nper method.</summary>
-        public NperRequestBuilder Nper
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Nper.NperRequestBuilder Nper
         {
-            get => new NperRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Nper.NperRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the npv method.</summary>
-        public NpvRequestBuilder Npv
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Npv.NpvRequestBuilder Npv
         {
-            get => new NpvRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Npv.NpvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the numberValue method.</summary>
-        public NumberValueRequestBuilder NumberValue
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.NumberValue.NumberValueRequestBuilder NumberValue
         {
-            get => new NumberValueRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.NumberValue.NumberValueRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the oct2Bin method.</summary>
-        public Oct2BinRequestBuilder Oct2Bin
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Oct2Bin.Oct2BinRequestBuilder Oct2Bin
         {
-            get => new Oct2BinRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Oct2Bin.Oct2BinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the oct2Dec method.</summary>
-        public Oct2DecRequestBuilder Oct2Dec
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Oct2Dec.Oct2DecRequestBuilder Oct2Dec
         {
-            get => new Oct2DecRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Oct2Dec.Oct2DecRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the oct2Hex method.</summary>
-        public Oct2HexRequestBuilder Oct2Hex
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Oct2Hex.Oct2HexRequestBuilder Oct2Hex
         {
-            get => new Oct2HexRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Oct2Hex.Oct2HexRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the odd method.</summary>
-        public OddRequestBuilder Odd
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Odd.OddRequestBuilder Odd
         {
-            get => new OddRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Odd.OddRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the oddFPrice method.</summary>
-        public OddFPriceRequestBuilder OddFPrice
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.OddFPrice.OddFPriceRequestBuilder OddFPrice
         {
-            get => new OddFPriceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.OddFPrice.OddFPriceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the oddFYield method.</summary>
-        public OddFYieldRequestBuilder OddFYield
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.OddFYield.OddFYieldRequestBuilder OddFYield
         {
-            get => new OddFYieldRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.OddFYield.OddFYieldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the oddLPrice method.</summary>
-        public OddLPriceRequestBuilder OddLPrice
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.OddLPrice.OddLPriceRequestBuilder OddLPrice
         {
-            get => new OddLPriceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.OddLPrice.OddLPriceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the oddLYield method.</summary>
-        public OddLYieldRequestBuilder OddLYield
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.OddLYield.OddLYieldRequestBuilder OddLYield
         {
-            get => new OddLYieldRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.OddLYield.OddLYieldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the or method.</summary>
-        public OrRequestBuilder Or
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Or.OrRequestBuilder Or
         {
-            get => new OrRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Or.OrRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the pduration method.</summary>
-        public PdurationRequestBuilder Pduration
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Pduration.PdurationRequestBuilder Pduration
         {
-            get => new PdurationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Pduration.PdurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the percentile_Exc method.</summary>
-        public Percentile_ExcRequestBuilder Percentile_Exc
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Percentile_Exc.Percentile_ExcRequestBuilder Percentile_Exc
         {
-            get => new Percentile_ExcRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Percentile_Exc.Percentile_ExcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the percentile_Inc method.</summary>
-        public Percentile_IncRequestBuilder Percentile_Inc
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Percentile_Inc.Percentile_IncRequestBuilder Percentile_Inc
         {
-            get => new Percentile_IncRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Percentile_Inc.Percentile_IncRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the percentRank_Exc method.</summary>
-        public PercentRank_ExcRequestBuilder PercentRank_Exc
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.PercentRank_Exc.PercentRank_ExcRequestBuilder PercentRank_Exc
         {
-            get => new PercentRank_ExcRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.PercentRank_Exc.PercentRank_ExcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the percentRank_Inc method.</summary>
-        public PercentRank_IncRequestBuilder PercentRank_Inc
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.PercentRank_Inc.PercentRank_IncRequestBuilder PercentRank_Inc
         {
-            get => new PercentRank_IncRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.PercentRank_Inc.PercentRank_IncRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the permut method.</summary>
-        public PermutRequestBuilder Permut
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Permut.PermutRequestBuilder Permut
         {
-            get => new PermutRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Permut.PermutRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the permutationa method.</summary>
-        public PermutationaRequestBuilder Permutationa
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Permutationa.PermutationaRequestBuilder Permutationa
         {
-            get => new PermutationaRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Permutationa.PermutationaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the phi method.</summary>
-        public PhiRequestBuilder Phi
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Phi.PhiRequestBuilder Phi
         {
-            get => new PhiRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Phi.PhiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the pi method.</summary>
-        public PiRequestBuilder Pi
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Pi.PiRequestBuilder Pi
         {
-            get => new PiRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Pi.PiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the pmt method.</summary>
-        public PmtRequestBuilder Pmt
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Pmt.PmtRequestBuilder Pmt
         {
-            get => new PmtRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Pmt.PmtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the poisson_Dist method.</summary>
-        public Poisson_DistRequestBuilder Poisson_Dist
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Poisson_Dist.Poisson_DistRequestBuilder Poisson_Dist
         {
-            get => new Poisson_DistRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Poisson_Dist.Poisson_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the power method.</summary>
-        public PowerRequestBuilder Power
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Power.PowerRequestBuilder Power
         {
-            get => new PowerRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Power.PowerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the ppmt method.</summary>
-        public PpmtRequestBuilder Ppmt
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ppmt.PpmtRequestBuilder Ppmt
         {
-            get => new PpmtRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ppmt.PpmtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the price method.</summary>
-        public PriceRequestBuilder Price
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Price.PriceRequestBuilder Price
         {
-            get => new PriceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Price.PriceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the priceDisc method.</summary>
-        public PriceDiscRequestBuilder PriceDisc
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.PriceDisc.PriceDiscRequestBuilder PriceDisc
         {
-            get => new PriceDiscRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.PriceDisc.PriceDiscRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the priceMat method.</summary>
-        public PriceMatRequestBuilder PriceMat
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.PriceMat.PriceMatRequestBuilder PriceMat
         {
-            get => new PriceMatRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.PriceMat.PriceMatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the product method.</summary>
-        public ProductRequestBuilder Product
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Product.ProductRequestBuilder Product
         {
-            get => new ProductRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Product.ProductRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the proper method.</summary>
-        public ProperRequestBuilder Proper
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Proper.ProperRequestBuilder Proper
         {
-            get => new ProperRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Proper.ProperRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the pv method.</summary>
-        public PvRequestBuilder Pv
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Pv.PvRequestBuilder Pv
         {
-            get => new PvRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Pv.PvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the quartile_Exc method.</summary>
-        public Quartile_ExcRequestBuilder Quartile_Exc
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Quartile_Exc.Quartile_ExcRequestBuilder Quartile_Exc
         {
-            get => new Quartile_ExcRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Quartile_Exc.Quartile_ExcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the quartile_Inc method.</summary>
-        public Quartile_IncRequestBuilder Quartile_Inc
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Quartile_Inc.Quartile_IncRequestBuilder Quartile_Inc
         {
-            get => new Quartile_IncRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Quartile_Inc.Quartile_IncRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the quotient method.</summary>
-        public QuotientRequestBuilder Quotient
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Quotient.QuotientRequestBuilder Quotient
         {
-            get => new QuotientRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Quotient.QuotientRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the radians method.</summary>
-        public RadiansRequestBuilder Radians
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Radians.RadiansRequestBuilder Radians
         {
-            get => new RadiansRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Radians.RadiansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rand method.</summary>
-        public RandRequestBuilder Rand
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Rand.RandRequestBuilder Rand
         {
-            get => new RandRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Rand.RandRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the randBetween method.</summary>
-        public RandBetweenRequestBuilder RandBetween
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.RandBetween.RandBetweenRequestBuilder RandBetween
         {
-            get => new RandBetweenRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.RandBetween.RandBetweenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rank_Avg method.</summary>
-        public Rank_AvgRequestBuilder Rank_Avg
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Rank_Avg.Rank_AvgRequestBuilder Rank_Avg
         {
-            get => new Rank_AvgRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Rank_Avg.Rank_AvgRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rank_Eq method.</summary>
-        public Rank_EqRequestBuilder Rank_Eq
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Rank_Eq.Rank_EqRequestBuilder Rank_Eq
         {
-            get => new Rank_EqRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Rank_Eq.Rank_EqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rate method.</summary>
-        public RateRequestBuilder Rate
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Rate.RateRequestBuilder Rate
         {
-            get => new RateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Rate.RateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the received method.</summary>
-        public ReceivedRequestBuilder Received
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Received.ReceivedRequestBuilder Received
         {
-            get => new ReceivedRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Received.ReceivedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the replace method.</summary>
-        public ReplaceRequestBuilder Replace
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Replace.ReplaceRequestBuilder Replace
         {
-            get => new ReplaceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Replace.ReplaceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the replaceB method.</summary>
-        public ReplaceBRequestBuilder ReplaceB
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ReplaceB.ReplaceBRequestBuilder ReplaceB
         {
-            get => new ReplaceBRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ReplaceB.ReplaceBRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rept method.</summary>
-        public ReptRequestBuilder Rept
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Rept.ReptRequestBuilder Rept
         {
-            get => new ReptRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Rept.ReptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the right method.</summary>
-        public RightRequestBuilder Right
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Right.RightRequestBuilder Right
         {
-            get => new RightRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Right.RightRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rightb method.</summary>
-        public RightbRequestBuilder Rightb
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Rightb.RightbRequestBuilder Rightb
         {
-            get => new RightbRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Rightb.RightbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the roman method.</summary>
-        public RomanRequestBuilder Roman
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Roman.RomanRequestBuilder Roman
         {
-            get => new RomanRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Roman.RomanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the round method.</summary>
-        public RoundRequestBuilder Round
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Round.RoundRequestBuilder Round
         {
-            get => new RoundRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Round.RoundRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the roundDown method.</summary>
-        public RoundDownRequestBuilder RoundDown
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.RoundDown.RoundDownRequestBuilder RoundDown
         {
-            get => new RoundDownRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.RoundDown.RoundDownRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the roundUp method.</summary>
-        public RoundUpRequestBuilder RoundUp
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.RoundUp.RoundUpRequestBuilder RoundUp
         {
-            get => new RoundUpRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.RoundUp.RoundUpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rows method.</summary>
-        public RowsRequestBuilder Rows
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Rows.RowsRequestBuilder Rows
         {
-            get => new RowsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Rows.RowsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rri method.</summary>
-        public RriRequestBuilder Rri
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Rri.RriRequestBuilder Rri
         {
-            get => new RriRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Rri.RriRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sec method.</summary>
-        public SecRequestBuilder Sec
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sec.SecRequestBuilder Sec
         {
-            get => new SecRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sec.SecRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sech method.</summary>
-        public SechRequestBuilder Sech
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sech.SechRequestBuilder Sech
         {
-            get => new SechRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sech.SechRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the second method.</summary>
-        public SecondRequestBuilder Second
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Second.SecondRequestBuilder Second
         {
-            get => new SecondRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Second.SecondRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the seriesSum method.</summary>
-        public SeriesSumRequestBuilder SeriesSum
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.SeriesSum.SeriesSumRequestBuilder SeriesSum
         {
-            get => new SeriesSumRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.SeriesSum.SeriesSumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sheet method.</summary>
-        public SheetRequestBuilder Sheet
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sheet.SheetRequestBuilder Sheet
         {
-            get => new SheetRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sheet.SheetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sheets method.</summary>
-        public SheetsRequestBuilder Sheets
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sheets.SheetsRequestBuilder Sheets
         {
-            get => new SheetsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sheets.SheetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sign method.</summary>
-        public SignRequestBuilder Sign
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sign.SignRequestBuilder Sign
         {
-            get => new SignRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sign.SignRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sin method.</summary>
-        public SinRequestBuilder Sin
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sin.SinRequestBuilder Sin
         {
-            get => new SinRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sin.SinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sinh method.</summary>
-        public SinhRequestBuilder Sinh
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sinh.SinhRequestBuilder Sinh
         {
-            get => new SinhRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sinh.SinhRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the skew method.</summary>
-        public SkewRequestBuilder Skew
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Skew.SkewRequestBuilder Skew
         {
-            get => new SkewRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Skew.SkewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the skew_p method.</summary>
-        public Skew_pRequestBuilder Skew_p
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Skew_p.Skew_pRequestBuilder Skew_p
         {
-            get => new Skew_pRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Skew_p.Skew_pRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sln method.</summary>
-        public SlnRequestBuilder Sln
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sln.SlnRequestBuilder Sln
         {
-            get => new SlnRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sln.SlnRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the small method.</summary>
-        public SmallRequestBuilder Small
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Small.SmallRequestBuilder Small
         {
-            get => new SmallRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Small.SmallRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sqrt method.</summary>
-        public SqrtRequestBuilder Sqrt
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sqrt.SqrtRequestBuilder Sqrt
         {
-            get => new SqrtRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sqrt.SqrtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sqrtPi method.</summary>
-        public SqrtPiRequestBuilder SqrtPi
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.SqrtPi.SqrtPiRequestBuilder SqrtPi
         {
-            get => new SqrtPiRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.SqrtPi.SqrtPiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the standardize method.</summary>
-        public StandardizeRequestBuilder Standardize
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Standardize.StandardizeRequestBuilder Standardize
         {
-            get => new StandardizeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Standardize.StandardizeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the stDev_P method.</summary>
-        public StDev_PRequestBuilder StDev_P
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.StDev_P.StDev_PRequestBuilder StDev_P
         {
-            get => new StDev_PRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.StDev_P.StDev_PRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the stDev_S method.</summary>
-        public StDev_SRequestBuilder StDev_S
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.StDev_S.StDev_SRequestBuilder StDev_S
         {
-            get => new StDev_SRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.StDev_S.StDev_SRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the stDevA method.</summary>
-        public StDevARequestBuilder StDevA
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.StDevA.StDevARequestBuilder StDevA
         {
-            get => new StDevARequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.StDevA.StDevARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the stDevPA method.</summary>
-        public StDevPARequestBuilder StDevPA
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.StDevPA.StDevPARequestBuilder StDevPA
         {
-            get => new StDevPARequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.StDevPA.StDevPARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the substitute method.</summary>
-        public SubstituteRequestBuilder Substitute
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Substitute.SubstituteRequestBuilder Substitute
         {
-            get => new SubstituteRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Substitute.SubstituteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the subtotal method.</summary>
-        public SubtotalRequestBuilder Subtotal
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Subtotal.SubtotalRequestBuilder Subtotal
         {
-            get => new SubtotalRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Subtotal.SubtotalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sum method.</summary>
-        public SumRequestBuilder Sum
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sum.SumRequestBuilder Sum
         {
-            get => new SumRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Sum.SumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sumIf method.</summary>
-        public SumIfRequestBuilder SumIf
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.SumIf.SumIfRequestBuilder SumIf
         {
-            get => new SumIfRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.SumIf.SumIfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sumIfs method.</summary>
-        public SumIfsRequestBuilder SumIfs
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.SumIfs.SumIfsRequestBuilder SumIfs
         {
-            get => new SumIfsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.SumIfs.SumIfsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sumSq method.</summary>
-        public SumSqRequestBuilder SumSq
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.SumSq.SumSqRequestBuilder SumSq
         {
-            get => new SumSqRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.SumSq.SumSqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the syd method.</summary>
-        public SydRequestBuilder Syd
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Syd.SydRequestBuilder Syd
         {
-            get => new SydRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Syd.SydRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the t method.</summary>
-        public TRequestBuilder T
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.T.TRequestBuilder T
         {
-            get => new TRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.T.TRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the t_Dist method.</summary>
-        public T_DistRequestBuilder T_Dist
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.T_Dist.T_DistRequestBuilder T_Dist
         {
-            get => new T_DistRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.T_Dist.T_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the t_Dist_2T method.</summary>
-        public T_Dist_2TRequestBuilder T_Dist_2T
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.T_Dist_2T.T_Dist_2TRequestBuilder T_Dist_2T
         {
-            get => new T_Dist_2TRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.T_Dist_2T.T_Dist_2TRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the t_Dist_RT method.</summary>
-        public T_Dist_RTRequestBuilder T_Dist_RT
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.T_Dist_RT.T_Dist_RTRequestBuilder T_Dist_RT
         {
-            get => new T_Dist_RTRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.T_Dist_RT.T_Dist_RTRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the t_Inv method.</summary>
-        public T_InvRequestBuilder T_Inv
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.T_Inv.T_InvRequestBuilder T_Inv
         {
-            get => new T_InvRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.T_Inv.T_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the t_Inv_2T method.</summary>
-        public T_Inv_2TRequestBuilder T_Inv_2T
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.T_Inv_2T.T_Inv_2TRequestBuilder T_Inv_2T
         {
-            get => new T_Inv_2TRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.T_Inv_2T.T_Inv_2TRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the tan method.</summary>
-        public TanRequestBuilder Tan
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Tan.TanRequestBuilder Tan
         {
-            get => new TanRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Tan.TanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the tanh method.</summary>
-        public TanhRequestBuilder Tanh
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Tanh.TanhRequestBuilder Tanh
         {
-            get => new TanhRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Tanh.TanhRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the tbillEq method.</summary>
-        public TbillEqRequestBuilder TbillEq
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.TbillEq.TbillEqRequestBuilder TbillEq
         {
-            get => new TbillEqRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.TbillEq.TbillEqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the tbillPrice method.</summary>
-        public TbillPriceRequestBuilder TbillPrice
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.TbillPrice.TbillPriceRequestBuilder TbillPrice
         {
-            get => new TbillPriceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.TbillPrice.TbillPriceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the tbillYield method.</summary>
-        public TbillYieldRequestBuilder TbillYield
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.TbillYield.TbillYieldRequestBuilder TbillYield
         {
-            get => new TbillYieldRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.TbillYield.TbillYieldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the text method.</summary>
-        public TextRequestBuilder Text
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Text.TextRequestBuilder Text
         {
-            get => new TextRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Text.TextRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the time method.</summary>
-        public TimeRequestBuilder Time
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Time.TimeRequestBuilder Time
         {
-            get => new TimeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Time.TimeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the timevalue method.</summary>
-        public TimevalueRequestBuilder Timevalue
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Timevalue.TimevalueRequestBuilder Timevalue
         {
-            get => new TimevalueRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Timevalue.TimevalueRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the today method.</summary>
-        public TodayRequestBuilder Today
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Today.TodayRequestBuilder Today
         {
-            get => new TodayRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Today.TodayRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the trim method.</summary>
-        public TrimRequestBuilder Trim
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Trim.TrimRequestBuilder Trim
         {
-            get => new TrimRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Trim.TrimRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the trimMean method.</summary>
-        public TrimMeanRequestBuilder TrimMean
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.TrimMean.TrimMeanRequestBuilder TrimMean
         {
-            get => new TrimMeanRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.TrimMean.TrimMeanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the true method.</summary>
-        public TrueRequestBuilder True
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.True.TrueRequestBuilder True
         {
-            get => new TrueRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.True.TrueRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the trunc method.</summary>
-        public TruncRequestBuilder Trunc
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Trunc.TruncRequestBuilder Trunc
         {
-            get => new TruncRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Trunc.TruncRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the type method.</summary>
-        public TypeRequestBuilder Type
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.TypeNamespace.TypeRequestBuilder Type
         {
-            get => new TypeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.TypeNamespace.TypeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unichar method.</summary>
-        public UnicharRequestBuilder Unichar
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Unichar.UnicharRequestBuilder Unichar
         {
-            get => new UnicharRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Unichar.UnicharRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unicode method.</summary>
-        public UnicodeRequestBuilder Unicode
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Unicode.UnicodeRequestBuilder Unicode
         {
-            get => new UnicodeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Unicode.UnicodeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the upper method.</summary>
-        public UpperRequestBuilder Upper
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Upper.UpperRequestBuilder Upper
         {
-            get => new UpperRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Upper.UpperRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the usdollar method.</summary>
-        public UsdollarRequestBuilder Usdollar
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Usdollar.UsdollarRequestBuilder Usdollar
         {
-            get => new UsdollarRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Usdollar.UsdollarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the value method.</summary>
-        public ValueRequestBuilder Value
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Value.ValueRequestBuilder Value
         {
-            get => new ValueRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Value.ValueRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the var_P method.</summary>
-        public Var_PRequestBuilder Var_P
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Var_P.Var_PRequestBuilder Var_P
         {
-            get => new Var_PRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Var_P.Var_PRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the var_S method.</summary>
-        public Var_SRequestBuilder Var_S
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Var_S.Var_SRequestBuilder Var_S
         {
-            get => new Var_SRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Var_S.Var_SRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the varA method.</summary>
-        public VarARequestBuilder VarA
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.VarA.VarARequestBuilder VarA
         {
-            get => new VarARequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.VarA.VarARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the varPA method.</summary>
-        public VarPARequestBuilder VarPA
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.VarPA.VarPARequestBuilder VarPA
         {
-            get => new VarPARequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.VarPA.VarPARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the vdb method.</summary>
-        public VdbRequestBuilder Vdb
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Vdb.VdbRequestBuilder Vdb
         {
-            get => new VdbRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Vdb.VdbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the vlookup method.</summary>
-        public VlookupRequestBuilder Vlookup
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Vlookup.VlookupRequestBuilder Vlookup
         {
-            get => new VlookupRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Vlookup.VlookupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the weekday method.</summary>
-        public WeekdayRequestBuilder Weekday
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Weekday.WeekdayRequestBuilder Weekday
         {
-            get => new WeekdayRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Weekday.WeekdayRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the weekNum method.</summary>
-        public WeekNumRequestBuilder WeekNum
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.WeekNum.WeekNumRequestBuilder WeekNum
         {
-            get => new WeekNumRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.WeekNum.WeekNumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the weibull_Dist method.</summary>
-        public Weibull_DistRequestBuilder Weibull_Dist
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Weibull_Dist.Weibull_DistRequestBuilder Weibull_Dist
         {
-            get => new Weibull_DistRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Weibull_Dist.Weibull_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the workDay method.</summary>
-        public WorkDayRequestBuilder WorkDay
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.WorkDay.WorkDayRequestBuilder WorkDay
         {
-            get => new WorkDayRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.WorkDay.WorkDayRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the workDay_Intl method.</summary>
-        public WorkDay_IntlRequestBuilder WorkDay_Intl
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.WorkDay_Intl.WorkDay_IntlRequestBuilder WorkDay_Intl
         {
-            get => new WorkDay_IntlRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.WorkDay_Intl.WorkDay_IntlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the xirr method.</summary>
-        public XirrRequestBuilder Xirr
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Xirr.XirrRequestBuilder Xirr
         {
-            get => new XirrRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Xirr.XirrRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the xnpv method.</summary>
-        public XnpvRequestBuilder Xnpv
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Xnpv.XnpvRequestBuilder Xnpv
         {
-            get => new XnpvRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Xnpv.XnpvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the xor method.</summary>
-        public XorRequestBuilder Xor
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Xor.XorRequestBuilder Xor
         {
-            get => new XorRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Xor.XorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the year method.</summary>
-        public YearRequestBuilder Year
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Year.YearRequestBuilder Year
         {
-            get => new YearRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Year.YearRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the yearFrac method.</summary>
-        public YearFracRequestBuilder YearFrac
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.YearFrac.YearFracRequestBuilder YearFrac
         {
-            get => new YearFracRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.YearFrac.YearFracRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the yield method.</summary>
-        public YieldRequestBuilder Yield
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Yield.YieldRequestBuilder Yield
         {
-            get => new YieldRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Yield.YieldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the yieldDisc method.</summary>
-        public YieldDiscRequestBuilder YieldDisc
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.YieldDisc.YieldDiscRequestBuilder YieldDisc
         {
-            get => new YieldDiscRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.YieldDisc.YieldDiscRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the yieldMat method.</summary>
-        public YieldMatRequestBuilder YieldMat
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.YieldMat.YieldMatRequestBuilder YieldMat
         {
-            get => new YieldMatRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.YieldMat.YieldMatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the z_Test method.</summary>
-        public Z_TestRequestBuilder Z_Test
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Z_Test.Z_TestRequestBuilder Z_Test
         {
-            get => new Z_TestRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Z_Test.Z_TestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="FunctionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FunctionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -2221,7 +2221,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="FunctionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FunctionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -2233,7 +2233,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -2246,57 +2246,57 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get functions from drives
         /// </summary>
-        /// <returns>A <see cref="WorkbookFunctions"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookFunctions"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookFunctions?> GetAsync(Action<RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookFunctions?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FunctionsRequestBuilder.FunctionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WorkbookFunctions> GetAsync(Action<RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookFunctions> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FunctionsRequestBuilder.FunctionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WorkbookFunctions>(requestInfo, WorkbookFunctions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkbookFunctions>(requestInfo, Microsoft.Graph.Models.WorkbookFunctions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property functions in drives
         /// </summary>
-        /// <returns>A <see cref="WorkbookFunctions"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookFunctions"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookFunctions?> PatchAsync(WorkbookFunctions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookFunctions?> PatchAsync(Microsoft.Graph.Models.WorkbookFunctions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WorkbookFunctions> PatchAsync(WorkbookFunctions body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookFunctions> PatchAsync(Microsoft.Graph.Models.WorkbookFunctions body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WorkbookFunctions>(requestInfo, WorkbookFunctions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkbookFunctions>(requestInfo, Microsoft.Graph.Models.WorkbookFunctions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property functions for drives
@@ -2324,11 +2324,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FunctionsRequestBuilder.FunctionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FunctionsRequestBuilder.FunctionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -2344,11 +2344,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(WorkbookFunctions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.WorkbookFunctions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(WorkbookFunctions body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.WorkbookFunctions body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -2361,11 +2361,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="FunctionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FunctionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FunctionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FunctionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new FunctionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FunctionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -2404,7 +2404,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FunctionsRequestBuilderGetRequestConfiguration : RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>
+        public class FunctionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FunctionsRequestBuilder.FunctionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.EmployeeExperience.LearningCourseActivities
     public class LearningCourseActivitiesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.EmployeeExperience.LearningCourseActivities.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.EmployeeExperience.LearningCourseActivities.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperience entity.</summary>
         /// <param name="position">The unique identifier of learningCourseActivity</param>
-        /// <returns>A <see cref="LearningCourseActivityItemRequestBuilder"/></returns>
-        public LearningCourseActivityItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.EmployeeExperience.LearningCourseActivities.Item.LearningCourseActivityItemRequestBuilder"/></returns>
+        public Microsoft.Graph.EmployeeExperience.LearningCourseActivities.Item.LearningCourseActivityItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("learningCourseActivity%2Did", position);
-                return new LearningCourseActivityItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.EmployeeExperience.LearningCourseActivities.Item.LearningCourseActivityItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="LearningCourseActivitiesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.EmployeeExperience.LearningCourseActivities.LearningCourseActivitiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningCourseActivities
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LearningCourseActivitiesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.EmployeeExperience.LearningCourseActivities.LearningCourseActivitiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.EmployeeExperience.LearningCourseActivities
         /// <summary>
         /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
         /// </summary>
-        /// <returns>A <see cref="LearningCourseActivityCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.LearningCourseActivityCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LearningCourseActivityCollectionResponse?> GetAsync(Action<RequestConfiguration<LearningCourseActivitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.LearningCourseActivityCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.EmployeeExperience.LearningCourseActivities.LearningCourseActivitiesRequestBuilder.LearningCourseActivitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<LearningCourseActivityCollectionResponse> GetAsync(Action<RequestConfiguration<LearningCourseActivitiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.LearningCourseActivityCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.EmployeeExperience.LearningCourseActivities.LearningCourseActivitiesRequestBuilder.LearningCourseActivitiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<LearningCourseActivityCollectionResponse>(requestInfo, LearningCourseActivityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.LearningCourseActivityCollectionResponse>(requestInfo, Microsoft.Graph.Models.LearningCourseActivityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to learningCourseActivities for employeeExperience
         /// </summary>
-        /// <returns>A <see cref="LearningCourseActivity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.LearningCourseActivity"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LearningCourseActivity?> PostAsync(LearningCourseActivity body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.LearningCourseActivity?> PostAsync(Microsoft.Graph.Models.LearningCourseActivity body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<LearningCourseActivity> PostAsync(LearningCourseActivity body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.LearningCourseActivity> PostAsync(Microsoft.Graph.Models.LearningCourseActivity body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<LearningCourseActivity>(requestInfo, LearningCourseActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.LearningCourseActivity>(requestInfo, Microsoft.Graph.Models.LearningCourseActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.EmployeeExperience.LearningCourseActivities
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LearningCourseActivitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.EmployeeExperience.LearningCourseActivities.LearningCourseActivitiesRequestBuilder.LearningCourseActivitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LearningCourseActivitiesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.EmployeeExperience.LearningCourseActivities.LearningCourseActivitiesRequestBuilder.LearningCourseActivitiesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.EmployeeExperience.LearningCourseActivities
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(LearningCourseActivity body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.LearningCourseActivity body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(LearningCourseActivity body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.LearningCourseActivity body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.EmployeeExperience.LearningCourseActivities
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="LearningCourseActivitiesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.EmployeeExperience.LearningCourseActivities.LearningCourseActivitiesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LearningCourseActivitiesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.EmployeeExperience.LearningCourseActivities.LearningCourseActivitiesRequestBuilder WithUrl(string rawUrl)
         {
-            return new LearningCourseActivitiesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.EmployeeExperience.LearningCourseActivities.LearningCourseActivitiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningCourseActivities
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class LearningCourseActivitiesRequestBuilderGetRequestConfiguration : RequestConfiguration<LearningCourseActivitiesRequestBuilderGetQueryParameters>
+        public class LearningCourseActivitiesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.EmployeeExperience.LearningCourseActivities.LearningCourseActivitiesRequestBuilder.LearningCourseActivitiesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

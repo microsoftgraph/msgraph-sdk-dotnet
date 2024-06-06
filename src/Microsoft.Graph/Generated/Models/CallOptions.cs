@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CallOptions"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CallOptions"/> and sets the default values.
         /// </summary>
         public CallOptions()
         {
@@ -58,17 +58,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CallOptions"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CallOptions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CallOptions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CallOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.incomingCallOptions" => new IncomingCallOptions(),
-                "#microsoft.graph.outgoingCallOptions" => new OutgoingCallOptions(),
-                _ => new CallOptions(),
+                "#microsoft.graph.incomingCallOptions" => new Microsoft.Graph.Models.IncomingCallOptions(),
+                "#microsoft.graph.outgoingCallOptions" => new Microsoft.Graph.Models.OutgoingCallOptions(),
+                _ => new Microsoft.Graph.Models.CallOptions(),
             };
         }
         /// <summary>

@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Reports.DeviceConfigurationUserActivity
     public class DeviceConfigurationUserActivityRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="DeviceConfigurationUserActivityRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.DeviceConfigurationUserActivity.DeviceConfigurationUserActivityRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Reports.DeviceConfigurationUserActivity
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceConfigurationUserActivityRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.DeviceConfigurationUserActivity.DeviceConfigurationUserActivityRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,25 +36,25 @@ namespace Microsoft.Graph.Reports.DeviceConfigurationUserActivity
         /// Metadata for the device configuration user activity report
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-reportroot-deviceconfigurationuseractivity?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Report"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Report"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Report?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Report?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Report> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Report> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Report>(requestInfo, Report.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Report>(requestInfo, Microsoft.Graph.Models.Report.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Metadata for the device configuration user activity report
@@ -78,11 +78,11 @@ namespace Microsoft.Graph.Reports.DeviceConfigurationUserActivity
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DeviceConfigurationUserActivityRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.DeviceConfigurationUserActivity.DeviceConfigurationUserActivityRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeviceConfigurationUserActivityRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Reports.DeviceConfigurationUserActivity.DeviceConfigurationUserActivityRequestBuilder WithUrl(string rawUrl)
         {
-            return new DeviceConfigurationUserActivityRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Reports.DeviceConfigurationUserActivity.DeviceConfigurationUserActivityRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

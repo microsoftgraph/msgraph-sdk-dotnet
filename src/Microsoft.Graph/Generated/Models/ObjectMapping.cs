@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttributeMapping>? AttributeMappings
+        public List<Microsoft.Graph.Models.AttributeMapping>? AttributeMappings
         {
-            get { return BackingStore?.Get<List<AttributeMapping>?>("attributeMappings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttributeMapping>?>("attributeMappings"); }
             set { BackingStore?.Set("attributeMappings", value); }
         }
 #nullable restore
 #else
-        public List<AttributeMapping> AttributeMappings
+        public List<Microsoft.Graph.Models.AttributeMapping> AttributeMappings
         {
-            get { return BackingStore?.Get<List<AttributeMapping>>("attributeMappings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttributeMapping>>("attributeMappings"); }
             set { BackingStore?.Set("attributeMappings", value); }
         }
 #endif
@@ -42,24 +42,24 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>The flowTypes property</summary>
-        public ObjectFlowTypes? FlowTypes
+        public Microsoft.Graph.Models.ObjectFlowTypes? FlowTypes
         {
-            get { return BackingStore?.Get<ObjectFlowTypes?>("flowTypes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ObjectFlowTypes?>("flowTypes"); }
             set { BackingStore?.Set("flowTypes", value); }
         }
         /// <summary>Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ObjectMappingMetadataEntry>? Metadata
+        public List<Microsoft.Graph.Models.ObjectMappingMetadataEntry>? Metadata
         {
-            get { return BackingStore?.Get<List<ObjectMappingMetadataEntry>?>("metadata"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ObjectMappingMetadataEntry>?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public List<ObjectMappingMetadataEntry> Metadata
+        public List<Microsoft.Graph.Models.ObjectMappingMetadataEntry> Metadata
         {
-            get { return BackingStore?.Get<List<ObjectMappingMetadataEntry>>("metadata"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ObjectMappingMetadataEntry>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
@@ -98,16 +98,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Filter? Scope
+        public Microsoft.Graph.Models.Filter? Scope
         {
-            get { return BackingStore?.Get<Filter?>("scope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Filter?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
 #nullable restore
 #else
-        public Filter Scope
+        public Microsoft.Graph.Models.Filter Scope
         {
-            get { return BackingStore?.Get<Filter>("scope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Filter>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
 #endif
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ObjectMapping"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ObjectMapping"/> and sets the default values.
         /// </summary>
         public ObjectMapping()
         {
@@ -154,12 +154,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ObjectMapping"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ObjectMapping"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ObjectMapping CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ObjectMapping CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ObjectMapping();
+            return new Microsoft.Graph.Models.ObjectMapping();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -169,13 +169,13 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attributeMappings", n => { AttributeMappings = n.GetCollectionOfObjectValues<AttributeMapping>(AttributeMapping.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attributeMappings", n => { AttributeMappings = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AttributeMapping>(Microsoft.Graph.Models.AttributeMapping.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "flowTypes", n => { FlowTypes = n.GetEnumValue<ObjectFlowTypes>(); } },
-                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<ObjectMappingMetadataEntry>(ObjectMappingMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "flowTypes", n => { FlowTypes = n.GetEnumValue<Microsoft.Graph.Models.ObjectFlowTypes>(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ObjectMappingMetadataEntry>(Microsoft.Graph.Models.ObjectMappingMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "scope", n => { Scope = n.GetObjectValue<Filter>(Filter.CreateFromDiscriminatorValue); } },
+                { "scope", n => { Scope = n.GetObjectValue<Microsoft.Graph.Models.Filter>(Microsoft.Graph.Models.Filter.CreateFromDiscriminatorValue); } },
                 { "sourceObjectName", n => { SourceObjectName = n.GetStringValue(); } },
                 { "targetObjectName", n => { TargetObjectName = n.GetStringValue(); } },
             };
@@ -187,13 +187,13 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<AttributeMapping>("attributeMappings", AttributeMappings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AttributeMapping>("attributeMappings", AttributeMappings);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteEnumValue<ObjectFlowTypes>("flowTypes", FlowTypes);
-            writer.WriteCollectionOfObjectValues<ObjectMappingMetadataEntry>("metadata", Metadata);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ObjectFlowTypes>("flowTypes", FlowTypes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ObjectMappingMetadataEntry>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<Filter>("scope", Scope);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Filter>("scope", Scope);
             writer.WriteStringValue("sourceObjectName", SourceObjectName);
             writer.WriteStringValue("targetObjectName", TargetObjectName);
             writer.WriteAdditionalData(AdditionalData);

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
     public class CustomExtensionStageSettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AssignmentPolicies.Item.CustomExtensionStageSettings.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AssignmentPolicies.Item.CustomExtensionStageSettings.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customExtensionStageSettings property of the microsoft.graph.accessPackageAssignmentPolicy entity.</summary>
         /// <param name="position">The unique identifier of customExtensionStageSetting</param>
-        /// <returns>A <see cref="CustomExtensionStageSettingItemRequestBuilder"/></returns>
-        public CustomExtensionStageSettingItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AssignmentPolicies.Item.CustomExtensionStageSettings.Item.CustomExtensionStageSettingItemRequestBuilder"/></returns>
+        public Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AssignmentPolicies.Item.CustomExtensionStageSettings.Item.CustomExtensionStageSettingItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("customExtensionStageSetting%2Did", position);
-                return new CustomExtensionStageSettingItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AssignmentPolicies.Item.CustomExtensionStageSettings.Item.CustomExtensionStageSettingItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CustomExtensionStageSettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AssignmentPolicies.Item.CustomExtensionStageSettings.CustomExtensionStageSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CustomExtensionStageSettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AssignmentPolicies.Item.CustomExtensionStageSettings.CustomExtensionStageSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         /// <summary>
         /// The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
         /// </summary>
-        /// <returns>A <see cref="CustomExtensionStageSettingCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CustomExtensionStageSettingCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CustomExtensionStageSettingCollectionResponse?> GetAsync(Action<RequestConfiguration<CustomExtensionStageSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CustomExtensionStageSettingCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AssignmentPolicies.Item.CustomExtensionStageSettings.CustomExtensionStageSettingsRequestBuilder.CustomExtensionStageSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CustomExtensionStageSettingCollectionResponse> GetAsync(Action<RequestConfiguration<CustomExtensionStageSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CustomExtensionStageSettingCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AssignmentPolicies.Item.CustomExtensionStageSettings.CustomExtensionStageSettingsRequestBuilder.CustomExtensionStageSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CustomExtensionStageSettingCollectionResponse>(requestInfo, CustomExtensionStageSettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CustomExtensionStageSettingCollectionResponse>(requestInfo, Microsoft.Graph.Models.CustomExtensionStageSettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to customExtensionStageSettings for identityGovernance
         /// </summary>
-        /// <returns>A <see cref="CustomExtensionStageSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CustomExtensionStageSetting"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CustomExtensionStageSetting?> PostAsync(CustomExtensionStageSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CustomExtensionStageSetting?> PostAsync(Microsoft.Graph.Models.CustomExtensionStageSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CustomExtensionStageSetting> PostAsync(CustomExtensionStageSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CustomExtensionStageSetting> PostAsync(Microsoft.Graph.Models.CustomExtensionStageSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CustomExtensionStageSetting>(requestInfo, CustomExtensionStageSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CustomExtensionStageSetting>(requestInfo, Microsoft.Graph.Models.CustomExtensionStageSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CustomExtensionStageSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AssignmentPolicies.Item.CustomExtensionStageSettings.CustomExtensionStageSettingsRequestBuilder.CustomExtensionStageSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CustomExtensionStageSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AssignmentPolicies.Item.CustomExtensionStageSettings.CustomExtensionStageSettingsRequestBuilder.CustomExtensionStageSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(CustomExtensionStageSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.CustomExtensionStageSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(CustomExtensionStageSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.CustomExtensionStageSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CustomExtensionStageSettingsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AssignmentPolicies.Item.CustomExtensionStageSettings.CustomExtensionStageSettingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CustomExtensionStageSettingsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AssignmentPolicies.Item.CustomExtensionStageSettings.CustomExtensionStageSettingsRequestBuilder WithUrl(string rawUrl)
         {
-            return new CustomExtensionStageSettingsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AssignmentPolicies.Item.CustomExtensionStageSettings.CustomExtensionStageSettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CustomExtensionStageSettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<CustomExtensionStageSettingsRequestBuilderGetQueryParameters>
+        public class CustomExtensionStageSettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AssignmentPolicies.Item.CustomExtensionStageSettings.CustomExtensionStageSettingsRequestBuilder.CustomExtensionStageSettingsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

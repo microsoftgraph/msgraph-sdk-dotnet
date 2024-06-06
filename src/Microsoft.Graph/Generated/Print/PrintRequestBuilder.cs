@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Print
     public class PrintRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the connectors property of the microsoft.graph.print entity.</summary>
-        public ConnectorsRequestBuilder Connectors
+        public Microsoft.Graph.Print.Connectors.ConnectorsRequestBuilder Connectors
         {
-            get => new ConnectorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Print.Connectors.ConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.print entity.</summary>
-        public OperationsRequestBuilder Operations
+        public Microsoft.Graph.Print.Operations.OperationsRequestBuilder Operations
         {
-            get => new OperationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Print.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the printers property of the microsoft.graph.print entity.</summary>
-        public PrintersRequestBuilder Printers
+        public Microsoft.Graph.Print.Printers.PrintersRequestBuilder Printers
         {
-            get => new PrintersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Print.Printers.PrintersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the services property of the microsoft.graph.print entity.</summary>
-        public ServicesRequestBuilder Services
+        public Microsoft.Graph.Print.Services.ServicesRequestBuilder Services
         {
-            get => new ServicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Print.Services.ServicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the shares property of the microsoft.graph.print entity.</summary>
-        public SharesRequestBuilder Shares
+        public Microsoft.Graph.Print.Shares.SharesRequestBuilder Shares
         {
-            get => new SharesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Print.Shares.SharesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskDefinitions property of the microsoft.graph.print entity.</summary>
-        public TaskDefinitionsRequestBuilder TaskDefinitions
+        public Microsoft.Graph.Print.TaskDefinitions.TaskDefinitionsRequestBuilder TaskDefinitions
         {
-            get => new TaskDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Print.TaskDefinitions.TaskDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrintRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Print.PrintRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Print
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrintRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Print.PrintRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -74,20 +74,20 @@ namespace Microsoft.Graph.Print
         /// <returns>A <see cref="Microsoft.Graph.Models.Print"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Print?> GetAsync(Action<RequestConfiguration<PrintRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Print?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Print.PrintRequestBuilder.PrintRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Print> GetAsync(Action<RequestConfiguration<PrintRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Print> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Print.PrintRequestBuilder.PrintRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Print>(requestInfo, Microsoft.Graph.Models.Print.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Print
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.Print?> PatchAsync(Microsoft.Graph.Models.Print body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Print
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Print>(requestInfo, Microsoft.Graph.Models.Print.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -123,11 +123,11 @@ namespace Microsoft.Graph.Print
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrintRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Print.PrintRequestBuilder.PrintRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrintRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Print.PrintRequestBuilder.PrintRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -160,11 +160,11 @@ namespace Microsoft.Graph.Print
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PrintRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Print.PrintRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PrintRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Print.PrintRequestBuilder WithUrl(string rawUrl)
         {
-            return new PrintRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Print.PrintRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get print
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Print
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PrintRequestBuilderGetRequestConfiguration : RequestConfiguration<PrintRequestBuilderGetQueryParameters>
+        public class PrintRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Print.PrintRequestBuilder.PrintRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests
     public class SwapShiftsChangeRequestsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the swapShiftsChangeRequests property of the microsoft.graph.schedule entity.</summary>
         /// <param name="position">The unique identifier of swapShiftsChangeRequest</param>
-        /// <returns>A <see cref="SwapShiftsChangeRequestItemRequestBuilder"/></returns>
-        public SwapShiftsChangeRequestItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.Item.SwapShiftsChangeRequestItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.Item.SwapShiftsChangeRequestItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("swapShiftsChangeRequest%2Did", position);
-                return new SwapShiftsChangeRequestItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.Item.SwapShiftsChangeRequestItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SwapShiftsChangeRequestsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.SwapShiftsChangeRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SwapShiftsChangeRequestsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.SwapShiftsChangeRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests
         /// Retrieve a list of swapShiftsChangeRequest objects in the team.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/swapshiftschangerequest-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="SwapShiftsChangeRequestCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SwapShiftsChangeRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SwapShiftsChangeRequestCollectionResponse?> GetAsync(Action<RequestConfiguration<SwapShiftsChangeRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SwapShiftsChangeRequestCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.SwapShiftsChangeRequestsRequestBuilder.SwapShiftsChangeRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SwapShiftsChangeRequestCollectionResponse> GetAsync(Action<RequestConfiguration<SwapShiftsChangeRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SwapShiftsChangeRequestCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.SwapShiftsChangeRequestsRequestBuilder.SwapShiftsChangeRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SwapShiftsChangeRequestCollectionResponse>(requestInfo, SwapShiftsChangeRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SwapShiftsChangeRequestCollectionResponse>(requestInfo, Microsoft.Graph.Models.SwapShiftsChangeRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create an instance of a swapShiftsChangeRequest object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/swapshiftschangerequest-post?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="SwapShiftsChangeRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SwapShiftsChangeRequest"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SwapShiftsChangeRequest?> PostAsync(SwapShiftsChangeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SwapShiftsChangeRequest?> PostAsync(Microsoft.Graph.Models.SwapShiftsChangeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SwapShiftsChangeRequest> PostAsync(SwapShiftsChangeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SwapShiftsChangeRequest> PostAsync(Microsoft.Graph.Models.SwapShiftsChangeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SwapShiftsChangeRequest>(requestInfo, SwapShiftsChangeRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SwapShiftsChangeRequest>(requestInfo, Microsoft.Graph.Models.SwapShiftsChangeRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of swapShiftsChangeRequest objects in the team.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SwapShiftsChangeRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.SwapShiftsChangeRequestsRequestBuilder.SwapShiftsChangeRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SwapShiftsChangeRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.SwapShiftsChangeRequestsRequestBuilder.SwapShiftsChangeRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(SwapShiftsChangeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.SwapShiftsChangeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(SwapShiftsChangeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.SwapShiftsChangeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SwapShiftsChangeRequestsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.SwapShiftsChangeRequestsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SwapShiftsChangeRequestsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.SwapShiftsChangeRequestsRequestBuilder WithUrl(string rawUrl)
         {
-            return new SwapShiftsChangeRequestsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.SwapShiftsChangeRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of swapShiftsChangeRequest objects in the team.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SwapShiftsChangeRequestsRequestBuilderGetRequestConfiguration : RequestConfiguration<SwapShiftsChangeRequestsRequestBuilderGetQueryParameters>
+        public class SwapShiftsChangeRequestsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.SwapShiftsChangeRequestsRequestBuilder.SwapShiftsChangeRequestsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

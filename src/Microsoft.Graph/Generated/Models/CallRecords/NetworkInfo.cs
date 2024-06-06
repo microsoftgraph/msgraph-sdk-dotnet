@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Models.CallRecords
         }
 #endif
         /// <summary>The connectionType property</summary>
-        public NetworkConnectionType? ConnectionType
+        public Microsoft.Graph.Models.CallRecords.NetworkConnectionType? ConnectionType
         {
-            get { return BackingStore?.Get<NetworkConnectionType?>("connectionType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.NetworkConnectionType?>("connectionType"); }
             set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>Fraction of the call that the media endpoint detected the network delay was significant enough to impact the ability to have real-time two-way communication.</summary>
@@ -204,16 +204,16 @@ namespace Microsoft.Graph.Models.CallRecords
         /// <summary>List of network trace route hops collected for this media stream.*</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TraceRouteHop>? TraceRouteHops
+        public List<Microsoft.Graph.Models.CallRecords.TraceRouteHop>? TraceRouteHops
         {
-            get { return BackingStore?.Get<List<TraceRouteHop>?>("traceRouteHops"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRecords.TraceRouteHop>?>("traceRouteHops"); }
             set { BackingStore?.Set("traceRouteHops", value); }
         }
 #nullable restore
 #else
-        public List<TraceRouteHop> TraceRouteHops
+        public List<Microsoft.Graph.Models.CallRecords.TraceRouteHop> TraceRouteHops
         {
-            get { return BackingStore?.Get<List<TraceRouteHop>>("traceRouteHops"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRecords.TraceRouteHop>>("traceRouteHops"); }
             set { BackingStore?.Set("traceRouteHops", value); }
         }
 #endif
@@ -312,7 +312,7 @@ namespace Microsoft.Graph.Models.CallRecords
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="NetworkInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CallRecords.NetworkInfo"/> and sets the default values.
         /// </summary>
         public NetworkInfo()
         {
@@ -322,12 +322,12 @@ namespace Microsoft.Graph.Models.CallRecords
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="NetworkInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CallRecords.NetworkInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static NetworkInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CallRecords.NetworkInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new NetworkInfo();
+            return new Microsoft.Graph.Models.CallRecords.NetworkInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -339,13 +339,13 @@ namespace Microsoft.Graph.Models.CallRecords
             {
                 { "bandwidthLowEventRatio", n => { BandwidthLowEventRatio = n.GetFloatValue(); } },
                 { "basicServiceSetIdentifier", n => { BasicServiceSetIdentifier = n.GetStringValue(); } },
-                { "connectionType", n => { ConnectionType = n.GetEnumValue<NetworkConnectionType>(); } },
+                { "connectionType", n => { ConnectionType = n.GetEnumValue<Microsoft.Graph.Models.CallRecords.NetworkConnectionType>(); } },
                 { "delayEventRatio", n => { DelayEventRatio = n.GetFloatValue(); } },
                 { "dnsSuffix", n => { DnsSuffix = n.GetStringValue(); } },
                 { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 { "linkSpeed", n => { LinkSpeed = n.GetLongValue(); } },
                 { "macAddress", n => { MacAddress = n.GetStringValue(); } },
-                { "networkTransportProtocol", n => { NetworkTransportProtocol = n.GetEnumValue<NetworkTransportProtocol>(); } },
+                { "networkTransportProtocol", n => { NetworkTransportProtocol = n.GetEnumValue<Microsoft.Graph.Models.CallRecords.NetworkTransportProtocol>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "port", n => { Port = n.GetIntValue(); } },
                 { "receivedQualityEventRatio", n => { ReceivedQualityEventRatio = n.GetFloatValue(); } },
@@ -354,13 +354,13 @@ namespace Microsoft.Graph.Models.CallRecords
                 { "relayPort", n => { RelayPort = n.GetIntValue(); } },
                 { "sentQualityEventRatio", n => { SentQualityEventRatio = n.GetFloatValue(); } },
                 { "subnet", n => { Subnet = n.GetStringValue(); } },
-                { "traceRouteHops", n => { TraceRouteHops = n.GetCollectionOfObjectValues<TraceRouteHop>(TraceRouteHop.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "wifiBand", n => { WifiBand = n.GetEnumValue<WifiBand>(); } },
+                { "traceRouteHops", n => { TraceRouteHops = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CallRecords.TraceRouteHop>(Microsoft.Graph.Models.CallRecords.TraceRouteHop.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "wifiBand", n => { WifiBand = n.GetEnumValue<Microsoft.Graph.Models.CallRecords.WifiBand>(); } },
                 { "wifiBatteryCharge", n => { WifiBatteryCharge = n.GetIntValue(); } },
                 { "wifiChannel", n => { WifiChannel = n.GetIntValue(); } },
                 { "wifiMicrosoftDriver", n => { WifiMicrosoftDriver = n.GetStringValue(); } },
                 { "wifiMicrosoftDriverVersion", n => { WifiMicrosoftDriverVersion = n.GetStringValue(); } },
-                { "wifiRadioType", n => { WifiRadioType = n.GetEnumValue<WifiRadioType>(); } },
+                { "wifiRadioType", n => { WifiRadioType = n.GetEnumValue<Microsoft.Graph.Models.CallRecords.WifiRadioType>(); } },
                 { "wifiSignalStrength", n => { WifiSignalStrength = n.GetIntValue(); } },
                 { "wifiVendorDriver", n => { WifiVendorDriver = n.GetStringValue(); } },
                 { "wifiVendorDriverVersion", n => { WifiVendorDriverVersion = n.GetStringValue(); } },
@@ -375,13 +375,13 @@ namespace Microsoft.Graph.Models.CallRecords
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteFloatValue("bandwidthLowEventRatio", BandwidthLowEventRatio);
             writer.WriteStringValue("basicServiceSetIdentifier", BasicServiceSetIdentifier);
-            writer.WriteEnumValue<NetworkConnectionType>("connectionType", ConnectionType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CallRecords.NetworkConnectionType>("connectionType", ConnectionType);
             writer.WriteFloatValue("delayEventRatio", DelayEventRatio);
             writer.WriteStringValue("dnsSuffix", DnsSuffix);
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteLongValue("linkSpeed", LinkSpeed);
             writer.WriteStringValue("macAddress", MacAddress);
-            writer.WriteEnumValue<NetworkTransportProtocol>("networkTransportProtocol", NetworkTransportProtocol);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CallRecords.NetworkTransportProtocol>("networkTransportProtocol", NetworkTransportProtocol);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("port", Port);
             writer.WriteFloatValue("receivedQualityEventRatio", ReceivedQualityEventRatio);
@@ -390,13 +390,13 @@ namespace Microsoft.Graph.Models.CallRecords
             writer.WriteIntValue("relayPort", RelayPort);
             writer.WriteFloatValue("sentQualityEventRatio", SentQualityEventRatio);
             writer.WriteStringValue("subnet", Subnet);
-            writer.WriteCollectionOfObjectValues<TraceRouteHop>("traceRouteHops", TraceRouteHops);
-            writer.WriteEnumValue<WifiBand>("wifiBand", WifiBand);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CallRecords.TraceRouteHop>("traceRouteHops", TraceRouteHops);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CallRecords.WifiBand>("wifiBand", WifiBand);
             writer.WriteIntValue("wifiBatteryCharge", WifiBatteryCharge);
             writer.WriteIntValue("wifiChannel", WifiChannel);
             writer.WriteStringValue("wifiMicrosoftDriver", WifiMicrosoftDriver);
             writer.WriteStringValue("wifiMicrosoftDriverVersion", WifiMicrosoftDriverVersion);
-            writer.WriteEnumValue<WifiRadioType>("wifiRadioType", WifiRadioType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CallRecords.WifiRadioType>("wifiRadioType", WifiRadioType);
             writer.WriteIntValue("wifiSignalStrength", WifiSignalStrength);
             writer.WriteStringValue("wifiVendorDriver", WifiVendorDriver);
             writer.WriteStringValue("wifiVendorDriverVersion", WifiVendorDriverVersion);

@@ -36,16 +36,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AggregationOption>? Aggregations
+        public List<Microsoft.Graph.Models.AggregationOption>? Aggregations
         {
-            get { return BackingStore?.Get<List<AggregationOption>?>("aggregations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AggregationOption>?>("aggregations"); }
             set { BackingStore?.Set("aggregations", value); }
         }
 #nullable restore
 #else
-        public List<AggregationOption> Aggregations
+        public List<Microsoft.Graph.Models.AggregationOption> Aggregations
         {
-            get { return BackingStore?.Get<List<AggregationOption>>("aggregations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AggregationOption>>("aggregations"); }
             set { BackingStore?.Set("aggregations", value); }
         }
 #endif
@@ -54,16 +54,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Contains the ordered collection of fields and limit to collapse results. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CollapseProperty>? CollapseProperties
+        public List<Microsoft.Graph.Models.CollapseProperty>? CollapseProperties
         {
-            get { return BackingStore?.Get<List<CollapseProperty>?>("collapseProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CollapseProperty>?>("collapseProperties"); }
             set { BackingStore?.Set("collapseProperties", value); }
         }
 #nullable restore
 #else
-        public List<CollapseProperty> CollapseProperties
+        public List<Microsoft.Graph.Models.CollapseProperty> CollapseProperties
         {
-            get { return BackingStore?.Get<List<CollapseProperty>>("collapseProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CollapseProperty>>("collapseProperties"); }
             set { BackingStore?.Set("collapseProperties", value); }
         }
 #endif
@@ -92,16 +92,16 @@ namespace Microsoft.Graph.Models
         /// <summary>One or more types of resources expected in the response. Possible values are: event, message, driveItem, externalItem, site, list, listItem, drive, chatMessage, person, acronym, bookmark.  Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: chatMessage, person, acronym, bookmark. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EntityType?>? EntityTypes
+        public List<Microsoft.Graph.Models.EntityType?>? EntityTypes
         {
-            get { return BackingStore?.Get<List<EntityType?>?>("entityTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EntityType?>?>("entityTypes"); }
             set { BackingStore?.Set("entityTypes", value); }
         }
 #nullable restore
 #else
-        public List<EntityType?> EntityTypes
+        public List<Microsoft.Graph.Models.EntityType?> EntityTypes
         {
-            get { return BackingStore?.Get<List<EntityType?>>("entityTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EntityType?>>("entityTypes"); }
             set { BackingStore?.Set("entityTypes", value); }
         }
 #endif
@@ -146,32 +146,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The query property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SearchQuery? Query
+        public Microsoft.Graph.Models.SearchQuery? Query
         {
-            get { return BackingStore?.Get<SearchQuery?>("query"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SearchQuery?>("query"); }
             set { BackingStore?.Set("query", value); }
         }
 #nullable restore
 #else
-        public SearchQuery Query
+        public Microsoft.Graph.Models.SearchQuery Query
         {
-            get { return BackingStore?.Get<SearchQuery>("query"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SearchQuery>("query"); }
             set { BackingStore?.Set("query", value); }
         }
 #endif
         /// <summary>Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SearchAlterationOptions? QueryAlterationOptions
+        public Microsoft.Graph.Models.SearchAlterationOptions? QueryAlterationOptions
         {
-            get { return BackingStore?.Get<SearchAlterationOptions?>("queryAlterationOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SearchAlterationOptions?>("queryAlterationOptions"); }
             set { BackingStore?.Set("queryAlterationOptions", value); }
         }
 #nullable restore
 #else
-        public SearchAlterationOptions QueryAlterationOptions
+        public Microsoft.Graph.Models.SearchAlterationOptions QueryAlterationOptions
         {
-            get { return BackingStore?.Get<SearchAlterationOptions>("queryAlterationOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SearchAlterationOptions>("queryAlterationOptions"); }
             set { BackingStore?.Set("queryAlterationOptions", value); }
         }
 #endif
@@ -194,16 +194,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Provides the search result template options to render search results from connectors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ResultTemplateOption? ResultTemplateOptions
+        public Microsoft.Graph.Models.ResultTemplateOption? ResultTemplateOptions
         {
-            get { return BackingStore?.Get<ResultTemplateOption?>("resultTemplateOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ResultTemplateOption?>("resultTemplateOptions"); }
             set { BackingStore?.Set("resultTemplateOptions", value); }
         }
 #nullable restore
 #else
-        public ResultTemplateOption ResultTemplateOptions
+        public Microsoft.Graph.Models.ResultTemplateOption ResultTemplateOptions
         {
-            get { return BackingStore?.Get<ResultTemplateOption>("resultTemplateOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ResultTemplateOption>("resultTemplateOptions"); }
             set { BackingStore?.Set("resultTemplateOptions", value); }
         }
 #endif
@@ -232,21 +232,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SortProperty>? SortProperties
+        public List<Microsoft.Graph.Models.SortProperty>? SortProperties
         {
-            get { return BackingStore?.Get<List<SortProperty>?>("sortProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SortProperty>?>("sortProperties"); }
             set { BackingStore?.Set("sortProperties", value); }
         }
 #nullable restore
 #else
-        public List<SortProperty> SortProperties
+        public List<Microsoft.Graph.Models.SortProperty> SortProperties
         {
-            get { return BackingStore?.Get<List<SortProperty>>("sortProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SortProperty>>("sortProperties"); }
             set { BackingStore?.Set("sortProperties", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SearchRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SearchRequest"/> and sets the default values.
         /// </summary>
         public SearchRequest()
         {
@@ -256,12 +256,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SearchRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SearchRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SearchRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SearchRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SearchRequest();
+            return new Microsoft.Graph.Models.SearchRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -272,21 +272,21 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "aggregationFilters", n => { AggregationFilters = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "aggregations", n => { Aggregations = n.GetCollectionOfObjectValues<AggregationOption>(AggregationOption.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "collapseProperties", n => { CollapseProperties = n.GetCollectionOfObjectValues<CollapseProperty>(CollapseProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "aggregations", n => { Aggregations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AggregationOption>(Microsoft.Graph.Models.AggregationOption.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "collapseProperties", n => { CollapseProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CollapseProperty>(Microsoft.Graph.Models.CollapseProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "contentSources", n => { ContentSources = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "enableTopResults", n => { EnableTopResults = n.GetBoolValue(); } },
-                { "entityTypes", n => { EntityTypes = n.GetCollectionOfEnumValues<EntityType>()?.ToList(); } },
+                { "entityTypes", n => { EntityTypes = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.EntityType>()?.ToList(); } },
                 { "fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "from", n => { From = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "query", n => { Query = n.GetObjectValue<SearchQuery>(SearchQuery.CreateFromDiscriminatorValue); } },
-                { "queryAlterationOptions", n => { QueryAlterationOptions = n.GetObjectValue<SearchAlterationOptions>(SearchAlterationOptions.CreateFromDiscriminatorValue); } },
+                { "query", n => { Query = n.GetObjectValue<Microsoft.Graph.Models.SearchQuery>(Microsoft.Graph.Models.SearchQuery.CreateFromDiscriminatorValue); } },
+                { "queryAlterationOptions", n => { QueryAlterationOptions = n.GetObjectValue<Microsoft.Graph.Models.SearchAlterationOptions>(Microsoft.Graph.Models.SearchAlterationOptions.CreateFromDiscriminatorValue); } },
                 { "region", n => { Region = n.GetStringValue(); } },
-                { "resultTemplateOptions", n => { ResultTemplateOptions = n.GetObjectValue<ResultTemplateOption>(ResultTemplateOption.CreateFromDiscriminatorValue); } },
+                { "resultTemplateOptions", n => { ResultTemplateOptions = n.GetObjectValue<Microsoft.Graph.Models.ResultTemplateOption>(Microsoft.Graph.Models.ResultTemplateOption.CreateFromDiscriminatorValue); } },
                 { "sharePointOneDriveOptions", n => { SharePointOneDriveOptions = n.GetObjectValue<Microsoft.Graph.Models.SharePointOneDriveOptions>(Microsoft.Graph.Models.SharePointOneDriveOptions.CreateFromDiscriminatorValue); } },
                 { "size", n => { Size = n.GetIntValue(); } },
-                { "sortProperties", n => { SortProperties = n.GetCollectionOfObjectValues<SortProperty>(SortProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sortProperties", n => { SortProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SortProperty>(Microsoft.Graph.Models.SortProperty.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -297,21 +297,21 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("aggregationFilters", AggregationFilters);
-            writer.WriteCollectionOfObjectValues<AggregationOption>("aggregations", Aggregations);
-            writer.WriteCollectionOfObjectValues<CollapseProperty>("collapseProperties", CollapseProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AggregationOption>("aggregations", Aggregations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CollapseProperty>("collapseProperties", CollapseProperties);
             writer.WriteCollectionOfPrimitiveValues<string>("contentSources", ContentSources);
             writer.WriteBoolValue("enableTopResults", EnableTopResults);
-            writer.WriteCollectionOfEnumValues<EntityType>("entityTypes", EntityTypes);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.EntityType>("entityTypes", EntityTypes);
             writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
             writer.WriteIntValue("from", From);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<SearchQuery>("query", Query);
-            writer.WriteObjectValue<SearchAlterationOptions>("queryAlterationOptions", QueryAlterationOptions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SearchQuery>("query", Query);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SearchAlterationOptions>("queryAlterationOptions", QueryAlterationOptions);
             writer.WriteStringValue("region", Region);
-            writer.WriteObjectValue<ResultTemplateOption>("resultTemplateOptions", ResultTemplateOptions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ResultTemplateOption>("resultTemplateOptions", ResultTemplateOptions);
             writer.WriteObjectValue<Microsoft.Graph.Models.SharePointOneDriveOptions>("sharePointOneDriveOptions", SharePointOneDriveOptions);
             writer.WriteIntValue("size", Size);
-            writer.WriteCollectionOfObjectValues<SortProperty>("sortProperties", SortProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SortProperty>("sortProperties", SortProperties);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

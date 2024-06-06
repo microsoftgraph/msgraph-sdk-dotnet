@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class IoTDeviceEvidence : AlertEvidence, IParsable
+    public class IoTDeviceEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The deviceId property</summary>
@@ -91,24 +91,24 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>The importance property</summary>
-        public IoTDeviceImportanceType? Importance
+        public Microsoft.Graph.Models.Security.IoTDeviceImportanceType? Importance
         {
-            get { return BackingStore?.Get<IoTDeviceImportanceType?>("importance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.IoTDeviceImportanceType?>("importance"); }
             set { BackingStore?.Set("importance", value); }
         }
         /// <summary>The ioTHub property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AzureResourceEvidence? IoTHub
+        public Microsoft.Graph.Models.Security.AzureResourceEvidence? IoTHub
         {
-            get { return BackingStore?.Get<AzureResourceEvidence?>("ioTHub"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.AzureResourceEvidence?>("ioTHub"); }
             set { BackingStore?.Set("ioTHub", value); }
         }
 #nullable restore
 #else
-        public AzureResourceEvidence IoTHub
+        public Microsoft.Graph.Models.Security.AzureResourceEvidence IoTHub
         {
-            get { return BackingStore?.Get<AzureResourceEvidence>("ioTHub"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.AzureResourceEvidence>("ioTHub"); }
             set { BackingStore?.Set("ioTHub", value); }
         }
 #endif
@@ -131,16 +131,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The ipAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IpEvidence? IpAddress
+        public Microsoft.Graph.Models.Security.IpEvidence? IpAddress
         {
-            get { return BackingStore?.Get<IpEvidence?>("ipAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.IpEvidence?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #nullable restore
 #else
-        public IpEvidence IpAddress
+        public Microsoft.Graph.Models.Security.IpEvidence IpAddress
         {
-            get { return BackingStore?.Get<IpEvidence>("ipAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.IpEvidence>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #endif
@@ -213,16 +213,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The nics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public NicEvidence? Nics
+        public Microsoft.Graph.Models.Security.NicEvidence? Nics
         {
-            get { return BackingStore?.Get<NicEvidence?>("nics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.NicEvidence?>("nics"); }
             set { BackingStore?.Set("nics", value); }
         }
 #nullable restore
 #else
-        public NicEvidence Nics
+        public Microsoft.Graph.Models.Security.NicEvidence Nics
         {
-            get { return BackingStore?.Get<NicEvidence>("nics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.NicEvidence>("nics"); }
             set { BackingStore?.Set("nics", value); }
         }
 #endif
@@ -357,16 +357,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The sourceRef property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UrlEvidence? SourceRef
+        public Microsoft.Graph.Models.Security.UrlEvidence? SourceRef
         {
-            get { return BackingStore?.Get<UrlEvidence?>("sourceRef"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.UrlEvidence?>("sourceRef"); }
             set { BackingStore?.Set("sourceRef", value); }
         }
 #nullable restore
 #else
-        public UrlEvidence SourceRef
+        public Microsoft.Graph.Models.Security.UrlEvidence SourceRef
         {
-            get { return BackingStore?.Get<UrlEvidence>("sourceRef"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.UrlEvidence>("sourceRef"); }
             set { BackingStore?.Set("sourceRef", value); }
         }
 #endif
@@ -387,7 +387,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IoTDeviceEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.IoTDeviceEvidence"/> and sets the default values.
         /// </summary>
         public IoTDeviceEvidence() : base()
         {
@@ -396,12 +396,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IoTDeviceEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.IoTDeviceEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IoTDeviceEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.IoTDeviceEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IoTDeviceEvidence();
+            return new Microsoft.Graph.Models.Security.IoTDeviceEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -416,17 +416,17 @@ namespace Microsoft.Graph.Models.Security
                 { "devicePageLink", n => { DevicePageLink = n.GetStringValue(); } },
                 { "deviceSubType", n => { DeviceSubType = n.GetStringValue(); } },
                 { "deviceType", n => { DeviceType = n.GetStringValue(); } },
-                { "importance", n => { Importance = n.GetEnumValue<IoTDeviceImportanceType>(); } },
-                { "ioTHub", n => { IoTHub = n.GetObjectValue<AzureResourceEvidence>(AzureResourceEvidence.CreateFromDiscriminatorValue); } },
+                { "importance", n => { Importance = n.GetEnumValue<Microsoft.Graph.Models.Security.IoTDeviceImportanceType>(); } },
+                { "ioTHub", n => { IoTHub = n.GetObjectValue<Microsoft.Graph.Models.Security.AzureResourceEvidence>(Microsoft.Graph.Models.Security.AzureResourceEvidence.CreateFromDiscriminatorValue); } },
                 { "ioTSecurityAgentId", n => { IoTSecurityAgentId = n.GetStringValue(); } },
-                { "ipAddress", n => { IpAddress = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
+                { "ipAddress", n => { IpAddress = n.GetObjectValue<Microsoft.Graph.Models.Security.IpEvidence>(Microsoft.Graph.Models.Security.IpEvidence.CreateFromDiscriminatorValue); } },
                 { "isAuthorized", n => { IsAuthorized = n.GetBoolValue(); } },
                 { "isProgramming", n => { IsProgramming = n.GetBoolValue(); } },
                 { "isScanner", n => { IsScanner = n.GetBoolValue(); } },
                 { "macAddress", n => { MacAddress = n.GetStringValue(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
-                { "nics", n => { Nics = n.GetObjectValue<NicEvidence>(NicEvidence.CreateFromDiscriminatorValue); } },
+                { "nics", n => { Nics = n.GetObjectValue<Microsoft.Graph.Models.Security.NicEvidence>(Microsoft.Graph.Models.Security.NicEvidence.CreateFromDiscriminatorValue); } },
                 { "operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
                 { "owners", n => { Owners = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "protocols", n => { Protocols = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -435,7 +435,7 @@ namespace Microsoft.Graph.Models.Security
                 { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
                 { "site", n => { Site = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
-                { "sourceRef", n => { SourceRef = n.GetObjectValue<UrlEvidence>(UrlEvidence.CreateFromDiscriminatorValue); } },
+                { "sourceRef", n => { SourceRef = n.GetObjectValue<Microsoft.Graph.Models.Security.UrlEvidence>(Microsoft.Graph.Models.Security.UrlEvidence.CreateFromDiscriminatorValue); } },
                 { "zone", n => { Zone = n.GetStringValue(); } },
             };
         }
@@ -452,17 +452,17 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteStringValue("devicePageLink", DevicePageLink);
             writer.WriteStringValue("deviceSubType", DeviceSubType);
             writer.WriteStringValue("deviceType", DeviceType);
-            writer.WriteEnumValue<IoTDeviceImportanceType>("importance", Importance);
-            writer.WriteObjectValue<AzureResourceEvidence>("ioTHub", IoTHub);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.IoTDeviceImportanceType>("importance", Importance);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.AzureResourceEvidence>("ioTHub", IoTHub);
             writer.WriteStringValue("ioTSecurityAgentId", IoTSecurityAgentId);
-            writer.WriteObjectValue<IpEvidence>("ipAddress", IpAddress);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.IpEvidence>("ipAddress", IpAddress);
             writer.WriteBoolValue("isAuthorized", IsAuthorized);
             writer.WriteBoolValue("isProgramming", IsProgramming);
             writer.WriteBoolValue("isScanner", IsScanner);
             writer.WriteStringValue("macAddress", MacAddress);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("model", Model);
-            writer.WriteObjectValue<NicEvidence>("nics", Nics);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.NicEvidence>("nics", Nics);
             writer.WriteStringValue("operatingSystem", OperatingSystem);
             writer.WriteCollectionOfPrimitiveValues<string>("owners", Owners);
             writer.WriteCollectionOfPrimitiveValues<string>("protocols", Protocols);
@@ -471,7 +471,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteStringValue("serialNumber", SerialNumber);
             writer.WriteStringValue("site", Site);
             writer.WriteStringValue("source", Source);
-            writer.WriteObjectValue<UrlEvidence>("sourceRef", SourceRef);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.UrlEvidence>("sourceRef", SourceRef);
             writer.WriteStringValue("zone", Zone);
         }
     }

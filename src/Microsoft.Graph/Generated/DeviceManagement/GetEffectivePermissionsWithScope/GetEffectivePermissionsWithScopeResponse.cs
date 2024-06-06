@@ -8,18 +8,18 @@ namespace Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope
 {
     [Obsolete("This class is obsolete. Use GetEffectivePermissionsWithScopeGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetEffectivePermissionsWithScopeResponse : GetEffectivePermissionsWithScopeGetResponse, IParsable
+    public class GetEffectivePermissionsWithScopeResponse : Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetEffectivePermissionsWithScopeResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetEffectivePermissionsWithScopeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetEffectivePermissionsWithScopeResponse();
+            return new Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeResponse();
         }
     }
 }

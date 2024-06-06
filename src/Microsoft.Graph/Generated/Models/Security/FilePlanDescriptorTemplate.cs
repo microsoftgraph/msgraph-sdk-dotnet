@@ -51,21 +51,21 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FilePlanDescriptorTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.FilePlanDescriptorTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FilePlanDescriptorTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.FilePlanDescriptorTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.authorityTemplate" => new AuthorityTemplate(),
-                "#microsoft.graph.security.categoryTemplate" => new CategoryTemplate(),
-                "#microsoft.graph.security.citationTemplate" => new CitationTemplate(),
-                "#microsoft.graph.security.departmentTemplate" => new DepartmentTemplate(),
-                "#microsoft.graph.security.filePlanReferenceTemplate" => new FilePlanReferenceTemplate(),
-                "#microsoft.graph.security.subcategoryTemplate" => new SubcategoryTemplate(),
-                _ => new FilePlanDescriptorTemplate(),
+                "#microsoft.graph.security.authorityTemplate" => new Microsoft.Graph.Models.Security.AuthorityTemplate(),
+                "#microsoft.graph.security.categoryTemplate" => new Microsoft.Graph.Models.Security.CategoryTemplate(),
+                "#microsoft.graph.security.citationTemplate" => new Microsoft.Graph.Models.Security.CitationTemplate(),
+                "#microsoft.graph.security.departmentTemplate" => new Microsoft.Graph.Models.Security.DepartmentTemplate(),
+                "#microsoft.graph.security.filePlanReferenceTemplate" => new Microsoft.Graph.Models.Security.FilePlanReferenceTemplate(),
+                "#microsoft.graph.security.subcategoryTemplate" => new Microsoft.Graph.Models.Security.SubcategoryTemplate(),
+                _ => new Microsoft.Graph.Models.Security.FilePlanDescriptorTemplate(),
             };
         }
         /// <summary>

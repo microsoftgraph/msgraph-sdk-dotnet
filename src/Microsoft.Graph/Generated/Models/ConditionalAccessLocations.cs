@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ConditionalAccessLocations"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ConditionalAccessLocations"/> and sets the default values.
         /// </summary>
         public ConditionalAccessLocations()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessLocations"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ConditionalAccessLocations"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConditionalAccessLocations CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ConditionalAccessLocations CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessLocations();
+            return new Microsoft.Graph.Models.ConditionalAccessLocations();
         }
         /// <summary>
         /// The deserialization information for the current model

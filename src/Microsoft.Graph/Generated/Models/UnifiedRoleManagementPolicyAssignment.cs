@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UnifiedRoleManagementPolicyAssignment : Entity, IParsable
+    public class UnifiedRoleManagementPolicyAssignment : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The policy that&apos;s associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRoleManagementPolicy? Policy
+        public Microsoft.Graph.Models.UnifiedRoleManagementPolicy? Policy
         {
-            get { return BackingStore?.Get<UnifiedRoleManagementPolicy?>("policy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UnifiedRoleManagementPolicy?>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
 #nullable restore
 #else
-        public UnifiedRoleManagementPolicy Policy
+        public Microsoft.Graph.Models.UnifiedRoleManagementPolicy Policy
         {
-            get { return BackingStore?.Get<UnifiedRoleManagementPolicy>("policy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UnifiedRoleManagementPolicy>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
 #endif
@@ -93,12 +93,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleManagementPolicyAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRoleManagementPolicyAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnifiedRoleManagementPolicyAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UnifiedRoleManagementPolicyAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedRoleManagementPolicyAssignment();
+            return new Microsoft.Graph.Models.UnifiedRoleManagementPolicyAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "policy", n => { Policy = n.GetObjectValue<UnifiedRoleManagementPolicy>(UnifiedRoleManagementPolicy.CreateFromDiscriminatorValue); } },
+                { "policy", n => { Policy = n.GetObjectValue<Microsoft.Graph.Models.UnifiedRoleManagementPolicy>(Microsoft.Graph.Models.UnifiedRoleManagementPolicy.CreateFromDiscriminatorValue); } },
                 { "policyId", n => { PolicyId = n.GetStringValue(); } },
                 { "roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
                 { "scopeId", n => { ScopeId = n.GetStringValue(); } },
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<UnifiedRoleManagementPolicy>("policy", Policy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UnifiedRoleManagementPolicy>("policy", Policy);
             writer.WriteStringValue("policyId", PolicyId);
             writer.WriteStringValue("roleDefinitionId", RoleDefinitionId);
             writer.WriteStringValue("scopeId", ScopeId);

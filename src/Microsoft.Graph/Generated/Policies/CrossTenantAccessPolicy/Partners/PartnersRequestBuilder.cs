@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners
     public class PartnersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the partners property of the microsoft.graph.crossTenantAccessPolicy entity.</summary>
         /// <param name="position">The unique identifier of crossTenantAccessPolicyConfigurationPartner</param>
-        /// <returns>A <see cref="CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder"/></returns>
-        public CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("crossTenantAccessPolicyConfigurationPartner%2DtenantId", position);
-                return new CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PartnersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.PartnersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PartnersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.PartnersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners
         /// Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user synchronization policy for all partner configurations.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicy-list-partners?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="CrossTenantAccessPolicyConfigurationPartnerCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CrossTenantAccessPolicyConfigurationPartnerCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CrossTenantAccessPolicyConfigurationPartnerCollectionResponse?> GetAsync(Action<RequestConfiguration<PartnersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CrossTenantAccessPolicyConfigurationPartnerCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.PartnersRequestBuilder.PartnersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CrossTenantAccessPolicyConfigurationPartnerCollectionResponse> GetAsync(Action<RequestConfiguration<PartnersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CrossTenantAccessPolicyConfigurationPartnerCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.PartnersRequestBuilder.PartnersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CrossTenantAccessPolicyConfigurationPartnerCollectionResponse>(requestInfo, CrossTenantAccessPolicyConfigurationPartnerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CrossTenantAccessPolicyConfigurationPartnerCollectionResponse>(requestInfo, Microsoft.Graph.Models.CrossTenantAccessPolicyConfigurationPartnerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new partner configuration in a cross-tenant access policy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicy-post-partners?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="CrossTenantAccessPolicyConfigurationPartner"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CrossTenantAccessPolicyConfigurationPartner"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CrossTenantAccessPolicyConfigurationPartner?> PostAsync(CrossTenantAccessPolicyConfigurationPartner body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CrossTenantAccessPolicyConfigurationPartner?> PostAsync(Microsoft.Graph.Models.CrossTenantAccessPolicyConfigurationPartner body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CrossTenantAccessPolicyConfigurationPartner> PostAsync(CrossTenantAccessPolicyConfigurationPartner body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.CrossTenantAccessPolicyConfigurationPartner> PostAsync(Microsoft.Graph.Models.CrossTenantAccessPolicyConfigurationPartner body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CrossTenantAccessPolicyConfigurationPartner>(requestInfo, CrossTenantAccessPolicyConfigurationPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CrossTenantAccessPolicyConfigurationPartner>(requestInfo, Microsoft.Graph.Models.CrossTenantAccessPolicyConfigurationPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user synchronization policy for all partner configurations.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PartnersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.PartnersRequestBuilder.PartnersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PartnersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.PartnersRequestBuilder.PartnersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(CrossTenantAccessPolicyConfigurationPartner body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.CrossTenantAccessPolicyConfigurationPartner body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(CrossTenantAccessPolicyConfigurationPartner body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.CrossTenantAccessPolicyConfigurationPartner body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PartnersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.PartnersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PartnersRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.PartnersRequestBuilder WithUrl(string rawUrl)
         {
-            return new PartnersRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.PartnersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user synchronization policy for all partner configurations.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PartnersRequestBuilderGetRequestConfiguration : RequestConfiguration<PartnersRequestBuilderGetQueryParameters>
+        public class PartnersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.PartnersRequestBuilder.PartnersRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

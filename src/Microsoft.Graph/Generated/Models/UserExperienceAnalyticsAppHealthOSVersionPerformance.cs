@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics device OS version performance entity contains OS version performance details.
     /// </summary>
-    public class UserExperienceAnalyticsAppHealthOSVersionPerformance : Entity, IParsable
+    public class UserExperienceAnalyticsAppHealthOSVersionPerformance : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The number of active devices for the OS version. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
         public int? ActiveDeviceCount
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsAppHealthOSVersionPerformance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsAppHealthOSVersionPerformance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsAppHealthOSVersionPerformance();
+            return new Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance();
         }
         /// <summary>
         /// The deserialization information for the current model

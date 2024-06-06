@@ -71,24 +71,24 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The status property</summary>
-        public CaseStatus? Status
+        public Microsoft.Graph.Models.Security.CaseStatus? Status
         {
-            get { return BackingStore?.Get<CaseStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.CaseStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Case"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.Case"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Case CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.Case CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.ediscoveryCase" => new EdiscoveryCase(),
-                _ => new Case(),
+                "#microsoft.graph.security.ediscoveryCase" => new Microsoft.Graph.Models.Security.EdiscoveryCase(),
+                _ => new Microsoft.Graph.Models.Security.Case(),
             };
         }
         /// <summary>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Models.Security
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<CaseStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.Security.CaseStatus>(); } },
             };
         }
         /// <summary>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteEnumValue<CaseStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.CaseStatus>("status", Status);
         }
     }
 }

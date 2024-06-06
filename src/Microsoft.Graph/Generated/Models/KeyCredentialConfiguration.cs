@@ -48,13 +48,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("restrictForAppsCreatedAfterDateTime", value); }
         }
         /// <summary>The type of restriction being applied. Possible values are asymmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.</summary>
-        public AppKeyCredentialRestrictionType? RestrictionType
+        public Microsoft.Graph.Models.AppKeyCredentialRestrictionType? RestrictionType
         {
-            get { return BackingStore?.Get<AppKeyCredentialRestrictionType?>("restrictionType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AppKeyCredentialRestrictionType?>("restrictionType"); }
             set { BackingStore?.Set("restrictionType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="KeyCredentialConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.KeyCredentialConfiguration"/> and sets the default values.
         /// </summary>
         public KeyCredentialConfiguration()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="KeyCredentialConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.KeyCredentialConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static KeyCredentialConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.KeyCredentialConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new KeyCredentialConfiguration();
+            return new Microsoft.Graph.Models.KeyCredentialConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models
                 { "maxLifetime", n => { MaxLifetime = n.GetTimeSpanValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "restrictForAppsCreatedAfterDateTime", n => { RestrictForAppsCreatedAfterDateTime = n.GetDateTimeOffsetValue(); } },
-                { "restrictionType", n => { RestrictionType = n.GetEnumValue<AppKeyCredentialRestrictionType>(); } },
+                { "restrictionType", n => { RestrictionType = n.GetEnumValue<Microsoft.Graph.Models.AppKeyCredentialRestrictionType>(); } },
             };
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Models
             writer.WriteTimeSpanValue("maxLifetime", MaxLifetime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("restrictForAppsCreatedAfterDateTime", RestrictForAppsCreatedAfterDateTime);
-            writer.WriteEnumValue<AppKeyCredentialRestrictionType>("restrictionType", RestrictionType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AppKeyCredentialRestrictionType>("restrictionType", RestrictionType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

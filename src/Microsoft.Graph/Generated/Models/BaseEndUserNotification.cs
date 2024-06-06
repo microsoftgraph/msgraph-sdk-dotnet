@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="BaseEndUserNotification"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.BaseEndUserNotification"/> and sets the default values.
         /// </summary>
         public BaseEndUserNotification()
         {
@@ -78,18 +78,18 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BaseEndUserNotification"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BaseEndUserNotification"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BaseEndUserNotification CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.BaseEndUserNotification CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.positiveReinforcementNotification" => new PositiveReinforcementNotification(),
-                "#microsoft.graph.simulationNotification" => new SimulationNotification(),
-                "#microsoft.graph.trainingReminderNotification" => new TrainingReminderNotification(),
-                _ => new BaseEndUserNotification(),
+                "#microsoft.graph.positiveReinforcementNotification" => new Microsoft.Graph.Models.PositiveReinforcementNotification(),
+                "#microsoft.graph.simulationNotification" => new Microsoft.Graph.Models.SimulationNotification(),
+                "#microsoft.graph.trainingReminderNotification" => new Microsoft.Graph.Models.TrainingReminderNotification(),
+                _ => new Microsoft.Graph.Models.BaseEndUserNotification(),
             };
         }
         /// <summary>

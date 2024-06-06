@@ -68,9 +68,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The feedback property</summary>
-        public AlertFeedback? Feedback
+        public Microsoft.Graph.Models.AlertFeedback? Feedback
         {
-            get { return BackingStore?.Get<AlertFeedback?>("feedback"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AlertFeedback?>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -90,9 +90,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The status property</summary>
-        public AlertStatus? Status
+        public Microsoft.Graph.Models.AlertStatus? Status
         {
-            get { return BackingStore?.Get<AlertStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AlertStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The updatedDateTime property</summary>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AlertHistoryState"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AlertHistoryState"/> and sets the default values.
         /// </summary>
         public AlertHistoryState()
         {
@@ -128,12 +128,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AlertHistoryState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AlertHistoryState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AlertHistoryState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AlertHistoryState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AlertHistoryState();
+            return new Microsoft.Graph.Models.AlertHistoryState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -146,9 +146,9 @@ namespace Microsoft.Graph.Models
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "assignedTo", n => { AssignedTo = n.GetStringValue(); } },
                 { "comments", n => { Comments = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "feedback", n => { Feedback = n.GetEnumValue<AlertFeedback>(); } },
+                { "feedback", n => { Feedback = n.GetEnumValue<Microsoft.Graph.Models.AlertFeedback>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<AlertStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.AlertStatus>(); } },
                 { "updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "user", n => { User = n.GetStringValue(); } },
             };
@@ -163,9 +163,9 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("appId", AppId);
             writer.WriteStringValue("assignedTo", AssignedTo);
             writer.WriteCollectionOfPrimitiveValues<string>("comments", Comments);
-            writer.WriteEnumValue<AlertFeedback>("feedback", Feedback);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AlertFeedback>("feedback", Feedback);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<AlertStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AlertStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updatedDateTime", UpdatedDateTime);
             writer.WriteStringValue("user", User);
             writer.WriteAdditionalData(AdditionalData);

@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.Is
 {
     [Obsolete("This class is obsolete. Use IsPublishedGetResponse instead.")]
     #pragma warning disable CS1591
-    public class IsPublishedResponse : IsPublishedGetResponse, IParsable
+    public class IsPublishedResponse : Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.IsPublished.IsPublishedGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IsPublishedResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.IsPublished.IsPublishedResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IsPublishedResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.IsPublished.IsPublishedResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IsPublishedResponse();
+            return new Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.IsPublished.IsPublishedResponse();
         }
     }
 }

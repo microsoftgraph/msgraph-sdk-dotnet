@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Reset passcode action result
     /// </summary>
-    public class ResetPasscodeActionResult : DeviceActionResult, IParsable
+    public class ResetPasscodeActionResult : Microsoft.Graph.Models.DeviceActionResult, IParsable
     {
         /// <summary>RotateBitLockerKeys action error code. Valid values 0 to 2147483647</summary>
         public int? ErrorCode
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ResetPasscodeActionResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ResetPasscodeActionResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ResetPasscodeActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ResetPasscodeActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ResetPasscodeActionResult();
+            return new Microsoft.Graph.Models.ResetPasscodeActionResult();
         }
         /// <summary>
         /// The deserialization information for the current model

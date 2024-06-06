@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>An error object indicating the reason for the conversion failure. This value isn&apos;t present if the conversion succeeded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GenericError? ErrorDetails
+        public Microsoft.Graph.Models.GenericError? ErrorDetails
         {
-            get { return BackingStore?.Get<GenericError?>("errorDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.GenericError?>("errorDetails"); }
             set { BackingStore?.Set("errorDetails", value); }
         }
 #nullable restore
 #else
-        public GenericError ErrorDetails
+        public Microsoft.Graph.Models.GenericError ErrorDetails
         {
-            get { return BackingStore?.Get<GenericError>("errorDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.GenericError>("errorDetails"); }
             set { BackingStore?.Set("errorDetails", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ConvertIdResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ConvertIdResult"/> and sets the default values.
         /// </summary>
         public ConvertIdResult()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConvertIdResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ConvertIdResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConvertIdResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ConvertIdResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConvertIdResult();
+            return new Microsoft.Graph.Models.ConvertIdResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errorDetails", n => { ErrorDetails = n.GetObjectValue<GenericError>(GenericError.CreateFromDiscriminatorValue); } },
+                { "errorDetails", n => { ErrorDetails = n.GetObjectValue<Microsoft.Graph.Models.GenericError>(Microsoft.Graph.Models.GenericError.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "sourceId", n => { SourceId = n.GetStringValue(); } },
                 { "targetId", n => { TargetId = n.GetStringValue(); } },
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<GenericError>("errorDetails", ErrorDetails);
+            writer.WriteObjectValue<Microsoft.Graph.Models.GenericError>("errorDetails", ErrorDetails);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sourceId", SourceId);
             writer.WriteStringValue("targetId", TargetId);

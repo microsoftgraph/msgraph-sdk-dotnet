@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.</summary>
-        public TrainingStatus? LatestTrainingStatus
+        public Microsoft.Graph.Models.TrainingStatus? LatestTrainingStatus
         {
-            get { return BackingStore?.Get<TrainingStatus?>("latestTrainingStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TrainingStatus?>("latestTrainingStatus"); }
             set { BackingStore?.Set("latestTrainingStatus", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -60,53 +60,53 @@ namespace Microsoft.Graph.Models
         /// <summary>Event details of the training when it was assigned to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserTrainingContentEventInfo? TrainingAssignedProperties
+        public Microsoft.Graph.Models.UserTrainingContentEventInfo? TrainingAssignedProperties
         {
-            get { return BackingStore?.Get<UserTrainingContentEventInfo?>("trainingAssignedProperties"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserTrainingContentEventInfo?>("trainingAssignedProperties"); }
             set { BackingStore?.Set("trainingAssignedProperties", value); }
         }
 #nullable restore
 #else
-        public UserTrainingContentEventInfo TrainingAssignedProperties
+        public Microsoft.Graph.Models.UserTrainingContentEventInfo TrainingAssignedProperties
         {
-            get { return BackingStore?.Get<UserTrainingContentEventInfo>("trainingAssignedProperties"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserTrainingContentEventInfo>("trainingAssignedProperties"); }
             set { BackingStore?.Set("trainingAssignedProperties", value); }
         }
 #endif
         /// <summary>Event details of the training when it was completed by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserTrainingContentEventInfo? TrainingCompletedProperties
+        public Microsoft.Graph.Models.UserTrainingContentEventInfo? TrainingCompletedProperties
         {
-            get { return BackingStore?.Get<UserTrainingContentEventInfo?>("trainingCompletedProperties"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserTrainingContentEventInfo?>("trainingCompletedProperties"); }
             set { BackingStore?.Set("trainingCompletedProperties", value); }
         }
 #nullable restore
 #else
-        public UserTrainingContentEventInfo TrainingCompletedProperties
+        public Microsoft.Graph.Models.UserTrainingContentEventInfo TrainingCompletedProperties
         {
-            get { return BackingStore?.Get<UserTrainingContentEventInfo>("trainingCompletedProperties"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserTrainingContentEventInfo>("trainingCompletedProperties"); }
             set { BackingStore?.Set("trainingCompletedProperties", value); }
         }
 #endif
         /// <summary>Event details of the training when it was updated/in-progress by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserTrainingContentEventInfo? TrainingUpdatedProperties
+        public Microsoft.Graph.Models.UserTrainingContentEventInfo? TrainingUpdatedProperties
         {
-            get { return BackingStore?.Get<UserTrainingContentEventInfo?>("trainingUpdatedProperties"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserTrainingContentEventInfo?>("trainingUpdatedProperties"); }
             set { BackingStore?.Set("trainingUpdatedProperties", value); }
         }
 #nullable restore
 #else
-        public UserTrainingContentEventInfo TrainingUpdatedProperties
+        public Microsoft.Graph.Models.UserTrainingContentEventInfo TrainingUpdatedProperties
         {
-            get { return BackingStore?.Get<UserTrainingContentEventInfo>("trainingUpdatedProperties"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserTrainingContentEventInfo>("trainingUpdatedProperties"); }
             set { BackingStore?.Set("trainingUpdatedProperties", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserTrainingEventInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.UserTrainingEventInfo"/> and sets the default values.
         /// </summary>
         public UserTrainingEventInfo()
         {
@@ -116,12 +116,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserTrainingEventInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserTrainingEventInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserTrainingEventInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.UserTrainingEventInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserTrainingEventInfo();
+            return new Microsoft.Graph.Models.UserTrainingEventInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,11 +132,11 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "latestTrainingStatus", n => { LatestTrainingStatus = n.GetEnumValue<TrainingStatus>(); } },
+                { "latestTrainingStatus", n => { LatestTrainingStatus = n.GetEnumValue<Microsoft.Graph.Models.TrainingStatus>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "trainingAssignedProperties", n => { TrainingAssignedProperties = n.GetObjectValue<UserTrainingContentEventInfo>(UserTrainingContentEventInfo.CreateFromDiscriminatorValue); } },
-                { "trainingCompletedProperties", n => { TrainingCompletedProperties = n.GetObjectValue<UserTrainingContentEventInfo>(UserTrainingContentEventInfo.CreateFromDiscriminatorValue); } },
-                { "trainingUpdatedProperties", n => { TrainingUpdatedProperties = n.GetObjectValue<UserTrainingContentEventInfo>(UserTrainingContentEventInfo.CreateFromDiscriminatorValue); } },
+                { "trainingAssignedProperties", n => { TrainingAssignedProperties = n.GetObjectValue<Microsoft.Graph.Models.UserTrainingContentEventInfo>(Microsoft.Graph.Models.UserTrainingContentEventInfo.CreateFromDiscriminatorValue); } },
+                { "trainingCompletedProperties", n => { TrainingCompletedProperties = n.GetObjectValue<Microsoft.Graph.Models.UserTrainingContentEventInfo>(Microsoft.Graph.Models.UserTrainingContentEventInfo.CreateFromDiscriminatorValue); } },
+                { "trainingUpdatedProperties", n => { TrainingUpdatedProperties = n.GetObjectValue<Microsoft.Graph.Models.UserTrainingContentEventInfo>(Microsoft.Graph.Models.UserTrainingContentEventInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -147,11 +147,11 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<TrainingStatus>("latestTrainingStatus", LatestTrainingStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TrainingStatus>("latestTrainingStatus", LatestTrainingStatus);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<UserTrainingContentEventInfo>("trainingAssignedProperties", TrainingAssignedProperties);
-            writer.WriteObjectValue<UserTrainingContentEventInfo>("trainingCompletedProperties", TrainingCompletedProperties);
-            writer.WriteObjectValue<UserTrainingContentEventInfo>("trainingUpdatedProperties", TrainingUpdatedProperties);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserTrainingContentEventInfo>("trainingAssignedProperties", TrainingAssignedProperties);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserTrainingContentEventInfo>("trainingCompletedProperties", TrainingCompletedProperties);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserTrainingContentEventInfo>("trainingUpdatedProperties", TrainingUpdatedProperties);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

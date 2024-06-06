@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Models.CallRecords
         }
 #endif
         /// <summary>The rating property</summary>
-        public UserFeedbackRating? Rating
+        public Microsoft.Graph.Models.CallRecords.UserFeedbackRating? Rating
         {
-            get { return BackingStore?.Get<UserFeedbackRating?>("rating"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.UserFeedbackRating?>("rating"); }
             set { BackingStore?.Set("rating", value); }
         }
         /// <summary>The feedback text provided by the user of this endpoint for the session.</summary>
@@ -60,21 +60,21 @@ namespace Microsoft.Graph.Models.CallRecords
         /// <summary>The set of feedback tokens provided by the user of this endpoint for the session. This is a set of Boolean properties. The property names should not be relied upon since they may change depending on what tokens are offered to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FeedbackTokenSet? Tokens
+        public Microsoft.Graph.Models.CallRecords.FeedbackTokenSet? Tokens
         {
-            get { return BackingStore?.Get<FeedbackTokenSet?>("tokens"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.FeedbackTokenSet?>("tokens"); }
             set { BackingStore?.Set("tokens", value); }
         }
 #nullable restore
 #else
-        public FeedbackTokenSet Tokens
+        public Microsoft.Graph.Models.CallRecords.FeedbackTokenSet Tokens
         {
-            get { return BackingStore?.Get<FeedbackTokenSet>("tokens"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.FeedbackTokenSet>("tokens"); }
             set { BackingStore?.Set("tokens", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserFeedback"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CallRecords.UserFeedback"/> and sets the default values.
         /// </summary>
         public UserFeedback()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Models.CallRecords
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserFeedback"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CallRecords.UserFeedback"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserFeedback CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CallRecords.UserFeedback CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserFeedback();
+            return new Microsoft.Graph.Models.CallRecords.UserFeedback();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,9 +100,9 @@ namespace Microsoft.Graph.Models.CallRecords
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "rating", n => { Rating = n.GetEnumValue<UserFeedbackRating>(); } },
+                { "rating", n => { Rating = n.GetEnumValue<Microsoft.Graph.Models.CallRecords.UserFeedbackRating>(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
-                { "tokens", n => { Tokens = n.GetObjectValue<FeedbackTokenSet>(FeedbackTokenSet.CreateFromDiscriminatorValue); } },
+                { "tokens", n => { Tokens = n.GetObjectValue<Microsoft.Graph.Models.CallRecords.FeedbackTokenSet>(Microsoft.Graph.Models.CallRecords.FeedbackTokenSet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -113,9 +113,9 @@ namespace Microsoft.Graph.Models.CallRecords
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<UserFeedbackRating>("rating", Rating);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CallRecords.UserFeedbackRating>("rating", Rating);
             writer.WriteStringValue("text", Text);
-            writer.WriteObjectValue<FeedbackTokenSet>("tokens", Tokens);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CallRecords.FeedbackTokenSet>("tokens", Tokens);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

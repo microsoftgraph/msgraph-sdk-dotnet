@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SecureScore : Entity, IParsable
+    public class SecureScore : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Active user count of the given tenant.</summary>
@@ -19,16 +19,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AverageComparativeScore>? AverageComparativeScores
+        public List<Microsoft.Graph.Models.AverageComparativeScore>? AverageComparativeScores
         {
-            get { return BackingStore?.Get<List<AverageComparativeScore>?>("averageComparativeScores"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AverageComparativeScore>?>("averageComparativeScores"); }
             set { BackingStore?.Set("averageComparativeScores", value); }
         }
 #nullable restore
 #else
-        public List<AverageComparativeScore> AverageComparativeScores
+        public List<Microsoft.Graph.Models.AverageComparativeScore> AverageComparativeScores
         {
-            get { return BackingStore?.Get<List<AverageComparativeScore>>("averageComparativeScores"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AverageComparativeScore>>("averageComparativeScores"); }
             set { BackingStore?.Set("averageComparativeScores", value); }
         }
 #endif
@@ -51,16 +51,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Contains tenant scores for a set of controls.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ControlScore>? ControlScores
+        public List<Microsoft.Graph.Models.ControlScore>? ControlScores
         {
-            get { return BackingStore?.Get<List<ControlScore>?>("controlScores"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ControlScore>?>("controlScores"); }
             set { BackingStore?.Set("controlScores", value); }
         }
 #nullable restore
 #else
-        public List<ControlScore> ControlScores
+        public List<Microsoft.Graph.Models.ControlScore> ControlScores
         {
-            get { return BackingStore?.Get<List<ControlScore>>("controlScores"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ControlScore>>("controlScores"); }
             set { BackingStore?.Set("controlScores", value); }
         }
 #endif
@@ -107,28 +107,28 @@ namespace Microsoft.Graph.Models
         /// <summary>Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SecurityVendorInformation? VendorInformation
+        public Microsoft.Graph.Models.SecurityVendorInformation? VendorInformation
         {
-            get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #nullable restore
 #else
-        public SecurityVendorInformation VendorInformation
+        public Microsoft.Graph.Models.SecurityVendorInformation VendorInformation
         {
-            get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SecureScore"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SecureScore"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SecureScore CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SecureScore CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SecureScore();
+            return new Microsoft.Graph.Models.SecureScore();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -139,15 +139,15 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "activeUserCount", n => { ActiveUserCount = n.GetIntValue(); } },
-                { "averageComparativeScores", n => { AverageComparativeScores = n.GetCollectionOfObjectValues<AverageComparativeScore>(AverageComparativeScore.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "averageComparativeScores", n => { AverageComparativeScores = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AverageComparativeScore>(Microsoft.Graph.Models.AverageComparativeScore.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
-                { "controlScores", n => { ControlScores = n.GetCollectionOfObjectValues<ControlScore>(ControlScore.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "controlScores", n => { ControlScores = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ControlScore>(Microsoft.Graph.Models.ControlScore.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "currentScore", n => { CurrentScore = n.GetDoubleValue(); } },
                 { "enabledServices", n => { EnabledServices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "licensedUserCount", n => { LicensedUserCount = n.GetIntValue(); } },
                 { "maxScore", n => { MaxScore = n.GetDoubleValue(); } },
-                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<Microsoft.Graph.Models.SecurityVendorInformation>(Microsoft.Graph.Models.SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -159,15 +159,15 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("activeUserCount", ActiveUserCount);
-            writer.WriteCollectionOfObjectValues<AverageComparativeScore>("averageComparativeScores", AverageComparativeScores);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AverageComparativeScore>("averageComparativeScores", AverageComparativeScores);
             writer.WriteStringValue("azureTenantId", AzureTenantId);
-            writer.WriteCollectionOfObjectValues<ControlScore>("controlScores", ControlScores);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ControlScore>("controlScores", ControlScores);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDoubleValue("currentScore", CurrentScore);
             writer.WriteCollectionOfPrimitiveValues<string>("enabledServices", EnabledServices);
             writer.WriteIntValue("licensedUserCount", LicensedUserCount);
             writer.WriteDoubleValue("maxScore", MaxScore);
-            writer.WriteObjectValue<SecurityVendorInformation>("vendorInformation", VendorInformation);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SecurityVendorInformation>("vendorInformation", VendorInformation);
         }
     }
 }

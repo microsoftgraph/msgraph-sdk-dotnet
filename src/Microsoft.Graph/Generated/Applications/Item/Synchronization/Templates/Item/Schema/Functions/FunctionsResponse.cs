@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
 {
     [Obsolete("This class is obsolete. Use FunctionsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class FunctionsResponse : FunctionsGetResponse, IParsable
+    public class FunctionsResponse : Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Functions.FunctionsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FunctionsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Functions.FunctionsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FunctionsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Functions.FunctionsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FunctionsResponse();
+            return new Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.Functions.FunctionsResponse();
         }
     }
 }

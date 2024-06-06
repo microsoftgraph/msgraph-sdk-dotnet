@@ -39,21 +39,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Resource Actions each containing a set of allowed and not allowed permissions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ResourceAction>? ResourceActions
+        public List<Microsoft.Graph.Models.ResourceAction>? ResourceActions
         {
-            get { return BackingStore?.Get<List<ResourceAction>?>("resourceActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ResourceAction>?>("resourceActions"); }
             set { BackingStore?.Set("resourceActions", value); }
         }
 #nullable restore
 #else
-        public List<ResourceAction> ResourceActions
+        public List<Microsoft.Graph.Models.ResourceAction> ResourceActions
         {
-            get { return BackingStore?.Get<List<ResourceAction>>("resourceActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ResourceAction>>("resourceActions"); }
             set { BackingStore?.Set("resourceActions", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RolePermission"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.RolePermission"/> and sets the default values.
         /// </summary>
         public RolePermission()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RolePermission"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RolePermission"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RolePermission CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.RolePermission CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RolePermission();
+            return new Microsoft.Graph.Models.RolePermission();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "resourceActions", n => { ResourceActions = n.GetCollectionOfObjectValues<ResourceAction>(ResourceAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resourceActions", n => { ResourceActions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ResourceAction>(Microsoft.Graph.Models.ResourceAction.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<ResourceAction>("resourceActions", ResourceActions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ResourceAction>("resourceActions", ResourceActions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

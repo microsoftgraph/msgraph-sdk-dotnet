@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics device for work from anywhere report.
     /// </summary>
-    public class UserExperienceAnalyticsWorkFromAnywhereDevice : Entity, IParsable
+    public class UserExperienceAnalyticsWorkFromAnywhereDevice : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>When TRUE, indicates the intune device&apos;s autopilot profile is assigned. When FALSE, indicates it&apos;s not Assigned. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? AutoPilotProfileAssigned
@@ -118,9 +118,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The healthStatus property</summary>
-        public UserExperienceAnalyticsHealthState? HealthStatus
+        public Microsoft.Graph.Models.UserExperienceAnalyticsHealthState? HealthStatus
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsHealthState?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>When TRUE, indicates the device&apos;s Cloud Management Gateway for Configuration Manager is enabled. When FALSE, indicates it&apos;s not enabled. Supports: $select, $OrderBy. Read-only.</summary>
@@ -308,9 +308,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("tpmCheckFailed", value); }
         }
         /// <summary>Work From Anywhere windows device upgrade eligibility status.</summary>
-        public OperatingSystemUpgradeEligibility? UpgradeEligibility
+        public Microsoft.Graph.Models.OperatingSystemUpgradeEligibility? UpgradeEligibility
         {
-            get { return BackingStore?.Get<OperatingSystemUpgradeEligibility?>("upgradeEligibility"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OperatingSystemUpgradeEligibility?>("upgradeEligibility"); }
             set { BackingStore?.Set("upgradeEligibility", value); }
         }
         /// <summary>Indicates per device windows score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
@@ -328,12 +328,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsWorkFromAnywhereDevice"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereDevice"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsWorkFromAnywhereDevice CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereDevice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsWorkFromAnywhereDevice();
+            return new Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereDevice();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -354,7 +354,7 @@ namespace Microsoft.Graph.Models
                 { "compliancePolicySetToIntune", n => { CompliancePolicySetToIntune = n.GetBoolValue(); } },
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
-                { "healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<Microsoft.Graph.Models.UserExperienceAnalyticsHealthState>(); } },
                 { "isCloudManagedGatewayEnabled", n => { IsCloudManagedGatewayEnabled = n.GetBoolValue(); } },
                 { "managedBy", n => { ManagedBy = n.GetStringValue(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
@@ -374,7 +374,7 @@ namespace Microsoft.Graph.Models
                 { "storageCheckFailed", n => { StorageCheckFailed = n.GetBoolValue(); } },
                 { "tenantAttached", n => { TenantAttached = n.GetBoolValue(); } },
                 { "tpmCheckFailed", n => { TpmCheckFailed = n.GetBoolValue(); } },
-                { "upgradeEligibility", n => { UpgradeEligibility = n.GetEnumValue<OperatingSystemUpgradeEligibility>(); } },
+                { "upgradeEligibility", n => { UpgradeEligibility = n.GetEnumValue<Microsoft.Graph.Models.OperatingSystemUpgradeEligibility>(); } },
                 { "windowsScore", n => { WindowsScore = n.GetDoubleValue(); } },
                 { "workFromAnywhereScore", n => { WorkFromAnywhereScore = n.GetDoubleValue(); } },
             };
@@ -398,7 +398,7 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("compliancePolicySetToIntune", CompliancePolicySetToIntune);
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceName", DeviceName);
-            writer.WriteEnumValue<UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
             writer.WriteBoolValue("isCloudManagedGatewayEnabled", IsCloudManagedGatewayEnabled);
             writer.WriteStringValue("managedBy", ManagedBy);
             writer.WriteStringValue("manufacturer", Manufacturer);
@@ -418,7 +418,7 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("storageCheckFailed", StorageCheckFailed);
             writer.WriteBoolValue("tenantAttached", TenantAttached);
             writer.WriteBoolValue("tpmCheckFailed", TpmCheckFailed);
-            writer.WriteEnumValue<OperatingSystemUpgradeEligibility>("upgradeEligibility", UpgradeEligibility);
+            writer.WriteEnumValue<Microsoft.Graph.Models.OperatingSystemUpgradeEligibility>("upgradeEligibility", UpgradeEligibility);
             writer.WriteDoubleValue("windowsScore", WindowsScore);
             writer.WriteDoubleValue("workFromAnywhereScore", WorkFromAnywhereScore);
         }

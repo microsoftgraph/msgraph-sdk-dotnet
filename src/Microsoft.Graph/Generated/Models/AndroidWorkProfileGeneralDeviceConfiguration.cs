@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Android Work Profile general device configuration.
     /// </summary>
-    public class AndroidWorkProfileGeneralDeviceConfiguration : DeviceConfiguration, IParsable
+    public class AndroidWorkProfileGeneralDeviceConfiguration : Microsoft.Graph.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Indicates whether or not to block fingerprint unlock.</summary>
         public bool? PasswordBlockFingerprintUnlock
@@ -48,9 +48,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("passwordPreviousPasswordBlockCount", value); }
         }
         /// <summary>Android Work Profile required password type.</summary>
-        public AndroidWorkProfileRequiredPasswordType? PasswordRequiredType
+        public Microsoft.Graph.Models.AndroidWorkProfileRequiredPasswordType? PasswordRequiredType
         {
-            get { return BackingStore?.Get<AndroidWorkProfileRequiredPasswordType?>("passwordRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AndroidWorkProfileRequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Number of sign in failures allowed before factory reset. Valid values 1 to 16</summary>
@@ -114,15 +114,15 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("workProfileBluetoothEnableContactSharing", value); }
         }
         /// <summary>Android Work Profile cross profile data sharing type.</summary>
-        public AndroidWorkProfileCrossProfileDataSharingType? WorkProfileDataSharingType
+        public Microsoft.Graph.Models.AndroidWorkProfileCrossProfileDataSharingType? WorkProfileDataSharingType
         {
-            get { return BackingStore?.Get<AndroidWorkProfileCrossProfileDataSharingType?>("workProfileDataSharingType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AndroidWorkProfileCrossProfileDataSharingType?>("workProfileDataSharingType"); }
             set { BackingStore?.Set("workProfileDataSharingType", value); }
         }
         /// <summary>Android Work Profile default app permission policy type.</summary>
-        public AndroidWorkProfileDefaultAppPermissionPolicyType? WorkProfileDefaultAppPermissionPolicy
+        public Microsoft.Graph.Models.AndroidWorkProfileDefaultAppPermissionPolicyType? WorkProfileDefaultAppPermissionPolicy
         {
-            get { return BackingStore?.Get<AndroidWorkProfileDefaultAppPermissionPolicyType?>("workProfileDefaultAppPermissionPolicy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AndroidWorkProfileDefaultAppPermissionPolicyType?>("workProfileDefaultAppPermissionPolicy"); }
             set { BackingStore?.Set("workProfileDefaultAppPermissionPolicy", value); }
         }
         /// <summary>Indicates whether or not to block fingerprint unlock for work profile.</summary>
@@ -198,9 +198,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("workProfilePasswordPreviousPasswordBlockCount", value); }
         }
         /// <summary>Android Work Profile required password type.</summary>
-        public AndroidWorkProfileRequiredPasswordType? WorkProfilePasswordRequiredType
+        public Microsoft.Graph.Models.AndroidWorkProfileRequiredPasswordType? WorkProfilePasswordRequiredType
         {
-            get { return BackingStore?.Get<AndroidWorkProfileRequiredPasswordType?>("workProfilePasswordRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AndroidWorkProfileRequiredPasswordType?>("workProfilePasswordRequiredType"); }
             set { BackingStore?.Set("workProfilePasswordRequiredType", value); }
         }
         /// <summary>Number of sign in failures allowed before work profile is removed and all corporate data deleted. Valid values 1 to 16</summary>
@@ -216,7 +216,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("workProfileRequirePassword", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AndroidWorkProfileGeneralDeviceConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AndroidWorkProfileGeneralDeviceConfiguration"/> and sets the default values.
         /// </summary>
         public AndroidWorkProfileGeneralDeviceConfiguration() : base()
         {
@@ -225,12 +225,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidWorkProfileGeneralDeviceConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AndroidWorkProfileGeneralDeviceConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidWorkProfileGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AndroidWorkProfileGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidWorkProfileGeneralDeviceConfiguration();
+            return new Microsoft.Graph.Models.AndroidWorkProfileGeneralDeviceConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -246,7 +246,7 @@ namespace Microsoft.Graph.Models
                 { "passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
                 { "passwordMinutesOfInactivityBeforeScreenTimeout", n => { PasswordMinutesOfInactivityBeforeScreenTimeout = n.GetIntValue(); } },
                 { "passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
-                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<AndroidWorkProfileRequiredPasswordType>(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<Microsoft.Graph.Models.AndroidWorkProfileRequiredPasswordType>(); } },
                 { "passwordSignInFailureCountBeforeFactoryReset", n => { PasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
                 { "securityRequireVerifyApps", n => { SecurityRequireVerifyApps = n.GetBoolValue(); } },
                 { "workProfileBlockAddingAccounts", n => { WorkProfileBlockAddingAccounts = n.GetBoolValue(); } },
@@ -257,8 +257,8 @@ namespace Microsoft.Graph.Models
                 { "workProfileBlockNotificationsWhileDeviceLocked", n => { WorkProfileBlockNotificationsWhileDeviceLocked = n.GetBoolValue(); } },
                 { "workProfileBlockScreenCapture", n => { WorkProfileBlockScreenCapture = n.GetBoolValue(); } },
                 { "workProfileBluetoothEnableContactSharing", n => { WorkProfileBluetoothEnableContactSharing = n.GetBoolValue(); } },
-                { "workProfileDataSharingType", n => { WorkProfileDataSharingType = n.GetEnumValue<AndroidWorkProfileCrossProfileDataSharingType>(); } },
-                { "workProfileDefaultAppPermissionPolicy", n => { WorkProfileDefaultAppPermissionPolicy = n.GetEnumValue<AndroidWorkProfileDefaultAppPermissionPolicyType>(); } },
+                { "workProfileDataSharingType", n => { WorkProfileDataSharingType = n.GetEnumValue<Microsoft.Graph.Models.AndroidWorkProfileCrossProfileDataSharingType>(); } },
+                { "workProfileDefaultAppPermissionPolicy", n => { WorkProfileDefaultAppPermissionPolicy = n.GetEnumValue<Microsoft.Graph.Models.AndroidWorkProfileDefaultAppPermissionPolicyType>(); } },
                 { "workProfilePasswordBlockFingerprintUnlock", n => { WorkProfilePasswordBlockFingerprintUnlock = n.GetBoolValue(); } },
                 { "workProfilePasswordBlockTrustAgents", n => { WorkProfilePasswordBlockTrustAgents = n.GetBoolValue(); } },
                 { "workProfilePasswordExpirationDays", n => { WorkProfilePasswordExpirationDays = n.GetIntValue(); } },
@@ -271,7 +271,7 @@ namespace Microsoft.Graph.Models
                 { "workProfilePasswordMinimumLength", n => { WorkProfilePasswordMinimumLength = n.GetIntValue(); } },
                 { "workProfilePasswordMinutesOfInactivityBeforeScreenTimeout", n => { WorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout = n.GetIntValue(); } },
                 { "workProfilePasswordPreviousPasswordBlockCount", n => { WorkProfilePasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
-                { "workProfilePasswordRequiredType", n => { WorkProfilePasswordRequiredType = n.GetEnumValue<AndroidWorkProfileRequiredPasswordType>(); } },
+                { "workProfilePasswordRequiredType", n => { WorkProfilePasswordRequiredType = n.GetEnumValue<Microsoft.Graph.Models.AndroidWorkProfileRequiredPasswordType>(); } },
                 { "workProfilePasswordSignInFailureCountBeforeFactoryReset", n => { WorkProfilePasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
                 { "workProfileRequirePassword", n => { WorkProfileRequirePassword = n.GetBoolValue(); } },
             };
@@ -290,7 +290,7 @@ namespace Microsoft.Graph.Models
             writer.WriteIntValue("passwordMinimumLength", PasswordMinimumLength);
             writer.WriteIntValue("passwordMinutesOfInactivityBeforeScreenTimeout", PasswordMinutesOfInactivityBeforeScreenTimeout);
             writer.WriteIntValue("passwordPreviousPasswordBlockCount", PasswordPreviousPasswordBlockCount);
-            writer.WriteEnumValue<AndroidWorkProfileRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AndroidWorkProfileRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
             writer.WriteIntValue("passwordSignInFailureCountBeforeFactoryReset", PasswordSignInFailureCountBeforeFactoryReset);
             writer.WriteBoolValue("securityRequireVerifyApps", SecurityRequireVerifyApps);
             writer.WriteBoolValue("workProfileBlockAddingAccounts", WorkProfileBlockAddingAccounts);
@@ -301,8 +301,8 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("workProfileBlockNotificationsWhileDeviceLocked", WorkProfileBlockNotificationsWhileDeviceLocked);
             writer.WriteBoolValue("workProfileBlockScreenCapture", WorkProfileBlockScreenCapture);
             writer.WriteBoolValue("workProfileBluetoothEnableContactSharing", WorkProfileBluetoothEnableContactSharing);
-            writer.WriteEnumValue<AndroidWorkProfileCrossProfileDataSharingType>("workProfileDataSharingType", WorkProfileDataSharingType);
-            writer.WriteEnumValue<AndroidWorkProfileDefaultAppPermissionPolicyType>("workProfileDefaultAppPermissionPolicy", WorkProfileDefaultAppPermissionPolicy);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AndroidWorkProfileCrossProfileDataSharingType>("workProfileDataSharingType", WorkProfileDataSharingType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AndroidWorkProfileDefaultAppPermissionPolicyType>("workProfileDefaultAppPermissionPolicy", WorkProfileDefaultAppPermissionPolicy);
             writer.WriteBoolValue("workProfilePasswordBlockFingerprintUnlock", WorkProfilePasswordBlockFingerprintUnlock);
             writer.WriteBoolValue("workProfilePasswordBlockTrustAgents", WorkProfilePasswordBlockTrustAgents);
             writer.WriteIntValue("workProfilePasswordExpirationDays", WorkProfilePasswordExpirationDays);
@@ -315,7 +315,7 @@ namespace Microsoft.Graph.Models
             writer.WriteIntValue("workProfilePasswordMinUpperCaseCharacters", WorkProfilePasswordMinUpperCaseCharacters);
             writer.WriteIntValue("workProfilePasswordMinutesOfInactivityBeforeScreenTimeout", WorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout);
             writer.WriteIntValue("workProfilePasswordPreviousPasswordBlockCount", WorkProfilePasswordPreviousPasswordBlockCount);
-            writer.WriteEnumValue<AndroidWorkProfileRequiredPasswordType>("workProfilePasswordRequiredType", WorkProfilePasswordRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AndroidWorkProfileRequiredPasswordType>("workProfilePasswordRequiredType", WorkProfilePasswordRequiredType);
             writer.WriteIntValue("workProfilePasswordSignInFailureCountBeforeFactoryReset", WorkProfilePasswordSignInFailureCountBeforeFactoryReset);
             writer.WriteBoolValue("workProfileRequirePassword", WorkProfileRequirePassword);
         }

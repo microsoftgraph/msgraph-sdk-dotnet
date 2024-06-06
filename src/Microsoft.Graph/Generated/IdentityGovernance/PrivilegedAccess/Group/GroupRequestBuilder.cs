@@ -24,42 +24,42 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group
     public class GroupRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the assignmentApprovals property of the microsoft.graph.privilegedAccessGroup entity.</summary>
-        public AssignmentApprovalsRequestBuilder AssignmentApprovals
+        public Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentApprovals.AssignmentApprovalsRequestBuilder AssignmentApprovals
         {
-            get => new AssignmentApprovalsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentApprovals.AssignmentApprovalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignmentScheduleInstances property of the microsoft.graph.privilegedAccessGroup entity.</summary>
-        public AssignmentScheduleInstancesRequestBuilder AssignmentScheduleInstances
+        public Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleInstances.AssignmentScheduleInstancesRequestBuilder AssignmentScheduleInstances
         {
-            get => new AssignmentScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleInstances.AssignmentScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignmentScheduleRequests property of the microsoft.graph.privilegedAccessGroup entity.</summary>
-        public AssignmentScheduleRequestsRequestBuilder AssignmentScheduleRequests
+        public Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.AssignmentScheduleRequestsRequestBuilder AssignmentScheduleRequests
         {
-            get => new AssignmentScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.AssignmentScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignmentSchedules property of the microsoft.graph.privilegedAccessGroup entity.</summary>
-        public AssignmentSchedulesRequestBuilder AssignmentSchedules
+        public Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.AssignmentSchedulesRequestBuilder AssignmentSchedules
         {
-            get => new AssignmentSchedulesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.AssignmentSchedulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the eligibilityScheduleInstances property of the microsoft.graph.privilegedAccessGroup entity.</summary>
-        public EligibilityScheduleInstancesRequestBuilder EligibilityScheduleInstances
+        public Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleInstances.EligibilityScheduleInstancesRequestBuilder EligibilityScheduleInstances
         {
-            get => new EligibilityScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleInstances.EligibilityScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the eligibilityScheduleRequests property of the microsoft.graph.privilegedAccessGroup entity.</summary>
-        public EligibilityScheduleRequestsRequestBuilder EligibilityScheduleRequests
+        public Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.EligibilityScheduleRequestsRequestBuilder EligibilityScheduleRequests
         {
-            get => new EligibilityScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.EligibilityScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the eligibilitySchedules property of the microsoft.graph.privilegedAccessGroup entity.</summary>
-        public EligibilitySchedulesRequestBuilder EligibilitySchedules
+        public Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.EligibilitySchedulesRequestBuilder EligibilitySchedules
         {
-            get => new EligibilitySchedulesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.EligibilitySchedulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.GroupRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.GroupRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -92,57 +92,57 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A group that&apos;s governed through Privileged Identity Management (PIM).
         /// </summary>
-        /// <returns>A <see cref="PrivilegedAccessGroup"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrivilegedAccessGroup"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrivilegedAccessGroup?> GetAsync(Action<RequestConfiguration<GroupRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrivilegedAccessGroup?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.GroupRequestBuilder.GroupRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PrivilegedAccessGroup> GetAsync(Action<RequestConfiguration<GroupRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrivilegedAccessGroup> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.GroupRequestBuilder.GroupRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PrivilegedAccessGroup>(requestInfo, PrivilegedAccessGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PrivilegedAccessGroup>(requestInfo, Microsoft.Graph.Models.PrivilegedAccessGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property group in identityGovernance
         /// </summary>
-        /// <returns>A <see cref="PrivilegedAccessGroup"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrivilegedAccessGroup"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrivilegedAccessGroup?> PatchAsync(PrivilegedAccessGroup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrivilegedAccessGroup?> PatchAsync(Microsoft.Graph.Models.PrivilegedAccessGroup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PrivilegedAccessGroup> PatchAsync(PrivilegedAccessGroup body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrivilegedAccessGroup> PatchAsync(Microsoft.Graph.Models.PrivilegedAccessGroup body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PrivilegedAccessGroup>(requestInfo, PrivilegedAccessGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PrivilegedAccessGroup>(requestInfo, Microsoft.Graph.Models.PrivilegedAccessGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property group for identityGovernance
@@ -170,11 +170,11 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.GroupRequestBuilder.GroupRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.GroupRequestBuilder.GroupRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -190,11 +190,11 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(PrivilegedAccessGroup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.PrivilegedAccessGroup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(PrivilegedAccessGroup body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.PrivilegedAccessGroup body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -207,11 +207,11 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GroupRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.GroupRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GroupRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.GroupRequestBuilder WithUrl(string rawUrl)
         {
-            return new GroupRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.GroupRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -250,7 +250,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GroupRequestBuilderGetRequestConfiguration : RequestConfiguration<GroupRequestBuilderGetQueryParameters>
+        public class GroupRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.GroupRequestBuilder.GroupRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

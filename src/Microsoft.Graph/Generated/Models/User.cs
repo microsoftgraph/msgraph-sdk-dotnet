@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class User : DirectoryObject, IParsable
+    public class User : Microsoft.Graph.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A freeform text entry field for the user to describe themselves. Returned only on $select.</summary>
@@ -35,16 +35,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The user&apos;s activities across devices. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserActivity>? Activities
+        public List<Microsoft.Graph.Models.UserActivity>? Activities
         {
-            get { return BackingStore?.Get<List<UserActivity>?>("activities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserActivity>?>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #nullable restore
 #else
-        public List<UserActivity> Activities
+        public List<Microsoft.Graph.Models.UserActivity> Activities
         {
-            get { return BackingStore?.Get<List<UserActivity>>("activities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserActivity>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #endif
@@ -67,64 +67,64 @@ namespace Microsoft.Graph.Models
         /// <summary>The user&apos;s terms of use acceptance statuses. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AgreementAcceptance>? AgreementAcceptances
+        public List<Microsoft.Graph.Models.AgreementAcceptance>? AgreementAcceptances
         {
-            get { return BackingStore?.Get<List<AgreementAcceptance>?>("agreementAcceptances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AgreementAcceptance>?>("agreementAcceptances"); }
             set { BackingStore?.Set("agreementAcceptances", value); }
         }
 #nullable restore
 #else
-        public List<AgreementAcceptance> AgreementAcceptances
+        public List<Microsoft.Graph.Models.AgreementAcceptance> AgreementAcceptances
         {
-            get { return BackingStore?.Get<List<AgreementAcceptance>>("agreementAcceptances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AgreementAcceptance>>("agreementAcceptances"); }
             set { BackingStore?.Set("agreementAcceptances", value); }
         }
 #endif
         /// <summary>Represents the app roles a user has been granted for an application. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppRoleAssignment>? AppRoleAssignments
+        public List<Microsoft.Graph.Models.AppRoleAssignment>? AppRoleAssignments
         {
-            get { return BackingStore?.Get<List<AppRoleAssignment>?>("appRoleAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AppRoleAssignment>?>("appRoleAssignments"); }
             set { BackingStore?.Set("appRoleAssignments", value); }
         }
 #nullable restore
 #else
-        public List<AppRoleAssignment> AppRoleAssignments
+        public List<Microsoft.Graph.Models.AppRoleAssignment> AppRoleAssignments
         {
-            get { return BackingStore?.Get<List<AppRoleAssignment>>("appRoleAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AppRoleAssignment>>("appRoleAssignments"); }
             set { BackingStore?.Set("appRoleAssignments", value); }
         }
 #endif
         /// <summary>The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn&apos;t differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignedLicense>? AssignedLicenses
+        public List<Microsoft.Graph.Models.AssignedLicense>? AssignedLicenses
         {
-            get { return BackingStore?.Get<List<AssignedLicense>?>("assignedLicenses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AssignedLicense>?>("assignedLicenses"); }
             set { BackingStore?.Set("assignedLicenses", value); }
         }
 #nullable restore
 #else
-        public List<AssignedLicense> AssignedLicenses
+        public List<Microsoft.Graph.Models.AssignedLicense> AssignedLicenses
         {
-            get { return BackingStore?.Get<List<AssignedLicense>>("assignedLicenses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AssignedLicense>>("assignedLicenses"); }
             set { BackingStore?.Set("assignedLicenses", value); }
         }
 #endif
         /// <summary>The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignedPlan>? AssignedPlans
+        public List<Microsoft.Graph.Models.AssignedPlan>? AssignedPlans
         {
-            get { return BackingStore?.Get<List<AssignedPlan>?>("assignedPlans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AssignedPlan>?>("assignedPlans"); }
             set { BackingStore?.Set("assignedPlans", value); }
         }
 #nullable restore
 #else
-        public List<AssignedPlan> AssignedPlans
+        public List<Microsoft.Graph.Models.AssignedPlan> AssignedPlans
         {
-            get { return BackingStore?.Get<List<AssignedPlan>>("assignedPlans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AssignedPlan>>("assignedPlans"); }
             set { BackingStore?.Set("assignedPlans", value); }
         }
 #endif
@@ -201,16 +201,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The user&apos;s calendar groups. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CalendarGroup>? CalendarGroups
+        public List<Microsoft.Graph.Models.CalendarGroup>? CalendarGroups
         {
-            get { return BackingStore?.Get<List<CalendarGroup>?>("calendarGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CalendarGroup>?>("calendarGroups"); }
             set { BackingStore?.Set("calendarGroups", value); }
         }
 #nullable restore
 #else
-        public List<CalendarGroup> CalendarGroups
+        public List<Microsoft.Graph.Models.CalendarGroup> CalendarGroups
         {
-            get { return BackingStore?.Get<List<CalendarGroup>>("calendarGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CalendarGroup>>("calendarGroups"); }
             set { BackingStore?.Set("calendarGroups", value); }
         }
 #endif
@@ -233,32 +233,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The calendar view for the calendar. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Event>? CalendarView
+        public List<Microsoft.Graph.Models.Event>? CalendarView
         {
-            get { return BackingStore?.Get<List<Event>?>("calendarView"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Event>?>("calendarView"); }
             set { BackingStore?.Set("calendarView", value); }
         }
 #nullable restore
 #else
-        public List<Event> CalendarView
+        public List<Microsoft.Graph.Models.Event> CalendarView
         {
-            get { return BackingStore?.Get<List<Event>>("calendarView"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Event>>("calendarView"); }
             set { BackingStore?.Set("calendarView", value); }
         }
 #endif
         /// <summary>The chats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Chat>? Chats
+        public List<Microsoft.Graph.Models.Chat>? Chats
         {
-            get { return BackingStore?.Get<List<Chat>?>("chats"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Chat>?>("chats"); }
             set { BackingStore?.Set("chats", value); }
         }
 #nullable restore
 #else
-        public List<Chat> Chats
+        public List<Microsoft.Graph.Models.Chat> Chats
         {
-            get { return BackingStore?.Get<List<Chat>>("chats"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Chat>>("chats"); }
             set { BackingStore?.Set("chats", value); }
         }
 #endif
@@ -281,16 +281,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The cloudClipboard property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudClipboardRoot? CloudClipboard
+        public Microsoft.Graph.Models.CloudClipboardRoot? CloudClipboard
         {
-            get { return BackingStore?.Get<CloudClipboardRoot?>("cloudClipboard"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CloudClipboardRoot?>("cloudClipboard"); }
             set { BackingStore?.Set("cloudClipboard", value); }
         }
 #nullable restore
 #else
-        public CloudClipboardRoot CloudClipboard
+        public Microsoft.Graph.Models.CloudClipboardRoot CloudClipboard
         {
-            get { return BackingStore?.Get<CloudClipboardRoot>("cloudClipboard"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CloudClipboardRoot>("cloudClipboard"); }
             set { BackingStore?.Set("cloudClipboard", value); }
         }
 #endif
@@ -329,32 +329,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The user&apos;s contacts folders. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ContactFolder>? ContactFolders
+        public List<Microsoft.Graph.Models.ContactFolder>? ContactFolders
         {
-            get { return BackingStore?.Get<List<ContactFolder>?>("contactFolders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ContactFolder>?>("contactFolders"); }
             set { BackingStore?.Set("contactFolders", value); }
         }
 #nullable restore
 #else
-        public List<ContactFolder> ContactFolders
+        public List<Microsoft.Graph.Models.ContactFolder> ContactFolders
         {
-            get { return BackingStore?.Get<List<ContactFolder>>("contactFolders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ContactFolder>>("contactFolders"); }
             set { BackingStore?.Set("contactFolders", value); }
         }
 #endif
         /// <summary>The user&apos;s contacts. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Contact>? Contacts
+        public List<Microsoft.Graph.Models.Contact>? Contacts
         {
-            get { return BackingStore?.Get<List<Contact>?>("contacts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Contact>?>("contacts"); }
             set { BackingStore?.Set("contacts", value); }
         }
 #nullable restore
 #else
-        public List<Contact> Contacts
+        public List<Microsoft.Graph.Models.Contact> Contacts
         {
-            get { return BackingStore?.Get<List<Contact>>("contacts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Contact>>("contacts"); }
             set { BackingStore?.Set("contacts", value); }
         }
 #endif
@@ -383,16 +383,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Directory objects that the user created. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? CreatedObjects
+        public List<Microsoft.Graph.Models.DirectoryObject>? CreatedObjects
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("createdObjects"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("createdObjects"); }
             set { BackingStore?.Set("createdObjects", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> CreatedObjects
+        public List<Microsoft.Graph.Models.DirectoryObject> CreatedObjects
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("createdObjects"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("createdObjects"); }
             set { BackingStore?.Set("createdObjects", value); }
         }
 #endif
@@ -415,16 +415,16 @@ namespace Microsoft.Graph.Models
         /// <summary>An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). The filter value is case-sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomSecurityAttributeValue? CustomSecurityAttributes
+        public Microsoft.Graph.Models.CustomSecurityAttributeValue? CustomSecurityAttributes
         {
-            get { return BackingStore?.Get<CustomSecurityAttributeValue?>("customSecurityAttributes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomSecurityAttributeValue?>("customSecurityAttributes"); }
             set { BackingStore?.Set("customSecurityAttributes", value); }
         }
 #nullable restore
 #else
-        public CustomSecurityAttributeValue CustomSecurityAttributes
+        public Microsoft.Graph.Models.CustomSecurityAttributeValue CustomSecurityAttributes
         {
-            get { return BackingStore?.Get<CustomSecurityAttributeValue>("customSecurityAttributes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomSecurityAttributeValue>("customSecurityAttributes"); }
             set { BackingStore?.Set("customSecurityAttributes", value); }
         }
 #endif
@@ -453,32 +453,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The list of troubleshooting events for this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementTroubleshootingEvent>? DeviceManagementTroubleshootingEvents
+        public List<Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent>? DeviceManagementTroubleshootingEvents
         {
-            get { return BackingStore?.Get<List<DeviceManagementTroubleshootingEvent>?>("deviceManagementTroubleshootingEvents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent>?>("deviceManagementTroubleshootingEvents"); }
             set { BackingStore?.Set("deviceManagementTroubleshootingEvents", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementTroubleshootingEvent> DeviceManagementTroubleshootingEvents
+        public List<Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent> DeviceManagementTroubleshootingEvents
         {
-            get { return BackingStore?.Get<List<DeviceManagementTroubleshootingEvent>>("deviceManagementTroubleshootingEvents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent>>("deviceManagementTroubleshootingEvents"); }
             set { BackingStore?.Set("deviceManagementTroubleshootingEvents", value); }
         }
 #endif
         /// <summary>The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? DirectReports
+        public List<Microsoft.Graph.Models.DirectoryObject>? DirectReports
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("directReports"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("directReports"); }
             set { BackingStore?.Set("directReports", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> DirectReports
+        public List<Microsoft.Graph.Models.DirectoryObject> DirectReports
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("directReports"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("directReports"); }
             set { BackingStore?.Set("directReports", value); }
         }
 #endif
@@ -533,16 +533,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The employeeExperience property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmployeeExperienceUser? EmployeeExperience
+        public Microsoft.Graph.Models.EmployeeExperienceUser? EmployeeExperience
         {
-            get { return BackingStore?.Get<EmployeeExperienceUser?>("employeeExperience"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmployeeExperienceUser?>("employeeExperience"); }
             set { BackingStore?.Set("employeeExperience", value); }
         }
 #nullable restore
 #else
-        public EmployeeExperienceUser EmployeeExperience
+        public Microsoft.Graph.Models.EmployeeExperienceUser EmployeeExperience
         {
-            get { return BackingStore?.Get<EmployeeExperienceUser>("employeeExperience"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmployeeExperienceUser>("employeeExperience"); }
             set { BackingStore?.Set("employeeExperience", value); }
         }
 #endif
@@ -609,32 +609,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The user&apos;s events. Default is to show Events under the Default Calendar. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Event>? Events
+        public List<Microsoft.Graph.Models.Event>? Events
         {
-            get { return BackingStore?.Get<List<Event>?>("events"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Event>?>("events"); }
             set { BackingStore?.Set("events", value); }
         }
 #nullable restore
 #else
-        public List<Event> Events
+        public List<Microsoft.Graph.Models.Event> Events
         {
-            get { return BackingStore?.Get<List<Event>>("events"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Event>>("events"); }
             set { BackingStore?.Set("events", value); }
         }
 #endif
         /// <summary>The collection of open extensions defined for the user. Read-only. Supports $expand. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions
+        public List<Microsoft.Graph.Models.Extension>? Extensions
         {
-            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions
+        public List<Microsoft.Graph.Models.Extension> Extensions
         {
-            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
@@ -679,16 +679,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The followedSites property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Site>? FollowedSites
+        public List<Microsoft.Graph.Models.Site>? FollowedSites
         {
-            get { return BackingStore?.Get<List<Site>?>("followedSites"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Site>?>("followedSites"); }
             set { BackingStore?.Set("followedSites", value); }
         }
 #nullable restore
 #else
-        public List<Site> FollowedSites
+        public List<Microsoft.Graph.Models.Site> FollowedSites
         {
-            get { return BackingStore?.Get<List<Site>>("followedSites"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Site>>("followedSites"); }
             set { BackingStore?.Set("followedSites", value); }
         }
 #endif
@@ -717,16 +717,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Represents the identities that can be used to sign in to this user account. Microsoft (also known as a local account), organizations, or social identity providers such as Facebook, Google, and Microsoft can provide identity and tie it to a user account. It may contain multiple items with the same signInType value. Returned only on $select.  Supports $filter (eq) with limitations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ObjectIdentity>? Identities
+        public List<Microsoft.Graph.Models.ObjectIdentity>? Identities
         {
-            get { return BackingStore?.Get<List<ObjectIdentity>?>("identities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ObjectIdentity>?>("identities"); }
             set { BackingStore?.Set("identities", value); }
         }
 #nullable restore
 #else
-        public List<ObjectIdentity> Identities
+        public List<Microsoft.Graph.Models.ObjectIdentity> Identities
         {
-            get { return BackingStore?.Get<List<ObjectIdentity>>("identities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ObjectIdentity>>("identities"); }
             set { BackingStore?.Set("identities", value); }
         }
 #endif
@@ -765,16 +765,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The insights property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OfficeGraphInsights? Insights
+        public Microsoft.Graph.Models.OfficeGraphInsights? Insights
         {
-            get { return BackingStore?.Get<OfficeGraphInsights?>("insights"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OfficeGraphInsights?>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
 #nullable restore
 #else
-        public OfficeGraphInsights Insights
+        public Microsoft.Graph.Models.OfficeGraphInsights Insights
         {
-            get { return BackingStore?.Get<OfficeGraphInsights>("insights"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OfficeGraphInsights>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
 #endif
@@ -819,16 +819,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The joinedTeams property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Team>? JoinedTeams
+        public List<Microsoft.Graph.Models.Team>? JoinedTeams
         {
-            get { return BackingStore?.Get<List<Team>?>("joinedTeams"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Team>?>("joinedTeams"); }
             set { BackingStore?.Set("joinedTeams", value); }
         }
 #nullable restore
 #else
-        public List<Team> JoinedTeams
+        public List<Microsoft.Graph.Models.Team> JoinedTeams
         {
-            get { return BackingStore?.Get<List<Team>>("joinedTeams"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Team>>("joinedTeams"); }
             set { BackingStore?.Set("joinedTeams", value); }
         }
 #endif
@@ -857,16 +857,16 @@ namespace Microsoft.Graph.Models
         /// <summary>State of license assignments for this user. Also indicates licenses that are directly assigned or the user has inherited through group memberships. Read-only. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LicenseAssignmentState>? LicenseAssignmentStates
+        public List<Microsoft.Graph.Models.LicenseAssignmentState>? LicenseAssignmentStates
         {
-            get { return BackingStore?.Get<List<LicenseAssignmentState>?>("licenseAssignmentStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.LicenseAssignmentState>?>("licenseAssignmentStates"); }
             set { BackingStore?.Set("licenseAssignmentStates", value); }
         }
 #nullable restore
 #else
-        public List<LicenseAssignmentState> LicenseAssignmentStates
+        public List<Microsoft.Graph.Models.LicenseAssignmentState> LicenseAssignmentStates
         {
-            get { return BackingStore?.Get<List<LicenseAssignmentState>>("licenseAssignmentStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.LicenseAssignmentState>>("licenseAssignmentStates"); }
             set { BackingStore?.Set("licenseAssignmentStates", value); }
         }
 #endif
@@ -921,16 +921,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The user&apos;s mail folders. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MailFolder>? MailFolders
+        public List<Microsoft.Graph.Models.MailFolder>? MailFolders
         {
-            get { return BackingStore?.Get<List<MailFolder>?>("mailFolders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MailFolder>?>("mailFolders"); }
             set { BackingStore?.Set("mailFolders", value); }
         }
 #nullable restore
 #else
-        public List<MailFolder> MailFolders
+        public List<Microsoft.Graph.Models.MailFolder> MailFolders
         {
-            get { return BackingStore?.Get<List<MailFolder>>("mailFolders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MailFolder>>("mailFolders"); }
             set { BackingStore?.Set("mailFolders", value); }
         }
 #endif
@@ -953,80 +953,80 @@ namespace Microsoft.Graph.Models
         /// <summary>Zero or more managed app registrations that belong to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppRegistration>? ManagedAppRegistrations
+        public List<Microsoft.Graph.Models.ManagedAppRegistration>? ManagedAppRegistrations
         {
-            get { return BackingStore?.Get<List<ManagedAppRegistration>?>("managedAppRegistrations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppRegistration>?>("managedAppRegistrations"); }
             set { BackingStore?.Set("managedAppRegistrations", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppRegistration> ManagedAppRegistrations
+        public List<Microsoft.Graph.Models.ManagedAppRegistration> ManagedAppRegistrations
         {
-            get { return BackingStore?.Get<List<ManagedAppRegistration>>("managedAppRegistrations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppRegistration>>("managedAppRegistrations"); }
             set { BackingStore?.Set("managedAppRegistrations", value); }
         }
 #endif
         /// <summary>The managed devices associated with the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDevice>? ManagedDevices
+        public List<Microsoft.Graph.Models.ManagedDevice>? ManagedDevices
         {
-            get { return BackingStore?.Get<List<ManagedDevice>?>("managedDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedDevice>?>("managedDevices"); }
             set { BackingStore?.Set("managedDevices", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDevice> ManagedDevices
+        public List<Microsoft.Graph.Models.ManagedDevice> ManagedDevices
         {
-            get { return BackingStore?.Get<List<ManagedDevice>>("managedDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedDevice>>("managedDevices"); }
             set { BackingStore?.Set("managedDevices", value); }
         }
 #endif
         /// <summary>The user or contact that is this user&apos;s manager. Read-only. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? Manager
+        public Microsoft.Graph.Models.DirectoryObject? Manager
         {
-            get { return BackingStore?.Get<DirectoryObject?>("manager"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject?>("manager"); }
             set { BackingStore?.Set("manager", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject Manager
+        public Microsoft.Graph.Models.DirectoryObject Manager
         {
-            get { return BackingStore?.Get<DirectoryObject>("manager"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject>("manager"); }
             set { BackingStore?.Set("manager", value); }
         }
 #endif
         /// <summary>The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? MemberOf
+        public List<Microsoft.Graph.Models.DirectoryObject>? MemberOf
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("memberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> MemberOf
+        public List<Microsoft.Graph.Models.DirectoryObject> MemberOf
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("memberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
 #endif
         /// <summary>The messages in a mailbox or folder. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Message>? Messages
+        public List<Microsoft.Graph.Models.Message>? Messages
         {
-            get { return BackingStore?.Get<List<Message>?>("messages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Message>?>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
 #nullable restore
 #else
-        public List<Message> Messages
+        public List<Microsoft.Graph.Models.Message> Messages
         {
-            get { return BackingStore?.Get<List<Message>>("messages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Message>>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
 #endif
@@ -1065,16 +1065,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The oauth2PermissionGrants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OAuth2PermissionGrant>? Oauth2PermissionGrants
+        public List<Microsoft.Graph.Models.OAuth2PermissionGrant>? Oauth2PermissionGrants
         {
-            get { return BackingStore?.Get<List<OAuth2PermissionGrant>?>("oauth2PermissionGrants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OAuth2PermissionGrant>?>("oauth2PermissionGrants"); }
             set { BackingStore?.Set("oauth2PermissionGrants", value); }
         }
 #nullable restore
 #else
-        public List<OAuth2PermissionGrant> Oauth2PermissionGrants
+        public List<Microsoft.Graph.Models.OAuth2PermissionGrant> Oauth2PermissionGrants
         {
-            get { return BackingStore?.Get<List<OAuth2PermissionGrant>>("oauth2PermissionGrants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OAuth2PermissionGrant>>("oauth2PermissionGrants"); }
             set { BackingStore?.Set("oauth2PermissionGrants", value); }
         }
 #endif
@@ -1113,16 +1113,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnlineMeeting>? OnlineMeetings
+        public List<Microsoft.Graph.Models.OnlineMeeting>? OnlineMeetings
         {
-            get { return BackingStore?.Get<List<OnlineMeeting>?>("onlineMeetings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnlineMeeting>?>("onlineMeetings"); }
             set { BackingStore?.Set("onlineMeetings", value); }
         }
 #nullable restore
 #else
-        public List<OnlineMeeting> OnlineMeetings
+        public List<Microsoft.Graph.Models.OnlineMeeting> OnlineMeetings
         {
-            get { return BackingStore?.Get<List<OnlineMeeting>>("onlineMeetings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnlineMeeting>>("onlineMeetings"); }
             set { BackingStore?.Set("onlineMeetings", value); }
         }
 #endif
@@ -1199,16 +1199,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Errors when using Microsoft synchronization product during provisioning. Returned only on $select. Supports $filter (eq, not, ge, le).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnPremisesProvisioningError>? OnPremisesProvisioningErrors
+        public List<Microsoft.Graph.Models.OnPremisesProvisioningError>? OnPremisesProvisioningErrors
         {
-            get { return BackingStore?.Get<List<OnPremisesProvisioningError>?>("onPremisesProvisioningErrors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnPremisesProvisioningError>?>("onPremisesProvisioningErrors"); }
             set { BackingStore?.Set("onPremisesProvisioningErrors", value); }
         }
 #nullable restore
 #else
-        public List<OnPremisesProvisioningError> OnPremisesProvisioningErrors
+        public List<Microsoft.Graph.Models.OnPremisesProvisioningError> OnPremisesProvisioningErrors
         {
-            get { return BackingStore?.Get<List<OnPremisesProvisioningError>>("onPremisesProvisioningErrors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnPremisesProvisioningError>>("onPremisesProvisioningErrors"); }
             set { BackingStore?.Set("onPremisesProvisioningErrors", value); }
         }
 #endif
@@ -1285,48 +1285,48 @@ namespace Microsoft.Graph.Models
         /// <summary>The outlook property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OutlookUser? Outlook
+        public Microsoft.Graph.Models.OutlookUser? Outlook
         {
-            get { return BackingStore?.Get<OutlookUser?>("outlook"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OutlookUser?>("outlook"); }
             set { BackingStore?.Set("outlook", value); }
         }
 #nullable restore
 #else
-        public OutlookUser Outlook
+        public Microsoft.Graph.Models.OutlookUser Outlook
         {
-            get { return BackingStore?.Get<OutlookUser>("outlook"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OutlookUser>("outlook"); }
             set { BackingStore?.Set("outlook", value); }
         }
 #endif
         /// <summary>Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? OwnedDevices
+        public List<Microsoft.Graph.Models.DirectoryObject>? OwnedDevices
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("ownedDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("ownedDevices"); }
             set { BackingStore?.Set("ownedDevices", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> OwnedDevices
+        public List<Microsoft.Graph.Models.DirectoryObject> OwnedDevices
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("ownedDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("ownedDevices"); }
             set { BackingStore?.Set("ownedDevices", value); }
         }
 #endif
         /// <summary>Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? OwnedObjects
+        public List<Microsoft.Graph.Models.DirectoryObject>? OwnedObjects
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("ownedObjects"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("ownedObjects"); }
             set { BackingStore?.Set("ownedObjects", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> OwnedObjects
+        public List<Microsoft.Graph.Models.DirectoryObject> OwnedObjects
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("ownedObjects"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("ownedObjects"); }
             set { BackingStore?.Set("ownedObjects", value); }
         }
 #endif
@@ -1381,80 +1381,80 @@ namespace Microsoft.Graph.Models
         /// <summary>People that are relevant to the user. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Person>? People
+        public List<Microsoft.Graph.Models.Person>? People
         {
-            get { return BackingStore?.Get<List<Person>?>("people"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Person>?>("people"); }
             set { BackingStore?.Set("people", value); }
         }
 #nullable restore
 #else
-        public List<Person> People
+        public List<Microsoft.Graph.Models.Person> People
         {
-            get { return BackingStore?.Get<List<Person>>("people"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Person>>("people"); }
             set { BackingStore?.Set("people", value); }
         }
 #endif
         /// <summary>List all resource-specific permission grants of a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ResourceSpecificPermissionGrant>? PermissionGrants
+        public List<Microsoft.Graph.Models.ResourceSpecificPermissionGrant>? PermissionGrants
         {
-            get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>?>("permissionGrants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ResourceSpecificPermissionGrant>?>("permissionGrants"); }
             set { BackingStore?.Set("permissionGrants", value); }
         }
 #nullable restore
 #else
-        public List<ResourceSpecificPermissionGrant> PermissionGrants
+        public List<Microsoft.Graph.Models.ResourceSpecificPermissionGrant> PermissionGrants
         {
-            get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>>("permissionGrants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ResourceSpecificPermissionGrant>>("permissionGrants"); }
             set { BackingStore?.Set("permissionGrants", value); }
         }
 #endif
         /// <summary>The user&apos;s profile photo. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProfilePhoto? Photo
+        public Microsoft.Graph.Models.ProfilePhoto? Photo
         {
-            get { return BackingStore?.Get<ProfilePhoto?>("photo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ProfilePhoto?>("photo"); }
             set { BackingStore?.Set("photo", value); }
         }
 #nullable restore
 #else
-        public ProfilePhoto Photo
+        public Microsoft.Graph.Models.ProfilePhoto Photo
         {
-            get { return BackingStore?.Get<ProfilePhoto>("photo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ProfilePhoto>("photo"); }
             set { BackingStore?.Set("photo", value); }
         }
 #endif
         /// <summary>The collection of the user&apos;s profile photos in different sizes. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProfilePhoto>? Photos
+        public List<Microsoft.Graph.Models.ProfilePhoto>? Photos
         {
-            get { return BackingStore?.Get<List<ProfilePhoto>?>("photos"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ProfilePhoto>?>("photos"); }
             set { BackingStore?.Set("photos", value); }
         }
 #nullable restore
 #else
-        public List<ProfilePhoto> Photos
+        public List<Microsoft.Graph.Models.ProfilePhoto> Photos
         {
-            get { return BackingStore?.Get<List<ProfilePhoto>>("photos"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ProfilePhoto>>("photos"); }
             set { BackingStore?.Set("photos", value); }
         }
 #endif
         /// <summary>Entry-point to the Planner resource that might exist for a user. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerUser? Planner
+        public Microsoft.Graph.Models.PlannerUser? Planner
         {
-            get { return BackingStore?.Get<PlannerUser?>("planner"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PlannerUser?>("planner"); }
             set { BackingStore?.Set("planner", value); }
         }
 #nullable restore
 #else
-        public PlannerUser Planner
+        public Microsoft.Graph.Models.PlannerUser Planner
         {
-            get { return BackingStore?.Get<PlannerUser>("planner"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PlannerUser>("planner"); }
             set { BackingStore?.Set("planner", value); }
         }
 #endif
@@ -1541,32 +1541,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The print property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserPrint? Print
+        public Microsoft.Graph.Models.UserPrint? Print
         {
-            get { return BackingStore?.Get<UserPrint?>("print"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserPrint?>("print"); }
             set { BackingStore?.Set("print", value); }
         }
 #nullable restore
 #else
-        public UserPrint Print
+        public Microsoft.Graph.Models.UserPrint Print
         {
-            get { return BackingStore?.Get<UserPrint>("print"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserPrint>("print"); }
             set { BackingStore?.Set("print", value); }
         }
 #endif
         /// <summary>The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProvisionedPlan>? ProvisionedPlans
+        public List<Microsoft.Graph.Models.ProvisionedPlan>? ProvisionedPlans
         {
-            get { return BackingStore?.Get<List<ProvisionedPlan>?>("provisionedPlans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ProvisionedPlan>?>("provisionedPlans"); }
             set { BackingStore?.Set("provisionedPlans", value); }
         }
 #nullable restore
 #else
-        public List<ProvisionedPlan> ProvisionedPlans
+        public List<Microsoft.Graph.Models.ProvisionedPlan> ProvisionedPlans
         {
-            get { return BackingStore?.Get<List<ProvisionedPlan>>("provisionedPlans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ProvisionedPlan>>("provisionedPlans"); }
             set { BackingStore?.Set("provisionedPlans", value); }
         }
 #endif
@@ -1589,16 +1589,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? RegisteredDevices
+        public List<Microsoft.Graph.Models.DirectoryObject>? RegisteredDevices
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("registeredDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("registeredDevices"); }
             set { BackingStore?.Set("registeredDevices", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> RegisteredDevices
+        public List<Microsoft.Graph.Models.DirectoryObject> RegisteredDevices
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("registeredDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("registeredDevices"); }
             set { BackingStore?.Set("registeredDevices", value); }
         }
 #endif
@@ -1637,16 +1637,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The scopedRoleMemberOf property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ScopedRoleMembership>? ScopedRoleMemberOf
+        public List<Microsoft.Graph.Models.ScopedRoleMembership>? ScopedRoleMemberOf
         {
-            get { return BackingStore?.Get<List<ScopedRoleMembership>?>("scopedRoleMemberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ScopedRoleMembership>?>("scopedRoleMemberOf"); }
             set { BackingStore?.Set("scopedRoleMemberOf", value); }
         }
 #nullable restore
 #else
-        public List<ScopedRoleMembership> ScopedRoleMemberOf
+        public List<Microsoft.Graph.Models.ScopedRoleMembership> ScopedRoleMemberOf
         {
-            get { return BackingStore?.Get<List<ScopedRoleMembership>>("scopedRoleMemberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ScopedRoleMembership>>("scopedRoleMemberOf"); }
             set { BackingStore?.Set("scopedRoleMemberOf", value); }
         }
 #endif
@@ -1669,32 +1669,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServiceProvisioningError>? ServiceProvisioningErrors
+        public List<Microsoft.Graph.Models.ServiceProvisioningError>? ServiceProvisioningErrors
         {
-            get { return BackingStore?.Get<List<ServiceProvisioningError>?>("serviceProvisioningErrors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ServiceProvisioningError>?>("serviceProvisioningErrors"); }
             set { BackingStore?.Set("serviceProvisioningErrors", value); }
         }
 #nullable restore
 #else
-        public List<ServiceProvisioningError> ServiceProvisioningErrors
+        public List<Microsoft.Graph.Models.ServiceProvisioningError> ServiceProvisioningErrors
         {
-            get { return BackingStore?.Get<List<ServiceProvisioningError>>("serviceProvisioningErrors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ServiceProvisioningError>>("serviceProvisioningErrors"); }
             set { BackingStore?.Set("serviceProvisioningErrors", value); }
         }
 #endif
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserSettings? Settings
+        public Microsoft.Graph.Models.UserSettings? Settings
         {
-            get { return BackingStore?.Get<UserSettings?>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public UserSettings Settings
+        public Microsoft.Graph.Models.UserSettings Settings
         {
-            get { return BackingStore?.Get<UserSettings>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
@@ -1745,16 +1745,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The users and groups responsible for this guest user&apos;s privileges in the tenant and keep the guest user&apos;s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? Sponsors
+        public List<Microsoft.Graph.Models.DirectoryObject>? Sponsors
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("sponsors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("sponsors"); }
             set { BackingStore?.Set("sponsors", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> Sponsors
+        public List<Microsoft.Graph.Models.DirectoryObject> Sponsors
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("sponsors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("sponsors"); }
             set { BackingStore?.Set("sponsors", value); }
         }
 #endif
@@ -1809,16 +1809,16 @@ namespace Microsoft.Graph.Models
         /// <summary>A container for Microsoft Teams features available for the user. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserTeamwork? Teamwork
+        public Microsoft.Graph.Models.UserTeamwork? Teamwork
         {
-            get { return BackingStore?.Get<UserTeamwork?>("teamwork"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserTeamwork?>("teamwork"); }
             set { BackingStore?.Set("teamwork", value); }
         }
 #nullable restore
 #else
-        public UserTeamwork Teamwork
+        public Microsoft.Graph.Models.UserTeamwork Teamwork
         {
-            get { return BackingStore?.Get<UserTeamwork>("teamwork"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserTeamwork>("teamwork"); }
             set { BackingStore?.Set("teamwork", value); }
         }
 #endif
@@ -1841,16 +1841,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The groups, including nested groups, and directory roles that a user is a member of. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? TransitiveMemberOf
+        public List<Microsoft.Graph.Models.DirectoryObject>? TransitiveMemberOf
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("transitiveMemberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("transitiveMemberOf"); }
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> TransitiveMemberOf
+        public List<Microsoft.Graph.Models.DirectoryObject> TransitiveMemberOf
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("transitiveMemberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("transitiveMemberOf"); }
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
 #endif
@@ -1903,7 +1903,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="User"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.User"/> and sets the default values.
         /// </summary>
         public User() : base()
         {
@@ -1912,12 +1912,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="User"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.User"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new User CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.User CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new User();
+            return new Microsoft.Graph.Models.User();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -1929,128 +1929,128 @@ namespace Microsoft.Graph.Models
             {
                 { "aboutMe", n => { AboutMe = n.GetStringValue(); } },
                 { "accountEnabled", n => { AccountEnabled = n.GetBoolValue(); } },
-                { "activities", n => { Activities = n.GetCollectionOfObjectValues<UserActivity>(UserActivity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "activities", n => { Activities = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UserActivity>(Microsoft.Graph.Models.UserActivity.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "ageGroup", n => { AgeGroup = n.GetStringValue(); } },
-                { "agreementAcceptances", n => { AgreementAcceptances = n.GetCollectionOfObjectValues<AgreementAcceptance>(AgreementAcceptance.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "appRoleAssignments", n => { AppRoleAssignments = n.GetCollectionOfObjectValues<AppRoleAssignment>(AppRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "assignedLicenses", n => { AssignedLicenses = n.GetCollectionOfObjectValues<AssignedLicense>(AssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "assignedPlans", n => { AssignedPlans = n.GetCollectionOfObjectValues<AssignedPlan>(AssignedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "agreementAcceptances", n => { AgreementAcceptances = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AgreementAcceptance>(Microsoft.Graph.Models.AgreementAcceptance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appRoleAssignments", n => { AppRoleAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AppRoleAssignment>(Microsoft.Graph.Models.AppRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignedLicenses", n => { AssignedLicenses = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AssignedLicense>(Microsoft.Graph.Models.AssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignedPlans", n => { AssignedPlans = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AssignedPlan>(Microsoft.Graph.Models.AssignedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "authentication", n => { Authentication = n.GetObjectValue<Microsoft.Graph.Models.Authentication>(Microsoft.Graph.Models.Authentication.CreateFromDiscriminatorValue); } },
                 { "authorizationInfo", n => { AuthorizationInfo = n.GetObjectValue<Microsoft.Graph.Models.AuthorizationInfo>(Microsoft.Graph.Models.AuthorizationInfo.CreateFromDiscriminatorValue); } },
                 { "birthday", n => { Birthday = n.GetDateTimeOffsetValue(); } },
                 { "businessPhones", n => { BusinessPhones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "calendar", n => { Calendar = n.GetObjectValue<Microsoft.Graph.Models.Calendar>(Microsoft.Graph.Models.Calendar.CreateFromDiscriminatorValue); } },
-                { "calendarGroups", n => { CalendarGroups = n.GetCollectionOfObjectValues<CalendarGroup>(CalendarGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "calendarView", n => { CalendarView = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "calendarGroups", n => { CalendarGroups = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CalendarGroup>(Microsoft.Graph.Models.CalendarGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "calendarView", n => { CalendarView = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Event>(Microsoft.Graph.Models.Event.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "calendars", n => { Calendars = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Calendar>(Microsoft.Graph.Models.Calendar.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "chats", n => { Chats = n.GetCollectionOfObjectValues<Chat>(Chat.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "chats", n => { Chats = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Chat>(Microsoft.Graph.Models.Chat.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "city", n => { City = n.GetStringValue(); } },
-                { "cloudClipboard", n => { CloudClipboard = n.GetObjectValue<CloudClipboardRoot>(CloudClipboardRoot.CreateFromDiscriminatorValue); } },
+                { "cloudClipboard", n => { CloudClipboard = n.GetObjectValue<Microsoft.Graph.Models.CloudClipboardRoot>(Microsoft.Graph.Models.CloudClipboardRoot.CreateFromDiscriminatorValue); } },
                 { "companyName", n => { CompanyName = n.GetStringValue(); } },
                 { "consentProvidedForMinor", n => { ConsentProvidedForMinor = n.GetStringValue(); } },
-                { "contactFolders", n => { ContactFolders = n.GetCollectionOfObjectValues<ContactFolder>(ContactFolder.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "contacts", n => { Contacts = n.GetCollectionOfObjectValues<Contact>(Contact.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contactFolders", n => { ContactFolders = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ContactFolder>(Microsoft.Graph.Models.ContactFolder.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contacts", n => { Contacts = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Contact>(Microsoft.Graph.Models.Contact.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "createdObjects", n => { CreatedObjects = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdObjects", n => { CreatedObjects = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "creationType", n => { CreationType = n.GetStringValue(); } },
-                { "customSecurityAttributes", n => { CustomSecurityAttributes = n.GetObjectValue<CustomSecurityAttributeValue>(CustomSecurityAttributeValue.CreateFromDiscriminatorValue); } },
+                { "customSecurityAttributes", n => { CustomSecurityAttributes = n.GetObjectValue<Microsoft.Graph.Models.CustomSecurityAttributeValue>(Microsoft.Graph.Models.CustomSecurityAttributeValue.CreateFromDiscriminatorValue); } },
                 { "department", n => { Department = n.GetStringValue(); } },
                 { "deviceEnrollmentLimit", n => { DeviceEnrollmentLimit = n.GetIntValue(); } },
-                { "deviceManagementTroubleshootingEvents", n => { DeviceManagementTroubleshootingEvents = n.GetCollectionOfObjectValues<DeviceManagementTroubleshootingEvent>(DeviceManagementTroubleshootingEvent.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "directReports", n => { DirectReports = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceManagementTroubleshootingEvents", n => { DeviceManagementTroubleshootingEvents = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent>(Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "directReports", n => { DirectReports = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "drive", n => { Drive = n.GetObjectValue<Microsoft.Graph.Models.Drive>(Microsoft.Graph.Models.Drive.CreateFromDiscriminatorValue); } },
                 { "drives", n => { Drives = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Drive>(Microsoft.Graph.Models.Drive.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "employeeExperience", n => { EmployeeExperience = n.GetObjectValue<EmployeeExperienceUser>(EmployeeExperienceUser.CreateFromDiscriminatorValue); } },
+                { "employeeExperience", n => { EmployeeExperience = n.GetObjectValue<Microsoft.Graph.Models.EmployeeExperienceUser>(Microsoft.Graph.Models.EmployeeExperienceUser.CreateFromDiscriminatorValue); } },
                 { "employeeHireDate", n => { EmployeeHireDate = n.GetDateTimeOffsetValue(); } },
                 { "employeeId", n => { EmployeeId = n.GetStringValue(); } },
                 { "employeeLeaveDateTime", n => { EmployeeLeaveDateTime = n.GetDateTimeOffsetValue(); } },
                 { "employeeOrgData", n => { EmployeeOrgData = n.GetObjectValue<Microsoft.Graph.Models.EmployeeOrgData>(Microsoft.Graph.Models.EmployeeOrgData.CreateFromDiscriminatorValue); } },
                 { "employeeType", n => { EmployeeType = n.GetStringValue(); } },
-                { "events", n => { Events = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "events", n => { Events = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Event>(Microsoft.Graph.Models.Event.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Extension>(Microsoft.Graph.Models.Extension.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "externalUserState", n => { ExternalUserState = n.GetStringValue(); } },
                 { "externalUserStateChangeDateTime", n => { ExternalUserStateChangeDateTime = n.GetDateTimeOffsetValue(); } },
                 { "faxNumber", n => { FaxNumber = n.GetStringValue(); } },
-                { "followedSites", n => { FollowedSites = n.GetCollectionOfObjectValues<Site>(Site.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "followedSites", n => { FollowedSites = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Site>(Microsoft.Graph.Models.Site.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "givenName", n => { GivenName = n.GetStringValue(); } },
                 { "hireDate", n => { HireDate = n.GetDateTimeOffsetValue(); } },
-                { "identities", n => { Identities = n.GetCollectionOfObjectValues<ObjectIdentity>(ObjectIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "identities", n => { Identities = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ObjectIdentity>(Microsoft.Graph.Models.ObjectIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "imAddresses", n => { ImAddresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "inferenceClassification", n => { InferenceClassification = n.GetObjectValue<Microsoft.Graph.Models.InferenceClassification>(Microsoft.Graph.Models.InferenceClassification.CreateFromDiscriminatorValue); } },
-                { "insights", n => { Insights = n.GetObjectValue<OfficeGraphInsights>(OfficeGraphInsights.CreateFromDiscriminatorValue); } },
+                { "insights", n => { Insights = n.GetObjectValue<Microsoft.Graph.Models.OfficeGraphInsights>(Microsoft.Graph.Models.OfficeGraphInsights.CreateFromDiscriminatorValue); } },
                 { "interests", n => { Interests = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "isResourceAccount", n => { IsResourceAccount = n.GetBoolValue(); } },
                 { "jobTitle", n => { JobTitle = n.GetStringValue(); } },
-                { "joinedTeams", n => { JoinedTeams = n.GetCollectionOfObjectValues<Team>(Team.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "joinedTeams", n => { JoinedTeams = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Team>(Microsoft.Graph.Models.Team.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lastPasswordChangeDateTime", n => { LastPasswordChangeDateTime = n.GetDateTimeOffsetValue(); } },
                 { "legalAgeGroupClassification", n => { LegalAgeGroupClassification = n.GetStringValue(); } },
-                { "licenseAssignmentStates", n => { LicenseAssignmentStates = n.GetCollectionOfObjectValues<LicenseAssignmentState>(LicenseAssignmentState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "licenseAssignmentStates", n => { LicenseAssignmentStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.LicenseAssignmentState>(Microsoft.Graph.Models.LicenseAssignmentState.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "licenseDetails", n => { LicenseDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.LicenseDetails>(Microsoft.Graph.Models.LicenseDetails.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "mail", n => { Mail = n.GetStringValue(); } },
-                { "mailFolders", n => { MailFolders = n.GetCollectionOfObjectValues<MailFolder>(MailFolder.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mailFolders", n => { MailFolders = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MailFolder>(Microsoft.Graph.Models.MailFolder.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "mailNickname", n => { MailNickname = n.GetStringValue(); } },
                 { "mailboxSettings", n => { MailboxSettings = n.GetObjectValue<Microsoft.Graph.Models.MailboxSettings>(Microsoft.Graph.Models.MailboxSettings.CreateFromDiscriminatorValue); } },
-                { "managedAppRegistrations", n => { ManagedAppRegistrations = n.GetCollectionOfObjectValues<ManagedAppRegistration>(ManagedAppRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "managedDevices", n => { ManagedDevices = n.GetCollectionOfObjectValues<ManagedDevice>(ManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "manager", n => { Manager = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
-                { "memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<Message>(Message.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedAppRegistrations", n => { ManagedAppRegistrations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppRegistration>(Microsoft.Graph.Models.ManagedAppRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedDevices", n => { ManagedDevices = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ManagedDevice>(Microsoft.Graph.Models.ManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "manager", n => { Manager = n.GetObjectValue<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Message>(Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "mobilePhone", n => { MobilePhone = n.GetStringValue(); } },
                 { "mySite", n => { MySite = n.GetStringValue(); } },
-                { "oauth2PermissionGrants", n => { Oauth2PermissionGrants = n.GetCollectionOfObjectValues<OAuth2PermissionGrant>(OAuth2PermissionGrant.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "oauth2PermissionGrants", n => { Oauth2PermissionGrants = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OAuth2PermissionGrant>(Microsoft.Graph.Models.OAuth2PermissionGrant.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "officeLocation", n => { OfficeLocation = n.GetStringValue(); } },
                 { "onPremisesDistinguishedName", n => { OnPremisesDistinguishedName = n.GetStringValue(); } },
                 { "onPremisesDomainName", n => { OnPremisesDomainName = n.GetStringValue(); } },
                 { "onPremisesExtensionAttributes", n => { OnPremisesExtensionAttributes = n.GetObjectValue<Microsoft.Graph.Models.OnPremisesExtensionAttributes>(Microsoft.Graph.Models.OnPremisesExtensionAttributes.CreateFromDiscriminatorValue); } },
                 { "onPremisesImmutableId", n => { OnPremisesImmutableId = n.GetStringValue(); } },
                 { "onPremisesLastSyncDateTime", n => { OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                { "onPremisesProvisioningErrors", n => { OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<OnPremisesProvisioningError>(OnPremisesProvisioningError.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "onPremisesProvisioningErrors", n => { OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OnPremisesProvisioningError>(Microsoft.Graph.Models.OnPremisesProvisioningError.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "onPremisesSamAccountName", n => { OnPremisesSamAccountName = n.GetStringValue(); } },
                 { "onPremisesSecurityIdentifier", n => { OnPremisesSecurityIdentifier = n.GetStringValue(); } },
                 { "onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
                 { "onPremisesUserPrincipalName", n => { OnPremisesUserPrincipalName = n.GetStringValue(); } },
                 { "onenote", n => { Onenote = n.GetObjectValue<Microsoft.Graph.Models.Onenote>(Microsoft.Graph.Models.Onenote.CreateFromDiscriminatorValue); } },
-                { "onlineMeetings", n => { OnlineMeetings = n.GetCollectionOfObjectValues<OnlineMeeting>(OnlineMeeting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "onlineMeetings", n => { OnlineMeetings = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OnlineMeeting>(Microsoft.Graph.Models.OnlineMeeting.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "otherMails", n => { OtherMails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "outlook", n => { Outlook = n.GetObjectValue<OutlookUser>(OutlookUser.CreateFromDiscriminatorValue); } },
-                { "ownedDevices", n => { OwnedDevices = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "ownedObjects", n => { OwnedObjects = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "outlook", n => { Outlook = n.GetObjectValue<Microsoft.Graph.Models.OutlookUser>(Microsoft.Graph.Models.OutlookUser.CreateFromDiscriminatorValue); } },
+                { "ownedDevices", n => { OwnedDevices = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ownedObjects", n => { OwnedObjects = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "passwordPolicies", n => { PasswordPolicies = n.GetStringValue(); } },
                 { "passwordProfile", n => { PasswordProfile = n.GetObjectValue<Microsoft.Graph.Models.PasswordProfile>(Microsoft.Graph.Models.PasswordProfile.CreateFromDiscriminatorValue); } },
                 { "pastProjects", n => { PastProjects = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "people", n => { People = n.GetCollectionOfObjectValues<Person>(Person.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "permissionGrants", n => { PermissionGrants = n.GetCollectionOfObjectValues<ResourceSpecificPermissionGrant>(ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "photo", n => { Photo = n.GetObjectValue<ProfilePhoto>(ProfilePhoto.CreateFromDiscriminatorValue); } },
-                { "photos", n => { Photos = n.GetCollectionOfObjectValues<ProfilePhoto>(ProfilePhoto.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "planner", n => { Planner = n.GetObjectValue<PlannerUser>(PlannerUser.CreateFromDiscriminatorValue); } },
+                { "people", n => { People = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Person>(Microsoft.Graph.Models.Person.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "permissionGrants", n => { PermissionGrants = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ResourceSpecificPermissionGrant>(Microsoft.Graph.Models.ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "photo", n => { Photo = n.GetObjectValue<Microsoft.Graph.Models.ProfilePhoto>(Microsoft.Graph.Models.ProfilePhoto.CreateFromDiscriminatorValue); } },
+                { "photos", n => { Photos = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ProfilePhoto>(Microsoft.Graph.Models.ProfilePhoto.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "planner", n => { Planner = n.GetObjectValue<Microsoft.Graph.Models.PlannerUser>(Microsoft.Graph.Models.PlannerUser.CreateFromDiscriminatorValue); } },
                 { "postalCode", n => { PostalCode = n.GetStringValue(); } },
                 { "preferredDataLocation", n => { PreferredDataLocation = n.GetStringValue(); } },
                 { "preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
                 { "preferredName", n => { PreferredName = n.GetStringValue(); } },
                 { "presence", n => { Presence = n.GetObjectValue<Microsoft.Graph.Models.Presence>(Microsoft.Graph.Models.Presence.CreateFromDiscriminatorValue); } },
-                { "print", n => { Print = n.GetObjectValue<UserPrint>(UserPrint.CreateFromDiscriminatorValue); } },
-                { "provisionedPlans", n => { ProvisionedPlans = n.GetCollectionOfObjectValues<ProvisionedPlan>(ProvisionedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "print", n => { Print = n.GetObjectValue<Microsoft.Graph.Models.UserPrint>(Microsoft.Graph.Models.UserPrint.CreateFromDiscriminatorValue); } },
+                { "provisionedPlans", n => { ProvisionedPlans = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ProvisionedPlan>(Microsoft.Graph.Models.ProvisionedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "proxyAddresses", n => { ProxyAddresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "registeredDevices", n => { RegisteredDevices = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "registeredDevices", n => { RegisteredDevices = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "responsibilities", n => { Responsibilities = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "schools", n => { Schools = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "scopedRoleMemberOf", n => { ScopedRoleMemberOf = n.GetCollectionOfObjectValues<ScopedRoleMembership>(ScopedRoleMembership.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scopedRoleMemberOf", n => { ScopedRoleMemberOf = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ScopedRoleMembership>(Microsoft.Graph.Models.ScopedRoleMembership.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "securityIdentifier", n => { SecurityIdentifier = n.GetStringValue(); } },
-                { "serviceProvisioningErrors", n => { ServiceProvisioningErrors = n.GetCollectionOfObjectValues<ServiceProvisioningError>(ServiceProvisioningError.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "settings", n => { Settings = n.GetObjectValue<UserSettings>(UserSettings.CreateFromDiscriminatorValue); } },
+                { "serviceProvisioningErrors", n => { ServiceProvisioningErrors = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ServiceProvisioningError>(Microsoft.Graph.Models.ServiceProvisioningError.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Models.UserSettings>(Microsoft.Graph.Models.UserSettings.CreateFromDiscriminatorValue); } },
                 { "showInAddressList", n => { ShowInAddressList = n.GetBoolValue(); } },
                 { "signInActivity", n => { SignInActivity = n.GetObjectValue<Microsoft.Graph.Models.SignInActivity>(Microsoft.Graph.Models.SignInActivity.CreateFromDiscriminatorValue); } },
                 { "signInSessionsValidFromDateTime", n => { SignInSessionsValidFromDateTime = n.GetDateTimeOffsetValue(); } },
                 { "skills", n => { Skills = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "sponsors", n => { Sponsors = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sponsors", n => { Sponsors = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "streetAddress", n => { StreetAddress = n.GetStringValue(); } },
                 { "surname", n => { Surname = n.GetStringValue(); } },
-                { "teamwork", n => { Teamwork = n.GetObjectValue<UserTeamwork>(UserTeamwork.CreateFromDiscriminatorValue); } },
+                { "teamwork", n => { Teamwork = n.GetObjectValue<Microsoft.Graph.Models.UserTeamwork>(Microsoft.Graph.Models.UserTeamwork.CreateFromDiscriminatorValue); } },
                 { "todo", n => { Todo = n.GetObjectValue<Microsoft.Graph.Models.Todo>(Microsoft.Graph.Models.Todo.CreateFromDiscriminatorValue); } },
-                { "transitiveMemberOf", n => { TransitiveMemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "transitiveMemberOf", n => { TransitiveMemberOf = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "usageLocation", n => { UsageLocation = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
                 { "userType", n => { UserType = n.GetStringValue(); } },
@@ -2066,128 +2066,128 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("aboutMe", AboutMe);
             writer.WriteBoolValue("accountEnabled", AccountEnabled);
-            writer.WriteCollectionOfObjectValues<UserActivity>("activities", Activities);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UserActivity>("activities", Activities);
             writer.WriteStringValue("ageGroup", AgeGroup);
-            writer.WriteCollectionOfObjectValues<AgreementAcceptance>("agreementAcceptances", AgreementAcceptances);
-            writer.WriteCollectionOfObjectValues<AppRoleAssignment>("appRoleAssignments", AppRoleAssignments);
-            writer.WriteCollectionOfObjectValues<AssignedLicense>("assignedLicenses", AssignedLicenses);
-            writer.WriteCollectionOfObjectValues<AssignedPlan>("assignedPlans", AssignedPlans);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AgreementAcceptance>("agreementAcceptances", AgreementAcceptances);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AppRoleAssignment>("appRoleAssignments", AppRoleAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AssignedLicense>("assignedLicenses", AssignedLicenses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AssignedPlan>("assignedPlans", AssignedPlans);
             writer.WriteObjectValue<Microsoft.Graph.Models.Authentication>("authentication", Authentication);
             writer.WriteObjectValue<Microsoft.Graph.Models.AuthorizationInfo>("authorizationInfo", AuthorizationInfo);
             writer.WriteDateTimeOffsetValue("birthday", Birthday);
             writer.WriteCollectionOfPrimitiveValues<string>("businessPhones", BusinessPhones);
             writer.WriteObjectValue<Microsoft.Graph.Models.Calendar>("calendar", Calendar);
-            writer.WriteCollectionOfObjectValues<CalendarGroup>("calendarGroups", CalendarGroups);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CalendarGroup>("calendarGroups", CalendarGroups);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Calendar>("calendars", Calendars);
-            writer.WriteCollectionOfObjectValues<Event>("calendarView", CalendarView);
-            writer.WriteCollectionOfObjectValues<Chat>("chats", Chats);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Event>("calendarView", CalendarView);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Chat>("chats", Chats);
             writer.WriteStringValue("city", City);
-            writer.WriteObjectValue<CloudClipboardRoot>("cloudClipboard", CloudClipboard);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CloudClipboardRoot>("cloudClipboard", CloudClipboard);
             writer.WriteStringValue("companyName", CompanyName);
             writer.WriteStringValue("consentProvidedForMinor", ConsentProvidedForMinor);
-            writer.WriteCollectionOfObjectValues<ContactFolder>("contactFolders", ContactFolders);
-            writer.WriteCollectionOfObjectValues<Contact>("contacts", Contacts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ContactFolder>("contactFolders", ContactFolders);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Contact>("contacts", Contacts);
             writer.WriteStringValue("country", Country);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("createdObjects", CreatedObjects);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("createdObjects", CreatedObjects);
             writer.WriteStringValue("creationType", CreationType);
-            writer.WriteObjectValue<CustomSecurityAttributeValue>("customSecurityAttributes", CustomSecurityAttributes);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CustomSecurityAttributeValue>("customSecurityAttributes", CustomSecurityAttributes);
             writer.WriteStringValue("department", Department);
             writer.WriteIntValue("deviceEnrollmentLimit", DeviceEnrollmentLimit);
-            writer.WriteCollectionOfObjectValues<DeviceManagementTroubleshootingEvent>("deviceManagementTroubleshootingEvents", DeviceManagementTroubleshootingEvents);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("directReports", DirectReports);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent>("deviceManagementTroubleshootingEvents", DeviceManagementTroubleshootingEvents);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("directReports", DirectReports);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<Microsoft.Graph.Models.Drive>("drive", Drive);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Drive>("drives", Drives);
-            writer.WriteObjectValue<EmployeeExperienceUser>("employeeExperience", EmployeeExperience);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EmployeeExperienceUser>("employeeExperience", EmployeeExperience);
             writer.WriteDateTimeOffsetValue("employeeHireDate", EmployeeHireDate);
             writer.WriteStringValue("employeeId", EmployeeId);
             writer.WriteDateTimeOffsetValue("employeeLeaveDateTime", EmployeeLeaveDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Models.EmployeeOrgData>("employeeOrgData", EmployeeOrgData);
             writer.WriteStringValue("employeeType", EmployeeType);
-            writer.WriteCollectionOfObjectValues<Event>("events", Events);
-            writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Event>("events", Events);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Extension>("extensions", Extensions);
             writer.WriteStringValue("externalUserState", ExternalUserState);
             writer.WriteDateTimeOffsetValue("externalUserStateChangeDateTime", ExternalUserStateChangeDateTime);
             writer.WriteStringValue("faxNumber", FaxNumber);
-            writer.WriteCollectionOfObjectValues<Site>("followedSites", FollowedSites);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Site>("followedSites", FollowedSites);
             writer.WriteStringValue("givenName", GivenName);
             writer.WriteDateTimeOffsetValue("hireDate", HireDate);
-            writer.WriteCollectionOfObjectValues<ObjectIdentity>("identities", Identities);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ObjectIdentity>("identities", Identities);
             writer.WriteCollectionOfPrimitiveValues<string>("imAddresses", ImAddresses);
             writer.WriteObjectValue<Microsoft.Graph.Models.InferenceClassification>("inferenceClassification", InferenceClassification);
-            writer.WriteObjectValue<OfficeGraphInsights>("insights", Insights);
+            writer.WriteObjectValue<Microsoft.Graph.Models.OfficeGraphInsights>("insights", Insights);
             writer.WriteCollectionOfPrimitiveValues<string>("interests", Interests);
             writer.WriteBoolValue("isResourceAccount", IsResourceAccount);
             writer.WriteStringValue("jobTitle", JobTitle);
-            writer.WriteCollectionOfObjectValues<Team>("joinedTeams", JoinedTeams);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Team>("joinedTeams", JoinedTeams);
             writer.WriteDateTimeOffsetValue("lastPasswordChangeDateTime", LastPasswordChangeDateTime);
             writer.WriteStringValue("legalAgeGroupClassification", LegalAgeGroupClassification);
-            writer.WriteCollectionOfObjectValues<LicenseAssignmentState>("licenseAssignmentStates", LicenseAssignmentStates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.LicenseAssignmentState>("licenseAssignmentStates", LicenseAssignmentStates);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.LicenseDetails>("licenseDetails", LicenseDetails);
             writer.WriteStringValue("mail", Mail);
             writer.WriteObjectValue<Microsoft.Graph.Models.MailboxSettings>("mailboxSettings", MailboxSettings);
-            writer.WriteCollectionOfObjectValues<MailFolder>("mailFolders", MailFolders);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MailFolder>("mailFolders", MailFolders);
             writer.WriteStringValue("mailNickname", MailNickname);
-            writer.WriteCollectionOfObjectValues<ManagedAppRegistration>("managedAppRegistrations", ManagedAppRegistrations);
-            writer.WriteCollectionOfObjectValues<ManagedDevice>("managedDevices", ManagedDevices);
-            writer.WriteObjectValue<DirectoryObject>("manager", Manager);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("memberOf", MemberOf);
-            writer.WriteCollectionOfObjectValues<Message>("messages", Messages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppRegistration>("managedAppRegistrations", ManagedAppRegistrations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ManagedDevice>("managedDevices", ManagedDevices);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DirectoryObject>("manager", Manager);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("memberOf", MemberOf);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Message>("messages", Messages);
             writer.WriteStringValue("mobilePhone", MobilePhone);
             writer.WriteStringValue("mySite", MySite);
-            writer.WriteCollectionOfObjectValues<OAuth2PermissionGrant>("oauth2PermissionGrants", Oauth2PermissionGrants);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OAuth2PermissionGrant>("oauth2PermissionGrants", Oauth2PermissionGrants);
             writer.WriteStringValue("officeLocation", OfficeLocation);
             writer.WriteObjectValue<Microsoft.Graph.Models.Onenote>("onenote", Onenote);
-            writer.WriteCollectionOfObjectValues<OnlineMeeting>("onlineMeetings", OnlineMeetings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OnlineMeeting>("onlineMeetings", OnlineMeetings);
             writer.WriteStringValue("onPremisesDistinguishedName", OnPremisesDistinguishedName);
             writer.WriteStringValue("onPremisesDomainName", OnPremisesDomainName);
             writer.WriteObjectValue<Microsoft.Graph.Models.OnPremisesExtensionAttributes>("onPremisesExtensionAttributes", OnPremisesExtensionAttributes);
             writer.WriteStringValue("onPremisesImmutableId", OnPremisesImmutableId);
             writer.WriteDateTimeOffsetValue("onPremisesLastSyncDateTime", OnPremisesLastSyncDateTime);
-            writer.WriteCollectionOfObjectValues<OnPremisesProvisioningError>("onPremisesProvisioningErrors", OnPremisesProvisioningErrors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OnPremisesProvisioningError>("onPremisesProvisioningErrors", OnPremisesProvisioningErrors);
             writer.WriteStringValue("onPremisesSamAccountName", OnPremisesSamAccountName);
             writer.WriteStringValue("onPremisesSecurityIdentifier", OnPremisesSecurityIdentifier);
             writer.WriteBoolValue("onPremisesSyncEnabled", OnPremisesSyncEnabled);
             writer.WriteStringValue("onPremisesUserPrincipalName", OnPremisesUserPrincipalName);
             writer.WriteCollectionOfPrimitiveValues<string>("otherMails", OtherMails);
-            writer.WriteObjectValue<OutlookUser>("outlook", Outlook);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("ownedDevices", OwnedDevices);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("ownedObjects", OwnedObjects);
+            writer.WriteObjectValue<Microsoft.Graph.Models.OutlookUser>("outlook", Outlook);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("ownedDevices", OwnedDevices);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("ownedObjects", OwnedObjects);
             writer.WriteStringValue("passwordPolicies", PasswordPolicies);
             writer.WriteObjectValue<Microsoft.Graph.Models.PasswordProfile>("passwordProfile", PasswordProfile);
             writer.WriteCollectionOfPrimitiveValues<string>("pastProjects", PastProjects);
-            writer.WriteCollectionOfObjectValues<Person>("people", People);
-            writer.WriteCollectionOfObjectValues<ResourceSpecificPermissionGrant>("permissionGrants", PermissionGrants);
-            writer.WriteObjectValue<ProfilePhoto>("photo", Photo);
-            writer.WriteCollectionOfObjectValues<ProfilePhoto>("photos", Photos);
-            writer.WriteObjectValue<PlannerUser>("planner", Planner);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Person>("people", People);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ResourceSpecificPermissionGrant>("permissionGrants", PermissionGrants);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ProfilePhoto>("photo", Photo);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ProfilePhoto>("photos", Photos);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PlannerUser>("planner", Planner);
             writer.WriteStringValue("postalCode", PostalCode);
             writer.WriteStringValue("preferredDataLocation", PreferredDataLocation);
             writer.WriteStringValue("preferredLanguage", PreferredLanguage);
             writer.WriteStringValue("preferredName", PreferredName);
             writer.WriteObjectValue<Microsoft.Graph.Models.Presence>("presence", Presence);
-            writer.WriteObjectValue<UserPrint>("print", Print);
-            writer.WriteCollectionOfObjectValues<ProvisionedPlan>("provisionedPlans", ProvisionedPlans);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserPrint>("print", Print);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ProvisionedPlan>("provisionedPlans", ProvisionedPlans);
             writer.WriteCollectionOfPrimitiveValues<string>("proxyAddresses", ProxyAddresses);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("registeredDevices", RegisteredDevices);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("registeredDevices", RegisteredDevices);
             writer.WriteCollectionOfPrimitiveValues<string>("responsibilities", Responsibilities);
             writer.WriteCollectionOfPrimitiveValues<string>("schools", Schools);
-            writer.WriteCollectionOfObjectValues<ScopedRoleMembership>("scopedRoleMemberOf", ScopedRoleMemberOf);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ScopedRoleMembership>("scopedRoleMemberOf", ScopedRoleMemberOf);
             writer.WriteStringValue("securityIdentifier", SecurityIdentifier);
-            writer.WriteCollectionOfObjectValues<ServiceProvisioningError>("serviceProvisioningErrors", ServiceProvisioningErrors);
-            writer.WriteObjectValue<UserSettings>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ServiceProvisioningError>("serviceProvisioningErrors", ServiceProvisioningErrors);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserSettings>("settings", Settings);
             writer.WriteBoolValue("showInAddressList", ShowInAddressList);
             writer.WriteObjectValue<Microsoft.Graph.Models.SignInActivity>("signInActivity", SignInActivity);
             writer.WriteDateTimeOffsetValue("signInSessionsValidFromDateTime", SignInSessionsValidFromDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("skills", Skills);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("sponsors", Sponsors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("sponsors", Sponsors);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("streetAddress", StreetAddress);
             writer.WriteStringValue("surname", Surname);
-            writer.WriteObjectValue<UserTeamwork>("teamwork", Teamwork);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserTeamwork>("teamwork", Teamwork);
             writer.WriteObjectValue<Microsoft.Graph.Models.Todo>("todo", Todo);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("transitiveMemberOf", TransitiveMemberOf);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("transitiveMemberOf", TransitiveMemberOf);
             writer.WriteStringValue("usageLocation", UsageLocation);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteStringValue("userType", UserType);

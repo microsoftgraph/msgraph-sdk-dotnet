@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Usage.Billed.MicrosoftGraphPa
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ExportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.Partners.Billing.Usage.Billed.MicrosoftGraphPartnersBillingExport.ExportPostRequestBody"/> and sets the default values.
         /// </summary>
         public ExportPostRequestBody()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Usage.Billed.MicrosoftGraphPa
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.Partners.Billing.Usage.Billed.MicrosoftGraphPartnersBillingExport.ExportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ExportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Reports.Partners.Billing.Usage.Billed.MicrosoftGraphPartnersBillingExport.ExportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExportPostRequestBody();
+            return new Microsoft.Graph.Reports.Partners.Billing.Usage.Billed.MicrosoftGraphPartnersBillingExport.ExportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Usage.Billed.MicrosoftGraphPa
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attributeSet", n => { AttributeSet = n.GetEnumValue<AttributeSet>(); } },
+                { "attributeSet", n => { AttributeSet = n.GetEnumValue<Microsoft.Graph.Models.Partners.Billing.AttributeSet>(); } },
                 { "invoiceId", n => { InvoiceId = n.GetStringValue(); } },
             };
         }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Usage.Billed.MicrosoftGraphPa
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AttributeSet>("attributeSet", AttributeSet);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Partners.Billing.AttributeSet>("attributeSet", AttributeSet);
             writer.WriteStringValue("invoiceId", InvoiceId);
             writer.WriteAdditionalData(AdditionalData);
         }

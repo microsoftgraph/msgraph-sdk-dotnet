@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.Autho
     public class AuthorityTemplateRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="AuthorityTemplateRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.AuthorityTemplate.AuthorityTemplateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.Autho
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthorityTemplateRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.AuthorityTemplate.AuthorityTemplateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,20 +38,20 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.Autho
         /// <returns>A <see cref="Microsoft.Graph.Models.Security.AuthorityTemplate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.AuthorityTemplate?> GetAsync(Action<RequestConfiguration<AuthorityTemplateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.AuthorityTemplate?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.AuthorityTemplate.AuthorityTemplateRequestBuilder.AuthorityTemplateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.AuthorityTemplate> GetAsync(Action<RequestConfiguration<AuthorityTemplateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.AuthorityTemplate> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.AuthorityTemplate.AuthorityTemplateRequestBuilder.AuthorityTemplateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.AuthorityTemplate>(requestInfo, Microsoft.Graph.Models.Security.AuthorityTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.Autho
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthorityTemplateRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.AuthorityTemplate.AuthorityTemplateRequestBuilder.AuthorityTemplateRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthorityTemplateRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.AuthorityTemplate.AuthorityTemplateRequestBuilder.AuthorityTemplateRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.Autho
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AuthorityTemplateRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.AuthorityTemplate.AuthorityTemplateRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AuthorityTemplateRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.AuthorityTemplate.AuthorityTemplateRequestBuilder WithUrl(string rawUrl)
         {
-            return new AuthorityTemplateRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.AuthorityTemplate.AuthorityTemplateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Specifies the underlying authority that describes the type of content to be retained and its retention schedule.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.Autho
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AuthorityTemplateRequestBuilderGetRequestConfiguration : RequestConfiguration<AuthorityTemplateRequestBuilderGetQueryParameters>
+        public class AuthorityTemplateRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.AuthorityTemplate.AuthorityTemplateRequestBuilder.AuthorityTemplateRequestBuilderGetQueryParameters>
         {
         }
     }

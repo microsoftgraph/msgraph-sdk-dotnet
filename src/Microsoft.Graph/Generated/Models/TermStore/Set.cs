@@ -13,16 +13,16 @@ namespace Microsoft.Graph.Models.TermStore
         /// <summary>Children terms of set in term [store].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Term>? Children
+        public List<Microsoft.Graph.Models.TermStore.Term>? Children
         {
-            get { return BackingStore?.Get<List<Term>?>("children"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.Term>?>("children"); }
             set { BackingStore?.Set("children", value); }
         }
 #nullable restore
 #else
-        public List<Term> Children
+        public List<Microsoft.Graph.Models.TermStore.Term> Children
         {
-            get { return BackingStore?.Get<List<Term>>("children"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.Term>>("children"); }
             set { BackingStore?.Set("children", value); }
         }
 #endif
@@ -51,32 +51,32 @@ namespace Microsoft.Graph.Models.TermStore
         /// <summary>Name of the set for each languageTag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LocalizedName>? LocalizedNames
+        public List<Microsoft.Graph.Models.TermStore.LocalizedName>? LocalizedNames
         {
-            get { return BackingStore?.Get<List<LocalizedName>?>("localizedNames"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.LocalizedName>?>("localizedNames"); }
             set { BackingStore?.Set("localizedNames", value); }
         }
 #nullable restore
 #else
-        public List<LocalizedName> LocalizedNames
+        public List<Microsoft.Graph.Models.TermStore.LocalizedName> LocalizedNames
         {
-            get { return BackingStore?.Get<List<LocalizedName>>("localizedNames"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.LocalizedName>>("localizedNames"); }
             set { BackingStore?.Set("localizedNames", value); }
         }
 #endif
         /// <summary>The parentGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Group? ParentGroup
+        public Microsoft.Graph.Models.TermStore.Group? ParentGroup
         {
-            get { return BackingStore?.Get<Group?>("parentGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TermStore.Group?>("parentGroup"); }
             set { BackingStore?.Set("parentGroup", value); }
         }
 #nullable restore
 #else
-        public Group ParentGroup
+        public Microsoft.Graph.Models.TermStore.Group ParentGroup
         {
-            get { return BackingStore?.Get<Group>("parentGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TermStore.Group>("parentGroup"); }
             set { BackingStore?.Set("parentGroup", value); }
         }
 #endif
@@ -99,44 +99,44 @@ namespace Microsoft.Graph.Models.TermStore
         /// <summary>Indicates which terms have been pinned or reused directly under the set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Relation>? Relations
+        public List<Microsoft.Graph.Models.TermStore.Relation>? Relations
         {
-            get { return BackingStore?.Get<List<Relation>?>("relations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.Relation>?>("relations"); }
             set { BackingStore?.Set("relations", value); }
         }
 #nullable restore
 #else
-        public List<Relation> Relations
+        public List<Microsoft.Graph.Models.TermStore.Relation> Relations
         {
-            get { return BackingStore?.Get<List<Relation>>("relations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.Relation>>("relations"); }
             set { BackingStore?.Set("relations", value); }
         }
 #endif
         /// <summary>All the terms under the set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Term>? Terms
+        public List<Microsoft.Graph.Models.TermStore.Term>? Terms
         {
-            get { return BackingStore?.Get<List<Term>?>("terms"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.Term>?>("terms"); }
             set { BackingStore?.Set("terms", value); }
         }
 #nullable restore
 #else
-        public List<Term> Terms
+        public List<Microsoft.Graph.Models.TermStore.Term> Terms
         {
-            get { return BackingStore?.Get<List<Term>>("terms"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.Term>>("terms"); }
             set { BackingStore?.Set("terms", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Set"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TermStore.Set"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Set CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TermStore.Set CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Set();
+            return new Microsoft.Graph.Models.TermStore.Set();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -146,14 +146,14 @@ namespace Microsoft.Graph.Models.TermStore
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "children", n => { Children = n.GetCollectionOfObjectValues<Term>(Term.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "children", n => { Children = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.Term>(Microsoft.Graph.Models.TermStore.Term.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "localizedNames", n => { LocalizedNames = n.GetCollectionOfObjectValues<LocalizedName>(LocalizedName.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "parentGroup", n => { ParentGroup = n.GetObjectValue<Group>(Group.CreateFromDiscriminatorValue); } },
+                { "localizedNames", n => { LocalizedNames = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.LocalizedName>(Microsoft.Graph.Models.TermStore.LocalizedName.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "parentGroup", n => { ParentGroup = n.GetObjectValue<Microsoft.Graph.Models.TermStore.Group>(Microsoft.Graph.Models.TermStore.Group.CreateFromDiscriminatorValue); } },
                 { "properties", n => { Properties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.KeyValue>(Microsoft.Graph.Models.KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "relations", n => { Relations = n.GetCollectionOfObjectValues<Relation>(Relation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "terms", n => { Terms = n.GetCollectionOfObjectValues<Term>(Term.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "relations", n => { Relations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.Relation>(Microsoft.Graph.Models.TermStore.Relation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "terms", n => { Terms = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.Term>(Microsoft.Graph.Models.TermStore.Term.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -164,14 +164,14 @@ namespace Microsoft.Graph.Models.TermStore
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Term>("children", Children);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.Term>("children", Children);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfObjectValues<LocalizedName>("localizedNames", LocalizedNames);
-            writer.WriteObjectValue<Group>("parentGroup", ParentGroup);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.LocalizedName>("localizedNames", LocalizedNames);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TermStore.Group>("parentGroup", ParentGroup);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.KeyValue>("properties", Properties);
-            writer.WriteCollectionOfObjectValues<Relation>("relations", Relations);
-            writer.WriteCollectionOfObjectValues<Term>("terms", Terms);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.Relation>("relations", Relations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.Term>("terms", Terms);
         }
     }
 }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class EducationWordResource : EducationResource, IParsable
+    public class EducationWordResource : Microsoft.Graph.Models.EducationResource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Location of the file on disk.</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EducationWordResource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.EducationWordResource"/> and sets the default values.
         /// </summary>
         public EducationWordResource() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationWordResource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationWordResource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationWordResource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EducationWordResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationWordResource();
+            return new Microsoft.Graph.Models.EducationWordResource();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class DirectoryDefinition : Entity, IParsable
+    public class DirectoryDefinition : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The discoverabilities property</summary>
-        public DirectoryDefinitionDiscoverabilities? Discoverabilities
+        public Microsoft.Graph.Models.DirectoryDefinitionDiscoverabilities? Discoverabilities
         {
-            get { return BackingStore?.Get<DirectoryDefinitionDiscoverabilities?>("discoverabilities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryDefinitionDiscoverabilities?>("discoverabilities"); }
             set { BackingStore?.Set("discoverabilities", value); }
         }
         /// <summary>Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
@@ -41,16 +41,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Collection of objects supported by the directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ObjectDefinition>? Objects
+        public List<Microsoft.Graph.Models.ObjectDefinition>? Objects
         {
-            get { return BackingStore?.Get<List<ObjectDefinition>?>("objects"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ObjectDefinition>?>("objects"); }
             set { BackingStore?.Set("objects", value); }
         }
 #nullable restore
 #else
-        public List<ObjectDefinition> Objects
+        public List<Microsoft.Graph.Models.ObjectDefinition> Objects
         {
-            get { return BackingStore?.Get<List<ObjectDefinition>>("objects"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ObjectDefinition>>("objects"); }
             set { BackingStore?.Set("objects", value); }
         }
 #endif
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DirectoryDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DirectoryDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DirectoryDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DirectoryDefinition();
+            return new Microsoft.Graph.Models.DirectoryDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,10 +94,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "discoverabilities", n => { Discoverabilities = n.GetEnumValue<DirectoryDefinitionDiscoverabilities>(); } },
+                { "discoverabilities", n => { Discoverabilities = n.GetEnumValue<Microsoft.Graph.Models.DirectoryDefinitionDiscoverabilities>(); } },
                 { "discoveryDateTime", n => { DiscoveryDateTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "objects", n => { Objects = n.GetCollectionOfObjectValues<ObjectDefinition>(ObjectDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "objects", n => { Objects = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ObjectDefinition>(Microsoft.Graph.Models.ObjectDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "readOnly", n => { ReadOnly = n.GetBoolValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
@@ -110,10 +110,10 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<DirectoryDefinitionDiscoverabilities>("discoverabilities", Discoverabilities);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DirectoryDefinitionDiscoverabilities>("discoverabilities", Discoverabilities);
             writer.WriteDateTimeOffsetValue("discoveryDateTime", DiscoveryDateTime);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<ObjectDefinition>("objects", Objects);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ObjectDefinition>("objects", Objects);
             writer.WriteBoolValue("readOnly", ReadOnly);
             writer.WriteStringValue("version", Version);
         }

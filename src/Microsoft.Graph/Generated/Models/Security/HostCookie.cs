@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class HostCookie : Artifact, IParsable
+    public class HostCookie : Microsoft.Graph.Models.Security.Artifact, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The URI for which the cookie is valid.</summary>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="HostCookie"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.HostCookie"/> and sets the default values.
         /// </summary>
         public HostCookie() : base()
         {
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HostCookie"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.HostCookie"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new HostCookie CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.HostCookie CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HostCookie();
+            return new Microsoft.Graph.Models.Security.HostCookie();
         }
         /// <summary>
         /// The deserialization information for the current model

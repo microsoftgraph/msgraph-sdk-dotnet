@@ -8,38 +8,38 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CustomCalloutExtension : Entity, IParsable
+    public class CustomCalloutExtension : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomExtensionAuthenticationConfiguration? AuthenticationConfiguration
+        public Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration? AuthenticationConfiguration
         {
-            get { return BackingStore?.Get<CustomExtensionAuthenticationConfiguration?>("authenticationConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration?>("authenticationConfiguration"); }
             set { BackingStore?.Set("authenticationConfiguration", value); }
         }
 #nullable restore
 #else
-        public CustomExtensionAuthenticationConfiguration AuthenticationConfiguration
+        public Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration AuthenticationConfiguration
         {
-            get { return BackingStore?.Get<CustomExtensionAuthenticationConfiguration>("authenticationConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration>("authenticationConfiguration"); }
             set { BackingStore?.Set("authenticationConfiguration", value); }
         }
 #endif
         /// <summary>HTTP connection settings that define how long Microsoft Entra ID can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomExtensionClientConfiguration? ClientConfiguration
+        public Microsoft.Graph.Models.CustomExtensionClientConfiguration? ClientConfiguration
         {
-            get { return BackingStore?.Get<CustomExtensionClientConfiguration?>("clientConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomExtensionClientConfiguration?>("clientConfiguration"); }
             set { BackingStore?.Set("clientConfiguration", value); }
         }
 #nullable restore
 #else
-        public CustomExtensionClientConfiguration ClientConfiguration
+        public Microsoft.Graph.Models.CustomExtensionClientConfiguration ClientConfiguration
         {
-            get { return BackingStore?.Get<CustomExtensionClientConfiguration>("clientConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomExtensionClientConfiguration>("clientConfiguration"); }
             set { BackingStore?.Set("clientConfiguration", value); }
         }
 #endif
@@ -78,36 +78,36 @@ namespace Microsoft.Graph.Models
         /// <summary>The type and details for configuring the endpoint to call the logic app&apos;s workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomExtensionEndpointConfiguration? EndpointConfiguration
+        public Microsoft.Graph.Models.CustomExtensionEndpointConfiguration? EndpointConfiguration
         {
-            get { return BackingStore?.Get<CustomExtensionEndpointConfiguration?>("endpointConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomExtensionEndpointConfiguration?>("endpointConfiguration"); }
             set { BackingStore?.Set("endpointConfiguration", value); }
         }
 #nullable restore
 #else
-        public CustomExtensionEndpointConfiguration EndpointConfiguration
+        public Microsoft.Graph.Models.CustomExtensionEndpointConfiguration EndpointConfiguration
         {
-            get { return BackingStore?.Get<CustomExtensionEndpointConfiguration>("endpointConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomExtensionEndpointConfiguration>("endpointConfiguration"); }
             set { BackingStore?.Set("endpointConfiguration", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomCalloutExtension"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CustomCalloutExtension"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CustomCalloutExtension CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CustomCalloutExtension CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.accessPackageAssignmentRequestWorkflowExtension" => new AccessPackageAssignmentRequestWorkflowExtension(),
-                "#microsoft.graph.accessPackageAssignmentWorkflowExtension" => new AccessPackageAssignmentWorkflowExtension(),
-                "#microsoft.graph.customAuthenticationExtension" => new CustomAuthenticationExtension(),
-                "#microsoft.graph.identityGovernance.customTaskExtension" => new CustomTaskExtension(),
-                "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new OnTokenIssuanceStartCustomExtension(),
-                _ => new CustomCalloutExtension(),
+                "#microsoft.graph.accessPackageAssignmentRequestWorkflowExtension" => new Microsoft.Graph.Models.AccessPackageAssignmentRequestWorkflowExtension(),
+                "#microsoft.graph.accessPackageAssignmentWorkflowExtension" => new Microsoft.Graph.Models.AccessPackageAssignmentWorkflowExtension(),
+                "#microsoft.graph.customAuthenticationExtension" => new Microsoft.Graph.Models.CustomAuthenticationExtension(),
+                "#microsoft.graph.identityGovernance.customTaskExtension" => new Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtension(),
+                "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new Microsoft.Graph.Models.OnTokenIssuanceStartCustomExtension(),
+                _ => new Microsoft.Graph.Models.CustomCalloutExtension(),
             };
         }
         /// <summary>
@@ -118,11 +118,11 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authenticationConfiguration", n => { AuthenticationConfiguration = n.GetObjectValue<CustomExtensionAuthenticationConfiguration>(CustomExtensionAuthenticationConfiguration.CreateFromDiscriminatorValue); } },
-                { "clientConfiguration", n => { ClientConfiguration = n.GetObjectValue<CustomExtensionClientConfiguration>(CustomExtensionClientConfiguration.CreateFromDiscriminatorValue); } },
+                { "authenticationConfiguration", n => { AuthenticationConfiguration = n.GetObjectValue<Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration>(Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration.CreateFromDiscriminatorValue); } },
+                { "clientConfiguration", n => { ClientConfiguration = n.GetObjectValue<Microsoft.Graph.Models.CustomExtensionClientConfiguration>(Microsoft.Graph.Models.CustomExtensionClientConfiguration.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "endpointConfiguration", n => { EndpointConfiguration = n.GetObjectValue<CustomExtensionEndpointConfiguration>(CustomExtensionEndpointConfiguration.CreateFromDiscriminatorValue); } },
+                { "endpointConfiguration", n => { EndpointConfiguration = n.GetObjectValue<Microsoft.Graph.Models.CustomExtensionEndpointConfiguration>(Microsoft.Graph.Models.CustomExtensionEndpointConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -133,11 +133,11 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<CustomExtensionAuthenticationConfiguration>("authenticationConfiguration", AuthenticationConfiguration);
-            writer.WriteObjectValue<CustomExtensionClientConfiguration>("clientConfiguration", ClientConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration>("authenticationConfiguration", AuthenticationConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CustomExtensionClientConfiguration>("clientConfiguration", ClientConfiguration);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<CustomExtensionEndpointConfiguration>("endpointConfiguration", EndpointConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CustomExtensionEndpointConfiguration>("endpointConfiguration", EndpointConfiguration);
         }
     }
 }

@@ -28,16 +28,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Count of items per insight.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? InsightCounts
+        public List<Microsoft.Graph.Models.KeyValuePair>? InsightCounts
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("insightCounts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValuePair>?>("insightCounts"); }
             set { BackingStore?.Set("insightCounts", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> InsightCounts
+        public List<Microsoft.Graph.Models.KeyValuePair> InsightCounts
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("insightCounts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValuePair>>("insightCounts"); }
             set { BackingStore?.Set("insightCounts", value); }
         }
 #endif
@@ -72,16 +72,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? ProductItemCounts
+        public List<Microsoft.Graph.Models.KeyValuePair>? ProductItemCounts
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("productItemCounts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValuePair>?>("productItemCounts"); }
             set { BackingStore?.Set("productItemCounts", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> ProductItemCounts
+        public List<Microsoft.Graph.Models.KeyValuePair> ProductItemCounts
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("productItemCounts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValuePair>>("productItemCounts"); }
             set { BackingStore?.Set("productItemCounts", value); }
         }
 #endif
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("totalItemSize", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SubjectRightsRequestDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SubjectRightsRequestDetail"/> and sets the default values.
         /// </summary>
         public SubjectRightsRequestDetail()
         {
@@ -108,12 +108,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SubjectRightsRequestDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SubjectRightsRequestDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SubjectRightsRequestDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SubjectRightsRequestDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SubjectRightsRequestDetail();
+            return new Microsoft.Graph.Models.SubjectRightsRequestDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,11 +124,11 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "excludedItemCount", n => { ExcludedItemCount = n.GetLongValue(); } },
-                { "insightCounts", n => { InsightCounts = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "insightCounts", n => { InsightCounts = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>(Microsoft.Graph.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "itemCount", n => { ItemCount = n.GetLongValue(); } },
                 { "itemNeedReview", n => { ItemNeedReview = n.GetLongValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "productItemCounts", n => { ProductItemCounts = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "productItemCounts", n => { ProductItemCounts = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>(Microsoft.Graph.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "signedOffItemCount", n => { SignedOffItemCount = n.GetLongValue(); } },
                 { "totalItemSize", n => { TotalItemSize = n.GetLongValue(); } },
             };
@@ -141,11 +141,11 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("excludedItemCount", ExcludedItemCount);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("insightCounts", InsightCounts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>("insightCounts", InsightCounts);
             writer.WriteLongValue("itemCount", ItemCount);
             writer.WriteLongValue("itemNeedReview", ItemNeedReview);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("productItemCounts", ProductItemCounts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>("productItemCounts", ProductItemCounts);
             writer.WriteLongValue("signedOffItemCount", SignedOffItemCount);
             writer.WriteLongValue("totalItemSize", TotalItemSize);
             writer.WriteAdditionalData(AdditionalData);

@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.AddGroup
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AddGroupPostResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.AddGroup.AddGroupPostResponse"/> and sets the default values.
         /// </summary>
         public AddGroupPostResponse()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.AddGroup
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AddGroupPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.AddGroup.AddGroupPostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AddGroupPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.AddGroup.AddGroupPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AddGroupPostResponse();
+            return new Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.AddGroup.AddGroupPostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

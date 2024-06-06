@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class EndUserNotificationDetailCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class EndUserNotificationDetailCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EndUserNotificationDetail>? Value
+        public List<Microsoft.Graph.Models.EndUserNotificationDetail>? Value
         {
-            get { return BackingStore?.Get<List<EndUserNotificationDetail>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EndUserNotificationDetail>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<EndUserNotificationDetail> Value
+        public List<Microsoft.Graph.Models.EndUserNotificationDetail> Value
         {
-            get { return BackingStore?.Get<List<EndUserNotificationDetail>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EndUserNotificationDetail>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EndUserNotificationDetailCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EndUserNotificationDetailCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EndUserNotificationDetailCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EndUserNotificationDetailCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EndUserNotificationDetailCollectionResponse();
+            return new Microsoft.Graph.Models.EndUserNotificationDetailCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<EndUserNotificationDetail>(EndUserNotificationDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.EndUserNotificationDetail>(Microsoft.Graph.Models.EndUserNotificationDetail.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<EndUserNotificationDetail>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.EndUserNotificationDetail>("value", Value);
         }
     }
 }

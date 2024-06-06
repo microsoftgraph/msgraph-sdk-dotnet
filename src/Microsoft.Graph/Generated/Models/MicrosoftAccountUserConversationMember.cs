@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class MicrosoftAccountUserConversationMember : ConversationMember, IParsable
+    public class MicrosoftAccountUserConversationMember : Microsoft.Graph.Models.ConversationMember, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Microsoft Account ID of the user.</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftAccountUserConversationMember"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MicrosoftAccountUserConversationMember"/> and sets the default values.
         /// </summary>
         public MicrosoftAccountUserConversationMember() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MicrosoftAccountUserConversationMember"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MicrosoftAccountUserConversationMember"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MicrosoftAccountUserConversationMember CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MicrosoftAccountUserConversationMember CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MicrosoftAccountUserConversationMember();
+            return new Microsoft.Graph.Models.MicrosoftAccountUserConversationMember();
         }
         /// <summary>
         /// The deserialization information for the current model

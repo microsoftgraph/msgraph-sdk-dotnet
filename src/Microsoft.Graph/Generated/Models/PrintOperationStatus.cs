@@ -52,13 +52,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The state property</summary>
-        public PrintOperationProcessingState? State
+        public Microsoft.Graph.Models.PrintOperationProcessingState? State
         {
-            get { return BackingStore?.Get<PrintOperationProcessingState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrintOperationProcessingState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrintOperationStatus"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.PrintOperationStatus"/> and sets the default values.
         /// </summary>
         public PrintOperationStatus()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrintOperationStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrintOperationStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PrintOperationStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.PrintOperationStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrintOperationStatus();
+            return new Microsoft.Graph.Models.PrintOperationStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<PrintOperationProcessingState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Models.PrintOperationProcessingState>(); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<PrintOperationProcessingState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PrintOperationProcessingState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

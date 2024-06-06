@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UnifiedRoleScheduleInstanceBase : Entity, IParsable
+    public class UnifiedRoleScheduleInstanceBase : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Read-only property with details of the app-specific scope when the assignment or role eligibility is scoped to an app. Nullable.</summary>
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The directory object that is the scope of the assignment or role eligibility. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? DirectoryScope
+        public Microsoft.Graph.Models.DirectoryObject? DirectoryScope
         {
-            get { return BackingStore?.Get<DirectoryObject?>("directoryScope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject?>("directoryScope"); }
             set { BackingStore?.Set("directoryScope", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject DirectoryScope
+        public Microsoft.Graph.Models.DirectoryObject DirectoryScope
         {
-            get { return BackingStore?.Get<DirectoryObject>("directoryScope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject>("directoryScope"); }
             set { BackingStore?.Set("directoryScope", value); }
         }
 #endif
@@ -77,16 +77,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The principal that&apos;s getting a role assignment or role eligibility through the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? Principal
+        public Microsoft.Graph.Models.DirectoryObject? Principal
         {
-            get { return BackingStore?.Get<DirectoryObject?>("principal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject?>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject Principal
+        public Microsoft.Graph.Models.DirectoryObject Principal
         {
-            get { return BackingStore?.Get<DirectoryObject>("principal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #endif
@@ -109,16 +109,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Detailed information for the roleDefinition object that is referenced through the roleDefinitionId property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRoleDefinition? RoleDefinition
+        public Microsoft.Graph.Models.UnifiedRoleDefinition? RoleDefinition
         {
-            get { return BackingStore?.Get<UnifiedRoleDefinition?>("roleDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UnifiedRoleDefinition?>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
 #nullable restore
 #else
-        public UnifiedRoleDefinition RoleDefinition
+        public Microsoft.Graph.Models.UnifiedRoleDefinition RoleDefinition
         {
-            get { return BackingStore?.Get<UnifiedRoleDefinition>("roleDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UnifiedRoleDefinition>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
 #endif
@@ -141,17 +141,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleScheduleInstanceBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRoleScheduleInstanceBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnifiedRoleScheduleInstanceBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UnifiedRoleScheduleInstanceBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.unifiedRoleAssignmentScheduleInstance" => new UnifiedRoleAssignmentScheduleInstance(),
-                "#microsoft.graph.unifiedRoleEligibilityScheduleInstance" => new UnifiedRoleEligibilityScheduleInstance(),
-                _ => new UnifiedRoleScheduleInstanceBase(),
+                "#microsoft.graph.unifiedRoleAssignmentScheduleInstance" => new Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance(),
+                "#microsoft.graph.unifiedRoleEligibilityScheduleInstance" => new Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleInstance(),
+                _ => new Microsoft.Graph.Models.UnifiedRoleScheduleInstanceBase(),
             };
         }
         /// <summary>
@@ -164,11 +164,11 @@ namespace Microsoft.Graph.Models
             {
                 { "appScope", n => { AppScope = n.GetObjectValue<Microsoft.Graph.Models.AppScope>(Microsoft.Graph.Models.AppScope.CreateFromDiscriminatorValue); } },
                 { "appScopeId", n => { AppScopeId = n.GetStringValue(); } },
-                { "directoryScope", n => { DirectoryScope = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "directoryScope", n => { DirectoryScope = n.GetObjectValue<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
                 { "directoryScopeId", n => { DirectoryScopeId = n.GetStringValue(); } },
-                { "principal", n => { Principal = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "principal", n => { Principal = n.GetObjectValue<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
                 { "principalId", n => { PrincipalId = n.GetStringValue(); } },
-                { "roleDefinition", n => { RoleDefinition = n.GetObjectValue<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue); } },
+                { "roleDefinition", n => { RoleDefinition = n.GetObjectValue<Microsoft.Graph.Models.UnifiedRoleDefinition>(Microsoft.Graph.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue); } },
                 { "roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
             };
         }
@@ -182,11 +182,11 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Models.AppScope>("appScope", AppScope);
             writer.WriteStringValue("appScopeId", AppScopeId);
-            writer.WriteObjectValue<DirectoryObject>("directoryScope", DirectoryScope);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DirectoryObject>("directoryScope", DirectoryScope);
             writer.WriteStringValue("directoryScopeId", DirectoryScopeId);
-            writer.WriteObjectValue<DirectoryObject>("principal", Principal);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DirectoryObject>("principal", Principal);
             writer.WriteStringValue("principalId", PrincipalId);
-            writer.WriteObjectValue<UnifiedRoleDefinition>("roleDefinition", RoleDefinition);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UnifiedRoleDefinition>("roleDefinition", RoleDefinition);
             writer.WriteStringValue("roleDefinitionId", RoleDefinitionId);
         }
     }

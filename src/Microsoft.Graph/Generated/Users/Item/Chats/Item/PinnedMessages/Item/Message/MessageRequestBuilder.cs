@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item.Message
     public class MessageRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="MessageRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item.Message.MessageRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item.Message
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MessageRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item.Message.MessageRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item.Message
         /// <summary>
         /// Represents details about the chat message that is pinned.
         /// </summary>
-        /// <returns>A <see cref="ChatMessage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ChatMessage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ChatMessage?> GetAsync(Action<RequestConfiguration<MessageRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ChatMessage?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item.Message.MessageRequestBuilder.MessageRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ChatMessage> GetAsync(Action<RequestConfiguration<MessageRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ChatMessage> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item.Message.MessageRequestBuilder.MessageRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ChatMessage>(requestInfo, ChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ChatMessage>(requestInfo, Microsoft.Graph.Models.ChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents details about the chat message that is pinned.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item.Message
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MessageRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item.Message.MessageRequestBuilder.MessageRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MessageRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item.Message.MessageRequestBuilder.MessageRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item.Message
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MessageRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item.Message.MessageRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MessageRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item.Message.MessageRequestBuilder WithUrl(string rawUrl)
         {
-            return new MessageRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item.Message.MessageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Represents details about the chat message that is pinned.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item.Message
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MessageRequestBuilderGetRequestConfiguration : RequestConfiguration<MessageRequestBuilderGetQueryParameters>
+        public class MessageRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item.Message.MessageRequestBuilder.MessageRequestBuilderGetQueryParameters>
         {
         }
     }

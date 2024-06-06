@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserExperienceAnalyticsWorkFromAnywhereMetric>? Value
+        public List<Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereMetric>? Value
         {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsWorkFromAnywhereMetric>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereMetric>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<UserExperienceAnalyticsWorkFromAnywhereMetric> Value
+        public List<Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereMetric> Value
         {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsWorkFromAnywhereMetric>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereMetric>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse();
+            return new Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<UserExperienceAnalyticsWorkFromAnywhereMetric>(UserExperienceAnalyticsWorkFromAnywhereMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereMetric>(Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereMetric.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<UserExperienceAnalyticsWorkFromAnywhereMetric>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereMetric>("value", Value);
         }
     }
 }

@@ -30,57 +30,57 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
     public class WorkbookChartItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the axes property of the microsoft.graph.workbookChart entity.</summary>
-        public AxesRequestBuilder Axes
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Axes.AxesRequestBuilder Axes
         {
-            get => new AxesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Axes.AxesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dataLabels property of the microsoft.graph.workbookChart entity.</summary>
-        public DataLabelsRequestBuilder DataLabels
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.DataLabels.DataLabelsRequestBuilder DataLabels
         {
-            get => new DataLabelsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.DataLabels.DataLabelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the format property of the microsoft.graph.workbookChart entity.</summary>
-        public FormatRequestBuilder Format
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Format.FormatRequestBuilder Format
         {
-            get => new FormatRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Format.FormatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the image method.</summary>
-        public ImageRequestBuilder Image
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Image.ImageRequestBuilder Image
         {
-            get => new ImageRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Image.ImageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the legend property of the microsoft.graph.workbookChart entity.</summary>
-        public LegendRequestBuilder Legend
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Legend.LegendRequestBuilder Legend
         {
-            get => new LegendRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Legend.LegendRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the series property of the microsoft.graph.workbookChart entity.</summary>
-        public SeriesRequestBuilder Series
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.SeriesRequestBuilder Series
         {
-            get => new SeriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.SeriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setData method.</summary>
-        public SetDataRequestBuilder SetData
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetData.SetDataRequestBuilder SetData
         {
-            get => new SetDataRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetData.SetDataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setPosition method.</summary>
-        public SetPositionRequestBuilder SetPosition
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetPosition.SetPositionRequestBuilder SetPosition
         {
-            get => new SetPositionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetPosition.SetPositionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the title property of the microsoft.graph.workbookChart entity.</summary>
-        public TitleRequestBuilder Title
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Title.TitleRequestBuilder Title
         {
-            get => new TitleRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Title.TitleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the worksheet property of the microsoft.graph.workbookChart entity.</summary>
-        public WorksheetRequestBuilder Worksheet
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Worksheet.WorksheetRequestBuilder Worksheet
         {
-            get => new WorksheetRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.Worksheet.WorksheetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WorkbookChartItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WorkbookChartItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -113,93 +113,93 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns collection of charts that are part of the worksheet. Read-only.
         /// </summary>
-        /// <returns>A <see cref="WorkbookChart"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookChart"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookChart?> GetAsync(Action<RequestConfiguration<WorkbookChartItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookChart?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder.WorkbookChartItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WorkbookChart> GetAsync(Action<RequestConfiguration<WorkbookChartItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookChart> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder.WorkbookChartItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WorkbookChart>(requestInfo, WorkbookChart.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkbookChart>(requestInfo, Microsoft.Graph.Models.WorkbookChart.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the image method.
         /// </summary>
-        /// <returns>A <see cref="ImageWithWidthRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidth.ImageWithWidthRequestBuilder"/></returns>
         /// <param name="width">Usage: width={width}</param>
-        public ImageWithWidthRequestBuilder ImageWithWidth(int? width)
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidth.ImageWithWidthRequestBuilder ImageWithWidth(int? width)
         {
             _ = width ?? throw new ArgumentNullException(nameof(width));
-            return new ImageWithWidthRequestBuilder(PathParameters, RequestAdapter, width);
+            return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidth.ImageWithWidthRequestBuilder(PathParameters, RequestAdapter, width);
         }
         /// <summary>
         /// Provides operations to call the image method.
         /// </summary>
-        /// <returns>A <see cref="ImageWithWidthWithHeightRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeight.ImageWithWidthWithHeightRequestBuilder"/></returns>
         /// <param name="height">Usage: height={height}</param>
         /// <param name="width">Usage: width={width}</param>
-        public ImageWithWidthWithHeightRequestBuilder ImageWithWidthWithHeight(int? height, int? width)
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeight.ImageWithWidthWithHeightRequestBuilder ImageWithWidthWithHeight(int? height, int? width)
         {
             _ = height ?? throw new ArgumentNullException(nameof(height));
             _ = width ?? throw new ArgumentNullException(nameof(width));
-            return new ImageWithWidthWithHeightRequestBuilder(PathParameters, RequestAdapter, height, width);
+            return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeight.ImageWithWidthWithHeightRequestBuilder(PathParameters, RequestAdapter, height, width);
         }
         /// <summary>
         /// Provides operations to call the image method.
         /// </summary>
-        /// <returns>A <see cref="ImageWithWidthWithHeightWithFittingModeRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeightWithFittingMode.ImageWithWidthWithHeightWithFittingModeRequestBuilder"/></returns>
         /// <param name="fittingMode">Usage: fittingMode=&apos;{fittingMode}&apos;</param>
         /// <param name="height">Usage: height={height}</param>
         /// <param name="width">Usage: width={width}</param>
-        public ImageWithWidthWithHeightWithFittingModeRequestBuilder ImageWithWidthWithHeightWithFittingMode(string fittingMode, int? height, int? width)
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeightWithFittingMode.ImageWithWidthWithHeightWithFittingModeRequestBuilder ImageWithWidthWithHeightWithFittingMode(string fittingMode, int? height, int? width)
         {
             if(string.IsNullOrEmpty(fittingMode)) throw new ArgumentNullException(nameof(fittingMode));
             _ = height ?? throw new ArgumentNullException(nameof(height));
             _ = width ?? throw new ArgumentNullException(nameof(width));
-            return new ImageWithWidthWithHeightWithFittingModeRequestBuilder(PathParameters, RequestAdapter, fittingMode, height, width);
+            return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeightWithFittingMode.ImageWithWidthWithHeightWithFittingModeRequestBuilder(PathParameters, RequestAdapter, fittingMode, height, width);
         }
         /// <summary>
         /// Update the navigation property charts in storage
         /// </summary>
-        /// <returns>A <see cref="WorkbookChart"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookChart"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookChart?> PatchAsync(WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookChart?> PatchAsync(Microsoft.Graph.Models.WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WorkbookChart> PatchAsync(WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookChart> PatchAsync(Microsoft.Graph.Models.WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WorkbookChart>(requestInfo, WorkbookChart.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkbookChart>(requestInfo, Microsoft.Graph.Models.WorkbookChart.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property charts for storage
@@ -227,11 +227,11 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WorkbookChartItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder.WorkbookChartItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WorkbookChartItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder.WorkbookChartItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -247,11 +247,11 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -264,11 +264,11 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WorkbookChartItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WorkbookChartItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WorkbookChartItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -307,7 +307,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WorkbookChartItemRequestBuilderGetRequestConfiguration : RequestConfiguration<WorkbookChartItemRequestBuilderGetQueryParameters>
+        public class WorkbookChartItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder.WorkbookChartItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

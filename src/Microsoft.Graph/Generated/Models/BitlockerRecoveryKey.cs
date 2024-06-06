@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class BitlockerRecoveryKey : Entity, IParsable
+    public class BitlockerRecoveryKey : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date and time when the key was originally backed up to Microsoft Entra ID. Not nullable.</summary>
@@ -57,12 +57,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BitlockerRecoveryKey"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BitlockerRecoveryKey"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BitlockerRecoveryKey CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.BitlockerRecoveryKey CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BitlockerRecoveryKey();
+            return new Microsoft.Graph.Models.BitlockerRecoveryKey();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "volumeType", n => { VolumeType = n.GetEnumValue<VolumeType>(); } },
+                { "volumeType", n => { VolumeType = n.GetEnumValue<Microsoft.Graph.Models.VolumeType>(); } },
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("key", Key);
-            writer.WriteEnumValue<VolumeType>("volumeType", VolumeType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.VolumeType>("volumeType", VolumeType);
         }
     }
 }

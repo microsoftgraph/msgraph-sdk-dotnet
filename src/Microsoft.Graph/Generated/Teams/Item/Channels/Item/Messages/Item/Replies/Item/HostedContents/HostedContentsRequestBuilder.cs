@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.Ho
     public class HostedContentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.HostedContents.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.HostedContents.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.</summary>
         /// <param name="position">The unique identifier of chatMessageHostedContent</param>
-        /// <returns>A <see cref="ChatMessageHostedContentItemRequestBuilder"/></returns>
-        public ChatMessageHostedContentItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.HostedContents.Item.ChatMessageHostedContentItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.HostedContents.Item.ChatMessageHostedContentItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("chatMessageHostedContent%2Did", position);
-                return new ChatMessageHostedContentItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.HostedContents.Item.ChatMessageHostedContentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="HostedContentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.HostedContents.HostedContentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.Ho
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="HostedContentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.HostedContents.HostedContentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,65 +52,66 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.Ho
         {
         }
         /// <summary>
-        /// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+        /// Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ChatMessageHostedContentCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ChatMessageHostedContentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ChatMessageHostedContentCollectionResponse?> GetAsync(Action<RequestConfiguration<HostedContentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ChatMessageHostedContentCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.HostedContents.HostedContentsRequestBuilder.HostedContentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ChatMessageHostedContentCollectionResponse> GetAsync(Action<RequestConfiguration<HostedContentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ChatMessageHostedContentCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.HostedContents.HostedContentsRequestBuilder.HostedContentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ChatMessageHostedContentCollectionResponse>(requestInfo, ChatMessageHostedContentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ChatMessageHostedContentCollectionResponse>(requestInfo, Microsoft.Graph.Models.ChatMessageHostedContentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to hostedContents for teams
         /// </summary>
-        /// <returns>A <see cref="ChatMessageHostedContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ChatMessageHostedContent"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ChatMessageHostedContent?> PostAsync(ChatMessageHostedContent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ChatMessageHostedContent?> PostAsync(Microsoft.Graph.Models.ChatMessageHostedContent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ChatMessageHostedContent> PostAsync(ChatMessageHostedContent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ChatMessageHostedContent> PostAsync(Microsoft.Graph.Models.ChatMessageHostedContent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ChatMessageHostedContent>(requestInfo, ChatMessageHostedContent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ChatMessageHostedContent>(requestInfo, Microsoft.Graph.Models.ChatMessageHostedContent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+        /// Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HostedContentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.HostedContents.HostedContentsRequestBuilder.HostedContentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HostedContentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.HostedContents.HostedContentsRequestBuilder.HostedContentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +127,11 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.Ho
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ChatMessageHostedContent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ChatMessageHostedContent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ChatMessageHostedContent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ChatMessageHostedContent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,14 +144,14 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.Ho
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="HostedContentsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.HostedContents.HostedContentsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public HostedContentsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.HostedContents.HostedContentsRequestBuilder WithUrl(string rawUrl)
         {
-            return new HostedContentsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.HostedContents.HostedContentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+        /// Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.
         /// </summary>
         public class HostedContentsRequestBuilderGetQueryParameters 
         {
@@ -218,7 +219,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.Ho
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class HostedContentsRequestBuilderGetRequestConfiguration : RequestConfiguration<HostedContentsRequestBuilderGetQueryParameters>
+        public class HostedContentsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Item.HostedContents.HostedContentsRequestBuilder.HostedContentsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

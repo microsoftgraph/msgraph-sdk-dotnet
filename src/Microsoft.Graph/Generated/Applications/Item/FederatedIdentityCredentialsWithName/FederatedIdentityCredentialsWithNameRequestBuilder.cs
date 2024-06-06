@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName
     public class FederatedIdentityCredentialsWithNameRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="FederatedIdentityCredentialsWithNameRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName.FederatedIdentityCredentialsWithNameRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="name">Alternate key of federatedIdentityCredential</param>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName
             if (!string.IsNullOrWhiteSpace(name)) PathParameters.Add("name", name);
         }
         /// <summary>
-        /// Instantiates a new <see cref="FederatedIdentityCredentialsWithNameRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName.FederatedIdentityCredentialsWithNameRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -61,51 +61,51 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName
         /// Read the properties and relationships of a federatedIdentityCredential object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="FederatedIdentityCredential"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.FederatedIdentityCredential"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FederatedIdentityCredential?> GetAsync(Action<RequestConfiguration<FederatedIdentityCredentialsWithNameRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.FederatedIdentityCredential?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName.FederatedIdentityCredentialsWithNameRequestBuilder.FederatedIdentityCredentialsWithNameRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FederatedIdentityCredential> GetAsync(Action<RequestConfiguration<FederatedIdentityCredentialsWithNameRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.FederatedIdentityCredential> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName.FederatedIdentityCredentialsWithNameRequestBuilder.FederatedIdentityCredentialsWithNameRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FederatedIdentityCredential>(requestInfo, FederatedIdentityCredential.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.FederatedIdentityCredential>(requestInfo, Microsoft.Graph.Models.FederatedIdentityCredential.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new federatedIdentityCredential object for an application if it does exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedidentitycredential-upsert?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="FederatedIdentityCredential"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.FederatedIdentityCredential"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FederatedIdentityCredential?> PatchAsync(FederatedIdentityCredential body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.FederatedIdentityCredential?> PatchAsync(Microsoft.Graph.Models.FederatedIdentityCredential body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FederatedIdentityCredential> PatchAsync(FederatedIdentityCredential body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.FederatedIdentityCredential> PatchAsync(Microsoft.Graph.Models.FederatedIdentityCredential body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FederatedIdentityCredential>(requestInfo, FederatedIdentityCredential.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.FederatedIdentityCredential>(requestInfo, Microsoft.Graph.Models.FederatedIdentityCredential.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a federatedIdentityCredential object from an application.
@@ -133,11 +133,11 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FederatedIdentityCredentialsWithNameRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName.FederatedIdentityCredentialsWithNameRequestBuilder.FederatedIdentityCredentialsWithNameRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FederatedIdentityCredentialsWithNameRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName.FederatedIdentityCredentialsWithNameRequestBuilder.FederatedIdentityCredentialsWithNameRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -153,11 +153,11 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(FederatedIdentityCredential body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.FederatedIdentityCredential body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(FederatedIdentityCredential body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.FederatedIdentityCredential body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -170,11 +170,11 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="FederatedIdentityCredentialsWithNameRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName.FederatedIdentityCredentialsWithNameRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FederatedIdentityCredentialsWithNameRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName.FederatedIdentityCredentialsWithNameRequestBuilder WithUrl(string rawUrl)
         {
-            return new FederatedIdentityCredentialsWithNameRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName.FederatedIdentityCredentialsWithNameRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FederatedIdentityCredentialsWithNameRequestBuilderGetRequestConfiguration : RequestConfiguration<FederatedIdentityCredentialsWithNameRequestBuilderGetQueryParameters>
+        public class FederatedIdentityCredentialsWithNameRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Applications.Item.FederatedIdentityCredentialsWithName.FederatedIdentityCredentialsWithNameRequestBuilder.FederatedIdentityCredentialsWithNameRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

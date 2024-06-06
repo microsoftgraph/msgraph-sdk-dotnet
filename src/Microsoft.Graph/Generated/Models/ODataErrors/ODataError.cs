@@ -23,23 +23,23 @@ namespace Microsoft.Graph.Models.ODataErrors
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MainError? Error
+        public Microsoft.Graph.Models.ODataErrors.MainError? Error
         {
-            get { return BackingStore?.Get<MainError?>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ODataErrors.MainError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public MainError Error
+        public Microsoft.Graph.Models.ODataErrors.MainError Error
         {
-            get { return BackingStore?.Get<MainError>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ODataErrors.MainError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => Error?.Message ?? string.Empty; }
         /// <summary>
-        /// Instantiates a new <see cref="ODataError"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ODataErrors.ODataError"/> and sets the default values.
         /// </summary>
         public ODataError()
         {
@@ -49,12 +49,12 @@ namespace Microsoft.Graph.Models.ODataErrors
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ODataError"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ODataErrors.ODataError"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ODataError CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ODataErrors.ODataError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ODataError();
+            return new Microsoft.Graph.Models.ODataErrors.ODataError();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Models.ODataErrors
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "error", n => { Error = n.GetObjectValue<MainError>(MainError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<Microsoft.Graph.Models.ODataErrors.MainError>(Microsoft.Graph.Models.ODataErrors.MainError.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Models.ODataErrors
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<MainError>("error", Error);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ODataErrors.MainError>("error", Error);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

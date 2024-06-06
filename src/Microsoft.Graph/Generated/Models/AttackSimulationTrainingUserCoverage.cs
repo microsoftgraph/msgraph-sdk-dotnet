@@ -54,21 +54,21 @@ namespace Microsoft.Graph.Models
         /// <summary>List of assigned trainings and their statuses for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserTrainingStatusInfo>? UserTrainings
+        public List<Microsoft.Graph.Models.UserTrainingStatusInfo>? UserTrainings
         {
-            get { return BackingStore?.Get<List<UserTrainingStatusInfo>?>("userTrainings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserTrainingStatusInfo>?>("userTrainings"); }
             set { BackingStore?.Set("userTrainings", value); }
         }
 #nullable restore
 #else
-        public List<UserTrainingStatusInfo> UserTrainings
+        public List<Microsoft.Graph.Models.UserTrainingStatusInfo> UserTrainings
         {
-            get { return BackingStore?.Get<List<UserTrainingStatusInfo>>("userTrainings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserTrainingStatusInfo>>("userTrainings"); }
             set { BackingStore?.Set("userTrainings", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AttackSimulationTrainingUserCoverage"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AttackSimulationTrainingUserCoverage"/> and sets the default values.
         /// </summary>
         public AttackSimulationTrainingUserCoverage()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AttackSimulationTrainingUserCoverage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AttackSimulationTrainingUserCoverage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AttackSimulationTrainingUserCoverage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AttackSimulationTrainingUserCoverage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AttackSimulationTrainingUserCoverage();
+            return new Microsoft.Graph.Models.AttackSimulationTrainingUserCoverage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Models
             {
                 { "attackSimulationUser", n => { AttackSimulationUser = n.GetObjectValue<Microsoft.Graph.Models.AttackSimulationUser>(Microsoft.Graph.Models.AttackSimulationUser.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "userTrainings", n => { UserTrainings = n.GetCollectionOfObjectValues<UserTrainingStatusInfo>(UserTrainingStatusInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userTrainings", n => { UserTrainings = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UserTrainingStatusInfo>(Microsoft.Graph.Models.UserTrainingStatusInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Models.AttackSimulationUser>("attackSimulationUser", AttackSimulationUser);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<UserTrainingStatusInfo>("userTrainings", UserTrainings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UserTrainingStatusInfo>("userTrainings", UserTrainings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -182,21 +182,21 @@ namespace Microsoft.Graph.Models
         /// <summary>List of role scope tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcUserRoleScopeTagInfo>? UserRoleScopeTags
+        public List<Microsoft.Graph.Models.CloudPcUserRoleScopeTagInfo>? UserRoleScopeTags
         {
-            get { return BackingStore?.Get<List<CloudPcUserRoleScopeTagInfo>?>("userRoleScopeTags"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CloudPcUserRoleScopeTagInfo>?>("userRoleScopeTags"); }
             set { BackingStore?.Set("userRoleScopeTags", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcUserRoleScopeTagInfo> UserRoleScopeTags
+        public List<Microsoft.Graph.Models.CloudPcUserRoleScopeTagInfo> UserRoleScopeTags
         {
-            get { return BackingStore?.Get<List<CloudPcUserRoleScopeTagInfo>>("userRoleScopeTags"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CloudPcUserRoleScopeTagInfo>>("userRoleScopeTags"); }
             set { BackingStore?.Set("userRoleScopeTags", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcAuditActor"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CloudPcAuditActor"/> and sets the default values.
         /// </summary>
         public CloudPcAuditActor()
         {
@@ -206,12 +206,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcAuditActor"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudPcAuditActor"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcAuditActor CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CloudPcAuditActor CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcAuditActor();
+            return new Microsoft.Graph.Models.CloudPcAuditActor();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -231,7 +231,7 @@ namespace Microsoft.Graph.Models
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPermissions", n => { UserPermissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                { "userRoleScopeTags", n => { UserRoleScopeTags = n.GetCollectionOfObjectValues<CloudPcUserRoleScopeTagInfo>(CloudPcUserRoleScopeTagInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userRoleScopeTags", n => { UserRoleScopeTags = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CloudPcUserRoleScopeTagInfo>(Microsoft.Graph.Models.CloudPcUserRoleScopeTagInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -251,7 +251,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("userId", UserId);
             writer.WriteCollectionOfPrimitiveValues<string>("userPermissions", UserPermissions);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
-            writer.WriteCollectionOfObjectValues<CloudPcUserRoleScopeTagInfo>("userRoleScopeTags", UserRoleScopeTags);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CloudPcUserRoleScopeTagInfo>("userRoleScopeTags", UserRoleScopeTags);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

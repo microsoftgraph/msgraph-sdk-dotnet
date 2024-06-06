@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties for the installation state for a device.
     /// </summary>
-    public class DeviceInstallState : Entity, IParsable
+    public class DeviceInstallState : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Device Id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,12 +122,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceInstallState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceInstallState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceInstallState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeviceInstallState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceInstallState();
+            return new Microsoft.Graph.Models.DeviceInstallState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Models
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
                 { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
-                { "installState", n => { InstallState = n.GetEnumValue<InstallState>(); } },
+                { "installState", n => { InstallState = n.GetEnumValue<Microsoft.Graph.Models.InstallState>(); } },
                 { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "osDescription", n => { OsDescription = n.GetStringValue(); } },
                 { "osVersion", n => { OsVersion = n.GetStringValue(); } },
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteStringValue("errorCode", ErrorCode);
-            writer.WriteEnumValue<InstallState>("installState", InstallState);
+            writer.WriteEnumValue<Microsoft.Graph.Models.InstallState>("installState", InstallState);
             writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
             writer.WriteStringValue("osDescription", OsDescription);
             writer.WriteStringValue("osVersion", OsVersion);

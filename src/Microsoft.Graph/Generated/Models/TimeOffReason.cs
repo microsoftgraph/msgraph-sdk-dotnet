@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class TimeOffReason : ChangeTrackedEntity, IParsable
+    public class TimeOffReason : Microsoft.Graph.Models.ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the timeOffReason. Required.</summary>
@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Supported icon types are: none, car, calendar, running, plane, firstAid, doctor, notWorking, clock, juryDuty, globe, cup, phone, weather, umbrella, piggyBank, dog, cake, trafficCone, pin, sunny. Required.</summary>
-        public TimeOffReasonIconType? IconType
+        public Microsoft.Graph.Models.TimeOffReasonIconType? IconType
         {
-            get { return BackingStore?.Get<TimeOffReasonIconType?>("iconType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TimeOffReasonIconType?>("iconType"); }
             set { BackingStore?.Set("iconType", value); }
         }
         /// <summary>Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.</summary>
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TimeOffReason"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TimeOffReason"/> and sets the default values.
         /// </summary>
         public TimeOffReason() : base()
         {
@@ -48,12 +48,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TimeOffReason"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TimeOffReason"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TimeOffReason CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TimeOffReason CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TimeOffReason();
+            return new Microsoft.Graph.Models.TimeOffReason();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "iconType", n => { IconType = n.GetEnumValue<TimeOffReasonIconType>(); } },
+                { "iconType", n => { IconType = n.GetEnumValue<Microsoft.Graph.Models.TimeOffReasonIconType>(); } },
                 { "isActive", n => { IsActive = n.GetBoolValue(); } },
             };
         }
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<TimeOffReasonIconType>("iconType", IconType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TimeOffReasonIconType>("iconType", IconType);
             writer.WriteBoolValue("isActive", IsActive);
         }
     }

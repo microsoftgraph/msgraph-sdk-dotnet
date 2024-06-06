@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
     public class EdiscoveryNoncustodialDataSourceItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the dataSource property of the microsoft.graph.security.ediscoveryNoncustodialDataSource entity.</summary>
-        public DataSourceRequestBuilder DataSource
+        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.DataSource.DataSourceRequestBuilder DataSource
         {
-            get => new DataSourceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.DataSource.DataSourceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the lastIndexOperation property of the microsoft.graph.security.ediscoveryNoncustodialDataSource entity.</summary>
-        public LastIndexOperationRequestBuilder LastIndexOperation
+        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.LastIndexOperation.LastIndexOperationRequestBuilder LastIndexOperation
         {
-            get => new LastIndexOperationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.LastIndexOperation.LastIndexOperationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyHold method.</summary>
-        public MicrosoftGraphSecurityApplyHoldRequestBuilder MicrosoftGraphSecurityApplyHold
+        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.MicrosoftGraphSecurityApplyHold.MicrosoftGraphSecurityApplyHoldRequestBuilder MicrosoftGraphSecurityApplyHold
         {
-            get => new MicrosoftGraphSecurityApplyHoldRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.MicrosoftGraphSecurityApplyHold.MicrosoftGraphSecurityApplyHoldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the release method.</summary>
-        public MicrosoftGraphSecurityReleaseRequestBuilder MicrosoftGraphSecurityRelease
+        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.MicrosoftGraphSecurityRelease.MicrosoftGraphSecurityReleaseRequestBuilder MicrosoftGraphSecurityRelease
         {
-            get => new MicrosoftGraphSecurityReleaseRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.MicrosoftGraphSecurityRelease.MicrosoftGraphSecurityReleaseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeHold method.</summary>
-        public MicrosoftGraphSecurityRemoveHoldRequestBuilder MicrosoftGraphSecurityRemoveHold
+        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.MicrosoftGraphSecurityRemoveHold.MicrosoftGraphSecurityRemoveHoldRequestBuilder MicrosoftGraphSecurityRemoveHold
         {
-            get => new MicrosoftGraphSecurityRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.MicrosoftGraphSecurityRemoveHold.MicrosoftGraphSecurityRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateIndex method.</summary>
-        public MicrosoftGraphSecurityUpdateIndexRequestBuilder MicrosoftGraphSecurityUpdateIndex
+        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.MicrosoftGraphSecurityUpdateIndex.MicrosoftGraphSecurityUpdateIndexRequestBuilder MicrosoftGraphSecurityUpdateIndex
         {
-            get => new MicrosoftGraphSecurityUpdateIndexRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.MicrosoftGraphSecurityUpdateIndex.MicrosoftGraphSecurityUpdateIndexRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="EdiscoveryNoncustodialDataSourceItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.EdiscoveryNoncustodialDataSourceItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="EdiscoveryNoncustodialDataSourceItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.EdiscoveryNoncustodialDataSourceItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -86,57 +86,57 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryNoncustodialDataSource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EdiscoveryNoncustodialDataSource?> GetAsync(Action<RequestConfiguration<EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.EdiscoveryNoncustodialDataSourceItemRequestBuilder.EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EdiscoveryNoncustodialDataSource> GetAsync(Action<RequestConfiguration<EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.EdiscoveryNoncustodialDataSourceItemRequestBuilder.EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EdiscoveryNoncustodialDataSource>(requestInfo, EdiscoveryNoncustodialDataSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource>(requestInfo, Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property noncustodialDataSources in security
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryNoncustodialDataSource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EdiscoveryNoncustodialDataSource?> PatchAsync(EdiscoveryNoncustodialDataSource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource?> PatchAsync(Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EdiscoveryNoncustodialDataSource> PatchAsync(EdiscoveryNoncustodialDataSource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource> PatchAsync(Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EdiscoveryNoncustodialDataSource>(requestInfo, EdiscoveryNoncustodialDataSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource>(requestInfo, Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property noncustodialDataSources for security
@@ -164,11 +164,11 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.EdiscoveryNoncustodialDataSourceItemRequestBuilder.EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.EdiscoveryNoncustodialDataSourceItemRequestBuilder.EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -184,11 +184,11 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(EdiscoveryNoncustodialDataSource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(EdiscoveryNoncustodialDataSource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -201,11 +201,11 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryNoncustodialDataSourceItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.EdiscoveryNoncustodialDataSourceItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EdiscoveryNoncustodialDataSourceItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.EdiscoveryNoncustodialDataSourceItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new EdiscoveryNoncustodialDataSourceItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.EdiscoveryNoncustodialDataSourceItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -244,7 +244,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EdiscoveryNoncustodialDataSourceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters>
+        public class EdiscoveryNoncustodialDataSourceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.EdiscoveryNoncustodialDataSourceItemRequestBuilder.EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

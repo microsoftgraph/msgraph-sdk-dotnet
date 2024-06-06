@@ -20,24 +20,24 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.T
     public class TaskReportsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskReports property of the microsoft.graph.identityGovernance.workflow entity.</summary>
         /// <param name="position">The unique identifier of taskReport</param>
-        /// <returns>A <see cref="TaskReportItemRequestBuilder"/></returns>
-        public TaskReportItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskReportItemRequestBuilder"/></returns>
+        public Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskReportItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("taskReport%2Did", position);
-                return new TaskReportItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskReportItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TaskReportsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.TaskReportsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.T
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TaskReportsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.TaskReportsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,37 +56,37 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.T
         /// Get a list of the taskReport objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-taskreports?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="TaskReportCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityGovernance.TaskReportCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TaskReportCollectionResponse?> GetAsync(Action<RequestConfiguration<TaskReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.IdentityGovernance.TaskReportCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.TaskReportsRequestBuilder.TaskReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TaskReportCollectionResponse> GetAsync(Action<RequestConfiguration<TaskReportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.IdentityGovernance.TaskReportCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.TaskReportsRequestBuilder.TaskReportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TaskReportCollectionResponse>(requestInfo, TaskReportCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.IdentityGovernance.TaskReportCollectionResponse>(requestInfo, Microsoft.Graph.Models.IdentityGovernance.TaskReportCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the summary method.
         /// </summary>
-        /// <returns>A <see cref="MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
         /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
-        public MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
+        public Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
             _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
-            return new MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
+            return new Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
         /// Get a list of the taskReport objects and their properties.
@@ -95,11 +95,11 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.T
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TaskReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.TaskReportsRequestBuilder.TaskReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TaskReportsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.TaskReportsRequestBuilder.TaskReportsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -110,11 +110,11 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.T
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TaskReportsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.TaskReportsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TaskReportsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.TaskReportsRequestBuilder WithUrl(string rawUrl)
         {
-            return new TaskReportsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.TaskReportsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the taskReport objects and their properties.
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.T
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TaskReportsRequestBuilderGetRequestConfiguration : RequestConfiguration<TaskReportsRequestBuilderGetQueryParameters>
+        public class TaskReportsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.TaskReportsRequestBuilder.TaskReportsRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Sites.GetAllSites
     public class GetAllSitesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetAllSitesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Sites.GetAllSites
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetAllSitesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,50 +35,50 @@ namespace Microsoft.Graph.Sites.GetAllSites
         /// List sites across geographies in an organization. This API can also be used to enumerate all sites in a non-multi-geo tenant. For more information, see Best practices for discovering files and detecting changes at scale.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-getallsites?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetAllSitesGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Sites.GetAllSites.GetAllSitesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAllSitesGetResponse?> GetAsGetAllSitesGetResponseAsync(Action<RequestConfiguration<GetAllSitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Sites.GetAllSites.GetAllSitesGetResponse?> GetAsGetAllSitesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder.GetAllSitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetAllSitesGetResponse> GetAsGetAllSitesGetResponseAsync(Action<RequestConfiguration<GetAllSitesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Sites.GetAllSites.GetAllSitesGetResponse> GetAsGetAllSitesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder.GetAllSitesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetAllSitesGetResponse>(requestInfo, GetAllSitesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Sites.GetAllSites.GetAllSitesGetResponse>(requestInfo, Microsoft.Graph.Sites.GetAllSites.GetAllSitesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List sites across geographies in an organization. This API can also be used to enumerate all sites in a non-multi-geo tenant. For more information, see Best practices for discovering files and detecting changes at scale.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-getallsites?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetAllSitesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Sites.GetAllSites.GetAllSitesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetAllSitesGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAllSitesResponse?> GetAsync(Action<RequestConfiguration<GetAllSitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Sites.GetAllSites.GetAllSitesResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder.GetAllSitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetAllSitesResponse> GetAsync(Action<RequestConfiguration<GetAllSitesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Sites.GetAllSites.GetAllSitesResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder.GetAllSitesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetAllSitesResponse>(requestInfo, GetAllSitesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Sites.GetAllSites.GetAllSitesResponse>(requestInfo, Microsoft.Graph.Sites.GetAllSites.GetAllSitesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List sites across geographies in an organization. This API can also be used to enumerate all sites in a non-multi-geo tenant. For more information, see Best practices for discovering files and detecting changes at scale.
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Sites.GetAllSites
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAllSitesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder.GetAllSitesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAllSitesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder.GetAllSitesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Sites.GetAllSites
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetAllSitesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetAllSitesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetAllSitesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List sites across geographies in an organization. This API can also be used to enumerate all sites in a non-multi-geo tenant. For more information, see Best practices for discovering files and detecting changes at scale.
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Sites.GetAllSites
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetAllSitesRequestBuilderGetRequestConfiguration : RequestConfiguration<GetAllSitesRequestBuilderGetQueryParameters>
+        public class GetAllSitesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder.GetAllSitesRequestBuilderGetQueryParameters>
         {
         }
     }

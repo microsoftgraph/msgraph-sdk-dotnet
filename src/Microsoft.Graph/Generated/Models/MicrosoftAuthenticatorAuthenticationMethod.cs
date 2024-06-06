@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class MicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod, IParsable
+    public class MicrosoftAuthenticatorAuthenticationMethod : Microsoft.Graph.Models.AuthenticationMethod, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date and time that this app was registered. This property is null if the device isn&apos;t registered for passwordless Phone Sign-In.</summary>
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftAuthenticatorAuthenticationMethod"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethod"/> and sets the default values.
         /// </summary>
         public MicrosoftAuthenticatorAuthenticationMethod() : base()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MicrosoftAuthenticatorAuthenticationMethod"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethod"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MicrosoftAuthenticatorAuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MicrosoftAuthenticatorAuthenticationMethod();
+            return new Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethod();
         }
         /// <summary>
         /// The deserialization information for the current model

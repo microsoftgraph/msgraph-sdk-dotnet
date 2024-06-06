@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CanvasLayout : Entity, IParsable
+    public class CanvasLayout : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collection of horizontal sections on the SharePoint page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HorizontalSection>? HorizontalSections
+        public List<Microsoft.Graph.Models.HorizontalSection>? HorizontalSections
         {
-            get { return BackingStore?.Get<List<HorizontalSection>?>("horizontalSections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.HorizontalSection>?>("horizontalSections"); }
             set { BackingStore?.Set("horizontalSections", value); }
         }
 #nullable restore
 #else
-        public List<HorizontalSection> HorizontalSections
+        public List<Microsoft.Graph.Models.HorizontalSection> HorizontalSections
         {
-            get { return BackingStore?.Get<List<HorizontalSection>>("horizontalSections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.HorizontalSection>>("horizontalSections"); }
             set { BackingStore?.Set("horizontalSections", value); }
         }
 #endif
@@ -45,12 +45,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CanvasLayout"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CanvasLayout"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CanvasLayout CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CanvasLayout CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CanvasLayout();
+            return new Microsoft.Graph.Models.CanvasLayout();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "horizontalSections", n => { HorizontalSections = n.GetCollectionOfObjectValues<HorizontalSection>(HorizontalSection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "horizontalSections", n => { HorizontalSections = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.HorizontalSection>(Microsoft.Graph.Models.HorizontalSection.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "verticalSection", n => { VerticalSection = n.GetObjectValue<Microsoft.Graph.Models.VerticalSection>(Microsoft.Graph.Models.VerticalSection.CreateFromDiscriminatorValue); } },
             };
         }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<HorizontalSection>("horizontalSections", HorizontalSections);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.HorizontalSection>("horizontalSections", HorizontalSections);
             writer.WriteObjectValue<Microsoft.Graph.Models.VerticalSection>("verticalSection", VerticalSection);
         }
     }

@@ -8,18 +8,18 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.GetAvailableExtensionP
 {
     [Obsolete("This class is obsolete. Use GetAvailableExtensionPropertiesPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetAvailableExtensionPropertiesResponse : GetAvailableExtensionPropertiesPostResponse, IParsable
+    public class GetAvailableExtensionPropertiesResponse : Microsoft.Graph.DirectoryNamespace.DeletedItems.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetAvailableExtensionPropertiesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DirectoryNamespace.DeletedItems.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetAvailableExtensionPropertiesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.DirectoryNamespace.DeletedItems.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetAvailableExtensionPropertiesResponse();
+            return new Microsoft.Graph.DirectoryNamespace.DeletedItems.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesResponse();
         }
     }
 }

@@ -26,59 +26,59 @@ namespace Microsoft.Graph.Groups.Item.Members
     public class MembersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Groups.Item.Members.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Members.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to application.</summary>
-        public GraphApplicationRequestBuilder GraphApplication
+        public Microsoft.Graph.Groups.Item.Members.GraphApplication.GraphApplicationRequestBuilder GraphApplication
         {
-            get => new GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Members.GraphApplication.GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to device.</summary>
-        public GraphDeviceRequestBuilder GraphDevice
+        public Microsoft.Graph.Groups.Item.Members.GraphDevice.GraphDeviceRequestBuilder GraphDevice
         {
-            get => new GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Members.GraphDevice.GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
-        public GraphGroupRequestBuilder GraphGroup
+        public Microsoft.Graph.Groups.Item.Members.GraphGroup.GraphGroupRequestBuilder GraphGroup
         {
-            get => new GraphGroupRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Members.GraphGroup.GraphGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to orgContact.</summary>
-        public GraphOrgContactRequestBuilder GraphOrgContact
+        public Microsoft.Graph.Groups.Item.Members.GraphOrgContact.GraphOrgContactRequestBuilder GraphOrgContact
         {
-            get => new GraphOrgContactRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Members.GraphOrgContact.GraphOrgContactRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public GraphServicePrincipalRequestBuilder GraphServicePrincipal
+        public Microsoft.Graph.Groups.Item.Members.GraphServicePrincipal.GraphServicePrincipalRequestBuilder GraphServicePrincipal
         {
-            get => new GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Members.GraphServicePrincipal.GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to user.</summary>
-        public GraphUserRequestBuilder GraphUser
+        public Microsoft.Graph.Groups.Item.Members.GraphUser.GraphUserRequestBuilder GraphUser
         {
-            get => new GraphUserRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Members.GraphUser.GraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of group entities.</summary>
-        public RefRequestBuilder Ref
+        public Microsoft.Graph.Groups.Item.Members.Ref.RefRequestBuilder Ref
         {
-            get => new RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Members.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.groups.item.members.item collection</summary>
         /// <param name="position">The unique identifier of directoryObject</param>
-        /// <returns>A <see cref="DirectoryObjectItemRequestBuilder"/></returns>
-        public DirectoryObjectItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Members.Item.DirectoryObjectItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Groups.Item.Members.Item.DirectoryObjectItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("directoryObject%2Did", position);
-                return new DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Groups.Item.Members.Item.DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MembersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Members.MembersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Groups.Item.Members
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MembersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Members.MembersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -97,25 +97,25 @@ namespace Microsoft.Graph.Groups.Item.Members
         /// Get a list of the group&apos;s direct members. A group can have users, organizational contacts, devices, service principals and other groups as members. This operation is not transitive.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<MembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<MembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DirectoryObjectCollectionResponse>(requestInfo, Microsoft.Graph.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the group&apos;s direct members. A group can have users, organizational contacts, devices, service principals and other groups as members. This operation is not transitive.
@@ -124,11 +124,11 @@ namespace Microsoft.Graph.Groups.Item.Members
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MembersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MembersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -139,11 +139,11 @@ namespace Microsoft.Graph.Groups.Item.Members
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MembersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Members.MembersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MembersRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Groups.Item.Members.MembersRequestBuilder WithUrl(string rawUrl)
         {
-            return new MembersRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Groups.Item.Members.MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the group&apos;s direct members. A group can have users, organizational contacts, devices, service principals and other groups as members. This operation is not transitive.
@@ -214,7 +214,7 @@ namespace Microsoft.Graph.Groups.Item.Members
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MembersRequestBuilderGetRequestConfiguration : RequestConfiguration<MembersRequestBuilderGetQueryParameters>
+        public class MembersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Groups.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>
         {
         }
     }

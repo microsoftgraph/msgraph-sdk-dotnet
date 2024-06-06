@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.AcquireAccessToken
         /// <summary>The credentials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SynchronizationSecretKeyStringValuePair>? Credentials
+        public List<Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair>? Credentials
         {
-            get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>?>("credentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair>?>("credentials"); }
             set { BackingStore?.Set("credentials", value); }
         }
 #nullable restore
 #else
-        public List<SynchronizationSecretKeyStringValuePair> Credentials
+        public List<Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair> Credentials
         {
-            get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>>("credentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair>>("credentials"); }
             set { BackingStore?.Set("credentials", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AcquireAccessTokenPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.Synchronization.AcquireAccessToken.AcquireAccessTokenPostRequestBody"/> and sets the default values.
         /// </summary>
         public AcquireAccessTokenPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.AcquireAccessToken
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AcquireAccessTokenPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Applications.Item.Synchronization.AcquireAccessToken.AcquireAccessTokenPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AcquireAccessTokenPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Applications.Item.Synchronization.AcquireAccessToken.AcquireAccessTokenPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AcquireAccessTokenPostRequestBody();
+            return new Microsoft.Graph.Applications.Item.Synchronization.AcquireAccessToken.AcquireAccessTokenPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.AcquireAccessToken
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "credentials", n => { Credentials = n.GetCollectionOfObjectValues<SynchronizationSecretKeyStringValuePair>(SynchronizationSecretKeyStringValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "credentials", n => { Credentials = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair>(Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.AcquireAccessToken
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<SynchronizationSecretKeyStringValuePair>("credentials", Credentials);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair>("credentials", Credentials);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

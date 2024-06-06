@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item.DeleteUserFromSharedAppleDevice
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeleteUserFromSharedAppleDevicePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.ManagedDevices.Item.DeleteUserFromSharedAppleDevice.DeleteUserFromSharedAppleDevicePostRequestBody"/> and sets the default values.
         /// </summary>
         public DeleteUserFromSharedAppleDevicePostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item.DeleteUserFromSharedAppleDevice
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeleteUserFromSharedAppleDevicePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.ManagedDevices.Item.DeleteUserFromSharedAppleDevice.DeleteUserFromSharedAppleDevicePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeleteUserFromSharedAppleDevicePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Me.ManagedDevices.Item.DeleteUserFromSharedAppleDevice.DeleteUserFromSharedAppleDevicePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeleteUserFromSharedAppleDevicePostRequestBody();
+            return new Microsoft.Graph.Me.ManagedDevices.Item.DeleteUserFromSharedAppleDevice.DeleteUserFromSharedAppleDevicePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

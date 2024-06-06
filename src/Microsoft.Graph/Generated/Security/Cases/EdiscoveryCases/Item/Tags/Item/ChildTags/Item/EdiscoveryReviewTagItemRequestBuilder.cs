@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTag
     public class EdiscoveryReviewTagItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="EdiscoveryReviewTagItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTags.Item.EdiscoveryReviewTagItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTag
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="EdiscoveryReviewTagItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTags.Item.EdiscoveryReviewTagItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTag
         /// <summary>
         /// Returns the tags that are a child of a tag.
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryReviewTag"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.EdiscoveryReviewTag"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EdiscoveryReviewTag?> GetAsync(Action<RequestConfiguration<EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.EdiscoveryReviewTag?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTags.Item.EdiscoveryReviewTagItemRequestBuilder.EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EdiscoveryReviewTag> GetAsync(Action<RequestConfiguration<EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.EdiscoveryReviewTag> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTags.Item.EdiscoveryReviewTagItemRequestBuilder.EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EdiscoveryReviewTag>(requestInfo, EdiscoveryReviewTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>(requestInfo, Microsoft.Graph.Models.Security.EdiscoveryReviewTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the tags that are a child of a tag.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTag
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTags.Item.EdiscoveryReviewTagItemRequestBuilder.EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTags.Item.EdiscoveryReviewTagItemRequestBuilder.EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTag
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryReviewTagItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTags.Item.EdiscoveryReviewTagItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EdiscoveryReviewTagItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTags.Item.EdiscoveryReviewTagItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new EdiscoveryReviewTagItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTags.Item.EdiscoveryReviewTagItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Returns the tags that are a child of a tag.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTag
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EdiscoveryReviewTagItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>
+        public class EdiscoveryReviewTagItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTags.Item.EdiscoveryReviewTagItemRequestBuilder.EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>
         {
         }
     }

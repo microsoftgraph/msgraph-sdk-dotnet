@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("trainingStatus", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserTrainingStatusInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.UserTrainingStatusInfo"/> and sets the default values.
         /// </summary>
         public UserTrainingStatusInfo()
         {
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserTrainingStatusInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserTrainingStatusInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserTrainingStatusInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.UserTrainingStatusInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserTrainingStatusInfo();
+            return new Microsoft.Graph.Models.UserTrainingStatusInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Models
                 { "completionDateTime", n => { CompletionDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "trainingStatus", n => { TrainingStatus = n.GetEnumValue<TrainingStatus>(); } },
+                { "trainingStatus", n => { TrainingStatus = n.GetEnumValue<Microsoft.Graph.Models.TrainingStatus>(); } },
             };
         }
         /// <summary>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("completionDateTime", CompletionDateTime);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<TrainingStatus>("trainingStatus", TrainingStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TrainingStatus>("trainingStatus", TrainingStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

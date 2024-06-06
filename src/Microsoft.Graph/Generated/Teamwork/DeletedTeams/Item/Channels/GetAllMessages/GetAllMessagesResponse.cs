@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllMessages
 {
     [Obsolete("This class is obsolete. Use GetAllMessagesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetAllMessagesResponse : GetAllMessagesGetResponse, IParsable
+    public class GetAllMessagesResponse : Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllMessages.GetAllMessagesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetAllMessagesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllMessages.GetAllMessagesResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetAllMessagesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllMessages.GetAllMessagesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetAllMessagesResponse();
+            return new Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllMessages.GetAllMessagesResponse();
         }
     }
 }

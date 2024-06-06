@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Windows Update for business configuration, allows you to specify how and when Windows as a Service updates your Windows 10/11 devices with feature and quality updates. Supports ODATA clauses that DeviceConfiguration entity supports: $filter by types of DeviceConfiguration, $top, $select only DeviceConfiguration base properties, $orderby only DeviceConfiguration base properties, and $skip. The query parameter &apos;$search&apos; is not supported.
     /// </summary>
-    public class WindowsUpdateForBusinessConfiguration : DeviceConfiguration, IParsable
+    public class WindowsUpdateForBusinessConfiguration : Microsoft.Graph.Models.DeviceConfiguration, IParsable
     {
         /// <summary>When TRUE, allows eligible Windows 10 devices to upgrade to Windows 11. When FALSE, implies the device stays on the existing operating system. Returned by default. Query parameters are not supported.</summary>
         public bool? AllowWindows11Upgrade
@@ -25,15 +25,15 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("automaticUpdateMode", value); }
         }
         /// <summary>Auto restart required notification dismissal method</summary>
-        public AutoRestartNotificationDismissalMethod? AutoRestartNotificationDismissal
+        public Microsoft.Graph.Models.AutoRestartNotificationDismissalMethod? AutoRestartNotificationDismissal
         {
-            get { return BackingStore?.Get<AutoRestartNotificationDismissalMethod?>("autoRestartNotificationDismissal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AutoRestartNotificationDismissalMethod?>("autoRestartNotificationDismissal"); }
             set { BackingStore?.Set("autoRestartNotificationDismissal", value); }
         }
         /// <summary>Which branch devices will receive their updates from</summary>
-        public WindowsUpdateType? BusinessReadyUpdatesOnly
+        public Microsoft.Graph.Models.WindowsUpdateType? BusinessReadyUpdatesOnly
         {
-            get { return BackingStore?.Get<WindowsUpdateType?>("businessReadyUpdatesOnly"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsUpdateType?>("businessReadyUpdatesOnly"); }
             set { BackingStore?.Set("businessReadyUpdatesOnly", value); }
         }
         /// <summary>Number of days before feature updates are installed automatically with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.</summary>
@@ -55,9 +55,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("deadlineGracePeriodInDays", value); }
         }
         /// <summary>Delivery optimization mode for peer distribution</summary>
-        public WindowsDeliveryOptimizationMode? DeliveryOptimizationMode
+        public Microsoft.Graph.Models.WindowsDeliveryOptimizationMode? DeliveryOptimizationMode
         {
-            get { return BackingStore?.Get<WindowsDeliveryOptimizationMode?>("deliveryOptimizationMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsDeliveryOptimizationMode?>("deliveryOptimizationMode"); }
             set { BackingStore?.Set("deliveryOptimizationMode", value); }
         }
         /// <summary>When TRUE, excludes Windows update Drivers. When FALSE, does not exclude Windows update Drivers. Returned by default. Query parameters are not supported.</summary>
@@ -129,16 +129,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The Installation Schedule. Possible values are: ActiveHoursStart, ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by default. Query parameters are not supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsUpdateInstallScheduleType? InstallationSchedule
+        public Microsoft.Graph.Models.WindowsUpdateInstallScheduleType? InstallationSchedule
         {
-            get { return BackingStore?.Get<WindowsUpdateInstallScheduleType?>("installationSchedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsUpdateInstallScheduleType?>("installationSchedule"); }
             set { BackingStore?.Set("installationSchedule", value); }
         }
 #nullable restore
 #else
-        public WindowsUpdateInstallScheduleType InstallationSchedule
+        public Microsoft.Graph.Models.WindowsUpdateInstallScheduleType InstallationSchedule
         {
-            get { return BackingStore?.Get<WindowsUpdateInstallScheduleType>("installationSchedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsUpdateInstallScheduleType>("installationSchedule"); }
             set { BackingStore?.Set("installationSchedule", value); }
         }
 #endif
@@ -215,31 +215,31 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("skipChecksBeforeRestart", value); }
         }
         /// <summary>Windows Update Notification Display Options</summary>
-        public WindowsUpdateNotificationDisplayOption? UpdateNotificationLevel
+        public Microsoft.Graph.Models.WindowsUpdateNotificationDisplayOption? UpdateNotificationLevel
         {
-            get { return BackingStore?.Get<WindowsUpdateNotificationDisplayOption?>("updateNotificationLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsUpdateNotificationDisplayOption?>("updateNotificationLevel"); }
             set { BackingStore?.Set("updateNotificationLevel", value); }
         }
         /// <summary>Schedule the update installation on the weeks of the month. Possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported. Possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek, unknownFutureValue.</summary>
-        public WindowsUpdateForBusinessUpdateWeeks? UpdateWeeks
+        public Microsoft.Graph.Models.WindowsUpdateForBusinessUpdateWeeks? UpdateWeeks
         {
-            get { return BackingStore?.Get<WindowsUpdateForBusinessUpdateWeeks?>("updateWeeks"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsUpdateForBusinessUpdateWeeks?>("updateWeeks"); }
             set { BackingStore?.Set("updateWeeks", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? UserPauseAccess
+        public Microsoft.Graph.Models.Enablement? UserPauseAccess
         {
-            get { return BackingStore?.Get<Enablement?>("userPauseAccess"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Enablement?>("userPauseAccess"); }
             set { BackingStore?.Set("userPauseAccess", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? UserWindowsUpdateScanAccess
+        public Microsoft.Graph.Models.Enablement? UserWindowsUpdateScanAccess
         {
-            get { return BackingStore?.Get<Enablement?>("userWindowsUpdateScanAccess"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Enablement?>("userWindowsUpdateScanAccess"); }
             set { BackingStore?.Set("userWindowsUpdateScanAccess", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsUpdateForBusinessConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WindowsUpdateForBusinessConfiguration"/> and sets the default values.
         /// </summary>
         public WindowsUpdateForBusinessConfiguration() : base()
         {
@@ -248,12 +248,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsUpdateForBusinessConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsUpdateForBusinessConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsUpdateForBusinessConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WindowsUpdateForBusinessConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsUpdateForBusinessConfiguration();
+            return new Microsoft.Graph.Models.WindowsUpdateForBusinessConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -264,13 +264,13 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "allowWindows11Upgrade", n => { AllowWindows11Upgrade = n.GetBoolValue(); } },
-                { "autoRestartNotificationDismissal", n => { AutoRestartNotificationDismissal = n.GetEnumValue<AutoRestartNotificationDismissalMethod>(); } },
-                { "automaticUpdateMode", n => { AutomaticUpdateMode = n.GetEnumValue<AutomaticUpdateMode>(); } },
-                { "businessReadyUpdatesOnly", n => { BusinessReadyUpdatesOnly = n.GetEnumValue<WindowsUpdateType>(); } },
+                { "autoRestartNotificationDismissal", n => { AutoRestartNotificationDismissal = n.GetEnumValue<Microsoft.Graph.Models.AutoRestartNotificationDismissalMethod>(); } },
+                { "automaticUpdateMode", n => { AutomaticUpdateMode = n.GetEnumValue<Microsoft.Graph.Models.AutomaticUpdateMode>(); } },
+                { "businessReadyUpdatesOnly", n => { BusinessReadyUpdatesOnly = n.GetEnumValue<Microsoft.Graph.Models.WindowsUpdateType>(); } },
                 { "deadlineForFeatureUpdatesInDays", n => { DeadlineForFeatureUpdatesInDays = n.GetIntValue(); } },
                 { "deadlineForQualityUpdatesInDays", n => { DeadlineForQualityUpdatesInDays = n.GetIntValue(); } },
                 { "deadlineGracePeriodInDays", n => { DeadlineGracePeriodInDays = n.GetIntValue(); } },
-                { "deliveryOptimizationMode", n => { DeliveryOptimizationMode = n.GetEnumValue<WindowsDeliveryOptimizationMode>(); } },
+                { "deliveryOptimizationMode", n => { DeliveryOptimizationMode = n.GetEnumValue<Microsoft.Graph.Models.WindowsDeliveryOptimizationMode>(); } },
                 { "driversExcluded", n => { DriversExcluded = n.GetBoolValue(); } },
                 { "engagedRestartDeadlineInDays", n => { EngagedRestartDeadlineInDays = n.GetIntValue(); } },
                 { "engagedRestartSnoozeScheduleInDays", n => { EngagedRestartSnoozeScheduleInDays = n.GetIntValue(); } },
@@ -282,10 +282,10 @@ namespace Microsoft.Graph.Models
                 { "featureUpdatesRollbackStartDateTime", n => { FeatureUpdatesRollbackStartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "featureUpdatesRollbackWindowInDays", n => { FeatureUpdatesRollbackWindowInDays = n.GetIntValue(); } },
                 { "featureUpdatesWillBeRolledBack", n => { FeatureUpdatesWillBeRolledBack = n.GetBoolValue(); } },
-                { "installationSchedule", n => { InstallationSchedule = n.GetObjectValue<WindowsUpdateInstallScheduleType>(WindowsUpdateInstallScheduleType.CreateFromDiscriminatorValue); } },
+                { "installationSchedule", n => { InstallationSchedule = n.GetObjectValue<Microsoft.Graph.Models.WindowsUpdateInstallScheduleType>(Microsoft.Graph.Models.WindowsUpdateInstallScheduleType.CreateFromDiscriminatorValue); } },
                 { "microsoftUpdateServiceAllowed", n => { MicrosoftUpdateServiceAllowed = n.GetBoolValue(); } },
                 { "postponeRebootUntilAfterDeadline", n => { PostponeRebootUntilAfterDeadline = n.GetBoolValue(); } },
-                { "prereleaseFeatures", n => { PrereleaseFeatures = n.GetEnumValue<PrereleaseFeatures>(); } },
+                { "prereleaseFeatures", n => { PrereleaseFeatures = n.GetEnumValue<Microsoft.Graph.Models.PrereleaseFeatures>(); } },
                 { "qualityUpdatesDeferralPeriodInDays", n => { QualityUpdatesDeferralPeriodInDays = n.GetIntValue(); } },
                 { "qualityUpdatesPauseExpiryDateTime", n => { QualityUpdatesPauseExpiryDateTime = n.GetDateTimeOffsetValue(); } },
                 { "qualityUpdatesPauseStartDate", n => { QualityUpdatesPauseStartDate = n.GetDateValue(); } },
@@ -295,10 +295,10 @@ namespace Microsoft.Graph.Models
                 { "scheduleImminentRestartWarningInMinutes", n => { ScheduleImminentRestartWarningInMinutes = n.GetIntValue(); } },
                 { "scheduleRestartWarningInHours", n => { ScheduleRestartWarningInHours = n.GetIntValue(); } },
                 { "skipChecksBeforeRestart", n => { SkipChecksBeforeRestart = n.GetBoolValue(); } },
-                { "updateNotificationLevel", n => { UpdateNotificationLevel = n.GetEnumValue<WindowsUpdateNotificationDisplayOption>(); } },
-                { "updateWeeks", n => { UpdateWeeks = n.GetEnumValue<WindowsUpdateForBusinessUpdateWeeks>(); } },
-                { "userPauseAccess", n => { UserPauseAccess = n.GetEnumValue<Enablement>(); } },
-                { "userWindowsUpdateScanAccess", n => { UserWindowsUpdateScanAccess = n.GetEnumValue<Enablement>(); } },
+                { "updateNotificationLevel", n => { UpdateNotificationLevel = n.GetEnumValue<Microsoft.Graph.Models.WindowsUpdateNotificationDisplayOption>(); } },
+                { "updateWeeks", n => { UpdateWeeks = n.GetEnumValue<Microsoft.Graph.Models.WindowsUpdateForBusinessUpdateWeeks>(); } },
+                { "userPauseAccess", n => { UserPauseAccess = n.GetEnumValue<Microsoft.Graph.Models.Enablement>(); } },
+                { "userWindowsUpdateScanAccess", n => { UserWindowsUpdateScanAccess = n.GetEnumValue<Microsoft.Graph.Models.Enablement>(); } },
             };
         }
         /// <summary>
@@ -310,13 +310,13 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowWindows11Upgrade", AllowWindows11Upgrade);
-            writer.WriteEnumValue<AutomaticUpdateMode>("automaticUpdateMode", AutomaticUpdateMode);
-            writer.WriteEnumValue<AutoRestartNotificationDismissalMethod>("autoRestartNotificationDismissal", AutoRestartNotificationDismissal);
-            writer.WriteEnumValue<WindowsUpdateType>("businessReadyUpdatesOnly", BusinessReadyUpdatesOnly);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AutomaticUpdateMode>("automaticUpdateMode", AutomaticUpdateMode);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AutoRestartNotificationDismissalMethod>("autoRestartNotificationDismissal", AutoRestartNotificationDismissal);
+            writer.WriteEnumValue<Microsoft.Graph.Models.WindowsUpdateType>("businessReadyUpdatesOnly", BusinessReadyUpdatesOnly);
             writer.WriteIntValue("deadlineForFeatureUpdatesInDays", DeadlineForFeatureUpdatesInDays);
             writer.WriteIntValue("deadlineForQualityUpdatesInDays", DeadlineForQualityUpdatesInDays);
             writer.WriteIntValue("deadlineGracePeriodInDays", DeadlineGracePeriodInDays);
-            writer.WriteEnumValue<WindowsDeliveryOptimizationMode>("deliveryOptimizationMode", DeliveryOptimizationMode);
+            writer.WriteEnumValue<Microsoft.Graph.Models.WindowsDeliveryOptimizationMode>("deliveryOptimizationMode", DeliveryOptimizationMode);
             writer.WriteBoolValue("driversExcluded", DriversExcluded);
             writer.WriteIntValue("engagedRestartDeadlineInDays", EngagedRestartDeadlineInDays);
             writer.WriteIntValue("engagedRestartSnoozeScheduleInDays", EngagedRestartSnoozeScheduleInDays);
@@ -327,10 +327,10 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("featureUpdatesRollbackStartDateTime", FeatureUpdatesRollbackStartDateTime);
             writer.WriteIntValue("featureUpdatesRollbackWindowInDays", FeatureUpdatesRollbackWindowInDays);
             writer.WriteBoolValue("featureUpdatesWillBeRolledBack", FeatureUpdatesWillBeRolledBack);
-            writer.WriteObjectValue<WindowsUpdateInstallScheduleType>("installationSchedule", InstallationSchedule);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WindowsUpdateInstallScheduleType>("installationSchedule", InstallationSchedule);
             writer.WriteBoolValue("microsoftUpdateServiceAllowed", MicrosoftUpdateServiceAllowed);
             writer.WriteBoolValue("postponeRebootUntilAfterDeadline", PostponeRebootUntilAfterDeadline);
-            writer.WriteEnumValue<PrereleaseFeatures>("prereleaseFeatures", PrereleaseFeatures);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PrereleaseFeatures>("prereleaseFeatures", PrereleaseFeatures);
             writer.WriteIntValue("qualityUpdatesDeferralPeriodInDays", QualityUpdatesDeferralPeriodInDays);
             writer.WriteBoolValue("qualityUpdatesPaused", QualityUpdatesPaused);
             writer.WriteDateTimeOffsetValue("qualityUpdatesPauseExpiryDateTime", QualityUpdatesPauseExpiryDateTime);
@@ -339,10 +339,10 @@ namespace Microsoft.Graph.Models
             writer.WriteIntValue("scheduleImminentRestartWarningInMinutes", ScheduleImminentRestartWarningInMinutes);
             writer.WriteIntValue("scheduleRestartWarningInHours", ScheduleRestartWarningInHours);
             writer.WriteBoolValue("skipChecksBeforeRestart", SkipChecksBeforeRestart);
-            writer.WriteEnumValue<WindowsUpdateNotificationDisplayOption>("updateNotificationLevel", UpdateNotificationLevel);
-            writer.WriteEnumValue<WindowsUpdateForBusinessUpdateWeeks>("updateWeeks", UpdateWeeks);
-            writer.WriteEnumValue<Enablement>("userPauseAccess", UserPauseAccess);
-            writer.WriteEnumValue<Enablement>("userWindowsUpdateScanAccess", UserWindowsUpdateScanAccess);
+            writer.WriteEnumValue<Microsoft.Graph.Models.WindowsUpdateNotificationDisplayOption>("updateNotificationLevel", UpdateNotificationLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Models.WindowsUpdateForBusinessUpdateWeeks>("updateWeeks", UpdateWeeks);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Enablement>("userPauseAccess", UserPauseAccess);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Enablement>("userWindowsUpdateScanAccess", UserWindowsUpdateScanAccess);
         }
     }
 }

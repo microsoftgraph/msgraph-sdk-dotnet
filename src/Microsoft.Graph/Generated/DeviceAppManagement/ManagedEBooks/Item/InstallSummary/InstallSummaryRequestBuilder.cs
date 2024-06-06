@@ -17,7 +17,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary
     public class InstallSummaryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="InstallSummaryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary.InstallSummaryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="InstallSummaryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary.InstallSummaryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -58,51 +58,51 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary
         /// Read properties and relationships of the eBookInstallSummary object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-ebookinstallsummary-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="EBookInstallSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EBookInstallSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EBookInstallSummary?> GetAsync(Action<RequestConfiguration<InstallSummaryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EBookInstallSummary?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary.InstallSummaryRequestBuilder.InstallSummaryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EBookInstallSummary> GetAsync(Action<RequestConfiguration<InstallSummaryRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EBookInstallSummary> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary.InstallSummaryRequestBuilder.InstallSummaryRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EBookInstallSummary>(requestInfo, EBookInstallSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EBookInstallSummary>(requestInfo, Microsoft.Graph.Models.EBookInstallSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of a eBookInstallSummary object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-ebookinstallsummary-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="EBookInstallSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EBookInstallSummary"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EBookInstallSummary?> PatchAsync(EBookInstallSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EBookInstallSummary?> PatchAsync(Microsoft.Graph.Models.EBookInstallSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EBookInstallSummary> PatchAsync(EBookInstallSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EBookInstallSummary> PatchAsync(Microsoft.Graph.Models.EBookInstallSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EBookInstallSummary>(requestInfo, EBookInstallSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EBookInstallSummary>(requestInfo, Microsoft.Graph.Models.EBookInstallSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property installSummary for deviceAppManagement
@@ -130,11 +130,11 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InstallSummaryRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary.InstallSummaryRequestBuilder.InstallSummaryRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InstallSummaryRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary.InstallSummaryRequestBuilder.InstallSummaryRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -150,11 +150,11 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(EBookInstallSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.EBookInstallSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(EBookInstallSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.EBookInstallSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -167,11 +167,11 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="InstallSummaryRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary.InstallSummaryRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public InstallSummaryRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary.InstallSummaryRequestBuilder WithUrl(string rawUrl)
         {
-            return new InstallSummaryRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary.InstallSummaryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -210,7 +210,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InstallSummaryRequestBuilderGetRequestConfiguration : RequestConfiguration<InstallSummaryRequestBuilderGetQueryParameters>
+        public class InstallSummaryRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary.InstallSummaryRequestBuilder.InstallSummaryRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

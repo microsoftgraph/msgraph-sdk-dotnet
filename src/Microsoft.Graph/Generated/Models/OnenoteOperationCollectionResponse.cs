@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OnenoteOperationCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class OnenoteOperationCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnenoteOperation>? Value
+        public List<Microsoft.Graph.Models.OnenoteOperation>? Value
         {
-            get { return BackingStore?.Get<List<OnenoteOperation>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnenoteOperation>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<OnenoteOperation> Value
+        public List<Microsoft.Graph.Models.OnenoteOperation> Value
         {
-            get { return BackingStore?.Get<List<OnenoteOperation>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnenoteOperation>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnenoteOperationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnenoteOperationCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnenoteOperationCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OnenoteOperationCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnenoteOperationCollectionResponse();
+            return new Microsoft.Graph.Models.OnenoteOperationCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<OnenoteOperation>(OnenoteOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OnenoteOperation>(Microsoft.Graph.Models.OnenoteOperation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<OnenoteOperation>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OnenoteOperation>("value", Value);
         }
     }
 }

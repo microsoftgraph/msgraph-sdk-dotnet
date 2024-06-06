@@ -25,42 +25,42 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item
     public class DeviceConfigurationItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the assign method.</summary>
-        public AssignRequestBuilder Assign
+        public Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assign.AssignRequestBuilder Assign
         {
-            get => new AssignRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assign.AssignRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceConfiguration entity.</summary>
-        public AssignmentsRequestBuilder Assignments
+        public Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assignments.AssignmentsRequestBuilder Assignments
         {
-            get => new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceSettingStateSummaries property of the microsoft.graph.deviceConfiguration entity.</summary>
-        public DeviceSettingStateSummariesRequestBuilder DeviceSettingStateSummaries
+        public Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceSettingStateSummaries.DeviceSettingStateSummariesRequestBuilder DeviceSettingStateSummaries
         {
-            get => new DeviceSettingStateSummariesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceSettingStateSummaries.DeviceSettingStateSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceStatuses property of the microsoft.graph.deviceConfiguration entity.</summary>
-        public DeviceStatusesRequestBuilder DeviceStatuses
+        public Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceStatuses.DeviceStatusesRequestBuilder DeviceStatuses
         {
-            get => new DeviceStatusesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceStatuses.DeviceStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceStatusOverview property of the microsoft.graph.deviceConfiguration entity.</summary>
-        public DeviceStatusOverviewRequestBuilder DeviceStatusOverview
+        public Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceStatusOverview.DeviceStatusOverviewRequestBuilder DeviceStatusOverview
         {
-            get => new DeviceStatusOverviewRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceStatusOverview.DeviceStatusOverviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userStatuses property of the microsoft.graph.deviceConfiguration entity.</summary>
-        public UserStatusesRequestBuilder UserStatuses
+        public Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.UserStatuses.UserStatusesRequestBuilder UserStatuses
         {
-            get => new UserStatusesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.UserStatuses.UserStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userStatusOverview property of the microsoft.graph.deviceConfiguration entity.</summary>
-        public UserStatusOverviewRequestBuilder UserStatusOverview
+        public Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.UserStatusOverview.UserStatusOverviewRequestBuilder UserStatusOverview
         {
-            get => new UserStatusOverviewRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.UserStatusOverview.UserStatusOverviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceConfigurationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceConfigurationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceConfigurationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceConfigurationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -76,12 +76,12 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item
         {
         }
         /// <summary>
-        /// Deletes a iosCustomConfiguration.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscustomconfiguration-delete?view=graph-rest-1.0" />
+        /// Deletes a windows10GeneralConfiguration.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10generalconfiguration-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -94,72 +94,72 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the windows10GeneralConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10generalconfiguration-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the iosCertificateProfile object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscertificateprofile-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="DeviceConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceConfiguration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceConfiguration?> GetAsync(Action<RequestConfiguration<DeviceConfigurationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeviceConfiguration?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceConfigurationItemRequestBuilder.DeviceConfigurationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceConfiguration> GetAsync(Action<RequestConfiguration<DeviceConfigurationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeviceConfiguration> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceConfigurationItemRequestBuilder.DeviceConfigurationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceConfiguration>(requestInfo, DeviceConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DeviceConfiguration>(requestInfo, Microsoft.Graph.Models.DeviceConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getOmaSettingPlainTextValue method.
         /// </summary>
-        /// <returns>A <see cref="GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId.GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder"/></returns>
         /// <param name="secretReferenceValueId">Usage: secretReferenceValueId=&apos;{secretReferenceValueId}&apos;</param>
-        public GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder GetOmaSettingPlainTextValueWithSecretReferenceValueId(string secretReferenceValueId)
+        public Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId.GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder GetOmaSettingPlainTextValueWithSecretReferenceValueId(string secretReferenceValueId)
         {
             if(string.IsNullOrEmpty(secretReferenceValueId)) throw new ArgumentNullException(nameof(secretReferenceValueId));
-            return new GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder(PathParameters, RequestAdapter, secretReferenceValueId);
+            return new Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId.GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder(PathParameters, RequestAdapter, secretReferenceValueId);
         }
         /// <summary>
-        /// Update the properties of a windowsDefenderAdvancedThreatProtectionConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsdefenderadvancedthreatprotectionconfiguration-update?view=graph-rest-1.0" />
+        /// Update the properties of a windowsUpdateForBusinessConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsupdateforbusinessconfiguration-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="DeviceConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceConfiguration"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceConfiguration?> PatchAsync(DeviceConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeviceConfiguration?> PatchAsync(Microsoft.Graph.Models.DeviceConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceConfiguration> PatchAsync(DeviceConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeviceConfiguration> PatchAsync(Microsoft.Graph.Models.DeviceConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceConfiguration>(requestInfo, DeviceConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DeviceConfiguration>(requestInfo, Microsoft.Graph.Models.DeviceConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a iosCustomConfiguration.
+        /// Deletes a windows10GeneralConfiguration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,17 +178,17 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the windows10GeneralConfiguration object.
+        /// Read properties and relationships of the iosCertificateProfile object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceConfigurationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceConfigurationItemRequestBuilder.DeviceConfigurationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceConfigurationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceConfigurationItemRequestBuilder.DeviceConfigurationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -197,18 +197,18 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a windowsDefenderAdvancedThreatProtectionConfiguration object.
+        /// Update the properties of a windowsUpdateForBusinessConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(DeviceConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.DeviceConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(DeviceConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.DeviceConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -221,11 +221,11 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DeviceConfigurationItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceConfigurationItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeviceConfigurationItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceConfigurationItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new DeviceConfigurationItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceConfigurationItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -235,7 +235,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item
         {
         }
         /// <summary>
-        /// Read properties and relationships of the windows10GeneralConfiguration object.
+        /// Read properties and relationships of the iosCertificateProfile object.
         /// </summary>
         public class DeviceConfigurationItemRequestBuilderGetQueryParameters 
         {
@@ -264,7 +264,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceConfigurationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceConfigurationItemRequestBuilderGetQueryParameters>
+        public class DeviceConfigurationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceConfigurationItemRequestBuilder.DeviceConfigurationItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

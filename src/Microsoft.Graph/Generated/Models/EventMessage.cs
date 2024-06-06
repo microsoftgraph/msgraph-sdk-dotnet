@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class EventMessage : Message, IParsable
+    public class EventMessage : Microsoft.Graph.Models.Message, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The endDateTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? EndDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? EndDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("endDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone EndDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone EndDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("endDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
 #endif
@@ -85,43 +85,43 @@ namespace Microsoft.Graph.Models
         /// <summary>The recurrence property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PatternedRecurrence? Recurrence
+        public Microsoft.Graph.Models.PatternedRecurrence? Recurrence
         {
-            get { return BackingStore?.Get<PatternedRecurrence?>("recurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PatternedRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #nullable restore
 #else
-        public PatternedRecurrence Recurrence
+        public Microsoft.Graph.Models.PatternedRecurrence Recurrence
         {
-            get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PatternedRecurrence>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #endif
         /// <summary>The startDateTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? StartDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? StartDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone StartDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone StartDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
         /// <summary>The type property</summary>
-        public EventType? Type
+        public Microsoft.Graph.Models.EventType? Type
         {
-            get { return BackingStore?.Get<EventType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EventType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="EventMessage"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.EventMessage"/> and sets the default values.
         /// </summary>
         public EventMessage() : base()
         {
@@ -130,17 +130,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EventMessage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EventMessage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EventMessage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EventMessage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.eventMessageRequest" => new EventMessageRequest(),
-                "#microsoft.graph.eventMessageResponse" => new EventMessageResponse(),
-                _ => new EventMessage(),
+                "#microsoft.graph.eventMessageRequest" => new Microsoft.Graph.Models.EventMessageRequest(),
+                "#microsoft.graph.eventMessageResponse" => new Microsoft.Graph.Models.EventMessageResponse(),
+                _ => new Microsoft.Graph.Models.EventMessage(),
             };
         }
         /// <summary>
@@ -151,16 +151,16 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "endDateTime", n => { EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "endDateTime", n => { EndDateTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "event", n => { Event = n.GetObjectValue<Microsoft.Graph.Models.Event>(Microsoft.Graph.Models.Event.CreateFromDiscriminatorValue); } },
                 { "isAllDay", n => { IsAllDay = n.GetBoolValue(); } },
                 { "isDelegated", n => { IsDelegated = n.GetBoolValue(); } },
                 { "isOutOfDate", n => { IsOutOfDate = n.GetBoolValue(); } },
                 { "location", n => { Location = n.GetObjectValue<Microsoft.Graph.Models.Location>(Microsoft.Graph.Models.Location.CreateFromDiscriminatorValue); } },
-                { "meetingMessageType", n => { MeetingMessageType = n.GetEnumValue<MeetingMessageType>(); } },
-                { "recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
-                { "startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<EventType>(); } },
+                { "meetingMessageType", n => { MeetingMessageType = n.GetEnumValue<Microsoft.Graph.Models.MeetingMessageType>(); } },
+                { "recurrence", n => { Recurrence = n.GetObjectValue<Microsoft.Graph.Models.PatternedRecurrence>(Microsoft.Graph.Models.PatternedRecurrence.CreateFromDiscriminatorValue); } },
+                { "startDateTime", n => { StartDateTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Models.EventType>(); } },
             };
         }
         /// <summary>
@@ -171,16 +171,16 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<DateTimeTimeZone>("endDateTime", EndDateTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("endDateTime", EndDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Models.Event>("event", Event);
             writer.WriteBoolValue("isAllDay", IsAllDay);
             writer.WriteBoolValue("isDelegated", IsDelegated);
             writer.WriteBoolValue("isOutOfDate", IsOutOfDate);
             writer.WriteObjectValue<Microsoft.Graph.Models.Location>("location", Location);
-            writer.WriteEnumValue<MeetingMessageType>("meetingMessageType", MeetingMessageType);
-            writer.WriteObjectValue<PatternedRecurrence>("recurrence", Recurrence);
-            writer.WriteObjectValue<DateTimeTimeZone>("startDateTime", StartDateTime);
-            writer.WriteEnumValue<EventType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Models.MeetingMessageType>("meetingMessageType", MeetingMessageType);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PatternedRecurrence>("recurrence", Recurrence);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("startDateTime", StartDateTime);
+            writer.WriteEnumValue<Microsoft.Graph.Models.EventType>("type", Type);
         }
     }
 }

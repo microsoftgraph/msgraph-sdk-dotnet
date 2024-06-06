@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="KeyValue"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.KeyValue"/> and sets the default values.
         /// </summary>
         public KeyValue()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="KeyValue"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.KeyValue"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static KeyValue CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.KeyValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new KeyValue();
+            return new Microsoft.Graph.Models.KeyValue();
         }
         /// <summary>
         /// The deserialization information for the current model

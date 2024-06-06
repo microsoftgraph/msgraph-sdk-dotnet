@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.Grant
 {
     #pragma warning disable CS1591
-    public class GrantPostResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GrantPostResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
@@ -30,12 +30,12 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.Grant
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GrantPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.Grant.GrantPostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GrantPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.Grant.GrantPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GrantPostResponse();
+            return new Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.Grant.GrantPostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

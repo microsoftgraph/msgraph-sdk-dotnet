@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class GroupPeerOutlierRecommendationInsightSettings : AccessReviewRecommendationInsightSetting, IParsable
+    public class GroupPeerOutlierRecommendationInsightSettings : Microsoft.Graph.Models.AccessReviewRecommendationInsightSetting, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="GroupPeerOutlierRecommendationInsightSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.GroupPeerOutlierRecommendationInsightSettings"/> and sets the default values.
         /// </summary>
         public GroupPeerOutlierRecommendationInsightSettings() : base()
         {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GroupPeerOutlierRecommendationInsightSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.GroupPeerOutlierRecommendationInsightSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GroupPeerOutlierRecommendationInsightSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.GroupPeerOutlierRecommendationInsightSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GroupPeerOutlierRecommendationInsightSettings();
+            return new Microsoft.Graph.Models.GroupPeerOutlierRecommendationInsightSettings();
         }
         /// <summary>
         /// The deserialization information for the current model

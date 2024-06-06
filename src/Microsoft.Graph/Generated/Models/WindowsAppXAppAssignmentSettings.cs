@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties used when assigning a Windows AppX mobile app to a group.
     /// </summary>
-    public class WindowsAppXAppAssignmentSettings : MobileAppAssignmentSettings, IParsable
+    public class WindowsAppXAppAssignmentSettings : Microsoft.Graph.Models.MobileAppAssignmentSettings, IParsable
     {
         /// <summary>When TRUE, indicates that device execution context will be used for the AppX mobile app. When FALSE, indicates that user context will be used for the AppX mobile app. By default, this property is set to FALSE. Once this property has been set to TRUE it cannot be changed.</summary>
         public bool? UseDeviceContext
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("useDeviceContext", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsAppXAppAssignmentSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WindowsAppXAppAssignmentSettings"/> and sets the default values.
         /// </summary>
         public WindowsAppXAppAssignmentSettings() : base()
         {
@@ -27,12 +27,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsAppXAppAssignmentSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsAppXAppAssignmentSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsAppXAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WindowsAppXAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsAppXAppAssignmentSettings();
+            return new Microsoft.Graph.Models.WindowsAppXAppAssignmentSettings();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -23,16 +23,16 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Redirect
         /// <summary>The configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrintJobConfiguration? Configuration
+        public Microsoft.Graph.Models.PrintJobConfiguration? Configuration
         {
-            get { return BackingStore?.Get<PrintJobConfiguration?>("configuration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrintJobConfiguration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #nullable restore
 #else
-        public PrintJobConfiguration Configuration
+        public Microsoft.Graph.Models.PrintJobConfiguration Configuration
         {
-            get { return BackingStore?.Get<PrintJobConfiguration>("configuration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrintJobConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #endif
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Redirect
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RedirectPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Print.Printers.Item.Jobs.Item.Redirect.RedirectPostRequestBody"/> and sets the default values.
         /// </summary>
         public RedirectPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Redirect
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RedirectPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Print.Printers.Item.Jobs.Item.Redirect.RedirectPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RedirectPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Print.Printers.Item.Jobs.Item.Redirect.RedirectPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RedirectPostRequestBody();
+            return new Microsoft.Graph.Print.Printers.Item.Jobs.Item.Redirect.RedirectPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Redirect
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<PrintJobConfiguration>(PrintJobConfiguration.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<Microsoft.Graph.Models.PrintJobConfiguration>(Microsoft.Graph.Models.PrintJobConfiguration.CreateFromDiscriminatorValue); } },
                 { "destinationPrinterId", n => { DestinationPrinterId = n.GetStringValue(); } },
             };
         }
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Redirect
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<PrintJobConfiguration>("configuration", Configuration);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PrintJobConfiguration>("configuration", Configuration);
             writer.WriteStringValue("destinationPrinterId", DestinationPrinterId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// IOS Update Configuration, allows you to configure time window within week to install iOS updates
     /// </summary>
-    public class IosUpdateConfiguration : DeviceConfiguration, IParsable
+    public class IosUpdateConfiguration : Microsoft.Graph.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Active Hours End (active hours mean the time window when updates install should not happen)</summary>
         public Time? ActiveHoursEnd
@@ -27,16 +27,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DayOfWeekObject?>? ScheduledInstallDays
+        public List<Microsoft.Graph.Models.DayOfWeekObject?>? ScheduledInstallDays
         {
-            get { return BackingStore?.Get<List<DayOfWeekObject?>?>("scheduledInstallDays"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DayOfWeekObject?>?>("scheduledInstallDays"); }
             set { BackingStore?.Set("scheduledInstallDays", value); }
         }
 #nullable restore
 #else
-        public List<DayOfWeekObject?> ScheduledInstallDays
+        public List<Microsoft.Graph.Models.DayOfWeekObject?> ScheduledInstallDays
         {
-            get { return BackingStore?.Get<List<DayOfWeekObject?>>("scheduledInstallDays"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DayOfWeekObject?>>("scheduledInstallDays"); }
             set { BackingStore?.Set("scheduledInstallDays", value); }
         }
 #endif
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("utcTimeOffsetInMinutes", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IosUpdateConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IosUpdateConfiguration"/> and sets the default values.
         /// </summary>
         public IosUpdateConfiguration() : base()
         {
@@ -56,12 +56,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosUpdateConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IosUpdateConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosUpdateConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IosUpdateConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosUpdateConfiguration();
+            return new Microsoft.Graph.Models.IosUpdateConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Models
             {
                 { "activeHoursEnd", n => { ActiveHoursEnd = n.GetTimeValue(); } },
                 { "activeHoursStart", n => { ActiveHoursStart = n.GetTimeValue(); } },
-                { "scheduledInstallDays", n => { ScheduledInstallDays = n.GetCollectionOfEnumValues<DayOfWeekObject>()?.ToList(); } },
+                { "scheduledInstallDays", n => { ScheduledInstallDays = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.DayOfWeekObject>()?.ToList(); } },
                 { "utcTimeOffsetInMinutes", n => { UtcTimeOffsetInMinutes = n.GetIntValue(); } },
             };
         }
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteTimeValue("activeHoursEnd", ActiveHoursEnd);
             writer.WriteTimeValue("activeHoursStart", ActiveHoursStart);
-            writer.WriteCollectionOfEnumValues<DayOfWeekObject>("scheduledInstallDays", ScheduledInstallDays);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.DayOfWeekObject>("scheduledInstallDays", ScheduledInstallDays);
             writer.WriteIntValue("utcTimeOffsetInMinutes", UtcTimeOffsetInMinutes);
         }
     }

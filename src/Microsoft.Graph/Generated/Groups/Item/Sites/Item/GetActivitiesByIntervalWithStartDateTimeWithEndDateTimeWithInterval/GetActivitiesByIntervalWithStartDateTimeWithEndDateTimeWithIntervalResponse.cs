@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetActivitiesByIntervalWithStar
 {
     [Obsolete("This class is obsolete. Use GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse : GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetResponse, IParsable
+    public class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse : Microsoft.Graph.Groups.Item.Sites.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Sites.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Groups.Item.Sites.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse();
+            return new Microsoft.Graph.Groups.Item.Sites.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse();
         }
     }
 }

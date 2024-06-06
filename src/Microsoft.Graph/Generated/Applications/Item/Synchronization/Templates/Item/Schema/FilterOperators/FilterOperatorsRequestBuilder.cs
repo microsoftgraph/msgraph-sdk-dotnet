@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
     public class FilterOperatorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="FilterOperatorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="FilterOperatorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,50 +35,50 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         /// List all operators supported in the scoping filters.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="FilterOperatorsGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FilterOperatorsGetResponse?> GetAsFilterOperatorsGetResponseAsync(Action<RequestConfiguration<FilterOperatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsGetResponse?> GetAsFilterOperatorsGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsRequestBuilder.FilterOperatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FilterOperatorsGetResponse> GetAsFilterOperatorsGetResponseAsync(Action<RequestConfiguration<FilterOperatorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsGetResponse> GetAsFilterOperatorsGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsRequestBuilder.FilterOperatorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FilterOperatorsGetResponse>(requestInfo, FilterOperatorsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsGetResponse>(requestInfo, Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all operators supported in the scoping filters.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="FilterOperatorsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsFilterOperatorsGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FilterOperatorsResponse?> GetAsync(Action<RequestConfiguration<FilterOperatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsRequestBuilder.FilterOperatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FilterOperatorsResponse> GetAsync(Action<RequestConfiguration<FilterOperatorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsRequestBuilder.FilterOperatorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FilterOperatorsResponse>(requestInfo, FilterOperatorsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsResponse>(requestInfo, Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all operators supported in the scoping filters.
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FilterOperatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsRequestBuilder.FilterOperatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FilterOperatorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsRequestBuilder.FilterOperatorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="FilterOperatorsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FilterOperatorsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsRequestBuilder WithUrl(string rawUrl)
         {
-            return new FilterOperatorsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List all operators supported in the scoping filters.
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FilterOperatorsRequestBuilderGetRequestConfiguration : RequestConfiguration<FilterOperatorsRequestBuilderGetQueryParameters>
+        public class FilterOperatorsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsRequestBuilder.FilterOperatorsRequestBuilderGetQueryParameters>
         {
         }
     }

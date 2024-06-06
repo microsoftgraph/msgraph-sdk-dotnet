@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CompanySubscription : Entity, IParsable
+    public class CompanySubscription : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The commerceSubscriptionId property</summary>
@@ -95,16 +95,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The serviceStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServicePlanInfo>? ServiceStatus
+        public List<Microsoft.Graph.Models.ServicePlanInfo>? ServiceStatus
         {
-            get { return BackingStore?.Get<List<ServicePlanInfo>?>("serviceStatus"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ServicePlanInfo>?>("serviceStatus"); }
             set { BackingStore?.Set("serviceStatus", value); }
         }
 #nullable restore
 #else
-        public List<ServicePlanInfo> ServiceStatus
+        public List<Microsoft.Graph.Models.ServicePlanInfo> ServiceStatus
         {
-            get { return BackingStore?.Get<List<ServicePlanInfo>>("serviceStatus"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ServicePlanInfo>>("serviceStatus"); }
             set { BackingStore?.Set("serviceStatus", value); }
         }
 #endif
@@ -165,12 +165,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CompanySubscription"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CompanySubscription"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CompanySubscription CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CompanySubscription CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CompanySubscription();
+            return new Microsoft.Graph.Models.CompanySubscription();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -187,7 +187,7 @@ namespace Microsoft.Graph.Models
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "ownerTenantId", n => { OwnerTenantId = n.GetStringValue(); } },
                 { "ownerType", n => { OwnerType = n.GetStringValue(); } },
-                { "serviceStatus", n => { ServiceStatus = n.GetCollectionOfObjectValues<ServicePlanInfo>(ServicePlanInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "serviceStatus", n => { ServiceStatus = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ServicePlanInfo>(Microsoft.Graph.Models.ServicePlanInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "skuId", n => { SkuId = n.GetStringValue(); } },
                 { "skuPartNumber", n => { SkuPartNumber = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -209,7 +209,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteStringValue("ownerTenantId", OwnerTenantId);
             writer.WriteStringValue("ownerType", OwnerType);
-            writer.WriteCollectionOfObjectValues<ServicePlanInfo>("serviceStatus", ServiceStatus);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ServicePlanInfo>("serviceStatus", ServiceStatus);
             writer.WriteStringValue("skuId", SkuId);
             writer.WriteStringValue("skuPartNumber", SkuPartNumber);
             writer.WriteStringValue("status", Status);

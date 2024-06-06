@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ConditionalAccessAllExternalTenants : ConditionalAccessExternalTenants, IParsable
+    public class ConditionalAccessAllExternalTenants : Microsoft.Graph.Models.ConditionalAccessExternalTenants, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="ConditionalAccessAllExternalTenants"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ConditionalAccessAllExternalTenants"/> and sets the default values.
         /// </summary>
         public ConditionalAccessAllExternalTenants() : base()
         {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessAllExternalTenants"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ConditionalAccessAllExternalTenants"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ConditionalAccessAllExternalTenants CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ConditionalAccessAllExternalTenants CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessAllExternalTenants();
+            return new Microsoft.Graph.Models.ConditionalAccessAllExternalTenants();
         }
         /// <summary>
         /// The deserialization information for the current model

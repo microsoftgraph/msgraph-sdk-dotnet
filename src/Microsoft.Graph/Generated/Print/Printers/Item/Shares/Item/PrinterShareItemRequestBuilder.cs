@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Shares.Item
     public class PrinterShareItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="PrinterShareItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Print.Printers.Item.Shares.Item.PrinterShareItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Shares.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrinterShareItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Print.Printers.Item.Shares.Item.PrinterShareItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Print.Printers.Item.Shares.Item
         /// <summary>
         /// The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
         /// </summary>
-        /// <returns>A <see cref="PrinterShare"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrinterShare"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrinterShare?> GetAsync(Action<RequestConfiguration<PrinterShareItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrinterShare?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Print.Printers.Item.Shares.Item.PrinterShareItemRequestBuilder.PrinterShareItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PrinterShare> GetAsync(Action<RequestConfiguration<PrinterShareItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrinterShare> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Print.Printers.Item.Shares.Item.PrinterShareItemRequestBuilder.PrinterShareItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PrinterShare>(requestInfo, PrinterShare.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PrinterShare>(requestInfo, Microsoft.Graph.Models.PrinterShare.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Print.Printers.Item.Shares.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrinterShareItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Print.Printers.Item.Shares.Item.PrinterShareItemRequestBuilder.PrinterShareItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrinterShareItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Print.Printers.Item.Shares.Item.PrinterShareItemRequestBuilder.PrinterShareItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Print.Printers.Item.Shares.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PrinterShareItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Print.Printers.Item.Shares.Item.PrinterShareItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PrinterShareItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Print.Printers.Item.Shares.Item.PrinterShareItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new PrinterShareItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Print.Printers.Item.Shares.Item.PrinterShareItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Shares.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PrinterShareItemRequestBuilderGetRequestConfiguration : RequestConfiguration<PrinterShareItemRequestBuilderGetQueryParameters>
+        public class PrinterShareItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Print.Printers.Item.Shares.Item.PrinterShareItemRequestBuilder.PrinterShareItemRequestBuilderGetQueryParameters>
         {
         }
     }

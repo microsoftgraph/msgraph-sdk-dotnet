@@ -18,12 +18,12 @@ namespace Microsoft.Graph.Users.Item.Authentication.Methods.Item
     public class AuthenticationMethodItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the resetPassword method.</summary>
-        public ResetPasswordRequestBuilder ResetPassword
+        public Microsoft.Graph.Users.Item.Authentication.Methods.Item.ResetPassword.ResetPasswordRequestBuilder ResetPassword
         {
-            get => new ResetPasswordRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Authentication.Methods.Item.ResetPassword.ResetPasswordRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationMethodItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Authentication.Methods.Item.AuthenticationMethodItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.Methods.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationMethodItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Authentication.Methods.Item.AuthenticationMethodItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,50 +41,50 @@ namespace Microsoft.Graph.Users.Item.Authentication.Methods.Item
         /// <summary>
         /// Represents all authentication methods registered to a user.
         /// </summary>
-        /// <returns>A <see cref="AuthenticationMethod"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationMethod"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationMethod?> GetAsync(Action<RequestConfiguration<AuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationMethod?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Authentication.Methods.Item.AuthenticationMethodItemRequestBuilder.AuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AuthenticationMethod> GetAsync(Action<RequestConfiguration<AuthenticationMethodItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationMethod> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Authentication.Methods.Item.AuthenticationMethodItemRequestBuilder.AuthenticationMethodItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AuthenticationMethod>(requestInfo, AuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthenticationMethod>(requestInfo, Microsoft.Graph.Models.AuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property methods in users
         /// </summary>
-        /// <returns>A <see cref="AuthenticationMethod"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationMethod"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationMethod?> PatchAsync(AuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationMethod?> PatchAsync(Microsoft.Graph.Models.AuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AuthenticationMethod> PatchAsync(AuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationMethod> PatchAsync(Microsoft.Graph.Models.AuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AuthenticationMethod>(requestInfo, AuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthenticationMethod>(requestInfo, Microsoft.Graph.Models.AuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents all authentication methods registered to a user.
@@ -93,11 +93,11 @@ namespace Microsoft.Graph.Users.Item.Authentication.Methods.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Authentication.Methods.Item.AuthenticationMethodItemRequestBuilder.AuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthenticationMethodItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Authentication.Methods.Item.AuthenticationMethodItemRequestBuilder.AuthenticationMethodItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -113,11 +113,11 @@ namespace Microsoft.Graph.Users.Item.Authentication.Methods.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(AuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.AuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(AuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.AuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -130,11 +130,11 @@ namespace Microsoft.Graph.Users.Item.Authentication.Methods.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AuthenticationMethodItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Authentication.Methods.Item.AuthenticationMethodItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AuthenticationMethodItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.Authentication.Methods.Item.AuthenticationMethodItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new AuthenticationMethodItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.Authentication.Methods.Item.AuthenticationMethodItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Represents all authentication methods registered to a user.
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.Methods.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AuthenticationMethodItemRequestBuilderGetRequestConfiguration : RequestConfiguration<AuthenticationMethodItemRequestBuilderGetQueryParameters>
+        public class AuthenticationMethodItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.Authentication.Methods.Item.AuthenticationMethodItemRequestBuilder.AuthenticationMethodItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

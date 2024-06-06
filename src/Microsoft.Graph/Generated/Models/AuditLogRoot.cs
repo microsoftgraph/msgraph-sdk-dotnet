@@ -7,66 +7,66 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AuditLogRoot : Entity, IParsable
+    public class AuditLogRoot : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The directoryAudits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryAudit>? DirectoryAudits
+        public List<Microsoft.Graph.Models.DirectoryAudit>? DirectoryAudits
         {
-            get { return BackingStore?.Get<List<DirectoryAudit>?>("directoryAudits"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryAudit>?>("directoryAudits"); }
             set { BackingStore?.Set("directoryAudits", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryAudit> DirectoryAudits
+        public List<Microsoft.Graph.Models.DirectoryAudit> DirectoryAudits
         {
-            get { return BackingStore?.Get<List<DirectoryAudit>>("directoryAudits"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryAudit>>("directoryAudits"); }
             set { BackingStore?.Set("directoryAudits", value); }
         }
 #endif
         /// <summary>The provisioning property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProvisioningObjectSummary>? Provisioning
+        public List<Microsoft.Graph.Models.ProvisioningObjectSummary>? Provisioning
         {
-            get { return BackingStore?.Get<List<ProvisioningObjectSummary>?>("provisioning"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ProvisioningObjectSummary>?>("provisioning"); }
             set { BackingStore?.Set("provisioning", value); }
         }
 #nullable restore
 #else
-        public List<ProvisioningObjectSummary> Provisioning
+        public List<Microsoft.Graph.Models.ProvisioningObjectSummary> Provisioning
         {
-            get { return BackingStore?.Get<List<ProvisioningObjectSummary>>("provisioning"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ProvisioningObjectSummary>>("provisioning"); }
             set { BackingStore?.Set("provisioning", value); }
         }
 #endif
         /// <summary>The signIns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SignIn>? SignIns
+        public List<Microsoft.Graph.Models.SignIn>? SignIns
         {
-            get { return BackingStore?.Get<List<SignIn>?>("signIns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SignIn>?>("signIns"); }
             set { BackingStore?.Set("signIns", value); }
         }
 #nullable restore
 #else
-        public List<SignIn> SignIns
+        public List<Microsoft.Graph.Models.SignIn> SignIns
         {
-            get { return BackingStore?.Get<List<SignIn>>("signIns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SignIn>>("signIns"); }
             set { BackingStore?.Set("signIns", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuditLogRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuditLogRoot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuditLogRoot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AuditLogRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuditLogRoot();
+            return new Microsoft.Graph.Models.AuditLogRoot();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,9 +76,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "directoryAudits", n => { DirectoryAudits = n.GetCollectionOfObjectValues<DirectoryAudit>(DirectoryAudit.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "provisioning", n => { Provisioning = n.GetCollectionOfObjectValues<ProvisioningObjectSummary>(ProvisioningObjectSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "signIns", n => { SignIns = n.GetCollectionOfObjectValues<SignIn>(SignIn.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "directoryAudits", n => { DirectoryAudits = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryAudit>(Microsoft.Graph.Models.DirectoryAudit.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "provisioning", n => { Provisioning = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ProvisioningObjectSummary>(Microsoft.Graph.Models.ProvisioningObjectSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "signIns", n => { SignIns = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SignIn>(Microsoft.Graph.Models.SignIn.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DirectoryAudit>("directoryAudits", DirectoryAudits);
-            writer.WriteCollectionOfObjectValues<ProvisioningObjectSummary>("provisioning", Provisioning);
-            writer.WriteCollectionOfObjectValues<SignIn>("signIns", SignIns);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryAudit>("directoryAudits", DirectoryAudits);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ProvisioningObjectSummary>("provisioning", Provisioning);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SignIn>("signIns", SignIns);
         }
     }
 }

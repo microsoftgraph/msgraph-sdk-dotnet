@@ -25,54 +25,54 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages
     public class MessagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the archive method.</summary>
-        public ArchiveRequestBuilder Archive
+        public Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchiveRequestBuilder Archive
         {
-            get => new ArchiveRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the favorite method.</summary>
-        public FavoriteRequestBuilder Favorite
+        public Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoriteRequestBuilder Favorite
         {
-            get => new FavoriteRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoriteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the markRead method.</summary>
-        public MarkReadRequestBuilder MarkRead
+        public Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead.MarkReadRequestBuilder MarkRead
         {
-            get => new MarkReadRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead.MarkReadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the markUnread method.</summary>
-        public MarkUnreadRequestBuilder MarkUnread
+        public Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread.MarkUnreadRequestBuilder MarkUnread
         {
-            get => new MarkUnreadRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread.MarkUnreadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unarchive method.</summary>
-        public UnarchiveRequestBuilder Unarchive
+        public Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unarchive.UnarchiveRequestBuilder Unarchive
         {
-            get => new UnarchiveRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unfavorite method.</summary>
-        public UnfavoriteRequestBuilder Unfavorite
+        public Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoriteRequestBuilder Unfavorite
         {
-            get => new UnfavoriteRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoriteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.</summary>
         /// <param name="position">The unique identifier of serviceUpdateMessage</param>
-        /// <returns>A <see cref="ServiceUpdateMessageItemRequestBuilder"/></returns>
-        public ServiceUpdateMessageItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Item.ServiceUpdateMessageItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Item.ServiceUpdateMessageItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("serviceUpdateMessage%2Did", position);
-                return new ServiceUpdateMessageItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Item.ServiceUpdateMessageItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MessagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MessagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MessagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MessagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -91,50 +91,50 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages
         /// Retrieve the serviceUpdateMessage resources from the messages navigation property. This operation retrieves all service update messages that exist for the tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ServiceUpdateMessageCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ServiceUpdateMessageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ServiceUpdateMessageCollectionResponse?> GetAsync(Action<RequestConfiguration<MessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ServiceUpdateMessageCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MessagesRequestBuilder.MessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ServiceUpdateMessageCollectionResponse> GetAsync(Action<RequestConfiguration<MessagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ServiceUpdateMessageCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MessagesRequestBuilder.MessagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ServiceUpdateMessageCollectionResponse>(requestInfo, ServiceUpdateMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ServiceUpdateMessageCollectionResponse>(requestInfo, Microsoft.Graph.Models.ServiceUpdateMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to messages for admin
         /// </summary>
-        /// <returns>A <see cref="ServiceUpdateMessage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ServiceUpdateMessage"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ServiceUpdateMessage?> PostAsync(ServiceUpdateMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ServiceUpdateMessage?> PostAsync(Microsoft.Graph.Models.ServiceUpdateMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ServiceUpdateMessage> PostAsync(ServiceUpdateMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ServiceUpdateMessage> PostAsync(Microsoft.Graph.Models.ServiceUpdateMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ServiceUpdateMessage>(requestInfo, ServiceUpdateMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ServiceUpdateMessage>(requestInfo, Microsoft.Graph.Models.ServiceUpdateMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the serviceUpdateMessage resources from the messages navigation property. This operation retrieves all service update messages that exist for the tenant.
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MessagesRequestBuilder.MessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MessagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MessagesRequestBuilder.MessagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -163,11 +163,11 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ServiceUpdateMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ServiceUpdateMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ServiceUpdateMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ServiceUpdateMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -180,11 +180,11 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MessagesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MessagesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MessagesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MessagesRequestBuilder WithUrl(string rawUrl)
         {
-            return new MessagesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve the serviceUpdateMessage resources from the messages navigation property. This operation retrieves all service update messages that exist for the tenant.
@@ -255,7 +255,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MessagesRequestBuilderGetRequestConfiguration : RequestConfiguration<MessagesRequestBuilderGetQueryParameters>
+        public class MessagesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MessagesRequestBuilder.MessagesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

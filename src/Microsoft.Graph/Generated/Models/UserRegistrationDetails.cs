@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UserRegistrationDetails : Entity, IParsable
+    public class UserRegistrationDetails : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.</summary>
@@ -113,9 +113,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The method the user selected as the default second-factor for performing multifactor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. This property is used as preferred MFA method when isSystemPreferredAuthenticationMethodEnabled is false. Supports $filter (any with eq).</summary>
-        public UserDefaultAuthenticationMethod? UserPreferredMethodForSecondaryAuthentication
+        public Microsoft.Graph.Models.UserDefaultAuthenticationMethod? UserPreferredMethodForSecondaryAuthentication
         {
-            get { return BackingStore?.Get<UserDefaultAuthenticationMethod?>("userPreferredMethodForSecondaryAuthentication"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserDefaultAuthenticationMethod?>("userPreferredMethodForSecondaryAuthentication"); }
             set { BackingStore?.Set("userPreferredMethodForSecondaryAuthentication", value); }
         }
         /// <summary>The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderby.</summary>
@@ -135,20 +135,20 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Identifies whether the user is a member or guest in the tenant. The possible values are: member, guest, unknownFutureValue.</summary>
-        public SignInUserType? UserType
+        public Microsoft.Graph.Models.SignInUserType? UserType
         {
-            get { return BackingStore?.Get<SignInUserType?>("userType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SignInUserType?>("userType"); }
             set { BackingStore?.Set("userType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserRegistrationDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserRegistrationDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserRegistrationDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserRegistrationDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserRegistrationDetails();
+            return new Microsoft.Graph.Models.UserRegistrationDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -170,9 +170,9 @@ namespace Microsoft.Graph.Models
                 { "methodsRegistered", n => { MethodsRegistered = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "systemPreferredAuthenticationMethods", n => { SystemPreferredAuthenticationMethods = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
-                { "userPreferredMethodForSecondaryAuthentication", n => { UserPreferredMethodForSecondaryAuthentication = n.GetEnumValue<UserDefaultAuthenticationMethod>(); } },
+                { "userPreferredMethodForSecondaryAuthentication", n => { UserPreferredMethodForSecondaryAuthentication = n.GetEnumValue<Microsoft.Graph.Models.UserDefaultAuthenticationMethod>(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                { "userType", n => { UserType = n.GetEnumValue<SignInUserType>(); } },
+                { "userType", n => { UserType = n.GetEnumValue<Microsoft.Graph.Models.SignInUserType>(); } },
             };
         }
         /// <summary>
@@ -195,9 +195,9 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfPrimitiveValues<string>("methodsRegistered", MethodsRegistered);
             writer.WriteCollectionOfPrimitiveValues<string>("systemPreferredAuthenticationMethods", SystemPreferredAuthenticationMethods);
             writer.WriteStringValue("userDisplayName", UserDisplayName);
-            writer.WriteEnumValue<UserDefaultAuthenticationMethod>("userPreferredMethodForSecondaryAuthentication", UserPreferredMethodForSecondaryAuthentication);
+            writer.WriteEnumValue<Microsoft.Graph.Models.UserDefaultAuthenticationMethod>("userPreferredMethodForSecondaryAuthentication", UserPreferredMethodForSecondaryAuthentication);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
-            writer.WriteEnumValue<SignInUserType>("userType", UserType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SignInUserType>("userType", UserType);
         }
     }
 }

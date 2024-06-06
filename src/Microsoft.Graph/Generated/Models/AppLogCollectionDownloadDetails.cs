@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AppLogCollectionDownloadDetails"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AppLogCollectionDownloadDetails"/> and sets the default values.
         /// </summary>
         public AppLogCollectionDownloadDetails()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppLogCollectionDownloadDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AppLogCollectionDownloadDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AppLogCollectionDownloadDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AppLogCollectionDownloadDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AppLogCollectionDownloadDetails();
+            return new Microsoft.Graph.Models.AppLogCollectionDownloadDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "appLogDecryptionAlgorithm", n => { AppLogDecryptionAlgorithm = n.GetEnumValue<AppLogDecryptionAlgorithm>(); } },
+                { "appLogDecryptionAlgorithm", n => { AppLogDecryptionAlgorithm = n.GetEnumValue<Microsoft.Graph.Models.AppLogDecryptionAlgorithm>(); } },
                 { "decryptionKey", n => { DecryptionKey = n.GetStringValue(); } },
                 { "downloadUrl", n => { DownloadUrl = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AppLogDecryptionAlgorithm>("appLogDecryptionAlgorithm", AppLogDecryptionAlgorithm);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AppLogDecryptionAlgorithm>("appLogDecryptionAlgorithm", AppLogDecryptionAlgorithm);
             writer.WriteStringValue("decryptionKey", DecryptionKey);
             writer.WriteStringValue("downloadUrl", DownloadUrl);
             writer.WriteStringValue("@odata.type", OdataType);

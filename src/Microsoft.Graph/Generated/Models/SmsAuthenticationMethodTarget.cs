@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SmsAuthenticationMethodTarget : AuthenticationMethodTarget, IParsable
+    public class SmsAuthenticationMethodTarget : Microsoft.Graph.Models.AuthenticationMethodTarget, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Determines if users can use this authentication method to sign in to Microsoft Entra ID. true if users can use this method for primary authentication, otherwise false.</summary>
@@ -19,12 +19,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SmsAuthenticationMethodTarget"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SmsAuthenticationMethodTarget"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SmsAuthenticationMethodTarget CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SmsAuthenticationMethodTarget CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SmsAuthenticationMethodTarget();
+            return new Microsoft.Graph.Models.SmsAuthenticationMethodTarget();
         }
         /// <summary>
         /// The deserialization information for the current model

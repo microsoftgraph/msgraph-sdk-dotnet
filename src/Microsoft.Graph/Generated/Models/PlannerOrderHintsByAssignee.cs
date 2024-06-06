@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PlannerOrderHintsByAssignee"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.PlannerOrderHintsByAssignee"/> and sets the default values.
         /// </summary>
         public PlannerOrderHintsByAssignee()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerOrderHintsByAssignee"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PlannerOrderHintsByAssignee"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlannerOrderHintsByAssignee CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.PlannerOrderHintsByAssignee CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerOrderHintsByAssignee();
+            return new Microsoft.Graph.Models.PlannerOrderHintsByAssignee();
         }
         /// <summary>
         /// The deserialization information for the current model

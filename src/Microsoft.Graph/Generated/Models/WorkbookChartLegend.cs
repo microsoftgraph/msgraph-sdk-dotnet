@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookChartLegend : Entity, IParsable
+    public class WorkbookChartLegend : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartLegendFormat? Format
+        public Microsoft.Graph.Models.WorkbookChartLegendFormat? Format
         {
-            get { return BackingStore?.Get<WorkbookChartLegendFormat?>("format"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartLegendFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartLegendFormat Format
+        public Microsoft.Graph.Models.WorkbookChartLegendFormat Format
         {
-            get { return BackingStore?.Get<WorkbookChartLegendFormat>("format"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartLegendFormat>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #endif
@@ -57,12 +57,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookChartLegend"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookChartLegend"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookChartLegend CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WorkbookChartLegend CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookChartLegend();
+            return new Microsoft.Graph.Models.WorkbookChartLegend();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "format", n => { Format = n.GetObjectValue<WorkbookChartLegendFormat>(WorkbookChartLegendFormat.CreateFromDiscriminatorValue); } },
+                { "format", n => { Format = n.GetObjectValue<Microsoft.Graph.Models.WorkbookChartLegendFormat>(Microsoft.Graph.Models.WorkbookChartLegendFormat.CreateFromDiscriminatorValue); } },
                 { "overlay", n => { Overlay = n.GetBoolValue(); } },
                 { "position", n => { Position = n.GetStringValue(); } },
                 { "visible", n => { Visible = n.GetBoolValue(); } },
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<WorkbookChartLegendFormat>("format", Format);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookChartLegendFormat>("format", Format);
             writer.WriteBoolValue("overlay", Overlay);
             writer.WriteStringValue("position", Position);
             writer.WriteBoolValue("visible", Visible);

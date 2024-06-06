@@ -69,16 +69,16 @@ namespace Microsoft.Graph.Communications.Calls.Item.RecordResponse
         /// <summary>The prompts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Prompt>? Prompts
+        public List<Microsoft.Graph.Models.Prompt>? Prompts
         {
-            get { return BackingStore?.Get<List<Prompt>?>("prompts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Prompt>?>("prompts"); }
             set { BackingStore?.Set("prompts", value); }
         }
 #nullable restore
 #else
-        public List<Prompt> Prompts
+        public List<Microsoft.Graph.Models.Prompt> Prompts
         {
-            get { return BackingStore?.Get<List<Prompt>>("prompts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Prompt>>("prompts"); }
             set { BackingStore?.Set("prompts", value); }
         }
 #endif
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.RecordResponse
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RecordResponsePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Communications.Calls.Item.RecordResponse.RecordResponsePostRequestBody"/> and sets the default values.
         /// </summary>
         public RecordResponsePostRequestBody()
         {
@@ -109,12 +109,12 @@ namespace Microsoft.Graph.Communications.Calls.Item.RecordResponse
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RecordResponsePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Communications.Calls.Item.RecordResponse.RecordResponsePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RecordResponsePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Communications.Calls.Item.RecordResponse.RecordResponsePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RecordResponsePostRequestBody();
+            return new Microsoft.Graph.Communications.Calls.Item.RecordResponse.RecordResponsePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.RecordResponse
                 { "maxRecordDurationInSeconds", n => { MaxRecordDurationInSeconds = n.GetIntValue(); } },
                 { "maxSilenceTimeoutInSeconds", n => { MaxSilenceTimeoutInSeconds = n.GetIntValue(); } },
                 { "playBeep", n => { PlayBeep = n.GetBoolValue(); } },
-                { "prompts", n => { Prompts = n.GetCollectionOfObjectValues<Prompt>(Prompt.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "prompts", n => { Prompts = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Prompt>(Microsoft.Graph.Models.Prompt.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "stopTones", n => { StopTones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.RecordResponse
             writer.WriteIntValue("maxRecordDurationInSeconds", MaxRecordDurationInSeconds);
             writer.WriteIntValue("maxSilenceTimeoutInSeconds", MaxSilenceTimeoutInSeconds);
             writer.WriteBoolValue("playBeep", PlayBeep);
-            writer.WriteCollectionOfObjectValues<Prompt>("prompts", Prompts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Prompt>("prompts", Prompts);
             writer.WriteCollectionOfPrimitiveValues<string>("stopTones", StopTones);
             writer.WriteAdditionalData(AdditionalData);
         }

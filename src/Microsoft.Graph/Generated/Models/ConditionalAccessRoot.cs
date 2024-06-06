@@ -7,98 +7,98 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ConditionalAccessRoot : Entity, IParsable
+    public class ConditionalAccessRoot : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Read-only. Nullable. Returns a collection of the specified authentication context class references.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationContextClassReference>? AuthenticationContextClassReferences
+        public List<Microsoft.Graph.Models.AuthenticationContextClassReference>? AuthenticationContextClassReferences
         {
-            get { return BackingStore?.Get<List<AuthenticationContextClassReference>?>("authenticationContextClassReferences"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationContextClassReference>?>("authenticationContextClassReferences"); }
             set { BackingStore?.Set("authenticationContextClassReferences", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationContextClassReference> AuthenticationContextClassReferences
+        public List<Microsoft.Graph.Models.AuthenticationContextClassReference> AuthenticationContextClassReferences
         {
-            get { return BackingStore?.Get<List<AuthenticationContextClassReference>>("authenticationContextClassReferences"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationContextClassReference>>("authenticationContextClassReferences"); }
             set { BackingStore?.Set("authenticationContextClassReferences", value); }
         }
 #endif
         /// <summary>The authenticationStrength property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationStrengthRoot? AuthenticationStrength
+        public Microsoft.Graph.Models.AuthenticationStrengthRoot? AuthenticationStrength
         {
-            get { return BackingStore?.Get<AuthenticationStrengthRoot?>("authenticationStrength"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationStrengthRoot?>("authenticationStrength"); }
             set { BackingStore?.Set("authenticationStrength", value); }
         }
 #nullable restore
 #else
-        public AuthenticationStrengthRoot AuthenticationStrength
+        public Microsoft.Graph.Models.AuthenticationStrengthRoot AuthenticationStrength
         {
-            get { return BackingStore?.Get<AuthenticationStrengthRoot>("authenticationStrength"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationStrengthRoot>("authenticationStrength"); }
             set { BackingStore?.Set("authenticationStrength", value); }
         }
 #endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified named locations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NamedLocation>? NamedLocations
+        public List<Microsoft.Graph.Models.NamedLocation>? NamedLocations
         {
-            get { return BackingStore?.Get<List<NamedLocation>?>("namedLocations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.NamedLocation>?>("namedLocations"); }
             set { BackingStore?.Set("namedLocations", value); }
         }
 #nullable restore
 #else
-        public List<NamedLocation> NamedLocations
+        public List<Microsoft.Graph.Models.NamedLocation> NamedLocations
         {
-            get { return BackingStore?.Get<List<NamedLocation>>("namedLocations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.NamedLocation>>("namedLocations"); }
             set { BackingStore?.Set("namedLocations", value); }
         }
 #endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConditionalAccessPolicy>? Policies
+        public List<Microsoft.Graph.Models.ConditionalAccessPolicy>? Policies
         {
-            get { return BackingStore?.Get<List<ConditionalAccessPolicy>?>("policies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConditionalAccessPolicy>?>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
 #nullable restore
 #else
-        public List<ConditionalAccessPolicy> Policies
+        public List<Microsoft.Graph.Models.ConditionalAccessPolicy> Policies
         {
-            get { return BackingStore?.Get<List<ConditionalAccessPolicy>>("policies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConditionalAccessPolicy>>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
 #endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified Conditional Access templates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConditionalAccessTemplate>? Templates
+        public List<Microsoft.Graph.Models.ConditionalAccessTemplate>? Templates
         {
-            get { return BackingStore?.Get<List<ConditionalAccessTemplate>?>("templates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConditionalAccessTemplate>?>("templates"); }
             set { BackingStore?.Set("templates", value); }
         }
 #nullable restore
 #else
-        public List<ConditionalAccessTemplate> Templates
+        public List<Microsoft.Graph.Models.ConditionalAccessTemplate> Templates
         {
-            get { return BackingStore?.Get<List<ConditionalAccessTemplate>>("templates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConditionalAccessTemplate>>("templates"); }
             set { BackingStore?.Set("templates", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ConditionalAccessRoot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ConditionalAccessRoot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ConditionalAccessRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessRoot();
+            return new Microsoft.Graph.Models.ConditionalAccessRoot();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authenticationContextClassReferences", n => { AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<AuthenticationContextClassReference>(AuthenticationContextClassReference.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "authenticationStrength", n => { AuthenticationStrength = n.GetObjectValue<AuthenticationStrengthRoot>(AuthenticationStrengthRoot.CreateFromDiscriminatorValue); } },
-                { "namedLocations", n => { NamedLocations = n.GetCollectionOfObjectValues<NamedLocation>(NamedLocation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "policies", n => { Policies = n.GetCollectionOfObjectValues<ConditionalAccessPolicy>(ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "templates", n => { Templates = n.GetCollectionOfObjectValues<ConditionalAccessTemplate>(ConditionalAccessTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationContextClassReferences", n => { AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationContextClassReference>(Microsoft.Graph.Models.AuthenticationContextClassReference.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationStrength", n => { AuthenticationStrength = n.GetObjectValue<Microsoft.Graph.Models.AuthenticationStrengthRoot>(Microsoft.Graph.Models.AuthenticationStrengthRoot.CreateFromDiscriminatorValue); } },
+                { "namedLocations", n => { NamedLocations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.NamedLocation>(Microsoft.Graph.Models.NamedLocation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "policies", n => { Policies = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ConditionalAccessPolicy>(Microsoft.Graph.Models.ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "templates", n => { Templates = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ConditionalAccessTemplate>(Microsoft.Graph.Models.ConditionalAccessTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -123,11 +123,11 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AuthenticationContextClassReference>("authenticationContextClassReferences", AuthenticationContextClassReferences);
-            writer.WriteObjectValue<AuthenticationStrengthRoot>("authenticationStrength", AuthenticationStrength);
-            writer.WriteCollectionOfObjectValues<NamedLocation>("namedLocations", NamedLocations);
-            writer.WriteCollectionOfObjectValues<ConditionalAccessPolicy>("policies", Policies);
-            writer.WriteCollectionOfObjectValues<ConditionalAccessTemplate>("templates", Templates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationContextClassReference>("authenticationContextClassReferences", AuthenticationContextClassReferences);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AuthenticationStrengthRoot>("authenticationStrength", AuthenticationStrength);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.NamedLocation>("namedLocations", NamedLocations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ConditionalAccessPolicy>("policies", Policies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ConditionalAccessTemplate>("templates", Templates);
         }
     }
 }

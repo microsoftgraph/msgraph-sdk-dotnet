@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCovera
     public class GetAttackSimulationTrainingUserCoverageRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetAttackSimulationTrainingUserCoverageRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCovera
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetAttackSimulationTrainingUserCoverageRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,50 +35,50 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCovera
         /// List training coverage for tenant users in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationtrainingusercoverage?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetAttackSimulationTrainingUserCoverageGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAttackSimulationTrainingUserCoverageGetResponse?> GetAsGetAttackSimulationTrainingUserCoverageGetResponseAsync(Action<RequestConfiguration<GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageGetResponse?> GetAsGetAttackSimulationTrainingUserCoverageGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder.GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetAttackSimulationTrainingUserCoverageGetResponse> GetAsGetAttackSimulationTrainingUserCoverageGetResponseAsync(Action<RequestConfiguration<GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageGetResponse> GetAsGetAttackSimulationTrainingUserCoverageGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder.GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetAttackSimulationTrainingUserCoverageGetResponse>(requestInfo, GetAttackSimulationTrainingUserCoverageGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageGetResponse>(requestInfo, Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List training coverage for tenant users in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationtrainingusercoverage?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetAttackSimulationTrainingUserCoverageResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetAttackSimulationTrainingUserCoverageGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAttackSimulationTrainingUserCoverageResponse?> GetAsync(Action<RequestConfiguration<GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder.GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetAttackSimulationTrainingUserCoverageResponse> GetAsync(Action<RequestConfiguration<GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder.GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetAttackSimulationTrainingUserCoverageResponse>(requestInfo, GetAttackSimulationTrainingUserCoverageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageResponse>(requestInfo, Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List training coverage for tenant users in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCovera
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder.GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder.GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCovera
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetAttackSimulationTrainingUserCoverageRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetAttackSimulationTrainingUserCoverageRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetAttackSimulationTrainingUserCoverageRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List training coverage for tenant users in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCovera
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetAttackSimulationTrainingUserCoverageRequestBuilderGetRequestConfiguration : RequestConfiguration<GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters>
+        public class GetAttackSimulationTrainingUserCoverageRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder.GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters>
         {
         }
     }

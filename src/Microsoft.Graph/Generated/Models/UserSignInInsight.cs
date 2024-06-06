@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UserSignInInsight : GovernanceInsight, IParsable
+    public class UserSignInInsight : Microsoft.Graph.Models.GovernanceInsight, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates when the user last signed in.</summary>
@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("lastSignInDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserSignInInsight"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.UserSignInInsight"/> and sets the default values.
         /// </summary>
         public UserSignInInsight() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserSignInInsight"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserSignInInsight"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserSignInInsight CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserSignInInsight CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserSignInInsight();
+            return new Microsoft.Graph.Models.UserSignInInsight();
         }
         /// <summary>
         /// The deserialization information for the current model

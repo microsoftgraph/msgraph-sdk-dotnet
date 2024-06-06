@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Artic
     public class ArticleItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ArticleItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Articles.Item.ArticleItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Artic
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ArticleItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Articles.Item.ArticleItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Artic
         /// <summary>
         /// Articles related to this vulnerability.
         /// </summary>
-        /// <returns>A <see cref="Article"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.Article"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Article?> GetAsync(Action<RequestConfiguration<ArticleItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.Article?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Articles.Item.ArticleItemRequestBuilder.ArticleItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Article> GetAsync(Action<RequestConfiguration<ArticleItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.Article> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Articles.Item.ArticleItemRequestBuilder.ArticleItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Article>(requestInfo, Article.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.Article>(requestInfo, Microsoft.Graph.Models.Security.Article.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Articles related to this vulnerability.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Artic
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ArticleItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Articles.Item.ArticleItemRequestBuilder.ArticleItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ArticleItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Articles.Item.ArticleItemRequestBuilder.ArticleItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Artic
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ArticleItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Articles.Item.ArticleItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ArticleItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Articles.Item.ArticleItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new ArticleItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Articles.Item.ArticleItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Articles related to this vulnerability.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Artic
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ArticleItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ArticleItemRequestBuilderGetQueryParameters>
+        public class ArticleItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Articles.Item.ArticleItemRequestBuilder.ArticleItemRequestBuilderGetQueryParameters>
         {
         }
     }

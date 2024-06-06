@@ -19,24 +19,24 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions
     public class AppDefinitionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.</summary>
         /// <param name="position">The unique identifier of teamsAppDefinition</param>
-        /// <returns>A <see cref="TeamsAppDefinitionItemRequestBuilder"/></returns>
-        public TeamsAppDefinitionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.TeamsAppDefinitionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.TeamsAppDefinitionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("teamsAppDefinition%2Did", position);
-                return new TeamsAppDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.TeamsAppDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AppDefinitionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.AppDefinitionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AppDefinitionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.AppDefinitionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions
         /// <summary>
         /// The details for each version of the app.
         /// </summary>
-        /// <returns>A <see cref="TeamsAppDefinitionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamsAppDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TeamsAppDefinitionCollectionResponse?> GetAsync(Action<RequestConfiguration<AppDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TeamsAppDefinitionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.AppDefinitionsRequestBuilder.AppDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TeamsAppDefinitionCollectionResponse> GetAsync(Action<RequestConfiguration<AppDefinitionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TeamsAppDefinitionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.AppDefinitionsRequestBuilder.AppDefinitionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TeamsAppDefinitionCollectionResponse>(requestInfo, TeamsAppDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TeamsAppDefinitionCollectionResponse>(requestInfo, Microsoft.Graph.Models.TeamsAppDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update an app previously published to the Microsoft Teams app catalog. To update an app, the distributionMethod property for the app must be set to organization. This API specifically updates an app published to your organization&apos;s app catalog (the tenant app catalog).
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.TeamsAppDefinition?> PostAsync(Microsoft.Graph.Models.TeamsAppDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TeamsAppDefinition>(requestInfo, Microsoft.Graph.Models.TeamsAppDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AppDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.AppDefinitionsRequestBuilder.AppDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AppDefinitionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.AppDefinitionsRequestBuilder.AppDefinitionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AppDefinitionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.AppDefinitionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AppDefinitionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.AppDefinitionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new AppDefinitionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.AppDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The details for each version of the app.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AppDefinitionsRequestBuilderGetRequestConfiguration : RequestConfiguration<AppDefinitionsRequestBuilderGetQueryParameters>
+        public class AppDefinitionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions.AppDefinitionsRequestBuilder.AppDefinitionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookChartSeries : Entity, IParsable
+    public class WorkbookChartSeries : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the formatting of a chart series, which includes fill and line formatting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartSeriesFormat? Format
+        public Microsoft.Graph.Models.WorkbookChartSeriesFormat? Format
         {
-            get { return BackingStore?.Get<WorkbookChartSeriesFormat?>("format"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartSeriesFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartSeriesFormat Format
+        public Microsoft.Graph.Models.WorkbookChartSeriesFormat Format
         {
-            get { return BackingStore?.Get<WorkbookChartSeriesFormat>("format"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartSeriesFormat>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #endif
@@ -45,28 +45,28 @@ namespace Microsoft.Graph.Models
         /// <summary>Represents a collection of all points in the series. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookChartPoint>? Points
+        public List<Microsoft.Graph.Models.WorkbookChartPoint>? Points
         {
-            get { return BackingStore?.Get<List<WorkbookChartPoint>?>("points"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookChartPoint>?>("points"); }
             set { BackingStore?.Set("points", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookChartPoint> Points
+        public List<Microsoft.Graph.Models.WorkbookChartPoint> Points
         {
-            get { return BackingStore?.Get<List<WorkbookChartPoint>>("points"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookChartPoint>>("points"); }
             set { BackingStore?.Set("points", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookChartSeries"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookChartSeries"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookChartSeries CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WorkbookChartSeries CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookChartSeries();
+            return new Microsoft.Graph.Models.WorkbookChartSeries();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,9 +76,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "format", n => { Format = n.GetObjectValue<WorkbookChartSeriesFormat>(WorkbookChartSeriesFormat.CreateFromDiscriminatorValue); } },
+                { "format", n => { Format = n.GetObjectValue<Microsoft.Graph.Models.WorkbookChartSeriesFormat>(Microsoft.Graph.Models.WorkbookChartSeriesFormat.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "points", n => { Points = n.GetCollectionOfObjectValues<WorkbookChartPoint>(WorkbookChartPoint.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "points", n => { Points = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookChartPoint>(Microsoft.Graph.Models.WorkbookChartPoint.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<WorkbookChartSeriesFormat>("format", Format);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookChartSeriesFormat>("format", Format);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<WorkbookChartPoint>("points", Points);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookChartPoint>("points", Points);
         }
     }
 }

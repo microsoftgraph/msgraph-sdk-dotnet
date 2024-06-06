@@ -39,16 +39,16 @@ namespace Microsoft.Graph.Models
         /// <summary>A list of apps, folders, and web clips to appear on a page. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosHomeScreenItem>? Icons
+        public List<Microsoft.Graph.Models.IosHomeScreenItem>? Icons
         {
-            get { return BackingStore?.Get<List<IosHomeScreenItem>?>("icons"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IosHomeScreenItem>?>("icons"); }
             set { BackingStore?.Set("icons", value); }
         }
 #nullable restore
 #else
-        public List<IosHomeScreenItem> Icons
+        public List<Microsoft.Graph.Models.IosHomeScreenItem> Icons
         {
-            get { return BackingStore?.Get<List<IosHomeScreenItem>>("icons"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IosHomeScreenItem>>("icons"); }
             set { BackingStore?.Set("icons", value); }
         }
 #endif
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IosHomeScreenPage"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IosHomeScreenPage"/> and sets the default values.
         /// </summary>
         public IosHomeScreenPage()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosHomeScreenPage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IosHomeScreenPage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IosHomeScreenPage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.IosHomeScreenPage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosHomeScreenPage();
+            return new Microsoft.Graph.Models.IosHomeScreenPage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "icons", n => { Icons = n.GetCollectionOfObjectValues<IosHomeScreenItem>(IosHomeScreenItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "icons", n => { Icons = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IosHomeScreenItem>(Microsoft.Graph.Models.IosHomeScreenItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<IosHomeScreenItem>("icons", Icons);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IosHomeScreenItem>("icons", Icons);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

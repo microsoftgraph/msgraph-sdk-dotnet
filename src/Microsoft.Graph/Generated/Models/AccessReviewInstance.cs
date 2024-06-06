@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AccessReviewInstance : Entity, IParsable
+    public class AccessReviewInstance : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewReviewer>? ContactedReviewers
+        public List<Microsoft.Graph.Models.AccessReviewReviewer>? ContactedReviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewer>?>("contactedReviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewReviewer>?>("contactedReviewers"); }
             set { BackingStore?.Set("contactedReviewers", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewReviewer> ContactedReviewers
+        public List<Microsoft.Graph.Models.AccessReviewReviewer> ContactedReviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewer>>("contactedReviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewReviewer>>("contactedReviewers"); }
             set { BackingStore?.Set("contactedReviewers", value); }
         }
 #endif
         /// <summary>Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewInstanceDecisionItem>? Decisions
+        public List<Microsoft.Graph.Models.AccessReviewInstanceDecisionItem>? Decisions
         {
-            get { return BackingStore?.Get<List<AccessReviewInstanceDecisionItem>?>("decisions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewInstanceDecisionItem>?>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewInstanceDecisionItem> Decisions
+        public List<Microsoft.Graph.Models.AccessReviewInstanceDecisionItem> Decisions
         {
-            get { return BackingStore?.Get<List<AccessReviewInstanceDecisionItem>>("decisions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewInstanceDecisionItem>>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
 #endif
@@ -51,64 +51,64 @@ namespace Microsoft.Graph.Models
         /// <summary>This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user&apos;s manager does not exist. Supports $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewReviewerScope>? FallbackReviewers
+        public List<Microsoft.Graph.Models.AccessReviewReviewerScope>? FallbackReviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("fallbackReviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewReviewerScope>?>("fallbackReviewers"); }
             set { BackingStore?.Set("fallbackReviewers", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewReviewerScope> FallbackReviewers
+        public List<Microsoft.Graph.Models.AccessReviewReviewerScope> FallbackReviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("fallbackReviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewReviewerScope>>("fallbackReviewers"); }
             set { BackingStore?.Set("fallbackReviewers", value); }
         }
 #endif
         /// <summary>This collection of access review scopes is used to define who the reviewers are. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewReviewerScope>? Reviewers
+        public List<Microsoft.Graph.Models.AccessReviewReviewerScope>? Reviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("reviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewReviewerScope>?>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewReviewerScope> Reviewers
+        public List<Microsoft.Graph.Models.AccessReviewReviewerScope> Reviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("reviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewReviewerScope>>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
 #endif
         /// <summary>Created based on scope and instanceEnumerationScope at the accessReviewScheduleDefinition level. Defines the scope of users reviewed in a group. Supports $select and $filter (contains only). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessReviewScope? Scope
+        public Microsoft.Graph.Models.AccessReviewScope? Scope
         {
-            get { return BackingStore?.Get<AccessReviewScope?>("scope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessReviewScope?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
 #nullable restore
 #else
-        public AccessReviewScope Scope
+        public Microsoft.Graph.Models.AccessReviewScope Scope
         {
-            get { return BackingStore?.Get<AccessReviewScope>("scope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessReviewScope>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
 #endif
         /// <summary>If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewStage>? Stages
+        public List<Microsoft.Graph.Models.AccessReviewStage>? Stages
         {
-            get { return BackingStore?.Get<List<AccessReviewStage>?>("stages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewStage>?>("stages"); }
             set { BackingStore?.Set("stages", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewStage> Stages
+        public List<Microsoft.Graph.Models.AccessReviewStage> Stages
         {
-            get { return BackingStore?.Get<List<AccessReviewStage>>("stages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewStage>>("stages"); }
             set { BackingStore?.Set("stages", value); }
         }
 #endif
@@ -137,12 +137,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewInstance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessReviewInstance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessReviewInstance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AccessReviewInstance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessReviewInstance();
+            return new Microsoft.Graph.Models.AccessReviewInstance();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -152,13 +152,13 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "contactedReviewers", n => { ContactedReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewer>(AccessReviewReviewer.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "decisions", n => { Decisions = n.GetCollectionOfObjectValues<AccessReviewInstanceDecisionItem>(AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contactedReviewers", n => { ContactedReviewers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewReviewer>(Microsoft.Graph.Models.AccessReviewReviewer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "decisions", n => { Decisions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewInstanceDecisionItem>(Microsoft.Graph.Models.AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                { "fallbackReviewers", n => { FallbackReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "scope", n => { Scope = n.GetObjectValue<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue); } },
-                { "stages", n => { Stages = n.GetCollectionOfObjectValues<AccessReviewStage>(AccessReviewStage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "fallbackReviewers", n => { FallbackReviewers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewReviewerScope>(Microsoft.Graph.Models.AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewReviewerScope>(Microsoft.Graph.Models.AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scope", n => { Scope = n.GetObjectValue<Microsoft.Graph.Models.AccessReviewScope>(Microsoft.Graph.Models.AccessReviewScope.CreateFromDiscriminatorValue); } },
+                { "stages", n => { Stages = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewStage>(Microsoft.Graph.Models.AccessReviewStage.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
@@ -171,13 +171,13 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AccessReviewReviewer>("contactedReviewers", ContactedReviewers);
-            writer.WriteCollectionOfObjectValues<AccessReviewInstanceDecisionItem>("decisions", Decisions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewReviewer>("contactedReviewers", ContactedReviewers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewInstanceDecisionItem>("decisions", Decisions);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
-            writer.WriteCollectionOfObjectValues<AccessReviewReviewerScope>("fallbackReviewers", FallbackReviewers);
-            writer.WriteCollectionOfObjectValues<AccessReviewReviewerScope>("reviewers", Reviewers);
-            writer.WriteObjectValue<AccessReviewScope>("scope", Scope);
-            writer.WriteCollectionOfObjectValues<AccessReviewStage>("stages", Stages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewReviewerScope>("fallbackReviewers", FallbackReviewers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewReviewerScope>("reviewers", Reviewers);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AccessReviewScope>("scope", Scope);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewStage>("stages", Stages);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteStringValue("status", Status);
         }

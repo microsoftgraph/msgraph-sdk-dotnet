@@ -45,21 +45,21 @@ namespace Microsoft.Graph.Communications.Calls.Item.SendDtmfTones
         /// <summary>The tones property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Tone?>? Tones
+        public List<Microsoft.Graph.Models.Tone?>? Tones
         {
-            get { return BackingStore?.Get<List<Tone?>?>("tones"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Tone?>?>("tones"); }
             set { BackingStore?.Set("tones", value); }
         }
 #nullable restore
 #else
-        public List<Tone?> Tones
+        public List<Microsoft.Graph.Models.Tone?> Tones
         {
-            get { return BackingStore?.Get<List<Tone?>>("tones"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Tone?>>("tones"); }
             set { BackingStore?.Set("tones", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SendDtmfTonesPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Communications.Calls.Item.SendDtmfTones.SendDtmfTonesPostRequestBody"/> and sets the default values.
         /// </summary>
         public SendDtmfTonesPostRequestBody()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Communications.Calls.Item.SendDtmfTones
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SendDtmfTonesPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Communications.Calls.Item.SendDtmfTones.SendDtmfTonesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SendDtmfTonesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Communications.Calls.Item.SendDtmfTones.SendDtmfTonesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SendDtmfTonesPostRequestBody();
+            return new Microsoft.Graph.Communications.Calls.Item.SendDtmfTones.SendDtmfTonesPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.SendDtmfTones
             {
                 { "clientContext", n => { ClientContext = n.GetStringValue(); } },
                 { "delayBetweenTonesMs", n => { DelayBetweenTonesMs = n.GetIntValue(); } },
-                { "tones", n => { Tones = n.GetCollectionOfEnumValues<Tone>()?.ToList(); } },
+                { "tones", n => { Tones = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.Tone>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.SendDtmfTones
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("clientContext", ClientContext);
             writer.WriteIntValue("delayBetweenTonesMs", DelayBetweenTonesMs);
-            writer.WriteCollectionOfEnumValues<Tone>("tones", Tones);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.Tone>("tones", Tones);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

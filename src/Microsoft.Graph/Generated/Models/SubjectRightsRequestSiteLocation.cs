@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SubjectRightsRequestSiteLocation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SubjectRightsRequestSiteLocation"/> and sets the default values.
         /// </summary>
         public SubjectRightsRequestSiteLocation()
         {
@@ -46,17 +46,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SubjectRightsRequestSiteLocation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SubjectRightsRequestSiteLocation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SubjectRightsRequestSiteLocation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SubjectRightsRequestSiteLocation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.subjectRightsRequestAllSiteLocation" => new SubjectRightsRequestAllSiteLocation(),
-                "#microsoft.graph.subjectRightsRequestEnumeratedSiteLocation" => new SubjectRightsRequestEnumeratedSiteLocation(),
-                _ => new SubjectRightsRequestSiteLocation(),
+                "#microsoft.graph.subjectRightsRequestAllSiteLocation" => new Microsoft.Graph.Models.SubjectRightsRequestAllSiteLocation(),
+                "#microsoft.graph.subjectRightsRequestEnumeratedSiteLocation" => new Microsoft.Graph.Models.SubjectRightsRequestEnumeratedSiteLocation(),
+                _ => new Microsoft.Graph.Models.SubjectRightsRequestSiteLocation(),
             };
         }
         /// <summary>

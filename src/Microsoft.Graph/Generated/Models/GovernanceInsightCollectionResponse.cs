@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class GovernanceInsightCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GovernanceInsightCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GovernanceInsight>? Value
+        public List<Microsoft.Graph.Models.GovernanceInsight>? Value
         {
-            get { return BackingStore?.Get<List<GovernanceInsight>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.GovernanceInsight>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<GovernanceInsight> Value
+        public List<Microsoft.Graph.Models.GovernanceInsight> Value
         {
-            get { return BackingStore?.Get<List<GovernanceInsight>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.GovernanceInsight>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GovernanceInsightCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.GovernanceInsightCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GovernanceInsightCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.GovernanceInsightCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GovernanceInsightCollectionResponse();
+            return new Microsoft.Graph.Models.GovernanceInsightCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<GovernanceInsight>(GovernanceInsight.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.GovernanceInsight>(Microsoft.Graph.Models.GovernanceInsight.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<GovernanceInsight>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.GovernanceInsight>("value", Value);
         }
     }
 }

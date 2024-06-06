@@ -7,25 +7,25 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SignInFrequencySessionControl : ConditionalAccessSessionControl, IParsable
+    public class SignInFrequencySessionControl : Microsoft.Graph.Models.ConditionalAccessSessionControl, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue. This property isn&apos;t required when using frequencyInterval with the value of timeBased.</summary>
-        public SignInFrequencyAuthenticationType? AuthenticationType
+        public Microsoft.Graph.Models.SignInFrequencyAuthenticationType? AuthenticationType
         {
-            get { return BackingStore?.Get<SignInFrequencyAuthenticationType?>("authenticationType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SignInFrequencyAuthenticationType?>("authenticationType"); }
             set { BackingStore?.Set("authenticationType", value); }
         }
         /// <summary>The possible values are timeBased, everyTime, unknownFutureValue. Sign-in frequency of everyTime is available for risky users, risky sign-ins, and Intune device enrollment. For more information, see Require reauthentication every time.</summary>
-        public SignInFrequencyInterval? FrequencyInterval
+        public Microsoft.Graph.Models.SignInFrequencyInterval? FrequencyInterval
         {
-            get { return BackingStore?.Get<SignInFrequencyInterval?>("frequencyInterval"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SignInFrequencyInterval?>("frequencyInterval"); }
             set { BackingStore?.Set("frequencyInterval", value); }
         }
         /// <summary>Possible values are: days, hours.</summary>
-        public SigninFrequencyType? Type
+        public Microsoft.Graph.Models.SigninFrequencyType? Type
         {
-            get { return BackingStore?.Get<SigninFrequencyType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SigninFrequencyType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>The number of days or hours.</summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SignInFrequencySessionControl"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SignInFrequencySessionControl"/> and sets the default values.
         /// </summary>
         public SignInFrequencySessionControl() : base()
         {
@@ -44,12 +44,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SignInFrequencySessionControl"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SignInFrequencySessionControl"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SignInFrequencySessionControl CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SignInFrequencySessionControl CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SignInFrequencySessionControl();
+            return new Microsoft.Graph.Models.SignInFrequencySessionControl();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,9 +59,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authenticationType", n => { AuthenticationType = n.GetEnumValue<SignInFrequencyAuthenticationType>(); } },
-                { "frequencyInterval", n => { FrequencyInterval = n.GetEnumValue<SignInFrequencyInterval>(); } },
-                { "type", n => { Type = n.GetEnumValue<SigninFrequencyType>(); } },
+                { "authenticationType", n => { AuthenticationType = n.GetEnumValue<Microsoft.Graph.Models.SignInFrequencyAuthenticationType>(); } },
+                { "frequencyInterval", n => { FrequencyInterval = n.GetEnumValue<Microsoft.Graph.Models.SignInFrequencyInterval>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Models.SigninFrequencyType>(); } },
                 { "value", n => { Value = n.GetIntValue(); } },
             };
         }
@@ -73,9 +73,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<SignInFrequencyAuthenticationType>("authenticationType", AuthenticationType);
-            writer.WriteEnumValue<SignInFrequencyInterval>("frequencyInterval", FrequencyInterval);
-            writer.WriteEnumValue<SigninFrequencyType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SignInFrequencyAuthenticationType>("authenticationType", AuthenticationType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SignInFrequencyInterval>("frequencyInterval", FrequencyInterval);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SigninFrequencyType>("type", Type);
             writer.WriteIntValue("value", Value);
         }
     }

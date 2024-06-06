@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class DeviceInstallStateCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class DeviceInstallStateCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceInstallState>? Value
+        public List<Microsoft.Graph.Models.DeviceInstallState>? Value
         {
-            get { return BackingStore?.Get<List<DeviceInstallState>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceInstallState>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<DeviceInstallState> Value
+        public List<Microsoft.Graph.Models.DeviceInstallState> Value
         {
-            get { return BackingStore?.Get<List<DeviceInstallState>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceInstallState>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceInstallStateCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceInstallStateCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceInstallStateCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeviceInstallStateCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceInstallStateCollectionResponse();
+            return new Microsoft.Graph.Models.DeviceInstallStateCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<DeviceInstallState>(DeviceInstallState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DeviceInstallState>(Microsoft.Graph.Models.DeviceInstallState.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceInstallState>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DeviceInstallState>("value", Value);
         }
     }
 }

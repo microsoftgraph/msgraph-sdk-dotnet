@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Singleton entity which is used to specify IE mode site metadata
     /// </summary>
-    public class BrowserSite : Entity, IParsable
+    public class BrowserSite : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.</summary>
         public bool? AllowRedirect
@@ -34,9 +34,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The compatibilityMode property</summary>
-        public BrowserSiteCompatibilityMode? CompatibilityMode
+        public Microsoft.Graph.Models.BrowserSiteCompatibilityMode? CompatibilityMode
         {
-            get { return BackingStore?.Get<BrowserSiteCompatibilityMode?>("compatibilityMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BrowserSiteCompatibilityMode?>("compatibilityMode"); }
             set { BackingStore?.Set("compatibilityMode", value); }
         }
         /// <summary>The date and time when the site was created.</summary>
@@ -54,32 +54,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The history of modifications applied to the site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BrowserSiteHistory>? History
+        public List<Microsoft.Graph.Models.BrowserSiteHistory>? History
         {
-            get { return BackingStore?.Get<List<BrowserSiteHistory>?>("history"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BrowserSiteHistory>?>("history"); }
             set { BackingStore?.Set("history", value); }
         }
 #nullable restore
 #else
-        public List<BrowserSiteHistory> History
+        public List<Microsoft.Graph.Models.BrowserSiteHistory> History
         {
-            get { return BackingStore?.Get<List<BrowserSiteHistory>>("history"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BrowserSiteHistory>>("history"); }
             set { BackingStore?.Set("history", value); }
         }
 #endif
         /// <summary>The user who last modified the site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -90,21 +90,21 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The mergeType property</summary>
-        public BrowserSiteMergeType? MergeType
+        public Microsoft.Graph.Models.BrowserSiteMergeType? MergeType
         {
-            get { return BackingStore?.Get<BrowserSiteMergeType?>("mergeType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BrowserSiteMergeType?>("mergeType"); }
             set { BackingStore?.Set("mergeType", value); }
         }
         /// <summary>The status property</summary>
-        public BrowserSiteStatus? Status
+        public Microsoft.Graph.Models.BrowserSiteStatus? Status
         {
-            get { return BackingStore?.Get<BrowserSiteStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BrowserSiteStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The targetEnvironment property</summary>
-        public BrowserSiteTargetEnvironment? TargetEnvironment
+        public Microsoft.Graph.Models.BrowserSiteTargetEnvironment? TargetEnvironment
         {
-            get { return BackingStore?.Get<BrowserSiteTargetEnvironment?>("targetEnvironment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BrowserSiteTargetEnvironment?>("targetEnvironment"); }
             set { BackingStore?.Set("targetEnvironment", value); }
         }
         /// <summary>The URL of the site.</summary>
@@ -126,12 +126,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BrowserSite"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BrowserSite"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BrowserSite CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.BrowserSite CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BrowserSite();
+            return new Microsoft.Graph.Models.BrowserSite();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -143,15 +143,15 @@ namespace Microsoft.Graph.Models
             {
                 { "allowRedirect", n => { AllowRedirect = n.GetBoolValue(); } },
                 { "comment", n => { Comment = n.GetStringValue(); } },
-                { "compatibilityMode", n => { CompatibilityMode = n.GetEnumValue<BrowserSiteCompatibilityMode>(); } },
+                { "compatibilityMode", n => { CompatibilityMode = n.GetEnumValue<Microsoft.Graph.Models.BrowserSiteCompatibilityMode>(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "history", n => { History = n.GetCollectionOfObjectValues<BrowserSiteHistory>(BrowserSiteHistory.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "history", n => { History = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.BrowserSiteHistory>(Microsoft.Graph.Models.BrowserSiteHistory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "mergeType", n => { MergeType = n.GetEnumValue<BrowserSiteMergeType>(); } },
-                { "status", n => { Status = n.GetEnumValue<BrowserSiteStatus>(); } },
-                { "targetEnvironment", n => { TargetEnvironment = n.GetEnumValue<BrowserSiteTargetEnvironment>(); } },
+                { "mergeType", n => { MergeType = n.GetEnumValue<Microsoft.Graph.Models.BrowserSiteMergeType>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.BrowserSiteStatus>(); } },
+                { "targetEnvironment", n => { TargetEnvironment = n.GetEnumValue<Microsoft.Graph.Models.BrowserSiteTargetEnvironment>(); } },
                 { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
@@ -165,15 +165,15 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteBoolValue("allowRedirect", AllowRedirect);
             writer.WriteStringValue("comment", Comment);
-            writer.WriteEnumValue<BrowserSiteCompatibilityMode>("compatibilityMode", CompatibilityMode);
+            writer.WriteEnumValue<Microsoft.Graph.Models.BrowserSiteCompatibilityMode>("compatibilityMode", CompatibilityMode);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("deletedDateTime", DeletedDateTime);
-            writer.WriteCollectionOfObjectValues<BrowserSiteHistory>("history", History);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.BrowserSiteHistory>("history", History);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteEnumValue<BrowserSiteMergeType>("mergeType", MergeType);
-            writer.WriteEnumValue<BrowserSiteStatus>("status", Status);
-            writer.WriteEnumValue<BrowserSiteTargetEnvironment>("targetEnvironment", TargetEnvironment);
+            writer.WriteEnumValue<Microsoft.Graph.Models.BrowserSiteMergeType>("mergeType", MergeType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.BrowserSiteStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.BrowserSiteTargetEnvironment>("targetEnvironment", TargetEnvironment);
             writer.WriteStringValue("webUrl", WebUrl);
         }
     }

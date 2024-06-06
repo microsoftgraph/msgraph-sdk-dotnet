@@ -7,18 +7,18 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class FilePlanReference : FilePlanDescriptorBase, IParsable
+    public class FilePlanReference : Microsoft.Graph.Models.Security.FilePlanDescriptorBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FilePlanReference"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.FilePlanReference"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FilePlanReference CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.FilePlanReference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FilePlanReference();
+            return new Microsoft.Graph.Models.Security.FilePlanReference();
         }
         /// <summary>
         /// The deserialization information for the current model

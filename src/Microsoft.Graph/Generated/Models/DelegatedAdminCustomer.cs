@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class DelegatedAdminCustomer : Entity, IParsable
+    public class DelegatedAdminCustomer : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Microsoft Entra ID display name of the customer tenant. Read-only. Supports $orderby.</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Contains the management details of a service in the customer tenant that&apos;s managed by delegated administration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DelegatedAdminServiceManagementDetail>? ServiceManagementDetails
+        public List<Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail>? ServiceManagementDetails
         {
-            get { return BackingStore?.Get<List<DelegatedAdminServiceManagementDetail>?>("serviceManagementDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail>?>("serviceManagementDetails"); }
             set { BackingStore?.Set("serviceManagementDetails", value); }
         }
 #nullable restore
 #else
-        public List<DelegatedAdminServiceManagementDetail> ServiceManagementDetails
+        public List<Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail> ServiceManagementDetails
         {
-            get { return BackingStore?.Get<List<DelegatedAdminServiceManagementDetail>>("serviceManagementDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail>>("serviceManagementDetails"); }
             set { BackingStore?.Set("serviceManagementDetails", value); }
         }
 #endif
@@ -61,12 +61,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DelegatedAdminCustomer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DelegatedAdminCustomer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DelegatedAdminCustomer CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DelegatedAdminCustomer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DelegatedAdminCustomer();
+            return new Microsoft.Graph.Models.DelegatedAdminCustomer();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "serviceManagementDetails", n => { ServiceManagementDetails = n.GetCollectionOfObjectValues<DelegatedAdminServiceManagementDetail>(DelegatedAdminServiceManagementDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "serviceManagementDetails", n => { ServiceManagementDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail>(Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<DelegatedAdminServiceManagementDetail>("serviceManagementDetails", ServiceManagementDetails);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail>("serviceManagementDetails", ServiceManagementDetails);
             writer.WriteStringValue("tenantId", TenantId);
         }
     }

@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EdgeSearchEngineBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.EdgeSearchEngineBase"/> and sets the default values.
         /// </summary>
         public EdgeSearchEngineBase()
         {
@@ -47,17 +47,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdgeSearchEngineBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EdgeSearchEngineBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EdgeSearchEngineBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.EdgeSearchEngineBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.edgeSearchEngine" => new EdgeSearchEngine(),
-                "#microsoft.graph.edgeSearchEngineCustom" => new EdgeSearchEngineCustom(),
-                _ => new EdgeSearchEngineBase(),
+                "#microsoft.graph.edgeSearchEngine" => new Microsoft.Graph.Models.EdgeSearchEngine(),
+                "#microsoft.graph.edgeSearchEngineCustom" => new Microsoft.Graph.Models.EdgeSearchEngineCustom(),
+                _ => new Microsoft.Graph.Models.EdgeSearchEngineBase(),
             };
         }
         /// <summary>

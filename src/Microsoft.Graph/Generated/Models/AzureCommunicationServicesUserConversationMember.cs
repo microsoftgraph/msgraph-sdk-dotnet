@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AzureCommunicationServicesUserConversationMember : ConversationMember, IParsable
+    public class AzureCommunicationServicesUserConversationMember : Microsoft.Graph.Models.ConversationMember, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Azure Communication Services ID of the user.</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AzureCommunicationServicesUserConversationMember"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AzureCommunicationServicesUserConversationMember"/> and sets the default values.
         /// </summary>
         public AzureCommunicationServicesUserConversationMember() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AzureCommunicationServicesUserConversationMember"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AzureCommunicationServicesUserConversationMember"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AzureCommunicationServicesUserConversationMember CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AzureCommunicationServicesUserConversationMember CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AzureCommunicationServicesUserConversationMember();
+            return new Microsoft.Graph.Models.AzureCommunicationServicesUserConversationMember();
         }
         /// <summary>
         /// The deserialization information for the current model

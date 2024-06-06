@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class LandingPageDetail : Entity, IParsable
+    public class LandingPageDetail : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Landing page detail content.</summary>
@@ -51,12 +51,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LandingPageDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.LandingPageDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new LandingPageDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.LandingPageDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LandingPageDetail();
+            return new Microsoft.Graph.Models.LandingPageDetail();
         }
         /// <summary>
         /// The deserialization information for the current model

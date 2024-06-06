@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations
     public class LocalizationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Organization.Item.Branding.Localizations.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Organization.Item.Branding.Localizations.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.</summary>
         /// <param name="position">The unique identifier of organizationalBrandingLocalization</param>
-        /// <returns>A <see cref="OrganizationalBrandingLocalizationItemRequestBuilder"/></returns>
-        public OrganizationalBrandingLocalizationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Organization.Item.Branding.Localizations.Item.OrganizationalBrandingLocalizationItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Organization.Item.Branding.Localizations.Item.OrganizationalBrandingLocalizationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("organizationalBrandingLocalization%2Did", position);
-                return new OrganizationalBrandingLocalizationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Organization.Item.Branding.Localizations.Item.OrganizationalBrandingLocalizationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="LocalizationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Organization.Item.Branding.Localizations.LocalizationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LocalizationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Organization.Item.Branding.Localizations.LocalizationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations
         /// Retrieve all localization branding objects, including the default branding.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="OrganizationalBrandingLocalizationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OrganizationalBrandingLocalizationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OrganizationalBrandingLocalizationCollectionResponse?> GetAsync(Action<RequestConfiguration<LocalizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OrganizationalBrandingLocalizationCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Organization.Item.Branding.Localizations.LocalizationsRequestBuilder.LocalizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<OrganizationalBrandingLocalizationCollectionResponse> GetAsync(Action<RequestConfiguration<LocalizationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OrganizationalBrandingLocalizationCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Organization.Item.Branding.Localizations.LocalizationsRequestBuilder.LocalizationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<OrganizationalBrandingLocalizationCollectionResponse>(requestInfo, OrganizationalBrandingLocalizationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.OrganizationalBrandingLocalizationCollectionResponse>(requestInfo, Microsoft.Graph.Models.OrganizationalBrandingLocalizationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new organizationalBrandingLocalization object. This creates a localized branding and at the same time, the default branding if it doesn&apos;t exist. The default branding is created only once. It&apos;s loaded when a localized branding isn&apos;t configured for the user&apos;s browser language. To retrieve the default branding, see Get branding.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationalbranding-post-localizations?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="OrganizationalBrandingLocalization"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OrganizationalBrandingLocalization"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OrganizationalBrandingLocalization?> PostAsync(OrganizationalBrandingLocalization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OrganizationalBrandingLocalization?> PostAsync(Microsoft.Graph.Models.OrganizationalBrandingLocalization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<OrganizationalBrandingLocalization> PostAsync(OrganizationalBrandingLocalization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OrganizationalBrandingLocalization> PostAsync(Microsoft.Graph.Models.OrganizationalBrandingLocalization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<OrganizationalBrandingLocalization>(requestInfo, OrganizationalBrandingLocalization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.OrganizationalBrandingLocalization>(requestInfo, Microsoft.Graph.Models.OrganizationalBrandingLocalization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve all localization branding objects, including the default branding.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LocalizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Organization.Item.Branding.Localizations.LocalizationsRequestBuilder.LocalizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LocalizationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Organization.Item.Branding.Localizations.LocalizationsRequestBuilder.LocalizationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(OrganizationalBrandingLocalization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.OrganizationalBrandingLocalization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(OrganizationalBrandingLocalization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.OrganizationalBrandingLocalization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="LocalizationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Organization.Item.Branding.Localizations.LocalizationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LocalizationsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Organization.Item.Branding.Localizations.LocalizationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new LocalizationsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Organization.Item.Branding.Localizations.LocalizationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve all localization branding objects, including the default branding.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class LocalizationsRequestBuilderGetRequestConfiguration : RequestConfiguration<LocalizationsRequestBuilderGetQueryParameters>
+        public class LocalizationsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Organization.Item.Branding.Localizations.LocalizationsRequestBuilder.LocalizationsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

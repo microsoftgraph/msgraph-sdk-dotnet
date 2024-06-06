@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UnifiedRoleManagementPolicyNotificationRule : UnifiedRoleManagementPolicyRule, IParsable
+    public class UnifiedRoleManagementPolicyNotificationRule : Microsoft.Graph.Models.UnifiedRoleManagementPolicyRule, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether a default recipient will receive the notification email.</summary>
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UnifiedRoleManagementPolicyNotificationRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.UnifiedRoleManagementPolicyNotificationRule"/> and sets the default values.
         /// </summary>
         public UnifiedRoleManagementPolicyNotificationRule() : base()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleManagementPolicyNotificationRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRoleManagementPolicyNotificationRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnifiedRoleManagementPolicyNotificationRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UnifiedRoleManagementPolicyNotificationRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedRoleManagementPolicyNotificationRule();
+            return new Microsoft.Graph.Models.UnifiedRoleManagementPolicyNotificationRule();
         }
         /// <summary>
         /// The deserialization information for the current model

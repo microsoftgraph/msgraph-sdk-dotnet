@@ -7,50 +7,50 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class PeopleAdminSettings : Entity, IParsable
+    public class PeopleAdminSettings : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProfileCardProperty>? ProfileCardProperties
+        public List<Microsoft.Graph.Models.ProfileCardProperty>? ProfileCardProperties
         {
-            get { return BackingStore?.Get<List<ProfileCardProperty>?>("profileCardProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ProfileCardProperty>?>("profileCardProperties"); }
             set { BackingStore?.Set("profileCardProperties", value); }
         }
 #nullable restore
 #else
-        public List<ProfileCardProperty> ProfileCardProperties
+        public List<Microsoft.Graph.Models.ProfileCardProperty> ProfileCardProperties
         {
-            get { return BackingStore?.Get<List<ProfileCardProperty>>("profileCardProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ProfileCardProperty>>("profileCardProperties"); }
             set { BackingStore?.Set("profileCardProperties", value); }
         }
 #endif
         /// <summary>Represents administrator settings that manage the support of pronouns in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PronounsSettings? Pronouns
+        public Microsoft.Graph.Models.PronounsSettings? Pronouns
         {
-            get { return BackingStore?.Get<PronounsSettings?>("pronouns"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PronounsSettings?>("pronouns"); }
             set { BackingStore?.Set("pronouns", value); }
         }
 #nullable restore
 #else
-        public PronounsSettings Pronouns
+        public Microsoft.Graph.Models.PronounsSettings Pronouns
         {
-            get { return BackingStore?.Get<PronounsSettings>("pronouns"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PronounsSettings>("pronouns"); }
             set { BackingStore?.Set("pronouns", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PeopleAdminSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PeopleAdminSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PeopleAdminSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.PeopleAdminSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PeopleAdminSettings();
+            return new Microsoft.Graph.Models.PeopleAdminSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "profileCardProperties", n => { ProfileCardProperties = n.GetCollectionOfObjectValues<ProfileCardProperty>(ProfileCardProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "pronouns", n => { Pronouns = n.GetObjectValue<PronounsSettings>(PronounsSettings.CreateFromDiscriminatorValue); } },
+                { "profileCardProperties", n => { ProfileCardProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ProfileCardProperty>(Microsoft.Graph.Models.ProfileCardProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "pronouns", n => { Pronouns = n.GetObjectValue<Microsoft.Graph.Models.PronounsSettings>(Microsoft.Graph.Models.PronounsSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ProfileCardProperty>("profileCardProperties", ProfileCardProperties);
-            writer.WriteObjectValue<PronounsSettings>("pronouns", Pronouns);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ProfileCardProperty>("profileCardProperties", ProfileCardProperties);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PronounsSettings>("pronouns", Pronouns);
         }
     }
 }

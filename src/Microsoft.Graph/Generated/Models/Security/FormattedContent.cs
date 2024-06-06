@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>The format of the content. The possible values are: text, html, markdown, unknownFutureValue.</summary>
-        public ContentFormat? Format
+        public Microsoft.Graph.Models.Security.ContentFormat? Format
         {
-            get { return BackingStore?.Get<ContentFormat?>("format"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.ContentFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="FormattedContent"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.FormattedContent"/> and sets the default values.
         /// </summary>
         public FormattedContent()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FormattedContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.FormattedContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static FormattedContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Security.FormattedContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FormattedContent();
+            return new Microsoft.Graph.Models.Security.FormattedContent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models.Security
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content", n => { Content = n.GetStringValue(); } },
-                { "format", n => { Format = n.GetEnumValue<ContentFormat>(); } },
+                { "format", n => { Format = n.GetEnumValue<Microsoft.Graph.Models.Security.ContentFormat>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content", Content);
-            writer.WriteEnumValue<ContentFormat>("format", Format);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.ContentFormat>("format", Format);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class TimeOff : ChangeTrackedEntity, IParsable
+    public class TimeOff : Microsoft.Graph.Models.ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The draft version of this timeOff item that is viewable by managers. It must be shared before it is visible to team members. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeOffItem? DraftTimeOff
+        public Microsoft.Graph.Models.TimeOffItem? DraftTimeOff
         {
-            get { return BackingStore?.Get<TimeOffItem?>("draftTimeOff"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TimeOffItem?>("draftTimeOff"); }
             set { BackingStore?.Set("draftTimeOff", value); }
         }
 #nullable restore
 #else
-        public TimeOffItem DraftTimeOff
+        public Microsoft.Graph.Models.TimeOffItem DraftTimeOff
         {
-            get { return BackingStore?.Get<TimeOffItem>("draftTimeOff"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TimeOffItem>("draftTimeOff"); }
             set { BackingStore?.Set("draftTimeOff", value); }
         }
 #endif
         /// <summary>The shared version of this timeOff that is viewable by both employees and managers. Updates to the sharedTimeOff property send notifications to users in the Teams client. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeOffItem? SharedTimeOff
+        public Microsoft.Graph.Models.TimeOffItem? SharedTimeOff
         {
-            get { return BackingStore?.Get<TimeOffItem?>("sharedTimeOff"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TimeOffItem?>("sharedTimeOff"); }
             set { BackingStore?.Set("sharedTimeOff", value); }
         }
 #nullable restore
 #else
-        public TimeOffItem SharedTimeOff
+        public Microsoft.Graph.Models.TimeOffItem SharedTimeOff
         {
-            get { return BackingStore?.Get<TimeOffItem>("sharedTimeOff"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TimeOffItem>("sharedTimeOff"); }
             set { BackingStore?.Set("sharedTimeOff", value); }
         }
 #endif
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TimeOff"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TimeOff"/> and sets the default values.
         /// </summary>
         public TimeOff() : base()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TimeOff"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TimeOff"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TimeOff CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TimeOff CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TimeOff();
+            return new Microsoft.Graph.Models.TimeOff();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,8 +83,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "draftTimeOff", n => { DraftTimeOff = n.GetObjectValue<TimeOffItem>(TimeOffItem.CreateFromDiscriminatorValue); } },
-                { "sharedTimeOff", n => { SharedTimeOff = n.GetObjectValue<TimeOffItem>(TimeOffItem.CreateFromDiscriminatorValue); } },
+                { "draftTimeOff", n => { DraftTimeOff = n.GetObjectValue<Microsoft.Graph.Models.TimeOffItem>(Microsoft.Graph.Models.TimeOffItem.CreateFromDiscriminatorValue); } },
+                { "sharedTimeOff", n => { SharedTimeOff = n.GetObjectValue<Microsoft.Graph.Models.TimeOffItem>(Microsoft.Graph.Models.TimeOffItem.CreateFromDiscriminatorValue); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -96,8 +96,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<TimeOffItem>("draftTimeOff", DraftTimeOff);
-            writer.WriteObjectValue<TimeOffItem>("sharedTimeOff", SharedTimeOff);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TimeOffItem>("draftTimeOff", DraftTimeOff);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TimeOffItem>("sharedTimeOff", SharedTimeOff);
             writer.WriteStringValue("userId", UserId);
         }
     }

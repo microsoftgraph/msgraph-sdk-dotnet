@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs
     public class TabsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tabs property of the microsoft.graph.channel entity.</summary>
         /// <param name="position">The unique identifier of teamsTab</param>
-        /// <returns>A <see cref="TeamsTabItemRequestBuilder"/></returns>
-        public TeamsTabItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs.Item.TeamsTabItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs.Item.TeamsTabItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("teamsTab%2Did", position);
-                return new TeamsTabItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs.Item.TeamsTabItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TabsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs.TabsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TabsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs.TabsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs
         /// <summary>
         /// A collection of all the tabs in the channel. A navigation property.
         /// </summary>
-        /// <returns>A <see cref="TeamsTabCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamsTabCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TeamsTabCollectionResponse?> GetAsync(Action<RequestConfiguration<TabsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TeamsTabCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs.TabsRequestBuilder.TabsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TeamsTabCollectionResponse> GetAsync(Action<RequestConfiguration<TabsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TeamsTabCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs.TabsRequestBuilder.TabsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TeamsTabCollectionResponse>(requestInfo, TeamsTabCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TeamsTabCollectionResponse>(requestInfo, Microsoft.Graph.Models.TeamsTabCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to tabs for users
         /// </summary>
-        /// <returns>A <see cref="TeamsTab"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamsTab"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TeamsTab?> PostAsync(TeamsTab body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TeamsTab?> PostAsync(Microsoft.Graph.Models.TeamsTab body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TeamsTab> PostAsync(TeamsTab body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TeamsTab> PostAsync(Microsoft.Graph.Models.TeamsTab body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TeamsTab>(requestInfo, TeamsTab.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TeamsTab>(requestInfo, Microsoft.Graph.Models.TeamsTab.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A collection of all the tabs in the channel. A navigation property.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TabsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs.TabsRequestBuilder.TabsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TabsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs.TabsRequestBuilder.TabsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(TeamsTab body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.TeamsTab body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(TeamsTab body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.TeamsTab body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TabsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs.TabsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TabsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs.TabsRequestBuilder WithUrl(string rawUrl)
         {
-            return new TabsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs.TabsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// A collection of all the tabs in the channel. A navigation property.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TabsRequestBuilderGetRequestConfiguration : RequestConfiguration<TabsRequestBuilderGetQueryParameters>
+        public class TabsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Tabs.TabsRequestBuilder.TabsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

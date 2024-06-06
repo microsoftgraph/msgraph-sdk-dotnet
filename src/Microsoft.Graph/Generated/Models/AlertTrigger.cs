@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AlertTrigger"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AlertTrigger"/> and sets the default values.
         /// </summary>
         public AlertTrigger()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AlertTrigger"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AlertTrigger"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AlertTrigger CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AlertTrigger CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AlertTrigger();
+            return new Microsoft.Graph.Models.AlertTrigger();
         }
         /// <summary>
         /// The deserialization information for the current model

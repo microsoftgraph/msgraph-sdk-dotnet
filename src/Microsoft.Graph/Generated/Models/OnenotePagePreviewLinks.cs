@@ -38,21 +38,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The previewImageUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExternalLink? PreviewImageUrl
+        public Microsoft.Graph.Models.ExternalLink? PreviewImageUrl
         {
-            get { return BackingStore?.Get<ExternalLink?>("previewImageUrl"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalLink?>("previewImageUrl"); }
             set { BackingStore?.Set("previewImageUrl", value); }
         }
 #nullable restore
 #else
-        public ExternalLink PreviewImageUrl
+        public Microsoft.Graph.Models.ExternalLink PreviewImageUrl
         {
-            get { return BackingStore?.Get<ExternalLink>("previewImageUrl"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalLink>("previewImageUrl"); }
             set { BackingStore?.Set("previewImageUrl", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnenotePagePreviewLinks"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OnenotePagePreviewLinks"/> and sets the default values.
         /// </summary>
         public OnenotePagePreviewLinks()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnenotePagePreviewLinks"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnenotePagePreviewLinks"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OnenotePagePreviewLinks CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.OnenotePagePreviewLinks CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnenotePagePreviewLinks();
+            return new Microsoft.Graph.Models.OnenotePagePreviewLinks();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "previewImageUrl", n => { PreviewImageUrl = n.GetObjectValue<ExternalLink>(ExternalLink.CreateFromDiscriminatorValue); } },
+                { "previewImageUrl", n => { PreviewImageUrl = n.GetObjectValue<Microsoft.Graph.Models.ExternalLink>(Microsoft.Graph.Models.ExternalLink.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<ExternalLink>("previewImageUrl", PreviewImageUrl);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ExternalLink>("previewImageUrl", PreviewImageUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -24,42 +24,42 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item
     public class SynchronizationJobItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the bulkUpload property of the microsoft.graph.synchronizationJob entity.</summary>
-        public BulkUploadRequestBuilder BulkUpload
+        public Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.BulkUpload.BulkUploadRequestBuilder BulkUpload
         {
-            get => new BulkUploadRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.BulkUpload.BulkUploadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the pause method.</summary>
-        public PauseRequestBuilder Pause
+        public Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Pause.PauseRequestBuilder Pause
         {
-            get => new PauseRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Pause.PauseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the provisionOnDemand method.</summary>
-        public ProvisionOnDemandRequestBuilder ProvisionOnDemand
+        public Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.ProvisionOnDemand.ProvisionOnDemandRequestBuilder ProvisionOnDemand
         {
-            get => new ProvisionOnDemandRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.ProvisionOnDemand.ProvisionOnDemandRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restart method.</summary>
-        public RestartRequestBuilder Restart
+        public Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Restart.RestartRequestBuilder Restart
         {
-            get => new RestartRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Restart.RestartRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the schema property of the microsoft.graph.synchronizationJob entity.</summary>
-        public SchemaRequestBuilder Schema
+        public Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.SchemaRequestBuilder Schema
         {
-            get => new SchemaRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.SchemaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the start method.</summary>
-        public StartRequestBuilder Start
+        public Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Start.StartRequestBuilder Start
         {
-            get => new StartRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Start.StartRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validateCredentials method.</summary>
-        public ValidateCredentialsRequestBuilder ValidateCredentials
+        public Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.ValidateCredentials.ValidateCredentialsRequestBuilder ValidateCredentials
         {
-            get => new ValidateCredentialsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.ValidateCredentials.ValidateCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="SynchronizationJobItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.SynchronizationJobItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SynchronizationJobItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.SynchronizationJobItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -101,50 +101,50 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item
         /// Retrieve the existing synchronization job and its properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="SynchronizationJob"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SynchronizationJob"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SynchronizationJob?> GetAsync(Action<RequestConfiguration<SynchronizationJobItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SynchronizationJob?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.SynchronizationJobItemRequestBuilder.SynchronizationJobItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SynchronizationJob> GetAsync(Action<RequestConfiguration<SynchronizationJobItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SynchronizationJob> GetAsync(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.SynchronizationJobItemRequestBuilder.SynchronizationJobItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SynchronizationJob>(requestInfo, SynchronizationJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SynchronizationJob>(requestInfo, Microsoft.Graph.Models.SynchronizationJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property jobs in servicePrincipals
         /// </summary>
-        /// <returns>A <see cref="SynchronizationJob"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SynchronizationJob"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SynchronizationJob?> PatchAsync(SynchronizationJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SynchronizationJob?> PatchAsync(Microsoft.Graph.Models.SynchronizationJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SynchronizationJob> PatchAsync(SynchronizationJob body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SynchronizationJob> PatchAsync(Microsoft.Graph.Models.SynchronizationJob body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SynchronizationJob>(requestInfo, SynchronizationJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SynchronizationJob>(requestInfo, Microsoft.Graph.Models.SynchronizationJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.
@@ -172,11 +172,11 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SynchronizationJobItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.SynchronizationJobItemRequestBuilder.SynchronizationJobItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SynchronizationJobItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.SynchronizationJobItemRequestBuilder.SynchronizationJobItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -192,11 +192,11 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(SynchronizationJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.SynchronizationJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(SynchronizationJob body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.SynchronizationJob body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -209,11 +209,11 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SynchronizationJobItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.SynchronizationJobItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SynchronizationJobItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.SynchronizationJobItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new SynchronizationJobItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.SynchronizationJobItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -252,7 +252,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SynchronizationJobItemRequestBuilderGetRequestConfiguration : RequestConfiguration<SynchronizationJobItemRequestBuilderGetQueryParameters>
+        public class SynchronizationJobItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.SynchronizationJobItemRequestBuilder.SynchronizationJobItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

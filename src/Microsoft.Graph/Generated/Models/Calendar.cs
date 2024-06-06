@@ -7,54 +7,54 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Calendar : Entity, IParsable
+    public class Calendar : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnlineMeetingProviderType?>? AllowedOnlineMeetingProviders
+        public List<Microsoft.Graph.Models.OnlineMeetingProviderType?>? AllowedOnlineMeetingProviders
         {
-            get { return BackingStore?.Get<List<OnlineMeetingProviderType?>?>("allowedOnlineMeetingProviders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnlineMeetingProviderType?>?>("allowedOnlineMeetingProviders"); }
             set { BackingStore?.Set("allowedOnlineMeetingProviders", value); }
         }
 #nullable restore
 #else
-        public List<OnlineMeetingProviderType?> AllowedOnlineMeetingProviders
+        public List<Microsoft.Graph.Models.OnlineMeetingProviderType?> AllowedOnlineMeetingProviders
         {
-            get { return BackingStore?.Get<List<OnlineMeetingProviderType?>>("allowedOnlineMeetingProviders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnlineMeetingProviderType?>>("allowedOnlineMeetingProviders"); }
             set { BackingStore?.Set("allowedOnlineMeetingProviders", value); }
         }
 #endif
         /// <summary>The permissions of the users with whom the calendar is shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CalendarPermission>? CalendarPermissions
+        public List<Microsoft.Graph.Models.CalendarPermission>? CalendarPermissions
         {
-            get { return BackingStore?.Get<List<CalendarPermission>?>("calendarPermissions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CalendarPermission>?>("calendarPermissions"); }
             set { BackingStore?.Set("calendarPermissions", value); }
         }
 #nullable restore
 #else
-        public List<CalendarPermission> CalendarPermissions
+        public List<Microsoft.Graph.Models.CalendarPermission> CalendarPermissions
         {
-            get { return BackingStore?.Get<List<CalendarPermission>>("calendarPermissions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CalendarPermission>>("calendarPermissions"); }
             set { BackingStore?.Set("calendarPermissions", value); }
         }
 #endif
         /// <summary>The calendar view for the calendar. Navigation property. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Event>? CalendarView
+        public List<Microsoft.Graph.Models.Event>? CalendarView
         {
-            get { return BackingStore?.Get<List<Event>?>("calendarView"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Event>?>("calendarView"); }
             set { BackingStore?.Set("calendarView", value); }
         }
 #nullable restore
 #else
-        public List<Event> CalendarView
+        public List<Microsoft.Graph.Models.Event> CalendarView
         {
-            get { return BackingStore?.Get<List<Event>>("calendarView"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Event>>("calendarView"); }
             set { BackingStore?.Set("calendarView", value); }
         }
 #endif
@@ -93,30 +93,30 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Specifies the color theme to distinguish the calendar from other calendars in a UI. The property values are: auto, lightBlue, lightGreen, lightOrange, lightGray, lightYellow, lightTeal, lightPink, lightBrown, lightRed, maxColor.</summary>
-        public CalendarColor? Color
+        public Microsoft.Graph.Models.CalendarColor? Color
         {
-            get { return BackingStore?.Get<CalendarColor?>("color"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CalendarColor?>("color"); }
             set { BackingStore?.Set("color", value); }
         }
         /// <summary>The default online meeting provider for meetings sent from this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.</summary>
-        public OnlineMeetingProviderType? DefaultOnlineMeetingProvider
+        public Microsoft.Graph.Models.OnlineMeetingProviderType? DefaultOnlineMeetingProvider
         {
-            get { return BackingStore?.Get<OnlineMeetingProviderType?>("defaultOnlineMeetingProvider"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnlineMeetingProviderType?>("defaultOnlineMeetingProvider"); }
             set { BackingStore?.Set("defaultOnlineMeetingProvider", value); }
         }
         /// <summary>The events in the calendar. Navigation property. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Event>? Events
+        public List<Microsoft.Graph.Models.Event>? Events
         {
-            get { return BackingStore?.Get<List<Event>?>("events"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Event>?>("events"); }
             set { BackingStore?.Set("events", value); }
         }
 #nullable restore
 #else
-        public List<Event> Events
+        public List<Microsoft.Graph.Models.Event> Events
         {
-            get { return BackingStore?.Get<List<Event>>("events"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Event>>("events"); }
             set { BackingStore?.Set("events", value); }
         }
 #endif
@@ -157,16 +157,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
+        public List<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
+        public List<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #endif
@@ -189,44 +189,44 @@ namespace Microsoft.Graph.Models
         /// <summary>If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailAddress? Owner
+        public Microsoft.Graph.Models.EmailAddress? Owner
         {
-            get { return BackingStore?.Get<EmailAddress?>("owner"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailAddress?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #nullable restore
 #else
-        public EmailAddress Owner
+        public Microsoft.Graph.Models.EmailAddress Owner
         {
-            get { return BackingStore?.Get<EmailAddress>("owner"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailAddress>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #endif
         /// <summary>The collection of single-value extended properties defined for the calendar. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
+        public List<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
+        public List<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Calendar"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Calendar"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Calendar CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Calendar CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Calendar();
+            return new Microsoft.Graph.Models.Calendar();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -236,24 +236,24 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowedOnlineMeetingProviders", n => { AllowedOnlineMeetingProviders = n.GetCollectionOfEnumValues<OnlineMeetingProviderType>()?.ToList(); } },
-                { "calendarPermissions", n => { CalendarPermissions = n.GetCollectionOfObjectValues<CalendarPermission>(CalendarPermission.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "calendarView", n => { CalendarView = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "allowedOnlineMeetingProviders", n => { AllowedOnlineMeetingProviders = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.OnlineMeetingProviderType>()?.ToList(); } },
+                { "calendarPermissions", n => { CalendarPermissions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CalendarPermission>(Microsoft.Graph.Models.CalendarPermission.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "calendarView", n => { CalendarView = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Event>(Microsoft.Graph.Models.Event.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "canEdit", n => { CanEdit = n.GetBoolValue(); } },
                 { "canShare", n => { CanShare = n.GetBoolValue(); } },
                 { "canViewPrivateItems", n => { CanViewPrivateItems = n.GetBoolValue(); } },
                 { "changeKey", n => { ChangeKey = n.GetStringValue(); } },
-                { "color", n => { Color = n.GetEnumValue<CalendarColor>(); } },
-                { "defaultOnlineMeetingProvider", n => { DefaultOnlineMeetingProvider = n.GetEnumValue<OnlineMeetingProviderType>(); } },
-                { "events", n => { Events = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "color", n => { Color = n.GetEnumValue<Microsoft.Graph.Models.CalendarColor>(); } },
+                { "defaultOnlineMeetingProvider", n => { DefaultOnlineMeetingProvider = n.GetEnumValue<Microsoft.Graph.Models.OnlineMeetingProviderType>(); } },
+                { "events", n => { Events = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Event>(Microsoft.Graph.Models.Event.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "hexColor", n => { HexColor = n.GetStringValue(); } },
                 { "isDefaultCalendar", n => { IsDefaultCalendar = n.GetBoolValue(); } },
                 { "isRemovable", n => { IsRemovable = n.GetBoolValue(); } },
                 { "isTallyingResponses", n => { IsTallyingResponses = n.GetBoolValue(); } },
-                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>(Microsoft.Graph.Models.MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
-                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "owner", n => { Owner = n.GetObjectValue<Microsoft.Graph.Models.EmailAddress>(Microsoft.Graph.Models.EmailAddress.CreateFromDiscriminatorValue); } },
+                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>(Microsoft.Graph.Models.SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -264,24 +264,24 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfEnumValues<OnlineMeetingProviderType>("allowedOnlineMeetingProviders", AllowedOnlineMeetingProviders);
-            writer.WriteCollectionOfObjectValues<CalendarPermission>("calendarPermissions", CalendarPermissions);
-            writer.WriteCollectionOfObjectValues<Event>("calendarView", CalendarView);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.OnlineMeetingProviderType>("allowedOnlineMeetingProviders", AllowedOnlineMeetingProviders);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CalendarPermission>("calendarPermissions", CalendarPermissions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Event>("calendarView", CalendarView);
             writer.WriteBoolValue("canEdit", CanEdit);
             writer.WriteBoolValue("canShare", CanShare);
             writer.WriteBoolValue("canViewPrivateItems", CanViewPrivateItems);
             writer.WriteStringValue("changeKey", ChangeKey);
-            writer.WriteEnumValue<CalendarColor>("color", Color);
-            writer.WriteEnumValue<OnlineMeetingProviderType>("defaultOnlineMeetingProvider", DefaultOnlineMeetingProvider);
-            writer.WriteCollectionOfObjectValues<Event>("events", Events);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CalendarColor>("color", Color);
+            writer.WriteEnumValue<Microsoft.Graph.Models.OnlineMeetingProviderType>("defaultOnlineMeetingProvider", DefaultOnlineMeetingProvider);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Event>("events", Events);
             writer.WriteStringValue("hexColor", HexColor);
             writer.WriteBoolValue("isDefaultCalendar", IsDefaultCalendar);
             writer.WriteBoolValue("isRemovable", IsRemovable);
             writer.WriteBoolValue("isTallyingResponses", IsTallyingResponses);
-            writer.WriteCollectionOfObjectValues<MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<EmailAddress>("owner", Owner);
-            writer.WriteCollectionOfObjectValues<SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EmailAddress>("owner", Owner);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
         }
     }
 }

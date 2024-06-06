@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class TeamsTab : Entity, IParsable
+    public class TeamsTab : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Container for custom settings applied to a tab. The tab is considered configured only once this property is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamsTabConfiguration? Configuration
+        public Microsoft.Graph.Models.TeamsTabConfiguration? Configuration
         {
-            get { return BackingStore?.Get<TeamsTabConfiguration?>("configuration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsTabConfiguration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #nullable restore
 #else
-        public TeamsTabConfiguration Configuration
+        public Microsoft.Graph.Models.TeamsTabConfiguration Configuration
         {
-            get { return BackingStore?.Get<TeamsTabConfiguration>("configuration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsTabConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #endif
@@ -77,12 +77,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamsTab"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamsTab"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeamsTab CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TeamsTab CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamsTab();
+            return new Microsoft.Graph.Models.TeamsTab();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<TeamsTabConfiguration>(TeamsTabConfiguration.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<Microsoft.Graph.Models.TeamsTabConfiguration>(Microsoft.Graph.Models.TeamsTabConfiguration.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "teamsApp", n => { TeamsApp = n.GetObjectValue<Microsoft.Graph.Models.TeamsApp>(Microsoft.Graph.Models.TeamsApp.CreateFromDiscriminatorValue); } },
                 { "webUrl", n => { WebUrl = n.GetStringValue(); } },
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<TeamsTabConfiguration>("configuration", Configuration);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TeamsTabConfiguration>("configuration", Configuration);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<Microsoft.Graph.Models.TeamsApp>("teamsApp", TeamsApp);
             writer.WriteStringValue("webUrl", WebUrl);

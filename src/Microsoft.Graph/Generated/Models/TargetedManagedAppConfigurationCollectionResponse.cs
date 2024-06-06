@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class TargetedManagedAppConfigurationCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class TargetedManagedAppConfigurationCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TargetedManagedAppConfiguration>? Value
+        public List<Microsoft.Graph.Models.TargetedManagedAppConfiguration>? Value
         {
-            get { return BackingStore?.Get<List<TargetedManagedAppConfiguration>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TargetedManagedAppConfiguration>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<TargetedManagedAppConfiguration> Value
+        public List<Microsoft.Graph.Models.TargetedManagedAppConfiguration> Value
         {
-            get { return BackingStore?.Get<List<TargetedManagedAppConfiguration>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TargetedManagedAppConfiguration>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TargetedManagedAppConfigurationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TargetedManagedAppConfigurationCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TargetedManagedAppConfigurationCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TargetedManagedAppConfigurationCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TargetedManagedAppConfigurationCollectionResponse();
+            return new Microsoft.Graph.Models.TargetedManagedAppConfigurationCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<TargetedManagedAppConfiguration>(TargetedManagedAppConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TargetedManagedAppConfiguration>(Microsoft.Graph.Models.TargetedManagedAppConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<TargetedManagedAppConfiguration>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TargetedManagedAppConfiguration>("value", Value);
         }
     }
 }

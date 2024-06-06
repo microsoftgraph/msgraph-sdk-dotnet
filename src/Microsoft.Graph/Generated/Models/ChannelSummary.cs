@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("ownersCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ChannelSummary"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ChannelSummary"/> and sets the default values.
         /// </summary>
         public ChannelSummary()
         {
@@ -70,12 +70,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ChannelSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ChannelSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ChannelSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ChannelSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ChannelSummary();
+            return new Microsoft.Graph.Models.ChannelSummary();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -7,56 +7,56 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class M365AppsInstallationOptions : Entity, IParsable
+    public class M365AppsInstallationOptions : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The appsForMac property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AppsInstallationOptionsForMac? AppsForMac
+        public Microsoft.Graph.Models.AppsInstallationOptionsForMac? AppsForMac
         {
-            get { return BackingStore?.Get<AppsInstallationOptionsForMac?>("appsForMac"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AppsInstallationOptionsForMac?>("appsForMac"); }
             set { BackingStore?.Set("appsForMac", value); }
         }
 #nullable restore
 #else
-        public AppsInstallationOptionsForMac AppsForMac
+        public Microsoft.Graph.Models.AppsInstallationOptionsForMac AppsForMac
         {
-            get { return BackingStore?.Get<AppsInstallationOptionsForMac>("appsForMac"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AppsInstallationOptionsForMac>("appsForMac"); }
             set { BackingStore?.Set("appsForMac", value); }
         }
 #endif
         /// <summary>The appsForWindows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AppsInstallationOptionsForWindows? AppsForWindows
+        public Microsoft.Graph.Models.AppsInstallationOptionsForWindows? AppsForWindows
         {
-            get { return BackingStore?.Get<AppsInstallationOptionsForWindows?>("appsForWindows"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AppsInstallationOptionsForWindows?>("appsForWindows"); }
             set { BackingStore?.Set("appsForWindows", value); }
         }
 #nullable restore
 #else
-        public AppsInstallationOptionsForWindows AppsForWindows
+        public Microsoft.Graph.Models.AppsInstallationOptionsForWindows AppsForWindows
         {
-            get { return BackingStore?.Get<AppsInstallationOptionsForWindows>("appsForWindows"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AppsInstallationOptionsForWindows>("appsForWindows"); }
             set { BackingStore?.Set("appsForWindows", value); }
         }
 #endif
         /// <summary>The updateChannel property</summary>
-        public AppsUpdateChannelType? UpdateChannel
+        public Microsoft.Graph.Models.AppsUpdateChannelType? UpdateChannel
         {
-            get { return BackingStore?.Get<AppsUpdateChannelType?>("updateChannel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AppsUpdateChannelType?>("updateChannel"); }
             set { BackingStore?.Set("updateChannel", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="M365AppsInstallationOptions"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.M365AppsInstallationOptions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new M365AppsInstallationOptions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.M365AppsInstallationOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new M365AppsInstallationOptions();
+            return new Microsoft.Graph.Models.M365AppsInstallationOptions();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,9 +66,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "appsForMac", n => { AppsForMac = n.GetObjectValue<AppsInstallationOptionsForMac>(AppsInstallationOptionsForMac.CreateFromDiscriminatorValue); } },
-                { "appsForWindows", n => { AppsForWindows = n.GetObjectValue<AppsInstallationOptionsForWindows>(AppsInstallationOptionsForWindows.CreateFromDiscriminatorValue); } },
-                { "updateChannel", n => { UpdateChannel = n.GetEnumValue<AppsUpdateChannelType>(); } },
+                { "appsForMac", n => { AppsForMac = n.GetObjectValue<Microsoft.Graph.Models.AppsInstallationOptionsForMac>(Microsoft.Graph.Models.AppsInstallationOptionsForMac.CreateFromDiscriminatorValue); } },
+                { "appsForWindows", n => { AppsForWindows = n.GetObjectValue<Microsoft.Graph.Models.AppsInstallationOptionsForWindows>(Microsoft.Graph.Models.AppsInstallationOptionsForWindows.CreateFromDiscriminatorValue); } },
+                { "updateChannel", n => { UpdateChannel = n.GetEnumValue<Microsoft.Graph.Models.AppsUpdateChannelType>(); } },
             };
         }
         /// <summary>
@@ -79,9 +79,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AppsInstallationOptionsForMac>("appsForMac", AppsForMac);
-            writer.WriteObjectValue<AppsInstallationOptionsForWindows>("appsForWindows", AppsForWindows);
-            writer.WriteEnumValue<AppsUpdateChannelType>("updateChannel", UpdateChannel);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AppsInstallationOptionsForMac>("appsForMac", AppsForMac);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AppsInstallationOptionsForWindows>("appsForWindows", AppsForWindows);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AppsUpdateChannelType>("updateChannel", UpdateChannel);
         }
     }
 }

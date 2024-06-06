@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class PrinterBase : Entity, IParsable
+    public class PrinterBase : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The capabilities of the printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrinterCapabilities? Capabilities
+        public Microsoft.Graph.Models.PrinterCapabilities? Capabilities
         {
-            get { return BackingStore?.Get<PrinterCapabilities?>("capabilities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrinterCapabilities?>("capabilities"); }
             set { BackingStore?.Set("capabilities", value); }
         }
 #nullable restore
 #else
-        public PrinterCapabilities Capabilities
+        public Microsoft.Graph.Models.PrinterCapabilities Capabilities
         {
-            get { return BackingStore?.Get<PrinterCapabilities>("capabilities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrinterCapabilities>("capabilities"); }
             set { BackingStore?.Set("capabilities", value); }
         }
 #endif
         /// <summary>The default print settings of printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrinterDefaults? Defaults
+        public Microsoft.Graph.Models.PrinterDefaults? Defaults
         {
-            get { return BackingStore?.Get<PrinterDefaults?>("defaults"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrinterDefaults?>("defaults"); }
             set { BackingStore?.Set("defaults", value); }
         }
 #nullable restore
 #else
-        public PrinterDefaults Defaults
+        public Microsoft.Graph.Models.PrinterDefaults Defaults
         {
-            get { return BackingStore?.Get<PrinterDefaults>("defaults"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrinterDefaults>("defaults"); }
             set { BackingStore?.Set("defaults", value); }
         }
 #endif
@@ -67,32 +67,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The list of jobs that are queued for printing by the printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintJob>? Jobs
+        public List<Microsoft.Graph.Models.PrintJob>? Jobs
         {
-            get { return BackingStore?.Get<List<PrintJob>?>("jobs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PrintJob>?>("jobs"); }
             set { BackingStore?.Set("jobs", value); }
         }
 #nullable restore
 #else
-        public List<PrintJob> Jobs
+        public List<Microsoft.Graph.Models.PrintJob> Jobs
         {
-            get { return BackingStore?.Get<List<PrintJob>>("jobs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PrintJob>>("jobs"); }
             set { BackingStore?.Set("jobs", value); }
         }
 #endif
         /// <summary>The physical and/or organizational location of the printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrinterLocation? Location
+        public Microsoft.Graph.Models.PrinterLocation? Location
         {
-            get { return BackingStore?.Get<PrinterLocation?>("location"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrinterLocation?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public PrinterLocation Location
+        public Microsoft.Graph.Models.PrinterLocation Location
         {
-            get { return BackingStore?.Get<PrinterLocation>("location"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrinterLocation>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #endif
@@ -131,33 +131,33 @@ namespace Microsoft.Graph.Models
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrinterStatus? Status
+        public Microsoft.Graph.Models.PrinterStatus? Status
         {
-            get { return BackingStore?.Get<PrinterStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrinterStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public PrinterStatus Status
+        public Microsoft.Graph.Models.PrinterStatus Status
         {
-            get { return BackingStore?.Get<PrinterStatus>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrinterStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrinterBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrinterBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrinterBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.PrinterBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.printer" => new Printer(),
-                "#microsoft.graph.printerShare" => new PrinterShare(),
-                _ => new PrinterBase(),
+                "#microsoft.graph.printer" => new Microsoft.Graph.Models.Printer(),
+                "#microsoft.graph.printerShare" => new Microsoft.Graph.Models.PrinterShare(),
+                _ => new Microsoft.Graph.Models.PrinterBase(),
             };
         }
         /// <summary>
@@ -168,15 +168,15 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "capabilities", n => { Capabilities = n.GetObjectValue<PrinterCapabilities>(PrinterCapabilities.CreateFromDiscriminatorValue); } },
-                { "defaults", n => { Defaults = n.GetObjectValue<PrinterDefaults>(PrinterDefaults.CreateFromDiscriminatorValue); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<Microsoft.Graph.Models.PrinterCapabilities>(Microsoft.Graph.Models.PrinterCapabilities.CreateFromDiscriminatorValue); } },
+                { "defaults", n => { Defaults = n.GetObjectValue<Microsoft.Graph.Models.PrinterDefaults>(Microsoft.Graph.Models.PrinterDefaults.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "isAcceptingJobs", n => { IsAcceptingJobs = n.GetBoolValue(); } },
-                { "jobs", n => { Jobs = n.GetCollectionOfObjectValues<PrintJob>(PrintJob.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "location", n => { Location = n.GetObjectValue<PrinterLocation>(PrinterLocation.CreateFromDiscriminatorValue); } },
+                { "jobs", n => { Jobs = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.PrintJob>(Microsoft.Graph.Models.PrintJob.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "location", n => { Location = n.GetObjectValue<Microsoft.Graph.Models.PrinterLocation>(Microsoft.Graph.Models.PrinterLocation.CreateFromDiscriminatorValue); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetObjectValue<PrinterStatus>(PrinterStatus.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<Microsoft.Graph.Models.PrinterStatus>(Microsoft.Graph.Models.PrinterStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -187,15 +187,15 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<PrinterCapabilities>("capabilities", Capabilities);
-            writer.WriteObjectValue<PrinterDefaults>("defaults", Defaults);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PrinterCapabilities>("capabilities", Capabilities);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PrinterDefaults>("defaults", Defaults);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isAcceptingJobs", IsAcceptingJobs);
-            writer.WriteCollectionOfObjectValues<PrintJob>("jobs", Jobs);
-            writer.WriteObjectValue<PrinterLocation>("location", Location);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.PrintJob>("jobs", Jobs);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PrinterLocation>("location", Location);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("model", Model);
-            writer.WriteObjectValue<PrinterStatus>("status", Status);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PrinterStatus>("status", Status);
         }
     }
 }

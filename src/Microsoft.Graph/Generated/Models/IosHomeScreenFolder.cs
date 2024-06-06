@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// A folder containing pages of apps and web clips on the Home Screen.
     /// </summary>
-    public class IosHomeScreenFolder : IosHomeScreenItem, IParsable
+    public class IosHomeScreenFolder : Microsoft.Graph.Models.IosHomeScreenItem, IParsable
     {
         /// <summary>Pages of Home Screen Layout Icons which must be applications or web clips. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosHomeScreenFolderPage>? Pages
+        public List<Microsoft.Graph.Models.IosHomeScreenFolderPage>? Pages
         {
-            get { return BackingStore?.Get<List<IosHomeScreenFolderPage>?>("pages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IosHomeScreenFolderPage>?>("pages"); }
             set { BackingStore?.Set("pages", value); }
         }
 #nullable restore
 #else
-        public List<IosHomeScreenFolderPage> Pages
+        public List<Microsoft.Graph.Models.IosHomeScreenFolderPage> Pages
         {
-            get { return BackingStore?.Get<List<IosHomeScreenFolderPage>>("pages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IosHomeScreenFolderPage>>("pages"); }
             set { BackingStore?.Set("pages", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IosHomeScreenFolder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IosHomeScreenFolder"/> and sets the default values.
         /// </summary>
         public IosHomeScreenFolder() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosHomeScreenFolder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IosHomeScreenFolder"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosHomeScreenFolder CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IosHomeScreenFolder CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosHomeScreenFolder();
+            return new Microsoft.Graph.Models.IosHomeScreenFolder();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "pages", n => { Pages = n.GetCollectionOfObjectValues<IosHomeScreenFolderPage>(IosHomeScreenFolderPage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "pages", n => { Pages = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IosHomeScreenFolderPage>(Microsoft.Graph.Models.IosHomeScreenFolderPage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<IosHomeScreenFolderPage>("pages", Pages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IosHomeScreenFolderPage>("pages", Pages);
         }
     }
 }

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes
     public class IncludesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the includes property of the microsoft.graph.permissionGrantPolicy entity.</summary>
         /// <param name="position">The unique identifier of permissionGrantConditionSet</param>
-        /// <returns>A <see cref="PermissionGrantConditionSetItemRequestBuilder"/></returns>
-        public PermissionGrantConditionSetItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.Item.PermissionGrantConditionSetItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.Item.PermissionGrantConditionSetItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("permissionGrantConditionSet%2Did", position);
-                return new PermissionGrantConditionSetItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.Item.PermissionGrantConditionSetItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IncludesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.IncludesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="IncludesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.IncludesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes
         /// Retrieve the condition sets which are *included* in a permissionGrantPolicy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissiongrantpolicy-list-includes?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="PermissionGrantConditionSetCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PermissionGrantConditionSetCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PermissionGrantConditionSetCollectionResponse?> GetAsync(Action<RequestConfiguration<IncludesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PermissionGrantConditionSetCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.IncludesRequestBuilder.IncludesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PermissionGrantConditionSetCollectionResponse> GetAsync(Action<RequestConfiguration<IncludesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PermissionGrantConditionSetCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.IncludesRequestBuilder.IncludesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PermissionGrantConditionSetCollectionResponse>(requestInfo, PermissionGrantConditionSetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PermissionGrantConditionSetCollectionResponse>(requestInfo, Microsoft.Graph.Models.PermissionGrantConditionSetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add conditions under which a permission grant event is *included* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the includes collection of a  permissionGrantPolicy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissiongrantpolicy-post-includes?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="PermissionGrantConditionSet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PermissionGrantConditionSet"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PermissionGrantConditionSet?> PostAsync(PermissionGrantConditionSet body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PermissionGrantConditionSet?> PostAsync(Microsoft.Graph.Models.PermissionGrantConditionSet body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PermissionGrantConditionSet> PostAsync(PermissionGrantConditionSet body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PermissionGrantConditionSet> PostAsync(Microsoft.Graph.Models.PermissionGrantConditionSet body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PermissionGrantConditionSet>(requestInfo, PermissionGrantConditionSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PermissionGrantConditionSet>(requestInfo, Microsoft.Graph.Models.PermissionGrantConditionSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the condition sets which are *included* in a permissionGrantPolicy.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IncludesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.IncludesRequestBuilder.IncludesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IncludesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.IncludesRequestBuilder.IncludesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(PermissionGrantConditionSet body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.PermissionGrantConditionSet body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(PermissionGrantConditionSet body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.PermissionGrantConditionSet body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="IncludesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.IncludesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public IncludesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.IncludesRequestBuilder WithUrl(string rawUrl)
         {
-            return new IncludesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.IncludesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve the condition sets which are *included* in a permissionGrantPolicy.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class IncludesRequestBuilderGetRequestConfiguration : RequestConfiguration<IncludesRequestBuilderGetQueryParameters>
+        public class IncludesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.IncludesRequestBuilder.IncludesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

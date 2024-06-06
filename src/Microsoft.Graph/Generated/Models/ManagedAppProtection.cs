@@ -9,40 +9,40 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Policy used to configure detailed management settings for a specified set of apps
     /// </summary>
-    public class ManagedAppProtection : ManagedAppPolicy, IParsable
+    public class ManagedAppProtection : Microsoft.Graph.Models.ManagedAppPolicy, IParsable
     {
         /// <summary>Data storage locations where a user may store managed data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppDataStorageLocation?>? AllowedDataStorageLocations
+        public List<Microsoft.Graph.Models.ManagedAppDataStorageLocation?>? AllowedDataStorageLocations
         {
-            get { return BackingStore?.Get<List<ManagedAppDataStorageLocation?>?>("allowedDataStorageLocations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppDataStorageLocation?>?>("allowedDataStorageLocations"); }
             set { BackingStore?.Set("allowedDataStorageLocations", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppDataStorageLocation?> AllowedDataStorageLocations
+        public List<Microsoft.Graph.Models.ManagedAppDataStorageLocation?> AllowedDataStorageLocations
         {
-            get { return BackingStore?.Get<List<ManagedAppDataStorageLocation?>>("allowedDataStorageLocations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppDataStorageLocation?>>("allowedDataStorageLocations"); }
             set { BackingStore?.Set("allowedDataStorageLocations", value); }
         }
 #endif
         /// <summary>Data can be transferred from/to these classes of apps</summary>
-        public ManagedAppDataTransferLevel? AllowedInboundDataTransferSources
+        public Microsoft.Graph.Models.ManagedAppDataTransferLevel? AllowedInboundDataTransferSources
         {
-            get { return BackingStore?.Get<ManagedAppDataTransferLevel?>("allowedInboundDataTransferSources"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ManagedAppDataTransferLevel?>("allowedInboundDataTransferSources"); }
             set { BackingStore?.Set("allowedInboundDataTransferSources", value); }
         }
         /// <summary>Represents the level to which the device&apos;s clipboard may be shared between apps</summary>
-        public ManagedAppClipboardSharingLevel? AllowedOutboundClipboardSharingLevel
+        public Microsoft.Graph.Models.ManagedAppClipboardSharingLevel? AllowedOutboundClipboardSharingLevel
         {
-            get { return BackingStore?.Get<ManagedAppClipboardSharingLevel?>("allowedOutboundClipboardSharingLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ManagedAppClipboardSharingLevel?>("allowedOutboundClipboardSharingLevel"); }
             set { BackingStore?.Set("allowedOutboundClipboardSharingLevel", value); }
         }
         /// <summary>Data can be transferred from/to these classes of apps</summary>
-        public ManagedAppDataTransferLevel? AllowedOutboundDataTransferDestinations
+        public Microsoft.Graph.Models.ManagedAppDataTransferLevel? AllowedOutboundDataTransferDestinations
         {
-            get { return BackingStore?.Get<ManagedAppDataTransferLevel?>("allowedOutboundDataTransferDestinations"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ManagedAppDataTransferLevel?>("allowedOutboundDataTransferDestinations"); }
             set { BackingStore?.Set("allowedOutboundDataTransferDestinations", value); }
         }
         /// <summary>Indicates whether contacts can be synced to the user&apos;s device.</summary>
@@ -76,9 +76,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("fingerprintBlocked", value); }
         }
         /// <summary>Type of managed browser</summary>
-        public ManagedBrowserType? ManagedBrowser
+        public Microsoft.Graph.Models.ManagedBrowserType? ManagedBrowser
         {
-            get { return BackingStore?.Get<ManagedBrowserType?>("managedBrowser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ManagedBrowserType?>("managedBrowser"); }
             set { BackingStore?.Set("managedBrowser", value); }
         }
         /// <summary>Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)</summary>
@@ -194,9 +194,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("periodOnlineBeforeAccessCheck", value); }
         }
         /// <summary>Character set which is to be used for a user&apos;s app PIN</summary>
-        public ManagedAppPinCharacterSet? PinCharacterSet
+        public Microsoft.Graph.Models.ManagedAppPinCharacterSet? PinCharacterSet
         {
-            get { return BackingStore?.Get<ManagedAppPinCharacterSet?>("pinCharacterSet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ManagedAppPinCharacterSet?>("pinCharacterSet"); }
             set { BackingStore?.Set("pinCharacterSet", value); }
         }
         /// <summary>Indicates whether an app-level pin is required.</summary>
@@ -224,7 +224,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("simplePinBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagedAppProtection"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ManagedAppProtection"/> and sets the default values.
         /// </summary>
         public ManagedAppProtection() : base()
         {
@@ -233,19 +233,19 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedAppProtection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedAppProtection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.androidManagedAppProtection" => new AndroidManagedAppProtection(),
-                "#microsoft.graph.defaultManagedAppProtection" => new DefaultManagedAppProtection(),
-                "#microsoft.graph.iosManagedAppProtection" => new IosManagedAppProtection(),
-                "#microsoft.graph.targetedManagedAppProtection" => new TargetedManagedAppProtection(),
-                _ => new ManagedAppProtection(),
+                "#microsoft.graph.androidManagedAppProtection" => new Microsoft.Graph.Models.AndroidManagedAppProtection(),
+                "#microsoft.graph.defaultManagedAppProtection" => new Microsoft.Graph.Models.DefaultManagedAppProtection(),
+                "#microsoft.graph.iosManagedAppProtection" => new Microsoft.Graph.Models.IosManagedAppProtection(),
+                "#microsoft.graph.targetedManagedAppProtection" => new Microsoft.Graph.Models.TargetedManagedAppProtection(),
+                _ => new Microsoft.Graph.Models.ManagedAppProtection(),
             };
         }
         /// <summary>
@@ -256,16 +256,16 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowedDataStorageLocations", n => { AllowedDataStorageLocations = n.GetCollectionOfEnumValues<ManagedAppDataStorageLocation>()?.ToList(); } },
-                { "allowedInboundDataTransferSources", n => { AllowedInboundDataTransferSources = n.GetEnumValue<ManagedAppDataTransferLevel>(); } },
-                { "allowedOutboundClipboardSharingLevel", n => { AllowedOutboundClipboardSharingLevel = n.GetEnumValue<ManagedAppClipboardSharingLevel>(); } },
-                { "allowedOutboundDataTransferDestinations", n => { AllowedOutboundDataTransferDestinations = n.GetEnumValue<ManagedAppDataTransferLevel>(); } },
+                { "allowedDataStorageLocations", n => { AllowedDataStorageLocations = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.ManagedAppDataStorageLocation>()?.ToList(); } },
+                { "allowedInboundDataTransferSources", n => { AllowedInboundDataTransferSources = n.GetEnumValue<Microsoft.Graph.Models.ManagedAppDataTransferLevel>(); } },
+                { "allowedOutboundClipboardSharingLevel", n => { AllowedOutboundClipboardSharingLevel = n.GetEnumValue<Microsoft.Graph.Models.ManagedAppClipboardSharingLevel>(); } },
+                { "allowedOutboundDataTransferDestinations", n => { AllowedOutboundDataTransferDestinations = n.GetEnumValue<Microsoft.Graph.Models.ManagedAppDataTransferLevel>(); } },
                 { "contactSyncBlocked", n => { ContactSyncBlocked = n.GetBoolValue(); } },
                 { "dataBackupBlocked", n => { DataBackupBlocked = n.GetBoolValue(); } },
                 { "deviceComplianceRequired", n => { DeviceComplianceRequired = n.GetBoolValue(); } },
                 { "disableAppPinIfDevicePinIsSet", n => { DisableAppPinIfDevicePinIsSet = n.GetBoolValue(); } },
                 { "fingerprintBlocked", n => { FingerprintBlocked = n.GetBoolValue(); } },
-                { "managedBrowser", n => { ManagedBrowser = n.GetEnumValue<ManagedBrowserType>(); } },
+                { "managedBrowser", n => { ManagedBrowser = n.GetEnumValue<Microsoft.Graph.Models.ManagedBrowserType>(); } },
                 { "managedBrowserToOpenLinksRequired", n => { ManagedBrowserToOpenLinksRequired = n.GetBoolValue(); } },
                 { "maximumPinRetries", n => { MaximumPinRetries = n.GetIntValue(); } },
                 { "minimumPinLength", n => { MinimumPinLength = n.GetIntValue(); } },
@@ -278,7 +278,7 @@ namespace Microsoft.Graph.Models
                 { "periodOfflineBeforeAccessCheck", n => { PeriodOfflineBeforeAccessCheck = n.GetTimeSpanValue(); } },
                 { "periodOfflineBeforeWipeIsEnforced", n => { PeriodOfflineBeforeWipeIsEnforced = n.GetTimeSpanValue(); } },
                 { "periodOnlineBeforeAccessCheck", n => { PeriodOnlineBeforeAccessCheck = n.GetTimeSpanValue(); } },
-                { "pinCharacterSet", n => { PinCharacterSet = n.GetEnumValue<ManagedAppPinCharacterSet>(); } },
+                { "pinCharacterSet", n => { PinCharacterSet = n.GetEnumValue<Microsoft.Graph.Models.ManagedAppPinCharacterSet>(); } },
                 { "pinRequired", n => { PinRequired = n.GetBoolValue(); } },
                 { "printBlocked", n => { PrintBlocked = n.GetBoolValue(); } },
                 { "saveAsBlocked", n => { SaveAsBlocked = n.GetBoolValue(); } },
@@ -293,16 +293,16 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfEnumValues<ManagedAppDataStorageLocation>("allowedDataStorageLocations", AllowedDataStorageLocations);
-            writer.WriteEnumValue<ManagedAppDataTransferLevel>("allowedInboundDataTransferSources", AllowedInboundDataTransferSources);
-            writer.WriteEnumValue<ManagedAppClipboardSharingLevel>("allowedOutboundClipboardSharingLevel", AllowedOutboundClipboardSharingLevel);
-            writer.WriteEnumValue<ManagedAppDataTransferLevel>("allowedOutboundDataTransferDestinations", AllowedOutboundDataTransferDestinations);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.ManagedAppDataStorageLocation>("allowedDataStorageLocations", AllowedDataStorageLocations);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ManagedAppDataTransferLevel>("allowedInboundDataTransferSources", AllowedInboundDataTransferSources);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ManagedAppClipboardSharingLevel>("allowedOutboundClipboardSharingLevel", AllowedOutboundClipboardSharingLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ManagedAppDataTransferLevel>("allowedOutboundDataTransferDestinations", AllowedOutboundDataTransferDestinations);
             writer.WriteBoolValue("contactSyncBlocked", ContactSyncBlocked);
             writer.WriteBoolValue("dataBackupBlocked", DataBackupBlocked);
             writer.WriteBoolValue("deviceComplianceRequired", DeviceComplianceRequired);
             writer.WriteBoolValue("disableAppPinIfDevicePinIsSet", DisableAppPinIfDevicePinIsSet);
             writer.WriteBoolValue("fingerprintBlocked", FingerprintBlocked);
-            writer.WriteEnumValue<ManagedBrowserType>("managedBrowser", ManagedBrowser);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ManagedBrowserType>("managedBrowser", ManagedBrowser);
             writer.WriteBoolValue("managedBrowserToOpenLinksRequired", ManagedBrowserToOpenLinksRequired);
             writer.WriteIntValue("maximumPinRetries", MaximumPinRetries);
             writer.WriteIntValue("minimumPinLength", MinimumPinLength);
@@ -315,7 +315,7 @@ namespace Microsoft.Graph.Models
             writer.WriteTimeSpanValue("periodOfflineBeforeAccessCheck", PeriodOfflineBeforeAccessCheck);
             writer.WriteTimeSpanValue("periodOfflineBeforeWipeIsEnforced", PeriodOfflineBeforeWipeIsEnforced);
             writer.WriteTimeSpanValue("periodOnlineBeforeAccessCheck", PeriodOnlineBeforeAccessCheck);
-            writer.WriteEnumValue<ManagedAppPinCharacterSet>("pinCharacterSet", PinCharacterSet);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ManagedAppPinCharacterSet>("pinCharacterSet", PinCharacterSet);
             writer.WriteBoolValue("pinRequired", PinRequired);
             writer.WriteBoolValue("printBlocked", PrintBlocked);
             writer.WriteBoolValue("saveAsBlocked", SaveAsBlocked);

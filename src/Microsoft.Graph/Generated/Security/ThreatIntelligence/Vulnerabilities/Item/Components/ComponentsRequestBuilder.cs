@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Compo
     public class ComponentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Components.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Components.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the components property of the microsoft.graph.security.vulnerability entity.</summary>
         /// <param name="position">The unique identifier of vulnerabilityComponent</param>
-        /// <returns>A <see cref="VulnerabilityComponentItemRequestBuilder"/></returns>
-        public VulnerabilityComponentItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Components.Item.VulnerabilityComponentItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Components.Item.VulnerabilityComponentItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("vulnerabilityComponent%2Did", position);
-                return new VulnerabilityComponentItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Components.Item.VulnerabilityComponentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ComponentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Components.ComponentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Compo
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ComponentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Components.ComponentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +55,50 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Compo
         /// Get a list of vulnerabilityComponent objects related to a known vulnerability.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-vulnerability-list-components?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="VulnerabilityComponentCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.VulnerabilityComponentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<VulnerabilityComponentCollectionResponse?> GetAsync(Action<RequestConfiguration<ComponentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.VulnerabilityComponentCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Components.ComponentsRequestBuilder.ComponentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<VulnerabilityComponentCollectionResponse> GetAsync(Action<RequestConfiguration<ComponentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.VulnerabilityComponentCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Components.ComponentsRequestBuilder.ComponentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<VulnerabilityComponentCollectionResponse>(requestInfo, VulnerabilityComponentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.VulnerabilityComponentCollectionResponse>(requestInfo, Microsoft.Graph.Models.Security.VulnerabilityComponentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to components for security
         /// </summary>
-        /// <returns>A <see cref="VulnerabilityComponent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.VulnerabilityComponent"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<VulnerabilityComponent?> PostAsync(VulnerabilityComponent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.VulnerabilityComponent?> PostAsync(Microsoft.Graph.Models.Security.VulnerabilityComponent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<VulnerabilityComponent> PostAsync(VulnerabilityComponent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.VulnerabilityComponent> PostAsync(Microsoft.Graph.Models.Security.VulnerabilityComponent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<VulnerabilityComponent>(requestInfo, VulnerabilityComponent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.VulnerabilityComponent>(requestInfo, Microsoft.Graph.Models.Security.VulnerabilityComponent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of vulnerabilityComponent objects related to a known vulnerability.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Compo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ComponentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Components.ComponentsRequestBuilder.ComponentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ComponentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Components.ComponentsRequestBuilder.ComponentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Compo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(VulnerabilityComponent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Security.VulnerabilityComponent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(VulnerabilityComponent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Security.VulnerabilityComponent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Compo
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ComponentsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Components.ComponentsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ComponentsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Components.ComponentsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ComponentsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Components.ComponentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of vulnerabilityComponent objects related to a known vulnerability.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Compo
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ComponentsRequestBuilderGetRequestConfiguration : RequestConfiguration<ComponentsRequestBuilderGetQueryParameters>
+        public class ComponentsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Components.ComponentsRequestBuilder.ComponentsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

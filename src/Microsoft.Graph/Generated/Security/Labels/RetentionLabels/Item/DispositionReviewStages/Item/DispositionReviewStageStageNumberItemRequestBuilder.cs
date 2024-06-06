@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReview
     public class DispositionReviewStageStageNumberItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="DispositionReviewStageStageNumberItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReviewStages.Item.DispositionReviewStageStageNumberItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReview
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DispositionReviewStageStageNumberItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReviewStages.Item.DispositionReviewStageStageNumberItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReview
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -50,57 +50,57 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReview
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// When action at the end of retention is chosen as &apos;dispositionReview&apos;, dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
         /// </summary>
-        /// <returns>A <see cref="DispositionReviewStage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.DispositionReviewStage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DispositionReviewStage?> GetAsync(Action<RequestConfiguration<DispositionReviewStageStageNumberItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.DispositionReviewStage?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReviewStages.Item.DispositionReviewStageStageNumberItemRequestBuilder.DispositionReviewStageStageNumberItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DispositionReviewStage> GetAsync(Action<RequestConfiguration<DispositionReviewStageStageNumberItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.DispositionReviewStage> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReviewStages.Item.DispositionReviewStageStageNumberItemRequestBuilder.DispositionReviewStageStageNumberItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DispositionReviewStage>(requestInfo, DispositionReviewStage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.DispositionReviewStage>(requestInfo, Microsoft.Graph.Models.Security.DispositionReviewStage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property dispositionReviewStages in security
         /// </summary>
-        /// <returns>A <see cref="DispositionReviewStage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.DispositionReviewStage"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DispositionReviewStage?> PatchAsync(DispositionReviewStage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.DispositionReviewStage?> PatchAsync(Microsoft.Graph.Models.Security.DispositionReviewStage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DispositionReviewStage> PatchAsync(DispositionReviewStage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.DispositionReviewStage> PatchAsync(Microsoft.Graph.Models.Security.DispositionReviewStage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DispositionReviewStage>(requestInfo, DispositionReviewStage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.DispositionReviewStage>(requestInfo, Microsoft.Graph.Models.Security.DispositionReviewStage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property dispositionReviewStages for security
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReview
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DispositionReviewStageStageNumberItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReviewStages.Item.DispositionReviewStageStageNumberItemRequestBuilder.DispositionReviewStageStageNumberItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DispositionReviewStageStageNumberItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReviewStages.Item.DispositionReviewStageStageNumberItemRequestBuilder.DispositionReviewStageStageNumberItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -148,11 +148,11 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReview
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(DispositionReviewStage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Security.DispositionReviewStage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(DispositionReviewStage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Security.DispositionReviewStage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -165,11 +165,11 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReview
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DispositionReviewStageStageNumberItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReviewStages.Item.DispositionReviewStageStageNumberItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DispositionReviewStageStageNumberItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReviewStages.Item.DispositionReviewStageStageNumberItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new DispositionReviewStageStageNumberItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReviewStages.Item.DispositionReviewStageStageNumberItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReview
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DispositionReviewStageStageNumberItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DispositionReviewStageStageNumberItemRequestBuilderGetQueryParameters>
+        public class DispositionReviewStageStageNumberItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.DispositionReviewStages.Item.DispositionReviewStageStageNumberItemRequestBuilder.DispositionReviewStageStageNumberItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UnifiedRoleEligibilityScheduleRequest : Request, IParsable
+    public class UnifiedRoleEligibilityScheduleRequest : Microsoft.Graph.Models.Request, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the type of operation on the role eligibility request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew, selfExtend, selfRenew, unknownFutureValue. adminAssign: For administrators to assign eligible roles to principals.adminRemove: For administrators to remove eligible roles from principals. adminUpdate: For administrators to change existing role eligibilities.adminExtend: For administrators to extend expiring role eligibilities.adminRenew: For administrators to renew expired eligibilities.selfActivate: For users to activate their assignments.selfDeactivate: For users to deactivate their active assignments.selfExtend: For users to request to extend their expiring assignments.selfRenew: For users to request to renew their expired assignments.</summary>
-        public UnifiedRoleScheduleRequestActions? Action
+        public Microsoft.Graph.Models.UnifiedRoleScheduleRequestActions? Action
         {
-            get { return BackingStore?.Get<UnifiedRoleScheduleRequestActions?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UnifiedRoleScheduleRequestActions?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Read-only property with details of the app-specific scope when the role eligibility is scoped to an app. Nullable. Supports $expand.</summary>
@@ -51,16 +51,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The directory object that is the scope of the role eligibility. Read-only. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? DirectoryScope
+        public Microsoft.Graph.Models.DirectoryObject? DirectoryScope
         {
-            get { return BackingStore?.Get<DirectoryObject?>("directoryScope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject?>("directoryScope"); }
             set { BackingStore?.Set("directoryScope", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject DirectoryScope
+        public Microsoft.Graph.Models.DirectoryObject DirectoryScope
         {
-            get { return BackingStore?.Get<DirectoryObject>("directoryScope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject>("directoryScope"); }
             set { BackingStore?.Set("directoryScope", value); }
         }
 #endif
@@ -105,16 +105,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The principal that&apos;s getting a role eligibility through the request. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? Principal
+        public Microsoft.Graph.Models.DirectoryObject? Principal
         {
-            get { return BackingStore?.Get<DirectoryObject?>("principal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject?>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject Principal
+        public Microsoft.Graph.Models.DirectoryObject Principal
         {
-            get { return BackingStore?.Get<DirectoryObject>("principal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #endif
@@ -137,16 +137,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRoleDefinition? RoleDefinition
+        public Microsoft.Graph.Models.UnifiedRoleDefinition? RoleDefinition
         {
-            get { return BackingStore?.Get<UnifiedRoleDefinition?>("roleDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UnifiedRoleDefinition?>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
 #nullable restore
 #else
-        public UnifiedRoleDefinition RoleDefinition
+        public Microsoft.Graph.Models.UnifiedRoleDefinition RoleDefinition
         {
-            get { return BackingStore?.Get<UnifiedRoleDefinition>("roleDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UnifiedRoleDefinition>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
 #endif
@@ -169,32 +169,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The period of the role eligibility. Recurring schedules are currently unsupported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestSchedule? ScheduleInfo
+        public Microsoft.Graph.Models.RequestSchedule? ScheduleInfo
         {
-            get { return BackingStore?.Get<RequestSchedule?>("scheduleInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RequestSchedule?>("scheduleInfo"); }
             set { BackingStore?.Set("scheduleInfo", value); }
         }
 #nullable restore
 #else
-        public RequestSchedule ScheduleInfo
+        public Microsoft.Graph.Models.RequestSchedule ScheduleInfo
         {
-            get { return BackingStore?.Get<RequestSchedule>("scheduleInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RequestSchedule>("scheduleInfo"); }
             set { BackingStore?.Set("scheduleInfo", value); }
         }
 #endif
         /// <summary>The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRoleEligibilitySchedule? TargetSchedule
+        public Microsoft.Graph.Models.UnifiedRoleEligibilitySchedule? TargetSchedule
         {
-            get { return BackingStore?.Get<UnifiedRoleEligibilitySchedule?>("targetSchedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UnifiedRoleEligibilitySchedule?>("targetSchedule"); }
             set { BackingStore?.Set("targetSchedule", value); }
         }
 #nullable restore
 #else
-        public UnifiedRoleEligibilitySchedule TargetSchedule
+        public Microsoft.Graph.Models.UnifiedRoleEligibilitySchedule TargetSchedule
         {
-            get { return BackingStore?.Get<UnifiedRoleEligibilitySchedule>("targetSchedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UnifiedRoleEligibilitySchedule>("targetSchedule"); }
             set { BackingStore?.Set("targetSchedule", value); }
         }
 #endif
@@ -233,12 +233,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleEligibilityScheduleRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnifiedRoleEligibilityScheduleRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedRoleEligibilityScheduleRequest();
+            return new Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -248,19 +248,19 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "action", n => { Action = n.GetEnumValue<UnifiedRoleScheduleRequestActions>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Models.UnifiedRoleScheduleRequestActions>(); } },
                 { "appScope", n => { AppScope = n.GetObjectValue<Microsoft.Graph.Models.AppScope>(Microsoft.Graph.Models.AppScope.CreateFromDiscriminatorValue); } },
                 { "appScopeId", n => { AppScopeId = n.GetStringValue(); } },
-                { "directoryScope", n => { DirectoryScope = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "directoryScope", n => { DirectoryScope = n.GetObjectValue<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
                 { "directoryScopeId", n => { DirectoryScopeId = n.GetStringValue(); } },
                 { "isValidationOnly", n => { IsValidationOnly = n.GetBoolValue(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
-                { "principal", n => { Principal = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "principal", n => { Principal = n.GetObjectValue<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
                 { "principalId", n => { PrincipalId = n.GetStringValue(); } },
-                { "roleDefinition", n => { RoleDefinition = n.GetObjectValue<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue); } },
+                { "roleDefinition", n => { RoleDefinition = n.GetObjectValue<Microsoft.Graph.Models.UnifiedRoleDefinition>(Microsoft.Graph.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue); } },
                 { "roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
-                { "scheduleInfo", n => { ScheduleInfo = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
-                { "targetSchedule", n => { TargetSchedule = n.GetObjectValue<UnifiedRoleEligibilitySchedule>(UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue); } },
+                { "scheduleInfo", n => { ScheduleInfo = n.GetObjectValue<Microsoft.Graph.Models.RequestSchedule>(Microsoft.Graph.Models.RequestSchedule.CreateFromDiscriminatorValue); } },
+                { "targetSchedule", n => { TargetSchedule = n.GetObjectValue<Microsoft.Graph.Models.UnifiedRoleEligibilitySchedule>(Microsoft.Graph.Models.UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue); } },
                 { "targetScheduleId", n => { TargetScheduleId = n.GetStringValue(); } },
                 { "ticketInfo", n => { TicketInfo = n.GetObjectValue<Microsoft.Graph.Models.TicketInfo>(Microsoft.Graph.Models.TicketInfo.CreateFromDiscriminatorValue); } },
             };
@@ -273,19 +273,19 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<UnifiedRoleScheduleRequestActions>("action", Action);
+            writer.WriteEnumValue<Microsoft.Graph.Models.UnifiedRoleScheduleRequestActions>("action", Action);
             writer.WriteObjectValue<Microsoft.Graph.Models.AppScope>("appScope", AppScope);
             writer.WriteStringValue("appScopeId", AppScopeId);
-            writer.WriteObjectValue<DirectoryObject>("directoryScope", DirectoryScope);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DirectoryObject>("directoryScope", DirectoryScope);
             writer.WriteStringValue("directoryScopeId", DirectoryScopeId);
             writer.WriteBoolValue("isValidationOnly", IsValidationOnly);
             writer.WriteStringValue("justification", Justification);
-            writer.WriteObjectValue<DirectoryObject>("principal", Principal);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DirectoryObject>("principal", Principal);
             writer.WriteStringValue("principalId", PrincipalId);
-            writer.WriteObjectValue<UnifiedRoleDefinition>("roleDefinition", RoleDefinition);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UnifiedRoleDefinition>("roleDefinition", RoleDefinition);
             writer.WriteStringValue("roleDefinitionId", RoleDefinitionId);
-            writer.WriteObjectValue<RequestSchedule>("scheduleInfo", ScheduleInfo);
-            writer.WriteObjectValue<UnifiedRoleEligibilitySchedule>("targetSchedule", TargetSchedule);
+            writer.WriteObjectValue<Microsoft.Graph.Models.RequestSchedule>("scheduleInfo", ScheduleInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UnifiedRoleEligibilitySchedule>("targetSchedule", TargetSchedule);
             writer.WriteStringValue("targetScheduleId", TargetScheduleId);
             writer.WriteObjectValue<Microsoft.Graph.Models.TicketInfo>("ticketInfo", TicketInfo);
         }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OnenotePage : OnenoteEntitySchemaObjectModel, IParsable
+    public class OnenotePage : Microsoft.Graph.Models.OnenoteEntitySchemaObjectModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The page&apos;s HTML content.</summary>
@@ -73,16 +73,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Links for opening the page. The oneNoteClientURL link opens the page in the OneNote native client if it &apos;s installed. The oneNoteWebUrl link opens the page in OneNote on the web. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PageLinks? Links
+        public Microsoft.Graph.Models.PageLinks? Links
         {
-            get { return BackingStore?.Get<PageLinks?>("links"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PageLinks?>("links"); }
             set { BackingStore?.Set("links", value); }
         }
 #nullable restore
 #else
-        public PageLinks Links
+        public Microsoft.Graph.Models.PageLinks Links
         {
-            get { return BackingStore?.Get<PageLinks>("links"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PageLinks>("links"); }
             set { BackingStore?.Set("links", value); }
         }
 #endif
@@ -95,32 +95,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The notebook that contains the page.  Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Notebook? ParentNotebook
+        public Microsoft.Graph.Models.Notebook? ParentNotebook
         {
-            get { return BackingStore?.Get<Notebook?>("parentNotebook"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Notebook?>("parentNotebook"); }
             set { BackingStore?.Set("parentNotebook", value); }
         }
 #nullable restore
 #else
-        public Notebook ParentNotebook
+        public Microsoft.Graph.Models.Notebook ParentNotebook
         {
-            get { return BackingStore?.Get<Notebook>("parentNotebook"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Notebook>("parentNotebook"); }
             set { BackingStore?.Set("parentNotebook", value); }
         }
 #endif
         /// <summary>The section that contains the page. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnenoteSection? ParentSection
+        public Microsoft.Graph.Models.OnenoteSection? ParentSection
         {
-            get { return BackingStore?.Get<OnenoteSection?>("parentSection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnenoteSection?>("parentSection"); }
             set { BackingStore?.Set("parentSection", value); }
         }
 #nullable restore
 #else
-        public OnenoteSection ParentSection
+        public Microsoft.Graph.Models.OnenoteSection ParentSection
         {
-            get { return BackingStore?.Get<OnenoteSection>("parentSection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnenoteSection>("parentSection"); }
             set { BackingStore?.Set("parentSection", value); }
         }
 #endif
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnenotePage"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OnenotePage"/> and sets the default values.
         /// </summary>
         public OnenotePage() : base()
         {
@@ -166,12 +166,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnenotePage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnenotePage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnenotePage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OnenotePage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnenotePage();
+            return new Microsoft.Graph.Models.OnenotePage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -186,10 +186,10 @@ namespace Microsoft.Graph.Models
                 { "createdByAppId", n => { CreatedByAppId = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "level", n => { Level = n.GetIntValue(); } },
-                { "links", n => { Links = n.GetObjectValue<PageLinks>(PageLinks.CreateFromDiscriminatorValue); } },
+                { "links", n => { Links = n.GetObjectValue<Microsoft.Graph.Models.PageLinks>(Microsoft.Graph.Models.PageLinks.CreateFromDiscriminatorValue); } },
                 { "order", n => { Order = n.GetIntValue(); } },
-                { "parentNotebook", n => { ParentNotebook = n.GetObjectValue<Notebook>(Notebook.CreateFromDiscriminatorValue); } },
-                { "parentSection", n => { ParentSection = n.GetObjectValue<OnenoteSection>(OnenoteSection.CreateFromDiscriminatorValue); } },
+                { "parentNotebook", n => { ParentNotebook = n.GetObjectValue<Microsoft.Graph.Models.Notebook>(Microsoft.Graph.Models.Notebook.CreateFromDiscriminatorValue); } },
+                { "parentSection", n => { ParentSection = n.GetObjectValue<Microsoft.Graph.Models.OnenoteSection>(Microsoft.Graph.Models.OnenoteSection.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "userTags", n => { UserTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
@@ -207,10 +207,10 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("createdByAppId", CreatedByAppId);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteIntValue("level", Level);
-            writer.WriteObjectValue<PageLinks>("links", Links);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PageLinks>("links", Links);
             writer.WriteIntValue("order", Order);
-            writer.WriteObjectValue<Notebook>("parentNotebook", ParentNotebook);
-            writer.WriteObjectValue<OnenoteSection>("parentSection", ParentSection);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Notebook>("parentNotebook", ParentNotebook);
+            writer.WriteObjectValue<Microsoft.Graph.Models.OnenoteSection>("parentSection", ParentSection);
             writer.WriteStringValue("title", Title);
             writer.WriteCollectionOfPrimitiveValues<string>("userTags", UserTags);
         }

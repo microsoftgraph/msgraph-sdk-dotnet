@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Me.ChangePassword
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ChangePasswordPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.ChangePassword.ChangePasswordPostRequestBody"/> and sets the default values.
         /// </summary>
         public ChangePasswordPostRequestBody()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Me.ChangePassword
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ChangePasswordPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.ChangePassword.ChangePasswordPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ChangePasswordPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Me.ChangePassword.ChangePasswordPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ChangePasswordPostRequestBody();
+            return new Microsoft.Graph.Me.ChangePassword.ChangePasswordPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UserExperienceAnalyticsDevicePerformanceCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class UserExperienceAnalyticsDevicePerformanceCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserExperienceAnalyticsDevicePerformance>? Value
+        public List<Microsoft.Graph.Models.UserExperienceAnalyticsDevicePerformance>? Value
         {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsDevicePerformance>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserExperienceAnalyticsDevicePerformance>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<UserExperienceAnalyticsDevicePerformance> Value
+        public List<Microsoft.Graph.Models.UserExperienceAnalyticsDevicePerformance> Value
         {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsDevicePerformance>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserExperienceAnalyticsDevicePerformance>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsDevicePerformanceCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsDevicePerformanceCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsDevicePerformanceCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserExperienceAnalyticsDevicePerformanceCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsDevicePerformanceCollectionResponse();
+            return new Microsoft.Graph.Models.UserExperienceAnalyticsDevicePerformanceCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<UserExperienceAnalyticsDevicePerformance>(UserExperienceAnalyticsDevicePerformance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UserExperienceAnalyticsDevicePerformance>(Microsoft.Graph.Models.UserExperienceAnalyticsDevicePerformance.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<UserExperienceAnalyticsDevicePerformance>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UserExperienceAnalyticsDevicePerformance>("value", Value);
         }
     }
 }

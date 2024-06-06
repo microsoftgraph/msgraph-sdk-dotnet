@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unarchive
 {
     [Obsolete("This class is obsolete. Use UnarchivePostResponse instead.")]
     #pragma warning disable CS1591
-    public class UnarchiveResponse : UnarchivePostResponse, IParsable
+    public class UnarchiveResponse : Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unarchive.UnarchivePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnarchiveResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unarchive.UnarchiveResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnarchiveResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unarchive.UnarchiveResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnarchiveResponse();
+            return new Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unarchive.UnarchiveResponse();
         }
     }
 }

@@ -35,19 +35,19 @@ namespace Microsoft.Graph.Models.ExternalConnectors
             set { BackingStore?.Set("id", value); }
         }
 #endif
-        /// <summary>The layout property</summary>
+        /// <summary>The definition of the content&apos;s appearance, represented by an Adaptive Card, which is a JSON-serialized card object model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Json? Layout
+        public UntypedNode? Layout
         {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Json?>("layout"); }
+            get { return BackingStore?.Get<UntypedNode?>("layout"); }
             set { BackingStore?.Set("layout", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Json Layout
+        public UntypedNode Layout
         {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.Json>("layout"); }
+            get { return BackingStore?.Get<UntypedNode>("layout"); }
             set { BackingStore?.Set("layout", value); }
         }
 #endif
@@ -76,21 +76,21 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         /// <summary>Specifies additional rules for selecting this display template based on the item schema. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PropertyRule>? Rules
+        public List<Microsoft.Graph.Models.ExternalConnectors.PropertyRule>? Rules
         {
-            get { return BackingStore?.Get<List<PropertyRule>?>("rules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.PropertyRule>?>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
 #nullable restore
 #else
-        public List<PropertyRule> Rules
+        public List<Microsoft.Graph.Models.ExternalConnectors.PropertyRule> Rules
         {
-            get { return BackingStore?.Get<List<PropertyRule>>("rules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.PropertyRule>>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DisplayTemplate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ExternalConnectors.DisplayTemplate"/> and sets the default values.
         /// </summary>
         public DisplayTemplate()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DisplayTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ExternalConnectors.DisplayTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DisplayTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ExternalConnectors.DisplayTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DisplayTemplate();
+            return new Microsoft.Graph.Models.ExternalConnectors.DisplayTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,10 +116,10 @@ namespace Microsoft.Graph.Models.ExternalConnectors
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "layout", n => { Layout = n.GetObjectValue<Microsoft.Graph.Models.Json>(Microsoft.Graph.Models.Json.CreateFromDiscriminatorValue); } },
+                { "layout", n => { Layout = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
-                { "rules", n => { Rules = n.GetCollectionOfObjectValues<PropertyRule>(PropertyRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.PropertyRule>(Microsoft.Graph.Models.ExternalConnectors.PropertyRule.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -130,10 +130,10 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<Microsoft.Graph.Models.Json>("layout", Layout);
+            writer.WriteObjectValue<UntypedNode>("layout", Layout);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("priority", Priority);
-            writer.WriteCollectionOfObjectValues<PropertyRule>("rules", Rules);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.PropertyRule>("rules", Rules);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

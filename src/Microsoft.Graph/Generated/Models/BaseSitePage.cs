@@ -7,28 +7,28 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class BaseSitePage : BaseItem, IParsable
+    public class BaseSitePage : Microsoft.Graph.Models.BaseItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.</summary>
-        public PageLayoutType? PageLayout
+        public Microsoft.Graph.Models.PageLayoutType? PageLayout
         {
-            get { return BackingStore?.Get<PageLayoutType?>("pageLayout"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PageLayoutType?>("pageLayout"); }
             set { BackingStore?.Set("pageLayout", value); }
         }
         /// <summary>The publishing status and the MM.mm version of the page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PublicationFacet? PublishingState
+        public Microsoft.Graph.Models.PublicationFacet? PublishingState
         {
-            get { return BackingStore?.Get<PublicationFacet?>("publishingState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PublicationFacet?>("publishingState"); }
             set { BackingStore?.Set("publishingState", value); }
         }
 #nullable restore
 #else
-        public PublicationFacet PublishingState
+        public Microsoft.Graph.Models.PublicationFacet PublishingState
         {
-            get { return BackingStore?.Get<PublicationFacet>("publishingState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PublicationFacet>("publishingState"); }
             set { BackingStore?.Set("publishingState", value); }
         }
 #endif
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="BaseSitePage"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.BaseSitePage"/> and sets the default values.
         /// </summary>
         public BaseSitePage() : base()
         {
@@ -58,16 +58,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BaseSitePage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BaseSitePage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BaseSitePage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.BaseSitePage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.sitePage" => new SitePage(),
-                _ => new BaseSitePage(),
+                "#microsoft.graph.sitePage" => new Microsoft.Graph.Models.SitePage(),
+                _ => new Microsoft.Graph.Models.BaseSitePage(),
             };
         }
         /// <summary>
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "pageLayout", n => { PageLayout = n.GetEnumValue<PageLayoutType>(); } },
-                { "publishingState", n => { PublishingState = n.GetObjectValue<PublicationFacet>(PublicationFacet.CreateFromDiscriminatorValue); } },
+                { "pageLayout", n => { PageLayout = n.GetEnumValue<Microsoft.Graph.Models.PageLayoutType>(); } },
+                { "publishingState", n => { PublishingState = n.GetObjectValue<Microsoft.Graph.Models.PublicationFacet>(Microsoft.Graph.Models.PublicationFacet.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
         }
@@ -91,8 +91,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<PageLayoutType>("pageLayout", PageLayout);
-            writer.WriteObjectValue<PublicationFacet>("publishingState", PublishingState);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PageLayoutType>("pageLayout", PageLayout);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PublicationFacet>("publishingState", PublishingState);
             writer.WriteStringValue("title", Title);
         }
     }

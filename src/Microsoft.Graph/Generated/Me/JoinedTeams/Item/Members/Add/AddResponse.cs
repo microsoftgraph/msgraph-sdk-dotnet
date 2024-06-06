@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Members.Add
 {
     [Obsolete("This class is obsolete. Use AddPostResponse instead.")]
     #pragma warning disable CS1591
-    public class AddResponse : AddPostResponse, IParsable
+    public class AddResponse : Microsoft.Graph.Me.JoinedTeams.Item.Members.Add.AddPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AddResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.JoinedTeams.Item.Members.Add.AddResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AddResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Me.JoinedTeams.Item.Members.Add.AddResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AddResponse();
+            return new Microsoft.Graph.Me.JoinedTeams.Item.Members.Add.AddResponse();
         }
     }
 }

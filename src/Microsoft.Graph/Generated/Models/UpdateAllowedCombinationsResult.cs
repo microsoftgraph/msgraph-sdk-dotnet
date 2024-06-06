@@ -54,16 +54,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The list of current authentication method combinations allowed by the authentication strength.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodModes?>? CurrentCombinations
+        public List<Microsoft.Graph.Models.AuthenticationMethodModes?>? CurrentCombinations
         {
-            get { return BackingStore?.Get<List<AuthenticationMethodModes?>?>("currentCombinations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationMethodModes?>?>("currentCombinations"); }
             set { BackingStore?.Set("currentCombinations", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodModes?> CurrentCombinations
+        public List<Microsoft.Graph.Models.AuthenticationMethodModes?> CurrentCombinations
         {
-            get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("currentCombinations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationMethodModes?>>("currentCombinations"); }
             set { BackingStore?.Set("currentCombinations", value); }
         }
 #endif
@@ -86,21 +86,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The list of former authentication method combinations allowed by the authentication strength before they were updated through the updateAllowedCombinations action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodModes?>? PreviousCombinations
+        public List<Microsoft.Graph.Models.AuthenticationMethodModes?>? PreviousCombinations
         {
-            get { return BackingStore?.Get<List<AuthenticationMethodModes?>?>("previousCombinations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationMethodModes?>?>("previousCombinations"); }
             set { BackingStore?.Set("previousCombinations", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodModes?> PreviousCombinations
+        public List<Microsoft.Graph.Models.AuthenticationMethodModes?> PreviousCombinations
         {
-            get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("previousCombinations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationMethodModes?>>("previousCombinations"); }
             set { BackingStore?.Set("previousCombinations", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UpdateAllowedCombinationsResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.UpdateAllowedCombinationsResult"/> and sets the default values.
         /// </summary>
         public UpdateAllowedCombinationsResult()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpdateAllowedCombinationsResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UpdateAllowedCombinationsResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UpdateAllowedCombinationsResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.UpdateAllowedCombinationsResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpdateAllowedCombinationsResult();
+            return new Microsoft.Graph.Models.UpdateAllowedCombinationsResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -127,9 +127,9 @@ namespace Microsoft.Graph.Models
             {
                 { "additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
                 { "conditionalAccessReferences", n => { ConditionalAccessReferences = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "currentCombinations", n => { CurrentCombinations = n.GetCollectionOfEnumValues<AuthenticationMethodModes>()?.ToList(); } },
+                { "currentCombinations", n => { CurrentCombinations = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.AuthenticationMethodModes>()?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "previousCombinations", n => { PreviousCombinations = n.GetCollectionOfEnumValues<AuthenticationMethodModes>()?.ToList(); } },
+                { "previousCombinations", n => { PreviousCombinations = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.AuthenticationMethodModes>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -141,9 +141,9 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("additionalInformation", AdditionalInformation);
             writer.WriteCollectionOfPrimitiveValues<string>("conditionalAccessReferences", ConditionalAccessReferences);
-            writer.WriteCollectionOfEnumValues<AuthenticationMethodModes>("currentCombinations", CurrentCombinations);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.AuthenticationMethodModes>("currentCombinations", CurrentCombinations);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfEnumValues<AuthenticationMethodModes>("previousCombinations", PreviousCombinations);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.AuthenticationMethodModes>("previousCombinations", PreviousCombinations);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

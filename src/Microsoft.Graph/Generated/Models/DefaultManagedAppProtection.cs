@@ -9,43 +9,43 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Policy used to configure detailed management settings for a specified set of apps for all users not targeted by a TargetedManagedAppProtection Policy
     /// </summary>
-    public class DefaultManagedAppProtection : ManagedAppProtection, IParsable
+    public class DefaultManagedAppProtection : Microsoft.Graph.Models.ManagedAppProtection, IParsable
     {
         /// <summary>Represents the level to which app data is encrypted for managed apps</summary>
-        public ManagedAppDataEncryptionType? AppDataEncryptionType
+        public Microsoft.Graph.Models.ManagedAppDataEncryptionType? AppDataEncryptionType
         {
-            get { return BackingStore?.Get<ManagedAppDataEncryptionType?>("appDataEncryptionType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ManagedAppDataEncryptionType?>("appDataEncryptionType"); }
             set { BackingStore?.Set("appDataEncryptionType", value); }
         }
         /// <summary>List of apps to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedMobileApp>? Apps
+        public List<Microsoft.Graph.Models.ManagedMobileApp>? Apps
         {
-            get { return BackingStore?.Get<List<ManagedMobileApp>?>("apps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedMobileApp>?>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
 #nullable restore
 #else
-        public List<ManagedMobileApp> Apps
+        public List<Microsoft.Graph.Models.ManagedMobileApp> Apps
         {
-            get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedMobileApp>>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
 #endif
         /// <summary>A set of string key and string value pairs to be sent to the affected users, unalterned by this service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? CustomSettings
+        public List<Microsoft.Graph.Models.KeyValuePair>? CustomSettings
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("customSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValuePair>?>("customSettings"); }
             set { BackingStore?.Set("customSettings", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> CustomSettings
+        public List<Microsoft.Graph.Models.KeyValuePair> CustomSettings
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("customSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValuePair>>("customSettings"); }
             set { BackingStore?.Set("customSettings", value); }
         }
 #endif
@@ -58,16 +58,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Navigation property to deployment summary of the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagedAppPolicyDeploymentSummary? DeploymentSummary
+        public Microsoft.Graph.Models.ManagedAppPolicyDeploymentSummary? DeploymentSummary
         {
-            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
 #nullable restore
 #else
-        public ManagedAppPolicyDeploymentSummary DeploymentSummary
+        public Microsoft.Graph.Models.ManagedAppPolicyDeploymentSummary DeploymentSummary
         {
-            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
 #endif
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("screenCaptureBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DefaultManagedAppProtection"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.DefaultManagedAppProtection"/> and sets the default values.
         /// </summary>
         public DefaultManagedAppProtection() : base()
         {
@@ -153,12 +153,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DefaultManagedAppProtection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DefaultManagedAppProtection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DefaultManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DefaultManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DefaultManagedAppProtection();
+            return new Microsoft.Graph.Models.DefaultManagedAppProtection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -168,11 +168,11 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "appDataEncryptionType", n => { AppDataEncryptionType = n.GetEnumValue<ManagedAppDataEncryptionType>(); } },
-                { "apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "customSettings", n => { CustomSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appDataEncryptionType", n => { AppDataEncryptionType = n.GetEnumValue<Microsoft.Graph.Models.ManagedAppDataEncryptionType>(); } },
+                { "apps", n => { Apps = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ManagedMobileApp>(Microsoft.Graph.Models.ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customSettings", n => { CustomSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>(Microsoft.Graph.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "deployedAppCount", n => { DeployedAppCount = n.GetIntValue(); } },
-                { "deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
+                { "deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<Microsoft.Graph.Models.ManagedAppPolicyDeploymentSummary>(Microsoft.Graph.Models.ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
                 { "disableAppEncryptionIfDeviceEncryptionIsEnabled", n => { DisableAppEncryptionIfDeviceEncryptionIsEnabled = n.GetBoolValue(); } },
                 { "encryptAppData", n => { EncryptAppData = n.GetBoolValue(); } },
                 { "faceIdBlocked", n => { FaceIdBlocked = n.GetBoolValue(); } },
@@ -190,11 +190,11 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<ManagedAppDataEncryptionType>("appDataEncryptionType", AppDataEncryptionType);
-            writer.WriteCollectionOfObjectValues<ManagedMobileApp>("apps", Apps);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("customSettings", CustomSettings);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ManagedAppDataEncryptionType>("appDataEncryptionType", AppDataEncryptionType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ManagedMobileApp>("apps", Apps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>("customSettings", CustomSettings);
             writer.WriteIntValue("deployedAppCount", DeployedAppCount);
-            writer.WriteObjectValue<ManagedAppPolicyDeploymentSummary>("deploymentSummary", DeploymentSummary);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ManagedAppPolicyDeploymentSummary>("deploymentSummary", DeploymentSummary);
             writer.WriteBoolValue("disableAppEncryptionIfDeviceEncryptionIsEnabled", DisableAppEncryptionIfDeviceEncryptionIsEnabled);
             writer.WriteBoolValue("encryptAppData", EncryptAppData);
             writer.WriteBoolValue("faceIdBlocked", FaceIdBlocked);

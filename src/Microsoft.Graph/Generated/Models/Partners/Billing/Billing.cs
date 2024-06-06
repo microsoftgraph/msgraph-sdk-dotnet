@@ -13,76 +13,76 @@ namespace Microsoft.Graph.Models.Partners.Billing
         /// <summary>Represents metadata for the exported data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Manifest>? Manifests
+        public List<Microsoft.Graph.Models.Partners.Billing.Manifest>? Manifests
         {
-            get { return BackingStore?.Get<List<Manifest>?>("manifests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Partners.Billing.Manifest>?>("manifests"); }
             set { BackingStore?.Set("manifests", value); }
         }
 #nullable restore
 #else
-        public List<Manifest> Manifests
+        public List<Microsoft.Graph.Models.Partners.Billing.Manifest> Manifests
         {
-            get { return BackingStore?.Get<List<Manifest>>("manifests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Partners.Billing.Manifest>>("manifests"); }
             set { BackingStore?.Set("manifests", value); }
         }
 #endif
         /// <summary>Represents an operation to export the billing data of a partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Operation>? Operations
+        public List<Microsoft.Graph.Models.Partners.Billing.Operation>? Operations
         {
-            get { return BackingStore?.Get<List<Operation>?>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Partners.Billing.Operation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<Operation> Operations
+        public List<Microsoft.Graph.Models.Partners.Billing.Operation> Operations
         {
-            get { return BackingStore?.Get<List<Operation>>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Partners.Billing.Operation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #endif
         /// <summary>The reconciliation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BillingReconciliation? Reconciliation
+        public Microsoft.Graph.Models.Partners.Billing.BillingReconciliation? Reconciliation
         {
-            get { return BackingStore?.Get<BillingReconciliation?>("reconciliation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Partners.Billing.BillingReconciliation?>("reconciliation"); }
             set { BackingStore?.Set("reconciliation", value); }
         }
 #nullable restore
 #else
-        public BillingReconciliation Reconciliation
+        public Microsoft.Graph.Models.Partners.Billing.BillingReconciliation Reconciliation
         {
-            get { return BackingStore?.Get<BillingReconciliation>("reconciliation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Partners.Billing.BillingReconciliation>("reconciliation"); }
             set { BackingStore?.Set("reconciliation", value); }
         }
 #endif
         /// <summary>The usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AzureUsage? Usage
+        public Microsoft.Graph.Models.Partners.Billing.AzureUsage? Usage
         {
-            get { return BackingStore?.Get<AzureUsage?>("usage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Partners.Billing.AzureUsage?>("usage"); }
             set { BackingStore?.Set("usage", value); }
         }
 #nullable restore
 #else
-        public AzureUsage Usage
+        public Microsoft.Graph.Models.Partners.Billing.AzureUsage Usage
         {
-            get { return BackingStore?.Get<AzureUsage>("usage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Partners.Billing.AzureUsage>("usage"); }
             set { BackingStore?.Set("usage", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Billing"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Partners.Billing.Billing"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Billing CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Partners.Billing.Billing CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Billing();
+            return new Microsoft.Graph.Models.Partners.Billing.Billing();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,10 +92,10 @@ namespace Microsoft.Graph.Models.Partners.Billing
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "manifests", n => { Manifests = n.GetCollectionOfObjectValues<Manifest>(Manifest.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "operations", n => { Operations = n.GetCollectionOfObjectValues<Operation>(Operation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "reconciliation", n => { Reconciliation = n.GetObjectValue<BillingReconciliation>(BillingReconciliation.CreateFromDiscriminatorValue); } },
-                { "usage", n => { Usage = n.GetObjectValue<AzureUsage>(AzureUsage.CreateFromDiscriminatorValue); } },
+                { "manifests", n => { Manifests = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Partners.Billing.Manifest>(Microsoft.Graph.Models.Partners.Billing.Manifest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Partners.Billing.Operation>(Microsoft.Graph.Models.Partners.Billing.Operation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "reconciliation", n => { Reconciliation = n.GetObjectValue<Microsoft.Graph.Models.Partners.Billing.BillingReconciliation>(Microsoft.Graph.Models.Partners.Billing.BillingReconciliation.CreateFromDiscriminatorValue); } },
+                { "usage", n => { Usage = n.GetObjectValue<Microsoft.Graph.Models.Partners.Billing.AzureUsage>(Microsoft.Graph.Models.Partners.Billing.AzureUsage.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,10 +106,10 @@ namespace Microsoft.Graph.Models.Partners.Billing
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Manifest>("manifests", Manifests);
-            writer.WriteCollectionOfObjectValues<Operation>("operations", Operations);
-            writer.WriteObjectValue<BillingReconciliation>("reconciliation", Reconciliation);
-            writer.WriteObjectValue<AzureUsage>("usage", Usage);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Partners.Billing.Manifest>("manifests", Manifests);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Partners.Billing.Operation>("operations", Operations);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Partners.Billing.BillingReconciliation>("reconciliation", Reconciliation);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Partners.Billing.AzureUsage>("usage", Usage);
         }
     }
 }

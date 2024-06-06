@@ -18,73 +18,73 @@ namespace Microsoft.Graph.Users.Item.Contacts.Item.Photo
     public class PhotoRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the media for the user entity.</summary>
-        public ContentRequestBuilder Content
+        public Microsoft.Graph.Users.Item.Contacts.Item.Photo.Value.ContentRequestBuilder Content
         {
-            get => new ContentRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Contacts.Item.Photo.Value.ContentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="PhotoRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Contacts.Item.Photo.PhotoRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PhotoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/contacts/{contact%2Did}/photo{?%24select}", pathParameters)
+        public PhotoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/contacts/{contact%2Did}/photo{?%24expand,%24select}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PhotoRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Contacts.Item.Photo.PhotoRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PhotoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/contacts/{contact%2Did}/photo{?%24select}", rawUrl)
+        public PhotoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/contacts/{contact%2Did}/photo{?%24expand,%24select}", rawUrl)
         {
         }
         /// <summary>
         /// Optional contact picture. You can get or set a photo for a contact.
         /// </summary>
-        /// <returns>A <see cref="ProfilePhoto"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ProfilePhoto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProfilePhoto?> GetAsync(Action<RequestConfiguration<PhotoRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ProfilePhoto?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Contacts.Item.Photo.PhotoRequestBuilder.PhotoRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ProfilePhoto> GetAsync(Action<RequestConfiguration<PhotoRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ProfilePhoto> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Contacts.Item.Photo.PhotoRequestBuilder.PhotoRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ProfilePhoto>(requestInfo, ProfilePhoto.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ProfilePhoto>(requestInfo, Microsoft.Graph.Models.ProfilePhoto.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property photo in users
         /// </summary>
-        /// <returns>A <see cref="ProfilePhoto"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ProfilePhoto"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProfilePhoto?> PatchAsync(ProfilePhoto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ProfilePhoto?> PatchAsync(Microsoft.Graph.Models.ProfilePhoto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ProfilePhoto> PatchAsync(ProfilePhoto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ProfilePhoto> PatchAsync(Microsoft.Graph.Models.ProfilePhoto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ProfilePhoto>(requestInfo, ProfilePhoto.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ProfilePhoto>(requestInfo, Microsoft.Graph.Models.ProfilePhoto.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Optional contact picture. You can get or set a photo for a contact.
@@ -93,11 +93,11 @@ namespace Microsoft.Graph.Users.Item.Contacts.Item.Photo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PhotoRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Contacts.Item.Photo.PhotoRequestBuilder.PhotoRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PhotoRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Contacts.Item.Photo.PhotoRequestBuilder.PhotoRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -113,11 +113,11 @@ namespace Microsoft.Graph.Users.Item.Contacts.Item.Photo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(ProfilePhoto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ProfilePhoto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(ProfilePhoto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ProfilePhoto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -130,17 +130,27 @@ namespace Microsoft.Graph.Users.Item.Contacts.Item.Photo
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PhotoRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Contacts.Item.Photo.PhotoRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PhotoRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.Contacts.Item.Photo.PhotoRequestBuilder WithUrl(string rawUrl)
         {
-            return new PhotoRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.Contacts.Item.Photo.PhotoRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Optional contact picture. You can get or set a photo for a contact.
         /// </summary>
         public class PhotoRequestBuilderGetQueryParameters 
         {
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -156,7 +166,7 @@ namespace Microsoft.Graph.Users.Item.Contacts.Item.Photo
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PhotoRequestBuilderGetRequestConfiguration : RequestConfiguration<PhotoRequestBuilderGetQueryParameters>
+        public class PhotoRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.Contacts.Item.Photo.PhotoRequestBuilder.PhotoRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

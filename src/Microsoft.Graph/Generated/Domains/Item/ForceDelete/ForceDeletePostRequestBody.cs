@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Domains.Item.ForceDelete
             set { BackingStore?.Set("disableUserAccounts", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ForceDeletePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Domains.Item.ForceDelete.ForceDeletePostRequestBody"/> and sets the default values.
         /// </summary>
         public ForceDeletePostRequestBody()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Domains.Item.ForceDelete
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ForceDeletePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Domains.Item.ForceDelete.ForceDeletePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ForceDeletePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Domains.Item.ForceDelete.ForceDeletePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ForceDeletePostRequestBody();
+            return new Microsoft.Graph.Domains.Item.ForceDelete.ForceDeletePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

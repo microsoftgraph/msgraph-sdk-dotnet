@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ManagedIOSLobAppCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class ManagedIOSLobAppCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedIOSLobApp>? Value
+        public List<Microsoft.Graph.Models.ManagedIOSLobApp>? Value
         {
-            get { return BackingStore?.Get<List<ManagedIOSLobApp>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedIOSLobApp>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ManagedIOSLobApp> Value
+        public List<Microsoft.Graph.Models.ManagedIOSLobApp> Value
         {
-            get { return BackingStore?.Get<List<ManagedIOSLobApp>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedIOSLobApp>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedIOSLobAppCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedIOSLobAppCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedIOSLobAppCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ManagedIOSLobAppCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedIOSLobAppCollectionResponse();
+            return new Microsoft.Graph.Models.ManagedIOSLobAppCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<ManagedIOSLobApp>(ManagedIOSLobApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ManagedIOSLobApp>(Microsoft.Graph.Models.ManagedIOSLobApp.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ManagedIOSLobApp>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ManagedIOSLobApp>("value", Value);
         }
     }
 }

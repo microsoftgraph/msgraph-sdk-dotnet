@@ -39,37 +39,37 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.Par
         /// <summary>The targetAttributeDefinition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AttributeDefinition? TargetAttributeDefinition
+        public Microsoft.Graph.Models.AttributeDefinition? TargetAttributeDefinition
         {
-            get { return BackingStore?.Get<AttributeDefinition?>("targetAttributeDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AttributeDefinition?>("targetAttributeDefinition"); }
             set { BackingStore?.Set("targetAttributeDefinition", value); }
         }
 #nullable restore
 #else
-        public AttributeDefinition TargetAttributeDefinition
+        public Microsoft.Graph.Models.AttributeDefinition TargetAttributeDefinition
         {
-            get { return BackingStore?.Get<AttributeDefinition>("targetAttributeDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AttributeDefinition>("targetAttributeDefinition"); }
             set { BackingStore?.Set("targetAttributeDefinition", value); }
         }
 #endif
         /// <summary>The testInputObject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExpressionInputObject? TestInputObject
+        public Microsoft.Graph.Models.ExpressionInputObject? TestInputObject
         {
-            get { return BackingStore?.Get<ExpressionInputObject?>("testInputObject"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExpressionInputObject?>("testInputObject"); }
             set { BackingStore?.Set("testInputObject", value); }
         }
 #nullable restore
 #else
-        public ExpressionInputObject TestInputObject
+        public Microsoft.Graph.Models.ExpressionInputObject TestInputObject
         {
-            get { return BackingStore?.Get<ExpressionInputObject>("testInputObject"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExpressionInputObject>("testInputObject"); }
             set { BackingStore?.Set("testInputObject", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ParseExpressionPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.ParseExpression.ParseExpressionPostRequestBody"/> and sets the default values.
         /// </summary>
         public ParseExpressionPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.Par
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ParseExpressionPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.ParseExpression.ParseExpressionPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ParseExpressionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.ParseExpression.ParseExpressionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ParseExpressionPostRequestBody();
+            return new Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.ParseExpression.ParseExpressionPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,8 +95,8 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.Par
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "expression", n => { Expression = n.GetStringValue(); } },
-                { "targetAttributeDefinition", n => { TargetAttributeDefinition = n.GetObjectValue<AttributeDefinition>(AttributeDefinition.CreateFromDiscriminatorValue); } },
-                { "testInputObject", n => { TestInputObject = n.GetObjectValue<ExpressionInputObject>(ExpressionInputObject.CreateFromDiscriminatorValue); } },
+                { "targetAttributeDefinition", n => { TargetAttributeDefinition = n.GetObjectValue<Microsoft.Graph.Models.AttributeDefinition>(Microsoft.Graph.Models.AttributeDefinition.CreateFromDiscriminatorValue); } },
+                { "testInputObject", n => { TestInputObject = n.GetObjectValue<Microsoft.Graph.Models.ExpressionInputObject>(Microsoft.Graph.Models.ExpressionInputObject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -107,8 +107,8 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.Par
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("expression", Expression);
-            writer.WriteObjectValue<AttributeDefinition>("targetAttributeDefinition", TargetAttributeDefinition);
-            writer.WriteObjectValue<ExpressionInputObject>("testInputObject", TestInputObject);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AttributeDefinition>("targetAttributeDefinition", TargetAttributeDefinition);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ExpressionInputObject>("testInputObject", TestInputObject);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

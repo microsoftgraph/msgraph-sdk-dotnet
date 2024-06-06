@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Policy for Windows information protection to configure detailed management settings
     /// </summary>
-    public class WindowsInformationProtection : ManagedAppPolicy, IParsable
+    public class WindowsInformationProtection : Microsoft.Graph.Models.ManagedAppPolicy, IParsable
     {
         /// <summary>Navigation property to list of security groups targeted for policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TargetedManagedAppPolicyAssignment>? Assignments
+        public List<Microsoft.Graph.Models.TargetedManagedAppPolicyAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TargetedManagedAppPolicyAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<TargetedManagedAppPolicyAssignment> Assignments
+        public List<Microsoft.Graph.Models.TargetedManagedAppPolicyAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TargetedManagedAppPolicyAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -36,23 +36,23 @@ namespace Microsoft.Graph.Models
         /// <summary>Specifies a recovery certificate that can be used for data recovery of encrypted files. This is the same as the data recovery agent(DRA) certificate for encrypting file system(EFS)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsInformationProtectionDataRecoveryCertificate? DataRecoveryCertificate
+        public Microsoft.Graph.Models.WindowsInformationProtectionDataRecoveryCertificate? DataRecoveryCertificate
         {
-            get { return BackingStore?.Get<WindowsInformationProtectionDataRecoveryCertificate?>("dataRecoveryCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsInformationProtectionDataRecoveryCertificate?>("dataRecoveryCertificate"); }
             set { BackingStore?.Set("dataRecoveryCertificate", value); }
         }
 #nullable restore
 #else
-        public WindowsInformationProtectionDataRecoveryCertificate DataRecoveryCertificate
+        public Microsoft.Graph.Models.WindowsInformationProtectionDataRecoveryCertificate DataRecoveryCertificate
         {
-            get { return BackingStore?.Get<WindowsInformationProtectionDataRecoveryCertificate>("dataRecoveryCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsInformationProtectionDataRecoveryCertificate>("dataRecoveryCertificate"); }
             set { BackingStore?.Set("dataRecoveryCertificate", value); }
         }
 #endif
         /// <summary>Possible values for WIP Protection enforcement levels</summary>
-        public WindowsInformationProtectionEnforcementLevel? EnforcementLevel
+        public Microsoft.Graph.Models.WindowsInformationProtectionEnforcementLevel? EnforcementLevel
         {
-            get { return BackingStore?.Get<WindowsInformationProtectionEnforcementLevel?>("enforcementLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsInformationProtectionEnforcementLevel?>("enforcementLevel"); }
             set { BackingStore?.Set("enforcementLevel", value); }
         }
         /// <summary>Primary enterprise domain</summary>
@@ -74,32 +74,32 @@ namespace Microsoft.Graph.Models
         /// <summary>This is the comma-separated list of internal proxy servers. For example, &apos;157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59&apos;. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsInformationProtectionResourceCollection>? EnterpriseInternalProxyServers
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>? EnterpriseInternalProxyServers
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>?>("enterpriseInternalProxyServers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>?>("enterpriseInternalProxyServers"); }
             set { BackingStore?.Set("enterpriseInternalProxyServers", value); }
         }
 #nullable restore
 #else
-        public List<WindowsInformationProtectionResourceCollection> EnterpriseInternalProxyServers
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection> EnterpriseInternalProxyServers
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>>("enterpriseInternalProxyServers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>>("enterpriseInternalProxyServers"); }
             set { BackingStore?.Set("enterpriseInternalProxyServers", value); }
         }
 #endif
         /// <summary>Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsInformationProtectionIPRangeCollection>? EnterpriseIPRanges
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionIPRangeCollection>? EnterpriseIPRanges
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionIPRangeCollection>?>("enterpriseIPRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionIPRangeCollection>?>("enterpriseIPRanges"); }
             set { BackingStore?.Set("enterpriseIPRanges", value); }
         }
 #nullable restore
 #else
-        public List<WindowsInformationProtectionIPRangeCollection> EnterpriseIPRanges
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionIPRangeCollection> EnterpriseIPRanges
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionIPRangeCollection>>("enterpriseIPRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionIPRangeCollection>>("enterpriseIPRanges"); }
             set { BackingStore?.Set("enterpriseIPRanges", value); }
         }
 #endif
@@ -112,64 +112,64 @@ namespace Microsoft.Graph.Models
         /// <summary>This is the list of domains that comprise the boundaries of the enterprise. Data from one of these domains that is sent to a device will be considered enterprise data and protected These locations will be considered a safe destination for enterprise data to be shared to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsInformationProtectionResourceCollection>? EnterpriseNetworkDomainNames
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>? EnterpriseNetworkDomainNames
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>?>("enterpriseNetworkDomainNames"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>?>("enterpriseNetworkDomainNames"); }
             set { BackingStore?.Set("enterpriseNetworkDomainNames", value); }
         }
 #nullable restore
 #else
-        public List<WindowsInformationProtectionResourceCollection> EnterpriseNetworkDomainNames
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection> EnterpriseNetworkDomainNames
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>>("enterpriseNetworkDomainNames"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>>("enterpriseNetworkDomainNames"); }
             set { BackingStore?.Set("enterpriseNetworkDomainNames", value); }
         }
 #endif
         /// <summary>List of enterprise domains to be protected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsInformationProtectionResourceCollection>? EnterpriseProtectedDomainNames
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>? EnterpriseProtectedDomainNames
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>?>("enterpriseProtectedDomainNames"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>?>("enterpriseProtectedDomainNames"); }
             set { BackingStore?.Set("enterpriseProtectedDomainNames", value); }
         }
 #nullable restore
 #else
-        public List<WindowsInformationProtectionResourceCollection> EnterpriseProtectedDomainNames
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection> EnterpriseProtectedDomainNames
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>>("enterpriseProtectedDomainNames"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>>("enterpriseProtectedDomainNames"); }
             set { BackingStore?.Set("enterpriseProtectedDomainNames", value); }
         }
 #endif
         /// <summary>Contains a list of Enterprise resource domains hosted in the cloud that need to be protected. Connections to these resources are considered enterprise data. If a proxy is paired with a cloud resource, traffic to the cloud resource will be routed through the enterprise network via the denoted proxy server (on Port 80). A proxy server used for this purpose must also be configured using the EnterpriseInternalProxyServers policy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsInformationProtectionProxiedDomainCollection>? EnterpriseProxiedDomains
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionProxiedDomainCollection>? EnterpriseProxiedDomains
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionProxiedDomainCollection>?>("enterpriseProxiedDomains"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionProxiedDomainCollection>?>("enterpriseProxiedDomains"); }
             set { BackingStore?.Set("enterpriseProxiedDomains", value); }
         }
 #nullable restore
 #else
-        public List<WindowsInformationProtectionProxiedDomainCollection> EnterpriseProxiedDomains
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionProxiedDomainCollection> EnterpriseProxiedDomains
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionProxiedDomainCollection>>("enterpriseProxiedDomains"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionProxiedDomainCollection>>("enterpriseProxiedDomains"); }
             set { BackingStore?.Set("enterpriseProxiedDomains", value); }
         }
 #endif
         /// <summary>This is a list of proxy servers. Any server not on this list is considered non-enterprise</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsInformationProtectionResourceCollection>? EnterpriseProxyServers
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>? EnterpriseProxyServers
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>?>("enterpriseProxyServers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>?>("enterpriseProxyServers"); }
             set { BackingStore?.Set("enterpriseProxyServers", value); }
         }
 #nullable restore
 #else
-        public List<WindowsInformationProtectionResourceCollection> EnterpriseProxyServers
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection> EnterpriseProxyServers
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>>("enterpriseProxyServers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>>("enterpriseProxyServers"); }
             set { BackingStore?.Set("enterpriseProxyServers", value); }
         }
 #endif
@@ -182,32 +182,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Another way to input exempt apps through xml files</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsInformationProtectionAppLockerFile>? ExemptAppLockerFiles
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionAppLockerFile>? ExemptAppLockerFiles
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionAppLockerFile>?>("exemptAppLockerFiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionAppLockerFile>?>("exemptAppLockerFiles"); }
             set { BackingStore?.Set("exemptAppLockerFiles", value); }
         }
 #nullable restore
 #else
-        public List<WindowsInformationProtectionAppLockerFile> ExemptAppLockerFiles
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionAppLockerFile> ExemptAppLockerFiles
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionAppLockerFile>>("exemptAppLockerFiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionAppLockerFile>>("exemptAppLockerFiles"); }
             set { BackingStore?.Set("exemptAppLockerFiles", value); }
         }
 #endif
         /// <summary>Exempt applications can also access enterprise data, but the data handled by those applications are not protected. This is because some critical enterprise applications may have compatibility problems with encrypted data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsInformationProtectionApp>? ExemptApps
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionApp>? ExemptApps
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionApp>?>("exemptApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionApp>?>("exemptApps"); }
             set { BackingStore?.Set("exemptApps", value); }
         }
 #nullable restore
 #else
-        public List<WindowsInformationProtectionApp> ExemptApps
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionApp> ExemptApps
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionApp>>("exemptApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionApp>>("exemptApps"); }
             set { BackingStore?.Set("exemptApps", value); }
         }
 #endif
@@ -232,48 +232,48 @@ namespace Microsoft.Graph.Models
         /// <summary>List of domain names that can used for work or personal resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsInformationProtectionResourceCollection>? NeutralDomainResources
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>? NeutralDomainResources
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>?>("neutralDomainResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>?>("neutralDomainResources"); }
             set { BackingStore?.Set("neutralDomainResources", value); }
         }
 #nullable restore
 #else
-        public List<WindowsInformationProtectionResourceCollection> NeutralDomainResources
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection> NeutralDomainResources
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>>("neutralDomainResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>>("neutralDomainResources"); }
             set { BackingStore?.Set("neutralDomainResources", value); }
         }
 #endif
         /// <summary>Another way to input protected apps through xml files</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsInformationProtectionAppLockerFile>? ProtectedAppLockerFiles
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionAppLockerFile>? ProtectedAppLockerFiles
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionAppLockerFile>?>("protectedAppLockerFiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionAppLockerFile>?>("protectedAppLockerFiles"); }
             set { BackingStore?.Set("protectedAppLockerFiles", value); }
         }
 #nullable restore
 #else
-        public List<WindowsInformationProtectionAppLockerFile> ProtectedAppLockerFiles
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionAppLockerFile> ProtectedAppLockerFiles
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionAppLockerFile>>("protectedAppLockerFiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionAppLockerFile>>("protectedAppLockerFiles"); }
             set { BackingStore?.Set("protectedAppLockerFiles", value); }
         }
 #endif
         /// <summary>Protected applications can access enterprise data and the data handled by those applications are protected with encryption</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsInformationProtectionApp>? ProtectedApps
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionApp>? ProtectedApps
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionApp>?>("protectedApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionApp>?>("protectedApps"); }
             set { BackingStore?.Set("protectedApps", value); }
         }
 #nullable restore
 #else
-        public List<WindowsInformationProtectionApp> ProtectedApps
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionApp> ProtectedApps
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionApp>>("protectedApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionApp>>("protectedApps"); }
             set { BackingStore?.Set("protectedApps", value); }
         }
 #endif
@@ -298,21 +298,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Specifies a list of file extensions, so that files with these extensions are encrypted when copying from an SMB share within the corporate boundary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsInformationProtectionResourceCollection>? SmbAutoEncryptedFileExtensions
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>? SmbAutoEncryptedFileExtensions
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>?>("smbAutoEncryptedFileExtensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>?>("smbAutoEncryptedFileExtensions"); }
             set { BackingStore?.Set("smbAutoEncryptedFileExtensions", value); }
         }
 #nullable restore
 #else
-        public List<WindowsInformationProtectionResourceCollection> SmbAutoEncryptedFileExtensions
+        public List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection> SmbAutoEncryptedFileExtensions
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>>("smbAutoEncryptedFileExtensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>>("smbAutoEncryptedFileExtensions"); }
             set { BackingStore?.Set("smbAutoEncryptedFileExtensions", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsInformationProtection"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WindowsInformationProtection"/> and sets the default values.
         /// </summary>
         public WindowsInformationProtection() : base()
         {
@@ -321,17 +321,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsInformationProtection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsInformationProtection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsInformationProtection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WindowsInformationProtection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.mdmWindowsInformationProtectionPolicy" => new MdmWindowsInformationProtectionPolicy(),
-                "#microsoft.graph.windowsInformationProtectionPolicy" => new WindowsInformationProtectionPolicy(),
-                _ => new WindowsInformationProtection(),
+                "#microsoft.graph.mdmWindowsInformationProtectionPolicy" => new Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy(),
+                "#microsoft.graph.windowsInformationProtectionPolicy" => new Microsoft.Graph.Models.WindowsInformationProtectionPolicy(),
+                _ => new Microsoft.Graph.Models.WindowsInformationProtection(),
             };
         }
         /// <summary>
@@ -342,31 +342,31 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>(TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TargetedManagedAppPolicyAssignment>(Microsoft.Graph.Models.TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "azureRightsManagementServicesAllowed", n => { AzureRightsManagementServicesAllowed = n.GetBoolValue(); } },
-                { "dataRecoveryCertificate", n => { DataRecoveryCertificate = n.GetObjectValue<WindowsInformationProtectionDataRecoveryCertificate>(WindowsInformationProtectionDataRecoveryCertificate.CreateFromDiscriminatorValue); } },
-                { "enforcementLevel", n => { EnforcementLevel = n.GetEnumValue<WindowsInformationProtectionEnforcementLevel>(); } },
+                { "dataRecoveryCertificate", n => { DataRecoveryCertificate = n.GetObjectValue<Microsoft.Graph.Models.WindowsInformationProtectionDataRecoveryCertificate>(Microsoft.Graph.Models.WindowsInformationProtectionDataRecoveryCertificate.CreateFromDiscriminatorValue); } },
+                { "enforcementLevel", n => { EnforcementLevel = n.GetEnumValue<Microsoft.Graph.Models.WindowsInformationProtectionEnforcementLevel>(); } },
                 { "enterpriseDomain", n => { EnterpriseDomain = n.GetStringValue(); } },
-                { "enterpriseIPRanges", n => { EnterpriseIPRanges = n.GetCollectionOfObjectValues<WindowsInformationProtectionIPRangeCollection>(WindowsInformationProtectionIPRangeCollection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "enterpriseIPRanges", n => { EnterpriseIPRanges = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionIPRangeCollection>(Microsoft.Graph.Models.WindowsInformationProtectionIPRangeCollection.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "enterpriseIPRangesAreAuthoritative", n => { EnterpriseIPRangesAreAuthoritative = n.GetBoolValue(); } },
-                { "enterpriseInternalProxyServers", n => { EnterpriseInternalProxyServers = n.GetCollectionOfObjectValues<WindowsInformationProtectionResourceCollection>(WindowsInformationProtectionResourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "enterpriseNetworkDomainNames", n => { EnterpriseNetworkDomainNames = n.GetCollectionOfObjectValues<WindowsInformationProtectionResourceCollection>(WindowsInformationProtectionResourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "enterpriseProtectedDomainNames", n => { EnterpriseProtectedDomainNames = n.GetCollectionOfObjectValues<WindowsInformationProtectionResourceCollection>(WindowsInformationProtectionResourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "enterpriseProxiedDomains", n => { EnterpriseProxiedDomains = n.GetCollectionOfObjectValues<WindowsInformationProtectionProxiedDomainCollection>(WindowsInformationProtectionProxiedDomainCollection.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "enterpriseProxyServers", n => { EnterpriseProxyServers = n.GetCollectionOfObjectValues<WindowsInformationProtectionResourceCollection>(WindowsInformationProtectionResourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "enterpriseInternalProxyServers", n => { EnterpriseInternalProxyServers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>(Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "enterpriseNetworkDomainNames", n => { EnterpriseNetworkDomainNames = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>(Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "enterpriseProtectedDomainNames", n => { EnterpriseProtectedDomainNames = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>(Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "enterpriseProxiedDomains", n => { EnterpriseProxiedDomains = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionProxiedDomainCollection>(Microsoft.Graph.Models.WindowsInformationProtectionProxiedDomainCollection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "enterpriseProxyServers", n => { EnterpriseProxyServers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>(Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "enterpriseProxyServersAreAuthoritative", n => { EnterpriseProxyServersAreAuthoritative = n.GetBoolValue(); } },
-                { "exemptAppLockerFiles", n => { ExemptAppLockerFiles = n.GetCollectionOfObjectValues<WindowsInformationProtectionAppLockerFile>(WindowsInformationProtectionAppLockerFile.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "exemptApps", n => { ExemptApps = n.GetCollectionOfObjectValues<WindowsInformationProtectionApp>(WindowsInformationProtectionApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exemptAppLockerFiles", n => { ExemptAppLockerFiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionAppLockerFile>(Microsoft.Graph.Models.WindowsInformationProtectionAppLockerFile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exemptApps", n => { ExemptApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionApp>(Microsoft.Graph.Models.WindowsInformationProtectionApp.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "iconsVisible", n => { IconsVisible = n.GetBoolValue(); } },
                 { "indexingEncryptedStoresOrItemsBlocked", n => { IndexingEncryptedStoresOrItemsBlocked = n.GetBoolValue(); } },
                 { "isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
-                { "neutralDomainResources", n => { NeutralDomainResources = n.GetCollectionOfObjectValues<WindowsInformationProtectionResourceCollection>(WindowsInformationProtectionResourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "protectedAppLockerFiles", n => { ProtectedAppLockerFiles = n.GetCollectionOfObjectValues<WindowsInformationProtectionAppLockerFile>(WindowsInformationProtectionAppLockerFile.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "protectedApps", n => { ProtectedApps = n.GetCollectionOfObjectValues<WindowsInformationProtectionApp>(WindowsInformationProtectionApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "neutralDomainResources", n => { NeutralDomainResources = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>(Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "protectedAppLockerFiles", n => { ProtectedAppLockerFiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionAppLockerFile>(Microsoft.Graph.Models.WindowsInformationProtectionAppLockerFile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "protectedApps", n => { ProtectedApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionApp>(Microsoft.Graph.Models.WindowsInformationProtectionApp.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "protectionUnderLockConfigRequired", n => { ProtectionUnderLockConfigRequired = n.GetBoolValue(); } },
                 { "revokeOnUnenrollDisabled", n => { RevokeOnUnenrollDisabled = n.GetBoolValue(); } },
                 { "rightsManagementServicesTemplateId", n => { RightsManagementServicesTemplateId = n.GetGuidValue(); } },
-                { "smbAutoEncryptedFileExtensions", n => { SmbAutoEncryptedFileExtensions = n.GetCollectionOfObjectValues<WindowsInformationProtectionResourceCollection>(WindowsInformationProtectionResourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "smbAutoEncryptedFileExtensions", n => { SmbAutoEncryptedFileExtensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>(Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -377,31 +377,31 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TargetedManagedAppPolicyAssignment>("assignments", Assignments);
             writer.WriteBoolValue("azureRightsManagementServicesAllowed", AzureRightsManagementServicesAllowed);
-            writer.WriteObjectValue<WindowsInformationProtectionDataRecoveryCertificate>("dataRecoveryCertificate", DataRecoveryCertificate);
-            writer.WriteEnumValue<WindowsInformationProtectionEnforcementLevel>("enforcementLevel", EnforcementLevel);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WindowsInformationProtectionDataRecoveryCertificate>("dataRecoveryCertificate", DataRecoveryCertificate);
+            writer.WriteEnumValue<Microsoft.Graph.Models.WindowsInformationProtectionEnforcementLevel>("enforcementLevel", EnforcementLevel);
             writer.WriteStringValue("enterpriseDomain", EnterpriseDomain);
-            writer.WriteCollectionOfObjectValues<WindowsInformationProtectionResourceCollection>("enterpriseInternalProxyServers", EnterpriseInternalProxyServers);
-            writer.WriteCollectionOfObjectValues<WindowsInformationProtectionIPRangeCollection>("enterpriseIPRanges", EnterpriseIPRanges);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>("enterpriseInternalProxyServers", EnterpriseInternalProxyServers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionIPRangeCollection>("enterpriseIPRanges", EnterpriseIPRanges);
             writer.WriteBoolValue("enterpriseIPRangesAreAuthoritative", EnterpriseIPRangesAreAuthoritative);
-            writer.WriteCollectionOfObjectValues<WindowsInformationProtectionResourceCollection>("enterpriseNetworkDomainNames", EnterpriseNetworkDomainNames);
-            writer.WriteCollectionOfObjectValues<WindowsInformationProtectionResourceCollection>("enterpriseProtectedDomainNames", EnterpriseProtectedDomainNames);
-            writer.WriteCollectionOfObjectValues<WindowsInformationProtectionProxiedDomainCollection>("enterpriseProxiedDomains", EnterpriseProxiedDomains);
-            writer.WriteCollectionOfObjectValues<WindowsInformationProtectionResourceCollection>("enterpriseProxyServers", EnterpriseProxyServers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>("enterpriseNetworkDomainNames", EnterpriseNetworkDomainNames);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>("enterpriseProtectedDomainNames", EnterpriseProtectedDomainNames);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionProxiedDomainCollection>("enterpriseProxiedDomains", EnterpriseProxiedDomains);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>("enterpriseProxyServers", EnterpriseProxyServers);
             writer.WriteBoolValue("enterpriseProxyServersAreAuthoritative", EnterpriseProxyServersAreAuthoritative);
-            writer.WriteCollectionOfObjectValues<WindowsInformationProtectionAppLockerFile>("exemptAppLockerFiles", ExemptAppLockerFiles);
-            writer.WriteCollectionOfObjectValues<WindowsInformationProtectionApp>("exemptApps", ExemptApps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionAppLockerFile>("exemptAppLockerFiles", ExemptAppLockerFiles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionApp>("exemptApps", ExemptApps);
             writer.WriteBoolValue("iconsVisible", IconsVisible);
             writer.WriteBoolValue("indexingEncryptedStoresOrItemsBlocked", IndexingEncryptedStoresOrItemsBlocked);
             writer.WriteBoolValue("isAssigned", IsAssigned);
-            writer.WriteCollectionOfObjectValues<WindowsInformationProtectionResourceCollection>("neutralDomainResources", NeutralDomainResources);
-            writer.WriteCollectionOfObjectValues<WindowsInformationProtectionAppLockerFile>("protectedAppLockerFiles", ProtectedAppLockerFiles);
-            writer.WriteCollectionOfObjectValues<WindowsInformationProtectionApp>("protectedApps", ProtectedApps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>("neutralDomainResources", NeutralDomainResources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionAppLockerFile>("protectedAppLockerFiles", ProtectedAppLockerFiles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionApp>("protectedApps", ProtectedApps);
             writer.WriteBoolValue("protectionUnderLockConfigRequired", ProtectionUnderLockConfigRequired);
             writer.WriteBoolValue("revokeOnUnenrollDisabled", RevokeOnUnenrollDisabled);
             writer.WriteGuidValue("rightsManagementServicesTemplateId", RightsManagementServicesTemplateId);
-            writer.WriteCollectionOfObjectValues<WindowsInformationProtectionResourceCollection>("smbAutoEncryptedFileExtensions", SmbAutoEncryptedFileExtensions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WindowsInformationProtectionResourceCollection>("smbAutoEncryptedFileExtensions", SmbAutoEncryptedFileExtensions);
         }
     }
 }

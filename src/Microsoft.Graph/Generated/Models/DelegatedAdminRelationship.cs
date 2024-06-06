@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class DelegatedAdminRelationship : Entity, IParsable
+    public class DelegatedAdminRelationship : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The access assignments associated with the delegated admin relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DelegatedAdminAccessAssignment>? AccessAssignments
+        public List<Microsoft.Graph.Models.DelegatedAdminAccessAssignment>? AccessAssignments
         {
-            get { return BackingStore?.Get<List<DelegatedAdminAccessAssignment>?>("accessAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DelegatedAdminAccessAssignment>?>("accessAssignments"); }
             set { BackingStore?.Set("accessAssignments", value); }
         }
 #nullable restore
 #else
-        public List<DelegatedAdminAccessAssignment> AccessAssignments
+        public List<Microsoft.Graph.Models.DelegatedAdminAccessAssignment> AccessAssignments
         {
-            get { return BackingStore?.Get<List<DelegatedAdminAccessAssignment>>("accessAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DelegatedAdminAccessAssignment>>("accessAssignments"); }
             set { BackingStore?.Set("accessAssignments", value); }
         }
 #endif
         /// <summary>The accessDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DelegatedAdminAccessDetails? AccessDetails
+        public Microsoft.Graph.Models.DelegatedAdminAccessDetails? AccessDetails
         {
-            get { return BackingStore?.Get<DelegatedAdminAccessDetails?>("accessDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DelegatedAdminAccessDetails?>("accessDetails"); }
             set { BackingStore?.Set("accessDetails", value); }
         }
 #nullable restore
 #else
-        public DelegatedAdminAccessDetails AccessDetails
+        public Microsoft.Graph.Models.DelegatedAdminAccessDetails AccessDetails
         {
-            get { return BackingStore?.Get<DelegatedAdminAccessDetails>("accessDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DelegatedAdminAccessDetails>("accessDetails"); }
             set { BackingStore?.Set("accessDetails", value); }
         }
 #endif
@@ -63,16 +63,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Can&apos;t be changed by the customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DelegatedAdminRelationshipCustomerParticipant? Customer
+        public Microsoft.Graph.Models.DelegatedAdminRelationshipCustomerParticipant? Customer
         {
-            get { return BackingStore?.Get<DelegatedAdminRelationshipCustomerParticipant?>("customer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DelegatedAdminRelationshipCustomerParticipant?>("customer"); }
             set { BackingStore?.Set("customer", value); }
         }
 #nullable restore
 #else
-        public DelegatedAdminRelationshipCustomerParticipant Customer
+        public Microsoft.Graph.Models.DelegatedAdminRelationshipCustomerParticipant Customer
         {
-            get { return BackingStore?.Get<DelegatedAdminRelationshipCustomerParticipant>("customer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DelegatedAdminRelationshipCustomerParticipant>("customer"); }
             set { BackingStore?.Set("customer", value); }
         }
 #endif
@@ -113,54 +113,54 @@ namespace Microsoft.Graph.Models
         /// <summary>The long running operations associated with the delegated admin relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DelegatedAdminRelationshipOperation>? Operations
+        public List<Microsoft.Graph.Models.DelegatedAdminRelationshipOperation>? Operations
         {
-            get { return BackingStore?.Get<List<DelegatedAdminRelationshipOperation>?>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DelegatedAdminRelationshipOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<DelegatedAdminRelationshipOperation> Operations
+        public List<Microsoft.Graph.Models.DelegatedAdminRelationshipOperation> Operations
         {
-            get { return BackingStore?.Get<List<DelegatedAdminRelationshipOperation>>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DelegatedAdminRelationshipOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #endif
         /// <summary>The requests associated with the delegated admin relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DelegatedAdminRelationshipRequest>? Requests
+        public List<Microsoft.Graph.Models.DelegatedAdminRelationshipRequest>? Requests
         {
-            get { return BackingStore?.Get<List<DelegatedAdminRelationshipRequest>?>("requests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DelegatedAdminRelationshipRequest>?>("requests"); }
             set { BackingStore?.Set("requests", value); }
         }
 #nullable restore
 #else
-        public List<DelegatedAdminRelationshipRequest> Requests
+        public List<Microsoft.Graph.Models.DelegatedAdminRelationshipRequest> Requests
         {
-            get { return BackingStore?.Get<List<DelegatedAdminRelationshipRequest>>("requests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DelegatedAdminRelationshipRequest>>("requests"); }
             set { BackingStore?.Set("requests", value); }
         }
 #endif
         /// <summary>The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.</summary>
-        public DelegatedAdminRelationshipStatus? Status
+        public Microsoft.Graph.Models.DelegatedAdminRelationshipStatus? Status
         {
-            get { return BackingStore?.Get<DelegatedAdminRelationshipStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DelegatedAdminRelationshipStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DelegatedAdminRelationship"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DelegatedAdminRelationship"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DelegatedAdminRelationship CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DelegatedAdminRelationship CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.resellerDelegatedAdminRelationship" => new ResellerDelegatedAdminRelationship(),
-                _ => new DelegatedAdminRelationship(),
+                "#microsoft.graph.resellerDelegatedAdminRelationship" => new Microsoft.Graph.Models.ResellerDelegatedAdminRelationship(),
+                _ => new Microsoft.Graph.Models.DelegatedAdminRelationship(),
             };
         }
         /// <summary>
@@ -171,19 +171,19 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accessAssignments", n => { AccessAssignments = n.GetCollectionOfObjectValues<DelegatedAdminAccessAssignment>(DelegatedAdminAccessAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "accessDetails", n => { AccessDetails = n.GetObjectValue<DelegatedAdminAccessDetails>(DelegatedAdminAccessDetails.CreateFromDiscriminatorValue); } },
+                { "accessAssignments", n => { AccessAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DelegatedAdminAccessAssignment>(Microsoft.Graph.Models.DelegatedAdminAccessAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessDetails", n => { AccessDetails = n.GetObjectValue<Microsoft.Graph.Models.DelegatedAdminAccessDetails>(Microsoft.Graph.Models.DelegatedAdminAccessDetails.CreateFromDiscriminatorValue); } },
                 { "activatedDateTime", n => { ActivatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "autoExtendDuration", n => { AutoExtendDuration = n.GetTimeSpanValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "customer", n => { Customer = n.GetObjectValue<DelegatedAdminRelationshipCustomerParticipant>(DelegatedAdminRelationshipCustomerParticipant.CreateFromDiscriminatorValue); } },
+                { "customer", n => { Customer = n.GetObjectValue<Microsoft.Graph.Models.DelegatedAdminRelationshipCustomerParticipant>(Microsoft.Graph.Models.DelegatedAdminRelationshipCustomerParticipant.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "duration", n => { Duration = n.GetTimeSpanValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "operations", n => { Operations = n.GetCollectionOfObjectValues<DelegatedAdminRelationshipOperation>(DelegatedAdminRelationshipOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "requests", n => { Requests = n.GetCollectionOfObjectValues<DelegatedAdminRelationshipRequest>(DelegatedAdminRelationshipRequest.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "status", n => { Status = n.GetEnumValue<DelegatedAdminRelationshipStatus>(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DelegatedAdminRelationshipOperation>(Microsoft.Graph.Models.DelegatedAdminRelationshipOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "requests", n => { Requests = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DelegatedAdminRelationshipRequest>(Microsoft.Graph.Models.DelegatedAdminRelationshipRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.DelegatedAdminRelationshipStatus>(); } },
             };
         }
         /// <summary>
@@ -194,19 +194,19 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DelegatedAdminAccessAssignment>("accessAssignments", AccessAssignments);
-            writer.WriteObjectValue<DelegatedAdminAccessDetails>("accessDetails", AccessDetails);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DelegatedAdminAccessAssignment>("accessAssignments", AccessAssignments);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DelegatedAdminAccessDetails>("accessDetails", AccessDetails);
             writer.WriteDateTimeOffsetValue("activatedDateTime", ActivatedDateTime);
             writer.WriteTimeSpanValue("autoExtendDuration", AutoExtendDuration);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<DelegatedAdminRelationshipCustomerParticipant>("customer", Customer);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DelegatedAdminRelationshipCustomerParticipant>("customer", Customer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteTimeSpanValue("duration", Duration);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteCollectionOfObjectValues<DelegatedAdminRelationshipOperation>("operations", Operations);
-            writer.WriteCollectionOfObjectValues<DelegatedAdminRelationshipRequest>("requests", Requests);
-            writer.WriteEnumValue<DelegatedAdminRelationshipStatus>("status", Status);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DelegatedAdminRelationshipOperation>("operations", Operations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DelegatedAdminRelationshipRequest>("requests", Requests);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DelegatedAdminRelationshipStatus>("status", Status);
         }
     }
 }

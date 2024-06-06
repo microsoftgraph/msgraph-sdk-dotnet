@@ -8,18 +8,18 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSetti
 {
     [Obsolete("This class is obsolete. Use GetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse : GetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponse, IParsable
+    public class GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse : Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId.GetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId.GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId.GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse();
+            return new Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId.GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse();
         }
     }
 }

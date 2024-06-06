@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.CopyNotebook
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CopyNotebookPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.CopyNotebook.CopyNotebookPostRequestBody"/> and sets the default values.
         /// </summary>
         public CopyNotebookPostRequestBody()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.CopyNotebook
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CopyNotebookPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.CopyNotebook.CopyNotebookPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CopyNotebookPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.CopyNotebook.CopyNotebookPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CopyNotebookPostRequestBody();
+            return new Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.CopyNotebook.CopyNotebookPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

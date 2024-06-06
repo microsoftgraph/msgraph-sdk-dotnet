@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AttachmentSessionCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class AttachmentSessionCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttachmentSession>? Value
+        public List<Microsoft.Graph.Models.AttachmentSession>? Value
         {
-            get { return BackingStore?.Get<List<AttachmentSession>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttachmentSession>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<AttachmentSession> Value
+        public List<Microsoft.Graph.Models.AttachmentSession> Value
         {
-            get { return BackingStore?.Get<List<AttachmentSession>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttachmentSession>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AttachmentSessionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AttachmentSessionCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AttachmentSessionCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AttachmentSessionCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AttachmentSessionCollectionResponse();
+            return new Microsoft.Graph.Models.AttachmentSessionCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<AttachmentSession>(AttachmentSession.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AttachmentSession>(Microsoft.Graph.Models.AttachmentSession.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AttachmentSession>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AttachmentSession>("value", Value);
         }
     }
 }

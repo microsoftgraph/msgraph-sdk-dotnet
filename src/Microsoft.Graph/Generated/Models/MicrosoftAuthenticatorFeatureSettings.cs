@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Determines whether the user&apos;s Authenticator app shows them the client app they&apos;re signing into.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationMethodFeatureConfiguration? DisplayAppInformationRequiredState
+        public Microsoft.Graph.Models.AuthenticationMethodFeatureConfiguration? DisplayAppInformationRequiredState
         {
-            get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration?>("displayAppInformationRequiredState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationMethodFeatureConfiguration?>("displayAppInformationRequiredState"); }
             set { BackingStore?.Set("displayAppInformationRequiredState", value); }
         }
 #nullable restore
 #else
-        public AuthenticationMethodFeatureConfiguration DisplayAppInformationRequiredState
+        public Microsoft.Graph.Models.AuthenticationMethodFeatureConfiguration DisplayAppInformationRequiredState
         {
-            get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration>("displayAppInformationRequiredState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationMethodFeatureConfiguration>("displayAppInformationRequiredState"); }
             set { BackingStore?.Set("displayAppInformationRequiredState", value); }
         }
 #endif
         /// <summary>Determines whether the user&apos;s Authenticator app shows them the geographic location of where the authentication request originated from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationMethodFeatureConfiguration? DisplayLocationInformationRequiredState
+        public Microsoft.Graph.Models.AuthenticationMethodFeatureConfiguration? DisplayLocationInformationRequiredState
         {
-            get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration?>("displayLocationInformationRequiredState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationMethodFeatureConfiguration?>("displayLocationInformationRequiredState"); }
             set { BackingStore?.Set("displayLocationInformationRequiredState", value); }
         }
 #nullable restore
 #else
-        public AuthenticationMethodFeatureConfiguration DisplayLocationInformationRequiredState
+        public Microsoft.Graph.Models.AuthenticationMethodFeatureConfiguration DisplayLocationInformationRequiredState
         {
-            get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration>("displayLocationInformationRequiredState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationMethodFeatureConfiguration>("displayLocationInformationRequiredState"); }
             set { BackingStore?.Set("displayLocationInformationRequiredState", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftAuthenticatorFeatureSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MicrosoftAuthenticatorFeatureSettings"/> and sets the default values.
         /// </summary>
         public MicrosoftAuthenticatorFeatureSettings()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MicrosoftAuthenticatorFeatureSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MicrosoftAuthenticatorFeatureSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MicrosoftAuthenticatorFeatureSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.MicrosoftAuthenticatorFeatureSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MicrosoftAuthenticatorFeatureSettings();
+            return new Microsoft.Graph.Models.MicrosoftAuthenticatorFeatureSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,8 +93,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "displayAppInformationRequiredState", n => { DisplayAppInformationRequiredState = n.GetObjectValue<AuthenticationMethodFeatureConfiguration>(AuthenticationMethodFeatureConfiguration.CreateFromDiscriminatorValue); } },
-                { "displayLocationInformationRequiredState", n => { DisplayLocationInformationRequiredState = n.GetObjectValue<AuthenticationMethodFeatureConfiguration>(AuthenticationMethodFeatureConfiguration.CreateFromDiscriminatorValue); } },
+                { "displayAppInformationRequiredState", n => { DisplayAppInformationRequiredState = n.GetObjectValue<Microsoft.Graph.Models.AuthenticationMethodFeatureConfiguration>(Microsoft.Graph.Models.AuthenticationMethodFeatureConfiguration.CreateFromDiscriminatorValue); } },
+                { "displayLocationInformationRequiredState", n => { DisplayLocationInformationRequiredState = n.GetObjectValue<Microsoft.Graph.Models.AuthenticationMethodFeatureConfiguration>(Microsoft.Graph.Models.AuthenticationMethodFeatureConfiguration.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -105,8 +105,8 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<AuthenticationMethodFeatureConfiguration>("displayAppInformationRequiredState", DisplayAppInformationRequiredState);
-            writer.WriteObjectValue<AuthenticationMethodFeatureConfiguration>("displayLocationInformationRequiredState", DisplayLocationInformationRequiredState);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AuthenticationMethodFeatureConfiguration>("displayAppInformationRequiredState", DisplayAppInformationRequiredState);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AuthenticationMethodFeatureConfiguration>("displayLocationInformationRequiredState", DisplayLocationInformationRequiredState);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

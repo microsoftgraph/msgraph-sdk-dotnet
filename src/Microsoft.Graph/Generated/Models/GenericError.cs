@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GenericError"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.GenericError"/> and sets the default values.
         /// </summary>
         public GenericError()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GenericError"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.GenericError"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GenericError CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.GenericError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GenericError();
+            return new Microsoft.Graph.Models.GenericError();
         }
         /// <summary>
         /// The deserialization information for the current model

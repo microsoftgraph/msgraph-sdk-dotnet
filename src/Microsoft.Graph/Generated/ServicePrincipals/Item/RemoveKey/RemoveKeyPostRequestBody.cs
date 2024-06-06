@@ -42,7 +42,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoveKey
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RemoveKeyPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.ServicePrincipals.Item.RemoveKey.RemoveKeyPostRequestBody"/> and sets the default values.
         /// </summary>
         public RemoveKeyPostRequestBody()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoveKey
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RemoveKeyPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.ServicePrincipals.Item.RemoveKey.RemoveKeyPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RemoveKeyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.ServicePrincipals.Item.RemoveKey.RemoveKeyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RemoveKeyPostRequestBody();
+            return new Microsoft.Graph.ServicePrincipals.Item.RemoveKey.RemoveKeyPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

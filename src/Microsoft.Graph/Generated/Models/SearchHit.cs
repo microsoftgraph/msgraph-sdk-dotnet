@@ -82,16 +82,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The resource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Entity? Resource
+        public Microsoft.Graph.Models.Entity? Resource
         {
-            get { return BackingStore?.Get<Entity?>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Entity?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public Entity Resource
+        public Microsoft.Graph.Models.Entity Resource
         {
-            get { return BackingStore?.Get<Entity>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Entity>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #endif
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SearchHit"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SearchHit"/> and sets the default values.
         /// </summary>
         public SearchHit()
         {
@@ -138,12 +138,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SearchHit"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SearchHit"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SearchHit CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SearchHit CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SearchHit();
+            return new Microsoft.Graph.Models.SearchHit();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Models
                 { "isCollapsed", n => { IsCollapsed = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "rank", n => { Rank = n.GetIntValue(); } },
-                { "resource", n => { Resource = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<Microsoft.Graph.Models.Entity>(Microsoft.Graph.Models.Entity.CreateFromDiscriminatorValue); } },
                 { "resultTemplateId", n => { ResultTemplateId = n.GetStringValue(); } },
                 { "summary", n => { Summary = n.GetStringValue(); } },
             };
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("isCollapsed", IsCollapsed);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("rank", Rank);
-            writer.WriteObjectValue<Entity>("resource", Resource);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Entity>("resource", Resource);
             writer.WriteStringValue("resultTemplateId", ResultTemplateId);
             writer.WriteStringValue("summary", Summary);
             writer.WriteAdditionalData(AdditionalData);

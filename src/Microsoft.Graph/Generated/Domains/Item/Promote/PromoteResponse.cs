@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Domains.Item.Promote
 {
     [Obsolete("This class is obsolete. Use PromotePostResponse instead.")]
     #pragma warning disable CS1591
-    public class PromoteResponse : PromotePostResponse, IParsable
+    public class PromoteResponse : Microsoft.Graph.Domains.Item.Promote.PromotePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PromoteResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Domains.Item.Promote.PromoteResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PromoteResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Domains.Item.Promote.PromoteResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PromoteResponse();
+            return new Microsoft.Graph.Domains.Item.Promote.PromoteResponse();
         }
     }
 }

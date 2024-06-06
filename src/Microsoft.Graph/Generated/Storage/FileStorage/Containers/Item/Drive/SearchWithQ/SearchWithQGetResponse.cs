@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.SearchWithQ
 {
     #pragma warning disable CS1591
-    public class SearchWithQGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class SearchWithQGetResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
@@ -30,12 +30,12 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.SearchWithQ
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SearchWithQGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.SearchWithQ.SearchWithQGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SearchWithQGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.SearchWithQ.SearchWithQGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SearchWithQGetResponse();
+            return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.SearchWithQ.SearchWithQGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

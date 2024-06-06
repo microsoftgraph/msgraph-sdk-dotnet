@@ -50,21 +50,21 @@ namespace Microsoft.Graph.Models
         /// <summary>If approval is required, the one, two or three elements of this collection define each of the stages of approval. An empty array is present if no approval is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageApprovalStage>? Stages
+        public List<Microsoft.Graph.Models.AccessPackageApprovalStage>? Stages
         {
-            get { return BackingStore?.Get<List<AccessPackageApprovalStage>?>("stages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageApprovalStage>?>("stages"); }
             set { BackingStore?.Set("stages", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageApprovalStage> Stages
+        public List<Microsoft.Graph.Models.AccessPackageApprovalStage> Stages
         {
-            get { return BackingStore?.Get<List<AccessPackageApprovalStage>>("stages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageApprovalStage>>("stages"); }
             set { BackingStore?.Set("stages", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessPackageAssignmentApprovalSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AccessPackageAssignmentApprovalSettings"/> and sets the default values.
         /// </summary>
         public AccessPackageAssignmentApprovalSettings()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageAssignmentApprovalSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackageAssignmentApprovalSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessPackageAssignmentApprovalSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AccessPackageAssignmentApprovalSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageAssignmentApprovalSettings();
+            return new Microsoft.Graph.Models.AccessPackageAssignmentApprovalSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Models
                 { "isApprovalRequiredForAdd", n => { IsApprovalRequiredForAdd = n.GetBoolValue(); } },
                 { "isApprovalRequiredForUpdate", n => { IsApprovalRequiredForUpdate = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "stages", n => { Stages = n.GetCollectionOfObjectValues<AccessPackageApprovalStage>(AccessPackageApprovalStage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "stages", n => { Stages = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageApprovalStage>(Microsoft.Graph.Models.AccessPackageApprovalStage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("isApprovalRequiredForAdd", IsApprovalRequiredForAdd);
             writer.WriteBoolValue("isApprovalRequiredForUpdate", IsApprovalRequiredForUpdate);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<AccessPackageApprovalStage>("stages", Stages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageApprovalStage>("stages", Stages);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

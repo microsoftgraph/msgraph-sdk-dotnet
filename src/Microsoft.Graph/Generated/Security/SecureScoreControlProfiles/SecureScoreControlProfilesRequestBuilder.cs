@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles
     public class SecureScoreControlProfilesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Security.SecureScoreControlProfiles.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.SecureScoreControlProfiles.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.</summary>
         /// <param name="position">The unique identifier of secureScoreControlProfile</param>
-        /// <returns>A <see cref="SecureScoreControlProfileItemRequestBuilder"/></returns>
-        public SecureScoreControlProfileItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Security.SecureScoreControlProfiles.Item.SecureScoreControlProfileItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Security.SecureScoreControlProfiles.Item.SecureScoreControlProfileItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("secureScoreControlProfile%2Did", position);
-                return new SecureScoreControlProfileItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Security.SecureScoreControlProfiles.Item.SecureScoreControlProfileItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SecureScoreControlProfilesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.SecureScoreControlProfiles.SecureScoreControlProfilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SecureScoreControlProfilesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.SecureScoreControlProfiles.SecureScoreControlProfilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +55,50 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles
         /// Retrieve the properties and relationships of a secureScoreControlProfiles object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-list-securescorecontrolprofiles?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="SecureScoreControlProfileCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SecureScoreControlProfileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SecureScoreControlProfileCollectionResponse?> GetAsync(Action<RequestConfiguration<SecureScoreControlProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SecureScoreControlProfileCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.SecureScoreControlProfiles.SecureScoreControlProfilesRequestBuilder.SecureScoreControlProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SecureScoreControlProfileCollectionResponse> GetAsync(Action<RequestConfiguration<SecureScoreControlProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SecureScoreControlProfileCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.SecureScoreControlProfiles.SecureScoreControlProfilesRequestBuilder.SecureScoreControlProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SecureScoreControlProfileCollectionResponse>(requestInfo, SecureScoreControlProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SecureScoreControlProfileCollectionResponse>(requestInfo, Microsoft.Graph.Models.SecureScoreControlProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to secureScoreControlProfiles for security
         /// </summary>
-        /// <returns>A <see cref="SecureScoreControlProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SecureScoreControlProfile"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SecureScoreControlProfile?> PostAsync(SecureScoreControlProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SecureScoreControlProfile?> PostAsync(Microsoft.Graph.Models.SecureScoreControlProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SecureScoreControlProfile> PostAsync(SecureScoreControlProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SecureScoreControlProfile> PostAsync(Microsoft.Graph.Models.SecureScoreControlProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SecureScoreControlProfile>(requestInfo, SecureScoreControlProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SecureScoreControlProfile>(requestInfo, Microsoft.Graph.Models.SecureScoreControlProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the properties and relationships of a secureScoreControlProfiles object.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SecureScoreControlProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.SecureScoreControlProfiles.SecureScoreControlProfilesRequestBuilder.SecureScoreControlProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SecureScoreControlProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.SecureScoreControlProfiles.SecureScoreControlProfilesRequestBuilder.SecureScoreControlProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(SecureScoreControlProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.SecureScoreControlProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(SecureScoreControlProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.SecureScoreControlProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SecureScoreControlProfilesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.SecureScoreControlProfiles.SecureScoreControlProfilesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SecureScoreControlProfilesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.SecureScoreControlProfiles.SecureScoreControlProfilesRequestBuilder WithUrl(string rawUrl)
         {
-            return new SecureScoreControlProfilesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.SecureScoreControlProfiles.SecureScoreControlProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve the properties and relationships of a secureScoreControlProfiles object.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SecureScoreControlProfilesRequestBuilderGetRequestConfiguration : RequestConfiguration<SecureScoreControlProfilesRequestBuilderGetQueryParameters>
+        public class SecureScoreControlProfilesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.SecureScoreControlProfiles.SecureScoreControlProfilesRequestBuilder.SecureScoreControlProfilesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

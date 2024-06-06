@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.It
     public class UserAttributeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="UserAttributeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.UserAttribute.UserAttributeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.It
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserAttributeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.UserAttribute.UserAttributeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.It
         /// <summary>
         /// The user attribute that you want to add to your user flow.
         /// </summary>
-        /// <returns>A <see cref="IdentityUserFlowAttribute"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityUserFlowAttribute"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IdentityUserFlowAttribute?> GetAsync(Action<RequestConfiguration<UserAttributeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.IdentityUserFlowAttribute?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.UserAttribute.UserAttributeRequestBuilder.UserAttributeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<IdentityUserFlowAttribute> GetAsync(Action<RequestConfiguration<UserAttributeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.IdentityUserFlowAttribute> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.UserAttribute.UserAttributeRequestBuilder.UserAttributeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<IdentityUserFlowAttribute>(requestInfo, IdentityUserFlowAttribute.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.IdentityUserFlowAttribute>(requestInfo, Microsoft.Graph.Models.IdentityUserFlowAttribute.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The user attribute that you want to add to your user flow.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserAttributeRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.UserAttribute.UserAttributeRequestBuilder.UserAttributeRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserAttributeRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.UserAttribute.UserAttributeRequestBuilder.UserAttributeRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.It
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UserAttributeRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.UserAttribute.UserAttributeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UserAttributeRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.UserAttribute.UserAttributeRequestBuilder WithUrl(string rawUrl)
         {
-            return new UserAttributeRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.UserAttribute.UserAttributeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The user attribute that you want to add to your user flow.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.It
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserAttributeRequestBuilderGetRequestConfiguration : RequestConfiguration<UserAttributeRequestBuilderGetQueryParameters>
+        public class UserAttributeRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.UserAttribute.UserAttributeRequestBuilder.UserAttributeRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -84,9 +84,9 @@ namespace Microsoft.Graph.Models.Search
         }
 #endif
         /// <summary>The device or operating system that can view this answer variation. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.</summary>
-        public DevicePlatformType? Platform
+        public Microsoft.Graph.Models.DevicePlatformType? Platform
         {
-            get { return BackingStore?.Get<DevicePlatformType?>("platform"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DevicePlatformType?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
         /// <summary>The URL link for the answer variation. When users select this answer variation from the search results, they&apos;re directed to the specified URL.</summary>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Models.Search
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AnswerVariant"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Search.AnswerVariant"/> and sets the default values.
         /// </summary>
         public AnswerVariant()
         {
@@ -116,12 +116,12 @@ namespace Microsoft.Graph.Models.Search
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AnswerVariant"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Search.AnswerVariant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AnswerVariant CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Search.AnswerVariant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AnswerVariant();
+            return new Microsoft.Graph.Models.Search.AnswerVariant();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Models.Search
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "languageTag", n => { LanguageTag = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
+                { "platform", n => { Platform = n.GetEnumValue<Microsoft.Graph.Models.DevicePlatformType>(); } },
                 { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Models.Search
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("languageTag", LanguageTag);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<DevicePlatformType>("platform", Platform);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DevicePlatformType>("platform", Platform);
             writer.WriteStringValue("webUrl", WebUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

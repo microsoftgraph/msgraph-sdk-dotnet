@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessFilter? DeviceFilter
+        public Microsoft.Graph.Models.ConditionalAccessFilter? DeviceFilter
         {
-            get { return BackingStore?.Get<ConditionalAccessFilter?>("deviceFilter"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessFilter?>("deviceFilter"); }
             set { BackingStore?.Set("deviceFilter", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessFilter DeviceFilter
+        public Microsoft.Graph.Models.ConditionalAccessFilter DeviceFilter
         {
-            get { return BackingStore?.Get<ConditionalAccessFilter>("deviceFilter"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessFilter>("deviceFilter"); }
             set { BackingStore?.Set("deviceFilter", value); }
         }
 #endif
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ConditionalAccessDevices"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ConditionalAccessDevices"/> and sets the default values.
         /// </summary>
         public ConditionalAccessDevices()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessDevices"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ConditionalAccessDevices"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConditionalAccessDevices CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ConditionalAccessDevices CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessDevices();
+            return new Microsoft.Graph.Models.ConditionalAccessDevices();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deviceFilter", n => { DeviceFilter = n.GetObjectValue<ConditionalAccessFilter>(ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
+                { "deviceFilter", n => { DeviceFilter = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessFilter>(Microsoft.Graph.Models.ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ConditionalAccessFilter>("deviceFilter", DeviceFilter);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessFilter>("deviceFilter", DeviceFilter);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

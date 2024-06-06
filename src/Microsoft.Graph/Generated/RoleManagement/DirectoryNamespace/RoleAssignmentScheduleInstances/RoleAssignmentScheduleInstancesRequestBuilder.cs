@@ -20,24 +20,24 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
     public class RoleAssignmentScheduleInstancesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignmentScheduleInstances property of the microsoft.graph.rbacApplication entity.</summary>
         /// <param name="position">The unique identifier of unifiedRoleAssignmentScheduleInstance</param>
-        /// <returns>A <see cref="UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder"/></returns>
-        public UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.Item.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder"/></returns>
+        public Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.Item.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("unifiedRoleAssignmentScheduleInstance%2Did", position);
-                return new UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.Item.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RoleAssignmentScheduleInstancesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RoleAssignmentScheduleInstancesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,61 +55,61 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
         /// <summary>
         /// Provides operations to call the filterByCurrentUser method.
         /// </summary>
-        /// <returns>A <see cref="FilterByCurrentUserWithOnRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder"/></returns>
         /// <param name="on">Usage: on=&apos;{on}&apos;</param>
-        public FilterByCurrentUserWithOnRequestBuilder FilterByCurrentUserWithOn(string on)
+        public Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder FilterByCurrentUserWithOn(string on)
         {
             if(string.IsNullOrEmpty(on)) throw new ArgumentNullException(nameof(on));
-            return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
+            return new Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
         /// Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentscheduleinstances?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleAssignmentScheduleInstanceCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstanceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleAssignmentScheduleInstanceCollectionResponse?> GetAsync(Action<RequestConfiguration<RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstanceCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder.RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedRoleAssignmentScheduleInstanceCollectionResponse> GetAsync(Action<RequestConfiguration<RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstanceCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder.RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedRoleAssignmentScheduleInstanceCollectionResponse>(requestInfo, UnifiedRoleAssignmentScheduleInstanceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstanceCollectionResponse>(requestInfo, Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstanceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to roleAssignmentScheduleInstances for roleManagement
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleAssignmentScheduleInstance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleAssignmentScheduleInstance?> PostAsync(UnifiedRoleAssignmentScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance?> PostAsync(Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedRoleAssignmentScheduleInstance> PostAsync(UnifiedRoleAssignmentScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance> PostAsync(Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedRoleAssignmentScheduleInstance>(requestInfo, UnifiedRoleAssignmentScheduleInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance>(requestInfo, Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
@@ -118,11 +118,11 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder.RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder.RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -138,11 +138,11 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(UnifiedRoleAssignmentScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(UnifiedRoleAssignmentScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -155,11 +155,11 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RoleAssignmentScheduleInstancesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RoleAssignmentScheduleInstancesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder WithUrl(string rawUrl)
         {
-            return new RoleAssignmentScheduleInstancesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
@@ -230,7 +230,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RoleAssignmentScheduleInstancesRequestBuilderGetRequestConfiguration : RequestConfiguration<RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters>
+        public class RoleAssignmentScheduleInstancesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder.RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

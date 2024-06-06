@@ -7,50 +7,50 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class TermsOfUseContainer : Entity, IParsable
+    public class TermsOfUseContainer : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the current status of a user&apos;s response to a company&apos;s customizable terms of use agreement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AgreementAcceptance>? AgreementAcceptances
+        public List<Microsoft.Graph.Models.AgreementAcceptance>? AgreementAcceptances
         {
-            get { return BackingStore?.Get<List<AgreementAcceptance>?>("agreementAcceptances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AgreementAcceptance>?>("agreementAcceptances"); }
             set { BackingStore?.Set("agreementAcceptances", value); }
         }
 #nullable restore
 #else
-        public List<AgreementAcceptance> AgreementAcceptances
+        public List<Microsoft.Graph.Models.AgreementAcceptance> AgreementAcceptances
         {
-            get { return BackingStore?.Get<List<AgreementAcceptance>>("agreementAcceptances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AgreementAcceptance>>("agreementAcceptances"); }
             set { BackingStore?.Set("agreementAcceptances", value); }
         }
 #endif
         /// <summary>Represents a tenant&apos;s customizable terms of use agreement that&apos;s created and managed with Microsoft Entra ID Governance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Agreement>? Agreements
+        public List<Microsoft.Graph.Models.Agreement>? Agreements
         {
-            get { return BackingStore?.Get<List<Agreement>?>("agreements"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Agreement>?>("agreements"); }
             set { BackingStore?.Set("agreements", value); }
         }
 #nullable restore
 #else
-        public List<Agreement> Agreements
+        public List<Microsoft.Graph.Models.Agreement> Agreements
         {
-            get { return BackingStore?.Get<List<Agreement>>("agreements"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Agreement>>("agreements"); }
             set { BackingStore?.Set("agreements", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TermsOfUseContainer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TermsOfUseContainer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TermsOfUseContainer CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TermsOfUseContainer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TermsOfUseContainer();
+            return new Microsoft.Graph.Models.TermsOfUseContainer();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "agreementAcceptances", n => { AgreementAcceptances = n.GetCollectionOfObjectValues<AgreementAcceptance>(AgreementAcceptance.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "agreements", n => { Agreements = n.GetCollectionOfObjectValues<Agreement>(Agreement.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "agreementAcceptances", n => { AgreementAcceptances = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AgreementAcceptance>(Microsoft.Graph.Models.AgreementAcceptance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "agreements", n => { Agreements = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Agreement>(Microsoft.Graph.Models.Agreement.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AgreementAcceptance>("agreementAcceptances", AgreementAcceptances);
-            writer.WriteCollectionOfObjectValues<Agreement>("agreements", Agreements);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AgreementAcceptance>("agreementAcceptances", AgreementAcceptances);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Agreement>("agreements", Agreements);
         }
     }
 }

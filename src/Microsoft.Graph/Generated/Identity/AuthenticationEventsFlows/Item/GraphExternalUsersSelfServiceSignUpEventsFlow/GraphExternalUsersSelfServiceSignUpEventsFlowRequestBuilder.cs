@@ -20,22 +20,22 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalU
     public class GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The conditions property</summary>
-        public ConditionsRequestBuilder Conditions
+        public Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.Conditions.ConditionsRequestBuilder Conditions
         {
-            get => new ConditionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.Conditions.ConditionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The onAttributeCollection property</summary>
-        public OnAttributeCollectionRequestBuilder OnAttributeCollection
+        public Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.OnAttributeCollection.OnAttributeCollectionRequestBuilder OnAttributeCollection
         {
-            get => new OnAttributeCollectionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.OnAttributeCollection.OnAttributeCollectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The onAuthenticationMethodLoadStart property</summary>
-        public OnAuthenticationMethodLoadStartRequestBuilder OnAuthenticationMethodLoadStart
+        public Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.OnAuthenticationMethodLoadStart.OnAuthenticationMethodLoadStartRequestBuilder OnAuthenticationMethodLoadStart
         {
-            get => new OnAuthenticationMethodLoadStartRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.OnAuthenticationMethodLoadStart.OnAuthenticationMethodLoadStartRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalU
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -53,25 +53,25 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalU
         /// <summary>
         /// Get the item of type microsoft.graph.authenticationEventsFlow as microsoft.graph.externalUsersSelfServiceSignUpEventsFlow
         /// </summary>
-        /// <returns>A <see cref="ExternalUsersSelfServiceSignUpEventsFlow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ExternalUsersSelfServiceSignUpEventsFlow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ExternalUsersSelfServiceSignUpEventsFlow?> GetAsync(Action<RequestConfiguration<GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ExternalUsersSelfServiceSignUpEventsFlow?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder.GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ExternalUsersSelfServiceSignUpEventsFlow> GetAsync(Action<RequestConfiguration<GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ExternalUsersSelfServiceSignUpEventsFlow> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder.GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ExternalUsersSelfServiceSignUpEventsFlow>(requestInfo, ExternalUsersSelfServiceSignUpEventsFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ExternalUsersSelfServiceSignUpEventsFlow>(requestInfo, Microsoft.Graph.Models.ExternalUsersSelfServiceSignUpEventsFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.authenticationEventsFlow as microsoft.graph.externalUsersSelfServiceSignUpEventsFlow
@@ -80,11 +80,11 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalU
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder.GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder.GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -95,11 +95,11 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalU
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder WithUrl(string rawUrl)
         {
-            return new GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.authenticationEventsFlow as microsoft.graph.externalUsersSelfServiceSignUpEventsFlow
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalU
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderGetQueryParameters>
+        public class GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder.GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDa
     public class GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDate.GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="date">Usage: date={date}</param>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDa
             if (date != null) PathParameters.Add("date", date);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDate.GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDa
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDa
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -79,11 +79,11 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDa
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDate.GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDate.GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDate.GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

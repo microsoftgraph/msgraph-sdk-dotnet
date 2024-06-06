@@ -20,42 +20,42 @@ namespace Microsoft.Graph.DirectoryRoles.Item.Members.Item
     public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Casts the previous resource to application.</summary>
-        public GraphApplicationRequestBuilder GraphApplication
+        public Microsoft.Graph.DirectoryRoles.Item.Members.Item.GraphApplication.GraphApplicationRequestBuilder GraphApplication
         {
-            get => new GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DirectoryRoles.Item.Members.Item.GraphApplication.GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to device.</summary>
-        public GraphDeviceRequestBuilder GraphDevice
+        public Microsoft.Graph.DirectoryRoles.Item.Members.Item.GraphDevice.GraphDeviceRequestBuilder GraphDevice
         {
-            get => new GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DirectoryRoles.Item.Members.Item.GraphDevice.GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
-        public GraphGroupRequestBuilder GraphGroup
+        public Microsoft.Graph.DirectoryRoles.Item.Members.Item.GraphGroup.GraphGroupRequestBuilder GraphGroup
         {
-            get => new GraphGroupRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DirectoryRoles.Item.Members.Item.GraphGroup.GraphGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to orgContact.</summary>
-        public GraphOrgContactRequestBuilder GraphOrgContact
+        public Microsoft.Graph.DirectoryRoles.Item.Members.Item.GraphOrgContact.GraphOrgContactRequestBuilder GraphOrgContact
         {
-            get => new GraphOrgContactRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DirectoryRoles.Item.Members.Item.GraphOrgContact.GraphOrgContactRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public GraphServicePrincipalRequestBuilder GraphServicePrincipal
+        public Microsoft.Graph.DirectoryRoles.Item.Members.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder GraphServicePrincipal
         {
-            get => new GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DirectoryRoles.Item.Members.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to user.</summary>
-        public GraphUserRequestBuilder GraphUser
+        public Microsoft.Graph.DirectoryRoles.Item.Members.Item.GraphUser.GraphUserRequestBuilder GraphUser
         {
-            get => new GraphUserRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DirectoryRoles.Item.Members.Item.GraphUser.GraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of directoryRole entities.</summary>
-        public RefRequestBuilder Ref
+        public Microsoft.Graph.DirectoryRoles.Item.Members.Item.Ref.RefRequestBuilder Ref
         {
-            get => new RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DirectoryRoles.Item.Members.Item.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="DirectoryObjectItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DirectoryRoles.Item.Members.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.DirectoryRoles.Item.Members.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DirectoryObjectItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DirectoryRoles.Item.Members.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

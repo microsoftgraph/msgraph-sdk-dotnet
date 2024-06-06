@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy
 {
     #pragma warning disable CS1591
-    public class SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
@@ -30,12 +30,12 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerforma
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse();
+            return new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Represents the content options of External Identities to be customized throughout the authentication flow for a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValue>? AttributeCollection
+        public List<Microsoft.Graph.Models.KeyValue>? AttributeCollection
         {
-            get { return BackingStore?.Get<List<KeyValue>?>("attributeCollection"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValue>?>("attributeCollection"); }
             set { BackingStore?.Set("attributeCollection", value); }
         }
 #nullable restore
 #else
-        public List<KeyValue> AttributeCollection
+        public List<Microsoft.Graph.Models.KeyValue> AttributeCollection
         {
-            get { return BackingStore?.Get<List<KeyValue>>("attributeCollection"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValue>>("attributeCollection"); }
             set { BackingStore?.Set("attributeCollection", value); }
         }
 #endif
@@ -70,16 +70,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Represents content options to customize during MFA proofup interruptions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValue>? RegistrationCampaign
+        public List<Microsoft.Graph.Models.KeyValue>? RegistrationCampaign
         {
-            get { return BackingStore?.Get<List<KeyValue>?>("registrationCampaign"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValue>?>("registrationCampaign"); }
             set { BackingStore?.Set("registrationCampaign", value); }
         }
 #nullable restore
 #else
-        public List<KeyValue> RegistrationCampaign
+        public List<Microsoft.Graph.Models.KeyValue> RegistrationCampaign
         {
-            get { return BackingStore?.Get<List<KeyValue>>("registrationCampaign"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValue>>("registrationCampaign"); }
             set { BackingStore?.Set("registrationCampaign", value); }
         }
 #endif
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ContentCustomization"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ContentCustomization"/> and sets the default values.
         /// </summary>
         public ContentCustomization()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ContentCustomization"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ContentCustomization"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ContentCustomization CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ContentCustomization CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ContentCustomization();
+            return new Microsoft.Graph.Models.ContentCustomization();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,10 +125,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attributeCollection", n => { AttributeCollection = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attributeCollection", n => { AttributeCollection = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.KeyValue>(Microsoft.Graph.Models.KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "attributeCollectionRelativeUrl", n => { AttributeCollectionRelativeUrl = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "registrationCampaign", n => { RegistrationCampaign = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "registrationCampaign", n => { RegistrationCampaign = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.KeyValue>(Microsoft.Graph.Models.KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "registrationCampaignRelativeUrl", n => { RegistrationCampaignRelativeUrl = n.GetStringValue(); } },
             };
         }
@@ -139,10 +139,10 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<KeyValue>("attributeCollection", AttributeCollection);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.KeyValue>("attributeCollection", AttributeCollection);
             writer.WriteStringValue("attributeCollectionRelativeUrl", AttributeCollectionRelativeUrl);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<KeyValue>("registrationCampaign", RegistrationCampaign);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.KeyValue>("registrationCampaign", RegistrationCampaign);
             writer.WriteStringValue("registrationCampaignRelativeUrl", RegistrationCampaignRelativeUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

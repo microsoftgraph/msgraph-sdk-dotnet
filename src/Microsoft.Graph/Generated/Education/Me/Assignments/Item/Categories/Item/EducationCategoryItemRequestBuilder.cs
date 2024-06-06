@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Categories.Item
     public class EducationCategoryItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of educationRoot entities.</summary>
-        public RefRequestBuilder Ref
+        public Microsoft.Graph.Education.Me.Assignments.Item.Categories.Item.Ref.RefRequestBuilder Ref
         {
-            get => new RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Me.Assignments.Item.Categories.Item.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="EducationCategoryItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Me.Assignments.Item.Categories.Item.EducationCategoryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Categories.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="EducationCategoryItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Me.Assignments.Item.Categories.Item.EducationCategoryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

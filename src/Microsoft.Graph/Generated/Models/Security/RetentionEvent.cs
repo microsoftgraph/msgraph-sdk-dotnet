@@ -67,48 +67,48 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>Represents the success status of a created event and additional information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EventPropagationResult>? EventPropagationResults
+        public List<Microsoft.Graph.Models.Security.EventPropagationResult>? EventPropagationResults
         {
-            get { return BackingStore?.Get<List<EventPropagationResult>?>("eventPropagationResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EventPropagationResult>?>("eventPropagationResults"); }
             set { BackingStore?.Set("eventPropagationResults", value); }
         }
 #nullable restore
 #else
-        public List<EventPropagationResult> EventPropagationResults
+        public List<Microsoft.Graph.Models.Security.EventPropagationResult> EventPropagationResults
         {
-            get { return BackingStore?.Get<List<EventPropagationResult>>("eventPropagationResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EventPropagationResult>>("eventPropagationResults"); }
             set { BackingStore?.Set("eventPropagationResults", value); }
         }
 #endif
         /// <summary>Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EventQuery>? EventQueries
+        public List<Microsoft.Graph.Models.Security.EventQuery>? EventQueries
         {
-            get { return BackingStore?.Get<List<EventQuery>?>("eventQueries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EventQuery>?>("eventQueries"); }
             set { BackingStore?.Set("eventQueries", value); }
         }
 #nullable restore
 #else
-        public List<EventQuery> EventQueries
+        public List<Microsoft.Graph.Models.Security.EventQuery> EventQueries
         {
-            get { return BackingStore?.Get<List<EventQuery>>("eventQueries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EventQuery>>("eventQueries"); }
             set { BackingStore?.Set("eventQueries", value); }
         }
 #endif
         /// <summary>Status of event propogation to the scoped locations after the event has been created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RetentionEventStatus? EventStatus
+        public Microsoft.Graph.Models.Security.RetentionEventStatus? EventStatus
         {
-            get { return BackingStore?.Get<RetentionEventStatus?>("eventStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.RetentionEventStatus?>("eventStatus"); }
             set { BackingStore?.Set("eventStatus", value); }
         }
 #nullable restore
 #else
-        public RetentionEventStatus EventStatus
+        public Microsoft.Graph.Models.Security.RetentionEventStatus EventStatus
         {
-            get { return BackingStore?.Get<RetentionEventStatus>("eventStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.RetentionEventStatus>("eventStatus"); }
             set { BackingStore?.Set("eventStatus", value); }
         }
 #endif
@@ -165,12 +165,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RetentionEvent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.RetentionEvent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RetentionEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.RetentionEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RetentionEvent();
+            return new Microsoft.Graph.Models.Security.RetentionEvent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -184,9 +184,9 @@ namespace Microsoft.Graph.Models.Security
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "eventPropagationResults", n => { EventPropagationResults = n.GetCollectionOfObjectValues<EventPropagationResult>(EventPropagationResult.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "eventQueries", n => { EventQueries = n.GetCollectionOfObjectValues<EventQuery>(EventQuery.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "eventStatus", n => { EventStatus = n.GetObjectValue<RetentionEventStatus>(RetentionEventStatus.CreateFromDiscriminatorValue); } },
+                { "eventPropagationResults", n => { EventPropagationResults = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.EventPropagationResult>(Microsoft.Graph.Models.Security.EventPropagationResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "eventQueries", n => { EventQueries = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.EventQuery>(Microsoft.Graph.Models.Security.EventQuery.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "eventStatus", n => { EventStatus = n.GetObjectValue<Microsoft.Graph.Models.Security.RetentionEventStatus>(Microsoft.Graph.Models.Security.RetentionEventStatus.CreateFromDiscriminatorValue); } },
                 { "eventTriggerDateTime", n => { EventTriggerDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -206,9 +206,9 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<EventPropagationResult>("eventPropagationResults", EventPropagationResults);
-            writer.WriteCollectionOfObjectValues<EventQuery>("eventQueries", EventQueries);
-            writer.WriteObjectValue<RetentionEventStatus>("eventStatus", EventStatus);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.EventPropagationResult>("eventPropagationResults", EventPropagationResults);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.EventQuery>("eventQueries", EventQueries);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.RetentionEventStatus>("eventStatus", EventStatus);
             writer.WriteDateTimeOffsetValue("eventTriggerDateTime", EventTriggerDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);

@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Item.Excuse
     public class ExcuseRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ExcuseRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Item.Excuse.ExcuseRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Item.Excuse
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ExcuseRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Item.Excuse.ExcuseRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,25 +36,25 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Item.Excuse
         /// Excuse a submission. Excused submissions aren&apos;t included in average grade calculations. Grading rubrics and feedback are deleted. Only teachers can perform this action.  If the Prefer: include-unknown-enum-members request header is provided, the excused submission shows the excused status. Otherwise, the submission status retains the returned status. For more information about how to use this header, see the Examples section.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsubmission-excuse?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="EducationSubmission"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationSubmission"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationSubmission?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationSubmission?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationSubmission> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationSubmission> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationSubmission>(requestInfo, EducationSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EducationSubmission>(requestInfo, Microsoft.Graph.Models.EducationSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Excuse a submission. Excused submissions aren&apos;t included in average grade calculations. Grading rubrics and feedback are deleted. Only teachers can perform this action.  If the Prefer: include-unknown-enum-members request header is provided, the excused submission shows the excused status. Otherwise, the submission status retains the returned status. For more information about how to use this header, see the Examples section.
@@ -78,11 +78,11 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Item.Excuse
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ExcuseRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Item.Excuse.ExcuseRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ExcuseRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Item.Excuse.ExcuseRequestBuilder WithUrl(string rawUrl)
         {
-            return new ExcuseRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Item.Excuse.ExcuseRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

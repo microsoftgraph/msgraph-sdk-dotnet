@@ -22,48 +22,48 @@ namespace Microsoft.Graph.Models
         /// <summary>*Experimental* Filter group set used to decide whether given object belongs and should be processed as part of this object mapping. An object is considered in scope if ANY of the groups in the collection is evaluated to true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FilterGroup>? CategoryFilterGroups
+        public List<Microsoft.Graph.Models.FilterGroup>? CategoryFilterGroups
         {
-            get { return BackingStore?.Get<List<FilterGroup>?>("categoryFilterGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.FilterGroup>?>("categoryFilterGroups"); }
             set { BackingStore?.Set("categoryFilterGroups", value); }
         }
 #nullable restore
 #else
-        public List<FilterGroup> CategoryFilterGroups
+        public List<Microsoft.Graph.Models.FilterGroup> CategoryFilterGroups
         {
-            get { return BackingStore?.Get<List<FilterGroup>>("categoryFilterGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.FilterGroup>>("categoryFilterGroups"); }
             set { BackingStore?.Set("categoryFilterGroups", value); }
         }
 #endif
         /// <summary>Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter isn&apos;t satisfied any longer, such object will get deprovisioned&apos;. An object is considered in scope if ANY of the groups in the collection is evaluated to true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FilterGroup>? Groups
+        public List<Microsoft.Graph.Models.FilterGroup>? Groups
         {
-            get { return BackingStore?.Get<List<FilterGroup>?>("groups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.FilterGroup>?>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
 #nullable restore
 #else
-        public List<FilterGroup> Groups
+        public List<Microsoft.Graph.Models.FilterGroup> Groups
         {
-            get { return BackingStore?.Get<List<FilterGroup>>("groups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.FilterGroup>>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
 #endif
         /// <summary>*Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn&apos;t satisfy this filter, then it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get deprovisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FilterGroup>? InputFilterGroups
+        public List<Microsoft.Graph.Models.FilterGroup>? InputFilterGroups
         {
-            get { return BackingStore?.Get<List<FilterGroup>?>("inputFilterGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.FilterGroup>?>("inputFilterGroups"); }
             set { BackingStore?.Set("inputFilterGroups", value); }
         }
 #nullable restore
 #else
-        public List<FilterGroup> InputFilterGroups
+        public List<Microsoft.Graph.Models.FilterGroup> InputFilterGroups
         {
-            get { return BackingStore?.Get<List<FilterGroup>>("inputFilterGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.FilterGroup>>("inputFilterGroups"); }
             set { BackingStore?.Set("inputFilterGroups", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Filter"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Filter"/> and sets the default values.
         /// </summary>
         public Filter()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Filter"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Filter"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Filter CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Filter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Filter();
+            return new Microsoft.Graph.Models.Filter();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,9 +109,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "categoryFilterGroups", n => { CategoryFilterGroups = n.GetCollectionOfObjectValues<FilterGroup>(FilterGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "groups", n => { Groups = n.GetCollectionOfObjectValues<FilterGroup>(FilterGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "inputFilterGroups", n => { InputFilterGroups = n.GetCollectionOfObjectValues<FilterGroup>(FilterGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "categoryFilterGroups", n => { CategoryFilterGroups = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.FilterGroup>(Microsoft.Graph.Models.FilterGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groups", n => { Groups = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.FilterGroup>(Microsoft.Graph.Models.FilterGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "inputFilterGroups", n => { InputFilterGroups = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.FilterGroup>(Microsoft.Graph.Models.FilterGroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -122,9 +122,9 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<FilterGroup>("categoryFilterGroups", CategoryFilterGroups);
-            writer.WriteCollectionOfObjectValues<FilterGroup>("groups", Groups);
-            writer.WriteCollectionOfObjectValues<FilterGroup>("inputFilterGroups", InputFilterGroups);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.FilterGroup>("categoryFilterGroups", CategoryFilterGroups);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.FilterGroup>("groups", Groups);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.FilterGroup>("inputFilterGroups", InputFilterGroups);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

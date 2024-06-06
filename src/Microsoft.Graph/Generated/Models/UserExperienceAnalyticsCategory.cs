@@ -9,49 +9,49 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics category entity contains the scores and insights for the various metrics of a category.
     /// </summary>
-    public class UserExperienceAnalyticsCategory : Entity, IParsable
+    public class UserExperienceAnalyticsCategory : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The insights for the category. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserExperienceAnalyticsInsight>? Insights
+        public List<Microsoft.Graph.Models.UserExperienceAnalyticsInsight>? Insights
         {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsInsight>?>("insights"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserExperienceAnalyticsInsight>?>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
 #nullable restore
 #else
-        public List<UserExperienceAnalyticsInsight> Insights
+        public List<Microsoft.Graph.Models.UserExperienceAnalyticsInsight> Insights
         {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsInsight>>("insights"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserExperienceAnalyticsInsight>>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
 #endif
         /// <summary>The metric values for the user experience analytics category. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserExperienceAnalyticsMetric>? MetricValues
+        public List<Microsoft.Graph.Models.UserExperienceAnalyticsMetric>? MetricValues
         {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsMetric>?>("metricValues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserExperienceAnalyticsMetric>?>("metricValues"); }
             set { BackingStore?.Set("metricValues", value); }
         }
 #nullable restore
 #else
-        public List<UserExperienceAnalyticsMetric> MetricValues
+        public List<Microsoft.Graph.Models.UserExperienceAnalyticsMetric> MetricValues
         {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsMetric>>("metricValues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserExperienceAnalyticsMetric>>("metricValues"); }
             set { BackingStore?.Set("metricValues", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsCategory"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsCategory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsCategory CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserExperienceAnalyticsCategory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsCategory();
+            return new Microsoft.Graph.Models.UserExperienceAnalyticsCategory();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,8 +61,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "insights", n => { Insights = n.GetCollectionOfObjectValues<UserExperienceAnalyticsInsight>(UserExperienceAnalyticsInsight.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "metricValues", n => { MetricValues = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "insights", n => { Insights = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UserExperienceAnalyticsInsight>(Microsoft.Graph.Models.UserExperienceAnalyticsInsight.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "metricValues", n => { MetricValues = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UserExperienceAnalyticsMetric>(Microsoft.Graph.Models.UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -73,8 +73,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<UserExperienceAnalyticsInsight>("insights", Insights);
-            writer.WriteCollectionOfObjectValues<UserExperienceAnalyticsMetric>("metricValues", MetricValues);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UserExperienceAnalyticsInsight>("insights", Insights);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UserExperienceAnalyticsMetric>("metricValues", MetricValues);
         }
     }
 }

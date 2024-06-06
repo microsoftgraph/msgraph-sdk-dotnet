@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class TeamsApp : Entity, IParsable
+    public class TeamsApp : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The details for each version of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TeamsAppDefinition>? AppDefinitions
+        public List<Microsoft.Graph.Models.TeamsAppDefinition>? AppDefinitions
         {
-            get { return BackingStore?.Get<List<TeamsAppDefinition>?>("appDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TeamsAppDefinition>?>("appDefinitions"); }
             set { BackingStore?.Set("appDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<TeamsAppDefinition> AppDefinitions
+        public List<Microsoft.Graph.Models.TeamsAppDefinition> AppDefinitions
         {
-            get { return BackingStore?.Get<List<TeamsAppDefinition>>("appDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TeamsAppDefinition>>("appDefinitions"); }
             set { BackingStore?.Set("appDefinitions", value); }
         }
 #endif
@@ -43,9 +43,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The method of distribution for the app. Read-only.</summary>
-        public TeamsAppDistributionMethod? DistributionMethod
+        public Microsoft.Graph.Models.TeamsAppDistributionMethod? DistributionMethod
         {
-            get { return BackingStore?.Get<TeamsAppDistributionMethod?>("distributionMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsAppDistributionMethod?>("distributionMethod"); }
             set { BackingStore?.Set("distributionMethod", value); }
         }
         /// <summary>The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.</summary>
@@ -67,12 +67,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamsApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamsApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeamsApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TeamsApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamsApp();
+            return new Microsoft.Graph.Models.TeamsApp();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,9 +82,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "appDefinitions", n => { AppDefinitions = n.GetCollectionOfObjectValues<TeamsAppDefinition>(TeamsAppDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appDefinitions", n => { AppDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TeamsAppDefinition>(Microsoft.Graph.Models.TeamsAppDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "distributionMethod", n => { DistributionMethod = n.GetEnumValue<TeamsAppDistributionMethod>(); } },
+                { "distributionMethod", n => { DistributionMethod = n.GetEnumValue<Microsoft.Graph.Models.TeamsAppDistributionMethod>(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
             };
         }
@@ -96,9 +96,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<TeamsAppDefinition>("appDefinitions", AppDefinitions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TeamsAppDefinition>("appDefinitions", AppDefinitions);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<TeamsAppDistributionMethod>("distributionMethod", DistributionMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TeamsAppDistributionMethod>("distributionMethod", DistributionMethod);
             writer.WriteStringValue("externalId", ExternalId);
         }
     }
