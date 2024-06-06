@@ -9,33 +9,33 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Locate device action result
     /// </summary>
-    public class LocateDeviceActionResult : DeviceActionResult, IParsable
+    public class LocateDeviceActionResult : Microsoft.Graph.Models.DeviceActionResult, IParsable
     {
         /// <summary>device location</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceGeoLocation? DeviceLocation
+        public Microsoft.Graph.Models.DeviceGeoLocation? DeviceLocation
         {
-            get { return BackingStore?.Get<DeviceGeoLocation?>("deviceLocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceGeoLocation?>("deviceLocation"); }
             set { BackingStore?.Set("deviceLocation", value); }
         }
 #nullable restore
 #else
-        public DeviceGeoLocation DeviceLocation
+        public Microsoft.Graph.Models.DeviceGeoLocation DeviceLocation
         {
-            get { return BackingStore?.Get<DeviceGeoLocation>("deviceLocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceGeoLocation>("deviceLocation"); }
             set { BackingStore?.Set("deviceLocation", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LocateDeviceActionResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.LocateDeviceActionResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new LocateDeviceActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.LocateDeviceActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LocateDeviceActionResult();
+            return new Microsoft.Graph.Models.LocateDeviceActionResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "deviceLocation", n => { DeviceLocation = n.GetObjectValue<DeviceGeoLocation>(DeviceGeoLocation.CreateFromDiscriminatorValue); } },
+                { "deviceLocation", n => { DeviceLocation = n.GetObjectValue<Microsoft.Graph.Models.DeviceGeoLocation>(Microsoft.Graph.Models.DeviceGeoLocation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<DeviceGeoLocation>("deviceLocation", DeviceLocation);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DeviceGeoLocation>("deviceLocation", DeviceLocation);
         }
     }
 }

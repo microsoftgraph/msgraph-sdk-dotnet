@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue. For more information about each value, see Risk types and detection.</summary>
-        public RiskDetail? Detail
+        public Microsoft.Graph.Models.RiskDetail? Detail
         {
-            get { return BackingStore?.Get<RiskDetail?>("detail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RiskDetail?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RiskUserActivity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.RiskUserActivity"/> and sets the default values.
         /// </summary>
         public RiskUserActivity()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RiskUserActivity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RiskUserActivity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RiskUserActivity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.RiskUserActivity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RiskUserActivity();
+            return new Microsoft.Graph.Models.RiskUserActivity();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "detail", n => { Detail = n.GetEnumValue<RiskDetail>(); } },
+                { "detail", n => { Detail = n.GetEnumValue<Microsoft.Graph.Models.RiskDetail>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<RiskDetail>("detail", Detail);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RiskDetail>("detail", Detail);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("riskEventTypes", RiskEventTypes);
             writer.WriteAdditionalData(AdditionalData);

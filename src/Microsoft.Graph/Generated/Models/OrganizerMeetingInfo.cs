@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OrganizerMeetingInfo : MeetingInfo, IParsable
+    public class OrganizerMeetingInfo : Microsoft.Graph.Models.MeetingInfo, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The organizer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Organizer
+        public Microsoft.Graph.Models.IdentitySet? Organizer
         {
-            get { return BackingStore?.Get<IdentitySet?>("organizer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Organizer
+        public Microsoft.Graph.Models.IdentitySet Organizer
         {
-            get { return BackingStore?.Get<IdentitySet>("organizer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OrganizerMeetingInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OrganizerMeetingInfo"/> and sets the default values.
         /// </summary>
         public OrganizerMeetingInfo() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OrganizerMeetingInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OrganizerMeetingInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OrganizerMeetingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OrganizerMeetingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OrganizerMeetingInfo();
+            return new Microsoft.Graph.Models.OrganizerMeetingInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "organizer", n => { Organizer = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "organizer", n => { Organizer = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<IdentitySet>("organizer", Organizer);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("organizer", Organizer);
         }
     }
 }

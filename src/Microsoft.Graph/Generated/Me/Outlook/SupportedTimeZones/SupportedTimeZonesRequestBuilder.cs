@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZones
     public class SupportedTimeZonesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="SupportedTimeZonesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZones
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SupportedTimeZonesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,49 +34,49 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZones
         /// <summary>
         /// Get the list of time zones that are supported for the user, as configured on the user&apos;s mailbox server. You can explicitly specify to have time zones returned in the Windows time zone format or  Internet Assigned Numbers Authority (IANA) time zone (also known as Olson time zone) format. The Windows format is the default. When setting up an Outlook client, the user selects the preferred time zone from this supported list. You can subsequently get the preferred time zone bygetting the user&apos;s mailbox settings.
         /// </summary>
-        /// <returns>A <see cref="SupportedTimeZonesGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SupportedTimeZonesGetResponse?> GetAsSupportedTimeZonesGetResponseAsync(Action<RequestConfiguration<SupportedTimeZonesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesGetResponse?> GetAsSupportedTimeZonesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder.SupportedTimeZonesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SupportedTimeZonesGetResponse> GetAsSupportedTimeZonesGetResponseAsync(Action<RequestConfiguration<SupportedTimeZonesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesGetResponse> GetAsSupportedTimeZonesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder.SupportedTimeZonesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SupportedTimeZonesGetResponse>(requestInfo, SupportedTimeZonesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesGetResponse>(requestInfo, Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the list of time zones that are supported for the user, as configured on the user&apos;s mailbox server. You can explicitly specify to have time zones returned in the Windows time zone format or  Internet Assigned Numbers Authority (IANA) time zone (also known as Olson time zone) format. The Windows format is the default. When setting up an Outlook client, the user selects the preferred time zone from this supported list. You can subsequently get the preferred time zone bygetting the user&apos;s mailbox settings.
         /// </summary>
-        /// <returns>A <see cref="SupportedTimeZonesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsSupportedTimeZonesGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SupportedTimeZonesResponse?> GetAsync(Action<RequestConfiguration<SupportedTimeZonesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder.SupportedTimeZonesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SupportedTimeZonesResponse> GetAsync(Action<RequestConfiguration<SupportedTimeZonesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder.SupportedTimeZonesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SupportedTimeZonesResponse>(requestInfo, SupportedTimeZonesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesResponse>(requestInfo, Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the list of time zones that are supported for the user, as configured on the user&apos;s mailbox server. You can explicitly specify to have time zones returned in the Windows time zone format or  Internet Assigned Numbers Authority (IANA) time zone (also known as Olson time zone) format. The Windows format is the default. When setting up an Outlook client, the user selects the preferred time zone from this supported list. You can subsequently get the preferred time zone bygetting the user&apos;s mailbox settings.
@@ -85,11 +85,11 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZones
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SupportedTimeZonesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder.SupportedTimeZonesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SupportedTimeZonesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder.SupportedTimeZonesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -100,11 +100,11 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZones
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SupportedTimeZonesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SupportedTimeZonesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder WithUrl(string rawUrl)
         {
-            return new SupportedTimeZonesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the list of time zones that are supported for the user, as configured on the user&apos;s mailbox server. You can explicitly specify to have time zones returned in the Windows time zone format or  Internet Assigned Numbers Authority (IANA) time zone (also known as Olson time zone) format. The Windows format is the default. When setting up an Outlook client, the user selects the preferred time zone from this supported list. You can subsequently get the preferred time zone bygetting the user&apos;s mailbox settings.
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZones
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SupportedTimeZonesRequestBuilderGetRequestConfiguration : RequestConfiguration<SupportedTimeZonesRequestBuilderGetQueryParameters>
+        public class SupportedTimeZonesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder.SupportedTimeZonesRequestBuilderGetQueryParameters>
         {
         }
     }

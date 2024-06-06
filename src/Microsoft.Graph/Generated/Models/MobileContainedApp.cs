@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// An abstract class that represents a contained app in a mobileApp acting as a package.
     /// </summary>
-    public class MobileContainedApp : Entity, IParsable
+    public class MobileContainedApp : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileContainedApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MobileContainedApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileContainedApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MobileContainedApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windowsUniversalAppXContainedApp" => new WindowsUniversalAppXContainedApp(),
-                _ => new MobileContainedApp(),
+                "#microsoft.graph.windowsUniversalAppXContainedApp" => new Microsoft.Graph.Models.WindowsUniversalAppXContainedApp(),
+                _ => new Microsoft.Graph.Models.MobileContainedApp(),
             };
         }
         /// <summary>

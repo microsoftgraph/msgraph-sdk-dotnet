@@ -19,9 +19,9 @@ namespace Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups
     public class SectionGroupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.</summary>
         /// <param name="position">The unique identifier of sectionGroup</param>
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SectionGroupsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SectionGroupsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,25 +55,25 @@ namespace Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups
         /// Retrieve a list of section groups from the specified section group.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="SectionGroupCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SectionGroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SectionGroupCollectionResponse?> GetAsync(Action<RequestConfiguration<SectionGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SectionGroupCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder.SectionGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SectionGroupCollectionResponse> GetAsync(Action<RequestConfiguration<SectionGroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SectionGroupCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder.SectionGroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SectionGroupCollectionResponse>(requestInfo, SectionGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SectionGroupCollectionResponse>(requestInfo, Microsoft.Graph.Models.SectionGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of section groups from the specified section group.
@@ -82,11 +82,11 @@ namespace Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SectionGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder.SectionGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SectionGroupsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder.SectionGroupsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -97,11 +97,11 @@ namespace Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SectionGroupsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SectionGroupsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder WithUrl(string rawUrl)
         {
-            return new SectionGroupsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of section groups from the specified section group.
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SectionGroupsRequestBuilderGetRequestConfiguration : RequestConfiguration<SectionGroupsRequestBuilderGetQueryParameters>
+        public class SectionGroupsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.Onenote.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder.SectionGroupsRequestBuilderGetQueryParameters>
         {
         }
     }

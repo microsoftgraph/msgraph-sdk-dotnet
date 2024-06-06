@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Abstract class that contains properties and inherited properties for apps that you can manage with an Intune app protection policy.
     /// </summary>
-    public class ManagedApp : MobileApp, IParsable
+    public class ManagedApp : Microsoft.Graph.Models.MobileApp, IParsable
     {
         /// <summary>A managed (MAM) application&apos;s availability.</summary>
-        public ManagedAppAvailability? AppAvailability
+        public Microsoft.Graph.Models.ManagedAppAvailability? AppAvailability
         {
-            get { return BackingStore?.Get<ManagedAppAvailability?>("appAvailability"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ManagedAppAvailability?>("appAvailability"); }
             set { BackingStore?.Set("appAvailability", value); }
         }
         /// <summary>The Application&apos;s version.</summary>
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ManagedApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ManagedApp"/> and sets the default values.
         /// </summary>
         public ManagedApp() : base()
         {
@@ -43,20 +43,20 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ManagedApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.managedAndroidLobApp" => new ManagedAndroidLobApp(),
-                "#microsoft.graph.managedAndroidStoreApp" => new ManagedAndroidStoreApp(),
-                "#microsoft.graph.managedIOSLobApp" => new ManagedIOSLobApp(),
-                "#microsoft.graph.managedIOSStoreApp" => new ManagedIOSStoreApp(),
-                "#microsoft.graph.managedMobileLobApp" => new ManagedMobileLobApp(),
-                _ => new ManagedApp(),
+                "#microsoft.graph.managedAndroidLobApp" => new Microsoft.Graph.Models.ManagedAndroidLobApp(),
+                "#microsoft.graph.managedAndroidStoreApp" => new Microsoft.Graph.Models.ManagedAndroidStoreApp(),
+                "#microsoft.graph.managedIOSLobApp" => new Microsoft.Graph.Models.ManagedIOSLobApp(),
+                "#microsoft.graph.managedIOSStoreApp" => new Microsoft.Graph.Models.ManagedIOSStoreApp(),
+                "#microsoft.graph.managedMobileLobApp" => new Microsoft.Graph.Models.ManagedMobileLobApp(),
+                _ => new Microsoft.Graph.Models.ManagedApp(),
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "appAvailability", n => { AppAvailability = n.GetEnumValue<ManagedAppAvailability>(); } },
+                { "appAvailability", n => { AppAvailability = n.GetEnumValue<Microsoft.Graph.Models.ManagedAppAvailability>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<ManagedAppAvailability>("appAvailability", AppAvailability);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ManagedAppAvailability>("appAvailability", AppAvailability);
             writer.WriteStringValue("version", Version);
         }
     }

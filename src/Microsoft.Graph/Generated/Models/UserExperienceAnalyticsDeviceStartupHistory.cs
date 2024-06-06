@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics device startup history entity contains device boot performance history details.
     /// </summary>
-    public class UserExperienceAnalyticsDeviceStartupHistory : Entity, IParsable
+    public class UserExperienceAnalyticsDeviceStartupHistory : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The device core boot time in milliseconds. Supports: $select, $OrderBy. Read-only.</summary>
         public int? CoreBootTimeInMs
@@ -92,9 +92,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("responsiveDesktopTimeInMs", value); }
         }
         /// <summary>Operating System restart category.</summary>
-        public UserExperienceAnalyticsOperatingSystemRestartCategory? RestartCategory
+        public Microsoft.Graph.Models.UserExperienceAnalyticsOperatingSystemRestartCategory? RestartCategory
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsOperatingSystemRestartCategory?>("restartCategory"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsOperatingSystemRestartCategory?>("restartCategory"); }
             set { BackingStore?.Set("restartCategory", value); }
         }
         /// <summary>OS restart fault bucket. The fault bucket is used to find additional information about a system crash. Supports: $select, $OrderBy. Read-only.</summary>
@@ -150,12 +150,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsDeviceStartupHistory"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsDeviceStartupHistory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsDeviceStartupHistory CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserExperienceAnalyticsDeviceStartupHistory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsDeviceStartupHistory();
+            return new Microsoft.Graph.Models.UserExperienceAnalyticsDeviceStartupHistory();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Models
                 { "isFirstLogin", n => { IsFirstLogin = n.GetBoolValue(); } },
                 { "operatingSystemVersion", n => { OperatingSystemVersion = n.GetStringValue(); } },
                 { "responsiveDesktopTimeInMs", n => { ResponsiveDesktopTimeInMs = n.GetIntValue(); } },
-                { "restartCategory", n => { RestartCategory = n.GetEnumValue<UserExperienceAnalyticsOperatingSystemRestartCategory>(); } },
+                { "restartCategory", n => { RestartCategory = n.GetEnumValue<Microsoft.Graph.Models.UserExperienceAnalyticsOperatingSystemRestartCategory>(); } },
                 { "restartFaultBucket", n => { RestartFaultBucket = n.GetStringValue(); } },
                 { "restartStopCode", n => { RestartStopCode = n.GetStringValue(); } },
                 { "startTime", n => { StartTime = n.GetDateTimeOffsetValue(); } },
@@ -201,7 +201,7 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("isFirstLogin", IsFirstLogin);
             writer.WriteStringValue("operatingSystemVersion", OperatingSystemVersion);
             writer.WriteIntValue("responsiveDesktopTimeInMs", ResponsiveDesktopTimeInMs);
-            writer.WriteEnumValue<UserExperienceAnalyticsOperatingSystemRestartCategory>("restartCategory", RestartCategory);
+            writer.WriteEnumValue<Microsoft.Graph.Models.UserExperienceAnalyticsOperatingSystemRestartCategory>("restartCategory", RestartCategory);
             writer.WriteStringValue("restartFaultBucket", RestartFaultBucket);
             writer.WriteStringValue("restartStopCode", RestartStopCode);
             writer.WriteDateTimeOffsetValue("startTime", StartTime);

@@ -7,18 +7,18 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class EdiscoveryIndexOperation : CaseOperation, IParsable
+    public class EdiscoveryIndexOperation : Microsoft.Graph.Models.Security.CaseOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryIndexOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.EdiscoveryIndexOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdiscoveryIndexOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.EdiscoveryIndexOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdiscoveryIndexOperation();
+            return new Microsoft.Graph.Models.Security.EdiscoveryIndexOperation();
         }
         /// <summary>
         /// The deserialization information for the current model

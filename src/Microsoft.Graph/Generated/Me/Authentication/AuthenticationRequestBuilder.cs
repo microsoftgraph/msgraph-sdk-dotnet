@@ -27,57 +27,57 @@ namespace Microsoft.Graph.Me.Authentication
     public class AuthenticationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the emailMethods property of the microsoft.graph.authentication entity.</summary>
-        public EmailMethodsRequestBuilder EmailMethods
+        public Microsoft.Graph.Me.Authentication.EmailMethods.EmailMethodsRequestBuilder EmailMethods
         {
-            get => new EmailMethodsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Authentication.EmailMethods.EmailMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.</summary>
-        public Fido2MethodsRequestBuilder Fido2Methods
+        public Microsoft.Graph.Me.Authentication.Fido2Methods.Fido2MethodsRequestBuilder Fido2Methods
         {
-            get => new Fido2MethodsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Authentication.Fido2Methods.Fido2MethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the methods property of the microsoft.graph.authentication entity.</summary>
-        public MethodsRequestBuilder Methods
+        public Microsoft.Graph.Me.Authentication.Methods.MethodsRequestBuilder Methods
         {
-            get => new MethodsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Authentication.Methods.MethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the microsoftAuthenticatorMethods property of the microsoft.graph.authentication entity.</summary>
-        public MicrosoftAuthenticatorMethodsRequestBuilder MicrosoftAuthenticatorMethods
+        public Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder MicrosoftAuthenticatorMethods
         {
-            get => new MicrosoftAuthenticatorMethodsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.authentication entity.</summary>
-        public OperationsRequestBuilder Operations
+        public Microsoft.Graph.Me.Authentication.Operations.OperationsRequestBuilder Operations
         {
-            get => new OperationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Authentication.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the passwordMethods property of the microsoft.graph.authentication entity.</summary>
-        public PasswordMethodsRequestBuilder PasswordMethods
+        public Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder PasswordMethods
         {
-            get => new PasswordMethodsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the phoneMethods property of the microsoft.graph.authentication entity.</summary>
-        public PhoneMethodsRequestBuilder PhoneMethods
+        public Microsoft.Graph.Me.Authentication.PhoneMethods.PhoneMethodsRequestBuilder PhoneMethods
         {
-            get => new PhoneMethodsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Authentication.PhoneMethods.PhoneMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.</summary>
-        public SoftwareOathMethodsRequestBuilder SoftwareOathMethods
+        public Microsoft.Graph.Me.Authentication.SoftwareOathMethods.SoftwareOathMethodsRequestBuilder SoftwareOathMethods
         {
-            get => new SoftwareOathMethodsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Authentication.SoftwareOathMethods.SoftwareOathMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the temporaryAccessPassMethods property of the microsoft.graph.authentication entity.</summary>
-        public TemporaryAccessPassMethodsRequestBuilder TemporaryAccessPassMethods
+        public Microsoft.Graph.Me.Authentication.TemporaryAccessPassMethods.TemporaryAccessPassMethodsRequestBuilder TemporaryAccessPassMethods
         {
-            get => new TemporaryAccessPassMethodsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Authentication.TemporaryAccessPassMethods.TemporaryAccessPassMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsHelloForBusinessMethods property of the microsoft.graph.authentication entity.</summary>
-        public WindowsHelloForBusinessMethodsRequestBuilder WindowsHelloForBusinessMethods
+        public Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.WindowsHelloForBusinessMethodsRequestBuilder WindowsHelloForBusinessMethods
         {
-            get => new WindowsHelloForBusinessMethodsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.WindowsHelloForBusinessMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Authentication.AuthenticationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Me.Authentication
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Authentication.AuthenticationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Me.Authentication
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Me.Authentication
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -120,20 +120,20 @@ namespace Microsoft.Graph.Me.Authentication
         /// <returns>A <see cref="Microsoft.Graph.Models.Authentication"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Authentication?> GetAsync(Action<RequestConfiguration<AuthenticationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Authentication?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.AuthenticationRequestBuilder.AuthenticationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Authentication> GetAsync(Action<RequestConfiguration<AuthenticationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Authentication> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.AuthenticationRequestBuilder.AuthenticationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Authentication>(requestInfo, Microsoft.Graph.Models.Authentication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Me.Authentication
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.Authentication?> PatchAsync(Microsoft.Graph.Models.Authentication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Me.Authentication
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Authentication>(requestInfo, Microsoft.Graph.Models.Authentication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -188,11 +188,11 @@ namespace Microsoft.Graph.Me.Authentication
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthenticationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.AuthenticationRequestBuilder.AuthenticationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthenticationRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.AuthenticationRequestBuilder.AuthenticationRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -225,11 +225,11 @@ namespace Microsoft.Graph.Me.Authentication
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AuthenticationRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Authentication.AuthenticationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AuthenticationRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Me.Authentication.AuthenticationRequestBuilder WithUrl(string rawUrl)
         {
-            return new AuthenticationRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Me.Authentication.AuthenticationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -268,7 +268,7 @@ namespace Microsoft.Graph.Me.Authentication
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AuthenticationRequestBuilderGetRequestConfiguration : RequestConfiguration<AuthenticationRequestBuilderGetQueryParameters>
+        public class AuthenticationRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.Authentication.AuthenticationRequestBuilder.AuthenticationRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

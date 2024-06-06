@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.IdentityGovernance
 {
     #pragma warning disable CS1591
-    public class Workflow : WorkflowBase, IParsable
+    public class Workflow : Microsoft.Graph.Models.IdentityGovernance.WorkflowBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>When the workflow was deleted.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
@@ -19,16 +19,16 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>The unique identifier of the Microsoft Entra identity that last modified the workflow object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserProcessingResult>? ExecutionScope
+        public List<Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>? ExecutionScope
         {
-            get { return BackingStore?.Get<List<UserProcessingResult>?>("executionScope"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>?>("executionScope"); }
             set { BackingStore?.Set("executionScope", value); }
         }
 #nullable restore
 #else
-        public List<UserProcessingResult> ExecutionScope
+        public List<Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult> ExecutionScope
         {
-            get { return BackingStore?.Get<List<UserProcessingResult>>("executionScope"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>>("executionScope"); }
             set { BackingStore?.Set("executionScope", value); }
         }
 #endif
@@ -57,48 +57,48 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>Workflow runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Run>? Runs
+        public List<Microsoft.Graph.Models.IdentityGovernance.Run>? Runs
         {
-            get { return BackingStore?.Get<List<Run>?>("runs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.Run>?>("runs"); }
             set { BackingStore?.Set("runs", value); }
         }
 #nullable restore
 #else
-        public List<Run> Runs
+        public List<Microsoft.Graph.Models.IdentityGovernance.Run> Runs
         {
-            get { return BackingStore?.Get<List<Run>>("runs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.Run>>("runs"); }
             set { BackingStore?.Set("runs", value); }
         }
 #endif
         /// <summary>Represents the aggregation of task execution data for tasks within a workflow object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TaskReport>? TaskReports
+        public List<Microsoft.Graph.Models.IdentityGovernance.TaskReport>? TaskReports
         {
-            get { return BackingStore?.Get<List<TaskReport>?>("taskReports"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.TaskReport>?>("taskReports"); }
             set { BackingStore?.Set("taskReports", value); }
         }
 #nullable restore
 #else
-        public List<TaskReport> TaskReports
+        public List<Microsoft.Graph.Models.IdentityGovernance.TaskReport> TaskReports
         {
-            get { return BackingStore?.Get<List<TaskReport>>("taskReports"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.TaskReport>>("taskReports"); }
             set { BackingStore?.Set("taskReports", value); }
         }
 #endif
         /// <summary>Per-user workflow execution results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserProcessingResult>? UserProcessingResults
+        public List<Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>? UserProcessingResults
         {
-            get { return BackingStore?.Get<List<UserProcessingResult>?>("userProcessingResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>?>("userProcessingResults"); }
             set { BackingStore?.Set("userProcessingResults", value); }
         }
 #nullable restore
 #else
-        public List<UserProcessingResult> UserProcessingResults
+        public List<Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult> UserProcessingResults
         {
-            get { return BackingStore?.Get<List<UserProcessingResult>>("userProcessingResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>>("userProcessingResults"); }
             set { BackingStore?.Set("userProcessingResults", value); }
         }
 #endif
@@ -111,21 +111,21 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>The workflow versions that are available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkflowVersion>? Versions
+        public List<Microsoft.Graph.Models.IdentityGovernance.WorkflowVersion>? Versions
         {
-            get { return BackingStore?.Get<List<WorkflowVersion>?>("versions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.WorkflowVersion>?>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
 #nullable restore
 #else
-        public List<WorkflowVersion> Versions
+        public List<Microsoft.Graph.Models.IdentityGovernance.WorkflowVersion> Versions
         {
-            get { return BackingStore?.Get<List<WorkflowVersion>>("versions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.WorkflowVersion>>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Workflow"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IdentityGovernance.Workflow"/> and sets the default values.
         /// </summary>
         public Workflow() : base()
         {
@@ -134,12 +134,12 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Workflow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityGovernance.Workflow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Workflow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IdentityGovernance.Workflow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Workflow();
+            return new Microsoft.Graph.Models.IdentityGovernance.Workflow();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -150,14 +150,14 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "executionScope", n => { ExecutionScope = n.GetCollectionOfObjectValues<UserProcessingResult>(UserProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "executionScope", n => { ExecutionScope = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>(Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "nextScheduleRunDateTime", n => { NextScheduleRunDateTime = n.GetDateTimeOffsetValue(); } },
-                { "runs", n => { Runs = n.GetCollectionOfObjectValues<Run>(Run.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "taskReports", n => { TaskReports = n.GetCollectionOfObjectValues<TaskReport>(TaskReport.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "userProcessingResults", n => { UserProcessingResults = n.GetCollectionOfObjectValues<UserProcessingResult>(UserProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "runs", n => { Runs = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.Run>(Microsoft.Graph.Models.IdentityGovernance.Run.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "taskReports", n => { TaskReports = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.TaskReport>(Microsoft.Graph.Models.IdentityGovernance.TaskReport.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userProcessingResults", n => { UserProcessingResults = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>(Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
-                { "versions", n => { Versions = n.GetCollectionOfObjectValues<WorkflowVersion>(WorkflowVersion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "versions", n => { Versions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.WorkflowVersion>(Microsoft.Graph.Models.IdentityGovernance.WorkflowVersion.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -169,14 +169,14 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("deletedDateTime", DeletedDateTime);
-            writer.WriteCollectionOfObjectValues<UserProcessingResult>("executionScope", ExecutionScope);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>("executionScope", ExecutionScope);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("nextScheduleRunDateTime", NextScheduleRunDateTime);
-            writer.WriteCollectionOfObjectValues<Run>("runs", Runs);
-            writer.WriteCollectionOfObjectValues<TaskReport>("taskReports", TaskReports);
-            writer.WriteCollectionOfObjectValues<UserProcessingResult>("userProcessingResults", UserProcessingResults);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.Run>("runs", Runs);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.TaskReport>("taskReports", TaskReports);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>("userProcessingResults", UserProcessingResults);
             writer.WriteIntValue("version", Version);
-            writer.WriteCollectionOfObjectValues<WorkflowVersion>("versions", Versions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.WorkflowVersion>("versions", Versions);
         }
     }
 }

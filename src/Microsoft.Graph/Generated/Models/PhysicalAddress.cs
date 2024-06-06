@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PhysicalAddress"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.PhysicalAddress"/> and sets the default values.
         /// </summary>
         public PhysicalAddress()
         {
@@ -126,12 +126,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PhysicalAddress"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PhysicalAddress"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PhysicalAddress CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.PhysicalAddress CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PhysicalAddress();
+            return new Microsoft.Graph.Models.PhysicalAddress();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -17,7 +17,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
     public class RoleDefinitionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="RoleDefinitionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.RoleDefinition.RoleDefinitionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RoleDefinitionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.RoleDefinition.RoleDefinitionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
         /// <summary>
         /// Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRoleDefinition"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleDefinition?> GetAsync(Action<RequestConfiguration<RoleDefinitionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRoleDefinition?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.RoleDefinition.RoleDefinitionRequestBuilder.RoleDefinitionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedRoleDefinition> GetAsync(Action<RequestConfiguration<RoleDefinitionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRoleDefinition> GetAsync(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.RoleDefinition.RoleDefinitionRequestBuilder.RoleDefinitionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedRoleDefinition>(requestInfo, UnifiedRoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UnifiedRoleDefinition>(requestInfo, Microsoft.Graph.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleDefinitionRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.RoleDefinition.RoleDefinitionRequestBuilder.RoleDefinitionRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleDefinitionRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.RoleDefinition.RoleDefinitionRequestBuilder.RoleDefinitionRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RoleDefinitionRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.RoleDefinition.RoleDefinitionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RoleDefinitionRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.RoleDefinition.RoleDefinitionRequestBuilder WithUrl(string rawUrl)
         {
-            return new RoleDefinitionRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.RoleDefinition.RoleDefinitionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RoleDefinitionRequestBuilderGetRequestConfiguration : RequestConfiguration<RoleDefinitionRequestBuilderGetQueryParameters>
+        public class RoleDefinitionRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.RoleDefinition.RoleDefinitionRequestBuilder.RoleDefinitionRequestBuilderGetQueryParameters>
         {
         }
     }

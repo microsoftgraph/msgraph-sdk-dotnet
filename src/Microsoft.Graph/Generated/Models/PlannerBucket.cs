@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class PlannerBucket : Entity, IParsable
+    public class PlannerBucket : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Name of the bucket.</summary>
@@ -61,28 +61,28 @@ namespace Microsoft.Graph.Models
         /// <summary>Read-only. Nullable. The collection of tasks in the bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerTask>? Tasks
+        public List<Microsoft.Graph.Models.PlannerTask>? Tasks
         {
-            get { return BackingStore?.Get<List<PlannerTask>?>("tasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PlannerTask>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #nullable restore
 #else
-        public List<PlannerTask> Tasks
+        public List<Microsoft.Graph.Models.PlannerTask> Tasks
         {
-            get { return BackingStore?.Get<List<PlannerTask>>("tasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PlannerTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerBucket"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PlannerBucket"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PlannerBucket CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.PlannerBucket CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerBucket();
+            return new Microsoft.Graph.Models.PlannerBucket();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "orderHint", n => { OrderHint = n.GetStringValue(); } },
                 { "planId", n => { PlanId = n.GetStringValue(); } },
-                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.PlannerTask>(Microsoft.Graph.Models.PlannerTask.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("orderHint", OrderHint);
             writer.WriteStringValue("planId", PlanId);
-            writer.WriteCollectionOfObjectValues<PlannerTask>("tasks", Tasks);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.PlannerTask>("tasks", Tasks);
         }
     }
 }

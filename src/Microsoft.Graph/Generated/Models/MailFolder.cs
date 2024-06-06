@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class MailFolder : Entity, IParsable
+    public class MailFolder : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The number of immediate child mailFolders in the current mailFolder.</summary>
@@ -19,16 +19,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of child folders in the mailFolder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MailFolder>? ChildFolders
+        public List<Microsoft.Graph.Models.MailFolder>? ChildFolders
         {
-            get { return BackingStore?.Get<List<MailFolder>?>("childFolders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MailFolder>?>("childFolders"); }
             set { BackingStore?.Set("childFolders", value); }
         }
 #nullable restore
 #else
-        public List<MailFolder> ChildFolders
+        public List<Microsoft.Graph.Models.MailFolder> ChildFolders
         {
-            get { return BackingStore?.Get<List<MailFolder>>("childFolders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MailFolder>>("childFolders"); }
             set { BackingStore?.Set("childFolders", value); }
         }
 #endif
@@ -57,48 +57,48 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of rules that apply to the user&apos;s Inbox folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MessageRule>? MessageRules
+        public List<Microsoft.Graph.Models.MessageRule>? MessageRules
         {
-            get { return BackingStore?.Get<List<MessageRule>?>("messageRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MessageRule>?>("messageRules"); }
             set { BackingStore?.Set("messageRules", value); }
         }
 #nullable restore
 #else
-        public List<MessageRule> MessageRules
+        public List<Microsoft.Graph.Models.MessageRule> MessageRules
         {
-            get { return BackingStore?.Get<List<MessageRule>>("messageRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MessageRule>>("messageRules"); }
             set { BackingStore?.Set("messageRules", value); }
         }
 #endif
         /// <summary>The collection of messages in the mailFolder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Message>? Messages
+        public List<Microsoft.Graph.Models.Message>? Messages
         {
-            get { return BackingStore?.Get<List<Message>?>("messages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Message>?>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
 #nullable restore
 #else
-        public List<Message> Messages
+        public List<Microsoft.Graph.Models.Message> Messages
         {
-            get { return BackingStore?.Get<List<Message>>("messages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Message>>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
 #endif
         /// <summary>The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
+        public List<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
+        public List<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #endif
@@ -121,16 +121,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
+        public List<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
+        public List<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #endif
@@ -149,16 +149,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MailFolder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MailFolder"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MailFolder CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MailFolder CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.mailSearchFolder" => new MailSearchFolder(),
-                _ => new MailFolder(),
+                "#microsoft.graph.mailSearchFolder" => new Microsoft.Graph.Models.MailSearchFolder(),
+                _ => new Microsoft.Graph.Models.MailFolder(),
             };
         }
         /// <summary>
@@ -170,14 +170,14 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "childFolderCount", n => { ChildFolderCount = n.GetIntValue(); } },
-                { "childFolders", n => { ChildFolders = n.GetCollectionOfObjectValues<MailFolder>(MailFolder.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "childFolders", n => { ChildFolders = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MailFolder>(Microsoft.Graph.Models.MailFolder.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "isHidden", n => { IsHidden = n.GetBoolValue(); } },
-                { "messageRules", n => { MessageRules = n.GetCollectionOfObjectValues<MessageRule>(MessageRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<Message>(Message.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "messageRules", n => { MessageRules = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MessageRule>(Microsoft.Graph.Models.MessageRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Message>(Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>(Microsoft.Graph.Models.MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "parentFolderId", n => { ParentFolderId = n.GetStringValue(); } },
-                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>(Microsoft.Graph.Models.SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "totalItemCount", n => { TotalItemCount = n.GetIntValue(); } },
                 { "unreadItemCount", n => { UnreadItemCount = n.GetIntValue(); } },
             };
@@ -191,14 +191,14 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("childFolderCount", ChildFolderCount);
-            writer.WriteCollectionOfObjectValues<MailFolder>("childFolders", ChildFolders);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MailFolder>("childFolders", ChildFolders);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isHidden", IsHidden);
-            writer.WriteCollectionOfObjectValues<MessageRule>("messageRules", MessageRules);
-            writer.WriteCollectionOfObjectValues<Message>("messages", Messages);
-            writer.WriteCollectionOfObjectValues<MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MessageRule>("messageRules", MessageRules);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Message>("messages", Messages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
             writer.WriteStringValue("parentFolderId", ParentFolderId);
-            writer.WriteCollectionOfObjectValues<SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
             writer.WriteIntValue("totalItemCount", TotalItemCount);
             writer.WriteIntValue("unreadItemCount", UnreadItemCount);
         }

@@ -61,16 +61,16 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.CreateLink
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DriveRecipient>? Recipients
+        public List<Microsoft.Graph.Models.DriveRecipient>? Recipients
         {
-            get { return BackingStore?.Get<List<DriveRecipient>?>("recipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DriveRecipient>?>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
 #nullable restore
 #else
-        public List<DriveRecipient> Recipients
+        public List<Microsoft.Graph.Models.DriveRecipient> Recipients
         {
-            get { return BackingStore?.Get<List<DriveRecipient>>("recipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DriveRecipient>>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
 #endif
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.CreateLink
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CreateLinkPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.CreateLink.CreateLinkPostRequestBody"/> and sets the default values.
         /// </summary>
         public CreateLinkPostRequestBody()
         {
@@ -129,12 +129,12 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.CreateLink
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CreateLinkPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.CreateLink.CreateLinkPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CreateLinkPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.CreateLink.CreateLinkPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CreateLinkPostRequestBody();
+            return new Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.CreateLink.CreateLinkPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.CreateLink
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "password", n => { Password = n.GetStringValue(); } },
-                { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DriveRecipient>(Microsoft.Graph.Models.DriveRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "retainInheritedPermissions", n => { RetainInheritedPermissions = n.GetBoolValue(); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
                 { "sendNotification", n => { SendNotification = n.GetBoolValue(); } },
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.CreateLink
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("password", Password);
-            writer.WriteCollectionOfObjectValues<DriveRecipient>("recipients", Recipients);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DriveRecipient>("recipients", Recipients);
             writer.WriteBoolValue("retainInheritedPermissions", RetainInheritedPermissions);
             writer.WriteStringValue("scope", Scope);
             writer.WriteBoolValue("sendNotification", SendNotification);

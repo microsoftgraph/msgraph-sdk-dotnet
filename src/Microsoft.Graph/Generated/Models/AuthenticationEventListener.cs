@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AuthenticationEventListener : Entity, IParsable
+    public class AuthenticationEventListener : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates the authenticationEventListener is associated with an authenticationEventsFlow. Read-only.</summary>
@@ -29,36 +29,36 @@ namespace Microsoft.Graph.Models
         /// <summary>The conditions on which this authenticationEventListener should trigger.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationConditions? Conditions
+        public Microsoft.Graph.Models.AuthenticationConditions? Conditions
         {
-            get { return BackingStore?.Get<AuthenticationConditions?>("conditions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationConditions?>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
 #nullable restore
 #else
-        public AuthenticationConditions Conditions
+        public Microsoft.Graph.Models.AuthenticationConditions Conditions
         {
-            get { return BackingStore?.Get<AuthenticationConditions>("conditions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationConditions>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationEventListener"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationEventListener"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthenticationEventListener CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AuthenticationEventListener CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.onAttributeCollectionListener" => new OnAttributeCollectionListener(),
-                "#microsoft.graph.onAuthenticationMethodLoadStartListener" => new OnAuthenticationMethodLoadStartListener(),
-                "#microsoft.graph.onInteractiveAuthFlowStartListener" => new OnInteractiveAuthFlowStartListener(),
-                "#microsoft.graph.onTokenIssuanceStartListener" => new OnTokenIssuanceStartListener(),
-                "#microsoft.graph.onUserCreateStartListener" => new OnUserCreateStartListener(),
-                _ => new AuthenticationEventListener(),
+                "#microsoft.graph.onAttributeCollectionListener" => new Microsoft.Graph.Models.OnAttributeCollectionListener(),
+                "#microsoft.graph.onAuthenticationMethodLoadStartListener" => new Microsoft.Graph.Models.OnAuthenticationMethodLoadStartListener(),
+                "#microsoft.graph.onInteractiveAuthFlowStartListener" => new Microsoft.Graph.Models.OnInteractiveAuthFlowStartListener(),
+                "#microsoft.graph.onTokenIssuanceStartListener" => new Microsoft.Graph.Models.OnTokenIssuanceStartListener(),
+                "#microsoft.graph.onUserCreateStartListener" => new Microsoft.Graph.Models.OnUserCreateStartListener(),
+                _ => new Microsoft.Graph.Models.AuthenticationEventListener(),
             };
         }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "authenticationEventsFlowId", n => { AuthenticationEventsFlowId = n.GetStringValue(); } },
-                { "conditions", n => { Conditions = n.GetObjectValue<AuthenticationConditions>(AuthenticationConditions.CreateFromDiscriminatorValue); } },
+                { "conditions", n => { Conditions = n.GetObjectValue<Microsoft.Graph.Models.AuthenticationConditions>(Microsoft.Graph.Models.AuthenticationConditions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("authenticationEventsFlowId", AuthenticationEventsFlowId);
-            writer.WriteObjectValue<AuthenticationConditions>("conditions", Conditions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AuthenticationConditions>("conditions", Conditions);
         }
     }
 }

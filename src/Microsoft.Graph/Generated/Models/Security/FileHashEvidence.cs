@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class FileHashEvidence : AlertEvidence, IParsable
+    public class FileHashEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The algorithm property</summary>
-        public FileHashAlgorithm? Algorithm
+        public Microsoft.Graph.Models.Security.FileHashAlgorithm? Algorithm
         {
-            get { return BackingStore?.Get<FileHashAlgorithm?>("algorithm"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FileHashAlgorithm?>("algorithm"); }
             set { BackingStore?.Set("algorithm", value); }
         }
         /// <summary>The value property</summary>
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="FileHashEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.FileHashEvidence"/> and sets the default values.
         /// </summary>
         public FileHashEvidence() : base()
         {
@@ -42,12 +42,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FileHashEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.FileHashEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FileHashEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.FileHashEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FileHashEvidence();
+            return new Microsoft.Graph.Models.Security.FileHashEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "algorithm", n => { Algorithm = n.GetEnumValue<FileHashAlgorithm>(); } },
+                { "algorithm", n => { Algorithm = n.GetEnumValue<Microsoft.Graph.Models.Security.FileHashAlgorithm>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<FileHashAlgorithm>("algorithm", Algorithm);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.FileHashAlgorithm>("algorithm", Algorithm);
             writer.WriteStringValue("value", Value);
         }
     }

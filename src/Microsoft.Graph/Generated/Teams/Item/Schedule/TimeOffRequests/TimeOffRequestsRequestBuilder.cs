@@ -19,86 +19,86 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests
     public class TimeOffRequestsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the timeOffRequests property of the microsoft.graph.schedule entity.</summary>
         /// <param name="position">The unique identifier of timeOffRequest</param>
-        /// <returns>A <see cref="TimeOffRequestItemRequestBuilder"/></returns>
-        public TimeOffRequestItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests.Item.TimeOffRequestItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests.Item.TimeOffRequestItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("timeOffRequest%2Did", position);
-                return new TimeOffRequestItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests.Item.TimeOffRequestItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TimeOffRequestsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests.TimeOffRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeOffRequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/timeOffRequests{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        public TimeOffRequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/timeOffRequests{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TimeOffRequestsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests.TimeOffRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeOffRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/timeOffRequests{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        public TimeOffRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/timeOffRequests{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieve a list of timeOffRequest objects in the team.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/timeoffrequest-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="TimeOffRequestCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TimeOffRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TimeOffRequestCollectionResponse?> GetAsync(Action<RequestConfiguration<TimeOffRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TimeOffRequestCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests.TimeOffRequestsRequestBuilder.TimeOffRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TimeOffRequestCollectionResponse> GetAsync(Action<RequestConfiguration<TimeOffRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TimeOffRequestCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests.TimeOffRequestsRequestBuilder.TimeOffRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TimeOffRequestCollectionResponse>(requestInfo, TimeOffRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TimeOffRequestCollectionResponse>(requestInfo, Microsoft.Graph.Models.TimeOffRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to timeOffRequests for teams
         /// </summary>
-        /// <returns>A <see cref="TimeOffRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TimeOffRequest"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TimeOffRequest?> PostAsync(TimeOffRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TimeOffRequest?> PostAsync(Microsoft.Graph.Models.TimeOffRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TimeOffRequest> PostAsync(TimeOffRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TimeOffRequest> PostAsync(Microsoft.Graph.Models.TimeOffRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TimeOffRequest>(requestInfo, TimeOffRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TimeOffRequest>(requestInfo, Microsoft.Graph.Models.TimeOffRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of timeOffRequest objects in the team.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TimeOffRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests.TimeOffRequestsRequestBuilder.TimeOffRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TimeOffRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests.TimeOffRequestsRequestBuilder.TimeOffRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(TimeOffRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.TimeOffRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(TimeOffRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.TimeOffRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TimeOffRequestsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests.TimeOffRequestsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TimeOffRequestsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests.TimeOffRequestsRequestBuilder WithUrl(string rawUrl)
         {
-            return new TimeOffRequestsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests.TimeOffRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of timeOffRequest objects in the team.
@@ -158,6 +158,16 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -209,7 +219,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TimeOffRequestsRequestBuilderGetRequestConfiguration : RequestConfiguration<TimeOffRequestsRequestBuilderGetQueryParameters>
+        public class TimeOffRequestsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests.TimeOffRequestsRequestBuilder.TimeOffRequestsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

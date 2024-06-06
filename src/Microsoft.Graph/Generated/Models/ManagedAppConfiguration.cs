@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Configuration used to deliver a set of custom settings as-is to apps for users to whom the configuration is scoped
     /// </summary>
-    public class ManagedAppConfiguration : ManagedAppPolicy, IParsable
+    public class ManagedAppConfiguration : Microsoft.Graph.Models.ManagedAppPolicy, IParsable
     {
         /// <summary>A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? CustomSettings
+        public List<Microsoft.Graph.Models.KeyValuePair>? CustomSettings
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("customSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValuePair>?>("customSettings"); }
             set { BackingStore?.Set("customSettings", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> CustomSettings
+        public List<Microsoft.Graph.Models.KeyValuePair> CustomSettings
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("customSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValuePair>>("customSettings"); }
             set { BackingStore?.Set("customSettings", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ManagedAppConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ManagedAppConfiguration"/> and sets the default values.
         /// </summary>
         public ManagedAppConfiguration() : base()
         {
@@ -37,16 +37,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedAppConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedAppConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedAppConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ManagedAppConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.targetedManagedAppConfiguration" => new TargetedManagedAppConfiguration(),
-                _ => new ManagedAppConfiguration(),
+                "#microsoft.graph.targetedManagedAppConfiguration" => new Microsoft.Graph.Models.TargetedManagedAppConfiguration(),
+                _ => new Microsoft.Graph.Models.ManagedAppConfiguration(),
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "customSettings", n => { CustomSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customSettings", n => { CustomSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>(Microsoft.Graph.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("customSettings", CustomSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>("customSettings", CustomSettings);
         }
     }
 }

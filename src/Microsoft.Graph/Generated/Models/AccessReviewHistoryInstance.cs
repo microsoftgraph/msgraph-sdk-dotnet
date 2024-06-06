@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AccessReviewHistoryInstance : Entity, IParsable
+    public class AccessReviewHistoryInstance : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Uri that can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.</summary>
@@ -57,20 +57,20 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("runDateTime", value); }
         }
         /// <summary>Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue. Once the status has been marked as done, a link can be generated to retrieve the instance&apos;s data by calling generateDownloadUri method.</summary>
-        public AccessReviewHistoryStatus? Status
+        public Microsoft.Graph.Models.AccessReviewHistoryStatus? Status
         {
-            get { return BackingStore?.Get<AccessReviewHistoryStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessReviewHistoryStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewHistoryInstance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessReviewHistoryInstance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessReviewHistoryInstance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AccessReviewHistoryInstance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessReviewHistoryInstance();
+            return new Microsoft.Graph.Models.AccessReviewHistoryInstance();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Models
                 { "reviewHistoryPeriodEndDateTime", n => { ReviewHistoryPeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "reviewHistoryPeriodStartDateTime", n => { ReviewHistoryPeriodStartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "runDateTime", n => { RunDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<AccessReviewHistoryStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.AccessReviewHistoryStatus>(); } },
             };
         }
         /// <summary>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("reviewHistoryPeriodEndDateTime", ReviewHistoryPeriodEndDateTime);
             writer.WriteDateTimeOffsetValue("reviewHistoryPeriodStartDateTime", ReviewHistoryPeriodStartDateTime);
             writer.WriteDateTimeOffsetValue("runDateTime", RunDateTime);
-            writer.WriteEnumValue<AccessReviewHistoryStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AccessReviewHistoryStatus>("status", Status);
         }
     }
 }

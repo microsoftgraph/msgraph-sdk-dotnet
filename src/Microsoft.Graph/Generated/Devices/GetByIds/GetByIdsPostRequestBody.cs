@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Devices.GetByIds
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GetByIdsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Devices.GetByIds.GetByIdsPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetByIdsPostRequestBody()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Devices.GetByIds
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetByIdsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Devices.GetByIds.GetByIdsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetByIdsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Devices.GetByIds.GetByIdsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetByIdsPostRequestBody();
+            return new Microsoft.Graph.Devices.GetByIds.GetByIdsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

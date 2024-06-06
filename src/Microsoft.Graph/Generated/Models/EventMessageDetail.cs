@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EventMessageDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.EventMessageDetail"/> and sets the default values.
         /// </summary>
         public EventMessageDetail()
         {
@@ -46,45 +46,45 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EventMessageDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EventMessageDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EventMessageDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.EventMessageDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.callEndedEventMessageDetail" => new CallEndedEventMessageDetail(),
-                "#microsoft.graph.callRecordingEventMessageDetail" => new CallRecordingEventMessageDetail(),
-                "#microsoft.graph.callStartedEventMessageDetail" => new CallStartedEventMessageDetail(),
-                "#microsoft.graph.callTranscriptEventMessageDetail" => new CallTranscriptEventMessageDetail(),
-                "#microsoft.graph.channelAddedEventMessageDetail" => new ChannelAddedEventMessageDetail(),
-                "#microsoft.graph.channelDeletedEventMessageDetail" => new ChannelDeletedEventMessageDetail(),
-                "#microsoft.graph.channelDescriptionUpdatedEventMessageDetail" => new ChannelDescriptionUpdatedEventMessageDetail(),
-                "#microsoft.graph.channelRenamedEventMessageDetail" => new ChannelRenamedEventMessageDetail(),
-                "#microsoft.graph.channelSetAsFavoriteByDefaultEventMessageDetail" => new ChannelSetAsFavoriteByDefaultEventMessageDetail(),
-                "#microsoft.graph.channelUnsetAsFavoriteByDefaultEventMessageDetail" => new ChannelUnsetAsFavoriteByDefaultEventMessageDetail(),
-                "#microsoft.graph.chatRenamedEventMessageDetail" => new ChatRenamedEventMessageDetail(),
-                "#microsoft.graph.conversationMemberRoleUpdatedEventMessageDetail" => new ConversationMemberRoleUpdatedEventMessageDetail(),
-                "#microsoft.graph.meetingPolicyUpdatedEventMessageDetail" => new MeetingPolicyUpdatedEventMessageDetail(),
-                "#microsoft.graph.membersAddedEventMessageDetail" => new MembersAddedEventMessageDetail(),
-                "#microsoft.graph.membersDeletedEventMessageDetail" => new MembersDeletedEventMessageDetail(),
-                "#microsoft.graph.membersJoinedEventMessageDetail" => new MembersJoinedEventMessageDetail(),
-                "#microsoft.graph.membersLeftEventMessageDetail" => new MembersLeftEventMessageDetail(),
-                "#microsoft.graph.messagePinnedEventMessageDetail" => new MessagePinnedEventMessageDetail(),
-                "#microsoft.graph.messageUnpinnedEventMessageDetail" => new MessageUnpinnedEventMessageDetail(),
-                "#microsoft.graph.tabUpdatedEventMessageDetail" => new TabUpdatedEventMessageDetail(),
-                "#microsoft.graph.teamArchivedEventMessageDetail" => new TeamArchivedEventMessageDetail(),
-                "#microsoft.graph.teamCreatedEventMessageDetail" => new TeamCreatedEventMessageDetail(),
-                "#microsoft.graph.teamDescriptionUpdatedEventMessageDetail" => new TeamDescriptionUpdatedEventMessageDetail(),
-                "#microsoft.graph.teamJoiningDisabledEventMessageDetail" => new TeamJoiningDisabledEventMessageDetail(),
-                "#microsoft.graph.teamJoiningEnabledEventMessageDetail" => new TeamJoiningEnabledEventMessageDetail(),
-                "#microsoft.graph.teamRenamedEventMessageDetail" => new TeamRenamedEventMessageDetail(),
-                "#microsoft.graph.teamsAppInstalledEventMessageDetail" => new TeamsAppInstalledEventMessageDetail(),
-                "#microsoft.graph.teamsAppRemovedEventMessageDetail" => new TeamsAppRemovedEventMessageDetail(),
-                "#microsoft.graph.teamsAppUpgradedEventMessageDetail" => new TeamsAppUpgradedEventMessageDetail(),
-                "#microsoft.graph.teamUnarchivedEventMessageDetail" => new TeamUnarchivedEventMessageDetail(),
-                _ => new EventMessageDetail(),
+                "#microsoft.graph.callEndedEventMessageDetail" => new Microsoft.Graph.Models.CallEndedEventMessageDetail(),
+                "#microsoft.graph.callRecordingEventMessageDetail" => new Microsoft.Graph.Models.CallRecordingEventMessageDetail(),
+                "#microsoft.graph.callStartedEventMessageDetail" => new Microsoft.Graph.Models.CallStartedEventMessageDetail(),
+                "#microsoft.graph.callTranscriptEventMessageDetail" => new Microsoft.Graph.Models.CallTranscriptEventMessageDetail(),
+                "#microsoft.graph.channelAddedEventMessageDetail" => new Microsoft.Graph.Models.ChannelAddedEventMessageDetail(),
+                "#microsoft.graph.channelDeletedEventMessageDetail" => new Microsoft.Graph.Models.ChannelDeletedEventMessageDetail(),
+                "#microsoft.graph.channelDescriptionUpdatedEventMessageDetail" => new Microsoft.Graph.Models.ChannelDescriptionUpdatedEventMessageDetail(),
+                "#microsoft.graph.channelRenamedEventMessageDetail" => new Microsoft.Graph.Models.ChannelRenamedEventMessageDetail(),
+                "#microsoft.graph.channelSetAsFavoriteByDefaultEventMessageDetail" => new Microsoft.Graph.Models.ChannelSetAsFavoriteByDefaultEventMessageDetail(),
+                "#microsoft.graph.channelUnsetAsFavoriteByDefaultEventMessageDetail" => new Microsoft.Graph.Models.ChannelUnsetAsFavoriteByDefaultEventMessageDetail(),
+                "#microsoft.graph.chatRenamedEventMessageDetail" => new Microsoft.Graph.Models.ChatRenamedEventMessageDetail(),
+                "#microsoft.graph.conversationMemberRoleUpdatedEventMessageDetail" => new Microsoft.Graph.Models.ConversationMemberRoleUpdatedEventMessageDetail(),
+                "#microsoft.graph.meetingPolicyUpdatedEventMessageDetail" => new Microsoft.Graph.Models.MeetingPolicyUpdatedEventMessageDetail(),
+                "#microsoft.graph.membersAddedEventMessageDetail" => new Microsoft.Graph.Models.MembersAddedEventMessageDetail(),
+                "#microsoft.graph.membersDeletedEventMessageDetail" => new Microsoft.Graph.Models.MembersDeletedEventMessageDetail(),
+                "#microsoft.graph.membersJoinedEventMessageDetail" => new Microsoft.Graph.Models.MembersJoinedEventMessageDetail(),
+                "#microsoft.graph.membersLeftEventMessageDetail" => new Microsoft.Graph.Models.MembersLeftEventMessageDetail(),
+                "#microsoft.graph.messagePinnedEventMessageDetail" => new Microsoft.Graph.Models.MessagePinnedEventMessageDetail(),
+                "#microsoft.graph.messageUnpinnedEventMessageDetail" => new Microsoft.Graph.Models.MessageUnpinnedEventMessageDetail(),
+                "#microsoft.graph.tabUpdatedEventMessageDetail" => new Microsoft.Graph.Models.TabUpdatedEventMessageDetail(),
+                "#microsoft.graph.teamArchivedEventMessageDetail" => new Microsoft.Graph.Models.TeamArchivedEventMessageDetail(),
+                "#microsoft.graph.teamCreatedEventMessageDetail" => new Microsoft.Graph.Models.TeamCreatedEventMessageDetail(),
+                "#microsoft.graph.teamDescriptionUpdatedEventMessageDetail" => new Microsoft.Graph.Models.TeamDescriptionUpdatedEventMessageDetail(),
+                "#microsoft.graph.teamJoiningDisabledEventMessageDetail" => new Microsoft.Graph.Models.TeamJoiningDisabledEventMessageDetail(),
+                "#microsoft.graph.teamJoiningEnabledEventMessageDetail" => new Microsoft.Graph.Models.TeamJoiningEnabledEventMessageDetail(),
+                "#microsoft.graph.teamRenamedEventMessageDetail" => new Microsoft.Graph.Models.TeamRenamedEventMessageDetail(),
+                "#microsoft.graph.teamsAppInstalledEventMessageDetail" => new Microsoft.Graph.Models.TeamsAppInstalledEventMessageDetail(),
+                "#microsoft.graph.teamsAppRemovedEventMessageDetail" => new Microsoft.Graph.Models.TeamsAppRemovedEventMessageDetail(),
+                "#microsoft.graph.teamsAppUpgradedEventMessageDetail" => new Microsoft.Graph.Models.TeamsAppUpgradedEventMessageDetail(),
+                "#microsoft.graph.teamUnarchivedEventMessageDetail" => new Microsoft.Graph.Models.TeamUnarchivedEventMessageDetail(),
+                _ => new Microsoft.Graph.Models.EventMessageDetail(),
             };
         }
         /// <summary>

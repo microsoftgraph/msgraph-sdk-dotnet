@@ -36,13 +36,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The type of account target content. Possible values are: unknown, includeAll, addressBook, unknownFutureValue.</summary>
-        public AccountTargetContentType? Type
+        public Microsoft.Graph.Models.AccountTargetContentType? Type
         {
-            get { return BackingStore?.Get<AccountTargetContentType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccountTargetContentType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AccountTargetContent"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AccountTargetContent"/> and sets the default values.
         /// </summary>
         public AccountTargetContent()
         {
@@ -52,17 +52,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccountTargetContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccountTargetContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccountTargetContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AccountTargetContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.addressBookAccountTargetContent" => new AddressBookAccountTargetContent(),
-                "#microsoft.graph.includeAllAccountTargetContent" => new IncludeAllAccountTargetContent(),
-                _ => new AccountTargetContent(),
+                "#microsoft.graph.addressBookAccountTargetContent" => new Microsoft.Graph.Models.AddressBookAccountTargetContent(),
+                "#microsoft.graph.includeAllAccountTargetContent" => new Microsoft.Graph.Models.IncludeAllAccountTargetContent(),
+                _ => new Microsoft.Graph.Models.AccountTargetContent(),
             };
         }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<AccountTargetContentType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Models.AccountTargetContentType>(); } },
             };
         }
         /// <summary>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<AccountTargetContentType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AccountTargetContentType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

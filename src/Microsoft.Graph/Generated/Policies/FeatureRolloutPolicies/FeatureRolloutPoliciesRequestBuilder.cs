@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies
     public class FeatureRolloutPoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Policies.FeatureRolloutPolicies.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Policies.FeatureRolloutPolicies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the featureRolloutPolicies property of the microsoft.graph.policyRoot entity.</summary>
         /// <param name="position">The unique identifier of featureRolloutPolicy</param>
-        /// <returns>A <see cref="FeatureRolloutPolicyItemRequestBuilder"/></returns>
-        public FeatureRolloutPolicyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.FeatureRolloutPolicyItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.FeatureRolloutPolicyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("featureRolloutPolicy%2Did", position);
-                return new FeatureRolloutPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.FeatureRolloutPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="FeatureRolloutPoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Policies.FeatureRolloutPolicies.FeatureRolloutPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="FeatureRolloutPoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Policies.FeatureRolloutPolicies.FeatureRolloutPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies
         /// Retrieve a list of featureRolloutPolicy objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/featurerolloutpolicies-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="FeatureRolloutPolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.FeatureRolloutPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FeatureRolloutPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<FeatureRolloutPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.FeatureRolloutPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Policies.FeatureRolloutPolicies.FeatureRolloutPoliciesRequestBuilder.FeatureRolloutPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FeatureRolloutPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<FeatureRolloutPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.FeatureRolloutPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Policies.FeatureRolloutPolicies.FeatureRolloutPoliciesRequestBuilder.FeatureRolloutPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FeatureRolloutPolicyCollectionResponse>(requestInfo, FeatureRolloutPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.FeatureRolloutPolicyCollectionResponse>(requestInfo, Microsoft.Graph.Models.FeatureRolloutPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new featureRolloutPolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/featurerolloutpolicies-post?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="FeatureRolloutPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.FeatureRolloutPolicy"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FeatureRolloutPolicy?> PostAsync(FeatureRolloutPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.FeatureRolloutPolicy?> PostAsync(Microsoft.Graph.Models.FeatureRolloutPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FeatureRolloutPolicy> PostAsync(FeatureRolloutPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.FeatureRolloutPolicy> PostAsync(Microsoft.Graph.Models.FeatureRolloutPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FeatureRolloutPolicy>(requestInfo, FeatureRolloutPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.FeatureRolloutPolicy>(requestInfo, Microsoft.Graph.Models.FeatureRolloutPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of featureRolloutPolicy objects.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FeatureRolloutPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Policies.FeatureRolloutPolicies.FeatureRolloutPoliciesRequestBuilder.FeatureRolloutPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FeatureRolloutPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Policies.FeatureRolloutPolicies.FeatureRolloutPoliciesRequestBuilder.FeatureRolloutPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(FeatureRolloutPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.FeatureRolloutPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(FeatureRolloutPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.FeatureRolloutPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="FeatureRolloutPoliciesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Policies.FeatureRolloutPolicies.FeatureRolloutPoliciesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FeatureRolloutPoliciesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Policies.FeatureRolloutPolicies.FeatureRolloutPoliciesRequestBuilder WithUrl(string rawUrl)
         {
-            return new FeatureRolloutPoliciesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Policies.FeatureRolloutPolicies.FeatureRolloutPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of featureRolloutPolicy objects.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FeatureRolloutPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<FeatureRolloutPoliciesRequestBuilderGetQueryParameters>
+        public class FeatureRolloutPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Policies.FeatureRolloutPolicies.FeatureRolloutPoliciesRequestBuilder.FeatureRolloutPoliciesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

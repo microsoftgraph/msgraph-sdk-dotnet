@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class RecordOperation : CommsOperation, IParsable
+    public class RecordOperation : Microsoft.Graph.Models.CommsOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The access token required to retrieve the recording.</summary>
@@ -45,12 +45,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RecordOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RecordOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RecordOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.RecordOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RecordOperation();
+            return new Microsoft.Graph.Models.RecordOperation();
         }
         /// <summary>
         /// The deserialization information for the current model

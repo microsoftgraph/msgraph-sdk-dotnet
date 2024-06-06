@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AccessReviewInstanceDecisionItem : Entity, IParsable
+    public class AccessReviewInstanceDecisionItem : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identifier of the accessReviewInstance parent. Supports $select. Read-only.</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The identifier of the user who applied the decision. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? AppliedBy
+        public Microsoft.Graph.Models.UserIdentity? AppliedBy
         {
-            get { return BackingStore?.Get<UserIdentity?>("appliedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserIdentity?>("appliedBy"); }
             set { BackingStore?.Set("appliedBy", value); }
         }
 #nullable restore
 #else
-        public UserIdentity AppliedBy
+        public Microsoft.Graph.Models.UserIdentity AppliedBy
         {
-            get { return BackingStore?.Get<UserIdentity>("appliedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserIdentity>("appliedBy"); }
             set { BackingStore?.Set("appliedBy", value); }
         }
 #endif
@@ -83,16 +83,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GovernanceInsight>? Insights
+        public List<Microsoft.Graph.Models.GovernanceInsight>? Insights
         {
-            get { return BackingStore?.Get<List<GovernanceInsight>?>("insights"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.GovernanceInsight>?>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
 #nullable restore
 #else
-        public List<GovernanceInsight> Insights
+        public List<Microsoft.Graph.Models.GovernanceInsight> Insights
         {
-            get { return BackingStore?.Get<List<GovernanceInsight>>("insights"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.GovernanceInsight>>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
 #endif
@@ -115,16 +115,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Every decision item in an access review represents a principal&apos;s access to a resource. This property represents details of the principal. For example, if a decision item represents access of User &apos;Bob&apos; to Group &apos;Sales&apos; - The principal is &apos;Bob&apos; and the resource is &apos;Sales&apos;. Principals can be of two types - userIdentity and servicePrincipalIdentity. Supports $select. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Principal
+        public Microsoft.Graph.Models.Identity? Principal
         {
-            get { return BackingStore?.Get<Identity?>("principal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity?>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #nullable restore
 #else
-        public Identity Principal
+        public Microsoft.Graph.Models.Identity Principal
         {
-            get { return BackingStore?.Get<Identity>("principal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #endif
@@ -163,16 +163,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Every decision item in an access review represents a principal&apos;s access to a resource. This property represents details of the resource. For example, if a decision item represents access of User &apos;Bob&apos; to Group &apos;Sales&apos; - The principal is Bob and the resource is &apos;Sales&apos;. Resources can be of multiple types. See accessReviewInstanceDecisionItemResource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessReviewInstanceDecisionItemResource? Resource
+        public Microsoft.Graph.Models.AccessReviewInstanceDecisionItemResource? Resource
         {
-            get { return BackingStore?.Get<AccessReviewInstanceDecisionItemResource?>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessReviewInstanceDecisionItemResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public AccessReviewInstanceDecisionItemResource Resource
+        public Microsoft.Graph.Models.AccessReviewInstanceDecisionItemResource Resource
         {
-            get { return BackingStore?.Get<AccessReviewInstanceDecisionItemResource>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessReviewInstanceDecisionItemResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #endif
@@ -195,16 +195,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The identifier of the reviewer.00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn&apos;t reviewed. Supports $select. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? ReviewedBy
+        public Microsoft.Graph.Models.UserIdentity? ReviewedBy
         {
-            get { return BackingStore?.Get<UserIdentity?>("reviewedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserIdentity?>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
 #nullable restore
 #else
-        public UserIdentity ReviewedBy
+        public Microsoft.Graph.Models.UserIdentity ReviewedBy
         {
-            get { return BackingStore?.Get<UserIdentity>("reviewedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserIdentity>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
 #endif
@@ -217,12 +217,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewInstanceDecisionItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessReviewInstanceDecisionItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessReviewInstanceDecisionItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AccessReviewInstanceDecisionItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessReviewInstanceDecisionItem();
+            return new Microsoft.Graph.Models.AccessReviewInstanceDecisionItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -233,18 +233,18 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "accessReviewId", n => { AccessReviewId = n.GetStringValue(); } },
-                { "appliedBy", n => { AppliedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "appliedBy", n => { AppliedBy = n.GetObjectValue<Microsoft.Graph.Models.UserIdentity>(Microsoft.Graph.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "appliedDateTime", n => { AppliedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "applyResult", n => { ApplyResult = n.GetStringValue(); } },
                 { "decision", n => { Decision = n.GetStringValue(); } },
-                { "insights", n => { Insights = n.GetCollectionOfObjectValues<GovernanceInsight>(GovernanceInsight.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "insights", n => { Insights = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.GovernanceInsight>(Microsoft.Graph.Models.GovernanceInsight.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
-                { "principal", n => { Principal = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "principal", n => { Principal = n.GetObjectValue<Microsoft.Graph.Models.Identity>(Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "principalLink", n => { PrincipalLink = n.GetStringValue(); } },
                 { "recommendation", n => { Recommendation = n.GetStringValue(); } },
-                { "resource", n => { Resource = n.GetObjectValue<AccessReviewInstanceDecisionItemResource>(AccessReviewInstanceDecisionItemResource.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<Microsoft.Graph.Models.AccessReviewInstanceDecisionItemResource>(Microsoft.Graph.Models.AccessReviewInstanceDecisionItemResource.CreateFromDiscriminatorValue); } },
                 { "resourceLink", n => { ResourceLink = n.GetStringValue(); } },
-                { "reviewedBy", n => { ReviewedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "reviewedBy", n => { ReviewedBy = n.GetObjectValue<Microsoft.Graph.Models.UserIdentity>(Microsoft.Graph.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "reviewedDateTime", n => { ReviewedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -257,18 +257,18 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("accessReviewId", AccessReviewId);
-            writer.WriteObjectValue<UserIdentity>("appliedBy", AppliedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserIdentity>("appliedBy", AppliedBy);
             writer.WriteDateTimeOffsetValue("appliedDateTime", AppliedDateTime);
             writer.WriteStringValue("applyResult", ApplyResult);
             writer.WriteStringValue("decision", Decision);
-            writer.WriteCollectionOfObjectValues<GovernanceInsight>("insights", Insights);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.GovernanceInsight>("insights", Insights);
             writer.WriteStringValue("justification", Justification);
-            writer.WriteObjectValue<Identity>("principal", Principal);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Identity>("principal", Principal);
             writer.WriteStringValue("principalLink", PrincipalLink);
             writer.WriteStringValue("recommendation", Recommendation);
-            writer.WriteObjectValue<AccessReviewInstanceDecisionItemResource>("resource", Resource);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AccessReviewInstanceDecisionItemResource>("resource", Resource);
             writer.WriteStringValue("resourceLink", ResourceLink);
-            writer.WriteObjectValue<UserIdentity>("reviewedBy", ReviewedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UserIdentity>("reviewedBy", ReviewedBy);
             writer.WriteDateTimeOffsetValue("reviewedDateTime", ReviewedDateTime);
         }
     }

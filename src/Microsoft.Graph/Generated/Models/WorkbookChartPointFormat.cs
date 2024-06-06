@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookChartPointFormat : Entity, IParsable
+    public class WorkbookChartPointFormat : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the fill format of a chart, which includes background formatting information. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartFill? Fill
+        public Microsoft.Graph.Models.WorkbookChartFill? Fill
         {
-            get { return BackingStore?.Get<WorkbookChartFill?>("fill"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartFill?>("fill"); }
             set { BackingStore?.Set("fill", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartFill Fill
+        public Microsoft.Graph.Models.WorkbookChartFill Fill
         {
-            get { return BackingStore?.Get<WorkbookChartFill>("fill"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartFill>("fill"); }
             set { BackingStore?.Set("fill", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookChartPointFormat"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookChartPointFormat"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookChartPointFormat CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WorkbookChartPointFormat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookChartPointFormat();
+            return new Microsoft.Graph.Models.WorkbookChartPointFormat();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "fill", n => { Fill = n.GetObjectValue<WorkbookChartFill>(WorkbookChartFill.CreateFromDiscriminatorValue); } },
+                { "fill", n => { Fill = n.GetObjectValue<Microsoft.Graph.Models.WorkbookChartFill>(Microsoft.Graph.Models.WorkbookChartFill.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<WorkbookChartFill>("fill", Fill);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookChartFill>("fill", Fill);
         }
     }
 }

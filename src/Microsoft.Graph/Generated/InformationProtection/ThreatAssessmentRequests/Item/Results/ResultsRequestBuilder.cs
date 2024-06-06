@@ -19,24 +19,24 @@ namespace Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Re
     public class ResultsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Results.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Results.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.</summary>
         /// <param name="position">The unique identifier of threatAssessmentResult</param>
-        /// <returns>A <see cref="ThreatAssessmentResultItemRequestBuilder"/></returns>
-        public ThreatAssessmentResultItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Results.Item.ThreatAssessmentResultItemRequestBuilder"/></returns>
+        public Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Results.Item.ThreatAssessmentResultItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("threatAssessmentResult%2Did", position);
-                return new ThreatAssessmentResultItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Results.Item.ThreatAssessmentResultItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ResultsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Results.ResultsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Re
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ResultsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Results.ResultsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Re
         /// <summary>
         /// A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
         /// </summary>
-        /// <returns>A <see cref="ThreatAssessmentResultCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ThreatAssessmentResultCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ThreatAssessmentResultCollectionResponse?> GetAsync(Action<RequestConfiguration<ResultsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ThreatAssessmentResultCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Results.ResultsRequestBuilder.ResultsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ThreatAssessmentResultCollectionResponse> GetAsync(Action<RequestConfiguration<ResultsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ThreatAssessmentResultCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Results.ResultsRequestBuilder.ResultsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ThreatAssessmentResultCollectionResponse>(requestInfo, ThreatAssessmentResultCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ThreatAssessmentResultCollectionResponse>(requestInfo, Microsoft.Graph.Models.ThreatAssessmentResultCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to results for informationProtection
         /// </summary>
-        /// <returns>A <see cref="ThreatAssessmentResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ThreatAssessmentResult"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ThreatAssessmentResult?> PostAsync(ThreatAssessmentResult body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ThreatAssessmentResult?> PostAsync(Microsoft.Graph.Models.ThreatAssessmentResult body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ThreatAssessmentResult> PostAsync(ThreatAssessmentResult body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ThreatAssessmentResult> PostAsync(Microsoft.Graph.Models.ThreatAssessmentResult body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ThreatAssessmentResult>(requestInfo, ThreatAssessmentResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ThreatAssessmentResult>(requestInfo, Microsoft.Graph.Models.ThreatAssessmentResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Re
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResultsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Results.ResultsRequestBuilder.ResultsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResultsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Results.ResultsRequestBuilder.ResultsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Re
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ThreatAssessmentResult body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ThreatAssessmentResult body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ThreatAssessmentResult body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ThreatAssessmentResult body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Re
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ResultsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Results.ResultsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ResultsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Results.ResultsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ResultsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Results.ResultsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Re
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ResultsRequestBuilderGetRequestConfiguration : RequestConfiguration<ResultsRequestBuilderGetQueryParameters>
+        public class ResultsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.InformationProtection.ThreatAssessmentRequests.Item.Results.ResultsRequestBuilder.ResultsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

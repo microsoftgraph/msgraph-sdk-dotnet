@@ -7,18 +7,18 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class AuthorityTemplate : FilePlanDescriptorTemplate, IParsable
+    public class AuthorityTemplate : Microsoft.Graph.Models.Security.FilePlanDescriptorTemplate, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthorityTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.AuthorityTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthorityTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.AuthorityTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthorityTemplate();
+            return new Microsoft.Graph.Models.Security.AuthorityTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model

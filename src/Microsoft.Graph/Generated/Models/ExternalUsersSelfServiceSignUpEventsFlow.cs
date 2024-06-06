@@ -7,75 +7,75 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ExternalUsersSelfServiceSignUpEventsFlow : AuthenticationEventsFlow, IParsable
+    public class ExternalUsersSelfServiceSignUpEventsFlow : Microsoft.Graph.Models.AuthenticationEventsFlow, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The configuration for what to invoke when attributes are ready to be collected from the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnAttributeCollectionHandler? OnAttributeCollection
+        public Microsoft.Graph.Models.OnAttributeCollectionHandler? OnAttributeCollection
         {
-            get { return BackingStore?.Get<OnAttributeCollectionHandler?>("onAttributeCollection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnAttributeCollectionHandler?>("onAttributeCollection"); }
             set { BackingStore?.Set("onAttributeCollection", value); }
         }
 #nullable restore
 #else
-        public OnAttributeCollectionHandler OnAttributeCollection
+        public Microsoft.Graph.Models.OnAttributeCollectionHandler OnAttributeCollection
         {
-            get { return BackingStore?.Get<OnAttributeCollectionHandler>("onAttributeCollection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnAttributeCollectionHandler>("onAttributeCollection"); }
             set { BackingStore?.Set("onAttributeCollection", value); }
         }
 #endif
         /// <summary>Required. The configuration for what to invoke when authentication methods are ready to be presented to the user. Must have at least one identity provider linked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnAuthenticationMethodLoadStartHandler? OnAuthenticationMethodLoadStart
+        public Microsoft.Graph.Models.OnAuthenticationMethodLoadStartHandler? OnAuthenticationMethodLoadStart
         {
-            get { return BackingStore?.Get<OnAuthenticationMethodLoadStartHandler?>("onAuthenticationMethodLoadStart"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnAuthenticationMethodLoadStartHandler?>("onAuthenticationMethodLoadStart"); }
             set { BackingStore?.Set("onAuthenticationMethodLoadStart", value); }
         }
 #nullable restore
 #else
-        public OnAuthenticationMethodLoadStartHandler OnAuthenticationMethodLoadStart
+        public Microsoft.Graph.Models.OnAuthenticationMethodLoadStartHandler OnAuthenticationMethodLoadStart
         {
-            get { return BackingStore?.Get<OnAuthenticationMethodLoadStartHandler>("onAuthenticationMethodLoadStart"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnAuthenticationMethodLoadStartHandler>("onAuthenticationMethodLoadStart"); }
             set { BackingStore?.Set("onAuthenticationMethodLoadStart", value); }
         }
 #endif
         /// <summary>Required. The configuration for what to invoke when an authentication flow is ready to be initiated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnInteractiveAuthFlowStartHandler? OnInteractiveAuthFlowStart
+        public Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler? OnInteractiveAuthFlowStart
         {
-            get { return BackingStore?.Get<OnInteractiveAuthFlowStartHandler?>("onInteractiveAuthFlowStart"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler?>("onInteractiveAuthFlowStart"); }
             set { BackingStore?.Set("onInteractiveAuthFlowStart", value); }
         }
 #nullable restore
 #else
-        public OnInteractiveAuthFlowStartHandler OnInteractiveAuthFlowStart
+        public Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler OnInteractiveAuthFlowStart
         {
-            get { return BackingStore?.Get<OnInteractiveAuthFlowStartHandler>("onInteractiveAuthFlowStart"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler>("onInteractiveAuthFlowStart"); }
             set { BackingStore?.Set("onInteractiveAuthFlowStart", value); }
         }
 #endif
         /// <summary>The configuration for what to invoke during user creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnUserCreateStartHandler? OnUserCreateStart
+        public Microsoft.Graph.Models.OnUserCreateStartHandler? OnUserCreateStart
         {
-            get { return BackingStore?.Get<OnUserCreateStartHandler?>("onUserCreateStart"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnUserCreateStartHandler?>("onUserCreateStart"); }
             set { BackingStore?.Set("onUserCreateStart", value); }
         }
 #nullable restore
 #else
-        public OnUserCreateStartHandler OnUserCreateStart
+        public Microsoft.Graph.Models.OnUserCreateStartHandler OnUserCreateStart
         {
-            get { return BackingStore?.Get<OnUserCreateStartHandler>("onUserCreateStart"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnUserCreateStartHandler>("onUserCreateStart"); }
             set { BackingStore?.Set("onUserCreateStart", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ExternalUsersSelfServiceSignUpEventsFlow"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ExternalUsersSelfServiceSignUpEventsFlow"/> and sets the default values.
         /// </summary>
         public ExternalUsersSelfServiceSignUpEventsFlow() : base()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExternalUsersSelfServiceSignUpEventsFlow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ExternalUsersSelfServiceSignUpEventsFlow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExternalUsersSelfServiceSignUpEventsFlow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ExternalUsersSelfServiceSignUpEventsFlow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExternalUsersSelfServiceSignUpEventsFlow();
+            return new Microsoft.Graph.Models.ExternalUsersSelfServiceSignUpEventsFlow();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,10 +99,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "onAttributeCollection", n => { OnAttributeCollection = n.GetObjectValue<OnAttributeCollectionHandler>(OnAttributeCollectionHandler.CreateFromDiscriminatorValue); } },
-                { "onAuthenticationMethodLoadStart", n => { OnAuthenticationMethodLoadStart = n.GetObjectValue<OnAuthenticationMethodLoadStartHandler>(OnAuthenticationMethodLoadStartHandler.CreateFromDiscriminatorValue); } },
-                { "onInteractiveAuthFlowStart", n => { OnInteractiveAuthFlowStart = n.GetObjectValue<OnInteractiveAuthFlowStartHandler>(OnInteractiveAuthFlowStartHandler.CreateFromDiscriminatorValue); } },
-                { "onUserCreateStart", n => { OnUserCreateStart = n.GetObjectValue<OnUserCreateStartHandler>(OnUserCreateStartHandler.CreateFromDiscriminatorValue); } },
+                { "onAttributeCollection", n => { OnAttributeCollection = n.GetObjectValue<Microsoft.Graph.Models.OnAttributeCollectionHandler>(Microsoft.Graph.Models.OnAttributeCollectionHandler.CreateFromDiscriminatorValue); } },
+                { "onAuthenticationMethodLoadStart", n => { OnAuthenticationMethodLoadStart = n.GetObjectValue<Microsoft.Graph.Models.OnAuthenticationMethodLoadStartHandler>(Microsoft.Graph.Models.OnAuthenticationMethodLoadStartHandler.CreateFromDiscriminatorValue); } },
+                { "onInteractiveAuthFlowStart", n => { OnInteractiveAuthFlowStart = n.GetObjectValue<Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler>(Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler.CreateFromDiscriminatorValue); } },
+                { "onUserCreateStart", n => { OnUserCreateStart = n.GetObjectValue<Microsoft.Graph.Models.OnUserCreateStartHandler>(Microsoft.Graph.Models.OnUserCreateStartHandler.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -113,10 +113,10 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<OnAttributeCollectionHandler>("onAttributeCollection", OnAttributeCollection);
-            writer.WriteObjectValue<OnAuthenticationMethodLoadStartHandler>("onAuthenticationMethodLoadStart", OnAuthenticationMethodLoadStart);
-            writer.WriteObjectValue<OnInteractiveAuthFlowStartHandler>("onInteractiveAuthFlowStart", OnInteractiveAuthFlowStart);
-            writer.WriteObjectValue<OnUserCreateStartHandler>("onUserCreateStart", OnUserCreateStart);
+            writer.WriteObjectValue<Microsoft.Graph.Models.OnAttributeCollectionHandler>("onAttributeCollection", OnAttributeCollection);
+            writer.WriteObjectValue<Microsoft.Graph.Models.OnAuthenticationMethodLoadStartHandler>("onAuthenticationMethodLoadStart", OnAuthenticationMethodLoadStart);
+            writer.WriteObjectValue<Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler>("onInteractiveAuthFlowStart", OnInteractiveAuthFlowStart);
+            writer.WriteObjectValue<Microsoft.Graph.Models.OnUserCreateStartHandler>("onUserCreateStart", OnUserCreateStart);
         }
     }
 }

@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The street address of the location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PhysicalAddress? Address
+        public Microsoft.Graph.Models.PhysicalAddress? Address
         {
-            get { return BackingStore?.Get<PhysicalAddress?>("address"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PhysicalAddress?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
 #nullable restore
 #else
-        public PhysicalAddress Address
+        public Microsoft.Graph.Models.PhysicalAddress Address
         {
-            get { return BackingStore?.Get<PhysicalAddress>("address"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PhysicalAddress>("address"); }
             set { BackingStore?.Set("address", value); }
         }
 #endif
@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The geographic coordinates and elevation of the location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OutlookGeoCoordinates? Coordinates
+        public Microsoft.Graph.Models.OutlookGeoCoordinates? Coordinates
         {
-            get { return BackingStore?.Get<OutlookGeoCoordinates?>("coordinates"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OutlookGeoCoordinates?>("coordinates"); }
             set { BackingStore?.Set("coordinates", value); }
         }
 #nullable restore
 #else
-        public OutlookGeoCoordinates Coordinates
+        public Microsoft.Graph.Models.OutlookGeoCoordinates Coordinates
         {
-            get { return BackingStore?.Get<OutlookGeoCoordinates>("coordinates"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OutlookGeoCoordinates>("coordinates"); }
             set { BackingStore?.Set("coordinates", value); }
         }
 #endif
@@ -138,13 +138,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>For internal use only.</summary>
-        public LocationUniqueIdType? UniqueIdType
+        public Microsoft.Graph.Models.LocationUniqueIdType? UniqueIdType
         {
-            get { return BackingStore?.Get<LocationUniqueIdType?>("uniqueIdType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.LocationUniqueIdType?>("uniqueIdType"); }
             set { BackingStore?.Set("uniqueIdType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Location"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Location"/> and sets the default values.
         /// </summary>
         public Location()
         {
@@ -154,16 +154,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Location"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Location"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Location CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Location CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.locationConstraintItem" => new LocationConstraintItem(),
-                _ => new Location(),
+                "#microsoft.graph.locationConstraintItem" => new Microsoft.Graph.Models.LocationConstraintItem(),
+                _ => new Microsoft.Graph.Models.Location(),
             };
         }
         /// <summary>
@@ -174,15 +174,15 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
-                { "coordinates", n => { Coordinates = n.GetObjectValue<OutlookGeoCoordinates>(OutlookGeoCoordinates.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<Microsoft.Graph.Models.PhysicalAddress>(Microsoft.Graph.Models.PhysicalAddress.CreateFromDiscriminatorValue); } },
+                { "coordinates", n => { Coordinates = n.GetObjectValue<Microsoft.Graph.Models.OutlookGeoCoordinates>(Microsoft.Graph.Models.OutlookGeoCoordinates.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "locationEmailAddress", n => { LocationEmailAddress = n.GetStringValue(); } },
-                { "locationType", n => { LocationType = n.GetEnumValue<LocationType>(); } },
+                { "locationType", n => { LocationType = n.GetEnumValue<Microsoft.Graph.Models.LocationType>(); } },
                 { "locationUri", n => { LocationUri = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "uniqueId", n => { UniqueId = n.GetStringValue(); } },
-                { "uniqueIdType", n => { UniqueIdType = n.GetEnumValue<LocationUniqueIdType>(); } },
+                { "uniqueIdType", n => { UniqueIdType = n.GetEnumValue<Microsoft.Graph.Models.LocationUniqueIdType>(); } },
             };
         }
         /// <summary>
@@ -192,15 +192,15 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<PhysicalAddress>("address", Address);
-            writer.WriteObjectValue<OutlookGeoCoordinates>("coordinates", Coordinates);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PhysicalAddress>("address", Address);
+            writer.WriteObjectValue<Microsoft.Graph.Models.OutlookGeoCoordinates>("coordinates", Coordinates);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("locationEmailAddress", LocationEmailAddress);
-            writer.WriteEnumValue<LocationType>("locationType", LocationType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.LocationType>("locationType", LocationType);
             writer.WriteStringValue("locationUri", LocationUri);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("uniqueId", UniqueId);
-            writer.WriteEnumValue<LocationUniqueIdType>("uniqueIdType", UniqueIdType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.LocationUniqueIdType>("uniqueIdType", UniqueIdType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

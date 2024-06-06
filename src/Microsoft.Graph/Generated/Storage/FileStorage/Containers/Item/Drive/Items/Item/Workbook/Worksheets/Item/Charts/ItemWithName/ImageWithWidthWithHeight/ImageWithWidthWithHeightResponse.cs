@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
 {
     [Obsolete("This class is obsolete. Use ImageWithWidthWithHeightGetResponse instead.")]
     #pragma warning disable CS1591
-    public class ImageWithWidthWithHeightResponse : ImageWithWidthWithHeightGetResponse, IParsable
+    public class ImageWithWidthWithHeightResponse : Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.ItemWithName.ImageWithWidthWithHeight.ImageWithWidthWithHeightGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ImageWithWidthWithHeightResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.ItemWithName.ImageWithWidthWithHeight.ImageWithWidthWithHeightResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ImageWithWidthWithHeightResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.ItemWithName.ImageWithWidthWithHeight.ImageWithWidthWithHeightResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ImageWithWidthWithHeightResponse();
+            return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Charts.ItemWithName.ImageWithWidthWithHeight.ImageWithWidthWithHeightResponse();
         }
     }
 }

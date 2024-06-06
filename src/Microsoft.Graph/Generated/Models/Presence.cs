@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Presence : Entity, IParsable
+    public class Presence : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The supplemental information to a user&apos;s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.</summary>
@@ -45,28 +45,28 @@ namespace Microsoft.Graph.Models
         /// <summary>The presence status message of a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PresenceStatusMessage? StatusMessage
+        public Microsoft.Graph.Models.PresenceStatusMessage? StatusMessage
         {
-            get { return BackingStore?.Get<PresenceStatusMessage?>("statusMessage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PresenceStatusMessage?>("statusMessage"); }
             set { BackingStore?.Set("statusMessage", value); }
         }
 #nullable restore
 #else
-        public PresenceStatusMessage StatusMessage
+        public Microsoft.Graph.Models.PresenceStatusMessage StatusMessage
         {
-            get { return BackingStore?.Get<PresenceStatusMessage>("statusMessage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PresenceStatusMessage>("statusMessage"); }
             set { BackingStore?.Set("statusMessage", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Presence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Presence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Presence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Presence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Presence();
+            return new Microsoft.Graph.Models.Presence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Models
             {
                 { "activity", n => { Activity = n.GetStringValue(); } },
                 { "availability", n => { Availability = n.GetStringValue(); } },
-                { "statusMessage", n => { StatusMessage = n.GetObjectValue<PresenceStatusMessage>(PresenceStatusMessage.CreateFromDiscriminatorValue); } },
+                { "statusMessage", n => { StatusMessage = n.GetObjectValue<Microsoft.Graph.Models.PresenceStatusMessage>(Microsoft.Graph.Models.PresenceStatusMessage.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("activity", Activity);
             writer.WriteStringValue("availability", Availability);
-            writer.WriteObjectValue<PresenceStatusMessage>("statusMessage", StatusMessage);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PresenceStatusMessage>("statusMessage", StatusMessage);
         }
     }
 }

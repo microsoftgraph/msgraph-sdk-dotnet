@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The description of this rubric level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationItemBody? Description
+        public Microsoft.Graph.Models.EducationItemBody? Description
         {
-            get { return BackingStore?.Get<EducationItemBody?>("description"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationItemBody?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public EducationItemBody Description
+        public Microsoft.Graph.Models.EducationItemBody Description
         {
-            get { return BackingStore?.Get<EducationItemBody>("description"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationItemBody>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
@@ -54,16 +54,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Null if this is a no-points rubric; educationAssignmentPointsGradeType if it&apos;s a points rubric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationAssignmentGradeType? Grading
+        public Microsoft.Graph.Models.EducationAssignmentGradeType? Grading
         {
-            get { return BackingStore?.Get<EducationAssignmentGradeType?>("grading"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationAssignmentGradeType?>("grading"); }
             set { BackingStore?.Set("grading", value); }
         }
 #nullable restore
 #else
-        public EducationAssignmentGradeType Grading
+        public Microsoft.Graph.Models.EducationAssignmentGradeType Grading
         {
-            get { return BackingStore?.Get<EducationAssignmentGradeType>("grading"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationAssignmentGradeType>("grading"); }
             set { BackingStore?.Set("grading", value); }
         }
 #endif
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RubricLevel"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.RubricLevel"/> and sets the default values.
         /// </summary>
         public RubricLevel()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RubricLevel"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RubricLevel"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RubricLevel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.RubricLevel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RubricLevel();
+            return new Microsoft.Graph.Models.RubricLevel();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,9 +125,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<EducationItemBody>(EducationItemBody.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<Microsoft.Graph.Models.EducationItemBody>(Microsoft.Graph.Models.EducationItemBody.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "grading", n => { Grading = n.GetObjectValue<EducationAssignmentGradeType>(EducationAssignmentGradeType.CreateFromDiscriminatorValue); } },
+                { "grading", n => { Grading = n.GetObjectValue<Microsoft.Graph.Models.EducationAssignmentGradeType>(Microsoft.Graph.Models.EducationAssignmentGradeType.CreateFromDiscriminatorValue); } },
                 { "levelId", n => { LevelId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -139,9 +139,9 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<EducationItemBody>("description", Description);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EducationItemBody>("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<EducationAssignmentGradeType>("grading", Grading);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EducationAssignmentGradeType>("grading", Grading);
             writer.WriteStringValue("levelId", LevelId);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

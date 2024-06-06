@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CalendarPermission : Entity, IParsable
+    public class CalendarPermission : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CalendarRoleType?>? AllowedRoles
+        public List<Microsoft.Graph.Models.CalendarRoleType?>? AllowedRoles
         {
-            get { return BackingStore?.Get<List<CalendarRoleType?>?>("allowedRoles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CalendarRoleType?>?>("allowedRoles"); }
             set { BackingStore?.Set("allowedRoles", value); }
         }
 #nullable restore
 #else
-        public List<CalendarRoleType?> AllowedRoles
+        public List<Microsoft.Graph.Models.CalendarRoleType?> AllowedRoles
         {
-            get { return BackingStore?.Get<List<CalendarRoleType?>>("allowedRoles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CalendarRoleType?>>("allowedRoles"); }
             set { BackingStore?.Set("allowedRoles", value); }
         }
 #endif
@@ -55,20 +55,20 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("isRemovable", value); }
         }
         /// <summary>Current permission level of the calendar share recipient or delegate.</summary>
-        public CalendarRoleType? Role
+        public Microsoft.Graph.Models.CalendarRoleType? Role
         {
-            get { return BackingStore?.Get<CalendarRoleType?>("role"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CalendarRoleType?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CalendarPermission"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CalendarPermission"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CalendarPermission CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CalendarPermission CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CalendarPermission();
+            return new Microsoft.Graph.Models.CalendarPermission();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,11 +78,11 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowedRoles", n => { AllowedRoles = n.GetCollectionOfEnumValues<CalendarRoleType>()?.ToList(); } },
+                { "allowedRoles", n => { AllowedRoles = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.CalendarRoleType>()?.ToList(); } },
                 { "emailAddress", n => { EmailAddress = n.GetObjectValue<Microsoft.Graph.Models.EmailAddress>(Microsoft.Graph.Models.EmailAddress.CreateFromDiscriminatorValue); } },
                 { "isInsideOrganization", n => { IsInsideOrganization = n.GetBoolValue(); } },
                 { "isRemovable", n => { IsRemovable = n.GetBoolValue(); } },
-                { "role", n => { Role = n.GetEnumValue<CalendarRoleType>(); } },
+                { "role", n => { Role = n.GetEnumValue<Microsoft.Graph.Models.CalendarRoleType>(); } },
             };
         }
         /// <summary>
@@ -93,11 +93,11 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfEnumValues<CalendarRoleType>("allowedRoles", AllowedRoles);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.CalendarRoleType>("allowedRoles", AllowedRoles);
             writer.WriteObjectValue<Microsoft.Graph.Models.EmailAddress>("emailAddress", EmailAddress);
             writer.WriteBoolValue("isInsideOrganization", IsInsideOrganization);
             writer.WriteBoolValue("isRemovable", IsRemovable);
-            writer.WriteEnumValue<CalendarRoleType>("role", Role);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CalendarRoleType>("role", Role);
         }
     }
 }

@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Me.WipeManagedAppRegistrationsByDeviceTag
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WipeManagedAppRegistrationsByDeviceTagPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.WipeManagedAppRegistrationsByDeviceTag.WipeManagedAppRegistrationsByDeviceTagPostRequestBody"/> and sets the default values.
         /// </summary>
         public WipeManagedAppRegistrationsByDeviceTagPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Me.WipeManagedAppRegistrationsByDeviceTag
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WipeManagedAppRegistrationsByDeviceTagPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.WipeManagedAppRegistrationsByDeviceTag.WipeManagedAppRegistrationsByDeviceTagPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WipeManagedAppRegistrationsByDeviceTagPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Me.WipeManagedAppRegistrationsByDeviceTag.WipeManagedAppRegistrationsByDeviceTagPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WipeManagedAppRegistrationsByDeviceTagPostRequestBody();
+            return new Microsoft.Graph.Me.WipeManagedAppRegistrationsByDeviceTag.WipeManagedAppRegistrationsByDeviceTagPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

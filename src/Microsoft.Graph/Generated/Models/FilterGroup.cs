@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Filter clauses (conditions) of this group. All clauses in a group must be satisfied in order for the filter group to evaluate to true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FilterClause>? Clauses
+        public List<Microsoft.Graph.Models.FilterClause>? Clauses
         {
-            get { return BackingStore?.Get<List<FilterClause>?>("clauses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.FilterClause>?>("clauses"); }
             set { BackingStore?.Set("clauses", value); }
         }
 #nullable restore
 #else
-        public List<FilterClause> Clauses
+        public List<Microsoft.Graph.Models.FilterClause> Clauses
         {
-            get { return BackingStore?.Get<List<FilterClause>>("clauses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.FilterClause>>("clauses"); }
             set { BackingStore?.Set("clauses", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="FilterGroup"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.FilterGroup"/> and sets the default values.
         /// </summary>
         public FilterGroup()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FilterGroup"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.FilterGroup"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static FilterGroup CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.FilterGroup CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FilterGroup();
+            return new Microsoft.Graph.Models.FilterGroup();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "clauses", n => { Clauses = n.GetCollectionOfObjectValues<FilterClause>(FilterClause.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "clauses", n => { Clauses = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.FilterClause>(Microsoft.Graph.Models.FilterClause.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<FilterClause>("clauses", Clauses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.FilterClause>("clauses", Clauses);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

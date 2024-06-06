@@ -8,18 +8,18 @@ namespace Microsoft.Graph.DirectoryObjects.GetByIds
 {
     [Obsolete("This class is obsolete. Use GetByIdsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetByIdsResponse : GetByIdsPostResponse, IParsable
+    public class GetByIdsResponse : Microsoft.Graph.DirectoryObjects.GetByIds.GetByIdsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetByIdsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DirectoryObjects.GetByIds.GetByIdsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetByIdsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.DirectoryObjects.GetByIds.GetByIdsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetByIdsResponse();
+            return new Microsoft.Graph.DirectoryObjects.GetByIds.GetByIdsResponse();
         }
     }
 }

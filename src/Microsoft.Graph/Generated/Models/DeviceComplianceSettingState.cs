@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Device compliance setting State for a given device.
     /// </summary>
-    public class DeviceComplianceSettingState : Entity, IParsable
+    public class DeviceComplianceSettingState : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The DateTime when device compliance grace period expires</summary>
         public DateTimeOffset? ComplianceGracePeriodExpirationDateTime
@@ -98,9 +98,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The state property</summary>
-        public ComplianceStatus? State
+        public Microsoft.Graph.Models.ComplianceStatus? State
         {
-            get { return BackingStore?.Get<ComplianceStatus?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ComplianceStatus?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>The User email address that is being reported</summary>
@@ -170,12 +170,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceComplianceSettingState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceComplianceSettingState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceComplianceSettingState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeviceComplianceSettingState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceComplianceSettingState();
+            return new Microsoft.Graph.Models.DeviceComplianceSettingState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Models
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
                 { "setting", n => { Setting = n.GetStringValue(); } },
                 { "settingName", n => { SettingName = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<ComplianceStatus>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Models.ComplianceStatus>(); } },
                 { "userEmail", n => { UserEmail = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userName", n => { UserName = n.GetStringValue(); } },
@@ -212,7 +212,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteStringValue("setting", Setting);
             writer.WriteStringValue("settingName", SettingName);
-            writer.WriteEnumValue<ComplianceStatus>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ComplianceStatus>("state", State);
             writer.WriteStringValue("userEmail", UserEmail);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userName", UserName);

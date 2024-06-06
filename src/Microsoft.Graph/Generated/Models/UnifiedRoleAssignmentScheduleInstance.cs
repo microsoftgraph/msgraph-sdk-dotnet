@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UnifiedRoleAssignmentScheduleInstance : UnifiedRoleScheduleInstanceBase, IParsable
+    public class UnifiedRoleAssignmentScheduleInstance : Microsoft.Graph.Models.UnifiedRoleScheduleInstanceBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>If the request is from an eligible administrator to activate a role, this parameter shows the related eligible assignment for that activation. Otherwise, it&apos;s null. Supports $expand and $select nested in $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRoleEligibilityScheduleInstance? ActivatedUsing
+        public Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleInstance? ActivatedUsing
         {
-            get { return BackingStore?.Get<UnifiedRoleEligibilityScheduleInstance?>("activatedUsing"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleInstance?>("activatedUsing"); }
             set { BackingStore?.Set("activatedUsing", value); }
         }
 #nullable restore
 #else
-        public UnifiedRoleEligibilityScheduleInstance ActivatedUsing
+        public Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleInstance ActivatedUsing
         {
-            get { return BackingStore?.Get<UnifiedRoleEligibilityScheduleInstance>("activatedUsing"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleInstance>("activatedUsing"); }
             set { BackingStore?.Set("activatedUsing", value); }
         }
 #endif
@@ -105,12 +105,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleAssignmentScheduleInstance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnifiedRoleAssignmentScheduleInstance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedRoleAssignmentScheduleInstance();
+            return new Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleInstance();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "activatedUsing", n => { ActivatedUsing = n.GetObjectValue<UnifiedRoleEligibilityScheduleInstance>(UnifiedRoleEligibilityScheduleInstance.CreateFromDiscriminatorValue); } },
+                { "activatedUsing", n => { ActivatedUsing = n.GetObjectValue<Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleInstance>(Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleInstance.CreateFromDiscriminatorValue); } },
                 { "assignmentType", n => { AssignmentType = n.GetStringValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "memberType", n => { MemberType = n.GetStringValue(); } },
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<UnifiedRoleEligibilityScheduleInstance>("activatedUsing", ActivatedUsing);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleInstance>("activatedUsing", ActivatedUsing);
             writer.WriteStringValue("assignmentType", AssignmentType);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteStringValue("memberType", MemberType);

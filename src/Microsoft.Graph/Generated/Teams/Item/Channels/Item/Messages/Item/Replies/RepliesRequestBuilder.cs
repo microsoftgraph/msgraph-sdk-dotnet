@@ -20,14 +20,14 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies
     public class RepliesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public DeltaRequestBuilder Delta
+        public Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Delta.DeltaRequestBuilder Delta
         {
-            get => new DeltaRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the replies property of the microsoft.graph.chatMessage entity.</summary>
         /// <param name="position">The unique identifier of chatMessage</param>
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RepliesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.RepliesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RepliesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.RepliesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -58,65 +58,67 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies
         {
         }
         /// <summary>
-        /// Replies for a specified message. Supports $expand for channel messages.
+        /// List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, call get channel message.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-list-replies?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ChatMessageCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ChatMessageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ChatMessageCollectionResponse?> GetAsync(Action<RequestConfiguration<RepliesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ChatMessageCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.RepliesRequestBuilder.RepliesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ChatMessageCollectionResponse> GetAsync(Action<RequestConfiguration<RepliesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ChatMessageCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.RepliesRequestBuilder.RepliesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ChatMessageCollectionResponse>(requestInfo, ChatMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ChatMessageCollectionResponse>(requestInfo, Microsoft.Graph.Models.ChatMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to replies for teams
+        /// Send a new reply to a chatMessage in a specified channel.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ChatMessage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ChatMessage"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ChatMessage?> PostAsync(ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ChatMessage?> PostAsync(Microsoft.Graph.Models.ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ChatMessage> PostAsync(ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ChatMessage> PostAsync(Microsoft.Graph.Models.ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ChatMessage>(requestInfo, ChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ChatMessage>(requestInfo, Microsoft.Graph.Models.ChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Replies for a specified message. Supports $expand for channel messages.
+        /// List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, call get channel message.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RepliesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.RepliesRequestBuilder.RepliesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RepliesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.RepliesRequestBuilder.RepliesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -125,18 +127,18 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to replies for teams
+        /// Send a new reply to a chatMessage in a specified channel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -149,14 +151,14 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RepliesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.RepliesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RepliesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.RepliesRequestBuilder WithUrl(string rawUrl)
         {
-            return new RepliesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.RepliesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Replies for a specified message. Supports $expand for channel messages.
+        /// List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, call get channel message.
         /// </summary>
         public class RepliesRequestBuilderGetQueryParameters 
         {
@@ -224,7 +226,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RepliesRequestBuilderGetRequestConfiguration : RequestConfiguration<RepliesRequestBuilderGetQueryParameters>
+        public class RepliesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.RepliesRequestBuilder.RepliesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

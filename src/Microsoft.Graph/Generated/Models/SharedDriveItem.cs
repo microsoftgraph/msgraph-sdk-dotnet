@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SharedDriveItem : BaseItem, IParsable
+    public class SharedDriveItem : Microsoft.Graph.Models.BaseItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Used to access the underlying driveItem</summary>
@@ -77,16 +77,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Information about the owner of the shared item being referenced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Owner
+        public Microsoft.Graph.Models.IdentitySet? Owner
         {
-            get { return BackingStore?.Get<IdentitySet?>("owner"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Owner
+        public Microsoft.Graph.Models.IdentitySet Owner
         {
-            get { return BackingStore?.Get<IdentitySet>("owner"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #endif
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SharedDriveItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SharedDriveItem"/> and sets the default values.
         /// </summary>
         public SharedDriveItem() : base()
         {
@@ -148,12 +148,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SharedDriveItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SharedDriveItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SharedDriveItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SharedDriveItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SharedDriveItem();
+            return new Microsoft.Graph.Models.SharedDriveItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.Models
                 { "items", n => { Items = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DriveItem>(Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "list", n => { List = n.GetObjectValue<Microsoft.Graph.Models.List>(Microsoft.Graph.Models.List.CreateFromDiscriminatorValue); } },
                 { "listItem", n => { ListItem = n.GetObjectValue<Microsoft.Graph.Models.ListItem>(Microsoft.Graph.Models.ListItem.CreateFromDiscriminatorValue); } },
-                { "owner", n => { Owner = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "permission", n => { Permission = n.GetObjectValue<Microsoft.Graph.Models.Permission>(Microsoft.Graph.Models.Permission.CreateFromDiscriminatorValue); } },
                 { "root", n => { Root = n.GetObjectValue<Microsoft.Graph.Models.DriveItem>(Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue); } },
                 { "site", n => { Site = n.GetObjectValue<Microsoft.Graph.Models.Site>(Microsoft.Graph.Models.Site.CreateFromDiscriminatorValue); } },
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DriveItem>("items", Items);
             writer.WriteObjectValue<Microsoft.Graph.Models.List>("list", List);
             writer.WriteObjectValue<Microsoft.Graph.Models.ListItem>("listItem", ListItem);
-            writer.WriteObjectValue<IdentitySet>("owner", Owner);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("owner", Owner);
             writer.WriteObjectValue<Microsoft.Graph.Models.Permission>("permission", Permission);
             writer.WriteObjectValue<Microsoft.Graph.Models.DriveItem>("root", Root);
             writer.WriteObjectValue<Microsoft.Graph.Models.Site>("site", Site);

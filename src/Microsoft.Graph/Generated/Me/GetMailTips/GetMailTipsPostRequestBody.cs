@@ -37,13 +37,13 @@ namespace Microsoft.Graph.Me.GetMailTips
         }
 #endif
         /// <summary>The MailTipsOptions property</summary>
-        public MailTipsType? MailTipsOptions
+        public Microsoft.Graph.Models.MailTipsType? MailTipsOptions
         {
-            get { return BackingStore?.Get<MailTipsType?>("MailTipsOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MailTipsType?>("MailTipsOptions"); }
             set { BackingStore?.Set("MailTipsOptions", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetMailTipsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.GetMailTips.GetMailTipsPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetMailTipsPostRequestBody()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Me.GetMailTips
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetMailTipsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.GetMailTips.GetMailTipsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetMailTipsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Me.GetMailTips.GetMailTipsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetMailTipsPostRequestBody();
+            return new Microsoft.Graph.Me.GetMailTips.GetMailTipsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Me.GetMailTips
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "EmailAddresses", n => { EmailAddresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "MailTipsOptions", n => { MailTipsOptions = n.GetEnumValue<MailTipsType>(); } },
+                { "MailTipsOptions", n => { MailTipsOptions = n.GetEnumValue<Microsoft.Graph.Models.MailTipsType>(); } },
             };
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Me.GetMailTips
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("EmailAddresses", EmailAddresses);
-            writer.WriteEnumValue<MailTipsType>("MailTipsOptions", MailTipsOptions);
+            writer.WriteEnumValue<Microsoft.Graph.Models.MailTipsType>("MailTipsOptions", MailTipsOptions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

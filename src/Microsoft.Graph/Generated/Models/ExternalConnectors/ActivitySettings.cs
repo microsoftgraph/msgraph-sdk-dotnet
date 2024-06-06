@@ -38,21 +38,21 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         /// <summary>Specifies configurations to identify an externalItem based on a shared URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UrlToItemResolverBase>? UrlToItemResolvers
+        public List<Microsoft.Graph.Models.ExternalConnectors.UrlToItemResolverBase>? UrlToItemResolvers
         {
-            get { return BackingStore?.Get<List<UrlToItemResolverBase>?>("urlToItemResolvers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.UrlToItemResolverBase>?>("urlToItemResolvers"); }
             set { BackingStore?.Set("urlToItemResolvers", value); }
         }
 #nullable restore
 #else
-        public List<UrlToItemResolverBase> UrlToItemResolvers
+        public List<Microsoft.Graph.Models.ExternalConnectors.UrlToItemResolverBase> UrlToItemResolvers
         {
-            get { return BackingStore?.Get<List<UrlToItemResolverBase>>("urlToItemResolvers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.UrlToItemResolverBase>>("urlToItemResolvers"); }
             set { BackingStore?.Set("urlToItemResolvers", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ActivitySettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ExternalConnectors.ActivitySettings"/> and sets the default values.
         /// </summary>
         public ActivitySettings()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ActivitySettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ExternalConnectors.ActivitySettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ActivitySettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ExternalConnectors.ActivitySettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ActivitySettings();
+            return new Microsoft.Graph.Models.ExternalConnectors.ActivitySettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "urlToItemResolvers", n => { UrlToItemResolvers = n.GetCollectionOfObjectValues<UrlToItemResolverBase>(UrlToItemResolverBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "urlToItemResolvers", n => { UrlToItemResolvers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.UrlToItemResolverBase>(Microsoft.Graph.Models.ExternalConnectors.UrlToItemResolverBase.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<UrlToItemResolverBase>("urlToItemResolvers", UrlToItemResolvers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.UrlToItemResolverBase>("urlToItemResolvers", UrlToItemResolvers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             set { BackingStore?.Set("totalUsers", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserSummary"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IdentityGovernance.UserSummary"/> and sets the default values.
         /// </summary>
         public UserSummary()
         {
@@ -76,12 +76,12 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityGovernance.UserSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.IdentityGovernance.UserSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserSummary();
+            return new Microsoft.Graph.Models.IdentityGovernance.UserSummary();
         }
         /// <summary>
         /// The deserialization information for the current model

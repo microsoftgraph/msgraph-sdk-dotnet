@@ -38,79 +38,79 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath
     public class GetByPathWithPathRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the analytics property of the microsoft.graph.site entity.</summary>
-        public AnalyticsRequestBuilder Analytics
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Analytics.AnalyticsRequestBuilder Analytics
         {
-            get => new AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the columns property of the microsoft.graph.site entity.</summary>
-        public ColumnsRequestBuilder Columns
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Columns.ColumnsRequestBuilder Columns
         {
-            get => new ColumnsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Columns.ColumnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contentTypes property of the microsoft.graph.site entity.</summary>
-        public ContentTypesRequestBuilder ContentTypes
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.ContentTypes.ContentTypesRequestBuilder ContentTypes
         {
-            get => new ContentTypesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.ContentTypes.ContentTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.</summary>
-        public CreatedByUserRequestBuilder CreatedByUser
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.CreatedByUser.CreatedByUserRequestBuilder CreatedByUser
         {
-            get => new CreatedByUserRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.CreatedByUser.CreatedByUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drive property of the microsoft.graph.site entity.</summary>
-        public DriveRequestBuilder Drive
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Drive.DriveRequestBuilder Drive
         {
-            get => new DriveRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Drive.DriveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drives property of the microsoft.graph.site entity.</summary>
-        public DrivesRequestBuilder Drives
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Drives.DrivesRequestBuilder Drives
         {
-            get => new DrivesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the externalColumns property of the microsoft.graph.site entity.</summary>
-        public ExternalColumnsRequestBuilder ExternalColumns
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.ExternalColumns.ExternalColumnsRequestBuilder ExternalColumns
         {
-            get => new ExternalColumnsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.ExternalColumns.ExternalColumnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getActivitiesByInterval method.</summary>
-        public GetActivitiesByIntervalRequestBuilder GetActivitiesByInterval
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder GetActivitiesByInterval
         {
-            get => new GetActivitiesByIntervalRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the items property of the microsoft.graph.site entity.</summary>
-        public ItemsRequestBuilder Items
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Items.ItemsRequestBuilder Items
         {
-            get => new ItemsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Items.ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.</summary>
-        public LastModifiedByUserRequestBuilder LastModifiedByUser
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.LastModifiedByUser.LastModifiedByUserRequestBuilder LastModifiedByUser
         {
-            get => new LastModifiedByUserRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.LastModifiedByUser.LastModifiedByUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the lists property of the microsoft.graph.site entity.</summary>
-        public ListsRequestBuilder Lists
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Lists.ListsRequestBuilder Lists
         {
-            get => new ListsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Lists.ListsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onenote property of the microsoft.graph.site entity.</summary>
-        public OnenoteRequestBuilder Onenote
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Onenote.OnenoteRequestBuilder Onenote
         {
-            get => new OnenoteRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Onenote.OnenoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.site entity.</summary>
-        public OperationsRequestBuilder Operations
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Operations.OperationsRequestBuilder Operations
         {
-            get => new OperationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pages property of the microsoft.graph.site entity.</summary>
-        public PagesRequestBuilder Pages
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Pages.PagesRequestBuilder Pages
         {
-            get => new PagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Pages.PagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissions property of the microsoft.graph.site entity.</summary>
-        public PermissionsRequestBuilder Permissions
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Permissions.PermissionsRequestBuilder Permissions
         {
-            get => new PermissionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sites property of the microsoft.graph.site entity.</summary>
         public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Sites.SitesRequestBuilder Sites
@@ -118,17 +118,17 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath
             get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Sites.SitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the termStore property of the microsoft.graph.site entity.</summary>
-        public TermStoreRequestBuilder TermStore
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.TermStore.TermStoreRequestBuilder TermStore
         {
-            get => new TermStoreRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.TermStore.TermStoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the termStores property of the microsoft.graph.site entity.</summary>
-        public TermStoresRequestBuilder TermStores
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.TermStores.TermStoresRequestBuilder TermStores
         {
-            get => new TermStoresRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.TermStores.TermStoresRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetByPathWithPathRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetByPathWithPathRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="path">Usage: path=&apos;{path}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath
             if (!string.IsNullOrWhiteSpace(path)) PathParameters.Add("path", path);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetByPathWithPathRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetByPathWithPathRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -148,26 +148,26 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath
         /// <summary>
         /// Provides operations to call the getActivitiesByInterval method.
         /// </summary>
-        /// <returns>A <see cref="GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder"/></returns>
         /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
         /// <param name="interval">Usage: interval=&apos;{interval}&apos;</param>
         /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
-        public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(string endDateTime, string interval, string startDateTime)
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(string endDateTime, string interval, string startDateTime)
         {
             if(string.IsNullOrEmpty(endDateTime)) throw new ArgumentNullException(nameof(endDateTime));
             if(string.IsNullOrEmpty(interval)) throw new ArgumentNullException(nameof(interval));
             if(string.IsNullOrEmpty(startDateTime)) throw new ArgumentNullException(nameof(startDateTime));
-            return new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(PathParameters, RequestAdapter, endDateTime, interval, startDateTime);
+            return new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(PathParameters, RequestAdapter, endDateTime, interval, startDateTime);
         }
         /// <summary>
         /// Provides operations to call the getApplicableContentTypesForList method.
         /// </summary>
-        /// <returns>A <see cref="GetApplicableContentTypesForListWithListIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetApplicableContentTypesForListWithListId.GetApplicableContentTypesForListWithListIdRequestBuilder"/></returns>
         /// <param name="listId">Usage: listId=&apos;{listId}&apos;</param>
-        public GetApplicableContentTypesForListWithListIdRequestBuilder GetApplicableContentTypesForListWithListId(string listId)
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetApplicableContentTypesForListWithListId.GetApplicableContentTypesForListWithListIdRequestBuilder GetApplicableContentTypesForListWithListId(string listId)
         {
             if(string.IsNullOrEmpty(listId)) throw new ArgumentNullException(nameof(listId));
-            return new GetApplicableContentTypesForListWithListIdRequestBuilder(PathParameters, RequestAdapter, listId);
+            return new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetApplicableContentTypesForListWithListId.GetApplicableContentTypesForListWithListIdRequestBuilder(PathParameters, RequestAdapter, listId);
         }
         /// <summary>
         /// Invoke function getByPath
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath
         /// <returns>A <see cref="Microsoft.Graph.Models.Site"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.Site?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -188,19 +188,19 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Site>(requestInfo, Microsoft.Graph.Models.Site.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getByPath method.
         /// </summary>
-        /// <returns>A <see cref="GetByPathWithPath1RequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetByPathWithPath1.GetByPathWithPath1RequestBuilder"/></returns>
         /// <param name="path1">Usage: path=&apos;{path1}&apos;</param>
-        public GetByPathWithPath1RequestBuilder GetByPathWithPath1(string path1)
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetByPathWithPath1.GetByPathWithPath1RequestBuilder GetByPathWithPath1(string path1)
         {
             if(string.IsNullOrEmpty(path1)) throw new ArgumentNullException(nameof(path1));
-            return new GetByPathWithPath1RequestBuilder(PathParameters, RequestAdapter, path1);
+            return new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetByPathWithPath1.GetByPathWithPath1RequestBuilder(PathParameters, RequestAdapter, path1);
         }
         /// <summary>
         /// Invoke function getByPath
@@ -224,11 +224,11 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetByPathWithPathRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetByPathWithPathRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetByPathWithPathRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetByPathWithPathRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetByPathWithPathRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetByPathWithPathRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

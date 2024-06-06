@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MeetingInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MeetingInfo"/> and sets the default values.
         /// </summary>
         public MeetingInfo()
         {
@@ -46,18 +46,18 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MeetingInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MeetingInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MeetingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.MeetingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.joinMeetingIdMeetingInfo" => new JoinMeetingIdMeetingInfo(),
-                "#microsoft.graph.organizerMeetingInfo" => new OrganizerMeetingInfo(),
-                "#microsoft.graph.tokenMeetingInfo" => new TokenMeetingInfo(),
-                _ => new MeetingInfo(),
+                "#microsoft.graph.joinMeetingIdMeetingInfo" => new Microsoft.Graph.Models.JoinMeetingIdMeetingInfo(),
+                "#microsoft.graph.organizerMeetingInfo" => new Microsoft.Graph.Models.OrganizerMeetingInfo(),
+                "#microsoft.graph.tokenMeetingInfo" => new Microsoft.Graph.Models.TokenMeetingInfo(),
+                _ => new Microsoft.Graph.Models.MeetingInfo(),
             };
         }
         /// <summary>

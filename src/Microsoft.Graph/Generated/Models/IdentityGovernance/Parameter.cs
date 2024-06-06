@@ -68,13 +68,13 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         }
 #endif
         /// <summary>The valueType property</summary>
-        public ValueTypeObject? ValueType
+        public Microsoft.Graph.Models.IdentityGovernance.ValueTypeObject? ValueType
         {
-            get { return BackingStore?.Get<ValueTypeObject?>("valueType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.ValueTypeObject?>("valueType"); }
             set { BackingStore?.Set("valueType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Parameter"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IdentityGovernance.Parameter"/> and sets the default values.
         /// </summary>
         public Parameter()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Parameter"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityGovernance.Parameter"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Parameter CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.IdentityGovernance.Parameter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Parameter();
+            return new Microsoft.Graph.Models.IdentityGovernance.Parameter();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "valueType", n => { ValueType = n.GetEnumValue<ValueTypeObject>(); } },
+                { "valueType", n => { ValueType = n.GetEnumValue<Microsoft.Graph.Models.IdentityGovernance.ValueTypeObject>(); } },
                 { "values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("values", Values);
-            writer.WriteEnumValue<ValueTypeObject>("valueType", ValueType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.IdentityGovernance.ValueTypeObject>("valueType", ValueType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

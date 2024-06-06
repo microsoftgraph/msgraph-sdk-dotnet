@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class RelyingPartyDetailedSummary : Entity, IParsable
+    public class RelyingPartyDetailedSummary : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Number of failed sign ins on AD FS in the period specified. Supports $orderby, $filter (eq).</summary>
@@ -25,16 +25,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Specifies all the validations checks done on applications config details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? MigrationValidationDetails
+        public List<Microsoft.Graph.Models.KeyValuePair>? MigrationValidationDetails
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("migrationValidationDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValuePair>?>("migrationValidationDetails"); }
             set { BackingStore?.Set("migrationValidationDetails", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> MigrationValidationDetails
+        public List<Microsoft.Graph.Models.KeyValuePair> MigrationValidationDetails
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("migrationValidationDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValuePair>>("migrationValidationDetails"); }
             set { BackingStore?.Set("migrationValidationDetails", value); }
         }
 #endif
@@ -129,12 +129,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RelyingPartyDetailedSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RelyingPartyDetailedSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RelyingPartyDetailedSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.RelyingPartyDetailedSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RelyingPartyDetailedSummary();
+            return new Microsoft.Graph.Models.RelyingPartyDetailedSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -145,8 +145,8 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "failedSignInCount", n => { FailedSignInCount = n.GetLongValue(); } },
-                { "migrationStatus", n => { MigrationStatus = n.GetEnumValue<MigrationStatus>(); } },
-                { "migrationValidationDetails", n => { MigrationValidationDetails = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "migrationStatus", n => { MigrationStatus = n.GetEnumValue<Microsoft.Graph.Models.MigrationStatus>(); } },
+                { "migrationValidationDetails", n => { MigrationValidationDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>(Microsoft.Graph.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "relyingPartyId", n => { RelyingPartyId = n.GetStringValue(); } },
                 { "relyingPartyName", n => { RelyingPartyName = n.GetStringValue(); } },
                 { "replyUrls", n => { ReplyUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -166,8 +166,8 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteLongValue("failedSignInCount", FailedSignInCount);
-            writer.WriteEnumValue<MigrationStatus>("migrationStatus", MigrationStatus);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("migrationValidationDetails", MigrationValidationDetails);
+            writer.WriteEnumValue<Microsoft.Graph.Models.MigrationStatus>("migrationStatus", MigrationStatus);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>("migrationValidationDetails", MigrationValidationDetails);
             writer.WriteStringValue("relyingPartyId", RelyingPartyId);
             writer.WriteStringValue("relyingPartyName", RelyingPartyName);
             writer.WriteCollectionOfPrimitiveValues<string>("replyUrls", ReplyUrls);

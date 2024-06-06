@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class FileEvidence : AlertEvidence, IParsable
+    public class FileEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.</summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="FileEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.FileEvidence"/> and sets the default values.
         /// </summary>
         public FileEvidence() : base()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FileEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.FileEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FileEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.FileEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FileEvidence();
+            return new Microsoft.Graph.Models.Security.FileEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "detectionStatus", n => { DetectionStatus = n.GetEnumValue<DetectionStatus>(); } },
+                { "detectionStatus", n => { DetectionStatus = n.GetEnumValue<Microsoft.Graph.Models.Security.DetectionStatus>(); } },
                 { "fileDetails", n => { FileDetails = n.GetObjectValue<Microsoft.Graph.Models.Security.FileDetails>(Microsoft.Graph.Models.Security.FileDetails.CreateFromDiscriminatorValue); } },
                 { "mdeDeviceId", n => { MdeDeviceId = n.GetStringValue(); } },
             };
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<DetectionStatus>("detectionStatus", DetectionStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.DetectionStatus>("detectionStatus", DetectionStatus);
             writer.WriteObjectValue<Microsoft.Graph.Models.Security.FileDetails>("fileDetails", FileDetails);
             writer.WriteStringValue("mdeDeviceId", MdeDeviceId);
         }

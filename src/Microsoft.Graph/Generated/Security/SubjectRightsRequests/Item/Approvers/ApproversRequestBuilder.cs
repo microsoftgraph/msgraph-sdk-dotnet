@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers
     public class ApproversRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.</summary>
         /// <param name="position">The unique identifier of user</param>
-        /// <returns>A <see cref="UserItemRequestBuilder"/></returns>
-        public UserItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers.Item.UserItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers.Item.UserItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("user%2Did", position);
-                return new UserItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers.Item.UserItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ApproversRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers.ApproversRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ApproversRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers.ApproversRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers
         /// <summary>
         /// Collection of users who can approve the request. Currently only supported for requests of type delete.
         /// </summary>
-        /// <returns>A <see cref="UserCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserCollectionResponse?> GetAsync(Action<RequestConfiguration<ApproversRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UserCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers.ApproversRequestBuilder.ApproversRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UserCollectionResponse> GetAsync(Action<RequestConfiguration<ApproversRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UserCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers.ApproversRequestBuilder.ApproversRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UserCollectionResponse>(requestInfo, UserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserCollectionResponse>(requestInfo, Microsoft.Graph.Models.UserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Collection of users who can approve the request. Currently only supported for requests of type delete.
@@ -81,11 +81,11 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ApproversRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers.ApproversRequestBuilder.ApproversRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ApproversRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers.ApproversRequestBuilder.ApproversRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -96,11 +96,11 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ApproversRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers.ApproversRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ApproversRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers.ApproversRequestBuilder WithUrl(string rawUrl)
         {
-            return new ApproversRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers.ApproversRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Collection of users who can approve the request. Currently only supported for requests of type delete.
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ApproversRequestBuilderGetRequestConfiguration : RequestConfiguration<ApproversRequestBuilderGetQueryParameters>
+        public class ApproversRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.SubjectRightsRequests.Item.Approvers.ApproversRequestBuilder.ApproversRequestBuilderGetQueryParameters>
         {
         }
     }

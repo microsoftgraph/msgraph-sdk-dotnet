@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.Content
     public class AddCopyRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="AddCopyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.ContentTypes.AddCopy.AddCopyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.Content
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AddCopyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.ContentTypes.AddCopy.AddCopyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,27 +36,27 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.Content
         /// Add a copy of a content type from a site to a list.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ContentType"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ContentType"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ContentType?> PostAsync(AddCopyPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ContentType?> PostAsync(Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.ContentTypes.AddCopy.AddCopyPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ContentType> PostAsync(AddCopyPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ContentType> PostAsync(Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.ContentTypes.AddCopy.AddCopyPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ContentType>(requestInfo, ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ContentType>(requestInfo, Microsoft.Graph.Models.ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add a copy of a content type from a site to a list.
@@ -66,11 +66,11 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.Content
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(AddCopyPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.ContentTypes.AddCopy.AddCopyPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(AddCopyPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.ContentTypes.AddCopy.AddCopyPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -83,11 +83,11 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.Content
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AddCopyRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.ContentTypes.AddCopy.AddCopyRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AddCopyRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.ContentTypes.AddCopy.AddCopyRequestBuilder WithUrl(string rawUrl)
         {
-            return new AddCopyRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.List.ContentTypes.AddCopy.AddCopyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

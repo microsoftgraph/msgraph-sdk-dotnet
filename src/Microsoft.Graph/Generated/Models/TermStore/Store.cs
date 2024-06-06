@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Models.TermStore
         /// <summary>Collection of all groups available in the term store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Group>? Groups
+        public List<Microsoft.Graph.Models.TermStore.Group>? Groups
         {
-            get { return BackingStore?.Get<List<Group>?>("groups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.Group>?>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
 #nullable restore
 #else
-        public List<Group> Groups
+        public List<Microsoft.Graph.Models.TermStore.Group> Groups
         {
-            get { return BackingStore?.Get<List<Group>>("groups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.Group>>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
 #endif
@@ -61,28 +61,28 @@ namespace Microsoft.Graph.Models.TermStore
         /// <summary>Collection of all sets available in the term store. This relationship can only be used to load a specific term set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Set>? Sets
+        public List<Microsoft.Graph.Models.TermStore.Set>? Sets
         {
-            get { return BackingStore?.Get<List<Set>?>("sets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.Set>?>("sets"); }
             set { BackingStore?.Set("sets", value); }
         }
 #nullable restore
 #else
-        public List<Set> Sets
+        public List<Microsoft.Graph.Models.TermStore.Set> Sets
         {
-            get { return BackingStore?.Get<List<Set>>("sets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.Set>>("sets"); }
             set { BackingStore?.Set("sets", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Store"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TermStore.Store"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Store CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TermStore.Store CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Store();
+            return new Microsoft.Graph.Models.TermStore.Store();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Models.TermStore
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "defaultLanguageTag", n => { DefaultLanguageTag = n.GetStringValue(); } },
-                { "groups", n => { Groups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groups", n => { Groups = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.Group>(Microsoft.Graph.Models.TermStore.Group.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "languageTags", n => { LanguageTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "sets", n => { Sets = n.GetCollectionOfObjectValues<Set>(Set.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sets", n => { Sets = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.Set>(Microsoft.Graph.Models.TermStore.Set.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -107,9 +107,9 @@ namespace Microsoft.Graph.Models.TermStore
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("defaultLanguageTag", DefaultLanguageTag);
-            writer.WriteCollectionOfObjectValues<Group>("groups", Groups);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.Group>("groups", Groups);
             writer.WriteCollectionOfPrimitiveValues<string>("languageTags", LanguageTags);
-            writer.WriteCollectionOfObjectValues<Set>("sets", Sets);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.Set>("sets", Sets);
         }
     }
 }

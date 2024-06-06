@@ -20,22 +20,22 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp
     public class GraphWin32LobAppRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.</summary>
-        public AssignmentsRequestBuilder Assignments
+        public Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.Assignments.AssignmentsRequestBuilder Assignments
         {
-            get => new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.mobileApp entity.</summary>
-        public CategoriesRequestBuilder Categories
+        public Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.Categories.CategoriesRequestBuilder Categories
         {
-            get => new CategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contentVersions property of the microsoft.graph.mobileLobApp entity.</summary>
-        public ContentVersionsRequestBuilder ContentVersions
+        public Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.ContentVersions.ContentVersionsRequestBuilder ContentVersions
         {
-            get => new ContentVersionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.ContentVersions.ContentVersionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphWin32LobAppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.GraphWin32LobAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphWin32LobAppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.GraphWin32LobAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -53,25 +53,25 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.win32LobApp
         /// </summary>
-        /// <returns>A <see cref="Win32LobApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Win32LobApp"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Win32LobApp?> GetAsync(Action<RequestConfiguration<GraphWin32LobAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Win32LobApp?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.GraphWin32LobAppRequestBuilder.GraphWin32LobAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Win32LobApp> GetAsync(Action<RequestConfiguration<GraphWin32LobAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Win32LobApp> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.GraphWin32LobAppRequestBuilder.GraphWin32LobAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Win32LobApp>(requestInfo, Win32LobApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Win32LobApp>(requestInfo, Microsoft.Graph.Models.Win32LobApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.win32LobApp
@@ -80,11 +80,11 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphWin32LobAppRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.GraphWin32LobAppRequestBuilder.GraphWin32LobAppRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphWin32LobAppRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.GraphWin32LobAppRequestBuilder.GraphWin32LobAppRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -95,11 +95,11 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GraphWin32LobAppRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.GraphWin32LobAppRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GraphWin32LobAppRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.GraphWin32LobAppRequestBuilder WithUrl(string rawUrl)
         {
-            return new GraphWin32LobAppRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.GraphWin32LobAppRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.win32LobApp
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphWin32LobAppRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphWin32LobAppRequestBuilderGetQueryParameters>
+        public class GraphWin32LobAppRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.GraphWin32LobAppRequestBuilder.GraphWin32LobAppRequestBuilderGetQueryParameters>
         {
         }
     }

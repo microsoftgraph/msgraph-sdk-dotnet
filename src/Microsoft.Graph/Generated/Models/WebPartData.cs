@@ -70,16 +70,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Properties bag of the web part.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Properties
+        public UntypedNode? Properties
         {
-            get { return BackingStore?.Get<Json?>("properties"); }
+            get { return BackingStore?.Get<UntypedNode?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #nullable restore
 #else
-        public Json Properties
+        public UntypedNode Properties
         {
-            get { return BackingStore?.Get<Json>("properties"); }
+            get { return BackingStore?.Get<UntypedNode>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #endif
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WebPartData"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WebPartData"/> and sets the default values.
         /// </summary>
         public WebPartData()
         {
@@ -126,12 +126,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WebPartData"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WebPartData"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WebPartData CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.WebPartData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WebPartData();
+            return new Microsoft.Graph.Models.WebPartData();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Models
                 { "dataVersion", n => { DataVersion = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "properties", n => { Properties = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "serverProcessedContent", n => { ServerProcessedContent = n.GetObjectValue<Microsoft.Graph.Models.ServerProcessedContent>(Microsoft.Graph.Models.ServerProcessedContent.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("dataVersion", DataVersion);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<Json>("properties", Properties);
+            writer.WriteObjectValue<UntypedNode>("properties", Properties);
             writer.WriteObjectValue<Microsoft.Graph.Models.ServerProcessedContent>("serverProcessedContent", ServerProcessedContent);
             writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);

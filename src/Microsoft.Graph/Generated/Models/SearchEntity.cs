@@ -8,66 +8,66 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SearchEntity : Entity, IParsable
+    public class SearchEntity : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Administrative answer in Microsoft Search results to define common acronyms in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Acronym>? Acronyms
+        public List<Microsoft.Graph.Models.Search.Acronym>? Acronyms
         {
-            get { return BackingStore?.Get<List<Acronym>?>("acronyms"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Search.Acronym>?>("acronyms"); }
             set { BackingStore?.Set("acronyms", value); }
         }
 #nullable restore
 #else
-        public List<Acronym> Acronyms
+        public List<Microsoft.Graph.Models.Search.Acronym> Acronyms
         {
-            get { return BackingStore?.Get<List<Acronym>>("acronyms"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Search.Acronym>>("acronyms"); }
             set { BackingStore?.Set("acronyms", value); }
         }
 #endif
         /// <summary>Administrative answer in Microsoft Search results for common search queries in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Bookmark>? Bookmarks
+        public List<Microsoft.Graph.Models.Search.Bookmark>? Bookmarks
         {
-            get { return BackingStore?.Get<List<Bookmark>?>("bookmarks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Search.Bookmark>?>("bookmarks"); }
             set { BackingStore?.Set("bookmarks", value); }
         }
 #nullable restore
 #else
-        public List<Bookmark> Bookmarks
+        public List<Microsoft.Graph.Models.Search.Bookmark> Bookmarks
         {
-            get { return BackingStore?.Get<List<Bookmark>>("bookmarks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Search.Bookmark>>("bookmarks"); }
             set { BackingStore?.Set("bookmarks", value); }
         }
 #endif
         /// <summary>Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Qna>? Qnas
+        public List<Microsoft.Graph.Models.Search.Qna>? Qnas
         {
-            get { return BackingStore?.Get<List<Qna>?>("qnas"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Search.Qna>?>("qnas"); }
             set { BackingStore?.Set("qnas", value); }
         }
 #nullable restore
 #else
-        public List<Qna> Qnas
+        public List<Microsoft.Graph.Models.Search.Qna> Qnas
         {
-            get { return BackingStore?.Get<List<Qna>>("qnas"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Search.Qna>>("qnas"); }
             set { BackingStore?.Set("qnas", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SearchEntity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SearchEntity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SearchEntity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SearchEntity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SearchEntity();
+            return new Microsoft.Graph.Models.SearchEntity();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,9 +77,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "acronyms", n => { Acronyms = n.GetCollectionOfObjectValues<Acronym>(Acronym.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "bookmarks", n => { Bookmarks = n.GetCollectionOfObjectValues<Bookmark>(Bookmark.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "qnas", n => { Qnas = n.GetCollectionOfObjectValues<Qna>(Qna.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "acronyms", n => { Acronyms = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Search.Acronym>(Microsoft.Graph.Models.Search.Acronym.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "bookmarks", n => { Bookmarks = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Search.Bookmark>(Microsoft.Graph.Models.Search.Bookmark.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "qnas", n => { Qnas = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Search.Qna>(Microsoft.Graph.Models.Search.Qna.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -90,9 +90,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Acronym>("acronyms", Acronyms);
-            writer.WriteCollectionOfObjectValues<Bookmark>("bookmarks", Bookmarks);
-            writer.WriteCollectionOfObjectValues<Qna>("qnas", Qnas);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Search.Acronym>("acronyms", Acronyms);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Search.Bookmark>("bookmarks", Bookmarks);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Search.Qna>("qnas", Qnas);
         }
     }
 }

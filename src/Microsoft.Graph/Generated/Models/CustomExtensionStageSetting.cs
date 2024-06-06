@@ -7,40 +7,40 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CustomExtensionStageSetting : Entity, IParsable
+    public class CustomExtensionStageSetting : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates the custom workflow extension that will be executed at this stage. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomCalloutExtension? CustomExtension
+        public Microsoft.Graph.Models.CustomCalloutExtension? CustomExtension
         {
-            get { return BackingStore?.Get<CustomCalloutExtension?>("customExtension"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomCalloutExtension?>("customExtension"); }
             set { BackingStore?.Set("customExtension", value); }
         }
 #nullable restore
 #else
-        public CustomCalloutExtension CustomExtension
+        public Microsoft.Graph.Models.CustomCalloutExtension CustomExtension
         {
-            get { return BackingStore?.Get<CustomCalloutExtension>("customExtension"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomCalloutExtension>("customExtension"); }
             set { BackingStore?.Set("customExtension", value); }
         }
 #endif
         /// <summary>The stage property</summary>
-        public AccessPackageCustomExtensionStage? Stage
+        public Microsoft.Graph.Models.AccessPackageCustomExtensionStage? Stage
         {
-            get { return BackingStore?.Get<AccessPackageCustomExtensionStage?>("stage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageCustomExtensionStage?>("stage"); }
             set { BackingStore?.Set("stage", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomExtensionStageSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CustomExtensionStageSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CustomExtensionStageSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CustomExtensionStageSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CustomExtensionStageSetting();
+            return new Microsoft.Graph.Models.CustomExtensionStageSetting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,8 +50,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "customExtension", n => { CustomExtension = n.GetObjectValue<CustomCalloutExtension>(CustomCalloutExtension.CreateFromDiscriminatorValue); } },
-                { "stage", n => { Stage = n.GetEnumValue<AccessPackageCustomExtensionStage>(); } },
+                { "customExtension", n => { CustomExtension = n.GetObjectValue<Microsoft.Graph.Models.CustomCalloutExtension>(Microsoft.Graph.Models.CustomCalloutExtension.CreateFromDiscriminatorValue); } },
+                { "stage", n => { Stage = n.GetEnumValue<Microsoft.Graph.Models.AccessPackageCustomExtensionStage>(); } },
             };
         }
         /// <summary>
@@ -62,8 +62,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<CustomCalloutExtension>("customExtension", CustomExtension);
-            writer.WriteEnumValue<AccessPackageCustomExtensionStage>("stage", Stage);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CustomCalloutExtension>("customExtension", CustomExtension);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AccessPackageCustomExtensionStage>("stage", Stage);
         }
     }
 }

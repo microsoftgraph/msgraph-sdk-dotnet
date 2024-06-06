@@ -38,37 +38,37 @@ namespace Microsoft.Graph.Models
         /// <summary>Overview of an attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SimulationReportOverview? Overview
+        public Microsoft.Graph.Models.SimulationReportOverview? Overview
         {
-            get { return BackingStore?.Get<SimulationReportOverview?>("overview"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SimulationReportOverview?>("overview"); }
             set { BackingStore?.Set("overview", value); }
         }
 #nullable restore
 #else
-        public SimulationReportOverview Overview
+        public Microsoft.Graph.Models.SimulationReportOverview Overview
         {
-            get { return BackingStore?.Get<SimulationReportOverview>("overview"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SimulationReportOverview>("overview"); }
             set { BackingStore?.Set("overview", value); }
         }
 #endif
         /// <summary>The tenant users and their online actions in an attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSimulationDetails>? SimulationUsers
+        public List<Microsoft.Graph.Models.UserSimulationDetails>? SimulationUsers
         {
-            get { return BackingStore?.Get<List<UserSimulationDetails>?>("simulationUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserSimulationDetails>?>("simulationUsers"); }
             set { BackingStore?.Set("simulationUsers", value); }
         }
 #nullable restore
 #else
-        public List<UserSimulationDetails> SimulationUsers
+        public List<Microsoft.Graph.Models.UserSimulationDetails> SimulationUsers
         {
-            get { return BackingStore?.Get<List<UserSimulationDetails>>("simulationUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserSimulationDetails>>("simulationUsers"); }
             set { BackingStore?.Set("simulationUsers", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SimulationReport"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SimulationReport"/> and sets the default values.
         /// </summary>
         public SimulationReport()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SimulationReport"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SimulationReport"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SimulationReport CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SimulationReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SimulationReport();
+            return new Microsoft.Graph.Models.SimulationReport();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,8 +94,8 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "overview", n => { Overview = n.GetObjectValue<SimulationReportOverview>(SimulationReportOverview.CreateFromDiscriminatorValue); } },
-                { "simulationUsers", n => { SimulationUsers = n.GetCollectionOfObjectValues<UserSimulationDetails>(UserSimulationDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "overview", n => { Overview = n.GetObjectValue<Microsoft.Graph.Models.SimulationReportOverview>(Microsoft.Graph.Models.SimulationReportOverview.CreateFromDiscriminatorValue); } },
+                { "simulationUsers", n => { SimulationUsers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UserSimulationDetails>(Microsoft.Graph.Models.UserSimulationDetails.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -106,8 +106,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<SimulationReportOverview>("overview", Overview);
-            writer.WriteCollectionOfObjectValues<UserSimulationDetails>("simulationUsers", SimulationUsers);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SimulationReportOverview>("overview", Overview);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UserSimulationDetails>("simulationUsers", SimulationUsers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

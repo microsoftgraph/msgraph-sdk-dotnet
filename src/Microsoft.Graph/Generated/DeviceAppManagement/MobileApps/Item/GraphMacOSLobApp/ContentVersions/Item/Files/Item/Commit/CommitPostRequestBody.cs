@@ -37,7 +37,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphMacOSLobApp.C
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CommitPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphMacOSLobApp.ContentVersions.Item.Files.Item.Commit.CommitPostRequestBody"/> and sets the default values.
         /// </summary>
         public CommitPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphMacOSLobApp.C
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CommitPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphMacOSLobApp.ContentVersions.Item.Files.Item.Commit.CommitPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CommitPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphMacOSLobApp.ContentVersions.Item.Files.Item.Commit.CommitPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CommitPostRequestBody();
+            return new Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphMacOSLobApp.ContentVersions.Item.Files.Item.Commit.CommitPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

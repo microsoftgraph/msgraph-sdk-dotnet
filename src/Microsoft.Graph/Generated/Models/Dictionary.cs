@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Dictionary"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Dictionary"/> and sets the default values.
         /// </summary>
         public Dictionary()
         {
@@ -46,17 +46,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Dictionary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Dictionary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Dictionary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Dictionary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.fileStorageContainerCustomPropertyDictionary" => new FileStorageContainerCustomPropertyDictionary(),
-                "#microsoft.graph.resultTemplateDictionary" => new ResultTemplateDictionary(),
-                _ => new Dictionary(),
+                "#microsoft.graph.fileStorageContainerCustomPropertyDictionary" => new Microsoft.Graph.Models.FileStorageContainerCustomPropertyDictionary(),
+                "#microsoft.graph.resultTemplateDictionary" => new Microsoft.Graph.Models.ResultTemplateDictionary(),
+                _ => new Microsoft.Graph.Models.Dictionary(),
             };
         }
         /// <summary>

@@ -7,43 +7,43 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class MembersDeletedEventMessageDetail : EventMessageDetail, IParsable
+    public class MembersDeletedEventMessageDetail : Microsoft.Graph.Models.EventMessageDetail, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Initiator of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Initiator
+        public Microsoft.Graph.Models.IdentitySet? Initiator
         {
-            get { return BackingStore?.Get<IdentitySet?>("initiator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Initiator
+        public Microsoft.Graph.Models.IdentitySet Initiator
         {
-            get { return BackingStore?.Get<IdentitySet>("initiator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
 #endif
         /// <summary>List of members deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TeamworkUserIdentity>? Members
+        public List<Microsoft.Graph.Models.TeamworkUserIdentity>? Members
         {
-            get { return BackingStore?.Get<List<TeamworkUserIdentity>?>("members"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TeamworkUserIdentity>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #nullable restore
 #else
-        public List<TeamworkUserIdentity> Members
+        public List<Microsoft.Graph.Models.TeamworkUserIdentity> Members
         {
-            get { return BackingStore?.Get<List<TeamworkUserIdentity>>("members"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TeamworkUserIdentity>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MembersDeletedEventMessageDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MembersDeletedEventMessageDetail"/> and sets the default values.
         /// </summary>
         public MembersDeletedEventMessageDetail() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MembersDeletedEventMessageDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MembersDeletedEventMessageDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MembersDeletedEventMessageDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MembersDeletedEventMessageDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MembersDeletedEventMessageDetail();
+            return new Microsoft.Graph.Models.MembersDeletedEventMessageDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,8 +67,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                { "members", n => { Members = n.GetCollectionOfObjectValues<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "initiator", n => { Initiator = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "members", n => { Members = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TeamworkUserIdentity>(Microsoft.Graph.Models.TeamworkUserIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<IdentitySet>("initiator", Initiator);
-            writer.WriteCollectionOfObjectValues<TeamworkUserIdentity>("members", Members);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("initiator", Initiator);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TeamworkUserIdentity>("members", Members);
         }
     }
 }

@@ -20,29 +20,29 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations
     public class ManagedAppRegistrationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUserIdsWithFlaggedAppRegistration method.</summary>
-        public GetUserIdsWithFlaggedAppRegistrationRequestBuilder GetUserIdsWithFlaggedAppRegistration
+        public Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.GetUserIdsWithFlaggedAppRegistration.GetUserIdsWithFlaggedAppRegistrationRequestBuilder GetUserIdsWithFlaggedAppRegistration
         {
-            get => new GetUserIdsWithFlaggedAppRegistrationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.GetUserIdsWithFlaggedAppRegistration.GetUserIdsWithFlaggedAppRegistrationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedAppRegistrations property of the microsoft.graph.deviceAppManagement entity.</summary>
         /// <param name="position">The unique identifier of managedAppRegistration</param>
-        /// <returns>A <see cref="ManagedAppRegistrationItemRequestBuilder"/></returns>
-        public ManagedAppRegistrationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.ManagedAppRegistrationItemRequestBuilder"/></returns>
+        public Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.ManagedAppRegistrationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("managedAppRegistration%2Did", position);
-                return new ManagedAppRegistrationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.ManagedAppRegistrationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagedAppRegistrationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagedAppRegistrationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -58,67 +58,67 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations
         {
         }
         /// <summary>
-        /// List properties and relationships of the managedAppRegistration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the androidManagedAppRegistration objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-androidmanagedappregistration-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ManagedAppRegistrationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedAppRegistrationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedAppRegistrationCollectionResponse?> GetAsync(Action<RequestConfiguration<ManagedAppRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedAppRegistrationCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder.ManagedAppRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedAppRegistrationCollectionResponse> GetAsync(Action<RequestConfiguration<ManagedAppRegistrationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedAppRegistrationCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder.ManagedAppRegistrationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedAppRegistrationCollectionResponse>(requestInfo, ManagedAppRegistrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedAppRegistrationCollectionResponse>(requestInfo, Microsoft.Graph.Models.ManagedAppRegistrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new androidManagedAppRegistration object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-androidmanagedappregistration-create?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ManagedAppRegistration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedAppRegistration"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedAppRegistration?> PostAsync(ManagedAppRegistration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedAppRegistration?> PostAsync(Microsoft.Graph.Models.ManagedAppRegistration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedAppRegistration> PostAsync(ManagedAppRegistration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedAppRegistration> PostAsync(Microsoft.Graph.Models.ManagedAppRegistration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedAppRegistration>(requestInfo, ManagedAppRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedAppRegistration>(requestInfo, Microsoft.Graph.Models.ManagedAppRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the managedAppRegistration objects.
+        /// List properties and relationships of the androidManagedAppRegistration objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedAppRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder.ManagedAppRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedAppRegistrationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder.ManagedAppRegistrationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -134,11 +134,11 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ManagedAppRegistration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ManagedAppRegistration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ManagedAppRegistration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ManagedAppRegistration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -151,14 +151,14 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ManagedAppRegistrationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ManagedAppRegistrationsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ManagedAppRegistrationsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the managedAppRegistration objects.
+        /// List properties and relationships of the androidManagedAppRegistration objects.
         /// </summary>
         public class ManagedAppRegistrationsRequestBuilderGetQueryParameters 
         {
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedAppRegistrationsRequestBuilderGetRequestConfiguration : RequestConfiguration<ManagedAppRegistrationsRequestBuilderGetQueryParameters>
+        public class ManagedAppRegistrationsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder.ManagedAppRegistrationsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

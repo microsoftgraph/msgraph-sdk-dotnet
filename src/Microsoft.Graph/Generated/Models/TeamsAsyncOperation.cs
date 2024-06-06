@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class TeamsAsyncOperation : Entity, IParsable
+    public class TeamsAsyncOperation : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Number of times the operation was attempted before being marked successful or failed.</summary>
@@ -25,16 +25,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Any error that causes the async operation to fail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OperationError? Error
+        public Microsoft.Graph.Models.OperationError? Error
         {
-            get { return BackingStore?.Get<OperationError?>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OperationError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public OperationError Error
+        public Microsoft.Graph.Models.OperationError Error
         {
-            get { return BackingStore?.Get<OperationError>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OperationError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #endif
@@ -45,15 +45,15 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The operationType property</summary>
-        public TeamsAsyncOperationType? OperationType
+        public Microsoft.Graph.Models.TeamsAsyncOperationType? OperationType
         {
-            get { return BackingStore?.Get<TeamsAsyncOperationType?>("operationType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsAsyncOperationType?>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
         }
         /// <summary>The status property</summary>
-        public TeamsAsyncOperationStatus? Status
+        public Microsoft.Graph.Models.TeamsAsyncOperationStatus? Status
         {
-            get { return BackingStore?.Get<TeamsAsyncOperationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsAsyncOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The ID of the object that&apos;s created or modified as result of this async operation, typically a team.</summary>
@@ -91,12 +91,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamsAsyncOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamsAsyncOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeamsAsyncOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TeamsAsyncOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamsAsyncOperation();
+            return new Microsoft.Graph.Models.TeamsAsyncOperation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,10 +108,10 @@ namespace Microsoft.Graph.Models
             {
                 { "attemptsCount", n => { AttemptsCount = n.GetIntValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "error", n => { Error = n.GetObjectValue<OperationError>(OperationError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<Microsoft.Graph.Models.OperationError>(Microsoft.Graph.Models.OperationError.CreateFromDiscriminatorValue); } },
                 { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                { "operationType", n => { OperationType = n.GetEnumValue<TeamsAsyncOperationType>(); } },
-                { "status", n => { Status = n.GetEnumValue<TeamsAsyncOperationStatus>(); } },
+                { "operationType", n => { OperationType = n.GetEnumValue<Microsoft.Graph.Models.TeamsAsyncOperationType>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.TeamsAsyncOperationStatus>(); } },
                 { "targetResourceId", n => { TargetResourceId = n.GetStringValue(); } },
                 { "targetResourceLocation", n => { TargetResourceLocation = n.GetStringValue(); } },
             };
@@ -126,10 +126,10 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteIntValue("attemptsCount", AttemptsCount);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<OperationError>("error", Error);
+            writer.WriteObjectValue<Microsoft.Graph.Models.OperationError>("error", Error);
             writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
-            writer.WriteEnumValue<TeamsAsyncOperationType>("operationType", OperationType);
-            writer.WriteEnumValue<TeamsAsyncOperationStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TeamsAsyncOperationType>("operationType", OperationType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TeamsAsyncOperationStatus>("status", Status);
             writer.WriteStringValue("targetResourceId", TargetResourceId);
             writer.WriteStringValue("targetResourceLocation", TargetResourceLocation);
         }

@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Add
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AddPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Add.AddPostRequestBody"/> and sets the default values.
         /// </summary>
         public AddPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Add
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AddPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Add.AddPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AddPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Add.AddPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AddPostRequestBody();
+            return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Add.AddPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

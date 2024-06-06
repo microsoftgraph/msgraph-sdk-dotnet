@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AuthenticationMethodsPolicy : Entity, IParsable
+    public class AuthenticationMethodsPolicy : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodConfiguration>? AuthenticationMethodConfigurations
+        public List<Microsoft.Graph.Models.AuthenticationMethodConfiguration>? AuthenticationMethodConfigurations
         {
-            get { return BackingStore?.Get<List<AuthenticationMethodConfiguration>?>("authenticationMethodConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationMethodConfiguration>?>("authenticationMethodConfigurations"); }
             set { BackingStore?.Set("authenticationMethodConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodConfiguration> AuthenticationMethodConfigurations
+        public List<Microsoft.Graph.Models.AuthenticationMethodConfiguration> AuthenticationMethodConfigurations
         {
-            get { return BackingStore?.Get<List<AuthenticationMethodConfiguration>>("authenticationMethodConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationMethodConfiguration>>("authenticationMethodConfigurations"); }
             set { BackingStore?.Set("authenticationMethodConfigurations", value); }
         }
 #endif
@@ -65,9 +65,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authentication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Do not use.</summary>
-        public AuthenticationMethodsPolicyMigrationState? PolicyMigrationState
+        public Microsoft.Graph.Models.AuthenticationMethodsPolicyMigrationState? PolicyMigrationState
         {
-            get { return BackingStore?.Get<AuthenticationMethodsPolicyMigrationState?>("policyMigrationState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationMethodsPolicyMigrationState?>("policyMigrationState"); }
             set { BackingStore?.Set("policyMigrationState", value); }
         }
         /// <summary>The version of the policy in use. Read-only.</summary>
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationMethodsPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationMethodsPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthenticationMethodsPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AuthenticationMethodsPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationMethodsPolicy();
+            return new Microsoft.Graph.Models.AuthenticationMethodsPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authenticationMethodConfigurations", n => { AuthenticationMethodConfigurations = n.GetCollectionOfObjectValues<AuthenticationMethodConfiguration>(AuthenticationMethodConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationMethodConfigurations", n => { AuthenticationMethodConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationMethodConfiguration>(Microsoft.Graph.Models.AuthenticationMethodConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "policyMigrationState", n => { PolicyMigrationState = n.GetEnumValue<AuthenticationMethodsPolicyMigrationState>(); } },
+                { "policyMigrationState", n => { PolicyMigrationState = n.GetEnumValue<Microsoft.Graph.Models.AuthenticationMethodsPolicyMigrationState>(); } },
                 { "policyVersion", n => { PolicyVersion = n.GetStringValue(); } },
                 { "reconfirmationInDays", n => { ReconfirmationInDays = n.GetIntValue(); } },
                 { "registrationEnforcement", n => { RegistrationEnforcement = n.GetObjectValue<Microsoft.Graph.Models.RegistrationEnforcement>(Microsoft.Graph.Models.RegistrationEnforcement.CreateFromDiscriminatorValue); } },
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AuthenticationMethodConfiguration>("authenticationMethodConfigurations", AuthenticationMethodConfigurations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationMethodConfiguration>("authenticationMethodConfigurations", AuthenticationMethodConfigurations);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteEnumValue<AuthenticationMethodsPolicyMigrationState>("policyMigrationState", PolicyMigrationState);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AuthenticationMethodsPolicyMigrationState>("policyMigrationState", PolicyMigrationState);
             writer.WriteStringValue("policyVersion", PolicyVersion);
             writer.WriteIntValue("reconfirmationInDays", ReconfirmationInDays);
             writer.WriteObjectValue<Microsoft.Graph.Models.RegistrationEnforcement>("registrationEnforcement", RegistrationEnforcement);

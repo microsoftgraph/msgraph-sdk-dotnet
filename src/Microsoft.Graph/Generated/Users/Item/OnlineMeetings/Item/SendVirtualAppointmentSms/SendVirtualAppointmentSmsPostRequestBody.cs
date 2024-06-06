@@ -21,29 +21,29 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.SendVirtualAppointmentS
         /// <summary>The attendees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttendeeNotificationInfo>? Attendees
+        public List<Microsoft.Graph.Models.AttendeeNotificationInfo>? Attendees
         {
-            get { return BackingStore?.Get<List<AttendeeNotificationInfo>?>("attendees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttendeeNotificationInfo>?>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
 #nullable restore
 #else
-        public List<AttendeeNotificationInfo> Attendees
+        public List<Microsoft.Graph.Models.AttendeeNotificationInfo> Attendees
         {
-            get { return BackingStore?.Get<List<AttendeeNotificationInfo>>("attendees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttendeeNotificationInfo>>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The messageType property</summary>
-        public VirtualAppointmentMessageType? MessageType
+        public Microsoft.Graph.Models.VirtualAppointmentMessageType? MessageType
         {
-            get { return BackingStore?.Get<VirtualAppointmentMessageType?>("messageType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.VirtualAppointmentMessageType?>("messageType"); }
             set { BackingStore?.Set("messageType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SendVirtualAppointmentSmsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.OnlineMeetings.Item.SendVirtualAppointmentSms.SendVirtualAppointmentSmsPostRequestBody"/> and sets the default values.
         /// </summary>
         public SendVirtualAppointmentSmsPostRequestBody()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.SendVirtualAppointmentS
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SendVirtualAppointmentSmsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.OnlineMeetings.Item.SendVirtualAppointmentSms.SendVirtualAppointmentSmsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SendVirtualAppointmentSmsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Users.Item.OnlineMeetings.Item.SendVirtualAppointmentSms.SendVirtualAppointmentSmsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SendVirtualAppointmentSmsPostRequestBody();
+            return new Microsoft.Graph.Users.Item.OnlineMeetings.Item.SendVirtualAppointmentSms.SendVirtualAppointmentSmsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.SendVirtualAppointmentS
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attendees", n => { Attendees = n.GetCollectionOfObjectValues<AttendeeNotificationInfo>(AttendeeNotificationInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "messageType", n => { MessageType = n.GetEnumValue<VirtualAppointmentMessageType>(); } },
+                { "attendees", n => { Attendees = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AttendeeNotificationInfo>(Microsoft.Graph.Models.AttendeeNotificationInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "messageType", n => { MessageType = n.GetEnumValue<Microsoft.Graph.Models.VirtualAppointmentMessageType>(); } },
             };
         }
         /// <summary>
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.SendVirtualAppointmentS
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<AttendeeNotificationInfo>("attendees", Attendees);
-            writer.WriteEnumValue<VirtualAppointmentMessageType>("messageType", MessageType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AttendeeNotificationInfo>("attendees", Attendees);
+            writer.WriteEnumValue<Microsoft.Graph.Models.VirtualAppointmentMessageType>("messageType", MessageType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

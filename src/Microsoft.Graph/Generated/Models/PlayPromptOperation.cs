@@ -7,18 +7,18 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class PlayPromptOperation : CommsOperation, IParsable
+    public class PlayPromptOperation : Microsoft.Graph.Models.CommsOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlayPromptOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PlayPromptOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PlayPromptOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.PlayPromptOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlayPromptOperation();
+            return new Microsoft.Graph.Models.PlayPromptOperation();
         }
         /// <summary>
         /// The deserialization information for the current model

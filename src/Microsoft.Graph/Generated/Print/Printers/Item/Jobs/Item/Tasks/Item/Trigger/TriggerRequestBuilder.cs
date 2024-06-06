@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Trigger
     public class TriggerRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="TriggerRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Trigger.TriggerRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Trigger
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TriggerRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Trigger.TriggerRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Trigger
         /// <summary>
         /// The printTaskTrigger that triggered this task&apos;s execution. Read-only.
         /// </summary>
-        /// <returns>A <see cref="PrintTaskTrigger"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrintTaskTrigger"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrintTaskTrigger?> GetAsync(Action<RequestConfiguration<TriggerRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrintTaskTrigger?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Trigger.TriggerRequestBuilder.TriggerRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PrintTaskTrigger> GetAsync(Action<RequestConfiguration<TriggerRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrintTaskTrigger> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Trigger.TriggerRequestBuilder.TriggerRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PrintTaskTrigger>(requestInfo, PrintTaskTrigger.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PrintTaskTrigger>(requestInfo, Microsoft.Graph.Models.PrintTaskTrigger.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The printTaskTrigger that triggered this task&apos;s execution. Read-only.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Trigger
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TriggerRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Trigger.TriggerRequestBuilder.TriggerRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TriggerRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Trigger.TriggerRequestBuilder.TriggerRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Trigger
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TriggerRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Trigger.TriggerRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TriggerRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Trigger.TriggerRequestBuilder WithUrl(string rawUrl)
         {
-            return new TriggerRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Trigger.TriggerRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The printTaskTrigger that triggered this task&apos;s execution. Read-only.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Trigger
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TriggerRequestBuilderGetRequestConfiguration : RequestConfiguration<TriggerRequestBuilderGetQueryParameters>
+        public class TriggerRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Trigger.TriggerRequestBuilder.TriggerRequestBuilderGetQueryParameters>
         {
         }
     }

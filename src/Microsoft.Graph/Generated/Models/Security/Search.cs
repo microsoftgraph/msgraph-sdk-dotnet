@@ -105,17 +105,17 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Search"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.Search"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Search CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.Search CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.ediscoveryReviewSetQuery" => new EdiscoveryReviewSetQuery(),
-                "#microsoft.graph.security.ediscoverySearch" => new EdiscoverySearch(),
-                _ => new Search(),
+                "#microsoft.graph.security.ediscoveryReviewSetQuery" => new Microsoft.Graph.Models.Security.EdiscoveryReviewSetQuery(),
+                "#microsoft.graph.security.ediscoverySearch" => new Microsoft.Graph.Models.Security.EdiscoverySearch(),
+                _ => new Microsoft.Graph.Models.Security.Search(),
             };
         }
         /// <summary>

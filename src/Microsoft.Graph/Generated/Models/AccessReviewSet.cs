@@ -7,50 +7,50 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AccessReviewSet : Entity, IParsable
+    public class AccessReviewSet : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the template and scheduling for an access review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewScheduleDefinition>? Definitions
+        public List<Microsoft.Graph.Models.AccessReviewScheduleDefinition>? Definitions
         {
-            get { return BackingStore?.Get<List<AccessReviewScheduleDefinition>?>("definitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewScheduleDefinition>?>("definitions"); }
             set { BackingStore?.Set("definitions", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewScheduleDefinition> Definitions
+        public List<Microsoft.Graph.Models.AccessReviewScheduleDefinition> Definitions
         {
-            get { return BackingStore?.Get<List<AccessReviewScheduleDefinition>>("definitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewScheduleDefinition>>("definitions"); }
             set { BackingStore?.Set("definitions", value); }
         }
 #endif
         /// <summary>Represents a collection of access review history data and the scopes used to collect that data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewHistoryDefinition>? HistoryDefinitions
+        public List<Microsoft.Graph.Models.AccessReviewHistoryDefinition>? HistoryDefinitions
         {
-            get { return BackingStore?.Get<List<AccessReviewHistoryDefinition>?>("historyDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewHistoryDefinition>?>("historyDefinitions"); }
             set { BackingStore?.Set("historyDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewHistoryDefinition> HistoryDefinitions
+        public List<Microsoft.Graph.Models.AccessReviewHistoryDefinition> HistoryDefinitions
         {
-            get { return BackingStore?.Get<List<AccessReviewHistoryDefinition>>("historyDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewHistoryDefinition>>("historyDefinitions"); }
             set { BackingStore?.Set("historyDefinitions", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewSet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessReviewSet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessReviewSet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AccessReviewSet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessReviewSet();
+            return new Microsoft.Graph.Models.AccessReviewSet();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "definitions", n => { Definitions = n.GetCollectionOfObjectValues<AccessReviewScheduleDefinition>(AccessReviewScheduleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "historyDefinitions", n => { HistoryDefinitions = n.GetCollectionOfObjectValues<AccessReviewHistoryDefinition>(AccessReviewHistoryDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "definitions", n => { Definitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewScheduleDefinition>(Microsoft.Graph.Models.AccessReviewScheduleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "historyDefinitions", n => { HistoryDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewHistoryDefinition>(Microsoft.Graph.Models.AccessReviewHistoryDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AccessReviewScheduleDefinition>("definitions", Definitions);
-            writer.WriteCollectionOfObjectValues<AccessReviewHistoryDefinition>("historyDefinitions", HistoryDefinitions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewScheduleDefinition>("definitions", Definitions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewHistoryDefinition>("historyDefinitions", HistoryDefinitions);
         }
     }
 }

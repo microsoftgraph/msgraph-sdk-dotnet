@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.AddLargeGalleryView
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AddLargeGalleryViewPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Communications.Calls.Item.AddLargeGalleryView.AddLargeGalleryViewPostRequestBody"/> and sets the default values.
         /// </summary>
         public AddLargeGalleryViewPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Communications.Calls.Item.AddLargeGalleryView
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AddLargeGalleryViewPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Communications.Calls.Item.AddLargeGalleryView.AddLargeGalleryViewPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AddLargeGalleryViewPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Communications.Calls.Item.AddLargeGalleryView.AddLargeGalleryViewPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AddLargeGalleryViewPostRequestBody();
+            return new Microsoft.Graph.Communications.Calls.Item.AddLargeGalleryView.AddLargeGalleryViewPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

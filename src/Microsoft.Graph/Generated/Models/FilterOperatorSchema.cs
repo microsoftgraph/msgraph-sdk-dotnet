@@ -7,46 +7,46 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class FilterOperatorSchema : Entity, IParsable
+    public class FilterOperatorSchema : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The arity property</summary>
-        public ScopeOperatorType? Arity
+        public Microsoft.Graph.Models.ScopeOperatorType? Arity
         {
-            get { return BackingStore?.Get<ScopeOperatorType?>("arity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ScopeOperatorType?>("arity"); }
             set { BackingStore?.Set("arity", value); }
         }
         /// <summary>The multivaluedComparisonType property</summary>
-        public ScopeOperatorMultiValuedComparisonType? MultivaluedComparisonType
+        public Microsoft.Graph.Models.ScopeOperatorMultiValuedComparisonType? MultivaluedComparisonType
         {
-            get { return BackingStore?.Get<ScopeOperatorMultiValuedComparisonType?>("multivaluedComparisonType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ScopeOperatorMultiValuedComparisonType?>("multivaluedComparisonType"); }
             set { BackingStore?.Set("multivaluedComparisonType", value); }
         }
         /// <summary>Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttributeType?>? SupportedAttributeTypes
+        public List<Microsoft.Graph.Models.AttributeType?>? SupportedAttributeTypes
         {
-            get { return BackingStore?.Get<List<AttributeType?>?>("supportedAttributeTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttributeType?>?>("supportedAttributeTypes"); }
             set { BackingStore?.Set("supportedAttributeTypes", value); }
         }
 #nullable restore
 #else
-        public List<AttributeType?> SupportedAttributeTypes
+        public List<Microsoft.Graph.Models.AttributeType?> SupportedAttributeTypes
         {
-            get { return BackingStore?.Get<List<AttributeType?>>("supportedAttributeTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttributeType?>>("supportedAttributeTypes"); }
             set { BackingStore?.Set("supportedAttributeTypes", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FilterOperatorSchema"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.FilterOperatorSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FilterOperatorSchema CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.FilterOperatorSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FilterOperatorSchema();
+            return new Microsoft.Graph.Models.FilterOperatorSchema();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,9 +56,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "arity", n => { Arity = n.GetEnumValue<ScopeOperatorType>(); } },
-                { "multivaluedComparisonType", n => { MultivaluedComparisonType = n.GetEnumValue<ScopeOperatorMultiValuedComparisonType>(); } },
-                { "supportedAttributeTypes", n => { SupportedAttributeTypes = n.GetCollectionOfEnumValues<AttributeType>()?.ToList(); } },
+                { "arity", n => { Arity = n.GetEnumValue<Microsoft.Graph.Models.ScopeOperatorType>(); } },
+                { "multivaluedComparisonType", n => { MultivaluedComparisonType = n.GetEnumValue<Microsoft.Graph.Models.ScopeOperatorMultiValuedComparisonType>(); } },
+                { "supportedAttributeTypes", n => { SupportedAttributeTypes = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.AttributeType>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -69,9 +69,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<ScopeOperatorType>("arity", Arity);
-            writer.WriteEnumValue<ScopeOperatorMultiValuedComparisonType>("multivaluedComparisonType", MultivaluedComparisonType);
-            writer.WriteCollectionOfEnumValues<AttributeType>("supportedAttributeTypes", SupportedAttributeTypes);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ScopeOperatorType>("arity", Arity);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ScopeOperatorMultiValuedComparisonType>("multivaluedComparisonType", MultivaluedComparisonType);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.AttributeType>("supportedAttributeTypes", SupportedAttributeTypes);
         }
     }
 }

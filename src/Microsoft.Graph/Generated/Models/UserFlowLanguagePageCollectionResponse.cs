@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UserFlowLanguagePageCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class UserFlowLanguagePageCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserFlowLanguagePage>? Value
+        public List<Microsoft.Graph.Models.UserFlowLanguagePage>? Value
         {
-            get { return BackingStore?.Get<List<UserFlowLanguagePage>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserFlowLanguagePage>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<UserFlowLanguagePage> Value
+        public List<Microsoft.Graph.Models.UserFlowLanguagePage> Value
         {
-            get { return BackingStore?.Get<List<UserFlowLanguagePage>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserFlowLanguagePage>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserFlowLanguagePageCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserFlowLanguagePageCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserFlowLanguagePageCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserFlowLanguagePageCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserFlowLanguagePageCollectionResponse();
+            return new Microsoft.Graph.Models.UserFlowLanguagePageCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<UserFlowLanguagePage>(UserFlowLanguagePage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UserFlowLanguagePage>(Microsoft.Graph.Models.UserFlowLanguagePage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<UserFlowLanguagePage>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UserFlowLanguagePage>("value", Value);
         }
     }
 }

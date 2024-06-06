@@ -24,42 +24,42 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint
     public class VirtualEndpointRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the auditEvents property of the microsoft.graph.virtualEndpoint entity.</summary>
-        public AuditEventsRequestBuilder AuditEvents
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.AuditEventsRequestBuilder AuditEvents
         {
-            get => new AuditEventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.AuditEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.</summary>
-        public CloudPCsRequestBuilder CloudPCs
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.CloudPCsRequestBuilder CloudPCs
         {
-            get => new CloudPCsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.CloudPCsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceImages property of the microsoft.graph.virtualEndpoint entity.</summary>
-        public DeviceImagesRequestBuilder DeviceImages
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.DeviceImagesRequestBuilder DeviceImages
         {
-            get => new DeviceImagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.DeviceImagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the galleryImages property of the microsoft.graph.virtualEndpoint entity.</summary>
-        public GalleryImagesRequestBuilder GalleryImages
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.GalleryImagesRequestBuilder GalleryImages
         {
-            get => new GalleryImagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages.GalleryImagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.</summary>
-        public OnPremisesConnectionsRequestBuilder OnPremisesConnections
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.OnPremisesConnections.OnPremisesConnectionsRequestBuilder OnPremisesConnections
         {
-            get => new OnPremisesConnectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.VirtualEndpoint.OnPremisesConnections.OnPremisesConnectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.</summary>
-        public ProvisioningPoliciesRequestBuilder ProvisioningPolicies
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder ProvisioningPolicies
         {
-            get => new ProvisioningPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userSettings property of the microsoft.graph.virtualEndpoint entity.</summary>
-        public UserSettingsRequestBuilder UserSettings
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.UserSettings.UserSettingsRequestBuilder UserSettings
         {
-            get => new UserSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.VirtualEndpoint.UserSettings.UserSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="VirtualEndpointRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.VirtualEndpointRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="VirtualEndpointRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.VirtualEndpointRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -102,20 +102,20 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint
         /// <returns>A <see cref="Microsoft.Graph.Models.VirtualEndpoint"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.VirtualEndpoint?> GetAsync(Action<RequestConfiguration<VirtualEndpointRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.VirtualEndpoint?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.VirtualEndpointRequestBuilder.VirtualEndpointRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.VirtualEndpoint> GetAsync(Action<RequestConfiguration<VirtualEndpointRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.VirtualEndpoint> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.VirtualEndpointRequestBuilder.VirtualEndpointRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.VirtualEndpoint>(requestInfo, Microsoft.Graph.Models.VirtualEndpoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.VirtualEndpoint?> PatchAsync(Microsoft.Graph.Models.VirtualEndpoint body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.VirtualEndpoint>(requestInfo, Microsoft.Graph.Models.VirtualEndpoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -170,11 +170,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<VirtualEndpointRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.VirtualEndpointRequestBuilder.VirtualEndpointRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<VirtualEndpointRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.VirtualEndpointRequestBuilder.VirtualEndpointRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -207,11 +207,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="VirtualEndpointRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.VirtualEndpointRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public VirtualEndpointRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceManagement.VirtualEndpoint.VirtualEndpointRequestBuilder WithUrl(string rawUrl)
         {
-            return new VirtualEndpointRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceManagement.VirtualEndpoint.VirtualEndpointRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -250,7 +250,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class VirtualEndpointRequestBuilderGetRequestConfiguration : RequestConfiguration<VirtualEndpointRequestBuilderGetQueryParameters>
+        public class VirtualEndpointRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.VirtualEndpoint.VirtualEndpointRequestBuilder.VirtualEndpointRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

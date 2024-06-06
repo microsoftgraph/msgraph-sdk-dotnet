@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole
 {
     [Obsolete("This class is obsolete. Use GetByUserRoleWithRoleGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetByUserRoleWithRoleResponse : GetByUserRoleWithRoleGetResponse, IParsable
+    public class GetByUserRoleWithRoleResponse : Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetByUserRoleWithRoleResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetByUserRoleWithRoleResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetByUserRoleWithRoleResponse();
+            return new Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleResponse();
         }
     }
 }

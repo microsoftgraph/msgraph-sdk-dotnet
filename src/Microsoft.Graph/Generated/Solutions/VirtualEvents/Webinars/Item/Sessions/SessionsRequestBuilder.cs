@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions
     public class SessionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.</summary>
         /// <param name="position">The unique identifier of virtualEventSession</param>
-        /// <returns>A <see cref="VirtualEventSessionItemRequestBuilder"/></returns>
-        public VirtualEventSessionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("virtualEventSession%2Did", position);
-                return new VirtualEventSessionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SessionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.SessionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SessionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.SessionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions
         /// <summary>
         /// Read the properties and relationships of a virtualEventSession object.
         /// </summary>
-        /// <returns>A <see cref="VirtualEventSessionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.VirtualEventSessionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<VirtualEventSessionCollectionResponse?> GetAsync(Action<RequestConfiguration<SessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.VirtualEventSessionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<VirtualEventSessionCollectionResponse> GetAsync(Action<RequestConfiguration<SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.VirtualEventSessionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<VirtualEventSessionCollectionResponse>(requestInfo, VirtualEventSessionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.VirtualEventSessionCollectionResponse>(requestInfo, Microsoft.Graph.Models.VirtualEventSessionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to sessions for solutions
         /// </summary>
-        /// <returns>A <see cref="VirtualEventSession"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.VirtualEventSession"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<VirtualEventSession?> PostAsync(VirtualEventSession body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.VirtualEventSession?> PostAsync(Microsoft.Graph.Models.VirtualEventSession body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<VirtualEventSession> PostAsync(VirtualEventSession body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.VirtualEventSession> PostAsync(Microsoft.Graph.Models.VirtualEventSession body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<VirtualEventSession>(requestInfo, VirtualEventSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.VirtualEventSession>(requestInfo, Microsoft.Graph.Models.VirtualEventSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of a virtualEventSession object.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(VirtualEventSession body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.VirtualEventSession body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(VirtualEventSession body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.VirtualEventSession body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SessionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.SessionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SessionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.SessionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new SessionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.SessionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Read the properties and relationships of a virtualEventSession object.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SessionsRequestBuilderGetRequestConfiguration : RequestConfiguration<SessionsRequestBuilderGetQueryParameters>
+        public class SessionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

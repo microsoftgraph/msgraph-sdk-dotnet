@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Me.Onenote.Sections.Item.Pages.Item.OnenotePatchConten
         /// <summary>The commands property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnenotePatchContentCommand>? Commands
+        public List<Microsoft.Graph.Models.OnenotePatchContentCommand>? Commands
         {
-            get { return BackingStore?.Get<List<OnenotePatchContentCommand>?>("commands"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnenotePatchContentCommand>?>("commands"); }
             set { BackingStore?.Set("commands", value); }
         }
 #nullable restore
 #else
-        public List<OnenotePatchContentCommand> Commands
+        public List<Microsoft.Graph.Models.OnenotePatchContentCommand> Commands
         {
-            get { return BackingStore?.Get<List<OnenotePatchContentCommand>>("commands"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnenotePatchContentCommand>>("commands"); }
             set { BackingStore?.Set("commands", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnenotePatchContentPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Onenote.Sections.Item.Pages.Item.OnenotePatchContent.OnenotePatchContentPostRequestBody"/> and sets the default values.
         /// </summary>
         public OnenotePatchContentPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Me.Onenote.Sections.Item.Pages.Item.OnenotePatchConten
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnenotePatchContentPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Onenote.Sections.Item.Pages.Item.OnenotePatchContent.OnenotePatchContentPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OnenotePatchContentPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Me.Onenote.Sections.Item.Pages.Item.OnenotePatchContent.OnenotePatchContentPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnenotePatchContentPostRequestBody();
+            return new Microsoft.Graph.Me.Onenote.Sections.Item.Pages.Item.OnenotePatchContent.OnenotePatchContentPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Me.Onenote.Sections.Item.Pages.Item.OnenotePatchConten
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "commands", n => { Commands = n.GetCollectionOfObjectValues<OnenotePatchContentCommand>(OnenotePatchContentCommand.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "commands", n => { Commands = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OnenotePatchContentCommand>(Microsoft.Graph.Models.OnenotePatchContentCommand.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Me.Onenote.Sections.Item.Pages.Item.OnenotePatchConten
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<OnenotePatchContentCommand>("commands", Commands);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OnenotePatchContentCommand>("commands", Commands);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

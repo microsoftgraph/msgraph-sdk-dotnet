@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class HorizontalSectionColumn : Entity, IParsable
+    public class HorizontalSectionColumn : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The collection of WebParts in this column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WebPart>? Webparts
+        public List<Microsoft.Graph.Models.WebPart>? Webparts
         {
-            get { return BackingStore?.Get<List<WebPart>?>("webparts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WebPart>?>("webparts"); }
             set { BackingStore?.Set("webparts", value); }
         }
 #nullable restore
 #else
-        public List<WebPart> Webparts
+        public List<Microsoft.Graph.Models.WebPart> Webparts
         {
-            get { return BackingStore?.Get<List<WebPart>>("webparts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WebPart>>("webparts"); }
             set { BackingStore?.Set("webparts", value); }
         }
 #endif
@@ -35,12 +35,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HorizontalSectionColumn"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.HorizontalSectionColumn"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new HorizontalSectionColumn CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.HorizontalSectionColumn CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HorizontalSectionColumn();
+            return new Microsoft.Graph.Models.HorizontalSectionColumn();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "webparts", n => { Webparts = n.GetCollectionOfObjectValues<WebPart>(WebPart.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "webparts", n => { Webparts = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WebPart>(Microsoft.Graph.Models.WebPart.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "width", n => { Width = n.GetIntValue(); } },
             };
         }
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<WebPart>("webparts", Webparts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WebPart>("webparts", Webparts);
             writer.WriteIntValue("width", Width);
         }
     }

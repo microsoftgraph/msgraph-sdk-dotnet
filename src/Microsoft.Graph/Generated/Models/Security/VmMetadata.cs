@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The cloudProvider property</summary>
-        public VmCloudProvider? CloudProvider
+        public Microsoft.Graph.Models.Security.VmCloudProvider? CloudProvider
         {
-            get { return BackingStore?.Get<VmCloudProvider?>("cloudProvider"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.VmCloudProvider?>("cloudProvider"); }
             set { BackingStore?.Set("cloudProvider", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="VmMetadata"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.VmMetadata"/> and sets the default values.
         /// </summary>
         public VmMetadata()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VmMetadata"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.VmMetadata"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static VmMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Security.VmMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VmMetadata();
+            return new Microsoft.Graph.Models.Security.VmMetadata();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cloudProvider", n => { CloudProvider = n.GetEnumValue<VmCloudProvider>(); } },
+                { "cloudProvider", n => { CloudProvider = n.GetEnumValue<Microsoft.Graph.Models.Security.VmCloudProvider>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
                 { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Models.Security
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<VmCloudProvider>("cloudProvider", CloudProvider);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.VmCloudProvider>("cloudProvider", CloudProvider);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("resourceId", ResourceId);
             writer.WriteStringValue("subscriptionId", SubscriptionId);

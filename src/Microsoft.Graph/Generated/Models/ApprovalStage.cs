@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ApprovalStage : Entity, IParsable
+    public class ApprovalStage : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether the stage is assigned to the calling user to review. Read-only.</summary>
@@ -51,16 +51,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The identifier of the reviewer. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn&apos;t reviewed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? ReviewedBy
+        public Microsoft.Graph.Models.Identity? ReviewedBy
         {
-            get { return BackingStore?.Get<Identity?>("reviewedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity?>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
 #nullable restore
 #else
-        public Identity ReviewedBy
+        public Microsoft.Graph.Models.Identity ReviewedBy
         {
-            get { return BackingStore?.Get<Identity>("reviewedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
 #endif
@@ -105,12 +105,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ApprovalStage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ApprovalStage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ApprovalStage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ApprovalStage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ApprovalStage();
+            return new Microsoft.Graph.Models.ApprovalStage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
                 { "reviewResult", n => { ReviewResult = n.GetStringValue(); } },
-                { "reviewedBy", n => { ReviewedBy = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "reviewedBy", n => { ReviewedBy = n.GetObjectValue<Microsoft.Graph.Models.Identity>(Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "reviewedDateTime", n => { ReviewedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("assignedToMe", AssignedToMe);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("justification", Justification);
-            writer.WriteObjectValue<Identity>("reviewedBy", ReviewedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Identity>("reviewedBy", ReviewedBy);
             writer.WriteDateTimeOffsetValue("reviewedDateTime", ReviewedDateTime);
             writer.WriteStringValue("reviewResult", ReviewResult);
             writer.WriteStringValue("status", Status);

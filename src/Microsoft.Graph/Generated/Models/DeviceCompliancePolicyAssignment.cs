@@ -9,33 +9,33 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Device compliance policy assignment.
     /// </summary>
-    public class DeviceCompliancePolicyAssignment : Entity, IParsable
+    public class DeviceCompliancePolicyAssignment : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Target for the compliance policy assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceAndAppManagementAssignmentTarget? Target
+        public Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget? Target
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public DeviceAndAppManagementAssignmentTarget Target
+        public Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget Target
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceCompliancePolicyAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceCompliancePolicyAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceCompliancePolicyAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeviceCompliancePolicyAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceCompliancePolicyAssignment();
+            return new Microsoft.Graph.Models.DeviceCompliancePolicyAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget>(Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<DeviceAndAppManagementAssignmentTarget>("target", Target);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget>("target", Target);
         }
     }
 }

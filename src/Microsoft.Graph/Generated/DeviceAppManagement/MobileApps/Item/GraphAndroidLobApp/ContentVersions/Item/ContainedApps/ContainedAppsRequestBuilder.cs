@@ -19,24 +19,24 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp
     public class ContainedAppsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.ContentVersions.Item.ContainedApps.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.ContentVersions.Item.ContainedApps.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the containedApps property of the microsoft.graph.mobileAppContent entity.</summary>
         /// <param name="position">The unique identifier of mobileContainedApp</param>
-        /// <returns>A <see cref="MobileContainedAppItemRequestBuilder"/></returns>
-        public MobileContainedAppItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.ContentVersions.Item.ContainedApps.Item.MobileContainedAppItemRequestBuilder"/></returns>
+        public Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.ContentVersions.Item.ContainedApps.Item.MobileContainedAppItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("mobileContainedApp%2Did", position);
-                return new MobileContainedAppItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.ContentVersions.Item.ContainedApps.Item.MobileContainedAppItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ContainedAppsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.ContentVersions.Item.ContainedApps.ContainedAppsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ContainedAppsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.ContentVersions.Item.ContainedApps.ContainedAppsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp
         /// <summary>
         /// The collection of contained apps in a MobileLobApp acting as a package.
         /// </summary>
-        /// <returns>A <see cref="MobileContainedAppCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MobileContainedAppCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MobileContainedAppCollectionResponse?> GetAsync(Action<RequestConfiguration<ContainedAppsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.MobileContainedAppCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.ContentVersions.Item.ContainedApps.ContainedAppsRequestBuilder.ContainedAppsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<MobileContainedAppCollectionResponse> GetAsync(Action<RequestConfiguration<ContainedAppsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.MobileContainedAppCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.ContentVersions.Item.ContainedApps.ContainedAppsRequestBuilder.ContainedAppsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<MobileContainedAppCollectionResponse>(requestInfo, MobileContainedAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.MobileContainedAppCollectionResponse>(requestInfo, Microsoft.Graph.Models.MobileContainedAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to containedApps for deviceAppManagement
         /// </summary>
-        /// <returns>A <see cref="MobileContainedApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MobileContainedApp"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MobileContainedApp?> PostAsync(MobileContainedApp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.MobileContainedApp?> PostAsync(Microsoft.Graph.Models.MobileContainedApp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<MobileContainedApp> PostAsync(MobileContainedApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.MobileContainedApp> PostAsync(Microsoft.Graph.Models.MobileContainedApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<MobileContainedApp>(requestInfo, MobileContainedApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.MobileContainedApp>(requestInfo, Microsoft.Graph.Models.MobileContainedApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The collection of contained apps in a MobileLobApp acting as a package.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ContainedAppsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.ContentVersions.Item.ContainedApps.ContainedAppsRequestBuilder.ContainedAppsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ContainedAppsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.ContentVersions.Item.ContainedApps.ContainedAppsRequestBuilder.ContainedAppsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(MobileContainedApp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.MobileContainedApp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(MobileContainedApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.MobileContainedApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ContainedAppsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.ContentVersions.Item.ContainedApps.ContainedAppsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ContainedAppsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.ContentVersions.Item.ContainedApps.ContainedAppsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ContainedAppsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.ContentVersions.Item.ContainedApps.ContainedAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The collection of contained apps in a MobileLobApp acting as a package.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ContainedAppsRequestBuilderGetRequestConfiguration : RequestConfiguration<ContainedAppsRequestBuilderGetQueryParameters>
+        public class ContainedAppsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.ContentVersions.Item.ContainedApps.ContainedAppsRequestBuilder.ContainedAppsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -15,16 +15,16 @@ namespace Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConn
         /// <summary>The activities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalActivity>? Activities
+        public List<Microsoft.Graph.Models.ExternalConnectors.ExternalActivity>? Activities
         {
-            get { return BackingStore?.Get<List<ExternalActivity>?>("activities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.ExternalActivity>?>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #nullable restore
 #else
-        public List<ExternalActivity> Activities
+        public List<Microsoft.Graph.Models.ExternalConnectors.ExternalActivity> Activities
         {
-            get { return BackingStore?.Get<List<ExternalActivity>>("activities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.ExternalActivity>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #endif
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConn
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>
-        /// Instantiates a new <see cref="AddActivitiesPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.AddActivitiesPostRequestBody"/> and sets the default values.
         /// </summary>
         public AddActivitiesPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConn
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AddActivitiesPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.AddActivitiesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AddActivitiesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.AddActivitiesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AddActivitiesPostRequestBody();
+            return new Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.AddActivitiesPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConn
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "activities", n => { Activities = n.GetCollectionOfObjectValues<ExternalActivity>(ExternalActivity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "activities", n => { Activities = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.ExternalActivity>(Microsoft.Graph.Models.ExternalConnectors.ExternalActivity.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConn
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<ExternalActivity>("activities", Activities);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.ExternalActivity>("activities", Activities);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

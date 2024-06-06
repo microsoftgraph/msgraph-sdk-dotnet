@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Run>? Value
+        public List<Microsoft.Graph.Models.IdentityGovernance.Run>? Value
         {
-            get { return BackingStore?.Get<List<Run>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.Run>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Run> Value
+        public List<Microsoft.Graph.Models.IdentityGovernance.Run> Value
         {
-            get { return BackingStore?.Get<List<Run>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.Run>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RunCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityGovernance.RunCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RunCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IdentityGovernance.RunCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RunCollectionResponse();
+            return new Microsoft.Graph.Models.IdentityGovernance.RunCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<Run>(Run.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.Run>(Microsoft.Graph.Models.IdentityGovernance.Run.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Run>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.Run>("value", Value);
         }
     }
 }

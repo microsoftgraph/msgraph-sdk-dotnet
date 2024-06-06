@@ -19,24 +19,24 @@ namespace Microsoft.Graph.AuditLogs.Provisioning
     public class ProvisioningRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.AuditLogs.Provisioning.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.AuditLogs.Provisioning.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.</summary>
         /// <param name="position">The unique identifier of provisioningObjectSummary</param>
-        /// <returns>A <see cref="ProvisioningObjectSummaryItemRequestBuilder"/></returns>
-        public ProvisioningObjectSummaryItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.AuditLogs.Provisioning.Item.ProvisioningObjectSummaryItemRequestBuilder"/></returns>
+        public Microsoft.Graph.AuditLogs.Provisioning.Item.ProvisioningObjectSummaryItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("provisioningObjectSummary%2Did", position);
-                return new ProvisioningObjectSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.AuditLogs.Provisioning.Item.ProvisioningObjectSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProvisioningRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.AuditLogs.Provisioning.ProvisioningRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.AuditLogs.Provisioning
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProvisioningRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.AuditLogs.Provisioning.ProvisioningRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +55,50 @@ namespace Microsoft.Graph.AuditLogs.Provisioning
         /// Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ProvisioningObjectSummaryCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ProvisioningObjectSummaryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProvisioningObjectSummaryCollectionResponse?> GetAsync(Action<RequestConfiguration<ProvisioningRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ProvisioningObjectSummaryCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.AuditLogs.Provisioning.ProvisioningRequestBuilder.ProvisioningRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ProvisioningObjectSummaryCollectionResponse> GetAsync(Action<RequestConfiguration<ProvisioningRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ProvisioningObjectSummaryCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.AuditLogs.Provisioning.ProvisioningRequestBuilder.ProvisioningRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ProvisioningObjectSummaryCollectionResponse>(requestInfo, ProvisioningObjectSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ProvisioningObjectSummaryCollectionResponse>(requestInfo, Microsoft.Graph.Models.ProvisioningObjectSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to provisioning for auditLogs
         /// </summary>
-        /// <returns>A <see cref="ProvisioningObjectSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ProvisioningObjectSummary"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProvisioningObjectSummary?> PostAsync(ProvisioningObjectSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ProvisioningObjectSummary?> PostAsync(Microsoft.Graph.Models.ProvisioningObjectSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ProvisioningObjectSummary> PostAsync(ProvisioningObjectSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ProvisioningObjectSummary> PostAsync(Microsoft.Graph.Models.ProvisioningObjectSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ProvisioningObjectSummary>(requestInfo, ProvisioningObjectSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ProvisioningObjectSummary>(requestInfo, Microsoft.Graph.Models.ProvisioningObjectSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.AuditLogs.Provisioning
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProvisioningRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.AuditLogs.Provisioning.ProvisioningRequestBuilder.ProvisioningRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProvisioningRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.AuditLogs.Provisioning.ProvisioningRequestBuilder.ProvisioningRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.AuditLogs.Provisioning
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ProvisioningObjectSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ProvisioningObjectSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ProvisioningObjectSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ProvisioningObjectSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.AuditLogs.Provisioning
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ProvisioningRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.AuditLogs.Provisioning.ProvisioningRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ProvisioningRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.AuditLogs.Provisioning.ProvisioningRequestBuilder WithUrl(string rawUrl)
         {
-            return new ProvisioningRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.AuditLogs.Provisioning.ProvisioningRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.AuditLogs.Provisioning
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ProvisioningRequestBuilderGetRequestConfiguration : RequestConfiguration<ProvisioningRequestBuilderGetQueryParameters>
+        public class ProvisioningRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.AuditLogs.Provisioning.ProvisioningRequestBuilder.ProvisioningRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

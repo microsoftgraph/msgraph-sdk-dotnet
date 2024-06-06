@@ -7,18 +7,18 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class TeleconferenceDeviceScreenSharingQuality : TeleconferenceDeviceVideoQuality, IParsable
+    public class TeleconferenceDeviceScreenSharingQuality : Microsoft.Graph.Models.TeleconferenceDeviceVideoQuality, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeleconferenceDeviceScreenSharingQuality"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeleconferenceDeviceScreenSharingQuality"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeleconferenceDeviceScreenSharingQuality CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TeleconferenceDeviceScreenSharingQuality CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeleconferenceDeviceScreenSharingQuality();
+            return new Microsoft.Graph.Models.TeleconferenceDeviceScreenSharingQuality();
         }
         /// <summary>
         /// The deserialization information for the current model

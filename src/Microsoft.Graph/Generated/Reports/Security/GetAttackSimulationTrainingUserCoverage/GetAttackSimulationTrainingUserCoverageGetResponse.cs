@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage
 {
     #pragma warning disable CS1591
-    public class GetAttackSimulationTrainingUserCoverageGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetAttackSimulationTrainingUserCoverageGetResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttackSimulationTrainingUserCoverage>? Value
+        public List<Microsoft.Graph.Models.AttackSimulationTrainingUserCoverage>? Value
         {
-            get { return BackingStore?.Get<List<AttackSimulationTrainingUserCoverage>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttackSimulationTrainingUserCoverage>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<AttackSimulationTrainingUserCoverage> Value
+        public List<Microsoft.Graph.Models.AttackSimulationTrainingUserCoverage> Value
         {
-            get { return BackingStore?.Get<List<AttackSimulationTrainingUserCoverage>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttackSimulationTrainingUserCoverage>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetAttackSimulationTrainingUserCoverageGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetAttackSimulationTrainingUserCoverageGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetAttackSimulationTrainingUserCoverageGetResponse();
+            return new Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCovera
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<AttackSimulationTrainingUserCoverage>(AttackSimulationTrainingUserCoverage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AttackSimulationTrainingUserCoverage>(Microsoft.Graph.Models.AttackSimulationTrainingUserCoverage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCovera
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AttackSimulationTrainingUserCoverage>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AttackSimulationTrainingUserCoverage>("value", Value);
         }
     }
 }

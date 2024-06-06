@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AccessReviewReviewerCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class AccessReviewReviewerCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewReviewer>? Value
+        public List<Microsoft.Graph.Models.AccessReviewReviewer>? Value
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewer>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewReviewer>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewReviewer> Value
+        public List<Microsoft.Graph.Models.AccessReviewReviewer> Value
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewer>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewReviewer>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewReviewerCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessReviewReviewerCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessReviewReviewerCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AccessReviewReviewerCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessReviewReviewerCollectionResponse();
+            return new Microsoft.Graph.Models.AccessReviewReviewerCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<AccessReviewReviewer>(AccessReviewReviewer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewReviewer>(Microsoft.Graph.Models.AccessReviewReviewer.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AccessReviewReviewer>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewReviewer>("value", Value);
         }
     }
 }

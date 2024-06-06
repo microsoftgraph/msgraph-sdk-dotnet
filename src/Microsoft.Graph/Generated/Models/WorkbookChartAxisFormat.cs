@@ -7,50 +7,50 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookChartAxisFormat : Entity, IParsable
+    public class WorkbookChartAxisFormat : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartFont? Font
+        public Microsoft.Graph.Models.WorkbookChartFont? Font
         {
-            get { return BackingStore?.Get<WorkbookChartFont?>("font"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartFont?>("font"); }
             set { BackingStore?.Set("font", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartFont Font
+        public Microsoft.Graph.Models.WorkbookChartFont Font
         {
-            get { return BackingStore?.Get<WorkbookChartFont>("font"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartFont>("font"); }
             set { BackingStore?.Set("font", value); }
         }
 #endif
         /// <summary>Represents chart line formatting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartLineFormat? Line
+        public Microsoft.Graph.Models.WorkbookChartLineFormat? Line
         {
-            get { return BackingStore?.Get<WorkbookChartLineFormat?>("line"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartLineFormat?>("line"); }
             set { BackingStore?.Set("line", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartLineFormat Line
+        public Microsoft.Graph.Models.WorkbookChartLineFormat Line
         {
-            get { return BackingStore?.Get<WorkbookChartLineFormat>("line"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartLineFormat>("line"); }
             set { BackingStore?.Set("line", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookChartAxisFormat"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookChartAxisFormat"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookChartAxisFormat CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WorkbookChartAxisFormat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookChartAxisFormat();
+            return new Microsoft.Graph.Models.WorkbookChartAxisFormat();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "font", n => { Font = n.GetObjectValue<WorkbookChartFont>(WorkbookChartFont.CreateFromDiscriminatorValue); } },
-                { "line", n => { Line = n.GetObjectValue<WorkbookChartLineFormat>(WorkbookChartLineFormat.CreateFromDiscriminatorValue); } },
+                { "font", n => { Font = n.GetObjectValue<Microsoft.Graph.Models.WorkbookChartFont>(Microsoft.Graph.Models.WorkbookChartFont.CreateFromDiscriminatorValue); } },
+                { "line", n => { Line = n.GetObjectValue<Microsoft.Graph.Models.WorkbookChartLineFormat>(Microsoft.Graph.Models.WorkbookChartLineFormat.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<WorkbookChartFont>("font", Font);
-            writer.WriteObjectValue<WorkbookChartLineFormat>("line", Line);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookChartFont>("font", Font);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookChartLineFormat>("line", Line);
         }
     }
 }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class CloudApplicationEvidence : AlertEvidence, IParsable
+    public class CloudApplicationEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Unique identifier of the application.</summary>
@@ -63,21 +63,21 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The stream property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public StreamObject? Stream
+        public Microsoft.Graph.Models.Security.StreamObject? Stream
         {
-            get { return BackingStore?.Get<StreamObject?>("stream"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.StreamObject?>("stream"); }
             set { BackingStore?.Set("stream", value); }
         }
 #nullable restore
 #else
-        public StreamObject Stream
+        public Microsoft.Graph.Models.Security.StreamObject Stream
         {
-            get { return BackingStore?.Get<StreamObject>("stream"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.StreamObject>("stream"); }
             set { BackingStore?.Set("stream", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CloudApplicationEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.CloudApplicationEvidence"/> and sets the default values.
         /// </summary>
         public CloudApplicationEvidence() : base()
         {
@@ -86,12 +86,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudApplicationEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.CloudApplicationEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudApplicationEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.CloudApplicationEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudApplicationEvidence();
+            return new Microsoft.Graph.Models.Security.CloudApplicationEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Models.Security
                 { "instanceId", n => { InstanceId = n.GetLongValue(); } },
                 { "instanceName", n => { InstanceName = n.GetStringValue(); } },
                 { "saasAppId", n => { SaasAppId = n.GetLongValue(); } },
-                { "stream", n => { Stream = n.GetObjectValue<StreamObject>(StreamObject.CreateFromDiscriminatorValue); } },
+                { "stream", n => { Stream = n.GetObjectValue<Microsoft.Graph.Models.Security.StreamObject>(Microsoft.Graph.Models.Security.StreamObject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteLongValue("instanceId", InstanceId);
             writer.WriteStringValue("instanceName", InstanceName);
             writer.WriteLongValue("saasAppId", SaasAppId);
-            writer.WriteObjectValue<StreamObject>("stream", Stream);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.StreamObject>("stream", Stream);
         }
     }
 }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AgreementAcceptance : Entity, IParsable
+    public class AgreementAcceptance : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identifier of the agreement file accepted by the user.</summary>
@@ -119,9 +119,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("recordedDateTime", value); }
         }
         /// <summary>The state of the agreement acceptance. Possible values are: accepted, declined. Supports $filter (eq).</summary>
-        public AgreementAcceptanceState? State
+        public Microsoft.Graph.Models.AgreementAcceptanceState? State
         {
-            get { return BackingStore?.Get<AgreementAcceptanceState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AgreementAcceptanceState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>Display name of the user when the acceptance was recorded.</summary>
@@ -191,12 +191,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AgreementAcceptance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AgreementAcceptance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AgreementAcceptance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AgreementAcceptance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AgreementAcceptance();
+            return new Microsoft.Graph.Models.AgreementAcceptance();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -214,7 +214,7 @@ namespace Microsoft.Graph.Models
                 { "deviceOSVersion", n => { DeviceOSVersion = n.GetStringValue(); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "recordedDateTime", n => { RecordedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "state", n => { State = n.GetEnumValue<AgreementAcceptanceState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Models.AgreementAcceptanceState>(); } },
                 { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
                 { "userEmail", n => { UserEmail = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
@@ -237,7 +237,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("deviceOSVersion", DeviceOSVersion);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteDateTimeOffsetValue("recordedDateTime", RecordedDateTime);
-            writer.WriteEnumValue<AgreementAcceptanceState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AgreementAcceptanceState>("state", State);
             writer.WriteStringValue("userDisplayName", UserDisplayName);
             writer.WriteStringValue("userEmail", UserEmail);
             writer.WriteStringValue("userId", UserId);

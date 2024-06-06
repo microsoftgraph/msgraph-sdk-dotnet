@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Places.Item.GraphRoom
     public class GraphRoomRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GraphRoomRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Places.Item.GraphRoom.GraphRoomRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Places.Item.GraphRoom
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphRoomRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Places.Item.GraphRoom.GraphRoomRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,25 +36,25 @@ namespace Microsoft.Graph.Places.Item.GraphRoom
         /// Get a collection of the specified type of place objects defined in the tenant. For example, you can get all the rooms, all the room lists, or the rooms in a specific room list in the tenant. A place object can be one of the following types: Both room and roomList are derived from the place object. By default, this operation returns 100 places per page. Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists. See details for how they compare.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Room"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Room"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Room?> GetAsync(Action<RequestConfiguration<GraphRoomRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Room?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Places.Item.GraphRoom.GraphRoomRequestBuilder.GraphRoomRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Room> GetAsync(Action<RequestConfiguration<GraphRoomRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Room> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Places.Item.GraphRoom.GraphRoomRequestBuilder.GraphRoomRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Room>(requestInfo, Room.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Room>(requestInfo, Microsoft.Graph.Models.Room.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a collection of the specified type of place objects defined in the tenant. For example, you can get all the rooms, all the room lists, or the rooms in a specific room list in the tenant. A place object can be one of the following types: Both room and roomList are derived from the place object. By default, this operation returns 100 places per page. Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists. See details for how they compare.
@@ -63,11 +63,11 @@ namespace Microsoft.Graph.Places.Item.GraphRoom
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphRoomRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Places.Item.GraphRoom.GraphRoomRequestBuilder.GraphRoomRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphRoomRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Places.Item.GraphRoom.GraphRoomRequestBuilder.GraphRoomRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -78,11 +78,11 @@ namespace Microsoft.Graph.Places.Item.GraphRoom
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GraphRoomRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Places.Item.GraphRoom.GraphRoomRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GraphRoomRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Places.Item.GraphRoom.GraphRoomRequestBuilder WithUrl(string rawUrl)
         {
-            return new GraphRoomRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Places.Item.GraphRoom.GraphRoomRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a collection of the specified type of place objects defined in the tenant. For example, you can get all the rooms, all the room lists, or the rooms in a specific room list in the tenant. A place object can be one of the following types: Both room and roomList are derived from the place object. By default, this operation returns 100 places per page. Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists. See details for how they compare.
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Places.Item.GraphRoom
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphRoomRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphRoomRequestBuilderGetQueryParameters>
+        public class GraphRoomRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Places.Item.GraphRoom.GraphRoomRequestBuilder.GraphRoomRequestBuilderGetQueryParameters>
         {
         }
     }

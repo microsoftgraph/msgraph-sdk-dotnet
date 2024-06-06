@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability
 {
     [Obsolete("This class is obsolete. Use GetStaffAvailabilityPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetStaffAvailabilityResponse : GetStaffAvailabilityPostResponse, IParsable
+    public class GetStaffAvailabilityResponse : Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability.GetStaffAvailabilityPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetStaffAvailabilityResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability.GetStaffAvailabilityResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetStaffAvailabilityResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability.GetStaffAvailabilityResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetStaffAvailabilityResponse();
+            return new Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability.GetStaffAvailabilityResponse();
         }
     }
 }

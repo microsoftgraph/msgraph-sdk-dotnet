@@ -144,7 +144,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetDeviceManagementIntentSett
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetDeviceManagementIntentSettingsReportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.Reports.GetDeviceManagementIntentSettingsReport.GetDeviceManagementIntentSettingsReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetDeviceManagementIntentSettingsReportPostRequestBody()
         {
@@ -154,12 +154,12 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetDeviceManagementIntentSett
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetDeviceManagementIntentSettingsReportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.Reports.GetDeviceManagementIntentSettingsReport.GetDeviceManagementIntentSettingsReportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetDeviceManagementIntentSettingsReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.DeviceManagement.Reports.GetDeviceManagementIntentSettingsReport.GetDeviceManagementIntentSettingsReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetDeviceManagementIntentSettingsReportPostRequestBody();
+            return new Microsoft.Graph.DeviceManagement.Reports.GetDeviceManagementIntentSettingsReport.GetDeviceManagementIntentSettingsReportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

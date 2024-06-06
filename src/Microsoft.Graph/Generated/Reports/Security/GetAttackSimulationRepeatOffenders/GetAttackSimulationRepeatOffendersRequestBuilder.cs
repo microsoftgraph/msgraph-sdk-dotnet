@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders
     public class GetAttackSimulationRepeatOffendersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetAttackSimulationRepeatOffendersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetAttackSimulationRepeatOffendersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,50 +35,50 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders
         /// List the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationrepeatoffenders?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetAttackSimulationRepeatOffendersGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAttackSimulationRepeatOffendersGetResponse?> GetAsGetAttackSimulationRepeatOffendersGetResponseAsync(Action<RequestConfiguration<GetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersGetResponse?> GetAsGetAttackSimulationRepeatOffendersGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder.GetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetAttackSimulationRepeatOffendersGetResponse> GetAsGetAttackSimulationRepeatOffendersGetResponseAsync(Action<RequestConfiguration<GetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersGetResponse> GetAsGetAttackSimulationRepeatOffendersGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder.GetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetAttackSimulationRepeatOffendersGetResponse>(requestInfo, GetAttackSimulationRepeatOffendersGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersGetResponse>(requestInfo, Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationrepeatoffenders?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetAttackSimulationRepeatOffendersResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetAttackSimulationRepeatOffendersGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAttackSimulationRepeatOffendersResponse?> GetAsync(Action<RequestConfiguration<GetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder.GetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetAttackSimulationRepeatOffendersResponse> GetAsync(Action<RequestConfiguration<GetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder.GetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetAttackSimulationRepeatOffendersResponse>(requestInfo, GetAttackSimulationRepeatOffendersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersResponse>(requestInfo, Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder.GetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder.GetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetAttackSimulationRepeatOffendersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetAttackSimulationRepeatOffendersRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetAttackSimulationRepeatOffendersRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration : RequestConfiguration<GetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters>
+        public class GetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder.GetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters>
         {
         }
     }

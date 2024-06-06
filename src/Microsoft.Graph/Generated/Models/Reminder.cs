@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The date, time and time zone that the event ends.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? EventEndTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? EventEndTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("eventEndTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("eventEndTime"); }
             set { BackingStore?.Set("eventEndTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone EventEndTime
+        public Microsoft.Graph.Models.DateTimeTimeZone EventEndTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("eventEndTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("eventEndTime"); }
             set { BackingStore?.Set("eventEndTime", value); }
         }
 #endif
@@ -70,32 +70,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The location of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Location? EventLocation
+        public Microsoft.Graph.Models.Location? EventLocation
         {
-            get { return BackingStore?.Get<Location?>("eventLocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Location?>("eventLocation"); }
             set { BackingStore?.Set("eventLocation", value); }
         }
 #nullable restore
 #else
-        public Location EventLocation
+        public Microsoft.Graph.Models.Location EventLocation
         {
-            get { return BackingStore?.Get<Location>("eventLocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Location>("eventLocation"); }
             set { BackingStore?.Set("eventLocation", value); }
         }
 #endif
         /// <summary>The date, time, and time zone that the event starts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? EventStartTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? EventStartTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("eventStartTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("eventStartTime"); }
             set { BackingStore?.Set("eventStartTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone EventStartTime
+        public Microsoft.Graph.Models.DateTimeTimeZone EventStartTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("eventStartTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("eventStartTime"); }
             set { BackingStore?.Set("eventStartTime", value); }
         }
 #endif
@@ -150,21 +150,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The date, time, and time zone that the reminder is set to occur.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? ReminderFireTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? ReminderFireTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("reminderFireTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("reminderFireTime"); }
             set { BackingStore?.Set("reminderFireTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone ReminderFireTime
+        public Microsoft.Graph.Models.DateTimeTimeZone ReminderFireTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("reminderFireTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("reminderFireTime"); }
             set { BackingStore?.Set("reminderFireTime", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Reminder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Reminder"/> and sets the default values.
         /// </summary>
         public Reminder()
         {
@@ -174,12 +174,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Reminder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Reminder"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Reminder CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Reminder CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Reminder();
+            return new Microsoft.Graph.Models.Reminder();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -190,14 +190,14 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "changeKey", n => { ChangeKey = n.GetStringValue(); } },
-                { "eventEndTime", n => { EventEndTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "eventEndTime", n => { EventEndTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "eventId", n => { EventId = n.GetStringValue(); } },
-                { "eventLocation", n => { EventLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
-                { "eventStartTime", n => { EventStartTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "eventLocation", n => { EventLocation = n.GetObjectValue<Microsoft.Graph.Models.Location>(Microsoft.Graph.Models.Location.CreateFromDiscriminatorValue); } },
+                { "eventStartTime", n => { EventStartTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "eventSubject", n => { EventSubject = n.GetStringValue(); } },
                 { "eventWebLink", n => { EventWebLink = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "reminderFireTime", n => { ReminderFireTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "reminderFireTime", n => { ReminderFireTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -208,14 +208,14 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("changeKey", ChangeKey);
-            writer.WriteObjectValue<DateTimeTimeZone>("eventEndTime", EventEndTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("eventEndTime", EventEndTime);
             writer.WriteStringValue("eventId", EventId);
-            writer.WriteObjectValue<Location>("eventLocation", EventLocation);
-            writer.WriteObjectValue<DateTimeTimeZone>("eventStartTime", EventStartTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Location>("eventLocation", EventLocation);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("eventStartTime", EventStartTime);
             writer.WriteStringValue("eventSubject", EventSubject);
             writer.WriteStringValue("eventWebLink", EventWebLink);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<DateTimeTimeZone>("reminderFireTime", ReminderFireTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("reminderFireTime", ReminderFireTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

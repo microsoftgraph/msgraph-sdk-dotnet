@@ -19,24 +19,24 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses
     public class ManagedAppStatusesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedAppStatuses property of the microsoft.graph.deviceAppManagement entity.</summary>
         /// <param name="position">The unique identifier of managedAppStatus</param>
-        /// <returns>A <see cref="ManagedAppStatusItemRequestBuilder"/></returns>
-        public ManagedAppStatusItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.Item.ManagedAppStatusItemRequestBuilder"/></returns>
+        public Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.Item.ManagedAppStatusItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("managedAppStatus%2Did", position);
-                return new ManagedAppStatusItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.Item.ManagedAppStatusItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagedAppStatusesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.ManagedAppStatusesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagedAppStatusesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.ManagedAppStatusesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +55,50 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses
         /// List properties and relationships of the managedAppStatus objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappstatus-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ManagedAppStatusCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedAppStatusCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedAppStatusCollectionResponse?> GetAsync(Action<RequestConfiguration<ManagedAppStatusesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedAppStatusCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.ManagedAppStatusesRequestBuilder.ManagedAppStatusesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedAppStatusCollectionResponse> GetAsync(Action<RequestConfiguration<ManagedAppStatusesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedAppStatusCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.ManagedAppStatusesRequestBuilder.ManagedAppStatusesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedAppStatusCollectionResponse>(requestInfo, ManagedAppStatusCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedAppStatusCollectionResponse>(requestInfo, Microsoft.Graph.Models.ManagedAppStatusCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to managedAppStatuses for deviceAppManagement
         /// </summary>
-        /// <returns>A <see cref="ManagedAppStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedAppStatus"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedAppStatus?> PostAsync(ManagedAppStatus body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedAppStatus?> PostAsync(Microsoft.Graph.Models.ManagedAppStatus body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedAppStatus> PostAsync(ManagedAppStatus body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedAppStatus> PostAsync(Microsoft.Graph.Models.ManagedAppStatus body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedAppStatus>(requestInfo, ManagedAppStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedAppStatus>(requestInfo, Microsoft.Graph.Models.ManagedAppStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List properties and relationships of the managedAppStatus objects.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedAppStatusesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.ManagedAppStatusesRequestBuilder.ManagedAppStatusesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedAppStatusesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.ManagedAppStatusesRequestBuilder.ManagedAppStatusesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ManagedAppStatus body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ManagedAppStatus body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ManagedAppStatus body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ManagedAppStatus body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ManagedAppStatusesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.ManagedAppStatusesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ManagedAppStatusesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.ManagedAppStatusesRequestBuilder WithUrl(string rawUrl)
         {
-            return new ManagedAppStatusesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.ManagedAppStatusesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List properties and relationships of the managedAppStatus objects.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedAppStatusesRequestBuilderGetRequestConfiguration : RequestConfiguration<ManagedAppStatusesRequestBuilderGetQueryParameters>
+        public class ManagedAppStatusesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.ManagedAppStatusesRequestBuilder.ManagedAppStatusesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

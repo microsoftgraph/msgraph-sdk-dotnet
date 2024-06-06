@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties and inherited properties for iOS Line Of Business apps.
     /// </summary>
-    public class IosLobApp : MobileLobApp, IParsable
+    public class IosLobApp : Microsoft.Graph.Models.MobileLobApp, IParsable
     {
         /// <summary>Contains properties of the possible iOS device types the mobile app can run on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosDeviceType? ApplicableDeviceType
+        public Microsoft.Graph.Models.IosDeviceType? ApplicableDeviceType
         {
-            get { return BackingStore?.Get<IosDeviceType?>("applicableDeviceType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IosDeviceType?>("applicableDeviceType"); }
             set { BackingStore?.Set("applicableDeviceType", value); }
         }
 #nullable restore
 #else
-        public IosDeviceType ApplicableDeviceType
+        public Microsoft.Graph.Models.IosDeviceType ApplicableDeviceType
         {
-            get { return BackingStore?.Get<IosDeviceType>("applicableDeviceType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IosDeviceType>("applicableDeviceType"); }
             set { BackingStore?.Set("applicableDeviceType", value); }
         }
 #endif
@@ -68,16 +68,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The value for the minimum applicable operating system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosMinimumOperatingSystem? MinimumSupportedOperatingSystem
+        public Microsoft.Graph.Models.IosMinimumOperatingSystem? MinimumSupportedOperatingSystem
         {
-            get { return BackingStore?.Get<IosMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IosMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #nullable restore
 #else
-        public IosMinimumOperatingSystem MinimumSupportedOperatingSystem
+        public Microsoft.Graph.Models.IosMinimumOperatingSystem MinimumSupportedOperatingSystem
         {
-            get { return BackingStore?.Get<IosMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IosMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #endif
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IosLobApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IosLobApp"/> and sets the default values.
         /// </summary>
         public IosLobApp() : base()
         {
@@ -107,12 +107,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosLobApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IosLobApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosLobApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IosLobApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosLobApp();
+            return new Microsoft.Graph.Models.IosLobApp();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,11 +122,11 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "applicableDeviceType", n => { ApplicableDeviceType = n.GetObjectValue<IosDeviceType>(IosDeviceType.CreateFromDiscriminatorValue); } },
+                { "applicableDeviceType", n => { ApplicableDeviceType = n.GetObjectValue<Microsoft.Graph.Models.IosDeviceType>(Microsoft.Graph.Models.IosDeviceType.CreateFromDiscriminatorValue); } },
                 { "buildNumber", n => { BuildNumber = n.GetStringValue(); } },
                 { "bundleId", n => { BundleId = n.GetStringValue(); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<IosMinimumOperatingSystem>(IosMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
+                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<Microsoft.Graph.Models.IosMinimumOperatingSystem>(Microsoft.Graph.Models.IosMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
                 { "versionNumber", n => { VersionNumber = n.GetStringValue(); } },
             };
         }
@@ -138,11 +138,11 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<IosDeviceType>("applicableDeviceType", ApplicableDeviceType);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IosDeviceType>("applicableDeviceType", ApplicableDeviceType);
             writer.WriteStringValue("buildNumber", BuildNumber);
             writer.WriteStringValue("bundleId", BundleId);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
-            writer.WriteObjectValue<IosMinimumOperatingSystem>("minimumSupportedOperatingSystem", MinimumSupportedOperatingSystem);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IosMinimumOperatingSystem>("minimumSupportedOperatingSystem", MinimumSupportedOperatingSystem);
             writer.WriteStringValue("versionNumber", VersionNumber);
         }
     }

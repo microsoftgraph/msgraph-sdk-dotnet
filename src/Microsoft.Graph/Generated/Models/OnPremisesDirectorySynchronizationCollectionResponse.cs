@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OnPremisesDirectorySynchronizationCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class OnPremisesDirectorySynchronizationCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnPremisesDirectorySynchronization>? Value
+        public List<Microsoft.Graph.Models.OnPremisesDirectorySynchronization>? Value
         {
-            get { return BackingStore?.Get<List<OnPremisesDirectorySynchronization>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnPremisesDirectorySynchronization>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<OnPremisesDirectorySynchronization> Value
+        public List<Microsoft.Graph.Models.OnPremisesDirectorySynchronization> Value
         {
-            get { return BackingStore?.Get<List<OnPremisesDirectorySynchronization>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnPremisesDirectorySynchronization>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnPremisesDirectorySynchronizationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnPremisesDirectorySynchronizationCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnPremisesDirectorySynchronizationCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OnPremisesDirectorySynchronizationCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnPremisesDirectorySynchronizationCollectionResponse();
+            return new Microsoft.Graph.Models.OnPremisesDirectorySynchronizationCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<OnPremisesDirectorySynchronization>(OnPremisesDirectorySynchronization.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OnPremisesDirectorySynchronization>(Microsoft.Graph.Models.OnPremisesDirectorySynchronization.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<OnPremisesDirectorySynchronization>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OnPremisesDirectorySynchronization>("value", Value);
         }
     }
 }

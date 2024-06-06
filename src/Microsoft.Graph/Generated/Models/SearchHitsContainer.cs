@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The aggregations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SearchAggregation>? Aggregations
+        public List<Microsoft.Graph.Models.SearchAggregation>? Aggregations
         {
-            get { return BackingStore?.Get<List<SearchAggregation>?>("aggregations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SearchAggregation>?>("aggregations"); }
             set { BackingStore?.Set("aggregations", value); }
         }
 #nullable restore
 #else
-        public List<SearchAggregation> Aggregations
+        public List<Microsoft.Graph.Models.SearchAggregation> Aggregations
         {
-            get { return BackingStore?.Get<List<SearchAggregation>>("aggregations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SearchAggregation>>("aggregations"); }
             set { BackingStore?.Set("aggregations", value); }
         }
 #endif
@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Models
         /// <summary>A collection of the search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SearchHit>? Hits
+        public List<Microsoft.Graph.Models.SearchHit>? Hits
         {
-            get { return BackingStore?.Get<List<SearchHit>?>("hits"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SearchHit>?>("hits"); }
             set { BackingStore?.Set("hits", value); }
         }
 #nullable restore
 #else
-        public List<SearchHit> Hits
+        public List<Microsoft.Graph.Models.SearchHit> Hits
         {
-            get { return BackingStore?.Get<List<SearchHit>>("hits"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SearchHit>>("hits"); }
             set { BackingStore?.Set("hits", value); }
         }
 #endif
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("total", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SearchHitsContainer"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SearchHitsContainer"/> and sets the default values.
         /// </summary>
         public SearchHitsContainer()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SearchHitsContainer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SearchHitsContainer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SearchHitsContainer CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SearchHitsContainer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SearchHitsContainer();
+            return new Microsoft.Graph.Models.SearchHitsContainer();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,8 +105,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "aggregations", n => { Aggregations = n.GetCollectionOfObjectValues<SearchAggregation>(SearchAggregation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "hits", n => { Hits = n.GetCollectionOfObjectValues<SearchHit>(SearchHit.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "aggregations", n => { Aggregations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SearchAggregation>(Microsoft.Graph.Models.SearchAggregation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hits", n => { Hits = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SearchHit>(Microsoft.Graph.Models.SearchHit.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "moreResultsAvailable", n => { MoreResultsAvailable = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "total", n => { Total = n.GetIntValue(); } },
@@ -119,8 +119,8 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<SearchAggregation>("aggregations", Aggregations);
-            writer.WriteCollectionOfObjectValues<SearchHit>("hits", Hits);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SearchAggregation>("aggregations", Aggregations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SearchHit>("hits", Hits);
             writer.WriteBoolValue("moreResultsAvailable", MoreResultsAvailable);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("total", Total);

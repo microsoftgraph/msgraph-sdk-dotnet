@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnUserCreateStartHandler"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OnUserCreateStartHandler"/> and sets the default values.
         /// </summary>
         public OnUserCreateStartHandler()
         {
@@ -46,16 +46,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnUserCreateStartHandler"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnUserCreateStartHandler"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OnUserCreateStartHandler CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.OnUserCreateStartHandler CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.onUserCreateStartExternalUsersSelfServiceSignUp" => new OnUserCreateStartExternalUsersSelfServiceSignUp(),
-                _ => new OnUserCreateStartHandler(),
+                "#microsoft.graph.onUserCreateStartExternalUsersSelfServiceSignUp" => new Microsoft.Graph.Models.OnUserCreateStartExternalUsersSelfServiceSignUp(),
+                _ => new Microsoft.Graph.Models.OnUserCreateStartHandler(),
             };
         }
         /// <summary>

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AccessPackageQuestion : Entity, IParsable
+    public class AccessPackageQuestion : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies whether the requestor is allowed to edit answers to questions for an assignment by posting an update to accessPackageAssignmentRequest.</summary>
@@ -25,16 +25,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The text of the question represented in a format for a specific locale.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageLocalizedText>? Localizations
+        public List<Microsoft.Graph.Models.AccessPackageLocalizedText>? Localizations
         {
-            get { return BackingStore?.Get<List<AccessPackageLocalizedText>?>("localizations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageLocalizedText>?>("localizations"); }
             set { BackingStore?.Set("localizations", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageLocalizedText> Localizations
+        public List<Microsoft.Graph.Models.AccessPackageLocalizedText> Localizations
         {
-            get { return BackingStore?.Get<List<AccessPackageLocalizedText>>("localizations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessPackageLocalizedText>>("localizations"); }
             set { BackingStore?.Set("localizations", value); }
         }
 #endif
@@ -63,17 +63,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageQuestion"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackageQuestion"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessPackageQuestion CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AccessPackageQuestion CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.accessPackageMultipleChoiceQuestion" => new AccessPackageMultipleChoiceQuestion(),
-                "#microsoft.graph.accessPackageTextInputQuestion" => new AccessPackageTextInputQuestion(),
-                _ => new AccessPackageQuestion(),
+                "#microsoft.graph.accessPackageMultipleChoiceQuestion" => new Microsoft.Graph.Models.AccessPackageMultipleChoiceQuestion(),
+                "#microsoft.graph.accessPackageTextInputQuestion" => new Microsoft.Graph.Models.AccessPackageTextInputQuestion(),
+                _ => new Microsoft.Graph.Models.AccessPackageQuestion(),
             };
         }
         /// <summary>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Models
             {
                 { "isAnswerEditable", n => { IsAnswerEditable = n.GetBoolValue(); } },
                 { "isRequired", n => { IsRequired = n.GetBoolValue(); } },
-                { "localizations", n => { Localizations = n.GetCollectionOfObjectValues<AccessPackageLocalizedText>(AccessPackageLocalizedText.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "localizations", n => { Localizations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageLocalizedText>(Microsoft.Graph.Models.AccessPackageLocalizedText.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "sequence", n => { Sequence = n.GetIntValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteBoolValue("isAnswerEditable", IsAnswerEditable);
             writer.WriteBoolValue("isRequired", IsRequired);
-            writer.WriteCollectionOfObjectValues<AccessPackageLocalizedText>("localizations", Localizations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessPackageLocalizedText>("localizations", Localizations);
             writer.WriteIntValue("sequence", Sequence);
             writer.WriteStringValue("text", Text);
         }

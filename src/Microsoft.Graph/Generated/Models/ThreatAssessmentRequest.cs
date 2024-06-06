@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ThreatAssessmentRequest : Entity, IParsable
+    public class ThreatAssessmentRequest : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The category property</summary>
-        public ThreatCategory? Category
+        public Microsoft.Graph.Models.ThreatCategory? Category
         {
-            get { return BackingStore?.Get<ThreatCategory?>("category"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ThreatCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The content type of threat assessment. Possible values are: mail, url, file.</summary>
-        public ThreatAssessmentContentType? ContentType
+        public Microsoft.Graph.Models.ThreatAssessmentContentType? ContentType
         {
-            get { return BackingStore?.Get<ThreatAssessmentContentType?>("contentType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ThreatAssessmentContentType?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
         /// <summary>The threat assessment request creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy
+        public Microsoft.Graph.Models.IdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy
+        public Microsoft.Graph.Models.IdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -45,55 +45,55 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The expectedAssessment property</summary>
-        public ThreatExpectedAssessment? ExpectedAssessment
+        public Microsoft.Graph.Models.ThreatExpectedAssessment? ExpectedAssessment
         {
-            get { return BackingStore?.Get<ThreatExpectedAssessment?>("expectedAssessment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ThreatExpectedAssessment?>("expectedAssessment"); }
             set { BackingStore?.Set("expectedAssessment", value); }
         }
         /// <summary>The source of the threat assessment request. Possible values are: administrator.</summary>
-        public ThreatAssessmentRequestSource? RequestSource
+        public Microsoft.Graph.Models.ThreatAssessmentRequestSource? RequestSource
         {
-            get { return BackingStore?.Get<ThreatAssessmentRequestSource?>("requestSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ThreatAssessmentRequestSource?>("requestSource"); }
             set { BackingStore?.Set("requestSource", value); }
         }
         /// <summary>A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ThreatAssessmentResult>? Results
+        public List<Microsoft.Graph.Models.ThreatAssessmentResult>? Results
         {
-            get { return BackingStore?.Get<List<ThreatAssessmentResult>?>("results"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ThreatAssessmentResult>?>("results"); }
             set { BackingStore?.Set("results", value); }
         }
 #nullable restore
 #else
-        public List<ThreatAssessmentResult> Results
+        public List<Microsoft.Graph.Models.ThreatAssessmentResult> Results
         {
-            get { return BackingStore?.Get<List<ThreatAssessmentResult>>("results"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ThreatAssessmentResult>>("results"); }
             set { BackingStore?.Set("results", value); }
         }
 #endif
         /// <summary>The assessment process status. Possible values are: pending, completed.</summary>
-        public ThreatAssessmentStatus? Status
+        public Microsoft.Graph.Models.ThreatAssessmentStatus? Status
         {
-            get { return BackingStore?.Get<ThreatAssessmentStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ThreatAssessmentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ThreatAssessmentRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ThreatAssessmentRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ThreatAssessmentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ThreatAssessmentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.emailFileAssessmentRequest" => new EmailFileAssessmentRequest(),
-                "#microsoft.graph.fileAssessmentRequest" => new FileAssessmentRequest(),
-                "#microsoft.graph.mailAssessmentRequest" => new MailAssessmentRequest(),
-                "#microsoft.graph.urlAssessmentRequest" => new UrlAssessmentRequest(),
-                _ => new ThreatAssessmentRequest(),
+                "#microsoft.graph.emailFileAssessmentRequest" => new Microsoft.Graph.Models.EmailFileAssessmentRequest(),
+                "#microsoft.graph.fileAssessmentRequest" => new Microsoft.Graph.Models.FileAssessmentRequest(),
+                "#microsoft.graph.mailAssessmentRequest" => new Microsoft.Graph.Models.MailAssessmentRequest(),
+                "#microsoft.graph.urlAssessmentRequest" => new Microsoft.Graph.Models.UrlAssessmentRequest(),
+                _ => new Microsoft.Graph.Models.ThreatAssessmentRequest(),
             };
         }
         /// <summary>
@@ -104,14 +104,14 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "category", n => { Category = n.GetEnumValue<ThreatCategory>(); } },
-                { "contentType", n => { ContentType = n.GetEnumValue<ThreatAssessmentContentType>(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "category", n => { Category = n.GetEnumValue<Microsoft.Graph.Models.ThreatCategory>(); } },
+                { "contentType", n => { ContentType = n.GetEnumValue<Microsoft.Graph.Models.ThreatAssessmentContentType>(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "expectedAssessment", n => { ExpectedAssessment = n.GetEnumValue<ThreatExpectedAssessment>(); } },
-                { "requestSource", n => { RequestSource = n.GetEnumValue<ThreatAssessmentRequestSource>(); } },
-                { "results", n => { Results = n.GetCollectionOfObjectValues<ThreatAssessmentResult>(ThreatAssessmentResult.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "status", n => { Status = n.GetEnumValue<ThreatAssessmentStatus>(); } },
+                { "expectedAssessment", n => { ExpectedAssessment = n.GetEnumValue<Microsoft.Graph.Models.ThreatExpectedAssessment>(); } },
+                { "requestSource", n => { RequestSource = n.GetEnumValue<Microsoft.Graph.Models.ThreatAssessmentRequestSource>(); } },
+                { "results", n => { Results = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ThreatAssessmentResult>(Microsoft.Graph.Models.ThreatAssessmentResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.ThreatAssessmentStatus>(); } },
             };
         }
         /// <summary>
@@ -122,14 +122,14 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<ThreatCategory>("category", Category);
-            writer.WriteEnumValue<ThreatAssessmentContentType>("contentType", ContentType);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ThreatCategory>("category", Category);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ThreatAssessmentContentType>("contentType", ContentType);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteEnumValue<ThreatExpectedAssessment>("expectedAssessment", ExpectedAssessment);
-            writer.WriteEnumValue<ThreatAssessmentRequestSource>("requestSource", RequestSource);
-            writer.WriteCollectionOfObjectValues<ThreatAssessmentResult>("results", Results);
-            writer.WriteEnumValue<ThreatAssessmentStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ThreatExpectedAssessment>("expectedAssessment", ExpectedAssessment);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ThreatAssessmentRequestSource>("requestSource", RequestSource);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ThreatAssessmentResult>("results", Results);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ThreatAssessmentStatus>("status", Status);
         }
     }
 }

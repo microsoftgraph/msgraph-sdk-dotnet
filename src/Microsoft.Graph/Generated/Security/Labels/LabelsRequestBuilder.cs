@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Security.Labels
     public class LabelsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the authorities property of the microsoft.graph.security.labelsRoot entity.</summary>
-        public AuthoritiesRequestBuilder Authorities
+        public Microsoft.Graph.Security.Labels.Authorities.AuthoritiesRequestBuilder Authorities
         {
-            get => new AuthoritiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Labels.Authorities.AuthoritiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.security.labelsRoot entity.</summary>
-        public CategoriesRequestBuilder Categories
+        public Microsoft.Graph.Security.Labels.Categories.CategoriesRequestBuilder Categories
         {
-            get => new CategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Labels.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the citations property of the microsoft.graph.security.labelsRoot entity.</summary>
-        public CitationsRequestBuilder Citations
+        public Microsoft.Graph.Security.Labels.Citations.CitationsRequestBuilder Citations
         {
-            get => new CitationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Labels.Citations.CitationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the departments property of the microsoft.graph.security.labelsRoot entity.</summary>
-        public DepartmentsRequestBuilder Departments
+        public Microsoft.Graph.Security.Labels.Departments.DepartmentsRequestBuilder Departments
         {
-            get => new DepartmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Labels.Departments.DepartmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the filePlanReferences property of the microsoft.graph.security.labelsRoot entity.</summary>
-        public FilePlanReferencesRequestBuilder FilePlanReferences
+        public Microsoft.Graph.Security.Labels.FilePlanReferences.FilePlanReferencesRequestBuilder FilePlanReferences
         {
-            get => new FilePlanReferencesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Labels.FilePlanReferences.FilePlanReferencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the retentionLabels property of the microsoft.graph.security.labelsRoot entity.</summary>
-        public RetentionLabelsRequestBuilder RetentionLabels
+        public Microsoft.Graph.Security.Labels.RetentionLabels.RetentionLabelsRequestBuilder RetentionLabels
         {
-            get => new RetentionLabelsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Labels.RetentionLabels.RetentionLabelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="LabelsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Labels.LabelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Security.Labels
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LabelsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Labels.LabelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Security.Labels
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -86,57 +86,57 @@ namespace Microsoft.Graph.Security.Labels
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get labels from security
         /// </summary>
-        /// <returns>A <see cref="LabelsRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.LabelsRoot"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LabelsRoot?> GetAsync(Action<RequestConfiguration<LabelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.LabelsRoot?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.LabelsRequestBuilder.LabelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<LabelsRoot> GetAsync(Action<RequestConfiguration<LabelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.LabelsRoot> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.LabelsRequestBuilder.LabelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<LabelsRoot>(requestInfo, LabelsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.LabelsRoot>(requestInfo, Microsoft.Graph.Models.Security.LabelsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property labels in security
         /// </summary>
-        /// <returns>A <see cref="LabelsRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.LabelsRoot"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LabelsRoot?> PatchAsync(LabelsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.LabelsRoot?> PatchAsync(Microsoft.Graph.Models.Security.LabelsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<LabelsRoot> PatchAsync(LabelsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.LabelsRoot> PatchAsync(Microsoft.Graph.Models.Security.LabelsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<LabelsRoot>(requestInfo, LabelsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.LabelsRoot>(requestInfo, Microsoft.Graph.Models.Security.LabelsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property labels for security
@@ -164,11 +164,11 @@ namespace Microsoft.Graph.Security.Labels
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LabelsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.LabelsRequestBuilder.LabelsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LabelsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.LabelsRequestBuilder.LabelsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -184,11 +184,11 @@ namespace Microsoft.Graph.Security.Labels
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(LabelsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Security.LabelsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(LabelsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Security.LabelsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -201,11 +201,11 @@ namespace Microsoft.Graph.Security.Labels
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="LabelsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.Labels.LabelsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LabelsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.Labels.LabelsRequestBuilder WithUrl(string rawUrl)
         {
-            return new LabelsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.Labels.LabelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -244,7 +244,7 @@ namespace Microsoft.Graph.Security.Labels
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class LabelsRequestBuilderGetRequestConfiguration : RequestConfiguration<LabelsRequestBuilderGetQueryParameters>
+        public class LabelsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.Labels.LabelsRequestBuilder.LabelsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.DeviceManagement.TroubleshootingEvents
     public class TroubleshootingEventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.DeviceManagement.TroubleshootingEvents.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.TroubleshootingEvents.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the troubleshootingEvents property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of deviceManagementTroubleshootingEvent</param>
-        /// <returns>A <see cref="DeviceManagementTroubleshootingEventItemRequestBuilder"/></returns>
-        public DeviceManagementTroubleshootingEventItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.TroubleshootingEvents.Item.DeviceManagementTroubleshootingEventItemRequestBuilder"/></returns>
+        public Microsoft.Graph.DeviceManagement.TroubleshootingEvents.Item.DeviceManagementTroubleshootingEventItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("deviceManagementTroubleshootingEvent%2Did", position);
-                return new DeviceManagementTroubleshootingEventItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.DeviceManagement.TroubleshootingEvents.Item.DeviceManagementTroubleshootingEventItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TroubleshootingEventsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.TroubleshootingEvents.TroubleshootingEventsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.DeviceManagement.TroubleshootingEvents
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TroubleshootingEventsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.TroubleshootingEvents.TroubleshootingEventsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.DeviceManagement.TroubleshootingEvents
         /// <summary>
         /// The list of troubleshooting events for the tenant.
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementTroubleshootingEventCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceManagementTroubleshootingEventCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementTroubleshootingEventCollectionResponse?> GetAsync(Action<RequestConfiguration<TroubleshootingEventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeviceManagementTroubleshootingEventCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.TroubleshootingEvents.TroubleshootingEventsRequestBuilder.TroubleshootingEventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceManagementTroubleshootingEventCollectionResponse> GetAsync(Action<RequestConfiguration<TroubleshootingEventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeviceManagementTroubleshootingEventCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.TroubleshootingEvents.TroubleshootingEventsRequestBuilder.TroubleshootingEventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceManagementTroubleshootingEventCollectionResponse>(requestInfo, DeviceManagementTroubleshootingEventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DeviceManagementTroubleshootingEventCollectionResponse>(requestInfo, Microsoft.Graph.Models.DeviceManagementTroubleshootingEventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to troubleshootingEvents for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementTroubleshootingEvent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementTroubleshootingEvent?> PostAsync(DeviceManagementTroubleshootingEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent?> PostAsync(Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceManagementTroubleshootingEvent> PostAsync(DeviceManagementTroubleshootingEvent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent> PostAsync(Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceManagementTroubleshootingEvent>(requestInfo, DeviceManagementTroubleshootingEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent>(requestInfo, Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of troubleshooting events for the tenant.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.DeviceManagement.TroubleshootingEvents
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TroubleshootingEventsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.TroubleshootingEvents.TroubleshootingEventsRequestBuilder.TroubleshootingEventsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TroubleshootingEventsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.TroubleshootingEvents.TroubleshootingEventsRequestBuilder.TroubleshootingEventsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.DeviceManagement.TroubleshootingEvents
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DeviceManagementTroubleshootingEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DeviceManagementTroubleshootingEvent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.DeviceManagement.TroubleshootingEvents
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TroubleshootingEventsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.TroubleshootingEvents.TroubleshootingEventsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TroubleshootingEventsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceManagement.TroubleshootingEvents.TroubleshootingEventsRequestBuilder WithUrl(string rawUrl)
         {
-            return new TroubleshootingEventsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceManagement.TroubleshootingEvents.TroubleshootingEventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The list of troubleshooting events for the tenant.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.DeviceManagement.TroubleshootingEvents
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TroubleshootingEventsRequestBuilderGetRequestConfiguration : RequestConfiguration<TroubleshootingEventsRequestBuilderGetQueryParameters>
+        public class TroubleshootingEventsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.TroubleshootingEvents.TroubleshootingEventsRequestBuilder.TroubleshootingEventsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

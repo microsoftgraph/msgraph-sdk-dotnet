@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions
     public class PermissionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissions property of the microsoft.graph.fileStorageContainer entity.</summary>
         /// <param name="position">The unique identifier of permission</param>
-        /// <returns>A <see cref="PermissionItemRequestBuilder"/></returns>
-        public PermissionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.PermissionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.PermissionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("permission%2Did", position);
-                return new PermissionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.PermissionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PermissionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.PermissionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PermissionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.PermissionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions
         /// <summary>
         /// The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are &apos;reader&apos;, &apos;writer&apos;, &apos;manager&apos;, and &apos;owner&apos;. Read-write.
         /// </summary>
-        /// <returns>A <see cref="PermissionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PermissionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PermissionCollectionResponse?> GetAsync(Action<RequestConfiguration<PermissionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PermissionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.PermissionsRequestBuilder.PermissionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PermissionCollectionResponse> GetAsync(Action<RequestConfiguration<PermissionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PermissionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.PermissionsRequestBuilder.PermissionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PermissionCollectionResponse>(requestInfo, PermissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PermissionCollectionResponse>(requestInfo, Microsoft.Graph.Models.PermissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to permissions for storage
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.Permission?> PostAsync(Microsoft.Graph.Models.Permission body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Permission>(requestInfo, Microsoft.Graph.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PermissionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.PermissionsRequestBuilder.PermissionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PermissionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.PermissionsRequestBuilder.PermissionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PermissionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.PermissionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PermissionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.PermissionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new PermissionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.PermissionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are &apos;reader&apos;, &apos;writer&apos;, &apos;manager&apos;, and &apos;owner&apos;. Read-write.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PermissionsRequestBuilderGetRequestConfiguration : RequestConfiguration<PermissionsRequestBuilderGetQueryParameters>
+        public class PermissionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.PermissionsRequestBuilder.PermissionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

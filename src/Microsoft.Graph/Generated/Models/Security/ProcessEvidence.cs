@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class ProcessEvidence : AlertEvidence, IParsable
+    public class ProcessEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.</summary>
@@ -19,16 +19,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>Image file details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FileDetails? ImageFile
+        public Microsoft.Graph.Models.Security.FileDetails? ImageFile
         {
-            get { return BackingStore?.Get<FileDetails?>("imageFile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FileDetails?>("imageFile"); }
             set { BackingStore?.Set("imageFile", value); }
         }
 #nullable restore
 #else
-        public FileDetails ImageFile
+        public Microsoft.Graph.Models.Security.FileDetails ImageFile
         {
-            get { return BackingStore?.Get<FileDetails>("imageFile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FileDetails>("imageFile"); }
             set { BackingStore?.Set("imageFile", value); }
         }
 #endif
@@ -63,16 +63,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>Parent process image file details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FileDetails? ParentProcessImageFile
+        public Microsoft.Graph.Models.Security.FileDetails? ParentProcessImageFile
         {
-            get { return BackingStore?.Get<FileDetails?>("parentProcessImageFile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FileDetails?>("parentProcessImageFile"); }
             set { BackingStore?.Set("parentProcessImageFile", value); }
         }
 #nullable restore
 #else
-        public FileDetails ParentProcessImageFile
+        public Microsoft.Graph.Models.Security.FileDetails ParentProcessImageFile
         {
-            get { return BackingStore?.Get<FileDetails>("parentProcessImageFile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FileDetails>("parentProcessImageFile"); }
             set { BackingStore?.Set("parentProcessImageFile", value); }
         }
 #endif
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ProcessEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.ProcessEvidence"/> and sets the default values.
         /// </summary>
         public ProcessEvidence() : base()
         {
@@ -130,12 +130,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProcessEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.ProcessEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ProcessEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.ProcessEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProcessEvidence();
+            return new Microsoft.Graph.Models.Security.ProcessEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -145,12 +145,12 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "detectionStatus", n => { DetectionStatus = n.GetEnumValue<DetectionStatus>(); } },
-                { "imageFile", n => { ImageFile = n.GetObjectValue<FileDetails>(FileDetails.CreateFromDiscriminatorValue); } },
+                { "detectionStatus", n => { DetectionStatus = n.GetEnumValue<Microsoft.Graph.Models.Security.DetectionStatus>(); } },
+                { "imageFile", n => { ImageFile = n.GetObjectValue<Microsoft.Graph.Models.Security.FileDetails>(Microsoft.Graph.Models.Security.FileDetails.CreateFromDiscriminatorValue); } },
                 { "mdeDeviceId", n => { MdeDeviceId = n.GetStringValue(); } },
                 { "parentProcessCreationDateTime", n => { ParentProcessCreationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "parentProcessId", n => { ParentProcessId = n.GetLongValue(); } },
-                { "parentProcessImageFile", n => { ParentProcessImageFile = n.GetObjectValue<FileDetails>(FileDetails.CreateFromDiscriminatorValue); } },
+                { "parentProcessImageFile", n => { ParentProcessImageFile = n.GetObjectValue<Microsoft.Graph.Models.Security.FileDetails>(Microsoft.Graph.Models.Security.FileDetails.CreateFromDiscriminatorValue); } },
                 { "processCommandLine", n => { ProcessCommandLine = n.GetStringValue(); } },
                 { "processCreationDateTime", n => { ProcessCreationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "processId", n => { ProcessId = n.GetLongValue(); } },
@@ -165,12 +165,12 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<DetectionStatus>("detectionStatus", DetectionStatus);
-            writer.WriteObjectValue<FileDetails>("imageFile", ImageFile);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.DetectionStatus>("detectionStatus", DetectionStatus);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.FileDetails>("imageFile", ImageFile);
             writer.WriteStringValue("mdeDeviceId", MdeDeviceId);
             writer.WriteDateTimeOffsetValue("parentProcessCreationDateTime", ParentProcessCreationDateTime);
             writer.WriteLongValue("parentProcessId", ParentProcessId);
-            writer.WriteObjectValue<FileDetails>("parentProcessImageFile", ParentProcessImageFile);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.FileDetails>("parentProcessImageFile", ParentProcessImageFile);
             writer.WriteStringValue("processCommandLine", ProcessCommandLine);
             writer.WriteDateTimeOffsetValue("processCreationDateTime", ProcessCreationDateTime);
             writer.WriteLongValue("processId", ProcessId);

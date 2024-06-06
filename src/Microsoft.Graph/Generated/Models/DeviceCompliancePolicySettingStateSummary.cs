@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Device Compilance Policy Setting State summary across the account.
     /// </summary>
-    public class DeviceCompliancePolicySettingStateSummary : Entity, IParsable
+    public class DeviceCompliancePolicySettingStateSummary : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Number of compliant devices</summary>
         public int? CompliantDeviceCount
@@ -26,16 +26,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceComplianceSettingState>? DeviceComplianceSettingStates
+        public List<Microsoft.Graph.Models.DeviceComplianceSettingState>? DeviceComplianceSettingStates
         {
-            get { return BackingStore?.Get<List<DeviceComplianceSettingState>?>("deviceComplianceSettingStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceComplianceSettingState>?>("deviceComplianceSettingStates"); }
             set { BackingStore?.Set("deviceComplianceSettingStates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceComplianceSettingState> DeviceComplianceSettingStates
+        public List<Microsoft.Graph.Models.DeviceComplianceSettingState> DeviceComplianceSettingStates
         {
-            get { return BackingStore?.Get<List<DeviceComplianceSettingState>>("deviceComplianceSettingStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceComplianceSettingState>>("deviceComplianceSettingStates"); }
             set { BackingStore?.Set("deviceComplianceSettingStates", value); }
         }
 #endif
@@ -58,9 +58,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("notApplicableDeviceCount", value); }
         }
         /// <summary>Supported platform types for policies.</summary>
-        public PolicyPlatformType? PlatformType
+        public Microsoft.Graph.Models.PolicyPlatformType? PlatformType
         {
-            get { return BackingStore?.Get<PolicyPlatformType?>("platformType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PolicyPlatformType?>("platformType"); }
             set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>Number of remediated devices</summary>
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceCompliancePolicySettingStateSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceCompliancePolicySettingStateSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceCompliancePolicySettingStateSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeviceCompliancePolicySettingStateSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceCompliancePolicySettingStateSummary();
+            return new Microsoft.Graph.Models.DeviceCompliancePolicySettingStateSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Models
             {
                 { "compliantDeviceCount", n => { CompliantDeviceCount = n.GetIntValue(); } },
                 { "conflictDeviceCount", n => { ConflictDeviceCount = n.GetIntValue(); } },
-                { "deviceComplianceSettingStates", n => { DeviceComplianceSettingStates = n.GetCollectionOfObjectValues<DeviceComplianceSettingState>(DeviceComplianceSettingState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceComplianceSettingStates", n => { DeviceComplianceSettingStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DeviceComplianceSettingState>(Microsoft.Graph.Models.DeviceComplianceSettingState.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
                 { "nonCompliantDeviceCount", n => { NonCompliantDeviceCount = n.GetIntValue(); } },
                 { "notApplicableDeviceCount", n => { NotApplicableDeviceCount = n.GetIntValue(); } },
-                { "platformType", n => { PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
+                { "platformType", n => { PlatformType = n.GetEnumValue<Microsoft.Graph.Models.PolicyPlatformType>(); } },
                 { "remediatedDeviceCount", n => { RemediatedDeviceCount = n.GetIntValue(); } },
                 { "setting", n => { Setting = n.GetStringValue(); } },
                 { "settingName", n => { SettingName = n.GetStringValue(); } },
@@ -148,11 +148,11 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteIntValue("compliantDeviceCount", CompliantDeviceCount);
             writer.WriteIntValue("conflictDeviceCount", ConflictDeviceCount);
-            writer.WriteCollectionOfObjectValues<DeviceComplianceSettingState>("deviceComplianceSettingStates", DeviceComplianceSettingStates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DeviceComplianceSettingState>("deviceComplianceSettingStates", DeviceComplianceSettingStates);
             writer.WriteIntValue("errorDeviceCount", ErrorDeviceCount);
             writer.WriteIntValue("nonCompliantDeviceCount", NonCompliantDeviceCount);
             writer.WriteIntValue("notApplicableDeviceCount", NotApplicableDeviceCount);
-            writer.WriteEnumValue<PolicyPlatformType>("platformType", PlatformType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PolicyPlatformType>("platformType", PlatformType);
             writer.WriteIntValue("remediatedDeviceCount", RemediatedDeviceCount);
             writer.WriteStringValue("setting", Setting);
             writer.WriteStringValue("settingName", SettingName);

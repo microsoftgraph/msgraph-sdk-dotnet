@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class PrivilegedAccessScheduleRequest : Request, IParsable
+    public class PrivilegedAccessScheduleRequest : Microsoft.Graph.Models.Request, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the type of operation on the group membership or ownership assignment request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew. adminAssign: For administrators to assign group membership or ownership to principals.adminRemove: For administrators to remove principals from group membership or ownership. adminUpdate: For administrators to change existing group membership or ownership assignments.adminExtend: For administrators to extend expiring assignments.adminRenew: For administrators to renew expired assignments.selfActivate: For principals to activate their assignments.selfDeactivate: For principals to deactivate their active assignments.</summary>
-        public ScheduleRequestActions? Action
+        public Microsoft.Graph.Models.ScheduleRequestActions? Action
         {
-            get { return BackingStore?.Get<ScheduleRequestActions?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ScheduleRequestActions?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.</summary>
@@ -41,16 +41,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The period of the group membership or ownership assignment. Recurring schedules are currently unsupported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestSchedule? ScheduleInfo
+        public Microsoft.Graph.Models.RequestSchedule? ScheduleInfo
         {
-            get { return BackingStore?.Get<RequestSchedule?>("scheduleInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RequestSchedule?>("scheduleInfo"); }
             set { BackingStore?.Set("scheduleInfo", value); }
         }
 #nullable restore
 #else
-        public RequestSchedule ScheduleInfo
+        public Microsoft.Graph.Models.RequestSchedule ScheduleInfo
         {
-            get { return BackingStore?.Get<RequestSchedule>("scheduleInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RequestSchedule>("scheduleInfo"); }
             set { BackingStore?.Set("scheduleInfo", value); }
         }
 #endif
@@ -73,17 +73,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrivilegedAccessScheduleRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrivilegedAccessScheduleRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrivilegedAccessScheduleRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.PrivilegedAccessScheduleRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest" => new PrivilegedAccessGroupAssignmentScheduleRequest(),
-                "#microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest" => new PrivilegedAccessGroupEligibilityScheduleRequest(),
-                _ => new PrivilegedAccessScheduleRequest(),
+                "#microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest" => new Microsoft.Graph.Models.PrivilegedAccessGroupAssignmentScheduleRequest(),
+                "#microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest" => new Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest(),
+                _ => new Microsoft.Graph.Models.PrivilegedAccessScheduleRequest(),
             };
         }
         /// <summary>
@@ -94,10 +94,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "action", n => { Action = n.GetEnumValue<ScheduleRequestActions>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Models.ScheduleRequestActions>(); } },
                 { "isValidationOnly", n => { IsValidationOnly = n.GetBoolValue(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
-                { "scheduleInfo", n => { ScheduleInfo = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
+                { "scheduleInfo", n => { ScheduleInfo = n.GetObjectValue<Microsoft.Graph.Models.RequestSchedule>(Microsoft.Graph.Models.RequestSchedule.CreateFromDiscriminatorValue); } },
                 { "ticketInfo", n => { TicketInfo = n.GetObjectValue<Microsoft.Graph.Models.TicketInfo>(Microsoft.Graph.Models.TicketInfo.CreateFromDiscriminatorValue); } },
             };
         }
@@ -109,10 +109,10 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<ScheduleRequestActions>("action", Action);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ScheduleRequestActions>("action", Action);
             writer.WriteBoolValue("isValidationOnly", IsValidationOnly);
             writer.WriteStringValue("justification", Justification);
-            writer.WriteObjectValue<RequestSchedule>("scheduleInfo", ScheduleInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Models.RequestSchedule>("scheduleInfo", ScheduleInfo);
             writer.WriteObjectValue<Microsoft.Graph.Models.TicketInfo>("ticketInfo", TicketInfo);
         }
     }

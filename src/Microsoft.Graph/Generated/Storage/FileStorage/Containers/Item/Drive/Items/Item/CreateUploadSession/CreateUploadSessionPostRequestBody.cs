@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.C
         /// <summary>The item property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DriveItemUploadableProperties? Item
+        public Microsoft.Graph.Models.DriveItemUploadableProperties? Item
         {
-            get { return BackingStore?.Get<DriveItemUploadableProperties?>("item"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DriveItemUploadableProperties?>("item"); }
             set { BackingStore?.Set("item", value); }
         }
 #nullable restore
 #else
-        public DriveItemUploadableProperties Item
+        public Microsoft.Graph.Models.DriveItemUploadableProperties Item
         {
-            get { return BackingStore?.Get<DriveItemUploadableProperties>("item"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DriveItemUploadableProperties>("item"); }
             set { BackingStore?.Set("item", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CreateUploadSessionPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.CreateUploadSession.CreateUploadSessionPostRequestBody"/> and sets the default values.
         /// </summary>
         public CreateUploadSessionPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.C
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CreateUploadSessionPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.CreateUploadSession.CreateUploadSessionPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CreateUploadSessionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.CreateUploadSession.CreateUploadSessionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CreateUploadSessionPostRequestBody();
+            return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.CreateUploadSession.CreateUploadSessionPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.C
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "item", n => { Item = n.GetObjectValue<DriveItemUploadableProperties>(DriveItemUploadableProperties.CreateFromDiscriminatorValue); } },
+                { "item", n => { Item = n.GetObjectValue<Microsoft.Graph.Models.DriveItemUploadableProperties>(Microsoft.Graph.Models.DriveItemUploadableProperties.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.C
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<DriveItemUploadableProperties>("item", Item);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DriveItemUploadableProperties>("item", Item);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

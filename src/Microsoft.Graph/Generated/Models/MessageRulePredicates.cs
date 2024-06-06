@@ -70,16 +70,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recipient>? FromAddresses
+        public List<Microsoft.Graph.Models.Recipient>? FromAddresses
         {
-            get { return BackingStore?.Get<List<Recipient>?>("fromAddresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>?>("fromAddresses"); }
             set { BackingStore?.Set("fromAddresses", value); }
         }
 #nullable restore
 #else
-        public List<Recipient> FromAddresses
+        public List<Microsoft.Graph.Models.Recipient> FromAddresses
         {
-            get { return BackingStore?.Get<List<Recipient>>("fromAddresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>>("fromAddresses"); }
             set { BackingStore?.Set("fromAddresses", value); }
         }
 #endif
@@ -258,16 +258,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Represents the email addresses that an incoming message must have been sent to in order for the condition or exception to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recipient>? SentToAddresses
+        public List<Microsoft.Graph.Models.Recipient>? SentToAddresses
         {
-            get { return BackingStore?.Get<List<Recipient>?>("sentToAddresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>?>("sentToAddresses"); }
             set { BackingStore?.Set("sentToAddresses", value); }
         }
 #nullable restore
 #else
-        public List<Recipient> SentToAddresses
+        public List<Microsoft.Graph.Models.Recipient> SentToAddresses
         {
-            get { return BackingStore?.Get<List<Recipient>>("sentToAddresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>>("sentToAddresses"); }
             set { BackingStore?.Set("sentToAddresses", value); }
         }
 #endif
@@ -302,21 +302,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Represents the minimum and maximum sizes (in kilobytes) that an incoming message must fall in between in order for the condition or exception to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SizeRange? WithinSizeRange
+        public Microsoft.Graph.Models.SizeRange? WithinSizeRange
         {
-            get { return BackingStore?.Get<SizeRange?>("withinSizeRange"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SizeRange?>("withinSizeRange"); }
             set { BackingStore?.Set("withinSizeRange", value); }
         }
 #nullable restore
 #else
-        public SizeRange WithinSizeRange
+        public Microsoft.Graph.Models.SizeRange WithinSizeRange
         {
-            get { return BackingStore?.Get<SizeRange>("withinSizeRange"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SizeRange>("withinSizeRange"); }
             set { BackingStore?.Set("withinSizeRange", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MessageRulePredicates"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MessageRulePredicates"/> and sets the default values.
         /// </summary>
         public MessageRulePredicates()
         {
@@ -326,12 +326,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MessageRulePredicates"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MessageRulePredicates"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MessageRulePredicates CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.MessageRulePredicates CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MessageRulePredicates();
+            return new Microsoft.Graph.Models.MessageRulePredicates();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -344,10 +344,10 @@ namespace Microsoft.Graph.Models
                 { "bodyContains", n => { BodyContains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "bodyOrSubjectContains", n => { BodyOrSubjectContains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "fromAddresses", n => { FromAddresses = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "fromAddresses", n => { FromAddresses = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>(Microsoft.Graph.Models.Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
                 { "headerContains", n => { HeaderContains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "importance", n => { Importance = n.GetEnumValue<Importance>(); } },
+                { "importance", n => { Importance = n.GetEnumValue<Microsoft.Graph.Models.Importance>(); } },
                 { "isApprovalRequest", n => { IsApprovalRequest = n.GetBoolValue(); } },
                 { "isAutomaticForward", n => { IsAutomaticForward = n.GetBoolValue(); } },
                 { "isAutomaticReply", n => { IsAutomaticReply = n.GetBoolValue(); } },
@@ -359,19 +359,19 @@ namespace Microsoft.Graph.Models
                 { "isReadReceipt", n => { IsReadReceipt = n.GetBoolValue(); } },
                 { "isSigned", n => { IsSigned = n.GetBoolValue(); } },
                 { "isVoicemail", n => { IsVoicemail = n.GetBoolValue(); } },
-                { "messageActionFlag", n => { MessageActionFlag = n.GetEnumValue<MessageActionFlag>(); } },
+                { "messageActionFlag", n => { MessageActionFlag = n.GetEnumValue<Microsoft.Graph.Models.MessageActionFlag>(); } },
                 { "notSentToMe", n => { NotSentToMe = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "recipientContains", n => { RecipientContains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "senderContains", n => { SenderContains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "sensitivity", n => { Sensitivity = n.GetEnumValue<Sensitivity>(); } },
+                { "sensitivity", n => { Sensitivity = n.GetEnumValue<Microsoft.Graph.Models.Sensitivity>(); } },
                 { "sentCcMe", n => { SentCcMe = n.GetBoolValue(); } },
                 { "sentOnlyToMe", n => { SentOnlyToMe = n.GetBoolValue(); } },
-                { "sentToAddresses", n => { SentToAddresses = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sentToAddresses", n => { SentToAddresses = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>(Microsoft.Graph.Models.Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "sentToMe", n => { SentToMe = n.GetBoolValue(); } },
                 { "sentToOrCcMe", n => { SentToOrCcMe = n.GetBoolValue(); } },
                 { "subjectContains", n => { SubjectContains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "withinSizeRange", n => { WithinSizeRange = n.GetObjectValue<SizeRange>(SizeRange.CreateFromDiscriminatorValue); } },
+                { "withinSizeRange", n => { WithinSizeRange = n.GetObjectValue<Microsoft.Graph.Models.SizeRange>(Microsoft.Graph.Models.SizeRange.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -384,10 +384,10 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfPrimitiveValues<string>("bodyContains", BodyContains);
             writer.WriteCollectionOfPrimitiveValues<string>("bodyOrSubjectContains", BodyOrSubjectContains);
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
-            writer.WriteCollectionOfObjectValues<Recipient>("fromAddresses", FromAddresses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>("fromAddresses", FromAddresses);
             writer.WriteBoolValue("hasAttachments", HasAttachments);
             writer.WriteCollectionOfPrimitiveValues<string>("headerContains", HeaderContains);
-            writer.WriteEnumValue<Importance>("importance", Importance);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Importance>("importance", Importance);
             writer.WriteBoolValue("isApprovalRequest", IsApprovalRequest);
             writer.WriteBoolValue("isAutomaticForward", IsAutomaticForward);
             writer.WriteBoolValue("isAutomaticReply", IsAutomaticReply);
@@ -399,19 +399,19 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("isReadReceipt", IsReadReceipt);
             writer.WriteBoolValue("isSigned", IsSigned);
             writer.WriteBoolValue("isVoicemail", IsVoicemail);
-            writer.WriteEnumValue<MessageActionFlag>("messageActionFlag", MessageActionFlag);
+            writer.WriteEnumValue<Microsoft.Graph.Models.MessageActionFlag>("messageActionFlag", MessageActionFlag);
             writer.WriteBoolValue("notSentToMe", NotSentToMe);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("recipientContains", RecipientContains);
             writer.WriteCollectionOfPrimitiveValues<string>("senderContains", SenderContains);
-            writer.WriteEnumValue<Sensitivity>("sensitivity", Sensitivity);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Sensitivity>("sensitivity", Sensitivity);
             writer.WriteBoolValue("sentCcMe", SentCcMe);
             writer.WriteBoolValue("sentOnlyToMe", SentOnlyToMe);
-            writer.WriteCollectionOfObjectValues<Recipient>("sentToAddresses", SentToAddresses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>("sentToAddresses", SentToAddresses);
             writer.WriteBoolValue("sentToMe", SentToMe);
             writer.WriteBoolValue("sentToOrCcMe", SentToOrCcMe);
             writer.WriteCollectionOfPrimitiveValues<string>("subjectContains", SubjectContains);
-            writer.WriteObjectValue<SizeRange>("withinSizeRange", WithinSizeRange);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SizeRange>("withinSizeRange", WithinSizeRange);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

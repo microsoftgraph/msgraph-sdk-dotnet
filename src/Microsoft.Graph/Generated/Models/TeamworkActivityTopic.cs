@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Type of source. Possible values are: entityUrl, text. For supported Microsoft Graph URLs, use entityUrl. For custom text, use text.</summary>
-        public TeamworkActivityTopicSource? Source
+        public Microsoft.Graph.Models.TeamworkActivityTopicSource? Source
         {
-            get { return BackingStore?.Get<TeamworkActivityTopicSource?>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamworkActivityTopicSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
         /// <summary>The topic value. If the value of the source property is entityUrl, this must be a Microsoft Graph URL. If the value is text, this must be a plain text value.</summary>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkActivityTopic"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TeamworkActivityTopic"/> and sets the default values.
         /// </summary>
         public TeamworkActivityTopic()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkActivityTopic"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamworkActivityTopic"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamworkActivityTopic CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.TeamworkActivityTopic CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkActivityTopic();
+            return new Microsoft.Graph.Models.TeamworkActivityTopic();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetEnumValue<TeamworkActivityTopicSource>(); } },
+                { "source", n => { Source = n.GetEnumValue<Microsoft.Graph.Models.TeamworkActivityTopicSource>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
                 { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<TeamworkActivityTopicSource>("source", Source);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TeamworkActivityTopicSource>("source", Source);
             writer.WriteStringValue("value", Value);
             writer.WriteStringValue("webUrl", WebUrl);
             writer.WriteAdditionalData(AdditionalData);

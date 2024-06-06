@@ -23,16 +23,16 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability
         /// <summary>The endDateTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? EndDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? EndDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("endDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone EndDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone EndDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("endDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
 #endif
@@ -55,21 +55,21 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability
         /// <summary>The startDateTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? StartDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone? StartDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone StartDateTime
+        public Microsoft.Graph.Models.DateTimeTimeZone StartDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GetStaffAvailabilityPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability.GetStaffAvailabilityPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetStaffAvailabilityPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetStaffAvailabilityPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability.GetStaffAvailabilityPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetStaffAvailabilityPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability.GetStaffAvailabilityPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetStaffAvailabilityPostRequestBody();
+            return new Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability.GetStaffAvailabilityPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "endDateTime", n => { EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "endDateTime", n => { EndDateTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "staffIds", n => { StaffIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "startDateTime", n => { StartDateTime = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<DateTimeTimeZone>("endDateTime", EndDateTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("endDateTime", EndDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("staffIds", StaffIds);
-            writer.WriteObjectValue<DateTimeTimeZone>("startDateTime", StartDateTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("startDateTime", StartDateTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,50 +7,50 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookChartPoint : Entity, IParsable
+    public class WorkbookChartPoint : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Encapsulates the format properties chart point. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartPointFormat? Format
+        public Microsoft.Graph.Models.WorkbookChartPointFormat? Format
         {
-            get { return BackingStore?.Get<WorkbookChartPointFormat?>("format"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartPointFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartPointFormat Format
+        public Microsoft.Graph.Models.WorkbookChartPointFormat Format
         {
-            get { return BackingStore?.Get<WorkbookChartPointFormat>("format"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartPointFormat>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #endif
         /// <summary>Returns the value of a chart point. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Value
+        public UntypedNode? Value
         {
-            get { return BackingStore?.Get<Json?>("value"); }
+            get { return BackingStore?.Get<UntypedNode?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public Json Value
+        public UntypedNode Value
         {
-            get { return BackingStore?.Get<Json>("value"); }
+            get { return BackingStore?.Get<UntypedNode>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookChartPoint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookChartPoint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookChartPoint CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WorkbookChartPoint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookChartPoint();
+            return new Microsoft.Graph.Models.WorkbookChartPoint();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "format", n => { Format = n.GetObjectValue<WorkbookChartPointFormat>(WorkbookChartPointFormat.CreateFromDiscriminatorValue); } },
-                { "value", n => { Value = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "format", n => { Format = n.GetObjectValue<Microsoft.Graph.Models.WorkbookChartPointFormat>(Microsoft.Graph.Models.WorkbookChartPointFormat.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<WorkbookChartPointFormat>("format", Format);
-            writer.WriteObjectValue<Json>("value", Value);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookChartPointFormat>("format", Format);
+            writer.WriteObjectValue<UntypedNode>("value", Value);
         }
     }
 }

@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The ediscoveryCases property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryCase>? EdiscoveryCases
+        public List<Microsoft.Graph.Models.Security.EdiscoveryCase>? EdiscoveryCases
         {
-            get { return BackingStore?.Get<List<EdiscoveryCase>?>("ediscoveryCases"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryCase>?>("ediscoveryCases"); }
             set { BackingStore?.Set("ediscoveryCases", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryCase> EdiscoveryCases
+        public List<Microsoft.Graph.Models.Security.EdiscoveryCase> EdiscoveryCases
         {
-            get { return BackingStore?.Get<List<EdiscoveryCase>>("ediscoveryCases"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryCase>>("ediscoveryCases"); }
             set { BackingStore?.Set("ediscoveryCases", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CasesRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.CasesRoot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CasesRoot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.CasesRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CasesRoot();
+            return new Microsoft.Graph.Models.Security.CasesRoot();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "ediscoveryCases", n => { EdiscoveryCases = n.GetCollectionOfObjectValues<EdiscoveryCase>(EdiscoveryCase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ediscoveryCases", n => { EdiscoveryCases = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryCase>(Microsoft.Graph.Models.Security.EdiscoveryCase.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<EdiscoveryCase>("ediscoveryCases", EdiscoveryCases);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryCase>("ediscoveryCases", EdiscoveryCases);
         }
     }
 }

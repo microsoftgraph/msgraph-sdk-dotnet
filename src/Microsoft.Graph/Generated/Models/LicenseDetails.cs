@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class LicenseDetails : Entity, IParsable
+    public class LicenseDetails : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Information about the service plans assigned with the license. Read-only. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServicePlanInfo>? ServicePlans
+        public List<Microsoft.Graph.Models.ServicePlanInfo>? ServicePlans
         {
-            get { return BackingStore?.Get<List<ServicePlanInfo>?>("servicePlans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ServicePlanInfo>?>("servicePlans"); }
             set { BackingStore?.Set("servicePlans", value); }
         }
 #nullable restore
 #else
-        public List<ServicePlanInfo> ServicePlans
+        public List<Microsoft.Graph.Models.ServicePlanInfo> ServicePlans
         {
-            get { return BackingStore?.Get<List<ServicePlanInfo>>("servicePlans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ServicePlanInfo>>("servicePlans"); }
             set { BackingStore?.Set("servicePlans", value); }
         }
 #endif
@@ -51,12 +51,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LicenseDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.LicenseDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new LicenseDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.LicenseDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LicenseDetails();
+            return new Microsoft.Graph.Models.LicenseDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "servicePlans", n => { ServicePlans = n.GetCollectionOfObjectValues<ServicePlanInfo>(ServicePlanInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "servicePlans", n => { ServicePlans = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ServicePlanInfo>(Microsoft.Graph.Models.ServicePlanInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "skuId", n => { SkuId = n.GetGuidValue(); } },
                 { "skuPartNumber", n => { SkuPartNumber = n.GetStringValue(); } },
             };
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ServicePlanInfo>("servicePlans", ServicePlans);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ServicePlanInfo>("servicePlans", ServicePlans);
             writer.WriteGuidValue("skuId", SkuId);
             writer.WriteStringValue("skuPartNumber", SkuPartNumber);
         }

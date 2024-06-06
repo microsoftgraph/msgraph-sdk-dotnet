@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class EducationGradingCategory : Entity, IParsable
+    public class EducationGradingCategory : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the grading category.</summary>
@@ -35,12 +35,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationGradingCategory"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationGradingCategory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationGradingCategory CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EducationGradingCategory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationGradingCategory();
+            return new Microsoft.Graph.Models.EducationGradingCategory();
         }
         /// <summary>
         /// The deserialization information for the current model

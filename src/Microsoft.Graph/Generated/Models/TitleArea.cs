@@ -58,9 +58,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Enumeration value that indicates the layout of the title area. The possible values are: imageAndTitle, plain, colorBlock, overlap, unknownFutureValue.</summary>
-        public TitleAreaLayoutType? Layout
+        public Microsoft.Graph.Models.TitleAreaLayoutType? Layout
         {
-            get { return BackingStore?.Get<TitleAreaLayoutType?>("layout"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TitleAreaLayoutType?>("layout"); }
             set { BackingStore?.Set("layout", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -130,13 +130,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Enumeration value that indicates the text alignment of the title area. The possible values are: left, center, unknownFutureValue.</summary>
-        public TitleAreaTextAlignmentType? TextAlignment
+        public Microsoft.Graph.Models.TitleAreaTextAlignmentType? TextAlignment
         {
-            get { return BackingStore?.Get<TitleAreaTextAlignmentType?>("textAlignment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TitleAreaTextAlignmentType?>("textAlignment"); }
             set { BackingStore?.Set("textAlignment", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TitleArea"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TitleArea"/> and sets the default values.
         /// </summary>
         public TitleArea()
         {
@@ -146,12 +146,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TitleArea"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TitleArea"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TitleArea CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.TitleArea CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TitleArea();
+            return new Microsoft.Graph.Models.TitleArea();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -164,14 +164,14 @@ namespace Microsoft.Graph.Models
                 { "alternativeText", n => { AlternativeText = n.GetStringValue(); } },
                 { "enableGradientEffect", n => { EnableGradientEffect = n.GetBoolValue(); } },
                 { "imageWebUrl", n => { ImageWebUrl = n.GetStringValue(); } },
-                { "layout", n => { Layout = n.GetEnumValue<TitleAreaLayoutType>(); } },
+                { "layout", n => { Layout = n.GetEnumValue<Microsoft.Graph.Models.TitleAreaLayoutType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "serverProcessedContent", n => { ServerProcessedContent = n.GetObjectValue<Microsoft.Graph.Models.ServerProcessedContent>(Microsoft.Graph.Models.ServerProcessedContent.CreateFromDiscriminatorValue); } },
                 { "showAuthor", n => { ShowAuthor = n.GetBoolValue(); } },
                 { "showPublishedDate", n => { ShowPublishedDate = n.GetBoolValue(); } },
                 { "showTextBlockAboveTitle", n => { ShowTextBlockAboveTitle = n.GetBoolValue(); } },
                 { "textAboveTitle", n => { TextAboveTitle = n.GetStringValue(); } },
-                { "textAlignment", n => { TextAlignment = n.GetEnumValue<TitleAreaTextAlignmentType>(); } },
+                { "textAlignment", n => { TextAlignment = n.GetEnumValue<Microsoft.Graph.Models.TitleAreaTextAlignmentType>(); } },
             };
         }
         /// <summary>
@@ -184,14 +184,14 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("alternativeText", AlternativeText);
             writer.WriteBoolValue("enableGradientEffect", EnableGradientEffect);
             writer.WriteStringValue("imageWebUrl", ImageWebUrl);
-            writer.WriteEnumValue<TitleAreaLayoutType>("layout", Layout);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TitleAreaLayoutType>("layout", Layout);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<Microsoft.Graph.Models.ServerProcessedContent>("serverProcessedContent", ServerProcessedContent);
             writer.WriteBoolValue("showAuthor", ShowAuthor);
             writer.WriteBoolValue("showPublishedDate", ShowPublishedDate);
             writer.WriteBoolValue("showTextBlockAboveTitle", ShowTextBlockAboveTitle);
             writer.WriteStringValue("textAboveTitle", TextAboveTitle);
-            writer.WriteEnumValue<TitleAreaTextAlignmentType>("textAlignment", TextAlignment);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TitleAreaTextAlignmentType>("textAlignment", TextAlignment);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

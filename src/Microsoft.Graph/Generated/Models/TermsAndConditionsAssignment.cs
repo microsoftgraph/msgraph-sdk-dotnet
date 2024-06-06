@@ -9,33 +9,33 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// A termsAndConditionsAssignment entity represents the assignment of a given Terms and Conditions (T&amp;C) policy to a given group. Users in the group will be required to accept the terms in order to have devices enrolled into Intune.
     /// </summary>
-    public class TermsAndConditionsAssignment : Entity, IParsable
+    public class TermsAndConditionsAssignment : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Assignment target that the T&amp;C policy is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceAndAppManagementAssignmentTarget? Target
+        public Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget? Target
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public DeviceAndAppManagementAssignmentTarget Target
+        public Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget Target
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TermsAndConditionsAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TermsAndConditionsAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TermsAndConditionsAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TermsAndConditionsAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TermsAndConditionsAssignment();
+            return new Microsoft.Graph.Models.TermsAndConditionsAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget>(Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<DeviceAndAppManagementAssignmentTarget>("target", Target);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget>("target", Target);
         }
     }
 }

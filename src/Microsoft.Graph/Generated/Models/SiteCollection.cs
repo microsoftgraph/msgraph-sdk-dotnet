@@ -17,19 +17,19 @@ namespace Microsoft.Graph.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The archivalDetails property</summary>
+        /// <summary>Represents whether the site collection is recently archived, fully archived, or reactivating. Possible values are: recentlyArchived, fullyArchived, reactivating, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SiteArchivalDetails? ArchivalDetails
+        public Microsoft.Graph.Models.SiteArchivalDetails? ArchivalDetails
         {
-            get { return BackingStore?.Get<SiteArchivalDetails?>("archivalDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SiteArchivalDetails?>("archivalDetails"); }
             set { BackingStore?.Set("archivalDetails", value); }
         }
 #nullable restore
 #else
-        public SiteArchivalDetails ArchivalDetails
+        public Microsoft.Graph.Models.SiteArchivalDetails ArchivalDetails
         {
-            get { return BackingStore?.Get<SiteArchivalDetails>("archivalDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SiteArchivalDetails>("archivalDetails"); }
             set { BackingStore?.Set("archivalDetails", value); }
         }
 #endif
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SiteCollection"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SiteCollection"/> and sets the default values.
         /// </summary>
         public SiteCollection()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SiteCollection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SiteCollection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SiteCollection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SiteCollection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SiteCollection();
+            return new Microsoft.Graph.Models.SiteCollection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "archivalDetails", n => { ArchivalDetails = n.GetObjectValue<SiteArchivalDetails>(SiteArchivalDetails.CreateFromDiscriminatorValue); } },
+                { "archivalDetails", n => { ArchivalDetails = n.GetObjectValue<Microsoft.Graph.Models.SiteArchivalDetails>(Microsoft.Graph.Models.SiteArchivalDetails.CreateFromDiscriminatorValue); } },
                 { "dataLocationCode", n => { DataLocationCode = n.GetStringValue(); } },
                 { "hostname", n => { Hostname = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<SiteArchivalDetails>("archivalDetails", ArchivalDetails);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SiteArchivalDetails>("archivalDetails", ArchivalDetails);
             writer.WriteStringValue("dataLocationCode", DataLocationCode);
             writer.WriteStringValue("hostname", Hostname);
             writer.WriteStringValue("@odata.type", OdataType);

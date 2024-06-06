@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AppsInstallationOptionsForWindows"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AppsInstallationOptionsForWindows"/> and sets the default values.
         /// </summary>
         public AppsInstallationOptionsForWindows()
         {
@@ -70,12 +70,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppsInstallationOptionsForWindows"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AppsInstallationOptionsForWindows"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AppsInstallationOptionsForWindows CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AppsInstallationOptionsForWindows CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AppsInstallationOptionsForWindows();
+            return new Microsoft.Graph.Models.AppsInstallationOptionsForWindows();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -26,16 +26,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The apiExpressions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<StringKeyStringValuePair>? ApiExpressions
+        public List<Microsoft.Graph.Models.StringKeyStringValuePair>? ApiExpressions
         {
-            get { return BackingStore?.Get<List<StringKeyStringValuePair>?>("apiExpressions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.StringKeyStringValuePair>?>("apiExpressions"); }
             set { BackingStore?.Set("apiExpressions", value); }
         }
 #nullable restore
 #else
-        public List<StringKeyStringValuePair> ApiExpressions
+        public List<Microsoft.Graph.Models.StringKeyStringValuePair> ApiExpressions
         {
-            get { return BackingStore?.Get<List<StringKeyStringValuePair>>("apiExpressions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.StringKeyStringValuePair>>("apiExpressions"); }
             set { BackingStore?.Set("apiExpressions", value); }
         }
 #endif
@@ -72,16 +72,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Metadata for the given object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttributeDefinitionMetadataEntry>? Metadata
+        public List<Microsoft.Graph.Models.AttributeDefinitionMetadataEntry>? Metadata
         {
-            get { return BackingStore?.Get<List<AttributeDefinitionMetadataEntry>?>("metadata"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttributeDefinitionMetadataEntry>?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public List<AttributeDefinitionMetadataEntry> Metadata
+        public List<Microsoft.Graph.Models.AttributeDefinitionMetadataEntry> Metadata
         {
-            get { return BackingStore?.Get<List<AttributeDefinitionMetadataEntry>>("metadata"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttributeDefinitionMetadataEntry>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
@@ -132,16 +132,16 @@ namespace Microsoft.Graph.Models
         /// <summary>For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ReferencedObject>? ReferencedObjects
+        public List<Microsoft.Graph.Models.ReferencedObject>? ReferencedObjects
         {
-            get { return BackingStore?.Get<List<ReferencedObject>?>("referencedObjects"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ReferencedObject>?>("referencedObjects"); }
             set { BackingStore?.Set("referencedObjects", value); }
         }
 #nullable restore
 #else
-        public List<ReferencedObject> ReferencedObjects
+        public List<Microsoft.Graph.Models.ReferencedObject> ReferencedObjects
         {
-            get { return BackingStore?.Get<List<ReferencedObject>>("referencedObjects"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ReferencedObject>>("referencedObjects"); }
             set { BackingStore?.Set("referencedObjects", value); }
         }
 #endif
@@ -152,13 +152,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("required", value); }
         }
         /// <summary>The type property</summary>
-        public AttributeType? Type
+        public Microsoft.Graph.Models.AttributeType? Type
         {
-            get { return BackingStore?.Get<AttributeType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AttributeType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AttributeDefinition"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AttributeDefinition"/> and sets the default values.
         /// </summary>
         public AttributeDefinition()
         {
@@ -168,12 +168,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AttributeDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AttributeDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AttributeDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AttributeDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AttributeDefinition();
+            return new Microsoft.Graph.Models.AttributeDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -184,18 +184,18 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "anchor", n => { Anchor = n.GetBoolValue(); } },
-                { "apiExpressions", n => { ApiExpressions = n.GetCollectionOfObjectValues<StringKeyStringValuePair>(StringKeyStringValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "apiExpressions", n => { ApiExpressions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.StringKeyStringValuePair>(Microsoft.Graph.Models.StringKeyStringValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "caseExact", n => { CaseExact = n.GetBoolValue(); } },
                 { "defaultValue", n => { DefaultValue = n.GetStringValue(); } },
                 { "flowNullValues", n => { FlowNullValues = n.GetBoolValue(); } },
-                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<AttributeDefinitionMetadataEntry>(AttributeDefinitionMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AttributeDefinitionMetadataEntry>(Microsoft.Graph.Models.AttributeDefinitionMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "multivalued", n => { Multivalued = n.GetBoolValue(); } },
-                { "mutability", n => { Mutability = n.GetEnumValue<Mutability>(); } },
+                { "mutability", n => { Mutability = n.GetEnumValue<Microsoft.Graph.Models.Mutability>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "referencedObjects", n => { ReferencedObjects = n.GetCollectionOfObjectValues<ReferencedObject>(ReferencedObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "referencedObjects", n => { ReferencedObjects = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ReferencedObject>(Microsoft.Graph.Models.ReferencedObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<AttributeType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Models.AttributeType>(); } },
             };
         }
         /// <summary>
@@ -206,18 +206,18 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("anchor", Anchor);
-            writer.WriteCollectionOfObjectValues<StringKeyStringValuePair>("apiExpressions", ApiExpressions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.StringKeyStringValuePair>("apiExpressions", ApiExpressions);
             writer.WriteBoolValue("caseExact", CaseExact);
             writer.WriteStringValue("defaultValue", DefaultValue);
             writer.WriteBoolValue("flowNullValues", FlowNullValues);
-            writer.WriteCollectionOfObjectValues<AttributeDefinitionMetadataEntry>("metadata", Metadata);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AttributeDefinitionMetadataEntry>("metadata", Metadata);
             writer.WriteBoolValue("multivalued", Multivalued);
-            writer.WriteEnumValue<Mutability>("mutability", Mutability);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Mutability>("mutability", Mutability);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<ReferencedObject>("referencedObjects", ReferencedObjects);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ReferencedObject>("referencedObjects", ReferencedObjects);
             writer.WriteBoolValue("required", Required);
-            writer.WriteEnumValue<AttributeType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AttributeType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

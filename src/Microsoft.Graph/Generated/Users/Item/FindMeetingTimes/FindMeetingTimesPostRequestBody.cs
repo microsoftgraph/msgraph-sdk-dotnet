@@ -21,16 +21,16 @@ namespace Microsoft.Graph.Users.Item.FindMeetingTimes
         /// <summary>The attendees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttendeeBase>? Attendees
+        public List<Microsoft.Graph.Models.AttendeeBase>? Attendees
         {
-            get { return BackingStore?.Get<List<AttendeeBase>?>("attendees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttendeeBase>?>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
 #nullable restore
 #else
-        public List<AttendeeBase> Attendees
+        public List<Microsoft.Graph.Models.AttendeeBase> Attendees
         {
-            get { return BackingStore?.Get<List<AttendeeBase>>("attendees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AttendeeBase>>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
 #endif
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Users.Item.FindMeetingTimes
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="FindMeetingTimesPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.FindMeetingTimes.FindMeetingTimesPostRequestBody"/> and sets the default values.
         /// </summary>
         public FindMeetingTimesPostRequestBody()
         {
@@ -109,12 +109,12 @@ namespace Microsoft.Graph.Users.Item.FindMeetingTimes
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FindMeetingTimesPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.FindMeetingTimes.FindMeetingTimesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static FindMeetingTimesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Users.Item.FindMeetingTimes.FindMeetingTimesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FindMeetingTimesPostRequestBody();
+            return new Microsoft.Graph.Users.Item.FindMeetingTimes.FindMeetingTimesPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Users.Item.FindMeetingTimes
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attendees", n => { Attendees = n.GetCollectionOfObjectValues<AttendeeBase>(AttendeeBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attendees", n => { Attendees = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AttendeeBase>(Microsoft.Graph.Models.AttendeeBase.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isOrganizerOptional", n => { IsOrganizerOptional = n.GetBoolValue(); } },
                 { "locationConstraint", n => { LocationConstraint = n.GetObjectValue<Microsoft.Graph.Models.LocationConstraint>(Microsoft.Graph.Models.LocationConstraint.CreateFromDiscriminatorValue); } },
                 { "maxCandidates", n => { MaxCandidates = n.GetIntValue(); } },
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Users.Item.FindMeetingTimes
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<AttendeeBase>("attendees", Attendees);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AttendeeBase>("attendees", Attendees);
             writer.WriteBoolValue("isOrganizerOptional", IsOrganizerOptional);
             writer.WriteObjectValue<Microsoft.Graph.Models.LocationConstraint>("locationConstraint", LocationConstraint);
             writer.WriteIntValue("maxCandidates", MaxCandidates);

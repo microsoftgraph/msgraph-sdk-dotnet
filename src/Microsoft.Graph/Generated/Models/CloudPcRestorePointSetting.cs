@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.</summary>
-        public CloudPcRestorePointFrequencyType? FrequencyType
+        public Microsoft.Graph.Models.CloudPcRestorePointFrequencyType? FrequencyType
         {
-            get { return BackingStore?.Get<CloudPcRestorePointFrequencyType?>("frequencyType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CloudPcRestorePointFrequencyType?>("frequencyType"); }
             set { BackingStore?.Set("frequencyType", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("userRestoreEnabled", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcRestorePointSetting"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CloudPcRestorePointSetting"/> and sets the default values.
         /// </summary>
         public CloudPcRestorePointSetting()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcRestorePointSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudPcRestorePointSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcRestorePointSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CloudPcRestorePointSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcRestorePointSetting();
+            return new Microsoft.Graph.Models.CloudPcRestorePointSetting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "frequencyType", n => { FrequencyType = n.GetEnumValue<CloudPcRestorePointFrequencyType>(); } },
+                { "frequencyType", n => { FrequencyType = n.GetEnumValue<Microsoft.Graph.Models.CloudPcRestorePointFrequencyType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "userRestoreEnabled", n => { UserRestoreEnabled = n.GetBoolValue(); } },
             };
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<CloudPcRestorePointFrequencyType>("frequencyType", FrequencyType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CloudPcRestorePointFrequencyType>("frequencyType", FrequencyType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("userRestoreEnabled", UserRestoreEnabled);
             writer.WriteAdditionalData(AdditionalData);

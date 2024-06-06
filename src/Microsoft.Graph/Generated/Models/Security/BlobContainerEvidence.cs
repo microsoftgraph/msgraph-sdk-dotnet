@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class BlobContainerEvidence : AlertEvidence, IParsable
+    public class BlobContainerEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the blob container.</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The storage which the blob container belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AzureResourceEvidence? StorageResource
+        public Microsoft.Graph.Models.Security.AzureResourceEvidence? StorageResource
         {
-            get { return BackingStore?.Get<AzureResourceEvidence?>("storageResource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.AzureResourceEvidence?>("storageResource"); }
             set { BackingStore?.Set("storageResource", value); }
         }
 #nullable restore
 #else
-        public AzureResourceEvidence StorageResource
+        public Microsoft.Graph.Models.Security.AzureResourceEvidence StorageResource
         {
-            get { return BackingStore?.Get<AzureResourceEvidence>("storageResource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.AzureResourceEvidence>("storageResource"); }
             set { BackingStore?.Set("storageResource", value); }
         }
 #endif
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="BlobContainerEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.BlobContainerEvidence"/> and sets the default values.
         /// </summary>
         public BlobContainerEvidence() : base()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BlobContainerEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.BlobContainerEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BlobContainerEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.BlobContainerEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BlobContainerEvidence();
+            return new Microsoft.Graph.Models.Security.BlobContainerEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models.Security
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "storageResource", n => { StorageResource = n.GetObjectValue<AzureResourceEvidence>(AzureResourceEvidence.CreateFromDiscriminatorValue); } },
+                { "storageResource", n => { StorageResource = n.GetObjectValue<Microsoft.Graph.Models.Security.AzureResourceEvidence>(Microsoft.Graph.Models.Security.AzureResourceEvidence.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Models.Security
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<AzureResourceEvidence>("storageResource", StorageResource);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.AzureResourceEvidence>("storageResource", StorageResource);
             writer.WriteStringValue("url", Url);
         }
     }

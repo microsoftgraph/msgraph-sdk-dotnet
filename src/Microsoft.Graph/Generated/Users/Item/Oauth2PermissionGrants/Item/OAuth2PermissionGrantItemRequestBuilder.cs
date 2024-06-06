@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Item
     public class OAuth2PermissionGrantItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="OAuth2PermissionGrantItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Item.OAuth2PermissionGrantItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="OAuth2PermissionGrantItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Item.OAuth2PermissionGrantItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Item
         /// <summary>
         /// Get oauth2PermissionGrants from users
         /// </summary>
-        /// <returns>A <see cref="OAuth2PermissionGrant"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OAuth2PermissionGrant"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OAuth2PermissionGrant?> GetAsync(Action<RequestConfiguration<OAuth2PermissionGrantItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OAuth2PermissionGrant?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Item.OAuth2PermissionGrantItemRequestBuilder.OAuth2PermissionGrantItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<OAuth2PermissionGrant> GetAsync(Action<RequestConfiguration<OAuth2PermissionGrantItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OAuth2PermissionGrant> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Item.OAuth2PermissionGrantItemRequestBuilder.OAuth2PermissionGrantItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<OAuth2PermissionGrant>(requestInfo, OAuth2PermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.OAuth2PermissionGrant>(requestInfo, Microsoft.Graph.Models.OAuth2PermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get oauth2PermissionGrants from users
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OAuth2PermissionGrantItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Item.OAuth2PermissionGrantItemRequestBuilder.OAuth2PermissionGrantItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OAuth2PermissionGrantItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Item.OAuth2PermissionGrantItemRequestBuilder.OAuth2PermissionGrantItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="OAuth2PermissionGrantItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Item.OAuth2PermissionGrantItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public OAuth2PermissionGrantItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Item.OAuth2PermissionGrantItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new OAuth2PermissionGrantItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Item.OAuth2PermissionGrantItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get oauth2PermissionGrants from users
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class OAuth2PermissionGrantItemRequestBuilderGetRequestConfiguration : RequestConfiguration<OAuth2PermissionGrantItemRequestBuilderGetQueryParameters>
+        public class OAuth2PermissionGrantItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Item.OAuth2PermissionGrantItemRequestBuilder.OAuth2PermissionGrantItemRequestBuilderGetQueryParameters>
         {
         }
     }

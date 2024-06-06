@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Me.Presence.SetStatusMessage
         /// <summary>The statusMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PresenceStatusMessage? StatusMessage
+        public Microsoft.Graph.Models.PresenceStatusMessage? StatusMessage
         {
-            get { return BackingStore?.Get<PresenceStatusMessage?>("statusMessage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PresenceStatusMessage?>("statusMessage"); }
             set { BackingStore?.Set("statusMessage", value); }
         }
 #nullable restore
 #else
-        public PresenceStatusMessage StatusMessage
+        public Microsoft.Graph.Models.PresenceStatusMessage StatusMessage
         {
-            get { return BackingStore?.Get<PresenceStatusMessage>("statusMessage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PresenceStatusMessage>("statusMessage"); }
             set { BackingStore?.Set("statusMessage", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SetStatusMessagePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Presence.SetStatusMessage.SetStatusMessagePostRequestBody"/> and sets the default values.
         /// </summary>
         public SetStatusMessagePostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Me.Presence.SetStatusMessage
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SetStatusMessagePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Presence.SetStatusMessage.SetStatusMessagePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SetStatusMessagePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Me.Presence.SetStatusMessage.SetStatusMessagePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SetStatusMessagePostRequestBody();
+            return new Microsoft.Graph.Me.Presence.SetStatusMessage.SetStatusMessagePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Me.Presence.SetStatusMessage
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "statusMessage", n => { StatusMessage = n.GetObjectValue<PresenceStatusMessage>(PresenceStatusMessage.CreateFromDiscriminatorValue); } },
+                { "statusMessage", n => { StatusMessage = n.GetObjectValue<Microsoft.Graph.Models.PresenceStatusMessage>(Microsoft.Graph.Models.PresenceStatusMessage.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Me.Presence.SetStatusMessage
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<PresenceStatusMessage>("statusMessage", StatusMessage);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PresenceStatusMessage>("statusMessage", StatusMessage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

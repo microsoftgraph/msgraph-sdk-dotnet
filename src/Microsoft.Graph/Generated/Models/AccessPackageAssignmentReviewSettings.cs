@@ -20,24 +20,24 @@ namespace Microsoft.Graph.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The default decision to apply if the access is not reviewed. The possible values are: keepAccess, removeAccess, acceptAccessRecommendation, unknownFutureValue.</summary>
-        public AccessReviewExpirationBehavior? ExpirationBehavior
+        public Microsoft.Graph.Models.AccessReviewExpirationBehavior? ExpirationBehavior
         {
-            get { return BackingStore?.Get<AccessReviewExpirationBehavior?>("expirationBehavior"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessReviewExpirationBehavior?>("expirationBehavior"); }
             set { BackingStore?.Set("expirationBehavior", value); }
         }
         /// <summary>This collection specifies the users who will be the fallback reviewers when the primary reviewers don&apos;t respond.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubjectSet>? FallbackReviewers
+        public List<Microsoft.Graph.Models.SubjectSet>? FallbackReviewers
         {
-            get { return BackingStore?.Get<List<SubjectSet>?>("fallbackReviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SubjectSet>?>("fallbackReviewers"); }
             set { BackingStore?.Set("fallbackReviewers", value); }
         }
 #nullable restore
 #else
-        public List<SubjectSet> FallbackReviewers
+        public List<Microsoft.Graph.Models.SubjectSet> FallbackReviewers
         {
-            get { return BackingStore?.Get<List<SubjectSet>>("fallbackReviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SubjectSet>>("fallbackReviewers"); }
             set { BackingStore?.Set("fallbackReviewers", value); }
         }
 #endif
@@ -84,37 +84,37 @@ namespace Microsoft.Graph.Models
         /// <summary>This collection specifies the users or group of users who will review the access package assignments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubjectSet>? PrimaryReviewers
+        public List<Microsoft.Graph.Models.SubjectSet>? PrimaryReviewers
         {
-            get { return BackingStore?.Get<List<SubjectSet>?>("primaryReviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SubjectSet>?>("primaryReviewers"); }
             set { BackingStore?.Set("primaryReviewers", value); }
         }
 #nullable restore
 #else
-        public List<SubjectSet> PrimaryReviewers
+        public List<Microsoft.Graph.Models.SubjectSet> PrimaryReviewers
         {
-            get { return BackingStore?.Get<List<SubjectSet>>("primaryReviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SubjectSet>>("primaryReviewers"); }
             set { BackingStore?.Set("primaryReviewers", value); }
         }
 #endif
         /// <summary>When the first review should start and how often it should recur.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EntitlementManagementSchedule? Schedule
+        public Microsoft.Graph.Models.EntitlementManagementSchedule? Schedule
         {
-            get { return BackingStore?.Get<EntitlementManagementSchedule?>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EntitlementManagementSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public EntitlementManagementSchedule Schedule
+        public Microsoft.Graph.Models.EntitlementManagementSchedule Schedule
         {
-            get { return BackingStore?.Get<EntitlementManagementSchedule>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EntitlementManagementSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessPackageAssignmentReviewSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AccessPackageAssignmentReviewSettings"/> and sets the default values.
         /// </summary>
         public AccessPackageAssignmentReviewSettings()
         {
@@ -124,12 +124,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageAssignmentReviewSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackageAssignmentReviewSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessPackageAssignmentReviewSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AccessPackageAssignmentReviewSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageAssignmentReviewSettings();
+            return new Microsoft.Graph.Models.AccessPackageAssignmentReviewSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -139,15 +139,15 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "expirationBehavior", n => { ExpirationBehavior = n.GetEnumValue<AccessReviewExpirationBehavior>(); } },
-                { "fallbackReviewers", n => { FallbackReviewers = n.GetCollectionOfObjectValues<SubjectSet>(SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "expirationBehavior", n => { ExpirationBehavior = n.GetEnumValue<Microsoft.Graph.Models.AccessReviewExpirationBehavior>(); } },
+                { "fallbackReviewers", n => { FallbackReviewers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SubjectSet>(Microsoft.Graph.Models.SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "isRecommendationEnabled", n => { IsRecommendationEnabled = n.GetBoolValue(); } },
                 { "isReviewerJustificationRequired", n => { IsReviewerJustificationRequired = n.GetBoolValue(); } },
                 { "isSelfReview", n => { IsSelfReview = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "primaryReviewers", n => { PrimaryReviewers = n.GetCollectionOfObjectValues<SubjectSet>(SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<EntitlementManagementSchedule>(EntitlementManagementSchedule.CreateFromDiscriminatorValue); } },
+                { "primaryReviewers", n => { PrimaryReviewers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SubjectSet>(Microsoft.Graph.Models.SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<Microsoft.Graph.Models.EntitlementManagementSchedule>(Microsoft.Graph.Models.EntitlementManagementSchedule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -157,15 +157,15 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AccessReviewExpirationBehavior>("expirationBehavior", ExpirationBehavior);
-            writer.WriteCollectionOfObjectValues<SubjectSet>("fallbackReviewers", FallbackReviewers);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AccessReviewExpirationBehavior>("expirationBehavior", ExpirationBehavior);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SubjectSet>("fallbackReviewers", FallbackReviewers);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteBoolValue("isRecommendationEnabled", IsRecommendationEnabled);
             writer.WriteBoolValue("isReviewerJustificationRequired", IsReviewerJustificationRequired);
             writer.WriteBoolValue("isSelfReview", IsSelfReview);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<SubjectSet>("primaryReviewers", PrimaryReviewers);
-            writer.WriteObjectValue<EntitlementManagementSchedule>("schedule", Schedule);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SubjectSet>("primaryReviewers", PrimaryReviewers);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EntitlementManagementSchedule>("schedule", Schedule);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

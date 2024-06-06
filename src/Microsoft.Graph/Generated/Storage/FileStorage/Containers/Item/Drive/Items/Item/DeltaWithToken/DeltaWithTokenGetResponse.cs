@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.DeltaWithToken
 {
     #pragma warning disable CS1591
-    public class DeltaWithTokenGetResponse : BaseDeltaFunctionResponse, IParsable
+    public class DeltaWithTokenGetResponse : Microsoft.Graph.Models.BaseDeltaFunctionResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
@@ -30,12 +30,12 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.D
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeltaWithTokenGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.DeltaWithToken.DeltaWithTokenGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeltaWithTokenGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.DeltaWithToken.DeltaWithTokenGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeltaWithTokenGetResponse();
+            return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.DeltaWithToken.DeltaWithTokenGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

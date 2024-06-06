@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The directory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RbacApplication? Directory
+        public Microsoft.Graph.Models.RbacApplication? Directory
         {
-            get { return BackingStore?.Get<RbacApplication?>("directory"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RbacApplication?>("directory"); }
             set { BackingStore?.Set("directory", value); }
         }
 #nullable restore
 #else
-        public RbacApplication Directory
+        public Microsoft.Graph.Models.RbacApplication Directory
         {
-            get { return BackingStore?.Get<RbacApplication>("directory"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RbacApplication>("directory"); }
             set { BackingStore?.Set("directory", value); }
         }
 #endif
         /// <summary>Container for roles and assignments for entitlement management resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RbacApplication? EntitlementManagement
+        public Microsoft.Graph.Models.RbacApplication? EntitlementManagement
         {
-            get { return BackingStore?.Get<RbacApplication?>("entitlementManagement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RbacApplication?>("entitlementManagement"); }
             set { BackingStore?.Set("entitlementManagement", value); }
         }
 #nullable restore
 #else
-        public RbacApplication EntitlementManagement
+        public Microsoft.Graph.Models.RbacApplication EntitlementManagement
         {
-            get { return BackingStore?.Get<RbacApplication>("entitlementManagement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RbacApplication>("entitlementManagement"); }
             set { BackingStore?.Set("entitlementManagement", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RoleManagement"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.RoleManagement"/> and sets the default values.
         /// </summary>
         public RoleManagement()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RoleManagement"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RoleManagement"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RoleManagement CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.RoleManagement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RoleManagement();
+            return new Microsoft.Graph.Models.RoleManagement();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,8 +93,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "directory", n => { Directory = n.GetObjectValue<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue); } },
-                { "entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue); } },
+                { "directory", n => { Directory = n.GetObjectValue<Microsoft.Graph.Models.RbacApplication>(Microsoft.Graph.Models.RbacApplication.CreateFromDiscriminatorValue); } },
+                { "entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<Microsoft.Graph.Models.RbacApplication>(Microsoft.Graph.Models.RbacApplication.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -105,8 +105,8 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<RbacApplication>("directory", Directory);
-            writer.WriteObjectValue<RbacApplication>("entitlementManagement", EntitlementManagement);
+            writer.WriteObjectValue<Microsoft.Graph.Models.RbacApplication>("directory", Directory);
+            writer.WriteObjectValue<Microsoft.Graph.Models.RbacApplication>("entitlementManagement", EntitlementManagement);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

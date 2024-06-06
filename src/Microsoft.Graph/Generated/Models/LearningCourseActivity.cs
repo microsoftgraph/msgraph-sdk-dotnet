@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class LearningCourseActivity : Entity, IParsable
+    public class LearningCourseActivity : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Date and time when the assignment was completed. Optional.</summary>
@@ -87,25 +87,25 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The status of the course activity. Possible values are: notStarted, inProgress, completed. Required.</summary>
-        public CourseStatus? Status
+        public Microsoft.Graph.Models.CourseStatus? Status
         {
-            get { return BackingStore?.Get<CourseStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CourseStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LearningCourseActivity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.LearningCourseActivity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new LearningCourseActivity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.LearningCourseActivity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.learningAssignment" => new LearningAssignment(),
-                "#microsoft.graph.learningSelfInitiatedCourse" => new LearningSelfInitiatedCourse(),
-                _ => new LearningCourseActivity(),
+                "#microsoft.graph.learningAssignment" => new Microsoft.Graph.Models.LearningAssignment(),
+                "#microsoft.graph.learningSelfInitiatedCourse" => new Microsoft.Graph.Models.LearningSelfInitiatedCourse(),
+                _ => new Microsoft.Graph.Models.LearningCourseActivity(),
             };
         }
         /// <summary>
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Models
                 { "learnerUserId", n => { LearnerUserId = n.GetStringValue(); } },
                 { "learningContentId", n => { LearningContentId = n.GetStringValue(); } },
                 { "learningProviderId", n => { LearningProviderId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<CourseStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.CourseStatus>(); } },
             };
         }
         /// <summary>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("learnerUserId", LearnerUserId);
             writer.WriteStringValue("learningContentId", LearningContentId);
             writer.WriteStringValue("learningProviderId", LearningProviderId);
-            writer.WriteEnumValue<CourseStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CourseStatus>("status", Status);
         }
     }
 }

@@ -21,9 +21,9 @@ namespace Microsoft.Graph.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The day property</summary>
-        public DayOfWeekObject? Day
+        public Microsoft.Graph.Models.DayOfWeekObject? Day
         {
-            get { return BackingStore?.Get<DayOfWeekObject?>("day"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DayOfWeekObject?>("day"); }
             set { BackingStore?.Set("day", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -45,21 +45,21 @@ namespace Microsoft.Graph.Models
         /// <summary>A list of start/end times during a day.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingWorkTimeSlot>? TimeSlots
+        public List<Microsoft.Graph.Models.BookingWorkTimeSlot>? TimeSlots
         {
-            get { return BackingStore?.Get<List<BookingWorkTimeSlot>?>("timeSlots"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BookingWorkTimeSlot>?>("timeSlots"); }
             set { BackingStore?.Set("timeSlots", value); }
         }
 #nullable restore
 #else
-        public List<BookingWorkTimeSlot> TimeSlots
+        public List<Microsoft.Graph.Models.BookingWorkTimeSlot> TimeSlots
         {
-            get { return BackingStore?.Get<List<BookingWorkTimeSlot>>("timeSlots"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BookingWorkTimeSlot>>("timeSlots"); }
             set { BackingStore?.Set("timeSlots", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="BookingWorkHours"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.BookingWorkHours"/> and sets the default values.
         /// </summary>
         public BookingWorkHours()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BookingWorkHours"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BookingWorkHours"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BookingWorkHours CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.BookingWorkHours CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BookingWorkHours();
+            return new Microsoft.Graph.Models.BookingWorkHours();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,9 +84,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "day", n => { Day = n.GetEnumValue<DayOfWeekObject>(); } },
+                { "day", n => { Day = n.GetEnumValue<Microsoft.Graph.Models.DayOfWeekObject>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "timeSlots", n => { TimeSlots = n.GetCollectionOfObjectValues<BookingWorkTimeSlot>(BookingWorkTimeSlot.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "timeSlots", n => { TimeSlots = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.BookingWorkTimeSlot>(Microsoft.Graph.Models.BookingWorkTimeSlot.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -96,9 +96,9 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<DayOfWeekObject>("day", Day);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DayOfWeekObject>("day", Day);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<BookingWorkTimeSlot>("timeSlots", TimeSlots);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.BookingWorkTimeSlot>("timeSlots", TimeSlots);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

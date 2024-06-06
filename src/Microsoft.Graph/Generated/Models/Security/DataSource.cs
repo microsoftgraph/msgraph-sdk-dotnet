@@ -49,26 +49,26 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>The hold status of the dataSource.The possible values are: notApplied, applied, applying, removing, partial</summary>
-        public DataSourceHoldStatus? HoldStatus
+        public Microsoft.Graph.Models.Security.DataSourceHoldStatus? HoldStatus
         {
-            get { return BackingStore?.Get<DataSourceHoldStatus?>("holdStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.DataSourceHoldStatus?>("holdStatus"); }
             set { BackingStore?.Set("holdStatus", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DataSource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.DataSource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DataSource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.DataSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.siteSource" => new SiteSource(),
-                "#microsoft.graph.security.unifiedGroupSource" => new UnifiedGroupSource(),
-                "#microsoft.graph.security.userSource" => new UserSource(),
-                _ => new DataSource(),
+                "#microsoft.graph.security.siteSource" => new Microsoft.Graph.Models.Security.SiteSource(),
+                "#microsoft.graph.security.unifiedGroupSource" => new Microsoft.Graph.Models.Security.UnifiedGroupSource(),
+                "#microsoft.graph.security.userSource" => new Microsoft.Graph.Models.Security.UserSource(),
+                _ => new Microsoft.Graph.Models.Security.DataSource(),
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models.Security
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "holdStatus", n => { HoldStatus = n.GetEnumValue<DataSourceHoldStatus>(); } },
+                { "holdStatus", n => { HoldStatus = n.GetEnumValue<Microsoft.Graph.Models.Security.DataSourceHoldStatus>(); } },
             };
         }
         /// <summary>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<DataSourceHoldStatus>("holdStatus", HoldStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.DataSourceHoldStatus>("holdStatus", HoldStatus);
         }
     }
 }

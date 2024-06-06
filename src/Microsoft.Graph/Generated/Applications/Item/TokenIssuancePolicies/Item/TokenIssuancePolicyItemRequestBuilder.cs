@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Item
     public class TokenIssuancePolicyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of application entities.</summary>
-        public RefRequestBuilder Ref
+        public Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Item.Ref.RefRequestBuilder Ref
         {
-            get => new RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Item.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="TokenIssuancePolicyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Item.TokenIssuancePolicyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TokenIssuancePolicyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Item.TokenIssuancePolicyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

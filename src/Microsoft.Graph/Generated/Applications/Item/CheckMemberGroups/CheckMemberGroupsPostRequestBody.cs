@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Applications.Item.CheckMemberGroups
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CheckMemberGroupsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.CheckMemberGroups.CheckMemberGroupsPostRequestBody"/> and sets the default values.
         /// </summary>
         public CheckMemberGroupsPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Applications.Item.CheckMemberGroups
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CheckMemberGroupsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Applications.Item.CheckMemberGroups.CheckMemberGroupsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CheckMemberGroupsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Applications.Item.CheckMemberGroups.CheckMemberGroupsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CheckMemberGroupsPostRequestBody();
+            return new Microsoft.Graph.Applications.Item.CheckMemberGroups.CheckMemberGroupsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

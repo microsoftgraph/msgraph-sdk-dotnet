@@ -38,21 +38,21 @@ namespace Microsoft.Graph.Models
         /// <summary>A collection of displays of the attribute collection page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationAttributeCollectionPageViewConfiguration>? Views
+        public List<Microsoft.Graph.Models.AuthenticationAttributeCollectionPageViewConfiguration>? Views
         {
-            get { return BackingStore?.Get<List<AuthenticationAttributeCollectionPageViewConfiguration>?>("views"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationAttributeCollectionPageViewConfiguration>?>("views"); }
             set { BackingStore?.Set("views", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationAttributeCollectionPageViewConfiguration> Views
+        public List<Microsoft.Graph.Models.AuthenticationAttributeCollectionPageViewConfiguration> Views
         {
-            get { return BackingStore?.Get<List<AuthenticationAttributeCollectionPageViewConfiguration>>("views"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationAttributeCollectionPageViewConfiguration>>("views"); }
             set { BackingStore?.Set("views", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationAttributeCollectionPage"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AuthenticationAttributeCollectionPage"/> and sets the default values.
         /// </summary>
         public AuthenticationAttributeCollectionPage()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationAttributeCollectionPage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationAttributeCollectionPage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AuthenticationAttributeCollectionPage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AuthenticationAttributeCollectionPage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationAttributeCollectionPage();
+            return new Microsoft.Graph.Models.AuthenticationAttributeCollectionPage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "views", n => { Views = n.GetCollectionOfObjectValues<AuthenticationAttributeCollectionPageViewConfiguration>(AuthenticationAttributeCollectionPageViewConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "views", n => { Views = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationAttributeCollectionPageViewConfiguration>(Microsoft.Graph.Models.AuthenticationAttributeCollectionPageViewConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<AuthenticationAttributeCollectionPageViewConfiguration>("views", Views);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationAttributeCollectionPageViewConfiguration>("views", Views);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

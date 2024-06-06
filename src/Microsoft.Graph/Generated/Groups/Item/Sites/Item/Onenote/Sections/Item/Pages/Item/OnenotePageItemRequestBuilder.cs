@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Ite
     public class OnenotePageItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the media for the group entity.</summary>
-        public ContentRequestBuilder Content
+        public Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.Content.ContentRequestBuilder Content
         {
-            get => new ContentRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.Content.ContentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the copyToSection method.</summary>
-        public CopyToSectionRequestBuilder CopyToSection
+        public Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.CopyToSection.CopyToSectionRequestBuilder CopyToSection
         {
-            get => new CopyToSectionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.CopyToSection.CopyToSectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the onenotePatchContent method.</summary>
-        public OnenotePatchContentRequestBuilder OnenotePatchContent
+        public Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.OnenotePatchContent.OnenotePatchContentRequestBuilder OnenotePatchContent
         {
-            get => new OnenotePatchContentRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.OnenotePatchContent.OnenotePatchContentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the parentNotebook property of the microsoft.graph.onenotePage entity.</summary>
-        public ParentNotebookRequestBuilder ParentNotebook
+        public Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.ParentNotebook.ParentNotebookRequestBuilder ParentNotebook
         {
-            get => new ParentNotebookRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.ParentNotebook.ParentNotebookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the parentSection property of the microsoft.graph.onenotePage entity.</summary>
-        public ParentSectionRequestBuilder ParentSection
+        public Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.ParentSection.ParentSectionRequestBuilder ParentSection
         {
-            get => new ParentSectionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.ParentSection.ParentSectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the preview method.</summary>
-        public PreviewRequestBuilder Preview
+        public Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.Preview.PreviewRequestBuilder Preview
         {
-            get => new PreviewRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.Preview.PreviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="OnenotePageItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.OnenotePageItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Ite
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="OnenotePageItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.OnenotePageItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Ite
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -86,57 +86,57 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Ite
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The collection of pages in the section.  Read-only. Nullable.
         /// </summary>
-        /// <returns>A <see cref="OnenotePage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnenotePage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnenotePage?> GetAsync(Action<RequestConfiguration<OnenotePageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OnenotePage?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.OnenotePageItemRequestBuilder.OnenotePageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<OnenotePage> GetAsync(Action<RequestConfiguration<OnenotePageItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OnenotePage> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.OnenotePageItemRequestBuilder.OnenotePageItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<OnenotePage>(requestInfo, OnenotePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.OnenotePage>(requestInfo, Microsoft.Graph.Models.OnenotePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property pages in groups
         /// </summary>
-        /// <returns>A <see cref="OnenotePage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnenotePage"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnenotePage?> PatchAsync(OnenotePage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OnenotePage?> PatchAsync(Microsoft.Graph.Models.OnenotePage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<OnenotePage> PatchAsync(OnenotePage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OnenotePage> PatchAsync(Microsoft.Graph.Models.OnenotePage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<OnenotePage>(requestInfo, OnenotePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.OnenotePage>(requestInfo, Microsoft.Graph.Models.OnenotePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property pages for groups
@@ -164,11 +164,11 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OnenotePageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.OnenotePageItemRequestBuilder.OnenotePageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OnenotePageItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.OnenotePageItemRequestBuilder.OnenotePageItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -184,11 +184,11 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(OnenotePage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.OnenotePage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(OnenotePage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.OnenotePage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -201,11 +201,11 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Ite
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="OnenotePageItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.OnenotePageItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public OnenotePageItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.OnenotePageItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new OnenotePageItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.OnenotePageItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -244,7 +244,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Ite
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class OnenotePageItemRequestBuilderGetRequestConfiguration : RequestConfiguration<OnenotePageItemRequestBuilderGetQueryParameters>
+        public class OnenotePageItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.OnenotePageItemRequestBuilder.OnenotePageItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

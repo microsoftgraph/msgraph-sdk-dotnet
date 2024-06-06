@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class DaylightTimeZoneOffset : StandardTimeZoneOffset, IParsable
+    public class DaylightTimeZoneOffset : Microsoft.Graph.Models.StandardTimeZoneOffset, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The time offset from Coordinated Universal Time (UTC) for daylight saving time. This value is in minutes.</summary>
@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("daylightBias", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DaylightTimeZoneOffset"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.DaylightTimeZoneOffset"/> and sets the default values.
         /// </summary>
         public DaylightTimeZoneOffset() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DaylightTimeZoneOffset"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DaylightTimeZoneOffset"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DaylightTimeZoneOffset CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DaylightTimeZoneOffset CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DaylightTimeZoneOffset();
+            return new Microsoft.Graph.Models.DaylightTimeZoneOffset();
         }
         /// <summary>
         /// The deserialization information for the current model

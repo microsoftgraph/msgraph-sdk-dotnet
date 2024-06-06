@@ -29,32 +29,32 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The country/region of origin for the given actor or threat associated with this intelligenceProfile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IntelligenceProfileCountryOrRegionOfOrigin>? CountriesOrRegionsOfOrigin
+        public List<Microsoft.Graph.Models.Security.IntelligenceProfileCountryOrRegionOfOrigin>? CountriesOrRegionsOfOrigin
         {
-            get { return BackingStore?.Get<List<IntelligenceProfileCountryOrRegionOfOrigin>?>("countriesOrRegionsOfOrigin"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.IntelligenceProfileCountryOrRegionOfOrigin>?>("countriesOrRegionsOfOrigin"); }
             set { BackingStore?.Set("countriesOrRegionsOfOrigin", value); }
         }
 #nullable restore
 #else
-        public List<IntelligenceProfileCountryOrRegionOfOrigin> CountriesOrRegionsOfOrigin
+        public List<Microsoft.Graph.Models.Security.IntelligenceProfileCountryOrRegionOfOrigin> CountriesOrRegionsOfOrigin
         {
-            get { return BackingStore?.Get<List<IntelligenceProfileCountryOrRegionOfOrigin>>("countriesOrRegionsOfOrigin"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.IntelligenceProfileCountryOrRegionOfOrigin>>("countriesOrRegionsOfOrigin"); }
             set { BackingStore?.Set("countriesOrRegionsOfOrigin", value); }
         }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FormattedContent? Description
+        public Microsoft.Graph.Models.Security.FormattedContent? Description
         {
-            get { return BackingStore?.Get<FormattedContent?>("description"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FormattedContent?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public FormattedContent Description
+        public Microsoft.Graph.Models.Security.FormattedContent Description
         {
-            get { return BackingStore?.Get<FormattedContent>("description"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FormattedContent>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
@@ -67,38 +67,38 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>Includes an assemblage of high-fidelity network indicators of compromise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IntelligenceProfileIndicator>? Indicators
+        public List<Microsoft.Graph.Models.Security.IntelligenceProfileIndicator>? Indicators
         {
-            get { return BackingStore?.Get<List<IntelligenceProfileIndicator>?>("indicators"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.IntelligenceProfileIndicator>?>("indicators"); }
             set { BackingStore?.Set("indicators", value); }
         }
 #nullable restore
 #else
-        public List<IntelligenceProfileIndicator> Indicators
+        public List<Microsoft.Graph.Models.Security.IntelligenceProfileIndicator> Indicators
         {
-            get { return BackingStore?.Get<List<IntelligenceProfileIndicator>>("indicators"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.IntelligenceProfileIndicator>>("indicators"); }
             set { BackingStore?.Set("indicators", value); }
         }
 #endif
         /// <summary>The kind property</summary>
-        public IntelligenceProfileKind? Kind
+        public Microsoft.Graph.Models.Security.IntelligenceProfileKind? Kind
         {
-            get { return BackingStore?.Get<IntelligenceProfileKind?>("kind"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.IntelligenceProfileKind?>("kind"); }
             set { BackingStore?.Set("kind", value); }
         }
         /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FormattedContent? Summary
+        public Microsoft.Graph.Models.Security.FormattedContent? Summary
         {
-            get { return BackingStore?.Get<FormattedContent?>("summary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FormattedContent?>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
 #nullable restore
 #else
-        public FormattedContent Summary
+        public Microsoft.Graph.Models.Security.FormattedContent Summary
         {
-            get { return BackingStore?.Get<FormattedContent>("summary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FormattedContent>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
 #endif
@@ -137,28 +137,28 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>Formatted information featuring a description of the distinctive tactics, techniques, and procedures (TTP) of the group, followed by a list of all known custom, commodity, and publicly available implants used by the group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FormattedContent? Tradecraft
+        public Microsoft.Graph.Models.Security.FormattedContent? Tradecraft
         {
-            get { return BackingStore?.Get<FormattedContent?>("tradecraft"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FormattedContent?>("tradecraft"); }
             set { BackingStore?.Set("tradecraft", value); }
         }
 #nullable restore
 #else
-        public FormattedContent Tradecraft
+        public Microsoft.Graph.Models.Security.FormattedContent Tradecraft
         {
-            get { return BackingStore?.Get<FormattedContent>("tradecraft"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FormattedContent>("tradecraft"); }
             set { BackingStore?.Set("tradecraft", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IntelligenceProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.IntelligenceProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IntelligenceProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.IntelligenceProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IntelligenceProfile();
+            return new Microsoft.Graph.Models.Security.IntelligenceProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -169,15 +169,15 @@ namespace Microsoft.Graph.Models.Security
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "countriesOrRegionsOfOrigin", n => { CountriesOrRegionsOfOrigin = n.GetCollectionOfObjectValues<IntelligenceProfileCountryOrRegionOfOrigin>(IntelligenceProfileCountryOrRegionOfOrigin.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "description", n => { Description = n.GetObjectValue<FormattedContent>(FormattedContent.CreateFromDiscriminatorValue); } },
+                { "countriesOrRegionsOfOrigin", n => { CountriesOrRegionsOfOrigin = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.IntelligenceProfileCountryOrRegionOfOrigin>(Microsoft.Graph.Models.Security.IntelligenceProfileCountryOrRegionOfOrigin.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "description", n => { Description = n.GetObjectValue<Microsoft.Graph.Models.Security.FormattedContent>(Microsoft.Graph.Models.Security.FormattedContent.CreateFromDiscriminatorValue); } },
                 { "firstActiveDateTime", n => { FirstActiveDateTime = n.GetDateTimeOffsetValue(); } },
-                { "indicators", n => { Indicators = n.GetCollectionOfObjectValues<IntelligenceProfileIndicator>(IntelligenceProfileIndicator.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "kind", n => { Kind = n.GetEnumValue<IntelligenceProfileKind>(); } },
-                { "summary", n => { Summary = n.GetObjectValue<FormattedContent>(FormattedContent.CreateFromDiscriminatorValue); } },
+                { "indicators", n => { Indicators = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.IntelligenceProfileIndicator>(Microsoft.Graph.Models.Security.IntelligenceProfileIndicator.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "kind", n => { Kind = n.GetEnumValue<Microsoft.Graph.Models.Security.IntelligenceProfileKind>(); } },
+                { "summary", n => { Summary = n.GetObjectValue<Microsoft.Graph.Models.Security.FormattedContent>(Microsoft.Graph.Models.Security.FormattedContent.CreateFromDiscriminatorValue); } },
                 { "targets", n => { Targets = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "tradecraft", n => { Tradecraft = n.GetObjectValue<FormattedContent>(FormattedContent.CreateFromDiscriminatorValue); } },
+                { "tradecraft", n => { Tradecraft = n.GetObjectValue<Microsoft.Graph.Models.Security.FormattedContent>(Microsoft.Graph.Models.Security.FormattedContent.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -189,15 +189,15 @@ namespace Microsoft.Graph.Models.Security
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("aliases", Aliases);
-            writer.WriteCollectionOfObjectValues<IntelligenceProfileCountryOrRegionOfOrigin>("countriesOrRegionsOfOrigin", CountriesOrRegionsOfOrigin);
-            writer.WriteObjectValue<FormattedContent>("description", Description);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.IntelligenceProfileCountryOrRegionOfOrigin>("countriesOrRegionsOfOrigin", CountriesOrRegionsOfOrigin);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.FormattedContent>("description", Description);
             writer.WriteDateTimeOffsetValue("firstActiveDateTime", FirstActiveDateTime);
-            writer.WriteCollectionOfObjectValues<IntelligenceProfileIndicator>("indicators", Indicators);
-            writer.WriteEnumValue<IntelligenceProfileKind>("kind", Kind);
-            writer.WriteObjectValue<FormattedContent>("summary", Summary);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.IntelligenceProfileIndicator>("indicators", Indicators);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.IntelligenceProfileKind>("kind", Kind);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.FormattedContent>("summary", Summary);
             writer.WriteCollectionOfPrimitiveValues<string>("targets", Targets);
             writer.WriteStringValue("title", Title);
-            writer.WriteObjectValue<FormattedContent>("tradecraft", Tradecraft);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.FormattedContent>("tradecraft", Tradecraft);
         }
     }
 }

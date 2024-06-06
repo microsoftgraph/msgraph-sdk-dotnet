@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Details of what occurred during the step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DetailsInfo? Details
+        public Microsoft.Graph.Models.DetailsInfo? Details
         {
-            get { return BackingStore?.Get<DetailsInfo?>("details"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DetailsInfo?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #nullable restore
 #else
-        public DetailsInfo Details
+        public Microsoft.Graph.Models.DetailsInfo Details
         {
-            get { return BackingStore?.Get<DetailsInfo>("details"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DetailsInfo>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #endif
@@ -90,13 +90,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("provisioningStepType", value); }
         }
         /// <summary>Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.</summary>
-        public ProvisioningResult? Status
+        public Microsoft.Graph.Models.ProvisioningResult? Status
         {
-            get { return BackingStore?.Get<ProvisioningResult?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ProvisioningResult?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProvisioningStep"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ProvisioningStep"/> and sets the default values.
         /// </summary>
         public ProvisioningStep()
         {
@@ -106,12 +106,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProvisioningStep"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ProvisioningStep"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ProvisioningStep CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ProvisioningStep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProvisioningStep();
+            return new Microsoft.Graph.Models.ProvisioningStep();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,11 +122,11 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "details", n => { Details = n.GetObjectValue<DetailsInfo>(DetailsInfo.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<Microsoft.Graph.Models.DetailsInfo>(Microsoft.Graph.Models.DetailsInfo.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "provisioningStepType", n => { ProvisioningStepType = n.GetEnumValue<ProvisioningStepType>(); } },
-                { "status", n => { Status = n.GetEnumValue<ProvisioningResult>(); } },
+                { "provisioningStepType", n => { ProvisioningStepType = n.GetEnumValue<Microsoft.Graph.Models.ProvisioningStepType>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.ProvisioningResult>(); } },
             };
         }
         /// <summary>
@@ -137,11 +137,11 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<DetailsInfo>("details", Details);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DetailsInfo>("details", Details);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<ProvisioningStepType>("provisioningStepType", ProvisioningStepType);
-            writer.WriteEnumValue<ProvisioningResult>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ProvisioningStepType>("provisioningStepType", ProvisioningStepType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ProvisioningResult>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

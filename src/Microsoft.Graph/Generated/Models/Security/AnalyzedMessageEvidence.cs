@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class AnalyzedMessageEvidence : AlertEvidence, IParsable
+    public class AnalyzedMessageEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Direction of the email relative to your network. The possible values are: inbound, outbound or intraorg.</summary>
@@ -115,32 +115,32 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The P1 sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailSender? P1Sender
+        public Microsoft.Graph.Models.Security.EmailSender? P1Sender
         {
-            get { return BackingStore?.Get<EmailSender?>("p1Sender"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.EmailSender?>("p1Sender"); }
             set { BackingStore?.Set("p1Sender", value); }
         }
 #nullable restore
 #else
-        public EmailSender P1Sender
+        public Microsoft.Graph.Models.Security.EmailSender P1Sender
         {
-            get { return BackingStore?.Get<EmailSender>("p1Sender"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.EmailSender>("p1Sender"); }
             set { BackingStore?.Set("p1Sender", value); }
         }
 #endif
         /// <summary>The P2 sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailSender? P2Sender
+        public Microsoft.Graph.Models.Security.EmailSender? P2Sender
         {
-            get { return BackingStore?.Get<EmailSender?>("p2Sender"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.EmailSender?>("p2Sender"); }
             set { BackingStore?.Set("p2Sender", value); }
         }
 #nullable restore
 #else
-        public EmailSender P2Sender
+        public Microsoft.Graph.Models.Security.EmailSender P2Sender
         {
-            get { return BackingStore?.Get<EmailSender>("p2Sender"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.EmailSender>("p2Sender"); }
             set { BackingStore?.Set("p2Sender", value); }
         }
 #endif
@@ -269,7 +269,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AnalyzedMessageEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.AnalyzedMessageEvidence"/> and sets the default values.
         /// </summary>
         public AnalyzedMessageEvidence() : base()
         {
@@ -278,12 +278,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AnalyzedMessageEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.AnalyzedMessageEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AnalyzedMessageEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.AnalyzedMessageEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AnalyzedMessageEvidence();
+            return new Microsoft.Graph.Models.Security.AnalyzedMessageEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -300,8 +300,8 @@ namespace Microsoft.Graph.Models.Security
                 { "internetMessageId", n => { InternetMessageId = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "networkMessageId", n => { NetworkMessageId = n.GetStringValue(); } },
-                { "p1Sender", n => { P1Sender = n.GetObjectValue<EmailSender>(EmailSender.CreateFromDiscriminatorValue); } },
-                { "p2Sender", n => { P2Sender = n.GetObjectValue<EmailSender>(EmailSender.CreateFromDiscriminatorValue); } },
+                { "p1Sender", n => { P1Sender = n.GetObjectValue<Microsoft.Graph.Models.Security.EmailSender>(Microsoft.Graph.Models.Security.EmailSender.CreateFromDiscriminatorValue); } },
+                { "p2Sender", n => { P2Sender = n.GetObjectValue<Microsoft.Graph.Models.Security.EmailSender>(Microsoft.Graph.Models.Security.EmailSender.CreateFromDiscriminatorValue); } },
                 { "receivedDateTime", n => { ReceivedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "recipientEmailAddress", n => { RecipientEmailAddress = n.GetStringValue(); } },
                 { "senderIp", n => { SenderIp = n.GetStringValue(); } },
@@ -328,8 +328,8 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteStringValue("internetMessageId", InternetMessageId);
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("networkMessageId", NetworkMessageId);
-            writer.WriteObjectValue<EmailSender>("p1Sender", P1Sender);
-            writer.WriteObjectValue<EmailSender>("p2Sender", P2Sender);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.EmailSender>("p1Sender", P1Sender);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.EmailSender>("p2Sender", P2Sender);
             writer.WriteDateTimeOffsetValue("receivedDateTime", ReceivedDateTime);
             writer.WriteStringValue("recipientEmailAddress", RecipientEmailAddress);
             writer.WriteStringValue("senderIp", SenderIp);

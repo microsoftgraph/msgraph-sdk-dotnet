@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class FilterOperatorSchemaCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class FilterOperatorSchemaCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FilterOperatorSchema>? Value
+        public List<Microsoft.Graph.Models.FilterOperatorSchema>? Value
         {
-            get { return BackingStore?.Get<List<FilterOperatorSchema>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.FilterOperatorSchema>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<FilterOperatorSchema> Value
+        public List<Microsoft.Graph.Models.FilterOperatorSchema> Value
         {
-            get { return BackingStore?.Get<List<FilterOperatorSchema>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.FilterOperatorSchema>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FilterOperatorSchemaCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.FilterOperatorSchemaCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FilterOperatorSchemaCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.FilterOperatorSchemaCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FilterOperatorSchemaCollectionResponse();
+            return new Microsoft.Graph.Models.FilterOperatorSchemaCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<FilterOperatorSchema>(FilterOperatorSchema.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.FilterOperatorSchema>(Microsoft.Graph.Models.FilterOperatorSchema.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<FilterOperatorSchema>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.FilterOperatorSchema>("value", Value);
         }
     }
 }

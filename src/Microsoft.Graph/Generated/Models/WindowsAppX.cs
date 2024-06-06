@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties and inherited properties for Windows AppX Line Of Business apps.
     /// </summary>
-    public class WindowsAppX : MobileLobApp, IParsable
+    public class WindowsAppX : Microsoft.Graph.Models.MobileLobApp, IParsable
     {
         /// <summary>Contains properties for Windows architecture.</summary>
-        public WindowsArchitecture? ApplicableArchitectures
+        public Microsoft.Graph.Models.WindowsArchitecture? ApplicableArchitectures
         {
-            get { return BackingStore?.Get<WindowsArchitecture?>("applicableArchitectures"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsArchitecture?>("applicableArchitectures"); }
             set { BackingStore?.Set("applicableArchitectures", value); }
         }
         /// <summary>The identity name of the uploaded app package. For example: &apos;Contoso.DemoApp&apos;.</summary>
@@ -90,21 +90,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The minimum operating system required for a Windows mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem
+        public Microsoft.Graph.Models.WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem
         {
-            get { return BackingStore?.Get<WindowsMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #nullable restore
 #else
-        public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem
+        public Microsoft.Graph.Models.WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem
         {
-            get { return BackingStore?.Get<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsAppX"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WindowsAppX"/> and sets the default values.
         /// </summary>
         public WindowsAppX() : base()
         {
@@ -113,12 +113,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsAppX"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsAppX"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsAppX CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WindowsAppX CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsAppX();
+            return new Microsoft.Graph.Models.WindowsAppX();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -128,13 +128,13 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<WindowsArchitecture>(); } },
+                { "applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<Microsoft.Graph.Models.WindowsArchitecture>(); } },
                 { "identityName", n => { IdentityName = n.GetStringValue(); } },
                 { "identityPublisherHash", n => { IdentityPublisherHash = n.GetStringValue(); } },
                 { "identityResourceIdentifier", n => { IdentityResourceIdentifier = n.GetStringValue(); } },
                 { "identityVersion", n => { IdentityVersion = n.GetStringValue(); } },
                 { "isBundle", n => { IsBundle = n.GetBoolValue(); } },
-                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<WindowsMinimumOperatingSystem>(WindowsMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
+                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<Microsoft.Graph.Models.WindowsMinimumOperatingSystem>(Microsoft.Graph.Models.WindowsMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -145,13 +145,13 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<WindowsArchitecture>("applicableArchitectures", ApplicableArchitectures);
+            writer.WriteEnumValue<Microsoft.Graph.Models.WindowsArchitecture>("applicableArchitectures", ApplicableArchitectures);
             writer.WriteStringValue("identityName", IdentityName);
             writer.WriteStringValue("identityPublisherHash", IdentityPublisherHash);
             writer.WriteStringValue("identityResourceIdentifier", IdentityResourceIdentifier);
             writer.WriteStringValue("identityVersion", IdentityVersion);
             writer.WriteBoolValue("isBundle", IsBundle);
-            writer.WriteObjectValue<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem", MinimumSupportedOperatingSystem);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem", MinimumSupportedOperatingSystem);
         }
     }
 }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookFunctionResult : Entity, IParsable
+    public class WorkbookFunctionResult : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The error property</summary>
@@ -29,28 +29,28 @@ namespace Microsoft.Graph.Models
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Value
+        public UntypedNode? Value
         {
-            get { return BackingStore?.Get<Json?>("value"); }
+            get { return BackingStore?.Get<UntypedNode?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public Json Value
+        public UntypedNode Value
         {
-            get { return BackingStore?.Get<Json>("value"); }
+            get { return BackingStore?.Get<UntypedNode>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookFunctionResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookFunctionResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookFunctionResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WorkbookFunctionResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookFunctionResult();
+            return new Microsoft.Graph.Models.WorkbookFunctionResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "error", n => { Error = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("error", Error);
-            writer.WriteObjectValue<Json>("value", Value);
+            writer.WriteObjectValue<UntypedNode>("value", Value);
         }
     }
 }

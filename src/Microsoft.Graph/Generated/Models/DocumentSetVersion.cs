@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class DocumentSetVersion : ListItemVersion, IParsable
+    public class DocumentSetVersion : Microsoft.Graph.Models.ListItemVersion, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Comment about the captured version.</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Models
         /// <summary>User who captured the version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy
+        public Microsoft.Graph.Models.IdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy
+        public Microsoft.Graph.Models.IdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -51,16 +51,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Items within the document set that are captured as part of this version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DocumentSetVersionItem>? Items
+        public List<Microsoft.Graph.Models.DocumentSetVersionItem>? Items
         {
-            get { return BackingStore?.Get<List<DocumentSetVersionItem>?>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DocumentSetVersionItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<DocumentSetVersionItem> Items
+        public List<Microsoft.Graph.Models.DocumentSetVersionItem> Items
         {
-            get { return BackingStore?.Get<List<DocumentSetVersionItem>>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DocumentSetVersionItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #endif
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("shouldCaptureMinorVersion", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DocumentSetVersion"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.DocumentSetVersion"/> and sets the default values.
         /// </summary>
         public DocumentSetVersion() : base()
         {
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DocumentSetVersion"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DocumentSetVersion"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DocumentSetVersion CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DocumentSetVersion CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DocumentSetVersion();
+            return new Microsoft.Graph.Models.DocumentSetVersion();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,9 +96,9 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "comment", n => { Comment = n.GetStringValue(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<DocumentSetVersionItem>(DocumentSetVersionItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DocumentSetVersionItem>(Microsoft.Graph.Models.DocumentSetVersionItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "shouldCaptureMinorVersion", n => { ShouldCaptureMinorVersion = n.GetBoolValue(); } },
             };
         }
@@ -111,9 +111,9 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("comment", Comment);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteCollectionOfObjectValues<DocumentSetVersionItem>("items", Items);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DocumentSetVersionItem>("items", Items);
             writer.WriteBoolValue("shouldCaptureMinorVersion", ShouldCaptureMinorVersion);
         }
     }

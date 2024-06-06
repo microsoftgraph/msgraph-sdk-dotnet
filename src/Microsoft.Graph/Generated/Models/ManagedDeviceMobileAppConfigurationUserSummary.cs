@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties, inherited properties and actions for an MDM mobile app configuration user status summary.
     /// </summary>
-    public class ManagedDeviceMobileAppConfigurationUserSummary : Entity, IParsable
+    public class ManagedDeviceMobileAppConfigurationUserSummary : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Version of the policy for that overview</summary>
         public int? ConfigurationVersion
@@ -56,12 +56,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedDeviceMobileAppConfigurationUserSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedDeviceMobileAppConfigurationUserSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedDeviceMobileAppConfigurationUserSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ManagedDeviceMobileAppConfigurationUserSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedDeviceMobileAppConfigurationUserSummary();
+            return new Microsoft.Graph.Models.ManagedDeviceMobileAppConfigurationUserSummary();
         }
         /// <summary>
         /// The deserialization information for the current model

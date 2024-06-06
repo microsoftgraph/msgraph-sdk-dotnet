@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ConditionalAccessSessionControl"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ConditionalAccessSessionControl"/> and sets the default values.
         /// </summary>
         public ConditionalAccessSessionControl()
         {
@@ -52,19 +52,19 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessSessionControl"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ConditionalAccessSessionControl"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConditionalAccessSessionControl CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ConditionalAccessSessionControl CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.applicationEnforcedRestrictionsSessionControl" => new ApplicationEnforcedRestrictionsSessionControl(),
-                "#microsoft.graph.cloudAppSecuritySessionControl" => new CloudAppSecuritySessionControl(),
-                "#microsoft.graph.persistentBrowserSessionControl" => new PersistentBrowserSessionControl(),
-                "#microsoft.graph.signInFrequencySessionControl" => new SignInFrequencySessionControl(),
-                _ => new ConditionalAccessSessionControl(),
+                "#microsoft.graph.applicationEnforcedRestrictionsSessionControl" => new Microsoft.Graph.Models.ApplicationEnforcedRestrictionsSessionControl(),
+                "#microsoft.graph.cloudAppSecuritySessionControl" => new Microsoft.Graph.Models.CloudAppSecuritySessionControl(),
+                "#microsoft.graph.persistentBrowserSessionControl" => new Microsoft.Graph.Models.PersistentBrowserSessionControl(),
+                "#microsoft.graph.signInFrequencySessionControl" => new Microsoft.Graph.Models.SignInFrequencySessionControl(),
+                _ => new Microsoft.Graph.Models.ConditionalAccessSessionControl(),
             };
         }
         /// <summary>

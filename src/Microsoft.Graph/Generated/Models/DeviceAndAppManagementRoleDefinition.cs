@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The Role Definition resource. The role definition is the foundation of role based access in Intune. The role combines an Intune resource such as a Mobile App and associated role permissions such as Create or Read for the resource. There are two types of roles, built-in and custom. Built-in roles cannot be modified. Both built-in roles and custom roles must have assignments to be enforced. Create custom roles if you want to define a role that allows any of the available resources and role permissions to be combined into a single role.
     /// </summary>
-    public class DeviceAndAppManagementRoleDefinition : RoleDefinition, IParsable
+    public class DeviceAndAppManagementRoleDefinition : Microsoft.Graph.Models.RoleDefinition, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="DeviceAndAppManagementRoleDefinition"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.DeviceAndAppManagementRoleDefinition"/> and sets the default values.
         /// </summary>
         public DeviceAndAppManagementRoleDefinition() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceAndAppManagementRoleDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceAndAppManagementRoleDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceAndAppManagementRoleDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeviceAndAppManagementRoleDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceAndAppManagementRoleDefinition();
+            return new Microsoft.Graph.Models.DeviceAndAppManagementRoleDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model

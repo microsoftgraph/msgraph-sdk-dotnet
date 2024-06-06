@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
         /// <summary>The options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookWorksheetProtectionOptions? Options
+        public Microsoft.Graph.Models.WorkbookWorksheetProtectionOptions? Options
         {
-            get { return BackingStore?.Get<WorkbookWorksheetProtectionOptions?>("options"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookWorksheetProtectionOptions?>("options"); }
             set { BackingStore?.Set("options", value); }
         }
 #nullable restore
 #else
-        public WorkbookWorksheetProtectionOptions Options
+        public Microsoft.Graph.Models.WorkbookWorksheetProtectionOptions Options
         {
-            get { return BackingStore?.Get<WorkbookWorksheetProtectionOptions>("options"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookWorksheetProtectionOptions>("options"); }
             set { BackingStore?.Set("options", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ProtectPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Protection.Protect.ProtectPostRequestBody"/> and sets the default values.
         /// </summary>
         public ProtectPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProtectPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Protection.Protect.ProtectPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ProtectPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Protection.Protect.ProtectPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProtectPostRequestBody();
+            return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Worksheets.Item.Protection.Protect.ProtectPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "options", n => { Options = n.GetObjectValue<WorkbookWorksheetProtectionOptions>(WorkbookWorksheetProtectionOptions.CreateFromDiscriminatorValue); } },
+                { "options", n => { Options = n.GetObjectValue<Microsoft.Graph.Models.WorkbookWorksheetProtectionOptions>(Microsoft.Graph.Models.WorkbookWorksheetProtectionOptions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.W
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<WorkbookWorksheetProtectionOptions>("options", Options);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookWorksheetProtectionOptions>("options", Options);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

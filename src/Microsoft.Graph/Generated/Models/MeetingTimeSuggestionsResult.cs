@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Models
         /// <summary>An array of meeting suggestions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MeetingTimeSuggestion>? MeetingTimeSuggestions
+        public List<Microsoft.Graph.Models.MeetingTimeSuggestion>? MeetingTimeSuggestions
         {
-            get { return BackingStore?.Get<List<MeetingTimeSuggestion>?>("meetingTimeSuggestions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MeetingTimeSuggestion>?>("meetingTimeSuggestions"); }
             set { BackingStore?.Set("meetingTimeSuggestions", value); }
         }
 #nullable restore
 #else
-        public List<MeetingTimeSuggestion> MeetingTimeSuggestions
+        public List<Microsoft.Graph.Models.MeetingTimeSuggestion> MeetingTimeSuggestions
         {
-            get { return BackingStore?.Get<List<MeetingTimeSuggestion>>("meetingTimeSuggestions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.MeetingTimeSuggestion>>("meetingTimeSuggestions"); }
             set { BackingStore?.Set("meetingTimeSuggestions", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MeetingTimeSuggestionsResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MeetingTimeSuggestionsResult"/> and sets the default values.
         /// </summary>
         public MeetingTimeSuggestionsResult()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MeetingTimeSuggestionsResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MeetingTimeSuggestionsResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MeetingTimeSuggestionsResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.MeetingTimeSuggestionsResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MeetingTimeSuggestionsResult();
+            return new Microsoft.Graph.Models.MeetingTimeSuggestionsResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "emptySuggestionsReason", n => { EmptySuggestionsReason = n.GetStringValue(); } },
-                { "meetingTimeSuggestions", n => { MeetingTimeSuggestions = n.GetCollectionOfObjectValues<MeetingTimeSuggestion>(MeetingTimeSuggestion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "meetingTimeSuggestions", n => { MeetingTimeSuggestions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.MeetingTimeSuggestion>(Microsoft.Graph.Models.MeetingTimeSuggestion.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("emptySuggestionsReason", EmptySuggestionsReason);
-            writer.WriteCollectionOfObjectValues<MeetingTimeSuggestion>("meetingTimeSuggestions", MeetingTimeSuggestions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.MeetingTimeSuggestion>("meetingTimeSuggestions", MeetingTimeSuggestions);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

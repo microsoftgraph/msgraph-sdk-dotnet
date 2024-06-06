@@ -16,7 +16,7 @@ namespace Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope
     public class GetEffectivePermissionsWithScopeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetEffectivePermissionsWithScopeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope
             if (!string.IsNullOrWhiteSpace(scope)) PathParameters.Add("scope", scope);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetEffectivePermissionsWithScopeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,50 +37,50 @@ namespace Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope
         /// Retrieves the effective permissions of the currently authenticated user
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-devicemanagement-geteffectivepermissions?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetEffectivePermissionsWithScopeGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetEffectivePermissionsWithScopeGetResponse?> GetAsGetEffectivePermissionsWithScopeGetResponseAsync(Action<RequestConfiguration<GetEffectivePermissionsWithScopeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeGetResponse?> GetAsGetEffectivePermissionsWithScopeGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder.GetEffectivePermissionsWithScopeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetEffectivePermissionsWithScopeGetResponse> GetAsGetEffectivePermissionsWithScopeGetResponseAsync(Action<RequestConfiguration<GetEffectivePermissionsWithScopeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeGetResponse> GetAsGetEffectivePermissionsWithScopeGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder.GetEffectivePermissionsWithScopeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetEffectivePermissionsWithScopeGetResponse>(requestInfo, GetEffectivePermissionsWithScopeGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeGetResponse>(requestInfo, Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the effective permissions of the currently authenticated user
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-devicemanagement-geteffectivepermissions?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetEffectivePermissionsWithScopeResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetEffectivePermissionsWithScopeGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetEffectivePermissionsWithScopeResponse?> GetAsync(Action<RequestConfiguration<GetEffectivePermissionsWithScopeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder.GetEffectivePermissionsWithScopeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetEffectivePermissionsWithScopeResponse> GetAsync(Action<RequestConfiguration<GetEffectivePermissionsWithScopeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder.GetEffectivePermissionsWithScopeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetEffectivePermissionsWithScopeResponse>(requestInfo, GetEffectivePermissionsWithScopeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeResponse>(requestInfo, Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the effective permissions of the currently authenticated user
@@ -89,11 +89,11 @@ namespace Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetEffectivePermissionsWithScopeRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder.GetEffectivePermissionsWithScopeRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetEffectivePermissionsWithScopeRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder.GetEffectivePermissionsWithScopeRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -104,11 +104,11 @@ namespace Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetEffectivePermissionsWithScopeRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetEffectivePermissionsWithScopeRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetEffectivePermissionsWithScopeRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieves the effective permissions of the currently authenticated user
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration : RequestConfiguration<GetEffectivePermissionsWithScopeRequestBuilderGetQueryParameters>
+        public class GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder.GetEffectivePermissionsWithScopeRequestBuilderGetQueryParameters>
         {
         }
     }

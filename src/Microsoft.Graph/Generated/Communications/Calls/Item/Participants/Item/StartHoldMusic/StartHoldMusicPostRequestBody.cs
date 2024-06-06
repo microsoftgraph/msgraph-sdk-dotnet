@@ -39,21 +39,21 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Item.StartHoldM
         /// <summary>The customPrompt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Prompt? CustomPrompt
+        public Microsoft.Graph.Models.Prompt? CustomPrompt
         {
-            get { return BackingStore?.Get<Prompt?>("customPrompt"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Prompt?>("customPrompt"); }
             set { BackingStore?.Set("customPrompt", value); }
         }
 #nullable restore
 #else
-        public Prompt CustomPrompt
+        public Microsoft.Graph.Models.Prompt CustomPrompt
         {
-            get { return BackingStore?.Get<Prompt>("customPrompt"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Prompt>("customPrompt"); }
             set { BackingStore?.Set("customPrompt", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="StartHoldMusicPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Communications.Calls.Item.Participants.Item.StartHoldMusic.StartHoldMusicPostRequestBody"/> and sets the default values.
         /// </summary>
         public StartHoldMusicPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Item.StartHoldM
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="StartHoldMusicPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Communications.Calls.Item.Participants.Item.StartHoldMusic.StartHoldMusicPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static StartHoldMusicPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Communications.Calls.Item.Participants.Item.StartHoldMusic.StartHoldMusicPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new StartHoldMusicPostRequestBody();
+            return new Microsoft.Graph.Communications.Calls.Item.Participants.Item.StartHoldMusic.StartHoldMusicPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Item.StartHoldM
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "clientContext", n => { ClientContext = n.GetStringValue(); } },
-                { "customPrompt", n => { CustomPrompt = n.GetObjectValue<Prompt>(Prompt.CreateFromDiscriminatorValue); } },
+                { "customPrompt", n => { CustomPrompt = n.GetObjectValue<Microsoft.Graph.Models.Prompt>(Microsoft.Graph.Models.Prompt.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Item.StartHoldM
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("clientContext", ClientContext);
-            writer.WriteObjectValue<Prompt>("customPrompt", CustomPrompt);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Prompt>("customPrompt", CustomPrompt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Endpoints
     public class EndpointsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.ServicePrincipals.Item.Endpoints.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.ServicePrincipals.Item.Endpoints.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the endpoints property of the microsoft.graph.servicePrincipal entity.</summary>
         /// <param name="position">The unique identifier of endpoint</param>
-        /// <returns>A <see cref="EndpointItemRequestBuilder"/></returns>
-        public EndpointItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.ServicePrincipals.Item.Endpoints.Item.EndpointItemRequestBuilder"/></returns>
+        public Microsoft.Graph.ServicePrincipals.Item.Endpoints.Item.EndpointItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("endpoint%2Did", position);
-                return new EndpointItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.ServicePrincipals.Item.Endpoints.Item.EndpointItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="EndpointsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.ServicePrincipals.Item.Endpoints.EndpointsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Endpoints
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="EndpointsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.ServicePrincipals.Item.Endpoints.EndpointsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Endpoints
         /// <summary>
         /// Get endpoints from servicePrincipals
         /// </summary>
-        /// <returns>A <see cref="EndpointCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EndpointCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EndpointCollectionResponse?> GetAsync(Action<RequestConfiguration<EndpointsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EndpointCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.Endpoints.EndpointsRequestBuilder.EndpointsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EndpointCollectionResponse> GetAsync(Action<RequestConfiguration<EndpointsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EndpointCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.Endpoints.EndpointsRequestBuilder.EndpointsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EndpointCollectionResponse>(requestInfo, EndpointCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EndpointCollectionResponse>(requestInfo, Microsoft.Graph.Models.EndpointCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to endpoints for servicePrincipals
         /// </summary>
-        /// <returns>A <see cref="Endpoint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Endpoint"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Endpoint?> PostAsync(Endpoint body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Endpoint?> PostAsync(Microsoft.Graph.Models.Endpoint body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Endpoint> PostAsync(Endpoint body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Endpoint> PostAsync(Microsoft.Graph.Models.Endpoint body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Endpoint>(requestInfo, Endpoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Endpoint>(requestInfo, Microsoft.Graph.Models.Endpoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get endpoints from servicePrincipals
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Endpoints
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EndpointsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.Endpoints.EndpointsRequestBuilder.EndpointsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EndpointsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.Endpoints.EndpointsRequestBuilder.EndpointsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Endpoints
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Endpoint body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Endpoint body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Endpoint body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Endpoint body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Endpoints
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="EndpointsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.ServicePrincipals.Item.Endpoints.EndpointsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EndpointsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.ServicePrincipals.Item.Endpoints.EndpointsRequestBuilder WithUrl(string rawUrl)
         {
-            return new EndpointsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.ServicePrincipals.Item.Endpoints.EndpointsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get endpoints from servicePrincipals
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Endpoints
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EndpointsRequestBuilderGetRequestConfiguration : RequestConfiguration<EndpointsRequestBuilderGetQueryParameters>
+        public class EndpointsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.Endpoints.EndpointsRequestBuilder.EndpointsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

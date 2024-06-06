@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Represents a staff member who provides services in a business.
     /// </summary>
-    public class BookingStaffMember : BookingStaffMemberBase, IParsable
+    public class BookingStaffMember : Microsoft.Graph.Models.BookingStaffMemberBase, IParsable
     {
         /// <summary>True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member&apos;s availability in their personal calendar in Microsoft 365, before making a booking.</summary>
         public bool? AvailabilityIsAffectedByPersonalCalendar
@@ -56,15 +56,15 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("isEmailNotificationEnabled", value); }
         }
         /// <summary>The membershipStatus property</summary>
-        public BookingStaffMembershipStatus? MembershipStatus
+        public Microsoft.Graph.Models.BookingStaffMembershipStatus? MembershipStatus
         {
-            get { return BackingStore?.Get<BookingStaffMembershipStatus?>("membershipStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BookingStaffMembershipStatus?>("membershipStatus"); }
             set { BackingStore?.Set("membershipStatus", value); }
         }
         /// <summary>The role property</summary>
-        public BookingStaffRole? Role
+        public Microsoft.Graph.Models.BookingStaffRole? Role
         {
-            get { return BackingStore?.Get<BookingStaffRole?>("role"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BookingStaffRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
         /// <summary>The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.</summary>
@@ -92,21 +92,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingWorkHours>? WorkingHours
+        public List<Microsoft.Graph.Models.BookingWorkHours>? WorkingHours
         {
-            get { return BackingStore?.Get<List<BookingWorkHours>?>("workingHours"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BookingWorkHours>?>("workingHours"); }
             set { BackingStore?.Set("workingHours", value); }
         }
 #nullable restore
 #else
-        public List<BookingWorkHours> WorkingHours
+        public List<Microsoft.Graph.Models.BookingWorkHours> WorkingHours
         {
-            get { return BackingStore?.Get<List<BookingWorkHours>>("workingHours"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.BookingWorkHours>>("workingHours"); }
             set { BackingStore?.Set("workingHours", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="BookingStaffMember"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.BookingStaffMember"/> and sets the default values.
         /// </summary>
         public BookingStaffMember() : base()
         {
@@ -115,12 +115,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BookingStaffMember"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BookingStaffMember"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BookingStaffMember CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.BookingStaffMember CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BookingStaffMember();
+            return new Microsoft.Graph.Models.BookingStaffMember();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -134,11 +134,11 @@ namespace Microsoft.Graph.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
                 { "isEmailNotificationEnabled", n => { IsEmailNotificationEnabled = n.GetBoolValue(); } },
-                { "membershipStatus", n => { MembershipStatus = n.GetEnumValue<BookingStaffMembershipStatus>(); } },
-                { "role", n => { Role = n.GetEnumValue<BookingStaffRole>(); } },
+                { "membershipStatus", n => { MembershipStatus = n.GetEnumValue<Microsoft.Graph.Models.BookingStaffMembershipStatus>(); } },
+                { "role", n => { Role = n.GetEnumValue<Microsoft.Graph.Models.BookingStaffRole>(); } },
                 { "timeZone", n => { TimeZone = n.GetStringValue(); } },
                 { "useBusinessHours", n => { UseBusinessHours = n.GetBoolValue(); } },
-                { "workingHours", n => { WorkingHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "workingHours", n => { WorkingHours = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.BookingWorkHours>(Microsoft.Graph.Models.BookingWorkHours.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -153,11 +153,11 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("emailAddress", EmailAddress);
             writer.WriteBoolValue("isEmailNotificationEnabled", IsEmailNotificationEnabled);
-            writer.WriteEnumValue<BookingStaffMembershipStatus>("membershipStatus", MembershipStatus);
-            writer.WriteEnumValue<BookingStaffRole>("role", Role);
+            writer.WriteEnumValue<Microsoft.Graph.Models.BookingStaffMembershipStatus>("membershipStatus", MembershipStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.BookingStaffRole>("role", Role);
             writer.WriteStringValue("timeZone", TimeZone);
             writer.WriteBoolValue("useBusinessHours", UseBusinessHours);
-            writer.WriteCollectionOfObjectValues<BookingWorkHours>("workingHours", WorkingHours);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.BookingWorkHours>("workingHours", WorkingHours);
         }
     }
 }

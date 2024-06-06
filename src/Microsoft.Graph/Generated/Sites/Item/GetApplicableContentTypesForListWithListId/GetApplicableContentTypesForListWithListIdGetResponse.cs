@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Sites.Item.GetApplicableContentTypesForListWithListId
 {
     #pragma warning disable CS1591
-    public class GetApplicableContentTypesForListWithListIdGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetApplicableContentTypesForListWithListIdGetResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ContentType>? Value
+        public List<Microsoft.Graph.Models.ContentType>? Value
         {
-            get { return BackingStore?.Get<List<ContentType>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ContentType>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ContentType> Value
+        public List<Microsoft.Graph.Models.ContentType> Value
         {
-            get { return BackingStore?.Get<List<ContentType>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ContentType>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetApplicableContentTypesForListWithListIdGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Sites.Item.GetApplicableContentTypesForListWithListId.GetApplicableContentTypesForListWithListIdGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetApplicableContentTypesForListWithListIdGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Sites.Item.GetApplicableContentTypesForListWithListId.GetApplicableContentTypesForListWithListIdGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetApplicableContentTypesForListWithListIdGetResponse();
+            return new Microsoft.Graph.Sites.Item.GetApplicableContentTypesForListWithListId.GetApplicableContentTypesForListWithListIdGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Sites.Item.GetApplicableContentTypesForListWithListId
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<ContentType>(ContentType.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ContentType>(Microsoft.Graph.Models.ContentType.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Sites.Item.GetApplicableContentTypesForListWithListId
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ContentType>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ContentType>("value", Value);
         }
     }
 }

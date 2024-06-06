@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Each resource in this collection represents the localized value of the attribute name for a given language, used as the default label for that locale. For example, a user with a nb-NO client gets &apos;Kostnadssenter&apos; as the attribute label, rather than &apos;Cost Center.&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DisplayNameLocalization>? Localizations
+        public List<Microsoft.Graph.Models.DisplayNameLocalization>? Localizations
         {
-            get { return BackingStore?.Get<List<DisplayNameLocalization>?>("localizations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DisplayNameLocalization>?>("localizations"); }
             set { BackingStore?.Set("localizations", value); }
         }
 #nullable restore
 #else
-        public List<DisplayNameLocalization> Localizations
+        public List<Microsoft.Graph.Models.DisplayNameLocalization> Localizations
         {
-            get { return BackingStore?.Get<List<DisplayNameLocalization>>("localizations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DisplayNameLocalization>>("localizations"); }
             set { BackingStore?.Set("localizations", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ProfileCardAnnotation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ProfileCardAnnotation"/> and sets the default values.
         /// </summary>
         public ProfileCardAnnotation()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProfileCardAnnotation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ProfileCardAnnotation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ProfileCardAnnotation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ProfileCardAnnotation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProfileCardAnnotation();
+            return new Microsoft.Graph.Models.ProfileCardAnnotation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "localizations", n => { Localizations = n.GetCollectionOfObjectValues<DisplayNameLocalization>(DisplayNameLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "localizations", n => { Localizations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DisplayNameLocalization>(Microsoft.Graph.Models.DisplayNameLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<DisplayNameLocalization>("localizations", Localizations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DisplayNameLocalization>("localizations", Localizations);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

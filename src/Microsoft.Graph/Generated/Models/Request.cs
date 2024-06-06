@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Request : Entity, IParsable
+    public class Request : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identifier of the approval of the request.</summary>
@@ -35,16 +35,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The principal that created the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy
+        public Microsoft.Graph.Models.IdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy
+        public Microsoft.Graph.Models.IdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -89,21 +89,21 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Request"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Request"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Request CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Request CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest" => new PrivilegedAccessGroupAssignmentScheduleRequest(),
-                "#microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest" => new PrivilegedAccessGroupEligibilityScheduleRequest(),
-                "#microsoft.graph.privilegedAccessScheduleRequest" => new PrivilegedAccessScheduleRequest(),
-                "#microsoft.graph.unifiedRoleAssignmentScheduleRequest" => new UnifiedRoleAssignmentScheduleRequest(),
-                "#microsoft.graph.unifiedRoleEligibilityScheduleRequest" => new UnifiedRoleEligibilityScheduleRequest(),
-                "#microsoft.graph.userConsentRequest" => new UserConsentRequest(),
-                _ => new Request(),
+                "#microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest" => new Microsoft.Graph.Models.PrivilegedAccessGroupAssignmentScheduleRequest(),
+                "#microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest" => new Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest(),
+                "#microsoft.graph.privilegedAccessScheduleRequest" => new Microsoft.Graph.Models.PrivilegedAccessScheduleRequest(),
+                "#microsoft.graph.unifiedRoleAssignmentScheduleRequest" => new Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleRequest(),
+                "#microsoft.graph.unifiedRoleEligibilityScheduleRequest" => new Microsoft.Graph.Models.UnifiedRoleEligibilityScheduleRequest(),
+                "#microsoft.graph.userConsentRequest" => new Microsoft.Graph.Models.UserConsentRequest(),
+                _ => new Microsoft.Graph.Models.Request(),
             };
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Models
             {
                 { "approvalId", n => { ApprovalId = n.GetStringValue(); } },
                 { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "customData", n => { CustomData = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("approvalId", ApprovalId);
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("customData", CustomData);
             writer.WriteStringValue("status", Status);

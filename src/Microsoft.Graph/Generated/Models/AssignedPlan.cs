@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("servicePlanId", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AssignedPlan"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AssignedPlan"/> and sets the default values.
         /// </summary>
         public AssignedPlan()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignedPlan"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AssignedPlan"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignedPlan CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AssignedPlan CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignedPlan();
+            return new Microsoft.Graph.Models.AssignedPlan();
         }
         /// <summary>
         /// The deserialization information for the current model

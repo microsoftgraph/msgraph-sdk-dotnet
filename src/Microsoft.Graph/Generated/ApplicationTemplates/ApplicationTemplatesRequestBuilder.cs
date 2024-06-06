@@ -19,24 +19,24 @@ namespace Microsoft.Graph.ApplicationTemplates
     public class ApplicationTemplatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.ApplicationTemplates.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.ApplicationTemplates.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of applicationTemplate entities.</summary>
         /// <param name="position">The unique identifier of applicationTemplate</param>
-        /// <returns>A <see cref="ApplicationTemplateItemRequestBuilder"/></returns>
-        public ApplicationTemplateItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.ApplicationTemplates.Item.ApplicationTemplateItemRequestBuilder"/></returns>
+        public Microsoft.Graph.ApplicationTemplates.Item.ApplicationTemplateItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("applicationTemplate%2Did", position);
-                return new ApplicationTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.ApplicationTemplates.Item.ApplicationTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ApplicationTemplatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.ApplicationTemplates.ApplicationTemplatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.ApplicationTemplates
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ApplicationTemplatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.ApplicationTemplates.ApplicationTemplatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,25 +55,25 @@ namespace Microsoft.Graph.ApplicationTemplates
         /// Retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ApplicationTemplateCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ApplicationTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ApplicationTemplateCollectionResponse?> GetAsync(Action<RequestConfiguration<ApplicationTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ApplicationTemplateCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.ApplicationTemplates.ApplicationTemplatesRequestBuilder.ApplicationTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ApplicationTemplateCollectionResponse> GetAsync(Action<RequestConfiguration<ApplicationTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ApplicationTemplateCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.ApplicationTemplates.ApplicationTemplatesRequestBuilder.ApplicationTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ApplicationTemplateCollectionResponse>(requestInfo, ApplicationTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ApplicationTemplateCollectionResponse>(requestInfo, Microsoft.Graph.Models.ApplicationTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery.
@@ -82,11 +82,11 @@ namespace Microsoft.Graph.ApplicationTemplates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ApplicationTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.ApplicationTemplates.ApplicationTemplatesRequestBuilder.ApplicationTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ApplicationTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.ApplicationTemplates.ApplicationTemplatesRequestBuilder.ApplicationTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -97,11 +97,11 @@ namespace Microsoft.Graph.ApplicationTemplates
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ApplicationTemplatesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.ApplicationTemplates.ApplicationTemplatesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ApplicationTemplatesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.ApplicationTemplates.ApplicationTemplatesRequestBuilder WithUrl(string rawUrl)
         {
-            return new ApplicationTemplatesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.ApplicationTemplates.ApplicationTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery.
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.ApplicationTemplates
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ApplicationTemplatesRequestBuilderGetRequestConfiguration : RequestConfiguration<ApplicationTemplatesRequestBuilderGetQueryParameters>
+        public class ApplicationTemplatesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.ApplicationTemplates.ApplicationTemplatesRequestBuilder.ApplicationTemplatesRequestBuilderGetQueryParameters>
         {
         }
     }

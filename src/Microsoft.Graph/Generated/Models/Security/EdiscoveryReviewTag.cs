@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class EdiscoveryReviewTag : Tag, IParsable
+    public class EdiscoveryReviewTag : Microsoft.Graph.Models.Security.Tag, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.</summary>
@@ -19,37 +19,37 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>Returns the tags that are a child of a tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryReviewTag>? ChildTags
+        public List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>? ChildTags
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("childTags"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>?>("childTags"); }
             set { BackingStore?.Set("childTags", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryReviewTag> ChildTags
+        public List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag> ChildTags
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("childTags"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>>("childTags"); }
             set { BackingStore?.Set("childTags", value); }
         }
 #endif
         /// <summary>Returns the parent tag of the specified tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoveryReviewTag? Parent
+        public Microsoft.Graph.Models.Security.EdiscoveryReviewTag? Parent
         {
-            get { return BackingStore?.Get<EdiscoveryReviewTag?>("parent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.EdiscoveryReviewTag?>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
 #nullable restore
 #else
-        public EdiscoveryReviewTag Parent
+        public Microsoft.Graph.Models.Security.EdiscoveryReviewTag Parent
         {
-            get { return BackingStore?.Get<EdiscoveryReviewTag>("parent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EdiscoveryReviewTag"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.EdiscoveryReviewTag"/> and sets the default values.
         /// </summary>
         public EdiscoveryReviewTag() : base()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryReviewTag"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.EdiscoveryReviewTag"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdiscoveryReviewTag CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.EdiscoveryReviewTag CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdiscoveryReviewTag();
+            return new Microsoft.Graph.Models.Security.EdiscoveryReviewTag();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,9 +73,9 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "childSelectability", n => { ChildSelectability = n.GetEnumValue<ChildSelectability>(); } },
-                { "childTags", n => { ChildTags = n.GetCollectionOfObjectValues<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "parent", n => { Parent = n.GetObjectValue<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue); } },
+                { "childSelectability", n => { ChildSelectability = n.GetEnumValue<Microsoft.Graph.Models.Security.ChildSelectability>(); } },
+                { "childTags", n => { ChildTags = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>(Microsoft.Graph.Models.Security.EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "parent", n => { Parent = n.GetObjectValue<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>(Microsoft.Graph.Models.Security.EdiscoveryReviewTag.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -86,9 +86,9 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<ChildSelectability>("childSelectability", ChildSelectability);
-            writer.WriteCollectionOfObjectValues<EdiscoveryReviewTag>("childTags", ChildTags);
-            writer.WriteObjectValue<EdiscoveryReviewTag>("parent", Parent);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.ChildSelectability>("childSelectability", ChildSelectability);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>("childTags", ChildTags);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>("parent", Parent);
         }
     }
 }

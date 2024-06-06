@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         }
 #endif
         /// <summary>The type property</summary>
-        public AclType? Type
+        public Microsoft.Graph.Models.ExternalConnectors.AclType? Type
         {
-            get { return BackingStore?.Get<AclType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.AclType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>The unique identifer of the identity. For Microsoft Entra identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups value is set to the ID of the externalGroup</summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Acl"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ExternalConnectors.Acl"/> and sets the default values.
         /// </summary>
         public Acl()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Acl"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ExternalConnectors.Acl"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Acl CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ExternalConnectors.Acl CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Acl();
+            return new Microsoft.Graph.Models.ExternalConnectors.Acl();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accessType", n => { AccessType = n.GetEnumValue<AccessType>(); } },
+                { "accessType", n => { AccessType = n.GetEnumValue<Microsoft.Graph.Models.ExternalConnectors.AccessType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<AclType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Models.ExternalConnectors.AclType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -102,9 +102,9 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AccessType>("accessType", AccessType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ExternalConnectors.AccessType>("accessType", AccessType);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<AclType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ExternalConnectors.AclType>("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

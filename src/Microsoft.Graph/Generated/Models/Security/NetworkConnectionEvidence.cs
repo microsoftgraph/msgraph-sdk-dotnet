@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class NetworkConnectionEvidence : AlertEvidence, IParsable
+    public class NetworkConnectionEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The destinationAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IpEvidence? DestinationAddress
+        public Microsoft.Graph.Models.Security.IpEvidence? DestinationAddress
         {
-            get { return BackingStore?.Get<IpEvidence?>("destinationAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.IpEvidence?>("destinationAddress"); }
             set { BackingStore?.Set("destinationAddress", value); }
         }
 #nullable restore
 #else
-        public IpEvidence DestinationAddress
+        public Microsoft.Graph.Models.Security.IpEvidence DestinationAddress
         {
-            get { return BackingStore?.Get<IpEvidence>("destinationAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.IpEvidence>("destinationAddress"); }
             set { BackingStore?.Set("destinationAddress", value); }
         }
 #endif
@@ -33,24 +33,24 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("destinationPort", value); }
         }
         /// <summary>The protocol property</summary>
-        public ProtocolType? Protocol
+        public Microsoft.Graph.Models.Security.ProtocolType? Protocol
         {
-            get { return BackingStore?.Get<ProtocolType?>("protocol"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.ProtocolType?>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
         /// <summary>The sourceAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IpEvidence? SourceAddress
+        public Microsoft.Graph.Models.Security.IpEvidence? SourceAddress
         {
-            get { return BackingStore?.Get<IpEvidence?>("sourceAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.IpEvidence?>("sourceAddress"); }
             set { BackingStore?.Set("sourceAddress", value); }
         }
 #nullable restore
 #else
-        public IpEvidence SourceAddress
+        public Microsoft.Graph.Models.Security.IpEvidence SourceAddress
         {
-            get { return BackingStore?.Get<IpEvidence>("sourceAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.IpEvidence>("sourceAddress"); }
             set { BackingStore?.Set("sourceAddress", value); }
         }
 #endif
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("sourcePort", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="NetworkConnectionEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.NetworkConnectionEvidence"/> and sets the default values.
         /// </summary>
         public NetworkConnectionEvidence() : base()
         {
@@ -70,12 +70,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="NetworkConnectionEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.NetworkConnectionEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new NetworkConnectionEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.NetworkConnectionEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new NetworkConnectionEvidence();
+            return new Microsoft.Graph.Models.Security.NetworkConnectionEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,10 +85,10 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "destinationAddress", n => { DestinationAddress = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
+                { "destinationAddress", n => { DestinationAddress = n.GetObjectValue<Microsoft.Graph.Models.Security.IpEvidence>(Microsoft.Graph.Models.Security.IpEvidence.CreateFromDiscriminatorValue); } },
                 { "destinationPort", n => { DestinationPort = n.GetIntValue(); } },
-                { "protocol", n => { Protocol = n.GetEnumValue<ProtocolType>(); } },
-                { "sourceAddress", n => { SourceAddress = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
+                { "protocol", n => { Protocol = n.GetEnumValue<Microsoft.Graph.Models.Security.ProtocolType>(); } },
+                { "sourceAddress", n => { SourceAddress = n.GetObjectValue<Microsoft.Graph.Models.Security.IpEvidence>(Microsoft.Graph.Models.Security.IpEvidence.CreateFromDiscriminatorValue); } },
                 { "sourcePort", n => { SourcePort = n.GetIntValue(); } },
             };
         }
@@ -100,10 +100,10 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<IpEvidence>("destinationAddress", DestinationAddress);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.IpEvidence>("destinationAddress", DestinationAddress);
             writer.WriteIntValue("destinationPort", DestinationPort);
-            writer.WriteEnumValue<ProtocolType>("protocol", Protocol);
-            writer.WriteObjectValue<IpEvidence>("sourceAddress", SourceAddress);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.ProtocolType>("protocol", Protocol);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.IpEvidence>("sourceAddress", SourceAddress);
             writer.WriteIntValue("sourcePort", SourcePort);
         }
     }

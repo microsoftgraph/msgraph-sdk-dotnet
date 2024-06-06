@@ -38,37 +38,37 @@ namespace Microsoft.Graph.Models
         /// <summary>The postAttributeCollection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentityApiConnector? PostAttributeCollection
+        public Microsoft.Graph.Models.IdentityApiConnector? PostAttributeCollection
         {
-            get { return BackingStore?.Get<IdentityApiConnector?>("postAttributeCollection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityApiConnector?>("postAttributeCollection"); }
             set { BackingStore?.Set("postAttributeCollection", value); }
         }
 #nullable restore
 #else
-        public IdentityApiConnector PostAttributeCollection
+        public Microsoft.Graph.Models.IdentityApiConnector PostAttributeCollection
         {
-            get { return BackingStore?.Get<IdentityApiConnector>("postAttributeCollection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityApiConnector>("postAttributeCollection"); }
             set { BackingStore?.Set("postAttributeCollection", value); }
         }
 #endif
         /// <summary>The postFederationSignup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentityApiConnector? PostFederationSignup
+        public Microsoft.Graph.Models.IdentityApiConnector? PostFederationSignup
         {
-            get { return BackingStore?.Get<IdentityApiConnector?>("postFederationSignup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityApiConnector?>("postFederationSignup"); }
             set { BackingStore?.Set("postFederationSignup", value); }
         }
 #nullable restore
 #else
-        public IdentityApiConnector PostFederationSignup
+        public Microsoft.Graph.Models.IdentityApiConnector PostFederationSignup
         {
-            get { return BackingStore?.Get<IdentityApiConnector>("postFederationSignup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityApiConnector>("postFederationSignup"); }
             set { BackingStore?.Set("postFederationSignup", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserFlowApiConnectorConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.UserFlowApiConnectorConfiguration"/> and sets the default values.
         /// </summary>
         public UserFlowApiConnectorConfiguration()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserFlowApiConnectorConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserFlowApiConnectorConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserFlowApiConnectorConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.UserFlowApiConnectorConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserFlowApiConnectorConfiguration();
+            return new Microsoft.Graph.Models.UserFlowApiConnectorConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,8 +94,8 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "postAttributeCollection", n => { PostAttributeCollection = n.GetObjectValue<IdentityApiConnector>(IdentityApiConnector.CreateFromDiscriminatorValue); } },
-                { "postFederationSignup", n => { PostFederationSignup = n.GetObjectValue<IdentityApiConnector>(IdentityApiConnector.CreateFromDiscriminatorValue); } },
+                { "postAttributeCollection", n => { PostAttributeCollection = n.GetObjectValue<Microsoft.Graph.Models.IdentityApiConnector>(Microsoft.Graph.Models.IdentityApiConnector.CreateFromDiscriminatorValue); } },
+                { "postFederationSignup", n => { PostFederationSignup = n.GetObjectValue<Microsoft.Graph.Models.IdentityApiConnector>(Microsoft.Graph.Models.IdentityApiConnector.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,8 +106,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<IdentityApiConnector>("postAttributeCollection", PostAttributeCollection);
-            writer.WriteObjectValue<IdentityApiConnector>("postFederationSignup", PostFederationSignup);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentityApiConnector>("postAttributeCollection", PostAttributeCollection);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentityApiConnector>("postFederationSignup", PostFederationSignup);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

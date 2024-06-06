@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item
     public class BookingCustomQuestionItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="BookingCustomQuestionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item.BookingCustomQuestionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="BookingCustomQuestionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item.BookingCustomQuestionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -59,51 +59,51 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item
         /// Read the properties and relationships of a bookingCustomQuestion object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingcustomquestion-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="BookingCustomQuestion"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BookingCustomQuestion"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BookingCustomQuestion?> GetAsync(Action<RequestConfiguration<BookingCustomQuestionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.BookingCustomQuestion?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item.BookingCustomQuestionItemRequestBuilder.BookingCustomQuestionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BookingCustomQuestion> GetAsync(Action<RequestConfiguration<BookingCustomQuestionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.BookingCustomQuestion> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item.BookingCustomQuestionItemRequestBuilder.BookingCustomQuestionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<BookingCustomQuestion>(requestInfo, BookingCustomQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.BookingCustomQuestion>(requestInfo, Microsoft.Graph.Models.BookingCustomQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of a bookingCustomQuestion object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingcustomquestion-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="BookingCustomQuestion"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BookingCustomQuestion"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BookingCustomQuestion?> PatchAsync(BookingCustomQuestion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.BookingCustomQuestion?> PatchAsync(Microsoft.Graph.Models.BookingCustomQuestion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BookingCustomQuestion> PatchAsync(BookingCustomQuestion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.BookingCustomQuestion> PatchAsync(Microsoft.Graph.Models.BookingCustomQuestion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<BookingCustomQuestion>(requestInfo, BookingCustomQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.BookingCustomQuestion>(requestInfo, Microsoft.Graph.Models.BookingCustomQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a bookingCustomQuestion object.
@@ -131,11 +131,11 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BookingCustomQuestionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item.BookingCustomQuestionItemRequestBuilder.BookingCustomQuestionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BookingCustomQuestionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item.BookingCustomQuestionItemRequestBuilder.BookingCustomQuestionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -151,11 +151,11 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(BookingCustomQuestion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.BookingCustomQuestion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(BookingCustomQuestion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.BookingCustomQuestion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -168,11 +168,11 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="BookingCustomQuestionItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item.BookingCustomQuestionItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public BookingCustomQuestionItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item.BookingCustomQuestionItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new BookingCustomQuestionItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item.BookingCustomQuestionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -211,7 +211,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BookingCustomQuestionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<BookingCustomQuestionItemRequestBuilderGetQueryParameters>
+        public class BookingCustomQuestionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item.BookingCustomQuestionItemRequestBuilder.BookingCustomQuestionItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

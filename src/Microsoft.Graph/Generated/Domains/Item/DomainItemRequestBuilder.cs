@@ -24,42 +24,42 @@ namespace Microsoft.Graph.Domains.Item
     public class DomainItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the domainNameReferences property of the microsoft.graph.domain entity.</summary>
-        public DomainNameReferencesRequestBuilder DomainNameReferences
+        public Microsoft.Graph.Domains.Item.DomainNameReferences.DomainNameReferencesRequestBuilder DomainNameReferences
         {
-            get => new DomainNameReferencesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Domains.Item.DomainNameReferences.DomainNameReferencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the federationConfiguration property of the microsoft.graph.domain entity.</summary>
-        public FederationConfigurationRequestBuilder FederationConfiguration
+        public Microsoft.Graph.Domains.Item.FederationConfiguration.FederationConfigurationRequestBuilder FederationConfiguration
         {
-            get => new FederationConfigurationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Domains.Item.FederationConfiguration.FederationConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the forceDelete method.</summary>
-        public ForceDeleteRequestBuilder ForceDelete
+        public Microsoft.Graph.Domains.Item.ForceDelete.ForceDeleteRequestBuilder ForceDelete
         {
-            get => new ForceDeleteRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Domains.Item.ForceDelete.ForceDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the promote method.</summary>
-        public PromoteRequestBuilder Promote
+        public Microsoft.Graph.Domains.Item.Promote.PromoteRequestBuilder Promote
         {
-            get => new PromoteRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Domains.Item.Promote.PromoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.</summary>
-        public ServiceConfigurationRecordsRequestBuilder ServiceConfigurationRecords
+        public Microsoft.Graph.Domains.Item.ServiceConfigurationRecords.ServiceConfigurationRecordsRequestBuilder ServiceConfigurationRecords
         {
-            get => new ServiceConfigurationRecordsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Domains.Item.ServiceConfigurationRecords.ServiceConfigurationRecordsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the verificationDnsRecords property of the microsoft.graph.domain entity.</summary>
-        public VerificationDnsRecordsRequestBuilder VerificationDnsRecords
+        public Microsoft.Graph.Domains.Item.VerificationDnsRecords.VerificationDnsRecordsRequestBuilder VerificationDnsRecords
         {
-            get => new VerificationDnsRecordsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Domains.Item.VerificationDnsRecords.VerificationDnsRecordsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the verify method.</summary>
-        public VerifyRequestBuilder Verify
+        public Microsoft.Graph.Domains.Item.Verify.VerifyRequestBuilder Verify
         {
-            get => new VerifyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Domains.Item.Verify.VerifyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="DomainItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Domains.Item.DomainItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Domains.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DomainItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Domains.Item.DomainItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Domains.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Domains.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -101,51 +101,51 @@ namespace Microsoft.Graph.Domains.Item
         /// Retrieve the properties and relationships of domain object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Domain"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Domain"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Domain?> GetAsync(Action<RequestConfiguration<DomainItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Domain?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Domains.Item.DomainItemRequestBuilder.DomainItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Domain> GetAsync(Action<RequestConfiguration<DomainItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Domain> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Domains.Item.DomainItemRequestBuilder.DomainItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Domain>(requestInfo, Domain.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Domain>(requestInfo, Microsoft.Graph.Models.Domain.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of domain object. Only verified domains can be updated.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Domain"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Domain"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Domain?> PatchAsync(Domain body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Domain?> PatchAsync(Microsoft.Graph.Models.Domain body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Domain> PatchAsync(Domain body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Domain> PatchAsync(Microsoft.Graph.Models.Domain body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Domain>(requestInfo, Domain.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Domain>(requestInfo, Microsoft.Graph.Models.Domain.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a domain from a tenant.
@@ -173,11 +173,11 @@ namespace Microsoft.Graph.Domains.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DomainItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Domains.Item.DomainItemRequestBuilder.DomainItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DomainItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Domains.Item.DomainItemRequestBuilder.DomainItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -193,11 +193,11 @@ namespace Microsoft.Graph.Domains.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Domain body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Domain body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Domain body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Domain body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -210,11 +210,11 @@ namespace Microsoft.Graph.Domains.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DomainItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Domains.Item.DomainItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DomainItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Domains.Item.DomainItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new DomainItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Domains.Item.DomainItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -253,7 +253,7 @@ namespace Microsoft.Graph.Domains.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DomainItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DomainItemRequestBuilderGetQueryParameters>
+        public class DomainItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Domains.Item.DomainItemRequestBuilder.DomainItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

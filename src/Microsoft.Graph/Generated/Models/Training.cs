@@ -7,28 +7,28 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Training : Entity, IParsable
+    public class Training : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Training availability status. Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.</summary>
-        public TrainingAvailabilityStatus? AvailabilityStatus
+        public Microsoft.Graph.Models.TrainingAvailabilityStatus? AvailabilityStatus
         {
-            get { return BackingStore?.Get<TrainingAvailabilityStatus?>("availabilityStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TrainingAvailabilityStatus?>("availabilityStatus"); }
             set { BackingStore?.Set("availabilityStatus", value); }
         }
         /// <summary>Identity of the user who created the training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? CreatedBy
+        public Microsoft.Graph.Models.EmailIdentity? CreatedBy
         {
-            get { return BackingStore?.Get<EmailIdentity?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity CreatedBy
+        public Microsoft.Graph.Models.EmailIdentity CreatedBy
         {
-            get { return BackingStore?.Get<EmailIdentity>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -85,32 +85,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Language specific details on a training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TrainingLanguageDetail>? LanguageDetails
+        public List<Microsoft.Graph.Models.TrainingLanguageDetail>? LanguageDetails
         {
-            get { return BackingStore?.Get<List<TrainingLanguageDetail>?>("languageDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TrainingLanguageDetail>?>("languageDetails"); }
             set { BackingStore?.Set("languageDetails", value); }
         }
 #nullable restore
 #else
-        public List<TrainingLanguageDetail> LanguageDetails
+        public List<Microsoft.Graph.Models.TrainingLanguageDetail> LanguageDetails
         {
-            get { return BackingStore?.Get<List<TrainingLanguageDetail>>("languageDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TrainingLanguageDetail>>("languageDetails"); }
             set { BackingStore?.Set("languageDetails", value); }
         }
 #endif
         /// <summary>Identity of the user who last modified the training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? LastModifiedBy
+        public Microsoft.Graph.Models.EmailIdentity? LastModifiedBy
         {
-            get { return BackingStore?.Get<EmailIdentity?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailIdentity?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity LastModifiedBy
+        public Microsoft.Graph.Models.EmailIdentity LastModifiedBy
         {
-            get { return BackingStore?.Get<EmailIdentity>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailIdentity>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -121,9 +121,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Training content source. Possible values are: unknown, global, tenant, unknownFutureValue.</summary>
-        public SimulationContentSource? Source
+        public Microsoft.Graph.Models.SimulationContentSource? Source
         {
-            get { return BackingStore?.Get<SimulationContentSource?>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SimulationContentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
         /// <summary>Supported locales for content for the associated training.</summary>
@@ -159,20 +159,20 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The type of training. Possible values are: unknown, phishing, unknownFutureValue.</summary>
-        public TrainingType? Type
+        public Microsoft.Graph.Models.TrainingType? Type
         {
-            get { return BackingStore?.Get<TrainingType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TrainingType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Training"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Training"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Training CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Training CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Training();
+            return new Microsoft.Graph.Models.Training();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -182,20 +182,20 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "availabilityStatus", n => { AvailabilityStatus = n.GetEnumValue<TrainingAvailabilityStatus>(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "availabilityStatus", n => { AvailabilityStatus = n.GetEnumValue<Microsoft.Graph.Models.TrainingAvailabilityStatus>(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.EmailIdentity>(Microsoft.Graph.Models.EmailIdentity.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "durationInMinutes", n => { DurationInMinutes = n.GetIntValue(); } },
                 { "hasEvaluation", n => { HasEvaluation = n.GetBoolValue(); } },
-                { "languageDetails", n => { LanguageDetails = n.GetCollectionOfObjectValues<TrainingLanguageDetail>(TrainingLanguageDetail.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "languageDetails", n => { LanguageDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TrainingLanguageDetail>(Microsoft.Graph.Models.TrainingLanguageDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.EmailIdentity>(Microsoft.Graph.Models.EmailIdentity.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "source", n => { Source = n.GetEnumValue<SimulationContentSource>(); } },
+                { "source", n => { Source = n.GetEnumValue<Microsoft.Graph.Models.SimulationContentSource>(); } },
                 { "supportedLocales", n => { SupportedLocales = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "type", n => { Type = n.GetEnumValue<TrainingType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Models.TrainingType>(); } },
             };
         }
         /// <summary>
@@ -206,20 +206,20 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<TrainingAvailabilityStatus>("availabilityStatus", AvailabilityStatus);
-            writer.WriteObjectValue<EmailIdentity>("createdBy", CreatedBy);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TrainingAvailabilityStatus>("availabilityStatus", AvailabilityStatus);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EmailIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteIntValue("durationInMinutes", DurationInMinutes);
             writer.WriteBoolValue("hasEvaluation", HasEvaluation);
-            writer.WriteCollectionOfObjectValues<TrainingLanguageDetail>("languageDetails", LanguageDetails);
-            writer.WriteObjectValue<EmailIdentity>("lastModifiedBy", LastModifiedBy);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TrainingLanguageDetail>("languageDetails", LanguageDetails);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EmailIdentity>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteEnumValue<SimulationContentSource>("source", Source);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SimulationContentSource>("source", Source);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedLocales", SupportedLocales);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteEnumValue<TrainingType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TrainingType>("type", Type);
         }
     }
 }

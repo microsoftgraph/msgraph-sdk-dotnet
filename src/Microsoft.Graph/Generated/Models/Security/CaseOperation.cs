@@ -11,9 +11,9 @@ namespace Microsoft.Graph.Models.Security
     #pragma warning restore CS1591
     {
         /// <summary>The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData</summary>
-        public CaseAction? Action
+        public Microsoft.Graph.Models.Security.CaseAction? Action
         {
-            get { return BackingStore?.Get<CaseAction?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.CaseAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>The date and time the operation was completed.</summary>
@@ -67,30 +67,30 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.</summary>
-        public CaseOperationStatus? Status
+        public Microsoft.Graph.Models.Security.CaseOperationStatus? Status
         {
-            get { return BackingStore?.Get<CaseOperationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.CaseOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CaseOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.CaseOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CaseOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.CaseOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.ediscoveryAddToReviewSetOperation" => new EdiscoveryAddToReviewSetOperation(),
-                "#microsoft.graph.security.ediscoveryEstimateOperation" => new EdiscoveryEstimateOperation(),
-                "#microsoft.graph.security.ediscoveryExportOperation" => new EdiscoveryExportOperation(),
-                "#microsoft.graph.security.ediscoveryHoldOperation" => new EdiscoveryHoldOperation(),
-                "#microsoft.graph.security.ediscoveryIndexOperation" => new EdiscoveryIndexOperation(),
-                "#microsoft.graph.security.ediscoveryPurgeDataOperation" => new EdiscoveryPurgeDataOperation(),
-                "#microsoft.graph.security.ediscoveryTagOperation" => new EdiscoveryTagOperation(),
-                _ => new CaseOperation(),
+                "#microsoft.graph.security.ediscoveryAddToReviewSetOperation" => new Microsoft.Graph.Models.Security.EdiscoveryAddToReviewSetOperation(),
+                "#microsoft.graph.security.ediscoveryEstimateOperation" => new Microsoft.Graph.Models.Security.EdiscoveryEstimateOperation(),
+                "#microsoft.graph.security.ediscoveryExportOperation" => new Microsoft.Graph.Models.Security.EdiscoveryExportOperation(),
+                "#microsoft.graph.security.ediscoveryHoldOperation" => new Microsoft.Graph.Models.Security.EdiscoveryHoldOperation(),
+                "#microsoft.graph.security.ediscoveryIndexOperation" => new Microsoft.Graph.Models.Security.EdiscoveryIndexOperation(),
+                "#microsoft.graph.security.ediscoveryPurgeDataOperation" => new Microsoft.Graph.Models.Security.EdiscoveryPurgeDataOperation(),
+                "#microsoft.graph.security.ediscoveryTagOperation" => new Microsoft.Graph.Models.Security.EdiscoveryTagOperation(),
+                _ => new Microsoft.Graph.Models.Security.CaseOperation(),
             };
         }
         /// <summary>
@@ -101,13 +101,13 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "action", n => { Action = n.GetEnumValue<CaseAction>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Models.Security.CaseAction>(); } },
                 { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "percentProgress", n => { PercentProgress = n.GetIntValue(); } },
                 { "resultInfo", n => { ResultInfo = n.GetObjectValue<Microsoft.Graph.Models.ResultInfo>(Microsoft.Graph.Models.ResultInfo.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<CaseOperationStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.Security.CaseOperationStatus>(); } },
             };
         }
         /// <summary>
@@ -118,13 +118,13 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<CaseAction>("action", Action);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.CaseAction>("action", Action);
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteIntValue("percentProgress", PercentProgress);
             writer.WriteObjectValue<Microsoft.Graph.Models.ResultInfo>("resultInfo", ResultInfo);
-            writer.WriteEnumValue<CaseOperationStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.CaseOperationStatus>("status", Status);
         }
     }
 }

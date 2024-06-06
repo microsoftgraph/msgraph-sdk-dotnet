@@ -13,16 +13,16 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         /// <summary>Represents an identity used to identify who is responsible for the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? PerformedBy
+        public Microsoft.Graph.Models.ExternalConnectors.Identity? PerformedBy
         {
-            get { return BackingStore?.Get<Identity?>("performedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.Identity?>("performedBy"); }
             set { BackingStore?.Set("performedBy", value); }
         }
 #nullable restore
 #else
-        public Identity PerformedBy
+        public Microsoft.Graph.Models.ExternalConnectors.Identity PerformedBy
         {
-            get { return BackingStore?.Get<Identity>("performedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.Identity>("performedBy"); }
             set { BackingStore?.Set("performedBy", value); }
         }
 #endif
@@ -33,24 +33,24 @@ namespace Microsoft.Graph.Models.ExternalConnectors
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The type property</summary>
-        public ExternalActivityType? Type
+        public Microsoft.Graph.Models.ExternalConnectors.ExternalActivityType? Type
         {
-            get { return BackingStore?.Get<ExternalActivityType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.ExternalActivityType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExternalActivity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ExternalConnectors.ExternalActivity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExternalActivity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ExternalConnectors.ExternalActivity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.externalConnectors.externalActivityResult" => new ExternalActivityResult(),
-                _ => new ExternalActivity(),
+                "#microsoft.graph.externalConnectors.externalActivityResult" => new Microsoft.Graph.Models.ExternalConnectors.ExternalActivityResult(),
+                _ => new Microsoft.Graph.Models.ExternalConnectors.ExternalActivity(),
             };
         }
         /// <summary>
@@ -61,9 +61,9 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "performedBy", n => { PerformedBy = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "performedBy", n => { PerformedBy = n.GetObjectValue<Microsoft.Graph.Models.ExternalConnectors.Identity>(Microsoft.Graph.Models.ExternalConnectors.Identity.CreateFromDiscriminatorValue); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { Type = n.GetEnumValue<ExternalActivityType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Models.ExternalConnectors.ExternalActivityType>(); } },
             };
         }
         /// <summary>
@@ -74,9 +74,9 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<Identity>("performedBy", PerformedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ExternalConnectors.Identity>("performedBy", PerformedBy);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
-            writer.WriteEnumValue<ExternalActivityType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ExternalConnectors.ExternalActivityType>("type", Type);
         }
     }
 }

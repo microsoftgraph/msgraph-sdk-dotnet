@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AddressBookAccountTargetContent : AccountTargetContent, IParsable
+    public class AddressBookAccountTargetContent : Microsoft.Graph.Models.AccountTargetContent, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of user emails targeted for an attack simulation training campaign.</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AddressBookAccountTargetContent"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AddressBookAccountTargetContent"/> and sets the default values.
         /// </summary>
         public AddressBookAccountTargetContent() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AddressBookAccountTargetContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AddressBookAccountTargetContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AddressBookAccountTargetContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AddressBookAccountTargetContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AddressBookAccountTargetContent();
+            return new Microsoft.Graph.Models.AddressBookAccountTargetContent();
         }
         /// <summary>
         /// The deserialization information for the current model

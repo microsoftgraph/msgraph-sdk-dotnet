@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Places.Item.GraphRoomList.Rooms
     public class RoomsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Places.Item.GraphRoomList.Rooms.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Places.Item.GraphRoomList.Rooms.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the rooms property of the microsoft.graph.roomList entity.</summary>
         /// <param name="position">The unique identifier of room</param>
-        /// <returns>A <see cref="RoomItemRequestBuilder"/></returns>
-        public RoomItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Places.Item.GraphRoomList.Rooms.Item.RoomItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Places.Item.GraphRoomList.Rooms.Item.RoomItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("room%2Did", position);
-                return new RoomItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Places.Item.GraphRoomList.Rooms.Item.RoomItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RoomsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Places.Item.GraphRoomList.Rooms.RoomsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Places.Item.GraphRoomList.Rooms
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RoomsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Places.Item.GraphRoomList.Rooms.RoomsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Places.Item.GraphRoomList.Rooms
         /// <summary>
         /// Get rooms from places
         /// </summary>
-        /// <returns>A <see cref="RoomCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RoomCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RoomCollectionResponse?> GetAsync(Action<RequestConfiguration<RoomsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.RoomCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Places.Item.GraphRoomList.Rooms.RoomsRequestBuilder.RoomsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<RoomCollectionResponse> GetAsync(Action<RequestConfiguration<RoomsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.RoomCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Places.Item.GraphRoomList.Rooms.RoomsRequestBuilder.RoomsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<RoomCollectionResponse>(requestInfo, RoomCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.RoomCollectionResponse>(requestInfo, Microsoft.Graph.Models.RoomCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to rooms for places
         /// </summary>
-        /// <returns>A <see cref="Room"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Room"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Room?> PostAsync(Room body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Room?> PostAsync(Microsoft.Graph.Models.Room body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Room> PostAsync(Room body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Room> PostAsync(Microsoft.Graph.Models.Room body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Room>(requestInfo, Room.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Room>(requestInfo, Microsoft.Graph.Models.Room.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get rooms from places
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Places.Item.GraphRoomList.Rooms
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoomsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Places.Item.GraphRoomList.Rooms.RoomsRequestBuilder.RoomsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoomsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Places.Item.GraphRoomList.Rooms.RoomsRequestBuilder.RoomsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Places.Item.GraphRoomList.Rooms
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Room body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Room body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Room body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Room body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Places.Item.GraphRoomList.Rooms
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RoomsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Places.Item.GraphRoomList.Rooms.RoomsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RoomsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Places.Item.GraphRoomList.Rooms.RoomsRequestBuilder WithUrl(string rawUrl)
         {
-            return new RoomsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Places.Item.GraphRoomList.Rooms.RoomsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get rooms from places
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Places.Item.GraphRoomList.Rooms
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RoomsRequestBuilderGetRequestConfiguration : RequestConfiguration<RoomsRequestBuilderGetQueryParameters>
+        public class RoomsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Places.Item.GraphRoomList.Rooms.RoomsRequestBuilder.RoomsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

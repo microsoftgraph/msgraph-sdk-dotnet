@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Un
     public class UnifiedGroupSourcesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UnifiedGroupSources.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UnifiedGroupSources.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the unifiedGroupSources property of the microsoft.graph.security.ediscoveryCustodian entity.</summary>
         /// <param name="position">The unique identifier of unifiedGroupSource</param>
-        /// <returns>A <see cref="UnifiedGroupSourceItemRequestBuilder"/></returns>
-        public UnifiedGroupSourceItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UnifiedGroupSources.Item.UnifiedGroupSourceItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UnifiedGroupSources.Item.UnifiedGroupSourceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("unifiedGroupSource%2Did", position);
-                return new UnifiedGroupSourceItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UnifiedGroupSources.Item.UnifiedGroupSourceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UnifiedGroupSourcesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UnifiedGroupSources.UnifiedGroupSourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Un
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UnifiedGroupSourcesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UnifiedGroupSources.UnifiedGroupSourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,65 +52,67 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Un
         {
         }
         /// <summary>
-        /// Data source entity for groups associated with the custodian.
+        /// Get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-unifiedgroupsources?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="UnifiedGroupSourceCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.UnifiedGroupSourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedGroupSourceCollectionResponse?> GetAsync(Action<RequestConfiguration<UnifiedGroupSourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.UnifiedGroupSourceCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UnifiedGroupSources.UnifiedGroupSourcesRequestBuilder.UnifiedGroupSourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedGroupSourceCollectionResponse> GetAsync(Action<RequestConfiguration<UnifiedGroupSourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.UnifiedGroupSourceCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UnifiedGroupSources.UnifiedGroupSourcesRequestBuilder.UnifiedGroupSourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedGroupSourceCollectionResponse>(requestInfo, UnifiedGroupSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.UnifiedGroupSourceCollectionResponse>(requestInfo, Microsoft.Graph.Models.Security.UnifiedGroupSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to unifiedGroupSources for security
+        /// Create a new unifiedGroupSource object associated with an eDiscovery custodian.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycustodian-post-unifiedgroupsources?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="UnifiedGroupSource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.UnifiedGroupSource"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedGroupSource?> PostAsync(UnifiedGroupSource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.UnifiedGroupSource?> PostAsync(Microsoft.Graph.Models.Security.UnifiedGroupSource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedGroupSource> PostAsync(UnifiedGroupSource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.UnifiedGroupSource> PostAsync(Microsoft.Graph.Models.Security.UnifiedGroupSource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedGroupSource>(requestInfo, UnifiedGroupSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.UnifiedGroupSource>(requestInfo, Microsoft.Graph.Models.Security.UnifiedGroupSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Data source entity for groups associated with the custodian.
+        /// Get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UnifiedGroupSourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UnifiedGroupSources.UnifiedGroupSourcesRequestBuilder.UnifiedGroupSourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UnifiedGroupSourcesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UnifiedGroupSources.UnifiedGroupSourcesRequestBuilder.UnifiedGroupSourcesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -119,18 +121,18 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Un
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to unifiedGroupSources for security
+        /// Create a new unifiedGroupSource object associated with an eDiscovery custodian.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(UnifiedGroupSource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Security.UnifiedGroupSource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(UnifiedGroupSource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Security.UnifiedGroupSource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,14 +145,14 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Un
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UnifiedGroupSourcesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UnifiedGroupSources.UnifiedGroupSourcesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UnifiedGroupSourcesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UnifiedGroupSources.UnifiedGroupSourcesRequestBuilder WithUrl(string rawUrl)
         {
-            return new UnifiedGroupSourcesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UnifiedGroupSources.UnifiedGroupSourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Data source entity for groups associated with the custodian.
+        /// Get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
         /// </summary>
         public class UnifiedGroupSourcesRequestBuilderGetQueryParameters 
         {
@@ -218,7 +220,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Un
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UnifiedGroupSourcesRequestBuilderGetRequestConfiguration : RequestConfiguration<UnifiedGroupSourcesRequestBuilderGetQueryParameters>
+        public class UnifiedGroupSourcesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UnifiedGroupSources.UnifiedGroupSourcesRequestBuilder.UnifiedGroupSourcesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

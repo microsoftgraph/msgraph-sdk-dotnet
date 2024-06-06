@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Summary data for managed devices
     /// </summary>
-    public class ManagedDeviceOverview : Entity, IParsable
+    public class ManagedDeviceOverview : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Distribution of Exchange Access State in Intune</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedDeviceOverview"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedDeviceOverview"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedDeviceOverview CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ManagedDeviceOverview CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedDeviceOverview();
+            return new Microsoft.Graph.Models.ManagedDeviceOverview();
         }
         /// <summary>
         /// The deserialization information for the current model

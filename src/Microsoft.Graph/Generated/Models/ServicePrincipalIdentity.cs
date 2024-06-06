@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ServicePrincipalIdentity : Identity, IParsable
+    public class ServicePrincipalIdentity : Microsoft.Graph.Models.Identity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The application identifier of the service principal.</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ServicePrincipalIdentity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ServicePrincipalIdentity"/> and sets the default values.
         /// </summary>
         public ServicePrincipalIdentity() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ServicePrincipalIdentity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ServicePrincipalIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ServicePrincipalIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ServicePrincipalIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ServicePrincipalIdentity();
+            return new Microsoft.Graph.Models.ServicePrincipalIdentity();
         }
         /// <summary>
         /// The deserialization information for the current model

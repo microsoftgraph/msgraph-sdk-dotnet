@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class RoomList : Place, IParsable
+    public class RoomList : Microsoft.Graph.Models.Place, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The email address of the room list.</summary>
@@ -29,21 +29,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The rooms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Room>? Rooms
+        public List<Microsoft.Graph.Models.Room>? Rooms
         {
-            get { return BackingStore?.Get<List<Room>?>("rooms"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Room>?>("rooms"); }
             set { BackingStore?.Set("rooms", value); }
         }
 #nullable restore
 #else
-        public List<Room> Rooms
+        public List<Microsoft.Graph.Models.Room> Rooms
         {
-            get { return BackingStore?.Get<List<Room>>("rooms"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Room>>("rooms"); }
             set { BackingStore?.Set("rooms", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RoomList"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.RoomList"/> and sets the default values.
         /// </summary>
         public RoomList() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RoomList"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RoomList"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RoomList CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.RoomList CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RoomList();
+            return new Microsoft.Graph.Models.RoomList();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
-                { "rooms", n => { Rooms = n.GetCollectionOfObjectValues<Room>(Room.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rooms", n => { Rooms = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Room>(Microsoft.Graph.Models.Room.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("emailAddress", EmailAddress);
-            writer.WriteCollectionOfObjectValues<Room>("rooms", Rooms);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Room>("rooms", Rooms);
         }
     }
 }

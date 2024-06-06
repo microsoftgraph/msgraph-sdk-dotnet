@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Devices that are managed or pre-enrolled through Intune
     /// </summary>
-    public class ManagedDevice : Entity, IParsable
+    public class ManagedDevice : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,16 +96,16 @@ namespace Microsoft.Graph.Models
         /// <summary>List of ComplexType deviceActionResult objects. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceActionResult>? DeviceActionResults
+        public List<Microsoft.Graph.Models.DeviceActionResult>? DeviceActionResults
         {
-            get { return BackingStore?.Get<List<DeviceActionResult>?>("deviceActionResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceActionResult>?>("deviceActionResults"); }
             set { BackingStore?.Set("deviceActionResults", value); }
         }
 #nullable restore
 #else
-        public List<DeviceActionResult> DeviceActionResults
+        public List<Microsoft.Graph.Models.DeviceActionResult> DeviceActionResults
         {
-            get { return BackingStore?.Get<List<DeviceActionResult>>("deviceActionResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceActionResult>>("deviceActionResults"); }
             set { BackingStore?.Set("deviceActionResults", value); }
         }
 #endif
@@ -144,32 +144,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Device compliance policy states for this device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceCompliancePolicyState>? DeviceCompliancePolicyStates
+        public List<Microsoft.Graph.Models.DeviceCompliancePolicyState>? DeviceCompliancePolicyStates
         {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicyState>?>("deviceCompliancePolicyStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceCompliancePolicyState>?>("deviceCompliancePolicyStates"); }
             set { BackingStore?.Set("deviceCompliancePolicyStates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceCompliancePolicyState> DeviceCompliancePolicyStates
+        public List<Microsoft.Graph.Models.DeviceCompliancePolicyState> DeviceCompliancePolicyStates
         {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicyState>>("deviceCompliancePolicyStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceCompliancePolicyState>>("deviceCompliancePolicyStates"); }
             set { BackingStore?.Set("deviceCompliancePolicyStates", value); }
         }
 #endif
         /// <summary>Device configuration states for this device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceConfigurationState>? DeviceConfigurationStates
+        public List<Microsoft.Graph.Models.DeviceConfigurationState>? DeviceConfigurationStates
         {
-            get { return BackingStore?.Get<List<DeviceConfigurationState>?>("deviceConfigurationStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceConfigurationState>?>("deviceConfigurationStates"); }
             set { BackingStore?.Set("deviceConfigurationStates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceConfigurationState> DeviceConfigurationStates
+        public List<Microsoft.Graph.Models.DeviceConfigurationState> DeviceConfigurationStates
         {
-            get { return BackingStore?.Get<List<DeviceConfigurationState>>("deviceConfigurationStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceConfigurationState>>("deviceConfigurationStates"); }
             set { BackingStore?.Set("deviceConfigurationStates", value); }
         }
 #endif
@@ -300,15 +300,15 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Device Exchange Access State.</summary>
-        public DeviceManagementExchangeAccessState? ExchangeAccessState
+        public Microsoft.Graph.Models.DeviceManagementExchangeAccessState? ExchangeAccessState
         {
-            get { return BackingStore?.Get<DeviceManagementExchangeAccessState?>("exchangeAccessState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceManagementExchangeAccessState?>("exchangeAccessState"); }
             set { BackingStore?.Set("exchangeAccessState", value); }
         }
         /// <summary>Device Exchange Access State Reason.</summary>
-        public DeviceManagementExchangeAccessStateReason? ExchangeAccessStateReason
+        public Microsoft.Graph.Models.DeviceManagementExchangeAccessStateReason? ExchangeAccessStateReason
         {
-            get { return BackingStore?.Get<DeviceManagementExchangeAccessStateReason?>("exchangeAccessStateReason"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceManagementExchangeAccessStateReason?>("exchangeAccessStateReason"); }
             set { BackingStore?.Set("exchangeAccessStateReason", value); }
         }
         /// <summary>Last time the device contacted Exchange. This property is read-only.</summary>
@@ -392,16 +392,16 @@ namespace Microsoft.Graph.Models
         /// <summary>List of log collection requests</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceLogCollectionResponse>? LogCollectionRequests
+        public List<Microsoft.Graph.Models.DeviceLogCollectionResponse>? LogCollectionRequests
         {
-            get { return BackingStore?.Get<List<DeviceLogCollectionResponse>?>("logCollectionRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceLogCollectionResponse>?>("logCollectionRequests"); }
             set { BackingStore?.Set("logCollectionRequests", value); }
         }
 #nullable restore
 #else
-        public List<DeviceLogCollectionResponse> LogCollectionRequests
+        public List<Microsoft.Graph.Models.DeviceLogCollectionResponse> LogCollectionRequests
         {
-            get { return BackingStore?.Get<List<DeviceLogCollectionResponse>>("logCollectionRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceLogCollectionResponse>>("logCollectionRequests"); }
             set { BackingStore?.Set("logCollectionRequests", value); }
         }
 #endif
@@ -428,9 +428,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("managedDeviceOwnerType", value); }
         }
         /// <summary>The managementAgent property</summary>
-        public ManagementAgentType? ManagementAgent
+        public Microsoft.Graph.Models.ManagementAgentType? ManagementAgent
         {
-            get { return BackingStore?.Get<ManagementAgentType?>("managementAgent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ManagementAgentType?>("managementAgent"); }
             set { BackingStore?.Set("managementAgent", value); }
         }
         /// <summary>Reports device management certificate expiration date. This property is read-only.</summary>
@@ -536,9 +536,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Available health states for the Device Health API</summary>
-        public ManagedDevicePartnerReportedHealthState? PartnerReportedThreatState
+        public Microsoft.Graph.Models.ManagedDevicePartnerReportedHealthState? PartnerReportedThreatState
         {
-            get { return BackingStore?.Get<ManagedDevicePartnerReportedHealthState?>("partnerReportedThreatState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ManagedDevicePartnerReportedHealthState?>("partnerReportedThreatState"); }
             set { BackingStore?.Set("partnerReportedThreatState", value); }
         }
         /// <summary>Phone number of the device. This property is read-only.</summary>
@@ -706,16 +706,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The primary users associated with the managed device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<User>? Users
+        public List<Microsoft.Graph.Models.User>? Users
         {
-            get { return BackingStore?.Get<List<User>?>("users"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.User>?>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #nullable restore
 #else
-        public List<User> Users
+        public List<Microsoft.Graph.Models.User> Users
         {
-            get { return BackingStore?.Get<List<User>>("users"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.User>>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #endif
@@ -754,12 +754,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedDevice"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedDevice"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedDevice CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ManagedDevice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedDevice();
+            return new Microsoft.Graph.Models.ManagedDevice();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -774,17 +774,17 @@ namespace Microsoft.Graph.Models
                 { "azureADDeviceId", n => { AzureADDeviceId = n.GetStringValue(); } },
                 { "azureADRegistered", n => { AzureADRegistered = n.GetBoolValue(); } },
                 { "complianceGracePeriodExpirationDateTime", n => { ComplianceGracePeriodExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                { "complianceState", n => { ComplianceState = n.GetEnumValue<ComplianceState>(); } },
+                { "complianceState", n => { ComplianceState = n.GetEnumValue<Microsoft.Graph.Models.ComplianceState>(); } },
                 { "configurationManagerClientEnabledFeatures", n => { ConfigurationManagerClientEnabledFeatures = n.GetObjectValue<Microsoft.Graph.Models.ConfigurationManagerClientEnabledFeatures>(Microsoft.Graph.Models.ConfigurationManagerClientEnabledFeatures.CreateFromDiscriminatorValue); } },
-                { "deviceActionResults", n => { DeviceActionResults = n.GetCollectionOfObjectValues<DeviceActionResult>(DeviceActionResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceActionResults", n => { DeviceActionResults = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DeviceActionResult>(Microsoft.Graph.Models.DeviceActionResult.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "deviceCategory", n => { DeviceCategory = n.GetObjectValue<Microsoft.Graph.Models.DeviceCategory>(Microsoft.Graph.Models.DeviceCategory.CreateFromDiscriminatorValue); } },
                 { "deviceCategoryDisplayName", n => { DeviceCategoryDisplayName = n.GetStringValue(); } },
-                { "deviceCompliancePolicyStates", n => { DeviceCompliancePolicyStates = n.GetCollectionOfObjectValues<DeviceCompliancePolicyState>(DeviceCompliancePolicyState.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "deviceConfigurationStates", n => { DeviceConfigurationStates = n.GetCollectionOfObjectValues<DeviceConfigurationState>(DeviceConfigurationState.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "deviceEnrollmentType", n => { DeviceEnrollmentType = n.GetEnumValue<DeviceEnrollmentType>(); } },
+                { "deviceCompliancePolicyStates", n => { DeviceCompliancePolicyStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DeviceCompliancePolicyState>(Microsoft.Graph.Models.DeviceCompliancePolicyState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceConfigurationStates", n => { DeviceConfigurationStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DeviceConfigurationState>(Microsoft.Graph.Models.DeviceConfigurationState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceEnrollmentType", n => { DeviceEnrollmentType = n.GetEnumValue<Microsoft.Graph.Models.DeviceEnrollmentType>(); } },
                 { "deviceHealthAttestationState", n => { DeviceHealthAttestationState = n.GetObjectValue<Microsoft.Graph.Models.DeviceHealthAttestationState>(Microsoft.Graph.Models.DeviceHealthAttestationState.CreateFromDiscriminatorValue); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
-                { "deviceRegistrationState", n => { DeviceRegistrationState = n.GetEnumValue<DeviceRegistrationState>(); } },
+                { "deviceRegistrationState", n => { DeviceRegistrationState = n.GetEnumValue<Microsoft.Graph.Models.DeviceRegistrationState>(); } },
                 { "easActivated", n => { EasActivated = n.GetBoolValue(); } },
                 { "easActivationDateTime", n => { EasActivationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "easDeviceId", n => { EasDeviceId = n.GetStringValue(); } },
@@ -792,8 +792,8 @@ namespace Microsoft.Graph.Models
                 { "enrolledDateTime", n => { EnrolledDateTime = n.GetDateTimeOffsetValue(); } },
                 { "enrollmentProfileName", n => { EnrollmentProfileName = n.GetStringValue(); } },
                 { "ethernetMacAddress", n => { EthernetMacAddress = n.GetStringValue(); } },
-                { "exchangeAccessState", n => { ExchangeAccessState = n.GetEnumValue<DeviceManagementExchangeAccessState>(); } },
-                { "exchangeAccessStateReason", n => { ExchangeAccessStateReason = n.GetEnumValue<DeviceManagementExchangeAccessStateReason>(); } },
+                { "exchangeAccessState", n => { ExchangeAccessState = n.GetEnumValue<Microsoft.Graph.Models.DeviceManagementExchangeAccessState>(); } },
+                { "exchangeAccessStateReason", n => { ExchangeAccessStateReason = n.GetEnumValue<Microsoft.Graph.Models.DeviceManagementExchangeAccessStateReason>(); } },
                 { "exchangeLastSuccessfulSyncDateTime", n => { ExchangeLastSuccessfulSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "freeStorageSpaceInBytes", n => { FreeStorageSpaceInBytes = n.GetLongValue(); } },
                 { "iccid", n => { Iccid = n.GetStringValue(); } },
@@ -802,10 +802,10 @@ namespace Microsoft.Graph.Models
                 { "isSupervised", n => { IsSupervised = n.GetBoolValue(); } },
                 { "jailBroken", n => { JailBroken = n.GetStringValue(); } },
                 { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                { "logCollectionRequests", n => { LogCollectionRequests = n.GetCollectionOfObjectValues<DeviceLogCollectionResponse>(DeviceLogCollectionResponse.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "logCollectionRequests", n => { LogCollectionRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DeviceLogCollectionResponse>(Microsoft.Graph.Models.DeviceLogCollectionResponse.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
-                { "managedDeviceOwnerType", n => { ManagedDeviceOwnerType = n.GetEnumValue<ManagedDeviceOwnerType>(); } },
-                { "managementAgent", n => { ManagementAgent = n.GetEnumValue<ManagementAgentType>(); } },
+                { "managedDeviceOwnerType", n => { ManagedDeviceOwnerType = n.GetEnumValue<Microsoft.Graph.Models.ManagedDeviceOwnerType>(); } },
+                { "managementAgent", n => { ManagementAgent = n.GetEnumValue<Microsoft.Graph.Models.ManagementAgentType>(); } },
                 { "managementCertificateExpirationDate", n => { ManagementCertificateExpirationDate = n.GetDateTimeOffsetValue(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 { "meid", n => { Meid = n.GetStringValue(); } },
@@ -813,7 +813,7 @@ namespace Microsoft.Graph.Models
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
                 { "osVersion", n => { OsVersion = n.GetStringValue(); } },
-                { "partnerReportedThreatState", n => { PartnerReportedThreatState = n.GetEnumValue<ManagedDevicePartnerReportedHealthState>(); } },
+                { "partnerReportedThreatState", n => { PartnerReportedThreatState = n.GetEnumValue<Microsoft.Graph.Models.ManagedDevicePartnerReportedHealthState>(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "physicalMemoryInBytes", n => { PhysicalMemoryInBytes = n.GetLongValue(); } },
                 { "remoteAssistanceSessionErrorDetails", n => { RemoteAssistanceSessionErrorDetails = n.GetStringValue(); } },
@@ -826,7 +826,7 @@ namespace Microsoft.Graph.Models
                 { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                { "users", n => { Users = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.User>(Microsoft.Graph.Models.User.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "wiFiMacAddress", n => { WiFiMacAddress = n.GetStringValue(); } },
                 { "windowsProtectionState", n => { WindowsProtectionState = n.GetObjectValue<Microsoft.Graph.Models.WindowsProtectionState>(Microsoft.Graph.Models.WindowsProtectionState.CreateFromDiscriminatorValue); } },
             };
@@ -839,21 +839,21 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<ComplianceState>("complianceState", ComplianceState);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ComplianceState>("complianceState", ComplianceState);
             writer.WriteObjectValue<Microsoft.Graph.Models.DeviceCategory>("deviceCategory", DeviceCategory);
-            writer.WriteCollectionOfObjectValues<DeviceCompliancePolicyState>("deviceCompliancePolicyStates", DeviceCompliancePolicyStates);
-            writer.WriteCollectionOfObjectValues<DeviceConfigurationState>("deviceConfigurationStates", DeviceConfigurationStates);
-            writer.WriteEnumValue<DeviceEnrollmentType>("deviceEnrollmentType", DeviceEnrollmentType);
-            writer.WriteEnumValue<DeviceRegistrationState>("deviceRegistrationState", DeviceRegistrationState);
-            writer.WriteEnumValue<DeviceManagementExchangeAccessState>("exchangeAccessState", ExchangeAccessState);
-            writer.WriteEnumValue<DeviceManagementExchangeAccessStateReason>("exchangeAccessStateReason", ExchangeAccessStateReason);
-            writer.WriteCollectionOfObjectValues<DeviceLogCollectionResponse>("logCollectionRequests", LogCollectionRequests);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DeviceCompliancePolicyState>("deviceCompliancePolicyStates", DeviceCompliancePolicyStates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DeviceConfigurationState>("deviceConfigurationStates", DeviceConfigurationStates);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DeviceEnrollmentType>("deviceEnrollmentType", DeviceEnrollmentType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DeviceRegistrationState>("deviceRegistrationState", DeviceRegistrationState);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DeviceManagementExchangeAccessState>("exchangeAccessState", ExchangeAccessState);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DeviceManagementExchangeAccessStateReason>("exchangeAccessStateReason", ExchangeAccessStateReason);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DeviceLogCollectionResponse>("logCollectionRequests", LogCollectionRequests);
             writer.WriteStringValue("managedDeviceName", ManagedDeviceName);
-            writer.WriteEnumValue<ManagedDeviceOwnerType>("managedDeviceOwnerType", ManagedDeviceOwnerType);
-            writer.WriteEnumValue<ManagementAgentType>("managementAgent", ManagementAgent);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ManagedDeviceOwnerType>("managedDeviceOwnerType", ManagedDeviceOwnerType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ManagementAgentType>("managementAgent", ManagementAgent);
             writer.WriteStringValue("notes", Notes);
-            writer.WriteEnumValue<ManagedDevicePartnerReportedHealthState>("partnerReportedThreatState", PartnerReportedThreatState);
-            writer.WriteCollectionOfObjectValues<User>("users", Users);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ManagedDevicePartnerReportedHealthState>("partnerReportedThreatState", PartnerReportedThreatState);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.User>("users", Users);
             writer.WriteObjectValue<Microsoft.Graph.Models.WindowsProtectionState>("windowsProtectionState", WindowsProtectionState);
         }
     }

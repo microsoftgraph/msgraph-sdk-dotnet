@@ -87,16 +87,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Logo image displayed in Company Portal apps which have a dark background behind the logo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MimeContent? DarkBackgroundLogo
+        public Microsoft.Graph.Models.MimeContent? DarkBackgroundLogo
         {
-            get { return BackingStore?.Get<MimeContent?>("darkBackgroundLogo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MimeContent?>("darkBackgroundLogo"); }
             set { BackingStore?.Set("darkBackgroundLogo", value); }
         }
 #nullable restore
 #else
-        public MimeContent DarkBackgroundLogo
+        public Microsoft.Graph.Models.MimeContent DarkBackgroundLogo
         {
-            get { return BackingStore?.Get<MimeContent>("darkBackgroundLogo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MimeContent>("darkBackgroundLogo"); }
             set { BackingStore?.Set("darkBackgroundLogo", value); }
         }
 #endif
@@ -119,16 +119,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Logo image displayed in Company Portal apps which have a light background behind the logo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MimeContent? LightBackgroundLogo
+        public Microsoft.Graph.Models.MimeContent? LightBackgroundLogo
         {
-            get { return BackingStore?.Get<MimeContent?>("lightBackgroundLogo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MimeContent?>("lightBackgroundLogo"); }
             set { BackingStore?.Set("lightBackgroundLogo", value); }
         }
 #nullable restore
 #else
-        public MimeContent LightBackgroundLogo
+        public Microsoft.Graph.Models.MimeContent LightBackgroundLogo
         {
-            get { return BackingStore?.Get<MimeContent>("lightBackgroundLogo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MimeContent>("lightBackgroundLogo"); }
             set { BackingStore?.Set("lightBackgroundLogo", value); }
         }
 #endif
@@ -217,21 +217,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Primary theme color used in the Company Portal applications and web portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RgbColor? ThemeColor
+        public Microsoft.Graph.Models.RgbColor? ThemeColor
         {
-            get { return BackingStore?.Get<RgbColor?>("themeColor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RgbColor?>("themeColor"); }
             set { BackingStore?.Set("themeColor", value); }
         }
 #nullable restore
 #else
-        public RgbColor ThemeColor
+        public Microsoft.Graph.Models.RgbColor ThemeColor
         {
-            get { return BackingStore?.Get<RgbColor>("themeColor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RgbColor>("themeColor"); }
             set { BackingStore?.Set("themeColor", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IntuneBrand"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IntuneBrand"/> and sets the default values.
         /// </summary>
         public IntuneBrand()
         {
@@ -241,12 +241,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IntuneBrand"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IntuneBrand"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IntuneBrand CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.IntuneBrand CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IntuneBrand();
+            return new Microsoft.Graph.Models.IntuneBrand();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -260,9 +260,9 @@ namespace Microsoft.Graph.Models
                 { "contactITName", n => { ContactITName = n.GetStringValue(); } },
                 { "contactITNotes", n => { ContactITNotes = n.GetStringValue(); } },
                 { "contactITPhoneNumber", n => { ContactITPhoneNumber = n.GetStringValue(); } },
-                { "darkBackgroundLogo", n => { DarkBackgroundLogo = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+                { "darkBackgroundLogo", n => { DarkBackgroundLogo = n.GetObjectValue<Microsoft.Graph.Models.MimeContent>(Microsoft.Graph.Models.MimeContent.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "lightBackgroundLogo", n => { LightBackgroundLogo = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+                { "lightBackgroundLogo", n => { LightBackgroundLogo = n.GetObjectValue<Microsoft.Graph.Models.MimeContent>(Microsoft.Graph.Models.MimeContent.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "onlineSupportSiteName", n => { OnlineSupportSiteName = n.GetStringValue(); } },
                 { "onlineSupportSiteUrl", n => { OnlineSupportSiteUrl = n.GetStringValue(); } },
@@ -270,7 +270,7 @@ namespace Microsoft.Graph.Models
                 { "showDisplayNameNextToLogo", n => { ShowDisplayNameNextToLogo = n.GetBoolValue(); } },
                 { "showLogo", n => { ShowLogo = n.GetBoolValue(); } },
                 { "showNameNextToLogo", n => { ShowNameNextToLogo = n.GetBoolValue(); } },
-                { "themeColor", n => { ThemeColor = n.GetObjectValue<RgbColor>(RgbColor.CreateFromDiscriminatorValue); } },
+                { "themeColor", n => { ThemeColor = n.GetObjectValue<Microsoft.Graph.Models.RgbColor>(Microsoft.Graph.Models.RgbColor.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -284,9 +284,9 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("contactITName", ContactITName);
             writer.WriteStringValue("contactITNotes", ContactITNotes);
             writer.WriteStringValue("contactITPhoneNumber", ContactITPhoneNumber);
-            writer.WriteObjectValue<MimeContent>("darkBackgroundLogo", DarkBackgroundLogo);
+            writer.WriteObjectValue<Microsoft.Graph.Models.MimeContent>("darkBackgroundLogo", DarkBackgroundLogo);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<MimeContent>("lightBackgroundLogo", LightBackgroundLogo);
+            writer.WriteObjectValue<Microsoft.Graph.Models.MimeContent>("lightBackgroundLogo", LightBackgroundLogo);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("onlineSupportSiteName", OnlineSupportSiteName);
             writer.WriteStringValue("onlineSupportSiteUrl", OnlineSupportSiteUrl);
@@ -294,7 +294,7 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("showDisplayNameNextToLogo", ShowDisplayNameNextToLogo);
             writer.WriteBoolValue("showLogo", ShowLogo);
             writer.WriteBoolValue("showNameNextToLogo", ShowNameNextToLogo);
-            writer.WriteObjectValue<RgbColor>("themeColor", ThemeColor);
+            writer.WriteObjectValue<Microsoft.Graph.Models.RgbColor>("themeColor", ThemeColor);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

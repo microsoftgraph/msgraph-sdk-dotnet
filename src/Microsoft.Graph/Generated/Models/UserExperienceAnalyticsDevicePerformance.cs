@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics device performance entity contains device boot performance details.
     /// </summary>
-    public class UserExperienceAnalyticsDevicePerformance : Entity, IParsable
+    public class UserExperienceAnalyticsDevicePerformance : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999</summary>
         public double? AverageBlueScreens
@@ -88,9 +88,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("groupPolicyLoginTimeInMs", value); }
         }
         /// <summary>The healthStatus property</summary>
-        public UserExperienceAnalyticsHealthState? HealthStatus
+        public Microsoft.Graph.Models.UserExperienceAnalyticsHealthState? HealthStatus
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsHealthState?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>The user experience analytics device login score.</summary>
@@ -174,12 +174,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsDevicePerformance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsDevicePerformance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsDevicePerformance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserExperienceAnalyticsDevicePerformance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsDevicePerformance();
+            return new Microsoft.Graph.Models.UserExperienceAnalyticsDevicePerformance();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -197,10 +197,10 @@ namespace Microsoft.Graph.Models
                 { "coreLoginTimeInMs", n => { CoreLoginTimeInMs = n.GetIntValue(); } },
                 { "deviceCount", n => { DeviceCount = n.GetLongValue(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
-                { "diskType", n => { DiskType = n.GetEnumValue<DiskType>(); } },
+                { "diskType", n => { DiskType = n.GetEnumValue<Microsoft.Graph.Models.DiskType>(); } },
                 { "groupPolicyBootTimeInMs", n => { GroupPolicyBootTimeInMs = n.GetIntValue(); } },
                 { "groupPolicyLoginTimeInMs", n => { GroupPolicyLoginTimeInMs = n.GetIntValue(); } },
-                { "healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<Microsoft.Graph.Models.UserExperienceAnalyticsHealthState>(); } },
                 { "loginScore", n => { LoginScore = n.GetIntValue(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
@@ -227,10 +227,10 @@ namespace Microsoft.Graph.Models
             writer.WriteIntValue("coreLoginTimeInMs", CoreLoginTimeInMs);
             writer.WriteLongValue("deviceCount", DeviceCount);
             writer.WriteStringValue("deviceName", DeviceName);
-            writer.WriteEnumValue<DiskType>("diskType", DiskType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DiskType>("diskType", DiskType);
             writer.WriteIntValue("groupPolicyBootTimeInMs", GroupPolicyBootTimeInMs);
             writer.WriteIntValue("groupPolicyLoginTimeInMs", GroupPolicyLoginTimeInMs);
-            writer.WriteEnumValue<UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
             writer.WriteIntValue("loginScore", LoginScore);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("model", Model);

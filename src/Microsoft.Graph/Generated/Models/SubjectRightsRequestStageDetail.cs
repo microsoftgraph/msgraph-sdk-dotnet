@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Describes the error, if any, for the current stage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PublicError? Error
+        public Microsoft.Graph.Models.PublicError? Error
         {
-            get { return BackingStore?.Get<PublicError?>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PublicError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public PublicError Error
+        public Microsoft.Graph.Models.PublicError Error
         {
-            get { return BackingStore?.Get<PublicError>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PublicError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #endif
@@ -52,19 +52,19 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: approval.</summary>
-        public SubjectRightsRequestStage? Stage
+        public Microsoft.Graph.Models.SubjectRightsRequestStage? Stage
         {
-            get { return BackingStore?.Get<SubjectRightsRequestStage?>("stage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SubjectRightsRequestStage?>("stage"); }
             set { BackingStore?.Set("stage", value); }
         }
         /// <summary>Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.</summary>
-        public SubjectRightsRequestStageStatus? Status
+        public Microsoft.Graph.Models.SubjectRightsRequestStageStatus? Status
         {
-            get { return BackingStore?.Get<SubjectRightsRequestStageStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SubjectRightsRequestStageStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SubjectRightsRequestStageDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SubjectRightsRequestStageDetail"/> and sets the default values.
         /// </summary>
         public SubjectRightsRequestStageDetail()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SubjectRightsRequestStageDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SubjectRightsRequestStageDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SubjectRightsRequestStageDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SubjectRightsRequestStageDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SubjectRightsRequestStageDetail();
+            return new Microsoft.Graph.Models.SubjectRightsRequestStageDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,10 +89,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "error", n => { Error = n.GetObjectValue<PublicError>(PublicError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<Microsoft.Graph.Models.PublicError>(Microsoft.Graph.Models.PublicError.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "stage", n => { Stage = n.GetEnumValue<SubjectRightsRequestStage>(); } },
-                { "status", n => { Status = n.GetEnumValue<SubjectRightsRequestStageStatus>(); } },
+                { "stage", n => { Stage = n.GetEnumValue<Microsoft.Graph.Models.SubjectRightsRequestStage>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.SubjectRightsRequestStageStatus>(); } },
             };
         }
         /// <summary>
@@ -102,10 +102,10 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<PublicError>("error", Error);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PublicError>("error", Error);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<SubjectRightsRequestStage>("stage", Stage);
-            writer.WriteEnumValue<SubjectRightsRequestStageStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SubjectRightsRequestStage>("stage", Stage);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SubjectRightsRequestStageStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

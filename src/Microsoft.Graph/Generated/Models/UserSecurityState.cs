@@ -188,9 +188,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.</summary>
-        public UserAccountSecurityType? UserAccountType
+        public Microsoft.Graph.Models.UserAccountSecurityType? UserAccountType
         {
-            get { return BackingStore?.Get<UserAccountSecurityType?>("userAccountType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserAccountSecurityType?>("userAccountType"); }
             set { BackingStore?.Set("userAccountType", value); }
         }
         /// <summary>User sign-in name - internet format: (user account name)@(user account DNS domain name).</summary>
@@ -210,7 +210,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserSecurityState"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.UserSecurityState"/> and sets the default values.
         /// </summary>
         public UserSecurityState()
         {
@@ -220,12 +220,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserSecurityState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserSecurityState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserSecurityState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.UserSecurityState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserSecurityState();
+            return new Microsoft.Graph.Models.UserSecurityState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -238,17 +238,17 @@ namespace Microsoft.Graph.Models
                 { "aadUserId", n => { AadUserId = n.GetStringValue(); } },
                 { "accountName", n => { AccountName = n.GetStringValue(); } },
                 { "domainName", n => { DomainName = n.GetStringValue(); } },
-                { "emailRole", n => { EmailRole = n.GetEnumValue<EmailRole>(); } },
+                { "emailRole", n => { EmailRole = n.GetEnumValue<Microsoft.Graph.Models.EmailRole>(); } },
                 { "isVpn", n => { IsVpn = n.GetBoolValue(); } },
                 { "logonDateTime", n => { LogonDateTime = n.GetDateTimeOffsetValue(); } },
                 { "logonId", n => { LogonId = n.GetStringValue(); } },
                 { "logonIp", n => { LogonIp = n.GetStringValue(); } },
                 { "logonLocation", n => { LogonLocation = n.GetStringValue(); } },
-                { "logonType", n => { LogonType = n.GetEnumValue<LogonType>(); } },
+                { "logonType", n => { LogonType = n.GetEnumValue<Microsoft.Graph.Models.LogonType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "onPremisesSecurityIdentifier", n => { OnPremisesSecurityIdentifier = n.GetStringValue(); } },
                 { "riskScore", n => { RiskScore = n.GetStringValue(); } },
-                { "userAccountType", n => { UserAccountType = n.GetEnumValue<UserAccountSecurityType>(); } },
+                { "userAccountType", n => { UserAccountType = n.GetEnumValue<Microsoft.Graph.Models.UserAccountSecurityType>(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
@@ -262,17 +262,17 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("aadUserId", AadUserId);
             writer.WriteStringValue("accountName", AccountName);
             writer.WriteStringValue("domainName", DomainName);
-            writer.WriteEnumValue<EmailRole>("emailRole", EmailRole);
+            writer.WriteEnumValue<Microsoft.Graph.Models.EmailRole>("emailRole", EmailRole);
             writer.WriteBoolValue("isVpn", IsVpn);
             writer.WriteDateTimeOffsetValue("logonDateTime", LogonDateTime);
             writer.WriteStringValue("logonId", LogonId);
             writer.WriteStringValue("logonIp", LogonIp);
             writer.WriteStringValue("logonLocation", LogonLocation);
-            writer.WriteEnumValue<LogonType>("logonType", LogonType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.LogonType>("logonType", LogonType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("onPremisesSecurityIdentifier", OnPremisesSecurityIdentifier);
             writer.WriteStringValue("riskScore", RiskScore);
-            writer.WriteEnumValue<UserAccountSecurityType>("userAccountType", UserAccountType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.UserAccountSecurityType>("userAccountType", UserAccountType);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteAdditionalData(AdditionalData);
         }

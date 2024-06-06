@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Device Configuration.
     /// </summary>
-    public class IosCertificateProfile : DeviceConfiguration, IParsable
+    public class IosCertificateProfile : Microsoft.Graph.Models.DeviceConfiguration, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="IosCertificateProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IosCertificateProfile"/> and sets the default values.
         /// </summary>
         public IosCertificateProfile() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosCertificateProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IosCertificateProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IosCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosCertificateProfile();
+            return new Microsoft.Graph.Models.IosCertificateProfile();
         }
         /// <summary>
         /// The deserialization information for the current model

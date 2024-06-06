@@ -60,16 +60,16 @@ namespace Microsoft.Graph.Models
         /// <summary>If provided, the fallback reviewers are asked to complete a review if the primary reviewers don&apos;t exist. For example, if managers are selected as reviewers and a principal under review doesn&apos;t have a manager in Microsoft Entra ID, the fallback reviewers are asked to review that principal. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewReviewerScope>? FallbackReviewers
+        public List<Microsoft.Graph.Models.AccessReviewReviewerScope>? FallbackReviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("fallbackReviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewReviewerScope>?>("fallbackReviewers"); }
             set { BackingStore?.Set("fallbackReviewers", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewReviewerScope> FallbackReviewers
+        public List<Microsoft.Graph.Models.AccessReviewReviewerScope> FallbackReviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("fallbackReviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewReviewerScope>>("fallbackReviewers"); }
             set { BackingStore?.Set("fallbackReviewers", value); }
         }
 #endif
@@ -92,16 +92,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The recommendationInsightSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewRecommendationInsightSetting>? RecommendationInsightSettings
+        public List<Microsoft.Graph.Models.AccessReviewRecommendationInsightSetting>? RecommendationInsightSettings
         {
-            get { return BackingStore?.Get<List<AccessReviewRecommendationInsightSetting>?>("recommendationInsightSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewRecommendationInsightSetting>?>("recommendationInsightSettings"); }
             set { BackingStore?.Set("recommendationInsightSettings", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewRecommendationInsightSetting> RecommendationInsightSettings
+        public List<Microsoft.Graph.Models.AccessReviewRecommendationInsightSetting> RecommendationInsightSettings
         {
-            get { return BackingStore?.Get<List<AccessReviewRecommendationInsightSetting>>("recommendationInsightSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewRecommendationInsightSetting>>("recommendationInsightSettings"); }
             set { BackingStore?.Set("recommendationInsightSettings", value); }
         }
 #endif
@@ -114,16 +114,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Defines who the reviewers are. If none is specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewReviewerScope>? Reviewers
+        public List<Microsoft.Graph.Models.AccessReviewReviewerScope>? Reviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("reviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewReviewerScope>?>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewReviewerScope> Reviewers
+        public List<Microsoft.Graph.Models.AccessReviewReviewerScope> Reviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("reviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AccessReviewReviewerScope>>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
 #endif
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessReviewStageSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AccessReviewStageSettings"/> and sets the default values.
         /// </summary>
         public AccessReviewStageSettings()
         {
@@ -154,12 +154,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewStageSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessReviewStageSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessReviewStageSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AccessReviewStageSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessReviewStageSettings();
+            return new Microsoft.Graph.Models.AccessReviewStageSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -172,11 +172,11 @@ namespace Microsoft.Graph.Models
                 { "decisionsThatWillMoveToNextStage", n => { DecisionsThatWillMoveToNextStage = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "dependsOn", n => { DependsOn = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "durationInDays", n => { DurationInDays = n.GetIntValue(); } },
-                { "fallbackReviewers", n => { FallbackReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "fallbackReviewers", n => { FallbackReviewers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewReviewerScope>(Microsoft.Graph.Models.AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recommendationInsightSettings", n => { RecommendationInsightSettings = n.GetCollectionOfObjectValues<AccessReviewRecommendationInsightSetting>(AccessReviewRecommendationInsightSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recommendationInsightSettings", n => { RecommendationInsightSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewRecommendationInsightSetting>(Microsoft.Graph.Models.AccessReviewRecommendationInsightSetting.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "recommendationsEnabled", n => { RecommendationsEnabled = n.GetBoolValue(); } },
-                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewReviewerScope>(Microsoft.Graph.Models.AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "stageId", n => { StageId = n.GetStringValue(); } },
             };
         }
@@ -190,11 +190,11 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfPrimitiveValues<string>("decisionsThatWillMoveToNextStage", DecisionsThatWillMoveToNextStage);
             writer.WriteCollectionOfPrimitiveValues<string>("dependsOn", DependsOn);
             writer.WriteIntValue("durationInDays", DurationInDays);
-            writer.WriteCollectionOfObjectValues<AccessReviewReviewerScope>("fallbackReviewers", FallbackReviewers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewReviewerScope>("fallbackReviewers", FallbackReviewers);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<AccessReviewRecommendationInsightSetting>("recommendationInsightSettings", RecommendationInsightSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewRecommendationInsightSetting>("recommendationInsightSettings", RecommendationInsightSettings);
             writer.WriteBoolValue("recommendationsEnabled", RecommendationsEnabled);
-            writer.WriteCollectionOfObjectValues<AccessReviewReviewerScope>("reviewers", Reviewers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AccessReviewReviewerScope>("reviewers", Reviewers);
             writer.WriteStringValue("stageId", StageId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -23,16 +23,16 @@ namespace Microsoft.Graph.Print.Printers.Create
         /// <summary>The certificateSigningRequest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrintCertificateSigningRequest? CertificateSigningRequest
+        public Microsoft.Graph.Models.PrintCertificateSigningRequest? CertificateSigningRequest
         {
-            get { return BackingStore?.Get<PrintCertificateSigningRequest?>("certificateSigningRequest"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrintCertificateSigningRequest?>("certificateSigningRequest"); }
             set { BackingStore?.Set("certificateSigningRequest", value); }
         }
 #nullable restore
 #else
-        public PrintCertificateSigningRequest CertificateSigningRequest
+        public Microsoft.Graph.Models.PrintCertificateSigningRequest CertificateSigningRequest
         {
-            get { return BackingStore?.Get<PrintCertificateSigningRequest>("certificateSigningRequest"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrintCertificateSigningRequest>("certificateSigningRequest"); }
             set { BackingStore?.Set("certificateSigningRequest", value); }
         }
 #endif
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Print.Printers.Create
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CreatePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Print.Printers.Create.CreatePostRequestBody"/> and sets the default values.
         /// </summary>
         public CreatePostRequestBody()
         {
@@ -133,12 +133,12 @@ namespace Microsoft.Graph.Print.Printers.Create
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CreatePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Print.Printers.Create.CreatePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CreatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Print.Printers.Create.CreatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CreatePostRequestBody();
+            return new Microsoft.Graph.Print.Printers.Create.CreatePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Print.Printers.Create
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "certificateSigningRequest", n => { CertificateSigningRequest = n.GetObjectValue<PrintCertificateSigningRequest>(PrintCertificateSigningRequest.CreateFromDiscriminatorValue); } },
+                { "certificateSigningRequest", n => { CertificateSigningRequest = n.GetObjectValue<Microsoft.Graph.Models.PrintCertificateSigningRequest>(Microsoft.Graph.Models.PrintCertificateSigningRequest.CreateFromDiscriminatorValue); } },
                 { "connectorId", n => { ConnectorId = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "hasPhysicalDevice", n => { HasPhysicalDevice = n.GetBoolValue(); } },
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Print.Printers.Create
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<PrintCertificateSigningRequest>("certificateSigningRequest", CertificateSigningRequest);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PrintCertificateSigningRequest>("certificateSigningRequest", CertificateSigningRequest);
             writer.WriteStringValue("connectorId", ConnectorId);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("hasPhysicalDevice", HasPhysicalDevice);

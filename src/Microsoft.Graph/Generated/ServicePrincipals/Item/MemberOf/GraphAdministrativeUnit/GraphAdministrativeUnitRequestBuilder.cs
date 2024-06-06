@@ -18,12 +18,12 @@ namespace Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUni
     public class GraphAdministrativeUnitRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUnit.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUnit.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphAdministrativeUnitRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUnit.GraphAdministrativeUnitRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUni
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphAdministrativeUnitRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUnit.GraphAdministrativeUnitRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,25 +41,25 @@ namespace Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUni
         /// <summary>
         /// Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
         /// </summary>
-        /// <returns>A <see cref="AdministrativeUnitCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AdministrativeUnitCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AdministrativeUnitCollectionResponse?> GetAsync(Action<RequestConfiguration<GraphAdministrativeUnitRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AdministrativeUnitCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUnit.GraphAdministrativeUnitRequestBuilder.GraphAdministrativeUnitRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AdministrativeUnitCollectionResponse> GetAsync(Action<RequestConfiguration<GraphAdministrativeUnitRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AdministrativeUnitCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUnit.GraphAdministrativeUnitRequestBuilder.GraphAdministrativeUnitRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AdministrativeUnitCollectionResponse>(requestInfo, AdministrativeUnitCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AdministrativeUnitCollectionResponse>(requestInfo, Microsoft.Graph.Models.AdministrativeUnitCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
@@ -68,11 +68,11 @@ namespace Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUni
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphAdministrativeUnitRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUnit.GraphAdministrativeUnitRequestBuilder.GraphAdministrativeUnitRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphAdministrativeUnitRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUnit.GraphAdministrativeUnitRequestBuilder.GraphAdministrativeUnitRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -83,11 +83,11 @@ namespace Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUni
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GraphAdministrativeUnitRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUnit.GraphAdministrativeUnitRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GraphAdministrativeUnitRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUnit.GraphAdministrativeUnitRequestBuilder WithUrl(string rawUrl)
         {
-            return new GraphAdministrativeUnitRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUnit.GraphAdministrativeUnitRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUni
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphAdministrativeUnitRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphAdministrativeUnitRequestBuilderGetQueryParameters>
+        public class GraphAdministrativeUnitRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUnit.GraphAdministrativeUnitRequestBuilder.GraphAdministrativeUnitRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class MicrosoftTrainingAssignmentMapping : TrainingSetting, IParsable
+    public class MicrosoftTrainingAssignmentMapping : Microsoft.Graph.Models.TrainingSetting, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TrainingAssignedTo?>? AssignedTo
+        public List<Microsoft.Graph.Models.TrainingAssignedTo?>? AssignedTo
         {
-            get { return BackingStore?.Get<List<TrainingAssignedTo?>?>("assignedTo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TrainingAssignedTo?>?>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
 #nullable restore
 #else
-        public List<TrainingAssignedTo?> AssignedTo
+        public List<Microsoft.Graph.Models.TrainingAssignedTo?> AssignedTo
         {
-            get { return BackingStore?.Get<List<TrainingAssignedTo?>>("assignedTo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TrainingAssignedTo?>>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
 #endif
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftTrainingAssignmentMapping"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MicrosoftTrainingAssignmentMapping"/> and sets the default values.
         /// </summary>
         public MicrosoftTrainingAssignmentMapping() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MicrosoftTrainingAssignmentMapping"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MicrosoftTrainingAssignmentMapping"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MicrosoftTrainingAssignmentMapping CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MicrosoftTrainingAssignmentMapping CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MicrosoftTrainingAssignmentMapping();
+            return new Microsoft.Graph.Models.MicrosoftTrainingAssignmentMapping();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignedTo", n => { AssignedTo = n.GetCollectionOfEnumValues<TrainingAssignedTo>()?.ToList(); } },
+                { "assignedTo", n => { AssignedTo = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.TrainingAssignedTo>()?.ToList(); } },
                 { "training", n => { Training = n.GetObjectValue<Microsoft.Graph.Models.Training>(Microsoft.Graph.Models.Training.CreateFromDiscriminatorValue); } },
             };
         }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfEnumValues<TrainingAssignedTo>("assignedTo", AssignedTo);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.TrainingAssignedTo>("assignedTo", AssignedTo);
             writer.WriteObjectValue<Microsoft.Graph.Models.Training>("training", Training);
         }
     }

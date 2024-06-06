@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ProfileCardProperty : Entity, IParsable
+    public class ProfileCardProperty : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProfileCardAnnotation>? Annotations
+        public List<Microsoft.Graph.Models.ProfileCardAnnotation>? Annotations
         {
-            get { return BackingStore?.Get<List<ProfileCardAnnotation>?>("annotations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ProfileCardAnnotation>?>("annotations"); }
             set { BackingStore?.Set("annotations", value); }
         }
 #nullable restore
 #else
-        public List<ProfileCardAnnotation> Annotations
+        public List<Microsoft.Graph.Models.ProfileCardAnnotation> Annotations
         {
-            get { return BackingStore?.Get<List<ProfileCardAnnotation>>("annotations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ProfileCardAnnotation>>("annotations"); }
             set { BackingStore?.Set("annotations", value); }
         }
 #endif
@@ -45,12 +45,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProfileCardProperty"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ProfileCardProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ProfileCardProperty CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ProfileCardProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProfileCardProperty();
+            return new Microsoft.Graph.Models.ProfileCardProperty();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "annotations", n => { Annotations = n.GetCollectionOfObjectValues<ProfileCardAnnotation>(ProfileCardAnnotation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "annotations", n => { Annotations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ProfileCardAnnotation>(Microsoft.Graph.Models.ProfileCardAnnotation.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "directoryPropertyName", n => { DirectoryPropertyName = n.GetStringValue(); } },
             };
         }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ProfileCardAnnotation>("annotations", Annotations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ProfileCardAnnotation>("annotations", Annotations);
             writer.WriteStringValue("directoryPropertyName", DirectoryPropertyName);
         }
     }

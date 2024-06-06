@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Reports.DailyPrintUsageByPrinter
     public class DailyPrintUsageByPrinterRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Reports.DailyPrintUsageByPrinter.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Reports.DailyPrintUsageByPrinter.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dailyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.</summary>
         /// <param name="position">The unique identifier of printUsageByPrinter</param>
-        /// <returns>A <see cref="PrintUsageByPrinterItemRequestBuilder"/></returns>
-        public PrintUsageByPrinterItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Reports.DailyPrintUsageByPrinter.Item.PrintUsageByPrinterItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Reports.DailyPrintUsageByPrinter.Item.PrintUsageByPrinterItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("printUsageByPrinter%2Did", position);
-                return new PrintUsageByPrinterItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Reports.DailyPrintUsageByPrinter.Item.PrintUsageByPrinterItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DailyPrintUsageByPrinterRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.DailyPrintUsageByPrinter.DailyPrintUsageByPrinterRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Reports.DailyPrintUsageByPrinter
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DailyPrintUsageByPrinterRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.DailyPrintUsageByPrinter.DailyPrintUsageByPrinterRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +55,50 @@ namespace Microsoft.Graph.Reports.DailyPrintUsageByPrinter
         /// Retrieve a list of daily print usage summaries, grouped by printer.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-list-dailyprintusagebyprinter?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="PrintUsageByPrinterCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrintUsageByPrinterCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrintUsageByPrinterCollectionResponse?> GetAsync(Action<RequestConfiguration<DailyPrintUsageByPrinterRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrintUsageByPrinterCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.DailyPrintUsageByPrinter.DailyPrintUsageByPrinterRequestBuilder.DailyPrintUsageByPrinterRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PrintUsageByPrinterCollectionResponse> GetAsync(Action<RequestConfiguration<DailyPrintUsageByPrinterRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrintUsageByPrinterCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.DailyPrintUsageByPrinter.DailyPrintUsageByPrinterRequestBuilder.DailyPrintUsageByPrinterRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PrintUsageByPrinterCollectionResponse>(requestInfo, PrintUsageByPrinterCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PrintUsageByPrinterCollectionResponse>(requestInfo, Microsoft.Graph.Models.PrintUsageByPrinterCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to dailyPrintUsageByPrinter for reports
         /// </summary>
-        /// <returns>A <see cref="PrintUsageByPrinter"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrintUsageByPrinter"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrintUsageByPrinter?> PostAsync(PrintUsageByPrinter body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrintUsageByPrinter?> PostAsync(Microsoft.Graph.Models.PrintUsageByPrinter body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PrintUsageByPrinter> PostAsync(PrintUsageByPrinter body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrintUsageByPrinter> PostAsync(Microsoft.Graph.Models.PrintUsageByPrinter body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PrintUsageByPrinter>(requestInfo, PrintUsageByPrinter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PrintUsageByPrinter>(requestInfo, Microsoft.Graph.Models.PrintUsageByPrinter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of daily print usage summaries, grouped by printer.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Reports.DailyPrintUsageByPrinter
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DailyPrintUsageByPrinterRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Reports.DailyPrintUsageByPrinter.DailyPrintUsageByPrinterRequestBuilder.DailyPrintUsageByPrinterRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DailyPrintUsageByPrinterRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Reports.DailyPrintUsageByPrinter.DailyPrintUsageByPrinterRequestBuilder.DailyPrintUsageByPrinterRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Reports.DailyPrintUsageByPrinter
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(PrintUsageByPrinter body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.PrintUsageByPrinter body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(PrintUsageByPrinter body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.PrintUsageByPrinter body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.Reports.DailyPrintUsageByPrinter
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DailyPrintUsageByPrinterRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.DailyPrintUsageByPrinter.DailyPrintUsageByPrinterRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DailyPrintUsageByPrinterRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Reports.DailyPrintUsageByPrinter.DailyPrintUsageByPrinterRequestBuilder WithUrl(string rawUrl)
         {
-            return new DailyPrintUsageByPrinterRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Reports.DailyPrintUsageByPrinter.DailyPrintUsageByPrinterRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of daily print usage summaries, grouped by printer.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Reports.DailyPrintUsageByPrinter
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DailyPrintUsageByPrinterRequestBuilderGetRequestConfiguration : RequestConfiguration<DailyPrintUsageByPrinterRequestBuilderGetQueryParameters>
+        public class DailyPrintUsageByPrinterRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Reports.DailyPrintUsageByPrinter.DailyPrintUsageByPrinterRequestBuilder.DailyPrintUsageByPrinterRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

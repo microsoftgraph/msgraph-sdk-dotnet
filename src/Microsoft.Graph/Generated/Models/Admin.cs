@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Models
         /// <summary>A container for the Microsoft 365 apps admin functionality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AdminMicrosoft365Apps? Microsoft365Apps
+        public Microsoft.Graph.Models.AdminMicrosoft365Apps? Microsoft365Apps
         {
-            get { return BackingStore?.Get<AdminMicrosoft365Apps?>("microsoft365Apps"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AdminMicrosoft365Apps?>("microsoft365Apps"); }
             set { BackingStore?.Set("microsoft365Apps", value); }
         }
 #nullable restore
 #else
-        public AdminMicrosoft365Apps Microsoft365Apps
+        public Microsoft.Graph.Models.AdminMicrosoft365Apps Microsoft365Apps
         {
-            get { return BackingStore?.Get<AdminMicrosoft365Apps>("microsoft365Apps"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AdminMicrosoft365Apps>("microsoft365Apps"); }
             set { BackingStore?.Set("microsoft365Apps", value); }
         }
 #endif
@@ -70,16 +70,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Represents a setting to control people-related admin settings in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PeopleAdminSettings? People
+        public Microsoft.Graph.Models.PeopleAdminSettings? People
         {
-            get { return BackingStore?.Get<PeopleAdminSettings?>("people"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PeopleAdminSettings?>("people"); }
             set { BackingStore?.Set("people", value); }
         }
 #nullable restore
 #else
-        public PeopleAdminSettings People
+        public Microsoft.Graph.Models.PeopleAdminSettings People
         {
-            get { return BackingStore?.Get<PeopleAdminSettings>("people"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PeopleAdminSettings>("people"); }
             set { BackingStore?.Set("people", value); }
         }
 #endif
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Admin"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Admin"/> and sets the default values.
         /// </summary>
         public Admin()
         {
@@ -126,12 +126,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Admin"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Admin"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Admin CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Admin CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Admin();
+            return new Microsoft.Graph.Models.Admin();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -142,9 +142,9 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "edge", n => { Edge = n.GetObjectValue<Microsoft.Graph.Models.Edge>(Microsoft.Graph.Models.Edge.CreateFromDiscriminatorValue); } },
-                { "microsoft365Apps", n => { Microsoft365Apps = n.GetObjectValue<AdminMicrosoft365Apps>(AdminMicrosoft365Apps.CreateFromDiscriminatorValue); } },
+                { "microsoft365Apps", n => { Microsoft365Apps = n.GetObjectValue<Microsoft.Graph.Models.AdminMicrosoft365Apps>(Microsoft.Graph.Models.AdminMicrosoft365Apps.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "people", n => { People = n.GetObjectValue<PeopleAdminSettings>(PeopleAdminSettings.CreateFromDiscriminatorValue); } },
+                { "people", n => { People = n.GetObjectValue<Microsoft.Graph.Models.PeopleAdminSettings>(Microsoft.Graph.Models.PeopleAdminSettings.CreateFromDiscriminatorValue); } },
                 { "serviceAnnouncement", n => { ServiceAnnouncement = n.GetObjectValue<Microsoft.Graph.Models.ServiceAnnouncement>(Microsoft.Graph.Models.ServiceAnnouncement.CreateFromDiscriminatorValue); } },
                 { "sharepoint", n => { Sharepoint = n.GetObjectValue<Microsoft.Graph.Models.Sharepoint>(Microsoft.Graph.Models.Sharepoint.CreateFromDiscriminatorValue); } },
             };
@@ -157,9 +157,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Models.Edge>("edge", Edge);
-            writer.WriteObjectValue<AdminMicrosoft365Apps>("microsoft365Apps", Microsoft365Apps);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AdminMicrosoft365Apps>("microsoft365Apps", Microsoft365Apps);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<PeopleAdminSettings>("people", People);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PeopleAdminSettings>("people", People);
             writer.WriteObjectValue<Microsoft.Graph.Models.ServiceAnnouncement>("serviceAnnouncement", ServiceAnnouncement);
             writer.WriteObjectValue<Microsoft.Graph.Models.Sharepoint>("sharepoint", Sharepoint);
             writer.WriteAdditionalData(AdditionalData);

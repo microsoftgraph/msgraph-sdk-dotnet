@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions
     public class ColumnPositionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the columnPositions property of the microsoft.graph.contentType entity.</summary>
         /// <param name="position">The unique identifier of columnDefinition</param>
-        /// <returns>A <see cref="ColumnDefinitionItemRequestBuilder"/></returns>
-        public ColumnDefinitionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions.Item.ColumnDefinitionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions.Item.ColumnDefinitionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("columnDefinition%2Did", position);
-                return new ColumnDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions.Item.ColumnDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ColumnPositionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions.ColumnPositionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ColumnPositionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions.ColumnPositionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions
         /// <summary>
         /// Column order information in a content type.
         /// </summary>
-        /// <returns>A <see cref="ColumnDefinitionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ColumnDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ColumnDefinitionCollectionResponse?> GetAsync(Action<RequestConfiguration<ColumnPositionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ColumnDefinitionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions.ColumnPositionsRequestBuilder.ColumnPositionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ColumnDefinitionCollectionResponse> GetAsync(Action<RequestConfiguration<ColumnPositionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ColumnDefinitionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions.ColumnPositionsRequestBuilder.ColumnPositionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ColumnDefinitionCollectionResponse>(requestInfo, ColumnDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ColumnDefinitionCollectionResponse>(requestInfo, Microsoft.Graph.Models.ColumnDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Column order information in a content type.
@@ -81,11 +81,11 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ColumnPositionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions.ColumnPositionsRequestBuilder.ColumnPositionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ColumnPositionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions.ColumnPositionsRequestBuilder.ColumnPositionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -96,11 +96,11 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ColumnPositionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions.ColumnPositionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ColumnPositionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions.ColumnPositionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ColumnPositionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions.ColumnPositionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Column order information in a content type.
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ColumnPositionsRequestBuilderGetRequestConfiguration : RequestConfiguration<ColumnPositionsRequestBuilderGetQueryParameters>
+        public class ColumnPositionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Shares.Item.List.ContentTypes.Item.ColumnPositions.ColumnPositionsRequestBuilder.ColumnPositionsRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UsedInsight : Entity, IParsable
+    public class UsedInsight : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Information about when the item was last viewed or modified by the user. Read only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UsageDetails? LastUsed
+        public Microsoft.Graph.Models.UsageDetails? LastUsed
         {
-            get { return BackingStore?.Get<UsageDetails?>("lastUsed"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UsageDetails?>("lastUsed"); }
             set { BackingStore?.Set("lastUsed", value); }
         }
 #nullable restore
 #else
-        public UsageDetails LastUsed
+        public Microsoft.Graph.Models.UsageDetails LastUsed
         {
-            get { return BackingStore?.Get<UsageDetails>("lastUsed"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UsageDetails>("lastUsed"); }
             set { BackingStore?.Set("lastUsed", value); }
         }
 #endif
         /// <summary>Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Entity? Resource
+        public Microsoft.Graph.Models.Entity? Resource
         {
-            get { return BackingStore?.Get<Entity?>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Entity?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public Entity Resource
+        public Microsoft.Graph.Models.Entity Resource
         {
-            get { return BackingStore?.Get<Entity>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Entity>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #endif
@@ -77,12 +77,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UsedInsight"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UsedInsight"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UsedInsight CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UsedInsight CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UsedInsight();
+            return new Microsoft.Graph.Models.UsedInsight();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,8 +92,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "lastUsed", n => { LastUsed = n.GetObjectValue<UsageDetails>(UsageDetails.CreateFromDiscriminatorValue); } },
-                { "resource", n => { Resource = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
+                { "lastUsed", n => { LastUsed = n.GetObjectValue<Microsoft.Graph.Models.UsageDetails>(Microsoft.Graph.Models.UsageDetails.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<Microsoft.Graph.Models.Entity>(Microsoft.Graph.Models.Entity.CreateFromDiscriminatorValue); } },
                 { "resourceReference", n => { ResourceReference = n.GetObjectValue<Microsoft.Graph.Models.ResourceReference>(Microsoft.Graph.Models.ResourceReference.CreateFromDiscriminatorValue); } },
                 { "resourceVisualization", n => { ResourceVisualization = n.GetObjectValue<Microsoft.Graph.Models.ResourceVisualization>(Microsoft.Graph.Models.ResourceVisualization.CreateFromDiscriminatorValue); } },
             };
@@ -106,8 +106,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<UsageDetails>("lastUsed", LastUsed);
-            writer.WriteObjectValue<Entity>("resource", Resource);
+            writer.WriteObjectValue<Microsoft.Graph.Models.UsageDetails>("lastUsed", LastUsed);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Entity>("resource", Resource);
         }
     }
 }

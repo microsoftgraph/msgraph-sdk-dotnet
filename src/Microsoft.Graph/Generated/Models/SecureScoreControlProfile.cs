@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SecureScoreControlProfile : Entity, IParsable
+    public class SecureScoreControlProfile : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Control action type (Config, Review, Behavior).</summary>
@@ -93,16 +93,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SecureScoreControlStateUpdate>? ControlStateUpdates
+        public List<Microsoft.Graph.Models.SecureScoreControlStateUpdate>? ControlStateUpdates
         {
-            get { return BackingStore?.Get<List<SecureScoreControlStateUpdate>?>("controlStateUpdates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SecureScoreControlStateUpdate>?>("controlStateUpdates"); }
             set { BackingStore?.Set("controlStateUpdates", value); }
         }
 #nullable restore
 #else
-        public List<SecureScoreControlStateUpdate> ControlStateUpdates
+        public List<Microsoft.Graph.Models.SecureScoreControlStateUpdate> ControlStateUpdates
         {
-            get { return BackingStore?.Get<List<SecureScoreControlStateUpdate>>("controlStateUpdates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SecureScoreControlStateUpdate>>("controlStateUpdates"); }
             set { BackingStore?.Set("controlStateUpdates", value); }
         }
 #endif
@@ -261,28 +261,28 @@ namespace Microsoft.Graph.Models
         /// <summary>Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SecurityVendorInformation? VendorInformation
+        public Microsoft.Graph.Models.SecurityVendorInformation? VendorInformation
         {
-            get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #nullable restore
 #else
-        public SecurityVendorInformation VendorInformation
+        public Microsoft.Graph.Models.SecurityVendorInformation VendorInformation
         {
-            get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SecureScoreControlProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SecureScoreControlProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SecureScoreControlProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SecureScoreControlProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SecureScoreControlProfile();
+            return new Microsoft.Graph.Models.SecureScoreControlProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -297,7 +297,7 @@ namespace Microsoft.Graph.Models
                 { "azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
                 { "complianceInformation", n => { ComplianceInformation = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ComplianceInformation>(Microsoft.Graph.Models.ComplianceInformation.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "controlCategory", n => { ControlCategory = n.GetStringValue(); } },
-                { "controlStateUpdates", n => { ControlStateUpdates = n.GetCollectionOfObjectValues<SecureScoreControlStateUpdate>(SecureScoreControlStateUpdate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "controlStateUpdates", n => { ControlStateUpdates = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SecureScoreControlStateUpdate>(Microsoft.Graph.Models.SecureScoreControlStateUpdate.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "deprecated", n => { Deprecated = n.GetBoolValue(); } },
                 { "implementationCost", n => { ImplementationCost = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -310,7 +310,7 @@ namespace Microsoft.Graph.Models
                 { "tier", n => { Tier = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "userImpact", n => { UserImpact = n.GetStringValue(); } },
-                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<Microsoft.Graph.Models.SecurityVendorInformation>(Microsoft.Graph.Models.SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -326,7 +326,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("azureTenantId", AzureTenantId);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ComplianceInformation>("complianceInformation", ComplianceInformation);
             writer.WriteStringValue("controlCategory", ControlCategory);
-            writer.WriteCollectionOfObjectValues<SecureScoreControlStateUpdate>("controlStateUpdates", ControlStateUpdates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SecureScoreControlStateUpdate>("controlStateUpdates", ControlStateUpdates);
             writer.WriteBoolValue("deprecated", Deprecated);
             writer.WriteStringValue("implementationCost", ImplementationCost);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
@@ -339,7 +339,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("tier", Tier);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("userImpact", UserImpact);
-            writer.WriteObjectValue<SecurityVendorInformation>("vendorInformation", VendorInformation);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SecurityVendorInformation>("vendorInformation", VendorInformation);
         }
     }
 }

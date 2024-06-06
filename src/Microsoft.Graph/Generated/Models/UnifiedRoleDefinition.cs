@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UnifiedRoleDefinition : Entity, IParsable
+    public class UnifiedRoleDefinition : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.</summary>
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleDefinition>? InheritsPermissionsFrom
+        public List<Microsoft.Graph.Models.UnifiedRoleDefinition>? InheritsPermissionsFrom
         {
-            get { return BackingStore?.Get<List<UnifiedRoleDefinition>?>("inheritsPermissionsFrom"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UnifiedRoleDefinition>?>("inheritsPermissionsFrom"); }
             set { BackingStore?.Set("inheritsPermissionsFrom", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleDefinition> InheritsPermissionsFrom
+        public List<Microsoft.Graph.Models.UnifiedRoleDefinition> InheritsPermissionsFrom
         {
-            get { return BackingStore?.Get<List<UnifiedRoleDefinition>>("inheritsPermissionsFrom"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UnifiedRoleDefinition>>("inheritsPermissionsFrom"); }
             set { BackingStore?.Set("inheritsPermissionsFrom", value); }
         }
 #endif
@@ -89,16 +89,16 @@ namespace Microsoft.Graph.Models
         /// <summary>List of permissions included in the role. Read-only when isBuiltIn is true. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRolePermission>? RolePermissions
+        public List<Microsoft.Graph.Models.UnifiedRolePermission>? RolePermissions
         {
-            get { return BackingStore?.Get<List<UnifiedRolePermission>?>("rolePermissions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UnifiedRolePermission>?>("rolePermissions"); }
             set { BackingStore?.Set("rolePermissions", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRolePermission> RolePermissions
+        public List<Microsoft.Graph.Models.UnifiedRolePermission> RolePermissions
         {
-            get { return BackingStore?.Get<List<UnifiedRolePermission>>("rolePermissions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UnifiedRolePermission>>("rolePermissions"); }
             set { BackingStore?.Set("rolePermissions", value); }
         }
 #endif
@@ -137,12 +137,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRoleDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnifiedRoleDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UnifiedRoleDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedRoleDefinition();
+            return new Microsoft.Graph.Models.UnifiedRoleDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -154,11 +154,11 @@ namespace Microsoft.Graph.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "inheritsPermissionsFrom", n => { InheritsPermissionsFrom = n.GetCollectionOfObjectValues<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "inheritsPermissionsFrom", n => { InheritsPermissionsFrom = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UnifiedRoleDefinition>(Microsoft.Graph.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "resourceScopes", n => { ResourceScopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "rolePermissions", n => { RolePermissions = n.GetCollectionOfObjectValues<UnifiedRolePermission>(UnifiedRolePermission.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rolePermissions", n => { RolePermissions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UnifiedRolePermission>(Microsoft.Graph.Models.UnifiedRolePermission.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "templateId", n => { TemplateId = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
@@ -173,11 +173,11 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleDefinition>("inheritsPermissionsFrom", InheritsPermissionsFrom);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UnifiedRoleDefinition>("inheritsPermissionsFrom", InheritsPermissionsFrom);
             writer.WriteBoolValue("isBuiltIn", IsBuiltIn);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteCollectionOfPrimitiveValues<string>("resourceScopes", ResourceScopes);
-            writer.WriteCollectionOfObjectValues<UnifiedRolePermission>("rolePermissions", RolePermissions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UnifiedRolePermission>("rolePermissions", RolePermissions);
             writer.WriteStringValue("templateId", TemplateId);
             writer.WriteStringValue("version", Version);
         }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ProvisioningObjectSummary : Entity, IParsable
+    public class ProvisioningObjectSummary : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  SUpports $filter (eq, gt, lt) and orderby.</summary>
@@ -57,16 +57,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Details of who initiated this provisioning. Supports $filter (eq, contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Initiator? InitiatedBy
+        public Microsoft.Graph.Models.Initiator? InitiatedBy
         {
-            get { return BackingStore?.Get<Initiator?>("initiatedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Initiator?>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
 #nullable restore
 #else
-        public Initiator InitiatedBy
+        public Microsoft.Graph.Models.Initiator InitiatedBy
         {
-            get { return BackingStore?.Get<Initiator>("initiatedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Initiator>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
 #endif
@@ -89,16 +89,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Details of each property that was modified in this provisioning action on this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ModifiedProperty>? ModifiedProperties
+        public List<Microsoft.Graph.Models.ModifiedProperty>? ModifiedProperties
         {
-            get { return BackingStore?.Get<List<ModifiedProperty>?>("modifiedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ModifiedProperty>?>("modifiedProperties"); }
             set { BackingStore?.Set("modifiedProperties", value); }
         }
 #nullable restore
 #else
-        public List<ModifiedProperty> ModifiedProperties
+        public List<Microsoft.Graph.Models.ModifiedProperty> ModifiedProperties
         {
-            get { return BackingStore?.Get<List<ModifiedProperty>>("modifiedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ModifiedProperty>>("modifiedProperties"); }
             set { BackingStore?.Set("modifiedProperties", value); }
         }
 #endif
@@ -127,96 +127,96 @@ namespace Microsoft.Graph.Models
         /// <summary>Details of each step in provisioning.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProvisioningStep>? ProvisioningSteps
+        public List<Microsoft.Graph.Models.ProvisioningStep>? ProvisioningSteps
         {
-            get { return BackingStore?.Get<List<ProvisioningStep>?>("provisioningSteps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ProvisioningStep>?>("provisioningSteps"); }
             set { BackingStore?.Set("provisioningSteps", value); }
         }
 #nullable restore
 #else
-        public List<ProvisioningStep> ProvisioningSteps
+        public List<Microsoft.Graph.Models.ProvisioningStep> ProvisioningSteps
         {
-            get { return BackingStore?.Get<List<ProvisioningStep>>("provisioningSteps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ProvisioningStep>>("provisioningSteps"); }
             set { BackingStore?.Set("provisioningSteps", value); }
         }
 #endif
         /// <summary>Represents the service principal used for provisioning. Supports $filter (eq) for id and name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProvisioningServicePrincipal? ServicePrincipal
+        public Microsoft.Graph.Models.ProvisioningServicePrincipal? ServicePrincipal
         {
-            get { return BackingStore?.Get<ProvisioningServicePrincipal?>("servicePrincipal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ProvisioningServicePrincipal?>("servicePrincipal"); }
             set { BackingStore?.Set("servicePrincipal", value); }
         }
 #nullable restore
 #else
-        public ProvisioningServicePrincipal ServicePrincipal
+        public Microsoft.Graph.Models.ProvisioningServicePrincipal ServicePrincipal
         {
-            get { return BackingStore?.Get<ProvisioningServicePrincipal>("servicePrincipal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ProvisioningServicePrincipal>("servicePrincipal"); }
             set { BackingStore?.Set("servicePrincipal", value); }
         }
 #endif
         /// <summary>Details of source object being provisioned. Supports $filter (eq, contains) for identityType, id, and displayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProvisionedIdentity? SourceIdentity
+        public Microsoft.Graph.Models.ProvisionedIdentity? SourceIdentity
         {
-            get { return BackingStore?.Get<ProvisionedIdentity?>("sourceIdentity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ProvisionedIdentity?>("sourceIdentity"); }
             set { BackingStore?.Set("sourceIdentity", value); }
         }
 #nullable restore
 #else
-        public ProvisionedIdentity SourceIdentity
+        public Microsoft.Graph.Models.ProvisionedIdentity SourceIdentity
         {
-            get { return BackingStore?.Get<ProvisionedIdentity>("sourceIdentity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ProvisionedIdentity>("sourceIdentity"); }
             set { BackingStore?.Set("sourceIdentity", value); }
         }
 #endif
         /// <summary>Details of source system of the object being provisioned. Supports $filter (eq, contains) for displayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProvisioningSystem? SourceSystem
+        public Microsoft.Graph.Models.ProvisioningSystem? SourceSystem
         {
-            get { return BackingStore?.Get<ProvisioningSystem?>("sourceSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ProvisioningSystem?>("sourceSystem"); }
             set { BackingStore?.Set("sourceSystem", value); }
         }
 #nullable restore
 #else
-        public ProvisioningSystem SourceSystem
+        public Microsoft.Graph.Models.ProvisioningSystem SourceSystem
         {
-            get { return BackingStore?.Get<ProvisioningSystem>("sourceSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ProvisioningSystem>("sourceSystem"); }
             set { BackingStore?.Set("sourceSystem", value); }
         }
 #endif
         /// <summary>Details of target object being provisioned. Supports $filter (eq, contains) for identityType, id, and displayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProvisionedIdentity? TargetIdentity
+        public Microsoft.Graph.Models.ProvisionedIdentity? TargetIdentity
         {
-            get { return BackingStore?.Get<ProvisionedIdentity?>("targetIdentity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ProvisionedIdentity?>("targetIdentity"); }
             set { BackingStore?.Set("targetIdentity", value); }
         }
 #nullable restore
 #else
-        public ProvisionedIdentity TargetIdentity
+        public Microsoft.Graph.Models.ProvisionedIdentity TargetIdentity
         {
-            get { return BackingStore?.Get<ProvisionedIdentity>("targetIdentity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ProvisionedIdentity>("targetIdentity"); }
             set { BackingStore?.Set("targetIdentity", value); }
         }
 #endif
         /// <summary>Details of target system of the object being provisioned. Supports $filter (eq, contains) for displayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProvisioningSystem? TargetSystem
+        public Microsoft.Graph.Models.ProvisioningSystem? TargetSystem
         {
-            get { return BackingStore?.Get<ProvisioningSystem?>("targetSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ProvisioningSystem?>("targetSystem"); }
             set { BackingStore?.Set("targetSystem", value); }
         }
 #nullable restore
 #else
-        public ProvisioningSystem TargetSystem
+        public Microsoft.Graph.Models.ProvisioningSystem TargetSystem
         {
-            get { return BackingStore?.Get<ProvisioningSystem>("targetSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ProvisioningSystem>("targetSystem"); }
             set { BackingStore?.Set("targetSystem", value); }
         }
 #endif
@@ -239,12 +239,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProvisioningObjectSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ProvisioningObjectSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ProvisioningObjectSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ProvisioningObjectSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProvisioningObjectSummary();
+            return new Microsoft.Graph.Models.ProvisioningObjectSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -258,17 +258,17 @@ namespace Microsoft.Graph.Models
                 { "changeId", n => { ChangeId = n.GetStringValue(); } },
                 { "cycleId", n => { CycleId = n.GetStringValue(); } },
                 { "durationInMilliseconds", n => { DurationInMilliseconds = n.GetIntValue(); } },
-                { "initiatedBy", n => { InitiatedBy = n.GetObjectValue<Initiator>(Initiator.CreateFromDiscriminatorValue); } },
+                { "initiatedBy", n => { InitiatedBy = n.GetObjectValue<Microsoft.Graph.Models.Initiator>(Microsoft.Graph.Models.Initiator.CreateFromDiscriminatorValue); } },
                 { "jobId", n => { JobId = n.GetStringValue(); } },
-                { "modifiedProperties", n => { ModifiedProperties = n.GetCollectionOfObjectValues<ModifiedProperty>(ModifiedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "provisioningAction", n => { ProvisioningAction = n.GetEnumValue<ProvisioningAction>(); } },
+                { "modifiedProperties", n => { ModifiedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ModifiedProperty>(Microsoft.Graph.Models.ModifiedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "provisioningAction", n => { ProvisioningAction = n.GetEnumValue<Microsoft.Graph.Models.ProvisioningAction>(); } },
                 { "provisioningStatusInfo", n => { ProvisioningStatusInfo = n.GetObjectValue<Microsoft.Graph.Models.ProvisioningStatusInfo>(Microsoft.Graph.Models.ProvisioningStatusInfo.CreateFromDiscriminatorValue); } },
-                { "provisioningSteps", n => { ProvisioningSteps = n.GetCollectionOfObjectValues<ProvisioningStep>(ProvisioningStep.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "servicePrincipal", n => { ServicePrincipal = n.GetObjectValue<ProvisioningServicePrincipal>(ProvisioningServicePrincipal.CreateFromDiscriminatorValue); } },
-                { "sourceIdentity", n => { SourceIdentity = n.GetObjectValue<ProvisionedIdentity>(ProvisionedIdentity.CreateFromDiscriminatorValue); } },
-                { "sourceSystem", n => { SourceSystem = n.GetObjectValue<ProvisioningSystem>(ProvisioningSystem.CreateFromDiscriminatorValue); } },
-                { "targetIdentity", n => { TargetIdentity = n.GetObjectValue<ProvisionedIdentity>(ProvisionedIdentity.CreateFromDiscriminatorValue); } },
-                { "targetSystem", n => { TargetSystem = n.GetObjectValue<ProvisioningSystem>(ProvisioningSystem.CreateFromDiscriminatorValue); } },
+                { "provisioningSteps", n => { ProvisioningSteps = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ProvisioningStep>(Microsoft.Graph.Models.ProvisioningStep.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "servicePrincipal", n => { ServicePrincipal = n.GetObjectValue<Microsoft.Graph.Models.ProvisioningServicePrincipal>(Microsoft.Graph.Models.ProvisioningServicePrincipal.CreateFromDiscriminatorValue); } },
+                { "sourceIdentity", n => { SourceIdentity = n.GetObjectValue<Microsoft.Graph.Models.ProvisionedIdentity>(Microsoft.Graph.Models.ProvisionedIdentity.CreateFromDiscriminatorValue); } },
+                { "sourceSystem", n => { SourceSystem = n.GetObjectValue<Microsoft.Graph.Models.ProvisioningSystem>(Microsoft.Graph.Models.ProvisioningSystem.CreateFromDiscriminatorValue); } },
+                { "targetIdentity", n => { TargetIdentity = n.GetObjectValue<Microsoft.Graph.Models.ProvisionedIdentity>(Microsoft.Graph.Models.ProvisionedIdentity.CreateFromDiscriminatorValue); } },
+                { "targetSystem", n => { TargetSystem = n.GetObjectValue<Microsoft.Graph.Models.ProvisioningSystem>(Microsoft.Graph.Models.ProvisioningSystem.CreateFromDiscriminatorValue); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
@@ -284,17 +284,17 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("changeId", ChangeId);
             writer.WriteStringValue("cycleId", CycleId);
             writer.WriteIntValue("durationInMilliseconds", DurationInMilliseconds);
-            writer.WriteObjectValue<Initiator>("initiatedBy", InitiatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Initiator>("initiatedBy", InitiatedBy);
             writer.WriteStringValue("jobId", JobId);
-            writer.WriteCollectionOfObjectValues<ModifiedProperty>("modifiedProperties", ModifiedProperties);
-            writer.WriteEnumValue<ProvisioningAction>("provisioningAction", ProvisioningAction);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ModifiedProperty>("modifiedProperties", ModifiedProperties);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ProvisioningAction>("provisioningAction", ProvisioningAction);
             writer.WriteObjectValue<Microsoft.Graph.Models.ProvisioningStatusInfo>("provisioningStatusInfo", ProvisioningStatusInfo);
-            writer.WriteCollectionOfObjectValues<ProvisioningStep>("provisioningSteps", ProvisioningSteps);
-            writer.WriteObjectValue<ProvisioningServicePrincipal>("servicePrincipal", ServicePrincipal);
-            writer.WriteObjectValue<ProvisionedIdentity>("sourceIdentity", SourceIdentity);
-            writer.WriteObjectValue<ProvisioningSystem>("sourceSystem", SourceSystem);
-            writer.WriteObjectValue<ProvisionedIdentity>("targetIdentity", TargetIdentity);
-            writer.WriteObjectValue<ProvisioningSystem>("targetSystem", TargetSystem);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ProvisioningStep>("provisioningSteps", ProvisioningSteps);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ProvisioningServicePrincipal>("servicePrincipal", ServicePrincipal);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ProvisionedIdentity>("sourceIdentity", SourceIdentity);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ProvisioningSystem>("sourceSystem", SourceSystem);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ProvisionedIdentity>("targetIdentity", TargetIdentity);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ProvisioningSystem>("targetSystem", TargetSystem);
             writer.WriteStringValue("tenantId", TenantId);
         }
     }

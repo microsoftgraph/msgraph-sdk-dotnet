@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The end property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? End
+        public Microsoft.Graph.Models.DateTimeTimeZone? End
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("end"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("end"); }
             set { BackingStore?.Set("end", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone End
+        public Microsoft.Graph.Models.DateTimeTimeZone End
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("end"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("end"); }
             set { BackingStore?.Set("end", value); }
         }
 #endif
@@ -54,21 +54,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The start property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? Start
+        public Microsoft.Graph.Models.DateTimeTimeZone? Start
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("start"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone?>("start"); }
             set { BackingStore?.Set("start", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone Start
+        public Microsoft.Graph.Models.DateTimeTimeZone Start
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("start"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DateTimeTimeZone>("start"); }
             set { BackingStore?.Set("start", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TimeSlot"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TimeSlot"/> and sets the default values.
         /// </summary>
         public TimeSlot()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TimeSlot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TimeSlot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TimeSlot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.TimeSlot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TimeSlot();
+            return new Microsoft.Graph.Models.TimeSlot();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "end", n => { End = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "end", n => { End = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "start", n => { Start = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "start", n => { Start = n.GetObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>(Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,9 +105,9 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<DateTimeTimeZone>("end", End);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("end", End);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<DateTimeTimeZone>("start", Start);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DateTimeTimeZone>("start", Start);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CloudClipboardRoot : Entity, IParsable
+    public class CloudClipboardRoot : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents a collection of Cloud Clipboard items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudClipboardItem>? Items
+        public List<Microsoft.Graph.Models.CloudClipboardItem>? Items
         {
-            get { return BackingStore?.Get<List<CloudClipboardItem>?>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CloudClipboardItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<CloudClipboardItem> Items
+        public List<Microsoft.Graph.Models.CloudClipboardItem> Items
         {
-            get { return BackingStore?.Get<List<CloudClipboardItem>>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CloudClipboardItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudClipboardRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudClipboardRoot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudClipboardRoot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CloudClipboardRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudClipboardRoot();
+            return new Microsoft.Graph.Models.CloudClipboardRoot();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "items", n => { Items = n.GetCollectionOfObjectValues<CloudClipboardItem>(CloudClipboardItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CloudClipboardItem>(Microsoft.Graph.Models.CloudClipboardItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<CloudClipboardItem>("items", Items);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CloudClipboardItem>("items", Items);
         }
     }
 }

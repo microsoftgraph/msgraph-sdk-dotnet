@@ -9,33 +9,33 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics metric for work from anywhere report.
     /// </summary>
-    public class UserExperienceAnalyticsWorkFromAnywhereMetric : Entity, IParsable
+    public class UserExperienceAnalyticsWorkFromAnywhereMetric : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The work from anywhere metric devices. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserExperienceAnalyticsWorkFromAnywhereDevice>? MetricDevices
+        public List<Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereDevice>? MetricDevices
         {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsWorkFromAnywhereDevice>?>("metricDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereDevice>?>("metricDevices"); }
             set { BackingStore?.Set("metricDevices", value); }
         }
 #nullable restore
 #else
-        public List<UserExperienceAnalyticsWorkFromAnywhereDevice> MetricDevices
+        public List<Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereDevice> MetricDevices
         {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsWorkFromAnywhereDevice>>("metricDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereDevice>>("metricDevices"); }
             set { BackingStore?.Set("metricDevices", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsWorkFromAnywhereMetric"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereMetric"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsWorkFromAnywhereMetric CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereMetric CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsWorkFromAnywhereMetric();
+            return new Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereMetric();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "metricDevices", n => { MetricDevices = n.GetCollectionOfObjectValues<UserExperienceAnalyticsWorkFromAnywhereDevice>(UserExperienceAnalyticsWorkFromAnywhereDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "metricDevices", n => { MetricDevices = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereDevice>(Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereDevice.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<UserExperienceAnalyticsWorkFromAnywhereDevice>("metricDevices", MetricDevices);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereDevice>("metricDevices", MetricDevices);
         }
     }
 }

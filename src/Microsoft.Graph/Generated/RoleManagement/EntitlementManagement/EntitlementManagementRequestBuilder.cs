@@ -26,52 +26,52 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement
     public class EntitlementManagementRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.</summary>
-        public ResourceNamespacesRequestBuilder ResourceNamespaces
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.ResourceNamespaces.ResourceNamespacesRequestBuilder ResourceNamespaces
         {
-            get => new ResourceNamespacesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.RoleManagement.EntitlementManagement.ResourceNamespaces.ResourceNamespacesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.</summary>
-        public RoleAssignmentsRequestBuilder RoleAssignments
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignments.RoleAssignmentsRequestBuilder RoleAssignments
         {
-            get => new RoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignments.RoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignmentScheduleInstances property of the microsoft.graph.rbacApplication entity.</summary>
-        public RoleAssignmentScheduleInstancesRequestBuilder RoleAssignmentScheduleInstances
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder RoleAssignmentScheduleInstances
         {
-            get => new RoleAssignmentScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignmentScheduleRequests property of the microsoft.graph.rbacApplication entity.</summary>
-        public RoleAssignmentScheduleRequestsRequestBuilder RoleAssignmentScheduleRequests
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.RoleAssignmentScheduleRequestsRequestBuilder RoleAssignmentScheduleRequests
         {
-            get => new RoleAssignmentScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.RoleAssignmentScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignmentSchedules property of the microsoft.graph.rbacApplication entity.</summary>
-        public RoleAssignmentSchedulesRequestBuilder RoleAssignmentSchedules
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSchedules.RoleAssignmentSchedulesRequestBuilder RoleAssignmentSchedules
         {
-            get => new RoleAssignmentSchedulesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSchedules.RoleAssignmentSchedulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.</summary>
-        public RoleDefinitionsRequestBuilder RoleDefinitions
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions.RoleDefinitionsRequestBuilder RoleDefinitions
         {
-            get => new RoleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions.RoleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleEligibilityScheduleInstances property of the microsoft.graph.rbacApplication entity.</summary>
-        public RoleEligibilityScheduleInstancesRequestBuilder RoleEligibilityScheduleInstances
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances.RoleEligibilityScheduleInstancesRequestBuilder RoleEligibilityScheduleInstances
         {
-            get => new RoleEligibilityScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances.RoleEligibilityScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleEligibilityScheduleRequests property of the microsoft.graph.rbacApplication entity.</summary>
-        public RoleEligibilityScheduleRequestsRequestBuilder RoleEligibilityScheduleRequests
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder RoleEligibilityScheduleRequests
         {
-            get => new RoleEligibilityScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleEligibilitySchedules property of the microsoft.graph.rbacApplication entity.</summary>
-        public RoleEligibilitySchedulesRequestBuilder RoleEligibilitySchedules
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySchedules.RoleEligibilitySchedulesRequestBuilder RoleEligibilitySchedules
         {
-            get => new RoleEligibilitySchedulesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySchedules.RoleEligibilitySchedulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="EntitlementManagementRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.RoleManagement.EntitlementManagement.EntitlementManagementRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="EntitlementManagementRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.RoleManagement.EntitlementManagement.EntitlementManagementRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -104,57 +104,57 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Container for roles and assignments for entitlement management resources.
         /// </summary>
-        /// <returns>A <see cref="RbacApplication"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RbacApplication"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RbacApplication?> GetAsync(Action<RequestConfiguration<EntitlementManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.RbacApplication?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.EntitlementManagementRequestBuilder.EntitlementManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<RbacApplication> GetAsync(Action<RequestConfiguration<EntitlementManagementRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.RbacApplication> GetAsync(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.EntitlementManagementRequestBuilder.EntitlementManagementRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<RbacApplication>(requestInfo, RbacApplication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.RbacApplication>(requestInfo, Microsoft.Graph.Models.RbacApplication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property entitlementManagement in roleManagement
         /// </summary>
-        /// <returns>A <see cref="RbacApplication"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RbacApplication"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RbacApplication?> PatchAsync(RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.RbacApplication?> PatchAsync(Microsoft.Graph.Models.RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<RbacApplication> PatchAsync(RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.RbacApplication> PatchAsync(Microsoft.Graph.Models.RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<RbacApplication>(requestInfo, RbacApplication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.RbacApplication>(requestInfo, Microsoft.Graph.Models.RbacApplication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property entitlementManagement for roleManagement
@@ -182,11 +182,11 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EntitlementManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.EntitlementManagementRequestBuilder.EntitlementManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EntitlementManagementRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.EntitlementManagementRequestBuilder.EntitlementManagementRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -202,11 +202,11 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -219,11 +219,11 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="EntitlementManagementRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.RoleManagement.EntitlementManagement.EntitlementManagementRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EntitlementManagementRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.RoleManagement.EntitlementManagement.EntitlementManagementRequestBuilder WithUrl(string rawUrl)
         {
-            return new EntitlementManagementRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.RoleManagement.EntitlementManagement.EntitlementManagementRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -262,7 +262,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EntitlementManagementRequestBuilderGetRequestConfiguration : RequestConfiguration<EntitlementManagementRequestBuilderGetQueryParameters>
+        public class EntitlementManagementRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.RoleManagement.EntitlementManagement.EntitlementManagementRequestBuilder.EntitlementManagementRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

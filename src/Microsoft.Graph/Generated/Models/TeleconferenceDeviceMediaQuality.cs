@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("remotePort", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TeleconferenceDeviceMediaQuality"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TeleconferenceDeviceMediaQuality"/> and sets the default values.
         /// </summary>
         public TeleconferenceDeviceMediaQuality()
         {
@@ -192,18 +192,18 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeleconferenceDeviceMediaQuality"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeleconferenceDeviceMediaQuality"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeleconferenceDeviceMediaQuality CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.TeleconferenceDeviceMediaQuality CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.teleconferenceDeviceAudioQuality" => new TeleconferenceDeviceAudioQuality(),
-                "#microsoft.graph.teleconferenceDeviceScreenSharingQuality" => new TeleconferenceDeviceScreenSharingQuality(),
-                "#microsoft.graph.teleconferenceDeviceVideoQuality" => new TeleconferenceDeviceVideoQuality(),
-                _ => new TeleconferenceDeviceMediaQuality(),
+                "#microsoft.graph.teleconferenceDeviceAudioQuality" => new Microsoft.Graph.Models.TeleconferenceDeviceAudioQuality(),
+                "#microsoft.graph.teleconferenceDeviceScreenSharingQuality" => new Microsoft.Graph.Models.TeleconferenceDeviceScreenSharingQuality(),
+                "#microsoft.graph.teleconferenceDeviceVideoQuality" => new Microsoft.Graph.Models.TeleconferenceDeviceVideoQuality(),
+                _ => new Microsoft.Graph.Models.TeleconferenceDeviceMediaQuality(),
             };
         }
         /// <summary>

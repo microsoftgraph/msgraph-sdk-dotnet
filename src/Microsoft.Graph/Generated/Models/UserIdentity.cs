@@ -7,10 +7,10 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class UserIdentity : Identity, IParsable
+    public class UserIdentity : Microsoft.Graph.Models.Identity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates the client IP address used by user performing the activity (audit log only).</summary>
+        /// <summary>Indicates the client IP address associated with the user performing the activity (audit log only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IpAddress
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserIdentity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.UserIdentity"/> and sets the default values.
         /// </summary>
         public UserIdentity() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserIdentity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserIdentity();
+            return new Microsoft.Graph.Models.UserIdentity();
         }
         /// <summary>
         /// The deserialization information for the current model

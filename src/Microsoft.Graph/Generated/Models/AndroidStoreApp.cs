@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties and inherited properties for Android store apps.
     /// </summary>
-    public class AndroidStoreApp : MobileApp, IParsable
+    public class AndroidStoreApp : Microsoft.Graph.Models.MobileApp, IParsable
     {
         /// <summary>The Android app store URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,16 +30,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The value for the minimum applicable operating system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AndroidMinimumOperatingSystem? MinimumSupportedOperatingSystem
+        public Microsoft.Graph.Models.AndroidMinimumOperatingSystem? MinimumSupportedOperatingSystem
         {
-            get { return BackingStore?.Get<AndroidMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AndroidMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #nullable restore
 #else
-        public AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem
+        public Microsoft.Graph.Models.AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem
         {
-            get { return BackingStore?.Get<AndroidMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AndroidMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #endif
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AndroidStoreApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AndroidStoreApp"/> and sets the default values.
         /// </summary>
         public AndroidStoreApp() : base()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidStoreApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AndroidStoreApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidStoreApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AndroidStoreApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidStoreApp();
+            return new Microsoft.Graph.Models.AndroidStoreApp();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "appStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
-                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<AndroidMinimumOperatingSystem>(AndroidMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
+                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<Microsoft.Graph.Models.AndroidMinimumOperatingSystem>(Microsoft.Graph.Models.AndroidMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
                 { "packageId", n => { PackageId = n.GetStringValue(); } },
             };
         }
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("appStoreUrl", AppStoreUrl);
-            writer.WriteObjectValue<AndroidMinimumOperatingSystem>("minimumSupportedOperatingSystem", MinimumSupportedOperatingSystem);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AndroidMinimumOperatingSystem>("minimumSupportedOperatingSystem", MinimumSupportedOperatingSystem);
         }
     }
 }

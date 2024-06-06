@@ -20,29 +20,29 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders
     public class UserFlowIdentityProvidersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of identityContainer entities.</summary>
-        public RefRequestBuilder Ref
+        public Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.Ref.RefRequestBuilder Ref
         {
-            get => new RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.identity.b2xUserFlows.item.userFlowIdentityProviders.item collection</summary>
         /// <param name="position">The unique identifier of identityProviderBase</param>
-        /// <returns>A <see cref="IdentityProviderBaseItemRequestBuilder"/></returns>
-        public IdentityProviderBaseItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.Item.IdentityProviderBaseItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.Item.IdentityProviderBaseItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("identityProviderBase%2Did", position);
-                return new IdentityProviderBaseItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.Item.IdentityProviderBaseItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserFlowIdentityProvidersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.UserFlowIdentityProvidersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserFlowIdentityProvidersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.UserFlowIdentityProvidersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -60,25 +60,25 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders
         /// <summary>
         /// Get userFlowIdentityProviders from identity
         /// </summary>
-        /// <returns>A <see cref="IdentityProviderBaseCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityProviderBaseCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IdentityProviderBaseCollectionResponse?> GetAsync(Action<RequestConfiguration<UserFlowIdentityProvidersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.IdentityProviderBaseCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.UserFlowIdentityProvidersRequestBuilder.UserFlowIdentityProvidersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<IdentityProviderBaseCollectionResponse> GetAsync(Action<RequestConfiguration<UserFlowIdentityProvidersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.IdentityProviderBaseCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.UserFlowIdentityProvidersRequestBuilder.UserFlowIdentityProvidersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<IdentityProviderBaseCollectionResponse>(requestInfo, IdentityProviderBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.IdentityProviderBaseCollectionResponse>(requestInfo, Microsoft.Graph.Models.IdentityProviderBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get userFlowIdentityProviders from identity
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserFlowIdentityProvidersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.UserFlowIdentityProvidersRequestBuilder.UserFlowIdentityProvidersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserFlowIdentityProvidersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.UserFlowIdentityProvidersRequestBuilder.UserFlowIdentityProvidersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UserFlowIdentityProvidersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.UserFlowIdentityProvidersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UserFlowIdentityProvidersRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.UserFlowIdentityProvidersRequestBuilder WithUrl(string rawUrl)
         {
-            return new UserFlowIdentityProvidersRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.UserFlowIdentityProvidersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get userFlowIdentityProviders from identity
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserFlowIdentityProvidersRequestBuilderGetRequestConfiguration : RequestConfiguration<UserFlowIdentityProvidersRequestBuilderGetQueryParameters>
+        public class UserFlowIdentityProvidersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.UserFlowIdentityProvidersRequestBuilder.UserFlowIdentityProvidersRequestBuilderGetQueryParameters>
         {
         }
     }

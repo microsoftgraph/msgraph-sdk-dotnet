@@ -16,22 +16,22 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item
     public class UserItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The mailboxSettings property</summary>
-        public MailboxSettingsRequestBuilder MailboxSettings
+        public Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.MailboxSettings.MailboxSettingsRequestBuilder MailboxSettings
         {
-            get => new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.MailboxSettings.MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of print entities.</summary>
-        public RefRequestBuilder Ref
+        public Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.Ref.RefRequestBuilder Ref
         {
-            get => new RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The serviceProvisioningErrors property</summary>
-        public ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
+        public Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
         {
-            get => new ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.UserItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.UserItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

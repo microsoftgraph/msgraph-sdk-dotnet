@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWit
 {
     [Obsolete("This class is obsolete. Use GetByUserIdAndRoleWithUserIdWithRoleGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetByUserIdAndRoleWithUserIdWithRoleResponse : GetByUserIdAndRoleWithUserIdWithRoleGetResponse, IParsable
+    public class GetByUserIdAndRoleWithUserIdWithRoleResponse : Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetByUserIdAndRoleWithUserIdWithRoleResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetByUserIdAndRoleWithUserIdWithRoleResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetByUserIdAndRoleWithUserIdWithRoleResponse();
+            return new Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleResponse();
         }
     }
 }

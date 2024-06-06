@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class MediaPrompt : Prompt, IParsable
+    public class MediaPrompt : Microsoft.Graph.Models.Prompt, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The mediaInfo property</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MediaPrompt"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MediaPrompt"/> and sets the default values.
         /// </summary>
         public MediaPrompt() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MediaPrompt"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MediaPrompt"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MediaPrompt CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MediaPrompt CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MediaPrompt();
+            return new Microsoft.Graph.Models.MediaPrompt();
         }
         /// <summary>
         /// The deserialization information for the current model

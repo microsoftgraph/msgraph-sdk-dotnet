@@ -37,9 +37,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Indicates the package type of an MSI Win32LobApp.</summary>
-        public Win32LobAppMsiPackageType? PackageType
+        public Microsoft.Graph.Models.Win32LobAppMsiPackageType? PackageType
         {
-            get { return BackingStore?.Get<Win32LobAppMsiPackageType?>("packageType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Win32LobAppMsiPackageType?>("packageType"); }
             set { BackingStore?.Set("packageType", value); }
         }
         /// <summary>The MSI product code.</summary>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Win32LobAppMsiInformation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Win32LobAppMsiInformation"/> and sets the default values.
         /// </summary>
         public Win32LobAppMsiInformation()
         {
@@ -139,12 +139,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Win32LobAppMsiInformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Win32LobAppMsiInformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Win32LobAppMsiInformation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Win32LobAppMsiInformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Win32LobAppMsiInformation();
+            return new Microsoft.Graph.Models.Win32LobAppMsiInformation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "packageType", n => { PackageType = n.GetEnumValue<Win32LobAppMsiPackageType>(); } },
+                { "packageType", n => { PackageType = n.GetEnumValue<Microsoft.Graph.Models.Win32LobAppMsiPackageType>(); } },
                 { "productCode", n => { ProductCode = n.GetStringValue(); } },
                 { "productName", n => { ProductName = n.GetStringValue(); } },
                 { "productVersion", n => { ProductVersion = n.GetStringValue(); } },
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<Win32LobAppMsiPackageType>("packageType", PackageType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Win32LobAppMsiPackageType>("packageType", PackageType);
             writer.WriteStringValue("productCode", ProductCode);
             writer.WriteStringValue("productName", ProductName);
             writer.WriteStringValue("productVersion", ProductVersion);

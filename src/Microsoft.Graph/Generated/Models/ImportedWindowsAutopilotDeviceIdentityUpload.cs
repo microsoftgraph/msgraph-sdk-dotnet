@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Import windows autopilot devices using upload.
     /// </summary>
-    public class ImportedWindowsAutopilotDeviceIdentityUpload : Entity, IParsable
+    public class ImportedWindowsAutopilotDeviceIdentityUpload : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>DateTime when the entity is created.</summary>
         public DateTimeOffset? CreatedDateTimeUtc
@@ -20,34 +20,34 @@ namespace Microsoft.Graph.Models
         /// <summary>Collection of all Autopilot devices as a part of this upload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ImportedWindowsAutopilotDeviceIdentity>? DeviceIdentities
+        public List<Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentity>? DeviceIdentities
         {
-            get { return BackingStore?.Get<List<ImportedWindowsAutopilotDeviceIdentity>?>("deviceIdentities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentity>?>("deviceIdentities"); }
             set { BackingStore?.Set("deviceIdentities", value); }
         }
 #nullable restore
 #else
-        public List<ImportedWindowsAutopilotDeviceIdentity> DeviceIdentities
+        public List<Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentity> DeviceIdentities
         {
-            get { return BackingStore?.Get<List<ImportedWindowsAutopilotDeviceIdentity>>("deviceIdentities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentity>>("deviceIdentities"); }
             set { BackingStore?.Set("deviceIdentities", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public ImportedWindowsAutopilotDeviceIdentityUploadStatus? Status
+        public Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentityUploadStatus? Status
         {
-            get { return BackingStore?.Get<ImportedWindowsAutopilotDeviceIdentityUploadStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentityUploadStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ImportedWindowsAutopilotDeviceIdentityUpload"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentityUpload"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ImportedWindowsAutopilotDeviceIdentityUpload CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentityUpload CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ImportedWindowsAutopilotDeviceIdentityUpload();
+            return new Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentityUpload();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "createdDateTimeUtc", n => { CreatedDateTimeUtc = n.GetDateTimeOffsetValue(); } },
-                { "deviceIdentities", n => { DeviceIdentities = n.GetCollectionOfObjectValues<ImportedWindowsAutopilotDeviceIdentity>(ImportedWindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "status", n => { Status = n.GetEnumValue<ImportedWindowsAutopilotDeviceIdentityUploadStatus>(); } },
+                { "deviceIdentities", n => { DeviceIdentities = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentity>(Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentityUploadStatus>(); } },
             };
         }
         /// <summary>
@@ -71,8 +71,8 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTimeUtc", CreatedDateTimeUtc);
-            writer.WriteCollectionOfObjectValues<ImportedWindowsAutopilotDeviceIdentity>("deviceIdentities", DeviceIdentities);
-            writer.WriteEnumValue<ImportedWindowsAutopilotDeviceIdentityUploadStatus>("status", Status);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentity>("deviceIdentities", DeviceIdentities);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentityUploadStatus>("status", Status);
         }
     }
 }

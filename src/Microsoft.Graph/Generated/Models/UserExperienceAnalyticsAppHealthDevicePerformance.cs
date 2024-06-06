@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics device performance entity contains device performance details.
     /// </summary>
-    public class UserExperienceAnalyticsAppHealthDevicePerformance : Entity, IParsable
+    public class UserExperienceAnalyticsAppHealthDevicePerformance : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The number of application crashes for the device. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
         public int? AppCrashCount
@@ -100,9 +100,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The healthStatus property</summary>
-        public UserExperienceAnalyticsHealthState? HealthStatus
+        public Microsoft.Graph.Models.UserExperienceAnalyticsHealthState? HealthStatus
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsHealthState?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
@@ -120,12 +120,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsAppHealthDevicePerformance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthDevicePerformance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsAppHealthDevicePerformance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthDevicePerformance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsAppHealthDevicePerformance();
+            return new Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthDevicePerformance();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Models
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
                 { "deviceManufacturer", n => { DeviceManufacturer = n.GetStringValue(); } },
                 { "deviceModel", n => { DeviceModel = n.GetStringValue(); } },
-                { "healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<Microsoft.Graph.Models.UserExperienceAnalyticsHealthState>(); } },
                 { "meanTimeToFailureInMinutes", n => { MeanTimeToFailureInMinutes = n.GetIntValue(); } },
                 { "processedDateTime", n => { ProcessedDateTime = n.GetDateTimeOffsetValue(); } },
             };
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceManufacturer", DeviceManufacturer);
             writer.WriteStringValue("deviceModel", DeviceModel);
-            writer.WriteEnumValue<UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
             writer.WriteIntValue("meanTimeToFailureInMinutes", MeanTimeToFailureInMinutes);
             writer.WriteDateTimeOffsetValue("processedDateTime", ProcessedDateTime);
         }

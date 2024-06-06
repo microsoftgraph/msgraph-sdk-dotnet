@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Models.Search
         /// <summary>The application property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Application
+        public Microsoft.Graph.Models.Search.Identity? Application
         {
-            get { return BackingStore?.Get<Identity?>("application"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Search.Identity?>("application"); }
             set { BackingStore?.Set("application", value); }
         }
 #nullable restore
 #else
-        public Identity Application
+        public Microsoft.Graph.Models.Search.Identity Application
         {
-            get { return BackingStore?.Get<Identity>("application"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Search.Identity>("application"); }
             set { BackingStore?.Set("application", value); }
         }
 #endif
@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Models.Search
         /// <summary>The device property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Device
+        public Microsoft.Graph.Models.Search.Identity? Device
         {
-            get { return BackingStore?.Get<Identity?>("device"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Search.Identity?>("device"); }
             set { BackingStore?.Set("device", value); }
         }
 #nullable restore
 #else
-        public Identity Device
+        public Microsoft.Graph.Models.Search.Identity Device
         {
-            get { return BackingStore?.Get<Identity>("device"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Search.Identity>("device"); }
             set { BackingStore?.Set("device", value); }
         }
 #endif
@@ -70,21 +70,21 @@ namespace Microsoft.Graph.Models.Search
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? User
+        public Microsoft.Graph.Models.Search.Identity? User
         {
-            get { return BackingStore?.Get<Identity?>("user"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Search.Identity?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
 #nullable restore
 #else
-        public Identity User
+        public Microsoft.Graph.Models.Search.Identity User
         {
-            get { return BackingStore?.Get<Identity>("user"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Search.Identity>("user"); }
             set { BackingStore?.Set("user", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IdentitySet"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Search.IdentitySet"/> and sets the default values.
         /// </summary>
         public IdentitySet()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Models.Search
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IdentitySet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Search.IdentitySet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IdentitySet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Search.IdentitySet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IdentitySet();
+            return new Microsoft.Graph.Models.Search.IdentitySet();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,10 +109,10 @@ namespace Microsoft.Graph.Models.Search
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "application", n => { Application = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                { "device", n => { Device = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "application", n => { Application = n.GetObjectValue<Microsoft.Graph.Models.Search.Identity>(Microsoft.Graph.Models.Search.Identity.CreateFromDiscriminatorValue); } },
+                { "device", n => { Device = n.GetObjectValue<Microsoft.Graph.Models.Search.Identity>(Microsoft.Graph.Models.Search.Identity.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<Microsoft.Graph.Models.Search.Identity>(Microsoft.Graph.Models.Search.Identity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -122,10 +122,10 @@ namespace Microsoft.Graph.Models.Search
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Identity>("application", Application);
-            writer.WriteObjectValue<Identity>("device", Device);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Search.Identity>("application", Application);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Search.Identity>("device", Device);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<Identity>("user", User);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Search.Identity>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.G
     public class GetActivitiesByIntervalRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetActivitiesByIntervalRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.G
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetActivitiesByIntervalRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,50 +35,50 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.G
         /// Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetActivitiesByIntervalGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetActivitiesByIntervalGetResponse?> GetAsGetActivitiesByIntervalGetResponseAsync(Action<RequestConfiguration<GetActivitiesByIntervalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalGetResponse?> GetAsGetActivitiesByIntervalGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder.GetActivitiesByIntervalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetActivitiesByIntervalGetResponse> GetAsGetActivitiesByIntervalGetResponseAsync(Action<RequestConfiguration<GetActivitiesByIntervalRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalGetResponse> GetAsGetActivitiesByIntervalGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder.GetActivitiesByIntervalRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetActivitiesByIntervalGetResponse>(requestInfo, GetActivitiesByIntervalGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalGetResponse>(requestInfo, Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="GetActivitiesByIntervalResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetActivitiesByIntervalGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetActivitiesByIntervalResponse?> GetAsync(Action<RequestConfiguration<GetActivitiesByIntervalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder.GetActivitiesByIntervalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetActivitiesByIntervalResponse> GetAsync(Action<RequestConfiguration<GetActivitiesByIntervalRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder.GetActivitiesByIntervalRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetActivitiesByIntervalResponse>(requestInfo, GetActivitiesByIntervalResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalResponse>(requestInfo, Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.G
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetActivitiesByIntervalRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder.GetActivitiesByIntervalRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetActivitiesByIntervalRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder.GetActivitiesByIntervalRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.G
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetActivitiesByIntervalRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetActivitiesByIntervalRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetActivitiesByIntervalRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.G
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetActivitiesByIntervalRequestBuilderGetRequestConfiguration : RequestConfiguration<GetActivitiesByIntervalRequestBuilderGetQueryParameters>
+        public class GetActivitiesByIntervalRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder.GetActivitiesByIntervalRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -14,16 +14,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The optional claims returned in the JWT access token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OptionalClaim>? AccessToken
+        public List<Microsoft.Graph.Models.OptionalClaim>? AccessToken
         {
-            get { return BackingStore?.Get<List<OptionalClaim>?>("accessToken"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OptionalClaim>?>("accessToken"); }
             set { BackingStore?.Set("accessToken", value); }
         }
 #nullable restore
 #else
-        public List<OptionalClaim> AccessToken
+        public List<Microsoft.Graph.Models.OptionalClaim> AccessToken
         {
-            get { return BackingStore?.Get<List<OptionalClaim>>("accessToken"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OptionalClaim>>("accessToken"); }
             set { BackingStore?.Set("accessToken", value); }
         }
 #endif
@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The optional claims returned in the JWT ID token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OptionalClaim>? IdToken
+        public List<Microsoft.Graph.Models.OptionalClaim>? IdToken
         {
-            get { return BackingStore?.Get<List<OptionalClaim>?>("idToken"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OptionalClaim>?>("idToken"); }
             set { BackingStore?.Set("idToken", value); }
         }
 #nullable restore
 #else
-        public List<OptionalClaim> IdToken
+        public List<Microsoft.Graph.Models.OptionalClaim> IdToken
         {
-            get { return BackingStore?.Get<List<OptionalClaim>>("idToken"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OptionalClaim>>("idToken"); }
             set { BackingStore?.Set("idToken", value); }
         }
 #endif
@@ -70,21 +70,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The optional claims returned in the SAML token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OptionalClaim>? Saml2Token
+        public List<Microsoft.Graph.Models.OptionalClaim>? Saml2Token
         {
-            get { return BackingStore?.Get<List<OptionalClaim>?>("saml2Token"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OptionalClaim>?>("saml2Token"); }
             set { BackingStore?.Set("saml2Token", value); }
         }
 #nullable restore
 #else
-        public List<OptionalClaim> Saml2Token
+        public List<Microsoft.Graph.Models.OptionalClaim> Saml2Token
         {
-            get { return BackingStore?.Get<List<OptionalClaim>>("saml2Token"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OptionalClaim>>("saml2Token"); }
             set { BackingStore?.Set("saml2Token", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OptionalClaims"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OptionalClaims"/> and sets the default values.
         /// </summary>
         public OptionalClaims()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OptionalClaims"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OptionalClaims"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OptionalClaims CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.OptionalClaims CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OptionalClaims();
+            return new Microsoft.Graph.Models.OptionalClaims();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,10 +109,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accessToken", n => { AccessToken = n.GetCollectionOfObjectValues<OptionalClaim>(OptionalClaim.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "idToken", n => { IdToken = n.GetCollectionOfObjectValues<OptionalClaim>(OptionalClaim.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessToken", n => { AccessToken = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OptionalClaim>(Microsoft.Graph.Models.OptionalClaim.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "idToken", n => { IdToken = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OptionalClaim>(Microsoft.Graph.Models.OptionalClaim.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "saml2Token", n => { Saml2Token = n.GetCollectionOfObjectValues<OptionalClaim>(OptionalClaim.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "saml2Token", n => { Saml2Token = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OptionalClaim>(Microsoft.Graph.Models.OptionalClaim.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -122,10 +122,10 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<OptionalClaim>("accessToken", AccessToken);
-            writer.WriteCollectionOfObjectValues<OptionalClaim>("idToken", IdToken);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OptionalClaim>("accessToken", AccessToken);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OptionalClaim>("idToken", IdToken);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<OptionalClaim>("saml2Token", Saml2Token);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OptionalClaim>("saml2Token", Saml2Token);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

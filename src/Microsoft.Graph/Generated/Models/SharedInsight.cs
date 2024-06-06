@@ -7,54 +7,54 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SharedInsight : Entity, IParsable
+    public class SharedInsight : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Details about the shared item. Read only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingDetail? LastShared
+        public Microsoft.Graph.Models.SharingDetail? LastShared
         {
-            get { return BackingStore?.Get<SharingDetail?>("lastShared"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SharingDetail?>("lastShared"); }
             set { BackingStore?.Set("lastShared", value); }
         }
 #nullable restore
 #else
-        public SharingDetail LastShared
+        public Microsoft.Graph.Models.SharingDetail LastShared
         {
-            get { return BackingStore?.Get<SharingDetail>("lastShared"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SharingDetail>("lastShared"); }
             set { BackingStore?.Set("lastShared", value); }
         }
 #endif
         /// <summary>The lastSharedMethod property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Entity? LastSharedMethod
+        public Microsoft.Graph.Models.Entity? LastSharedMethod
         {
-            get { return BackingStore?.Get<Entity?>("lastSharedMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Entity?>("lastSharedMethod"); }
             set { BackingStore?.Set("lastSharedMethod", value); }
         }
 #nullable restore
 #else
-        public Entity LastSharedMethod
+        public Microsoft.Graph.Models.Entity LastSharedMethod
         {
-            get { return BackingStore?.Get<Entity>("lastSharedMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Entity>("lastSharedMethod"); }
             set { BackingStore?.Set("lastSharedMethod", value); }
         }
 #endif
         /// <summary>Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Entity? Resource
+        public Microsoft.Graph.Models.Entity? Resource
         {
-            get { return BackingStore?.Get<Entity?>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Entity?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public Entity Resource
+        public Microsoft.Graph.Models.Entity Resource
         {
-            get { return BackingStore?.Get<Entity>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Entity>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #endif
@@ -93,28 +93,28 @@ namespace Microsoft.Graph.Models
         /// <summary>The sharingHistory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SharingDetail>? SharingHistory
+        public List<Microsoft.Graph.Models.SharingDetail>? SharingHistory
         {
-            get { return BackingStore?.Get<List<SharingDetail>?>("sharingHistory"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SharingDetail>?>("sharingHistory"); }
             set { BackingStore?.Set("sharingHistory", value); }
         }
 #nullable restore
 #else
-        public List<SharingDetail> SharingHistory
+        public List<Microsoft.Graph.Models.SharingDetail> SharingHistory
         {
-            get { return BackingStore?.Get<List<SharingDetail>>("sharingHistory"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SharingDetail>>("sharingHistory"); }
             set { BackingStore?.Set("sharingHistory", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SharedInsight"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SharedInsight"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SharedInsight CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SharedInsight CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SharedInsight();
+            return new Microsoft.Graph.Models.SharedInsight();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,12 +124,12 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "lastShared", n => { LastShared = n.GetObjectValue<SharingDetail>(SharingDetail.CreateFromDiscriminatorValue); } },
-                { "lastSharedMethod", n => { LastSharedMethod = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
-                { "resource", n => { Resource = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
+                { "lastShared", n => { LastShared = n.GetObjectValue<Microsoft.Graph.Models.SharingDetail>(Microsoft.Graph.Models.SharingDetail.CreateFromDiscriminatorValue); } },
+                { "lastSharedMethod", n => { LastSharedMethod = n.GetObjectValue<Microsoft.Graph.Models.Entity>(Microsoft.Graph.Models.Entity.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<Microsoft.Graph.Models.Entity>(Microsoft.Graph.Models.Entity.CreateFromDiscriminatorValue); } },
                 { "resourceReference", n => { ResourceReference = n.GetObjectValue<Microsoft.Graph.Models.ResourceReference>(Microsoft.Graph.Models.ResourceReference.CreateFromDiscriminatorValue); } },
                 { "resourceVisualization", n => { ResourceVisualization = n.GetObjectValue<Microsoft.Graph.Models.ResourceVisualization>(Microsoft.Graph.Models.ResourceVisualization.CreateFromDiscriminatorValue); } },
-                { "sharingHistory", n => { SharingHistory = n.GetCollectionOfObjectValues<SharingDetail>(SharingDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sharingHistory", n => { SharingHistory = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SharingDetail>(Microsoft.Graph.Models.SharingDetail.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -140,10 +140,10 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<SharingDetail>("lastShared", LastShared);
-            writer.WriteObjectValue<Entity>("lastSharedMethod", LastSharedMethod);
-            writer.WriteObjectValue<Entity>("resource", Resource);
-            writer.WriteCollectionOfObjectValues<SharingDetail>("sharingHistory", SharingHistory);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SharingDetail>("lastShared", LastShared);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Entity>("lastSharedMethod", LastSharedMethod);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Entity>("resource", Resource);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SharingDetail>("sharingHistory", SharingHistory);
         }
     }
 }

@@ -21,27 +21,27 @@ namespace Microsoft.Graph.Planner.Tasks.Item
     public class PlannerTaskItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the assignedToTaskBoardFormat property of the microsoft.graph.plannerTask entity.</summary>
-        public AssignedToTaskBoardFormatRequestBuilder AssignedToTaskBoardFormat
+        public Microsoft.Graph.Planner.Tasks.Item.AssignedToTaskBoardFormat.AssignedToTaskBoardFormatRequestBuilder AssignedToTaskBoardFormat
         {
-            get => new AssignedToTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Planner.Tasks.Item.AssignedToTaskBoardFormat.AssignedToTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the bucketTaskBoardFormat property of the microsoft.graph.plannerTask entity.</summary>
-        public BucketTaskBoardFormatRequestBuilder BucketTaskBoardFormat
+        public Microsoft.Graph.Planner.Tasks.Item.BucketTaskBoardFormat.BucketTaskBoardFormatRequestBuilder BucketTaskBoardFormat
         {
-            get => new BucketTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Planner.Tasks.Item.BucketTaskBoardFormat.BucketTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the details property of the microsoft.graph.plannerTask entity.</summary>
-        public DetailsRequestBuilder Details
+        public Microsoft.Graph.Planner.Tasks.Item.Details.DetailsRequestBuilder Details
         {
-            get => new DetailsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Planner.Tasks.Item.Details.DetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the progressTaskBoardFormat property of the microsoft.graph.plannerTask entity.</summary>
-        public ProgressTaskBoardFormatRequestBuilder ProgressTaskBoardFormat
+        public Microsoft.Graph.Planner.Tasks.Item.ProgressTaskBoardFormat.ProgressTaskBoardFormatRequestBuilder ProgressTaskBoardFormat
         {
-            get => new ProgressTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Planner.Tasks.Item.ProgressTaskBoardFormat.ProgressTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlannerTaskItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Planner.Tasks.Item.PlannerTaskItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Planner.Tasks.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlannerTaskItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Planner.Tasks.Item.PlannerTaskItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Planner.Tasks.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Planner.Tasks.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -83,51 +83,51 @@ namespace Microsoft.Graph.Planner.Tasks.Item
         /// Retrieve the properties and relationships of plannerTask object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannertask-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="PlannerTask"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PlannerTask"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PlannerTask?> GetAsync(Action<RequestConfiguration<PlannerTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PlannerTask?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Planner.Tasks.Item.PlannerTaskItemRequestBuilder.PlannerTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PlannerTask> GetAsync(Action<RequestConfiguration<PlannerTaskItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PlannerTask> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Planner.Tasks.Item.PlannerTaskItemRequestBuilder.PlannerTaskItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PlannerTask>(requestInfo, PlannerTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PlannerTask>(requestInfo, Microsoft.Graph.Models.PlannerTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of plannerTask object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannertask-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="PlannerTask"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PlannerTask"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PlannerTask?> PatchAsync(PlannerTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PlannerTask?> PatchAsync(Microsoft.Graph.Models.PlannerTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PlannerTask> PatchAsync(PlannerTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PlannerTask> PatchAsync(Microsoft.Graph.Models.PlannerTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PlannerTask>(requestInfo, PlannerTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PlannerTask>(requestInfo, Microsoft.Graph.Models.PlannerTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a plannerTask object.
@@ -155,11 +155,11 @@ namespace Microsoft.Graph.Planner.Tasks.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PlannerTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Planner.Tasks.Item.PlannerTaskItemRequestBuilder.PlannerTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PlannerTaskItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Planner.Tasks.Item.PlannerTaskItemRequestBuilder.PlannerTaskItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -175,11 +175,11 @@ namespace Microsoft.Graph.Planner.Tasks.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(PlannerTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.PlannerTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(PlannerTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.PlannerTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -192,11 +192,11 @@ namespace Microsoft.Graph.Planner.Tasks.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PlannerTaskItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Planner.Tasks.Item.PlannerTaskItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PlannerTaskItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Planner.Tasks.Item.PlannerTaskItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new PlannerTaskItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Planner.Tasks.Item.PlannerTaskItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -235,7 +235,7 @@ namespace Microsoft.Graph.Planner.Tasks.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PlannerTaskItemRequestBuilderGetRequestConfiguration : RequestConfiguration<PlannerTaskItemRequestBuilderGetQueryParameters>
+        public class PlannerTaskItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Planner.Tasks.Item.PlannerTaskItemRequestBuilder.PlannerTaskItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class InviteParticipantsOperation : CommsOperation, IParsable
+    public class InviteParticipantsOperation : Microsoft.Graph.Models.CommsOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The participants to invite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<InvitationParticipantInfo>? Participants
+        public List<Microsoft.Graph.Models.InvitationParticipantInfo>? Participants
         {
-            get { return BackingStore?.Get<List<InvitationParticipantInfo>?>("participants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.InvitationParticipantInfo>?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #nullable restore
 #else
-        public List<InvitationParticipantInfo> Participants
+        public List<Microsoft.Graph.Models.InvitationParticipantInfo> Participants
         {
-            get { return BackingStore?.Get<List<InvitationParticipantInfo>>("participants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.InvitationParticipantInfo>>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InviteParticipantsOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.InviteParticipantsOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new InviteParticipantsOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.InviteParticipantsOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InviteParticipantsOperation();
+            return new Microsoft.Graph.Models.InviteParticipantsOperation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "participants", n => { Participants = n.GetCollectionOfObjectValues<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "participants", n => { Participants = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.InvitationParticipantInfo>(Microsoft.Graph.Models.InvitationParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<InvitationParticipantInfo>("participants", Participants);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.InvitationParticipantInfo>("participants", Participants);
         }
     }
 }

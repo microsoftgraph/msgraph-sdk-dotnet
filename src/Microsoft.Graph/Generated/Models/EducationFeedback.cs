@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>User who created the feedback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? FeedbackBy
+        public Microsoft.Graph.Models.IdentitySet? FeedbackBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("feedbackBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("feedbackBy"); }
             set { BackingStore?.Set("feedbackBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet FeedbackBy
+        public Microsoft.Graph.Models.IdentitySet FeedbackBy
         {
-            get { return BackingStore?.Get<IdentitySet>("feedbackBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("feedbackBy"); }
             set { BackingStore?.Set("feedbackBy", value); }
         }
 #endif
@@ -60,21 +60,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Feedback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationItemBody? Text
+        public Microsoft.Graph.Models.EducationItemBody? Text
         {
-            get { return BackingStore?.Get<EducationItemBody?>("text"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationItemBody?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public EducationItemBody Text
+        public Microsoft.Graph.Models.EducationItemBody Text
         {
-            get { return BackingStore?.Get<EducationItemBody>("text"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationItemBody>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EducationFeedback"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.EducationFeedback"/> and sets the default values.
         /// </summary>
         public EducationFeedback()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationFeedback"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationFeedback"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EducationFeedback CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.EducationFeedback CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationFeedback();
+            return new Microsoft.Graph.Models.EducationFeedback();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,10 +99,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "feedbackBy", n => { FeedbackBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "feedbackBy", n => { FeedbackBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "feedbackDateTime", n => { FeedbackDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "text", n => { Text = n.GetObjectValue<EducationItemBody>(EducationItemBody.CreateFromDiscriminatorValue); } },
+                { "text", n => { Text = n.GetObjectValue<Microsoft.Graph.Models.EducationItemBody>(Microsoft.Graph.Models.EducationItemBody.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -112,10 +112,10 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<IdentitySet>("feedbackBy", FeedbackBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentitySet>("feedbackBy", FeedbackBy);
             writer.WriteDateTimeOffsetValue("feedbackDateTime", FeedbackDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<EducationItemBody>("text", Text);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EducationItemBody>("text", Text);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

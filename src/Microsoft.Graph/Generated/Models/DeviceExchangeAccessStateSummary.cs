@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("unknownDeviceCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceExchangeAccessStateSummary"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.DeviceExchangeAccessStateSummary"/> and sets the default values.
         /// </summary>
         public DeviceExchangeAccessStateSummary()
         {
@@ -77,12 +77,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceExchangeAccessStateSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceExchangeAccessStateSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceExchangeAccessStateSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.DeviceExchangeAccessStateSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceExchangeAccessStateSummary();
+            return new Microsoft.Graph.Models.DeviceExchangeAccessStateSummary();
         }
         /// <summary>
         /// The deserialization information for the current model

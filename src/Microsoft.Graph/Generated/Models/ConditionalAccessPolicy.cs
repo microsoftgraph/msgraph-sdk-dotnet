@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ConditionalAccessPolicy : Entity, IParsable
+    public class ConditionalAccessPolicy : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessConditionSet? Conditions
+        public Microsoft.Graph.Models.ConditionalAccessConditionSet? Conditions
         {
-            get { return BackingStore?.Get<ConditionalAccessConditionSet?>("conditions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessConditionSet?>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessConditionSet Conditions
+        public Microsoft.Graph.Models.ConditionalAccessConditionSet Conditions
         {
-            get { return BackingStore?.Get<ConditionalAccessConditionSet>("conditions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessConditionSet>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
 #endif
@@ -67,16 +67,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Specifies the grant controls that must be fulfilled to pass the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessGrantControls? GrantControls
+        public Microsoft.Graph.Models.ConditionalAccessGrantControls? GrantControls
         {
-            get { return BackingStore?.Get<ConditionalAccessGrantControls?>("grantControls"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessGrantControls?>("grantControls"); }
             set { BackingStore?.Set("grantControls", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessGrantControls GrantControls
+        public Microsoft.Graph.Models.ConditionalAccessGrantControls GrantControls
         {
-            get { return BackingStore?.Get<ConditionalAccessGrantControls>("grantControls"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessGrantControls>("grantControls"); }
             set { BackingStore?.Set("grantControls", value); }
         }
 #endif
@@ -89,23 +89,23 @@ namespace Microsoft.Graph.Models
         /// <summary>Specifies the session controls that are enforced after sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessSessionControls? SessionControls
+        public Microsoft.Graph.Models.ConditionalAccessSessionControls? SessionControls
         {
-            get { return BackingStore?.Get<ConditionalAccessSessionControls?>("sessionControls"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessSessionControls?>("sessionControls"); }
             set { BackingStore?.Set("sessionControls", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessSessionControls SessionControls
+        public Microsoft.Graph.Models.ConditionalAccessSessionControls SessionControls
         {
-            get { return BackingStore?.Get<ConditionalAccessSessionControls>("sessionControls"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessSessionControls>("sessionControls"); }
             set { BackingStore?.Set("sessionControls", value); }
         }
 #endif
         /// <summary>The state property</summary>
-        public ConditionalAccessPolicyState? State
+        public Microsoft.Graph.Models.ConditionalAccessPolicyState? State
         {
-            get { return BackingStore?.Get<ConditionalAccessPolicyState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessPolicyState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>The templateId property</summary>
@@ -127,12 +127,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ConditionalAccessPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ConditionalAccessPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ConditionalAccessPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessPolicy();
+            return new Microsoft.Graph.Models.ConditionalAccessPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -142,14 +142,14 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "conditions", n => { Conditions = n.GetObjectValue<ConditionalAccessConditionSet>(ConditionalAccessConditionSet.CreateFromDiscriminatorValue); } },
+                { "conditions", n => { Conditions = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessConditionSet>(Microsoft.Graph.Models.ConditionalAccessConditionSet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "grantControls", n => { GrantControls = n.GetObjectValue<ConditionalAccessGrantControls>(ConditionalAccessGrantControls.CreateFromDiscriminatorValue); } },
+                { "grantControls", n => { GrantControls = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessGrantControls>(Microsoft.Graph.Models.ConditionalAccessGrantControls.CreateFromDiscriminatorValue); } },
                 { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "sessionControls", n => { SessionControls = n.GetObjectValue<ConditionalAccessSessionControls>(ConditionalAccessSessionControls.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetEnumValue<ConditionalAccessPolicyState>(); } },
+                { "sessionControls", n => { SessionControls = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessSessionControls>(Microsoft.Graph.Models.ConditionalAccessSessionControls.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Models.ConditionalAccessPolicyState>(); } },
                 { "templateId", n => { TemplateId = n.GetStringValue(); } },
             };
         }
@@ -161,14 +161,14 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ConditionalAccessConditionSet>("conditions", Conditions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessConditionSet>("conditions", Conditions);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<ConditionalAccessGrantControls>("grantControls", GrantControls);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessGrantControls>("grantControls", GrantControls);
             writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
-            writer.WriteObjectValue<ConditionalAccessSessionControls>("sessionControls", SessionControls);
-            writer.WriteEnumValue<ConditionalAccessPolicyState>("state", State);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessSessionControls>("sessionControls", SessionControls);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ConditionalAccessPolicyState>("state", State);
             writer.WriteStringValue("templateId", TemplateId);
         }
     }

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics model scores entity consolidates the various Endpoint Analytics scores.
     /// </summary>
-    public class UserExperienceAnalyticsModelScores : Entity, IParsable
+    public class UserExperienceAnalyticsModelScores : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Indicates a score calculated from application health data to indicate when a device is having problems running one or more applications. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? AppReliabilityScore
@@ -30,9 +30,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("endpointAnalyticsScore", value); }
         }
         /// <summary>The healthStatus property</summary>
-        public UserExperienceAnalyticsHealthState? HealthStatus
+        public Microsoft.Graph.Models.UserExperienceAnalyticsHealthState? HealthStatus
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.UserExperienceAnalyticsHealthState?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>The manufacturer name of the device. Examples: Microsoft Corporation, HP, Lenovo. Supports: $select, $OrderBy. Read-only.</summary>
@@ -88,12 +88,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsModelScores"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsModelScores"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsModelScores CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.UserExperienceAnalyticsModelScores CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsModelScores();
+            return new Microsoft.Graph.Models.UserExperienceAnalyticsModelScores();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Models
                 { "appReliabilityScore", n => { AppReliabilityScore = n.GetDoubleValue(); } },
                 { "batteryHealthScore", n => { BatteryHealthScore = n.GetDoubleValue(); } },
                 { "endpointAnalyticsScore", n => { EndpointAnalyticsScore = n.GetDoubleValue(); } },
-                { "healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<Microsoft.Graph.Models.UserExperienceAnalyticsHealthState>(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "modelDeviceCount", n => { ModelDeviceCount = n.GetLongValue(); } },
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDoubleValue("appReliabilityScore", AppReliabilityScore);
             writer.WriteDoubleValue("batteryHealthScore", BatteryHealthScore);
             writer.WriteDoubleValue("endpointAnalyticsScore", EndpointAnalyticsScore);
-            writer.WriteEnumValue<UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("model", Model);
             writer.WriteLongValue("modelDeviceCount", ModelDeviceCount);

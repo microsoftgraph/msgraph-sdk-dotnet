@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class ArticleIndicator : Indicator, IParsable
+    public class ArticleIndicator : Microsoft.Graph.Models.Security.Indicator, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="ArticleIndicator"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.ArticleIndicator"/> and sets the default values.
         /// </summary>
         public ArticleIndicator() : base()
         {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ArticleIndicator"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.ArticleIndicator"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ArticleIndicator CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.ArticleIndicator CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ArticleIndicator();
+            return new Microsoft.Graph.Models.Security.ArticleIndicator();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -21,34 +21,34 @@ namespace Microsoft.Graph.Users.Item.FollowedSites
     public class FollowedSitesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the add method.</summary>
-        public AddRequestBuilder Add
+        public Microsoft.Graph.Users.Item.FollowedSites.Add.AddRequestBuilder Add
         {
-            get => new AddRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.FollowedSites.Add.AddRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Users.Item.FollowedSites.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.FollowedSites.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the remove method.</summary>
-        public RemoveRequestBuilder Remove
+        public Microsoft.Graph.Users.Item.FollowedSites.Remove.RemoveRequestBuilder Remove
         {
-            get => new RemoveRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.FollowedSites.Remove.RemoveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the followedSites property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of site</param>
-        /// <returns>A <see cref="SiteItemRequestBuilder"/></returns>
-        public SiteItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.FollowedSites.Item.SiteItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Users.Item.FollowedSites.Item.SiteItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("site%2Did", position);
-                return new SiteItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Users.Item.FollowedSites.Item.SiteItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="FollowedSitesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.FollowedSites.FollowedSitesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Users.Item.FollowedSites
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="FollowedSitesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.FollowedSites.FollowedSitesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -66,25 +66,25 @@ namespace Microsoft.Graph.Users.Item.FollowedSites
         /// <summary>
         /// Get followedSites from users
         /// </summary>
-        /// <returns>A <see cref="SiteCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SiteCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SiteCollectionResponse?> GetAsync(Action<RequestConfiguration<FollowedSitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SiteCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.FollowedSites.FollowedSitesRequestBuilder.FollowedSitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SiteCollectionResponse> GetAsync(Action<RequestConfiguration<FollowedSitesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SiteCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.FollowedSites.FollowedSitesRequestBuilder.FollowedSitesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SiteCollectionResponse>(requestInfo, SiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SiteCollectionResponse>(requestInfo, Microsoft.Graph.Models.SiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get followedSites from users
@@ -93,11 +93,11 @@ namespace Microsoft.Graph.Users.Item.FollowedSites
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FollowedSitesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.FollowedSites.FollowedSitesRequestBuilder.FollowedSitesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FollowedSitesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.FollowedSites.FollowedSitesRequestBuilder.FollowedSitesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Users.Item.FollowedSites
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="FollowedSitesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.FollowedSites.FollowedSitesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FollowedSitesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.FollowedSites.FollowedSitesRequestBuilder WithUrl(string rawUrl)
         {
-            return new FollowedSitesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.FollowedSites.FollowedSitesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get followedSites from users
@@ -183,7 +183,7 @@ namespace Microsoft.Graph.Users.Item.FollowedSites
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FollowedSitesRequestBuilderGetRequestConfiguration : RequestConfiguration<FollowedSitesRequestBuilderGetQueryParameters>
+        public class FollowedSitesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.FollowedSites.FollowedSitesRequestBuilder.FollowedSitesRequestBuilderGetQueryParameters>
         {
         }
     }

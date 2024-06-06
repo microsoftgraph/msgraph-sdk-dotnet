@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OnInteractiveAuthFlowStartListener : AuthenticationEventListener, IParsable
+    public class OnInteractiveAuthFlowStartListener : Microsoft.Graph.Models.AuthenticationEventListener, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnInteractiveAuthFlowStartHandler? Handler
+        public Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler? Handler
         {
-            get { return BackingStore?.Get<OnInteractiveAuthFlowStartHandler?>("handler"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler?>("handler"); }
             set { BackingStore?.Set("handler", value); }
         }
 #nullable restore
 #else
-        public OnInteractiveAuthFlowStartHandler Handler
+        public Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler Handler
         {
-            get { return BackingStore?.Get<OnInteractiveAuthFlowStartHandler>("handler"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler>("handler"); }
             set { BackingStore?.Set("handler", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnInteractiveAuthFlowStartListener"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OnInteractiveAuthFlowStartListener"/> and sets the default values.
         /// </summary>
         public OnInteractiveAuthFlowStartListener() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnInteractiveAuthFlowStartListener"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnInteractiveAuthFlowStartListener"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnInteractiveAuthFlowStartListener CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OnInteractiveAuthFlowStartListener CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnInteractiveAuthFlowStartListener();
+            return new Microsoft.Graph.Models.OnInteractiveAuthFlowStartListener();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "handler", n => { Handler = n.GetObjectValue<OnInteractiveAuthFlowStartHandler>(OnInteractiveAuthFlowStartHandler.CreateFromDiscriminatorValue); } },
+                { "handler", n => { Handler = n.GetObjectValue<Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler>(Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<OnInteractiveAuthFlowStartHandler>("handler", Handler);
+            writer.WriteObjectValue<Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler>("handler", Handler);
         }
     }
 }

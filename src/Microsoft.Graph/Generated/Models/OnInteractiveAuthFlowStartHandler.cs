@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnInteractiveAuthFlowStartHandler"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler"/> and sets the default values.
         /// </summary>
         public OnInteractiveAuthFlowStartHandler()
         {
@@ -46,16 +46,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnInteractiveAuthFlowStartHandler"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OnInteractiveAuthFlowStartHandler CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp" => new OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp(),
-                _ => new OnInteractiveAuthFlowStartHandler(),
+                "#microsoft.graph.onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp" => new Microsoft.Graph.Models.OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp(),
+                _ => new Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler(),
             };
         }
         /// <summary>

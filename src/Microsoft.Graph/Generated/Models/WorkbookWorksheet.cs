@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookWorksheet : Entity, IParsable
+    public class WorkbookWorksheet : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Returns collection of charts that are part of the worksheet. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookChart>? Charts
+        public List<Microsoft.Graph.Models.WorkbookChart>? Charts
         {
-            get { return BackingStore?.Get<List<WorkbookChart>?>("charts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookChart>?>("charts"); }
             set { BackingStore?.Set("charts", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookChart> Charts
+        public List<Microsoft.Graph.Models.WorkbookChart> Charts
         {
-            get { return BackingStore?.Get<List<WorkbookChart>>("charts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookChart>>("charts"); }
             set { BackingStore?.Set("charts", value); }
         }
 #endif
@@ -45,32 +45,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Returns collection of names that are associated with the worksheet. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookNamedItem>? Names
+        public List<Microsoft.Graph.Models.WorkbookNamedItem>? Names
         {
-            get { return BackingStore?.Get<List<WorkbookNamedItem>?>("names"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookNamedItem>?>("names"); }
             set { BackingStore?.Set("names", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookNamedItem> Names
+        public List<Microsoft.Graph.Models.WorkbookNamedItem> Names
         {
-            get { return BackingStore?.Get<List<WorkbookNamedItem>>("names"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookNamedItem>>("names"); }
             set { BackingStore?.Set("names", value); }
         }
 #endif
         /// <summary>Collection of PivotTables that are part of the worksheet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookPivotTable>? PivotTables
+        public List<Microsoft.Graph.Models.WorkbookPivotTable>? PivotTables
         {
-            get { return BackingStore?.Get<List<WorkbookPivotTable>?>("pivotTables"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookPivotTable>?>("pivotTables"); }
             set { BackingStore?.Set("pivotTables", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookPivotTable> PivotTables
+        public List<Microsoft.Graph.Models.WorkbookPivotTable> PivotTables
         {
-            get { return BackingStore?.Get<List<WorkbookPivotTable>>("pivotTables"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookPivotTable>>("pivotTables"); }
             set { BackingStore?.Set("pivotTables", value); }
         }
 #endif
@@ -83,32 +83,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Returns sheet protection object for a worksheet. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookWorksheetProtection? Protection
+        public Microsoft.Graph.Models.WorkbookWorksheetProtection? Protection
         {
-            get { return BackingStore?.Get<WorkbookWorksheetProtection?>("protection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookWorksheetProtection?>("protection"); }
             set { BackingStore?.Set("protection", value); }
         }
 #nullable restore
 #else
-        public WorkbookWorksheetProtection Protection
+        public Microsoft.Graph.Models.WorkbookWorksheetProtection Protection
         {
-            get { return BackingStore?.Get<WorkbookWorksheetProtection>("protection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookWorksheetProtection>("protection"); }
             set { BackingStore?.Set("protection", value); }
         }
 #endif
         /// <summary>Collection of tables that are part of the worksheet. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookTable>? Tables
+        public List<Microsoft.Graph.Models.WorkbookTable>? Tables
         {
-            get { return BackingStore?.Get<List<WorkbookTable>?>("tables"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookTable>?>("tables"); }
             set { BackingStore?.Set("tables", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookTable> Tables
+        public List<Microsoft.Graph.Models.WorkbookTable> Tables
         {
-            get { return BackingStore?.Get<List<WorkbookTable>>("tables"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.WorkbookTable>>("tables"); }
             set { BackingStore?.Set("tables", value); }
         }
 #endif
@@ -131,12 +131,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookWorksheet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookWorksheet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookWorksheet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WorkbookWorksheet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookWorksheet();
+            return new Microsoft.Graph.Models.WorkbookWorksheet();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -146,13 +146,13 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "charts", n => { Charts = n.GetCollectionOfObjectValues<WorkbookChart>(WorkbookChart.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "charts", n => { Charts = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookChart>(Microsoft.Graph.Models.WorkbookChart.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "names", n => { Names = n.GetCollectionOfObjectValues<WorkbookNamedItem>(WorkbookNamedItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "pivotTables", n => { PivotTables = n.GetCollectionOfObjectValues<WorkbookPivotTable>(WorkbookPivotTable.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "names", n => { Names = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookNamedItem>(Microsoft.Graph.Models.WorkbookNamedItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "pivotTables", n => { PivotTables = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookPivotTable>(Microsoft.Graph.Models.WorkbookPivotTable.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "position", n => { Position = n.GetIntValue(); } },
-                { "protection", n => { Protection = n.GetObjectValue<WorkbookWorksheetProtection>(WorkbookWorksheetProtection.CreateFromDiscriminatorValue); } },
-                { "tables", n => { Tables = n.GetCollectionOfObjectValues<WorkbookTable>(WorkbookTable.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "protection", n => { Protection = n.GetObjectValue<Microsoft.Graph.Models.WorkbookWorksheetProtection>(Microsoft.Graph.Models.WorkbookWorksheetProtection.CreateFromDiscriminatorValue); } },
+                { "tables", n => { Tables = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookTable>(Microsoft.Graph.Models.WorkbookTable.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "visibility", n => { Visibility = n.GetStringValue(); } },
             };
         }
@@ -164,13 +164,13 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<WorkbookChart>("charts", Charts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookChart>("charts", Charts);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<WorkbookNamedItem>("names", Names);
-            writer.WriteCollectionOfObjectValues<WorkbookPivotTable>("pivotTables", PivotTables);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookNamedItem>("names", Names);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookPivotTable>("pivotTables", PivotTables);
             writer.WriteIntValue("position", Position);
-            writer.WriteObjectValue<WorkbookWorksheetProtection>("protection", Protection);
-            writer.WriteCollectionOfObjectValues<WorkbookTable>("tables", Tables);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookWorksheetProtection>("protection", Protection);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.WorkbookTable>("tables", Tables);
             writer.WriteStringValue("visibility", Visibility);
         }
     }

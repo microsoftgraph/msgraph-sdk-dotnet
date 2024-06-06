@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AccessPackageResourceRequest : Entity, IParsable
+    public class AccessPackageResourceRequest : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The catalog property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageCatalog? Catalog
+        public Microsoft.Graph.Models.AccessPackageCatalog? Catalog
         {
-            get { return BackingStore?.Get<AccessPackageCatalog?>("catalog"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageCatalog?>("catalog"); }
             set { BackingStore?.Set("catalog", value); }
         }
 #nullable restore
 #else
-        public AccessPackageCatalog Catalog
+        public Microsoft.Graph.Models.AccessPackageCatalog Catalog
         {
-            get { return BackingStore?.Get<AccessPackageCatalog>("catalog"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageCatalog>("catalog"); }
             set { BackingStore?.Set("catalog", value); }
         }
 #endif
@@ -33,42 +33,42 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The type of the request. Use adminAdd to add a resource, if the caller is an administrator or resource owner, adminUpdate to update a resource, or adminRemove to remove a resource.</summary>
-        public AccessPackageRequestType? RequestType
+        public Microsoft.Graph.Models.AccessPackageRequestType? RequestType
         {
-            get { return BackingStore?.Get<AccessPackageRequestType?>("requestType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageRequestType?>("requestType"); }
             set { BackingStore?.Set("requestType", value); }
         }
         /// <summary>The resource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageResource? Resource
+        public Microsoft.Graph.Models.AccessPackageResource? Resource
         {
-            get { return BackingStore?.Get<AccessPackageResource?>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public AccessPackageResource Resource
+        public Microsoft.Graph.Models.AccessPackageResource Resource
         {
-            get { return BackingStore?.Get<AccessPackageResource>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #endif
         /// <summary>The outcome of whether the service was able to add the resource to the catalog. The value is delivered if the resource was added or removed, and deliveryFailed if it couldn&apos;t be added or removed. Read-only.</summary>
-        public AccessPackageRequestState? State
+        public Microsoft.Graph.Models.AccessPackageRequestState? State
         {
-            get { return BackingStore?.Get<AccessPackageRequestState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageRequestState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageResourceRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackageResourceRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessPackageResourceRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AccessPackageResourceRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageResourceRequest();
+            return new Microsoft.Graph.Models.AccessPackageResourceRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,11 +78,11 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "catalog", n => { Catalog = n.GetObjectValue<AccessPackageCatalog>(AccessPackageCatalog.CreateFromDiscriminatorValue); } },
+                { "catalog", n => { Catalog = n.GetObjectValue<Microsoft.Graph.Models.AccessPackageCatalog>(Microsoft.Graph.Models.AccessPackageCatalog.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "requestType", n => { RequestType = n.GetEnumValue<AccessPackageRequestType>(); } },
-                { "resource", n => { Resource = n.GetObjectValue<AccessPackageResource>(AccessPackageResource.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetEnumValue<AccessPackageRequestState>(); } },
+                { "requestType", n => { RequestType = n.GetEnumValue<Microsoft.Graph.Models.AccessPackageRequestType>(); } },
+                { "resource", n => { Resource = n.GetObjectValue<Microsoft.Graph.Models.AccessPackageResource>(Microsoft.Graph.Models.AccessPackageResource.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Models.AccessPackageRequestState>(); } },
             };
         }
         /// <summary>
@@ -93,11 +93,11 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AccessPackageCatalog>("catalog", Catalog);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AccessPackageCatalog>("catalog", Catalog);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteEnumValue<AccessPackageRequestType>("requestType", RequestType);
-            writer.WriteObjectValue<AccessPackageResource>("resource", Resource);
-            writer.WriteEnumValue<AccessPackageRequestState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AccessPackageRequestType>("requestType", RequestType);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AccessPackageResource>("resource", Resource);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AccessPackageRequestState>("state", State);
         }
     }
 }

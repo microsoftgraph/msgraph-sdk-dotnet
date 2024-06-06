@@ -9,54 +9,54 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties used to assign an Win32 LOB mobile app to a group.
     /// </summary>
-    public class Win32LobAppAssignmentSettings : MobileAppAssignmentSettings, IParsable
+    public class Win32LobAppAssignmentSettings : Microsoft.Graph.Models.MobileAppAssignmentSettings, IParsable
     {
         /// <summary>Contains value for delivery optimization priority.</summary>
-        public Win32LobAppDeliveryOptimizationPriority? DeliveryOptimizationPriority
+        public Microsoft.Graph.Models.Win32LobAppDeliveryOptimizationPriority? DeliveryOptimizationPriority
         {
-            get { return BackingStore?.Get<Win32LobAppDeliveryOptimizationPriority?>("deliveryOptimizationPriority"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Win32LobAppDeliveryOptimizationPriority?>("deliveryOptimizationPriority"); }
             set { BackingStore?.Set("deliveryOptimizationPriority", value); }
         }
         /// <summary>The install time settings to apply for this app assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MobileAppInstallTimeSettings? InstallTimeSettings
+        public Microsoft.Graph.Models.MobileAppInstallTimeSettings? InstallTimeSettings
         {
-            get { return BackingStore?.Get<MobileAppInstallTimeSettings?>("installTimeSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MobileAppInstallTimeSettings?>("installTimeSettings"); }
             set { BackingStore?.Set("installTimeSettings", value); }
         }
 #nullable restore
 #else
-        public MobileAppInstallTimeSettings InstallTimeSettings
+        public Microsoft.Graph.Models.MobileAppInstallTimeSettings InstallTimeSettings
         {
-            get { return BackingStore?.Get<MobileAppInstallTimeSettings>("installTimeSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MobileAppInstallTimeSettings>("installTimeSettings"); }
             set { BackingStore?.Set("installTimeSettings", value); }
         }
 #endif
         /// <summary>Contains value for notification status.</summary>
-        public Win32LobAppNotification? Notifications
+        public Microsoft.Graph.Models.Win32LobAppNotification? Notifications
         {
-            get { return BackingStore?.Get<Win32LobAppNotification?>("notifications"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Win32LobAppNotification?>("notifications"); }
             set { BackingStore?.Set("notifications", value); }
         }
         /// <summary>The reboot settings to apply for this app assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Win32LobAppRestartSettings? RestartSettings
+        public Microsoft.Graph.Models.Win32LobAppRestartSettings? RestartSettings
         {
-            get { return BackingStore?.Get<Win32LobAppRestartSettings?>("restartSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Win32LobAppRestartSettings?>("restartSettings"); }
             set { BackingStore?.Set("restartSettings", value); }
         }
 #nullable restore
 #else
-        public Win32LobAppRestartSettings RestartSettings
+        public Microsoft.Graph.Models.Win32LobAppRestartSettings RestartSettings
         {
-            get { return BackingStore?.Get<Win32LobAppRestartSettings>("restartSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Win32LobAppRestartSettings>("restartSettings"); }
             set { BackingStore?.Set("restartSettings", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Win32LobAppAssignmentSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Win32LobAppAssignmentSettings"/> and sets the default values.
         /// </summary>
         public Win32LobAppAssignmentSettings() : base()
         {
@@ -65,12 +65,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Win32LobAppAssignmentSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Win32LobAppAssignmentSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Win32LobAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Win32LobAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Win32LobAppAssignmentSettings();
+            return new Microsoft.Graph.Models.Win32LobAppAssignmentSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,10 +80,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "deliveryOptimizationPriority", n => { DeliveryOptimizationPriority = n.GetEnumValue<Win32LobAppDeliveryOptimizationPriority>(); } },
-                { "installTimeSettings", n => { InstallTimeSettings = n.GetObjectValue<MobileAppInstallTimeSettings>(MobileAppInstallTimeSettings.CreateFromDiscriminatorValue); } },
-                { "notifications", n => { Notifications = n.GetEnumValue<Win32LobAppNotification>(); } },
-                { "restartSettings", n => { RestartSettings = n.GetObjectValue<Win32LobAppRestartSettings>(Win32LobAppRestartSettings.CreateFromDiscriminatorValue); } },
+                { "deliveryOptimizationPriority", n => { DeliveryOptimizationPriority = n.GetEnumValue<Microsoft.Graph.Models.Win32LobAppDeliveryOptimizationPriority>(); } },
+                { "installTimeSettings", n => { InstallTimeSettings = n.GetObjectValue<Microsoft.Graph.Models.MobileAppInstallTimeSettings>(Microsoft.Graph.Models.MobileAppInstallTimeSettings.CreateFromDiscriminatorValue); } },
+                { "notifications", n => { Notifications = n.GetEnumValue<Microsoft.Graph.Models.Win32LobAppNotification>(); } },
+                { "restartSettings", n => { RestartSettings = n.GetObjectValue<Microsoft.Graph.Models.Win32LobAppRestartSettings>(Microsoft.Graph.Models.Win32LobAppRestartSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -94,10 +94,10 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<Win32LobAppDeliveryOptimizationPriority>("deliveryOptimizationPriority", DeliveryOptimizationPriority);
-            writer.WriteObjectValue<MobileAppInstallTimeSettings>("installTimeSettings", InstallTimeSettings);
-            writer.WriteEnumValue<Win32LobAppNotification>("notifications", Notifications);
-            writer.WriteObjectValue<Win32LobAppRestartSettings>("restartSettings", RestartSettings);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Win32LobAppDeliveryOptimizationPriority>("deliveryOptimizationPriority", DeliveryOptimizationPriority);
+            writer.WriteObjectValue<Microsoft.Graph.Models.MobileAppInstallTimeSettings>("installTimeSettings", InstallTimeSettings);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Win32LobAppNotification>("notifications", Notifications);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Win32LobAppRestartSettings>("restartSettings", RestartSettings);
         }
     }
 }

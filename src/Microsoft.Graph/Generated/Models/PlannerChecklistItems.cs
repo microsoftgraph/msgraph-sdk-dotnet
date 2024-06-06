@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PlannerChecklistItems"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.PlannerChecklistItems"/> and sets the default values.
         /// </summary>
         public PlannerChecklistItems()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerChecklistItems"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PlannerChecklistItems"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlannerChecklistItems CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.PlannerChecklistItems CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerChecklistItems();
+            return new Microsoft.Graph.Models.PlannerChecklistItems();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Search.Qnas
     public class QnasRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Search.Qnas.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Search.Qnas.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the qnas property of the microsoft.graph.searchEntity entity.</summary>
         /// <param name="position">The unique identifier of qna</param>
-        /// <returns>A <see cref="QnaItemRequestBuilder"/></returns>
-        public QnaItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Search.Qnas.Item.QnaItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Search.Qnas.Item.QnaItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("qna%2Did", position);
-                return new QnaItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Search.Qnas.Item.QnaItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="QnasRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Search.Qnas.QnasRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Search.Qnas
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="QnasRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Search.Qnas.QnasRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Search.Qnas
         /// Get a list of the qna objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="QnaCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Search.QnaCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<QnaCollectionResponse?> GetAsync(Action<RequestConfiguration<QnasRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Search.QnaCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Search.Qnas.QnasRequestBuilder.QnasRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<QnaCollectionResponse> GetAsync(Action<RequestConfiguration<QnasRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Search.QnaCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Search.Qnas.QnasRequestBuilder.QnasRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<QnaCollectionResponse>(requestInfo, QnaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Search.QnaCollectionResponse>(requestInfo, Microsoft.Graph.Models.Search.QnaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new qna object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Qna"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Search.Qna"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Qna?> PostAsync(Qna body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Search.Qna?> PostAsync(Microsoft.Graph.Models.Search.Qna body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Qna> PostAsync(Qna body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Search.Qna> PostAsync(Microsoft.Graph.Models.Search.Qna body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Qna>(requestInfo, Qna.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Search.Qna>(requestInfo, Microsoft.Graph.Models.Search.Qna.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the qna objects and their properties.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Search.Qnas
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<QnasRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Search.Qnas.QnasRequestBuilder.QnasRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<QnasRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Search.Qnas.QnasRequestBuilder.QnasRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Search.Qnas
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Qna body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Search.Qna body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Qna body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Search.Qna body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Search.Qnas
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="QnasRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Search.Qnas.QnasRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public QnasRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Search.Qnas.QnasRequestBuilder WithUrl(string rawUrl)
         {
-            return new QnasRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Search.Qnas.QnasRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the qna objects and their properties.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Search.Qnas
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class QnasRequestBuilderGetRequestConfiguration : RequestConfiguration<QnasRequestBuilderGetQueryParameters>
+        public class QnasRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Search.Qnas.QnasRequestBuilder.QnasRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

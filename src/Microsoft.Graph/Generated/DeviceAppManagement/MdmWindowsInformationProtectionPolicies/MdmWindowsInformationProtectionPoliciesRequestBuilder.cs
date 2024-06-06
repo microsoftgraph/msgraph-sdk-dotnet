@@ -19,24 +19,24 @@ namespace Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPol
     public class MdmWindowsInformationProtectionPoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mdmWindowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.</summary>
         /// <param name="position">The unique identifier of mdmWindowsInformationProtectionPolicy</param>
-        /// <returns>A <see cref="MdmWindowsInformationProtectionPolicyItemRequestBuilder"/></returns>
-        public MdmWindowsInformationProtectionPolicyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.Item.MdmWindowsInformationProtectionPolicyItemRequestBuilder"/></returns>
+        public Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.Item.MdmWindowsInformationProtectionPolicyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("mdmWindowsInformationProtectionPolicy%2Did", position);
-                return new MdmWindowsInformationProtectionPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.Item.MdmWindowsInformationProtectionPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MdmWindowsInformationProtectionPoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.MdmWindowsInformationProtectionPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPol
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MdmWindowsInformationProtectionPoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.MdmWindowsInformationProtectionPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPol
         /// List properties and relationships of the mdmWindowsInformationProtectionPolicy objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-mdmwindowsinformationprotectionpolicy-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="MdmWindowsInformationProtectionPolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MdmWindowsInformationProtectionPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<MdmWindowsInformationProtectionPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.MdmWindowsInformationProtectionPoliciesRequestBuilder.MdmWindowsInformationProtectionPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<MdmWindowsInformationProtectionPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<MdmWindowsInformationProtectionPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.MdmWindowsInformationProtectionPoliciesRequestBuilder.MdmWindowsInformationProtectionPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<MdmWindowsInformationProtectionPolicyCollectionResponse>(requestInfo, MdmWindowsInformationProtectionPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicyCollectionResponse>(requestInfo, Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new mdmWindowsInformationProtectionPolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-mdmwindowsinformationprotectionpolicy-create?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="MdmWindowsInformationProtectionPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MdmWindowsInformationProtectionPolicy?> PostAsync(MdmWindowsInformationProtectionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy?> PostAsync(Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<MdmWindowsInformationProtectionPolicy> PostAsync(MdmWindowsInformationProtectionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy> PostAsync(Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<MdmWindowsInformationProtectionPolicy>(requestInfo, MdmWindowsInformationProtectionPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy>(requestInfo, Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List properties and relationships of the mdmWindowsInformationProtectionPolicy objects.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPol
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MdmWindowsInformationProtectionPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.MdmWindowsInformationProtectionPoliciesRequestBuilder.MdmWindowsInformationProtectionPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MdmWindowsInformationProtectionPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.MdmWindowsInformationProtectionPoliciesRequestBuilder.MdmWindowsInformationProtectionPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPol
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(MdmWindowsInformationProtectionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(MdmWindowsInformationProtectionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPol
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MdmWindowsInformationProtectionPoliciesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.MdmWindowsInformationProtectionPoliciesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MdmWindowsInformationProtectionPoliciesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.MdmWindowsInformationProtectionPoliciesRequestBuilder WithUrl(string rawUrl)
         {
-            return new MdmWindowsInformationProtectionPoliciesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.MdmWindowsInformationProtectionPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List properties and relationships of the mdmWindowsInformationProtectionPolicy objects.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPol
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MdmWindowsInformationProtectionPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<MdmWindowsInformationProtectionPoliciesRequestBuilderGetQueryParameters>
+        public class MdmWindowsInformationProtectionPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.MdmWindowsInformationProtectionPoliciesRequestBuilder.MdmWindowsInformationProtectionPoliciesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

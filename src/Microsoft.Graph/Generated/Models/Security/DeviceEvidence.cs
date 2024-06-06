@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class DeviceEvidence : AlertEvidence, IParsable
+    public class DeviceEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A unique identifier assigned to a device by Microsoft Entra ID when device is Microsoft Entra joined.</summary>
@@ -55,9 +55,9 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("firstSeenDateTime", value); }
         }
         /// <summary>The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.</summary>
-        public DeviceHealthStatus? HealthStatus
+        public Microsoft.Graph.Models.Security.DeviceHealthStatus? HealthStatus
         {
-            get { return BackingStore?.Get<DeviceHealthStatus?>("healthStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.DeviceHealthStatus?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>Ip interfaces of the device during the time of the alert.</summary>
@@ -111,16 +111,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>Users that were logged on the machine during the time of the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LoggedOnUser>? LoggedOnUsers
+        public List<Microsoft.Graph.Models.Security.LoggedOnUser>? LoggedOnUsers
         {
-            get { return BackingStore?.Get<List<LoggedOnUser>?>("loggedOnUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.LoggedOnUser>?>("loggedOnUsers"); }
             set { BackingStore?.Set("loggedOnUsers", value); }
         }
 #nullable restore
 #else
-        public List<LoggedOnUser> LoggedOnUsers
+        public List<Microsoft.Graph.Models.Security.LoggedOnUser> LoggedOnUsers
         {
-            get { return BackingStore?.Get<List<LoggedOnUser>>("loggedOnUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.LoggedOnUser>>("loggedOnUsers"); }
             set { BackingStore?.Set("loggedOnUsers", value); }
         }
 #endif
@@ -191,9 +191,9 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.</summary>
-        public DeviceRiskScore? RiskScore
+        public Microsoft.Graph.Models.Security.DeviceRiskScore? RiskScore
         {
-            get { return BackingStore?.Get<DeviceRiskScore?>("riskScore"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.DeviceRiskScore?>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
         /// <summary>The version of the operating system platform.</summary>
@@ -229,7 +229,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.DeviceEvidence"/> and sets the default values.
         /// </summary>
         public DeviceEvidence() : base()
         {
@@ -238,12 +238,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.DeviceEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.DeviceEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceEvidence();
+            return new Microsoft.Graph.Models.Security.DeviceEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -254,21 +254,21 @@ namespace Microsoft.Graph.Models.Security
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "azureAdDeviceId", n => { AzureAdDeviceId = n.GetStringValue(); } },
-                { "defenderAvStatus", n => { DefenderAvStatus = n.GetEnumValue<DefenderAvStatus>(); } },
+                { "defenderAvStatus", n => { DefenderAvStatus = n.GetEnumValue<Microsoft.Graph.Models.Security.DefenderAvStatus>(); } },
                 { "deviceDnsName", n => { DeviceDnsName = n.GetStringValue(); } },
                 { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                { "healthStatus", n => { HealthStatus = n.GetEnumValue<DeviceHealthStatus>(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<Microsoft.Graph.Models.Security.DeviceHealthStatus>(); } },
                 { "ipInterfaces", n => { IpInterfaces = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "lastExternalIpAddress", n => { LastExternalIpAddress = n.GetStringValue(); } },
                 { "lastIpAddress", n => { LastIpAddress = n.GetStringValue(); } },
-                { "loggedOnUsers", n => { LoggedOnUsers = n.GetCollectionOfObjectValues<LoggedOnUser>(LoggedOnUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "loggedOnUsers", n => { LoggedOnUsers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.LoggedOnUser>(Microsoft.Graph.Models.Security.LoggedOnUser.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "mdeDeviceId", n => { MdeDeviceId = n.GetStringValue(); } },
-                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<OnboardingStatus>(); } },
+                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<Microsoft.Graph.Models.Security.OnboardingStatus>(); } },
                 { "osBuild", n => { OsBuild = n.GetLongValue(); } },
                 { "osPlatform", n => { OsPlatform = n.GetStringValue(); } },
                 { "rbacGroupId", n => { RbacGroupId = n.GetIntValue(); } },
                 { "rbacGroupName", n => { RbacGroupName = n.GetStringValue(); } },
-                { "riskScore", n => { RiskScore = n.GetEnumValue<DeviceRiskScore>(); } },
+                { "riskScore", n => { RiskScore = n.GetEnumValue<Microsoft.Graph.Models.Security.DeviceRiskScore>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
                 { "vmMetadata", n => { VmMetadata = n.GetObjectValue<Microsoft.Graph.Models.Security.VmMetadata>(Microsoft.Graph.Models.Security.VmMetadata.CreateFromDiscriminatorValue); } },
             };
@@ -282,21 +282,21 @@ namespace Microsoft.Graph.Models.Security
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("azureAdDeviceId", AzureAdDeviceId);
-            writer.WriteEnumValue<DefenderAvStatus>("defenderAvStatus", DefenderAvStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.DefenderAvStatus>("defenderAvStatus", DefenderAvStatus);
             writer.WriteStringValue("deviceDnsName", DeviceDnsName);
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
-            writer.WriteEnumValue<DeviceHealthStatus>("healthStatus", HealthStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.DeviceHealthStatus>("healthStatus", HealthStatus);
             writer.WriteCollectionOfPrimitiveValues<string>("ipInterfaces", IpInterfaces);
             writer.WriteStringValue("lastExternalIpAddress", LastExternalIpAddress);
             writer.WriteStringValue("lastIpAddress", LastIpAddress);
-            writer.WriteCollectionOfObjectValues<LoggedOnUser>("loggedOnUsers", LoggedOnUsers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.LoggedOnUser>("loggedOnUsers", LoggedOnUsers);
             writer.WriteStringValue("mdeDeviceId", MdeDeviceId);
-            writer.WriteEnumValue<OnboardingStatus>("onboardingStatus", OnboardingStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.OnboardingStatus>("onboardingStatus", OnboardingStatus);
             writer.WriteLongValue("osBuild", OsBuild);
             writer.WriteStringValue("osPlatform", OsPlatform);
             writer.WriteIntValue("rbacGroupId", RbacGroupId);
             writer.WriteStringValue("rbacGroupName", RbacGroupName);
-            writer.WriteEnumValue<DeviceRiskScore>("riskScore", RiskScore);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.DeviceRiskScore>("riskScore", RiskScore);
             writer.WriteStringValue("version", Version);
             writer.WriteObjectValue<Microsoft.Graph.Models.Security.VmMetadata>("vmMetadata", VmMetadata);
         }

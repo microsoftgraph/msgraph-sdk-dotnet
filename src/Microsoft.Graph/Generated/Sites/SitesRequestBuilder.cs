@@ -23,44 +23,44 @@ namespace Microsoft.Graph.Sites
     public class SitesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the add method.</summary>
-        public AddRequestBuilder Add
+        public Microsoft.Graph.Sites.Add.AddRequestBuilder Add
         {
-            get => new AddRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Sites.Add.AddRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Sites.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Sites.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public DeltaRequestBuilder Delta
+        public Microsoft.Graph.Sites.Delta.DeltaRequestBuilder Delta
         {
-            get => new DeltaRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Sites.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAllSites method.</summary>
-        public GetAllSitesRequestBuilder GetAllSites
+        public Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder GetAllSites
         {
-            get => new GetAllSitesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the remove method.</summary>
-        public RemoveRequestBuilder Remove
+        public Microsoft.Graph.Sites.Remove.RemoveRequestBuilder Remove
         {
-            get => new RemoveRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Sites.Remove.RemoveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of site entities.</summary>
         /// <param name="position">The unique identifier of site</param>
-        /// <returns>A <see cref="SiteItemRequestBuilder"/></returns>
-        public SiteItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Sites.Item.SiteItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Sites.Item.SiteItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("site%2Did", position);
-                return new SiteItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Sites.Item.SiteItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SitesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.SitesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Sites
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SitesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.SitesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -79,25 +79,25 @@ namespace Microsoft.Graph.Sites
         /// Search across a SharePoint tenant for sites that match keywords provided. The only property that works for sorting is createdDateTime. The search filter is a free text search that uses multiple properties when retrieving the search results.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-search?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="SiteCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SiteCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SiteCollectionResponse?> GetAsync(Action<RequestConfiguration<SitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SiteCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.SitesRequestBuilder.SitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SiteCollectionResponse> GetAsync(Action<RequestConfiguration<SitesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SiteCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.SitesRequestBuilder.SitesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SiteCollectionResponse>(requestInfo, SiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SiteCollectionResponse>(requestInfo, Microsoft.Graph.Models.SiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Search across a SharePoint tenant for sites that match keywords provided. The only property that works for sorting is createdDateTime. The search filter is a free text search that uses multiple properties when retrieving the search results.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Sites
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SitesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.SitesRequestBuilder.SitesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SitesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.SitesRequestBuilder.SitesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -121,11 +121,11 @@ namespace Microsoft.Graph.Sites
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SitesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Sites.SitesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SitesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Sites.SitesRequestBuilder WithUrl(string rawUrl)
         {
-            return new SitesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Sites.SitesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Search across a SharePoint tenant for sites that match keywords provided. The only property that works for sorting is createdDateTime. The search filter is a free text search that uses multiple properties when retrieving the search results.
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Sites
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SitesRequestBuilderGetRequestConfiguration : RequestConfiguration<SitesRequestBuilderGetQueryParameters>
+        public class SitesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Sites.SitesRequestBuilder.SitesRequestBuilderGetQueryParameters>
         {
         }
     }

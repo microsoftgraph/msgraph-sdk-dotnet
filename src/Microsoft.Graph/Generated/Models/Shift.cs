@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Shift : ChangeTrackedEntity, IParsable
+    public class Shift : Microsoft.Graph.Models.ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they are shared, which copies the changes from the draftShift to the sharedShift property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ShiftItem? DraftShift
+        public Microsoft.Graph.Models.ShiftItem? DraftShift
         {
-            get { return BackingStore?.Get<ShiftItem?>("draftShift"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ShiftItem?>("draftShift"); }
             set { BackingStore?.Set("draftShift", value); }
         }
 #nullable restore
 #else
-        public ShiftItem DraftShift
+        public Microsoft.Graph.Models.ShiftItem DraftShift
         {
-            get { return BackingStore?.Get<ShiftItem>("draftShift"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ShiftItem>("draftShift"); }
             set { BackingStore?.Set("draftShift", value); }
         }
 #endif
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The shared version of this shift that is viewable by both employees and managers. Updates to the sharedShift property send notifications to users in the Teams client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ShiftItem? SharedShift
+        public Microsoft.Graph.Models.ShiftItem? SharedShift
         {
-            get { return BackingStore?.Get<ShiftItem?>("sharedShift"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ShiftItem?>("sharedShift"); }
             set { BackingStore?.Set("sharedShift", value); }
         }
 #nullable restore
 #else
-        public ShiftItem SharedShift
+        public Microsoft.Graph.Models.ShiftItem SharedShift
         {
-            get { return BackingStore?.Get<ShiftItem>("sharedShift"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ShiftItem>("sharedShift"); }
             set { BackingStore?.Set("sharedShift", value); }
         }
 #endif
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Shift"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Shift"/> and sets the default values.
         /// </summary>
         public Shift() : base()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Shift"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Shift"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Shift CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Shift CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Shift();
+            return new Microsoft.Graph.Models.Shift();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,9 +99,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "draftShift", n => { DraftShift = n.GetObjectValue<ShiftItem>(ShiftItem.CreateFromDiscriminatorValue); } },
+                { "draftShift", n => { DraftShift = n.GetObjectValue<Microsoft.Graph.Models.ShiftItem>(Microsoft.Graph.Models.ShiftItem.CreateFromDiscriminatorValue); } },
                 { "schedulingGroupId", n => { SchedulingGroupId = n.GetStringValue(); } },
-                { "sharedShift", n => { SharedShift = n.GetObjectValue<ShiftItem>(ShiftItem.CreateFromDiscriminatorValue); } },
+                { "sharedShift", n => { SharedShift = n.GetObjectValue<Microsoft.Graph.Models.ShiftItem>(Microsoft.Graph.Models.ShiftItem.CreateFromDiscriminatorValue); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -113,9 +113,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ShiftItem>("draftShift", DraftShift);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ShiftItem>("draftShift", DraftShift);
             writer.WriteStringValue("schedulingGroupId", SchedulingGroupId);
-            writer.WriteObjectValue<ShiftItem>("sharedShift", SharedShift);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ShiftItem>("sharedShift", SharedShift);
             writer.WriteStringValue("userId", UserId);
         }
     }

@@ -13,48 +13,48 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The contact information for the abuse contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WhoisContact? Abuse
+        public Microsoft.Graph.Models.Security.WhoisContact? Abuse
         {
-            get { return BackingStore?.Get<WhoisContact?>("abuse"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisContact?>("abuse"); }
             set { BackingStore?.Set("abuse", value); }
         }
 #nullable restore
 #else
-        public WhoisContact Abuse
+        public Microsoft.Graph.Models.Security.WhoisContact Abuse
         {
-            get { return BackingStore?.Get<WhoisContact>("abuse"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisContact>("abuse"); }
             set { BackingStore?.Set("abuse", value); }
         }
 #endif
         /// <summary>The contact information for the admin contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WhoisContact? Admin
+        public Microsoft.Graph.Models.Security.WhoisContact? Admin
         {
-            get { return BackingStore?.Get<WhoisContact?>("admin"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisContact?>("admin"); }
             set { BackingStore?.Set("admin", value); }
         }
 #nullable restore
 #else
-        public WhoisContact Admin
+        public Microsoft.Graph.Models.Security.WhoisContact Admin
         {
-            get { return BackingStore?.Get<WhoisContact>("admin"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisContact>("admin"); }
             set { BackingStore?.Set("admin", value); }
         }
 #endif
         /// <summary>The contact information for the billing contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WhoisContact? Billing
+        public Microsoft.Graph.Models.Security.WhoisContact? Billing
         {
-            get { return BackingStore?.Get<WhoisContact?>("billing"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisContact?>("billing"); }
             set { BackingStore?.Set("billing", value); }
         }
 #nullable restore
 #else
-        public WhoisContact Billing
+        public Microsoft.Graph.Models.Security.WhoisContact Billing
         {
-            get { return BackingStore?.Get<WhoisContact>("billing"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisContact>("billing"); }
             set { BackingStore?.Set("billing", value); }
         }
 #endif
@@ -117,32 +117,32 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The nameservers for this WHOIS object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WhoisNameserver>? Nameservers
+        public List<Microsoft.Graph.Models.Security.WhoisNameserver>? Nameservers
         {
-            get { return BackingStore?.Get<List<WhoisNameserver>?>("nameservers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.WhoisNameserver>?>("nameservers"); }
             set { BackingStore?.Set("nameservers", value); }
         }
 #nullable restore
 #else
-        public List<WhoisNameserver> Nameservers
+        public List<Microsoft.Graph.Models.Security.WhoisNameserver> Nameservers
         {
-            get { return BackingStore?.Get<List<WhoisNameserver>>("nameservers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.WhoisNameserver>>("nameservers"); }
             set { BackingStore?.Set("nameservers", value); }
         }
 #endif
         /// <summary>The contact information for the noc contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WhoisContact? Noc
+        public Microsoft.Graph.Models.Security.WhoisContact? Noc
         {
-            get { return BackingStore?.Get<WhoisContact?>("noc"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisContact?>("noc"); }
             set { BackingStore?.Set("noc", value); }
         }
 #nullable restore
 #else
-        public WhoisContact Noc
+        public Microsoft.Graph.Models.Security.WhoisContact Noc
         {
-            get { return BackingStore?.Get<WhoisContact>("noc"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisContact>("noc"); }
             set { BackingStore?.Set("noc", value); }
         }
 #endif
@@ -165,32 +165,32 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The contact information for the registrant contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WhoisContact? Registrant
+        public Microsoft.Graph.Models.Security.WhoisContact? Registrant
         {
-            get { return BackingStore?.Get<WhoisContact?>("registrant"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisContact?>("registrant"); }
             set { BackingStore?.Set("registrant", value); }
         }
 #nullable restore
 #else
-        public WhoisContact Registrant
+        public Microsoft.Graph.Models.Security.WhoisContact Registrant
         {
-            get { return BackingStore?.Get<WhoisContact>("registrant"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisContact>("registrant"); }
             set { BackingStore?.Set("registrant", value); }
         }
 #endif
         /// <summary>The contact information for the registrar contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WhoisContact? Registrar
+        public Microsoft.Graph.Models.Security.WhoisContact? Registrar
         {
-            get { return BackingStore?.Get<WhoisContact?>("registrar"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisContact?>("registrar"); }
             set { BackingStore?.Set("registrar", value); }
         }
 #nullable restore
 #else
-        public WhoisContact Registrar
+        public Microsoft.Graph.Models.Security.WhoisContact Registrar
         {
-            get { return BackingStore?.Get<WhoisContact>("registrar"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisContact>("registrar"); }
             set { BackingStore?.Set("registrar", value); }
         }
 #endif
@@ -203,16 +203,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The contact information for the technical contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WhoisContact? Technical
+        public Microsoft.Graph.Models.Security.WhoisContact? Technical
         {
-            get { return BackingStore?.Get<WhoisContact?>("technical"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisContact?>("technical"); }
             set { BackingStore?.Set("technical", value); }
         }
 #nullable restore
 #else
-        public WhoisContact Technical
+        public Microsoft.Graph.Models.Security.WhoisContact Technical
         {
-            get { return BackingStore?.Get<WhoisContact>("technical"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisContact>("technical"); }
             set { BackingStore?.Set("technical", value); }
         }
 #endif
@@ -235,33 +235,33 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The contact information for the zone contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WhoisContact? Zone
+        public Microsoft.Graph.Models.Security.WhoisContact? Zone
         {
-            get { return BackingStore?.Get<WhoisContact?>("zone"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisContact?>("zone"); }
             set { BackingStore?.Set("zone", value); }
         }
 #nullable restore
 #else
-        public WhoisContact Zone
+        public Microsoft.Graph.Models.Security.WhoisContact Zone
         {
-            get { return BackingStore?.Get<WhoisContact>("zone"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.WhoisContact>("zone"); }
             set { BackingStore?.Set("zone", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WhoisBaseRecord"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.WhoisBaseRecord"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WhoisBaseRecord CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.WhoisBaseRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.whoisHistoryRecord" => new WhoisHistoryRecord(),
-                "#microsoft.graph.security.whoisRecord" => new WhoisRecord(),
-                _ => new WhoisBaseRecord(),
+                "#microsoft.graph.security.whoisHistoryRecord" => new Microsoft.Graph.Models.Security.WhoisHistoryRecord(),
+                "#microsoft.graph.security.whoisRecord" => new Microsoft.Graph.Models.Security.WhoisRecord(),
+                _ => new Microsoft.Graph.Models.Security.WhoisBaseRecord(),
             };
         }
         /// <summary>
@@ -272,24 +272,24 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "abuse", n => { Abuse = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
-                { "admin", n => { Admin = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
-                { "billing", n => { Billing = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
+                { "abuse", n => { Abuse = n.GetObjectValue<Microsoft.Graph.Models.Security.WhoisContact>(Microsoft.Graph.Models.Security.WhoisContact.CreateFromDiscriminatorValue); } },
+                { "admin", n => { Admin = n.GetObjectValue<Microsoft.Graph.Models.Security.WhoisContact>(Microsoft.Graph.Models.Security.WhoisContact.CreateFromDiscriminatorValue); } },
+                { "billing", n => { Billing = n.GetObjectValue<Microsoft.Graph.Models.Security.WhoisContact>(Microsoft.Graph.Models.Security.WhoisContact.CreateFromDiscriminatorValue); } },
                 { "domainStatus", n => { DomainStatus = n.GetStringValue(); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "host", n => { Host = n.GetObjectValue<Microsoft.Graph.Models.Security.Host>(Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue); } },
                 { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                { "nameservers", n => { Nameservers = n.GetCollectionOfObjectValues<WhoisNameserver>(WhoisNameserver.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "noc", n => { Noc = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
+                { "nameservers", n => { Nameservers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.WhoisNameserver>(Microsoft.Graph.Models.Security.WhoisNameserver.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "noc", n => { Noc = n.GetObjectValue<Microsoft.Graph.Models.Security.WhoisContact>(Microsoft.Graph.Models.Security.WhoisContact.CreateFromDiscriminatorValue); } },
                 { "rawWhoisText", n => { RawWhoisText = n.GetStringValue(); } },
-                { "registrant", n => { Registrant = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
-                { "registrar", n => { Registrar = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
+                { "registrant", n => { Registrant = n.GetObjectValue<Microsoft.Graph.Models.Security.WhoisContact>(Microsoft.Graph.Models.Security.WhoisContact.CreateFromDiscriminatorValue); } },
+                { "registrar", n => { Registrar = n.GetObjectValue<Microsoft.Graph.Models.Security.WhoisContact>(Microsoft.Graph.Models.Security.WhoisContact.CreateFromDiscriminatorValue); } },
                 { "registrationDateTime", n => { RegistrationDateTime = n.GetDateTimeOffsetValue(); } },
-                { "technical", n => { Technical = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
+                { "technical", n => { Technical = n.GetObjectValue<Microsoft.Graph.Models.Security.WhoisContact>(Microsoft.Graph.Models.Security.WhoisContact.CreateFromDiscriminatorValue); } },
                 { "whoisServer", n => { WhoisServer = n.GetStringValue(); } },
-                { "zone", n => { Zone = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
+                { "zone", n => { Zone = n.GetObjectValue<Microsoft.Graph.Models.Security.WhoisContact>(Microsoft.Graph.Models.Security.WhoisContact.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -300,24 +300,24 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<WhoisContact>("abuse", Abuse);
-            writer.WriteObjectValue<WhoisContact>("admin", Admin);
-            writer.WriteObjectValue<WhoisContact>("billing", Billing);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.WhoisContact>("abuse", Abuse);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.WhoisContact>("admin", Admin);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.WhoisContact>("billing", Billing);
             writer.WriteStringValue("domainStatus", DomainStatus);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Models.Security.Host>("host", Host);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
             writer.WriteDateTimeOffsetValue("lastUpdateDateTime", LastUpdateDateTime);
-            writer.WriteCollectionOfObjectValues<WhoisNameserver>("nameservers", Nameservers);
-            writer.WriteObjectValue<WhoisContact>("noc", Noc);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.WhoisNameserver>("nameservers", Nameservers);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.WhoisContact>("noc", Noc);
             writer.WriteStringValue("rawWhoisText", RawWhoisText);
-            writer.WriteObjectValue<WhoisContact>("registrant", Registrant);
-            writer.WriteObjectValue<WhoisContact>("registrar", Registrar);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.WhoisContact>("registrant", Registrant);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.WhoisContact>("registrar", Registrar);
             writer.WriteDateTimeOffsetValue("registrationDateTime", RegistrationDateTime);
-            writer.WriteObjectValue<WhoisContact>("technical", Technical);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.WhoisContact>("technical", Technical);
             writer.WriteStringValue("whoisServer", WhoisServer);
-            writer.WriteObjectValue<WhoisContact>("zone", Zone);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.WhoisContact>("zone", Zone);
         }
     }
 }

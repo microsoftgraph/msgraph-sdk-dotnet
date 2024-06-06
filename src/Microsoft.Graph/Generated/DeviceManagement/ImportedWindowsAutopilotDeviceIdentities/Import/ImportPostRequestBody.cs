@@ -23,21 +23,21 @@ namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentit
         /// <summary>The importedWindowsAutopilotDeviceIdentities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ImportedWindowsAutopilotDeviceIdentity>? ImportedWindowsAutopilotDeviceIdentities
+        public List<Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentity>? ImportedWindowsAutopilotDeviceIdentities
         {
-            get { return BackingStore?.Get<List<ImportedWindowsAutopilotDeviceIdentity>?>("importedWindowsAutopilotDeviceIdentities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentity>?>("importedWindowsAutopilotDeviceIdentities"); }
             set { BackingStore?.Set("importedWindowsAutopilotDeviceIdentities", value); }
         }
 #nullable restore
 #else
-        public List<ImportedWindowsAutopilotDeviceIdentity> ImportedWindowsAutopilotDeviceIdentities
+        public List<Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentity> ImportedWindowsAutopilotDeviceIdentities
         {
-            get { return BackingStore?.Get<List<ImportedWindowsAutopilotDeviceIdentity>>("importedWindowsAutopilotDeviceIdentities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentity>>("importedWindowsAutopilotDeviceIdentities"); }
             set { BackingStore?.Set("importedWindowsAutopilotDeviceIdentities", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ImportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import.ImportPostRequestBody"/> and sets the default values.
         /// </summary>
         public ImportPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentit
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ImportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import.ImportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ImportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import.ImportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ImportPostRequestBody();
+            return new Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import.ImportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentit
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "importedWindowsAutopilotDeviceIdentities", n => { ImportedWindowsAutopilotDeviceIdentities = n.GetCollectionOfObjectValues<ImportedWindowsAutopilotDeviceIdentity>(ImportedWindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "importedWindowsAutopilotDeviceIdentities", n => { ImportedWindowsAutopilotDeviceIdentities = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentity>(Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentit
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<ImportedWindowsAutopilotDeviceIdentity>("importedWindowsAutopilotDeviceIdentities", ImportedWindowsAutopilotDeviceIdentities);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ImportedWindowsAutopilotDeviceIdentity>("importedWindowsAutopilotDeviceIdentities", ImportedWindowsAutopilotDeviceIdentities);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

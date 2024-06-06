@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class KubernetesSecretEvidence : AlertEvidence, IParsable
+    public class KubernetesSecretEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The secret name.</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The secret namespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public KubernetesNamespaceEvidence? Namespace
+        public Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence? Namespace
         {
-            get { return BackingStore?.Get<KubernetesNamespaceEvidence?>("namespace"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence?>("namespace"); }
             set { BackingStore?.Set("namespace", value); }
         }
 #nullable restore
 #else
-        public KubernetesNamespaceEvidence Namespace
+        public Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence Namespace
         {
-            get { return BackingStore?.Get<KubernetesNamespaceEvidence>("namespace"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence>("namespace"); }
             set { BackingStore?.Set("namespace", value); }
         }
 #endif
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="KubernetesSecretEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.KubernetesSecretEvidence"/> and sets the default values.
         /// </summary>
         public KubernetesSecretEvidence() : base()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="KubernetesSecretEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.KubernetesSecretEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new KubernetesSecretEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.KubernetesSecretEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new KubernetesSecretEvidence();
+            return new Microsoft.Graph.Models.Security.KubernetesSecretEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models.Security
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "namespace", n => { Namespace = n.GetObjectValue<KubernetesNamespaceEvidence>(KubernetesNamespaceEvidence.CreateFromDiscriminatorValue); } },
+                { "namespace", n => { Namespace = n.GetObjectValue<Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence>(Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence.CreateFromDiscriminatorValue); } },
                 { "secretType", n => { SecretType = n.GetStringValue(); } },
             };
         }
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Models.Security
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<KubernetesNamespaceEvidence>("namespace", Namespace);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence>("namespace", Namespace);
             writer.WriteStringValue("secretType", SecretType);
         }
     }

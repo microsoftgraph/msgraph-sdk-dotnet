@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CloudPcOnPremisesConnection : Entity, IParsable
+    public class CloudPcOnPremisesConnection : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Maximum length is 255. Optional.</summary>
@@ -75,9 +75,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Specifies how the provisioned Cloud PC joins to Microsoft Entra. It includes different types, one is Microsoft Entra ID join, which means there&apos;s no on-premises Active Directory (AD) in the current tenant, and the Cloud PC device is joined by Microsoft Entra. Another one is hybridAzureADJoin, which means there&apos;s also an on-premises Active Directory (AD) in the current tenant and the Cloud PC device joins to on-premises Active Directory (AD) and Microsoft Entra. The type also determines which types of users can be assigned and can sign into a Cloud PC. The azureADJoin type indicates that cloud-only and hybrid users can be assigned and signed into the Cloud PC. hybridAzureADJoin indicates only hybrid users can be assigned and signed into the Cloud PC. The default value is hybridAzureADJoin.</summary>
-        public CloudPcOnPremisesConnectionType? ConnectionType
+        public Microsoft.Graph.Models.CloudPcOnPremisesConnectionType? ConnectionType
         {
-            get { return BackingStore?.Get<CloudPcOnPremisesConnectionType?>("connectionType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CloudPcOnPremisesConnectionType?>("connectionType"); }
             set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>The display name for the Azure network connection.</summary>
@@ -97,24 +97,24 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The healthCheckStatus property</summary>
-        public CloudPcOnPremisesConnectionStatus? HealthCheckStatus
+        public Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatus? HealthCheckStatus
         {
-            get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatus?>("healthCheckStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatus?>("healthCheckStatus"); }
             set { BackingStore?.Set("healthCheckStatus", value); }
         }
         /// <summary>Indicates the results of health checks performed on the on-premises connection. Read-only. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcOnPremisesConnectionStatusDetail? HealthCheckStatusDetail
+        public Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail? HealthCheckStatusDetail
         {
-            get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatusDetail?>("healthCheckStatusDetail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail?>("healthCheckStatusDetail"); }
             set { BackingStore?.Set("healthCheckStatusDetail", value); }
         }
 #nullable restore
 #else
-        public CloudPcOnPremisesConnectionStatusDetail HealthCheckStatusDetail
+        public Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail HealthCheckStatusDetail
         {
-            get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatusDetail>("healthCheckStatusDetail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail>("healthCheckStatusDetail"); }
             set { BackingStore?.Set("healthCheckStatusDetail", value); }
         }
 #endif
@@ -239,12 +239,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcOnPremisesConnection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CloudPcOnPremisesConnection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPcOnPremisesConnection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CloudPcOnPremisesConnection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcOnPremisesConnection();
+            return new Microsoft.Graph.Models.CloudPcOnPremisesConnection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -258,10 +258,10 @@ namespace Microsoft.Graph.Models
                 { "adDomainPassword", n => { AdDomainPassword = n.GetStringValue(); } },
                 { "adDomainUsername", n => { AdDomainUsername = n.GetStringValue(); } },
                 { "alternateResourceUrl", n => { AlternateResourceUrl = n.GetStringValue(); } },
-                { "connectionType", n => { ConnectionType = n.GetEnumValue<CloudPcOnPremisesConnectionType>(); } },
+                { "connectionType", n => { ConnectionType = n.GetEnumValue<Microsoft.Graph.Models.CloudPcOnPremisesConnectionType>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "healthCheckStatus", n => { HealthCheckStatus = n.GetEnumValue<CloudPcOnPremisesConnectionStatus>(); } },
-                { "healthCheckStatusDetail", n => { HealthCheckStatusDetail = n.GetObjectValue<CloudPcOnPremisesConnectionStatusDetail>(CloudPcOnPremisesConnectionStatusDetail.CreateFromDiscriminatorValue); } },
+                { "healthCheckStatus", n => { HealthCheckStatus = n.GetEnumValue<Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatus>(); } },
+                { "healthCheckStatusDetail", n => { HealthCheckStatusDetail = n.GetObjectValue<Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail>(Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail.CreateFromDiscriminatorValue); } },
                 { "inUse", n => { InUse = n.GetBoolValue(); } },
                 { "organizationalUnit", n => { OrganizationalUnit = n.GetStringValue(); } },
                 { "resourceGroupId", n => { ResourceGroupId = n.GetStringValue(); } },
@@ -284,10 +284,10 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("adDomainPassword", AdDomainPassword);
             writer.WriteStringValue("adDomainUsername", AdDomainUsername);
             writer.WriteStringValue("alternateResourceUrl", AlternateResourceUrl);
-            writer.WriteEnumValue<CloudPcOnPremisesConnectionType>("connectionType", ConnectionType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CloudPcOnPremisesConnectionType>("connectionType", ConnectionType);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<CloudPcOnPremisesConnectionStatus>("healthCheckStatus", HealthCheckStatus);
-            writer.WriteObjectValue<CloudPcOnPremisesConnectionStatusDetail>("healthCheckStatusDetail", HealthCheckStatusDetail);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatus>("healthCheckStatus", HealthCheckStatus);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail>("healthCheckStatusDetail", HealthCheckStatusDetail);
             writer.WriteBoolValue("inUse", InUse);
             writer.WriteStringValue("organizationalUnit", OrganizationalUnit);
             writer.WriteStringValue("resourceGroupId", ResourceGroupId);

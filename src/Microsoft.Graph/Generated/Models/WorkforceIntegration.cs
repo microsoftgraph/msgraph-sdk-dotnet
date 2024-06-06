@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WorkforceIntegration : ChangeTrackedEntity, IParsable
+    public class WorkforceIntegration : Microsoft.Graph.Models.ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>API version for the call back URL. Start with 1.</summary>
@@ -35,16 +35,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The workforce integration encryption resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkforceIntegrationEncryption? Encryption
+        public Microsoft.Graph.Models.WorkforceIntegrationEncryption? Encryption
         {
-            get { return BackingStore?.Get<WorkforceIntegrationEncryption?>("encryption"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkforceIntegrationEncryption?>("encryption"); }
             set { BackingStore?.Set("encryption", value); }
         }
 #nullable restore
 #else
-        public WorkforceIntegrationEncryption Encryption
+        public Microsoft.Graph.Models.WorkforceIntegrationEncryption Encryption
         {
-            get { return BackingStore?.Get<WorkforceIntegrationEncryption>("encryption"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkforceIntegrationEncryption>("encryption"); }
             set { BackingStore?.Set("encryption", value); }
         }
 #endif
@@ -55,9 +55,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>The Shifts entities supported for synchronous change notifications. Shifts will make a call back to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, userShiftPreferences, openshift, openShiftRequest, offerShiftRequest, unknownFutureValue.</summary>
-        public WorkforceIntegrationSupportedEntities? SupportedEntities
+        public Microsoft.Graph.Models.WorkforceIntegrationSupportedEntities? SupportedEntities
         {
-            get { return BackingStore?.Get<WorkforceIntegrationSupportedEntities?>("supportedEntities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkforceIntegrationSupportedEntities?>("supportedEntities"); }
             set { BackingStore?.Set("supportedEntities", value); }
         }
         /// <summary>Workforce Integration URL for callbacks from the Shifts service.</summary>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WorkforceIntegration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WorkforceIntegration"/> and sets the default values.
         /// </summary>
         public WorkforceIntegration() : base()
         {
@@ -86,12 +86,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkforceIntegration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkforceIntegration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkforceIntegration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WorkforceIntegration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkforceIntegration();
+            return new Microsoft.Graph.Models.WorkforceIntegration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,9 +103,9 @@ namespace Microsoft.Graph.Models
             {
                 { "apiVersion", n => { ApiVersion = n.GetIntValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "encryption", n => { Encryption = n.GetObjectValue<WorkforceIntegrationEncryption>(WorkforceIntegrationEncryption.CreateFromDiscriminatorValue); } },
+                { "encryption", n => { Encryption = n.GetObjectValue<Microsoft.Graph.Models.WorkforceIntegrationEncryption>(Microsoft.Graph.Models.WorkforceIntegrationEncryption.CreateFromDiscriminatorValue); } },
                 { "isActive", n => { IsActive = n.GetBoolValue(); } },
-                { "supportedEntities", n => { SupportedEntities = n.GetEnumValue<WorkforceIntegrationSupportedEntities>(); } },
+                { "supportedEntities", n => { SupportedEntities = n.GetEnumValue<Microsoft.Graph.Models.WorkforceIntegrationSupportedEntities>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -119,9 +119,9 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteIntValue("apiVersion", ApiVersion);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<WorkforceIntegrationEncryption>("encryption", Encryption);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkforceIntegrationEncryption>("encryption", Encryption);
             writer.WriteBoolValue("isActive", IsActive);
-            writer.WriteEnumValue<WorkforceIntegrationSupportedEntities>("supportedEntities", SupportedEntities);
+            writer.WriteEnumValue<Microsoft.Graph.Models.WorkforceIntegrationSupportedEntities>("supportedEntities", SupportedEntities);
             writer.WriteStringValue("url", Url);
         }
     }

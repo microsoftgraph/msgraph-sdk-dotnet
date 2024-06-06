@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources
     public class LinkedResourcesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.</summary>
         /// <param name="position">The unique identifier of linkedResource</param>
-        /// <returns>A <see cref="LinkedResourceItemRequestBuilder"/></returns>
-        public LinkedResourceItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.Item.LinkedResourceItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.Item.LinkedResourceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("linkedResource%2Did", position);
-                return new LinkedResourceItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.Item.LinkedResourceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="LinkedResourcesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LinkedResourcesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources
         /// <summary>
         /// A collection of resources linked to the task.
         /// </summary>
-        /// <returns>A <see cref="LinkedResourceCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.LinkedResourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LinkedResourceCollectionResponse?> GetAsync(Action<RequestConfiguration<LinkedResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.LinkedResourceCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder.LinkedResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<LinkedResourceCollectionResponse> GetAsync(Action<RequestConfiguration<LinkedResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.LinkedResourceCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder.LinkedResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<LinkedResourceCollectionResponse>(requestInfo, LinkedResourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.LinkedResourceCollectionResponse>(requestInfo, Microsoft.Graph.Models.LinkedResourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to linkedResources for users
         /// </summary>
-        /// <returns>A <see cref="LinkedResource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.LinkedResource"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LinkedResource?> PostAsync(LinkedResource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.LinkedResource?> PostAsync(Microsoft.Graph.Models.LinkedResource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<LinkedResource> PostAsync(LinkedResource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.LinkedResource> PostAsync(Microsoft.Graph.Models.LinkedResource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<LinkedResource>(requestInfo, LinkedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.LinkedResource>(requestInfo, Microsoft.Graph.Models.LinkedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A collection of resources linked to the task.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LinkedResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder.LinkedResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LinkedResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder.LinkedResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(LinkedResource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.LinkedResource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(LinkedResource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.LinkedResource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="LinkedResourcesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LinkedResourcesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder WithUrl(string rawUrl)
         {
-            return new LinkedResourcesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// A collection of resources linked to the task.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class LinkedResourcesRequestBuilderGetRequestConfiguration : RequestConfiguration<LinkedResourcesRequestBuilderGetQueryParameters>
+        public class LinkedResourcesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder.LinkedResourcesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

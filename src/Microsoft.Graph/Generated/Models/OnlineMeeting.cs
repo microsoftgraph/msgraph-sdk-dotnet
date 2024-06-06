@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OnlineMeeting : OnlineMeetingBase, IParsable
+    public class OnlineMeeting : Microsoft.Graph.Models.OnlineMeetingBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The content stream of the attendee report of a Microsoft Teams live event. Read-only.</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Settings related to a live event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BroadcastMeetingSettings? BroadcastSettings
+        public Microsoft.Graph.Models.BroadcastMeetingSettings? BroadcastSettings
         {
-            get { return BackingStore?.Get<BroadcastMeetingSettings?>("broadcastSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BroadcastMeetingSettings?>("broadcastSettings"); }
             set { BackingStore?.Set("broadcastSettings", value); }
         }
 #nullable restore
 #else
-        public BroadcastMeetingSettings BroadcastSettings
+        public Microsoft.Graph.Models.BroadcastMeetingSettings BroadcastSettings
         {
-            get { return BackingStore?.Get<BroadcastMeetingSettings>("broadcastSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BroadcastMeetingSettings>("broadcastSettings"); }
             set { BackingStore?.Set("broadcastSettings", value); }
         }
 #endif
@@ -79,32 +79,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The participants associated with the online meeting.  This includes the organizer and the attendees.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MeetingParticipants? Participants
+        public Microsoft.Graph.Models.MeetingParticipants? Participants
         {
-            get { return BackingStore?.Get<MeetingParticipants?>("participants"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MeetingParticipants?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #nullable restore
 #else
-        public MeetingParticipants Participants
+        public Microsoft.Graph.Models.MeetingParticipants Participants
         {
-            get { return BackingStore?.Get<MeetingParticipants>("participants"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MeetingParticipants>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #endif
         /// <summary>The recordings of an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CallRecording>? Recordings
+        public List<Microsoft.Graph.Models.CallRecording>? Recordings
         {
-            get { return BackingStore?.Get<List<CallRecording>?>("recordings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRecording>?>("recordings"); }
             set { BackingStore?.Set("recordings", value); }
         }
 #nullable restore
 #else
-        public List<CallRecording> Recordings
+        public List<Microsoft.Graph.Models.CallRecording> Recordings
         {
-            get { return BackingStore?.Get<List<CallRecording>>("recordings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallRecording>>("recordings"); }
             set { BackingStore?.Set("recordings", value); }
         }
 #endif
@@ -117,21 +117,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The transcripts of an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CallTranscript>? Transcripts
+        public List<Microsoft.Graph.Models.CallTranscript>? Transcripts
         {
-            get { return BackingStore?.Get<List<CallTranscript>?>("transcripts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallTranscript>?>("transcripts"); }
             set { BackingStore?.Set("transcripts", value); }
         }
 #nullable restore
 #else
-        public List<CallTranscript> Transcripts
+        public List<Microsoft.Graph.Models.CallTranscript> Transcripts
         {
-            get { return BackingStore?.Get<List<CallTranscript>>("transcripts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CallTranscript>>("transcripts"); }
             set { BackingStore?.Set("transcripts", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnlineMeeting"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OnlineMeeting"/> and sets the default values.
         /// </summary>
         public OnlineMeeting() : base()
         {
@@ -140,12 +140,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnlineMeeting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnlineMeeting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnlineMeeting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OnlineMeeting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnlineMeeting();
+            return new Microsoft.Graph.Models.OnlineMeeting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -156,15 +156,15 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "attendeeReport", n => { AttendeeReport = n.GetByteArrayValue(); } },
-                { "broadcastSettings", n => { BroadcastSettings = n.GetObjectValue<BroadcastMeetingSettings>(BroadcastMeetingSettings.CreateFromDiscriminatorValue); } },
+                { "broadcastSettings", n => { BroadcastSettings = n.GetObjectValue<Microsoft.Graph.Models.BroadcastMeetingSettings>(Microsoft.Graph.Models.BroadcastMeetingSettings.CreateFromDiscriminatorValue); } },
                 { "creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
                 { "isBroadcast", n => { IsBroadcast = n.GetBoolValue(); } },
-                { "participants", n => { Participants = n.GetObjectValue<MeetingParticipants>(MeetingParticipants.CreateFromDiscriminatorValue); } },
-                { "recordings", n => { Recordings = n.GetCollectionOfObjectValues<CallRecording>(CallRecording.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "participants", n => { Participants = n.GetObjectValue<Microsoft.Graph.Models.MeetingParticipants>(Microsoft.Graph.Models.MeetingParticipants.CreateFromDiscriminatorValue); } },
+                { "recordings", n => { Recordings = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CallRecording>(Microsoft.Graph.Models.CallRecording.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                { "transcripts", n => { Transcripts = n.GetCollectionOfObjectValues<CallTranscript>(CallTranscript.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "transcripts", n => { Transcripts = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CallTranscript>(Microsoft.Graph.Models.CallTranscript.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -176,15 +176,15 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteByteArrayValue("attendeeReport", AttendeeReport);
-            writer.WriteObjectValue<BroadcastMeetingSettings>("broadcastSettings", BroadcastSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Models.BroadcastMeetingSettings>("broadcastSettings", BroadcastSettings);
             writer.WriteDateTimeOffsetValue("creationDateTime", CreationDateTime);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteStringValue("externalId", ExternalId);
             writer.WriteBoolValue("isBroadcast", IsBroadcast);
-            writer.WriteObjectValue<MeetingParticipants>("participants", Participants);
-            writer.WriteCollectionOfObjectValues<CallRecording>("recordings", Recordings);
+            writer.WriteObjectValue<Microsoft.Graph.Models.MeetingParticipants>("participants", Participants);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CallRecording>("recordings", Recordings);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
-            writer.WriteCollectionOfObjectValues<CallTranscript>("transcripts", Transcripts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CallTranscript>("transcripts", Transcripts);
         }
     }
 }

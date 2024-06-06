@@ -44,16 +44,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of key-value pairs that define parameters that the consuming service can use or call. You must specify this property when performing a POST or a PATCH operation on the addIns collection. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValue>? Properties
+        public List<Microsoft.Graph.Models.KeyValue>? Properties
         {
-            get { return BackingStore?.Get<List<KeyValue>?>("properties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValue>?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #nullable restore
 #else
-        public List<KeyValue> Properties
+        public List<Microsoft.Graph.Models.KeyValue> Properties
         {
-            get { return BackingStore?.Get<List<KeyValue>>("properties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValue>>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #endif
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AddIn"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AddIn"/> and sets the default values.
         /// </summary>
         public AddIn()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AddIn"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AddIn"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AddIn CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AddIn CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AddIn();
+            return new Microsoft.Graph.Models.AddIn();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Models
             {
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "properties", n => { Properties = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "properties", n => { Properties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.KeyValue>(Microsoft.Graph.Models.KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<KeyValue>("properties", Properties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.KeyValue>("properties", Properties);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

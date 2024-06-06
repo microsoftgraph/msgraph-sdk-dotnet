@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class PassiveDnsRecord : Artifact, IParsable
+    public class PassiveDnsRecord : Microsoft.Graph.Models.Security.Artifact, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The artifact property</summary>
@@ -47,16 +47,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The parentHost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Host? ParentHost
+        public Microsoft.Graph.Models.Security.Host? ParentHost
         {
-            get { return BackingStore?.Get<Host?>("parentHost"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Host?>("parentHost"); }
             set { BackingStore?.Set("parentHost", value); }
         }
 #nullable restore
 #else
-        public Host ParentHost
+        public Microsoft.Graph.Models.Security.Host ParentHost
         {
-            get { return BackingStore?.Get<Host>("parentHost"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Host>("parentHost"); }
             set { BackingStore?.Set("parentHost", value); }
         }
 #endif
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PassiveDnsRecord"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.PassiveDnsRecord"/> and sets the default values.
         /// </summary>
         public PassiveDnsRecord() : base()
         {
@@ -86,12 +86,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PassiveDnsRecord"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.PassiveDnsRecord"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PassiveDnsRecord CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.PassiveDnsRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PassiveDnsRecord();
+            return new Microsoft.Graph.Models.Security.PassiveDnsRecord();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Models.Security
                 { "collectedDateTime", n => { CollectedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                { "parentHost", n => { ParentHost = n.GetObjectValue<Host>(Host.CreateFromDiscriminatorValue); } },
+                { "parentHost", n => { ParentHost = n.GetObjectValue<Microsoft.Graph.Models.Security.Host>(Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue); } },
                 { "recordType", n => { RecordType = n.GetStringValue(); } },
             };
         }
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteDateTimeOffsetValue("collectedDateTime", CollectedDateTime);
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
-            writer.WriteObjectValue<Host>("parentHost", ParentHost);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.Host>("parentHost", ParentHost);
             writer.WriteStringValue("recordType", RecordType);
         }
     }

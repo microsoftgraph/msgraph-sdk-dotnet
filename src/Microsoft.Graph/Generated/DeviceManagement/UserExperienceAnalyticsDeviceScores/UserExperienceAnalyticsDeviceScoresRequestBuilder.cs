@@ -19,24 +19,24 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores
     public class UserExperienceAnalyticsDeviceScoresRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsDeviceScores property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of userExperienceAnalyticsDeviceScores</param>
-        /// <returns>A <see cref="UserExperienceAnalyticsDeviceScoresItemRequestBuilder"/></returns>
-        public UserExperienceAnalyticsDeviceScoresItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores.Item.UserExperienceAnalyticsDeviceScoresItemRequestBuilder"/></returns>
+        public Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores.Item.UserExperienceAnalyticsDeviceScoresItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("userExperienceAnalyticsDeviceScores%2Did", position);
-                return new UserExperienceAnalyticsDeviceScoresItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores.Item.UserExperienceAnalyticsDeviceScoresItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserExperienceAnalyticsDeviceScoresRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores.UserExperienceAnalyticsDeviceScoresRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserExperienceAnalyticsDeviceScoresRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores.UserExperienceAnalyticsDeviceScoresRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores
         /// <summary>
         /// User experience analytics device scores
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsDeviceScoresCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsDeviceScoresCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserExperienceAnalyticsDeviceScoresCollectionResponse?> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsDeviceScoresRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsDeviceScoresCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores.UserExperienceAnalyticsDeviceScoresRequestBuilder.UserExperienceAnalyticsDeviceScoresRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UserExperienceAnalyticsDeviceScoresCollectionResponse> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsDeviceScoresRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsDeviceScoresCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores.UserExperienceAnalyticsDeviceScoresRequestBuilder.UserExperienceAnalyticsDeviceScoresRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsDeviceScoresCollectionResponse>(requestInfo, UserExperienceAnalyticsDeviceScoresCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserExperienceAnalyticsDeviceScoresCollectionResponse>(requestInfo, Microsoft.Graph.Models.UserExperienceAnalyticsDeviceScoresCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to userExperienceAnalyticsDeviceScores for deviceManagement
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsDeviceScores?> PostAsync(Microsoft.Graph.Models.UserExperienceAnalyticsDeviceScores body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserExperienceAnalyticsDeviceScores>(requestInfo, Microsoft.Graph.Models.UserExperienceAnalyticsDeviceScores.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsDeviceScoresRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores.UserExperienceAnalyticsDeviceScoresRequestBuilder.UserExperienceAnalyticsDeviceScoresRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsDeviceScoresRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores.UserExperienceAnalyticsDeviceScoresRequestBuilder.UserExperienceAnalyticsDeviceScoresRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsDeviceScoresRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores.UserExperienceAnalyticsDeviceScoresRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UserExperienceAnalyticsDeviceScoresRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores.UserExperienceAnalyticsDeviceScoresRequestBuilder WithUrl(string rawUrl)
         {
-            return new UserExperienceAnalyticsDeviceScoresRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores.UserExperienceAnalyticsDeviceScoresRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// User experience analytics device scores
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserExperienceAnalyticsDeviceScoresRequestBuilderGetRequestConfiguration : RequestConfiguration<UserExperienceAnalyticsDeviceScoresRequestBuilderGetQueryParameters>
+        public class UserExperienceAnalyticsDeviceScoresRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceScores.UserExperienceAnalyticsDeviceScoresRequestBuilder.UserExperienceAnalyticsDeviceScoresRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

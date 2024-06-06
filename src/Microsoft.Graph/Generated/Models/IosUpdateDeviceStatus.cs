@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class IosUpdateDeviceStatus : Entity, IParsable
+    public class IosUpdateDeviceStatus : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The DateTime when device compliance grace period expires</summary>
@@ -65,9 +65,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The installStatus property</summary>
-        public IosUpdatesInstallStatus? InstallStatus
+        public Microsoft.Graph.Models.IosUpdatesInstallStatus? InstallStatus
         {
-            get { return BackingStore?.Get<IosUpdatesInstallStatus?>("installStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IosUpdatesInstallStatus?>("installStatus"); }
             set { BackingStore?.Set("installStatus", value); }
         }
         /// <summary>Last modified date time of the policy report.</summary>
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The status property</summary>
-        public ComplianceStatus? Status
+        public Microsoft.Graph.Models.ComplianceStatus? Status
         {
-            get { return BackingStore?.Get<ComplianceStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ComplianceStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The User id that is being reported.</summary>
@@ -149,12 +149,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosUpdateDeviceStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IosUpdateDeviceStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosUpdateDeviceStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IosUpdateDeviceStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosUpdateDeviceStatus();
+            return new Microsoft.Graph.Models.IosUpdateDeviceStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -168,10 +168,10 @@ namespace Microsoft.Graph.Models
                 { "deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
                 { "deviceModel", n => { DeviceModel = n.GetStringValue(); } },
-                { "installStatus", n => { InstallStatus = n.GetEnumValue<IosUpdatesInstallStatus>(); } },
+                { "installStatus", n => { InstallStatus = n.GetEnumValue<Microsoft.Graph.Models.IosUpdatesInstallStatus>(); } },
                 { "lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "osVersion", n => { OsVersion = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<ComplianceStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.ComplianceStatus>(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userName", n => { UserName = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
@@ -189,10 +189,10 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("deviceDisplayName", DeviceDisplayName);
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceModel", DeviceModel);
-            writer.WriteEnumValue<IosUpdatesInstallStatus>("installStatus", InstallStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.IosUpdatesInstallStatus>("installStatus", InstallStatus);
             writer.WriteDateTimeOffsetValue("lastReportedDateTime", LastReportedDateTime);
             writer.WriteStringValue("osVersion", OsVersion);
-            writer.WriteEnumValue<ComplianceStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ComplianceStatus>("status", Status);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userName", UserName);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);

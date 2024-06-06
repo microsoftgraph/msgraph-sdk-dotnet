@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Models.CallRecords
 {
     #pragma warning disable CS1591
-    public class ServiceEndpoint : Endpoint, IParsable
+    public class ServiceEndpoint : Microsoft.Graph.Models.CallRecords.Endpoint, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="ServiceEndpoint"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CallRecords.ServiceEndpoint"/> and sets the default values.
         /// </summary>
         public ServiceEndpoint() : base()
         {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Models.CallRecords
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ServiceEndpoint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CallRecords.ServiceEndpoint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ServiceEndpoint CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CallRecords.ServiceEndpoint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ServiceEndpoint();
+            return new Microsoft.Graph.Models.CallRecords.ServiceEndpoint();
         }
         /// <summary>
         /// The deserialization information for the current model

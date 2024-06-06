@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Me.Insights.Trending.Item.Resource
     public class ResourceRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ResourceRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Insights.Trending.Item.Resource.ResourceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Me.Insights.Trending.Item.Resource
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ResourceRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Insights.Trending.Item.Resource.ResourceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Me.Insights.Trending.Item.Resource
         /// <summary>
         /// Used for navigating to the trending document.
         /// </summary>
-        /// <returns>A <see cref="Entity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Entity"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Entity?> GetAsync(Action<RequestConfiguration<ResourceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Entity?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Insights.Trending.Item.Resource.ResourceRequestBuilder.ResourceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Entity> GetAsync(Action<RequestConfiguration<ResourceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Entity> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Insights.Trending.Item.Resource.ResourceRequestBuilder.ResourceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Entity>(requestInfo, Entity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Entity>(requestInfo, Microsoft.Graph.Models.Entity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Used for navigating to the trending document.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Me.Insights.Trending.Item.Resource
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourceRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Insights.Trending.Item.Resource.ResourceRequestBuilder.ResourceRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourceRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Insights.Trending.Item.Resource.ResourceRequestBuilder.ResourceRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Me.Insights.Trending.Item.Resource
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ResourceRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Insights.Trending.Item.Resource.ResourceRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ResourceRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Me.Insights.Trending.Item.Resource.ResourceRequestBuilder WithUrl(string rawUrl)
         {
-            return new ResourceRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Me.Insights.Trending.Item.Resource.ResourceRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Used for navigating to the trending document.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Me.Insights.Trending.Item.Resource
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ResourceRequestBuilderGetRequestConfiguration : RequestConfiguration<ResourceRequestBuilderGetQueryParameters>
+        public class ResourceRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.Insights.Trending.Item.Resource.ResourceRequestBuilder.ResourceRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -7,50 +7,50 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class EdiscoveryAddToReviewSetOperation : CaseOperation, IParsable
+    public class EdiscoveryAddToReviewSetOperation : Microsoft.Graph.Models.Security.CaseOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>eDiscovery review set to which items matching source collection query gets added.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoveryReviewSet? ReviewSet
+        public Microsoft.Graph.Models.Security.EdiscoveryReviewSet? ReviewSet
         {
-            get { return BackingStore?.Get<EdiscoveryReviewSet?>("reviewSet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.EdiscoveryReviewSet?>("reviewSet"); }
             set { BackingStore?.Set("reviewSet", value); }
         }
 #nullable restore
 #else
-        public EdiscoveryReviewSet ReviewSet
+        public Microsoft.Graph.Models.Security.EdiscoveryReviewSet ReviewSet
         {
-            get { return BackingStore?.Get<EdiscoveryReviewSet>("reviewSet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.EdiscoveryReviewSet>("reviewSet"); }
             set { BackingStore?.Set("reviewSet", value); }
         }
 #endif
         /// <summary>eDiscovery search that gets added to review set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoverySearch? Search
+        public Microsoft.Graph.Models.Security.EdiscoverySearch? Search
         {
-            get { return BackingStore?.Get<EdiscoverySearch?>("search"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.EdiscoverySearch?>("search"); }
             set { BackingStore?.Set("search", value); }
         }
 #nullable restore
 #else
-        public EdiscoverySearch Search
+        public Microsoft.Graph.Models.Security.EdiscoverySearch Search
         {
-            get { return BackingStore?.Get<EdiscoverySearch>("search"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.EdiscoverySearch>("search"); }
             set { BackingStore?.Set("search", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryAddToReviewSetOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.EdiscoveryAddToReviewSetOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdiscoveryAddToReviewSetOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.EdiscoveryAddToReviewSetOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdiscoveryAddToReviewSetOperation();
+            return new Microsoft.Graph.Models.Security.EdiscoveryAddToReviewSetOperation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "reviewSet", n => { ReviewSet = n.GetObjectValue<EdiscoveryReviewSet>(EdiscoveryReviewSet.CreateFromDiscriminatorValue); } },
-                { "search", n => { Search = n.GetObjectValue<EdiscoverySearch>(EdiscoverySearch.CreateFromDiscriminatorValue); } },
+                { "reviewSet", n => { ReviewSet = n.GetObjectValue<Microsoft.Graph.Models.Security.EdiscoveryReviewSet>(Microsoft.Graph.Models.Security.EdiscoveryReviewSet.CreateFromDiscriminatorValue); } },
+                { "search", n => { Search = n.GetObjectValue<Microsoft.Graph.Models.Security.EdiscoverySearch>(Microsoft.Graph.Models.Security.EdiscoverySearch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<EdiscoveryReviewSet>("reviewSet", ReviewSet);
-            writer.WriteObjectValue<EdiscoverySearch>("search", Search);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.EdiscoveryReviewSet>("reviewSet", ReviewSet);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.EdiscoverySearch>("search", Search);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// A complex type to store registry rule data for a Win32 LOB app.
     /// </summary>
-    public class Win32LobAppRegistryRule : Win32LobAppRule, IParsable
+    public class Win32LobAppRegistryRule : Microsoft.Graph.Models.Win32LobAppRule, IParsable
     {
         /// <summary>A value indicating whether to search the 32-bit registry on 64-bit systems.</summary>
         public bool? Check32BitOn64System
@@ -50,15 +50,15 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>A list of possible operations for rules used to make determinations about an application based on registry keys or values. Unless noted, the values can be used with either detection or requirement rules.</summary>
-        public Win32LobAppRegistryRuleOperationType? OperationType
+        public Microsoft.Graph.Models.Win32LobAppRegistryRuleOperationType? OperationType
         {
-            get { return BackingStore?.Get<Win32LobAppRegistryRuleOperationType?>("operationType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Win32LobAppRegistryRuleOperationType?>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
         }
         /// <summary>Contains properties for detection operator.</summary>
-        public Win32LobAppRuleOperator? Operator
+        public Microsoft.Graph.Models.Win32LobAppRuleOperator? Operator
         {
-            get { return BackingStore?.Get<Win32LobAppRuleOperator?>("operator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Win32LobAppRuleOperator?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>The name of the registry value to detect.</summary>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Win32LobAppRegistryRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Win32LobAppRegistryRule"/> and sets the default values.
         /// </summary>
         public Win32LobAppRegistryRule() : base()
         {
@@ -87,12 +87,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Win32LobAppRegistryRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Win32LobAppRegistryRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Win32LobAppRegistryRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Win32LobAppRegistryRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Win32LobAppRegistryRule();
+            return new Microsoft.Graph.Models.Win32LobAppRegistryRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,8 +105,8 @@ namespace Microsoft.Graph.Models
                 { "check32BitOn64System", n => { Check32BitOn64System = n.GetBoolValue(); } },
                 { "comparisonValue", n => { ComparisonValue = n.GetStringValue(); } },
                 { "keyPath", n => { KeyPath = n.GetStringValue(); } },
-                { "operationType", n => { OperationType = n.GetEnumValue<Win32LobAppRegistryRuleOperationType>(); } },
-                { "operator", n => { Operator = n.GetEnumValue<Win32LobAppRuleOperator>(); } },
+                { "operationType", n => { OperationType = n.GetEnumValue<Microsoft.Graph.Models.Win32LobAppRegistryRuleOperationType>(); } },
+                { "operator", n => { Operator = n.GetEnumValue<Microsoft.Graph.Models.Win32LobAppRuleOperator>(); } },
                 { "valueName", n => { ValueName = n.GetStringValue(); } },
             };
         }
@@ -121,8 +121,8 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("check32BitOn64System", Check32BitOn64System);
             writer.WriteStringValue("comparisonValue", ComparisonValue);
             writer.WriteStringValue("keyPath", KeyPath);
-            writer.WriteEnumValue<Win32LobAppRegistryRuleOperationType>("operationType", OperationType);
-            writer.WriteEnumValue<Win32LobAppRuleOperator>("operator", Operator);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Win32LobAppRegistryRuleOperationType>("operationType", OperationType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Win32LobAppRuleOperator>("operator", Operator);
             writer.WriteStringValue("valueName", ValueName);
         }
     }

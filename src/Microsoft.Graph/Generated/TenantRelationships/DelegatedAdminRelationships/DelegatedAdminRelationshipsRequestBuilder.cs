@@ -19,24 +19,24 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships
     public class DelegatedAdminRelationshipsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the delegatedAdminRelationships property of the microsoft.graph.tenantRelationship entity.</summary>
         /// <param name="position">The unique identifier of delegatedAdminRelationship</param>
-        /// <returns>A <see cref="DelegatedAdminRelationshipItemRequestBuilder"/></returns>
-        public DelegatedAdminRelationshipItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.DelegatedAdminRelationshipItemRequestBuilder"/></returns>
+        public Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.DelegatedAdminRelationshipItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("delegatedAdminRelationship%2Did", position);
-                return new DelegatedAdminRelationshipItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.DelegatedAdminRelationshipItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DelegatedAdminRelationshipsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.DelegatedAdminRelationshipsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DelegatedAdminRelationshipsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.DelegatedAdminRelationshipsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships
         /// Get a list of the delegatedAdminRelationship objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadminrelationships?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="DelegatedAdminRelationshipCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DelegatedAdminRelationshipCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DelegatedAdminRelationshipCollectionResponse?> GetAsync(Action<RequestConfiguration<DelegatedAdminRelationshipsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DelegatedAdminRelationshipCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.DelegatedAdminRelationshipsRequestBuilder.DelegatedAdminRelationshipsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DelegatedAdminRelationshipCollectionResponse> GetAsync(Action<RequestConfiguration<DelegatedAdminRelationshipsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DelegatedAdminRelationshipCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.DelegatedAdminRelationshipsRequestBuilder.DelegatedAdminRelationshipsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DelegatedAdminRelationshipCollectionResponse>(requestInfo, DelegatedAdminRelationshipCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DelegatedAdminRelationshipCollectionResponse>(requestInfo, Microsoft.Graph.Models.DelegatedAdminRelationshipCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new delegatedAdminRelationship object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantrelationship-post-delegatedadminrelationships?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="DelegatedAdminRelationship"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DelegatedAdminRelationship"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DelegatedAdminRelationship?> PostAsync(DelegatedAdminRelationship body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DelegatedAdminRelationship?> PostAsync(Microsoft.Graph.Models.DelegatedAdminRelationship body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DelegatedAdminRelationship> PostAsync(DelegatedAdminRelationship body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DelegatedAdminRelationship> PostAsync(Microsoft.Graph.Models.DelegatedAdminRelationship body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DelegatedAdminRelationship>(requestInfo, DelegatedAdminRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DelegatedAdminRelationship>(requestInfo, Microsoft.Graph.Models.DelegatedAdminRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the delegatedAdminRelationship objects and their properties.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DelegatedAdminRelationshipsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.DelegatedAdminRelationshipsRequestBuilder.DelegatedAdminRelationshipsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DelegatedAdminRelationshipsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.DelegatedAdminRelationshipsRequestBuilder.DelegatedAdminRelationshipsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DelegatedAdminRelationship body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.DelegatedAdminRelationship body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DelegatedAdminRelationship body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.DelegatedAdminRelationship body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DelegatedAdminRelationshipsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.DelegatedAdminRelationshipsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DelegatedAdminRelationshipsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.DelegatedAdminRelationshipsRequestBuilder WithUrl(string rawUrl)
         {
-            return new DelegatedAdminRelationshipsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.DelegatedAdminRelationshipsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the delegatedAdminRelationship objects and their properties.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DelegatedAdminRelationshipsRequestBuilderGetRequestConfiguration : RequestConfiguration<DelegatedAdminRelationshipsRequestBuilderGetQueryParameters>
+        public class DelegatedAdminRelationshipsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.DelegatedAdminRelationshipsRequestBuilder.DelegatedAdminRelationshipsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

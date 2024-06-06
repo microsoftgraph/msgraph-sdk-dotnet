@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses
 {
     [Obsolete("This class is obsolete. Use GetManagedAppDiagnosticStatusesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetManagedAppDiagnosticStatusesResponse : GetManagedAppDiagnosticStatusesGetResponse, IParsable
+    public class GetManagedAppDiagnosticStatusesResponse : Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetManagedAppDiagnosticStatusesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetManagedAppDiagnosticStatusesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetManagedAppDiagnosticStatusesResponse();
+            return new Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesResponse();
         }
     }
 }

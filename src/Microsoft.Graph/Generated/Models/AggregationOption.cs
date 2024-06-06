@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The bucketDefinition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BucketAggregationDefinition? BucketDefinition
+        public Microsoft.Graph.Models.BucketAggregationDefinition? BucketDefinition
         {
-            get { return BackingStore?.Get<BucketAggregationDefinition?>("bucketDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BucketAggregationDefinition?>("bucketDefinition"); }
             set { BackingStore?.Set("bucketDefinition", value); }
         }
 #nullable restore
 #else
-        public BucketAggregationDefinition BucketDefinition
+        public Microsoft.Graph.Models.BucketAggregationDefinition BucketDefinition
         {
-            get { return BackingStore?.Get<BucketAggregationDefinition>("bucketDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.BucketAggregationDefinition>("bucketDefinition"); }
             set { BackingStore?.Set("bucketDefinition", value); }
         }
 #endif
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("size", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AggregationOption"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AggregationOption"/> and sets the default values.
         /// </summary>
         public AggregationOption()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AggregationOption"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AggregationOption"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AggregationOption CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AggregationOption CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AggregationOption();
+            return new Microsoft.Graph.Models.AggregationOption();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bucketDefinition", n => { BucketDefinition = n.GetObjectValue<BucketAggregationDefinition>(BucketAggregationDefinition.CreateFromDiscriminatorValue); } },
+                { "bucketDefinition", n => { BucketDefinition = n.GetObjectValue<Microsoft.Graph.Models.BucketAggregationDefinition>(Microsoft.Graph.Models.BucketAggregationDefinition.CreateFromDiscriminatorValue); } },
                 { "field", n => { Field = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "size", n => { Size = n.GetIntValue(); } },
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<BucketAggregationDefinition>("bucketDefinition", BucketDefinition);
+            writer.WriteObjectValue<Microsoft.Graph.Models.BucketAggregationDefinition>("bucketDefinition", BucketDefinition);
             writer.WriteStringValue("field", Field);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("size", Size);

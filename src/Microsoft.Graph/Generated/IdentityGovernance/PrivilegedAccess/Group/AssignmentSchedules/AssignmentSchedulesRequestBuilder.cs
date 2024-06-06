@@ -20,24 +20,24 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
     public class AssignmentSchedulesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignmentSchedules property of the microsoft.graph.privilegedAccessGroup entity.</summary>
         /// <param name="position">The unique identifier of privilegedAccessGroupAssignmentSchedule</param>
-        /// <returns>A <see cref="PrivilegedAccessGroupAssignmentScheduleItemRequestBuilder"/></returns>
-        public PrivilegedAccessGroupAssignmentScheduleItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.Item.PrivilegedAccessGroupAssignmentScheduleItemRequestBuilder"/></returns>
+        public Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.Item.PrivilegedAccessGroupAssignmentScheduleItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("privilegedAccessGroupAssignmentSchedule%2Did", position);
-                return new PrivilegedAccessGroupAssignmentScheduleItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.Item.PrivilegedAccessGroupAssignmentScheduleItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AssignmentSchedulesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.AssignmentSchedulesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AssignmentSchedulesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.AssignmentSchedulesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,61 +55,61 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
         /// <summary>
         /// Provides operations to call the filterByCurrentUser method.
         /// </summary>
-        /// <returns>A <see cref="FilterByCurrentUserWithOnRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder"/></returns>
         /// <param name="on">Usage: on=&apos;{on}&apos;</param>
-        public FilterByCurrentUserWithOnRequestBuilder FilterByCurrentUserWithOn(string on)
+        public Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder FilterByCurrentUserWithOn(string on)
         {
             if(string.IsNullOrEmpty(on)) throw new ArgumentNullException(nameof(on));
-            return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
+            return new Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
         /// Get a list of the privilegedAccessGroupAssignmentSchedule objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-assignmentschedules?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="PrivilegedAccessGroupAssignmentScheduleCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrivilegedAccessGroupAssignmentScheduleCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrivilegedAccessGroupAssignmentScheduleCollectionResponse?> GetAsync(Action<RequestConfiguration<AssignmentSchedulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrivilegedAccessGroupAssignmentScheduleCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.AssignmentSchedulesRequestBuilder.AssignmentSchedulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PrivilegedAccessGroupAssignmentScheduleCollectionResponse> GetAsync(Action<RequestConfiguration<AssignmentSchedulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrivilegedAccessGroupAssignmentScheduleCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.AssignmentSchedulesRequestBuilder.AssignmentSchedulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PrivilegedAccessGroupAssignmentScheduleCollectionResponse>(requestInfo, PrivilegedAccessGroupAssignmentScheduleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PrivilegedAccessGroupAssignmentScheduleCollectionResponse>(requestInfo, Microsoft.Graph.Models.PrivilegedAccessGroupAssignmentScheduleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to assignmentSchedules for identityGovernance
         /// </summary>
-        /// <returns>A <see cref="PrivilegedAccessGroupAssignmentSchedule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrivilegedAccessGroupAssignmentSchedule"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrivilegedAccessGroupAssignmentSchedule?> PostAsync(PrivilegedAccessGroupAssignmentSchedule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrivilegedAccessGroupAssignmentSchedule?> PostAsync(Microsoft.Graph.Models.PrivilegedAccessGroupAssignmentSchedule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PrivilegedAccessGroupAssignmentSchedule> PostAsync(PrivilegedAccessGroupAssignmentSchedule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PrivilegedAccessGroupAssignmentSchedule> PostAsync(Microsoft.Graph.Models.PrivilegedAccessGroupAssignmentSchedule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PrivilegedAccessGroupAssignmentSchedule>(requestInfo, PrivilegedAccessGroupAssignmentSchedule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PrivilegedAccessGroupAssignmentSchedule>(requestInfo, Microsoft.Graph.Models.PrivilegedAccessGroupAssignmentSchedule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the privilegedAccessGroupAssignmentSchedule objects and their properties.
@@ -118,11 +118,11 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AssignmentSchedulesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.AssignmentSchedulesRequestBuilder.AssignmentSchedulesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AssignmentSchedulesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.AssignmentSchedulesRequestBuilder.AssignmentSchedulesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -138,11 +138,11 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(PrivilegedAccessGroupAssignmentSchedule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.PrivilegedAccessGroupAssignmentSchedule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(PrivilegedAccessGroupAssignmentSchedule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.PrivilegedAccessGroupAssignmentSchedule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -155,11 +155,11 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AssignmentSchedulesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.AssignmentSchedulesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AssignmentSchedulesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.AssignmentSchedulesRequestBuilder WithUrl(string rawUrl)
         {
-            return new AssignmentSchedulesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.AssignmentSchedulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the privilegedAccessGroupAssignmentSchedule objects and their properties.
@@ -230,7 +230,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AssignmentSchedulesRequestBuilderGetRequestConfiguration : RequestConfiguration<AssignmentSchedulesRequestBuilderGetQueryParameters>
+        public class AssignmentSchedulesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.AssignmentSchedulesRequestBuilder.AssignmentSchedulesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

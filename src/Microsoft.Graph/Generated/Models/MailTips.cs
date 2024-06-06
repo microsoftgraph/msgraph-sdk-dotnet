@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Mail tips for automatic reply if it has been set up by the recipient.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AutomaticRepliesMailTips? AutomaticReplies
+        public Microsoft.Graph.Models.AutomaticRepliesMailTips? AutomaticReplies
         {
-            get { return BackingStore?.Get<AutomaticRepliesMailTips?>("automaticReplies"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AutomaticRepliesMailTips?>("automaticReplies"); }
             set { BackingStore?.Set("automaticReplies", value); }
         }
 #nullable restore
 #else
-        public AutomaticRepliesMailTips AutomaticReplies
+        public Microsoft.Graph.Models.AutomaticRepliesMailTips AutomaticReplies
         {
-            get { return BackingStore?.Get<AutomaticRepliesMailTips>("automaticReplies"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AutomaticRepliesMailTips>("automaticReplies"); }
             set { BackingStore?.Set("automaticReplies", value); }
         }
 #endif
@@ -76,16 +76,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Errors that occur during the getMailTips action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MailTipsError? Error
+        public Microsoft.Graph.Models.MailTipsError? Error
         {
-            get { return BackingStore?.Get<MailTipsError?>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MailTipsError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public MailTipsError Error
+        public Microsoft.Graph.Models.MailTipsError Error
         {
-            get { return BackingStore?.Get<MailTipsError>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MailTipsError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #endif
@@ -130,24 +130,24 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its &apos;partner&apos;. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It&apos;s also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.</summary>
-        public RecipientScopeType? RecipientScope
+        public Microsoft.Graph.Models.RecipientScopeType? RecipientScope
         {
-            get { return BackingStore?.Get<RecipientScopeType?>("recipientScope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RecipientScopeType?>("recipientScope"); }
             set { BackingStore?.Set("recipientScope", value); }
         }
         /// <summary>Recipients suggested based on previous contexts where they appear in the same message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recipient>? RecipientSuggestions
+        public List<Microsoft.Graph.Models.Recipient>? RecipientSuggestions
         {
-            get { return BackingStore?.Get<List<Recipient>?>("recipientSuggestions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>?>("recipientSuggestions"); }
             set { BackingStore?.Set("recipientSuggestions", value); }
         }
 #nullable restore
 #else
-        public List<Recipient> RecipientSuggestions
+        public List<Microsoft.Graph.Models.Recipient> RecipientSuggestions
         {
-            get { return BackingStore?.Get<List<Recipient>>("recipientSuggestions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Recipient>>("recipientSuggestions"); }
             set { BackingStore?.Set("recipientSuggestions", value); }
         }
 #endif
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("totalMemberCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MailTips"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MailTips"/> and sets the default values.
         /// </summary>
         public MailTips()
         {
@@ -168,12 +168,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MailTips"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MailTips"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MailTips CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.MailTips CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MailTips();
+            return new Microsoft.Graph.Models.MailTips();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -183,18 +183,18 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "automaticReplies", n => { AutomaticReplies = n.GetObjectValue<AutomaticRepliesMailTips>(AutomaticRepliesMailTips.CreateFromDiscriminatorValue); } },
+                { "automaticReplies", n => { AutomaticReplies = n.GetObjectValue<Microsoft.Graph.Models.AutomaticRepliesMailTips>(Microsoft.Graph.Models.AutomaticRepliesMailTips.CreateFromDiscriminatorValue); } },
                 { "customMailTip", n => { CustomMailTip = n.GetStringValue(); } },
                 { "deliveryRestricted", n => { DeliveryRestricted = n.GetBoolValue(); } },
                 { "emailAddress", n => { EmailAddress = n.GetObjectValue<Microsoft.Graph.Models.EmailAddress>(Microsoft.Graph.Models.EmailAddress.CreateFromDiscriminatorValue); } },
-                { "error", n => { Error = n.GetObjectValue<MailTipsError>(MailTipsError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<Microsoft.Graph.Models.MailTipsError>(Microsoft.Graph.Models.MailTipsError.CreateFromDiscriminatorValue); } },
                 { "externalMemberCount", n => { ExternalMemberCount = n.GetIntValue(); } },
                 { "isModerated", n => { IsModerated = n.GetBoolValue(); } },
                 { "mailboxFull", n => { MailboxFull = n.GetBoolValue(); } },
                 { "maxMessageSize", n => { MaxMessageSize = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recipientScope", n => { RecipientScope = n.GetEnumValue<RecipientScopeType>(); } },
-                { "recipientSuggestions", n => { RecipientSuggestions = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recipientScope", n => { RecipientScope = n.GetEnumValue<Microsoft.Graph.Models.RecipientScopeType>(); } },
+                { "recipientSuggestions", n => { RecipientSuggestions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>(Microsoft.Graph.Models.Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "totalMemberCount", n => { TotalMemberCount = n.GetIntValue(); } },
             };
         }
@@ -205,18 +205,18 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<AutomaticRepliesMailTips>("automaticReplies", AutomaticReplies);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AutomaticRepliesMailTips>("automaticReplies", AutomaticReplies);
             writer.WriteStringValue("customMailTip", CustomMailTip);
             writer.WriteBoolValue("deliveryRestricted", DeliveryRestricted);
             writer.WriteObjectValue<Microsoft.Graph.Models.EmailAddress>("emailAddress", EmailAddress);
-            writer.WriteObjectValue<MailTipsError>("error", Error);
+            writer.WriteObjectValue<Microsoft.Graph.Models.MailTipsError>("error", Error);
             writer.WriteIntValue("externalMemberCount", ExternalMemberCount);
             writer.WriteBoolValue("isModerated", IsModerated);
             writer.WriteBoolValue("mailboxFull", MailboxFull);
             writer.WriteIntValue("maxMessageSize", MaxMessageSize);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<RecipientScopeType>("recipientScope", RecipientScope);
-            writer.WriteCollectionOfObjectValues<Recipient>("recipientSuggestions", RecipientSuggestions);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RecipientScopeType>("recipientScope", RecipientScope);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Recipient>("recipientSuggestions", RecipientSuggestions);
             writer.WriteIntValue("totalMemberCount", TotalMemberCount);
             writer.WriteAdditionalData(AdditionalData);
         }

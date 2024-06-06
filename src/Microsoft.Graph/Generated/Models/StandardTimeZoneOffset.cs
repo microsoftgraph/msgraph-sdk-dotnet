@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("dayOccurrence", value); }
         }
         /// <summary>Represents the day of the week when the transition from daylight saving time to standard time.</summary>
-        public DayOfWeekObject? DayOfWeek
+        public Microsoft.Graph.Models.DayOfWeekObject? DayOfWeek
         {
-            get { return BackingStore?.Get<DayOfWeekObject?>("dayOfWeek"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DayOfWeekObject?>("dayOfWeek"); }
             set { BackingStore?.Set("dayOfWeek", value); }
         }
         /// <summary>Represents the month of the year when the transition from daylight saving time to standard time occurs.</summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("year", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="StandardTimeZoneOffset"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.StandardTimeZoneOffset"/> and sets the default values.
         /// </summary>
         public StandardTimeZoneOffset()
         {
@@ -77,16 +77,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="StandardTimeZoneOffset"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.StandardTimeZoneOffset"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static StandardTimeZoneOffset CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.StandardTimeZoneOffset CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.daylightTimeZoneOffset" => new DaylightTimeZoneOffset(),
-                _ => new StandardTimeZoneOffset(),
+                "#microsoft.graph.daylightTimeZoneOffset" => new Microsoft.Graph.Models.DaylightTimeZoneOffset(),
+                _ => new Microsoft.Graph.Models.StandardTimeZoneOffset(),
             };
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dayOccurrence", n => { DayOccurrence = n.GetIntValue(); } },
-                { "dayOfWeek", n => { DayOfWeek = n.GetEnumValue<DayOfWeekObject>(); } },
+                { "dayOfWeek", n => { DayOfWeek = n.GetEnumValue<Microsoft.Graph.Models.DayOfWeekObject>(); } },
                 { "month", n => { Month = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "time", n => { Time = n.GetTimeValue(); } },
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("dayOccurrence", DayOccurrence);
-            writer.WriteEnumValue<DayOfWeekObject>("dayOfWeek", DayOfWeek);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DayOfWeekObject>("dayOfWeek", DayOfWeek);
             writer.WriteIntValue("month", Month);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteTimeValue("time", Time);

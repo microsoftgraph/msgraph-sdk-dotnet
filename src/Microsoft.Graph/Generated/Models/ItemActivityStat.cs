@@ -7,86 +7,86 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ItemActivityStat : Entity, IParsable
+    public class ItemActivityStat : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Statistics about the access actions in this interval. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemActionStat? Access
+        public Microsoft.Graph.Models.ItemActionStat? Access
         {
-            get { return BackingStore?.Get<ItemActionStat?>("access"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemActionStat?>("access"); }
             set { BackingStore?.Set("access", value); }
         }
 #nullable restore
 #else
-        public ItemActionStat Access
+        public Microsoft.Graph.Models.ItemActionStat Access
         {
-            get { return BackingStore?.Get<ItemActionStat>("access"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemActionStat>("access"); }
             set { BackingStore?.Set("access", value); }
         }
 #endif
         /// <summary>Exposes the itemActivities represented in this itemActivityStat resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ItemActivity>? Activities
+        public List<Microsoft.Graph.Models.ItemActivity>? Activities
         {
-            get { return BackingStore?.Get<List<ItemActivity>?>("activities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ItemActivity>?>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #nullable restore
 #else
-        public List<ItemActivity> Activities
+        public List<Microsoft.Graph.Models.ItemActivity> Activities
         {
-            get { return BackingStore?.Get<List<ItemActivity>>("activities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ItemActivity>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #endif
         /// <summary>Statistics about the create actions in this interval. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemActionStat? Create
+        public Microsoft.Graph.Models.ItemActionStat? Create
         {
-            get { return BackingStore?.Get<ItemActionStat?>("create"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemActionStat?>("create"); }
             set { BackingStore?.Set("create", value); }
         }
 #nullable restore
 #else
-        public ItemActionStat Create
+        public Microsoft.Graph.Models.ItemActionStat Create
         {
-            get { return BackingStore?.Get<ItemActionStat>("create"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemActionStat>("create"); }
             set { BackingStore?.Set("create", value); }
         }
 #endif
         /// <summary>Statistics about the delete actions in this interval. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemActionStat? Delete
+        public Microsoft.Graph.Models.ItemActionStat? Delete
         {
-            get { return BackingStore?.Get<ItemActionStat?>("delete"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemActionStat?>("delete"); }
             set { BackingStore?.Set("delete", value); }
         }
 #nullable restore
 #else
-        public ItemActionStat Delete
+        public Microsoft.Graph.Models.ItemActionStat Delete
         {
-            get { return BackingStore?.Get<ItemActionStat>("delete"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemActionStat>("delete"); }
             set { BackingStore?.Set("delete", value); }
         }
 #endif
         /// <summary>Statistics about the edit actions in this interval. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemActionStat? Edit
+        public Microsoft.Graph.Models.ItemActionStat? Edit
         {
-            get { return BackingStore?.Get<ItemActionStat?>("edit"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemActionStat?>("edit"); }
             set { BackingStore?.Set("edit", value); }
         }
 #nullable restore
 #else
-        public ItemActionStat Edit
+        public Microsoft.Graph.Models.ItemActionStat Edit
         {
-            get { return BackingStore?.Get<ItemActionStat>("edit"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemActionStat>("edit"); }
             set { BackingStore?.Set("edit", value); }
         }
 #endif
@@ -121,16 +121,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Statistics about the move actions in this interval. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemActionStat? Move
+        public Microsoft.Graph.Models.ItemActionStat? Move
         {
-            get { return BackingStore?.Get<ItemActionStat?>("move"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemActionStat?>("move"); }
             set { BackingStore?.Set("move", value); }
         }
 #nullable restore
 #else
-        public ItemActionStat Move
+        public Microsoft.Graph.Models.ItemActionStat Move
         {
-            get { return BackingStore?.Get<ItemActionStat>("move"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ItemActionStat>("move"); }
             set { BackingStore?.Set("move", value); }
         }
 #endif
@@ -143,12 +143,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ItemActivityStat"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ItemActivityStat"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ItemActivityStat CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ItemActivityStat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ItemActivityStat();
+            return new Microsoft.Graph.Models.ItemActivityStat();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -158,15 +158,15 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "access", n => { Access = n.GetObjectValue<ItemActionStat>(ItemActionStat.CreateFromDiscriminatorValue); } },
-                { "activities", n => { Activities = n.GetCollectionOfObjectValues<ItemActivity>(ItemActivity.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "create", n => { Create = n.GetObjectValue<ItemActionStat>(ItemActionStat.CreateFromDiscriminatorValue); } },
-                { "delete", n => { Delete = n.GetObjectValue<ItemActionStat>(ItemActionStat.CreateFromDiscriminatorValue); } },
-                { "edit", n => { Edit = n.GetObjectValue<ItemActionStat>(ItemActionStat.CreateFromDiscriminatorValue); } },
+                { "access", n => { Access = n.GetObjectValue<Microsoft.Graph.Models.ItemActionStat>(Microsoft.Graph.Models.ItemActionStat.CreateFromDiscriminatorValue); } },
+                { "activities", n => { Activities = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ItemActivity>(Microsoft.Graph.Models.ItemActivity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "create", n => { Create = n.GetObjectValue<Microsoft.Graph.Models.ItemActionStat>(Microsoft.Graph.Models.ItemActionStat.CreateFromDiscriminatorValue); } },
+                { "delete", n => { Delete = n.GetObjectValue<Microsoft.Graph.Models.ItemActionStat>(Microsoft.Graph.Models.ItemActionStat.CreateFromDiscriminatorValue); } },
+                { "edit", n => { Edit = n.GetObjectValue<Microsoft.Graph.Models.ItemActionStat>(Microsoft.Graph.Models.ItemActionStat.CreateFromDiscriminatorValue); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "incompleteData", n => { IncompleteData = n.GetObjectValue<Microsoft.Graph.Models.IncompleteData>(Microsoft.Graph.Models.IncompleteData.CreateFromDiscriminatorValue); } },
                 { "isTrending", n => { IsTrending = n.GetBoolValue(); } },
-                { "move", n => { Move = n.GetObjectValue<ItemActionStat>(ItemActionStat.CreateFromDiscriminatorValue); } },
+                { "move", n => { Move = n.GetObjectValue<Microsoft.Graph.Models.ItemActionStat>(Microsoft.Graph.Models.ItemActionStat.CreateFromDiscriminatorValue); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -178,15 +178,15 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ItemActionStat>("access", Access);
-            writer.WriteCollectionOfObjectValues<ItemActivity>("activities", Activities);
-            writer.WriteObjectValue<ItemActionStat>("create", Create);
-            writer.WriteObjectValue<ItemActionStat>("delete", Delete);
-            writer.WriteObjectValue<ItemActionStat>("edit", Edit);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemActionStat>("access", Access);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ItemActivity>("activities", Activities);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemActionStat>("create", Create);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemActionStat>("delete", Delete);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemActionStat>("edit", Edit);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Models.IncompleteData>("incompleteData", IncompleteData);
             writer.WriteBoolValue("isTrending", IsTrending);
-            writer.WriteObjectValue<ItemActionStat>("move", Move);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ItemActionStat>("move", Move);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
         }
     }

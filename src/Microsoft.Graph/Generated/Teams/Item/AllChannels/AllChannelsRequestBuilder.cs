@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Teams.Item.AllChannels
     public class AllChannelsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Teams.Item.AllChannels.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Teams.Item.AllChannels.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the allChannels property of the microsoft.graph.team entity.</summary>
         /// <param name="position">The unique identifier of channel</param>
-        /// <returns>A <see cref="ChannelItemRequestBuilder"/></returns>
-        public ChannelItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Teams.Item.AllChannels.Item.ChannelItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Teams.Item.AllChannels.Item.ChannelItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("channel%2Did", position);
-                return new ChannelItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Teams.Item.AllChannels.Item.ChannelItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AllChannelsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teams.Item.AllChannels.AllChannelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Teams.Item.AllChannels
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AllChannelsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teams.Item.AllChannels.AllChannelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,25 +55,25 @@ namespace Microsoft.Graph.Teams.Item.AllChannels
         /// Get the list of channels either in this team or shared with this team (incoming channels).
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-list-allchannels?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ChannelCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ChannelCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ChannelCollectionResponse?> GetAsync(Action<RequestConfiguration<AllChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ChannelCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.AllChannels.AllChannelsRequestBuilder.AllChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ChannelCollectionResponse> GetAsync(Action<RequestConfiguration<AllChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ChannelCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.AllChannels.AllChannelsRequestBuilder.AllChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ChannelCollectionResponse>(requestInfo, ChannelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ChannelCollectionResponse>(requestInfo, Microsoft.Graph.Models.ChannelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the list of channels either in this team or shared with this team (incoming channels).
@@ -82,11 +82,11 @@ namespace Microsoft.Graph.Teams.Item.AllChannels
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AllChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.AllChannels.AllChannelsRequestBuilder.AllChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AllChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.AllChannels.AllChannelsRequestBuilder.AllChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -97,11 +97,11 @@ namespace Microsoft.Graph.Teams.Item.AllChannels
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AllChannelsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Teams.Item.AllChannels.AllChannelsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AllChannelsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Teams.Item.AllChannels.AllChannelsRequestBuilder WithUrl(string rawUrl)
         {
-            return new AllChannelsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Teams.Item.AllChannels.AllChannelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the list of channels either in this team or shared with this team (incoming channels).
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Teams.Item.AllChannels
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AllChannelsRequestBuilderGetRequestConfiguration : RequestConfiguration<AllChannelsRequestBuilderGetQueryParameters>
+        public class AllChannelsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Teams.Item.AllChannels.AllChannelsRequestBuilder.AllChannelsRequestBuilderGetQueryParameters>
         {
         }
     }

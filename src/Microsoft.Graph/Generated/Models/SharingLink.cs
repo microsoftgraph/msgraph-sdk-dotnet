@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The app the link is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Application
+        public Microsoft.Graph.Models.Identity? Application
         {
-            get { return BackingStore?.Get<Identity?>("application"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity?>("application"); }
             set { BackingStore?.Set("application", value); }
         }
 #nullable restore
 #else
-        public Identity Application
+        public Microsoft.Graph.Models.Identity Application
         {
-            get { return BackingStore?.Get<Identity>("application"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Identity>("application"); }
             set { BackingStore?.Set("application", value); }
         }
 #endif
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SharingLink"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SharingLink"/> and sets the default values.
         /// </summary>
         public SharingLink()
         {
@@ -132,12 +132,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SharingLink"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SharingLink"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SharingLink CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SharingLink CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SharingLink();
+            return new Microsoft.Graph.Models.SharingLink();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "application", n => { Application = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "application", n => { Application = n.GetObjectValue<Microsoft.Graph.Models.Identity>(Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "preventsDownload", n => { PreventsDownload = n.GetBoolValue(); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
@@ -163,7 +163,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Identity>("application", Application);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Identity>("application", Application);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("preventsDownload", PreventsDownload);
             writer.WriteStringValue("scope", Scope);

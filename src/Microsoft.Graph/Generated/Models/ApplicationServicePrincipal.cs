@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ApplicationServicePrincipal"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ApplicationServicePrincipal"/> and sets the default values.
         /// </summary>
         public ApplicationServicePrincipal()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ApplicationServicePrincipal"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ApplicationServicePrincipal"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ApplicationServicePrincipal CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ApplicationServicePrincipal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ApplicationServicePrincipal();
+            return new Microsoft.Graph.Models.ApplicationServicePrincipal();
         }
         /// <summary>
         /// The deserialization information for the current model

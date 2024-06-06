@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ListItemVersion : BaseItemVersion, IParsable
+    public class ListItemVersion : Microsoft.Graph.Models.BaseItemVersion, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of the fields and values for this version of the list item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FieldValueSet? Fields
+        public Microsoft.Graph.Models.FieldValueSet? Fields
         {
-            get { return BackingStore?.Get<FieldValueSet?>("fields"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.FieldValueSet?>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
 #nullable restore
 #else
-        public FieldValueSet Fields
+        public Microsoft.Graph.Models.FieldValueSet Fields
         {
-            get { return BackingStore?.Get<FieldValueSet>("fields"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.FieldValueSet>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ListItemVersion"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ListItemVersion"/> and sets the default values.
         /// </summary>
         public ListItemVersion() : base()
         {
@@ -36,16 +36,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ListItemVersion"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ListItemVersion"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ListItemVersion CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ListItemVersion CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.documentSetVersion" => new DocumentSetVersion(),
-                _ => new ListItemVersion(),
+                "#microsoft.graph.documentSetVersion" => new Microsoft.Graph.Models.DocumentSetVersion(),
+                _ => new Microsoft.Graph.Models.ListItemVersion(),
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "fields", n => { Fields = n.GetObjectValue<FieldValueSet>(FieldValueSet.CreateFromDiscriminatorValue); } },
+                { "fields", n => { Fields = n.GetObjectValue<Microsoft.Graph.Models.FieldValueSet>(Microsoft.Graph.Models.FieldValueSet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<FieldValueSet>("fields", Fields);
+            writer.WriteObjectValue<Microsoft.Graph.Models.FieldValueSet>("fields", Fields);
         }
     }
 }

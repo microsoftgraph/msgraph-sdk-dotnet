@@ -23,44 +23,44 @@ namespace Microsoft.Graph.Contracts
     public class ContractsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Contracts.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Contracts.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public DeltaRequestBuilder Delta
+        public Microsoft.Graph.Contracts.Delta.DeltaRequestBuilder Delta
         {
-            get => new DeltaRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Contracts.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAvailableExtensionProperties method.</summary>
-        public GetAvailableExtensionPropertiesRequestBuilder GetAvailableExtensionProperties
+        public Microsoft.Graph.Contracts.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesRequestBuilder GetAvailableExtensionProperties
         {
-            get => new GetAvailableExtensionPropertiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Contracts.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getByIds method.</summary>
-        public GetByIdsRequestBuilder GetByIds
+        public Microsoft.Graph.Contracts.GetByIds.GetByIdsRequestBuilder GetByIds
         {
-            get => new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Contracts.GetByIds.GetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validateProperties method.</summary>
-        public ValidatePropertiesRequestBuilder ValidateProperties
+        public Microsoft.Graph.Contracts.ValidateProperties.ValidatePropertiesRequestBuilder ValidateProperties
         {
-            get => new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Contracts.ValidateProperties.ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of contract entities.</summary>
         /// <param name="position">The unique identifier of contract</param>
-        /// <returns>A <see cref="ContractItemRequestBuilder"/></returns>
-        public ContractItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("contract%2Did", position);
-                return new ContractItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ContractsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Contracts.ContractsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Contracts
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ContractsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Contracts.ContractsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -79,50 +79,50 @@ namespace Microsoft.Graph.Contracts
         /// Retrieve a list of contract objects associated to a partner tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contract-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ContractCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ContractCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ContractCollectionResponse?> GetAsync(Action<RequestConfiguration<ContractsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ContractCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Contracts.ContractsRequestBuilder.ContractsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ContractCollectionResponse> GetAsync(Action<RequestConfiguration<ContractsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ContractCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Contracts.ContractsRequestBuilder.ContractsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ContractCollectionResponse>(requestInfo, ContractCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ContractCollectionResponse>(requestInfo, Microsoft.Graph.Models.ContractCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to contracts
         /// </summary>
-        /// <returns>A <see cref="Contract"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Contract"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Contract?> PostAsync(Contract body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Contract?> PostAsync(Microsoft.Graph.Models.Contract body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Contract> PostAsync(Contract body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Contract> PostAsync(Microsoft.Graph.Models.Contract body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Contract>(requestInfo, Contract.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Contract>(requestInfo, Microsoft.Graph.Models.Contract.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of contract objects associated to a partner tenant.
@@ -131,11 +131,11 @@ namespace Microsoft.Graph.Contracts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ContractsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Contracts.ContractsRequestBuilder.ContractsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ContractsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Contracts.ContractsRequestBuilder.ContractsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -151,11 +151,11 @@ namespace Microsoft.Graph.Contracts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Contract body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Contract body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Contract body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Contract body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -168,11 +168,11 @@ namespace Microsoft.Graph.Contracts
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ContractsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Contracts.ContractsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ContractsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Contracts.ContractsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ContractsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Contracts.ContractsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of contract objects associated to a partner tenant.
@@ -243,7 +243,7 @@ namespace Microsoft.Graph.Contracts
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ContractsRequestBuilderGetRequestConfiguration : RequestConfiguration<ContractsRequestBuilderGetQueryParameters>
+        public class ContractsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Contracts.ContractsRequestBuilder.ContractsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

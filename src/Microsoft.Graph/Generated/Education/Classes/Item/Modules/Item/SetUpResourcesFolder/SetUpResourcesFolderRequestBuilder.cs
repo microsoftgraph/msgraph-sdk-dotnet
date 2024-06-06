@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Modules.Item.SetUpResourcesFold
     public class SetUpResourcesFolderRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="SetUpResourcesFolderRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Classes.Item.Modules.Item.SetUpResourcesFolder.SetUpResourcesFolderRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Modules.Item.SetUpResourcesFold
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SetUpResourcesFolderRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Classes.Item.Modules.Item.SetUpResourcesFolder.SetUpResourcesFolderRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,25 +36,25 @@ namespace Microsoft.Graph.Education.Classes.Item.Modules.Item.SetUpResourcesFold
         /// Create a SharePoint folder to upload files for a given educationModule. Only teachers can perform this operation. The teacher determines what resources to upload to the SharePoint folder for the module.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationmodule-setupresourcesfolder?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="EducationModule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationModule"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationModule?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationModule?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationModule> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationModule> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationModule>(requestInfo, EducationModule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EducationModule>(requestInfo, Microsoft.Graph.Models.EducationModule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a SharePoint folder to upload files for a given educationModule. Only teachers can perform this operation. The teacher determines what resources to upload to the SharePoint folder for the module.
@@ -78,11 +78,11 @@ namespace Microsoft.Graph.Education.Classes.Item.Modules.Item.SetUpResourcesFold
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SetUpResourcesFolderRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Education.Classes.Item.Modules.Item.SetUpResourcesFolder.SetUpResourcesFolderRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SetUpResourcesFolderRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Education.Classes.Item.Modules.Item.SetUpResourcesFolder.SetUpResourcesFolderRequestBuilder WithUrl(string rawUrl)
         {
-            return new SetUpResourcesFolderRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Education.Classes.Item.Modules.Item.SetUpResourcesFolder.SetUpResourcesFolderRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

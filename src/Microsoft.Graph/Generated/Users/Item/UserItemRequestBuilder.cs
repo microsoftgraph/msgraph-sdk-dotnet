@@ -92,372 +92,372 @@ namespace Microsoft.Graph.Users.Item
     public class UserItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the activities property of the microsoft.graph.user entity.</summary>
-        public ActivitiesRequestBuilder Activities
+        public Microsoft.Graph.Users.Item.Activities.ActivitiesRequestBuilder Activities
         {
-            get => new ActivitiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Activities.ActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.</summary>
-        public AgreementAcceptancesRequestBuilder AgreementAcceptances
+        public Microsoft.Graph.Users.Item.AgreementAcceptances.AgreementAcceptancesRequestBuilder AgreementAcceptances
         {
-            get => new AgreementAcceptancesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.AgreementAcceptances.AgreementAcceptancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appRoleAssignments property of the microsoft.graph.user entity.</summary>
-        public AppRoleAssignmentsRequestBuilder AppRoleAssignments
+        public Microsoft.Graph.Users.Item.AppRoleAssignments.AppRoleAssignmentsRequestBuilder AppRoleAssignments
         {
-            get => new AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.AppRoleAssignments.AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the assignLicense method.</summary>
-        public AssignLicenseRequestBuilder AssignLicense
+        public Microsoft.Graph.Users.Item.AssignLicense.AssignLicenseRequestBuilder AssignLicense
         {
-            get => new AssignLicenseRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.AssignLicense.AssignLicenseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authentication property of the microsoft.graph.user entity.</summary>
-        public AuthenticationRequestBuilder Authentication
+        public Microsoft.Graph.Users.Item.Authentication.AuthenticationRequestBuilder Authentication
         {
-            get => new AuthenticationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Authentication.AuthenticationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendar property of the microsoft.graph.user entity.</summary>
-        public CalendarRequestBuilder Calendar
+        public Microsoft.Graph.Users.Item.Calendar.CalendarRequestBuilder Calendar
         {
-            get => new CalendarRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendarGroups property of the microsoft.graph.user entity.</summary>
-        public CalendarGroupsRequestBuilder CalendarGroups
+        public Microsoft.Graph.Users.Item.CalendarGroups.CalendarGroupsRequestBuilder CalendarGroups
         {
-            get => new CalendarGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.CalendarGroups.CalendarGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendars property of the microsoft.graph.user entity.</summary>
-        public CalendarsRequestBuilder Calendars
+        public Microsoft.Graph.Users.Item.Calendars.CalendarsRequestBuilder Calendars
         {
-            get => new CalendarsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Calendars.CalendarsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendarView property of the microsoft.graph.user entity.</summary>
-        public CalendarViewRequestBuilder CalendarView
+        public Microsoft.Graph.Users.Item.CalendarView.CalendarViewRequestBuilder CalendarView
         {
-            get => new CalendarViewRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.CalendarView.CalendarViewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the changePassword method.</summary>
-        public ChangePasswordRequestBuilder ChangePassword
+        public Microsoft.Graph.Users.Item.ChangePassword.ChangePasswordRequestBuilder ChangePassword
         {
-            get => new ChangePasswordRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.ChangePassword.ChangePasswordRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the chats property of the microsoft.graph.user entity.</summary>
-        public ChatsRequestBuilder Chats
+        public Microsoft.Graph.Users.Item.Chats.ChatsRequestBuilder Chats
         {
-            get => new ChatsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Chats.ChatsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        public CheckMemberGroupsRequestBuilder CheckMemberGroups
+        public Microsoft.Graph.Users.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder CheckMemberGroups
         {
-            get => new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        public CheckMemberObjectsRequestBuilder CheckMemberObjects
+        public Microsoft.Graph.Users.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder CheckMemberObjects
         {
-            get => new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudClipboard property of the microsoft.graph.user entity.</summary>
-        public CloudClipboardRequestBuilder CloudClipboard
+        public Microsoft.Graph.Users.Item.CloudClipboard.CloudClipboardRequestBuilder CloudClipboard
         {
-            get => new CloudClipboardRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.CloudClipboard.CloudClipboardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contactFolders property of the microsoft.graph.user entity.</summary>
-        public ContactFoldersRequestBuilder ContactFolders
+        public Microsoft.Graph.Users.Item.ContactFolders.ContactFoldersRequestBuilder ContactFolders
         {
-            get => new ContactFoldersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.ContactFolders.ContactFoldersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contacts property of the microsoft.graph.user entity.</summary>
-        public ContactsRequestBuilder Contacts
+        public Microsoft.Graph.Users.Item.Contacts.ContactsRequestBuilder Contacts
         {
-            get => new ContactsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Contacts.ContactsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the createdObjects property of the microsoft.graph.user entity.</summary>
-        public CreatedObjectsRequestBuilder CreatedObjects
+        public Microsoft.Graph.Users.Item.CreatedObjects.CreatedObjectsRequestBuilder CreatedObjects
         {
-            get => new CreatedObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.CreatedObjects.CreatedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceManagementTroubleshootingEvents property of the microsoft.graph.user entity.</summary>
-        public DeviceManagementTroubleshootingEventsRequestBuilder DeviceManagementTroubleshootingEvents
+        public Microsoft.Graph.Users.Item.DeviceManagementTroubleshootingEvents.DeviceManagementTroubleshootingEventsRequestBuilder DeviceManagementTroubleshootingEvents
         {
-            get => new DeviceManagementTroubleshootingEventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.DeviceManagementTroubleshootingEvents.DeviceManagementTroubleshootingEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directReports property of the microsoft.graph.user entity.</summary>
-        public DirectReportsRequestBuilder DirectReports
+        public Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder DirectReports
         {
-            get => new DirectReportsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drive property of the microsoft.graph.user entity.</summary>
-        public DriveRequestBuilder Drive
+        public Microsoft.Graph.Users.Item.Drive.DriveRequestBuilder Drive
         {
-            get => new DriveRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Drive.DriveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drives property of the microsoft.graph.user entity.</summary>
-        public DrivesRequestBuilder Drives
+        public Microsoft.Graph.Users.Item.Drives.DrivesRequestBuilder Drives
         {
-            get => new DrivesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the employeeExperience property of the microsoft.graph.user entity.</summary>
-        public EmployeeExperienceRequestBuilder EmployeeExperience
+        public Microsoft.Graph.Users.Item.EmployeeExperience.EmployeeExperienceRequestBuilder EmployeeExperience
         {
-            get => new EmployeeExperienceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.EmployeeExperience.EmployeeExperienceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the events property of the microsoft.graph.user entity.</summary>
-        public EventsRequestBuilder Events
+        public Microsoft.Graph.Users.Item.Events.EventsRequestBuilder Events
         {
-            get => new EventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the exportDeviceAndAppManagementData method.</summary>
-        public ExportDeviceAndAppManagementDataRequestBuilder ExportDeviceAndAppManagementData
+        public Microsoft.Graph.Users.Item.ExportDeviceAndAppManagementData.ExportDeviceAndAppManagementDataRequestBuilder ExportDeviceAndAppManagementData
         {
-            get => new ExportDeviceAndAppManagementDataRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.ExportDeviceAndAppManagementData.ExportDeviceAndAppManagementDataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the exportPersonalData method.</summary>
-        public ExportPersonalDataRequestBuilder ExportPersonalData
+        public Microsoft.Graph.Users.Item.ExportPersonalData.ExportPersonalDataRequestBuilder ExportPersonalData
         {
-            get => new ExportPersonalDataRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.ExportPersonalData.ExportPersonalDataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.user entity.</summary>
-        public ExtensionsRequestBuilder Extensions
+        public Microsoft.Graph.Users.Item.Extensions.ExtensionsRequestBuilder Extensions
         {
-            get => new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the findMeetingTimes method.</summary>
-        public FindMeetingTimesRequestBuilder FindMeetingTimes
+        public Microsoft.Graph.Users.Item.FindMeetingTimes.FindMeetingTimesRequestBuilder FindMeetingTimes
         {
-            get => new FindMeetingTimesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.FindMeetingTimes.FindMeetingTimesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the followedSites property of the microsoft.graph.user entity.</summary>
-        public FollowedSitesRequestBuilder FollowedSites
+        public Microsoft.Graph.Users.Item.FollowedSites.FollowedSitesRequestBuilder FollowedSites
         {
-            get => new FollowedSitesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.FollowedSites.FollowedSitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMailTips method.</summary>
-        public GetMailTipsRequestBuilder GetMailTips
+        public Microsoft.Graph.Users.Item.GetMailTips.GetMailTipsRequestBuilder GetMailTips
         {
-            get => new GetMailTipsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.GetMailTips.GetMailTipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getManagedAppDiagnosticStatuses method.</summary>
-        public GetManagedAppDiagnosticStatusesRequestBuilder GetManagedAppDiagnosticStatuses
+        public Microsoft.Graph.Users.Item.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesRequestBuilder GetManagedAppDiagnosticStatuses
         {
-            get => new GetManagedAppDiagnosticStatusesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getManagedAppPolicies method.</summary>
-        public GetManagedAppPoliciesRequestBuilder GetManagedAppPolicies
+        public Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder GetManagedAppPolicies
         {
-            get => new GetManagedAppPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getManagedDevicesWithAppFailures method.</summary>
-        public GetManagedDevicesWithAppFailuresRequestBuilder GetManagedDevicesWithAppFailures
+        public Microsoft.Graph.Users.Item.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresRequestBuilder GetManagedDevicesWithAppFailures
         {
-            get => new GetManagedDevicesWithAppFailuresRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        public GetMemberGroupsRequestBuilder GetMemberGroups
+        public Microsoft.Graph.Users.Item.GetMemberGroups.GetMemberGroupsRequestBuilder GetMemberGroups
         {
-            get => new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.GetMemberGroups.GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        public GetMemberObjectsRequestBuilder GetMemberObjects
+        public Microsoft.Graph.Users.Item.GetMemberObjects.GetMemberObjectsRequestBuilder GetMemberObjects
         {
-            get => new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.GetMemberObjects.GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the inferenceClassification property of the microsoft.graph.user entity.</summary>
-        public InferenceClassificationRequestBuilder InferenceClassification
+        public Microsoft.Graph.Users.Item.InferenceClassification.InferenceClassificationRequestBuilder InferenceClassification
         {
-            get => new InferenceClassificationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.InferenceClassification.InferenceClassificationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the insights property of the microsoft.graph.user entity.</summary>
-        public InsightsRequestBuilder Insights
+        public Microsoft.Graph.Users.Item.Insights.InsightsRequestBuilder Insights
         {
-            get => new InsightsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Insights.InsightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the joinedTeams property of the microsoft.graph.user entity.</summary>
-        public JoinedTeamsRequestBuilder JoinedTeams
+        public Microsoft.Graph.Users.Item.JoinedTeams.JoinedTeamsRequestBuilder JoinedTeams
         {
-            get => new JoinedTeamsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.JoinedTeams.JoinedTeamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the licenseDetails property of the microsoft.graph.user entity.</summary>
-        public LicenseDetailsRequestBuilder LicenseDetails
+        public Microsoft.Graph.Users.Item.LicenseDetails.LicenseDetailsRequestBuilder LicenseDetails
         {
-            get => new LicenseDetailsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.LicenseDetails.LicenseDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The mailboxSettings property</summary>
-        public MailboxSettingsRequestBuilder MailboxSettings
+        public Microsoft.Graph.Users.Item.MailboxSettings.MailboxSettingsRequestBuilder MailboxSettings
         {
-            get => new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.MailboxSettings.MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mailFolders property of the microsoft.graph.user entity.</summary>
-        public MailFoldersRequestBuilder MailFolders
+        public Microsoft.Graph.Users.Item.MailFolders.MailFoldersRequestBuilder MailFolders
         {
-            get => new MailFoldersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.MailFolders.MailFoldersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedAppRegistrations property of the microsoft.graph.user entity.</summary>
-        public ManagedAppRegistrationsRequestBuilder ManagedAppRegistrations
+        public Microsoft.Graph.Users.Item.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder ManagedAppRegistrations
         {
-            get => new ManagedAppRegistrationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedDevices property of the microsoft.graph.user entity.</summary>
-        public ManagedDevicesRequestBuilder ManagedDevices
+        public Microsoft.Graph.Users.Item.ManagedDevices.ManagedDevicesRequestBuilder ManagedDevices
         {
-            get => new ManagedDevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.ManagedDevices.ManagedDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the manager property of the microsoft.graph.user entity.</summary>
-        public ManagerRequestBuilder Manager
+        public Microsoft.Graph.Users.Item.Manager.ManagerRequestBuilder Manager
         {
-            get => new ManagerRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Manager.ManagerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the memberOf property of the microsoft.graph.user entity.</summary>
-        public MemberOfRequestBuilder MemberOf
+        public Microsoft.Graph.Users.Item.MemberOf.MemberOfRequestBuilder MemberOf
         {
-            get => new MemberOfRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.MemberOf.MemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messages property of the microsoft.graph.user entity.</summary>
-        public MessagesRequestBuilder Messages
+        public Microsoft.Graph.Users.Item.Messages.MessagesRequestBuilder Messages
         {
-            get => new MessagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.user entity.</summary>
-        public Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants
+        public Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants
         {
-            get => new Oauth2PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Oauth2PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onenote property of the microsoft.graph.user entity.</summary>
-        public OnenoteRequestBuilder Onenote
+        public Microsoft.Graph.Users.Item.Onenote.OnenoteRequestBuilder Onenote
         {
-            get => new OnenoteRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Onenote.OnenoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.</summary>
-        public OnlineMeetingsRequestBuilder OnlineMeetings
+        public Microsoft.Graph.Users.Item.OnlineMeetings.OnlineMeetingsRequestBuilder OnlineMeetings
         {
-            get => new OnlineMeetingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.OnlineMeetings.OnlineMeetingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the outlook property of the microsoft.graph.user entity.</summary>
-        public OutlookRequestBuilder Outlook
+        public Microsoft.Graph.Users.Item.Outlook.OutlookRequestBuilder Outlook
         {
-            get => new OutlookRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Outlook.OutlookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the ownedDevices property of the microsoft.graph.user entity.</summary>
-        public OwnedDevicesRequestBuilder OwnedDevices
+        public Microsoft.Graph.Users.Item.OwnedDevices.OwnedDevicesRequestBuilder OwnedDevices
         {
-            get => new OwnedDevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.OwnedDevices.OwnedDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the ownedObjects property of the microsoft.graph.user entity.</summary>
-        public OwnedObjectsRequestBuilder OwnedObjects
+        public Microsoft.Graph.Users.Item.OwnedObjects.OwnedObjectsRequestBuilder OwnedObjects
         {
-            get => new OwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.OwnedObjects.OwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the people property of the microsoft.graph.user entity.</summary>
-        public PeopleRequestBuilder People
+        public Microsoft.Graph.Users.Item.People.PeopleRequestBuilder People
         {
-            get => new PeopleRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.People.PeopleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.user entity.</summary>
-        public PermissionGrantsRequestBuilder PermissionGrants
+        public Microsoft.Graph.Users.Item.PermissionGrants.PermissionGrantsRequestBuilder PermissionGrants
         {
-            get => new PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.PermissionGrants.PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the photo property of the microsoft.graph.user entity.</summary>
-        public PhotoRequestBuilder Photo
+        public Microsoft.Graph.Users.Item.Photo.PhotoRequestBuilder Photo
         {
-            get => new PhotoRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Photo.PhotoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the photos property of the microsoft.graph.user entity.</summary>
-        public PhotosRequestBuilder Photos
+        public Microsoft.Graph.Users.Item.Photos.PhotosRequestBuilder Photos
         {
-            get => new PhotosRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Photos.PhotosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the planner property of the microsoft.graph.user entity.</summary>
-        public PlannerRequestBuilder Planner
+        public Microsoft.Graph.Users.Item.Planner.PlannerRequestBuilder Planner
         {
-            get => new PlannerRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Planner.PlannerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the presence property of the microsoft.graph.user entity.</summary>
-        public PresenceRequestBuilder Presence
+        public Microsoft.Graph.Users.Item.Presence.PresenceRequestBuilder Presence
         {
-            get => new PresenceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Presence.PresenceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the registeredDevices property of the microsoft.graph.user entity.</summary>
-        public RegisteredDevicesRequestBuilder RegisteredDevices
+        public Microsoft.Graph.Users.Item.RegisteredDevices.RegisteredDevicesRequestBuilder RegisteredDevices
         {
-            get => new RegisteredDevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.RegisteredDevices.RegisteredDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeAllDevicesFromManagement method.</summary>
-        public RemoveAllDevicesFromManagementRequestBuilder RemoveAllDevicesFromManagement
+        public Microsoft.Graph.Users.Item.RemoveAllDevicesFromManagement.RemoveAllDevicesFromManagementRequestBuilder RemoveAllDevicesFromManagement
         {
-            get => new RemoveAllDevicesFromManagementRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.RemoveAllDevicesFromManagement.RemoveAllDevicesFromManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reprocessLicenseAssignment method.</summary>
-        public ReprocessLicenseAssignmentRequestBuilder ReprocessLicenseAssignment
+        public Microsoft.Graph.Users.Item.ReprocessLicenseAssignment.ReprocessLicenseAssignmentRequestBuilder ReprocessLicenseAssignment
         {
-            get => new ReprocessLicenseAssignmentRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.ReprocessLicenseAssignment.ReprocessLicenseAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
-        public RestoreRequestBuilder Restore
+        public Microsoft.Graph.Users.Item.Restore.RestoreRequestBuilder Restore
         {
-            get => new RestoreRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retryServiceProvisioning method.</summary>
-        public RetryServiceProvisioningRequestBuilder RetryServiceProvisioning
+        public Microsoft.Graph.Users.Item.RetryServiceProvisioning.RetryServiceProvisioningRequestBuilder RetryServiceProvisioning
         {
-            get => new RetryServiceProvisioningRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.RetryServiceProvisioning.RetryServiceProvisioningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the revokeSignInSessions method.</summary>
-        public RevokeSignInSessionsRequestBuilder RevokeSignInSessions
+        public Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsRequestBuilder RevokeSignInSessions
         {
-            get => new RevokeSignInSessionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the scopedRoleMemberOf property of the microsoft.graph.user entity.</summary>
-        public ScopedRoleMemberOfRequestBuilder ScopedRoleMemberOf
+        public Microsoft.Graph.Users.Item.ScopedRoleMemberOf.ScopedRoleMemberOfRequestBuilder ScopedRoleMemberOf
         {
-            get => new ScopedRoleMemberOfRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.ScopedRoleMemberOf.ScopedRoleMemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendMail method.</summary>
-        public SendMailRequestBuilder SendMail
+        public Microsoft.Graph.Users.Item.SendMail.SendMailRequestBuilder SendMail
         {
-            get => new SendMailRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.SendMail.SendMailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The serviceProvisioningErrors property</summary>
-        public ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
+        public Microsoft.Graph.Users.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
         {
-            get => new ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.user entity.</summary>
-        public SettingsRequestBuilder Settings
+        public Microsoft.Graph.Users.Item.Settings.SettingsRequestBuilder Settings
         {
-            get => new SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sponsors property of the microsoft.graph.user entity.</summary>
-        public SponsorsRequestBuilder Sponsors
+        public Microsoft.Graph.Users.Item.Sponsors.SponsorsRequestBuilder Sponsors
         {
-            get => new SponsorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Sponsors.SponsorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the teamwork property of the microsoft.graph.user entity.</summary>
-        public TeamworkRequestBuilder Teamwork
+        public Microsoft.Graph.Users.Item.Teamwork.TeamworkRequestBuilder Teamwork
         {
-            get => new TeamworkRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Teamwork.TeamworkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the todo property of the microsoft.graph.user entity.</summary>
-        public TodoRequestBuilder Todo
+        public Microsoft.Graph.Users.Item.Todo.TodoRequestBuilder Todo
         {
-            get => new TodoRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.Todo.TodoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transitiveMemberOf property of the microsoft.graph.user entity.</summary>
-        public TransitiveMemberOfRequestBuilder TransitiveMemberOf
+        public Microsoft.Graph.Users.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder TransitiveMemberOf
         {
-            get => new TransitiveMemberOfRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the translateExchangeIds method.</summary>
-        public TranslateExchangeIdsRequestBuilder TranslateExchangeIds
+        public Microsoft.Graph.Users.Item.TranslateExchangeIds.TranslateExchangeIdsRequestBuilder TranslateExchangeIds
         {
-            get => new TranslateExchangeIdsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.TranslateExchangeIds.TranslateExchangeIdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the wipeManagedAppRegistrationsByDeviceTag method.</summary>
-        public WipeManagedAppRegistrationsByDeviceTagRequestBuilder WipeManagedAppRegistrationsByDeviceTag
+        public Microsoft.Graph.Users.Item.WipeManagedAppRegistrationsByDeviceTag.WipeManagedAppRegistrationsByDeviceTagRequestBuilder WipeManagedAppRegistrationsByDeviceTag
         {
-            get => new WipeManagedAppRegistrationsByDeviceTagRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.WipeManagedAppRegistrationsByDeviceTag.WipeManagedAppRegistrationsByDeviceTagRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.UserItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -465,7 +465,7 @@ namespace Microsoft.Graph.Users.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.UserItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -473,12 +473,12 @@ namespace Microsoft.Graph.Users.Item
         {
         }
         /// <summary>
-        /// Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-1.0" />
+        /// Deletes a user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-user-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -491,55 +491,55 @@ namespace Microsoft.Graph.Users.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the exportDeviceAndAppManagementData method.
         /// </summary>
-        /// <returns>A <see cref="ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.ExportDeviceAndAppManagementDataWithSkipWithTop.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder"/></returns>
         /// <param name="skip">Usage: skip={skip}</param>
         /// <param name="top">Usage: top={top}</param>
-        public ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder ExportDeviceAndAppManagementDataWithSkipWithTop(int? skip, int? top)
+        public Microsoft.Graph.Users.Item.ExportDeviceAndAppManagementDataWithSkipWithTop.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder ExportDeviceAndAppManagementDataWithSkipWithTop(int? skip, int? top)
         {
             _ = skip ?? throw new ArgumentNullException(nameof(skip));
             _ = top ?? throw new ArgumentNullException(nameof(top));
-            return new ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(PathParameters, RequestAdapter, skip, top);
+            return new Microsoft.Graph.Users.Item.ExportDeviceAndAppManagementDataWithSkipWithTop.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(PathParameters, RequestAdapter, skip, top);
         }
         /// <summary>
         /// Read properties and relationships of the user object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-user-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-user-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.User"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.User?> GetAsync(Action<RequestConfiguration<UserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.User?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.UserItemRequestBuilder.UserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.User> GetAsync(Action<RequestConfiguration<UserItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.User> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.UserItemRequestBuilder.UserItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.User>(requestInfo, Microsoft.Graph.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage. Customers through Microsoft Entra ID for customers can also use this API operation to update their details. See Default user permissions in customer tenants for the list of properties they can update.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0" />
+        /// Update the properties of a user object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-user-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.User"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.User?> PatchAsync(Microsoft.Graph.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -553,24 +553,24 @@ namespace Microsoft.Graph.Users.Item
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.User>(requestInfo, Microsoft.Graph.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the reminderView method.
         /// </summary>
-        /// <returns>A <see cref="ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.ReminderViewWithStartDateTimeWithEndDateTime.ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
         /// <param name="endDateTime">Usage: EndDateTime=&apos;{EndDateTime}&apos;</param>
         /// <param name="startDateTime">Usage: StartDateTime=&apos;{StartDateTime}&apos;</param>
-        public ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder ReminderViewWithStartDateTimeWithEndDateTime(string endDateTime, string startDateTime)
+        public Microsoft.Graph.Users.Item.ReminderViewWithStartDateTimeWithEndDateTime.ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder ReminderViewWithStartDateTimeWithEndDateTime(string endDateTime, string startDateTime)
         {
             if(string.IsNullOrEmpty(endDateTime)) throw new ArgumentNullException(nameof(endDateTime));
             if(string.IsNullOrEmpty(startDateTime)) throw new ArgumentNullException(nameof(startDateTime));
-            return new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
+            return new Microsoft.Graph.Users.Item.ReminderViewWithStartDateTimeWithEndDateTime.ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
-        /// Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
+        /// Deletes a user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -595,11 +595,11 @@ namespace Microsoft.Graph.Users.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.UserItemRequestBuilder.UserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.UserItemRequestBuilder.UserItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -608,7 +608,7 @@ namespace Microsoft.Graph.Users.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage. Customers through Microsoft Entra ID for customers can also use this API operation to update their details. See Default user permissions in customer tenants for the list of properties they can update.
+        /// Update the properties of a user object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -632,11 +632,11 @@ namespace Microsoft.Graph.Users.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UserItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.UserItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UserItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.UserItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new UserItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.UserItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -675,7 +675,7 @@ namespace Microsoft.Graph.Users.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserItemRequestBuilderGetRequestConfiguration : RequestConfiguration<UserItemRequestBuilderGetQueryParameters>
+        public class UserItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.UserItemRequestBuilder.UserItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

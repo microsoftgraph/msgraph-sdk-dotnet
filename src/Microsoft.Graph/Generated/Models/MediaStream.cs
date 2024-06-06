@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The direction property</summary>
-        public MediaDirection? Direction
+        public Microsoft.Graph.Models.MediaDirection? Direction
         {
-            get { return BackingStore?.Get<MediaDirection?>("direction"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MediaDirection?>("direction"); }
             set { BackingStore?.Set("direction", value); }
         }
         /// <summary>The media stream label.</summary>
@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The mediaType property</summary>
-        public Modality? MediaType
+        public Microsoft.Graph.Models.Modality? MediaType
         {
-            get { return BackingStore?.Get<Modality?>("mediaType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Modality?>("mediaType"); }
             set { BackingStore?.Set("mediaType", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MediaStream"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MediaStream"/> and sets the default values.
         /// </summary>
         public MediaStream()
         {
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MediaStream"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MediaStream"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MediaStream CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.MediaStream CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MediaStream();
+            return new Microsoft.Graph.Models.MediaStream();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,9 +111,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "direction", n => { Direction = n.GetEnumValue<MediaDirection>(); } },
+                { "direction", n => { Direction = n.GetEnumValue<Microsoft.Graph.Models.MediaDirection>(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "mediaType", n => { MediaType = n.GetEnumValue<Modality>(); } },
+                { "mediaType", n => { MediaType = n.GetEnumValue<Microsoft.Graph.Models.Modality>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "serverMuted", n => { ServerMuted = n.GetBoolValue(); } },
                 { "sourceId", n => { SourceId = n.GetStringValue(); } },
@@ -126,9 +126,9 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<MediaDirection>("direction", Direction);
+            writer.WriteEnumValue<Microsoft.Graph.Models.MediaDirection>("direction", Direction);
             writer.WriteStringValue("label", Label);
-            writer.WriteEnumValue<Modality>("mediaType", MediaType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Modality>("mediaType", MediaType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("serverMuted", ServerMuted);
             writer.WriteStringValue("sourceId", SourceId);

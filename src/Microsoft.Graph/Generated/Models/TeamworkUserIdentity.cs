@@ -7,17 +7,17 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class TeamworkUserIdentity : Identity, IParsable
+    public class TeamworkUserIdentity : Microsoft.Graph.Models.Identity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.</summary>
-        public TeamworkUserIdentityType? UserIdentityType
+        public Microsoft.Graph.Models.TeamworkUserIdentityType? UserIdentityType
         {
-            get { return BackingStore?.Get<TeamworkUserIdentityType?>("userIdentityType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamworkUserIdentityType?>("userIdentityType"); }
             set { BackingStore?.Set("userIdentityType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkUserIdentity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TeamworkUserIdentity"/> and sets the default values.
         /// </summary>
         public TeamworkUserIdentity() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkUserIdentity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamworkUserIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeamworkUserIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TeamworkUserIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkUserIdentity();
+            return new Microsoft.Graph.Models.TeamworkUserIdentity();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "userIdentityType", n => { UserIdentityType = n.GetEnumValue<TeamworkUserIdentityType>(); } },
+                { "userIdentityType", n => { UserIdentityType = n.GetEnumValue<Microsoft.Graph.Models.TeamworkUserIdentityType>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<TeamworkUserIdentityType>("userIdentityType", UserIdentityType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TeamworkUserIdentityType>("userIdentityType", UserIdentityType);
         }
     }
 }

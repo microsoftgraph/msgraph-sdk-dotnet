@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class GoogleCloudResourceEvidence : AlertEvidence, IParsable
+    public class GoogleCloudResourceEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The fullResourceName property</summary>
@@ -43,9 +43,9 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>The type of location. Possible values are: unknown, regional, zonal, global, unknownFutureValue.</summary>
-        public GoogleCloudLocationType? LocationType
+        public Microsoft.Graph.Models.Security.GoogleCloudLocationType? LocationType
         {
-            get { return BackingStore?.Get<GoogleCloudLocationType?>("locationType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.GoogleCloudLocationType?>("locationType"); }
             set { BackingStore?.Set("locationType", value); }
         }
         /// <summary>The Google project ID as defined by the user.</summary>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GoogleCloudResourceEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.GoogleCloudResourceEvidence"/> and sets the default values.
         /// </summary>
         public GoogleCloudResourceEvidence() : base()
         {
@@ -112,12 +112,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GoogleCloudResourceEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.GoogleCloudResourceEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GoogleCloudResourceEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.GoogleCloudResourceEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GoogleCloudResourceEvidence();
+            return new Microsoft.Graph.Models.Security.GoogleCloudResourceEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Models.Security
             {
                 { "fullResourceName", n => { FullResourceName = n.GetStringValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
-                { "locationType", n => { LocationType = n.GetEnumValue<GoogleCloudLocationType>(); } },
+                { "locationType", n => { LocationType = n.GetEnumValue<Microsoft.Graph.Models.Security.GoogleCloudLocationType>(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectNumber", n => { ProjectNumber = n.GetLongValue(); } },
                 { "resourceName", n => { ResourceName = n.GetStringValue(); } },
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Models.Security
             base.Serialize(writer);
             writer.WriteStringValue("fullResourceName", FullResourceName);
             writer.WriteStringValue("location", Location);
-            writer.WriteEnumValue<GoogleCloudLocationType>("locationType", LocationType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.GoogleCloudLocationType>("locationType", LocationType);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteLongValue("projectNumber", ProjectNumber);
             writer.WriteStringValue("resourceName", ResourceName);

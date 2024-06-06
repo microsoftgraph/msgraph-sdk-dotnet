@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGe
 {
     [Obsolete("This class is obsolete. Use GetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse : GetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetResponse, IParsable
+    public class GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse : Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime.GetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime.GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime.GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse();
+            return new Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime.GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse();
         }
     }
 }

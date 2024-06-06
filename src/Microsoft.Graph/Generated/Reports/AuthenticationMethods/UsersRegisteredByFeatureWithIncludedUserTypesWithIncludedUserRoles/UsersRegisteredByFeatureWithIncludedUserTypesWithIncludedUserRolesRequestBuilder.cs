@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByFeature
     public class UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="includedUserRoles">Usage: includedUserRoles=&apos;{includedUserRoles}&apos;</param>
         /// <param name="includedUserTypes">Usage: includedUserTypes=&apos;{includedUserTypes}&apos;</param>
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByFeature
             if (!string.IsNullOrWhiteSpace(includedUserTypes)) PathParameters.Add("includedUserTypes", includedUserTypes);
         }
         /// <summary>
-        /// Instantiates a new <see cref="UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,25 +39,25 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByFeature
         /// <summary>
         /// Invoke function usersRegisteredByFeature
         /// </summary>
-        /// <returns>A <see cref="UserRegistrationFeatureSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserRegistrationFeatureSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserRegistrationFeatureSummary?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UserRegistrationFeatureSummary?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UserRegistrationFeatureSummary> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UserRegistrationFeatureSummary> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UserRegistrationFeatureSummary>(requestInfo, UserRegistrationFeatureSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserRegistrationFeatureSummary>(requestInfo, Microsoft.Graph.Models.UserRegistrationFeatureSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function usersRegisteredByFeature
@@ -81,11 +81,11 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByFeature
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder WithUrl(string rawUrl)
         {
-            return new UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Search
 {
     #pragma warning disable CS1591
-    public class Bookmark : SearchAnswer, IParsable
+    public class Bookmark : Microsoft.Graph.Models.Search.SearchAnswer, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Date and time when the bookmark stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
@@ -63,16 +63,16 @@ namespace Microsoft.Graph.Models.Search
         /// <summary>Keywords that trigger this bookmark to appear in search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AnswerKeyword? Keywords
+        public Microsoft.Graph.Models.Search.AnswerKeyword? Keywords
         {
-            get { return BackingStore?.Get<AnswerKeyword?>("keywords"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Search.AnswerKeyword?>("keywords"); }
             set { BackingStore?.Set("keywords", value); }
         }
 #nullable restore
 #else
-        public AnswerKeyword Keywords
+        public Microsoft.Graph.Models.Search.AnswerKeyword Keywords
         {
-            get { return BackingStore?.Get<AnswerKeyword>("keywords"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Search.AnswerKeyword>("keywords"); }
             set { BackingStore?.Set("keywords", value); }
         }
 #endif
@@ -95,16 +95,16 @@ namespace Microsoft.Graph.Models.Search
         /// <summary>List of devices and operating systems that are able to view this bookmark. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DevicePlatformType?>? Platforms
+        public List<Microsoft.Graph.Models.DevicePlatformType?>? Platforms
         {
-            get { return BackingStore?.Get<List<DevicePlatformType?>?>("platforms"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DevicePlatformType?>?>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
 #nullable restore
 #else
-        public List<DevicePlatformType?> Platforms
+        public List<Microsoft.Graph.Models.DevicePlatformType?> Platforms
         {
-            get { return BackingStore?.Get<List<DevicePlatformType?>>("platforms"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DevicePlatformType?>>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
 #endif
@@ -125,36 +125,36 @@ namespace Microsoft.Graph.Models.Search
         }
 #endif
         /// <summary>The state property</summary>
-        public AnswerState? State
+        public Microsoft.Graph.Models.Search.AnswerState? State
         {
-            get { return BackingStore?.Get<AnswerState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Search.AnswerState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AnswerVariant>? TargetedVariations
+        public List<Microsoft.Graph.Models.Search.AnswerVariant>? TargetedVariations
         {
-            get { return BackingStore?.Get<List<AnswerVariant>?>("targetedVariations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Search.AnswerVariant>?>("targetedVariations"); }
             set { BackingStore?.Set("targetedVariations", value); }
         }
 #nullable restore
 #else
-        public List<AnswerVariant> TargetedVariations
+        public List<Microsoft.Graph.Models.Search.AnswerVariant> TargetedVariations
         {
-            get { return BackingStore?.Get<List<AnswerVariant>>("targetedVariations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Search.AnswerVariant>>("targetedVariations"); }
             set { BackingStore?.Set("targetedVariations", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Bookmark"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Search.Bookmark"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Bookmark CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Search.Bookmark CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Bookmark();
+            return new Microsoft.Graph.Models.Search.Bookmark();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -169,12 +169,12 @@ namespace Microsoft.Graph.Models.Search
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "groupIds", n => { GroupIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "isSuggested", n => { IsSuggested = n.GetBoolValue(); } },
-                { "keywords", n => { Keywords = n.GetObjectValue<AnswerKeyword>(AnswerKeyword.CreateFromDiscriminatorValue); } },
+                { "keywords", n => { Keywords = n.GetObjectValue<Microsoft.Graph.Models.Search.AnswerKeyword>(Microsoft.Graph.Models.Search.AnswerKeyword.CreateFromDiscriminatorValue); } },
                 { "languageTags", n => { LanguageTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "platforms", n => { Platforms = n.GetCollectionOfEnumValues<DevicePlatformType>()?.ToList(); } },
+                { "platforms", n => { Platforms = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.DevicePlatformType>()?.ToList(); } },
                 { "powerAppIds", n => { PowerAppIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "state", n => { State = n.GetEnumValue<AnswerState>(); } },
-                { "targetedVariations", n => { TargetedVariations = n.GetCollectionOfObjectValues<AnswerVariant>(AnswerVariant.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Models.Search.AnswerState>(); } },
+                { "targetedVariations", n => { TargetedVariations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Search.AnswerVariant>(Microsoft.Graph.Models.Search.AnswerVariant.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -190,12 +190,12 @@ namespace Microsoft.Graph.Models.Search
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
             writer.WriteCollectionOfPrimitiveValues<string>("groupIds", GroupIds);
             writer.WriteBoolValue("isSuggested", IsSuggested);
-            writer.WriteObjectValue<AnswerKeyword>("keywords", Keywords);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Search.AnswerKeyword>("keywords", Keywords);
             writer.WriteCollectionOfPrimitiveValues<string>("languageTags", LanguageTags);
-            writer.WriteCollectionOfEnumValues<DevicePlatformType>("platforms", Platforms);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.DevicePlatformType>("platforms", Platforms);
             writer.WriteCollectionOfPrimitiveValues<string>("powerAppIds", PowerAppIds);
-            writer.WriteEnumValue<AnswerState>("state", State);
-            writer.WriteCollectionOfObjectValues<AnswerVariant>("targetedVariations", TargetedVariations);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Search.AnswerState>("state", State);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Search.AnswerVariant>("targetedVariations", TargetedVariations);
         }
     }
 }

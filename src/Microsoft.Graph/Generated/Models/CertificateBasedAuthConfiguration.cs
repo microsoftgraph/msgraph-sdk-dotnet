@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CertificateBasedAuthConfiguration : Entity, IParsable
+    public class CertificateBasedAuthConfiguration : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collection of certificate authorities which creates a trusted certificate chain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CertificateAuthority>? CertificateAuthorities
+        public List<Microsoft.Graph.Models.CertificateAuthority>? CertificateAuthorities
         {
-            get { return BackingStore?.Get<List<CertificateAuthority>?>("certificateAuthorities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CertificateAuthority>?>("certificateAuthorities"); }
             set { BackingStore?.Set("certificateAuthorities", value); }
         }
 #nullable restore
 #else
-        public List<CertificateAuthority> CertificateAuthorities
+        public List<Microsoft.Graph.Models.CertificateAuthority> CertificateAuthorities
         {
-            get { return BackingStore?.Get<List<CertificateAuthority>>("certificateAuthorities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CertificateAuthority>>("certificateAuthorities"); }
             set { BackingStore?.Set("certificateAuthorities", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CertificateBasedAuthConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CertificateBasedAuthConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CertificateBasedAuthConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CertificateBasedAuthConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CertificateBasedAuthConfiguration();
+            return new Microsoft.Graph.Models.CertificateBasedAuthConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "certificateAuthorities", n => { CertificateAuthorities = n.GetCollectionOfObjectValues<CertificateAuthority>(CertificateAuthority.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "certificateAuthorities", n => { CertificateAuthorities = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CertificateAuthority>(Microsoft.Graph.Models.CertificateAuthority.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<CertificateAuthority>("certificateAuthorities", CertificateAuthorities);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CertificateAuthority>("certificateAuthorities", CertificateAuthorities);
         }
     }
 }

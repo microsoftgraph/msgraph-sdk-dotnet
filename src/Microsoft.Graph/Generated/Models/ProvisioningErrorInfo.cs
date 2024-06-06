@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue</summary>
-        public ProvisioningStatusErrorCategory? ErrorCategory
+        public Microsoft.Graph.Models.ProvisioningStatusErrorCategory? ErrorCategory
         {
-            get { return BackingStore?.Get<ProvisioningStatusErrorCategory?>("errorCategory"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ProvisioningStatusErrorCategory?>("errorCategory"); }
             set { BackingStore?.Set("errorCategory", value); }
         }
         /// <summary>Unique error code if any occurred. Learn more</summary>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ProvisioningErrorInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ProvisioningErrorInfo"/> and sets the default values.
         /// </summary>
         public ProvisioningErrorInfo()
         {
@@ -116,12 +116,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProvisioningErrorInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ProvisioningErrorInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ProvisioningErrorInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ProvisioningErrorInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProvisioningErrorInfo();
+            return new Microsoft.Graph.Models.ProvisioningErrorInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "additionalDetails", n => { AdditionalDetails = n.GetStringValue(); } },
-                { "errorCategory", n => { ErrorCategory = n.GetEnumValue<ProvisioningStatusErrorCategory>(); } },
+                { "errorCategory", n => { ErrorCategory = n.GetEnumValue<Microsoft.Graph.Models.ProvisioningStatusErrorCategory>(); } },
                 { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("additionalDetails", AdditionalDetails);
-            writer.WriteEnumValue<ProvisioningStatusErrorCategory>("errorCategory", ErrorCategory);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ProvisioningStatusErrorCategory>("errorCategory", ErrorCategory);
             writer.WriteStringValue("errorCode", ErrorCode);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("reason", Reason);

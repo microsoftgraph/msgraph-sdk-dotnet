@@ -19,12 +19,12 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ServiceProvisioningErrorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ServiceProvisioningErrorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -42,26 +42,26 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.
         /// <summary>
         /// Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
         /// </summary>
-        /// <returns>A <see cref="ServiceProvisioningErrorCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ServiceProvisioningErrorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ServiceProvisioningErrorCollectionResponse?> GetAsync(Action<RequestConfiguration<ServiceProvisioningErrorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ServiceProvisioningErrorCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder.ServiceProvisioningErrorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ServiceProvisioningErrorCollectionResponse> GetAsync(Action<RequestConfiguration<ServiceProvisioningErrorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ServiceProvisioningErrorCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder.ServiceProvisioningErrorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ServiceProvisioningErrorCollectionResponse>(requestInfo, ServiceProvisioningErrorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ServiceProvisioningErrorCollectionResponse>(requestInfo, Microsoft.Graph.Models.ServiceProvisioningErrorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
@@ -71,11 +71,11 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ServiceProvisioningErrorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder.ServiceProvisioningErrorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ServiceProvisioningErrorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder.ServiceProvisioningErrorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -86,12 +86,12 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ServiceProvisioningErrorsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
-        public ServiceProvisioningErrorsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ServiceProvisioningErrorsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ServiceProvisioningErrorsRequestBuilderGetRequestConfiguration : RequestConfiguration<ServiceProvisioningErrorsRequestBuilderGetQueryParameters>
+        public class ServiceProvisioningErrorsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder.ServiceProvisioningErrorsRequestBuilderGetQueryParameters>
         {
         }
     }

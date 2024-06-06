@@ -33,9 +33,9 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>The hold status of the dataSourceContainer. The possible values are: notApplied, applied, applying, removing, partial</summary>
-        public DataSourceHoldStatus? HoldStatus
+        public Microsoft.Graph.Models.Security.DataSourceHoldStatus? HoldStatus
         {
-            get { return BackingStore?.Get<DataSourceHoldStatus?>("holdStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.DataSourceHoldStatus?>("holdStatus"); }
             set { BackingStore?.Set("holdStatus", value); }
         }
         /// <summary>Last modified date and time of the dataSourceContainer.</summary>
@@ -51,25 +51,25 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("releasedDateTime", value); }
         }
         /// <summary>Latest status of the dataSourceContainer. Possible values are: Active, Released.</summary>
-        public DataSourceContainerStatus? Status
+        public Microsoft.Graph.Models.Security.DataSourceContainerStatus? Status
         {
-            get { return BackingStore?.Get<DataSourceContainerStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.DataSourceContainerStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DataSourceContainer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.DataSourceContainer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DataSourceContainer CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.DataSourceContainer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.ediscoveryCustodian" => new EdiscoveryCustodian(),
-                "#microsoft.graph.security.ediscoveryNoncustodialDataSource" => new EdiscoveryNoncustodialDataSource(),
-                _ => new DataSourceContainer(),
+                "#microsoft.graph.security.ediscoveryCustodian" => new Microsoft.Graph.Models.Security.EdiscoveryCustodian(),
+                "#microsoft.graph.security.ediscoveryNoncustodialDataSource" => new Microsoft.Graph.Models.Security.EdiscoveryNoncustodialDataSource(),
+                _ => new Microsoft.Graph.Models.Security.DataSourceContainer(),
             };
         }
         /// <summary>
@@ -82,10 +82,10 @@ namespace Microsoft.Graph.Models.Security
             {
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "holdStatus", n => { HoldStatus = n.GetEnumValue<DataSourceHoldStatus>(); } },
+                { "holdStatus", n => { HoldStatus = n.GetEnumValue<Microsoft.Graph.Models.Security.DataSourceHoldStatus>(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "releasedDateTime", n => { ReleasedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<DataSourceContainerStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.Security.DataSourceContainerStatus>(); } },
             };
         }
         /// <summary>
@@ -98,10 +98,10 @@ namespace Microsoft.Graph.Models.Security
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<DataSourceHoldStatus>("holdStatus", HoldStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.DataSourceHoldStatus>("holdStatus", HoldStatus);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteDateTimeOffsetValue("releasedDateTime", ReleasedDateTime);
-            writer.WriteEnumValue<DataSourceContainerStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.Security.DataSourceContainerStatus>("status", Status);
         }
     }
 }

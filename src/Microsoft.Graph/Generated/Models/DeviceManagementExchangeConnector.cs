@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Entity which represents a connection to an Exchange environment.
     /// </summary>
-    public class DeviceManagementExchangeConnector : Entity, IParsable
+    public class DeviceManagementExchangeConnector : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The name of the server hosting the Exchange Connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,9 +44,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The type of Exchange Connector.</summary>
-        public DeviceManagementExchangeConnectorType? ExchangeConnectorType
+        public Microsoft.Graph.Models.DeviceManagementExchangeConnectorType? ExchangeConnectorType
         {
-            get { return BackingStore?.Get<DeviceManagementExchangeConnectorType?>("exchangeConnectorType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceManagementExchangeConnectorType?>("exchangeConnectorType"); }
             set { BackingStore?.Set("exchangeConnectorType", value); }
         }
         /// <summary>Exchange Organization to the Exchange server</summary>
@@ -104,9 +104,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The current status of the Exchange Connector.</summary>
-        public DeviceManagementExchangeConnectorStatus? Status
+        public Microsoft.Graph.Models.DeviceManagementExchangeConnectorStatus? Status
         {
-            get { return BackingStore?.Get<DeviceManagementExchangeConnectorStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceManagementExchangeConnectorStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The version of the ExchangeConnectorAgent</summary>
@@ -128,12 +128,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementExchangeConnector"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceManagementExchangeConnector"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementExchangeConnector CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeviceManagementExchangeConnector CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementExchangeConnector();
+            return new Microsoft.Graph.Models.DeviceManagementExchangeConnector();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -145,12 +145,12 @@ namespace Microsoft.Graph.Models
             {
                 { "connectorServerName", n => { ConnectorServerName = n.GetStringValue(); } },
                 { "exchangeAlias", n => { ExchangeAlias = n.GetStringValue(); } },
-                { "exchangeConnectorType", n => { ExchangeConnectorType = n.GetEnumValue<DeviceManagementExchangeConnectorType>(); } },
+                { "exchangeConnectorType", n => { ExchangeConnectorType = n.GetEnumValue<Microsoft.Graph.Models.DeviceManagementExchangeConnectorType>(); } },
                 { "exchangeOrganization", n => { ExchangeOrganization = n.GetStringValue(); } },
                 { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "primarySmtpAddress", n => { PrimarySmtpAddress = n.GetStringValue(); } },
                 { "serverName", n => { ServerName = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<DeviceManagementExchangeConnectorStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.DeviceManagementExchangeConnectorStatus>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -164,12 +164,12 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("connectorServerName", ConnectorServerName);
             writer.WriteStringValue("exchangeAlias", ExchangeAlias);
-            writer.WriteEnumValue<DeviceManagementExchangeConnectorType>("exchangeConnectorType", ExchangeConnectorType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DeviceManagementExchangeConnectorType>("exchangeConnectorType", ExchangeConnectorType);
             writer.WriteStringValue("exchangeOrganization", ExchangeOrganization);
             writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
             writer.WriteStringValue("primarySmtpAddress", PrimarySmtpAddress);
             writer.WriteStringValue("serverName", ServerName);
-            writer.WriteEnumValue<DeviceManagementExchangeConnectorStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.DeviceManagementExchangeConnectorStatus>("status", Status);
             writer.WriteStringValue("version", Version);
         }
     }

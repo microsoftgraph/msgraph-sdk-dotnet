@@ -20,29 +20,29 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams
     public class DeletedTeamsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Teamwork.DeletedTeams.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Teamwork.DeletedTeams.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAllMessages method.</summary>
-        public GetAllMessagesRequestBuilder GetAllMessages
+        public Microsoft.Graph.Teamwork.DeletedTeams.GetAllMessages.GetAllMessagesRequestBuilder GetAllMessages
         {
-            get => new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Teamwork.DeletedTeams.GetAllMessages.GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.</summary>
         /// <param name="position">The unique identifier of deletedTeam</param>
-        /// <returns>A <see cref="DeletedTeamItemRequestBuilder"/></returns>
-        public DeletedTeamItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Teamwork.DeletedTeams.Item.DeletedTeamItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Teamwork.DeletedTeams.Item.DeletedTeamItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("deletedTeam%2Did", position);
-                return new DeletedTeamItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Teamwork.DeletedTeams.Item.DeletedTeamItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeletedTeamsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teamwork.DeletedTeams.DeletedTeamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeletedTeamsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Teamwork.DeletedTeams.DeletedTeamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,50 +61,50 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams
         /// Get a list of the deletedTeam objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamwork-list-deletedteams?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="DeletedTeamCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeletedTeamCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeletedTeamCollectionResponse?> GetAsync(Action<RequestConfiguration<DeletedTeamsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeletedTeamCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teamwork.DeletedTeams.DeletedTeamsRequestBuilder.DeletedTeamsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeletedTeamCollectionResponse> GetAsync(Action<RequestConfiguration<DeletedTeamsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeletedTeamCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teamwork.DeletedTeams.DeletedTeamsRequestBuilder.DeletedTeamsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeletedTeamCollectionResponse>(requestInfo, DeletedTeamCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DeletedTeamCollectionResponse>(requestInfo, Microsoft.Graph.Models.DeletedTeamCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to deletedTeams for teamwork
         /// </summary>
-        /// <returns>A <see cref="DeletedTeam"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeletedTeam"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeletedTeam?> PostAsync(DeletedTeam body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeletedTeam?> PostAsync(Microsoft.Graph.Models.DeletedTeam body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeletedTeam> PostAsync(DeletedTeam body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.DeletedTeam> PostAsync(Microsoft.Graph.Models.DeletedTeam body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeletedTeam>(requestInfo, DeletedTeam.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DeletedTeam>(requestInfo, Microsoft.Graph.Models.DeletedTeam.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the deletedTeam objects and their properties.
@@ -113,11 +113,11 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeletedTeamsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teamwork.DeletedTeams.DeletedTeamsRequestBuilder.DeletedTeamsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeletedTeamsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teamwork.DeletedTeams.DeletedTeamsRequestBuilder.DeletedTeamsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -133,11 +133,11 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DeletedTeam body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.DeletedTeam body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DeletedTeam body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.DeletedTeam body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -150,11 +150,11 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DeletedTeamsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Teamwork.DeletedTeams.DeletedTeamsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeletedTeamsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Teamwork.DeletedTeams.DeletedTeamsRequestBuilder WithUrl(string rawUrl)
         {
-            return new DeletedTeamsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Teamwork.DeletedTeams.DeletedTeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the deletedTeam objects and their properties.
@@ -225,7 +225,7 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeletedTeamsRequestBuilderGetRequestConfiguration : RequestConfiguration<DeletedTeamsRequestBuilderGetQueryParameters>
+        public class DeletedTeamsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Teamwork.DeletedTeams.DeletedTeamsRequestBuilder.DeletedTeamsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

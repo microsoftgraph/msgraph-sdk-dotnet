@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Possible values are: EscrowBehavior, DisableMonitoringForChanges, OriginalJoiningProperty, Disposition, IsCustomerDefined, ExcludeFromReporting, Unsynchronized.</summary>
-        public ObjectMappingMetadata? Key
+        public Microsoft.Graph.Models.ObjectMappingMetadata? Key
         {
-            get { return BackingStore?.Get<ObjectMappingMetadata?>("key"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ObjectMappingMetadata?>("key"); }
             set { BackingStore?.Set("key", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ObjectMappingMetadataEntry"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ObjectMappingMetadataEntry"/> and sets the default values.
         /// </summary>
         public ObjectMappingMetadataEntry()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ObjectMappingMetadataEntry"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ObjectMappingMetadataEntry"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ObjectMappingMetadataEntry CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ObjectMappingMetadataEntry CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ObjectMappingMetadataEntry();
+            return new Microsoft.Graph.Models.ObjectMappingMetadataEntry();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "key", n => { Key = n.GetEnumValue<ObjectMappingMetadata>(); } },
+                { "key", n => { Key = n.GetEnumValue<Microsoft.Graph.Models.ObjectMappingMetadata>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<ObjectMappingMetadata>("key", Key);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ObjectMappingMetadata>("key", Key);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);

@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors
     public class DescriptorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the authorityTemplate property of the microsoft.graph.security.filePlanDescriptor entity.</summary>
-        public AuthorityTemplateRequestBuilder AuthorityTemplate
+        public Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.AuthorityTemplate.AuthorityTemplateRequestBuilder AuthorityTemplate
         {
-            get => new AuthorityTemplateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.AuthorityTemplate.AuthorityTemplateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categoryTemplate property of the microsoft.graph.security.filePlanDescriptor entity.</summary>
-        public CategoryTemplateRequestBuilder CategoryTemplate
+        public Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.CategoryTemplate.CategoryTemplateRequestBuilder CategoryTemplate
         {
-            get => new CategoryTemplateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.CategoryTemplate.CategoryTemplateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the citationTemplate property of the microsoft.graph.security.filePlanDescriptor entity.</summary>
-        public CitationTemplateRequestBuilder CitationTemplate
+        public Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.CitationTemplate.CitationTemplateRequestBuilder CitationTemplate
         {
-            get => new CitationTemplateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.CitationTemplate.CitationTemplateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the departmentTemplate property of the microsoft.graph.security.filePlanDescriptor entity.</summary>
-        public DepartmentTemplateRequestBuilder DepartmentTemplate
+        public Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.DepartmentTemplate.DepartmentTemplateRequestBuilder DepartmentTemplate
         {
-            get => new DepartmentTemplateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.DepartmentTemplate.DepartmentTemplateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the filePlanReferenceTemplate property of the microsoft.graph.security.filePlanDescriptor entity.</summary>
-        public FilePlanReferenceTemplateRequestBuilder FilePlanReferenceTemplate
+        public Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.FilePlanReferenceTemplate.FilePlanReferenceTemplateRequestBuilder FilePlanReferenceTemplate
         {
-            get => new FilePlanReferenceTemplateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.FilePlanReferenceTemplate.FilePlanReferenceTemplateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="DescriptorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.DescriptorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DescriptorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.DescriptorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -80,57 +80,57 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents out-of-the-box values that provide more options to improve the manageability and organization of the content you need to label.
         /// </summary>
-        /// <returns>A <see cref="FilePlanDescriptor"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.FilePlanDescriptor"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FilePlanDescriptor?> GetAsync(Action<RequestConfiguration<DescriptorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.FilePlanDescriptor?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.DescriptorsRequestBuilder.DescriptorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FilePlanDescriptor> GetAsync(Action<RequestConfiguration<DescriptorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.FilePlanDescriptor> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.DescriptorsRequestBuilder.DescriptorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FilePlanDescriptor>(requestInfo, FilePlanDescriptor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.FilePlanDescriptor>(requestInfo, Microsoft.Graph.Models.Security.FilePlanDescriptor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property descriptors in security
         /// </summary>
-        /// <returns>A <see cref="FilePlanDescriptor"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.FilePlanDescriptor"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FilePlanDescriptor?> PatchAsync(FilePlanDescriptor body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.FilePlanDescriptor?> PatchAsync(Microsoft.Graph.Models.Security.FilePlanDescriptor body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FilePlanDescriptor> PatchAsync(FilePlanDescriptor body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Security.FilePlanDescriptor> PatchAsync(Microsoft.Graph.Models.Security.FilePlanDescriptor body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FilePlanDescriptor>(requestInfo, FilePlanDescriptor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.FilePlanDescriptor>(requestInfo, Microsoft.Graph.Models.Security.FilePlanDescriptor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property descriptors for security
@@ -158,11 +158,11 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DescriptorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.DescriptorsRequestBuilder.DescriptorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DescriptorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.DescriptorsRequestBuilder.DescriptorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -178,11 +178,11 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(FilePlanDescriptor body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Security.FilePlanDescriptor body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(FilePlanDescriptor body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Security.FilePlanDescriptor body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -195,11 +195,11 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DescriptorsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.DescriptorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DescriptorsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.DescriptorsRequestBuilder WithUrl(string rawUrl)
         {
-            return new DescriptorsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.DescriptorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -238,7 +238,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DescriptorsRequestBuilderGetRequestConfiguration : RequestConfiguration<DescriptorsRequestBuilderGetQueryParameters>
+        public class DescriptorsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.Labels.RetentionLabels.Item.Descriptors.DescriptorsRequestBuilder.DescriptorsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

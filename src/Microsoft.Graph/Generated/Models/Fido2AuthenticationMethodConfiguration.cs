@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Fido2AuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable
+    public class Fido2AuthenticationMethodConfiguration : Microsoft.Graph.Models.AuthenticationMethodConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of groups that are enabled to use the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodTarget>? IncludeTargets
+        public List<Microsoft.Graph.Models.AuthenticationMethodTarget>? IncludeTargets
         {
-            get { return BackingStore?.Get<List<AuthenticationMethodTarget>?>("includeTargets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationMethodTarget>?>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodTarget> IncludeTargets
+        public List<Microsoft.Graph.Models.AuthenticationMethodTarget> IncludeTargets
         {
-            get { return BackingStore?.Get<List<AuthenticationMethodTarget>>("includeTargets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AuthenticationMethodTarget>>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
 #endif
@@ -41,21 +41,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Controls whether key restrictions are enforced on FIDO2 security keys, either allowing or disallowing certain key types as defined by Authenticator Attestation GUID (AAGUID), an identifier that indicates the type (e.g. make and model) of the authenticator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Fido2KeyRestrictions? KeyRestrictions
+        public Microsoft.Graph.Models.Fido2KeyRestrictions? KeyRestrictions
         {
-            get { return BackingStore?.Get<Fido2KeyRestrictions?>("keyRestrictions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Fido2KeyRestrictions?>("keyRestrictions"); }
             set { BackingStore?.Set("keyRestrictions", value); }
         }
 #nullable restore
 #else
-        public Fido2KeyRestrictions KeyRestrictions
+        public Microsoft.Graph.Models.Fido2KeyRestrictions KeyRestrictions
         {
-            get { return BackingStore?.Get<Fido2KeyRestrictions>("keyRestrictions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Fido2KeyRestrictions>("keyRestrictions"); }
             set { BackingStore?.Set("keyRestrictions", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Fido2AuthenticationMethodConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Fido2AuthenticationMethodConfiguration"/> and sets the default values.
         /// </summary>
         public Fido2AuthenticationMethodConfiguration() : base()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Fido2AuthenticationMethodConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Fido2AuthenticationMethodConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Fido2AuthenticationMethodConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Fido2AuthenticationMethodConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Fido2AuthenticationMethodConfiguration();
+            return new Microsoft.Graph.Models.Fido2AuthenticationMethodConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,10 +79,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<AuthenticationMethodTarget>(AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationMethodTarget>(Microsoft.Graph.Models.AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isAttestationEnforced", n => { IsAttestationEnforced = n.GetBoolValue(); } },
                 { "isSelfServiceRegistrationAllowed", n => { IsSelfServiceRegistrationAllowed = n.GetBoolValue(); } },
-                { "keyRestrictions", n => { KeyRestrictions = n.GetObjectValue<Fido2KeyRestrictions>(Fido2KeyRestrictions.CreateFromDiscriminatorValue); } },
+                { "keyRestrictions", n => { KeyRestrictions = n.GetObjectValue<Microsoft.Graph.Models.Fido2KeyRestrictions>(Microsoft.Graph.Models.Fido2KeyRestrictions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -93,10 +93,10 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AuthenticationMethodTarget>("includeTargets", IncludeTargets);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AuthenticationMethodTarget>("includeTargets", IncludeTargets);
             writer.WriteBoolValue("isAttestationEnforced", IsAttestationEnforced);
             writer.WriteBoolValue("isSelfServiceRegistrationAllowed", IsSelfServiceRegistrationAllowed);
-            writer.WriteObjectValue<Fido2KeyRestrictions>("keyRestrictions", KeyRestrictions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Fido2KeyRestrictions>("keyRestrictions", KeyRestrictions);
         }
     }
 }

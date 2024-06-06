@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class MessageRule : Entity, IParsable
+    public class MessageRule : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Actions to be taken on a message when the corresponding conditions are fulfilled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MessageRuleActions? Actions
+        public Microsoft.Graph.Models.MessageRuleActions? Actions
         {
-            get { return BackingStore?.Get<MessageRuleActions?>("actions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MessageRuleActions?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #nullable restore
 #else
-        public MessageRuleActions Actions
+        public Microsoft.Graph.Models.MessageRuleActions Actions
         {
-            get { return BackingStore?.Get<MessageRuleActions>("actions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MessageRuleActions>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #endif
         /// <summary>Conditions that when fulfilled trigger the corresponding actions for that rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MessageRulePredicates? Conditions
+        public Microsoft.Graph.Models.MessageRulePredicates? Conditions
         {
-            get { return BackingStore?.Get<MessageRulePredicates?>("conditions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MessageRulePredicates?>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
 #nullable restore
 #else
-        public MessageRulePredicates Conditions
+        public Microsoft.Graph.Models.MessageRulePredicates Conditions
         {
-            get { return BackingStore?.Get<MessageRulePredicates>("conditions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MessageRulePredicates>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
 #endif
@@ -61,16 +61,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Exception conditions for the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MessageRulePredicates? Exceptions
+        public Microsoft.Graph.Models.MessageRulePredicates? Exceptions
         {
-            get { return BackingStore?.Get<MessageRulePredicates?>("exceptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MessageRulePredicates?>("exceptions"); }
             set { BackingStore?.Set("exceptions", value); }
         }
 #nullable restore
 #else
-        public MessageRulePredicates Exceptions
+        public Microsoft.Graph.Models.MessageRulePredicates Exceptions
         {
-            get { return BackingStore?.Get<MessageRulePredicates>("exceptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MessageRulePredicates>("exceptions"); }
             set { BackingStore?.Set("exceptions", value); }
         }
 #endif
@@ -101,12 +101,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MessageRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MessageRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MessageRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MessageRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MessageRule();
+            return new Microsoft.Graph.Models.MessageRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,10 +116,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "actions", n => { Actions = n.GetObjectValue<MessageRuleActions>(MessageRuleActions.CreateFromDiscriminatorValue); } },
-                { "conditions", n => { Conditions = n.GetObjectValue<MessageRulePredicates>(MessageRulePredicates.CreateFromDiscriminatorValue); } },
+                { "actions", n => { Actions = n.GetObjectValue<Microsoft.Graph.Models.MessageRuleActions>(Microsoft.Graph.Models.MessageRuleActions.CreateFromDiscriminatorValue); } },
+                { "conditions", n => { Conditions = n.GetObjectValue<Microsoft.Graph.Models.MessageRulePredicates>(Microsoft.Graph.Models.MessageRulePredicates.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "exceptions", n => { Exceptions = n.GetObjectValue<MessageRulePredicates>(MessageRulePredicates.CreateFromDiscriminatorValue); } },
+                { "exceptions", n => { Exceptions = n.GetObjectValue<Microsoft.Graph.Models.MessageRulePredicates>(Microsoft.Graph.Models.MessageRulePredicates.CreateFromDiscriminatorValue); } },
                 { "hasError", n => { HasError = n.GetBoolValue(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "isReadOnly", n => { IsReadOnly = n.GetBoolValue(); } },
@@ -134,10 +134,10 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MessageRuleActions>("actions", Actions);
-            writer.WriteObjectValue<MessageRulePredicates>("conditions", Conditions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.MessageRuleActions>("actions", Actions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.MessageRulePredicates>("conditions", Conditions);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<MessageRulePredicates>("exceptions", Exceptions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.MessageRulePredicates>("exceptions", Exceptions);
             writer.WriteBoolValue("hasError", HasError);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteBoolValue("isReadOnly", IsReadOnly);

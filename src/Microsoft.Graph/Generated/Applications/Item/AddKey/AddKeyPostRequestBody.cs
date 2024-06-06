@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Applications.Item.AddKey
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AddKeyPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Applications.Item.AddKey.AddKeyPostRequestBody"/> and sets the default values.
         /// </summary>
         public AddKeyPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Applications.Item.AddKey
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AddKeyPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Applications.Item.AddKey.AddKeyPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AddKeyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Applications.Item.AddKey.AddKeyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AddKeyPostRequestBody();
+            return new Microsoft.Graph.Applications.Item.AddKey.AddKeyPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

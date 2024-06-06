@@ -21,23 +21,23 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.UserSettings.Item.Ass
         /// <summary>The assignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcUserSettingAssignment>? Assignments
+        public List<Microsoft.Graph.Models.CloudPcUserSettingAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<CloudPcUserSettingAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CloudPcUserSettingAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcUserSettingAssignment> Assignments
+        public List<Microsoft.Graph.Models.CloudPcUserSettingAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<CloudPcUserSettingAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CloudPcUserSettingAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>
-        /// Instantiates a new <see cref="AssignPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.UserSettings.Item.Assign.AssignPostRequestBody"/> and sets the default values.
         /// </summary>
         public AssignPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.UserSettings.Item.Ass
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.UserSettings.Item.Assign.AssignPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.DeviceManagement.VirtualEndpoint.UserSettings.Item.Assign.AssignPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignPostRequestBody();
+            return new Microsoft.Graph.DeviceManagement.VirtualEndpoint.UserSettings.Item.Assign.AssignPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.UserSettings.Item.Ass
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<CloudPcUserSettingAssignment>(CloudPcUserSettingAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CloudPcUserSettingAssignment>(Microsoft.Graph.Models.CloudPcUserSettingAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.UserSettings.Item.Ass
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<CloudPcUserSettingAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CloudPcUserSettingAssignment>("assignments", Assignments);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

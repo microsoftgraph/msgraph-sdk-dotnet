@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class IdentityUserFlow : Entity, IParsable
+    public class IdentityUserFlow : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The userFlowType property</summary>
@@ -25,16 +25,16 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IdentityUserFlow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityUserFlow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IdentityUserFlow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IdentityUserFlow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.b2xIdentityUserFlow" => new B2xIdentityUserFlow(),
-                _ => new IdentityUserFlow(),
+                "#microsoft.graph.b2xIdentityUserFlow" => new Microsoft.Graph.Models.B2xIdentityUserFlow(),
+                _ => new Microsoft.Graph.Models.IdentityUserFlow(),
             };
         }
         /// <summary>
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "userFlowType", n => { UserFlowType = n.GetEnumValue<UserFlowType>(); } },
+                { "userFlowType", n => { UserFlowType = n.GetEnumValue<Microsoft.Graph.Models.UserFlowType>(); } },
                 { "userFlowTypeVersion", n => { UserFlowTypeVersion = n.GetFloatValue(); } },
             };
         }
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<UserFlowType>("userFlowType", UserFlowType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.UserFlowType>("userFlowType", UserFlowType);
             writer.WriteFloatValue("userFlowTypeVersion", UserFlowTypeVersion);
         }
     }

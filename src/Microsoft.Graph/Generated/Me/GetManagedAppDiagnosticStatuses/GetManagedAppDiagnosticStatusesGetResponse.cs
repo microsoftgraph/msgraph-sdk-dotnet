@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses
 {
     #pragma warning disable CS1591
-    public class GetManagedAppDiagnosticStatusesGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetManagedAppDiagnosticStatusesGetResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppDiagnosticStatus>? Value
+        public List<Microsoft.Graph.Models.ManagedAppDiagnosticStatus>? Value
         {
-            get { return BackingStore?.Get<List<ManagedAppDiagnosticStatus>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppDiagnosticStatus>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppDiagnosticStatus> Value
+        public List<Microsoft.Graph.Models.ManagedAppDiagnosticStatus> Value
         {
-            get { return BackingStore?.Get<List<ManagedAppDiagnosticStatus>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ManagedAppDiagnosticStatus>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetManagedAppDiagnosticStatusesGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetManagedAppDiagnosticStatusesGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetManagedAppDiagnosticStatusesGetResponse();
+            return new Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<ManagedAppDiagnosticStatus>(ManagedAppDiagnosticStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppDiagnosticStatus>(Microsoft.Graph.Models.ManagedAppDiagnosticStatus.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ManagedAppDiagnosticStatus>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ManagedAppDiagnosticStatus>("value", Value);
         }
     }
 }

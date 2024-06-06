@@ -42,13 +42,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The state property</summary>
-        public CallTranscriptionState? State
+        public Microsoft.Graph.Models.CallTranscriptionState? State
         {
-            get { return BackingStore?.Get<CallTranscriptionState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CallTranscriptionState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CallTranscriptionInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CallTranscriptionInfo"/> and sets the default values.
         /// </summary>
         public CallTranscriptionInfo()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CallTranscriptionInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CallTranscriptionInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CallTranscriptionInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CallTranscriptionInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CallTranscriptionInfo();
+            return new Microsoft.Graph.Models.CallTranscriptionInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Models
             {
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<CallTranscriptionState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Models.CallTranscriptionState>(); } },
             };
         }
         /// <summary>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<CallTranscriptionState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CallTranscriptionState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

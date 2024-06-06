@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class DnsEvidence : AlertEvidence, IParsable
+    public class DnsEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The dnsServerIp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IpEvidence? DnsServerIp
+        public Microsoft.Graph.Models.Security.IpEvidence? DnsServerIp
         {
-            get { return BackingStore?.Get<IpEvidence?>("dnsServerIp"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.IpEvidence?>("dnsServerIp"); }
             set { BackingStore?.Set("dnsServerIp", value); }
         }
 #nullable restore
 #else
-        public IpEvidence DnsServerIp
+        public Microsoft.Graph.Models.Security.IpEvidence DnsServerIp
         {
-            get { return BackingStore?.Get<IpEvidence>("dnsServerIp"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.IpEvidence>("dnsServerIp"); }
             set { BackingStore?.Set("dnsServerIp", value); }
         }
 #endif
@@ -45,37 +45,37 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The hostIpAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IpEvidence? HostIpAddress
+        public Microsoft.Graph.Models.Security.IpEvidence? HostIpAddress
         {
-            get { return BackingStore?.Get<IpEvidence?>("hostIpAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.IpEvidence?>("hostIpAddress"); }
             set { BackingStore?.Set("hostIpAddress", value); }
         }
 #nullable restore
 #else
-        public IpEvidence HostIpAddress
+        public Microsoft.Graph.Models.Security.IpEvidence HostIpAddress
         {
-            get { return BackingStore?.Get<IpEvidence>("hostIpAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.IpEvidence>("hostIpAddress"); }
             set { BackingStore?.Set("hostIpAddress", value); }
         }
 #endif
         /// <summary>The ipAddresses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IpEvidence>? IpAddresses
+        public List<Microsoft.Graph.Models.Security.IpEvidence>? IpAddresses
         {
-            get { return BackingStore?.Get<List<IpEvidence>?>("ipAddresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.IpEvidence>?>("ipAddresses"); }
             set { BackingStore?.Set("ipAddresses", value); }
         }
 #nullable restore
 #else
-        public List<IpEvidence> IpAddresses
+        public List<Microsoft.Graph.Models.Security.IpEvidence> IpAddresses
         {
-            get { return BackingStore?.Get<List<IpEvidence>>("ipAddresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.IpEvidence>>("ipAddresses"); }
             set { BackingStore?.Set("ipAddresses", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DnsEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.DnsEvidence"/> and sets the default values.
         /// </summary>
         public DnsEvidence() : base()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DnsEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.DnsEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DnsEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.DnsEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DnsEvidence();
+            return new Microsoft.Graph.Models.Security.DnsEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,10 +99,10 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "dnsServerIp", n => { DnsServerIp = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
+                { "dnsServerIp", n => { DnsServerIp = n.GetObjectValue<Microsoft.Graph.Models.Security.IpEvidence>(Microsoft.Graph.Models.Security.IpEvidence.CreateFromDiscriminatorValue); } },
                 { "domainName", n => { DomainName = n.GetStringValue(); } },
-                { "hostIpAddress", n => { HostIpAddress = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
-                { "ipAddresses", n => { IpAddresses = n.GetCollectionOfObjectValues<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hostIpAddress", n => { HostIpAddress = n.GetObjectValue<Microsoft.Graph.Models.Security.IpEvidence>(Microsoft.Graph.Models.Security.IpEvidence.CreateFromDiscriminatorValue); } },
+                { "ipAddresses", n => { IpAddresses = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.IpEvidence>(Microsoft.Graph.Models.Security.IpEvidence.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -113,10 +113,10 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<IpEvidence>("dnsServerIp", DnsServerIp);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.IpEvidence>("dnsServerIp", DnsServerIp);
             writer.WriteStringValue("domainName", DomainName);
-            writer.WriteObjectValue<IpEvidence>("hostIpAddress", HostIpAddress);
-            writer.WriteCollectionOfObjectValues<IpEvidence>("ipAddresses", IpAddresses);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.IpEvidence>("hostIpAddress", HostIpAddress);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.IpEvidence>("ipAddresses", IpAddresses);
         }
     }
 }

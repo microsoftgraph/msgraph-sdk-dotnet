@@ -22,32 +22,32 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item
     public class ManagedEBookItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the assign method.</summary>
-        public AssignRequestBuilder Assign
+        public Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assign.AssignRequestBuilder Assign
         {
-            get => new AssignRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assign.AssignRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.managedEBook entity.</summary>
-        public AssignmentsRequestBuilder Assignments
+        public Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments.AssignmentsRequestBuilder Assignments
         {
-            get => new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceStates property of the microsoft.graph.managedEBook entity.</summary>
-        public DeviceStatesRequestBuilder DeviceStates
+        public Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.DeviceStates.DeviceStatesRequestBuilder DeviceStates
         {
-            get => new DeviceStatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.DeviceStates.DeviceStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the installSummary property of the microsoft.graph.managedEBook entity.</summary>
-        public InstallSummaryRequestBuilder InstallSummary
+        public Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary.InstallSummaryRequestBuilder InstallSummary
         {
-            get => new InstallSummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary.InstallSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userStateSummary property of the microsoft.graph.managedEBook entity.</summary>
-        public UserStateSummaryRequestBuilder UserStateSummary
+        public Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.UserStateSummary.UserStateSummaryRequestBuilder UserStateSummary
         {
-            get => new UserStateSummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.UserStateSummary.UserStateSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagedEBookItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.ManagedEBookItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagedEBookItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.ManagedEBookItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -81,59 +81,59 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the iosVppEBook object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-iosvppebook-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the managedEBook object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-managedebook-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ManagedEBook"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedEBook"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedEBook?> GetAsync(Action<RequestConfiguration<ManagedEBookItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedEBook?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.ManagedEBookItemRequestBuilder.ManagedEBookItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedEBook> GetAsync(Action<RequestConfiguration<ManagedEBookItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedEBook> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.ManagedEBookItemRequestBuilder.ManagedEBookItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedEBook>(requestInfo, ManagedEBook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedEBook>(requestInfo, Microsoft.Graph.Models.ManagedEBook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of a iosVppEBook object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-iosvppebook-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ManagedEBook"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedEBook"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedEBook?> PatchAsync(ManagedEBook body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedEBook?> PatchAsync(Microsoft.Graph.Models.ManagedEBook body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedEBook> PatchAsync(ManagedEBook body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedEBook> PatchAsync(Microsoft.Graph.Models.ManagedEBook body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedEBook>(requestInfo, ManagedEBook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedEBook>(requestInfo, Microsoft.Graph.Models.ManagedEBook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a iosVppEBook.
@@ -155,17 +155,17 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the iosVppEBook object.
+        /// Read properties and relationships of the managedEBook object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedEBookItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.ManagedEBookItemRequestBuilder.ManagedEBookItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedEBookItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.ManagedEBookItemRequestBuilder.ManagedEBookItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -181,11 +181,11 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(ManagedEBook body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ManagedEBook body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(ManagedEBook body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ManagedEBook body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -198,11 +198,11 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ManagedEBookItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.ManagedEBookItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ManagedEBookItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.ManagedEBookItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new ManagedEBookItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.ManagedEBookItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -212,7 +212,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item
         {
         }
         /// <summary>
-        /// Read properties and relationships of the iosVppEBook object.
+        /// Read properties and relationships of the managedEBook object.
         /// </summary>
         public class ManagedEBookItemRequestBuilderGetQueryParameters 
         {
@@ -241,7 +241,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedEBookItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ManagedEBookItemRequestBuilderGetQueryParameters>
+        public class ManagedEBookItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.ManagedEBookItemRequestBuilder.ManagedEBookItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

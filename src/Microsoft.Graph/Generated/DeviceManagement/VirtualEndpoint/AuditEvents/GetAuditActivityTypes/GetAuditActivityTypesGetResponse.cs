@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes
 {
     #pragma warning disable CS1591
-    public class GetAuditActivityTypesGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetAuditActivityTypesGetResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
@@ -30,12 +30,12 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditA
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetAuditActivityTypesGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes.GetAuditActivityTypesGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetAuditActivityTypesGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes.GetAuditActivityTypesGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetAuditActivityTypesGetResponse();
+            return new Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes.GetAuditActivityTypesGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

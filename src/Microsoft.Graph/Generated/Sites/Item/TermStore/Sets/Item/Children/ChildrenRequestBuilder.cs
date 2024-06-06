@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children
     public class ChildrenRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the children property of the microsoft.graph.termStore.set entity.</summary>
         /// <param name="position">The unique identifier of term</param>
-        /// <returns>A <see cref="TermItemRequestBuilder"/></returns>
-        public TermItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children.Item.TermItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children.Item.TermItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("term%2Did", position);
-                return new TermItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children.Item.TermItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ChildrenRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children.ChildrenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ChildrenRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children.ChildrenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children
         /// Get the first level children of a [set] or [term] resource using the children navigation property.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="TermCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TermStore.TermCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TermCollectionResponse?> GetAsync(Action<RequestConfiguration<ChildrenRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TermStore.TermCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children.ChildrenRequestBuilder.ChildrenRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TermCollectionResponse> GetAsync(Action<RequestConfiguration<ChildrenRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TermStore.TermCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children.ChildrenRequestBuilder.ChildrenRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TermCollectionResponse>(requestInfo, TermCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermStore.TermCollectionResponse>(requestInfo, Microsoft.Graph.Models.TermStore.TermCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new term object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-term-post?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Term"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TermStore.Term"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Term?> PostAsync(Term body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TermStore.Term?> PostAsync(Microsoft.Graph.Models.TermStore.Term body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Term> PostAsync(Term body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TermStore.Term> PostAsync(Microsoft.Graph.Models.TermStore.Term body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Term>(requestInfo, Term.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermStore.Term>(requestInfo, Microsoft.Graph.Models.TermStore.Term.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the first level children of a [set] or [term] resource using the children navigation property.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChildrenRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children.ChildrenRequestBuilder.ChildrenRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChildrenRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children.ChildrenRequestBuilder.ChildrenRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Term body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.TermStore.Term body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Term body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.TermStore.Term body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ChildrenRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children.ChildrenRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ChildrenRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children.ChildrenRequestBuilder WithUrl(string rawUrl)
         {
-            return new ChildrenRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children.ChildrenRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the first level children of a [set] or [term] resource using the children navigation property.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ChildrenRequestBuilderGetRequestConfiguration : RequestConfiguration<ChildrenRequestBuilderGetQueryParameters>
+        public class ChildrenRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children.ChildrenRequestBuilder.ChildrenRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

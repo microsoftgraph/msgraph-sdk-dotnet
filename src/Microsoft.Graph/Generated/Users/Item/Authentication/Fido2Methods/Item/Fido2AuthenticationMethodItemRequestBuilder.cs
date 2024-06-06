@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item
     public class Fido2AuthenticationMethodItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="Fido2AuthenticationMethodItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item.Fido2AuthenticationMethodItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Fido2AuthenticationMethodItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item.Fido2AuthenticationMethodItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -51,32 +51,32 @@ namespace Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents the FIDO2 security keys registered to a user for authentication.
         /// </summary>
-        /// <returns>A <see cref="Fido2AuthenticationMethod"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Fido2AuthenticationMethod"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Fido2AuthenticationMethod?> GetAsync(Action<RequestConfiguration<Fido2AuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Fido2AuthenticationMethod?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item.Fido2AuthenticationMethodItemRequestBuilder.Fido2AuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Fido2AuthenticationMethod> GetAsync(Action<RequestConfiguration<Fido2AuthenticationMethodItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.Fido2AuthenticationMethod> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item.Fido2AuthenticationMethodItemRequestBuilder.Fido2AuthenticationMethodItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Fido2AuthenticationMethod>(requestInfo, Fido2AuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Fido2AuthenticationMethod>(requestInfo, Microsoft.Graph.Models.Fido2AuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a user&apos;s FIDO2 Security Key Authentication Method object.
@@ -104,11 +104,11 @@ namespace Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Fido2AuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item.Fido2AuthenticationMethodItemRequestBuilder.Fido2AuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Fido2AuthenticationMethodItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item.Fido2AuthenticationMethodItemRequestBuilder.Fido2AuthenticationMethodItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -119,11 +119,11 @@ namespace Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Fido2AuthenticationMethodItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item.Fido2AuthenticationMethodItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Fido2AuthenticationMethodItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item.Fido2AuthenticationMethodItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Fido2AuthenticationMethodItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item.Fido2AuthenticationMethodItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class Fido2AuthenticationMethodItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Fido2AuthenticationMethodItemRequestBuilderGetQueryParameters>
+        public class Fido2AuthenticationMethodItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item.Fido2AuthenticationMethodItemRequestBuilder.Fido2AuthenticationMethodItemRequestBuilderGetQueryParameters>
         {
         }
     }

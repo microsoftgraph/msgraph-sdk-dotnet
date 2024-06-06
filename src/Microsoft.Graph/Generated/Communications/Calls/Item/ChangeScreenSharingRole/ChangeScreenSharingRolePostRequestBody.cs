@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Communications.Calls.Item.ChangeScreenSharingRole
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The role property</summary>
-        public ScreenSharingRole? Role
+        public Microsoft.Graph.Models.ScreenSharingRole? Role
         {
-            get { return BackingStore?.Get<ScreenSharingRole?>("role"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ScreenSharingRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ChangeScreenSharingRolePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Communications.Calls.Item.ChangeScreenSharingRole.ChangeScreenSharingRolePostRequestBody"/> and sets the default values.
         /// </summary>
         public ChangeScreenSharingRolePostRequestBody()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Communications.Calls.Item.ChangeScreenSharingRole
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ChangeScreenSharingRolePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Communications.Calls.Item.ChangeScreenSharingRole.ChangeScreenSharingRolePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ChangeScreenSharingRolePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Communications.Calls.Item.ChangeScreenSharingRole.ChangeScreenSharingRolePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ChangeScreenSharingRolePostRequestBody();
+            return new Microsoft.Graph.Communications.Calls.Item.ChangeScreenSharingRole.ChangeScreenSharingRolePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.ChangeScreenSharingRole
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "role", n => { Role = n.GetEnumValue<ScreenSharingRole>(); } },
+                { "role", n => { Role = n.GetEnumValue<Microsoft.Graph.Models.ScreenSharingRole>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.ChangeScreenSharingRole
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<ScreenSharingRole>("role", Role);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ScreenSharingRole>("role", Role);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

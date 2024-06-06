@@ -16,7 +16,7 @@ configuration:
       - isIssue
       - isOpen
       - hasLabel:
-          label: 'Needs: Author Feedback'
+          label: 'status:waiting-for-author-feedback'
       - hasLabel:
           label: 'Status: No recent activity'
       - noActivitySince:
@@ -31,7 +31,7 @@ configuration:
       - isIssue
       - isOpen
       - hasLabel:
-          label: 'Needs: Author Feedback'
+          label: 'status:waiting-for-author-feedback'
       - noActivitySince:
           days: 4
       - isNotLabeledWith:
@@ -64,7 +64,7 @@ configuration:
       - isPullRequest
       - isOpen
       - hasLabel:
-          label: 'Needs: Author Feedback'
+          label: 'status:waiting-for-author-feedback'
       - hasLabel:
           label: 'Status: No recent activity'
       - noActivitySince:
@@ -79,7 +79,7 @@ configuration:
       - isPullRequest
       - isOpen
       - hasLabel:
-          label: 'Needs: Author Feedback'
+          label: 'status:waiting-for-author-feedback'
       - noActivitySince:
           days: 7
       - isNotLabeledWith:
@@ -97,12 +97,12 @@ configuration:
       - isActivitySender:
           issueAuthor: True
       - hasLabel:
-          label: 'Needs: Author Feedback'
+          label: 'status:waiting-for-author-feedback'
       then:
       - addLabel:
           label: 'Needs: Attention :wave:'
       - removeLabel:
-          label: 'Needs: Author Feedback'
+          label: 'status:waiting-for-author-feedback'
       description: 
     - if:
       - payloadType: Issues
@@ -148,7 +148,7 @@ configuration:
           reviewState: Changes_requested
       then:
       - addLabel:
-          label: 'Needs: Author Feedback'
+          label: 'status:waiting-for-author-feedback'
       description: 
     - if:
       - payloadType: Pull_Request
@@ -158,30 +158,30 @@ configuration:
           isAction:
             action: Closed
       - hasLabel:
-          label: 'Needs: Author Feedback'
+          label: 'status:waiting-for-author-feedback'
       then:
       - removeLabel:
-          label: 'Needs: Author Feedback'
+          label: 'status:waiting-for-author-feedback'
       description: 
     - if:
       - payloadType: Issue_Comment
       - isActivitySender:
           issueAuthor: True
       - hasLabel:
-          label: 'Needs: Author Feedback'
+          label: 'status:waiting-for-author-feedback'
       then:
       - removeLabel:
-          label: 'Needs: Author Feedback'
+          label: 'status:waiting-for-author-feedback'
       description: 
     - if:
       - payloadType: Pull_Request_Review
       - isActivitySender:
           issueAuthor: True
       - hasLabel:
-          label: 'Needs: Author Feedback'
+          label: 'status:waiting-for-author-feedback'
       then:
       - removeLabel:
-          label: 'Needs: Author Feedback'
+          label: 'status:waiting-for-author-feedback'
       description: 
     - if:
       - payloadType: Pull_Request

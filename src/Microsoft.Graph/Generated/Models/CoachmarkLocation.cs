@@ -48,13 +48,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("offset", value); }
         }
         /// <summary>Type of coachmark location. The possible values are: unknown, fromEmail, subject, externalTag, displayName, messageBody, unknownFutureValue.</summary>
-        public CoachmarkLocationType? Type
+        public Microsoft.Graph.Models.CoachmarkLocationType? Type
         {
-            get { return BackingStore?.Get<CoachmarkLocationType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CoachmarkLocationType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CoachmarkLocation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CoachmarkLocation"/> and sets the default values.
         /// </summary>
         public CoachmarkLocation()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CoachmarkLocation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CoachmarkLocation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CoachmarkLocation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CoachmarkLocation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CoachmarkLocation();
+            return new Microsoft.Graph.Models.CoachmarkLocation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models
                 { "length", n => { Length = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "offset", n => { Offset = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<CoachmarkLocationType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Models.CoachmarkLocationType>(); } },
             };
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Models
             writer.WriteIntValue("length", Length);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("offset", Offset);
-            writer.WriteEnumValue<CoachmarkLocationType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CoachmarkLocationType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

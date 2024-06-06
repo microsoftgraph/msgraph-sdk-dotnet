@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AppConsentRequestScope"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AppConsentRequestScope"/> and sets the default values.
         /// </summary>
         public AppConsentRequestScope()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppConsentRequestScope"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AppConsentRequestScope"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AppConsentRequestScope CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AppConsentRequestScope CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AppConsentRequestScope();
+            return new Microsoft.Graph.Models.AppConsentRequestScope();
         }
         /// <summary>
         /// The deserialization information for the current model

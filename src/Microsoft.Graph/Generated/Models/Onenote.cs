@@ -7,114 +7,114 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Onenote : Entity, IParsable
+    public class Onenote : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Notebook>? Notebooks
+        public List<Microsoft.Graph.Models.Notebook>? Notebooks
         {
-            get { return BackingStore?.Get<List<Notebook>?>("notebooks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Notebook>?>("notebooks"); }
             set { BackingStore?.Set("notebooks", value); }
         }
 #nullable restore
 #else
-        public List<Notebook> Notebooks
+        public List<Microsoft.Graph.Models.Notebook> Notebooks
         {
-            get { return BackingStore?.Get<List<Notebook>>("notebooks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Notebook>>("notebooks"); }
             set { BackingStore?.Set("notebooks", value); }
         }
 #endif
         /// <summary>The status of OneNote operations. Getting an operations collection isn&apos;t supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnenoteOperation>? Operations
+        public List<Microsoft.Graph.Models.OnenoteOperation>? Operations
         {
-            get { return BackingStore?.Get<List<OnenoteOperation>?>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnenoteOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<OnenoteOperation> Operations
+        public List<Microsoft.Graph.Models.OnenoteOperation> Operations
         {
-            get { return BackingStore?.Get<List<OnenoteOperation>>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnenoteOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #endif
         /// <summary>The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnenotePage>? Pages
+        public List<Microsoft.Graph.Models.OnenotePage>? Pages
         {
-            get { return BackingStore?.Get<List<OnenotePage>?>("pages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnenotePage>?>("pages"); }
             set { BackingStore?.Set("pages", value); }
         }
 #nullable restore
 #else
-        public List<OnenotePage> Pages
+        public List<Microsoft.Graph.Models.OnenotePage> Pages
         {
-            get { return BackingStore?.Get<List<OnenotePage>>("pages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnenotePage>>("pages"); }
             set { BackingStore?.Set("pages", value); }
         }
 #endif
         /// <summary>The image and other file resources in OneNote pages. Getting a resources collection isn&apos;t supported, but you can get the binary content of a specific resource. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnenoteResource>? Resources
+        public List<Microsoft.Graph.Models.OnenoteResource>? Resources
         {
-            get { return BackingStore?.Get<List<OnenoteResource>?>("resources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnenoteResource>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #nullable restore
 #else
-        public List<OnenoteResource> Resources
+        public List<Microsoft.Graph.Models.OnenoteResource> Resources
         {
-            get { return BackingStore?.Get<List<OnenoteResource>>("resources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnenoteResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #endif
         /// <summary>The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SectionGroup>? SectionGroups
+        public List<Microsoft.Graph.Models.SectionGroup>? SectionGroups
         {
-            get { return BackingStore?.Get<List<SectionGroup>?>("sectionGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SectionGroup>?>("sectionGroups"); }
             set { BackingStore?.Set("sectionGroups", value); }
         }
 #nullable restore
 #else
-        public List<SectionGroup> SectionGroups
+        public List<Microsoft.Graph.Models.SectionGroup> SectionGroups
         {
-            get { return BackingStore?.Get<List<SectionGroup>>("sectionGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SectionGroup>>("sectionGroups"); }
             set { BackingStore?.Set("sectionGroups", value); }
         }
 #endif
         /// <summary>The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnenoteSection>? Sections
+        public List<Microsoft.Graph.Models.OnenoteSection>? Sections
         {
-            get { return BackingStore?.Get<List<OnenoteSection>?>("sections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnenoteSection>?>("sections"); }
             set { BackingStore?.Set("sections", value); }
         }
 #nullable restore
 #else
-        public List<OnenoteSection> Sections
+        public List<Microsoft.Graph.Models.OnenoteSection> Sections
         {
-            get { return BackingStore?.Get<List<OnenoteSection>>("sections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnenoteSection>>("sections"); }
             set { BackingStore?.Set("sections", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Onenote"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Onenote"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Onenote CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Onenote CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Onenote();
+            return new Microsoft.Graph.Models.Onenote();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,12 +124,12 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "notebooks", n => { Notebooks = n.GetCollectionOfObjectValues<Notebook>(Notebook.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "operations", n => { Operations = n.GetCollectionOfObjectValues<OnenoteOperation>(OnenoteOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "pages", n => { Pages = n.GetCollectionOfObjectValues<OnenotePage>(OnenotePage.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "resources", n => { Resources = n.GetCollectionOfObjectValues<OnenoteResource>(OnenoteResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sectionGroups", n => { SectionGroups = n.GetCollectionOfObjectValues<SectionGroup>(SectionGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sections", n => { Sections = n.GetCollectionOfObjectValues<OnenoteSection>(OnenoteSection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "notebooks", n => { Notebooks = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Notebook>(Microsoft.Graph.Models.Notebook.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OnenoteOperation>(Microsoft.Graph.Models.OnenoteOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "pages", n => { Pages = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OnenotePage>(Microsoft.Graph.Models.OnenotePage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OnenoteResource>(Microsoft.Graph.Models.OnenoteResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sectionGroups", n => { SectionGroups = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SectionGroup>(Microsoft.Graph.Models.SectionGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sections", n => { Sections = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OnenoteSection>(Microsoft.Graph.Models.OnenoteSection.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -140,12 +140,12 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Notebook>("notebooks", Notebooks);
-            writer.WriteCollectionOfObjectValues<OnenoteOperation>("operations", Operations);
-            writer.WriteCollectionOfObjectValues<OnenotePage>("pages", Pages);
-            writer.WriteCollectionOfObjectValues<OnenoteResource>("resources", Resources);
-            writer.WriteCollectionOfObjectValues<SectionGroup>("sectionGroups", SectionGroups);
-            writer.WriteCollectionOfObjectValues<OnenoteSection>("sections", Sections);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Notebook>("notebooks", Notebooks);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OnenoteOperation>("operations", Operations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OnenotePage>("pages", Pages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OnenoteResource>("resources", Resources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SectionGroup>("sectionGroups", SectionGroups);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OnenoteSection>("sections", Sections);
         }
     }
 }

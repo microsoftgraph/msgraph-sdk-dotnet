@@ -116,9 +116,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Network connection direction. Possible values are: unknown, inbound, outbound.</summary>
-        public ConnectionDirection? Direction
+        public Microsoft.Graph.Models.ConnectionDirection? Direction
         {
-            get { return BackingStore?.Get<ConnectionDirection?>("direction"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConnectionDirection?>("direction"); }
             set { BackingStore?.Set("direction", value); }
         }
         /// <summary>Date when the destination domain was registered. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
@@ -224,9 +224,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.</summary>
-        public SecurityNetworkProtocol? Protocol
+        public Microsoft.Graph.Models.SecurityNetworkProtocol? Protocol
         {
-            get { return BackingStore?.Get<SecurityNetworkProtocol?>("protocol"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SecurityNetworkProtocol?>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
         /// <summary>Provider generated/calculated risk score of the network connection. Recommended value range of 0-1, which equates to a percentage.</summary>
@@ -294,9 +294,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Network connection status. Possible values are: unknown, attempted, succeeded, blocked, failed.</summary>
-        public ConnectionStatus? Status
+        public Microsoft.Graph.Models.ConnectionStatus? Status
         {
-            get { return BackingStore?.Get<ConnectionStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConnectionStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Parameters (suffix) of the destination URL.</summary>
@@ -316,7 +316,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="NetworkConnection"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.NetworkConnection"/> and sets the default values.
         /// </summary>
         public NetworkConnection()
         {
@@ -326,12 +326,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="NetworkConnection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.NetworkConnection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static NetworkConnection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.NetworkConnection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new NetworkConnection();
+            return new Microsoft.Graph.Models.NetworkConnection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -347,7 +347,7 @@ namespace Microsoft.Graph.Models
                 { "destinationLocation", n => { DestinationLocation = n.GetStringValue(); } },
                 { "destinationPort", n => { DestinationPort = n.GetStringValue(); } },
                 { "destinationUrl", n => { DestinationUrl = n.GetStringValue(); } },
-                { "direction", n => { Direction = n.GetEnumValue<ConnectionDirection>(); } },
+                { "direction", n => { Direction = n.GetEnumValue<Microsoft.Graph.Models.ConnectionDirection>(); } },
                 { "domainRegisteredDateTime", n => { DomainRegisteredDateTime = n.GetDateTimeOffsetValue(); } },
                 { "localDnsName", n => { LocalDnsName = n.GetStringValue(); } },
                 { "natDestinationAddress", n => { NatDestinationAddress = n.GetStringValue(); } },
@@ -355,12 +355,12 @@ namespace Microsoft.Graph.Models
                 { "natSourceAddress", n => { NatSourceAddress = n.GetStringValue(); } },
                 { "natSourcePort", n => { NatSourcePort = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "protocol", n => { Protocol = n.GetEnumValue<SecurityNetworkProtocol>(); } },
+                { "protocol", n => { Protocol = n.GetEnumValue<Microsoft.Graph.Models.SecurityNetworkProtocol>(); } },
                 { "riskScore", n => { RiskScore = n.GetStringValue(); } },
                 { "sourceAddress", n => { SourceAddress = n.GetStringValue(); } },
                 { "sourceLocation", n => { SourceLocation = n.GetStringValue(); } },
                 { "sourcePort", n => { SourcePort = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<ConnectionStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.ConnectionStatus>(); } },
                 { "urlParameters", n => { UrlParameters = n.GetStringValue(); } },
             };
         }
@@ -377,7 +377,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("destinationLocation", DestinationLocation);
             writer.WriteStringValue("destinationPort", DestinationPort);
             writer.WriteStringValue("destinationUrl", DestinationUrl);
-            writer.WriteEnumValue<ConnectionDirection>("direction", Direction);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ConnectionDirection>("direction", Direction);
             writer.WriteDateTimeOffsetValue("domainRegisteredDateTime", DomainRegisteredDateTime);
             writer.WriteStringValue("localDnsName", LocalDnsName);
             writer.WriteStringValue("natDestinationAddress", NatDestinationAddress);
@@ -385,12 +385,12 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("natSourceAddress", NatSourceAddress);
             writer.WriteStringValue("natSourcePort", NatSourcePort);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<SecurityNetworkProtocol>("protocol", Protocol);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SecurityNetworkProtocol>("protocol", Protocol);
             writer.WriteStringValue("riskScore", RiskScore);
             writer.WriteStringValue("sourceAddress", SourceAddress);
             writer.WriteStringValue("sourceLocation", SourceLocation);
             writer.WriteStringValue("sourcePort", SourcePort);
-            writer.WriteEnumValue<ConnectionStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ConnectionStatus>("status", Status);
             writer.WriteStringValue("urlParameters", UrlParameters);
             writer.WriteAdditionalData(AdditionalData);
         }

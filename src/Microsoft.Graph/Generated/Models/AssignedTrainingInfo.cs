@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AssignedTrainingInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AssignedTrainingInfo"/> and sets the default values.
         /// </summary>
         public AssignedTrainingInfo()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignedTrainingInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AssignedTrainingInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignedTrainingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AssignedTrainingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignedTrainingInfo();
+            return new Microsoft.Graph.Models.AssignedTrainingInfo();
         }
         /// <summary>
         /// The deserialization information for the current model

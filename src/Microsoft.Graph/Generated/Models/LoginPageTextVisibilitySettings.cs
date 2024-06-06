@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="LoginPageTextVisibilitySettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.LoginPageTextVisibilitySettings"/> and sets the default values.
         /// </summary>
         public LoginPageTextVisibilitySettings()
         {
@@ -82,12 +82,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LoginPageTextVisibilitySettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.LoginPageTextVisibilitySettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static LoginPageTextVisibilitySettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.LoginPageTextVisibilitySettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LoginPageTextVisibilitySettings();
+            return new Microsoft.Graph.Models.LoginPageTextVisibilitySettings();
         }
         /// <summary>
         /// The deserialization information for the current model

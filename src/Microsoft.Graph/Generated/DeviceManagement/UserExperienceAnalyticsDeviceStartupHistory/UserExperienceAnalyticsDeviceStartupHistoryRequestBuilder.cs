@@ -19,24 +19,24 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupH
     public class UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsDeviceStartupHistory property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of userExperienceAnalyticsDeviceStartupHistory</param>
-        /// <returns>A <see cref="UserExperienceAnalyticsDeviceStartupHistoryItemRequestBuilder"/></returns>
-        public UserExperienceAnalyticsDeviceStartupHistoryItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.Item.UserExperienceAnalyticsDeviceStartupHistoryItemRequestBuilder"/></returns>
+        public Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.Item.UserExperienceAnalyticsDeviceStartupHistoryItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("userExperienceAnalyticsDeviceStartupHistory%2Did", position);
-                return new UserExperienceAnalyticsDeviceStartupHistoryItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.Item.UserExperienceAnalyticsDeviceStartupHistoryItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupH
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupH
         /// <summary>
         /// User experience analytics device Startup History
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsDeviceStartupHistoryCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsDeviceStartupHistoryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserExperienceAnalyticsDeviceStartupHistoryCollectionResponse?> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsDeviceStartupHistoryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsDeviceStartupHistoryCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UserExperienceAnalyticsDeviceStartupHistoryCollectionResponse> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsDeviceStartupHistoryRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsDeviceStartupHistoryCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsDeviceStartupHistoryCollectionResponse>(requestInfo, UserExperienceAnalyticsDeviceStartupHistoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserExperienceAnalyticsDeviceStartupHistoryCollectionResponse>(requestInfo, Microsoft.Graph.Models.UserExperienceAnalyticsDeviceStartupHistoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to userExperienceAnalyticsDeviceStartupHistory for deviceManagement
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupH
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsDeviceStartupHistory?> PostAsync(Microsoft.Graph.Models.UserExperienceAnalyticsDeviceStartupHistory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupH
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserExperienceAnalyticsDeviceStartupHistory>(requestInfo, Microsoft.Graph.Models.UserExperienceAnalyticsDeviceStartupHistory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupH
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsDeviceStartupHistoryRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsDeviceStartupHistoryRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupH
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder WithUrl(string rawUrl)
         {
-            return new UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// User experience analytics device Startup History
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupH
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserExperienceAnalyticsDeviceStartupHistoryRequestBuilderGetRequestConfiguration : RequestConfiguration<UserExperienceAnalyticsDeviceStartupHistoryRequestBuilderGetQueryParameters>
+        public class UserExperienceAnalyticsDeviceStartupHistoryRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class DeviceLocalCredentialInfo : Entity, IParsable
+    public class DeviceLocalCredentialInfo : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The credentials of the device&apos;s local administrator account backed up to Azure Active Directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceLocalCredential>? Credentials
+        public List<Microsoft.Graph.Models.DeviceLocalCredential>? Credentials
         {
-            get { return BackingStore?.Get<List<DeviceLocalCredential>?>("credentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceLocalCredential>?>("credentials"); }
             set { BackingStore?.Set("credentials", value); }
         }
 #nullable restore
 #else
-        public List<DeviceLocalCredential> Credentials
+        public List<Microsoft.Graph.Models.DeviceLocalCredential> Credentials
         {
-            get { return BackingStore?.Get<List<DeviceLocalCredential>>("credentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DeviceLocalCredential>>("credentials"); }
             set { BackingStore?.Set("credentials", value); }
         }
 #endif
@@ -57,12 +57,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceLocalCredentialInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceLocalCredentialInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceLocalCredentialInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DeviceLocalCredentialInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceLocalCredentialInfo();
+            return new Microsoft.Graph.Models.DeviceLocalCredentialInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "credentials", n => { Credentials = n.GetCollectionOfObjectValues<DeviceLocalCredential>(DeviceLocalCredential.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "credentials", n => { Credentials = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DeviceLocalCredential>(Microsoft.Graph.Models.DeviceLocalCredential.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
                 { "lastBackupDateTime", n => { LastBackupDateTime = n.GetDateTimeOffsetValue(); } },
                 { "refreshDateTime", n => { RefreshDateTime = n.GetDateTimeOffsetValue(); } },
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceLocalCredential>("credentials", Credentials);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DeviceLocalCredential>("credentials", Credentials);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteDateTimeOffsetValue("lastBackupDateTime", LastBackupDateTime);
             writer.WriteDateTimeOffsetValue("refreshDateTime", RefreshDateTime);

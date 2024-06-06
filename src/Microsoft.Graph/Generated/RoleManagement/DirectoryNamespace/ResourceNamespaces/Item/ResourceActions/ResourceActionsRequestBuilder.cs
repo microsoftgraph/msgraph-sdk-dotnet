@@ -19,24 +19,24 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.I
     public class ResourceActionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.Item.ResourceActions.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.Item.ResourceActions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.</summary>
         /// <param name="position">The unique identifier of unifiedRbacResourceAction</param>
-        /// <returns>A <see cref="UnifiedRbacResourceActionItemRequestBuilder"/></returns>
-        public UnifiedRbacResourceActionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.Item.ResourceActions.Item.UnifiedRbacResourceActionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.Item.ResourceActions.Item.UnifiedRbacResourceActionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("unifiedRbacResourceAction%2Did", position);
-                return new UnifiedRbacResourceActionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.Item.ResourceActions.Item.UnifiedRbacResourceActionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ResourceActionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.Item.ResourceActions.ResourceActionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.I
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ResourceActionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.Item.ResourceActions.ResourceActionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.I
         /// <summary>
         /// Get resourceActions from roleManagement
         /// </summary>
-        /// <returns>A <see cref="UnifiedRbacResourceActionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRbacResourceActionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRbacResourceActionCollectionResponse?> GetAsync(Action<RequestConfiguration<ResourceActionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRbacResourceActionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.Item.ResourceActions.ResourceActionsRequestBuilder.ResourceActionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedRbacResourceActionCollectionResponse> GetAsync(Action<RequestConfiguration<ResourceActionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRbacResourceActionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.Item.ResourceActions.ResourceActionsRequestBuilder.ResourceActionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedRbacResourceActionCollectionResponse>(requestInfo, UnifiedRbacResourceActionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UnifiedRbacResourceActionCollectionResponse>(requestInfo, Microsoft.Graph.Models.UnifiedRbacResourceActionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to resourceActions for roleManagement
         /// </summary>
-        /// <returns>A <see cref="UnifiedRbacResourceAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.UnifiedRbacResourceAction"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRbacResourceAction?> PostAsync(UnifiedRbacResourceAction body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRbacResourceAction?> PostAsync(Microsoft.Graph.Models.UnifiedRbacResourceAction body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedRbacResourceAction> PostAsync(UnifiedRbacResourceAction body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.UnifiedRbacResourceAction> PostAsync(Microsoft.Graph.Models.UnifiedRbacResourceAction body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedRbacResourceAction>(requestInfo, UnifiedRbacResourceAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UnifiedRbacResourceAction>(requestInfo, Microsoft.Graph.Models.UnifiedRbacResourceAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get resourceActions from roleManagement
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourceActionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.Item.ResourceActions.ResourceActionsRequestBuilder.ResourceActionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourceActionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.Item.ResourceActions.ResourceActionsRequestBuilder.ResourceActionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(UnifiedRbacResourceAction body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.UnifiedRbacResourceAction body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(UnifiedRbacResourceAction body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.UnifiedRbacResourceAction body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.I
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ResourceActionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.Item.ResourceActions.ResourceActionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ResourceActionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.Item.ResourceActions.ResourceActionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ResourceActionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.Item.ResourceActions.ResourceActionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get resourceActions from roleManagement
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.I
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ResourceActionsRequestBuilderGetRequestConfiguration : RequestConfiguration<ResourceActionsRequestBuilderGetQueryParameters>
+        public class ResourceActionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.Item.ResourceActions.ResourceActionsRequestBuilder.ResourceActionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

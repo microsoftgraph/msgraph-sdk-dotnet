@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp
     public class CheckGrantedPermissionsForAppRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="CheckGrantedPermissionsForAppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CheckGrantedPermissionsForAppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,49 +34,49 @@ namespace Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp
         /// <summary>
         /// Invoke action checkGrantedPermissionsForApp
         /// </summary>
-        /// <returns>A <see cref="CheckGrantedPermissionsForAppPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppPostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CheckGrantedPermissionsForAppPostResponse?> PostAsCheckGrantedPermissionsForAppPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppPostResponse?> PostAsCheckGrantedPermissionsForAppPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CheckGrantedPermissionsForAppPostResponse> PostAsCheckGrantedPermissionsForAppPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppPostResponse> PostAsCheckGrantedPermissionsForAppPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CheckGrantedPermissionsForAppPostResponse>(requestInfo, CheckGrantedPermissionsForAppPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppPostResponse>(requestInfo, Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action checkGrantedPermissionsForApp
         /// </summary>
-        /// <returns>A <see cref="CheckGrantedPermissionsForAppResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use PostAsCheckGrantedPermissionsForAppPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CheckGrantedPermissionsForAppResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CheckGrantedPermissionsForAppResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CheckGrantedPermissionsForAppResponse>(requestInfo, CheckGrantedPermissionsForAppResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppResponse>(requestInfo, Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action checkGrantedPermissionsForApp
@@ -100,11 +100,11 @@ namespace Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CheckGrantedPermissionsForAppRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CheckGrantedPermissionsForAppRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppRequestBuilder WithUrl(string rawUrl)
         {
-            return new CheckGrantedPermissionsForAppRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

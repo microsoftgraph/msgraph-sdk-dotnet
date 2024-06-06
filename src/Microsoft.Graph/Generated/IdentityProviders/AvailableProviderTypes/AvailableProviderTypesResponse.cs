@@ -8,18 +8,18 @@ namespace Microsoft.Graph.IdentityProviders.AvailableProviderTypes
 {
     [Obsolete("This class is obsolete. Use AvailableProviderTypesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class AvailableProviderTypesResponse : AvailableProviderTypesGetResponse, IParsable
+    public class AvailableProviderTypesResponse : Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AvailableProviderTypesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AvailableProviderTypesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AvailableProviderTypesResponse();
+            return new Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesResponse();
         }
     }
 }

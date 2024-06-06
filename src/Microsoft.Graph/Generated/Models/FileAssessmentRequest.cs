@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class FileAssessmentRequest : ThreatAssessmentRequest, IParsable
+    public class FileAssessmentRequest : Microsoft.Graph.Models.ThreatAssessmentRequest, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Base64 encoded file content. The file content can&apos;t fetch back because it isn&apos;t stored.</summary>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="FileAssessmentRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.FileAssessmentRequest"/> and sets the default values.
         /// </summary>
         public FileAssessmentRequest() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FileAssessmentRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.FileAssessmentRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FileAssessmentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.FileAssessmentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FileAssessmentRequest();
+            return new Microsoft.Graph.Models.FileAssessmentRequest();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ResourceReference"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ResourceReference"/> and sets the default values.
         /// </summary>
         public ResourceReference()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ResourceReference"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ResourceReference"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ResourceReference CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ResourceReference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ResourceReference();
+            return new Microsoft.Graph.Models.ResourceReference();
         }
         /// <summary>
         /// The deserialization information for the current model

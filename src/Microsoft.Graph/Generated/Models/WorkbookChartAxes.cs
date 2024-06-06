@@ -7,66 +7,66 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookChartAxes : Entity, IParsable
+    public class WorkbookChartAxes : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the category axis in a chart. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartAxis? CategoryAxis
+        public Microsoft.Graph.Models.WorkbookChartAxis? CategoryAxis
         {
-            get { return BackingStore?.Get<WorkbookChartAxis?>("categoryAxis"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartAxis?>("categoryAxis"); }
             set { BackingStore?.Set("categoryAxis", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartAxis CategoryAxis
+        public Microsoft.Graph.Models.WorkbookChartAxis CategoryAxis
         {
-            get { return BackingStore?.Get<WorkbookChartAxis>("categoryAxis"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartAxis>("categoryAxis"); }
             set { BackingStore?.Set("categoryAxis", value); }
         }
 #endif
         /// <summary>Represents the series axis of a 3-dimensional chart. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartAxis? SeriesAxis
+        public Microsoft.Graph.Models.WorkbookChartAxis? SeriesAxis
         {
-            get { return BackingStore?.Get<WorkbookChartAxis?>("seriesAxis"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartAxis?>("seriesAxis"); }
             set { BackingStore?.Set("seriesAxis", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartAxis SeriesAxis
+        public Microsoft.Graph.Models.WorkbookChartAxis SeriesAxis
         {
-            get { return BackingStore?.Get<WorkbookChartAxis>("seriesAxis"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartAxis>("seriesAxis"); }
             set { BackingStore?.Set("seriesAxis", value); }
         }
 #endif
         /// <summary>Represents the value axis in an axis. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartAxis? ValueAxis
+        public Microsoft.Graph.Models.WorkbookChartAxis? ValueAxis
         {
-            get { return BackingStore?.Get<WorkbookChartAxis?>("valueAxis"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartAxis?>("valueAxis"); }
             set { BackingStore?.Set("valueAxis", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartAxis ValueAxis
+        public Microsoft.Graph.Models.WorkbookChartAxis ValueAxis
         {
-            get { return BackingStore?.Get<WorkbookChartAxis>("valueAxis"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.WorkbookChartAxis>("valueAxis"); }
             set { BackingStore?.Set("valueAxis", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookChartAxes"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookChartAxes"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookChartAxes CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WorkbookChartAxes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookChartAxes();
+            return new Microsoft.Graph.Models.WorkbookChartAxes();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,9 +76,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "categoryAxis", n => { CategoryAxis = n.GetObjectValue<WorkbookChartAxis>(WorkbookChartAxis.CreateFromDiscriminatorValue); } },
-                { "seriesAxis", n => { SeriesAxis = n.GetObjectValue<WorkbookChartAxis>(WorkbookChartAxis.CreateFromDiscriminatorValue); } },
-                { "valueAxis", n => { ValueAxis = n.GetObjectValue<WorkbookChartAxis>(WorkbookChartAxis.CreateFromDiscriminatorValue); } },
+                { "categoryAxis", n => { CategoryAxis = n.GetObjectValue<Microsoft.Graph.Models.WorkbookChartAxis>(Microsoft.Graph.Models.WorkbookChartAxis.CreateFromDiscriminatorValue); } },
+                { "seriesAxis", n => { SeriesAxis = n.GetObjectValue<Microsoft.Graph.Models.WorkbookChartAxis>(Microsoft.Graph.Models.WorkbookChartAxis.CreateFromDiscriminatorValue); } },
+                { "valueAxis", n => { ValueAxis = n.GetObjectValue<Microsoft.Graph.Models.WorkbookChartAxis>(Microsoft.Graph.Models.WorkbookChartAxis.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<WorkbookChartAxis>("categoryAxis", CategoryAxis);
-            writer.WriteObjectValue<WorkbookChartAxis>("seriesAxis", SeriesAxis);
-            writer.WriteObjectValue<WorkbookChartAxis>("valueAxis", ValueAxis);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookChartAxis>("categoryAxis", CategoryAxis);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookChartAxis>("seriesAxis", SeriesAxis);
+            writer.WriteObjectValue<Microsoft.Graph.Models.WorkbookChartAxis>("valueAxis", ValueAxis);
         }
     }
 }

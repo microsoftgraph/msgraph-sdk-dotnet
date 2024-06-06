@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             set { BackingStore?.Set("unprocessedTasks", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TaskReportSummary"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IdentityGovernance.TaskReportSummary"/> and sets the default values.
         /// </summary>
         public TaskReportSummary()
         {
@@ -70,12 +70,12 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TaskReportSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityGovernance.TaskReportSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TaskReportSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.IdentityGovernance.TaskReportSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TaskReportSummary();
+            return new Microsoft.Graph.Models.IdentityGovernance.TaskReportSummary();
         }
         /// <summary>
         /// The deserialization information for the current model

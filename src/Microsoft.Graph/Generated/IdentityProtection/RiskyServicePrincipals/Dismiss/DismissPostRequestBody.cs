@@ -36,7 +36,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyServicePrincipals.Dismiss
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DismissPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityProtection.RiskyServicePrincipals.Dismiss.DismissPostRequestBody"/> and sets the default values.
         /// </summary>
         public DismissPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.IdentityProtection.RiskyServicePrincipals.Dismiss
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DismissPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityProtection.RiskyServicePrincipals.Dismiss.DismissPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DismissPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.IdentityProtection.RiskyServicePrincipals.Dismiss.DismissPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DismissPostRequestBody();
+            return new Microsoft.Graph.IdentityProtection.RiskyServicePrincipals.Dismiss.DismissPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

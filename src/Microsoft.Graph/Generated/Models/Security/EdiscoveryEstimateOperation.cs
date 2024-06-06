@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class EdiscoveryEstimateOperation : CaseOperation, IParsable
+    public class EdiscoveryEstimateOperation : Microsoft.Graph.Models.Security.CaseOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The estimated count of items for the search that matched the content query.</summary>
@@ -31,16 +31,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>eDiscovery search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoverySearch? Search
+        public Microsoft.Graph.Models.Security.EdiscoverySearch? Search
         {
-            get { return BackingStore?.Get<EdiscoverySearch?>("search"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.EdiscoverySearch?>("search"); }
             set { BackingStore?.Set("search", value); }
         }
 #nullable restore
 #else
-        public EdiscoverySearch Search
+        public Microsoft.Graph.Models.Security.EdiscoverySearch Search
         {
-            get { return BackingStore?.Get<EdiscoverySearch>("search"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.EdiscoverySearch>("search"); }
             set { BackingStore?.Set("search", value); }
         }
 #endif
@@ -65,12 +65,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryEstimateOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.EdiscoveryEstimateOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdiscoveryEstimateOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.EdiscoveryEstimateOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdiscoveryEstimateOperation();
+            return new Microsoft.Graph.Models.Security.EdiscoveryEstimateOperation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Models.Security
                 { "indexedItemCount", n => { IndexedItemCount = n.GetLongValue(); } },
                 { "indexedItemsSize", n => { IndexedItemsSize = n.GetLongValue(); } },
                 { "mailboxCount", n => { MailboxCount = n.GetIntValue(); } },
-                { "search", n => { Search = n.GetObjectValue<EdiscoverySearch>(EdiscoverySearch.CreateFromDiscriminatorValue); } },
+                { "search", n => { Search = n.GetObjectValue<Microsoft.Graph.Models.Security.EdiscoverySearch>(Microsoft.Graph.Models.Security.EdiscoverySearch.CreateFromDiscriminatorValue); } },
                 { "siteCount", n => { SiteCount = n.GetIntValue(); } },
                 { "unindexedItemCount", n => { UnindexedItemCount = n.GetLongValue(); } },
                 { "unindexedItemsSize", n => { UnindexedItemsSize = n.GetLongValue(); } },
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteLongValue("indexedItemCount", IndexedItemCount);
             writer.WriteLongValue("indexedItemsSize", IndexedItemsSize);
             writer.WriteIntValue("mailboxCount", MailboxCount);
-            writer.WriteObjectValue<EdiscoverySearch>("search", Search);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.EdiscoverySearch>("search", Search);
             writer.WriteIntValue("siteCount", SiteCount);
             writer.WriteLongValue("unindexedItemCount", UnindexedItemCount);
             writer.WriteLongValue("unindexedItemsSize", UnindexedItemsSize);

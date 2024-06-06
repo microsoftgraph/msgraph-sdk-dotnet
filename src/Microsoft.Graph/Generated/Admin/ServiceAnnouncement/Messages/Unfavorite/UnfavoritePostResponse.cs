@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UnfavoritePostResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritePostResponse"/> and sets the default values.
         /// </summary>
         public UnfavoritePostResponse()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnfavoritePostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritePostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UnfavoritePostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritePostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnfavoritePostResponse();
+            return new Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritePostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

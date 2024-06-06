@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Models.Partners.Billing
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnbilledUsage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Partners.Billing.UnbilledUsage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnbilledUsage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Partners.Billing.UnbilledUsage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnbilledUsage();
+            return new Microsoft.Graph.Models.Partners.Billing.UnbilledUsage();
         }
         /// <summary>
         /// The deserialization information for the current model

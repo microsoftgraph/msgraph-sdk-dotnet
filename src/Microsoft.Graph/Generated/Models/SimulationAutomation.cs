@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class SimulationAutomation : Entity, IParsable
+    public class SimulationAutomation : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Identity of the user who created the attack simulation automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? CreatedBy
+        public Microsoft.Graph.Models.EmailIdentity? CreatedBy
         {
-            get { return BackingStore?.Get<EmailIdentity?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity CreatedBy
+        public Microsoft.Graph.Models.EmailIdentity CreatedBy
         {
-            get { return BackingStore?.Get<EmailIdentity>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -67,16 +67,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Identity of the user who most recently modified the attack simulation automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? LastModifiedBy
+        public Microsoft.Graph.Models.EmailIdentity? LastModifiedBy
         {
-            get { return BackingStore?.Get<EmailIdentity?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailIdentity?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity LastModifiedBy
+        public Microsoft.Graph.Models.EmailIdentity LastModifiedBy
         {
-            get { return BackingStore?.Get<EmailIdentity>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EmailIdentity>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -101,34 +101,34 @@ namespace Microsoft.Graph.Models
         /// <summary>A collection of simulation automation runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SimulationAutomationRun>? Runs
+        public List<Microsoft.Graph.Models.SimulationAutomationRun>? Runs
         {
-            get { return BackingStore?.Get<List<SimulationAutomationRun>?>("runs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SimulationAutomationRun>?>("runs"); }
             set { BackingStore?.Set("runs", value); }
         }
 #nullable restore
 #else
-        public List<SimulationAutomationRun> Runs
+        public List<Microsoft.Graph.Models.SimulationAutomationRun> Runs
         {
-            get { return BackingStore?.Get<List<SimulationAutomationRun>>("runs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SimulationAutomationRun>>("runs"); }
             set { BackingStore?.Set("runs", value); }
         }
 #endif
         /// <summary>Status of the attack simulation automation. Supports $filter and $orderby. The possible values are: unknown, draft, notRunning, running, completed, unknownFutureValue.</summary>
-        public SimulationAutomationStatus? Status
+        public Microsoft.Graph.Models.SimulationAutomationStatus? Status
         {
-            get { return BackingStore?.Get<SimulationAutomationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SimulationAutomationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SimulationAutomation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SimulationAutomation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SimulationAutomation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.SimulationAutomation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SimulationAutomation();
+            return new Microsoft.Graph.Models.SimulationAutomation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -138,16 +138,16 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.EmailIdentity>(Microsoft.Graph.Models.EmailIdentity.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.EmailIdentity>(Microsoft.Graph.Models.EmailIdentity.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastRunDateTime", n => { LastRunDateTime = n.GetDateTimeOffsetValue(); } },
                 { "nextRunDateTime", n => { NextRunDateTime = n.GetDateTimeOffsetValue(); } },
-                { "runs", n => { Runs = n.GetCollectionOfObjectValues<SimulationAutomationRun>(SimulationAutomationRun.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "status", n => { Status = n.GetEnumValue<SimulationAutomationStatus>(); } },
+                { "runs", n => { Runs = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SimulationAutomationRun>(Microsoft.Graph.Models.SimulationAutomationRun.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.SimulationAutomationStatus>(); } },
             };
         }
         /// <summary>
@@ -158,16 +158,16 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<EmailIdentity>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EmailIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<EmailIdentity>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EmailIdentity>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteDateTimeOffsetValue("lastRunDateTime", LastRunDateTime);
             writer.WriteDateTimeOffsetValue("nextRunDateTime", NextRunDateTime);
-            writer.WriteCollectionOfObjectValues<SimulationAutomationRun>("runs", Runs);
-            writer.WriteEnumValue<SimulationAutomationStatus>("status", Status);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SimulationAutomationRun>("runs", Runs);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SimulationAutomationStatus>("status", Status);
         }
     }
 }

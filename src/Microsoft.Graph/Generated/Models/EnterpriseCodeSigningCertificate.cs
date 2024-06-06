@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class EnterpriseCodeSigningCertificate : Entity, IParsable
+    public class EnterpriseCodeSigningCertificate : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Windows Enterprise Code-Signing Certificate in the raw data format. Set to null once certificate has been uploaded and other properties have been populated.</summary>
@@ -65,9 +65,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The status property</summary>
-        public CertificateStatus? Status
+        public Microsoft.Graph.Models.CertificateStatus? Status
         {
-            get { return BackingStore?.Get<CertificateStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CertificateStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The subject value for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.</summary>
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EnterpriseCodeSigningCertificate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EnterpriseCodeSigningCertificate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EnterpriseCodeSigningCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EnterpriseCodeSigningCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EnterpriseCodeSigningCertificate();
+            return new Microsoft.Graph.Models.EnterpriseCodeSigningCertificate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Models
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
                 { "issuerName", n => { IssuerName = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<CertificateStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Models.CertificateStatus>(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "subjectName", n => { SubjectName = n.GetStringValue(); } },
                 { "uploadDateTime", n => { UploadDateTime = n.GetDateTimeOffsetValue(); } },
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteStringValue("issuer", Issuer);
             writer.WriteStringValue("issuerName", IssuerName);
-            writer.WriteEnumValue<CertificateStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Models.CertificateStatus>("status", Status);
             writer.WriteStringValue("subject", Subject);
             writer.WriteStringValue("subjectName", SubjectName);
             writer.WriteDateTimeOffsetValue("uploadDateTime", UploadDateTime);

@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageResourceAttributeDestination? Destination
+        public Microsoft.Graph.Models.AccessPackageResourceAttributeDestination? Destination
         {
-            get { return BackingStore?.Get<AccessPackageResourceAttributeDestination?>("destination"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageResourceAttributeDestination?>("destination"); }
             set { BackingStore?.Set("destination", value); }
         }
 #nullable restore
 #else
-        public AccessPackageResourceAttributeDestination Destination
+        public Microsoft.Graph.Models.AccessPackageResourceAttributeDestination Destination
         {
-            get { return BackingStore?.Get<AccessPackageResourceAttributeDestination>("destination"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageResourceAttributeDestination>("destination"); }
             set { BackingStore?.Set("destination", value); }
         }
 #endif
@@ -82,21 +82,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled, currently a accessPackageResourceAttributeQuestion type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageResourceAttributeSource? Source
+        public Microsoft.Graph.Models.AccessPackageResourceAttributeSource? Source
         {
-            get { return BackingStore?.Get<AccessPackageResourceAttributeSource?>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageResourceAttributeSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #nullable restore
 #else
-        public AccessPackageResourceAttributeSource Source
+        public Microsoft.Graph.Models.AccessPackageResourceAttributeSource Source
         {
-            get { return BackingStore?.Get<AccessPackageResourceAttributeSource>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageResourceAttributeSource>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessPackageResourceAttribute"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AccessPackageResourceAttribute"/> and sets the default values.
         /// </summary>
         public AccessPackageResourceAttribute()
         {
@@ -106,12 +106,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageResourceAttribute"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackageResourceAttribute"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessPackageResourceAttribute CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AccessPackageResourceAttribute CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageResourceAttribute();
+            return new Microsoft.Graph.Models.AccessPackageResourceAttribute();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -121,12 +121,12 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "destination", n => { Destination = n.GetObjectValue<AccessPackageResourceAttributeDestination>(AccessPackageResourceAttributeDestination.CreateFromDiscriminatorValue); } },
+                { "destination", n => { Destination = n.GetObjectValue<Microsoft.Graph.Models.AccessPackageResourceAttributeDestination>(Microsoft.Graph.Models.AccessPackageResourceAttributeDestination.CreateFromDiscriminatorValue); } },
                 { "isEditable", n => { IsEditable = n.GetBoolValue(); } },
                 { "isPersistedOnAssignmentRemoval", n => { IsPersistedOnAssignmentRemoval = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetObjectValue<AccessPackageResourceAttributeSource>(AccessPackageResourceAttributeSource.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetObjectValue<Microsoft.Graph.Models.AccessPackageResourceAttributeSource>(Microsoft.Graph.Models.AccessPackageResourceAttributeSource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -136,12 +136,12 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<AccessPackageResourceAttributeDestination>("destination", Destination);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AccessPackageResourceAttributeDestination>("destination", Destination);
             writer.WriteBoolValue("isEditable", IsEditable);
             writer.WriteBoolValue("isPersistedOnAssignmentRemoval", IsPersistedOnAssignmentRemoval);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<AccessPackageResourceAttributeSource>("source", Source);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AccessPackageResourceAttributeSource>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

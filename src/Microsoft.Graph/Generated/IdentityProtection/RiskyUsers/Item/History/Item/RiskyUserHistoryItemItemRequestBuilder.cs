@@ -17,7 +17,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item
     public class RiskyUserHistoryItemItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="RiskyUserHistoryItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item.RiskyUserHistoryItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RiskyUserHistoryItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item.RiskyUserHistoryItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -50,57 +50,57 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The activity related to user risk level change
         /// </summary>
-        /// <returns>A <see cref="RiskyUserHistoryItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RiskyUserHistoryItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RiskyUserHistoryItem?> GetAsync(Action<RequestConfiguration<RiskyUserHistoryItemItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.RiskyUserHistoryItem?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item.RiskyUserHistoryItemItemRequestBuilder.RiskyUserHistoryItemItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<RiskyUserHistoryItem> GetAsync(Action<RequestConfiguration<RiskyUserHistoryItemItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.RiskyUserHistoryItem> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item.RiskyUserHistoryItemItemRequestBuilder.RiskyUserHistoryItemItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<RiskyUserHistoryItem>(requestInfo, RiskyUserHistoryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.RiskyUserHistoryItem>(requestInfo, Microsoft.Graph.Models.RiskyUserHistoryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property history in identityProtection
         /// </summary>
-        /// <returns>A <see cref="RiskyUserHistoryItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.RiskyUserHistoryItem"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RiskyUserHistoryItem?> PatchAsync(RiskyUserHistoryItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.RiskyUserHistoryItem?> PatchAsync(Microsoft.Graph.Models.RiskyUserHistoryItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<RiskyUserHistoryItem> PatchAsync(RiskyUserHistoryItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.RiskyUserHistoryItem> PatchAsync(Microsoft.Graph.Models.RiskyUserHistoryItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<RiskyUserHistoryItem>(requestInfo, RiskyUserHistoryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.RiskyUserHistoryItem>(requestInfo, Microsoft.Graph.Models.RiskyUserHistoryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property history for identityProtection
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RiskyUserHistoryItemItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item.RiskyUserHistoryItemItemRequestBuilder.RiskyUserHistoryItemItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RiskyUserHistoryItemItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item.RiskyUserHistoryItemItemRequestBuilder.RiskyUserHistoryItemItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -148,11 +148,11 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(RiskyUserHistoryItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.RiskyUserHistoryItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(RiskyUserHistoryItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.RiskyUserHistoryItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -165,11 +165,11 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RiskyUserHistoryItemItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item.RiskyUserHistoryItemItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RiskyUserHistoryItemItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item.RiskyUserHistoryItemItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new RiskyUserHistoryItemItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item.RiskyUserHistoryItemItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RiskyUserHistoryItemItemRequestBuilderGetRequestConfiguration : RequestConfiguration<RiskyUserHistoryItemItemRequestBuilderGetQueryParameters>
+        public class RiskyUserHistoryItemItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History.Item.RiskyUserHistoryItemItemRequestBuilder.RiskyUserHistoryItemItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

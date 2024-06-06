@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Thumbnails
     public class ThumbnailsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.</summary>
         /// <param name="position">The unique identifier of thumbnailSet</param>
-        /// <returns>A <see cref="ThumbnailSetItemRequestBuilder"/></returns>
-        public ThumbnailSetItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.Item.ThumbnailSetItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.Item.ThumbnailSetItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("thumbnailSet%2Did", position);
-                return new ThumbnailSetItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.Item.ThumbnailSetItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ThumbnailsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.ThumbnailsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Thumbnails
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ThumbnailsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.ThumbnailsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Thumbnails
         /// <summary>
         /// Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.
         /// </summary>
-        /// <returns>A <see cref="ThumbnailSetCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ThumbnailSetCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ThumbnailSetCollectionResponse?> GetAsync(Action<RequestConfiguration<ThumbnailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ThumbnailSetCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.ThumbnailsRequestBuilder.ThumbnailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ThumbnailSetCollectionResponse> GetAsync(Action<RequestConfiguration<ThumbnailsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ThumbnailSetCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.ThumbnailsRequestBuilder.ThumbnailsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ThumbnailSetCollectionResponse>(requestInfo, ThumbnailSetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ThumbnailSetCollectionResponse>(requestInfo, Microsoft.Graph.Models.ThumbnailSetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to thumbnails for drives
         /// </summary>
-        /// <returns>A <see cref="ThumbnailSet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ThumbnailSet"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ThumbnailSet?> PostAsync(ThumbnailSet body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ThumbnailSet?> PostAsync(Microsoft.Graph.Models.ThumbnailSet body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ThumbnailSet> PostAsync(ThumbnailSet body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ThumbnailSet> PostAsync(Microsoft.Graph.Models.ThumbnailSet body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ThumbnailSet>(requestInfo, ThumbnailSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ThumbnailSet>(requestInfo, Microsoft.Graph.Models.ThumbnailSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Thumbnails
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ThumbnailsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.ThumbnailsRequestBuilder.ThumbnailsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ThumbnailsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.ThumbnailsRequestBuilder.ThumbnailsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Thumbnails
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ThumbnailSet body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ThumbnailSet body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ThumbnailSet body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ThumbnailSet body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Thumbnails
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ThumbnailsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.ThumbnailsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ThumbnailsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.ThumbnailsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ThumbnailsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.ThumbnailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Thumbnails
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ThumbnailsRequestBuilderGetRequestConfiguration : RequestConfiguration<ThumbnailsRequestBuilderGetQueryParameters>
+        public class ThumbnailsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.ThumbnailsRequestBuilder.ThumbnailsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

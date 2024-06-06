@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The ManagedAppPolicy resource represents a base type for platform specific policies.
     /// </summary>
-    public class ManagedAppPolicy : Entity, IParsable
+    public class ManagedAppPolicy : Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The date and time the policy was created.</summary>
         public DateTimeOffset? CreatedDateTime
@@ -74,25 +74,25 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedAppPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedAppPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedAppPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ManagedAppPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.androidManagedAppProtection" => new AndroidManagedAppProtection(),
-                "#microsoft.graph.defaultManagedAppProtection" => new DefaultManagedAppProtection(),
-                "#microsoft.graph.iosManagedAppProtection" => new IosManagedAppProtection(),
-                "#microsoft.graph.managedAppConfiguration" => new ManagedAppConfiguration(),
-                "#microsoft.graph.managedAppProtection" => new ManagedAppProtection(),
-                "#microsoft.graph.mdmWindowsInformationProtectionPolicy" => new MdmWindowsInformationProtectionPolicy(),
-                "#microsoft.graph.targetedManagedAppConfiguration" => new TargetedManagedAppConfiguration(),
-                "#microsoft.graph.targetedManagedAppProtection" => new TargetedManagedAppProtection(),
-                "#microsoft.graph.windowsInformationProtection" => new WindowsInformationProtection(),
-                "#microsoft.graph.windowsInformationProtectionPolicy" => new WindowsInformationProtectionPolicy(),
-                _ => new ManagedAppPolicy(),
+                "#microsoft.graph.androidManagedAppProtection" => new Microsoft.Graph.Models.AndroidManagedAppProtection(),
+                "#microsoft.graph.defaultManagedAppProtection" => new Microsoft.Graph.Models.DefaultManagedAppProtection(),
+                "#microsoft.graph.iosManagedAppProtection" => new Microsoft.Graph.Models.IosManagedAppProtection(),
+                "#microsoft.graph.managedAppConfiguration" => new Microsoft.Graph.Models.ManagedAppConfiguration(),
+                "#microsoft.graph.managedAppProtection" => new Microsoft.Graph.Models.ManagedAppProtection(),
+                "#microsoft.graph.mdmWindowsInformationProtectionPolicy" => new Microsoft.Graph.Models.MdmWindowsInformationProtectionPolicy(),
+                "#microsoft.graph.targetedManagedAppConfiguration" => new Microsoft.Graph.Models.TargetedManagedAppConfiguration(),
+                "#microsoft.graph.targetedManagedAppProtection" => new Microsoft.Graph.Models.TargetedManagedAppProtection(),
+                "#microsoft.graph.windowsInformationProtection" => new Microsoft.Graph.Models.WindowsInformationProtection(),
+                "#microsoft.graph.windowsInformationProtectionPolicy" => new Microsoft.Graph.Models.WindowsInformationProtectionPolicy(),
+                _ => new Microsoft.Graph.Models.ManagedAppPolicy(),
             };
         }
         /// <summary>

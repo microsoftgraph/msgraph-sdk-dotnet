@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties and inherited properties for the Microsoft Edge app on Windows.
     /// </summary>
-    public class WindowsMicrosoftEdgeApp : MobileApp, IParsable
+    public class WindowsMicrosoftEdgeApp : Microsoft.Graph.Models.MobileApp, IParsable
     {
         /// <summary>The enum to specify the channels for Microsoft Edge apps.</summary>
-        public MicrosoftEdgeChannel? Channel
+        public Microsoft.Graph.Models.MicrosoftEdgeChannel? Channel
         {
-            get { return BackingStore?.Get<MicrosoftEdgeChannel?>("channel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MicrosoftEdgeChannel?>("channel"); }
             set { BackingStore?.Set("channel", value); }
         }
         /// <summary>The language locale to use when the Edge app displays text to the user.</summary>
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsMicrosoftEdgeApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.WindowsMicrosoftEdgeApp"/> and sets the default values.
         /// </summary>
         public WindowsMicrosoftEdgeApp() : base()
         {
@@ -43,12 +43,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsMicrosoftEdgeApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsMicrosoftEdgeApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsMicrosoftEdgeApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.WindowsMicrosoftEdgeApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsMicrosoftEdgeApp();
+            return new Microsoft.Graph.Models.WindowsMicrosoftEdgeApp();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "channel", n => { Channel = n.GetEnumValue<MicrosoftEdgeChannel>(); } },
+                { "channel", n => { Channel = n.GetEnumValue<Microsoft.Graph.Models.MicrosoftEdgeChannel>(); } },
                 { "displayLanguageLocale", n => { DisplayLanguageLocale = n.GetStringValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<MicrosoftEdgeChannel>("channel", Channel);
+            writer.WriteEnumValue<Microsoft.Graph.Models.MicrosoftEdgeChannel>("channel", Channel);
             writer.WriteStringValue("displayLanguageLocale", DisplayLanguageLocale);
         }
     }

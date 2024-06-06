@@ -70,27 +70,27 @@ namespace Microsoft.Graph.Models
         /// <summary>If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type isn&apos;t Function, this property is null/empty array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<StringKeyAttributeMappingSourceValuePair>? Parameters
+        public List<Microsoft.Graph.Models.StringKeyAttributeMappingSourceValuePair>? Parameters
         {
-            get { return BackingStore?.Get<List<StringKeyAttributeMappingSourceValuePair>?>("parameters"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.StringKeyAttributeMappingSourceValuePair>?>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
 #nullable restore
 #else
-        public List<StringKeyAttributeMappingSourceValuePair> Parameters
+        public List<Microsoft.Graph.Models.StringKeyAttributeMappingSourceValuePair> Parameters
         {
-            get { return BackingStore?.Get<List<StringKeyAttributeMappingSourceValuePair>>("parameters"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.StringKeyAttributeMappingSourceValuePair>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
 #endif
         /// <summary>The type property</summary>
-        public AttributeMappingSourceType? Type
+        public Microsoft.Graph.Models.AttributeMappingSourceType? Type
         {
-            get { return BackingStore?.Get<AttributeMappingSourceType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AttributeMappingSourceType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AttributeMappingSource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AttributeMappingSource"/> and sets the default values.
         /// </summary>
         public AttributeMappingSource()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AttributeMappingSource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AttributeMappingSource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AttributeMappingSource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AttributeMappingSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AttributeMappingSource();
+            return new Microsoft.Graph.Models.AttributeMappingSource();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,8 +118,8 @@ namespace Microsoft.Graph.Models
                 { "expression", n => { Expression = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<StringKeyAttributeMappingSourceValuePair>(StringKeyAttributeMappingSourceValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "type", n => { Type = n.GetEnumValue<AttributeMappingSourceType>(); } },
+                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.StringKeyAttributeMappingSourceValuePair>(Microsoft.Graph.Models.StringKeyAttributeMappingSourceValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Models.AttributeMappingSourceType>(); } },
             };
         }
         /// <summary>
@@ -132,8 +132,8 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("expression", Expression);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<StringKeyAttributeMappingSourceValuePair>("parameters", Parameters);
-            writer.WriteEnumValue<AttributeMappingSourceType>("type", Type);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.StringKeyAttributeMappingSourceValuePair>("parameters", Parameters);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AttributeMappingSourceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Users.Item.AgreementAcceptances
     public class AgreementAcceptancesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Users.Item.AgreementAcceptances.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Users.Item.AgreementAcceptances.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of agreementAcceptance</param>
-        /// <returns>A <see cref="AgreementAcceptanceItemRequestBuilder"/></returns>
-        public AgreementAcceptanceItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.AgreementAcceptances.Item.AgreementAcceptanceItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Users.Item.AgreementAcceptances.Item.AgreementAcceptanceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("agreementAcceptance%2Did", position);
-                return new AgreementAcceptanceItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Users.Item.AgreementAcceptances.Item.AgreementAcceptanceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AgreementAcceptancesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.AgreementAcceptances.AgreementAcceptancesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Users.Item.AgreementAcceptances
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AgreementAcceptancesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.AgreementAcceptances.AgreementAcceptancesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.Users.Item.AgreementAcceptances
         /// <summary>
         /// The user&apos;s terms of use acceptance statuses. Read-only. Nullable.
         /// </summary>
-        /// <returns>A <see cref="AgreementAcceptanceCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AgreementAcceptanceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AgreementAcceptanceCollectionResponse?> GetAsync(Action<RequestConfiguration<AgreementAcceptancesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AgreementAcceptanceCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.AgreementAcceptances.AgreementAcceptancesRequestBuilder.AgreementAcceptancesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AgreementAcceptanceCollectionResponse> GetAsync(Action<RequestConfiguration<AgreementAcceptancesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AgreementAcceptanceCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.AgreementAcceptances.AgreementAcceptancesRequestBuilder.AgreementAcceptancesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AgreementAcceptanceCollectionResponse>(requestInfo, AgreementAcceptanceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AgreementAcceptanceCollectionResponse>(requestInfo, Microsoft.Graph.Models.AgreementAcceptanceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The user&apos;s terms of use acceptance statuses. Read-only. Nullable.
@@ -81,11 +81,11 @@ namespace Microsoft.Graph.Users.Item.AgreementAcceptances
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AgreementAcceptancesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.AgreementAcceptances.AgreementAcceptancesRequestBuilder.AgreementAcceptancesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AgreementAcceptancesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.AgreementAcceptances.AgreementAcceptancesRequestBuilder.AgreementAcceptancesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -96,11 +96,11 @@ namespace Microsoft.Graph.Users.Item.AgreementAcceptances
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AgreementAcceptancesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.AgreementAcceptances.AgreementAcceptancesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AgreementAcceptancesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Users.Item.AgreementAcceptances.AgreementAcceptancesRequestBuilder WithUrl(string rawUrl)
         {
-            return new AgreementAcceptancesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Users.Item.AgreementAcceptances.AgreementAcceptancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The user&apos;s terms of use acceptance statuses. Read-only. Nullable.
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Users.Item.AgreementAcceptances
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AgreementAcceptancesRequestBuilderGetRequestConfiguration : RequestConfiguration<AgreementAcceptancesRequestBuilderGetQueryParameters>
+        public class AgreementAcceptancesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.AgreementAcceptances.AgreementAcceptancesRequestBuilder.AgreementAcceptancesRequestBuilderGetQueryParameters>
         {
         }
     }

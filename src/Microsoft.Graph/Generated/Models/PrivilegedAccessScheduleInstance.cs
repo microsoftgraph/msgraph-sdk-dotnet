@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class PrivilegedAccessScheduleInstance : Entity, IParsable
+    public class PrivilegedAccessScheduleInstance : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>When the schedule instance ends. Required.</summary>
@@ -25,17 +25,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrivilegedAccessScheduleInstance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PrivilegedAccessScheduleInstance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrivilegedAccessScheduleInstance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.PrivilegedAccessScheduleInstance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.privilegedAccessGroupAssignmentScheduleInstance" => new PrivilegedAccessGroupAssignmentScheduleInstance(),
-                "#microsoft.graph.privilegedAccessGroupEligibilityScheduleInstance" => new PrivilegedAccessGroupEligibilityScheduleInstance(),
-                _ => new PrivilegedAccessScheduleInstance(),
+                "#microsoft.graph.privilegedAccessGroupAssignmentScheduleInstance" => new Microsoft.Graph.Models.PrivilegedAccessGroupAssignmentScheduleInstance(),
+                "#microsoft.graph.privilegedAccessGroupEligibilityScheduleInstance" => new Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleInstance(),
+                _ => new Microsoft.Graph.Models.PrivilegedAccessScheduleInstance(),
             };
         }
         /// <summary>

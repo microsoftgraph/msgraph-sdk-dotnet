@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Policy used to configure detailed management settings targeted to specific security groups
     /// </summary>
-    public class TargetedManagedAppProtection : ManagedAppProtection, IParsable
+    public class TargetedManagedAppProtection : Microsoft.Graph.Models.ManagedAppProtection, IParsable
     {
         /// <summary>Navigation property to list of inclusion and exclusion groups to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TargetedManagedAppPolicyAssignment>? Assignments
+        public List<Microsoft.Graph.Models.TargetedManagedAppPolicyAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TargetedManagedAppPolicyAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<TargetedManagedAppPolicyAssignment> Assignments
+        public List<Microsoft.Graph.Models.TargetedManagedAppPolicyAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TargetedManagedAppPolicyAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("isAssigned", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TargetedManagedAppProtection"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.TargetedManagedAppProtection"/> and sets the default values.
         /// </summary>
         public TargetedManagedAppProtection() : base()
         {
@@ -43,17 +43,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TargetedManagedAppProtection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TargetedManagedAppProtection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TargetedManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TargetedManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.androidManagedAppProtection" => new AndroidManagedAppProtection(),
-                "#microsoft.graph.iosManagedAppProtection" => new IosManagedAppProtection(),
-                _ => new TargetedManagedAppProtection(),
+                "#microsoft.graph.androidManagedAppProtection" => new Microsoft.Graph.Models.AndroidManagedAppProtection(),
+                "#microsoft.graph.iosManagedAppProtection" => new Microsoft.Graph.Models.IosManagedAppProtection(),
+                _ => new Microsoft.Graph.Models.TargetedManagedAppProtection(),
             };
         }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>(TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TargetedManagedAppPolicyAssignment>(Microsoft.Graph.Models.TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
             };
         }
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TargetedManagedAppPolicyAssignment>("assignments", Assignments);
             writer.WriteBoolValue("isAssigned", IsAssigned);
         }
     }

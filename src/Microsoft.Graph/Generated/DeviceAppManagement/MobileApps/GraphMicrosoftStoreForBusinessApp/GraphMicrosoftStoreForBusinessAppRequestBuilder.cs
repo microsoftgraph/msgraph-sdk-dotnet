@@ -18,12 +18,12 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForB
     public class GraphMicrosoftStoreForBusinessAppRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForBusinessApp.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForBusinessApp.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphMicrosoftStoreForBusinessAppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForBusinessApp.GraphMicrosoftStoreForBusinessAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForB
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphMicrosoftStoreForBusinessAppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForBusinessApp.GraphMicrosoftStoreForBusinessAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,25 +41,25 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForB
         /// <summary>
         /// Get the items of type microsoft.graph.microsoftStoreForBusinessApp in the microsoft.graph.mobileApp collection
         /// </summary>
-        /// <returns>A <see cref="MicrosoftStoreForBusinessAppCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MicrosoftStoreForBusinessAppCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MicrosoftStoreForBusinessAppCollectionResponse?> GetAsync(Action<RequestConfiguration<GraphMicrosoftStoreForBusinessAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.MicrosoftStoreForBusinessAppCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForBusinessApp.GraphMicrosoftStoreForBusinessAppRequestBuilder.GraphMicrosoftStoreForBusinessAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<MicrosoftStoreForBusinessAppCollectionResponse> GetAsync(Action<RequestConfiguration<GraphMicrosoftStoreForBusinessAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.MicrosoftStoreForBusinessAppCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForBusinessApp.GraphMicrosoftStoreForBusinessAppRequestBuilder.GraphMicrosoftStoreForBusinessAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<MicrosoftStoreForBusinessAppCollectionResponse>(requestInfo, MicrosoftStoreForBusinessAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.MicrosoftStoreForBusinessAppCollectionResponse>(requestInfo, Microsoft.Graph.Models.MicrosoftStoreForBusinessAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the items of type microsoft.graph.microsoftStoreForBusinessApp in the microsoft.graph.mobileApp collection
@@ -68,11 +68,11 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForB
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphMicrosoftStoreForBusinessAppRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForBusinessApp.GraphMicrosoftStoreForBusinessAppRequestBuilder.GraphMicrosoftStoreForBusinessAppRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphMicrosoftStoreForBusinessAppRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForBusinessApp.GraphMicrosoftStoreForBusinessAppRequestBuilder.GraphMicrosoftStoreForBusinessAppRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -83,11 +83,11 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForB
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GraphMicrosoftStoreForBusinessAppRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForBusinessApp.GraphMicrosoftStoreForBusinessAppRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GraphMicrosoftStoreForBusinessAppRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForBusinessApp.GraphMicrosoftStoreForBusinessAppRequestBuilder WithUrl(string rawUrl)
         {
-            return new GraphMicrosoftStoreForBusinessAppRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForBusinessApp.GraphMicrosoftStoreForBusinessAppRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the items of type microsoft.graph.microsoftStoreForBusinessApp in the microsoft.graph.mobileApp collection
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForB
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphMicrosoftStoreForBusinessAppRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphMicrosoftStoreForBusinessAppRequestBuilderGetQueryParameters>
+        public class GraphMicrosoftStoreForBusinessAppRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.GraphMicrosoftStoreForBusinessApp.GraphMicrosoftStoreForBusinessAppRequestBuilder.GraphMicrosoftStoreForBusinessAppRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>List of sensitivity labels assigned to a file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SensitivityLabelAssignment>? Labels
+        public List<Microsoft.Graph.Models.SensitivityLabelAssignment>? Labels
         {
-            get { return BackingStore?.Get<List<SensitivityLabelAssignment>?>("labels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SensitivityLabelAssignment>?>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
 #nullable restore
 #else
-        public List<SensitivityLabelAssignment> Labels
+        public List<Microsoft.Graph.Models.SensitivityLabelAssignment> Labels
         {
-            get { return BackingStore?.Get<List<SensitivityLabelAssignment>>("labels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SensitivityLabelAssignment>>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
 #endif
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ExtractSensitivityLabelsResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ExtractSensitivityLabelsResult"/> and sets the default values.
         /// </summary>
         public ExtractSensitivityLabelsResult()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExtractSensitivityLabelsResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ExtractSensitivityLabelsResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ExtractSensitivityLabelsResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ExtractSensitivityLabelsResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExtractSensitivityLabelsResult();
+            return new Microsoft.Graph.Models.ExtractSensitivityLabelsResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "labels", n => { Labels = n.GetCollectionOfObjectValues<SensitivityLabelAssignment>(SensitivityLabelAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "labels", n => { Labels = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SensitivityLabelAssignment>(Microsoft.Graph.Models.SensitivityLabelAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<SensitivityLabelAssignment>("labels", Labels);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SensitivityLabelAssignment>("labels", Labels);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

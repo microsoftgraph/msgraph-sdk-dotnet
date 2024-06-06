@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Organization : DirectoryObject, IParsable
+    public class Organization : Microsoft.Graph.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The collection of service plans associated with the tenant. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignedPlan>? AssignedPlans
+        public List<Microsoft.Graph.Models.AssignedPlan>? AssignedPlans
         {
-            get { return BackingStore?.Get<List<AssignedPlan>?>("assignedPlans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AssignedPlan>?>("assignedPlans"); }
             set { BackingStore?.Set("assignedPlans", value); }
         }
 #nullable restore
 #else
-        public List<AssignedPlan> AssignedPlans
+        public List<Microsoft.Graph.Models.AssignedPlan> AssignedPlans
         {
-            get { return BackingStore?.Get<List<AssignedPlan>>("assignedPlans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AssignedPlan>>("assignedPlans"); }
             set { BackingStore?.Set("assignedPlans", value); }
         }
 #endif
         /// <summary>Branding for the organization. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OrganizationalBranding? Branding
+        public Microsoft.Graph.Models.OrganizationalBranding? Branding
         {
-            get { return BackingStore?.Get<OrganizationalBranding?>("branding"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OrganizationalBranding?>("branding"); }
             set { BackingStore?.Set("branding", value); }
         }
 #nullable restore
 #else
-        public OrganizationalBranding Branding
+        public Microsoft.Graph.Models.OrganizationalBranding Branding
         {
-            get { return BackingStore?.Get<OrganizationalBranding>("branding"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OrganizationalBranding>("branding"); }
             set { BackingStore?.Set("branding", value); }
         }
 #endif
@@ -163,16 +163,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of open extensions defined for the organization. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions
+        public List<Microsoft.Graph.Models.Extension>? Extensions
         {
-            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions
+        public List<Microsoft.Graph.Models.Extension> Extensions
         {
-            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
@@ -193,9 +193,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Mobile device management authority.</summary>
-        public MdmAuthority? MobileDeviceManagementAuthority
+        public Microsoft.Graph.Models.MdmAuthority? MobileDeviceManagementAuthority
         {
-            get { return BackingStore?.Get<MdmAuthority?>("mobileDeviceManagementAuthority"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MdmAuthority?>("mobileDeviceManagementAuthority"); }
             set { BackingStore?.Set("mobileDeviceManagementAuthority", value); }
         }
         /// <summary>The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
@@ -267,16 +267,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProvisionedPlan>? ProvisionedPlans
+        public List<Microsoft.Graph.Models.ProvisionedPlan>? ProvisionedPlans
         {
-            get { return BackingStore?.Get<List<ProvisionedPlan>?>("provisionedPlans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ProvisionedPlan>?>("provisionedPlans"); }
             set { BackingStore?.Set("provisionedPlans", value); }
         }
 #nullable restore
 #else
-        public List<ProvisionedPlan> ProvisionedPlans
+        public List<Microsoft.Graph.Models.ProvisionedPlan> ProvisionedPlans
         {
-            get { return BackingStore?.Get<List<ProvisionedPlan>>("provisionedPlans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ProvisionedPlan>>("provisionedPlans"); }
             set { BackingStore?.Set("provisionedPlans", value); }
         }
 #endif
@@ -379,21 +379,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The collection of domains associated with this tenant. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VerifiedDomain>? VerifiedDomains
+        public List<Microsoft.Graph.Models.VerifiedDomain>? VerifiedDomains
         {
-            get { return BackingStore?.Get<List<VerifiedDomain>?>("verifiedDomains"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.VerifiedDomain>?>("verifiedDomains"); }
             set { BackingStore?.Set("verifiedDomains", value); }
         }
 #nullable restore
 #else
-        public List<VerifiedDomain> VerifiedDomains
+        public List<Microsoft.Graph.Models.VerifiedDomain> VerifiedDomains
         {
-            get { return BackingStore?.Get<List<VerifiedDomain>>("verifiedDomains"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.VerifiedDomain>>("verifiedDomains"); }
             set { BackingStore?.Set("verifiedDomains", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Organization"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Organization"/> and sets the default values.
         /// </summary>
         public Organization() : base()
         {
@@ -402,12 +402,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Organization"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Organization"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Organization CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Organization CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Organization();
+            return new Microsoft.Graph.Models.Organization();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -417,8 +417,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignedPlans", n => { AssignedPlans = n.GetCollectionOfObjectValues<AssignedPlan>(AssignedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "branding", n => { Branding = n.GetObjectValue<OrganizationalBranding>(OrganizationalBranding.CreateFromDiscriminatorValue); } },
+                { "assignedPlans", n => { AssignedPlans = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AssignedPlan>(Microsoft.Graph.Models.AssignedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "branding", n => { Branding = n.GetObjectValue<Microsoft.Graph.Models.OrganizationalBranding>(Microsoft.Graph.Models.OrganizationalBranding.CreateFromDiscriminatorValue); } },
                 { "businessPhones", n => { BusinessPhones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "certificateBasedAuthConfiguration", n => { CertificateBasedAuthConfiguration = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CertificateBasedAuthConfiguration>(Microsoft.Graph.Models.CertificateBasedAuthConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "city", n => { City = n.GetStringValue(); } },
@@ -427,23 +427,23 @@ namespace Microsoft.Graph.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "defaultUsageLocation", n => { DefaultUsageLocation = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Extension>(Microsoft.Graph.Models.Extension.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "marketingNotificationEmails", n => { MarketingNotificationEmails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "mobileDeviceManagementAuthority", n => { MobileDeviceManagementAuthority = n.GetEnumValue<MdmAuthority>(); } },
+                { "mobileDeviceManagementAuthority", n => { MobileDeviceManagementAuthority = n.GetEnumValue<Microsoft.Graph.Models.MdmAuthority>(); } },
                 { "onPremisesLastSyncDateTime", n => { OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
-                { "partnerTenantType", n => { PartnerTenantType = n.GetEnumValue<PartnerTenantType>(); } },
+                { "partnerTenantType", n => { PartnerTenantType = n.GetEnumValue<Microsoft.Graph.Models.PartnerTenantType>(); } },
                 { "postalCode", n => { PostalCode = n.GetStringValue(); } },
                 { "preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
                 { "privacyProfile", n => { PrivacyProfile = n.GetObjectValue<Microsoft.Graph.Models.PrivacyProfile>(Microsoft.Graph.Models.PrivacyProfile.CreateFromDiscriminatorValue); } },
-                { "provisionedPlans", n => { ProvisionedPlans = n.GetCollectionOfObjectValues<ProvisionedPlan>(ProvisionedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "provisionedPlans", n => { ProvisionedPlans = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ProvisionedPlan>(Microsoft.Graph.Models.ProvisionedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "securityComplianceNotificationMails", n => { SecurityComplianceNotificationMails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "securityComplianceNotificationPhones", n => { SecurityComplianceNotificationPhones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "street", n => { Street = n.GetStringValue(); } },
                 { "technicalNotificationMails", n => { TechnicalNotificationMails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "tenantType", n => { TenantType = n.GetStringValue(); } },
-                { "verifiedDomains", n => { VerifiedDomains = n.GetCollectionOfObjectValues<VerifiedDomain>(VerifiedDomain.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "verifiedDomains", n => { VerifiedDomains = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.VerifiedDomain>(Microsoft.Graph.Models.VerifiedDomain.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -454,8 +454,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AssignedPlan>("assignedPlans", AssignedPlans);
-            writer.WriteObjectValue<OrganizationalBranding>("branding", Branding);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AssignedPlan>("assignedPlans", AssignedPlans);
+            writer.WriteObjectValue<Microsoft.Graph.Models.OrganizationalBranding>("branding", Branding);
             writer.WriteCollectionOfPrimitiveValues<string>("businessPhones", BusinessPhones);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CertificateBasedAuthConfiguration>("certificateBasedAuthConfiguration", CertificateBasedAuthConfiguration);
             writer.WriteStringValue("city", City);
@@ -464,23 +464,23 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("defaultUsageLocation", DefaultUsageLocation);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Extension>("extensions", Extensions);
             writer.WriteCollectionOfPrimitiveValues<string>("marketingNotificationEmails", MarketingNotificationEmails);
-            writer.WriteEnumValue<MdmAuthority>("mobileDeviceManagementAuthority", MobileDeviceManagementAuthority);
+            writer.WriteEnumValue<Microsoft.Graph.Models.MdmAuthority>("mobileDeviceManagementAuthority", MobileDeviceManagementAuthority);
             writer.WriteDateTimeOffsetValue("onPremisesLastSyncDateTime", OnPremisesLastSyncDateTime);
             writer.WriteBoolValue("onPremisesSyncEnabled", OnPremisesSyncEnabled);
-            writer.WriteEnumValue<PartnerTenantType>("partnerTenantType", PartnerTenantType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PartnerTenantType>("partnerTenantType", PartnerTenantType);
             writer.WriteStringValue("postalCode", PostalCode);
             writer.WriteStringValue("preferredLanguage", PreferredLanguage);
             writer.WriteObjectValue<Microsoft.Graph.Models.PrivacyProfile>("privacyProfile", PrivacyProfile);
-            writer.WriteCollectionOfObjectValues<ProvisionedPlan>("provisionedPlans", ProvisionedPlans);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ProvisionedPlan>("provisionedPlans", ProvisionedPlans);
             writer.WriteCollectionOfPrimitiveValues<string>("securityComplianceNotificationMails", SecurityComplianceNotificationMails);
             writer.WriteCollectionOfPrimitiveValues<string>("securityComplianceNotificationPhones", SecurityComplianceNotificationPhones);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("street", Street);
             writer.WriteCollectionOfPrimitiveValues<string>("technicalNotificationMails", TechnicalNotificationMails);
             writer.WriteStringValue("tenantType", TenantType);
-            writer.WriteCollectionOfObjectValues<VerifiedDomain>("verifiedDomains", VerifiedDomains);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.VerifiedDomain>("verifiedDomains", VerifiedDomains);
         }
     }
 }

@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class DelegatedPermissionClassification : Entity, IParsable
+    public class DelegatedPermissionClassification : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The classification value. Possible values: low, medium (preview), high (preview). Doesn&apos;t support $filter.</summary>
-        public PermissionClassificationType? Classification
+        public Microsoft.Graph.Models.PermissionClassificationType? Classification
         {
-            get { return BackingStore?.Get<PermissionClassificationType?>("classification"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PermissionClassificationType?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
         /// <summary>The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Doesn&apos;t support $filter.</summary>
@@ -51,12 +51,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DelegatedPermissionClassification"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DelegatedPermissionClassification"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DelegatedPermissionClassification CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.DelegatedPermissionClassification CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DelegatedPermissionClassification();
+            return new Microsoft.Graph.Models.DelegatedPermissionClassification();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "classification", n => { Classification = n.GetEnumValue<PermissionClassificationType>(); } },
+                { "classification", n => { Classification = n.GetEnumValue<Microsoft.Graph.Models.PermissionClassificationType>(); } },
                 { "permissionId", n => { PermissionId = n.GetStringValue(); } },
                 { "permissionName", n => { PermissionName = n.GetStringValue(); } },
             };
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<PermissionClassificationType>("classification", Classification);
+            writer.WriteEnumValue<Microsoft.Graph.Models.PermissionClassificationType>("classification", Classification);
             writer.WriteStringValue("permissionId", PermissionId);
             writer.WriteStringValue("permissionName", PermissionName);
         }

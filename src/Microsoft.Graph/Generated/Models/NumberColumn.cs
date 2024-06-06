@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="NumberColumn"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.NumberColumn"/> and sets the default values.
         /// </summary>
         public NumberColumn()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="NumberColumn"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.NumberColumn"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static NumberColumn CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.NumberColumn CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new NumberColumn();
+            return new Microsoft.Graph.Models.NumberColumn();
         }
         /// <summary>
         /// The deserialization information for the current model

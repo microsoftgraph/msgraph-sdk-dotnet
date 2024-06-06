@@ -17,7 +17,7 @@ namespace Microsoft.Graph.InformationProtection.Bitlocker.RecoveryKeys.Item
     public class BitlockerRecoveryKeyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="BitlockerRecoveryKeyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.InformationProtection.Bitlocker.RecoveryKeys.Item.BitlockerRecoveryKeyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.InformationProtection.Bitlocker.RecoveryKeys.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="BitlockerRecoveryKeyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.InformationProtection.Bitlocker.RecoveryKeys.Item.BitlockerRecoveryKeyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,25 +36,25 @@ namespace Microsoft.Graph.InformationProtection.Bitlocker.RecoveryKeys.Item
         /// Retrieve the properties and relationships of a bitlockerRecoveryKey object.  By default, this operation doesn&apos;t return the key property that represents the actual recovery key. To include the key property in the response, use the $select OData query parameter. Including the $select query parameter triggers a Microsoft Entra audit of the operation and generates an audit log. For more information on audit logs for bitlocker recovery keys, see the KeyManagement category filter of Microsoft Entra audit logs.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bitlockerrecoverykey-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="BitlockerRecoveryKey"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.BitlockerRecoveryKey"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BitlockerRecoveryKey?> GetAsync(Action<RequestConfiguration<BitlockerRecoveryKeyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.BitlockerRecoveryKey?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.InformationProtection.Bitlocker.RecoveryKeys.Item.BitlockerRecoveryKeyItemRequestBuilder.BitlockerRecoveryKeyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BitlockerRecoveryKey> GetAsync(Action<RequestConfiguration<BitlockerRecoveryKeyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.BitlockerRecoveryKey> GetAsync(Action<RequestConfiguration<Microsoft.Graph.InformationProtection.Bitlocker.RecoveryKeys.Item.BitlockerRecoveryKeyItemRequestBuilder.BitlockerRecoveryKeyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<BitlockerRecoveryKey>(requestInfo, BitlockerRecoveryKey.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.BitlockerRecoveryKey>(requestInfo, Microsoft.Graph.Models.BitlockerRecoveryKey.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the properties and relationships of a bitlockerRecoveryKey object.  By default, this operation doesn&apos;t return the key property that represents the actual recovery key. To include the key property in the response, use the $select OData query parameter. Including the $select query parameter triggers a Microsoft Entra audit of the operation and generates an audit log. For more information on audit logs for bitlocker recovery keys, see the KeyManagement category filter of Microsoft Entra audit logs.
@@ -63,11 +63,11 @@ namespace Microsoft.Graph.InformationProtection.Bitlocker.RecoveryKeys.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BitlockerRecoveryKeyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.InformationProtection.Bitlocker.RecoveryKeys.Item.BitlockerRecoveryKeyItemRequestBuilder.BitlockerRecoveryKeyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BitlockerRecoveryKeyItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.InformationProtection.Bitlocker.RecoveryKeys.Item.BitlockerRecoveryKeyItemRequestBuilder.BitlockerRecoveryKeyItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -78,11 +78,11 @@ namespace Microsoft.Graph.InformationProtection.Bitlocker.RecoveryKeys.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="BitlockerRecoveryKeyItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.InformationProtection.Bitlocker.RecoveryKeys.Item.BitlockerRecoveryKeyItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public BitlockerRecoveryKeyItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.InformationProtection.Bitlocker.RecoveryKeys.Item.BitlockerRecoveryKeyItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new BitlockerRecoveryKeyItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.InformationProtection.Bitlocker.RecoveryKeys.Item.BitlockerRecoveryKeyItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve the properties and relationships of a bitlockerRecoveryKey object.  By default, this operation doesn&apos;t return the key property that represents the actual recovery key. To include the key property in the response, use the $select OData query parameter. Including the $select query parameter triggers a Microsoft Entra audit of the operation and generates an audit log. For more information on audit logs for bitlocker recovery keys, see the KeyManagement category filter of Microsoft Entra audit logs.
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.InformationProtection.Bitlocker.RecoveryKeys.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BitlockerRecoveryKeyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<BitlockerRecoveryKeyItemRequestBuilderGetQueryParameters>
+        public class BitlockerRecoveryKeyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.InformationProtection.Bitlocker.RecoveryKeys.Item.BitlockerRecoveryKeyItemRequestBuilder.BitlockerRecoveryKeyItemRequestBuilderGetQueryParameters>
         {
         }
     }

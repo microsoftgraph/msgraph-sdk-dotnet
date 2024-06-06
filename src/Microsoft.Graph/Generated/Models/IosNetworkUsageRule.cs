@@ -35,16 +35,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Information about the managed apps that this rule is going to apply to. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? ManagedApps
+        public List<Microsoft.Graph.Models.AppListItem>? ManagedApps
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("managedApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AppListItem>?>("managedApps"); }
             set { BackingStore?.Set("managedApps", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> ManagedApps
+        public List<Microsoft.Graph.Models.AppListItem> ManagedApps
         {
-            get { return BackingStore?.Get<List<AppListItem>>("managedApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AppListItem>>("managedApps"); }
             set { BackingStore?.Set("managedApps", value); }
         }
 #endif
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IosNetworkUsageRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.IosNetworkUsageRule"/> and sets the default values.
         /// </summary>
         public IosNetworkUsageRule()
         {
@@ -75,12 +75,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosNetworkUsageRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IosNetworkUsageRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IosNetworkUsageRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.IosNetworkUsageRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosNetworkUsageRule();
+            return new Microsoft.Graph.Models.IosNetworkUsageRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Models
             {
                 { "cellularDataBlockWhenRoaming", n => { CellularDataBlockWhenRoaming = n.GetBoolValue(); } },
                 { "cellularDataBlocked", n => { CellularDataBlocked = n.GetBoolValue(); } },
-                { "managedApps", n => { ManagedApps = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedApps", n => { ManagedApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AppListItem>(Microsoft.Graph.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("cellularDataBlocked", CellularDataBlocked);
             writer.WriteBoolValue("cellularDataBlockWhenRoaming", CellularDataBlockWhenRoaming);
-            writer.WriteCollectionOfObjectValues<AppListItem>("managedApps", ManagedApps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AppListItem>("managedApps", ManagedApps);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.</summary>
-        public FileHashType? HashType
+        public Microsoft.Graph.Models.FileHashType? HashType
         {
-            get { return BackingStore?.Get<FileHashType?>("hashType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.FileHashType?>("hashType"); }
             set { BackingStore?.Set("hashType", value); }
         }
         /// <summary>Value of the file hash.</summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="FileHash"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.FileHash"/> and sets the default values.
         /// </summary>
         public FileHash()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FileHash"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.FileHash"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static FileHash CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.FileHash CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FileHash();
+            return new Microsoft.Graph.Models.FileHash();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "hashType", n => { HashType = n.GetEnumValue<FileHashType>(); } },
+                { "hashType", n => { HashType = n.GetEnumValue<Microsoft.Graph.Models.FileHashType>(); } },
                 { "hashValue", n => { HashValue = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<FileHashType>("hashType", HashType);
+            writer.WriteEnumValue<Microsoft.Graph.Models.FileHashType>("hashType", HashType);
             writer.WriteStringValue("hashValue", HashValue);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

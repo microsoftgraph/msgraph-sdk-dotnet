@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Poli
     public class UsageRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="UsageRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Policies.Item.Usage.UsageRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Poli
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UsageRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Policies.Item.Usage.UsageRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,25 +36,25 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Poli
         /// Allows the caller to see which Conditional Access policies reference a specified authentication strength policy. The policies are returned in two collections, one containing Conditional Access policies that require an MFA claim and the other containing Conditional Access policies that do not require such a claim. Policies in the former category are restricted in what kinds of changes may be made to them to prevent undermining the MFA requirement of those policies.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-usage?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="AuthenticationStrengthUsage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationStrengthUsage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationStrengthUsage?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationStrengthUsage?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AuthenticationStrengthUsage> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AuthenticationStrengthUsage> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AuthenticationStrengthUsage>(requestInfo, AuthenticationStrengthUsage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthenticationStrengthUsage>(requestInfo, Microsoft.Graph.Models.AuthenticationStrengthUsage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Allows the caller to see which Conditional Access policies reference a specified authentication strength policy. The policies are returned in two collections, one containing Conditional Access policies that require an MFA claim and the other containing Conditional Access policies that do not require such a claim. Policies in the former category are restricted in what kinds of changes may be made to them to prevent undermining the MFA requirement of those policies.
@@ -78,11 +78,11 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Poli
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UsageRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Policies.Item.Usage.UsageRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UsageRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Policies.Item.Usage.UsageRequestBuilder WithUrl(string rawUrl)
         {
-            return new UsageRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Policies.Item.Usage.UsageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Configuration regarding properties of the custom extension which can be overwritten per event listener. If no values are provided, the properties on the custom extension are used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomExtensionClientConfiguration? ClientConfiguration
+        public Microsoft.Graph.Models.CustomExtensionClientConfiguration? ClientConfiguration
         {
-            get { return BackingStore?.Get<CustomExtensionClientConfiguration?>("clientConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomExtensionClientConfiguration?>("clientConfiguration"); }
             set { BackingStore?.Set("clientConfiguration", value); }
         }
 #nullable restore
 #else
-        public CustomExtensionClientConfiguration ClientConfiguration
+        public Microsoft.Graph.Models.CustomExtensionClientConfiguration ClientConfiguration
         {
-            get { return BackingStore?.Get<CustomExtensionClientConfiguration>("clientConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CustomExtensionClientConfiguration>("clientConfiguration"); }
             set { BackingStore?.Set("clientConfiguration", value); }
         }
 #endif
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CustomExtensionOverwriteConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CustomExtensionOverwriteConfiguration"/> and sets the default values.
         /// </summary>
         public CustomExtensionOverwriteConfiguration()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomExtensionOverwriteConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CustomExtensionOverwriteConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CustomExtensionOverwriteConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CustomExtensionOverwriteConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CustomExtensionOverwriteConfiguration();
+            return new Microsoft.Graph.Models.CustomExtensionOverwriteConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "clientConfiguration", n => { ClientConfiguration = n.GetObjectValue<CustomExtensionClientConfiguration>(CustomExtensionClientConfiguration.CreateFromDiscriminatorValue); } },
+                { "clientConfiguration", n => { ClientConfiguration = n.GetObjectValue<Microsoft.Graph.Models.CustomExtensionClientConfiguration>(Microsoft.Graph.Models.CustomExtensionClientConfiguration.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<CustomExtensionClientConfiguration>("clientConfiguration", ClientConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CustomExtensionClientConfiguration>("clientConfiguration", ClientConfiguration);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

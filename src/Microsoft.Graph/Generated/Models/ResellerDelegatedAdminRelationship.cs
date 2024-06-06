@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class ResellerDelegatedAdminRelationship : DelegatedAdminRelationship, IParsable
+    public class ResellerDelegatedAdminRelationship : Microsoft.Graph.Models.DelegatedAdminRelationship, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The tenant ID of the indirect provider partner who created the relationship for the indirect reseller partner.</summary>
@@ -35,12 +35,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ResellerDelegatedAdminRelationship"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ResellerDelegatedAdminRelationship"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ResellerDelegatedAdminRelationship CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.ResellerDelegatedAdminRelationship CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ResellerDelegatedAdminRelationship();
+            return new Microsoft.Graph.Models.ResellerDelegatedAdminRelationship();
         }
         /// <summary>
         /// The deserialization information for the current model

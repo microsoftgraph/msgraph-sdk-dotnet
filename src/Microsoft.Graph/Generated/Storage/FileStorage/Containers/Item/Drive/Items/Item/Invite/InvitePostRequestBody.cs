@@ -71,16 +71,16 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.I
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DriveRecipient>? Recipients
+        public List<Microsoft.Graph.Models.DriveRecipient>? Recipients
         {
-            get { return BackingStore?.Get<List<DriveRecipient>?>("recipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DriveRecipient>?>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
 #nullable restore
 #else
-        public List<DriveRecipient> Recipients
+        public List<Microsoft.Graph.Models.DriveRecipient> Recipients
         {
-            get { return BackingStore?.Get<List<DriveRecipient>>("recipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DriveRecipient>>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
 #endif
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.I
             set { BackingStore?.Set("sendInvitation", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="InvitePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Invite.InvitePostRequestBody"/> and sets the default values.
         /// </summary>
         public InvitePostRequestBody()
         {
@@ -129,12 +129,12 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.I
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InvitePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Invite.InvitePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static InvitePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Invite.InvitePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InvitePostRequestBody();
+            return new Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.Invite.InvitePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.I
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "password", n => { Password = n.GetStringValue(); } },
-                { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DriveRecipient>(Microsoft.Graph.Models.DriveRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "requireSignIn", n => { RequireSignIn = n.GetBoolValue(); } },
                 { "retainInheritedPermissions", n => { RetainInheritedPermissions = n.GetBoolValue(); } },
                 { "roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.Items.Item.I
             writer.WriteStringValue("expirationDateTime", ExpirationDateTime);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("password", Password);
-            writer.WriteCollectionOfObjectValues<DriveRecipient>("recipients", Recipients);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DriveRecipient>("recipients", Recipients);
             writer.WriteBoolValue("requireSignIn", RequireSignIn);
             writer.WriteBoolValue("retainInheritedPermissions", RetainInheritedPermissions);
             writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);

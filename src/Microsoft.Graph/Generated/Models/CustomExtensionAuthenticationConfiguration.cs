@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CustomExtensionAuthenticationConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration"/> and sets the default values.
         /// </summary>
         public CustomExtensionAuthenticationConfiguration()
         {
@@ -46,17 +46,17 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomExtensionAuthenticationConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CustomExtensionAuthenticationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.azureAdPopTokenAuthentication" => new AzureAdPopTokenAuthentication(),
-                "#microsoft.graph.azureAdTokenAuthentication" => new AzureAdTokenAuthentication(),
-                _ => new CustomExtensionAuthenticationConfiguration(),
+                "#microsoft.graph.azureAdPopTokenAuthentication" => new Microsoft.Graph.Models.AzureAdPopTokenAuthentication(),
+                "#microsoft.graph.azureAdTokenAuthentication" => new Microsoft.Graph.Models.AzureAdTokenAuthentication(),
+                _ => new Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration(),
             };
         }
         /// <summary>

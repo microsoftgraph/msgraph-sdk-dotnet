@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Properties"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ExternalConnectors.Properties"/> and sets the default values.
         /// </summary>
         public Properties()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Properties"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ExternalConnectors.Properties"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Properties CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ExternalConnectors.Properties CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Properties();
+            return new Microsoft.Graph.Models.ExternalConnectors.Properties();
         }
         /// <summary>
         /// The deserialization information for the current model

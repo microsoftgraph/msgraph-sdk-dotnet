@@ -12,9 +12,9 @@ namespace Microsoft.Graph.Models
     #pragma warning restore CS1591
     {
         /// <summary>The actions property</summary>
-        public ChatMessageActions? Actions
+        public Microsoft.Graph.Models.ChatMessageActions? Actions
         {
-            get { return BackingStore?.Get<ChatMessageActions?>("actions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ChatMessageActions?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -50,21 +50,21 @@ namespace Microsoft.Graph.Models
         /// <summary>The reaction in the modified message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ChatMessageReaction? Reaction
+        public Microsoft.Graph.Models.ChatMessageReaction? Reaction
         {
-            get { return BackingStore?.Get<ChatMessageReaction?>("reaction"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ChatMessageReaction?>("reaction"); }
             set { BackingStore?.Set("reaction", value); }
         }
 #nullable restore
 #else
-        public ChatMessageReaction Reaction
+        public Microsoft.Graph.Models.ChatMessageReaction Reaction
         {
-            get { return BackingStore?.Get<ChatMessageReaction>("reaction"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ChatMessageReaction>("reaction"); }
             set { BackingStore?.Set("reaction", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ChatMessageHistoryItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ChatMessageHistoryItem"/> and sets the default values.
         /// </summary>
         public ChatMessageHistoryItem()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ChatMessageHistoryItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ChatMessageHistoryItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ChatMessageHistoryItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ChatMessageHistoryItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ChatMessageHistoryItem();
+            return new Microsoft.Graph.Models.ChatMessageHistoryItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,10 +89,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions", n => { Actions = n.GetEnumValue<ChatMessageActions>(); } },
+                { "actions", n => { Actions = n.GetEnumValue<Microsoft.Graph.Models.ChatMessageActions>(); } },
                 { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "reaction", n => { Reaction = n.GetObjectValue<ChatMessageReaction>(ChatMessageReaction.CreateFromDiscriminatorValue); } },
+                { "reaction", n => { Reaction = n.GetObjectValue<Microsoft.Graph.Models.ChatMessageReaction>(Microsoft.Graph.Models.ChatMessageReaction.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -102,10 +102,10 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<ChatMessageActions>("actions", Actions);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ChatMessageActions>("actions", Actions);
             writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<ChatMessageReaction>("reaction", Reaction);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ChatMessageReaction>("reaction", Reaction);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

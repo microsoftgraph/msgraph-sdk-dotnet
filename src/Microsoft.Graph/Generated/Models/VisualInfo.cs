@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Optional. JSON object used to represent an icon which represents the application used to generate the activity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ImageInfo? Attribution
+        public Microsoft.Graph.Models.ImageInfo? Attribution
         {
-            get { return BackingStore?.Get<ImageInfo?>("attribution"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ImageInfo?>("attribution"); }
             set { BackingStore?.Set("attribution", value); }
         }
 #nullable restore
 #else
-        public ImageInfo Attribution
+        public Microsoft.Graph.Models.ImageInfo Attribution
         {
-            get { return BackingStore?.Get<ImageInfo>("attribution"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ImageInfo>("attribution"); }
             set { BackingStore?.Set("attribution", value); }
         }
 #endif
@@ -54,16 +54,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Content
+        public UntypedNode? Content
         {
-            get { return BackingStore?.Get<Json?>("content"); }
+            get { return BackingStore?.Get<UntypedNode?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public Json Content
+        public UntypedNode Content
         {
-            get { return BackingStore?.Get<Json>("content"); }
+            get { return BackingStore?.Get<UntypedNode>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #endif
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="VisualInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.VisualInfo"/> and sets the default values.
         /// </summary>
         public VisualInfo()
         {
@@ -126,12 +126,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VisualInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.VisualInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static VisualInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.VisualInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VisualInfo();
+            return new Microsoft.Graph.Models.VisualInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -141,9 +141,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attribution", n => { Attribution = n.GetObjectValue<ImageInfo>(ImageInfo.CreateFromDiscriminatorValue); } },
+                { "attribution", n => { Attribution = n.GetObjectValue<Microsoft.Graph.Models.ImageInfo>(Microsoft.Graph.Models.ImageInfo.CreateFromDiscriminatorValue); } },
                 { "backgroundColor", n => { BackgroundColor = n.GetStringValue(); } },
-                { "content", n => { Content = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayText", n => { DisplayText = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -156,9 +156,9 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ImageInfo>("attribution", Attribution);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ImageInfo>("attribution", Attribution);
             writer.WriteStringValue("backgroundColor", BackgroundColor);
-            writer.WriteObjectValue<Json>("content", Content);
+            writer.WriteObjectValue<UntypedNode>("content", Content);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayText", DisplayText);
             writer.WriteStringValue("@odata.type", OdataType);

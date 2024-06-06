@@ -28,16 +28,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The entity (user, application, team, or channel) that was @mentioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ChatMessageMentionedIdentitySet? Mentioned
+        public Microsoft.Graph.Models.ChatMessageMentionedIdentitySet? Mentioned
         {
-            get { return BackingStore?.Get<ChatMessageMentionedIdentitySet?>("mentioned"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ChatMessageMentionedIdentitySet?>("mentioned"); }
             set { BackingStore?.Set("mentioned", value); }
         }
 #nullable restore
 #else
-        public ChatMessageMentionedIdentitySet Mentioned
+        public Microsoft.Graph.Models.ChatMessageMentionedIdentitySet Mentioned
         {
-            get { return BackingStore?.Get<ChatMessageMentionedIdentitySet>("mentioned"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ChatMessageMentionedIdentitySet>("mentioned"); }
             set { BackingStore?.Set("mentioned", value); }
         }
 #endif
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ChatMessageMention"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ChatMessageMention"/> and sets the default values.
         /// </summary>
         public ChatMessageMention()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ChatMessageMention"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ChatMessageMention"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ChatMessageMention CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ChatMessageMention CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ChatMessageMention();
+            return new Microsoft.Graph.Models.ChatMessageMention();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Models
             {
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "mentionText", n => { MentionText = n.GetStringValue(); } },
-                { "mentioned", n => { Mentioned = n.GetObjectValue<ChatMessageMentionedIdentitySet>(ChatMessageMentionedIdentitySet.CreateFromDiscriminatorValue); } },
+                { "mentioned", n => { Mentioned = n.GetObjectValue<Microsoft.Graph.Models.ChatMessageMentionedIdentitySet>(Microsoft.Graph.Models.ChatMessageMentionedIdentitySet.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("id", Id);
-            writer.WriteObjectValue<ChatMessageMentionedIdentitySet>("mentioned", Mentioned);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ChatMessageMentionedIdentitySet>("mentioned", Mentioned);
             writer.WriteStringValue("mentionText", MentionText);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

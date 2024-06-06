@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AuditActor"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AuditActor"/> and sets the default values.
         /// </summary>
         public AuditActor()
         {
@@ -175,12 +175,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuditActor"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuditActor"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AuditActor CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.AuditActor CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuditActor();
+            return new Microsoft.Graph.Models.AuditActor();
         }
         /// <summary>
         /// The deserialization information for the current model

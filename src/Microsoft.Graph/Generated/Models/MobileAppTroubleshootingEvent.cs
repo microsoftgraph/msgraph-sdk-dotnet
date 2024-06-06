@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class MobileAppTroubleshootingEvent : Entity, IParsable
+    public class MobileAppTroubleshootingEvent : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates collection of App Log Upload Request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppLogCollectionRequest>? AppLogCollectionRequests
+        public List<Microsoft.Graph.Models.AppLogCollectionRequest>? AppLogCollectionRequests
         {
-            get { return BackingStore?.Get<List<AppLogCollectionRequest>?>("appLogCollectionRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AppLogCollectionRequest>?>("appLogCollectionRequests"); }
             set { BackingStore?.Set("appLogCollectionRequests", value); }
         }
 #nullable restore
 #else
-        public List<AppLogCollectionRequest> AppLogCollectionRequests
+        public List<Microsoft.Graph.Models.AppLogCollectionRequest> AppLogCollectionRequests
         {
-            get { return BackingStore?.Get<List<AppLogCollectionRequest>>("appLogCollectionRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AppLogCollectionRequest>>("appLogCollectionRequests"); }
             set { BackingStore?.Set("appLogCollectionRequests", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileAppTroubleshootingEvent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MobileAppTroubleshootingEvent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileAppTroubleshootingEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.MobileAppTroubleshootingEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MobileAppTroubleshootingEvent();
+            return new Microsoft.Graph.Models.MobileAppTroubleshootingEvent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "appLogCollectionRequests", n => { AppLogCollectionRequests = n.GetCollectionOfObjectValues<AppLogCollectionRequest>(AppLogCollectionRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appLogCollectionRequests", n => { AppLogCollectionRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AppLogCollectionRequest>(Microsoft.Graph.Models.AppLogCollectionRequest.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AppLogCollectionRequest>("appLogCollectionRequests", AppLogCollectionRequests);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AppLogCollectionRequest>("appLogCollectionRequests", AppLogCollectionRequests);
         }
     }
 }

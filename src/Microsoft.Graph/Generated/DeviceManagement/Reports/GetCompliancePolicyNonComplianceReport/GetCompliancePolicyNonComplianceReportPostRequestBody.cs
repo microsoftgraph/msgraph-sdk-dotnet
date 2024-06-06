@@ -144,7 +144,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetCompliancePolicyNonComplia
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetCompliancePolicyNonComplianceReportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.Reports.GetCompliancePolicyNonComplianceReport.GetCompliancePolicyNonComplianceReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetCompliancePolicyNonComplianceReportPostRequestBody()
         {
@@ -154,12 +154,12 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetCompliancePolicyNonComplia
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetCompliancePolicyNonComplianceReportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.Reports.GetCompliancePolicyNonComplianceReport.GetCompliancePolicyNonComplianceReportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetCompliancePolicyNonComplianceReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.DeviceManagement.Reports.GetCompliancePolicyNonComplianceReport.GetCompliancePolicyNonComplianceReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetCompliancePolicyNonComplianceReportPostRequestBody();
+            return new Microsoft.Graph.DeviceManagement.Reports.GetCompliancePolicyNonComplianceReport.GetCompliancePolicyNonComplianceReportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

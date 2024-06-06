@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Content type information of the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ContentTypeInfo? ContentType
+        public Microsoft.Graph.Models.ContentTypeInfo? ContentType
         {
-            get { return BackingStore?.Get<ContentTypeInfo?>("contentType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ContentTypeInfo?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
 #nullable restore
 #else
-        public ContentTypeInfo ContentType
+        public Microsoft.Graph.Models.ContentTypeInfo ContentType
         {
-            get { return BackingStore?.Get<ContentTypeInfo>("contentType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ContentTypeInfo>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DocumentSetContent"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.DocumentSetContent"/> and sets the default values.
         /// </summary>
         public DocumentSetContent()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DocumentSetContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DocumentSetContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DocumentSetContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.DocumentSetContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DocumentSetContent();
+            return new Microsoft.Graph.Models.DocumentSetContent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "contentType", n => { ContentType = n.GetObjectValue<ContentTypeInfo>(ContentTypeInfo.CreateFromDiscriminatorValue); } },
+                { "contentType", n => { ContentType = n.GetObjectValue<Microsoft.Graph.Models.ContentTypeInfo>(Microsoft.Graph.Models.ContentTypeInfo.CreateFromDiscriminatorValue); } },
                 { "fileName", n => { FileName = n.GetStringValue(); } },
                 { "folderName", n => { FolderName = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ContentTypeInfo>("contentType", ContentType);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ContentTypeInfo>("contentType", ContentType);
             writer.WriteStringValue("fileName", FileName);
             writer.WriteStringValue("folderName", FolderName);
             writer.WriteStringValue("@odata.type", OdataType);

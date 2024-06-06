@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AccessPackageAssignmentRequestCallbackData : CustomExtensionData, IParsable
+    public class AccessPackageAssignmentRequestCallbackData : Microsoft.Graph.Models.CustomExtensionData, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Details for the callback.</summary>
@@ -43,9 +43,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Indicates the stage at which the custom callout extension is executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.</summary>
-        public AccessPackageCustomExtensionStage? Stage
+        public Microsoft.Graph.Models.AccessPackageCustomExtensionStage? Stage
         {
-            get { return BackingStore?.Get<AccessPackageCustomExtensionStage?>("stage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AccessPackageCustomExtensionStage?>("stage"); }
             set { BackingStore?.Set("stage", value); }
         }
         /// <summary>Allow the extension to be able to deny or cancel the request submitted by the requestor. The supported values are Denied and Canceled. This property can only be set for an assignmentRequestCreated stage.</summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessPackageAssignmentRequestCallbackData"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.AccessPackageAssignmentRequestCallbackData"/> and sets the default values.
         /// </summary>
         public AccessPackageAssignmentRequestCallbackData() : base()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageAssignmentRequestCallbackData"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackageAssignmentRequestCallbackData"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessPackageAssignmentRequestCallbackData CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AccessPackageAssignmentRequestCallbackData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageAssignmentRequestCallbackData();
+            return new Microsoft.Graph.Models.AccessPackageAssignmentRequestCallbackData();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Models
             {
                 { "customExtensionStageInstanceDetail", n => { CustomExtensionStageInstanceDetail = n.GetStringValue(); } },
                 { "customExtensionStageInstanceId", n => { CustomExtensionStageInstanceId = n.GetStringValue(); } },
-                { "stage", n => { Stage = n.GetEnumValue<AccessPackageCustomExtensionStage>(); } },
+                { "stage", n => { Stage = n.GetEnumValue<Microsoft.Graph.Models.AccessPackageCustomExtensionStage>(); } },
                 { "state", n => { State = n.GetStringValue(); } },
             };
         }
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("customExtensionStageInstanceDetail", CustomExtensionStageInstanceDetail);
             writer.WriteStringValue("customExtensionStageInstanceId", CustomExtensionStageInstanceId);
-            writer.WriteEnumValue<AccessPackageCustomExtensionStage>("stage", Stage);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AccessPackageCustomExtensionStage>("stage", Stage);
             writer.WriteStringValue("state", State);
         }
     }

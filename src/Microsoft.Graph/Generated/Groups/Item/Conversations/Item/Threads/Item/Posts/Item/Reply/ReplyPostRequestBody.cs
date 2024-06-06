@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ReplyPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Reply.ReplyPostRequestBody"/> and sets the default values.
         /// </summary>
         public ReplyPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ReplyPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Reply.ReplyPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ReplyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Reply.ReplyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ReplyPostRequestBody();
+            return new Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Reply.ReplyPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCateg
     public class GradingCategoriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCategories.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCategories.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the gradingCategories property of the microsoft.graph.educationAssignmentSettings entity.</summary>
         /// <param name="position">The unique identifier of educationGradingCategory</param>
-        /// <returns>A <see cref="EducationGradingCategoryItemRequestBuilder"/></returns>
-        public EducationGradingCategoryItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCategories.Item.EducationGradingCategoryItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCategories.Item.EducationGradingCategoryItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("educationGradingCategory%2Did", position);
-                return new EducationGradingCategoryItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCategories.Item.EducationGradingCategoryItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GradingCategoriesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCategories.GradingCategoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCateg
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GradingCategoriesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCategories.GradingCategoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCateg
         /// <summary>
         /// When set, enables users to weight assignments differently when computing a class average grade.
         /// </summary>
-        /// <returns>A <see cref="EducationGradingCategoryCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationGradingCategoryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationGradingCategoryCollectionResponse?> GetAsync(Action<RequestConfiguration<GradingCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationGradingCategoryCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCategories.GradingCategoriesRequestBuilder.GradingCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationGradingCategoryCollectionResponse> GetAsync(Action<RequestConfiguration<GradingCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationGradingCategoryCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCategories.GradingCategoriesRequestBuilder.GradingCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationGradingCategoryCollectionResponse>(requestInfo, EducationGradingCategoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EducationGradingCategoryCollectionResponse>(requestInfo, Microsoft.Graph.Models.EducationGradingCategoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to gradingCategories for education
         /// </summary>
-        /// <returns>A <see cref="EducationGradingCategory"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationGradingCategory"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationGradingCategory?> PostAsync(EducationGradingCategory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationGradingCategory?> PostAsync(Microsoft.Graph.Models.EducationGradingCategory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationGradingCategory> PostAsync(EducationGradingCategory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationGradingCategory> PostAsync(Microsoft.Graph.Models.EducationGradingCategory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationGradingCategory>(requestInfo, EducationGradingCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EducationGradingCategory>(requestInfo, Microsoft.Graph.Models.EducationGradingCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// When set, enables users to weight assignments differently when computing a class average grade.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCateg
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GradingCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCategories.GradingCategoriesRequestBuilder.GradingCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GradingCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCategories.GradingCategoriesRequestBuilder.GradingCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCateg
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(EducationGradingCategory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.EducationGradingCategory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(EducationGradingCategory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.EducationGradingCategory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCateg
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GradingCategoriesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCategories.GradingCategoriesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GradingCategoriesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCategories.GradingCategoriesRequestBuilder WithUrl(string rawUrl)
         {
-            return new GradingCategoriesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCategories.GradingCategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// When set, enables users to weight assignments differently when computing a class average grade.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCateg
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GradingCategoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<GradingCategoriesRequestBuilderGetQueryParameters>
+        public class GradingCategoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCategories.GradingCategoriesRequestBuilder.GradingCategoriesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

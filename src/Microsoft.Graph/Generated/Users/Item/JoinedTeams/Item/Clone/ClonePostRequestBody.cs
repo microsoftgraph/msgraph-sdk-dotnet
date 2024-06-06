@@ -85,19 +85,19 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Clone
         }
 #endif
         /// <summary>The partsToClone property</summary>
-        public ClonableTeamParts? PartsToClone
+        public Microsoft.Graph.Models.ClonableTeamParts? PartsToClone
         {
-            get { return BackingStore?.Get<ClonableTeamParts?>("partsToClone"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ClonableTeamParts?>("partsToClone"); }
             set { BackingStore?.Set("partsToClone", value); }
         }
         /// <summary>The visibility property</summary>
-        public TeamVisibilityType? Visibility
+        public Microsoft.Graph.Models.TeamVisibilityType? Visibility
         {
-            get { return BackingStore?.Get<TeamVisibilityType?>("visibility"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamVisibilityType?>("visibility"); }
             set { BackingStore?.Set("visibility", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ClonePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.JoinedTeams.Item.Clone.ClonePostRequestBody"/> and sets the default values.
         /// </summary>
         public ClonePostRequestBody()
         {
@@ -107,12 +107,12 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Clone
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ClonePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.JoinedTeams.Item.Clone.ClonePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ClonePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Users.Item.JoinedTeams.Item.Clone.ClonePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ClonePostRequestBody();
+            return new Microsoft.Graph.Users.Item.JoinedTeams.Item.Clone.ClonePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,8 +126,8 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Clone
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "mailNickname", n => { MailNickname = n.GetStringValue(); } },
-                { "partsToClone", n => { PartsToClone = n.GetEnumValue<ClonableTeamParts>(); } },
-                { "visibility", n => { Visibility = n.GetEnumValue<TeamVisibilityType>(); } },
+                { "partsToClone", n => { PartsToClone = n.GetEnumValue<Microsoft.Graph.Models.ClonableTeamParts>(); } },
+                { "visibility", n => { Visibility = n.GetEnumValue<Microsoft.Graph.Models.TeamVisibilityType>(); } },
             };
         }
         /// <summary>
@@ -141,8 +141,8 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Clone
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("mailNickname", MailNickname);
-            writer.WriteEnumValue<ClonableTeamParts>("partsToClone", PartsToClone);
-            writer.WriteEnumValue<TeamVisibilityType>("visibility", Visibility);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ClonableTeamParts>("partsToClone", PartsToClone);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TeamVisibilityType>("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

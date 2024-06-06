@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Models
         /// <summary>A collection of search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SearchHitsContainer>? HitsContainers
+        public List<Microsoft.Graph.Models.SearchHitsContainer>? HitsContainers
         {
-            get { return BackingStore?.Get<List<SearchHitsContainer>?>("hitsContainers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SearchHitsContainer>?>("hitsContainers"); }
             set { BackingStore?.Set("hitsContainers", value); }
         }
 #nullable restore
 #else
-        public List<SearchHitsContainer> HitsContainers
+        public List<Microsoft.Graph.Models.SearchHitsContainer> HitsContainers
         {
-            get { return BackingStore?.Get<List<SearchHitsContainer>>("hitsContainers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SearchHitsContainer>>("hitsContainers"); }
             set { BackingStore?.Set("hitsContainers", value); }
         }
 #endif
@@ -54,32 +54,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Provides information related to spelling corrections in the alteration response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AlterationResponse? QueryAlterationResponse
+        public Microsoft.Graph.Models.AlterationResponse? QueryAlterationResponse
         {
-            get { return BackingStore?.Get<AlterationResponse?>("queryAlterationResponse"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AlterationResponse?>("queryAlterationResponse"); }
             set { BackingStore?.Set("queryAlterationResponse", value); }
         }
 #nullable restore
 #else
-        public AlterationResponse QueryAlterationResponse
+        public Microsoft.Graph.Models.AlterationResponse QueryAlterationResponse
         {
-            get { return BackingStore?.Get<AlterationResponse>("queryAlterationResponse"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AlterationResponse>("queryAlterationResponse"); }
             set { BackingStore?.Set("queryAlterationResponse", value); }
         }
 #endif
         /// <summary>A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ResultTemplateDictionary? ResultTemplates
+        public Microsoft.Graph.Models.ResultTemplateDictionary? ResultTemplates
         {
-            get { return BackingStore?.Get<ResultTemplateDictionary?>("resultTemplates"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ResultTemplateDictionary?>("resultTemplates"); }
             set { BackingStore?.Set("resultTemplates", value); }
         }
 #nullable restore
 #else
-        public ResultTemplateDictionary ResultTemplates
+        public Microsoft.Graph.Models.ResultTemplateDictionary ResultTemplates
         {
-            get { return BackingStore?.Get<ResultTemplateDictionary>("resultTemplates"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ResultTemplateDictionary>("resultTemplates"); }
             set { BackingStore?.Set("resultTemplates", value); }
         }
 #endif
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SearchResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SearchResponse"/> and sets the default values.
         /// </summary>
         public SearchResponse()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SearchResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SearchResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SearchResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SearchResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SearchResponse();
+            return new Microsoft.Graph.Models.SearchResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,10 +125,10 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "hitsContainers", n => { HitsContainers = n.GetCollectionOfObjectValues<SearchHitsContainer>(SearchHitsContainer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hitsContainers", n => { HitsContainers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SearchHitsContainer>(Microsoft.Graph.Models.SearchHitsContainer.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "queryAlterationResponse", n => { QueryAlterationResponse = n.GetObjectValue<AlterationResponse>(AlterationResponse.CreateFromDiscriminatorValue); } },
-                { "resultTemplates", n => { ResultTemplates = n.GetObjectValue<ResultTemplateDictionary>(ResultTemplateDictionary.CreateFromDiscriminatorValue); } },
+                { "queryAlterationResponse", n => { QueryAlterationResponse = n.GetObjectValue<Microsoft.Graph.Models.AlterationResponse>(Microsoft.Graph.Models.AlterationResponse.CreateFromDiscriminatorValue); } },
+                { "resultTemplates", n => { ResultTemplates = n.GetObjectValue<Microsoft.Graph.Models.ResultTemplateDictionary>(Microsoft.Graph.Models.ResultTemplateDictionary.CreateFromDiscriminatorValue); } },
                 { "searchTerms", n => { SearchTerms = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -139,10 +139,10 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<SearchHitsContainer>("hitsContainers", HitsContainers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SearchHitsContainer>("hitsContainers", HitsContainers);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<AlterationResponse>("queryAlterationResponse", QueryAlterationResponse);
-            writer.WriteObjectValue<ResultTemplateDictionary>("resultTemplates", ResultTemplates);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AlterationResponse>("queryAlterationResponse", QueryAlterationResponse);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ResultTemplateDictionary>("resultTemplates", ResultTemplates);
             writer.WriteCollectionOfPrimitiveValues<string>("searchTerms", SearchTerms);
             writer.WriteAdditionalData(AdditionalData);
         }

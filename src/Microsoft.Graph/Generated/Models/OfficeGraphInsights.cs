@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OfficeGraphInsights : Entity, IParsable
+    public class OfficeGraphInsights : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SharedInsight>? Shared
+        public List<Microsoft.Graph.Models.SharedInsight>? Shared
         {
-            get { return BackingStore?.Get<List<SharedInsight>?>("shared"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SharedInsight>?>("shared"); }
             set { BackingStore?.Set("shared", value); }
         }
 #nullable restore
 #else
-        public List<SharedInsight> Shared
+        public List<Microsoft.Graph.Models.SharedInsight> Shared
         {
-            get { return BackingStore?.Get<List<SharedInsight>>("shared"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SharedInsight>>("shared"); }
             set { BackingStore?.Set("shared", value); }
         }
 #endif
@@ -45,28 +45,28 @@ namespace Microsoft.Graph.Models
         /// <summary>Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UsedInsight>? Used
+        public List<Microsoft.Graph.Models.UsedInsight>? Used
         {
-            get { return BackingStore?.Get<List<UsedInsight>?>("used"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UsedInsight>?>("used"); }
             set { BackingStore?.Set("used", value); }
         }
 #nullable restore
 #else
-        public List<UsedInsight> Used
+        public List<Microsoft.Graph.Models.UsedInsight> Used
         {
-            get { return BackingStore?.Get<List<UsedInsight>>("used"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.UsedInsight>>("used"); }
             set { BackingStore?.Set("used", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OfficeGraphInsights"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OfficeGraphInsights"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OfficeGraphInsights CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OfficeGraphInsights CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OfficeGraphInsights();
+            return new Microsoft.Graph.Models.OfficeGraphInsights();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,9 +76,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "shared", n => { Shared = n.GetCollectionOfObjectValues<SharedInsight>(SharedInsight.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "shared", n => { Shared = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SharedInsight>(Microsoft.Graph.Models.SharedInsight.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "trending", n => { Trending = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Trending>(Microsoft.Graph.Models.Trending.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "used", n => { Used = n.GetCollectionOfObjectValues<UsedInsight>(UsedInsight.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "used", n => { Used = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.UsedInsight>(Microsoft.Graph.Models.UsedInsight.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<SharedInsight>("shared", Shared);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SharedInsight>("shared", Shared);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Trending>("trending", Trending);
-            writer.WriteCollectionOfObjectValues<UsedInsight>("used", Used);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.UsedInsight>("used", Used);
         }
     }
 }

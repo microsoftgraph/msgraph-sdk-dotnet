@@ -8,18 +8,18 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.CheckMemberObject
 {
     [Obsolete("This class is obsolete. Use CheckMemberObjectsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class CheckMemberObjectsResponse : CheckMemberObjectsPostResponse, IParsable
+    public class CheckMemberObjectsResponse : Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.CheckMemberObjects.CheckMemberObjectsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CheckMemberObjectsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.CheckMemberObjects.CheckMemberObjectsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CheckMemberObjectsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.CheckMemberObjects.CheckMemberObjectsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CheckMemberObjectsResponse();
+            return new Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.CheckMemberObjects.CheckMemberObjectsResponse();
         }
     }
 }

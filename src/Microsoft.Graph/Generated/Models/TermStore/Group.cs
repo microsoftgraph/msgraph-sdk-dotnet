@@ -65,36 +65,36 @@ namespace Microsoft.Graph.Models.TermStore
         }
 #endif
         /// <summary>Returns the type of the group. Possible values are: global, system, and siteCollection.</summary>
-        public TermGroupScope? Scope
+        public Microsoft.Graph.Models.TermStore.TermGroupScope? Scope
         {
-            get { return BackingStore?.Get<TermGroupScope?>("scope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TermStore.TermGroupScope?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
         /// <summary>All sets under the group in a term [store].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Set>? Sets
+        public List<Microsoft.Graph.Models.TermStore.Set>? Sets
         {
-            get { return BackingStore?.Get<List<Set>?>("sets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.Set>?>("sets"); }
             set { BackingStore?.Set("sets", value); }
         }
 #nullable restore
 #else
-        public List<Set> Sets
+        public List<Microsoft.Graph.Models.TermStore.Set> Sets
         {
-            get { return BackingStore?.Get<List<Set>>("sets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.TermStore.Set>>("sets"); }
             set { BackingStore?.Set("sets", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Group"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TermStore.Group"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Group CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.TermStore.Group CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Group();
+            return new Microsoft.Graph.Models.TermStore.Group();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,8 +108,8 @@ namespace Microsoft.Graph.Models.TermStore
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "parentSiteId", n => { ParentSiteId = n.GetStringValue(); } },
-                { "scope", n => { Scope = n.GetEnumValue<TermGroupScope>(); } },
-                { "sets", n => { Sets = n.GetCollectionOfObjectValues<Set>(Set.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scope", n => { Scope = n.GetEnumValue<Microsoft.Graph.Models.TermStore.TermGroupScope>(); } },
+                { "sets", n => { Sets = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.Set>(Microsoft.Graph.Models.TermStore.Set.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -124,8 +124,8 @@ namespace Microsoft.Graph.Models.TermStore
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("parentSiteId", ParentSiteId);
-            writer.WriteEnumValue<TermGroupScope>("scope", Scope);
-            writer.WriteCollectionOfObjectValues<Set>("sets", Sets);
+            writer.WriteEnumValue<Microsoft.Graph.Models.TermStore.TermGroupScope>("scope", Scope);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.TermStore.Set>("sets", Sets);
         }
     }
 }

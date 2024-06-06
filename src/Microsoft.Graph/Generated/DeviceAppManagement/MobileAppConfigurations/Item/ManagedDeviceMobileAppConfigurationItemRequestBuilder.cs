@@ -23,37 +23,37 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item
     public class ManagedDeviceMobileAppConfigurationItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the assign method.</summary>
-        public AssignRequestBuilder Assign
+        public Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.Assign.AssignRequestBuilder Assign
         {
-            get => new AssignRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.Assign.AssignRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.</summary>
-        public AssignmentsRequestBuilder Assignments
+        public Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.Assignments.AssignmentsRequestBuilder Assignments
         {
-            get => new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceStatuses property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.</summary>
-        public DeviceStatusesRequestBuilder DeviceStatuses
+        public Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.DeviceStatuses.DeviceStatusesRequestBuilder DeviceStatuses
         {
-            get => new DeviceStatusesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.DeviceStatuses.DeviceStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceStatusSummary property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.</summary>
-        public DeviceStatusSummaryRequestBuilder DeviceStatusSummary
+        public Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.DeviceStatusSummary.DeviceStatusSummaryRequestBuilder DeviceStatusSummary
         {
-            get => new DeviceStatusSummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.DeviceStatusSummary.DeviceStatusSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userStatuses property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.</summary>
-        public UserStatusesRequestBuilder UserStatuses
+        public Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserStatuses.UserStatusesRequestBuilder UserStatuses
         {
-            get => new UserStatusesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserStatuses.UserStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userStatusSummary property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.</summary>
-        public UserStatusSummaryRequestBuilder UserStatusSummary
+        public Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserStatusSummary.UserStatusSummaryRequestBuilder UserStatusSummary
         {
-            get => new UserStatusSummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserStatusSummary.UserStatusSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagedDeviceMobileAppConfigurationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.ManagedDeviceMobileAppConfigurationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagedDeviceMobileAppConfigurationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.ManagedDeviceMobileAppConfigurationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -87,59 +87,59 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceMobileAppConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfiguration-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the iosMobileAppConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ManagedDeviceMobileAppConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedDeviceMobileAppConfiguration?> GetAsync(Action<RequestConfiguration<ManagedDeviceMobileAppConfigurationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.ManagedDeviceMobileAppConfigurationItemRequestBuilder.ManagedDeviceMobileAppConfigurationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedDeviceMobileAppConfiguration> GetAsync(Action<RequestConfiguration<ManagedDeviceMobileAppConfigurationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.ManagedDeviceMobileAppConfigurationItemRequestBuilder.ManagedDeviceMobileAppConfigurationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfiguration>(requestInfo, ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration>(requestInfo, Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of a iosMobileAppConfiguration object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="ManagedDeviceMobileAppConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedDeviceMobileAppConfiguration?> PatchAsync(ManagedDeviceMobileAppConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration?> PatchAsync(Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedDeviceMobileAppConfiguration> PatchAsync(ManagedDeviceMobileAppConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration> PatchAsync(Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfiguration>(requestInfo, ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration>(requestInfo, Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a iosMobileAppConfiguration.
@@ -161,17 +161,17 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceMobileAppConfiguration object.
+        /// Read properties and relationships of the iosMobileAppConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedDeviceMobileAppConfigurationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.ManagedDeviceMobileAppConfigurationItemRequestBuilder.ManagedDeviceMobileAppConfigurationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedDeviceMobileAppConfigurationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.ManagedDeviceMobileAppConfigurationItemRequestBuilder.ManagedDeviceMobileAppConfigurationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -187,11 +187,11 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(ManagedDeviceMobileAppConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(ManagedDeviceMobileAppConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -204,11 +204,11 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ManagedDeviceMobileAppConfigurationItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.ManagedDeviceMobileAppConfigurationItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ManagedDeviceMobileAppConfigurationItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.ManagedDeviceMobileAppConfigurationItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new ManagedDeviceMobileAppConfigurationItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.ManagedDeviceMobileAppConfigurationItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item
         {
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceMobileAppConfiguration object.
+        /// Read properties and relationships of the iosMobileAppConfiguration object.
         /// </summary>
         public class ManagedDeviceMobileAppConfigurationItemRequestBuilderGetQueryParameters 
         {
@@ -247,7 +247,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedDeviceMobileAppConfigurationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ManagedDeviceMobileAppConfigurationItemRequestBuilderGetQueryParameters>
+        public class ManagedDeviceMobileAppConfigurationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.ManagedDeviceMobileAppConfigurationItemRequestBuilder.ManagedDeviceMobileAppConfigurationItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

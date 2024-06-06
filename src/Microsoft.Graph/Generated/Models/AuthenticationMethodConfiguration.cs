@@ -7,51 +7,51 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AuthenticationMethodConfiguration : Entity, IParsable
+    public class AuthenticationMethodConfiguration : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Groups of users that are excluded from a policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExcludeTarget>? ExcludeTargets
+        public List<Microsoft.Graph.Models.ExcludeTarget>? ExcludeTargets
         {
-            get { return BackingStore?.Get<List<ExcludeTarget>?>("excludeTargets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExcludeTarget>?>("excludeTargets"); }
             set { BackingStore?.Set("excludeTargets", value); }
         }
 #nullable restore
 #else
-        public List<ExcludeTarget> ExcludeTargets
+        public List<Microsoft.Graph.Models.ExcludeTarget> ExcludeTargets
         {
-            get { return BackingStore?.Get<List<ExcludeTarget>>("excludeTargets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExcludeTarget>>("excludeTargets"); }
             set { BackingStore?.Set("excludeTargets", value); }
         }
 #endif
         /// <summary>The state of the policy. Possible values are: enabled, disabled.</summary>
-        public AuthenticationMethodState? State
+        public Microsoft.Graph.Models.AuthenticationMethodState? State
         {
-            get { return BackingStore?.Get<AuthenticationMethodState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationMethodState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationMethodConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationMethodConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthenticationMethodConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AuthenticationMethodConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.emailAuthenticationMethodConfiguration" => new EmailAuthenticationMethodConfiguration(),
-                "#microsoft.graph.fido2AuthenticationMethodConfiguration" => new Fido2AuthenticationMethodConfiguration(),
-                "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration" => new MicrosoftAuthenticatorAuthenticationMethodConfiguration(),
-                "#microsoft.graph.smsAuthenticationMethodConfiguration" => new SmsAuthenticationMethodConfiguration(),
-                "#microsoft.graph.softwareOathAuthenticationMethodConfiguration" => new SoftwareOathAuthenticationMethodConfiguration(),
-                "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration" => new TemporaryAccessPassAuthenticationMethodConfiguration(),
-                "#microsoft.graph.voiceAuthenticationMethodConfiguration" => new VoiceAuthenticationMethodConfiguration(),
-                "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration" => new X509CertificateAuthenticationMethodConfiguration(),
-                _ => new AuthenticationMethodConfiguration(),
+                "#microsoft.graph.emailAuthenticationMethodConfiguration" => new Microsoft.Graph.Models.EmailAuthenticationMethodConfiguration(),
+                "#microsoft.graph.fido2AuthenticationMethodConfiguration" => new Microsoft.Graph.Models.Fido2AuthenticationMethodConfiguration(),
+                "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration" => new Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethodConfiguration(),
+                "#microsoft.graph.smsAuthenticationMethodConfiguration" => new Microsoft.Graph.Models.SmsAuthenticationMethodConfiguration(),
+                "#microsoft.graph.softwareOathAuthenticationMethodConfiguration" => new Microsoft.Graph.Models.SoftwareOathAuthenticationMethodConfiguration(),
+                "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration" => new Microsoft.Graph.Models.TemporaryAccessPassAuthenticationMethodConfiguration(),
+                "#microsoft.graph.voiceAuthenticationMethodConfiguration" => new Microsoft.Graph.Models.VoiceAuthenticationMethodConfiguration(),
+                "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration" => new Microsoft.Graph.Models.X509CertificateAuthenticationMethodConfiguration(),
+                _ => new Microsoft.Graph.Models.AuthenticationMethodConfiguration(),
             };
         }
         /// <summary>
@@ -62,8 +62,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "excludeTargets", n => { ExcludeTargets = n.GetCollectionOfObjectValues<ExcludeTarget>(ExcludeTarget.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "state", n => { State = n.GetEnumValue<AuthenticationMethodState>(); } },
+                { "excludeTargets", n => { ExcludeTargets = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ExcludeTarget>(Microsoft.Graph.Models.ExcludeTarget.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Models.AuthenticationMethodState>(); } },
             };
         }
         /// <summary>
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ExcludeTarget>("excludeTargets", ExcludeTargets);
-            writer.WriteEnumValue<AuthenticationMethodState>("state", State);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ExcludeTarget>("excludeTargets", ExcludeTargets);
+            writer.WriteEnumValue<Microsoft.Graph.Models.AuthenticationMethodState>("state", State);
         }
     }
 }

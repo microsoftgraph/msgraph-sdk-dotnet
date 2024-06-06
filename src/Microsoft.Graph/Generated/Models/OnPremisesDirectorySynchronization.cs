@@ -7,50 +7,50 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OnPremisesDirectorySynchronization : Entity, IParsable
+    public class OnPremisesDirectorySynchronization : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnPremisesDirectorySynchronizationConfiguration? Configuration
+        public Microsoft.Graph.Models.OnPremisesDirectorySynchronizationConfiguration? Configuration
         {
-            get { return BackingStore?.Get<OnPremisesDirectorySynchronizationConfiguration?>("configuration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnPremisesDirectorySynchronizationConfiguration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #nullable restore
 #else
-        public OnPremisesDirectorySynchronizationConfiguration Configuration
+        public Microsoft.Graph.Models.OnPremisesDirectorySynchronizationConfiguration Configuration
         {
-            get { return BackingStore?.Get<OnPremisesDirectorySynchronizationConfiguration>("configuration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnPremisesDirectorySynchronizationConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #endif
         /// <summary>The features property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnPremisesDirectorySynchronizationFeature? Features
+        public Microsoft.Graph.Models.OnPremisesDirectorySynchronizationFeature? Features
         {
-            get { return BackingStore?.Get<OnPremisesDirectorySynchronizationFeature?>("features"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnPremisesDirectorySynchronizationFeature?>("features"); }
             set { BackingStore?.Set("features", value); }
         }
 #nullable restore
 #else
-        public OnPremisesDirectorySynchronizationFeature Features
+        public Microsoft.Graph.Models.OnPremisesDirectorySynchronizationFeature Features
         {
-            get { return BackingStore?.Get<OnPremisesDirectorySynchronizationFeature>("features"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnPremisesDirectorySynchronizationFeature>("features"); }
             set { BackingStore?.Set("features", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnPremisesDirectorySynchronization"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnPremisesDirectorySynchronization"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnPremisesDirectorySynchronization CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OnPremisesDirectorySynchronization CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnPremisesDirectorySynchronization();
+            return new Microsoft.Graph.Models.OnPremisesDirectorySynchronization();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<OnPremisesDirectorySynchronizationConfiguration>(OnPremisesDirectorySynchronizationConfiguration.CreateFromDiscriminatorValue); } },
-                { "features", n => { Features = n.GetObjectValue<OnPremisesDirectorySynchronizationFeature>(OnPremisesDirectorySynchronizationFeature.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<Microsoft.Graph.Models.OnPremisesDirectorySynchronizationConfiguration>(Microsoft.Graph.Models.OnPremisesDirectorySynchronizationConfiguration.CreateFromDiscriminatorValue); } },
+                { "features", n => { Features = n.GetObjectValue<Microsoft.Graph.Models.OnPremisesDirectorySynchronizationFeature>(Microsoft.Graph.Models.OnPremisesDirectorySynchronizationFeature.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<OnPremisesDirectorySynchronizationConfiguration>("configuration", Configuration);
-            writer.WriteObjectValue<OnPremisesDirectorySynchronizationFeature>("features", Features);
+            writer.WriteObjectValue<Microsoft.Graph.Models.OnPremisesDirectorySynchronizationConfiguration>("configuration", Configuration);
+            writer.WriteObjectValue<Microsoft.Graph.Models.OnPremisesDirectorySynchronizationFeature>("features", Features);
         }
     }
 }

@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Education.Users.Delta
 {
     #pragma warning disable CS1591
-    public class DeltaGetResponse : BaseDeltaFunctionResponse, IParsable
+    public class DeltaGetResponse : Microsoft.Graph.Models.BaseDeltaFunctionResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationUser>? Value
+        public List<Microsoft.Graph.Models.EducationUser>? Value
         {
-            get { return BackingStore?.Get<List<EducationUser>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationUser>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<EducationUser> Value
+        public List<Microsoft.Graph.Models.EducationUser> Value
         {
-            get { return BackingStore?.Get<List<EducationUser>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.EducationUser>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeltaGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Education.Users.Delta.DeltaGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeltaGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Education.Users.Delta.DeltaGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeltaGetResponse();
+            return new Microsoft.Graph.Education.Users.Delta.DeltaGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Education.Users.Delta
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<EducationUser>(EducationUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.EducationUser>(Microsoft.Graph.Models.EducationUser.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Education.Users.Delta
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<EducationUser>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.EducationUser>("value", Value);
         }
     }
 }

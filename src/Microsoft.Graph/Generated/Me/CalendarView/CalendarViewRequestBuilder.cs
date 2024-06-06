@@ -20,29 +20,29 @@ namespace Microsoft.Graph.Me.CalendarView
     public class CalendarViewRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Me.CalendarView.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.CalendarView.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public DeltaRequestBuilder Delta
+        public Microsoft.Graph.Me.CalendarView.Delta.DeltaRequestBuilder Delta
         {
-            get => new DeltaRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.CalendarView.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendarView property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of event</param>
-        /// <returns>A <see cref="EventItemRequestBuilder"/></returns>
-        public EventItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Me.CalendarView.Item.EventItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Me.CalendarView.Item.EventItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("event%2Did", position);
-                return new EventItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Me.CalendarView.Item.EventItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CalendarViewRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.CalendarView.CalendarViewRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Me.CalendarView
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CalendarViewRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.CalendarView.CalendarViewRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,25 +61,25 @@ namespace Microsoft.Graph.Me.CalendarView
         /// Get the occurrences, exceptions, and single instances of events in a calendar view defined by a time range, from the user&apos;s default calendar,or from some other calendar of the user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-calendarview?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="EventCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EventCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EventCollectionResponse?> GetAsync(Action<RequestConfiguration<CalendarViewRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EventCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.CalendarView.CalendarViewRequestBuilder.CalendarViewRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EventCollectionResponse> GetAsync(Action<RequestConfiguration<CalendarViewRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EventCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.CalendarView.CalendarViewRequestBuilder.CalendarViewRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EventCollectionResponse>(requestInfo, EventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EventCollectionResponse>(requestInfo, Microsoft.Graph.Models.EventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the occurrences, exceptions, and single instances of events in a calendar view defined by a time range, from the user&apos;s default calendar,or from some other calendar of the user.
@@ -88,11 +88,11 @@ namespace Microsoft.Graph.Me.CalendarView
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CalendarViewRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.CalendarView.CalendarViewRequestBuilder.CalendarViewRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CalendarViewRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.CalendarView.CalendarViewRequestBuilder.CalendarViewRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -103,11 +103,11 @@ namespace Microsoft.Graph.Me.CalendarView
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CalendarViewRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.CalendarView.CalendarViewRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CalendarViewRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Me.CalendarView.CalendarViewRequestBuilder WithUrl(string rawUrl)
         {
-            return new CalendarViewRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Me.CalendarView.CalendarViewRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the occurrences, exceptions, and single instances of events in a calendar view defined by a time range, from the user&apos;s default calendar,or from some other calendar of the user.
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Me.CalendarView
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CalendarViewRequestBuilderGetRequestConfiguration : RequestConfiguration<CalendarViewRequestBuilderGetQueryParameters>
+        public class CalendarViewRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.CalendarView.CalendarViewRequestBuilder.CalendarViewRequestBuilderGetQueryParameters>
         {
         }
     }

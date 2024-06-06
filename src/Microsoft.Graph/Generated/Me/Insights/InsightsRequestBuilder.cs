@@ -20,22 +20,22 @@ namespace Microsoft.Graph.Me.Insights
     public class InsightsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the shared property of the microsoft.graph.officeGraphInsights entity.</summary>
-        public SharedRequestBuilder Shared
+        public Microsoft.Graph.Me.Insights.Shared.SharedRequestBuilder Shared
         {
-            get => new SharedRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Insights.Shared.SharedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.</summary>
-        public TrendingRequestBuilder Trending
+        public Microsoft.Graph.Me.Insights.Trending.TrendingRequestBuilder Trending
         {
-            get => new TrendingRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Insights.Trending.TrendingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the used property of the microsoft.graph.officeGraphInsights entity.</summary>
-        public UsedRequestBuilder Used
+        public Microsoft.Graph.Me.Insights.Used.UsedRequestBuilder Used
         {
-            get => new UsedRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Insights.Used.UsedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="InsightsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Insights.InsightsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Me.Insights
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="InsightsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Insights.InsightsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Me.Insights
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -68,57 +68,57 @@ namespace Microsoft.Graph.Me.Insights
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get insights from me
         /// </summary>
-        /// <returns>A <see cref="OfficeGraphInsights"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OfficeGraphInsights"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OfficeGraphInsights?> GetAsync(Action<RequestConfiguration<InsightsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OfficeGraphInsights?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<OfficeGraphInsights> GetAsync(Action<RequestConfiguration<InsightsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OfficeGraphInsights> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<OfficeGraphInsights>(requestInfo, OfficeGraphInsights.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.OfficeGraphInsights>(requestInfo, Microsoft.Graph.Models.OfficeGraphInsights.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property insights in me
         /// </summary>
-        /// <returns>A <see cref="OfficeGraphInsights"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OfficeGraphInsights"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OfficeGraphInsights?> PatchAsync(OfficeGraphInsights body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OfficeGraphInsights?> PatchAsync(Microsoft.Graph.Models.OfficeGraphInsights body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<OfficeGraphInsights> PatchAsync(OfficeGraphInsights body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.OfficeGraphInsights> PatchAsync(Microsoft.Graph.Models.OfficeGraphInsights body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<OfficeGraphInsights>(requestInfo, OfficeGraphInsights.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.OfficeGraphInsights>(requestInfo, Microsoft.Graph.Models.OfficeGraphInsights.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property insights for me
@@ -146,11 +146,11 @@ namespace Microsoft.Graph.Me.Insights
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InsightsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InsightsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -166,11 +166,11 @@ namespace Microsoft.Graph.Me.Insights
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(OfficeGraphInsights body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.OfficeGraphInsights body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(OfficeGraphInsights body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.OfficeGraphInsights body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -183,11 +183,11 @@ namespace Microsoft.Graph.Me.Insights
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="InsightsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Insights.InsightsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public InsightsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Me.Insights.InsightsRequestBuilder WithUrl(string rawUrl)
         {
-            return new InsightsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Me.Insights.InsightsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Me.Insights
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InsightsRequestBuilderGetRequestConfiguration : RequestConfiguration<InsightsRequestBuilderGetQueryParameters>
+        public class InsightsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

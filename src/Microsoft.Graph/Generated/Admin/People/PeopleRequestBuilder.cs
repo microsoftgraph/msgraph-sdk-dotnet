@@ -19,17 +19,17 @@ namespace Microsoft.Graph.Admin.People
     public class PeopleRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the profileCardProperties property of the microsoft.graph.peopleAdminSettings entity.</summary>
-        public ProfileCardPropertiesRequestBuilder ProfileCardProperties
+        public Microsoft.Graph.Admin.People.ProfileCardProperties.ProfileCardPropertiesRequestBuilder ProfileCardProperties
         {
-            get => new ProfileCardPropertiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Admin.People.ProfileCardProperties.ProfileCardPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pronouns property of the microsoft.graph.peopleAdminSettings entity.</summary>
-        public PronounsRequestBuilder Pronouns
+        public Microsoft.Graph.Admin.People.Pronouns.PronounsRequestBuilder Pronouns
         {
-            get => new PronounsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Admin.People.Pronouns.PronounsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="PeopleRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Admin.People.PeopleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Admin.People
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PeopleRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Admin.People.PeopleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -48,25 +48,25 @@ namespace Microsoft.Graph.Admin.People
         /// Retrieve the properties and relationships of a peopleAdminSettings object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/peopleadminsettings-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="PeopleAdminSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.PeopleAdminSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PeopleAdminSettings?> GetAsync(Action<RequestConfiguration<PeopleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PeopleAdminSettings?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Admin.People.PeopleRequestBuilder.PeopleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PeopleAdminSettings> GetAsync(Action<RequestConfiguration<PeopleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.PeopleAdminSettings> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Admin.People.PeopleRequestBuilder.PeopleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PeopleAdminSettings>(requestInfo, PeopleAdminSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PeopleAdminSettings>(requestInfo, Microsoft.Graph.Models.PeopleAdminSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the properties and relationships of a peopleAdminSettings object.
@@ -75,11 +75,11 @@ namespace Microsoft.Graph.Admin.People
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PeopleRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Admin.People.PeopleRequestBuilder.PeopleRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PeopleRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Admin.People.PeopleRequestBuilder.PeopleRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -90,11 +90,11 @@ namespace Microsoft.Graph.Admin.People
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PeopleRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Admin.People.PeopleRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PeopleRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Admin.People.PeopleRequestBuilder WithUrl(string rawUrl)
         {
-            return new PeopleRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Admin.People.PeopleRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve the properties and relationships of a peopleAdminSettings object.
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Admin.People
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PeopleRequestBuilderGetRequestConfiguration : RequestConfiguration<PeopleRequestBuilderGetQueryParameters>
+        public class PeopleRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Admin.People.PeopleRequestBuilder.PeopleRequestBuilderGetQueryParameters>
         {
         }
     }

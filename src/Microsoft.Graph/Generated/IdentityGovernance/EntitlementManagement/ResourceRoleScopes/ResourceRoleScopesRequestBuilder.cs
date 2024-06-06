@@ -19,24 +19,24 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleS
     public class ResourceRoleScopesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resourceRoleScopes property of the microsoft.graph.entitlementManagement entity.</summary>
         /// <param name="position">The unique identifier of accessPackageResourceRoleScope</param>
-        /// <returns>A <see cref="AccessPackageResourceRoleScopeItemRequestBuilder"/></returns>
-        public AccessPackageResourceRoleScopeItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes.Item.AccessPackageResourceRoleScopeItemRequestBuilder"/></returns>
+        public Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes.Item.AccessPackageResourceRoleScopeItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("accessPackageResourceRoleScope%2Did", position);
-                return new AccessPackageResourceRoleScopeItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes.Item.AccessPackageResourceRoleScopeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ResourceRoleScopesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes.ResourceRoleScopesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleS
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ResourceRoleScopesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes.ResourceRoleScopesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleS
         /// <summary>
         /// Get resourceRoleScopes from identityGovernance
         /// </summary>
-        /// <returns>A <see cref="AccessPackageResourceRoleScopeCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackageResourceRoleScopeCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AccessPackageResourceRoleScopeCollectionResponse?> GetAsync(Action<RequestConfiguration<ResourceRoleScopesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AccessPackageResourceRoleScopeCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes.ResourceRoleScopesRequestBuilder.ResourceRoleScopesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AccessPackageResourceRoleScopeCollectionResponse> GetAsync(Action<RequestConfiguration<ResourceRoleScopesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AccessPackageResourceRoleScopeCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes.ResourceRoleScopesRequestBuilder.ResourceRoleScopesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AccessPackageResourceRoleScopeCollectionResponse>(requestInfo, AccessPackageResourceRoleScopeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AccessPackageResourceRoleScopeCollectionResponse>(requestInfo, Microsoft.Graph.Models.AccessPackageResourceRoleScopeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to resourceRoleScopes for identityGovernance
         /// </summary>
-        /// <returns>A <see cref="AccessPackageResourceRoleScope"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackageResourceRoleScope"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AccessPackageResourceRoleScope?> PostAsync(AccessPackageResourceRoleScope body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AccessPackageResourceRoleScope?> PostAsync(Microsoft.Graph.Models.AccessPackageResourceRoleScope body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AccessPackageResourceRoleScope> PostAsync(AccessPackageResourceRoleScope body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.AccessPackageResourceRoleScope> PostAsync(Microsoft.Graph.Models.AccessPackageResourceRoleScope body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AccessPackageResourceRoleScope>(requestInfo, AccessPackageResourceRoleScope.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AccessPackageResourceRoleScope>(requestInfo, Microsoft.Graph.Models.AccessPackageResourceRoleScope.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get resourceRoleScopes from identityGovernance
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleS
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourceRoleScopesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes.ResourceRoleScopesRequestBuilder.ResourceRoleScopesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourceRoleScopesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes.ResourceRoleScopesRequestBuilder.ResourceRoleScopesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleS
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(AccessPackageResourceRoleScope body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.AccessPackageResourceRoleScope body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(AccessPackageResourceRoleScope body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.AccessPackageResourceRoleScope body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleS
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ResourceRoleScopesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes.ResourceRoleScopesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ResourceRoleScopesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes.ResourceRoleScopesRequestBuilder WithUrl(string rawUrl)
         {
-            return new ResourceRoleScopesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes.ResourceRoleScopesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get resourceRoleScopes from identityGovernance
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleS
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ResourceRoleScopesRequestBuilderGetRequestConfiguration : RequestConfiguration<ResourceRoleScopesRequestBuilderGetQueryParameters>
+        public class ResourceRoleScopesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes.ResourceRoleScopesRequestBuilder.ResourceRoleScopesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

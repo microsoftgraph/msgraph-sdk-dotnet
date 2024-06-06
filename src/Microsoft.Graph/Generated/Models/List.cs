@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class List : BaseItem, IParsable
+    public class List : Microsoft.Graph.Models.BaseItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The collection of field definitions for this list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ColumnDefinition>? Columns
+        public List<Microsoft.Graph.Models.ColumnDefinition>? Columns
         {
-            get { return BackingStore?.Get<List<ColumnDefinition>?>("columns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ColumnDefinition>?>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
 #nullable restore
 #else
-        public List<ColumnDefinition> Columns
+        public List<Microsoft.Graph.Models.ColumnDefinition> Columns
         {
-            get { return BackingStore?.Get<List<ColumnDefinition>>("columns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ColumnDefinition>>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
 #endif
         /// <summary>The collection of content types present in this list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ContentType>? ContentTypes
+        public List<Microsoft.Graph.Models.ContentType>? ContentTypes
         {
-            get { return BackingStore?.Get<List<ContentType>?>("contentTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ContentType>?>("contentTypes"); }
             set { BackingStore?.Set("contentTypes", value); }
         }
 #nullable restore
 #else
-        public List<ContentType> ContentTypes
+        public List<Microsoft.Graph.Models.ContentType> ContentTypes
         {
-            get { return BackingStore?.Get<List<ContentType>>("contentTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ContentType>>("contentTypes"); }
             set { BackingStore?.Set("contentTypes", value); }
         }
 #endif
@@ -77,48 +77,48 @@ namespace Microsoft.Graph.Models
         /// <summary>All items contained in the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ListItem>? Items
+        public List<Microsoft.Graph.Models.ListItem>? Items
         {
-            get { return BackingStore?.Get<List<ListItem>?>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ListItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<ListItem> Items
+        public List<Microsoft.Graph.Models.ListItem> Items
         {
-            get { return BackingStore?.Get<List<ListItem>>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ListItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #endif
         /// <summary>Contains more details about the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ListInfo? ListProp
+        public Microsoft.Graph.Models.ListInfo? ListProp
         {
-            get { return BackingStore?.Get<ListInfo?>("list"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ListInfo?>("list"); }
             set { BackingStore?.Set("list", value); }
         }
 #nullable restore
 #else
-        public ListInfo ListProp
+        public Microsoft.Graph.Models.ListInfo ListProp
         {
-            get { return BackingStore?.Get<ListInfo>("list"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ListInfo>("list"); }
             set { BackingStore?.Set("list", value); }
         }
 #endif
         /// <summary>The collection of long-running operations on the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RichLongRunningOperation>? Operations
+        public List<Microsoft.Graph.Models.RichLongRunningOperation>? Operations
         {
-            get { return BackingStore?.Get<List<RichLongRunningOperation>?>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.RichLongRunningOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<RichLongRunningOperation> Operations
+        public List<Microsoft.Graph.Models.RichLongRunningOperation> Operations
         {
-            get { return BackingStore?.Get<List<RichLongRunningOperation>>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.RichLongRunningOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #endif
@@ -141,37 +141,37 @@ namespace Microsoft.Graph.Models
         /// <summary>The set of subscriptions on the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Subscription>? Subscriptions
+        public List<Microsoft.Graph.Models.Subscription>? Subscriptions
         {
-            get { return BackingStore?.Get<List<Subscription>?>("subscriptions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Subscription>?>("subscriptions"); }
             set { BackingStore?.Set("subscriptions", value); }
         }
 #nullable restore
 #else
-        public List<Subscription> Subscriptions
+        public List<Microsoft.Graph.Models.Subscription> Subscriptions
         {
-            get { return BackingStore?.Get<List<Subscription>>("subscriptions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Subscription>>("subscriptions"); }
             set { BackingStore?.Set("subscriptions", value); }
         }
 #endif
         /// <summary>If present, indicates that the list is system-managed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SystemFacet? System
+        public Microsoft.Graph.Models.SystemFacet? System
         {
-            get { return BackingStore?.Get<SystemFacet?>("system"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SystemFacet?>("system"); }
             set { BackingStore?.Set("system", value); }
         }
 #nullable restore
 #else
-        public SystemFacet System
+        public Microsoft.Graph.Models.SystemFacet System
         {
-            get { return BackingStore?.Get<SystemFacet>("system"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SystemFacet>("system"); }
             set { BackingStore?.Set("system", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="List"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.List"/> and sets the default values.
         /// </summary>
         public List() : base()
         {
@@ -180,12 +180,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="List"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.List"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new List CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.List CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new List();
+            return new Microsoft.Graph.Models.List();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -195,16 +195,16 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "columns", n => { Columns = n.GetCollectionOfObjectValues<ColumnDefinition>(ColumnDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "contentTypes", n => { ContentTypes = n.GetCollectionOfObjectValues<ContentType>(ContentType.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "columns", n => { Columns = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ColumnDefinition>(Microsoft.Graph.Models.ColumnDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contentTypes", n => { ContentTypes = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ContentType>(Microsoft.Graph.Models.ContentType.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "drive", n => { Drive = n.GetObjectValue<Microsoft.Graph.Models.Drive>(Microsoft.Graph.Models.Drive.CreateFromDiscriminatorValue); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<ListItem>(ListItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "list", n => { ListProp = n.GetObjectValue<ListInfo>(ListInfo.CreateFromDiscriminatorValue); } },
-                { "operations", n => { Operations = n.GetCollectionOfObjectValues<RichLongRunningOperation>(RichLongRunningOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ListItem>(Microsoft.Graph.Models.ListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "list", n => { ListProp = n.GetObjectValue<Microsoft.Graph.Models.ListInfo>(Microsoft.Graph.Models.ListInfo.CreateFromDiscriminatorValue); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.RichLongRunningOperation>(Microsoft.Graph.Models.RichLongRunningOperation.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "sharepointIds", n => { SharepointIds = n.GetObjectValue<Microsoft.Graph.Models.SharepointIds>(Microsoft.Graph.Models.SharepointIds.CreateFromDiscriminatorValue); } },
-                { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<Subscription>(Subscription.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "system", n => { System = n.GetObjectValue<SystemFacet>(SystemFacet.CreateFromDiscriminatorValue); } },
+                { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Subscription>(Microsoft.Graph.Models.Subscription.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "system", n => { System = n.GetObjectValue<Microsoft.Graph.Models.SystemFacet>(Microsoft.Graph.Models.SystemFacet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -215,16 +215,16 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ColumnDefinition>("columns", Columns);
-            writer.WriteCollectionOfObjectValues<ContentType>("contentTypes", ContentTypes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ColumnDefinition>("columns", Columns);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ContentType>("contentTypes", ContentTypes);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<Microsoft.Graph.Models.Drive>("drive", Drive);
-            writer.WriteCollectionOfObjectValues<ListItem>("items", Items);
-            writer.WriteObjectValue<ListInfo>("list", ListProp);
-            writer.WriteCollectionOfObjectValues<RichLongRunningOperation>("operations", Operations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ListItem>("items", Items);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ListInfo>("list", ListProp);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.RichLongRunningOperation>("operations", Operations);
             writer.WriteObjectValue<Microsoft.Graph.Models.SharepointIds>("sharepointIds", SharepointIds);
-            writer.WriteCollectionOfObjectValues<Subscription>("subscriptions", Subscriptions);
-            writer.WriteObjectValue<SystemFacet>("system", System);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Subscription>("subscriptions", Subscriptions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SystemFacet>("system", System);
         }
     }
 }

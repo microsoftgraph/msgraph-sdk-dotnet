@@ -19,24 +19,24 @@ namespace Microsoft.Graph.FilterOperators
     public class FilterOperatorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.FilterOperators.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.FilterOperators.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of filterOperatorSchema entities.</summary>
         /// <param name="position">The unique identifier of filterOperatorSchema</param>
-        /// <returns>A <see cref="FilterOperatorSchemaItemRequestBuilder"/></returns>
-        public FilterOperatorSchemaItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.FilterOperators.Item.FilterOperatorSchemaItemRequestBuilder"/></returns>
+        public Microsoft.Graph.FilterOperators.Item.FilterOperatorSchemaItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("filterOperatorSchema%2Did", position);
-                return new FilterOperatorSchemaItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.FilterOperators.Item.FilterOperatorSchemaItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="FilterOperatorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.FilterOperators.FilterOperatorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.FilterOperators
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="FilterOperatorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.FilterOperators.FilterOperatorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.FilterOperators
         /// <summary>
         /// Get entities from filterOperators
         /// </summary>
-        /// <returns>A <see cref="FilterOperatorSchemaCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.FilterOperatorSchemaCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FilterOperatorSchemaCollectionResponse?> GetAsync(Action<RequestConfiguration<FilterOperatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.FilterOperatorSchemaCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.FilterOperators.FilterOperatorsRequestBuilder.FilterOperatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FilterOperatorSchemaCollectionResponse> GetAsync(Action<RequestConfiguration<FilterOperatorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.FilterOperatorSchemaCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.FilterOperators.FilterOperatorsRequestBuilder.FilterOperatorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FilterOperatorSchemaCollectionResponse>(requestInfo, FilterOperatorSchemaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.FilterOperatorSchemaCollectionResponse>(requestInfo, Microsoft.Graph.Models.FilterOperatorSchemaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to filterOperators
         /// </summary>
-        /// <returns>A <see cref="FilterOperatorSchema"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.FilterOperatorSchema"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FilterOperatorSchema?> PostAsync(FilterOperatorSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.FilterOperatorSchema?> PostAsync(Microsoft.Graph.Models.FilterOperatorSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FilterOperatorSchema> PostAsync(FilterOperatorSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.FilterOperatorSchema> PostAsync(Microsoft.Graph.Models.FilterOperatorSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FilterOperatorSchema>(requestInfo, FilterOperatorSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.FilterOperatorSchema>(requestInfo, Microsoft.Graph.Models.FilterOperatorSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from filterOperators
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.FilterOperators
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FilterOperatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.FilterOperators.FilterOperatorsRequestBuilder.FilterOperatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FilterOperatorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.FilterOperators.FilterOperatorsRequestBuilder.FilterOperatorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.FilterOperators
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(FilterOperatorSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.FilterOperatorSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(FilterOperatorSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.FilterOperatorSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.FilterOperators
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="FilterOperatorsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.FilterOperators.FilterOperatorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FilterOperatorsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.FilterOperators.FilterOperatorsRequestBuilder WithUrl(string rawUrl)
         {
-            return new FilterOperatorsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.FilterOperators.FilterOperatorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get entities from filterOperators
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.FilterOperators
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FilterOperatorsRequestBuilderGetRequestConfiguration : RequestConfiguration<FilterOperatorsRequestBuilderGetQueryParameters>
+        public class FilterOperatorsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.FilterOperators.FilterOperatorsRequestBuilder.FilterOperatorsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

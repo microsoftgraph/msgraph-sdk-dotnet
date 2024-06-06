@@ -26,7 +26,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsDefenderSc
             set { BackingStore?.Set("quickScan", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsDefenderScanPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsDefenderScan.WindowsDefenderScanPostRequestBody"/> and sets the default values.
         /// </summary>
         public WindowsDefenderScanPostRequestBody()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsDefenderSc
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsDefenderScanPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsDefenderScan.WindowsDefenderScanPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WindowsDefenderScanPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsDefenderScan.WindowsDefenderScanPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsDefenderScanPostRequestBody();
+            return new Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsDefenderScan.WindowsDefenderScanPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

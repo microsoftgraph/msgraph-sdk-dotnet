@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Me.Chats.Item.InstalledApps.Item.Upgrade
         /// <summary>The consentedPermissionSet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamsAppPermissionSet? ConsentedPermissionSet
+        public Microsoft.Graph.Models.TeamsAppPermissionSet? ConsentedPermissionSet
         {
-            get { return BackingStore?.Get<TeamsAppPermissionSet?>("consentedPermissionSet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsAppPermissionSet?>("consentedPermissionSet"); }
             set { BackingStore?.Set("consentedPermissionSet", value); }
         }
 #nullable restore
 #else
-        public TeamsAppPermissionSet ConsentedPermissionSet
+        public Microsoft.Graph.Models.TeamsAppPermissionSet ConsentedPermissionSet
         {
-            get { return BackingStore?.Get<TeamsAppPermissionSet>("consentedPermissionSet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamsAppPermissionSet>("consentedPermissionSet"); }
             set { BackingStore?.Set("consentedPermissionSet", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UpgradePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Chats.Item.InstalledApps.Item.Upgrade.UpgradePostRequestBody"/> and sets the default values.
         /// </summary>
         public UpgradePostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Me.Chats.Item.InstalledApps.Item.Upgrade
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpgradePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Chats.Item.InstalledApps.Item.Upgrade.UpgradePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UpgradePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Me.Chats.Item.InstalledApps.Item.Upgrade.UpgradePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpgradePostRequestBody();
+            return new Microsoft.Graph.Me.Chats.Item.InstalledApps.Item.Upgrade.UpgradePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Me.Chats.Item.InstalledApps.Item.Upgrade
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "consentedPermissionSet", n => { ConsentedPermissionSet = n.GetObjectValue<TeamsAppPermissionSet>(TeamsAppPermissionSet.CreateFromDiscriminatorValue); } },
+                { "consentedPermissionSet", n => { ConsentedPermissionSet = n.GetObjectValue<Microsoft.Graph.Models.TeamsAppPermissionSet>(Microsoft.Graph.Models.TeamsAppPermissionSet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Me.Chats.Item.InstalledApps.Item.Upgrade
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<TeamsAppPermissionSet>("consentedPermissionSet", ConsentedPermissionSet);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TeamsAppPermissionSet>("consentedPermissionSet", ConsentedPermissionSet);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

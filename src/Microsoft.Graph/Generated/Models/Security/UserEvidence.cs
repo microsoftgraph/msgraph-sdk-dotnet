@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     #pragma warning disable CS1591
-    public class UserEvidence : AlertEvidence, IParsable
+    public class UserEvidence : Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The stream property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public StreamObject? Stream
+        public Microsoft.Graph.Models.Security.StreamObject? Stream
         {
-            get { return BackingStore?.Get<StreamObject?>("stream"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.StreamObject?>("stream"); }
             set { BackingStore?.Set("stream", value); }
         }
 #nullable restore
 #else
-        public StreamObject Stream
+        public Microsoft.Graph.Models.Security.StreamObject Stream
         {
-            get { return BackingStore?.Get<StreamObject>("stream"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Security.StreamObject>("stream"); }
             set { BackingStore?.Set("stream", value); }
         }
 #endif
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserEvidence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.UserEvidence"/> and sets the default values.
         /// </summary>
         public UserEvidence() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserEvidence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.UserEvidence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.UserEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserEvidence();
+            return new Microsoft.Graph.Models.Security.UserEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "stream", n => { Stream = n.GetObjectValue<StreamObject>(StreamObject.CreateFromDiscriminatorValue); } },
+                { "stream", n => { Stream = n.GetObjectValue<Microsoft.Graph.Models.Security.StreamObject>(Microsoft.Graph.Models.Security.StreamObject.CreateFromDiscriminatorValue); } },
                 { "userAccount", n => { UserAccount = n.GetObjectValue<Microsoft.Graph.Models.Security.UserAccount>(Microsoft.Graph.Models.Security.UserAccount.CreateFromDiscriminatorValue); } },
             };
         }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<StreamObject>("stream", Stream);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Security.StreamObject>("stream", Stream);
             writer.WriteObjectValue<Microsoft.Graph.Models.Security.UserAccount>("userAccount", UserAccount);
         }
     }

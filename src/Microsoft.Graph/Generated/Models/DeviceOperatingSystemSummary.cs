@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("windowsMobileCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceOperatingSystemSummary"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.DeviceOperatingSystemSummary"/> and sets the default values.
         /// </summary>
         public DeviceOperatingSystemSummary()
         {
@@ -119,12 +119,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceOperatingSystemSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.DeviceOperatingSystemSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceOperatingSystemSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.DeviceOperatingSystemSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceOperatingSystemSummary();
+            return new Microsoft.Graph.Models.DeviceOperatingSystemSummary();
         }
         /// <summary>
         /// The deserialization information for the current model

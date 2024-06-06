@@ -21,27 +21,27 @@ namespace Microsoft.Graph.Education
     public class EducationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the classes property of the microsoft.graph.educationRoot entity.</summary>
-        public ClassesRequestBuilder Classes
+        public Microsoft.Graph.Education.Classes.ClassesRequestBuilder Classes
         {
-            get => new ClassesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Classes.ClassesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the me property of the microsoft.graph.educationRoot entity.</summary>
-        public MeRequestBuilder Me
+        public Microsoft.Graph.Education.Me.MeRequestBuilder Me
         {
-            get => new MeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Me.MeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the schools property of the microsoft.graph.educationRoot entity.</summary>
-        public SchoolsRequestBuilder Schools
+        public Microsoft.Graph.Education.Schools.SchoolsRequestBuilder Schools
         {
-            get => new SchoolsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Schools.SchoolsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the users property of the microsoft.graph.educationRoot entity.</summary>
-        public UsersRequestBuilder Users
+        public Microsoft.Graph.Education.Users.UsersRequestBuilder Users
         {
-            get => new UsersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Education.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="EducationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.EducationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Education
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="EducationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Education.EducationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -59,50 +59,50 @@ namespace Microsoft.Graph.Education
         /// <summary>
         /// Get education
         /// </summary>
-        /// <returns>A <see cref="EducationRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationRoot"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationRoot?> GetAsync(Action<RequestConfiguration<EducationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationRoot?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Education.EducationRequestBuilder.EducationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationRoot> GetAsync(Action<RequestConfiguration<EducationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationRoot> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Education.EducationRequestBuilder.EducationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationRoot>(requestInfo, EducationRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EducationRoot>(requestInfo, Microsoft.Graph.Models.EducationRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update education
         /// </summary>
-        /// <returns>A <see cref="EducationRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationRoot"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationRoot?> PatchAsync(EducationRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationRoot?> PatchAsync(Microsoft.Graph.Models.EducationRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationRoot> PatchAsync(EducationRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.EducationRoot> PatchAsync(Microsoft.Graph.Models.EducationRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationRoot>(requestInfo, EducationRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EducationRoot>(requestInfo, Microsoft.Graph.Models.EducationRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get education
@@ -111,11 +111,11 @@ namespace Microsoft.Graph.Education
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Education.EducationRequestBuilder.EducationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Education.EducationRequestBuilder.EducationRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -131,11 +131,11 @@ namespace Microsoft.Graph.Education
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(EducationRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.EducationRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(EducationRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.EducationRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -148,11 +148,11 @@ namespace Microsoft.Graph.Education
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="EducationRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Education.EducationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EducationRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Education.EducationRequestBuilder WithUrl(string rawUrl)
         {
-            return new EducationRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Education.EducationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get education
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Education
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EducationRequestBuilderGetRequestConfiguration : RequestConfiguration<EducationRequestBuilderGetQueryParameters>
+        public class EducationRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Education.EducationRequestBuilder.EducationRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

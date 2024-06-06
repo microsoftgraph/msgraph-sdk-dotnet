@@ -17,7 +17,7 @@ namespace Microsoft.Graph.External.Connections.Item.Items.Item.Activities.Item.P
     public class PerformedByRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="PerformedByRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.External.Connections.Item.Items.Item.Activities.Item.PerformedBy.PerformedByRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.External.Connections.Item.Items.Item.Activities.Item.P
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PerformedByRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.External.Connections.Item.Items.Item.Activities.Item.PerformedBy.PerformedByRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,20 +38,20 @@ namespace Microsoft.Graph.External.Connections.Item.Items.Item.Activities.Item.P
         /// <returns>A <see cref="Microsoft.Graph.Models.ExternalConnectors.Identity"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.ExternalConnectors.Identity?> GetAsync(Action<RequestConfiguration<PerformedByRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ExternalConnectors.Identity?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.External.Connections.Item.Items.Item.Activities.Item.PerformedBy.PerformedByRequestBuilder.PerformedByRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.ExternalConnectors.Identity> GetAsync(Action<RequestConfiguration<PerformedByRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.ExternalConnectors.Identity> GetAsync(Action<RequestConfiguration<Microsoft.Graph.External.Connections.Item.Items.Item.Activities.Item.PerformedBy.PerformedByRequestBuilder.PerformedByRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ExternalConnectors.Identity>(requestInfo, Microsoft.Graph.Models.ExternalConnectors.Identity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.External.Connections.Item.Items.Item.Activities.Item.P
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PerformedByRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.External.Connections.Item.Items.Item.Activities.Item.PerformedBy.PerformedByRequestBuilder.PerformedByRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PerformedByRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.External.Connections.Item.Items.Item.Activities.Item.PerformedBy.PerformedByRequestBuilder.PerformedByRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.External.Connections.Item.Items.Item.Activities.Item.P
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PerformedByRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.External.Connections.Item.Items.Item.Activities.Item.PerformedBy.PerformedByRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PerformedByRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.External.Connections.Item.Items.Item.Activities.Item.PerformedBy.PerformedByRequestBuilder WithUrl(string rawUrl)
         {
-            return new PerformedByRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.External.Connections.Item.Items.Item.Activities.Item.PerformedBy.PerformedByRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Represents an identity used to identify who is responsible for the activity.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.External.Connections.Item.Items.Item.Activities.Item.P
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PerformedByRequestBuilderGetRequestConfiguration : RequestConfiguration<PerformedByRequestBuilderGetQueryParameters>
+        public class PerformedByRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.External.Connections.Item.Items.Item.Activities.Item.PerformedBy.PerformedByRequestBuilder.PerformedByRequestBuilderGetQueryParameters>
         {
         }
     }

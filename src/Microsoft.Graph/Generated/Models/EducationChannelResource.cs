@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class EducationChannelResource : EducationResource, IParsable
+    public class EducationChannelResource : Microsoft.Graph.Models.EducationResource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>URL of the channel resource.</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EducationChannelResource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.EducationChannelResource"/> and sets the default values.
         /// </summary>
         public EducationChannelResource() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationChannelResource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationChannelResource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationChannelResource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EducationChannelResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationChannelResource();
+            return new Microsoft.Graph.Models.EducationChannelResource();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Movies rating labels in Ireland</summary>
-        public RatingIrelandMoviesType? MovieRating
+        public Microsoft.Graph.Models.RatingIrelandMoviesType? MovieRating
         {
-            get { return BackingStore?.Get<RatingIrelandMoviesType?>("movieRating"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RatingIrelandMoviesType?>("movieRating"); }
             set { BackingStore?.Set("movieRating", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -42,13 +42,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>TV content rating labels in Ireland</summary>
-        public RatingIrelandTelevisionType? TvRating
+        public Microsoft.Graph.Models.RatingIrelandTelevisionType? TvRating
         {
-            get { return BackingStore?.Get<RatingIrelandTelevisionType?>("tvRating"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.RatingIrelandTelevisionType?>("tvRating"); }
             set { BackingStore?.Set("tvRating", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MediaContentRatingIreland"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.MediaContentRatingIreland"/> and sets the default values.
         /// </summary>
         public MediaContentRatingIreland()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MediaContentRatingIreland"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.MediaContentRatingIreland"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MediaContentRatingIreland CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.MediaContentRatingIreland CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MediaContentRatingIreland();
+            return new Microsoft.Graph.Models.MediaContentRatingIreland();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,9 +73,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "movieRating", n => { MovieRating = n.GetEnumValue<RatingIrelandMoviesType>(); } },
+                { "movieRating", n => { MovieRating = n.GetEnumValue<Microsoft.Graph.Models.RatingIrelandMoviesType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "tvRating", n => { TvRating = n.GetEnumValue<RatingIrelandTelevisionType>(); } },
+                { "tvRating", n => { TvRating = n.GetEnumValue<Microsoft.Graph.Models.RatingIrelandTelevisionType>(); } },
             };
         }
         /// <summary>
@@ -85,9 +85,9 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<RatingIrelandMoviesType>("movieRating", MovieRating);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RatingIrelandMoviesType>("movieRating", MovieRating);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<RatingIrelandTelevisionType>("tvRating", TvRating);
+            writer.WriteEnumValue<Microsoft.Graph.Models.RatingIrelandTelevisionType>("tvRating", TvRating);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

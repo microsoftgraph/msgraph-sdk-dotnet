@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CommunicationsApplicationInstanceIdentity : Identity, IParsable
+    public class CommunicationsApplicationInstanceIdentity : Microsoft.Graph.Models.Identity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>True if the participant shouldn&apos;t be shown in other participants&apos; rosters.</summary>
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CommunicationsApplicationInstanceIdentity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CommunicationsApplicationInstanceIdentity"/> and sets the default values.
         /// </summary>
         public CommunicationsApplicationInstanceIdentity() : base()
         {
@@ -42,12 +42,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CommunicationsApplicationInstanceIdentity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CommunicationsApplicationInstanceIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CommunicationsApplicationInstanceIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CommunicationsApplicationInstanceIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CommunicationsApplicationInstanceIdentity();
+            return new Microsoft.Graph.Models.CommunicationsApplicationInstanceIdentity();
         }
         /// <summary>
         /// The deserialization information for the current model

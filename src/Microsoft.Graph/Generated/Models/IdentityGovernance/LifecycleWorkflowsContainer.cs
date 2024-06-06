@@ -13,16 +13,16 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>The customTaskExtension instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomTaskExtension>? CustomTaskExtensions
+        public List<Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtension>? CustomTaskExtensions
         {
-            get { return BackingStore?.Get<List<CustomTaskExtension>?>("customTaskExtensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtension>?>("customTaskExtensions"); }
             set { BackingStore?.Set("customTaskExtensions", value); }
         }
 #nullable restore
 #else
-        public List<CustomTaskExtension> CustomTaskExtensions
+        public List<Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtension> CustomTaskExtensions
         {
-            get { return BackingStore?.Get<List<CustomTaskExtension>>("customTaskExtensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtension>>("customTaskExtensions"); }
             set { BackingStore?.Set("customTaskExtensions", value); }
         }
 #endif
@@ -45,76 +45,76 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LifecycleManagementSettings? Settings
+        public Microsoft.Graph.Models.IdentityGovernance.LifecycleManagementSettings? Settings
         {
-            get { return BackingStore?.Get<LifecycleManagementSettings?>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.LifecycleManagementSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public LifecycleManagementSettings Settings
+        public Microsoft.Graph.Models.IdentityGovernance.LifecycleManagementSettings Settings
         {
-            get { return BackingStore?.Get<LifecycleManagementSettings>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.LifecycleManagementSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>The definition of tasks within the lifecycle workflows instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TaskDefinition>? TaskDefinitions
+        public List<Microsoft.Graph.Models.IdentityGovernance.TaskDefinition>? TaskDefinitions
         {
-            get { return BackingStore?.Get<List<TaskDefinition>?>("taskDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.TaskDefinition>?>("taskDefinitions"); }
             set { BackingStore?.Set("taskDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<TaskDefinition> TaskDefinitions
+        public List<Microsoft.Graph.Models.IdentityGovernance.TaskDefinition> TaskDefinitions
         {
-            get { return BackingStore?.Get<List<TaskDefinition>>("taskDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.TaskDefinition>>("taskDefinitions"); }
             set { BackingStore?.Set("taskDefinitions", value); }
         }
 #endif
         /// <summary>The workflows in the lifecycle workflows instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Workflow>? Workflows
+        public List<Microsoft.Graph.Models.IdentityGovernance.Workflow>? Workflows
         {
-            get { return BackingStore?.Get<List<Workflow>?>("workflows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.Workflow>?>("workflows"); }
             set { BackingStore?.Set("workflows", value); }
         }
 #nullable restore
 #else
-        public List<Workflow> Workflows
+        public List<Microsoft.Graph.Models.IdentityGovernance.Workflow> Workflows
         {
-            get { return BackingStore?.Get<List<Workflow>>("workflows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.Workflow>>("workflows"); }
             set { BackingStore?.Set("workflows", value); }
         }
 #endif
         /// <summary>The workflow templates in the lifecycle workflow instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkflowTemplate>? WorkflowTemplates
+        public List<Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate>? WorkflowTemplates
         {
-            get { return BackingStore?.Get<List<WorkflowTemplate>?>("workflowTemplates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate>?>("workflowTemplates"); }
             set { BackingStore?.Set("workflowTemplates", value); }
         }
 #nullable restore
 #else
-        public List<WorkflowTemplate> WorkflowTemplates
+        public List<Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate> WorkflowTemplates
         {
-            get { return BackingStore?.Get<List<WorkflowTemplate>>("workflowTemplates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate>>("workflowTemplates"); }
             set { BackingStore?.Set("workflowTemplates", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LifecycleWorkflowsContainer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowsContainer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new LifecycleWorkflowsContainer CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowsContainer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LifecycleWorkflowsContainer();
+            return new Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowsContainer();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,12 +124,12 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "customTaskExtensions", n => { CustomTaskExtensions = n.GetCollectionOfObjectValues<CustomTaskExtension>(CustomTaskExtension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customTaskExtensions", n => { CustomTaskExtensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtension>(Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtension.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "deletedItems", n => { DeletedItems = n.GetObjectValue<Microsoft.Graph.Models.DeletedItemContainer>(Microsoft.Graph.Models.DeletedItemContainer.CreateFromDiscriminatorValue); } },
-                { "settings", n => { Settings = n.GetObjectValue<LifecycleManagementSettings>(LifecycleManagementSettings.CreateFromDiscriminatorValue); } },
-                { "taskDefinitions", n => { TaskDefinitions = n.GetCollectionOfObjectValues<TaskDefinition>(TaskDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "workflowTemplates", n => { WorkflowTemplates = n.GetCollectionOfObjectValues<WorkflowTemplate>(WorkflowTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "workflows", n => { Workflows = n.GetCollectionOfObjectValues<Workflow>(Workflow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Models.IdentityGovernance.LifecycleManagementSettings>(Microsoft.Graph.Models.IdentityGovernance.LifecycleManagementSettings.CreateFromDiscriminatorValue); } },
+                { "taskDefinitions", n => { TaskDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.TaskDefinition>(Microsoft.Graph.Models.IdentityGovernance.TaskDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "workflowTemplates", n => { WorkflowTemplates = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate>(Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "workflows", n => { Workflows = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.Workflow>(Microsoft.Graph.Models.IdentityGovernance.Workflow.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -140,12 +140,12 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<CustomTaskExtension>("customTaskExtensions", CustomTaskExtensions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtension>("customTaskExtensions", CustomTaskExtensions);
             writer.WriteObjectValue<Microsoft.Graph.Models.DeletedItemContainer>("deletedItems", DeletedItems);
-            writer.WriteObjectValue<LifecycleManagementSettings>("settings", Settings);
-            writer.WriteCollectionOfObjectValues<TaskDefinition>("taskDefinitions", TaskDefinitions);
-            writer.WriteCollectionOfObjectValues<Workflow>("workflows", Workflows);
-            writer.WriteCollectionOfObjectValues<WorkflowTemplate>("workflowTemplates", WorkflowTemplates);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentityGovernance.LifecycleManagementSettings>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.TaskDefinition>("taskDefinitions", TaskDefinitions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.Workflow>("workflows", Workflows);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.IdentityGovernance.WorkflowTemplate>("workflowTemplates", WorkflowTemplates);
         }
     }
 }

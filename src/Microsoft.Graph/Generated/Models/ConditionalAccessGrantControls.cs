@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The authenticationStrength property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationStrengthPolicy? AuthenticationStrength
+        public Microsoft.Graph.Models.AuthenticationStrengthPolicy? AuthenticationStrength
         {
-            get { return BackingStore?.Get<AuthenticationStrengthPolicy?>("authenticationStrength"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationStrengthPolicy?>("authenticationStrength"); }
             set { BackingStore?.Set("authenticationStrength", value); }
         }
 #nullable restore
 #else
-        public AuthenticationStrengthPolicy AuthenticationStrength
+        public Microsoft.Graph.Models.AuthenticationStrengthPolicy AuthenticationStrength
         {
-            get { return BackingStore?.Get<AuthenticationStrengthPolicy>("authenticationStrength"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.AuthenticationStrengthPolicy>("authenticationStrength"); }
             set { BackingStore?.Set("authenticationStrength", value); }
         }
 #endif
@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Models
         /// <summary>List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConditionalAccessGrantControl?>? BuiltInControls
+        public List<Microsoft.Graph.Models.ConditionalAccessGrantControl?>? BuiltInControls
         {
-            get { return BackingStore?.Get<List<ConditionalAccessGrantControl?>?>("builtInControls"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConditionalAccessGrantControl?>?>("builtInControls"); }
             set { BackingStore?.Set("builtInControls", value); }
         }
 #nullable restore
 #else
-        public List<ConditionalAccessGrantControl?> BuiltInControls
+        public List<Microsoft.Graph.Models.ConditionalAccessGrantControl?> BuiltInControls
         {
-            get { return BackingStore?.Get<List<ConditionalAccessGrantControl?>>("builtInControls"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ConditionalAccessGrantControl?>>("builtInControls"); }
             set { BackingStore?.Set("builtInControls", value); }
         }
 #endif
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ConditionalAccessGrantControls"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.ConditionalAccessGrantControls"/> and sets the default values.
         /// </summary>
         public ConditionalAccessGrantControls()
         {
@@ -126,12 +126,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessGrantControls"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.ConditionalAccessGrantControls"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConditionalAccessGrantControls CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.ConditionalAccessGrantControls CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessGrantControls();
+            return new Microsoft.Graph.Models.ConditionalAccessGrantControls();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -141,8 +141,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authenticationStrength", n => { AuthenticationStrength = n.GetObjectValue<AuthenticationStrengthPolicy>(AuthenticationStrengthPolicy.CreateFromDiscriminatorValue); } },
-                { "builtInControls", n => { BuiltInControls = n.GetCollectionOfEnumValues<ConditionalAccessGrantControl>()?.ToList(); } },
+                { "authenticationStrength", n => { AuthenticationStrength = n.GetObjectValue<Microsoft.Graph.Models.AuthenticationStrengthPolicy>(Microsoft.Graph.Models.AuthenticationStrengthPolicy.CreateFromDiscriminatorValue); } },
+                { "builtInControls", n => { BuiltInControls = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.ConditionalAccessGrantControl>()?.ToList(); } },
                 { "customAuthenticationFactors", n => { CustomAuthenticationFactors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "operator", n => { Operator = n.GetStringValue(); } },
@@ -156,8 +156,8 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<AuthenticationStrengthPolicy>("authenticationStrength", AuthenticationStrength);
-            writer.WriteCollectionOfEnumValues<ConditionalAccessGrantControl>("builtInControls", BuiltInControls);
+            writer.WriteObjectValue<Microsoft.Graph.Models.AuthenticationStrengthPolicy>("authenticationStrength", AuthenticationStrength);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.ConditionalAccessGrantControl>("builtInControls", BuiltInControls);
             writer.WriteCollectionOfPrimitiveValues<string>("customAuthenticationFactors", CustomAuthenticationFactors);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("operator", Operator);

@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostTracker>? Value
+        public List<Microsoft.Graph.Models.Security.HostTracker>? Value
         {
-            get { return BackingStore?.Get<List<HostTracker>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostTracker>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<HostTracker> Value
+        public List<Microsoft.Graph.Models.Security.HostTracker> Value
         {
-            get { return BackingStore?.Get<List<HostTracker>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Security.HostTracker>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HostTrackerCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.HostTrackerCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new HostTrackerCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Security.HostTrackerCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HostTrackerCollectionResponse();
+            return new Microsoft.Graph.Models.Security.HostTrackerCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<HostTracker>(HostTracker.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostTracker>(Microsoft.Graph.Models.Security.HostTracker.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<HostTracker>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Security.HostTracker>("value", Value);
         }
     }
 }

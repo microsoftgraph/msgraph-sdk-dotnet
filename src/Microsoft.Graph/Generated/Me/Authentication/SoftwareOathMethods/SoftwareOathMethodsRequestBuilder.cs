@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Me.Authentication.SoftwareOathMethods
     public class SoftwareOathMethodsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Me.Authentication.SoftwareOathMethods.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Me.Authentication.SoftwareOathMethods.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.</summary>
         /// <param name="position">The unique identifier of softwareOathAuthenticationMethod</param>
-        /// <returns>A <see cref="SoftwareOathAuthenticationMethodItemRequestBuilder"/></returns>
-        public SoftwareOathAuthenticationMethodItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Me.Authentication.SoftwareOathMethods.Item.SoftwareOathAuthenticationMethodItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Me.Authentication.SoftwareOathMethods.Item.SoftwareOathAuthenticationMethodItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("softwareOathAuthenticationMethod%2Did", position);
-                return new SoftwareOathAuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Me.Authentication.SoftwareOathMethods.Item.SoftwareOathAuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SoftwareOathMethodsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Authentication.SoftwareOathMethods.SoftwareOathMethodsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Me.Authentication.SoftwareOathMethods
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SoftwareOathMethodsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Me.Authentication.SoftwareOathMethods.SoftwareOathMethodsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,25 +55,25 @@ namespace Microsoft.Graph.Me.Authentication.SoftwareOathMethods
         /// Retrieve a list of a user&apos;s software OATH token authentication method objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-list-softwareoathmethods?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="SoftwareOathAuthenticationMethodCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SoftwareOathAuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SoftwareOathAuthenticationMethodCollectionResponse?> GetAsync(Action<RequestConfiguration<SoftwareOathMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SoftwareOathAuthenticationMethodCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.SoftwareOathMethods.SoftwareOathMethodsRequestBuilder.SoftwareOathMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SoftwareOathAuthenticationMethodCollectionResponse> GetAsync(Action<RequestConfiguration<SoftwareOathMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.SoftwareOathAuthenticationMethodCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.SoftwareOathMethods.SoftwareOathMethodsRequestBuilder.SoftwareOathMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SoftwareOathAuthenticationMethodCollectionResponse>(requestInfo, SoftwareOathAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SoftwareOathAuthenticationMethodCollectionResponse>(requestInfo, Microsoft.Graph.Models.SoftwareOathAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of a user&apos;s software OATH token authentication method objects and their properties.
@@ -82,11 +82,11 @@ namespace Microsoft.Graph.Me.Authentication.SoftwareOathMethods
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SoftwareOathMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.SoftwareOathMethods.SoftwareOathMethodsRequestBuilder.SoftwareOathMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SoftwareOathMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.SoftwareOathMethods.SoftwareOathMethodsRequestBuilder.SoftwareOathMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -97,11 +97,11 @@ namespace Microsoft.Graph.Me.Authentication.SoftwareOathMethods
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SoftwareOathMethodsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Me.Authentication.SoftwareOathMethods.SoftwareOathMethodsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SoftwareOathMethodsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Me.Authentication.SoftwareOathMethods.SoftwareOathMethodsRequestBuilder WithUrl(string rawUrl)
         {
-            return new SoftwareOathMethodsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Me.Authentication.SoftwareOathMethods.SoftwareOathMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of a user&apos;s software OATH token authentication method objects and their properties.
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Me.Authentication.SoftwareOathMethods
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SoftwareOathMethodsRequestBuilderGetRequestConfiguration : RequestConfiguration<SoftwareOathMethodsRequestBuilderGetQueryParameters>
+        public class SoftwareOathMethodsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.Authentication.SoftwareOathMethods.SoftwareOathMethodsRequestBuilder.SoftwareOathMethodsRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups
     public class GroupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Sites.Item.TermStores.Item.Groups.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Sites.Item.TermStores.Item.Groups.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groups property of the microsoft.graph.termStore.store entity.</summary>
         /// <param name="position">The unique identifier of group</param>
-        /// <returns>A <see cref="GroupItemRequestBuilder"/></returns>
-        public GroupItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Sites.Item.TermStores.Item.Groups.Item.GroupItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Sites.Item.TermStores.Item.Groups.Item.GroupItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("group%2Did", position);
-                return new GroupItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Sites.Item.TermStores.Item.Groups.Item.GroupItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.TermStores.Item.Groups.GroupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.TermStores.Item.Groups.GroupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups
         /// <summary>
         /// Collection of all groups available in the term store.
         /// </summary>
-        /// <returns>A <see cref="GroupCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TermStore.GroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GroupCollectionResponse?> GetAsync(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TermStore.GroupCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.TermStores.Item.Groups.GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GroupCollectionResponse> GetAsync(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.TermStore.GroupCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.TermStores.Item.Groups.GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GroupCollectionResponse>(requestInfo, GroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermStore.GroupCollectionResponse>(requestInfo, Microsoft.Graph.Models.TermStore.GroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to groups for sites
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.TermStore.Group?> PostAsync(Microsoft.Graph.Models.TermStore.Group body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermStore.Group>(requestInfo, Microsoft.Graph.Models.TermStore.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.TermStores.Item.Groups.GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Sites.Item.TermStores.Item.Groups.GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GroupsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Sites.Item.TermStores.Item.Groups.GroupsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GroupsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Sites.Item.TermStores.Item.Groups.GroupsRequestBuilder WithUrl(string rawUrl)
         {
-            return new GroupsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Sites.Item.TermStores.Item.Groups.GroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Collection of all groups available in the term store.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GroupsRequestBuilderGetRequestConfiguration : RequestConfiguration<GroupsRequestBuilderGetQueryParameters>
+        public class GroupsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Sites.Item.TermStores.Item.Groups.GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

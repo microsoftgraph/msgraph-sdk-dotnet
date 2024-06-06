@@ -7,33 +7,33 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class EducationFeedbackResourceOutcome : EducationOutcome, IParsable
+    public class EducationFeedbackResourceOutcome : Microsoft.Graph.Models.EducationOutcome, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The actual feedback resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationResource? FeedbackResource
+        public Microsoft.Graph.Models.EducationResource? FeedbackResource
         {
-            get { return BackingStore?.Get<EducationResource?>("feedbackResource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationResource?>("feedbackResource"); }
             set { BackingStore?.Set("feedbackResource", value); }
         }
 #nullable restore
 #else
-        public EducationResource FeedbackResource
+        public Microsoft.Graph.Models.EducationResource FeedbackResource
         {
-            get { return BackingStore?.Get<EducationResource>("feedbackResource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationResource>("feedbackResource"); }
             set { BackingStore?.Set("feedbackResource", value); }
         }
 #endif
         /// <summary>The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, unknownFutureValue.</summary>
-        public EducationFeedbackResourceOutcomeStatus? ResourceStatus
+        public Microsoft.Graph.Models.EducationFeedbackResourceOutcomeStatus? ResourceStatus
         {
-            get { return BackingStore?.Get<EducationFeedbackResourceOutcomeStatus?>("resourceStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EducationFeedbackResourceOutcomeStatus?>("resourceStatus"); }
             set { BackingStore?.Set("resourceStatus", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="EducationFeedbackResourceOutcome"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.EducationFeedbackResourceOutcome"/> and sets the default values.
         /// </summary>
         public EducationFeedbackResourceOutcome() : base()
         {
@@ -42,12 +42,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationFeedbackResourceOutcome"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.EducationFeedbackResourceOutcome"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationFeedbackResourceOutcome CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.EducationFeedbackResourceOutcome CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationFeedbackResourceOutcome();
+            return new Microsoft.Graph.Models.EducationFeedbackResourceOutcome();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,8 +57,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "feedbackResource", n => { FeedbackResource = n.GetObjectValue<EducationResource>(EducationResource.CreateFromDiscriminatorValue); } },
-                { "resourceStatus", n => { ResourceStatus = n.GetEnumValue<EducationFeedbackResourceOutcomeStatus>(); } },
+                { "feedbackResource", n => { FeedbackResource = n.GetObjectValue<Microsoft.Graph.Models.EducationResource>(Microsoft.Graph.Models.EducationResource.CreateFromDiscriminatorValue); } },
+                { "resourceStatus", n => { ResourceStatus = n.GetEnumValue<Microsoft.Graph.Models.EducationFeedbackResourceOutcomeStatus>(); } },
             };
         }
         /// <summary>
@@ -69,8 +69,8 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<EducationResource>("feedbackResource", FeedbackResource);
-            writer.WriteEnumValue<EducationFeedbackResourceOutcomeStatus>("resourceStatus", ResourceStatus);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EducationResource>("feedbackResource", FeedbackResource);
+            writer.WriteEnumValue<Microsoft.Graph.Models.EducationFeedbackResourceOutcomeStatus>("resourceStatus", ResourceStatus);
         }
     }
 }

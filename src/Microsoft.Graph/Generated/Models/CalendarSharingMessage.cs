@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class CalendarSharingMessage : Message, IParsable
+    public class CalendarSharingMessage : Microsoft.Graph.Models.Message, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The canAccept property</summary>
@@ -19,32 +19,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The sharingMessageAction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CalendarSharingMessageAction? SharingMessageAction
+        public Microsoft.Graph.Models.CalendarSharingMessageAction? SharingMessageAction
         {
-            get { return BackingStore?.Get<CalendarSharingMessageAction?>("sharingMessageAction"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CalendarSharingMessageAction?>("sharingMessageAction"); }
             set { BackingStore?.Set("sharingMessageAction", value); }
         }
 #nullable restore
 #else
-        public CalendarSharingMessageAction SharingMessageAction
+        public Microsoft.Graph.Models.CalendarSharingMessageAction SharingMessageAction
         {
-            get { return BackingStore?.Get<CalendarSharingMessageAction>("sharingMessageAction"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.CalendarSharingMessageAction>("sharingMessageAction"); }
             set { BackingStore?.Set("sharingMessageAction", value); }
         }
 #endif
         /// <summary>The sharingMessageActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CalendarSharingMessageAction>? SharingMessageActions
+        public List<Microsoft.Graph.Models.CalendarSharingMessageAction>? SharingMessageActions
         {
-            get { return BackingStore?.Get<List<CalendarSharingMessageAction>?>("sharingMessageActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CalendarSharingMessageAction>?>("sharingMessageActions"); }
             set { BackingStore?.Set("sharingMessageActions", value); }
         }
 #nullable restore
 #else
-        public List<CalendarSharingMessageAction> SharingMessageActions
+        public List<Microsoft.Graph.Models.CalendarSharingMessageAction> SharingMessageActions
         {
-            get { return BackingStore?.Get<List<CalendarSharingMessageAction>>("sharingMessageActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.CalendarSharingMessageAction>>("sharingMessageActions"); }
             set { BackingStore?.Set("sharingMessageActions", value); }
         }
 #endif
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CalendarSharingMessage"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.CalendarSharingMessage"/> and sets the default values.
         /// </summary>
         public CalendarSharingMessage() : base()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CalendarSharingMessage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.CalendarSharingMessage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CalendarSharingMessage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.CalendarSharingMessage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CalendarSharingMessage();
+            return new Microsoft.Graph.Models.CalendarSharingMessage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,8 +90,8 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "canAccept", n => { CanAccept = n.GetBoolValue(); } },
-                { "sharingMessageAction", n => { SharingMessageAction = n.GetObjectValue<CalendarSharingMessageAction>(CalendarSharingMessageAction.CreateFromDiscriminatorValue); } },
-                { "sharingMessageActions", n => { SharingMessageActions = n.GetCollectionOfObjectValues<CalendarSharingMessageAction>(CalendarSharingMessageAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sharingMessageAction", n => { SharingMessageAction = n.GetObjectValue<Microsoft.Graph.Models.CalendarSharingMessageAction>(Microsoft.Graph.Models.CalendarSharingMessageAction.CreateFromDiscriminatorValue); } },
+                { "sharingMessageActions", n => { SharingMessageActions = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.CalendarSharingMessageAction>(Microsoft.Graph.Models.CalendarSharingMessageAction.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "suggestedCalendarName", n => { SuggestedCalendarName = n.GetStringValue(); } },
             };
         }
@@ -104,8 +104,8 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("canAccept", CanAccept);
-            writer.WriteObjectValue<CalendarSharingMessageAction>("sharingMessageAction", SharingMessageAction);
-            writer.WriteCollectionOfObjectValues<CalendarSharingMessageAction>("sharingMessageActions", SharingMessageActions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.CalendarSharingMessageAction>("sharingMessageAction", SharingMessageAction);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.CalendarSharingMessageAction>("sharingMessageActions", SharingMessageActions);
             writer.WriteStringValue("suggestedCalendarName", SuggestedCalendarName);
         }
     }

@@ -27,54 +27,54 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item
     public class WorkbookWorksheetItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the charts property of the microsoft.graph.workbookWorksheet entity.</summary>
-        public ChartsRequestBuilder Charts
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ChartsRequestBuilder Charts
         {
-            get => new ChartsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ChartsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the names property of the microsoft.graph.workbookWorksheet entity.</summary>
-        public NamesRequestBuilder Names
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Names.NamesRequestBuilder Names
         {
-            get => new NamesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Names.NamesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pivotTables property of the microsoft.graph.workbookWorksheet entity.</summary>
-        public PivotTablesRequestBuilder PivotTables
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.PivotTables.PivotTablesRequestBuilder PivotTables
         {
-            get => new PivotTablesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.PivotTables.PivotTablesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the protection property of the microsoft.graph.workbookWorksheet entity.</summary>
-        public ProtectionRequestBuilder Protection
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Protection.ProtectionRequestBuilder Protection
         {
-            get => new ProtectionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Protection.ProtectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the range method.</summary>
-        public RangeRequestBuilder Range
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.RangeRequestBuilder Range
         {
-            get => new RangeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.RangeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tables property of the microsoft.graph.workbookWorksheet entity.</summary>
-        public TablesRequestBuilder Tables
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.TablesRequestBuilder Tables
         {
-            get => new TablesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.TablesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the usedRange method.</summary>
-        public UsedRangeRequestBuilder UsedRange
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.UsedRangeRequestBuilder UsedRange
         {
-            get => new UsedRangeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.UsedRangeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Provides operations to call the cell method.
         /// </summary>
-        /// <returns>A <see cref="CellWithRowWithColumnRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.CellWithRowWithColumn.CellWithRowWithColumnRequestBuilder"/></returns>
         /// <param name="column">Usage: column={column}</param>
         /// <param name="row">Usage: row={row}</param>
-        public CellWithRowWithColumnRequestBuilder CellWithRowWithColumn(int? column, int? row)
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.CellWithRowWithColumn.CellWithRowWithColumnRequestBuilder CellWithRowWithColumn(int? column, int? row)
         {
             _ = column ?? throw new ArgumentNullException(nameof(column));
             _ = row ?? throw new ArgumentNullException(nameof(row));
-            return new CellWithRowWithColumnRequestBuilder(PathParameters, RequestAdapter, column, row);
+            return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.CellWithRowWithColumn.CellWithRowWithColumnRequestBuilder(PathParameters, RequestAdapter, column, row);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WorkbookWorksheetItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.WorkbookWorksheetItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WorkbookWorksheetItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.WorkbookWorksheetItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -107,67 +107,67 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents a collection of worksheets associated with the workbook. Read-only.
         /// </summary>
-        /// <returns>A <see cref="WorkbookWorksheet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookWorksheet"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookWorksheet?> GetAsync(Action<RequestConfiguration<WorkbookWorksheetItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookWorksheet?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.WorkbookWorksheetItemRequestBuilder.WorkbookWorksheetItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WorkbookWorksheet> GetAsync(Action<RequestConfiguration<WorkbookWorksheetItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookWorksheet> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.WorkbookWorksheetItemRequestBuilder.WorkbookWorksheetItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WorkbookWorksheet>(requestInfo, WorkbookWorksheet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkbookWorksheet>(requestInfo, Microsoft.Graph.Models.WorkbookWorksheet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property worksheets in drives
         /// </summary>
-        /// <returns>A <see cref="WorkbookWorksheet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookWorksheet"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookWorksheet?> PatchAsync(WorkbookWorksheet body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookWorksheet?> PatchAsync(Microsoft.Graph.Models.WorkbookWorksheet body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WorkbookWorksheet> PatchAsync(WorkbookWorksheet body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Models.WorkbookWorksheet> PatchAsync(Microsoft.Graph.Models.WorkbookWorksheet body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WorkbookWorksheet>(requestInfo, WorkbookWorksheet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkbookWorksheet>(requestInfo, Microsoft.Graph.Models.WorkbookWorksheet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the range method.
         /// </summary>
-        /// <returns>A <see cref="RangeWithAddressRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeWithAddress.RangeWithAddressRequestBuilder"/></returns>
         /// <param name="address">Usage: address=&apos;{address}&apos;</param>
-        public RangeWithAddressRequestBuilder RangeWithAddress(string address)
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeWithAddress.RangeWithAddressRequestBuilder RangeWithAddress(string address)
         {
             if(string.IsNullOrEmpty(address)) throw new ArgumentNullException(nameof(address));
-            return new RangeWithAddressRequestBuilder(PathParameters, RequestAdapter, address);
+            return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeWithAddress.RangeWithAddressRequestBuilder(PathParameters, RequestAdapter, address);
         }
         /// <summary>
         /// Delete navigation property worksheets for drives
@@ -195,11 +195,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WorkbookWorksheetItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.WorkbookWorksheetItemRequestBuilder.WorkbookWorksheetItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WorkbookWorksheetItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.WorkbookWorksheetItemRequestBuilder.WorkbookWorksheetItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -215,11 +215,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(WorkbookWorksheet body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.WorkbookWorksheet body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(WorkbookWorksheet body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.WorkbookWorksheet body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -232,21 +232,21 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item
         /// <summary>
         /// Provides operations to call the usedRange method.
         /// </summary>
-        /// <returns>A <see cref="UsedRangeWithValuesOnlyRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRangeWithValuesOnly.UsedRangeWithValuesOnlyRequestBuilder"/></returns>
         /// <param name="valuesOnly">Usage: valuesOnly={valuesOnly}</param>
-        public UsedRangeWithValuesOnlyRequestBuilder UsedRangeWithValuesOnly(bool? valuesOnly)
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRangeWithValuesOnly.UsedRangeWithValuesOnlyRequestBuilder UsedRangeWithValuesOnly(bool? valuesOnly)
         {
             _ = valuesOnly ?? throw new ArgumentNullException(nameof(valuesOnly));
-            return new UsedRangeWithValuesOnlyRequestBuilder(PathParameters, RequestAdapter, valuesOnly);
+            return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRangeWithValuesOnly.UsedRangeWithValuesOnlyRequestBuilder(PathParameters, RequestAdapter, valuesOnly);
         }
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WorkbookWorksheetItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.WorkbookWorksheetItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WorkbookWorksheetItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.WorkbookWorksheetItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WorkbookWorksheetItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.WorkbookWorksheetItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -285,7 +285,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WorkbookWorksheetItemRequestBuilderGetRequestConfiguration : RequestConfiguration<WorkbookWorksheetItemRequestBuilderGetQueryParameters>
+        public class WorkbookWorksheetItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.WorkbookWorksheetItemRequestBuilder.WorkbookWorksheetItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

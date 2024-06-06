@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class FileStorage : Entity, IParsable
+    public class FileStorage : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The containers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FileStorageContainer>? Containers
+        public List<Microsoft.Graph.Models.FileStorageContainer>? Containers
         {
-            get { return BackingStore?.Get<List<FileStorageContainer>?>("containers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.FileStorageContainer>?>("containers"); }
             set { BackingStore?.Set("containers", value); }
         }
 #nullable restore
 #else
-        public List<FileStorageContainer> Containers
+        public List<Microsoft.Graph.Models.FileStorageContainer> Containers
         {
-            get { return BackingStore?.Get<List<FileStorageContainer>>("containers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.FileStorageContainer>>("containers"); }
             set { BackingStore?.Set("containers", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FileStorage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.FileStorage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FileStorage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.FileStorage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FileStorage();
+            return new Microsoft.Graph.Models.FileStorage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "containers", n => { Containers = n.GetCollectionOfObjectValues<FileStorageContainer>(FileStorageContainer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "containers", n => { Containers = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.FileStorageContainer>(Microsoft.Graph.Models.FileStorageContainer.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<FileStorageContainer>("containers", Containers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.FileStorageContainer>("containers", Containers);
         }
     }
 }

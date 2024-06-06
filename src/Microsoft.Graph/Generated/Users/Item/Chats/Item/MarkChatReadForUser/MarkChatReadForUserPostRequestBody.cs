@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.MarkChatReadForUser
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkUserIdentity? User
+        public Microsoft.Graph.Models.TeamworkUserIdentity? User
         {
-            get { return BackingStore?.Get<TeamworkUserIdentity?>("user"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamworkUserIdentity?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
 #nullable restore
 #else
-        public TeamworkUserIdentity User
+        public Microsoft.Graph.Models.TeamworkUserIdentity User
         {
-            get { return BackingStore?.Get<TeamworkUserIdentity>("user"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TeamworkUserIdentity>("user"); }
             set { BackingStore?.Set("user", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MarkChatReadForUserPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Chats.Item.MarkChatReadForUser.MarkChatReadForUserPostRequestBody"/> and sets the default values.
         /// </summary>
         public MarkChatReadForUserPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.MarkChatReadForUser
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MarkChatReadForUserPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Chats.Item.MarkChatReadForUser.MarkChatReadForUserPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MarkChatReadForUserPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Users.Item.Chats.Item.MarkChatReadForUser.MarkChatReadForUserPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MarkChatReadForUserPostRequestBody();
+            return new Microsoft.Graph.Users.Item.Chats.Item.MarkChatReadForUser.MarkChatReadForUserPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.MarkChatReadForUser
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "user", n => { User = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<Microsoft.Graph.Models.TeamworkUserIdentity>(Microsoft.Graph.Models.TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.MarkChatReadForUser
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<TeamworkUserIdentity>("user", User);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TeamworkUserIdentity>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

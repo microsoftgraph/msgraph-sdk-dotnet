@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="StreamObject"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.Security.StreamObject"/> and sets the default values.
         /// </summary>
         public StreamObject()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="StreamObject"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Security.StreamObject"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static StreamObject CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.Security.StreamObject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new StreamObject();
+            return new Microsoft.Graph.Models.Security.StreamObject();
         }
         /// <summary>
         /// The deserialization information for the current model

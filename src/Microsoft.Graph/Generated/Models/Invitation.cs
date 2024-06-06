@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class Invitation : Entity, IParsable
+    public class Invitation : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The user created as part of the invitation creation. Read-Only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public User? InvitedUser
+        public Microsoft.Graph.Models.User? InvitedUser
         {
-            get { return BackingStore?.Get<User?>("invitedUser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.User?>("invitedUser"); }
             set { BackingStore?.Set("invitedUser", value); }
         }
 #nullable restore
 #else
-        public User InvitedUser
+        public Microsoft.Graph.Models.User InvitedUser
         {
-            get { return BackingStore?.Get<User>("invitedUser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.User>("invitedUser"); }
             set { BackingStore?.Set("invitedUser", value); }
         }
 #endif
@@ -77,16 +77,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The users or groups who are sponsors of the invited user. Sponsors are users and groups that are responsible for guest users&apos; privileges in the tenant and for keeping the guest users&apos; information and access up to date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? InvitedUserSponsors
+        public List<Microsoft.Graph.Models.DirectoryObject>? InvitedUserSponsors
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("invitedUserSponsors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("invitedUserSponsors"); }
             set { BackingStore?.Set("invitedUserSponsors", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> InvitedUserSponsors
+        public List<Microsoft.Graph.Models.DirectoryObject> InvitedUserSponsors
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("invitedUserSponsors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("invitedUserSponsors"); }
             set { BackingStore?.Set("invitedUserSponsors", value); }
         }
 #endif
@@ -169,12 +169,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Invitation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.Invitation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Invitation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.Invitation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Invitation();
+            return new Microsoft.Graph.Models.Invitation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -186,11 +186,11 @@ namespace Microsoft.Graph.Models
             {
                 { "inviteRedeemUrl", n => { InviteRedeemUrl = n.GetStringValue(); } },
                 { "inviteRedirectUrl", n => { InviteRedirectUrl = n.GetStringValue(); } },
-                { "invitedUser", n => { InvitedUser = n.GetObjectValue<User>(User.CreateFromDiscriminatorValue); } },
+                { "invitedUser", n => { InvitedUser = n.GetObjectValue<Microsoft.Graph.Models.User>(Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
                 { "invitedUserDisplayName", n => { InvitedUserDisplayName = n.GetStringValue(); } },
                 { "invitedUserEmailAddress", n => { InvitedUserEmailAddress = n.GetStringValue(); } },
                 { "invitedUserMessageInfo", n => { InvitedUserMessageInfo = n.GetObjectValue<Microsoft.Graph.Models.InvitedUserMessageInfo>(Microsoft.Graph.Models.InvitedUserMessageInfo.CreateFromDiscriminatorValue); } },
-                { "invitedUserSponsors", n => { InvitedUserSponsors = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "invitedUserSponsors", n => { InvitedUserSponsors = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "invitedUserType", n => { InvitedUserType = n.GetStringValue(); } },
                 { "resetRedemption", n => { ResetRedemption = n.GetBoolValue(); } },
                 { "sendInvitationMessage", n => { SendInvitationMessage = n.GetBoolValue(); } },
@@ -205,11 +205,11 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<User>("invitedUser", InvitedUser);
+            writer.WriteObjectValue<Microsoft.Graph.Models.User>("invitedUser", InvitedUser);
             writer.WriteStringValue("invitedUserDisplayName", InvitedUserDisplayName);
             writer.WriteStringValue("invitedUserEmailAddress", InvitedUserEmailAddress);
             writer.WriteObjectValue<Microsoft.Graph.Models.InvitedUserMessageInfo>("invitedUserMessageInfo", InvitedUserMessageInfo);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("invitedUserSponsors", InvitedUserSponsors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("invitedUserSponsors", InvitedUserSponsors);
             writer.WriteStringValue("invitedUserType", InvitedUserType);
             writer.WriteStringValue("inviteRedeemUrl", InviteRedeemUrl);
             writer.WriteStringValue("inviteRedirectUrl", InviteRedirectUrl);

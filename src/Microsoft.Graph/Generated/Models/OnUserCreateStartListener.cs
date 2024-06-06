@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OnUserCreateStartListener : AuthenticationEventListener, IParsable
+    public class OnUserCreateStartListener : Microsoft.Graph.Models.AuthenticationEventListener, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnUserCreateStartHandler? Handler
+        public Microsoft.Graph.Models.OnUserCreateStartHandler? Handler
         {
-            get { return BackingStore?.Get<OnUserCreateStartHandler?>("handler"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnUserCreateStartHandler?>("handler"); }
             set { BackingStore?.Set("handler", value); }
         }
 #nullable restore
 #else
-        public OnUserCreateStartHandler Handler
+        public Microsoft.Graph.Models.OnUserCreateStartHandler Handler
         {
-            get { return BackingStore?.Get<OnUserCreateStartHandler>("handler"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OnUserCreateStartHandler>("handler"); }
             set { BackingStore?.Set("handler", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnUserCreateStartListener"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OnUserCreateStartListener"/> and sets the default values.
         /// </summary>
         public OnUserCreateStartListener() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnUserCreateStartListener"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OnUserCreateStartListener"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnUserCreateStartListener CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OnUserCreateStartListener CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnUserCreateStartListener();
+            return new Microsoft.Graph.Models.OnUserCreateStartListener();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "handler", n => { Handler = n.GetObjectValue<OnUserCreateStartHandler>(OnUserCreateStartHandler.CreateFromDiscriminatorValue); } },
+                { "handler", n => { Handler = n.GetObjectValue<Microsoft.Graph.Models.OnUserCreateStartHandler>(Microsoft.Graph.Models.OnUserCreateStartHandler.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<OnUserCreateStartHandler>("handler", Handler);
+            writer.WriteObjectValue<Microsoft.Graph.Models.OnUserCreateStartHandler>("handler", Handler);
         }
     }
 }

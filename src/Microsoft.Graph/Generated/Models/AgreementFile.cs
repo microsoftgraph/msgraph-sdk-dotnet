@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class AgreementFile : AgreementFileProperties, IParsable
+    public class AgreementFile : Microsoft.Graph.Models.AgreementFileProperties, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The localized version of the terms of use agreement files attached to the agreement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AgreementFileLocalization>? Localizations
+        public List<Microsoft.Graph.Models.AgreementFileLocalization>? Localizations
         {
-            get { return BackingStore?.Get<List<AgreementFileLocalization>?>("localizations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AgreementFileLocalization>?>("localizations"); }
             set { BackingStore?.Set("localizations", value); }
         }
 #nullable restore
 #else
-        public List<AgreementFileLocalization> Localizations
+        public List<Microsoft.Graph.Models.AgreementFileLocalization> Localizations
         {
-            get { return BackingStore?.Get<List<AgreementFileLocalization>>("localizations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.AgreementFileLocalization>>("localizations"); }
             set { BackingStore?.Set("localizations", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AgreementFile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.AgreementFile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AgreementFile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.AgreementFile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AgreementFile();
+            return new Microsoft.Graph.Models.AgreementFile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "localizations", n => { Localizations = n.GetCollectionOfObjectValues<AgreementFileLocalization>(AgreementFileLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "localizations", n => { Localizations = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.AgreementFileLocalization>(Microsoft.Graph.Models.AgreementFileLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AgreementFileLocalization>("localizations", Localizations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.AgreementFileLocalization>("localizations", Localizations);
         }
     }
 }

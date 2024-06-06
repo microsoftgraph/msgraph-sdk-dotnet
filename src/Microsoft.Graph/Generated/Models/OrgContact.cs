@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Models
 {
     #pragma warning disable CS1591
-    public class OrgContact : DirectoryObject, IParsable
+    public class OrgContact : Microsoft.Graph.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Postal addresses for this organizational contact. For now a contact can only have one physical address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PhysicalOfficeAddress>? Addresses
+        public List<Microsoft.Graph.Models.PhysicalOfficeAddress>? Addresses
         {
-            get { return BackingStore?.Get<List<PhysicalOfficeAddress>?>("addresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PhysicalOfficeAddress>?>("addresses"); }
             set { BackingStore?.Set("addresses", value); }
         }
 #nullable restore
 #else
-        public List<PhysicalOfficeAddress> Addresses
+        public List<Microsoft.Graph.Models.PhysicalOfficeAddress> Addresses
         {
-            get { return BackingStore?.Get<List<PhysicalOfficeAddress>>("addresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.PhysicalOfficeAddress>>("addresses"); }
             set { BackingStore?.Set("addresses", value); }
         }
 #endif
@@ -61,16 +61,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The contact&apos;s direct reports. (The users and contacts that have their manager property set to this contact.)  Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? DirectReports
+        public List<Microsoft.Graph.Models.DirectoryObject>? DirectReports
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("directReports"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("directReports"); }
             set { BackingStore?.Set("directReports", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> DirectReports
+        public List<Microsoft.Graph.Models.DirectoryObject> DirectReports
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("directReports"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("directReports"); }
             set { BackingStore?.Set("directReports", value); }
         }
 #endif
@@ -157,32 +157,32 @@ namespace Microsoft.Graph.Models
         /// <summary>The user or contact that is this contact&apos;s manager. Read-only. Supports $expand and $filter (eq) by id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? Manager
+        public Microsoft.Graph.Models.DirectoryObject? Manager
         {
-            get { return BackingStore?.Get<DirectoryObject?>("manager"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject?>("manager"); }
             set { BackingStore?.Set("manager", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject Manager
+        public Microsoft.Graph.Models.DirectoryObject Manager
         {
-            get { return BackingStore?.Get<DirectoryObject>("manager"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.DirectoryObject>("manager"); }
             set { BackingStore?.Set("manager", value); }
         }
 #endif
         /// <summary>Groups that this contact is a member of. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? MemberOf
+        public List<Microsoft.Graph.Models.DirectoryObject>? MemberOf
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("memberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> MemberOf
+        public List<Microsoft.Graph.Models.DirectoryObject> MemberOf
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("memberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
 #endif
@@ -195,16 +195,16 @@ namespace Microsoft.Graph.Models
         /// <summary>List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not for category and propertyCausingError), /$count eq 0, /$count ne 0.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnPremisesProvisioningError>? OnPremisesProvisioningErrors
+        public List<Microsoft.Graph.Models.OnPremisesProvisioningError>? OnPremisesProvisioningErrors
         {
-            get { return BackingStore?.Get<List<OnPremisesProvisioningError>?>("onPremisesProvisioningErrors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnPremisesProvisioningError>?>("onPremisesProvisioningErrors"); }
             set { BackingStore?.Set("onPremisesProvisioningErrors", value); }
         }
 #nullable restore
 #else
-        public List<OnPremisesProvisioningError> OnPremisesProvisioningErrors
+        public List<Microsoft.Graph.Models.OnPremisesProvisioningError> OnPremisesProvisioningErrors
         {
-            get { return BackingStore?.Get<List<OnPremisesProvisioningError>>("onPremisesProvisioningErrors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.OnPremisesProvisioningError>>("onPremisesProvisioningErrors"); }
             set { BackingStore?.Set("onPremisesProvisioningErrors", value); }
         }
 #endif
@@ -217,16 +217,16 @@ namespace Microsoft.Graph.Models
         /// <summary>List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Phone>? Phones
+        public List<Microsoft.Graph.Models.Phone>? Phones
         {
-            get { return BackingStore?.Get<List<Phone>?>("phones"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Phone>?>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
 #nullable restore
 #else
-        public List<Phone> Phones
+        public List<Microsoft.Graph.Models.Phone> Phones
         {
-            get { return BackingStore?.Get<List<Phone>>("phones"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.Phone>>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
 #endif
@@ -249,16 +249,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an organizational contact object .  Supports $filter (eq, not, for isResolved and serviceInstance).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServiceProvisioningError>? ServiceProvisioningErrors
+        public List<Microsoft.Graph.Models.ServiceProvisioningError>? ServiceProvisioningErrors
         {
-            get { return BackingStore?.Get<List<ServiceProvisioningError>?>("serviceProvisioningErrors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ServiceProvisioningError>?>("serviceProvisioningErrors"); }
             set { BackingStore?.Set("serviceProvisioningErrors", value); }
         }
 #nullable restore
 #else
-        public List<ServiceProvisioningError> ServiceProvisioningErrors
+        public List<Microsoft.Graph.Models.ServiceProvisioningError> ServiceProvisioningErrors
         {
-            get { return BackingStore?.Get<List<ServiceProvisioningError>>("serviceProvisioningErrors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.ServiceProvisioningError>>("serviceProvisioningErrors"); }
             set { BackingStore?.Set("serviceProvisioningErrors", value); }
         }
 #endif
@@ -281,21 +281,21 @@ namespace Microsoft.Graph.Models
         /// <summary>Groups that this contact is a member of, including groups that the contact is nested under. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? TransitiveMemberOf
+        public List<Microsoft.Graph.Models.DirectoryObject>? TransitiveMemberOf
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("transitiveMemberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>?>("transitiveMemberOf"); }
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> TransitiveMemberOf
+        public List<Microsoft.Graph.Models.DirectoryObject> TransitiveMemberOf
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("transitiveMemberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.DirectoryObject>>("transitiveMemberOf"); }
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OrgContact"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.OrgContact"/> and sets the default values.
         /// </summary>
         public OrgContact() : base()
         {
@@ -304,12 +304,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OrgContact"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.OrgContact"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OrgContact CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Models.OrgContact CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OrgContact();
+            return new Microsoft.Graph.Models.OrgContact();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -319,25 +319,25 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "addresses", n => { Addresses = n.GetCollectionOfObjectValues<PhysicalOfficeAddress>(PhysicalOfficeAddress.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "addresses", n => { Addresses = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.PhysicalOfficeAddress>(Microsoft.Graph.Models.PhysicalOfficeAddress.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "companyName", n => { CompanyName = n.GetStringValue(); } },
                 { "department", n => { Department = n.GetStringValue(); } },
-                { "directReports", n => { DirectReports = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "directReports", n => { DirectReports = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "givenName", n => { GivenName = n.GetStringValue(); } },
                 { "jobTitle", n => { JobTitle = n.GetStringValue(); } },
                 { "mail", n => { Mail = n.GetStringValue(); } },
                 { "mailNickname", n => { MailNickname = n.GetStringValue(); } },
-                { "manager", n => { Manager = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
-                { "memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "manager", n => { Manager = n.GetObjectValue<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "onPremisesLastSyncDateTime", n => { OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                { "onPremisesProvisioningErrors", n => { OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<OnPremisesProvisioningError>(OnPremisesProvisioningError.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "onPremisesProvisioningErrors", n => { OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.OnPremisesProvisioningError>(Microsoft.Graph.Models.OnPremisesProvisioningError.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
-                { "phones", n => { Phones = n.GetCollectionOfObjectValues<Phone>(Phone.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "phones", n => { Phones = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Phone>(Microsoft.Graph.Models.Phone.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "proxyAddresses", n => { ProxyAddresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "serviceProvisioningErrors", n => { ServiceProvisioningErrors = n.GetCollectionOfObjectValues<ServiceProvisioningError>(ServiceProvisioningError.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "serviceProvisioningErrors", n => { ServiceProvisioningErrors = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ServiceProvisioningError>(Microsoft.Graph.Models.ServiceProvisioningError.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "surname", n => { Surname = n.GetStringValue(); } },
-                { "transitiveMemberOf", n => { TransitiveMemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "transitiveMemberOf", n => { TransitiveMemberOf = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>(Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -348,25 +348,25 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<PhysicalOfficeAddress>("addresses", Addresses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.PhysicalOfficeAddress>("addresses", Addresses);
             writer.WriteStringValue("companyName", CompanyName);
             writer.WriteStringValue("department", Department);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("directReports", DirectReports);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("directReports", DirectReports);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("givenName", GivenName);
             writer.WriteStringValue("jobTitle", JobTitle);
             writer.WriteStringValue("mail", Mail);
             writer.WriteStringValue("mailNickname", MailNickname);
-            writer.WriteObjectValue<DirectoryObject>("manager", Manager);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("memberOf", MemberOf);
+            writer.WriteObjectValue<Microsoft.Graph.Models.DirectoryObject>("manager", Manager);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("memberOf", MemberOf);
             writer.WriteDateTimeOffsetValue("onPremisesLastSyncDateTime", OnPremisesLastSyncDateTime);
-            writer.WriteCollectionOfObjectValues<OnPremisesProvisioningError>("onPremisesProvisioningErrors", OnPremisesProvisioningErrors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.OnPremisesProvisioningError>("onPremisesProvisioningErrors", OnPremisesProvisioningErrors);
             writer.WriteBoolValue("onPremisesSyncEnabled", OnPremisesSyncEnabled);
-            writer.WriteCollectionOfObjectValues<Phone>("phones", Phones);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.Phone>("phones", Phones);
             writer.WriteCollectionOfPrimitiveValues<string>("proxyAddresses", ProxyAddresses);
-            writer.WriteCollectionOfObjectValues<ServiceProvisioningError>("serviceProvisioningErrors", ServiceProvisioningErrors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.ServiceProvisioningError>("serviceProvisioningErrors", ServiceProvisioningErrors);
             writer.WriteStringValue("surname", Surname);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("transitiveMemberOf", TransitiveMemberOf);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.DirectoryObject>("transitiveMemberOf", TransitiveMemberOf);
         }
     }
 }

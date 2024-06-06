@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The code property</summary>
-        public SynchronizationStatusCode? Code
+        public Microsoft.Graph.Models.SynchronizationStatusCode? Code
         {
-            get { return BackingStore?.Get<SynchronizationStatusCode?>("code"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SynchronizationStatusCode?>("code"); }
             set { BackingStore?.Set("code", value); }
         }
         /// <summary>Number of consecutive times this job failed.</summary>
@@ -40,48 +40,48 @@ namespace Microsoft.Graph.Models
         /// <summary>Details of the last execution of the job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationTaskExecution? LastExecution
+        public Microsoft.Graph.Models.SynchronizationTaskExecution? LastExecution
         {
-            get { return BackingStore?.Get<SynchronizationTaskExecution?>("lastExecution"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SynchronizationTaskExecution?>("lastExecution"); }
             set { BackingStore?.Set("lastExecution", value); }
         }
 #nullable restore
 #else
-        public SynchronizationTaskExecution LastExecution
+        public Microsoft.Graph.Models.SynchronizationTaskExecution LastExecution
         {
-            get { return BackingStore?.Get<SynchronizationTaskExecution>("lastExecution"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SynchronizationTaskExecution>("lastExecution"); }
             set { BackingStore?.Set("lastExecution", value); }
         }
 #endif
         /// <summary>Details of the last execution of this job, which didn&apos;t have any errors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationTaskExecution? LastSuccessfulExecution
+        public Microsoft.Graph.Models.SynchronizationTaskExecution? LastSuccessfulExecution
         {
-            get { return BackingStore?.Get<SynchronizationTaskExecution?>("lastSuccessfulExecution"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SynchronizationTaskExecution?>("lastSuccessfulExecution"); }
             set { BackingStore?.Set("lastSuccessfulExecution", value); }
         }
 #nullable restore
 #else
-        public SynchronizationTaskExecution LastSuccessfulExecution
+        public Microsoft.Graph.Models.SynchronizationTaskExecution LastSuccessfulExecution
         {
-            get { return BackingStore?.Get<SynchronizationTaskExecution>("lastSuccessfulExecution"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SynchronizationTaskExecution>("lastSuccessfulExecution"); }
             set { BackingStore?.Set("lastSuccessfulExecution", value); }
         }
 #endif
         /// <summary>Details of the last execution of the job, which exported objects into the target directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationTaskExecution? LastSuccessfulExecutionWithExports
+        public Microsoft.Graph.Models.SynchronizationTaskExecution? LastSuccessfulExecutionWithExports
         {
-            get { return BackingStore?.Get<SynchronizationTaskExecution?>("lastSuccessfulExecutionWithExports"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SynchronizationTaskExecution?>("lastSuccessfulExecutionWithExports"); }
             set { BackingStore?.Set("lastSuccessfulExecutionWithExports", value); }
         }
 #nullable restore
 #else
-        public SynchronizationTaskExecution LastSuccessfulExecutionWithExports
+        public Microsoft.Graph.Models.SynchronizationTaskExecution LastSuccessfulExecutionWithExports
         {
-            get { return BackingStore?.Get<SynchronizationTaskExecution>("lastSuccessfulExecutionWithExports"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SynchronizationTaskExecution>("lastSuccessfulExecutionWithExports"); }
             set { BackingStore?.Set("lastSuccessfulExecutionWithExports", value); }
         }
 #endif
@@ -104,32 +104,32 @@ namespace Microsoft.Graph.Models
         /// <summary>Details of the progress of a job toward completion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SynchronizationProgress>? Progress
+        public List<Microsoft.Graph.Models.SynchronizationProgress>? Progress
         {
-            get { return BackingStore?.Get<List<SynchronizationProgress>?>("progress"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SynchronizationProgress>?>("progress"); }
             set { BackingStore?.Set("progress", value); }
         }
 #nullable restore
 #else
-        public List<SynchronizationProgress> Progress
+        public List<Microsoft.Graph.Models.SynchronizationProgress> Progress
         {
-            get { return BackingStore?.Get<List<SynchronizationProgress>>("progress"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.SynchronizationProgress>>("progress"); }
             set { BackingStore?.Set("progress", value); }
         }
 #endif
         /// <summary>If job is in quarantine, quarantine details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationQuarantine? Quarantine
+        public Microsoft.Graph.Models.SynchronizationQuarantine? Quarantine
         {
-            get { return BackingStore?.Get<SynchronizationQuarantine?>("quarantine"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SynchronizationQuarantine?>("quarantine"); }
             set { BackingStore?.Set("quarantine", value); }
         }
 #nullable restore
 #else
-        public SynchronizationQuarantine Quarantine
+        public Microsoft.Graph.Models.SynchronizationQuarantine Quarantine
         {
-            get { return BackingStore?.Get<SynchronizationQuarantine>("quarantine"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SynchronizationQuarantine>("quarantine"); }
             set { BackingStore?.Set("quarantine", value); }
         }
 #endif
@@ -148,16 +148,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Count of synchronized objects, listed by object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<StringKeyLongValuePair>? SynchronizedEntryCountByType
+        public List<Microsoft.Graph.Models.StringKeyLongValuePair>? SynchronizedEntryCountByType
         {
-            get { return BackingStore?.Get<List<StringKeyLongValuePair>?>("synchronizedEntryCountByType"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.StringKeyLongValuePair>?>("synchronizedEntryCountByType"); }
             set { BackingStore?.Set("synchronizedEntryCountByType", value); }
         }
 #nullable restore
 #else
-        public List<StringKeyLongValuePair> SynchronizedEntryCountByType
+        public List<Microsoft.Graph.Models.StringKeyLongValuePair> SynchronizedEntryCountByType
         {
-            get { return BackingStore?.Get<List<StringKeyLongValuePair>>("synchronizedEntryCountByType"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Models.StringKeyLongValuePair>>("synchronizedEntryCountByType"); }
             set { BackingStore?.Set("synchronizedEntryCountByType", value); }
         }
 #endif
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SynchronizationStatus"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Models.SynchronizationStatus"/> and sets the default values.
         /// </summary>
         public SynchronizationStatus()
         {
@@ -188,12 +188,12 @@ namespace Microsoft.Graph.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SynchronizationStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Models.SynchronizationStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SynchronizationStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Models.SynchronizationStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SynchronizationStatus();
+            return new Microsoft.Graph.Models.SynchronizationStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -203,18 +203,18 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<SynchronizationStatusCode>(); } },
+                { "code", n => { Code = n.GetEnumValue<Microsoft.Graph.Models.SynchronizationStatusCode>(); } },
                 { "countSuccessiveCompleteFailures", n => { CountSuccessiveCompleteFailures = n.GetLongValue(); } },
                 { "escrowsPruned", n => { EscrowsPruned = n.GetBoolValue(); } },
-                { "lastExecution", n => { LastExecution = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
-                { "lastSuccessfulExecution", n => { LastSuccessfulExecution = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
-                { "lastSuccessfulExecutionWithExports", n => { LastSuccessfulExecutionWithExports = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
+                { "lastExecution", n => { LastExecution = n.GetObjectValue<Microsoft.Graph.Models.SynchronizationTaskExecution>(Microsoft.Graph.Models.SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
+                { "lastSuccessfulExecution", n => { LastSuccessfulExecution = n.GetObjectValue<Microsoft.Graph.Models.SynchronizationTaskExecution>(Microsoft.Graph.Models.SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
+                { "lastSuccessfulExecutionWithExports", n => { LastSuccessfulExecutionWithExports = n.GetObjectValue<Microsoft.Graph.Models.SynchronizationTaskExecution>(Microsoft.Graph.Models.SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "progress", n => { Progress = n.GetCollectionOfObjectValues<SynchronizationProgress>(SynchronizationProgress.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "quarantine", n => { Quarantine = n.GetObjectValue<SynchronizationQuarantine>(SynchronizationQuarantine.CreateFromDiscriminatorValue); } },
+                { "progress", n => { Progress = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SynchronizationProgress>(Microsoft.Graph.Models.SynchronizationProgress.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "quarantine", n => { Quarantine = n.GetObjectValue<Microsoft.Graph.Models.SynchronizationQuarantine>(Microsoft.Graph.Models.SynchronizationQuarantine.CreateFromDiscriminatorValue); } },
                 { "steadyStateFirstAchievedTime", n => { SteadyStateFirstAchievedTime = n.GetDateTimeOffsetValue(); } },
                 { "steadyStateLastAchievedTime", n => { SteadyStateLastAchievedTime = n.GetDateTimeOffsetValue(); } },
-                { "synchronizedEntryCountByType", n => { SynchronizedEntryCountByType = n.GetCollectionOfObjectValues<StringKeyLongValuePair>(StringKeyLongValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "synchronizedEntryCountByType", n => { SynchronizedEntryCountByType = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.StringKeyLongValuePair>(Microsoft.Graph.Models.StringKeyLongValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "troubleshootingUrl", n => { TroubleshootingUrl = n.GetStringValue(); } },
             };
         }
@@ -225,18 +225,18 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<SynchronizationStatusCode>("code", Code);
+            writer.WriteEnumValue<Microsoft.Graph.Models.SynchronizationStatusCode>("code", Code);
             writer.WriteLongValue("countSuccessiveCompleteFailures", CountSuccessiveCompleteFailures);
             writer.WriteBoolValue("escrowsPruned", EscrowsPruned);
-            writer.WriteObjectValue<SynchronizationTaskExecution>("lastExecution", LastExecution);
-            writer.WriteObjectValue<SynchronizationTaskExecution>("lastSuccessfulExecution", LastSuccessfulExecution);
-            writer.WriteObjectValue<SynchronizationTaskExecution>("lastSuccessfulExecutionWithExports", LastSuccessfulExecutionWithExports);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SynchronizationTaskExecution>("lastExecution", LastExecution);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SynchronizationTaskExecution>("lastSuccessfulExecution", LastSuccessfulExecution);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SynchronizationTaskExecution>("lastSuccessfulExecutionWithExports", LastSuccessfulExecutionWithExports);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<SynchronizationProgress>("progress", Progress);
-            writer.WriteObjectValue<SynchronizationQuarantine>("quarantine", Quarantine);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SynchronizationProgress>("progress", Progress);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SynchronizationQuarantine>("quarantine", Quarantine);
             writer.WriteDateTimeOffsetValue("steadyStateFirstAchievedTime", SteadyStateFirstAchievedTime);
             writer.WriteDateTimeOffsetValue("steadyStateLastAchievedTime", SteadyStateLastAchievedTime);
-            writer.WriteCollectionOfObjectValues<StringKeyLongValuePair>("synchronizedEntryCountByType", SynchronizedEntryCountByType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.StringKeyLongValuePair>("synchronizedEntryCountByType", SynchronizedEntryCountByType);
             writer.WriteStringValue("troubleshootingUrl", TroubleshootingUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
