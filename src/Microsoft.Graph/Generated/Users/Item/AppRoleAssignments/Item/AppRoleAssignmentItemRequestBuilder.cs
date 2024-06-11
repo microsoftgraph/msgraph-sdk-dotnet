@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Users.Item.AppRoleAssignments.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the app roles a user has been granted for an application. Supports $expand.
+        /// Represents the app roles a user is granted for an application. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.AppRoleAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Users.Item.AppRoleAssignments.Item
             return requestInfo;
         }
         /// <summary>
-        /// Represents the app roles a user has been granted for an application. Supports $expand.
+        /// Represents the app roles a user is granted for an application. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Users.Item.AppRoleAssignments.Item
         {
         }
         /// <summary>
-        /// Represents the app roles a user has been granted for an application. Supports $expand.
+        /// Represents the app roles a user is granted for an application. Supports $expand.
         /// </summary>
         public class AppRoleAssignmentItemRequestBuilderGetQueryParameters 
         {

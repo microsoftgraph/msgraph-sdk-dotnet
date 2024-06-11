@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Groups.Item.CreatedOnBehalfOf
         {
         }
         /// <summary>
-        /// The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
+        /// The user (or application) that created the group. NOTE: This property isn&apos;t set if the user is an administrator. Read-only.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Groups.Item.CreatedOnBehalfOf
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DirectoryObject>(requestInfo, Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
+        /// The user (or application) that created the group. NOTE: This property isn&apos;t set if the user is an administrator. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Groups.Item.CreatedOnBehalfOf
             return new Microsoft.Graph.Groups.Item.CreatedOnBehalfOf.CreatedOnBehalfOfRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
+        /// The user (or application) that created the group. NOTE: This property isn&apos;t set if the user is an administrator. Read-only.
         /// </summary>
         public class CreatedOnBehalfOfRequestBuilderGetQueryParameters 
         {

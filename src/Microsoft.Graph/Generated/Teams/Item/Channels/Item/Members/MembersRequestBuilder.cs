@@ -82,8 +82,8 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Members
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ConversationMemberCollectionResponse>(requestInfo, Microsoft.Graph.Models.ConversationMemberCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a conversationMember to a channel.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0" />
+        /// Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.ConversationMember"/></returns>
         /// <param name="body">The request body</param>
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Members
             return requestInfo;
         }
         /// <summary>
-        /// Add a conversationMember to a channel.
+        /// Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

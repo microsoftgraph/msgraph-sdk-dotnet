@@ -83,6 +83,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("devices", value); }
         }
 #endif
+        /// <summary>The insiderRiskLevels property</summary>
+        public Microsoft.Graph.Models.ConditionalAccessInsiderRiskLevels? InsiderRiskLevels
+        {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessInsiderRiskLevels?>("insiderRiskLevels"); }
+            set { BackingStore?.Set("insiderRiskLevels", value); }
+        }
         /// <summary>Locations included in and excluded from the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -225,6 +231,7 @@ namespace Microsoft.Graph.Models
                 { "clientAppTypes", n => { ClientAppTypes = n.GetCollectionOfEnumValues<Microsoft.Graph.Models.ConditionalAccessClientApp>()?.ToList(); } },
                 { "clientApplications", n => { ClientApplications = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessClientApplications>(Microsoft.Graph.Models.ConditionalAccessClientApplications.CreateFromDiscriminatorValue); } },
                 { "devices", n => { Devices = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessDevices>(Microsoft.Graph.Models.ConditionalAccessDevices.CreateFromDiscriminatorValue); } },
+                { "insiderRiskLevels", n => { InsiderRiskLevels = n.GetEnumValue<Microsoft.Graph.Models.ConditionalAccessInsiderRiskLevels>(); } },
                 { "locations", n => { Locations = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessLocations>(Microsoft.Graph.Models.ConditionalAccessLocations.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "platforms", n => { Platforms = n.GetObjectValue<Microsoft.Graph.Models.ConditionalAccessPlatforms>(Microsoft.Graph.Models.ConditionalAccessPlatforms.CreateFromDiscriminatorValue); } },
@@ -245,6 +252,7 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessClientApplications>("clientApplications", ClientApplications);
             writer.WriteCollectionOfEnumValues<Microsoft.Graph.Models.ConditionalAccessClientApp>("clientAppTypes", ClientAppTypes);
             writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessDevices>("devices", Devices);
+            writer.WriteEnumValue<Microsoft.Graph.Models.ConditionalAccessInsiderRiskLevels>("insiderRiskLevels", InsiderRiskLevels);
             writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessLocations>("locations", Locations);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<Microsoft.Graph.Models.ConditionalAccessPlatforms>("platforms", Platforms);

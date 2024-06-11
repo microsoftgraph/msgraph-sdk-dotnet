@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isManaged"); }
             set { BackingStore?.Set("isManaged", value); }
         }
-        /// <summary>true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.</summary>
+        /// <summary>true if the device is rooted or jail-broken. This property can only be updated by Intune.</summary>
         public bool? IsRooted
         {
             get { return BackingStore?.Get<bool?>("isRooted"); }
