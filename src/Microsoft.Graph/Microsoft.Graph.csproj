@@ -36,6 +36,7 @@ https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/dev/CHANGELOG.md
     <Deterministic>true</Deterministic>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <NoWarn>$(NoWarn);NU5048;NETSDK1138</NoWarn>
+    <Version>$(VersionPrefix)</Version>
   </PropertyGroup>
   <PropertyGroup Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)','net5.0'))">
     <IsTrimmable>true</IsTrimmable>
