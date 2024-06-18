@@ -26,8 +26,6 @@
     <!-- VersionPrefix minor version should not be set when the change comes from the generator. It will be updated automatically. -->
     <!-- VersionPrefix minor version must be manually set when making manual changes to code. -->
     <!-- VersionPrefix major and patch versions must be manually set. -->
-    <VersionSuffix>
-    </VersionSuffix>
     <PackageReleaseNotes>
 https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/dev/CHANGELOG.md
     </PackageReleaseNotes>
