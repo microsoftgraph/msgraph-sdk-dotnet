@@ -117,16 +117,6 @@ configuration:
       description:
     - if:
       - payloadType: Issues
-      - isAction:
-        action: Closed
-      - hasLabel:
-          label: 'status:waiting-for-author-feedback'
-      then:
-      - removeLabel:
-          label: 'status:waiting-for-author-feedback'
-      description:
-    - if:
-      - payloadType: Issues
       - or:
         - isAssignedToSomeone
         - isAction:
@@ -134,6 +124,16 @@ configuration:
       then:
       - removeLabel:
           label: 'Needs: Triage'
+      description:
+    - if:
+      - payloadType: Issues
+      - isAction:
+          action: Closed
+      - hasLabel:
+          label: 'status:waiting-for-author-feedback'
+      then:
+      - removeLabel:
+          label: 'status:waiting-for-author-feedback'
       description:
     - if:
       - payloadType: Pull_Request
