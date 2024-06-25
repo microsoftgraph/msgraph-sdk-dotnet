@@ -26,7 +26,7 @@ To begin making requests with the library, you will need to initialize a **Graph
 
 The authentication provider is responsible for authenticating requests before sending them to the service. The Microsoft Graph .NET Client Library doesn't implement any authentication by default. Instead, you will need to retrieve access tokens for the service via the authentication library of your choice or by coding against one of the authentication endpoints directly. Please [read here](https://docs.microsoft.com/en-us/graph/auth/) for more details about authenticating the Microsoft Graph service.
 
-You can also read about authentication with Kiota generated clients [here](https://github.com/microsoft/kiota/blob/main/docs/extending/authentication.md#authentication-with-kiota-clients)
+You can also read about authentication with Kiota generated clients [here](https://learn.microsoft.com/en-us/openapi/kiota/authentication?tabs=csharp)
 
 ## Resource model
 
