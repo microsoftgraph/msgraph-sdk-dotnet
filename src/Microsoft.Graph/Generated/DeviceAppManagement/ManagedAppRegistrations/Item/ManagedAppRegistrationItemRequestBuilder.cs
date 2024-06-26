@@ -73,8 +73,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the managedAppRegistration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the androidManagedAppRegistration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-androidmanagedappregistration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.ManagedAppRegistration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the managedAppRegistration object.
+        /// Read properties and relationships of the androidManagedAppRegistration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item
         {
         }
         /// <summary>
-        /// Read properties and relationships of the managedAppRegistration object.
+        /// Read properties and relationships of the androidManagedAppRegistration object.
         /// </summary>
         public class ManagedAppRegistrationItemRequestBuilderGetQueryParameters 
         {

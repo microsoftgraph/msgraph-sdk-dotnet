@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Invitations.Item.InvitedUser
         {
         }
         /// <summary>
-        /// The user created as part of the invitation creation. Read-Only
+        /// The user created as part of the invitation creation. Read-only. The id property is required in the request body to reset a redemption status.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.User"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Invitations.Item.InvitedUser
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.User>(requestInfo, Microsoft.Graph.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The user created as part of the invitation creation. Read-Only
+        /// The user created as part of the invitation creation. Read-only. The id property is required in the request body to reset a redemption status.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Invitations.Item.InvitedUser
             return new Microsoft.Graph.Invitations.Item.InvitedUser.InvitedUserRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The user created as part of the invitation creation. Read-Only
+        /// The user created as part of the invitation creation. Read-only. The id property is required in the request body to reset a redemption status.
         /// </summary>
         public class InvitedUserRequestBuilderGetQueryParameters 
         {

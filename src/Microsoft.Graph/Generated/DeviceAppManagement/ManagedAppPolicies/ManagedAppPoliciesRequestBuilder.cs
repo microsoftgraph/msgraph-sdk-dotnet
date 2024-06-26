@@ -52,8 +52,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies
         {
         }
         /// <summary>
-        /// List properties and relationships of the windowsInformationProtection objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotection-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the targetedManagedAppProtection objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.ManagedAppPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedAppPolicy>(requestInfo, Microsoft.Graph.Models.ManagedAppPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the windowsInformationProtection objects.
+        /// List properties and relationships of the targetedManagedAppProtection objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies
             return new Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the windowsInformationProtection objects.
+        /// List properties and relationships of the targetedManagedAppProtection objects.
         /// </summary>
         public class ManagedAppPoliciesRequestBuilderGetQueryParameters 
         {

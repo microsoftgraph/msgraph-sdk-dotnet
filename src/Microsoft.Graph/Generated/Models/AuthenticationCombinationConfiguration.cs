@@ -38,6 +38,7 @@ namespace Microsoft.Graph.Models
             return mappingValue switch
             {
                 "#microsoft.graph.fido2CombinationConfiguration" => new Microsoft.Graph.Models.Fido2CombinationConfiguration(),
+                "#microsoft.graph.x509CertificateCombinationConfiguration" => new Microsoft.Graph.Models.X509CertificateCombinationConfiguration(),
                 _ => new Microsoft.Graph.Models.AuthenticationCombinationConfiguration(),
             };
         }

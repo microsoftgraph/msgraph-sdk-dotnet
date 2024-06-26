@@ -989,6 +989,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.workbookWorksheetProtection" => new Microsoft.Graph.Models.WorkbookWorksheetProtection(),
                 "#microsoft.graph.workforceIntegration" => new Microsoft.Graph.Models.WorkforceIntegration(),
                 "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration" => new Microsoft.Graph.Models.X509CertificateAuthenticationMethodConfiguration(),
+                "#microsoft.graph.x509CertificateCombinationConfiguration" => new Microsoft.Graph.Models.X509CertificateCombinationConfiguration(),
                 _ => new Microsoft.Graph.Models.Entity(),
             };
         }

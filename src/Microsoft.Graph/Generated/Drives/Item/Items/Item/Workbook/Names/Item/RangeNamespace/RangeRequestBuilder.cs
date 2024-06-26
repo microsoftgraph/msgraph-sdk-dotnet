@@ -33,8 +33,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names.Item.RangeNamesp
         {
         }
         /// <summary>
-        /// Returns the range object that is associated with the name. Throws an exception if the named item&apos;s type is not a range.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/nameditem-range?view=graph-rest-1.0" />
+        /// Retrieve the properties and relationships of range object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/range-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookRange"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names.Item.RangeNamesp
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkbookRange>(requestInfo, Microsoft.Graph.Models.WorkbookRange.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the range object that is associated with the name. Throws an exception if the named item&apos;s type is not a range.
+        /// Retrieve the properties and relationships of range object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDns
         {
         }
         /// <summary>
-        /// Get a list of passiveDnsRecord resources associated with a host. This is a forward DNS lookup which queries the IP address of the specified host using its hostname. 
+        /// Get a list of passiveDnsRecord resources associated with a host. This method is a forward DNS lookup that queries the IP address of the specified host using its hostname. 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-list-passivedns?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Security.PassiveDnsRecordCollectionResponse"/></returns>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDns
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.PassiveDnsRecordCollectionResponse>(requestInfo, Microsoft.Graph.Models.Security.PassiveDnsRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of passiveDnsRecord resources associated with a host. This is a forward DNS lookup which queries the IP address of the specified host using its hostname. 
+        /// Get a list of passiveDnsRecord resources associated with a host. This method is a forward DNS lookup that queries the IP address of the specified host using its hostname. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDns
             return new Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDns.PassiveDnsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of passiveDnsRecord resources associated with a host. This is a forward DNS lookup which queries the IP address of the specified host using its hostname. 
+        /// Get a list of passiveDnsRecord resources associated with a host. This method is a forward DNS lookup that queries the IP address of the specified host using its hostname. 
         /// </summary>
         public class PassiveDnsRequestBuilderGetQueryParameters 
         {

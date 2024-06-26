@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Invitations
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.InvitationCollectionResponse>(requestInfo, Microsoft.Graph.Models.InvitationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new invitation. Invitation adds an external user to the organization. When creating a new invitation, you have several options available:
+        /// Use this API to create a new invitation or reset the redemption status for a guest user who already redeemed their invitation. Invitation adds an external user to the organization. When creating a new invitation, you have several options available:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/invitation-post?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Invitation"/></returns>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Invitations
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new invitation. Invitation adds an external user to the organization. When creating a new invitation, you have several options available:
+        /// Use this API to create a new invitation or reset the redemption status for a guest user who already redeemed their invitation. Invitation adds an external user to the organization. When creating a new invitation, you have several options available:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

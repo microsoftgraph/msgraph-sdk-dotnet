@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     public class Invitation : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The user created as part of the invitation creation. Read-Only</summary>
+        /// <summary>The user created as part of the invitation creation. Read-only. The id property is required in the request body to reset a redemption status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Models.User? InvitedUser
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("invitedUserEmailAddress", value); }
         }
 #endif
-        /// <summary>Additional configuration for the message being sent to the invited user, including customizing message text, language, and cc recipient list.</summary>
+        /// <summary>Contains configuration for the message being sent to the invited user, including customizing message text, language, and cc recipient list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Models.InvitedUserMessageInfo? InvitedUserMessageInfo
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("inviteRedeemUrl", value); }
         }
 #endif
-        /// <summary>The URL the user should be redirected to once the invitation is redeemed. Required.</summary>
+        /// <summary>The URL the user should be redirected to after the invitation is redeemed. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InviteRedirectUrl
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("inviteRedirectUrl", value); }
         }
 #endif
-        /// <summary>Reset the user&apos;s redemption status and reinvite a user while retaining their user identifier, group memberships, and app assignments. This property allows you to enable a user to sign-in using a different email address from the one in the previous invitation. For more information about using this property, see Reset redemption status for a guest user.</summary>
+        /// <summary>Reset the user&apos;s redemption status and reinvite a user while retaining their user identifier, group memberships, and app assignments. This property allows you to enable a user to sign-in using a different email address from the one in the previous invitation. When true, the invitedUser/id relationship is required. For more information about using this property, see Reset redemption status for a guest user.</summary>
         public bool? ResetRedemption
         {
             get { return BackingStore?.Get<bool?>("resetRedemption"); }
