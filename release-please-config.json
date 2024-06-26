@@ -14,7 +14,8 @@
         "package-name": "src/Microsoft.Graph/",
         "changelog-path": "CHANGELOG.md",
         "extra-files": [
-          "README.md"
+          "README.md",
+          "src/Microsoft.Graph.csproj"
         ]
       }
     },
