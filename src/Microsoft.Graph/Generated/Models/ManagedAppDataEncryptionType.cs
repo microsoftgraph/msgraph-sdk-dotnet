@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Represents the level to which app data is encrypted for managed apps</summary>
     public enum ManagedAppDataEncryptionType
     {

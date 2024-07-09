@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Edition Upgrade License type</summary>
     public enum EditionUpgradeLicenseType
     {

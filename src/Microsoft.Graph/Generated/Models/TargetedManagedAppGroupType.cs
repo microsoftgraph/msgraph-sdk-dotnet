@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps</summary>
     public enum TargetedManagedAppGroupType
     {

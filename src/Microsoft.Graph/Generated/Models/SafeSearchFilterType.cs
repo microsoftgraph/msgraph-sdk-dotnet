@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Specifies what level of safe search (filtering adult content) is required</summary>
     public enum SafeSearchFilterType
     {

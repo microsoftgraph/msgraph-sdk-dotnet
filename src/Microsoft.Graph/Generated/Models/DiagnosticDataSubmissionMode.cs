@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Allow the device to send diagnostic and usage telemetry data, such as Watson.</summary>
     public enum DiagnosticDataSubmissionMode
     {

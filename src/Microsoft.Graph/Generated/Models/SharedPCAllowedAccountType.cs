@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Type of accounts that are allowed to share the PC.</summary>
     [Flags]
     public enum SharedPCAllowedAccountType

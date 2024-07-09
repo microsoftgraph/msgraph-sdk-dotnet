@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Scheduled the update installation on the weeks of the month</summary>
     [Flags]
     public enum WindowsUpdateForBusinessUpdateWeeks
