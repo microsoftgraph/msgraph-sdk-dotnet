@@ -18,11 +18,11 @@ using Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Permission
 using Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Sites;
 using Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.TermStore;
 using Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.TermStores;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -31,95 +31,96 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1
     /// <summary>
     /// Provides operations to call the getByPath method.
     /// </summary>
-    public class GetByPathWithPath1RequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class GetByPathWithPath1RequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the analytics property of the microsoft.graph.site entity.</summary>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Analytics.AnalyticsRequestBuilder Analytics
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Analytics.AnalyticsRequestBuilder Analytics
         {
-            get => new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the columns property of the microsoft.graph.site entity.</summary>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Columns.ColumnsRequestBuilder Columns
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Columns.ColumnsRequestBuilder Columns
         {
-            get => new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Columns.ColumnsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Columns.ColumnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contentTypes property of the microsoft.graph.site entity.</summary>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.ContentTypes.ContentTypesRequestBuilder ContentTypes
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.ContentTypes.ContentTypesRequestBuilder ContentTypes
         {
-            get => new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.ContentTypes.ContentTypesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.ContentTypes.ContentTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.</summary>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.CreatedByUser.CreatedByUserRequestBuilder CreatedByUser
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.CreatedByUser.CreatedByUserRequestBuilder CreatedByUser
         {
-            get => new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.CreatedByUser.CreatedByUserRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.CreatedByUser.CreatedByUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drive property of the microsoft.graph.site entity.</summary>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Drive.DriveRequestBuilder Drive
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Drive.DriveRequestBuilder Drive
         {
-            get => new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Drive.DriveRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Drive.DriveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drives property of the microsoft.graph.site entity.</summary>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Drives.DrivesRequestBuilder Drives
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Drives.DrivesRequestBuilder Drives
         {
-            get => new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the externalColumns property of the microsoft.graph.site entity.</summary>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.ExternalColumns.ExternalColumnsRequestBuilder ExternalColumns
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.ExternalColumns.ExternalColumnsRequestBuilder ExternalColumns
         {
-            get => new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.ExternalColumns.ExternalColumnsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.ExternalColumns.ExternalColumnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the items property of the microsoft.graph.site entity.</summary>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Items.ItemsRequestBuilder Items
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Items.ItemsRequestBuilder Items
         {
-            get => new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Items.ItemsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Items.ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.</summary>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.LastModifiedByUser.LastModifiedByUserRequestBuilder LastModifiedByUser
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.LastModifiedByUser.LastModifiedByUserRequestBuilder LastModifiedByUser
         {
-            get => new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.LastModifiedByUser.LastModifiedByUserRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.LastModifiedByUser.LastModifiedByUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the lists property of the microsoft.graph.site entity.</summary>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists.ListsRequestBuilder Lists
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists.ListsRequestBuilder Lists
         {
-            get => new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists.ListsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists.ListsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onenote property of the microsoft.graph.site entity.</summary>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Onenote.OnenoteRequestBuilder Onenote
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Onenote.OnenoteRequestBuilder Onenote
         {
-            get => new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Onenote.OnenoteRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Onenote.OnenoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.site entity.</summary>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Operations.OperationsRequestBuilder Operations
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Operations.OperationsRequestBuilder Operations
         {
-            get => new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pages property of the microsoft.graph.site entity.</summary>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Pages.PagesRequestBuilder Pages
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Pages.PagesRequestBuilder Pages
         {
-            get => new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Pages.PagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Pages.PagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissions property of the microsoft.graph.site entity.</summary>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Permissions.PermissionsRequestBuilder Permissions
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Permissions.PermissionsRequestBuilder Permissions
         {
-            get => new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sites property of the microsoft.graph.site entity.</summary>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Sites.SitesRequestBuilder Sites
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Sites.SitesRequestBuilder Sites
         {
-            get => new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Sites.SitesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Sites.SitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the termStore property of the microsoft.graph.site entity.</summary>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.TermStore.TermStoreRequestBuilder TermStore
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.TermStore.TermStoreRequestBuilder TermStore
         {
-            get => new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.TermStore.TermStoreRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.TermStore.TermStoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the termStores property of the microsoft.graph.site entity.</summary>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.TermStores.TermStoresRequestBuilder TermStores
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.TermStores.TermStoresRequestBuilder TermStores
         {
-            get => new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.TermStores.TermStoresRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.TermStores.TermStoresRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.GetByPathWithPath1RequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.GetByPathWithPath1RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="path1">Usage: path=&apos;{path1}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -129,7 +130,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1
             if (!string.IsNullOrWhiteSpace(path1)) PathParameters.Add("path1", path1);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.GetByPathWithPath1RequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.GetByPathWithPath1RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -139,25 +140,25 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1
         /// <summary>
         /// Invoke function getByPath
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Site"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Site"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Site?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Site?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Site> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Site> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Site>(requestInfo, Microsoft.Graph.Models.Site.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Site>(requestInfo, global::Microsoft.Graph.Models.Site.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getByPath
@@ -181,17 +182,18 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.GetByPathWithPath1RequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.GetByPathWithPath1RequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.GetByPathWithPath1RequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.GetByPathWithPath1RequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.GetByPathWithPath1RequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.GetByPathWithPath1RequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetByPathWithPath1RequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class GetByPathWithPath1RequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }
