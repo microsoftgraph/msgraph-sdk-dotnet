@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models
     public partial class CompanySubscription : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The ID of this subscription in the commerce system. Alternate key.</summary>
+        /// <summary>The commerceSubscriptionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CommerceSubscriptionId
@@ -27,25 +27,25 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("commerceSubscriptionId", value); }
         }
 #endif
-        /// <summary>The date and time when this subscription was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Whether the subscription is a free trial or purchased.</summary>
+        /// <summary>The isTrial property</summary>
         public bool? IsTrial
         {
             get { return BackingStore?.Get<bool?>("isTrial"); }
             set { BackingStore?.Set("isTrial", value); }
         }
-        /// <summary>The date and time when the subscription will move to the next state (as defined by the status property) if not renewed by the tenant. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>The nextLifecycleDateTime property</summary>
         public DateTimeOffset? NextLifecycleDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("nextLifecycleDateTime"); }
             set { BackingStore?.Set("nextLifecycleDateTime", value); }
         }
-        /// <summary>The object ID of the account admin.</summary>
+        /// <summary>The ownerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnerId
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("ownerId", value); }
         }
 #endif
-        /// <summary>The unique identifier for the Microsoft partner tenant that created the subscription on a customer tenant.</summary>
+        /// <summary>The ownerTenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnerTenantId
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("ownerTenantId", value); }
         }
 #endif
-        /// <summary>Indicates the entity that ownerId belongs to, for example, &apos;User&apos;.</summary>
+        /// <summary>The ownerType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnerType
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("ownerType", value); }
         }
 #endif
-        /// <summary>The provisioning status of each service included in this subscription.</summary>
+        /// <summary>The serviceStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.ServicePlanInfo>? ServiceStatus
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("serviceStatus", value); }
         }
 #endif
-        /// <summary>The object ID of the SKU associated with this subscription.</summary>
+        /// <summary>The skuId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SkuId
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("skuId", value); }
         }
 #endif
-        /// <summary>The SKU associated with this subscription.</summary>
+        /// <summary>The skuPartNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SkuPartNumber
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("skuPartNumber", value); }
         }
 #endif
-        /// <summary>The status of this subscription. Possible values are: Enabled, Deleted, Suspended, Warning, LockedOut.</summary>
+        /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("status", value); }
         }
 #endif
-        /// <summary>The number of licenses included in this subscription.</summary>
+        /// <summary>The totalLicenses property</summary>
         public int? TotalLicenses
         {
             get { return BackingStore?.Get<int?>("totalLicenses"); }

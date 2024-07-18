@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Me.Authentication.EmailMethods
         {
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s email Authentication Method objects and their properties. This call only returns a single object referenced by ID 3ddfcfc8-9383-446f-83cc-3ab9be4be18f as only one email method can be set on users.
+        /// Retrieve a list of a user&apos;s emailAuthenticationMethod objects and their properties. This API will return only a single object in the collection as only one email method can be set for a user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-list-emailmethods?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.EmailAuthenticationMethodCollectionResponse"/></returns>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Me.Authentication.EmailMethods
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.EmailAuthenticationMethod>(requestInfo, global::Microsoft.Graph.Models.EmailAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s email Authentication Method objects and their properties. This call only returns a single object referenced by ID 3ddfcfc8-9383-446f-83cc-3ab9be4be18f as only one email method can be set on users.
+        /// Retrieve a list of a user&apos;s emailAuthenticationMethod objects and their properties. This API will return only a single object in the collection as only one email method can be set for a user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Me.Authentication.EmailMethods
             return new global::Microsoft.Graph.Me.Authentication.EmailMethods.EmailMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s email Authentication Method objects and their properties. This call only returns a single object referenced by ID 3ddfcfc8-9383-446f-83cc-3ab9be4be18f as only one email method can be set on users.
+        /// Retrieve a list of a user&apos;s emailAuthenticationMethod objects and their properties. This API will return only a single object in the collection as only one email method can be set for a user.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class EmailMethodsRequestBuilderGetQueryParameters 

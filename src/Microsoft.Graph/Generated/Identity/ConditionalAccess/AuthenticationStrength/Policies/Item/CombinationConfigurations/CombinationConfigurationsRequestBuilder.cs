@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Poli
         {
         }
         /// <summary>
-        /// Get the authenticationCombinationConfiguration objects for an authentication strength policy. The objects can be of one or more of the following derived types:* fido2combinationConfigurations* x509certificatecombinationconfiguration authenticationCombinationConfiguration objects are supported only for custom authentication strengths.
+        /// Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-list-combinationconfigurations?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.AuthenticationCombinationConfigurationCollectionResponse"/></returns>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Poli
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AuthenticationCombinationConfigurationCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.AuthenticationCombinationConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new authenticationCombinationConfiguration object which can be of one of the following derived types:* fido2combinationConfiguration* x509certificatecombinationconfiguration
+        /// Create a new authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-post-combinationconfigurations?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.AuthenticationCombinationConfiguration"/></returns>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Poli
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AuthenticationCombinationConfiguration>(requestInfo, global::Microsoft.Graph.Models.AuthenticationCombinationConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the authenticationCombinationConfiguration objects for an authentication strength policy. The objects can be of one or more of the following derived types:* fido2combinationConfigurations* x509certificatecombinationconfiguration authenticationCombinationConfiguration objects are supported only for custom authentication strengths.
+        /// Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Poli
             return requestInfo;
         }
         /// <summary>
-        /// Create a new authenticationCombinationConfiguration object which can be of one of the following derived types:* fido2combinationConfiguration* x509certificatecombinationconfiguration
+        /// Create a new authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Poli
             return new global::Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Policies.Item.CombinationConfigurations.CombinationConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the authenticationCombinationConfiguration objects for an authentication strength policy. The objects can be of one or more of the following derived types:* fido2combinationConfigurations* x509certificatecombinationconfiguration authenticationCombinationConfiguration objects are supported only for custom authentication strengths.
+        /// Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class CombinationConfigurationsRequestBuilderGetQueryParameters 

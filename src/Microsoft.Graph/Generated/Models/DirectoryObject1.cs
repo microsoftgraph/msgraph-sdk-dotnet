@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("onPremisesSynchronization", value); }
         }
 #endif
-        /// <summary>List of commercial subscriptions that an organization acquired.</summary>
+        /// <summary>The subscriptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.CompanySubscription>? Subscriptions

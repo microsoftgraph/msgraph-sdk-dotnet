@@ -84,12 +84,6 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("devices", value); }
         }
 #endif
-        /// <summary>Insider risk levels included in the policy. The possible values are: minor, moderate, elevated, unknownFutureValue.</summary>
-        public global::Microsoft.Graph.Models.ConditionalAccessInsiderRiskLevels? InsiderRiskLevels
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ConditionalAccessInsiderRiskLevels?>("insiderRiskLevels"); }
-            set { BackingStore?.Set("insiderRiskLevels", value); }
-        }
         /// <summary>Locations included in and excluded from the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -232,7 +226,6 @@ namespace Microsoft.Graph.Models
                 { "clientAppTypes", n => { ClientAppTypes = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Models.ConditionalAccessClientApp>()?.AsList(); } },
                 { "clientApplications", n => { ClientApplications = n.GetObjectValue<global::Microsoft.Graph.Models.ConditionalAccessClientApplications>(global::Microsoft.Graph.Models.ConditionalAccessClientApplications.CreateFromDiscriminatorValue); } },
                 { "devices", n => { Devices = n.GetObjectValue<global::Microsoft.Graph.Models.ConditionalAccessDevices>(global::Microsoft.Graph.Models.ConditionalAccessDevices.CreateFromDiscriminatorValue); } },
-                { "insiderRiskLevels", n => { InsiderRiskLevels = n.GetEnumValue<global::Microsoft.Graph.Models.ConditionalAccessInsiderRiskLevels>(); } },
                 { "locations", n => { Locations = n.GetObjectValue<global::Microsoft.Graph.Models.ConditionalAccessLocations>(global::Microsoft.Graph.Models.ConditionalAccessLocations.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "platforms", n => { Platforms = n.GetObjectValue<global::Microsoft.Graph.Models.ConditionalAccessPlatforms>(global::Microsoft.Graph.Models.ConditionalAccessPlatforms.CreateFromDiscriminatorValue); } },
@@ -253,7 +246,6 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ConditionalAccessClientApplications>("clientApplications", ClientApplications);
             writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Models.ConditionalAccessClientApp>("clientAppTypes", ClientAppTypes);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ConditionalAccessDevices>("devices", Devices);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.ConditionalAccessInsiderRiskLevels>("insiderRiskLevels", InsiderRiskLevels);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ConditionalAccessLocations>("locations", Locations);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ConditionalAccessPlatforms>("platforms", Platforms);

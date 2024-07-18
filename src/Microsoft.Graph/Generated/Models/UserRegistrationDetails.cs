@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isSystemPreferredAuthenticationMethodEnabled"); }
             set { BackingStore?.Set("isSystemPreferredAuthenticationMethodEnabled", value); }
         }
-        /// <summary>The date and time (UTC) when the report was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>The date and time (UTC) when the record was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastUpdatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }

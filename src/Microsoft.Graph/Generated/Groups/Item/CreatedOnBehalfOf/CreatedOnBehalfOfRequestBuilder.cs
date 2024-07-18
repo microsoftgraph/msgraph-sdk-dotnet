@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Groups.Item.CreatedOnBehalfOf
         {
         }
         /// <summary>
-        /// The user (or application) that created the group. NOTE: This property isn&apos;t set if the user is an administrator. Read-only.
+        /// The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DirectoryObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Groups.Item.CreatedOnBehalfOf
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DirectoryObject>(requestInfo, global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The user (or application) that created the group. NOTE: This property isn&apos;t set if the user is an administrator. Read-only.
+        /// The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Groups.Item.CreatedOnBehalfOf
             return new global::Microsoft.Graph.Groups.Item.CreatedOnBehalfOf.CreatedOnBehalfOfRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The user (or application) that created the group. NOTE: This property isn&apos;t set if the user is an administrator. Read-only.
+        /// The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class CreatedOnBehalfOfRequestBuilderGetQueryParameters 

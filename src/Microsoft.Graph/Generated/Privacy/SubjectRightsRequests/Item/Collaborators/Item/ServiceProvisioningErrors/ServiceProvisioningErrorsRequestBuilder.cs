@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.
         {
         }
         /// <summary>
-        /// Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).
+        /// Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ServiceProvisioningErrorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ServiceProvisioningErrorCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ServiceProvisioningErrorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).
+        /// Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.
             return new global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).
+        /// Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class ServiceProvisioningErrorsRequestBuilderGetQueryParameters 

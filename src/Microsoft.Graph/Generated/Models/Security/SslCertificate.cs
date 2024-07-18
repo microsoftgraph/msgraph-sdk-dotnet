@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Models.Security
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
-        /// <summary>The host resources related with this sslCertificate.</summary>
+        /// <summary>The hosts related with this sslCertificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.Security.Host>? RelatedHosts

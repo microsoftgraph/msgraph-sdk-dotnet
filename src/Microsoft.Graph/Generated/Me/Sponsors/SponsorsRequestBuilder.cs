@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Me.Sponsors
         {
         }
         /// <summary>
-        /// The users and groups responsible for this guest&apos;s privileges in the tenant and keeping the guest&apos;s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
+        /// The users and groups responsible for this guest user&apos;s privileges in the tenant and keep the guest user&apos;s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Me.Sponsors
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The users and groups responsible for this guest&apos;s privileges in the tenant and keeping the guest&apos;s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
+        /// The users and groups responsible for this guest user&apos;s privileges in the tenant and keep the guest user&apos;s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Me.Sponsors
             return new global::Microsoft.Graph.Me.Sponsors.SponsorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The users and groups responsible for this guest&apos;s privileges in the tenant and keeping the guest&apos;s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
+        /// The users and groups responsible for this guest user&apos;s privileges in the tenant and keep the guest user&apos;s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class SponsorsRequestBuilderGetQueryParameters 

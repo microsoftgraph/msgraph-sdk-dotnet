@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are: reader, writer, manager, and owner. Read-write.
+        /// The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are &apos;reader&apos;, &apos;writer&apos;, &apos;manager&apos;, and &apos;owner&apos;. Read-write.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Permission"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item
             return requestInfo;
         }
         /// <summary>
-        /// The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are: reader, writer, manager, and owner. Read-write.
+        /// The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are &apos;reader&apos;, &apos;writer&apos;, &apos;manager&apos;, and &apos;owner&apos;. Read-write.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -187,7 +187,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item
         {
         }
         /// <summary>
-        /// The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are: reader, writer, manager, and owner. Read-write.
+        /// The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are &apos;reader&apos;, &apos;writer&apos;, &apos;manager&apos;, and &apos;owner&apos;. Read-write.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class PermissionItemRequestBuilderGetQueryParameters 

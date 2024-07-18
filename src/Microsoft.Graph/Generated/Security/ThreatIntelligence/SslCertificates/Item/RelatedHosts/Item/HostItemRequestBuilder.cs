@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.SslCertificates.Item.Relat
         {
         }
         /// <summary>
-        /// The host resources related with this sslCertificate.
+        /// The hosts related with this sslCertificate.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.Host"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.SslCertificates.Item.Relat
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.Host>(requestInfo, global::Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The host resources related with this sslCertificate.
+        /// The hosts related with this sslCertificate.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.SslCertificates.Item.Relat
             return new global::Microsoft.Graph.Security.ThreatIntelligence.SslCertificates.Item.RelatedHosts.Item.HostItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The host resources related with this sslCertificate.
+        /// The hosts related with this sslCertificate.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class HostItemRequestBuilderGetQueryParameters 

@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("drive", value); }
         }
 #endif
-        /// <summary>The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are: reader, writer, manager, and owner. Read-write.</summary>
+        /// <summary>The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are &apos;reader&apos;, &apos;writer&apos;, &apos;manager&apos;, and &apos;owner&apos;. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.Permission>? Permissions

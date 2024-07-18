@@ -53,8 +53,7 @@ namespace Microsoft.Graph.DirectoryNamespace.Subscriptions
         {
         }
         /// <summary>
-        /// Get the list of commercial subscriptions that an organization acquired.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-list-subscriptions?view=graph-rest-1.0" />
+        /// Get subscriptions from directory
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.CompanySubscriptionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +101,7 @@ namespace Microsoft.Graph.DirectoryNamespace.Subscriptions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.CompanySubscription>(requestInfo, global::Microsoft.Graph.Models.CompanySubscription.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of commercial subscriptions that an organization acquired.
+        /// Get subscriptions from directory
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +151,7 @@ namespace Microsoft.Graph.DirectoryNamespace.Subscriptions
             return new global::Microsoft.Graph.DirectoryNamespace.Subscriptions.SubscriptionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of commercial subscriptions that an organization acquired.
+        /// Get subscriptions from directory
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class SubscriptionsRequestBuilderGetQueryParameters 

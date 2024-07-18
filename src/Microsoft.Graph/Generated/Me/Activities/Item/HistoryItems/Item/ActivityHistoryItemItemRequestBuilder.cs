@@ -85,8 +85,8 @@ namespace Microsoft.Graph.Me.Activities.Item.HistoryItems.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ActivityHistoryItem>(requestInfo, global::Microsoft.Graph.Models.ActivityHistoryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new or replace an existing history item for an existing user activity.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/projectrome-put-historyitem?view=graph-rest-1.0" />
+        /// Delete an existing history item for an existing user activity.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/projectrome-delete-historyitem?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ActivityHistoryItem"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Me.Activities.Item.HistoryItems.Item
             return requestInfo;
         }
         /// <summary>
-        /// Create a new or replace an existing history item for an existing user activity.
+        /// Delete an existing history item for an existing user activity.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

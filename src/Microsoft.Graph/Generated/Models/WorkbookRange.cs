@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<int?>("columnCount"); }
             set { BackingStore?.Set("columnCount", value); }
         }
-        /// <summary>Indicates whether all columns of the current range are hidden.</summary>
+        /// <summary>Represents if all columns of the current range are hidden.</summary>
         public bool? ColumnHidden
         {
             get { return BackingStore?.Get<bool?>("columnHidden"); }
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<int?>("rowCount"); }
             set { BackingStore?.Set("rowCount", value); }
         }
-        /// <summary>Indicates whether all rows of the current range are hidden.</summary>
+        /// <summary>Represents if all rows of the current range are hidden.</summary>
         public bool? RowHidden
         {
             get { return BackingStore?.Get<bool?>("rowHidden"); }
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("text", value); }
         }
 #endif
-        /// <summary>Represents the raw values of the specified range. The data returned can be of type string, number, or a Boolean. Cell that contains an error returns the error string.</summary>
+        /// <summary>Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Values

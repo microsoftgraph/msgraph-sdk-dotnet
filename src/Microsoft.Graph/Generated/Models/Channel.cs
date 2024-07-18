@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("filesFolder", value); }
         }
 #endif
-        /// <summary>Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. Note: All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is false.</summary>
+        /// <summary>Indicates whether the channel should automatically be marked &apos;favorite&apos; for all members of the team. Can only be set programmatically with Create team. Default: false.</summary>
         public bool? IsFavoriteByDefault
         {
             get { return BackingStore?.Get<bool?>("isFavoriteByDefault"); }

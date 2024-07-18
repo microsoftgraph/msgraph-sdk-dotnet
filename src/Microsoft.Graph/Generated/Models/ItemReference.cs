@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Percent-encoded path that can be used to navigate to the item. Read-only.</summary>
+        /// <summary>Path that can be used to navigate to the item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Path

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models
     public partial class AuthenticationCombinationConfiguration : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Which authentication method combinations this configuration applies to. Must be an allowedCombinations object, part of the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is &apos;fido2&apos;.</summary>
+        /// <summary>Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that&apos;s defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is &apos;fido2&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.AuthenticationMethodModes?>? AppliesToCombinations
@@ -39,7 +39,6 @@ namespace Microsoft.Graph.Models
             return mappingValue switch
             {
                 "#microsoft.graph.fido2CombinationConfiguration" => new global::Microsoft.Graph.Models.Fido2CombinationConfiguration(),
-                "#microsoft.graph.x509CertificateCombinationConfiguration" => new global::Microsoft.Graph.Models.X509CertificateCombinationConfiguration(),
                 _ => new global::Microsoft.Graph.Models.AuthenticationCombinationConfiguration(),
             };
         }

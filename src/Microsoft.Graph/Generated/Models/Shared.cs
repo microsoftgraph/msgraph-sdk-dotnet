@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("owner", value); }
         }
 #endif
-        /// <summary>Indicates the scope of how the item is shared. The possible values are: anonymous, organization, or users. Read-only.</summary>
+        /// <summary>Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Scope
