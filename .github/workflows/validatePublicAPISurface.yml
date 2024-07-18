@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.1.7
-      - run: scripts/validatePublicAPISurface.ps1
+      - run: scripts/generateDomPatch.ps1
         shell: pwsh
         id: generatePatch
       - uses: baywet/kiota-dom-export-diff-tool@main
