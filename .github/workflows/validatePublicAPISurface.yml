@@ -1,0 +1,35 @@
+name: Validate Public API surface changes
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'feature/*', 'dev' ,'master' ]
+  pull_request:
+    branches: [ 'feature/*', 'dev' ,'master' ]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.7
+      - run: scripts/validatePublicAPISurface.ps1
+        shell: pwsh
+        id: generatePatch
+      - uses: baywet/kiota-dom-export-diff-tool@main
+        if: ${{ steps.generatePatch.outputs.patchFilePath != '' }}
+        with:
+          path: ${{ steps.generatePatch.outputs.patchFilePath }}
+          fail-on-removal: true
+        id: diff
+      - run: gh pr comment ${{ github.env.number }} -b ${{ steps.diff.outputs.explanations }}
+        if: ${{ steps.generatePatch.outputs.patchFilePath != '' && steps.diff.outputs.explanations != '' && github.event_name == 'pull_request' }}
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: rm ${{ steps.generatePatch.outputs.patchFilePath }}
+        continue-on-error: true
+        if: ${{ steps.generatePatch.outputs.patchFilePath != '' }}
