@@ -261,17 +261,15 @@ extends:
                     nuGetFeedType: external
                     publishFeedCredentials: 'microsoftgraph NuGet connection'
                 - task: GitHubRelease@1
-                  displayName: 'GitHub release (create)'
+                  displayName: 'GitHub release (Upload Artifacts)'
                   inputs:
                     gitHubConnection: 'Kiota_Release'
                     target: $(Build.SourceVersion)
+                    action: edit
                     tagSource: userSpecifiedTag
                     tag: 'v$(VERSION_STRING)'
-                    title: '$(VERSION_STRING)'
-                    releaseNotesSource: inline
+                    title: 'v$(VERSION_STRING)'
                     assets: |
                       !**/**
                       $(Pipeline.Workspace)/Microsoft.Graph.*.*nupkg
-                    changeLogType: issueBased
-                    isPreRelease: '$(IS_PRE_RELEASE)'
-                    addChangeLog: true
+                    addChangeLog: false
