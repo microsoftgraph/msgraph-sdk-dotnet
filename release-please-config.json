@@ -6,7 +6,7 @@
       ".github",
       ".vscode"
     ],
-    "release-type": "dotnet",
+    "release-type": "simple",
     "include-component-in-tag": false,
     "include-v-in-tag": true,
     "packages": {
@@ -15,7 +15,7 @@
         "changelog-path": "CHANGELOG.md",
         "extra-files": [
           "README.md",
-          "src/Microsoft.Graph.csproj"
+          "src/Microsoft.Graph/Microsoft.Graph.csproj"
         ]
       }
     },
