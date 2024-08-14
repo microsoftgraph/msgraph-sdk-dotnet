@@ -99,16 +99,22 @@ extends:
             arguments: '--configuration $(BuildConfiguration) --verbosity normal --no-build'
         - task: PowerShell@2
           displayName: 'Validate updated version'
+          condition: and(contains(variables['build.sourceBranch'], 'refs/heads/master'), succeeded())
           inputs:
             targetType: filePath
             filePath: '$(Build.SourcesDirectory)\scripts\ValidateUpdatedNugetVersion.ps1'
             arguments: '-packageName "Microsoft.Graph" -projectPath "$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.csproj"'
             pwsh: true
           enabled: true
-        - task: EsrpCodeSigning@3
+        - task: EsrpCodeSigning@5
           displayName: 'ESRP DLL Strong Name (Microsoft.Graph)'
           inputs:
-            ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
+            ConnectedServiceName: 'Federated DevX ESRP Managed Identity Connection'
+            AppRegistrationClientId: '65035b7f-7357-4f29-bf25-c5ee5c3949f8'
+            AppRegistrationTenantId: 'cdc5aeea-15c5-4db6-b079-fcadd2505dc2'
+            AuthAKVName: 'akv-prod-eastus'
+            AuthCertName: 'ReferenceLibraryPrivateCert'
+            AuthSignCertName: 'ReferencePackagePublisherCertificate'
             FolderPath: src/Microsoft.Graph/bin/release
             Pattern: Microsoft.Graph.dll
             signConfigType: inlineSignParams
@@ -130,10 +136,18 @@ extends:
                   }
               ]
             SessionTimeout: 20
-        - task: EsrpCodeSigning@3
+            MaxConcurrency: 50
+            MaxRetryAttempts: 5
+            PendingAnalysisWaitTimeoutMinutes: 5
+        - task: EsrpCodeSigning@5
           displayName: 'ESRP DLL CodeSigning (Microsoft.Graph)'
           inputs:
-            ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
+            ConnectedServiceName: 'Federated DevX ESRP Managed Identity Connection'
+            AppRegistrationClientId: '65035b7f-7357-4f29-bf25-c5ee5c3949f8'
+            AppRegistrationTenantId: 'cdc5aeea-15c5-4db6-b079-fcadd2505dc2'
+            AuthAKVName: 'akv-prod-eastus'
+            AuthCertName: 'ReferenceLibraryPrivateCert'
+            AuthSignCertName: 'ReferencePackagePublisherCertificate'
             FolderPath: src/Microsoft.Graph/bin/release
             Pattern: Microsoft.Graph.dll
             signConfigType: inlineSignParams
@@ -176,15 +190,23 @@ extends:
                   }
               ]
             SessionTimeout: 20
+            MaxConcurrency: 50
+            MaxRetryAttempts: 5
+            PendingAnalysisWaitTimeoutMinutes: 5
         - powershell: |
             dotnet pack $env:BUILD_SOURCESDIRECTORY/src/Microsoft.Graph/Microsoft.Graph.csproj /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg --no-build --output $env:BUILD_ARTIFACTSTAGINGDIRECTORY --configuration $env:BUILD_CONFIGURATION
           env:
             BUILD_CONFIGURATION: $(BuildConfiguration)
           displayName: dotnet pack
-        - task: EsrpCodeSigning@3
+        - task: EsrpCodeSigning@5
           displayName: 'ESRP NuGet CodeSigning'
           inputs:
-            ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
+            ConnectedServiceName: 'Federated DevX ESRP Managed Identity Connection'
+            AppRegistrationClientId: '65035b7f-7357-4f29-bf25-c5ee5c3949f8'
+            AppRegistrationTenantId: 'cdc5aeea-15c5-4db6-b079-fcadd2505dc2'
+            AuthAKVName: 'akv-prod-eastus'
+            AuthCertName: 'ReferenceLibraryPrivateCert'
+            AuthSignCertName: 'ReferencePackagePublisherCertificate'
             FolderPath: '$(Build.ArtifactStagingDirectory)'
             Pattern: '*nupkg'
             signConfigType: inlineSignParams
@@ -206,6 +228,9 @@ extends:
                   }
               ]
             SessionTimeout: 20
+            MaxConcurrency: 50
+            MaxRetryAttempts: 5
+            PendingAnalysisWaitTimeoutMinutes: 5
         - task: CopyFiles@2
           displayName: 'Copy release scripts to artifact staging directory'
           inputs:
