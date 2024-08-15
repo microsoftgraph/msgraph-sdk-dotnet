@@ -1,5 +1,5 @@
 {
-    "bootstrap-sha": "1354831baeafb52965a8b2f5f80df5c43e414c99",
+    "bootstrap-sha": "148f1ef380baedb27f7adb3c93b45f194f5c3e16",
     "exclude-paths": [
       ".git",
       ".idea",
@@ -8,10 +8,10 @@
     ],
     "release-type": "simple",
     "include-component-in-tag": false,
-    "include-v-in-tag": true,
+    "include-v-in-tag": false,
     "packages": {
       ".": {
-        "package-name": "src/Microsoft.Graph/",
+        "package-name": "Microsoft.Graph",
         "changelog-path": "CHANGELOG.md",
         "extra-files": [
           "README.md",
