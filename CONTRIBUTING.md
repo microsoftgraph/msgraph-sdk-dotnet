@@ -9,7 +9,7 @@ There are a few different recommended paths to get contributions into the releas
 The best way to get started with a contribution is to start a dialog with us. Sometimes features will be under development or out of scope for this library, and it's best to check before starting work on contribution, especially for large work items.
 
 ## Pull requests
-All pull requests should be submitted against the **master** branch or a specific feature branch. The master branch is intended to represent the code released in the most-recent Nuget package.
+All pull requests should be submitted against the **main** branch or a specific feature branch. The main branch is intended to represent the code released in the most-recent Nuget package.
 
 ## Commit message format
 
@@ -42,7 +42,7 @@ The recommended commit types used are:
 
 Adding a footer with the prefix **BREAKING CHANGE:** will cause an increment of the _major_ version.
 
-When a new package is about to be release, the release PR will be merged into master. The package will be generated from master.
+When a new package is about to be release, the release PR will be merged into main. The package will be generated from main.
 
 Some things to note about this project:
 

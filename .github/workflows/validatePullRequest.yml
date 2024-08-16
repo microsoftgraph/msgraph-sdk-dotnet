@@ -3,9 +3,9 @@ name: Validate Pull Request
 on:
   workflow_dispatch:
   push:
-    branches: [ 'feature/*', 'dev' ,'master' ]
+    branches: [ 'feature/*', 'main' ]
   pull_request:
-    branches: [ 'feature/*', 'dev' ,'master' ]
+    branches: [ 'feature/*', 'main' ]
     
 permissions:
   contents: read #those permissions are required to run the codeql analysis
