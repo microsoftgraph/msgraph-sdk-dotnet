@@ -111,14 +111,14 @@ Between 3.x and 4.x there were some major breaking changes:
  * Replacing Newtosoft.Json with System.Text.Json
  * Upgrading Microsoft.Graph.Core dependency to version 2.0.0
 
-View the upgrade guide [here](https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/dev/docs/upgrade-to-v4.md).
+View the upgrade guide [here](https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/main/docs/upgrade-to-v4.md).
 
 
 ### Upgrading to v5
 
 Between 4.x and 5.x there were several major breaking changes as the SDK now uses Kiota for code generation.
 
-View the upgrade guide [here](https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/dev/docs/upgrade-to-v5.md).
+View the upgrade guide [here](https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/main/docs/upgrade-to-v5.md).
 
 ## Issues
 
