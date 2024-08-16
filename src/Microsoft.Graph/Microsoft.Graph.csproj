@@ -29,7 +29,7 @@
     <!-- VersionPrefix minor version must be manually set when making manual changes to code. -->
     <!-- VersionPrefix major and patch versions must be manually set. -->
     <PackageReleaseNotes>
-https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/dev/CHANGELOG.md
+https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/main/CHANGELOG.md
     </PackageReleaseNotes>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>

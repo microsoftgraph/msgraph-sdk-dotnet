@@ -19,7 +19,7 @@
 Param(
     [string]$owner,
     [string]$repo,
-    [string]$branchName = "master"
+    [string]$branchName = "main"
 )
 
 if ([string]::IsNullOrEmpty($owner)) {
